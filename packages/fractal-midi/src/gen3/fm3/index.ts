@@ -9,3 +9,5 @@ export {
   FM3_FAMILY_JOIN_PROVENANCE,
   type Fm3FamilyJoinProvenance,
 } from './familyJoinDiscrete.generated.js';
+
+export { FM3_RANGES } from './ranges.js';

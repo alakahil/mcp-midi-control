@@ -10,7 +10,7 @@
  * `DeviceDescriptor`.
  *
  * SCOPE / DISCIPLINE. The wire codec (model byte + checksum + function
- * family) is validated as shared across the family — the III's own codec
+ * family) is validated as shared across the family ā€” the III's own codec
  * is byte-verified against 10 public captures, and FM3/FM9 reuse it with
  * their model byte (see memory `project_fm3_fm9_capture_evidence` and
  * `docs/_private/PLAN-device-family-expansion.md`). The PARAMETER SET/GET
@@ -18,7 +18,7 @@
  * any device yet; every config that wires it ships with
  * `support_tier: 'community-beta'` and a per-response safety marker. We
  * emit ONLY wire shapes verified against Fractal's published spec or the
- * III's captured layout — never guessed bytes
+ * III's captured layout ā€” never guessed bytes
  * (preference_axefx3_no_untested_wire_paths).
  *
  * The catalog factory lives in `./catalog.ts`: block roster + effect IDs
@@ -52,7 +52,7 @@ import {
   buildVp4SetParam,
 } from 'fractal-midi/gen3/vp4';
 import { FM9_RANGES, FM9_ROUNDTRIP_DISCRETE } from 'fractal-midi/gen3/fm9';
-import { FM3_FAMILY_JOIN_DISCRETE } from 'fractal-midi/gen3/fm3';
+import { FM3_FAMILY_JOIN_DISCRETE, FM3_RANGES } from 'fractal-midi/gen3/fm3';
 import { createModernCatalog, type AxeFxIIIParam } from './catalog.js';
 
 /** FM9 SysEx model byte: its device-true editor-cache ranges (FM9_RANGES) take
@@ -72,7 +72,7 @@ const FM3_MODEL_ID = 0x11;
  * carries the FAMILY-JOIN overlay instead
  * (`fractal-midi/scripts/generate-fm3-family-join-discrete.ts`): the same
  * correction, classified by (family, SYMBOL) join against the FM9 cache enum
- * rows + FM9/III roundtrips — family-pattern evidence, community-beta, FM3
+ * rows + FM9/III roundtrips ā€” family-pattern evidence, community-beta, FM3
  * roundtrip pending. VP4 (0x14) has no oracle data and gets no overlay.
  */
 const ROUNDTRIP_DISCRETE_BY_MODEL: Readonly<Record<number, Readonly<Record<string, number>>>> = {
@@ -83,7 +83,7 @@ const ROUNDTRIP_DISCRETE_BY_MODEL: Readonly<Record<number, Readonly<Record<strin
 import { makeReader } from './reader.js';
 import { makeWriter } from './writer.js';
 
-/** Wire response window — same budget the III device-namespaced tools use. */
+/** Wire response window ā€” same budget the III device-namespaced tools use. */
 const GET_RESPONSE_TIMEOUT_MS = 800;
 
 /**
@@ -100,8 +100,8 @@ export interface FractalModernConfig {
   connection_label?: string;
   port_match: readonly { pattern: RegExp | string }[];
   /**
-   * Grid dimensions (rows × cols) for grid-shaped devices. III/FM9 = 6×14;
-   * FM3 = 4×12. OMITTED for serial AM4-shape devices (VP4): those place
+   * Grid dimensions (rows Ć— cols) for grid-shaped devices. III/FM9 = 6Ć—14;
+   * FM3 = 4Ć—12. OMITTED for serial AM4-shape devices (VP4): those place
    * blocks in a fixed N-slot chain, not a freeform grid, so they set
    * `slot_count` instead and report `slot_model: 'linear'`.
    */
@@ -124,7 +124,7 @@ export interface FractalModernConfig {
    * Device's OWN per-family param table. The III passes its catalog (the
    * byte-identity anchor); FM3/FM9 pass their device-true tables mined
    * from each editor's own binary. paramIds are firmware-specific, so the
-   * III's must NEVER be reused for FM3/FM9 wire writes — see catalog.ts.
+   * III's must NEVER be reused for FM3/FM9 wire writes ā€” see catalog.ts.
    */
   params_by_family: Readonly<Record<string, readonly AxeFxIIIParam[]>>;
   /**
@@ -155,16 +155,16 @@ export interface FractalModernConfig {
    */
   writes_gated?: boolean;
   /**
-   * When `writes_gated` is true, ops listed here are EXEMPT — they have a
+   * When `writes_gated` is true, ops listed here are EXEMPT ā€” they have a
    * hardware-confirmed wire shape and ship as community-beta. e.g. VP4 allows
    * `set_bypass` + `save_preset` (decoded byte-exact from a community capture)
-   * while every other write stays gated. Omit ⇒ all writes gated.
+   * while every other write stays gated. Omit ā‡’ all writes gated.
    */
   write_allowlist?: readonly string[];
   /**
    * MIDI Bank-Select encoding for switch_preset's PC+bank message. Default
    * 'standard' (Axe-Fx III per the v1.4 spec: bank = CC0<<7 | CC32).
-   * Set 'msb' for devices that read the bank from CC0/MSB and ignore CC32 —
+   * Set 'msb' for devices that read the bank from CC0/MSB and ignore CC32 ā€”
    * without it, any preset above 127 lands in bank 0. FM9: hardware-confirmed
    * 2026-06-06. FM3: fw 12.00 field-confirmed to IGNORE CC32 (2026-06-12),
    * despite the v1.4 spec naming the FM3 'standard'. See buildSwitchPresetPC.
@@ -175,8 +175,8 @@ export interface FractalModernConfig {
    * the spec-documented path; FM9-hardware-confirmed with 'msb' bank select).
    * Set 'sysex' to switch via the gen-3 fn=0x01 sub=0x27 SysEx-native op
    * instead: full 14-bit preset number, no MIDI-channel or bank-encoding
-   * dependency. FM3 uses 'sysex' — sub=0x27 is FM3-hardware-confirmed (live
-   * 475→100 switch 2026-06-10; field-test restore 2026-06-12), while the PC
+   * dependency. FM3 uses 'sysex' ā€” sub=0x27 is FM3-hardware-confirmed (live
+   * 475ā†’100 switch 2026-06-10; field-test restore 2026-06-12), while the PC
    * path is hardware-FALSIFIED there with 'standard' bank select (FM3 fw 12.00
    * ignores CC32: a PC switch to preset 438 landed on 54 = 438 mod 128).
    */
@@ -187,7 +187,7 @@ export interface FractalModernConfig {
    * roster is device-specific so the family-shared overlay leaves it numeric
    * (e.g. FM9 amp models). Partial tables are fine. Broadcast/read ordinals,
    * which double as the discrete-SET value (set-by-name: a discrete SET carries
-   * float32(ordinal) at pos 12, sub 09 00 — no separate raw-id space). Omit for
+   * float32(ordinal) at pos 12, sub 09 00 ā€” no separate raw-id space). Omit for
    * devices with none.
    */
   enum_overrides?: Readonly<Record<string, Readonly<Record<number, string>>>>;
@@ -243,9 +243,15 @@ export function createModernFractalDescriptor(config: FractalModernConfig): Devi
     // FM9: device-true display ranges from the FM9-Edit effectDefinitions cache
     // (community capture, fw 11.0) override the AM4-overlay-inferred bounds for
     // calibration, correcting the float params whose inherited range contradicts
-    // the real front panel (DELAY_TIME, REVERB_PREDELAY, etc.). The III/FM3/VP4
-    // have no device-true range table yet, so they keep the catalog inference.
-    deviceRanges: config.model_byte === FM9_MODEL_ID ? FM9_RANGES : undefined,
+    // the real front panel (DELAY_TIME, REVERB_PREDELAY, etc.). The III/VP4
+    // have no device-true range table yet. FM3 carries a small hardware-validated
+    // range override; remaining FM3 params keep the catalog inference.
+    deviceRanges:
+      config.model_byte === FM9_MODEL_ID
+        ? FM9_RANGES
+        : config.model_byte === FM3_MODEL_ID
+          ? FM3_RANGES
+          : undefined,
     // Discrete-ordinal overlay: params the enum paths missed but oracle
     // evidence proves are ordinals (the device quantizes a continuous SET), so
     // they must route DISCRETE. III and FM9 each get their OWN roundtrip-derived
@@ -343,7 +349,7 @@ export function createModernFractalDescriptor(config: FractalModernConfig): Devi
       // false = flash PERSISTENCE is not hardware-VERIFIED (so auto-save during
       // navigation stays gated). The explicit save_preset tool still sends the
       // store envelope (fn=0x01 sub=0x26, captured byte-exact from III/FM9-Edit),
-      // marked untested — gated on writer.savePreset presence, not this flag.
+      // marked untested ā€” gated on writer.savePreset presence, not this flag.
       // save_note carries that distinction to the agent so supports_save=false
       // is never read as "saving is unavailable".
       supports_save: false,
@@ -366,7 +372,7 @@ export function createModernFractalDescriptor(config: FractalModernConfig): Devi
       channelNames: config.channel_names,
       // Per-block channel-count derivation requires a device-true catalog
       // (the maxPid stride floor is unsound on a mined-superset catalog like
-      // the III's) — see reader.ts strideOf.
+      // the III's) ā€” see reader.ts strideOf.
       deviceTrueCatalog: config.device_true_roster ?? false,
     }),
     writer: makeWriter({
