@@ -32,7 +32,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 6, name: 'CABINET_TYPE3', displayLabel: 'Type', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 7, name: 'CABINET_TYPE4', displayLabel: 'Type', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 8, name: 'CABINET_LEVEL1', displayLabel: 'Level', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 9, name: 'CABINET_LEVEL2', displayLabel: 'Level', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 9, name: 'CABINET_LEVEL2', displayLabel: 'Level', unit: 'db', displayMin: -40, displayMax: 0 }, // FM3 fw 13 HW: SET/GET 0 dB=65534 acked; restored -3 dB=60619
   { family: 'CABINET', paramId: 10, name: 'CABINET_LEVEL3', displayLabel: 'Level', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 11, name: 'CABINET_LEVEL4', displayLabel: 'Level', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 12, name: 'CABINET_PAN1', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // inferred from Fractal convention

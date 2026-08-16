@@ -31,10 +31,13 @@ import {
   fm3CabProximityFrequencyFieldByteOffset,
   fm3Cab2DistanceFieldByteOffset,
   fm3Cab2PositionFieldByteOffset,
+  fm3Cab2LevelFieldByteOffset,
   FM3_CAB2_DISTANCE_BODY_INDEX,
   FM3_CAB2_DISTANCE_PARAM_ID,
   FM3_CAB2_POSITION_BODY_INDEX,
   FM3_CAB2_POSITION_PARAM_ID,
+  FM3_CAB2_LEVEL_BODY_INDEX,
+  FM3_CAB2_LEVEL_PARAM_ID,
   FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX,
   FM3_CAB_PROXIMITY_FREQUENCY_PARAM_ID,
   typeName,
@@ -209,6 +212,39 @@ if (CAB2_POSITION_CAPTURES.every((capture) => existsSync(capture.path))) {
       `FM3 Cab 2 Position ${capture.percent}%: capture's actual Cab 2 Distance`,
       cab?.channels?.B?.cab2_distance_cm === capture.distance,
       `got=${String(cab?.channels?.B?.cab2_distance_cm)}`,
+    );
+  }
+}
+
+// Level is independently isolated at index 3. The supplied -3 dB capture also
+// moved Cab 2 Position from 70% to 50%; record that fact instead of treating
+// the pair as a one-word diff. The older -2 dB capture provides a third point.
+const CAB2_LEVEL_CAPTURES = [
+  { db: 0, raw: 65534, position: 70, path: 'samples/captured/cab2_position_70pct.syx' },
+  { db: -3, raw: 60619, position: 50, path: 'samples/captured/cab2_level_minus3db.syx' },
+] as const;
+if (CAB2_LEVEL_CAPTURES.every((capture) => existsSync(capture.path))) {
+  for (const capture of CAB2_LEVEL_CAPTURES) {
+    const source = new Uint8Array(readFileSync(capture.path));
+    const parsed = parsePresetDump(source);
+    const decoded = decodeRawPatch(parsed.chunkPayloads);
+    const body = decodeGen3Body(decoded.body, parsed.modelId);
+    const cab = body.blocks?.find((b) => b.block === 'Cab');
+    const offset = cab ? fm3Cab2LevelFieldByteOffset(cab, 'B') : -1;
+    const raw = offset >= 0 ? decoded.body[offset] | (decoded.body[offset + 1] << 8) : -1;
+    check(`FM3 Cab 2 Level ${capture.db} dB: CRC`, decoded.crcValid);
+    check(`FM3 Cab 2 Level ${capture.db} dB: live paramId`, FM3_CAB2_LEVEL_PARAM_ID === 9);
+    check(`FM3 Cab 2 Level ${capture.db} dB: stored-body index`, FM3_CAB2_LEVEL_BODY_INDEX === 3);
+    check(`FM3 Cab 2 Level ${capture.db} dB: raw u16 LE`, raw === capture.raw, `got=${raw}`);
+    check(
+      `FM3 Cab 2 Level ${capture.db} dB: decoded display`,
+      cab?.channels?.B?.cab2_level_db === capture.db,
+      `got=${String(cab?.channels?.B?.cab2_level_db)}`,
+    );
+    check(
+      `FM3 Cab 2 Level ${capture.db} dB: capture's actual Cab 2 Position`,
+      cab?.channels?.B?.cab2_position_percent === capture.position,
+      `got=${String(cab?.channels?.B?.cab2_position_percent)}`,
     );
   }
 }

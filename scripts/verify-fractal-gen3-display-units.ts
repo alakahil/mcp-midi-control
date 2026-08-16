@@ -180,6 +180,14 @@ check('FM3 cab.dynacab_r2 encodes 70.0% as 45874', fm3Cab2Position.encode(70) ==
 check('FM3 cab.dynacab_r2 decodes raw 32767 as 50.0%', fm3Cab2Position.decode(32767) === 50);
 check('FM3 cab.dynacab_r2 decodes raw 45874 as 70.0%', fm3Cab2Position.decode(45874) === 70);
 
+const fm3Cab2Level = FM3_DESCRIPTOR.blocks.cab.params.level2;
+check('FM3 cab.level2 encodes 0.00 dB as 65534', fm3Cab2Level.encode(0) === 65534);
+check('FM3 cab.level2 encodes -2.00 dB as 62257', fm3Cab2Level.encode(-2) === 62257);
+check('FM3 cab.level2 encodes -3.00 dB as 60619', fm3Cab2Level.encode(-3) === 60619);
+check('FM3 cab.level2 decodes raw 65534 as 0.00 dB', fm3Cab2Level.decode(65534) === 0);
+check('FM3 cab.level2 decodes raw 62257 as -2.00 dB', fm3Cab2Level.decode(62257) === -2);
+check('FM3 cab.level2 decodes raw 60619 as -3.00 dB', fm3Cab2Level.decode(60619) === -3);
+
 // Coverage: the III catalog carries hardware-anchored AM4-joined ranges, so
 // it must ship a meaningful number of calibrated params — this proves the
 // A4/A5 wiring is live. FM3/FM9 are reported but not yet required (their
