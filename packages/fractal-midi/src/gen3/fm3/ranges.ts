@@ -24,5 +24,13 @@ export const FM3_RANGES = {
       displayMin: 0,
       displayMax: 1,
     },
+    // CABINET_PROXFREQ - hardware-validated on FM3 fw 13, 2026-08-16.
+    // Stored-preset u16 register uses log10 scaling across 20..200 Hz:
+    // 100 Hz -> raw 45806; 120 Hz -> raw 50995.
+    41: {
+      kind: 'float',
+      displayMin: 20,
+      displayMax: 200,
+    },
   },
 } as const;

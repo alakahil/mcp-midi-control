@@ -264,6 +264,29 @@ const CAB_BANK_NAMES: Record<number, string> = { 0: 'FACTORY 1', 1: 'FACTORY 2',
 const CAB_MODE_NAMES: Record<number, string> = { 0: 'LEGACY', 1: 'DYNA-CAB' };
 const CAB_MIC_NAMES: Record<number, string> = { 0: 'Condenser', 1: 'Ribbon', 2: 'Dynamic 1', 3: 'Dynamic 2' };
 
+/** FM3 fw 13 hardware-capture anchor for CABINET_PROXFREQ (live paramId 41).
+ * In the stored-preset Cab channel array it is word/index 35, a u16 LE value
+ * normalized logarithmically across 20..200 Hz. This stored-body index is not
+ * the live SET/GET paramId. Evidence: 100 Hz -> 45806, 120 Hz -> 50995. */
+export const FM3_CAB_PROXIMITY_FREQUENCY_PARAM_ID = 41;
+export const FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX = 35;
+
+export function fm3CabProximityFrequencyFieldByteOffset(
+  block: Gen3Block,
+  channel: string,
+): number {
+  if (block.block !== 'Cab' || block.cols !== 106 || block.rows !== 4) {
+    throw new Error('Proximity Frequency stored-body offset is validated only for an FM3 106x4 Cab block');
+  }
+  const ch = CHANNEL_LETTERS.indexOf(channel.toUpperCase() as (typeof CHANNEL_LETTERS)[number]);
+  if (ch < 0) throw new Error(`Invalid channel "${channel}" (expected A/B/C/D)`);
+  return block.params_offset + ch * block.cols * 2 + FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX * 2;
+}
+
+function decodeFm3CabProximityFrequency(raw: number): number {
+  return Math.round(20 * Math.pow(10, raw / 65534));
+}
+
 // ── low-level reads ───────────────────────────────────────────────────
 function u16(data: Uint8Array, off: number): number {
   return ((data[off] ?? 0) | ((data[off + 1] ?? 0) << 8)) & 0xffff;
@@ -468,6 +491,12 @@ function walkBlocks(data: Uint8Array, chainStart: number, profile: DeviceProfile
         const base = paramsStart + ch * cols * 2;
         const modeId = u16(data, base + 25 * 2);
         const c: Gen3BlockChannel = { mode: CAB_MODE_NAMES[modeId] ?? `mode_${modeId}` };
+        // Hardware-validated only on the FM3's 106x4 Cab body layout. Keep the
+        // N=1 evidence scoped instead of assuming sibling-device body indices.
+        if (profile === DEVICE_PROFILES[MODEL_FM3] && cols === 106 && rows === 4) {
+          const raw = u16(data, base + FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX * 2);
+          c.proximity_frequency_hz = decodeFm3CabProximityFrequency(raw);
+        }
         if (modeId === 1) {
           const dc1 = u16(data, base + 79 * 2);
           c.dynacab1_id = dc1;

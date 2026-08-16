@@ -150,6 +150,22 @@ for (const r of results) {
   console.log(`  ${r.label}: ${r.calibratedCount} display-first calibrated params`);
 }
 
+// FM3 fw 13 hardware captures pin the Cab Proximity Frequency logarithmic
+// calibration at two interior points, not merely at synthetic endpoints.
+const fm3ProximityFrequency = FM3_DESCRIPTOR.blocks.cab.params.proxfreq;
+check(
+  'FM3 cab.proxfreq encodes hardware-captured 100 Hz as 45806',
+  fm3ProximityFrequency.encode(100) === 45806,
+  `got ${fm3ProximityFrequency.encode(100)}`,
+);
+check(
+  'FM3 cab.proxfreq encodes hardware-captured 120 Hz as 50995',
+  fm3ProximityFrequency.encode(120) === 50995,
+  `got ${fm3ProximityFrequency.encode(120)}`,
+);
+check('FM3 cab.proxfreq decodes raw 45806 as 100 Hz', fm3ProximityFrequency.decode(45806) === 100);
+check('FM3 cab.proxfreq decodes raw 50995 as 120 Hz', fm3ProximityFrequency.decode(50995) === 120);
+
 // Coverage: the III catalog carries hardware-anchored AM4-joined ranges, so
 // it must ship a meaningful number of calibrated params — this proves the
 // A4/A5 wiring is live. FM3/FM9 are reported but not yet required (their

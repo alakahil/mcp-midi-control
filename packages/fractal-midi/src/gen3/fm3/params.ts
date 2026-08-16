@@ -64,7 +64,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 38, name: 'CABINET_LOCUT', displayLabel: 'Low Cut', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 39, name: 'CABINET_HICUT', displayLabel: 'High Cut', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 40, name: 'CABINET_ZOOM', displayLabel: 'Zoom', unit: 'enum' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 41, name: 'CABINET_PROXFREQ', displayLabel: 'Proximity Frequency', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 41, name: 'CABINET_PROXFREQ', displayLabel: 'Proximity Frequency', unit: 'hz', displayMin: 20, displayMax: 200, scaling: 'log10' }, // FM3 fw 13 hardware captures: 100 Hz -> raw 45806, 120 Hz -> raw 50995
   { family: 'CABINET', paramId: 42, name: 'CABINET_INPUTSEL', displayLabel: 'Input Mode', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 43, name: 'CABINET_PRETYPE', displayLabel: 'Preamp Type', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 44, name: 'CABINET_BASS', displayLabel: 'Bass', unit: 'numeric' }, // inferred from AxeEdit III XML controlType

@@ -28,6 +28,9 @@ import { decodeRawPatch } from '../packages/fractal-gen3/dist/presetHuffman.js';
 import {
   decodeGen3Body,
   decodeGen3PresetDump,
+  fm3CabProximityFrequencyFieldByteOffset,
+  FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX,
+  FM3_CAB_PROXIMITY_FREQUENCY_PARAM_ID,
   typeName,
 } from '../packages/fractal-gen3/dist/presetBody.js';
 import { gen3WholePresetToSpec } from '../packages/core/dist/protocol-generic/gen3-source.js';
@@ -116,6 +119,33 @@ check(
   typeof typeName('Amp', 0) === 'string' && typeName('Amp', 0)!.length > 0,
   `got=${JSON.stringify(typeName('Amp', 0))}`,
 );
+
+// FM3 fw 13 hardware captures: the front-panel Proximity Frequency knob was
+// the only intentional edit (100 Hz -> 120 Hz). Both captures traverse the
+// production SysEx/container/Huffman/body decoder; no raw-file cmp oracle.
+const PROXIMITY_CAPTURES = [
+  { hz: 100, raw: 45806, path: 'samples/captured/proximity-frequency-100hz.syx' },
+  { hz: 120, raw: 50995, path: 'samples/captured/proximity-frequency-120hz.syx' },
+] as const;
+for (const capture of PROXIMITY_CAPTURES) {
+  const source = new Uint8Array(readFileSync(capture.path));
+  const parsed = parsePresetDump(source);
+  const decoded = decodeRawPatch(parsed.chunkPayloads);
+  const body = decodeGen3Body(decoded.body, parsed.modelId);
+  const cab = body.blocks?.find((b) => b.block === 'Cab');
+  const offset = cab ? fm3CabProximityFrequencyFieldByteOffset(cab, 'B') : -1;
+  const raw = offset >= 0 ? decoded.body[offset] | (decoded.body[offset + 1] << 8) : -1;
+  check(`FM3 Proximity Frequency ${capture.hz} Hz: model`, parsed.modelId === 0x11);
+  check(`FM3 Proximity Frequency ${capture.hz} Hz: CRC`, decoded.crcValid);
+  check(`FM3 Proximity Frequency ${capture.hz} Hz: live paramId`, FM3_CAB_PROXIMITY_FREQUENCY_PARAM_ID === 41);
+  check(`FM3 Proximity Frequency ${capture.hz} Hz: stored-body index`, FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX === 35);
+  check(`FM3 Proximity Frequency ${capture.hz} Hz: raw u16 LE`, raw === capture.raw, `got=${raw}`);
+  check(
+    `FM3 Proximity Frequency ${capture.hz} Hz: decoded display`,
+    cab?.channels?.B?.proximity_frequency_hz === capture.hz,
+    `got=${String(cab?.channels?.B?.proximity_frequency_hz)}`,
+  );
+}
 
 // ── 2. Reference cross-check (when samples + Python present) ──────────
 function findPython(): string | undefined {

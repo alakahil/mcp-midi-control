@@ -1,15 +1,18 @@
 ---
 name: display-log10-scaling
 class: coercion
-status: matched-singleton
+status: matched
 discovered:  (bright_cap mismatch root-cause)
 verified_on:
   - axe-fx-ii-q8.02
+  - fm3-fw13-hardware-preset-captures
 firmware_sensitive: false
 golden: scripts/verify-axe-fx-ii-calibration.ts (hardware-anchored log10 round-trips, e.g. compressor.ratio/attack/release)
 relates_to: [display-q16-fixedpoint]
 consumed_in:
   - fractal-midi/src/gen2/axe-fx-ii/params.ts (entries with `scaling: 'log10'`)
+  - fractal-midi/src/gen3/fm3/params.ts (`CABINET_PROXFREQ`)
+  - packages/fractal-gen3/src/presetBody.ts (FM3 Cab stored-body decode)
 ---
 
 # Log10 scaling display ↔ wire coercion
@@ -27,7 +30,9 @@ wireValue = round(log10(display) * kEncodeScale)
 ```
 
 The exact constants (`kDecodeScale`, `kEncodeScale`) are per-parameter
-metadata in `params.ts` entries marked `scaling: 'log10'`.
+metadata in `params.ts` entries marked `scaling: 'log10'`. For a bounded
+display range `[min,max]`, the shared normalized form is equivalently
+`display = min * (max/min)^(wire/65534)`.
 
 ## Where it's used
 
@@ -45,12 +50,12 @@ delay times in the high range.
 
 ## Where it does not apply
 
-This is an Axe-Fx II per-parameter coercion verified on a single
-firmware major. No second axis is claimed: log10 scaling is selected by
-per-param `scaling: 'log10'` metadata in the II catalog, and the III and
-AM4 catalogs carry their own per-param scaling metadata that has not been
-cross-mapped to this primitive. Parameters without the metadata use Q16
-fixed-point ([[display-q16-fixedpoint]]) or direct mapping.
+This is a per-parameter coercion, not a global gen-3 rule. The second device
+axis is FM3 fw 13 Cab Proximity Frequency: two complete hardware preset
+captures decode to stored-body u16 LE values 45806 at 100 Hz and 50995 at
+120 Hz, exactly matching `floor(log10(display/20) * 65534)` for the 20..200
+Hz range. Parameters without `scaling: 'log10'` metadata use their own
+registered coercion or direct mapping.
 
 ## Verification path
 
@@ -66,3 +71,5 @@ surface.
 - 17 hand entries gained `scaling: 'log10'` in the fix-up pass.
 - An audit of 80 🔴 displayMin/Max mismatches is queued post-MVP
   (some may also need log10 scaling).
+- 2026-08-16: promoted to `matched` with the FM3 fw 13 hardware-capture axis;
+  registered Cab Proximity Frequency (paramId 41, stored-body index 35).
