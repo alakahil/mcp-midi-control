@@ -49,6 +49,14 @@ export const FM3_RANGES = {
       displayMin: 0,
       displayMax: 100,
     },
+    // CABINET_DYNACAB_Z1 - FM3 fw 13 hardware-validated, 2026-08-16.
+    // Linear 0..24 cm: live SET/GET 0 cm -> raw 0 (acked), restored 10 cm ->
+    // raw 27306 (acked); Z2 stayed 3 cm and the full Cab bulk vector restored.
+    97: {
+      kind: 'float',
+      displayMin: 0,
+      displayMax: 24,
+    },
     // CABINET_DYNACAB_Z2 - FM3 fw 13 hardware-validated, 2026-08-16.
     // Linear 0..24 cm: preset 3.00 cm -> 8192; live GET 10.00 cm -> 27306;
     // live SET/GET 12.00 cm -> 32767 (acked), then restored to 10.00 cm.

@@ -30,10 +30,13 @@ import {
   decodeGen3PresetDump,
   fm3CabProximityFrequencyFieldByteOffset,
   fm3Cab2DistanceFieldByteOffset,
+  fm3Cab1DistanceFieldByteOffset,
   fm3Cab2PositionFieldByteOffset,
   fm3Cab2LevelFieldByteOffset,
   FM3_CAB2_DISTANCE_BODY_INDEX,
   FM3_CAB2_DISTANCE_PARAM_ID,
+  FM3_CAB1_DISTANCE_BODY_INDEX,
+  FM3_CAB1_DISTANCE_PARAM_ID,
   FM3_CAB2_POSITION_BODY_INDEX,
   FM3_CAB2_POSITION_PARAM_ID,
   FM3_CAB2_LEVEL_BODY_INDEX,
@@ -179,6 +182,39 @@ if (CAB2_DISTANCE_CAPTURES.every((capture) => existsSync(capture.path))) {
       `FM3 Cab 2 Distance ${capture.cm} cm: decoded display`,
       cab?.channels?.B?.cab2_distance_cm === capture.cm,
       `got=${String(cab?.channels?.B?.cab2_distance_cm)}`,
+    );
+  }
+}
+
+// The supplied Cab 1 Distance pair also changes Cab 2 Level from -3 dB back
+// to 0 dB. Distance remains independently isolated at index 91; record the
+// actual level in both captures rather than describing this as a one-word diff.
+const CAB1_DISTANCE_CAPTURES = [
+  { cm: 0, raw: 0, cab2LevelDb: -3, path: 'samples/captured/cab2_level_minus3db.syx' },
+  { cm: 10, raw: 27306, cab2LevelDb: 0, path: 'samples/captured/cab1_distance_10cm.syx' },
+] as const;
+if (CAB1_DISTANCE_CAPTURES.every((capture) => existsSync(capture.path))) {
+  for (const capture of CAB1_DISTANCE_CAPTURES) {
+    const source = new Uint8Array(readFileSync(capture.path));
+    const parsed = parsePresetDump(source);
+    const decoded = decodeRawPatch(parsed.chunkPayloads);
+    const body = decodeGen3Body(decoded.body, parsed.modelId);
+    const cab = body.blocks?.find((b) => b.block === 'Cab');
+    const offset = cab ? fm3Cab1DistanceFieldByteOffset(cab, 'B') : -1;
+    const raw = offset >= 0 ? decoded.body[offset] | (decoded.body[offset + 1] << 8) : -1;
+    check(`FM3 Cab 1 Distance ${capture.cm} cm: CRC`, decoded.crcValid);
+    check(`FM3 Cab 1 Distance ${capture.cm} cm: live paramId`, FM3_CAB1_DISTANCE_PARAM_ID === 97);
+    check(`FM3 Cab 1 Distance ${capture.cm} cm: stored-body index`, FM3_CAB1_DISTANCE_BODY_INDEX === 91);
+    check(`FM3 Cab 1 Distance ${capture.cm} cm: raw u16 LE`, raw === capture.raw, `got=${raw}`);
+    check(
+      `FM3 Cab 1 Distance ${capture.cm} cm: decoded display`,
+      cab?.channels?.B?.cab1_distance_cm === capture.cm,
+      `got=${String(cab?.channels?.B?.cab1_distance_cm)}`,
+    );
+    check(
+      `FM3 Cab 1 Distance ${capture.cm} cm: capture's actual Cab 2 Level`,
+      cab?.channels?.B?.cab2_level_db === capture.cab2LevelDb,
+      `got=${String(cab?.channels?.B?.cab2_level_db)}`,
     );
   }
 }

@@ -174,6 +174,12 @@ check('FM3 cab.dynacab_z2 decodes raw 8192 as 3.00 cm', fm3Cab2Distance.decode(8
 check('FM3 cab.dynacab_z2 decodes raw 27306 as 10.00 cm', fm3Cab2Distance.decode(27306) === 10);
 check('FM3 cab.dynacab_z2 decodes live GET raw 32767 as 12.00 cm', fm3Cab2Distance.decode(32767) === 12);
 
+const fm3Cab1Distance = FM3_DESCRIPTOR.blocks.cab.params.dynacab_z1;
+check('FM3 cab.dynacab_z1 encodes 0.00 cm as 0', fm3Cab1Distance.encode(0) === 0);
+check('FM3 cab.dynacab_z1 encodes 10.00 cm as 27306', fm3Cab1Distance.encode(10) === 27306);
+check('FM3 cab.dynacab_z1 decodes raw 0 as 0.00 cm', fm3Cab1Distance.decode(0) === 0);
+check('FM3 cab.dynacab_z1 decodes raw 27306 as 10.00 cm', fm3Cab1Distance.decode(27306) === 10);
+
 const fm3Cab2Position = FM3_DESCRIPTOR.blocks.cab.params.dynacab_r2;
 check('FM3 cab.dynacab_r2 encodes 50.0% as 32767', fm3Cab2Position.encode(50) === 32767);
 check('FM3 cab.dynacab_r2 encodes 70.0% as 45874', fm3Cab2Position.encode(70) === 45874);

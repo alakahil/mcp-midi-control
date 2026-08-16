@@ -273,6 +273,9 @@ export const FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX = 35;
 /** FM3 fw 13 hardware-preset anchor for Cab 2 DynaCab Distance. */
 export const FM3_CAB2_DISTANCE_PARAM_ID = 98;
 export const FM3_CAB2_DISTANCE_BODY_INDEX = 92;
+/** FM3 fw 13 hardware-preset anchor for Cab 1 DynaCab Distance. */
+export const FM3_CAB1_DISTANCE_PARAM_ID = 97;
+export const FM3_CAB1_DISTANCE_BODY_INDEX = 91;
 /** FM3 fw 13 hardware-preset anchor for Cab 2 DynaCab Position. */
 export const FM3_CAB2_POSITION_PARAM_ID = 94;
 export const FM3_CAB2_POSITION_BODY_INDEX = 88;
@@ -301,6 +304,15 @@ export function fm3Cab2DistanceFieldByteOffset(block: Gen3Block, channel: string
   return block.params_offset + ch * block.cols * 2 + FM3_CAB2_DISTANCE_BODY_INDEX * 2;
 }
 
+export function fm3Cab1DistanceFieldByteOffset(block: Gen3Block, channel: string): number {
+  if (block.block !== 'Cab' || block.cols !== 106 || block.rows !== 4) {
+    throw new Error('Cab 1 Distance stored-body offset is validated only for an FM3 106x4 Cab block');
+  }
+  const ch = CHANNEL_LETTERS.indexOf(channel.toUpperCase() as (typeof CHANNEL_LETTERS)[number]);
+  if (ch < 0) throw new Error(`Invalid channel "${channel}" (expected A/B/C/D)`);
+  return block.params_offset + ch * block.cols * 2 + FM3_CAB1_DISTANCE_BODY_INDEX * 2;
+}
+
 export function fm3Cab2PositionFieldByteOffset(block: Gen3Block, channel: string): number {
   if (block.block !== 'Cab' || block.cols !== 106 || block.rows !== 4) {
     throw new Error('Cab 2 Position stored-body offset is validated only for an FM3 106x4 Cab block');
@@ -323,7 +335,7 @@ function decodeFm3CabProximityFrequency(raw: number): number {
   return Math.round(20 * Math.pow(10, raw / 65534));
 }
 
-function decodeFm3Cab2Distance(raw: number): number {
+function decodeFm3CabDistance(raw: number): number {
   return Math.round((raw / 65534) * 24 * 100) / 100;
 }
 
@@ -545,7 +557,9 @@ function walkBlocks(data: Uint8Array, chainStart: number, profile: DeviceProfile
           const raw = u16(data, base + FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX * 2);
           c.proximity_frequency_hz = decodeFm3CabProximityFrequency(raw);
           const distanceRaw = u16(data, base + FM3_CAB2_DISTANCE_BODY_INDEX * 2);
-          c.cab2_distance_cm = decodeFm3Cab2Distance(distanceRaw);
+          c.cab2_distance_cm = decodeFm3CabDistance(distanceRaw);
+          const distance1Raw = u16(data, base + FM3_CAB1_DISTANCE_BODY_INDEX * 2);
+          c.cab1_distance_cm = decodeFm3CabDistance(distance1Raw);
           const positionRaw = u16(data, base + FM3_CAB2_POSITION_BODY_INDEX * 2);
           c.cab2_position_percent = decodeFm3Cab2Position(positionRaw);
           const levelRaw = u16(data, base + FM3_CAB2_LEVEL_BODY_INDEX * 2);
