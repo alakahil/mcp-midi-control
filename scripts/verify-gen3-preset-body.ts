@@ -29,6 +29,9 @@ import {
   decodeGen3Body,
   decodeGen3PresetDump,
   fm3CabProximityFrequencyFieldByteOffset,
+  fm3Cab2DistanceFieldByteOffset,
+  FM3_CAB2_DISTANCE_BODY_INDEX,
+  FM3_CAB2_DISTANCE_PARAM_ID,
   FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX,
   FM3_CAB_PROXIMITY_FREQUENCY_PARAM_ID,
   typeName,
@@ -145,6 +148,33 @@ for (const capture of PROXIMITY_CAPTURES) {
     cab?.channels?.B?.proximity_frequency_hz === capture.hz,
     `got=${String(cab?.channels?.B?.proximity_frequency_hz)}`,
   );
+}
+
+// Same FM3 preset and Cab B channel, with only Cab 2 DynaCab Distance changed
+// from 3.00 cm to 10.00 cm. Both files traverse the production decoders.
+const CAB2_DISTANCE_CAPTURES = [
+  { cm: 3, raw: 8192, path: 'samples/captured/proximity-frequency-120hz.syx' },
+  { cm: 10, raw: 27306, path: 'samples/captured/cab2_distance_10cm.syx' },
+] as const;
+if (CAB2_DISTANCE_CAPTURES.every((capture) => existsSync(capture.path))) {
+  for (const capture of CAB2_DISTANCE_CAPTURES) {
+    const source = new Uint8Array(readFileSync(capture.path));
+    const parsed = parsePresetDump(source);
+    const decoded = decodeRawPatch(parsed.chunkPayloads);
+    const body = decodeGen3Body(decoded.body, parsed.modelId);
+    const cab = body.blocks?.find((b) => b.block === 'Cab');
+    const offset = cab ? fm3Cab2DistanceFieldByteOffset(cab, 'B') : -1;
+    const raw = offset >= 0 ? decoded.body[offset] | (decoded.body[offset + 1] << 8) : -1;
+    check(`FM3 Cab 2 Distance ${capture.cm} cm: CRC`, decoded.crcValid);
+    check(`FM3 Cab 2 Distance ${capture.cm} cm: live paramId`, FM3_CAB2_DISTANCE_PARAM_ID === 98);
+    check(`FM3 Cab 2 Distance ${capture.cm} cm: stored-body index`, FM3_CAB2_DISTANCE_BODY_INDEX === 92);
+    check(`FM3 Cab 2 Distance ${capture.cm} cm: raw u16 LE`, raw === capture.raw, `got=${raw}`);
+    check(
+      `FM3 Cab 2 Distance ${capture.cm} cm: decoded display`,
+      cab?.channels?.B?.cab2_distance_cm === capture.cm,
+      `got=${String(cab?.channels?.B?.cab2_distance_cm)}`,
+    );
+  }
 }
 
 // ── 2. Reference cross-check (when samples + Python present) ──────────

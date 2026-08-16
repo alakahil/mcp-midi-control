@@ -32,5 +32,13 @@ export const FM3_RANGES = {
       displayMin: 20,
       displayMax: 200,
     },
+    // CABINET_DYNACAB_Z2 - FM3 fw 13 hardware-validated, 2026-08-16.
+    // Linear 0..24 cm: preset 3.00 cm -> 8192; live GET 10.00 cm -> 27306;
+    // live SET/GET 12.00 cm -> 32767 (acked), then restored to 10.00 cm.
+    98: {
+      kind: 'float',
+      displayMin: 0,
+      displayMax: 24,
+    },
   },
 } as const;

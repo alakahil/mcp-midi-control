@@ -270,6 +270,9 @@ const CAB_MIC_NAMES: Record<number, string> = { 0: 'Condenser', 1: 'Ribbon', 2: 
  * the live SET/GET paramId. Evidence: 100 Hz -> 45806, 120 Hz -> 50995. */
 export const FM3_CAB_PROXIMITY_FREQUENCY_PARAM_ID = 41;
 export const FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX = 35;
+/** FM3 fw 13 hardware-preset anchor for Cab 2 DynaCab Distance. */
+export const FM3_CAB2_DISTANCE_PARAM_ID = 98;
+export const FM3_CAB2_DISTANCE_BODY_INDEX = 92;
 
 export function fm3CabProximityFrequencyFieldByteOffset(
   block: Gen3Block,
@@ -283,8 +286,21 @@ export function fm3CabProximityFrequencyFieldByteOffset(
   return block.params_offset + ch * block.cols * 2 + FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX * 2;
 }
 
+export function fm3Cab2DistanceFieldByteOffset(block: Gen3Block, channel: string): number {
+  if (block.block !== 'Cab' || block.cols !== 106 || block.rows !== 4) {
+    throw new Error('Cab 2 Distance stored-body offset is validated only for an FM3 106x4 Cab block');
+  }
+  const ch = CHANNEL_LETTERS.indexOf(channel.toUpperCase() as (typeof CHANNEL_LETTERS)[number]);
+  if (ch < 0) throw new Error(`Invalid channel "${channel}" (expected A/B/C/D)`);
+  return block.params_offset + ch * block.cols * 2 + FM3_CAB2_DISTANCE_BODY_INDEX * 2;
+}
+
 function decodeFm3CabProximityFrequency(raw: number): number {
   return Math.round(20 * Math.pow(10, raw / 65534));
+}
+
+function decodeFm3Cab2Distance(raw: number): number {
+  return Math.round((raw / 65534) * 24 * 100) / 100;
 }
 
 // ── low-level reads ───────────────────────────────────────────────────
@@ -496,6 +512,8 @@ function walkBlocks(data: Uint8Array, chainStart: number, profile: DeviceProfile
         if (profile === DEVICE_PROFILES[MODEL_FM3] && cols === 106 && rows === 4) {
           const raw = u16(data, base + FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX * 2);
           c.proximity_frequency_hz = decodeFm3CabProximityFrequency(raw);
+          const distanceRaw = u16(data, base + FM3_CAB2_DISTANCE_BODY_INDEX * 2);
+          c.cab2_distance_cm = decodeFm3Cab2Distance(distanceRaw);
         }
         if (modeId === 1) {
           const dc1 = u16(data, base + 79 * 2);

@@ -116,7 +116,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 93, name: 'CABINET_DYNACAB_R1', displayLabel: 'DynaCab', unit: 'unverified' },
   { family: 'CABINET', paramId: 94, name: 'CABINET_DYNACAB_R2', displayLabel: 'DynaCab', unit: 'unverified' },
   { family: 'CABINET', paramId: 97, name: 'CABINET_DYNACAB_Z1', displayLabel: 'Distance', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 98, name: 'CABINET_DYNACAB_Z2', displayLabel: 'Distance', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 98, name: 'CABINET_DYNACAB_Z2', displayLabel: 'Distance', unit: 'cm', displayMin: 0, displayMax: 24 }, // FM3 fw 13 HW: GET 10 cm=27306; SET/GET 12 cm=32767 acked; restored 10 cm
   { family: 'CABINET', paramId: 105, name: 'CABINET_AUTO_ALIGN', displayLabel: 'Auto Align', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 65280, name: 'CABINET_PICKER1', displayLabel: 'Picker', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 65281, name: 'CABINET_PICKER2', displayLabel: 'Picker', unit: 'enum' }, // inferred from AxeEdit III XML controlType

@@ -22,7 +22,7 @@
  * conversion is still the caller's responsibility
  * until hardware verification lands.
  */
-export type Unit = 'bipolar_percent' | 'count' | 'db' | 'degrees' | 'enum' | 'hz' | 'knob_0_10' | 'knob_0_20' | 'ms' | 'numeric' | 'percent' | 'pf' | 'ratio' | 'seconds' | 'semitones' | 'unverified';
+export type Unit = 'bipolar_percent' | 'cm' | 'count' | 'db' | 'degrees' | 'enum' | 'hz' | 'knob_0_10' | 'knob_0_20' | 'ms' | 'numeric' | 'percent' | 'pf' | 'ratio' | 'seconds' | 'semitones' | 'unverified';
 
 /** One entry in a gen-3 device parameter catalog. */
 export interface Param {

@@ -166,6 +166,14 @@ check(
 check('FM3 cab.proxfreq decodes raw 45806 as 100 Hz', fm3ProximityFrequency.decode(45806) === 100);
 check('FM3 cab.proxfreq decodes raw 50995 as 120 Hz', fm3ProximityFrequency.decode(50995) === 120);
 
+const fm3Cab2Distance = FM3_DESCRIPTOR.blocks.cab.params.dynacab_z2;
+check('FM3 cab.dynacab_z2 encodes 3.00 cm as 8192', fm3Cab2Distance.encode(3) === 8192);
+check('FM3 cab.dynacab_z2 encodes 10.00 cm as 27306', fm3Cab2Distance.encode(10) === 27306);
+check('FM3 cab.dynacab_z2 encodes live-validated 12.00 cm as 32767', fm3Cab2Distance.encode(12) === 32767);
+check('FM3 cab.dynacab_z2 decodes raw 8192 as 3.00 cm', fm3Cab2Distance.decode(8192) === 3);
+check('FM3 cab.dynacab_z2 decodes raw 27306 as 10.00 cm', fm3Cab2Distance.decode(27306) === 10);
+check('FM3 cab.dynacab_z2 decodes live GET raw 32767 as 12.00 cm', fm3Cab2Distance.decode(32767) === 12);
+
 // Coverage: the III catalog carries hardware-anchored AM4-joined ranges, so
 // it must ship a meaningful number of calibrated params — this proves the
 // A4/A5 wiring is live. FM3/FM9 are reported but not yet required (their
