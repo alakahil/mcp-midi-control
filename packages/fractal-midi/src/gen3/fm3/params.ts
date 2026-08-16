@@ -114,7 +114,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 90, name: 'CABINET_DYNACAB_MIC2', unit: 'count', displayMin: 0, displayMax: 31 }, // inferred from AM4
   { family: 'CABINET', paramId: 92, name: 'CABINET_DYNACAB_MIC4', unit: 'unverified' },
   { family: 'CABINET', paramId: 93, name: 'CABINET_DYNACAB_R1', displayLabel: 'DynaCab', unit: 'unverified' },
-  { family: 'CABINET', paramId: 94, name: 'CABINET_DYNACAB_R2', displayLabel: 'DynaCab', unit: 'unverified' },
+  { family: 'CABINET', paramId: 94, name: 'CABINET_DYNACAB_R2', displayLabel: 'Position', unit: 'percent', displayMin: 0, displayMax: 100 }, // FM3 fw 13 HW: SET/GET 50.0%=32767 acked; restored 70.0%=45874
   { family: 'CABINET', paramId: 97, name: 'CABINET_DYNACAB_Z1', displayLabel: 'Distance', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 98, name: 'CABINET_DYNACAB_Z2', displayLabel: 'Distance', unit: 'cm', displayMin: 0, displayMax: 24 }, // FM3 fw 13 HW: GET 10 cm=27306; SET/GET 12 cm=32767 acked; restored 10 cm
   { family: 'CABINET', paramId: 105, name: 'CABINET_AUTO_ALIGN', displayLabel: 'Auto Align', unit: 'enum' }, // inferred from AxeEdit III XML controlType

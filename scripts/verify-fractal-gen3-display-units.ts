@@ -174,6 +174,12 @@ check('FM3 cab.dynacab_z2 decodes raw 8192 as 3.00 cm', fm3Cab2Distance.decode(8
 check('FM3 cab.dynacab_z2 decodes raw 27306 as 10.00 cm', fm3Cab2Distance.decode(27306) === 10);
 check('FM3 cab.dynacab_z2 decodes live GET raw 32767 as 12.00 cm', fm3Cab2Distance.decode(32767) === 12);
 
+const fm3Cab2Position = FM3_DESCRIPTOR.blocks.cab.params.dynacab_r2;
+check('FM3 cab.dynacab_r2 encodes 50.0% as 32767', fm3Cab2Position.encode(50) === 32767);
+check('FM3 cab.dynacab_r2 encodes 70.0% as 45874', fm3Cab2Position.encode(70) === 45874);
+check('FM3 cab.dynacab_r2 decodes raw 32767 as 50.0%', fm3Cab2Position.decode(32767) === 50);
+check('FM3 cab.dynacab_r2 decodes raw 45874 as 70.0%', fm3Cab2Position.decode(45874) === 70);
+
 // Coverage: the III catalog carries hardware-anchored AM4-joined ranges, so
 // it must ship a meaningful number of calibrated params — this proves the
 // A4/A5 wiring is live. FM3/FM9 are reported but not yet required (their

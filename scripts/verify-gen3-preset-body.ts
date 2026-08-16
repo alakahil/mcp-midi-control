@@ -30,8 +30,11 @@ import {
   decodeGen3PresetDump,
   fm3CabProximityFrequencyFieldByteOffset,
   fm3Cab2DistanceFieldByteOffset,
+  fm3Cab2PositionFieldByteOffset,
   FM3_CAB2_DISTANCE_BODY_INDEX,
   FM3_CAB2_DISTANCE_PARAM_ID,
+  FM3_CAB2_POSITION_BODY_INDEX,
+  FM3_CAB2_POSITION_PARAM_ID,
   FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX,
   FM3_CAB_PROXIMITY_FREQUENCY_PARAM_ID,
   typeName,
@@ -172,6 +175,39 @@ if (CAB2_DISTANCE_CAPTURES.every((capture) => existsSync(capture.path))) {
     check(
       `FM3 Cab 2 Distance ${capture.cm} cm: decoded display`,
       cab?.channels?.B?.cab2_distance_cm === capture.cm,
+      `got=${String(cab?.channels?.B?.cab2_distance_cm)}`,
+    );
+  }
+}
+
+// The supplied 50% baseline and 70% capture also differ at the already-pinned
+// Cab 2 Distance word (10 cm vs 3 cm). Position remains isolated at index 88;
+// the test records both facts and does not misrepresent this as a one-word pair.
+const CAB2_POSITION_CAPTURES = [
+  { percent: 50, raw: 32767, distance: 10, path: 'samples/captured/cab2_distance_10cm.syx' },
+  { percent: 70, raw: 45874, distance: 3, path: 'samples/captured/cab2_position_70pct.syx' },
+] as const;
+if (CAB2_POSITION_CAPTURES.every((capture) => existsSync(capture.path))) {
+  for (const capture of CAB2_POSITION_CAPTURES) {
+    const source = new Uint8Array(readFileSync(capture.path));
+    const parsed = parsePresetDump(source);
+    const decoded = decodeRawPatch(parsed.chunkPayloads);
+    const body = decodeGen3Body(decoded.body, parsed.modelId);
+    const cab = body.blocks?.find((b) => b.block === 'Cab');
+    const offset = cab ? fm3Cab2PositionFieldByteOffset(cab, 'B') : -1;
+    const raw = offset >= 0 ? decoded.body[offset] | (decoded.body[offset + 1] << 8) : -1;
+    check(`FM3 Cab 2 Position ${capture.percent}%: CRC`, decoded.crcValid);
+    check(`FM3 Cab 2 Position ${capture.percent}%: live paramId`, FM3_CAB2_POSITION_PARAM_ID === 94);
+    check(`FM3 Cab 2 Position ${capture.percent}%: stored-body index`, FM3_CAB2_POSITION_BODY_INDEX === 88);
+    check(`FM3 Cab 2 Position ${capture.percent}%: raw u16 LE`, raw === capture.raw, `got=${raw}`);
+    check(
+      `FM3 Cab 2 Position ${capture.percent}%: decoded display`,
+      cab?.channels?.B?.cab2_position_percent === capture.percent,
+      `got=${String(cab?.channels?.B?.cab2_position_percent)}`,
+    );
+    check(
+      `FM3 Cab 2 Position ${capture.percent}%: capture's actual Cab 2 Distance`,
+      cab?.channels?.B?.cab2_distance_cm === capture.distance,
       `got=${String(cab?.channels?.B?.cab2_distance_cm)}`,
     );
   }
