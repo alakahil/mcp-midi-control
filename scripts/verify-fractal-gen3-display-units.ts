@@ -186,6 +186,12 @@ check('FM3 cab.dynacab_r2 encodes 70.0% as 45874', fm3Cab2Position.encode(70) ==
 check('FM3 cab.dynacab_r2 decodes raw 32767 as 50.0%', fm3Cab2Position.decode(32767) === 50);
 check('FM3 cab.dynacab_r2 decodes raw 45874 as 70.0%', fm3Cab2Position.decode(45874) === 70);
 
+const fm3Cab1Position = FM3_DESCRIPTOR.blocks.cab.params.dynacab_r1;
+check('FM3 cab.dynacab_r1 encodes 0.0% as 0', fm3Cab1Position.encode(0) === 0);
+check('FM3 cab.dynacab_r1 encodes 25.0% as 16384', fm3Cab1Position.encode(25) === 16384);
+check('FM3 cab.dynacab_r1 decodes raw 0 as 0.0%', fm3Cab1Position.decode(0) === 0);
+check('FM3 cab.dynacab_r1 decodes raw 16384 as 25.0%', fm3Cab1Position.decode(16384) === 25);
+
 const fm3Cab2Level = FM3_DESCRIPTOR.blocks.cab.params.level2;
 check('FM3 cab.level2 encodes 0.00 dB as 65534', fm3Cab2Level.encode(0) === 65534);
 check('FM3 cab.level2 encodes -2.00 dB as 62257', fm3Cab2Level.encode(-2) === 62257);

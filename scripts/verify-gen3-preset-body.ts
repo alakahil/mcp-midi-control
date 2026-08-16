@@ -32,6 +32,7 @@ import {
   fm3Cab2DistanceFieldByteOffset,
   fm3Cab1DistanceFieldByteOffset,
   fm3Cab2PositionFieldByteOffset,
+  fm3Cab1PositionFieldByteOffset,
   fm3Cab2LevelFieldByteOffset,
   FM3_CAB2_DISTANCE_BODY_INDEX,
   FM3_CAB2_DISTANCE_PARAM_ID,
@@ -39,6 +40,8 @@ import {
   FM3_CAB1_DISTANCE_PARAM_ID,
   FM3_CAB2_POSITION_BODY_INDEX,
   FM3_CAB2_POSITION_PARAM_ID,
+  FM3_CAB1_POSITION_BODY_INDEX,
+  FM3_CAB1_POSITION_PARAM_ID,
   FM3_CAB2_LEVEL_BODY_INDEX,
   FM3_CAB2_LEVEL_PARAM_ID,
   FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX,
@@ -248,6 +251,39 @@ if (CAB2_POSITION_CAPTURES.every((capture) => existsSync(capture.path))) {
       `FM3 Cab 2 Position ${capture.percent}%: capture's actual Cab 2 Distance`,
       cab?.channels?.B?.cab2_distance_cm === capture.distance,
       `got=${String(cab?.channels?.B?.cab2_distance_cm)}`,
+    );
+  }
+}
+
+// The supplied Cab 1 Position capture also resets Cab 1 Distance from 10 cm
+// to 0 cm. Position remains independently isolated at index 87; record both
+// actual states rather than describing the pair as a one-word diff.
+const CAB1_POSITION_CAPTURES = [
+  { percent: 50, raw: 32767, distance: 10, path: 'samples/captured/cab1_distance_10cm.syx' },
+  { percent: 25, raw: 16384, distance: 0, path: 'samples/captured/cab1_position_25pct.syx' },
+] as const;
+if (CAB1_POSITION_CAPTURES.every((capture) => existsSync(capture.path))) {
+  for (const capture of CAB1_POSITION_CAPTURES) {
+    const source = new Uint8Array(readFileSync(capture.path));
+    const parsed = parsePresetDump(source);
+    const decoded = decodeRawPatch(parsed.chunkPayloads);
+    const body = decodeGen3Body(decoded.body, parsed.modelId);
+    const cab = body.blocks?.find((b) => b.block === 'Cab');
+    const offset = cab ? fm3Cab1PositionFieldByteOffset(cab, 'B') : -1;
+    const raw = offset >= 0 ? decoded.body[offset] | (decoded.body[offset + 1] << 8) : -1;
+    check(`FM3 Cab 1 Position ${capture.percent}%: CRC`, decoded.crcValid);
+    check(`FM3 Cab 1 Position ${capture.percent}%: live paramId`, FM3_CAB1_POSITION_PARAM_ID === 93);
+    check(`FM3 Cab 1 Position ${capture.percent}%: stored-body index`, FM3_CAB1_POSITION_BODY_INDEX === 87);
+    check(`FM3 Cab 1 Position ${capture.percent}%: raw u16 LE`, raw === capture.raw, `got=${raw}`);
+    check(
+      `FM3 Cab 1 Position ${capture.percent}%: decoded display`,
+      cab?.channels?.B?.cab1_position_percent === capture.percent,
+      `got=${String(cab?.channels?.B?.cab1_position_percent)}`,
+    );
+    check(
+      `FM3 Cab 1 Position ${capture.percent}%: capture's actual Cab 1 Distance`,
+      cab?.channels?.B?.cab1_distance_cm === capture.distance,
+      `got=${String(cab?.channels?.B?.cab1_distance_cm)}`,
     );
   }
 }

@@ -41,6 +41,14 @@ export const FM3_RANGES = {
       displayMin: 20,
       displayMax: 200,
     },
+    // CABINET_DYNACAB_R1 - FM3 fw 13 hardware-validated, 2026-08-16.
+    // Linear 0..100%: live SET/GET 0% -> raw 0 (acked), restored 25% ->
+    // raw 16384 (acked); only bulk index 199 changed and the vector restored.
+    93: {
+      kind: 'float',
+      displayMin: 0,
+      displayMax: 100,
+    },
     // CABINET_DYNACAB_R2 - FM3 fw 13 hardware-validated, 2026-08-16.
     // Linear 0..100%: live SET/GET 50.0% -> raw 32767 (acked), then restored
     // to 70.0% -> raw 45874 (acked); full Cab bulk vector restored exactly.
