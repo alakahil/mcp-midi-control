@@ -34,6 +34,7 @@ import {
   fm3Cab2PositionFieldByteOffset,
   fm3Cab1PositionFieldByteOffset,
   fm3Cab2LevelFieldByteOffset,
+  fm3Cab1LevelFieldByteOffset,
   FM3_CAB2_DISTANCE_BODY_INDEX,
   FM3_CAB2_DISTANCE_PARAM_ID,
   FM3_CAB1_DISTANCE_BODY_INDEX,
@@ -44,6 +45,8 @@ import {
   FM3_CAB1_POSITION_PARAM_ID,
   FM3_CAB2_LEVEL_BODY_INDEX,
   FM3_CAB2_LEVEL_PARAM_ID,
+  FM3_CAB1_LEVEL_BODY_INDEX,
+  FM3_CAB1_LEVEL_PARAM_ID,
   FM3_CAB_PROXIMITY_FREQUENCY_BODY_INDEX,
   FM3_CAB_PROXIMITY_FREQUENCY_PARAM_ID,
   typeName,
@@ -317,6 +320,39 @@ if (CAB2_LEVEL_CAPTURES.every((capture) => existsSync(capture.path))) {
       `FM3 Cab 2 Level ${capture.db} dB: capture's actual Cab 2 Position`,
       cab?.channels?.B?.cab2_position_percent === capture.position,
       `got=${String(cab?.channels?.B?.cab2_position_percent)}`,
+    );
+  }
+}
+
+// The supplied Cab 1 Level capture also resets Cab 1 Position from 25% to
+// 50%. Level remains independently isolated at index 2; record both actual
+// states rather than describing the pair as a one-word diff.
+const CAB1_LEVEL_CAPTURES = [
+  { db: -2, raw: 62257, position: 25, path: 'samples/captured/cab1_position_25pct.syx' },
+  { db: -12, raw: 45874, position: 50, path: 'samples/captured/cab1_level_minus12db.syx' },
+] as const;
+if (CAB1_LEVEL_CAPTURES.every((capture) => existsSync(capture.path))) {
+  for (const capture of CAB1_LEVEL_CAPTURES) {
+    const source = new Uint8Array(readFileSync(capture.path));
+    const parsed = parsePresetDump(source);
+    const decoded = decodeRawPatch(parsed.chunkPayloads);
+    const body = decodeGen3Body(decoded.body, parsed.modelId);
+    const cab = body.blocks?.find((b) => b.block === 'Cab');
+    const offset = cab ? fm3Cab1LevelFieldByteOffset(cab, 'B') : -1;
+    const raw = offset >= 0 ? decoded.body[offset] | (decoded.body[offset + 1] << 8) : -1;
+    check(`FM3 Cab 1 Level ${capture.db} dB: CRC`, decoded.crcValid);
+    check(`FM3 Cab 1 Level ${capture.db} dB: live paramId`, FM3_CAB1_LEVEL_PARAM_ID === 8);
+    check(`FM3 Cab 1 Level ${capture.db} dB: stored-body index`, FM3_CAB1_LEVEL_BODY_INDEX === 2);
+    check(`FM3 Cab 1 Level ${capture.db} dB: raw u16 LE`, raw === capture.raw, `got=${raw}`);
+    check(
+      `FM3 Cab 1 Level ${capture.db} dB: decoded display`,
+      cab?.channels?.B?.cab1_level_db === capture.db,
+      `got=${String(cab?.channels?.B?.cab1_level_db)}`,
+    );
+    check(
+      `FM3 Cab 1 Level ${capture.db} dB: capture's actual Cab 1 Position`,
+      cab?.channels?.B?.cab1_position_percent === capture.position,
+      `got=${String(cab?.channels?.B?.cab1_position_percent)}`,
     );
   }
 }

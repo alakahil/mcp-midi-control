@@ -285,6 +285,9 @@ export const FM3_CAB1_POSITION_BODY_INDEX = 87;
 /** FM3 fw 13 hardware-preset anchor for Cab 2 Level. */
 export const FM3_CAB2_LEVEL_PARAM_ID = 9;
 export const FM3_CAB2_LEVEL_BODY_INDEX = 3;
+/** FM3 fw 13 hardware-preset anchor for Cab 1 Level. */
+export const FM3_CAB1_LEVEL_PARAM_ID = 8;
+export const FM3_CAB1_LEVEL_BODY_INDEX = 2;
 
 export function fm3CabProximityFrequencyFieldByteOffset(
   block: Gen3Block,
@@ -343,6 +346,15 @@ export function fm3Cab2LevelFieldByteOffset(block: Gen3Block, channel: string): 
   return block.params_offset + ch * block.cols * 2 + FM3_CAB2_LEVEL_BODY_INDEX * 2;
 }
 
+export function fm3Cab1LevelFieldByteOffset(block: Gen3Block, channel: string): number {
+  if (block.block !== 'Cab' || block.cols !== 106 || block.rows !== 4) {
+    throw new Error('Cab 1 Level stored-body offset is validated only for an FM3 106x4 Cab block');
+  }
+  const ch = CHANNEL_LETTERS.indexOf(channel.toUpperCase() as (typeof CHANNEL_LETTERS)[number]);
+  if (ch < 0) throw new Error(`Invalid channel "${channel}" (expected A/B/C/D)`);
+  return block.params_offset + ch * block.cols * 2 + FM3_CAB1_LEVEL_BODY_INDEX * 2;
+}
+
 function decodeFm3CabProximityFrequency(raw: number): number {
   return Math.round(20 * Math.pow(10, raw / 65534));
 }
@@ -355,7 +367,7 @@ function decodeFm3CabPosition(raw: number): number {
   return Math.round((raw / 65534) * 1000) / 10;
 }
 
-function decodeFm3Cab2Level(raw: number): number {
+function decodeFm3CabLevel(raw: number): number {
   return Math.round(((raw / 65534) * 40 - 40) * 100) / 100;
 }
 
@@ -577,7 +589,9 @@ function walkBlocks(data: Uint8Array, chainStart: number, profile: DeviceProfile
           const position1Raw = u16(data, base + FM3_CAB1_POSITION_BODY_INDEX * 2);
           c.cab1_position_percent = decodeFm3CabPosition(position1Raw);
           const levelRaw = u16(data, base + FM3_CAB2_LEVEL_BODY_INDEX * 2);
-          c.cab2_level_db = decodeFm3Cab2Level(levelRaw);
+          c.cab2_level_db = decodeFm3CabLevel(levelRaw);
+          const level1Raw = u16(data, base + FM3_CAB1_LEVEL_BODY_INDEX * 2);
+          c.cab1_level_db = decodeFm3CabLevel(level1Raw);
         }
         if (modeId === 1) {
           const dc1 = u16(data, base + 79 * 2);

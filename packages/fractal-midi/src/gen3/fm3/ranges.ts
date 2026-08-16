@@ -6,6 +6,15 @@
 
 export const FM3_RANGES = {
   CABINET: {
+    // CABINET_LEVEL1 - FM3 fw 13 hardware-validated, 2026-08-16.
+    // Linear -40..0 dB: live SET/GET 0 dB -> raw 65534 (acked), restored
+    // -12 dB -> raw 45874 (acked); only bulk index 114 changed and the full
+    // 424-value Cab vector restored exactly.
+    8: {
+      kind: 'float',
+      displayMin: -40,
+      displayMax: 0,
+    },
     // CABINET_LEVEL2 - FM3 fw 13 hardware-validated, 2026-08-16.
     // Linear -40..0 dB: live SET/GET 0 dB -> raw 65534 (acked), restored
     // -3 dB -> raw 60619 (acked); Cab 1 stayed -2 dB -> raw 62257 and the
