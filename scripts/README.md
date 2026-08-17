@@ -73,6 +73,7 @@ device support or decoding undocumented SysEx.
 - `mcp-probe-axefx2-routing-slot666.ts`: MCP-driven probe pattern
 - `verify-axefx2-routing-write.ts`: wire-level routing oracle
 - `test-axefx2-slot603-glassy-clean.ts`: hardware test
+- `probe-fm3-cab1-pan.ts`: controlled FM3 Cab 1 Pan round-trip validation (Node 24.x required)
 - `probe-factory-restore.ts`: AM4 factory restore probe
 - `write-test.ts`: AM4 write smoke
 
