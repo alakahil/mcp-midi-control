@@ -74,6 +74,8 @@ device support or decoding undocumented SysEx.
 - `verify-axefx2-routing-write.ts`: wire-level routing oracle
 - `test-axefx2-slot603-glassy-clean.ts`: hardware test
 - `probe-fm3-cab1-pan.ts`: controlled FM3 Cab 1 Pan round-trip validation (Node 24.x required)
+- `probe-fm3-cab-readonly.ts`: read-only FM3 Cab bulk-state probe
+- `probe-fm3-status-dump.ts`: read-only FM3 STATUS_DUMP probe
 - `probe-factory-restore.ts`: AM4 factory restore probe
 - `write-test.ts`: AM4 write smoke
 
