@@ -66,6 +66,13 @@ export const FM3_RANGES = {
       displayMin: 3,
       displayMax: 30,
     },
+    // CABINET_MICSPACE - FM3 fw 13 hardware-validated, 2026-08-21.
+    // Linear 0..100 cm: 0 cm -> raw 0; 17 cm -> raw 11141; 100 cm -> raw 65534.
+    37: {
+      kind: 'float',
+      displayMin: 0,
+      displayMax: 100,
+    },
     // CABINET_AIR - FM3 fw 13 hardware-validated, 2026-08-21.
     // Linear 0..100%: GET-only live diff 0.0% -> raw 0, 1.0% -> raw 655;
     // only active channel-B Cab bulk index 160 changed.
