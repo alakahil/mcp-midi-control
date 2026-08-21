@@ -73,6 +73,13 @@ export const FM3_RANGES = {
       displayMin: -12,
       displayMax: 12,
     },
+    // CABINET_MID - FM3 fw 13 hardware-validated, 2026-08-21.
+    // GET-only: -12 dB=0; 0 dB=32767; +12 dB=65534.
+    45: {
+      kind: 'float',
+      displayMin: -12,
+      displayMax: 12,
+    },
     // CABINET_ROOMMIX - FM3 fw 13 hardware-validated, 2026-08-21.
     // Linear 0..100%: GET-only live diff 0% -> raw 0, 1% -> raw 655;
     // only active channel-B Cab bulk index 141 changed.
