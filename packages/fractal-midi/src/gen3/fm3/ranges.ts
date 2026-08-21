@@ -73,6 +73,14 @@ export const FM3_RANGES = {
       displayMin: 0,
       displayMax: 100,
     },
+    // CABINET_LOCUT - FM3 fw 13 hardware-validated, 2026-08-21.
+    // Log10 scaling across 20..2000 Hz:
+    // 20 Hz -> raw 0; 60 Hz -> raw 15634; 2000 Hz -> raw 65534.
+    38: {
+      kind: 'float',
+      displayMin: 20,
+      displayMax: 2000,
+    },
     // CABINET_AIR - FM3 fw 13 hardware-validated, 2026-08-21.
     // Linear 0..100%: GET-only live diff 0.0% -> raw 0, 1.0% -> raw 655;
     // only active channel-B Cab bulk index 160 changed.
