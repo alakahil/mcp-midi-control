@@ -171,6 +171,11 @@ export const FM3_RANGES = {
       displayMax: 1,
       enumCount: 2,
     },
+    57: {
+      kind: 'float',
+      displayMin: 0,
+      displayMax: 10,
+    },
     93: {
       kind: 'float',
       displayMin: 0,
