@@ -66,7 +66,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 40, name: 'CABINET_ZOOM', displayLabel: 'Zoom', unit: 'enum' }, // FM3 fw 13 HW GET-only: OFF=raw 0; ON=raw 1
   { family: 'CABINET', paramId: 41, name: 'CABINET_PROXFREQ', displayLabel: 'Proximity Frequency', unit: 'hz', displayMin: 20, displayMax: 200, scaling: 'log10' }, // FM3 fw 13 HW GET-only: 20Hz=raw 0; 120Hz=50995; 200Hz=65534
   { family: 'CABINET', paramId: 42, name: 'CABINET_INPUTSEL', displayLabel: 'Input Mode', unit: 'enum' }, // FM3 fw 13 HW GET-only: Stereo=0; Left=1; Right=2; Sum L+R=3
-  { family: 'CABINET', paramId: 43, name: 'CABINET_PRETYPE', displayLabel: 'Preamp Type', unit: 'enum' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 43, name: 'CABINET_PRETYPE', displayLabel: 'Preamp Type', unit: 'enum' }, // FM3 fw 13 HW GET-only: None=0; Tube=1; Bipolar=2; FET I=3; FET II=4; Transformer=5; Tape 70us=6; Tape 50us=7; Tape 35us=8; Vintage=9; Modern=10; Exciter=11
   { family: 'CABINET', paramId: 44, name: 'CABINET_BASS', displayLabel: 'Bass', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 45, name: 'CABINET_MID', displayLabel: 'Mid', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 46, name: 'CABINET_TREBLE', displayLabel: 'Treble', unit: 'numeric' }, // inferred from AxeEdit III XML controlType

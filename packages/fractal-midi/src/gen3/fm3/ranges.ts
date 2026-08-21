@@ -58,6 +58,14 @@ export const FM3_RANGES = {
       displayMax: 3,
       enumCount: 4,
     },
+    // CABINET_PRETYPE - FM3 fw 13 hardware-validated, 2026-08-21.
+    // GET-only live mapping: None=0 .. Exciter=11.
+    43: {
+      kind: 'enum',
+      displayMin: 0,
+      displayMax: 11,
+      enumCount: 12,
+    },
     // CABINET_ROOMMIX - FM3 fw 13 hardware-validated, 2026-08-21.
     // Linear 0..100%: GET-only live diff 0% -> raw 0, 1% -> raw 655;
     // only active channel-B Cab bulk index 141 changed.
