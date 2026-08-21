@@ -50,6 +50,14 @@ export const FM3_RANGES = {
       displayMin: 20,
       displayMax: 200,
     },
+    // CABINET_ROOMMIX - FM3 fw 13 hardware-validated, 2026-08-21.
+    // Linear 0..100%: GET-only live diff 0% -> raw 0, 1% -> raw 655;
+    // only active channel-B Cab bulk index 141 changed.
+    35: {
+      kind: 'float',
+      displayMin: 0,
+      displayMax: 100,
+    },
     // CABINET_AIR - FM3 fw 13 hardware-validated, 2026-08-21.
     // Linear 0..100%: GET-only live diff 0.0% -> raw 0, 1.0% -> raw 655;
     // only active channel-B Cab bulk index 160 changed.
