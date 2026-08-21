@@ -152,6 +152,11 @@ export const FM3_RANGES = {
     // CABINET_AIRFREQ - FM3 fw 13 hardware-validated, 2026-08-21.
     // 2000 Hz -> raw 0; 5000.1 -> 26079; 6000.1 -> 31268; 20000 -> 65534.
     // GET-only full-vector diffs changed only active channel-B bulk index 161.
+    53: {
+      kind: 'float',
+      displayMin: -100,
+      displayMax: 100,
+    },
     55: {
       kind: 'float',
       displayMin: 2000,
