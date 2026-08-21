@@ -50,6 +50,14 @@ export const FM3_RANGES = {
       displayMin: 20,
       displayMax: 200,
     },
+    // CABINET_INPUTSEL - FM3 fw 13 hardware-validated, 2026-08-21.
+    // GET-only live mapping: Stereo=0; Left=1; Right=2; Sum L+R=3.
+    42: {
+      kind: 'enum',
+      displayMin: 0,
+      displayMax: 3,
+      enumCount: 4,
+    },
     // CABINET_ROOMMIX - FM3 fw 13 hardware-validated, 2026-08-21.
     // Linear 0..100%: GET-only live diff 0% -> raw 0, 1% -> raw 655;
     // only active channel-B Cab bulk index 141 changed.
