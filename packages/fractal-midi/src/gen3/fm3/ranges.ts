@@ -58,6 +58,14 @@ export const FM3_RANGES = {
       displayMin: 0,
       displayMax: 100,
     },
+    // CABINET_ROOMSIZE - FM3 fw 13 hardware-validated, 2026-08-21.
+    // Log10 scaling across 3.00..30.00 m:
+    // 3.00 m -> raw 0; 10.00 m -> raw 34266; 30.00 m -> raw 65534.
+    36: {
+      kind: 'float',
+      displayMin: 3,
+      displayMax: 30,
+    },
     // CABINET_AIR - FM3 fw 13 hardware-validated, 2026-08-21.
     // Linear 0..100%: GET-only live diff 0.0% -> raw 0, 1.0% -> raw 655;
     // only active channel-B Cab bulk index 160 changed.
