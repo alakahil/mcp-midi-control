@@ -79,7 +79,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 53, name: 'CABINET_FLOORLVL', displayLabel: 'Floor Reflections', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 54, name: 'CABINET_AIR', displayLabel: 'Air', unit: 'percent', displayMin: 0, displayMax: 100 }, // FM3 fw 13 HW GET-only: 0.0%=raw 0; 1.0%=raw 655
   { family: 'CABINET', paramId: 55, name: 'CABINET_AIRFREQ', displayLabel: 'Frequency', unit: 'hz', displayMin: 2000, displayMax: 20000, scaling: 'log10' }, // FM3 fw 13 HW GET-only validated
-  { family: 'CABINET', paramId: 56, name: 'CABINET_ROOMSHAPE', displayLabel: 'Room Shape', unit: 'enum' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 56, name: 'CABINET_ROOMSHAPE', displayLabel: 'Room Shape', unit: 'enum', displayMin: 0, displayMax: 1 }, // FM3 fw 13 HW GET-only: Hall=raw 0; Room=raw 1
   { family: 'CABINET', paramId: 57, name: 'CABINET_LFDAMPING', displayLabel: 'LF Damping', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 58, name: 'CABINET_HFDAMPING', displayLabel: 'HF Damping', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 59, name: 'CABINET_DIFFUSION', displayLabel: 'Room Diffusion', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
