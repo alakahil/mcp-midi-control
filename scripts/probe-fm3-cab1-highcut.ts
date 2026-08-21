@@ -18,7 +18,7 @@ import {
   parseMultipurposeResponse,
   parseStatusDumpResponse,
 } from 'fractal-midi/gen3/axe-fx-iii';
-import { FM3_PARAMS_BY_FAMILY } from 'fractal-midi/gen3/fm3';
+import { FM3_PARAMS_BY_FAMILY, FM3_RANGES } from 'fractal-midi/gen3/fm3';
 import { fractalChecksum } from 'fractal-midi/shared';
 
 const MODEL = 0x11;
@@ -54,7 +54,11 @@ assertEqual(hex(statusRequest), 'F0 00 01 74 11 13 07 F7', 'STATUS_DUMP GET wire
 
 const highCutParam = (FM3_PARAMS_BY_FAMILY.CABINET ?? []).find((p) => p.paramId === HIGHCUT_PARAM_ID);
 assertEqual(highCutParam?.name, 'CABINET_HICUT1', 'catalog param name');
-assertEqual(highCutParam?.unit, 'numeric', 'catalog unit');
+assertEqual(highCutParam?.unit, 'hz', 'catalog unit');
+const highCutRange = FM3_RANGES.CABINET[HIGHCUT_PARAM_ID];
+assertEqual(highCutRange?.kind, 'float', 'range kind');
+assertEqual(highCutRange?.displayMin, 2000, 'range displayMin');
+assertEqual(highCutRange?.displayMax, 20000, 'range displayMax');
 assertEqual(HIGHCUT_INDEX, 172, 'channel-B High Cut bulk index');
 
 let detectedPath = '(discovery pending)';

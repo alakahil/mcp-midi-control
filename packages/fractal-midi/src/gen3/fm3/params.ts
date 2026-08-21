@@ -89,7 +89,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 63, name: 'CABINET_LOCUT2', displayLabel: 'Low Cut', unit: 'hz', displayMin: 20, displayMax: 200, scaling: 'log10' }, // FM3 fw 13 HW GET-only: 20Hz=raw 0; 60Hz=raw 31268; 200Hz=raw 65534
   { family: 'CABINET', paramId: 64, name: 'CABINET_LOCUT3', displayLabel: 'Low Cut', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 65, name: 'CABINET_LOCUT4', displayLabel: 'Low Cut', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 66, name: 'CABINET_HICUT1', displayLabel: 'High Cut', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 66, name: 'CABINET_HICUT1', displayLabel: 'High Cut', unit: 'hz', displayMin: 2000, displayMax: 20000, scaling: 'log10' }, // FM3 fw 13 HW GET-only: 2000Hz=raw 0; 6000.1Hz=raw 31268; 20000Hz=raw 65534
   { family: 'CABINET', paramId: 67, name: 'CABINET_HICUT2', displayLabel: 'High Cut', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 68, name: 'CABINET_HICUT3', displayLabel: 'High Cut', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 69, name: 'CABINET_HICUT4', displayLabel: 'High Cut', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
