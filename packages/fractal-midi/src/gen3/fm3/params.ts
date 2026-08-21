@@ -63,7 +63,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 37, name: 'CABINET_MICSPACE', displayLabel: 'Mic Spacing', unit: 'cm', displayMin: 0, displayMax: 100 }, // FM3 fw 13 HW GET-only: 0cm=raw 0; 17cm=11141; 100cm=65534
   { family: 'CABINET', paramId: 38, name: 'CABINET_LOCUT', displayLabel: 'Low Cut', unit: 'hz', displayMin: 20, displayMax: 2000, scaling: 'log10' }, // FM3 fw 13 HW GET-only: 20Hz=raw 0; 60Hz=15634; 2000Hz=65534
   { family: 'CABINET', paramId: 39, name: 'CABINET_HICUT', displayLabel: 'High Cut', unit: 'hz', displayMin: 200, displayMax: 20000, scaling: 'log10' }, // FM3 fw 13 HW GET-only: 200Hz=raw 0; 10000Hz=55670; 20000Hz=65534
-  { family: 'CABINET', paramId: 40, name: 'CABINET_ZOOM', displayLabel: 'Zoom', unit: 'enum' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 40, name: 'CABINET_ZOOM', displayLabel: 'Zoom', unit: 'enum' }, // FM3 fw 13 HW GET-only: OFF=raw 0; ON=raw 1
   { family: 'CABINET', paramId: 41, name: 'CABINET_PROXFREQ', displayLabel: 'Proximity Frequency', unit: 'hz', displayMin: 20, displayMax: 200, scaling: 'log10' }, // FM3 fw 13 hardware captures: 100 Hz -> raw 45806, 120 Hz -> raw 50995
   { family: 'CABINET', paramId: 42, name: 'CABINET_INPUTSEL', displayLabel: 'Input Mode', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 43, name: 'CABINET_PRETYPE', displayLabel: 'Preamp Type', unit: 'enum' }, // inferred from AxeEdit III XML controlType
