@@ -87,6 +87,14 @@ export const FM3_RANGES = {
       displayMin: -12,
       displayMax: 12,
     },
+    // CABINET_OVERSAMPLE - FM3 fw 13 hardware-validated, 2026-08-21.
+    // GET-only: Economy=0; High Quality=1.
+    47: {
+      kind: 'enum',
+      displayMin: 0,
+      displayMax: 1,
+      enumCount: 2,
+    },
     // CABINET_ROOMMIX - FM3 fw 13 hardware-validated, 2026-08-21.
     // Linear 0..100%: GET-only live diff 0% -> raw 0, 1% -> raw 655;
     // only active channel-B Cab bulk index 141 changed.

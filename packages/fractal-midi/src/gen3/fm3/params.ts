@@ -70,7 +70,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 44, name: 'CABINET_BASS', displayLabel: 'Bass', unit: 'db', displayMin: -12, displayMax: 12 }, // FM3 fw 13 HW GET-only: -12 dB=0; 0 dB=32767; +12 dB=65534
   { family: 'CABINET', paramId: 45, name: 'CABINET_MID', displayLabel: 'Mid', unit: 'db', displayMin: -12, displayMax: 12 }, // FM3 fw 13 HW GET-only: -12 dB=0; 0 dB=32767; +12 dB=65534
   { family: 'CABINET', paramId: 46, name: 'CABINET_TREBLE', displayLabel: 'Treble', unit: 'db', displayMin: -12, displayMax: 12 }, // FM3 fw 13 HW GET-only: -12 dB=0; 0 dB=32767; +12 dB=65534
-  { family: 'CABINET', paramId: 47, name: 'CABINET_OVERSAMPLE', displayLabel: 'Preamp Mode', unit: 'enum' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 47, name: 'CABINET_OVERSAMPLE', displayLabel: 'Preamp Mode', unit: 'enum' }, // FM3 fw 13 HW GET-only: Economy=0; High Quality=1
   { family: 'CABINET', paramId: 48, name: 'CABINET_SMOOTH1', displayLabel: 'Smoothing', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 49, name: 'CABINET_SMOOTH2', displayLabel: 'Smoothing', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 50, name: 'CABINET_SMOOTH3', displayLabel: 'Smoothing', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
