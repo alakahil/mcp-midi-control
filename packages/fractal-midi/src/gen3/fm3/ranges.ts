@@ -58,6 +58,14 @@ export const FM3_RANGES = {
       displayMin: 0,
       displayMax: 100,
     },
+    // CABINET_AIRFREQ - FM3 fw 13 hardware-validated, 2026-08-21.
+    // 2000 Hz -> raw 0; 5000.1 -> 26079; 6000.1 -> 31268; 20000 -> 65534.
+    // GET-only full-vector diffs changed only active channel-B bulk index 161.
+    55: {
+      kind: 'float',
+      displayMin: 2000,
+      displayMax: 20000,
+    },
     // CABINET_DYNACAB_R1 - FM3 fw 13 hardware-validated, 2026-08-16.
     // Linear 0..100%: live SET/GET 0% -> raw 0 (acked), restored 25% ->
     // raw 16384 (acked); only bulk index 199 changed and the vector restored.
