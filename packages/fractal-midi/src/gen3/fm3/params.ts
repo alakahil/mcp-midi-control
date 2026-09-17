@@ -470,7 +470,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'DISTORT', paramId: 31, name: 'DISTORT_DEPTHFREQ', displayLabel: 'Depth Frequency', unit: 'hz', displayMin: 50, displayMax: 500 }, // inferred from AM4; device-true 31 (III 29 would mis-address)
   { family: 'DISTORT', paramId: 32, name: 'DISTORT_DRIVETYPE', unit: 'enum' }, // FM3-Edit 13.0 cache: enum 0..7; device-true 32 (III 30 would mis-address)
   { family: 'DISTORT', paramId: 33, name: 'DISTORT_MVCAP', displayLabel: 'Master Vol Cap', unit: 'numeric' }, // inferred from AxeEdit III XML controlType; device-true 33 (III 31 would mis-address)
-  { family: 'DISTORT', paramId: 34, name: 'DISTORT_WSHPF', unit: 'unverified' }, // device-true 34 (III 32 would mis-address)
+  { family: 'DISTORT', paramId: 34, name: 'DISTORT_WSHPF', unit: 'hz', displayMin: 2, displayMax: 2000, scaling: 'log10' }, // FM3 fw 13 HW GET-only: VIEW_VALUE=32.00 Hz; B raw 26304 -> 32.0014 log10
   { family: 'DISTORT', paramId: 35, name: 'DISTORT_CFCLIP', displayLabel: 'Harmonics', unit: 'numeric' }, // inferred from AxeEdit III XML controlType; device-true 35 (III 33 would mis-address)
   { family: 'DISTORT', paramId: 36, name: 'DISTORT_TONETYPE', displayLabel: 'Tonestack Type', unit: 'enum' }, // inferred from AxeEdit III XML controlType; device-true 36 (III 34 would mis-address)
   { family: 'DISTORT', paramId: 37, name: 'DISTORT_TIMECONST', displayLabel: 'B+ Time Constant', unit: 'numeric' }, // inferred from AxeEdit III XML controlType; device-true 37 (III 35 would mis-address)
