@@ -459,7 +459,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'DISTORT', paramId: 20, name: 'DISTORT_TONELOC', displayLabel: 'Tonestack Location', unit: 'enum' }, // inferred from AxeEdit III XML controlType; device-true 20 (III 14 would mis-address)
   { family: 'DISTORT', paramId: 21, name: 'DISTORT_INPUTSELECT', displayLabel: 'Input Select', unit: 'enum' }, // inferred from AM4; device-true 21 (III 15 would mis-address)
   { family: 'DISTORT', paramId: 22, name: 'DISTORT_DEPTH', displayLabel: 'Depth', unit: 'knob_0_10', displayMin: 0, displayMax: 10 }, // inferred from AM4; device-true 22 (III 16 would mis-address)
-  { family: 'DISTORT', paramId: 23, name: 'DISTORT_OFFSET1', unit: 'unverified' }, // device-true 23 (III 17 would mis-address)
+  { family: 'DISTORT', paramId: 23, name: 'DISTORT_OFFSET1', unit: 'numeric', displayMin: -1, displayMax: 1, scaling: 'linear' }, // FM3 fw 13 HW GET-only: VIEW_VALUE=-0.240; B raw 24903 -> -0.239998 linear
   { family: 'DISTORT', paramId: 24, name: 'DISTORT_CLIPTYPE2', unit: 'enum' }, // inferred from AM4; device-true 24 (III 18 would mis-address)
   { family: 'DISTORT', paramId: 25, name: 'DISTORT_SUPPLYSAG', displayLabel: 'Supply Sag', unit: 'knob_0_10', displayMin: 0, displayMax: 10 }, // inferred from AM4; device-true 25 (III 19 would mis-address)
   { family: 'DISTORT', paramId: 26, name: 'DISTORT_PRESENCE', displayLabel: 'Presence', unit: 'knob_0_10', displayMin: 0, displayMax: 10 }, // inferred from AM4; device-true 26 (III 20 would mis-address)
