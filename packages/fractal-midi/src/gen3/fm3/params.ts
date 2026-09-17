@@ -47,8 +47,8 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 21, name: 'CABINET_PROXIMITY2', displayLabel: 'Proximity', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 22, name: 'CABINET_PROXIMITY3', displayLabel: 'Proximity', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 23, name: 'CABINET_PROXIMITY4', displayLabel: 'Proximity', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 24, name: 'CABINET_MUTE1', unit: 'unverified' },
-  { family: 'CABINET', paramId: 25, name: 'CABINET_MUTE2', unit: 'unverified' },
+  { family: 'CABINET', paramId: 24, name: 'CABINET_MUTE1', unit: 'enum', displayMin: 0, displayMax: 2 }, // FM3 fw 13 HW GET-only + editor cache: --/MUTE/SOLO
+  { family: 'CABINET', paramId: 25, name: 'CABINET_MUTE2', unit: 'enum', displayMin: 0, displayMax: 2 }, // FM3 fw 13 HW GET-only + editor cache: --/MUTE/SOLO
   { family: 'CABINET', paramId: 26, name: 'CABINET_MUTE3', unit: 'unverified' },
   { family: 'CABINET', paramId: 27, name: 'CABINET_MUTE4', unit: 'unverified' },
   { family: 'CABINET', paramId: 28, name: 'CABINET_LEVEL', displayLabel: 'Level', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
