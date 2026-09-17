@@ -520,7 +520,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'DISTORT', paramId: 81, name: 'DISTORT_DEFINITION', displayLabel: 'Definition', unit: 'count', displayMin: -10, displayMax: 10 }, // inferred from AM4; device-true 81 (III 79 would mis-address)
   { family: 'DISTORT', paramId: 82, name: 'DISTORT_CFTHRESH', displayLabel: 'Compression', unit: 'numeric' }, // inferred from AxeEdit III XML controlType; device-true 82 (III 80 would mis-address)
   { family: 'DISTORT', paramId: 83, name: 'DISTORT_CFGRID', displayLabel: 'Grid Clipping', unit: 'percent', displayMin: 0, displayMax: 100 }, // inferred from AM4; device-true 83 (III 81 would mis-address)
-  { family: 'DISTORT', paramId: 84, name: 'DISTORT_VERSION', unit: 'unverified' }, // device-true 84 (III 82 would mis-address)
+  { family: 'DISTORT', paramId: 84, name: 'DISTORT_VERSION', unit: 'numeric', displayMin: 0, displayMax: 0 }, // FM3 fw 13 HW GET-only: VIEW_VALUE=0; definition min=0 max=0
   { family: 'DISTORT', paramId: 85, name: 'DISTORT_HICUT', displayLabel: 'High Cut', unit: 'hz', displayMin: 200, displayMax: 20000 }, // inferred from AM4; device-true 85 (III 83 would mis-address)
   { family: 'DISTORT', paramId: 86, name: 'DISTORT_DYNPRES', displayLabel: 'Dynamic Presence', unit: 'knob_0_10', displayMin: 0, displayMax: 10 }, // inferred from AM4; device-true 86 (III 84 would mis-address)
   { family: 'DISTORT', paramId: 87, name: 'DISTORT_DYNDEPTH', displayLabel: 'Dynamic Depth', unit: 'knob_0_10', displayMin: 0, displayMax: 10 }, // inferred from AM4; device-true 87 (III 85 would mis-address)
