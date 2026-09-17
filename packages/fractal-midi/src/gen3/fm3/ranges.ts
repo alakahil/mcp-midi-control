@@ -18,6 +18,12 @@ export const FM3_RANGES = {
       displayMax: 2,
       enumCount: 3,
     },
+    31: {
+      kind: 'enum',
+      displayMin: 0,
+      displayMax: 1,
+      enumCount: 2,
+    },
     // CABINET_LEVEL1 - FM3 fw 13 hardware-validated, 2026-08-16.
     // Linear -40..0 dB: live SET/GET 0 dB -> raw 65534 (acked), restored
     // -12 dB -> raw 45874 (acked); only bulk index 114 changed and the full
