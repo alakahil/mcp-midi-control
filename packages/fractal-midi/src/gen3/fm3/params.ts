@@ -476,7 +476,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'DISTORT', paramId: 37, name: 'DISTORT_TIMECONST', displayLabel: 'B+ Time Constant', unit: 'numeric' }, // inferred from AxeEdit III XML controlType; device-true 37 (III 35 would mis-address)
   { family: 'DISTORT', paramId: 38, name: 'DISTORT_BIAS', displayLabel: 'Grid Bias', unit: 'knob_0_10', displayMin: 0, displayMax: 10 }, // inferred from AM4; device-true 38 (III 36 would mis-address)
   { family: 'DISTORT', paramId: 39, name: 'DISTORT_FBTYPE', unit: 'enum' }, // FM3-Edit 13.0 cache: enum 0..68; device-true 39 (III 37 would mis-address)
-  { family: 'DISTORT', paramId: 40, name: 'DISTORT_PI_RATIO', unit: 'unverified' }, // device-true 40 (III 38 would mis-address)
+  { family: 'DISTORT', paramId: 40, name: 'DISTORT_PI_RATIO', unit: 'numeric', displayMin: 0, displayMax: 1, scaling: 'linear' }, // FM3 fw 13 HW GET-only: VIEW_VALUE=0.377; B raw 24706 -> 0.376995 linear
   { family: 'DISTORT', paramId: 41, name: 'DISTORT_BRIGHT', displayLabel: 'Bright', unit: 'enum' }, // inferred from AM4; device-true 41 (III 39 would mis-address)
   { family: 'DISTORT', paramId: 42, name: 'DISTORT_BOOST', displayLabel: 'Boost', unit: 'enum' }, // inferred from AxeEdit III XML controlType; device-true 42 (III 40 would mis-address)
   { family: 'DISTORT', paramId: 43, name: 'DISTORT_SPKRLFQ', displayLabel: 'LF Q', unit: 'numeric' }, // inferred from AxeEdit III XML controlType; device-true 43 (III 41 would mis-address)
