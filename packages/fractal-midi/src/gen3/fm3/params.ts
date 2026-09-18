@@ -23,8 +23,8 @@
 import type { Param } from '../types.js';
 
 export const FM3_PARAMS: readonly Param[] = [
-  { family: 'CABINET', paramId: 0, name: 'CABINET_BANK1', displayLabel: 'Bank', unit: 'enum' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 1, name: 'CABINET_BANK2', displayLabel: 'Bank', unit: 'enum' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 0, name: 'CABINET_BANK1', displayLabel: 'Bank', unit: 'enum' }, // enum inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
+  { family: 'CABINET', paramId: 1, name: 'CABINET_BANK2', displayLabel: 'Bank', unit: 'enum' }, // enum inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 2, name: 'CABINET_BANK3', displayLabel: 'Bank', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 3, name: 'CABINET_BANK4', displayLabel: 'Bank', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 4, name: 'CABINET_TYPE1', displayLabel: 'Type', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
