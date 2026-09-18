@@ -27,8 +27,8 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 1, name: 'CABINET_BANK2', displayLabel: 'Bank', unit: 'enum' }, // enum inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 2, name: 'CABINET_BANK3', displayLabel: 'Bank', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 3, name: 'CABINET_BANK4', displayLabel: 'Bank', unit: 'enum' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 4, name: 'CABINET_TYPE1', displayLabel: 'Type', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 5, name: 'CABINET_TYPE2', displayLabel: 'Type', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 4, name: 'CABINET_TYPE1', displayLabel: 'Type', unit: 'numeric' }, // numeric inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
+  { family: 'CABINET', paramId: 5, name: 'CABINET_TYPE2', displayLabel: 'Type', unit: 'numeric' }, // numeric inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 6, name: 'CABINET_TYPE3', displayLabel: 'Type', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 7, name: 'CABINET_TYPE4', displayLabel: 'Type', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 8, name: 'CABINET_LEVEL1', displayLabel: 'Level', unit: 'db', displayMin: -40, displayMax: 0 }, // FM3 fw 13 HW: SET/GET 0 dB=65534 acked; restored -12 dB=45874
