@@ -35,8 +35,8 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 9, name: 'CABINET_LEVEL2', displayLabel: 'Level', unit: 'db', displayMin: -40, displayMax: 0 }, // FM3 fw 13 HW: SET/GET 0 dB=65534 acked; restored -3 dB=60619
   { family: 'CABINET', paramId: 10, name: 'CABINET_LEVEL3', displayLabel: 'Level', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 11, name: 'CABINET_LEVEL4', displayLabel: 'Level', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 12, name: 'CABINET_PAN1', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // inferred from Fractal convention
-  { family: 'CABINET', paramId: 13, name: 'CABINET_PAN2', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // inferred from Fractal convention
+  { family: 'CABINET', paramId: 12, name: 'CABINET_PAN1', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // bipolar range inferred from Fractal convention; FM3 fw13 hardware address/read validated 2026-09-18
+  { family: 'CABINET', paramId: 13, name: 'CABINET_PAN2', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // bipolar range inferred from Fractal convention; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 14, name: 'CABINET_PAN3', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // inferred from Fractal convention
   { family: 'CABINET', paramId: 15, name: 'CABINET_PAN4', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // inferred from Fractal convention
   { family: 'CABINET', paramId: 16, name: 'CABINET_DELAY1', displayLabel: 'Distance 1', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
