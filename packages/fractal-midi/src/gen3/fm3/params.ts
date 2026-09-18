@@ -57,7 +57,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 31, name: 'CABINET_MODE', unit: 'enum', displayMin: 0, displayMax: 1 }, // FM3 fw 13 HW GET-only + editor cache: LEGACY/DYNA-CAB
   { family: 'CABINET', paramId: 32, name: 'CABINET_BYPASS', displayLabel: 'Bypass', unit: 'enum' }, // enum semantics inferred from Fractal convention; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 33, name: 'CABINET_DRIVE', displayLabel: 'Drive', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
-  { family: 'CABINET', paramId: 34, name: 'CABINET_BIAS', displayLabel: 'Saturation', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 34, name: 'CABINET_BIAS', displayLabel: 'Saturation', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 35, name: 'CABINET_ROOMMIX', displayLabel: 'Room Level', unit: 'percent', displayMin: 0, displayMax: 100 }, // FM3 fw 13 HW GET-only: 0%=raw 0; 1%=raw 655
   { family: 'CABINET', paramId: 36, name: 'CABINET_ROOMSIZE', displayLabel: 'Room Size', unit: 'numeric', displayMin: 3, displayMax: 30 }, // FM3 fw 13 HW GET-only: 3.00m=raw 0; 10.00m=34266; 30.00m=65534
   { family: 'CABINET', paramId: 37, name: 'CABINET_MICSPACE', displayLabel: 'Mic Spacing', unit: 'cm', displayMin: 0, displayMax: 100 }, // FM3 fw 13 HW GET-only: 0cm=raw 0; 17cm=11141; 100cm=65534
