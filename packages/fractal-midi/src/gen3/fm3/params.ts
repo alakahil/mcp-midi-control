@@ -45,8 +45,8 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 19, name: 'CABINET_DELAY4', displayLabel: 'Distance 4', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 20, name: 'CABINET_PROXIMITY1', displayLabel: 'Proximity', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 21, name: 'CABINET_PROXIMITY2', displayLabel: 'Proximity', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
-  { family: 'CABINET', paramId: 22, name: 'CABINET_PROXIMITY3', displayLabel: 'Proximity', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 23, name: 'CABINET_PROXIMITY4', displayLabel: 'Proximity', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 22, name: 'CABINET_PROXIMITY3', displayLabel: 'Proximity', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
+  { family: 'CABINET', paramId: 23, name: 'CABINET_PROXIMITY4', displayLabel: 'Proximity', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 24, name: 'CABINET_MUTE1', unit: 'enum', displayMin: 0, displayMax: 2 }, // FM3 fw 13 HW GET-only + editor cache: --/MUTE/SOLO
   { family: 'CABINET', paramId: 25, name: 'CABINET_MUTE2', unit: 'enum', displayMin: 0, displayMax: 2 }, // FM3 fw 13 HW GET-only + editor cache: --/MUTE/SOLO
   { family: 'CABINET', paramId: 26, name: 'CABINET_MUTE3', unit: 'unverified' },
