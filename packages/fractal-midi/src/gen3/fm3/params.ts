@@ -39,8 +39,8 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 13, name: 'CABINET_PAN2', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // bipolar range inferred from Fractal convention; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 14, name: 'CABINET_PAN3', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // inferred from Fractal convention
   { family: 'CABINET', paramId: 15, name: 'CABINET_PAN4', displayLabel: 'Pan', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // inferred from Fractal convention
-  { family: 'CABINET', paramId: 16, name: 'CABINET_DELAY1', displayLabel: 'Distance 1', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
-  { family: 'CABINET', paramId: 17, name: 'CABINET_DELAY2', displayLabel: 'Distance 2', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 16, name: 'CABINET_DELAY1', displayLabel: 'Distance 1', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware range validated 2026-08-14
+  { family: 'CABINET', paramId: 17, name: 'CABINET_DELAY2', displayLabel: 'Distance 2', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware range validated 2026-08-14
   { family: 'CABINET', paramId: 18, name: 'CABINET_DELAY3', displayLabel: 'Distance 3', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 19, name: 'CABINET_DELAY4', displayLabel: 'Distance 4', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 20, name: 'CABINET_PROXIMITY1', displayLabel: 'Proximity', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
