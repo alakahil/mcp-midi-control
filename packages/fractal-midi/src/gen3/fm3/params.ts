@@ -55,7 +55,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 29, name: 'CABINET_PAN', displayLabel: 'Balance', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // bipolar range inferred from Fractal convention; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 30, name: 'CABINET_BYPASSMODE', displayLabel: 'Bypass Mode', unit: 'enum' }, // enum semantics inferred from Fractal convention; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 31, name: 'CABINET_MODE', unit: 'enum', displayMin: 0, displayMax: 1 }, // FM3 fw 13 HW GET-only + editor cache: LEGACY/DYNA-CAB
-  { family: 'CABINET', paramId: 32, name: 'CABINET_BYPASS', displayLabel: 'Bypass', unit: 'enum' }, // inferred from Fractal convention
+  { family: 'CABINET', paramId: 32, name: 'CABINET_BYPASS', displayLabel: 'Bypass', unit: 'enum' }, // enum semantics inferred from Fractal convention; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 33, name: 'CABINET_DRIVE', displayLabel: 'Drive', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 34, name: 'CABINET_BIAS', displayLabel: 'Saturation', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 35, name: 'CABINET_ROOMMIX', displayLabel: 'Room Level', unit: 'percent', displayMin: 0, displayMax: 100 }, // FM3 fw 13 HW GET-only: 0%=raw 0; 1%=raw 655
