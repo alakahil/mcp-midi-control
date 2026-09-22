@@ -94,7 +94,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 68, name: 'CABINET_HICUT3', displayLabel: 'High Cut', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-22; range/scaling unverified
   { family: 'CABINET', paramId: 69, name: 'CABINET_HICUT4', displayLabel: 'High Cut', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-22; range/scaling unverified
   { family: 'CABINET', paramId: 70, name: 'CABINET_LENGTH1', displayLabel: 'IR Length', unit: 'enum' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-22; enum mapping/count unverified
-  { family: 'CABINET', paramId: 71, name: 'CABINET_LENGTH2', displayLabel: 'IR Length', unit: 'enum' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 71, name: 'CABINET_LENGTH2', displayLabel: 'IR Length', unit: 'enum' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-22; enum mapping/count unverified
   { family: 'CABINET', paramId: 72, name: 'CABINET_LENGTH3', displayLabel: 'IR Length', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 73, name: 'CABINET_LENGTH4', displayLabel: 'IR Length', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 74, name: 'CABINET_LOSLOPE1', displayLabel: 'Low Slope', unit: 'enum' }, // inferred from AxeEdit III XML controlType
