@@ -93,7 +93,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 67, name: 'CABINET_HICUT2', displayLabel: 'High Cut', unit: 'hz', displayMin: 2000, displayMax: 20000, scaling: 'log10' }, // FM3 fw 13 HW GET-only: 2000Hz=raw 0; 6000.1Hz=raw 31268; 20000Hz=raw 65534
   { family: 'CABINET', paramId: 68, name: 'CABINET_HICUT3', displayLabel: 'High Cut', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-22; range/scaling unverified
   { family: 'CABINET', paramId: 69, name: 'CABINET_HICUT4', displayLabel: 'High Cut', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-22; range/scaling unverified
-  { family: 'CABINET', paramId: 70, name: 'CABINET_LENGTH1', displayLabel: 'IR Length', unit: 'enum' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 70, name: 'CABINET_LENGTH1', displayLabel: 'IR Length', unit: 'enum' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-22; enum mapping/count unverified
   { family: 'CABINET', paramId: 71, name: 'CABINET_LENGTH2', displayLabel: 'IR Length', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 72, name: 'CABINET_LENGTH3', displayLabel: 'IR Length', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 73, name: 'CABINET_LENGTH4', displayLabel: 'IR Length', unit: 'enum' }, // inferred from AxeEdit III XML controlType
