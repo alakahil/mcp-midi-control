@@ -73,7 +73,7 @@ export const FM3_PARAMS: readonly Param[] = [
   { family: 'CABINET', paramId: 47, name: 'CABINET_OVERSAMPLE', displayLabel: 'Preamp Mode', unit: 'enum' }, // FM3 fw 13 HW GET-only: Economy=0; High Quality=1
   { family: 'CABINET', paramId: 48, name: 'CABINET_SMOOTH1', displayLabel: 'Smoothing', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
   { family: 'CABINET', paramId: 49, name: 'CABINET_SMOOTH2', displayLabel: 'Smoothing', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-18
-  { family: 'CABINET', paramId: 50, name: 'CABINET_SMOOTH3', displayLabel: 'Smoothing', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
+  { family: 'CABINET', paramId: 50, name: 'CABINET_SMOOTH3', displayLabel: 'Smoothing', unit: 'numeric' }, // unit inferred from AxeEdit III XML controlType; FM3 fw13 hardware address/read validated 2026-09-22
   { family: 'CABINET', paramId: 51, name: 'CABINET_SMOOTH4', displayLabel: 'Smoothing', unit: 'numeric' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 52, name: 'CABINET_ORDER', displayLabel: 'Filter Slope', unit: 'enum' }, // inferred from AxeEdit III XML controlType
   { family: 'CABINET', paramId: 53, name: 'CABINET_FLOORLVL', displayLabel: 'Floor Reflections', unit: 'bipolar_percent', displayMin: -100, displayMax: 100 }, // inferred from AxeEdit III XML controlType
