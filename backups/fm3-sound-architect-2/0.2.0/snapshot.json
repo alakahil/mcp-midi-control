@@ -1,0 +1,127 @@
+{
+  "plugin": "FM3 Sound Architect 2",
+  "version": "0.2.0",
+  "plugin_id": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+  "release_id": "pluginrel_6acde49fd8c88191b58701d49cf34af7",
+  "snapshot_date": "2026-10-13",
+  "file_count": 2946,
+  "original_gzip_sha256": "c88d510b9c38c92c523f11d81ffbd93da71fcb5145bff8880be0872f6c4cfdcb",
+  "archive_sha256": "6c812487ffa0920314b2b3090dbd9b70d93646fc521ac140a9e353ca24082bd9",
+  "archive_bytes": 11212892,
+  "archive_format": "tar.xz",
+  "uncompressed_tar_sha256": "2bcaccc0203aee9f56b573e17845f180d9dac5ffd9e93f7a4e49a9b41fd33182",
+  "files_manifest_sha256": "ce1c4c4da20a5848b0eb3ace4fae23b638cceeec0e3c467333a347a6c57136f4",
+  "parts": [
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-000",
+      "bytes": 524288,
+      "sha256": "5b9cdadfda365f9d757755e240f72167debab36ccefdb52c1112359660f6b865"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-001",
+      "bytes": 524288,
+      "sha256": "0196206f9dc1c0e00d7a216761b94be0335826734959305924af8d8fc001b066"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-002",
+      "bytes": 524288,
+      "sha256": "c8e40a0957fd4609779a1bc0d747fe48f5757c28ed5318539567f31889067e7b"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-003",
+      "bytes": 524288,
+      "sha256": "2c626638371a429e80317c137a9d0f55d8adc0b239b415c5a6246c55aff04cd4"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-004",
+      "bytes": 524288,
+      "sha256": "32bb09ecb4c8086e65df2075967645fc7828544c828b39fc5e25d54c3b8be2a5"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-005",
+      "bytes": 524288,
+      "sha256": "2ba2cc71c5d9bcea16107b0aae1493b5d7677d02985f14dbdabdd3ddaea8ba2c"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-006",
+      "bytes": 524288,
+      "sha256": "b76737cafb2441caf58e12bcb062b497d4e48ee73487288cd5dd069635322d43"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-007",
+      "bytes": 524288,
+      "sha256": "c1a52e43b4be3e54b4ed529064e978ea74db2f77e71ec2978eff0cbbac9be91f"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-008",
+      "bytes": 524288,
+      "sha256": "f464b899d1d9ce9c3f578815d4b3105e3f575ee14162ae667ab45fc61c60cd87"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-009",
+      "bytes": 524288,
+      "sha256": "b893620199edff0f02640fe7e32856e56fd5df88ca9e27df2e7d1148869fad0a"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-010",
+      "bytes": 524288,
+      "sha256": "c67b50b43d537746b0ac66a65504e1541568f08893f95e433e8fa212bcc53b18"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-011",
+      "bytes": 524288,
+      "sha256": "d842e256ccf6a140b30c93a8398b5f783c154d27f31b41c9a89b8f4e80513915"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-012",
+      "bytes": 524288,
+      "sha256": "2cad5ec63e5e2f40731c800003a7f7391629ca0a1e4063242d19d10879c99784"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-013",
+      "bytes": 524288,
+      "sha256": "504c085e8ed328bb42dc91b80f88e290cd946053425a6da918d263fccfc14a7b"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-014",
+      "bytes": 524288,
+      "sha256": "1b8c5c23cad8610b0c2eee14512dc900925eaee6a27c2ef4d82bfd9df2be0101"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-015",
+      "bytes": 524288,
+      "sha256": "59ecf2e71076be869b0cb145c0861240ef71eed52eea1cecbd749b3e927022f4"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-016",
+      "bytes": 524288,
+      "sha256": "5e830fe4c9d881e86b51f9cc28fc7b0e9ab3f5d06fe220471f5bfac086ec25b3"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-017",
+      "bytes": 524288,
+      "sha256": "15653ed13ea3fd515b80f50d2aa72b5a917fd14c191dd9ae2c3e3a40eb121e5d"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-018",
+      "bytes": 524288,
+      "sha256": "230e2f9ed3a4dc98e504ae8f93831766d0b568d08637ecbc24e4bd1ca815c50c"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-019",
+      "bytes": 524288,
+      "sha256": "bcf96562a609da71e0ec11e3b7747ff690e834f5d1de408c072fe3bc28e5813b"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-020",
+      "bytes": 524288,
+      "sha256": "fd8e3967bb31e9506661291eeb534a95815a552682268f0e576a023d415cefb4"
+    },
+    {
+      "path": "parts/FM3_Sound_Architect_2_v0.2.0.tar.xz.part-021",
+      "bytes": 202844,
+      "sha256": "b1f518ac58bd4e0ddafde839811431f113da7b9e0d976902fd71014d57e76059"
+    }
+  ],
+  "public_github_storage_authorized": "2026-10-13; user explicitly approved after public visibility disclosure"
+}
