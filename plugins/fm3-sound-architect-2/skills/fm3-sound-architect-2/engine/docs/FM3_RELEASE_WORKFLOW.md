@@ -1,4 +1,4 @@
-# FM3 0.3.1: väljalase, tõendid ja laadimine
+# FM3 0.3.2: väljalase, tõendid ja laadimine
 
 ## Sisukord
 - Ulatus
@@ -6,10 +6,11 @@
 - Väljalase = commit
 - Laadimise kontroll
 - Järgmine etapp
+- 0.3.2 avaldamisvormingu parandus
 
 ## Ulatus
 
-0.3.1 ühendab GitHubi 0.3.0 tabeli/paigutuse ja avaldatud privaatse 0.2.2
+0.3.2 sisaldab 0.3.1 ühendatud arendust. 0.3.1 ühendas GitHubi 0.3.0 tabeli/paigutuse ja avaldatud privaatse 0.2.2
 Amp Leveli tõendid. See ei tähenda kõigi FM3 plokkide, globaalsete seadete,
 modifikaatorite, tempo sõltuvuste ega suvalise neljarealise ruudustiku tuge.
 Seadmega suhtlemist siin etapis ei lisata. Kasutaja füüsilist osalemist pole vaja.
@@ -116,3 +117,12 @@ töövoogu; praegune luba hõlmab GET/read-only päringuid.
 Eelista tulevikus üht koondatud importi ja automatiseeritud lugemist paljudele
 käsitsi nupumuutustele. Aktiivse tööpuhvri ja salvestatud presetikoha lugemist
 tuleb tõendada eraldi. Heli/CPU hinnang jääb sihitud viimaseks kontrolliks.
+
+## 0.3.2 avaldamisvormingu parandus
+
+0.3.1 avaldamise tagasivõrdlus tuvastas, et platvorm kirjutab
+`.codex-plugin/plugin.json` täpitähed ASCII Unicode’i paokoodidena. JSON-i
+andmed jäid samaks, kuid ranged failiräsid erinesid. 0.3.2 lähtefail kasutab
+sama kinnitatud vormingut. Pakendaja kontrollib seda enne arhiivi loomist.
+Ühtegi kontrollsummade erandit ei lisata. 0.3.1 jääb ajalooliseks väljalaskeks;
+parandus saab uue commit’i ja versiooni.

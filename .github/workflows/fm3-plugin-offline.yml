@@ -22,7 +22,8 @@ jobs:
         run: python3 tools/fm3/build-release.py --commit HEAD --tests "$RUNNER_TEMP/fm3-tests/summary.json" --output "$RUNNER_TEMP/fm3-release"
       - name: Verify the unpacked package
         run: |
-          tar -xzf "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2-0.3.1.tar.gz" -C "$RUNNER_TEMP/fm3-release"
+          FM3_PACKAGE_VERSION="$(node -p "require('./plugins/fm3-sound-architect-2/plugin.json').version")"
+          tar -xzf "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2-$FM3_PACKAGE_VERSION.tar.gz" -C "$RUNNER_TEMP/fm3-release"
           node "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-self-check.mjs" "$GITHUB_SHA"
       - uses: actions/upload-artifact@v4
         if: always()

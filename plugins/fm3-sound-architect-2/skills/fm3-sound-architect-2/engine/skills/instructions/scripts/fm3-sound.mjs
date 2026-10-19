@@ -10,7 +10,7 @@ import {writePresetOutputs,sha256} from './fm3-output.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.1',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.2',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
     outputs:['.syx','.txt','.spec.json','.validation.json'],
     layout:{rows:[2,3],maxBlocksPerRow:10,blocks:Object.values(SLUG_BY_EID),policy:'Exactly the composed blocks; no removal, duplicates or arbitrary 4-row graph'},
@@ -31,7 +31,7 @@ export function composeSound(base,spec){
   check(first.report.baseId==='jb-newlook','Sound composer requires the jb-newlook base');
   const second=arrangeSound(first.syx,spec,{allow:spec.allow??[]});
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
-  const report={generator:'fm3-sound-0.3.1',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.2',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:'not tested',...state,
     stages:{composer:{scope:'intermediate; not final settings',...first.report},layout:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};

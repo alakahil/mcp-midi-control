@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Plugina versioon on `0.3.1`; ühine käivituspunkt on `fm3-preset.mjs`.
+Plugina versioon on `0.3.2`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -177,7 +177,7 @@ Loe arhiive ajutises analüüsikaustas; ära lisa välispakettide sõltuvusi,
 FM3-Editi rakendust ega Ghidra projekte plugina paketti. [REA arendusjuhendi](engine/docs/FM3_REA_DEVELOPMENT.md)
 varasemad keskkonnatakistused on ajaloolised. Ära muuda kaitse- ega protsessikontrolle.
 
-## Ühendatud 0.3.1 — tabelikodeerija, paigutus ja soundid
+## Ühendatud 0.3.2 — tabelikodeerija, paigutus ja soundid
 
 Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõik teed on MOOTORIS
 (`engine/skills/instructions/`) või `engine/docs/`. Detailid: `engine/docs/FM3_TABLE_ENCODER.md`,
@@ -250,3 +250,7 @@ puuduvaid engine-faile või erinevat versiooni, märgi laadimine kinnitamata.
 Ära kirjuta hosti hallatud skill-kausta käsitsi üle, et kontroll näiliselt läbiks.
 Väikese kasutusülesande offline-genereerimine ja failide kontroll lõpetavad
 laadimise kontrolli; heli, FM3 import ja CPU on eraldi tõendid.
+
+0.3.2 säilitab 0.3.1 generaatori käitumise ning kirjutab ühilduvusmanifesti
+platvormi kinnitatud ASCII-paokoodidega JSON-vormingus. Nii jäävad avaldatud
+failide räsid commit’ist ehitatud paketi manifestiga täpselt vastavusse.

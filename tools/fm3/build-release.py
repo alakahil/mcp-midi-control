@@ -27,6 +27,8 @@ def build(commit,tests,output):
         raise ValueError('Tests do not attest this clean commit and complete suite')
     portable=json.loads(files['plugin.json']);legacy=json.loads(files['.codex-plugin/plugin.json'])
     if (portable['name'],portable['version'])!=(legacy['name'],legacy['version']):raise ValueError('Manifest mismatch')
+    canonical_legacy=(json.dumps(legacy,ensure_ascii=True,indent=2)+'\n').encode()
+    if files['.codex-plugin/plugin.json']!=canonical_legacy:raise ValueError('Compatibility manifest must match observed platform JSON formatting')
     manifest={'schemaVersion':1,'pluginId':'plugins_6accfd716e148191b0adb61e4e36f0e4','name':portable['name'],
       'version':portable['version'],'sourceRepository':'https://github.com/alakahil/mcp-midi-control',
       'sourceCommit':commit,'sourcePluginTreeSha256':tree_sha,
