@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Plugina versioon on `0.3.2`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.3`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -177,7 +177,7 @@ Loe arhiive ajutises analüüsikaustas; ära lisa välispakettide sõltuvusi,
 FM3-Editi rakendust ega Ghidra projekte plugina paketti. [REA arendusjuhendi](engine/docs/FM3_REA_DEVELOPMENT.md)
 varasemad keskkonnatakistused on ajaloolised. Ära muuda kaitse- ega protsessikontrolle.
 
-## Ühendatud 0.3.2 — tabelikodeerija, paigutus ja soundid
+## Ühendatud generaator — tabelikodeerija, paigutus ja soundid
 
 Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõik teed on MOOTORIS
 (`engine/skills/instructions/`) või `engine/docs/`. Detailid: `engine/docs/FM3_TABLE_ENCODER.md`,
@@ -254,3 +254,10 @@ laadimise kontrolli; heli, FM3 import ja CPU on eraldi tõendid.
 0.3.2 säilitab 0.3.1 generaatori käitumise ning kirjutab ühilduvusmanifesti
 platvormi kinnitatud ASCII-paokoodidega JSON-vormingus. Nii jäävad avaldatud
 failide räsid commit’ist ehitatud paketi manifestiga täpselt vastavusse.
+
+
+0.3.3 parandab logaritmilise juhiku null- ja negatiivsete sisendite kontrolli.
+Ära kasuta Cab DynaCab R1/R2 tabelijuhte enne skaala kooskõlastamist: olemasolevad
+FM3 allikad annavad vastuoluliselt 0–10 ja 0–100. See ei puuduta kinnitatud
+Cab-mallide kasutamist. Kontrolli avaldatud versiooni eraldi väljalaskekviitungist;
+lähtekoodis olev versiooninumber üksi ei kinnita avaldamist.

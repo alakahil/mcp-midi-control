@@ -1580,7 +1580,8 @@
         "VOCODER:8",
         "VOCODER:9"
       ],
-      "action": "Reconcile catalog-only and dictionary-only keys from existing FM3-specific source tables. Retain OLD_FLANGER aliases; verify device availability before adding catalog-only families.",
+      "completed": "All 1555 gaps structurally classified in metadata-reconciliation.json; aliases retained, independent ranges compared.",
+      "action": "Resolve Cab DynaCab R1/R2 scale conflicts and identify four unnamed writable descriptors using original FM3 calibration/cache evidence. Review remaining GLOBAL and missing-family semantics without guessed ID offsets.",
       "doneWhen": "Each mismatch is classified as alias, unnamed/reserved slot, different scope, or proven FM3 omission; no other-device ID is substituted."
     },
     {
@@ -2267,7 +2268,8 @@
         "WAH:8",
         "WAH:9"
       ],
-      "action": "Generate offline boundary/enum/round-trip and no-collateral-write cases for eligible table controls; compare with existing snapshots and independent reference formulas.",
+      "completed": "encoder-matrix.json covers all currently eligible table keys, every bundled base, A-D slots, existing point replay and invalid inputs.",
+      "action": "Keep the matrix as a release gate and extend it when base layouts or parameters are added; separately resolve source-scale conflicts before promoting semantic support.",
       "doneWhen": "Software checks have their own result axis and never promote a taper class or model template to an individual hardware measurement."
     },
     {

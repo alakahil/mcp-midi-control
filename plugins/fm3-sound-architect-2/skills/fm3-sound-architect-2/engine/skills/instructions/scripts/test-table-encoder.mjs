@@ -29,4 +29,14 @@ for(const r of tb.readings){if(r.display===null)continue;const p=[...d.byKey.val
   check(Math.abs(decodeValue(p,r.raw)-r.display)<0.006,`taper batch ${r.name}: decoded ${decodeValue(p,r.raw)} vs read ${r.display}`);
   check(Math.abs(encodeValue(p,r.display)-r.raw)<=1,`taper batch ${r.name}: encode`);tbn++}
 check(tbn===15,'Expected 15 taper batch readings');
+// 6. A tiny negative display value used to fit MVCAP's tolerance and return NaN.
+// Reject before log evaluation; a failed write must leave its input untouched.
+const mvcap=findParam('amp','DISTORT_MVCAP'),original=Buffer.from(base);
+for(const value of [0,-Number.EPSILON]){
+  let rejected=false;try{encodeValue(mvcap,value)}catch(e){rejected=/positive|outside/.test(e.message)}
+  check(rejected,'MVCAP must reject a nonpositive logarithmic value');
+  rejected=false;try{writeTableControls(base,{name:'BAD LOG',controls:[{block:'amp',channel:'A',param:33,value}]})}catch(e){rejected=/positive|outside/.test(e.message)}
+  check(rejected&&base.equals(original),'Invalid logarithmic write must fail without changing the base');
+}
+check(encodeValue(mvcap,mvcap.min*mvcap.displayMultiplier)===0,'Valid MVCAP minimum must remain writable');
 console.log(JSON.stringify({measuredPoints:ok,taperBatch:tbn,controlParity:par,writePath:r.writes.map(w=>[w.name,w.raw,+w.display.toFixed(3)]),gate:'ok'}));

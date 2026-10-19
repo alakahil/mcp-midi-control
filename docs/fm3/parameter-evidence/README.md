@@ -7,8 +7,12 @@ Run from the repository root with Python 3.10+ and Node 22+; no npm installation
 ```sh
 python3 tools/fm3/test-parameter-evidence.py
 python3 tools/fm3/parameter-evidence.py
+python3 tools/fm3/metadata_reconciliation.py
+node tools/fm3/encoder-matrix.mjs
 # After reviewing changed sources:
 python3 tools/fm3/parameter-evidence.py --write
+python3 tools/fm3/metadata_reconciliation.py --write
+node tools/fm3/encoder-matrix.mjs --write
 ```
 
 The default command replays the evidence and compares every generated output. CI fails on missing or changed evidence, mismatched GET/SYX words, unconfirmed or failed point records, duplicate dictionary keys, conflicting names, or stale generated outputs. The generator only reads local files. It does not authorize MIDI SET, LOAD, save, or import.
@@ -32,4 +36,12 @@ Input hashes, not the current checkout's HEAD, determine the generated content. 
 
 This is an evidence-indexing baseline, not a percentage of all FM3 features. The selected older Amp/Drive/Delay/Reverb scalar evidence and Rotary baseline points are now indexed. Remaining historical reports and compressed Amp sources still need review for additional explicit observations. Zero indexed points means **not indexed**, not unmeasured or unsupported. The queue prioritizes reuse of existing evidence and automated tests before asking for new measurements. General routing, modifiers, controller assignments, CPU and audio need separate coverage models.
 
-The existing private plugin and its published 0.3.2 package are unchanged. Registry files live outside the plugin package. A future release still requires exact-commit packaging, the offline suite, package self-check and fresh-chat launcher validation; hardware import/audio/CPU results must remain separate.
+The installed private plugin remains at 0.3.2. The PR now includes a 0.3.3 source candidate fixing rejection of nonpositive logarithmic inputs; it is not a published release. Registry and matrix outputs live outside the plugin package. A future release still requires exact-commit packaging, the offline suite, package self-check and fresh-chat launcher validation; hardware import/audio/CPU results must remain separate.
+
+## Metadata reconciliation and software matrix
+
+[Metadata reconciliation](metadata-reconciliation.md) classifies all one-sided keys, retains aliases, compares independently authored FM3 ranges and identifies unnamed writable fields and repeated enum labels. Classification is not resolution of unknown semantics. Two DynaCab R1/R2 scale conflicts remain open; no dictionary range is changed by this audit.
+
+[Encoder matrix](encoder-matrix.json) tests every table-eligible parameter's scalar policy, fixed normalized-position anchors, all option indices/labels, invalid inputs and roundtrips. It also replays the already indexed measurements; PEQ slope values use their explicit dB/OCT option label. It runs three batched writes on every bundled base across all A-D slots, independently calculates offsets and expected raw values, and checks the complete output body for collateral changes. Batched software presets are kept in memory and are not supplied for device import.
+
+The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. It does not establish type visibility, DSP validity, arbitrary-preset support, audio or CPU behavior. Changing the matrix or its inputs requires regeneration in the command order above.

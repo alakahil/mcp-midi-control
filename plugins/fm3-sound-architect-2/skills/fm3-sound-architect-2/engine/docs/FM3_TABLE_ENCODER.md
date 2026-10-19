@@ -1,4 +1,4 @@
-# Tabelipõhine kodeerija — 0.74.1, 2026-10-13
+# Tabelipõhine kodeerija — 0.74.2, 2026-10-19
 
 `scripts/fm3-table-encoder.mjs` kodeerib iga FM3 parameetri FM3-Editis kuvatavast
 väärtusest 16-bitiseks sõnaks. Toorväärtusi pole vaja eraldi mõõta. Allikas on
@@ -58,3 +58,15 @@ Kasutaja impordis faili ühe korra ja luges FM3-Editist näidud: `references/tap
   Reverbi kaks näitu loeti Scene 2 kanalilt B; need vastavad aluse toorväärtustele 48495/52427 ja on samuti kehtivad punktid.
 - Ei kuvatud: Delay Q (Digital Mono), Reverb Drive (Medium Room), Compressor Threshold 1/2 (Econo-Dyno-Comp). Need kuuluvad samadesse klassidesse.
 - Klassid 0x05 (17 parameetrit) ja 0x06 (29 parameetrit) on nüüd staatusega taper-class-verified ja vaikimisi kirjutatavad.
+
+
+## 0.74.2 sisendikontroll
+
+Logaritmilise juhiku kuvatav väärtus peab olema positiivne ka siis, kui
+ujuvkomatolerants lubaks väga väikest nulli või negatiivset sisendit. Regressioon
+kontrollib Amp Master Vol Cap nulli ja väikest negatiivset väärtust nii üksiku
+kodeerimise kui ka tervikliku kirjutuse kaudu; korrektne alampiir jääb lubatuks.
+
+Cab DynaCab R1/R2 puhul on sõnastiku 0–10 ning repo FM3 kalibreeringu 0–100
+vahemikud vastuolus. See versioon ei muuda skaalasid ega kinnita neid parameetreid
+uue mõõtmisega; nende tabelijuhtide kasutamine ootab allikate kooskõlastamist.

@@ -1,4 +1,4 @@
-# FM3 0.3.2: väljalase, tõendid ja laadimine
+# FM3 0.3.3 kandidaat: väljalase, tõendid ja laadimine
 
 ## Sisukord
 - Ulatus
@@ -9,6 +9,13 @@
 - 0.3.2 avaldamisvormingu parandus
 
 ## Ulatus
+
+0.3.3 kandidaat lisab logaritmiliste juhikute mittepositiivse sisendi tõrjumise.
+Kandidaat ei ole uus avaldatud pluginaväljalase: avaldamine, täpne commit ja
+käivitajajuhendi uuendus tuleb kinnitada väljalaskekviitungis. Cab DynaCab R1/R2
+vahemike 0–10 ja 0–100 allikavastuolu jääb lahendamata; skaalasid ei muudeta
+oletuse põhjal. Välised metaandmete ja kodeerimismaatriksi kontrollid asuvad repo
+`tools/fm3/` ning `docs/fm3/parameter-evidence/` kaustades.
 
 0.3.2 sisaldab 0.3.1 ühendatud arendust. 0.3.1 ühendas GitHubi 0.3.0 tabeli/paigutuse ja avaldatud privaatse 0.2.2
 Amp Leveli tõendid. See ei tähenda kõigi FM3 plokkide, globaalsete seadete,

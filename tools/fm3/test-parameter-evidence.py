@@ -5,6 +5,7 @@ import importlib.util
 from pathlib import Path
 import unittest
 import struct
+from metadata_reconciliation import classify, parse_ranges, bounds, same_range
 from legacy_evidence import check_point, check_delta, drive_point
 
 spec = importlib.util.spec_from_file_location('evidence', Path(__file__).with_name('parameter-evidence.py'))
@@ -153,6 +154,31 @@ class LegacyTests(unittest.TestCase):
         carried = next(o for o in reg.observations if o['id'] == 'rotary-controls/controls/0/points/0')
         self.assertEqual(carried['scope']['acquisition'], 'carried-state-not-isolated-change')
         self.assertEqual(carried['scope']['channel'], 'A')
+
+
+class MetadataTests(unittest.TestCase):
+    def test_restricted_ranges_parser_rejects_executable_or_unknown_fields(self):
+        good = "export const FM3_RANGES = { CABINET: { 8: { kind: 'float', displayMin: -40, displayMax: 0, }, }, } as const;"
+        self.assertEqual(parse_ranges(good)['CABINET']['8']['displayMin'], -40)
+        for bad in [good + 'process.exit(0);', good.replace('-40', 'run()'), good.replace("kind:", "unknown:")]:
+            with self.subTest(bad=bad), self.assertRaises((ValueError, KeyError)):
+                parse_ranges(bad)
+
+    def test_gap_classification_does_not_invent_a_name_or_device_support(self):
+        row = {'join': 'catalog-only', 'pid': 65520, 'family': 'DISTORT', 'names': ['DISTORT_ZEROEQ']}
+        self.assertEqual(classify(row, [], {'DISTORT'}), 'high-id-editor-control')
+        row.update(pid=0, family='VOCODER', names=['VOCODER_TYPE'])
+        self.assertEqual(classify(row, [], {'DISTORT'}), 'family-absent-from-table')
+        row = {'join': 'dictionary-only', 'pid': 29, 'family': 'CHORUS', 'dictionaryRow': 0, 'names': []}
+        self.assertEqual(classify(row, [{'kind': 'linear', 'status': 'taper-class-verified'}], {'CHORUS'}), 'unnamed-active-descriptor')
+        self.assertEqual(row['names'], [])
+
+    def test_display_multiplier_conflict_survives_float_tolerance(self):
+        p = {'kind': 'linear', 'min': 0, 'max': 1, 'displayMultiplier': 10}
+        self.assertFalse(same_range([0, 100], bounds(p)))
+        self.assertTrue(same_range([0, 10], [0, 10.0000001]))
+        p.update(kind='knob', min=0.5, max=500)
+        self.assertEqual(bounds(p), [0, 10])
 
 
 if __name__ == '__main__':

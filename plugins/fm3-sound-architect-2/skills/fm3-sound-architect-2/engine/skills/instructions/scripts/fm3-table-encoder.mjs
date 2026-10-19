@@ -1,4 +1,4 @@
-// FM3 table-based parameter encoder (0.74.1). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
+// FM3 table-based parameter encoder (0.74.2). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
 import fs from 'node:fs';
@@ -69,6 +69,8 @@ export function encodeValue(p,value,opts={}){
   if(p.kind==='knob'){const m=p.displayMultiplier||1;check(value>=0&&value<=m+1e-9,`${p.name}: ${value} outside 0…${m}`);return Math.round(value/m*65534)}
   const v=value/(p.displayMultiplier||1),lo=p.min,hi=p.max,eps=1e-6*Math.max(1,Math.abs(hi-lo));
   check(v>=lo-eps&&v<=hi+eps,`${p.name}: ${value} outside ${lo*(p.displayMultiplier||1)}…${hi*(p.displayMultiplier||1)}`);
+  // The numeric tolerance must not admit zero/negative values into a logarithm.
+  if(p.kind==='log')check(v>0,`${p.name}: logarithmic value must be positive`);
   const n=p.kind==='log'?Math.log(v/lo)/Math.log(hi/lo):(v-lo)/(hi-lo);
   return Math.min(65534,Math.max(0,Math.round(n*65534)));
 }
@@ -114,7 +116,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
   check(Buffer.from(before.parsed.headerPayload).equals(Buffer.from(after.parsed.headerPayload)),'Dump header changed');
   const raw=Buffer.from(after.raw.rawPatch);check(raw.readUInt16LE(72)===actual.length&&raw.readUInt16LE(74)===after.raw.compSize,'Invalid encoded size');
   check(raw.subarray(76+after.raw.compSize).every(v=>v===0),'Nonzero output padding');
-  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.1',dictionarySha256:dictionaryHash,base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
+  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.2',dictionarySha256:dictionaryHash,base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 
