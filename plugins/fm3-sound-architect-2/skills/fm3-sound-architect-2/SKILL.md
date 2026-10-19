@@ -165,6 +165,32 @@ Loe arhiive ajutises analüüsikaustas; ära lisa välispakettide sõltuvusi,
 FM3-Editi rakendust ega Ghidra projekte plugina paketti. [REA arendusjuhendi](engine/docs/FM3_REA_DEVELOPMENT.md)
 varasemad keskkonnatakistused on ajaloolised. Ära muuda kaitse- ega protsessikontrolle.
 
+## Claude'i arendus 0.3.0 — tabelikodeerija, vaba paigutus, soundid
+
+Lisatud teise AI-platvormi SA2 v0.2.0 peale; ükski olemasolev fail pole muudetud. Kõik teed on MOOTORIS
+(`engine/skills/instructions/`) või `engine/docs/`. Detailid: `engine/docs/FM3_TABLE_ENCODER.md`,
+`engine/docs/FM3_LAYOUT.md`.
+
+- **Tabelikodeerija** `scripts/fm3-table-encoder.mjs` + `references/fm3-param-dictionary.json`
+  (FracTool 3.87 FM3 tabel, 2892 parameetrit, 488 valikuloendit). Väärtused antakse FM3-Edit'i näiduna.
+  Kõverad: lineaarne, logaritmiline, nupp (klass 0x5: näit = n × 10), lineaarne dB (0x6).
+  Tõendid: 280/280 seadmepunkti, 15/15 partiikatse näitu (`references/taper-batch-20261013.json`),
+  12/12 senist juhti. Vaikimisi kirjutatakse measured / taper-class-verified / enum-labels-crosschecked;
+  linear-by-structure ja enum-labels vajavad `allow`; unverified-taper (36 kirjet) mitte kunagi.
+- **Kahe rea vaba paigutus** `scripts/fm3-layout.mjs`: rida 2 In 1 → … → Send, rida 3 Return → … → Out 1,
+  read 1/4 tühjad; plokkide järjekorra määrab sound. Ruudustiku liigutamine on **seadmel kinnitatud**
+  (`examples/FM3_LAYOUT_MOVE_TEST_export.syx` keha identne).
+- **Soundi koostaja** `scripts/fm3-sound.mjs` (jb-newlook): `composer` → `layout` → `blockScenes` →
+  `controls` → `selectedScene`. Output Scene Level 1–8 (−20…+20 dB) on seadmel kinnitatud.
+- **Satriani "Soap On A Rope"** `examples/SATRIANI_SOAP_ON_A_ROPE{,_V2,_V3}.*`: V1/V2 kuulatud, V3 (tämber
+  eraldatud originaali kitarriraja järgi) ootab kuulamist. Kõik kolm on SA2 koostajaga baitidentsed.
+- **Helivõrdlus** `scripts/fm3-audio-compare.py REF FM3`: kolmandikoktaavi tämber ja stereolaius
+  (eelista eraldatud kitarrirada). Efektide tuvastamine EI ole valideeritud — ära väida helianalüüsi
+  põhjal phaserit/delay'd.
+- Testid: `node scripts/test-table-encoder.mjs`, `node scripts/test-layout.mjs`.
+  Teadaolev SA2 eelne probleem: `scripts/test-composer-filter.mjs` kukub läbi ka puhtas v0.2.0-s
+  (aegunud ootus Filteri juhtide keelamisele pärast REA laiendust); pole selle muudatusega seotud.
+
 ## Tõendite säilitamine ja avaldamine
 
 Algne mootor on hoitud alamkaustas `engine`, säilitades selle sisemised failiteed,
