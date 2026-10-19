@@ -9,12 +9,13 @@ Automaatselt korratav audit avaldatud firmware 13 andmetest. Arvud näitavad all
 | Parameetrisõnastiku kirjed | 2892 |
 | Kataloogi ja sõnastiku ühised paarid | 1668 |
 | Ainult kataloogis / ainult sõnastikus | 331 / 1224 |
-| GET/SYX-ga uuesti võrreldud mõõtmispunktid | 846 |
-| Erinevad uuesti kontrollitud GET/SYX paarid | 335 |
-| Vähemalt ühe sellise punktiga parameetrid | 67 |
+| GET/SYX-ga uuesti võrreldud mõõtmispunktid | 869 |
+| Erinevad uuesti kontrollitud GET/SYX paarid | 354 |
+| Vähemalt ühe sellise punktiga parameetrid | 72 |
 | Eraldi arvestatud ekraaninäidud | 15 |
-| Ekspordi abil kontrollitud punktid ilma GET-ita | 2 |
-| Vahele jäetud või välistatud lähtekirjed | 32 |
+| Ekspordi abil kontrollitud punktid ilma GET-ita | 30 |
+| Vähemalt ühe paaristatud või ekspordipunktiga parameetrid | 85 |
+| Vahele jäetud või välistatud lähtekirjed | 36 |
 
 Üks GET/SYX paar võib tõendada mitut punkti. Terve kanali mall ei tõenda kõigi nuppude skaalasid. Sõnastiku `measured` ja `taper-class-verified` on lähteallika väited; need ei suurenda automaatselt mõõdetud punktide arvu.
 
@@ -37,7 +38,7 @@ Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik
 | FILTER | 37 | 37 | 5 | 0 / 0 |
 | FLANGER | 33 | 33 | 0 | 30 / 2 |
 | FORMANT | 12 | 12 | 0 | 0 / 0 |
-| FUZZ | 43 | 44 | 0 | 40 / 4 |
+| FUZZ | 43 | 44 | 5 | 40 / 4 |
 | GATE | 19 | 19 | 0 | 0 / 0 |
 | GEQ | 21 | 20 | 15 | 0 / 0 |
 | GLOBAL | 173 | 1024 | 0 | 0 / 0 |
@@ -73,7 +74,7 @@ Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik
 
 ## Järgmised tööd kasutaja ajakulu vähendamiseks
 
-1. Siduda ülejäänud olemasolevad Amp/Drive/Delay/Reverb/Rotary mõõtmised samasse registrisse. Uusi mõõtmisi ei tellita enne olemasolevate tõendite läbivaatust.
+1. Valitud vanemad Amp/Drive/Delay/Reverb mõõtmised ja Rotary algseis on registris. Jätkata ülejäänud ajalooliste tagasieksportide ja Ampi arhiivi läbivaatust; mallis leiduvat väärtust ei loeta automaatselt mõõdetud nupuväärtuseks.
 2. Lahendada kataloogi ja sõnastiku erinevused olemasoleva FM3 metaandmestiku ning pöördprojekteerimise tulemuste põhjal. Teise seadme ID-d ei asenda FM3 tõendit.
 3. Koostada automaatne piirväärtuste, valikute ja kõrvalmuudatuste testimaatriks ning laiendada kontrollitud plokipaigutusi.
 4. Alles allesjäänud ebaselguste jaoks koostada ühine mõõtepakett: üks laadimine, võimalikult vähe ekraanikontrolle ja eksport ainult seal, kus seda tõesti vaja on.

@@ -27,14 +27,16 @@
     "unverified-taper": 36
   },
   "observations": {
-    "paired-point": 846,
+    "paired-point": 869,
     "screen-reading-no-export": 15,
-    "syx-export-no-get": 2
+    "syx-export-no-get": 30
   },
-  "pairedCapturesReplayed": 335,
-  "parametersWithPairedPoint": 67,
-  "catalogKeysWithPairedPoint": 67,
-  "excludedOrSkippedRecords": 32,
+  "pairedCapturesReplayed": 354,
+  "parametersWithPairedPoint": 72,
+  "catalogKeysWithPairedPoint": 72,
+  "parametersWithSyxExportPoint": 18,
+  "parametersWithPairedOrExportPoint": 85,
+  "excludedOrSkippedRecords": 36,
   "templatesWithSourceHash": 734,
   "composerTemplateDeclarations": {
     "amp": 336,
@@ -176,7 +178,7 @@
       "family": "FUZZ",
       "catalogKeys": 43,
       "dictionaryKeys": 44,
-      "pairedPointKeys": 0,
+      "pairedPointKeys": 5,
       "tableDefaultOnBundledBase": 40,
       "tableOptInOnBundledBase": 4
     },

@@ -13,6 +13,7 @@ import json
 from pathlib import Path
 import struct
 import subprocess
+from legacy_evidence import LegacyEvidence, check_point
 
 ROOT = Path(__file__).resolve().parents[2]
 ENGINE = ROOT / 'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine'
@@ -123,6 +124,7 @@ class Registry:
         self.exclusions = []
         self.jobs = []
         self.syx_only = []
+        self.legacy = LegacyEvidence(self, INS, ENGINE / 'docs')
 
     def source(self, path):
         path = Path(path)
@@ -266,9 +268,9 @@ class Registry:
                 'evidence': self.ref(path, f'/readings/{i}')})
 
     def audit_pairs(self):
-        files = sorted({str(job[4]) for job in self.jobs} | {str(job[1]) for job in self.syx_only})
+        files = sorted({str(job[4]) for job in self.jobs} | {str(job[1]) for job in self.syx_only} | self.legacy.files)
         runtime = json.loads(subprocess.check_output(['node', str(ROOT / 'tools/fm3/registry-runtime.mjs')],
-                              input=json.dumps({'files': files}).encode(), cwd=ROOT))
+                              input=json.dumps({'files': files, 'driveComparisons': self.legacy.comparisons}).encode(), cwd=ROOT))
         checked = set()
         for obs, effect, words, start, syx, capture, proof in self.jobs:
             syx_sha = self.sources[syx.relative_to(ROOT).as_posix()]['sha256']
@@ -287,15 +289,19 @@ class Registry:
             syx_values = list(struct.unpack_from('<' + 'H' * (words * 4), body, start))
             require(values == syx_values, 'GET/SYX words differ')
             require(proof['matchedWords'] == len(values), 'Reported pair count differs')
-            p = obs['scope']
-            require(values['ABCD'.index(p['channel']) * words + p['pid']] == p['raw'], 'Anchor raw word differs')
-            obs['verification'] = 'raw-get-syx-replayed'
+            if obs is not None:
+                p = obs['scope']
+                require(values['ABCD'.index(p['channel']) * words + p['pid']] == p['raw'], 'Anchor raw word differs')
+                if 'typePid' in p:
+                    check_point(body, effect, p)
+                obs['verification'] = 'raw-get-syx-replayed'
             checked.add((syx_sha, sha(raw), effect))
         for obs, syx, offset in self.syx_only:
             body = base64.b64decode(runtime['bodies'][str(syx)]['base64'])
             require(struct.unpack_from('<H', body, offset)[0] == obs['scope']['raw'], 'SYX-only point differs')
             require(struct.unpack_from('<H', body, offset + 10)[0] == obs['scope']['modelId'], 'SYX-only model differs')
             obs['verification'] = 'export-word-replayed-no-get'
+        self.legacy.verify(runtime)
         runtime.pop('bodies')
         return runtime, len(checked)
 
@@ -346,6 +352,7 @@ def build():
     reg = Registry()
     inventory = reg.inventory()
     reg.points()
+    reg.legacy.collect()
     runtime, pairs = reg.audit_pairs()
     cat = reg.read(ROOT / 'packages/fractal-midi/catalog/fm3.json')['data']['FM3_PARAMS']
     dictionary = reg.read(REF / 'fm3-param-dictionary.json')
@@ -359,6 +366,7 @@ def build():
         by_id[obs['parameter']]['observations'].append(i)
     require(len({o['id'] for o in reg.observations}) == len(reg.observations), 'Duplicate observation ID')
     measured = {o['parameter'] for o in reg.observations if o['kind'] == 'paired-point'}
+    exports = {o['parameter'] for o in reg.observations if o['kind'] == 'syx-export-no-get'}
     family_rows = []
     for family in sorted({p['family'] for p in rows}, key=lambda x: x or ''):
         ps = [p for p in rows if p['family'] == family]
@@ -373,13 +381,15 @@ def build():
         'dictionaryStatusClaims': dict(sorted(Counter(p['status'] for p in dictionary['params']).items())),
         'observations': dict(sorted(Counter(o['kind'] for o in reg.observations).items())), 'pairedCapturesReplayed': pairs,
         'parametersWithPairedPoint': len(measured), 'catalogKeysWithPairedPoint': len(measured & {p['id'] for p in rows if p['catalogRows']}),
+        'parametersWithSyxExportPoint': len(exports), 'parametersWithPairedOrExportPoint': len(measured | exports),
         'excludedOrSkippedRecords': len(reg.exclusions), 'templatesWithSourceHash': len(reg.templates),
         'composerTemplateDeclarations': {k: v['declaredCount'] for k, v in template_support.items()}, 'families': family_rows}
     # These are evidence-indexing gaps, not requests to repeat hardware measurements.
     tasks = [
         {'id': 'existing-evidence-adapters', 'priority': 1, 'userPhysicalActions': 0,
-         'action': 'Normalize remaining legacy Amp/Drive/Delay/Reverb scalar fixtures and Rotary baseline points; reuse stored captures and original regression tests.',
-         'inputs': ['references/rotary-controls.json', 'references/amp-level-cd-plan.json', 'references/amp-history.json.gz', 'references/offline-suite.json'],
+         'action': 'Selected legacy scalar adapters are complete. Mine remaining historical return reports and compressed Amp evidence for additional explicit display observations; do not infer knob measurements from template words.',
+         'completed': ['Amp Gain/Bass eight isolated exports', 'G5/TONE/TIME historical returns', 'Drive six isolated exports and 18 paired captures', 'Rotary five baseline points and carried Rate 2 state'],
+         'inputs': ['references/amp-history.json.gz', 'references/offline-suite.json', 'docs/*HARDWARE*'],
          'doneWhen': 'Every promoted point has a source pointer, model/channel scope and replayed raw evidence; skipped/ambiguous points stay separate.'},
         {'id': 'metadata-join-gaps', 'priority': 1, 'userPhysicalActions': 0,
          'parameterIds': [p['id'] for p in rows if p['join'] != 'both'],
@@ -410,9 +420,10 @@ def build():
         'sourceReferences': 'source is a repository-relative path; pointer is RFC 6901. catalogRows/dictionaryRow index the named source arrays.',
         'measurement': 'A point only proves its recorded firmware/type/channel/value scope. No interpolation or cross-model/channel promotion.',
         'encoder': 'Table availability requires policy, supported kind and a bundled base layout; composer support is separately declared.',
-        'limitations': 'Legacy scalar adapters and non-parameter features remain in work-queue.json. Zero indexed points means not indexed, not unmeasured or unsupported.',
+        'limitations': 'Remaining historical evidence mining and non-parameter features remain in work-queue.json. Zero indexed points means not indexed, not unmeasured or unsupported.',
         'hardware': 'No device import, audio or CPU testing was performed by this audit.'},
         'sources': dict(sorted(reg.sources.items())), 'parameters': rows, 'observations': reg.observations,
+        'replayOnlyPairs': reg.legacy.replay_only,
         'templates': reg.templates, 'composerTemplates': template_support,
         'composerDeclarations': {k: v for k, v in cap.items() if k != 'templates'},
         'excludedOrSkipped': reg.exclusions}
@@ -449,6 +460,7 @@ def markdown(s):
         f'| Vähemalt ühe sellise punktiga parameetrid | {s["parametersWithPairedPoint"]} |',
         f'| Eraldi arvestatud ekraaninäidud | {s["observations"].get("screen-reading-no-export", 0)} |',
         f'| Ekspordi abil kontrollitud punktid ilma GET-ita | {s["observations"].get("syx-export-no-get", 0)} |',
+        f'| Vähemalt ühe paaristatud või ekspordipunktiga parameetrid | {s["parametersWithPairedOrExportPoint"]} |',
         f'| Vahele jäetud või välistatud lähtekirjed | {s["excludedOrSkippedRecords"]} |', '',
         'Üks GET/SYX paar võib tõendada mitut punkti. Terve kanali mall ei tõenda kõigi nuppude skaalasid. Sõnastiku `measured` ja `taper-class-verified` on lähteallika väited; need ei suurenda automaatselt mõõdetud punktide arvu.', '',
         'Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik ja parameetri asukoht tuntud alusfailis. See ei laiene suvalisele presetile. Composeri lisatavate plokkide tugi on eraldi `registry.json` failis; allolev null ei tähenda, et composer plokki ei toeta.', '',
@@ -457,7 +469,7 @@ def markdown(s):
     for f in s['families']:
         lines.append(f'| {f["family"] or "Nimetu"} | {f["catalogKeys"]} | {f["dictionaryKeys"]} | {f["pairedPointKeys"]} | {f["tableDefaultOnBundledBase"]} / {f["tableOptInOnBundledBase"]} |')
     lines += ['', '## Järgmised tööd kasutaja ajakulu vähendamiseks', '',
-        '1. Siduda ülejäänud olemasolevad Amp/Drive/Delay/Reverb/Rotary mõõtmised samasse registrisse. Uusi mõõtmisi ei tellita enne olemasolevate tõendite läbivaatust.',
+        '1. Valitud vanemad Amp/Drive/Delay/Reverb mõõtmised ja Rotary algseis on registris. Jätkata ülejäänud ajalooliste tagasieksportide ja Ampi arhiivi läbivaatust; mallis leiduvat väärtust ei loeta automaatselt mõõdetud nupuväärtuseks.',
         '2. Lahendada kataloogi ja sõnastiku erinevused olemasoleva FM3 metaandmestiku ning pöördprojekteerimise tulemuste põhjal. Teise seadme ID-d ei asenda FM3 tõendit.',
         '3. Koostada automaatne piirväärtuste, valikute ja kõrvalmuudatuste testimaatriks ning laiendada kontrollitud plokipaigutusi.',
         '4. Alles allesjäänud ebaselguste jaoks koostada ühine mõõtepakett: üks laadimine, võimalikult vähe ekraanikontrolle ja eksport ainult seal, kus seda tõesti vaja on.',

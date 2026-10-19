@@ -4,6 +4,8 @@ import copy
 import importlib.util
 from pathlib import Path
 import unittest
+import struct
+from legacy_evidence import check_point, check_delta, drive_point
 
 spec = importlib.util.spec_from_file_location('evidence', Path(__file__).with_name('parameter-evidence.py'))
 evidence = importlib.util.module_from_spec(spec)
@@ -93,6 +95,64 @@ class AccountingTests(unittest.TestCase):
         row = self.rows()[0]
         self.assertEqual(row['join'], 'catalog-only')
         self.assertNotIn('tableEncoder', row)
+
+
+class LegacyTests(unittest.TestCase):
+    def body(self):
+        body = bytearray(14222)
+        struct.pack_into('<H', body, 8414, 118)
+        struct.pack_into('<HH', body, 8456, 44, 4)
+        struct.pack_into('<HH', body, 8636, 26, 13107)
+        return body
+
+    def test_model_channel_layout_and_pid_are_checked(self):
+        scope = {'channel': 'C', 'pid': 1, 'raw': 13107, 'modelId': 26}
+        self.assertEqual(check_point(self.body(), 118, scope), 8638)
+        for replacement in [{'channel': 'B'}, {'modelId': 19}, {'pid': -1}, {'raw': 32767}]:
+            with self.subTest(replacement=replacement), self.assertRaises(ValueError):
+                check_point(self.body(), 118, {**scope, **replacement})
+        damaged = self.body()
+        struct.pack_into('<H', damaged, 8456, 43)
+        with self.assertRaisesRegex(ValueError, 'layout'):
+            check_point(damaged, 118, scope)
+
+    def test_full_body_delta_rejects_collateral_and_wrong_report(self):
+        before, after = self.body(), self.body()
+        after[8638] ^= 1
+        delta = check_delta(before, after, allowed={8638, 8639})
+        self.assertEqual(len(delta), 1)
+        with self.assertRaisesRegex(ValueError, 'delta'):
+            check_delta(before, after, expected=[])
+        after[100] ^= 1
+        with self.assertRaisesRegex(ValueError, 'collateral'):
+            check_delta(before, after, allowed={8638, 8639})
+        with self.assertRaisesRegex(ValueError, 'length'):
+            check_delta(before, after[:-1])
+
+    def test_failed_skipped_and_unconfirmed_drive_cannot_be_points(self):
+        step = {'kind': 'control', 'channel': 'A', 'binaryId': 19, 'pid': 1, 'field': 'Drive', 'value': 2}
+        result = {'status': 'passed', 'displayConfirmed': True, 'step': step,
+                  'comparison': {'step': step, 'observation': {'userConfirmedDisplayValue': 2, 'rawAfter': 13107}}}
+        self.assertEqual(drive_point(step, result)['raw'], 13107)
+        for patch in [{'status': 'failed'}, {'status': 'skipped'}, {'displayConfirmed': False}]:
+            with self.subTest(patch=patch), self.assertRaises(ValueError):
+                drive_point(step, {**result, **patch})
+        result['comparison']['observation']['userConfirmedDisplayValue'] = 8
+        with self.assertRaisesRegex(ValueError, 'display'):
+            drive_point(step, result)
+
+    def test_historical_semantics_and_exclusions_stay_separate(self):
+        reg = evidence.Registry()
+        reg.legacy.collect()
+        time = next(o for o in reg.observations if o['id'] == 'legacy/FM3_TIME_HARDWARE_ROUNDTRIP/values/1/params/0')
+        self.assertEqual(time['scope']['value'], 400)
+        self.assertNotEqual(time['scope']['value'], time['scope']['decodedValue'])
+        self.assertEqual(time['kind'], 'syx-export-no-get')
+        self.assertTrue(any(x['detail']['status'] == 'failed' for x in reg.exclusions))
+        self.assertEqual(sum(x['detail']['status'] == 'skipped' for x in reg.exclusions), 3)
+        carried = next(o for o in reg.observations if o['id'] == 'rotary-controls/controls/0/points/0')
+        self.assertEqual(carried['scope']['acquisition'], 'carried-state-not-isolated-change')
+        self.assertEqual(carried['scope']['channel'], 'A')
 
 
 if __name__ == '__main__':

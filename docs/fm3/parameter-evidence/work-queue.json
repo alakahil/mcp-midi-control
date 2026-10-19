@@ -5,12 +5,17 @@
       "id": "existing-evidence-adapters",
       "priority": 1,
       "userPhysicalActions": 0,
-      "action": "Normalize remaining legacy Amp/Drive/Delay/Reverb scalar fixtures and Rotary baseline points; reuse stored captures and original regression tests.",
+      "action": "Selected legacy scalar adapters are complete. Mine remaining historical return reports and compressed Amp evidence for additional explicit display observations; do not infer knob measurements from template words.",
+      "completed": [
+        "Amp Gain/Bass eight isolated exports",
+        "G5/TONE/TIME historical returns",
+        "Drive six isolated exports and 18 paired captures",
+        "Rotary five baseline points and carried Rate 2 state"
+      ],
       "inputs": [
-        "references/rotary-controls.json",
-        "references/amp-level-cd-plan.json",
         "references/amp-history.json.gz",
-        "references/offline-suite.json"
+        "references/offline-suite.json",
+        "docs/*HARDWARE*"
       ],
       "doneWhen": "Every promoted point has a source pointer, model/channel scope and replayed raw evidence; skipped/ambiguous points stay separate."
     },
@@ -1954,8 +1959,6 @@
         "FLANGER:7",
         "FLANGER:8",
         "FLANGER:9",
-        "FUZZ:0",
-        "FUZZ:1",
         "FUZZ:10",
         "FUZZ:11",
         "FUZZ:12",
@@ -1966,7 +1969,6 @@
         "FUZZ:17",
         "FUZZ:18",
         "FUZZ:19",
-        "FUZZ:2",
         "FUZZ:20",
         "FUZZ:21",
         "FUZZ:22",
@@ -1977,7 +1979,6 @@
         "FUZZ:27",
         "FUZZ:28",
         "FUZZ:29",
-        "FUZZ:3",
         "FUZZ:30",
         "FUZZ:31",
         "FUZZ:32",
@@ -1988,7 +1989,6 @@
         "FUZZ:37",
         "FUZZ:38",
         "FUZZ:39",
-        "FUZZ:4",
         "FUZZ:40",
         "FUZZ:41",
         "FUZZ:42",
