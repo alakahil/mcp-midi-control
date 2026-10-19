@@ -21,6 +21,8 @@ jobs:
           python3 tools/fm3/test-parameter-evidence.py
           python3 tools/fm3/test-six-field-resolution.py
           python3 tools/fm3/six_field_resolution.py
+          python3 tools/fm3/test-type-applicability.py
+          python3 tools/fm3/type_applicability.py
           python3 tools/fm3/parameter-evidence.py
           python3 tools/fm3/metadata_reconciliation.py
           node tools/fm3/encoder-matrix.mjs

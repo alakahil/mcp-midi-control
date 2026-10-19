@@ -15,9 +15,10 @@ tuvastatud, kuid kirjutamisel blokeeritud. Uusi seadmemõõtmisi ei tehtud.
 
 Choruse Low/High on FM3-Editi FW13 kirjelduses tüüpidel
 2, 3, 5, 6, 7, 8, 13, 14 ja 21. Tüübil 20 kuvatakse sama CHORUS_TREBLE
-parameetrit nimega EQ. Delay Range on FW13 Expert-lehel. Need on redaktori
-nähtavustingimused; kodeerija ei kontrolli veel kõiki tüübist sõltuvaid juhte.
-Kasuta neid koos vastava kinnitatud tüübi kanaliga. Kõik mudeli- ja
+parameetrit nimega EQ. Delay Range on FW13 Expert-varulehel; tüübid 15, 16 ja 17
+kasutavad teist Expert-lehte. Chorus/Drive’i tabelikirjutused jõustavad nüüd
+[tüübisobivuse reegleid](FM3_TYPE_APPLICABILITY.md). Kasuta neid koos vastava
+kinnitatud tüübi kanaliga. Kõik mudeli- ja
 kanalikombinatsioonid ei ole uue seadmeimpordiga katsetatud.
 
 Drive Oversampling esineb FM3-Editi enda parameetritabelis PID-ga 43 ning

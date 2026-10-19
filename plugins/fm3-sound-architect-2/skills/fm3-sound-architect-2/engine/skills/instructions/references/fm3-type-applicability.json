@@ -1,0 +1,7554 @@
+{
+  "schemaVersion": 1,
+  "firmware": "13.0",
+  "editor": "1.07.17",
+  "sources": {
+    "editorSha256": "c06f993530057214205a64330116a823e5b31507610d1792c1f3617725d6e927",
+    "layoutSha256": "0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2",
+    "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730"
+  },
+  "policy": "Explicit page type sets; empty page fallback is the complement within the same pageNum. Firmware predicates filter ancestors and controls; comments excluded. Selector is a separate enum. Restrict explicit writes, preserve hidden stored words.",
+  "limits": "XML-derived conservative authoring policy, not executed native UI or DSP validation. Only Chorus/Drive; no tempo, modifier or other-family applicability checks.",
+  "families": {
+    "CHORUS": {
+      "typePid": 0,
+      "types": [
+        "Digital Mono",
+        "Digital Stereo",
+        "Analog Mono",
+        "Analog Stereo",
+        "Japan CE-2",
+        "Warm Stereo",
+        "80'S Style",
+        "Triangle Chorus",
+        "8-Voice Stereo",
+        "Tape Chorus",
+        "Dimension 1",
+        "Dimension 2",
+        "Dimension 3",
+        "4-Voice Analog",
+        "8-Voice Analog",
+        "Stereo Tri-Chorus",
+        "Dual Chorus",
+        "Tape Flanger",
+        "Japan CE-1 Chorus",
+        "Japan CE-1 Vibrato",
+        "Japan CH-1",
+        "MX234",
+        "Small Copy",
+        "Japan CE-2 Bass",
+        "Vibrato",
+        "Rockguy",
+        "MX134 Stereo"
+      ],
+      "descriptor": {
+        "pid": 0,
+        "name": "CHORUS_TYPE",
+        "descriptorOffset": 18668128,
+        "nameOffset": 8248648,
+        "tableOffset": 18668128,
+        "tableRows": 32,
+        "bindings": [
+          [
+            0,
+            "CHORUS_TYPE"
+          ],
+          [
+            1,
+            "CHORUS_VOICES"
+          ],
+          [
+            2,
+            "CHORUS_RATE"
+          ],
+          [
+            3,
+            "CHORUS_TEMPO"
+          ],
+          [
+            4,
+            "CHORUS_DEPTH"
+          ],
+          [
+            5,
+            "CHORUS_HICUT"
+          ],
+          [
+            6,
+            "CHORUS_DELAYTIME"
+          ],
+          [
+            7,
+            "CHORUS_LFOPHASE"
+          ],
+          [
+            8,
+            "CHORUS_LFOTYPE"
+          ],
+          [
+            9,
+            "CHORUS_AUTO"
+          ],
+          [
+            10,
+            "CHORUS_MIX"
+          ],
+          [
+            11,
+            "CHORUS_LEVEL"
+          ],
+          [
+            12,
+            "CHORUS_PAN"
+          ],
+          [
+            13,
+            "CHORUS_BYPASSMODE"
+          ],
+          [
+            14,
+            "CHORUS_GLOBALMIX"
+          ],
+          [
+            15,
+            "CHORUS_BYPASS"
+          ],
+          [
+            16,
+            "CHORUS_PHASEREV"
+          ],
+          [
+            17,
+            "CHORUS_WIDTH"
+          ],
+          [
+            18,
+            "CHORUS_RATE2"
+          ],
+          [
+            19,
+            "CHORUS_DEPTH2"
+          ],
+          [
+            20,
+            "CHORUS_DRIVE"
+          ],
+          [
+            21,
+            "CHORUS_LOWCUT"
+          ],
+          [
+            22,
+            "CHORUS_SPREAD"
+          ],
+          [
+            23,
+            "CHORUS_MODE"
+          ],
+          [
+            24,
+            "CHORUS_DEPTHL"
+          ],
+          [
+            25,
+            "CHORUS_DEPTHC"
+          ],
+          [
+            26,
+            "CHORUS_DEPTHR"
+          ],
+          [
+            27,
+            "CHORUS_TEMPO2"
+          ],
+          [
+            28,
+            "CHORUS_SCENEIGNORE"
+          ],
+          [
+            29,
+            "CHORUS_DELAYRANGE"
+          ],
+          [
+            30,
+            "CHORUS_BASS"
+          ],
+          [
+            31,
+            "CHORUS_TREBLE"
+          ]
+        ]
+      },
+      "pages": [
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            9,
+            17
+          ],
+          "fallback": false,
+          "controls": {
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DELAYTIME": [
+              "Delay Time"
+            ],
+            "CHORUS_DEPTH": [
+              "Depth"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_RATE": [
+              "Rate"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ],
+            "CHORUS_TEMPO": [
+              "Tempo"
+            ],
+            "CHORUS_WIDTH": [
+              "Width"
+            ]
+          },
+          "effectiveTypes": [
+            9,
+            17
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            15
+          ],
+          "fallback": false,
+          "controls": {
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DELAYTIME": [
+              "Delay Time"
+            ],
+            "CHORUS_DEPTH": [
+              "Master\nDepth"
+            ],
+            "CHORUS_DEPTHC": [
+              "Center\nDepth"
+            ],
+            "CHORUS_DEPTHL": [
+              "Left\nDepth"
+            ],
+            "CHORUS_DEPTHR": [
+              "Right\nDepth"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_RATE": [
+              "Rate"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ],
+            "CHORUS_TEMPO": [
+              "Tempo"
+            ]
+          },
+          "effectiveTypes": [
+            15
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            16
+          ],
+          "fallback": false,
+          "controls": {
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DELAYTIME": [
+              "Delay Time"
+            ],
+            "CHORUS_DEPTH": [
+              "Master\nDepth"
+            ],
+            "CHORUS_DEPTHL": [
+              "Depth"
+            ],
+            "CHORUS_DEPTHR": [
+              "Depth"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_RATE": [
+              "Rate"
+            ],
+            "CHORUS_RATE2": [
+              "Rate"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ],
+            "CHORUS_TEMPO": [
+              "Tempo"
+            ],
+            "CHORUS_TEMPO2": [
+              "Tempo"
+            ]
+          },
+          "effectiveTypes": [
+            16
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            13,
+            14,
+            21
+          ],
+          "fallback": false,
+          "controls": {
+            "CHORUS_BASS": [
+              "Low"
+            ],
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DEPTH": [
+              "Depth"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_RATE": [
+              "Rate"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ],
+            "CHORUS_TEMPO": [
+              "Tempo"
+            ],
+            "CHORUS_TREBLE": [
+              "High"
+            ]
+          },
+          "effectiveTypes": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            13,
+            14,
+            21
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            20
+          ],
+          "fallback": false,
+          "controls": {
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DEPTH": [
+              "Depth"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_RATE": [
+              "Rate"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ],
+            "CHORUS_TEMPO": [
+              "Tempo"
+            ],
+            "CHORUS_TREBLE": [
+              "EQ"
+            ]
+          },
+          "effectiveTypes": [
+            20
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": null,
+          "fallback": true,
+          "controls": {
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DEPTH": [
+              "Depth"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_RATE": [
+              "Rate"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ],
+            "CHORUS_TEMPO": [
+              "Tempo"
+            ]
+          },
+          "effectiveTypes": [
+            0,
+            1,
+            4,
+            10,
+            11,
+            12,
+            18,
+            19,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        {
+          "page": 1,
+          "name": "Expert",
+          "firmware": {},
+          "types": [
+            15
+          ],
+          "fallback": false,
+          "controls": {
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DRIVE": [
+              "Drive"
+            ],
+            "CHORUS_HICUT": [
+              "High Cut"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_LOWCUT": [
+              "Low Cut"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_PHASEREV": [
+              "Phase Reverse"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ]
+          },
+          "effectiveTypes": [
+            15
+          ]
+        },
+        {
+          "page": 1,
+          "name": "Expert",
+          "firmware": {},
+          "types": [
+            16
+          ],
+          "fallback": false,
+          "controls": {
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DRIVE": [
+              "Drive"
+            ],
+            "CHORUS_HICUT": [
+              "High Cut"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_LFOTYPE": [
+              "LFO Type"
+            ],
+            "CHORUS_LOWCUT": [
+              "Low Cut"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_PHASEREV": [
+              "Phase Reverse"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ],
+            "CHORUS_WIDTH": [
+              "Right\nTime Ratio"
+            ]
+          },
+          "effectiveTypes": [
+            16
+          ]
+        },
+        {
+          "page": 1,
+          "name": "Expert",
+          "firmware": {},
+          "types": [
+            17
+          ],
+          "fallback": false,
+          "controls": {
+            "CHORUS_AUTO": [
+              "Auto Depth"
+            ],
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DELAYTIME": [
+              "Minimum\nDelay"
+            ],
+            "CHORUS_DEPTH2": [
+              "LFO2 Depth"
+            ],
+            "CHORUS_DRIVE": [
+              "Drive"
+            ],
+            "CHORUS_HICUT": [
+              "High Cut"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_LFOPHASE": [
+              "LFO Phase"
+            ],
+            "CHORUS_LFOTYPE": [
+              "LFO Type"
+            ],
+            "CHORUS_LOWCUT": [
+              "Low Cut"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_MODE": [
+              "Dimension Mode"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_PHASEREV": [
+              "Phase Reverse"
+            ],
+            "CHORUS_RATE2": [
+              "LFO2 Rate"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ],
+            "CHORUS_VOICES": [
+              "Number of Voices"
+            ],
+            "CHORUS_WIDTH": [
+              "Width"
+            ]
+          },
+          "effectiveTypes": [
+            17
+          ]
+        },
+        {
+          "page": 1,
+          "name": "Expert",
+          "firmware": {},
+          "types": null,
+          "fallback": true,
+          "controls": {
+            "CHORUS_AUTO": [
+              "Auto Depth"
+            ],
+            "CHORUS_BYPASS": [
+              "Bypass"
+            ],
+            "CHORUS_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "CHORUS_DELAYRANGE": [
+              "Delay Range"
+            ],
+            "CHORUS_DELAYTIME": [
+              "Minimum\nDelay"
+            ],
+            "CHORUS_DEPTH2": [
+              "LFO2 Depth"
+            ],
+            "CHORUS_DRIVE": [
+              "Drive"
+            ],
+            "CHORUS_HICUT": [
+              "High Cut"
+            ],
+            "CHORUS_LEVEL": [
+              "Level"
+            ],
+            "CHORUS_LFOPHASE": [
+              "LFO Phase"
+            ],
+            "CHORUS_LFOTYPE": [
+              "LFO Type"
+            ],
+            "CHORUS_LOWCUT": [
+              "Low Cut"
+            ],
+            "CHORUS_MIX": [
+              "Mix"
+            ],
+            "CHORUS_MODE": [
+              "Dimension Mode"
+            ],
+            "CHORUS_PAN": [
+              "Balance"
+            ],
+            "CHORUS_PHASEREV": [
+              "Phase Reverse"
+            ],
+            "CHORUS_RATE2": [
+              "LFO2 Rate"
+            ],
+            "CHORUS_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "CHORUS_SPREAD": [
+              "Stereo\nSpread"
+            ],
+            "CHORUS_VOICES": [
+              "Number of Voices"
+            ],
+            "CHORUS_WIDTH": [
+              "Width"
+            ]
+          },
+          "effectiveTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        }
+      ],
+      "parameters": {
+        "0": {
+          "name": "CHORUS_TYPE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "1": {
+          "name": "CHORUS_VOICES",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "2": {
+          "name": "CHORUS_RATE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "3": {
+          "name": "CHORUS_TEMPO",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "4": {
+          "name": "CHORUS_DEPTH",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "5": {
+          "name": "CHORUS_HICUT",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "6": {
+          "name": "CHORUS_DELAYTIME",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "7": {
+          "name": "CHORUS_LFOPHASE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "8": {
+          "name": "CHORUS_LFOTYPE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "9": {
+          "name": "CHORUS_AUTO",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "10": {
+          "name": "CHORUS_MIX",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "11": {
+          "name": "CHORUS_LEVEL",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "12": {
+          "name": "CHORUS_PAN",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "13": {
+          "name": "CHORUS_BYPASSMODE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "14": {
+          "name": "CHORUS_GLOBALMIX",
+          "allowedTypes": []
+        },
+        "15": {
+          "name": "CHORUS_BYPASS",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "16": {
+          "name": "CHORUS_PHASEREV",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "17": {
+          "name": "CHORUS_WIDTH",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "18": {
+          "name": "CHORUS_RATE2",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "19": {
+          "name": "CHORUS_DEPTH2",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "20": {
+          "name": "CHORUS_DRIVE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "21": {
+          "name": "CHORUS_LOWCUT",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "22": {
+          "name": "CHORUS_SPREAD",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "23": {
+          "name": "CHORUS_MODE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "24": {
+          "name": "CHORUS_DEPTHL",
+          "allowedTypes": [
+            15,
+            16
+          ]
+        },
+        "25": {
+          "name": "CHORUS_DEPTHC",
+          "allowedTypes": [
+            15
+          ]
+        },
+        "26": {
+          "name": "CHORUS_DEPTHR",
+          "allowedTypes": [
+            15,
+            16
+          ]
+        },
+        "27": {
+          "name": "CHORUS_TEMPO2",
+          "allowedTypes": [
+            16
+          ]
+        },
+        "28": {
+          "name": "CHORUS_SCENEIGNORE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "29": {
+          "name": "CHORUS_DELAYRANGE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        "30": {
+          "name": "CHORUS_BASS",
+          "allowedTypes": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            13,
+            14,
+            21
+          ]
+        },
+        "31": {
+          "name": "CHORUS_TREBLE",
+          "allowedTypes": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            13,
+            14,
+            20,
+            21
+          ]
+        }
+      }
+    },
+    "FUZZ": {
+      "typePid": 0,
+      "types": [
+        "Rat Distortion",
+        "PI Fuzz",
+        "Tube Drive 3-Knob",
+        "Super OD",
+        "Treble Boost",
+        "Mid Boost",
+        "T808 OD",
+        "Fat Rat",
+        "T808 Mod",
+        "Octave Distortion",
+        "Plus Distortion",
+        "Hard Fuzz",
+        "FET Boost",
+        "Tape Distortion",
+        "Full OD",
+        "Blues OD",
+        "Shred Distortion",
+        "M-Zone Distortion",
+        "Bender Fuzz",
+        "BB Pre",
+        "Master Fuzz",
+        "Face Fuzz",
+        "Bit Crusher",
+        "Eternal Love",
+        "Esoteric ACB",
+        "Esoteric RCB",
+        "Zen Master",
+        "Tube Drive 4-Knob",
+        "FAS LED-Drive",
+        "SDD Preamp",
+        "FET Preamp",
+        "Suhr Riot Ge (R)",
+        "Micro Boost",
+        "FAS Boost",
+        "Timothy Mid",
+        "Shimmer Drive",
+        "Blackglass 7K",
+        "Suhr Riot LED (L)",
+        "Timothy Up",
+        "Tone of Kings",
+        "Heartpedal 11",
+        "Jam Ray",
+        "Suhr Riot LED/Si (M)",
+        "OD 250",
+        "Timothy Down",
+        "TS9DX +",
+        "Box o' Crunch",
+        "OD 250 Gray",
+        "Horizon Precision Drive",
+        "Compulsion Distortion LP",
+        "Hoodoo Drive",
+        "Compulsion Distortion HP",
+        "TS9DX Hot",
+        "DS1 Distortion",
+        "DS1 Distortion Mod",
+        "MCMLXXXI Drive",
+        "Sonic Drive",
+        "Valve Screamer VS9",
+        "Maxoff 808",
+        "Klone Chiron",
+        "Esoteric Bass RCB",
+        "BB Pre AT",
+        "Griddle Cake",
+        "Bosom Boost",
+        "OD-One Overdrive",
+        "Nobelium OVD-1",
+        "Sunrise Splendor Hi-Cut",
+        "Gauss Drive",
+        "Sunrise Splendor",
+        "Integral Pre",
+        "PI Fuzz - Triangle",
+        "PI Fuzz - Ram's Head",
+        "Colortone Booster",
+        "Colortone OD",
+        "MOSFET Distortion",
+        "PI Fuzz - Russian",
+        "Super Fuzz",
+        "Tube Drive 5-Knob",
+        "77 Custom OD",
+        "Angry Chuck",
+        "Guardian Photon Speed",
+        "Paradigm Shifter",
+        "PI Fuzz - Bass",
+        "NoAmp Bass DI",
+        "NoAmp Bass Pre",
+        "Royal Bass DI",
+        "Swedish Metal"
+      ],
+      "descriptor": {
+        "pid": 0,
+        "name": "FUZZ_TYPE",
+        "descriptorOffset": 18689216,
+        "nameOffset": 8255160,
+        "tableOffset": 18689216,
+        "tableRows": 44,
+        "bindings": [
+          [
+            0,
+            "FUZZ_TYPE"
+          ],
+          [
+            1,
+            "FUZZ_DRIVE"
+          ],
+          [
+            2,
+            "FUZZ_TONE"
+          ],
+          [
+            3,
+            "FUZZ_LEVEL"
+          ],
+          [
+            4,
+            "FUZZ_MIX"
+          ],
+          [
+            5,
+            "FUZZ_BYPASSMODE"
+          ],
+          [
+            6,
+            "FUZZ_SLEW"
+          ],
+          [
+            7,
+            "FUZZ_BYPASS"
+          ],
+          [
+            8,
+            "FUZZ_LOCUT"
+          ],
+          [
+            9,
+            "FUZZ_HICUT"
+          ],
+          [
+            10,
+            "FUZZ_CLIPTYPE"
+          ],
+          [
+            11,
+            "FUZZ_BIAS"
+          ],
+          [
+            12,
+            "FUZZ_LOW"
+          ],
+          [
+            13,
+            "FUZZ_MID"
+          ],
+          [
+            14,
+            "FUZZ_MIDFREQ"
+          ],
+          [
+            15,
+            "FUZZ_TREBLE"
+          ],
+          [
+            16,
+            "FUZZ_BITREDUCE"
+          ],
+          [
+            17,
+            "FUZZ_INPUTSELECT"
+          ],
+          [
+            18,
+            "FUZZ_PAN"
+          ],
+          [
+            19,
+            "FUZZ_RESAMPLE"
+          ],
+          [
+            20,
+            "FUZZ_CLIPSHAPE"
+          ],
+          [
+            21,
+            "FUZZ_EQON"
+          ],
+          [
+            22,
+            "FUZZ_EQ1"
+          ],
+          [
+            23,
+            "FUZZ_EQ2"
+          ],
+          [
+            24,
+            "FUZZ_EQ3"
+          ],
+          [
+            25,
+            "FUZZ_EQ4"
+          ],
+          [
+            26,
+            "FUZZ_EQ5"
+          ],
+          [
+            27,
+            "FUZZ_EQ6"
+          ],
+          [
+            28,
+            "FUZZ_EQ7"
+          ],
+          [
+            29,
+            "FUZZ_EQ8"
+          ],
+          [
+            30,
+            "FUZZ_EQ9"
+          ],
+          [
+            31,
+            "FUZZ_EQ10"
+          ],
+          [
+            32,
+            "FUZZ_PDTYPE"
+          ],
+          [
+            33,
+            "FUZZ_PDQTY"
+          ],
+          [
+            34,
+            "FUZZ_NDTYPE"
+          ],
+          [
+            35,
+            "FUZZ_NDQTY"
+          ],
+          [
+            36,
+            "FUZZ_DRYGAIN"
+          ],
+          [
+            37,
+            "FUZZ_BASS"
+          ],
+          [
+            38,
+            "FUZZ_HIMID"
+          ],
+          [
+            39,
+            "FUZZ_SCENEIGNORE"
+          ],
+          [
+            40,
+            "FUZZ_WICKER"
+          ],
+          [
+            41,
+            "FUZZ_TONESWITCH"
+          ],
+          [
+            42,
+            "FUZZ_DRIVE2"
+          ],
+          [
+            43,
+            "FUZZ_OVERSAMPLE"
+          ]
+        ]
+      },
+      "pages": [
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            0,
+            7
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Distortion"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Filter"
+            ]
+          },
+          "effectiveTypes": [
+            0,
+            7
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            1,
+            70,
+            71,
+            75,
+            82
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Sustain"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ],
+            "FUZZ_TONESWITCH": [
+              "Tone"
+            ],
+            "FUZZ_WICKER": [
+              "Wicker"
+            ]
+          },
+          "effectiveTypes": [
+            1,
+            70,
+            71,
+            75,
+            82
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            10
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Distortion"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": [
+            10
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            15,
+            50,
+            66,
+            68,
+            81
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Gain"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": [
+            15,
+            50,
+            66,
+            68,
+            81
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            31,
+            37,
+            42,
+            46,
+            53,
+            54,
+            56
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Distortion"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": [
+            31,
+            37,
+            42,
+            46,
+            53,
+            54,
+            56
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            11,
+            12,
+            13,
+            14,
+            18,
+            20,
+            21,
+            22,
+            23,
+            28,
+            29,
+            30,
+            32,
+            33,
+            35,
+            39,
+            43,
+            45,
+            47,
+            52,
+            57,
+            58,
+            80
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            11,
+            12,
+            13,
+            14,
+            18,
+            20,
+            21,
+            22,
+            23,
+            28,
+            29,
+            30,
+            32,
+            33,
+            35,
+            39,
+            43,
+            45,
+            47,
+            52,
+            57,
+            58,
+            80
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            19,
+            24,
+            25,
+            27,
+            60,
+            61,
+            67
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Gain"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            19,
+            24,
+            25,
+            27,
+            60,
+            61,
+            67
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            74,
+            77,
+            79
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MID": [
+              "Mid"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            74,
+            77,
+            79
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            16
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Gain"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Contour"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            16
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            17
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Distortion"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MID": [
+              "Mid"
+            ],
+            "FUZZ_MIDFREQ": [
+              "Mid\nFrequency"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            17
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            26
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BASS": [
+              "Voice"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": [
+            26
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            34,
+            38,
+            41,
+            44
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BASS": [
+              "Bass"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Gain"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            34,
+            38,
+            41,
+            44
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            36
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_HIMID": [
+              "High Mid"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOCUT": [
+              "Grunt"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MID": [
+              "Mid"
+            ],
+            "FUZZ_MIDFREQ": [
+              "Mid\nFrequency"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Attack"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            36
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            40
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BASS": [
+              "Bass Cut"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": [
+            40
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            48
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BASS": [
+              "Attack"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Bright"
+            ]
+          },
+          "effectiveTypes": [
+            48
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            49,
+            51
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": [
+            49,
+            51
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": [
+            55
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Cut"
+            ]
+          },
+          "effectiveTypes": [
+            55
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            59
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Gain"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            59
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            62
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Presence"
+            ]
+          },
+          "effectiveTypes": [
+            62
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            63
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BASS": [
+              "Tight"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Boost"
+            ],
+            "FUZZ_HIMID": [
+              "Mid"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            63
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            64
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Overdrive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ]
+          },
+          "effectiveTypes": [
+            64
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            65
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BASS": [
+              "Bass Response"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Spectrum"
+            ]
+          },
+          "effectiveTypes": [
+            65
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            69
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            69
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            72,
+            73
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Volume"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            72,
+            73
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            74
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Distortion"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MID": [
+              "Mid"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            74
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            76
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BIAS": [
+              "Bias"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ],
+            "FUZZ_TONESWITCH": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": [
+            76
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            78
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Gain"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "100 Hz"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": [
+            78
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            83,
+            84
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Presence"
+            ],
+            "FUZZ_DRIVE2": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MIX": [
+              "Blend"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            83,
+            84
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            85
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOCUT": [
+              "Low Cut"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            85
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {},
+          "types": [
+            86
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Distortion"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOW": [
+              "Low"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_TONE": [
+              "High"
+            ]
+          },
+          "effectiveTypes": [
+            86
+          ]
+        },
+        {
+          "page": 0,
+          "name": "Basic",
+          "firmware": {
+            "version_gtet": "3,3"
+          },
+          "types": null,
+          "fallback": true,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRIVE": [
+              "Drive"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TONE": [
+              "Tone"
+            ]
+          },
+          "effectiveTypes": []
+        },
+        {
+          "page": 1,
+          "name": "Tone",
+          "firmware": {
+            "version_gtet": "5"
+          },
+          "types": null,
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_HICUT": [
+              "High Cut"
+            ],
+            "FUZZ_HIMID": [
+              "High Mid"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_LOCUT": [
+              "Low Cut"
+            ],
+            "FUZZ_LOW": [
+              "Bass"
+            ],
+            "FUZZ_MID": [
+              "Mid"
+            ],
+            "FUZZ_MIDFREQ": [
+              "Mid\nFrequency"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_TREBLE": [
+              "Treble"
+            ]
+          },
+          "effectiveTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        {
+          "page": 2,
+          "name": "Graphic EQ",
+          "firmware": {},
+          "types": null,
+          "fallback": false,
+          "controls": {
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_EQ1": [
+              "100"
+            ],
+            "FUZZ_EQ10": [
+              "6400"
+            ],
+            "FUZZ_EQ2": [
+              "160"
+            ],
+            "FUZZ_EQ3": [
+              "250"
+            ],
+            "FUZZ_EQ4": [
+              "400"
+            ],
+            "FUZZ_EQ5": [
+              "640"
+            ],
+            "FUZZ_EQ6": [
+              "1000"
+            ],
+            "FUZZ_EQ7": [
+              "1600"
+            ],
+            "FUZZ_EQ8": [
+              "2500"
+            ],
+            "FUZZ_EQ9": [
+              "4000"
+            ],
+            "FUZZ_EQON": [
+              "Graphic EQ"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ]
+          },
+          "effectiveTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        {
+          "page": 3,
+          "name": "Advanced",
+          "firmware": {
+            "version_gtet": "9,2"
+          },
+          "types": [
+            2,
+            4,
+            5,
+            9,
+            11,
+            12,
+            13,
+            18,
+            20,
+            21,
+            22,
+            27,
+            29,
+            30,
+            32,
+            35,
+            36,
+            72,
+            73,
+            76,
+            77,
+            83,
+            84,
+            85
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BIAS": [
+              "Bias"
+            ],
+            "FUZZ_BITREDUCE": [
+              "Bit Reduce"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_CLIPSHAPE": [
+              "Clip Shape"
+            ],
+            "FUZZ_CLIPTYPE": [
+              "Clip Type"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_RESAMPLE": [
+              "Sample Rate"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_SLEW": [
+              "Slew Rate"
+            ]
+          },
+          "effectiveTypes": [
+            2,
+            4,
+            5,
+            9,
+            11,
+            12,
+            13,
+            18,
+            20,
+            21,
+            22,
+            27,
+            29,
+            30,
+            32,
+            35,
+            36,
+            72,
+            73,
+            76,
+            77,
+            83,
+            84,
+            85
+          ]
+        },
+        {
+          "page": 3,
+          "name": "Advanced",
+          "firmware": {
+            "version_gtet": "11,01"
+          },
+          "types": [
+            0,
+            3,
+            6,
+            7,
+            8,
+            10,
+            14,
+            15,
+            16,
+            17,
+            19,
+            23,
+            24,
+            25,
+            26,
+            28,
+            31,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            64,
+            65,
+            66,
+            67,
+            68,
+            74,
+            78,
+            79,
+            80,
+            81,
+            86
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BASS": [
+              "Bass\nResponse"
+            ],
+            "FUZZ_BIAS": [
+              "Bias"
+            ],
+            "FUZZ_BITREDUCE": [
+              "Bit Reduce"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_DRYGAIN": [
+              "Dry Level"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_NDQTY": [
+              "Diode-\nQuantity"
+            ],
+            "FUZZ_NDTYPE": [
+              "Diode-\nType"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_PDQTY": [
+              "Diode+\nQuantity"
+            ],
+            "FUZZ_PDTYPE": [
+              "Diode+\nType"
+            ],
+            "FUZZ_RESAMPLE": [
+              "Sample Rate"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_SLEW": [
+              "Slew Rate"
+            ]
+          },
+          "effectiveTypes": [
+            0,
+            3,
+            6,
+            7,
+            8,
+            10,
+            14,
+            15,
+            16,
+            17,
+            19,
+            23,
+            24,
+            25,
+            26,
+            28,
+            31,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            64,
+            65,
+            66,
+            67,
+            68,
+            74,
+            78,
+            79,
+            80,
+            81,
+            86
+          ]
+        },
+        {
+          "page": 3,
+          "name": "Advanced",
+          "firmware": {},
+          "types": [
+            62
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BASS": [
+              "Bass Response"
+            ],
+            "FUZZ_BIAS": [
+              "Bias"
+            ],
+            "FUZZ_BITREDUCE": [
+              "Bit Reduce"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_RESAMPLE": [
+              "Sample Rate"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_SLEW": [
+              "Slew Rate"
+            ]
+          },
+          "effectiveTypes": [
+            62
+          ]
+        },
+        {
+          "page": 3,
+          "name": "Advanced",
+          "firmware": {},
+          "types": [
+            63,
+            69
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BITREDUCE": [
+              "Bit Reduce"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_RESAMPLE": [
+              "Sample Rate"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ]
+          },
+          "effectiveTypes": [
+            63,
+            69
+          ]
+        },
+        {
+          "page": 3,
+          "name": "Advanced",
+          "firmware": {},
+          "types": [
+            1,
+            70,
+            71,
+            75,
+            82
+          ],
+          "fallback": false,
+          "controls": {
+            "FUZZ_BIAS": [
+              "Bias"
+            ],
+            "FUZZ_BITREDUCE": [
+              "Bit Reduce"
+            ],
+            "FUZZ_BYPASS": [
+              "Bypass"
+            ],
+            "FUZZ_BYPASSMODE": [
+              "Bypass\nMode"
+            ],
+            "FUZZ_INPUTSELECT": [
+              "Input\nSelect"
+            ],
+            "FUZZ_LEVEL": [
+              "Level"
+            ],
+            "FUZZ_MIX": [
+              "Mix"
+            ],
+            "FUZZ_NDQTY": [
+              "Diode-\nQuantity"
+            ],
+            "FUZZ_NDTYPE": [
+              "Diode-\nType"
+            ],
+            "FUZZ_PAN": [
+              "Balance"
+            ],
+            "FUZZ_PDQTY": [
+              "Diode+\nQuantity"
+            ],
+            "FUZZ_PDTYPE": [
+              "Diode+\nType"
+            ],
+            "FUZZ_RESAMPLE": [
+              "Sample Rate"
+            ],
+            "FUZZ_SCENEIGNORE": [
+              "Scene\nIgnore"
+            ],
+            "FUZZ_SLEW": [
+              "Slew Rate"
+            ]
+          },
+          "effectiveTypes": [
+            1,
+            70,
+            71,
+            75,
+            82
+          ]
+        }
+      ],
+      "parameters": {
+        "0": {
+          "name": "FUZZ_TYPE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "1": {
+          "name": "FUZZ_DRIVE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "2": {
+          "name": "FUZZ_TONE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            18,
+            20,
+            21,
+            22,
+            23,
+            26,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            62,
+            65,
+            66,
+            68,
+            70,
+            71,
+            75,
+            76,
+            78,
+            80,
+            81,
+            82,
+            86
+          ]
+        },
+        "3": {
+          "name": "FUZZ_LEVEL",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "4": {
+          "name": "FUZZ_MIX",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "5": {
+          "name": "FUZZ_BYPASSMODE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "6": {
+          "name": "FUZZ_SLEW",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            64,
+            65,
+            66,
+            67,
+            68,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "7": {
+          "name": "FUZZ_BYPASS",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "8": {
+          "name": "FUZZ_LOCUT",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "9": {
+          "name": "FUZZ_HICUT",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "10": {
+          "name": "FUZZ_CLIPTYPE",
+          "allowedTypes": [
+            2,
+            4,
+            5,
+            9,
+            11,
+            12,
+            13,
+            18,
+            20,
+            21,
+            22,
+            27,
+            29,
+            30,
+            32,
+            35,
+            36,
+            72,
+            73,
+            76,
+            77,
+            83,
+            84,
+            85
+          ]
+        },
+        "11": {
+          "name": "FUZZ_BIAS",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            64,
+            65,
+            66,
+            67,
+            68,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "12": {
+          "name": "FUZZ_LOW",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "13": {
+          "name": "FUZZ_MID",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "14": {
+          "name": "FUZZ_MIDFREQ",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "15": {
+          "name": "FUZZ_TREBLE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "16": {
+          "name": "FUZZ_BITREDUCE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "17": {
+          "name": "FUZZ_INPUTSELECT",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "18": {
+          "name": "FUZZ_PAN",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "19": {
+          "name": "FUZZ_RESAMPLE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "20": {
+          "name": "FUZZ_CLIPSHAPE",
+          "allowedTypes": [
+            2,
+            4,
+            5,
+            9,
+            11,
+            12,
+            13,
+            18,
+            20,
+            21,
+            22,
+            27,
+            29,
+            30,
+            32,
+            35,
+            36,
+            72,
+            73,
+            76,
+            77,
+            83,
+            84,
+            85
+          ]
+        },
+        "21": {
+          "name": "FUZZ_EQON",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "22": {
+          "name": "FUZZ_EQ1",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "23": {
+          "name": "FUZZ_EQ2",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "24": {
+          "name": "FUZZ_EQ3",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "25": {
+          "name": "FUZZ_EQ4",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "26": {
+          "name": "FUZZ_EQ5",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "27": {
+          "name": "FUZZ_EQ6",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "28": {
+          "name": "FUZZ_EQ7",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "29": {
+          "name": "FUZZ_EQ8",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "30": {
+          "name": "FUZZ_EQ9",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "31": {
+          "name": "FUZZ_EQ10",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "32": {
+          "name": "FUZZ_PDTYPE",
+          "allowedTypes": [
+            0,
+            1,
+            3,
+            6,
+            7,
+            8,
+            10,
+            14,
+            15,
+            16,
+            17,
+            19,
+            23,
+            24,
+            25,
+            26,
+            28,
+            31,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            64,
+            65,
+            66,
+            67,
+            68,
+            70,
+            71,
+            74,
+            75,
+            78,
+            79,
+            80,
+            81,
+            82,
+            86
+          ]
+        },
+        "33": {
+          "name": "FUZZ_PDQTY",
+          "allowedTypes": [
+            0,
+            1,
+            3,
+            6,
+            7,
+            8,
+            10,
+            14,
+            15,
+            16,
+            17,
+            19,
+            23,
+            24,
+            25,
+            26,
+            28,
+            31,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            64,
+            65,
+            66,
+            67,
+            68,
+            70,
+            71,
+            74,
+            75,
+            78,
+            79,
+            80,
+            81,
+            82,
+            86
+          ]
+        },
+        "34": {
+          "name": "FUZZ_NDTYPE",
+          "allowedTypes": [
+            0,
+            1,
+            3,
+            6,
+            7,
+            8,
+            10,
+            14,
+            15,
+            16,
+            17,
+            19,
+            23,
+            24,
+            25,
+            26,
+            28,
+            31,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            64,
+            65,
+            66,
+            67,
+            68,
+            70,
+            71,
+            74,
+            75,
+            78,
+            79,
+            80,
+            81,
+            82,
+            86
+          ]
+        },
+        "35": {
+          "name": "FUZZ_NDQTY",
+          "allowedTypes": [
+            0,
+            1,
+            3,
+            6,
+            7,
+            8,
+            10,
+            14,
+            15,
+            16,
+            17,
+            19,
+            23,
+            24,
+            25,
+            26,
+            28,
+            31,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            64,
+            65,
+            66,
+            67,
+            68,
+            70,
+            71,
+            74,
+            75,
+            78,
+            79,
+            80,
+            81,
+            82,
+            86
+          ]
+        },
+        "36": {
+          "name": "FUZZ_DRYGAIN",
+          "allowedTypes": [
+            0,
+            3,
+            6,
+            7,
+            8,
+            10,
+            14,
+            15,
+            16,
+            17,
+            19,
+            23,
+            24,
+            25,
+            26,
+            28,
+            31,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            64,
+            65,
+            66,
+            67,
+            68,
+            74,
+            78,
+            79,
+            80,
+            81,
+            86
+          ]
+        },
+        "37": {
+          "name": "FUZZ_BASS",
+          "allowedTypes": [
+            0,
+            3,
+            6,
+            7,
+            8,
+            10,
+            14,
+            15,
+            16,
+            17,
+            19,
+            23,
+            24,
+            25,
+            26,
+            28,
+            31,
+            33,
+            34,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            74,
+            78,
+            79,
+            80,
+            81,
+            86
+          ]
+        },
+        "38": {
+          "name": "FUZZ_HIMID",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "39": {
+          "name": "FUZZ_SCENEIGNORE",
+          "allowedTypes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ]
+        },
+        "40": {
+          "name": "FUZZ_WICKER",
+          "allowedTypes": [
+            1,
+            70,
+            71,
+            75,
+            82
+          ]
+        },
+        "41": {
+          "name": "FUZZ_TONESWITCH",
+          "allowedTypes": [
+            1,
+            70,
+            71,
+            75,
+            76,
+            82
+          ]
+        },
+        "42": {
+          "name": "FUZZ_DRIVE2",
+          "allowedTypes": [
+            83,
+            84
+          ]
+        },
+        "43": {
+          "name": "FUZZ_OVERSAMPLE",
+          "allowedTypes": []
+        }
+      }
+    }
+  }
+}

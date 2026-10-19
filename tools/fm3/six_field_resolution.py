@@ -41,7 +41,7 @@ def cache_records():
     return parsed, {(s['section_tag'], r['param_id']): r for s in parsed['sections'] for r in s['records']}
 
 
-def mine_editor(data):
+def mine_editor(data, targets=TARGETS, include_rows=False):
     """Read the editor's own PE64 pointers, then contiguous 16-byte descriptors."""
     require(data[:2] == b'MZ', 'Not a PE file')
     pe = struct.unpack_from('<I', data, 60)[0]
@@ -77,7 +77,7 @@ def mine_editor(data):
         return {'pid': pid, 'name': name, 'descriptorOffset': offset, 'nameOffset': off}
 
     result = []
-    for family, _, pid, symbol in TARGETS:
+    for family, _, pid, symbol in targets:
         rows = []
         for match in re.finditer(re.escape(symbol.encode()+b'\0'), data):
             off = match.start()
@@ -110,7 +110,8 @@ def mine_editor(data):
         else:
             raise ValueError('Missing descriptor terminator')
         require((pid, symbol) in neighbors and len(set(p for p, _ in neighbors)) == len(neighbors), 'Wrong/duplicate family binding')
-        result.append({**row, 'tableOffset': start, 'tableRows': len(neighbors)})
+        result.append({**row, 'tableOffset': start, 'tableRows': len(neighbors),
+                       **({'bindings': neighbors} if include_rows else {})})
     return result
 
 

@@ -109,6 +109,13 @@ uued plokid algavad bypass'is ning aktiveeritakse `scenes` kaudu.
 Ajaparameetri muutmisel kasuta nõutud selgesõnalist Tempo NONE väärtust.
 Genereerimine ei salvesta midagi FM3 presetikohta ega paigalda User IR-i.
 
+Choruse ja Drive’i tabelijuhid kontrollitakse lõpliku kanali tüübi järgi;
+sobimatu väärtus põhjustab vea ka PID või experimental/raw kaudu.
+[Tüübisobivuse juhend](engine/docs/FM3_TYPE_APPLICABILITY.md) kirjeldab
+FW13 reegleid ja piire. Eelista mudelivahetuseks täiskanalimalle. Muude perede
+tüübisobivus ning tempo- ja modifikaatoriseosed ei ole üldises tabelikirjutajas
+veel automaatselt kontrollitud; ära järelda skalaari olemasolust universaalset luba.
+
 ## Toetatud põhivõimalused
 
 Kasuta järgnevat ülevaatena; täpsed sisendipiirid tulevad koodist ja skeemist.

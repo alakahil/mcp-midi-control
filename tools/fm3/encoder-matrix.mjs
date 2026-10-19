@@ -6,6 +6,7 @@ import {fileURLToPath} from 'node:url';
 import {loadDictionary, encodeValue, decodeValue, writeTableControls, DEFAULT_STATUSES, OPT_IN_STATUSES, FAMILY_BY_SLUG} from '../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs';
 import {composerBases, layouts} from '../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-composer-bases.mjs';
 import {inspectStructure} from '../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/drive-collector/fm3-prototype.mjs';
+import {typeApplicability,typePolicySummary} from '../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-type-applicability.mjs';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const engine = 'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/';
@@ -97,26 +98,37 @@ for (const obs of registry.observations.filter(o => ['paired-point', 'syx-export
 // Batch by exact base and position to avoid tens of thousands of redundant compression runs.
 // Every A-D slot has an independently computed offset; interior values vary by offset.
 const writeRuns = [];
-let controlWrites = 0;
+let controlWrites = 0, typeExcludedWrites = 0, typeRejectionChecks = 0;
 for (const [bi, base] of composerBases.entries()) {
   const bytes = read(engine + base.file);
   assert.equal(sha(bytes), base.sha256, 'Wrong matrix base');
   const original = inspectStructure(bytes), before = Buffer.from(original.raw.body);
   const entries = eligible.flatMap(p => bindings(p).filter(b => b.base.id === base.id).map(b => ({p, ...b})));
   for (const phase of [0, 1, 2]) {
-    const controls = [], expected = [], allowed = new Set();
+    const candidates = [], controls = [], expected = [], allowed = new Set(), excluded = [];
     for (const {p, slug, layout} of entries) for (let ch = 0; ch < 4; ch++) {
       const offset = layout.header + 46 + 2 * (ch * layout.words + p.param);
       assert.ok(!allowed.has(offset), 'Aliased control address');
       const raw = p.kind === 'enum' ? (phase === 0 ? 0 : phase === 2 ? p.enum.length - 1 : (p.param + ch) % p.enum.length)
         : phase === 0 ? 0 : phase === 2 ? 65534 : 1 + (offset * 31) % 65533;
       const value = p.kind === 'enum' ? raw : atPosition(p, raw / 65534);
-      controls.push({block: slug, channel: 'ABCD'[ch], param: p.param, value});
-      expected.push({parameter: key(p), offset, raw});
-      allowed.add(offset); allowed.add(offset + 1);
+      candidates.push({p, slug, ch, layout, offset, raw, value});
+    }
+    const planned = new Map(candidates.map(c => [c.offset, c.raw]));
+    for (const {p, slug, ch, layout, offset, raw, value} of candidates) {
+      const typeOffset = layout.header + 46 + 2 * ch * layout.words;
+      const type = planned.get(typeOffset) ?? before.readUInt16LE(typeOffset);
+      const a = typeApplicability(p, type), control = {block: slug, channel: 'ABCD'[ch], param: p.param, value};
+      if (a.covered && !a.allowed) {excluded.push({control, type, parameter: key(p)}); continue;}
+      controls.push(control);expected.push({parameter: key(p), offset, raw});
+      allowed.add(offset);allowed.add(offset + 1);
     }
     const name = `FM3 MATRIX ${bi} ${phase}`;
     const result = writeTableControls(bytes, {name, controls}, {allow: [...OPT_IN_STATUSES]});
+    if (excluded.length) {
+      assert.throws(() => writeTableControls(bytes, {name, controls: [...controls, excluded[0].control]}, {allow: [...OPT_IN_STATUSES]}), /not applicable/);
+      typeRejectionChecks++;
+    }
     const decoded = inspectStructure(result.syx), actual = Buffer.from(decoded.raw.body);
     assert.equal(actual.length, before.length);
     assert.equal(decoded.decoded.preset_name, name);
@@ -127,24 +139,29 @@ for (const [bi, base] of composerBases.entries()) {
       assert.ok(allowed.has(i), `Matrix collateral change at ${i}`); changedBytes++;
     }
     controlWrites += controls.length;
+    typeExcludedWrites += excluded.length;
     writeRuns.push({base: base.id, baseSha256: base.sha256, layout: base.layout, phase: ['minimum', 'varied-interior', 'maximum'][phase],
-      channels: 'ABCD', parameters: entries.length, controlWrites: controls.length, changedBytes, outputSha256: sha(result.syx)});
+      channels: 'ABCD', scalarParameters: entries.length, candidateWrites: candidates.length, typeExcludedWrites: excluded.length,
+      excluded: excluded.map(x => ({parameter: x.parameter, channel: x.control.channel, finalType: x.type})),
+      controlWrites: controls.length, changedBytes, outputSha256: sha(result.syx)});
   }
 }
 
 const sourcePaths = [out + 'registry.json', out + 'metadata-reconciliation.json', 'tools/fm3/encoder-matrix.mjs',
   engine + 'references/fm3-param-dictionary.json', engine + 'scripts/fm3-table-encoder.mjs', engine + 'scripts/fm3-composer-bases.mjs',
+  engine + 'references/fm3-type-applicability.json', engine + 'scripts/fm3-type-applicability.mjs',
   engine + 'scripts/drive-collector/fm3-prototype.mjs', engine + 'scripts/drive-collector/fm3-codec.mjs', engine + 'scripts/fm3-codec.mjs',
   ...composerBases.map(b => engine + b.file)];
 const result = {schemaVersion: 1, scope: {
   softwareOnly: true, deviceIO: false, newHardwareEvidence: false, generatedPresetsDelivered: false,
   parameterEligibility: 'Accepted table policy, implemented scalar kind, and at least one bundled base layout. Other parameters remain outside this matrix.',
   curveOracle: 'Fixed normalized positions plus independent endpoint interpolation; one wire LSB tolerance for floating point/quantized historical displays.',
-  limits: 'No arbitrary preset, model visibility, DSP/audio/CPU, routing or modifier validation. DynaCab display/percent distinction is documented separately; hidden Drive Oversampling is blocked.'},
+  limits: 'Only Chorus/Drive type applicability is enforced in batch writes; exclusions are counted separately. Scalar conformance is not type-independent write permission. No arbitrary preset, other-family visibility, DSP/audio/CPU, tempo, routing or modifier validation.'},
   sources: Object.fromEntries(sourcePaths.map(path => [path, sha(read(path))])),
   summary: {eligibleParameterKeys: eligible.length, numericPositionChecks: numericChecks, enumChecks, rejectionChecks, roundtripChecks,
     existingObservationsChecked: observationResults.length, existingObservationKeys: new Set(observationResults.map(x => x.parameter)).size,
-    slopeLabelAdapters, bundledBases: composerBases.length, syxWriteRuns: writeRuns.length, controlWrites,
+    slopeLabelAdapters, bundledBases: composerBases.length, syxWriteRuns: writeRuns.length, controlWrites,typeExcludedWrites,typeRejectionChecks,
+    typeApplicability:typePolicySummary(),
     openScaleConflicts: reconciliation.scaleConflicts.map(p => p.parameter), unnamedWritableKeys: reconciliation.summary.unnamedWritableKeys,
     softwareChecks: 'passed', hardwareValidationAdded: false, userPhysicalActions: 0},
   parameters: parameterResults, existingObservations: observationResults, writeRuns};

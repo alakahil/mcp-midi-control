@@ -7,6 +7,7 @@ import {arrangeSound,SLUG_BY_EID} from './fm3-layout.mjs';
 import {assertFields,validateOptions,loadDictionary,DEFAULT_STATUSES,OPT_IN_STATUSES,FAMILY_BY_SLUG} from './fm3-table-encoder.mjs';
 import {finalSoundState,renderFinalSoundText} from './fm3-final-state.mjs';
 import {writePresetOutputs,sha256} from './fm3-output.mjs';
+import {typePolicySummary} from './fm3-type-applicability.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
@@ -17,7 +18,8 @@ export function getSoundCapabilities(base){
     table:{defaultStatuses:DEFAULT_STATUSES,optInStatuses:OPT_IN_STATUSES,families:FAMILY_BY_SLUG,dictionaryEntries:d.params.length,
       blockedParameters:d.params.filter(p=>p.status==='blocked-hidden-editor').map(p=>({family:p.family,pid:p.param,name:p.name,reason:'Hidden in FM3-Edit 1.07.17; no write support'})),
       cabPosition:{parameters:['CABINET_DYNACAB_R1','CABINET_DYNACAB_R2'],displayRange:[0,10],unit:'unitless'},
-      policy:'Entry counts are not validated device coverage. Type visibility/tempo dependencies remain partial; use full templates for model/type changes.'},
+      typeApplicability:typePolicySummary(),
+      policy:'Entry counts are not validated device coverage. Chorus/Drive explicit table writes follow final-channel type policy; other families, tempo and modifiers remain unchecked. Use full templates for model/type changes.'},
     outputSceneLevels:{supported:true,block:'out1',parameters:'OUTPUT_SCENE1..8',rangeDb:[-20,20],channels:['A','B','C','D']},
     limitations:['No device connection','New output hardware/audio/CPU unconfirmed','Experimental raw/taper writes excluded from this entry point','Global settings, arbitrary routing and all FM3 families are not implemented']};
 }

@@ -46,7 +46,9 @@ The installed private plugin remains at 0.3.2. The PR now includes a 0.3.3 sourc
 
 [Encoder matrix](encoder-matrix.json) tests every table-eligible parameter's scalar policy, fixed normalized-position anchors, all option indices/labels, invalid inputs and roundtrips. It also replays the already indexed measurements; PEQ slope values use their explicit dB/OCT option label. It runs three batched writes on every bundled base across all A-D slots, independently calculates offsets and expected raw values, and checks the complete output body for collateral changes. Batched software presets are kept in memory and are not supplied for device import.
 
-The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. It does not establish type visibility, DSP validity, arbitrary-preset support, audio or CPU behavior. Changing the matrix or its inputs requires regeneration in the command order above.
+The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. Chorus/Drive batch writes now follow the FW13 final-channel type policy: incompatible candidates are counted as exclusions, not successful writes. Scalar conformance remains separate. Other-family visibility, tempo/modifiers, DSP validity, arbitrary-preset support, audio and CPU behavior are outside this matrix. Changing the matrix or its inputs requires regeneration in the command order above.
+
+The bounded type policy is documented in the packaged `engine/docs/FM3_TYPE_APPLICABILITY.md`. Reproduce extraction with `python3 tools/fm3/type_applicability.py --editor /path/to/FM3-Edit.exe`; without `--editor`, verify the committed receipt against its pages, native name/PID bindings, dictionary and FW13 cache. `test-type-applicability.py` covers compiler failures, and the packaged Node regression reuses all 114 captured Chorus/Drive type templates on A–D. No new hardware measurements are inferred from either check.
 
 The six-field check replays the already bundled FW13 cache without network access.
 To repeat direct PE64 descriptor mining and XML comment/condition analysis, obtain

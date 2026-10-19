@@ -1,4 +1,4 @@
-# Tabelipõhine kodeerija — 0.74.3, 2026-10-19
+# Tabelipõhine kodeerija — 0.74.4, 2026-10-19
 
 `scripts/fm3-table-encoder.mjs` kodeerib iga FM3 parameetri FM3-Editis kuvatavast
 väärtusest 16-bitiseks sõnaks. Toorväärtusi pole vaja eraldi mõõta. Allikas on
@@ -74,3 +74,7 @@ CHORUS_DELAYRANGE, CHORUS_BASS ja CHORUS_TREBLE. FUZZ_OVERSAMPLE
 on tuvastatud, kuid redaktoris peidetud ning kirjutamisel blokeeritud ka
 experimental/raw režiimis. DynaCab R1/R2 sisend jääb kuvatavale 0–10 skaalale;
 0–100 protsendiesitus ei ole otsene sisend. [Tõendid ja piirid](FM3_METADATA_RESOLUTION.md).
+
+## 0.74.4 tüübisobivus
+
+Choruse ja Drive’i selgesõnalised kirjutused kontrollitakse lõpliku kanali tüübi järgi enne muutmist. Nime/PID/raw teed järgivad sama reeglit. Täpne ulatus, varulehtede käsitlus ja allesjäänud sõltuvused: [tüübisobivuse juhend](FM3_TYPE_APPLICABILITY.md). Skalaari kodeerimisoskus ei tähenda universaalset kirjutusluba.

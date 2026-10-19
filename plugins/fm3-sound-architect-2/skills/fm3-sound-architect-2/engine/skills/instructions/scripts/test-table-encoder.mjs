@@ -45,8 +45,9 @@ for(const [pid,name,value] of [[29,'CHORUS_DELAYRANGE',20.5],[30,'CHORUS_BASS',5
   check(p===findParam('chorus',pid),'Name/PID resolution must agree');
   check(Math.abs(encodeValue(p,value)-32767)<=1,'Resolved Chorus midpoint');
   for(const channel of 'ABCD'){
-    const named=writeTableControls(base,{name:'SYMBOL CHECK',controls:[{block:'chorus',channel,param:name,value}]});
-    const numeric=writeTableControls(base,{name:'SYMBOL CHECK',controls:[{block:'chorus',channel,param:pid,value}]});
+    const type={block:'chorus',channel,param:'TYPE',value:'Analog Mono'};
+    const named=writeTableControls(base,{name:'SYMBOL CHECK',controls:[type,{block:'chorus',channel,param:name,value}]});
+    const numeric=writeTableControls(base,{name:'SYMBOL CHECK',controls:[type,{block:'chorus',channel,param:pid,value}]});
     check(named.syx.equals(numeric.syx),'Symbol and numeric writes must be byte-identical');
   }
 }

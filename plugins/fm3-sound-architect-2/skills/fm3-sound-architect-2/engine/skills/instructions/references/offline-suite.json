@@ -14,6 +14,15 @@
       "required": true
     },
     {
+      "id": "test-type-applicability",
+      "command": [
+        "node",
+        "scripts/test-type-applicability.mjs"
+      ],
+      "scope": "FW13 Chorus/Drive explicit write applicability, all 114 captured templates on A-D, final type, order independence, atomic failure and final guide",
+      "required": true
+    },
+    {
       "id": "test-layout",
       "command": [
         "node",

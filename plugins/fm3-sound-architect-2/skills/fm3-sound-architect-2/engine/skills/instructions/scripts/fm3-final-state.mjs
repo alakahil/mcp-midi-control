@@ -5,6 +5,7 @@ import {layouts,filterDonor,peqDonor,geqDonor,enhancerDonor} from './fm3-compose
 import {describeComposerScenes} from './fm3-jb-composer.mjs';
 import {loadDictionary,decodeValue,DEFAULT_STATUSES,OPT_IN_STATUSES,findParam} from './fm3-table-encoder.mjs';
 import {sha256} from './fm3-output.mjs';
+import {typeApplicability,typePolicySummary} from './fm3-type-applicability.mjs';
 const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks);
 export function finalSoundState(syx,writes,opts={}){
   const after=inspectStructure(syx),body=Buffer.from(after.raw.body),{records}=scanRecords(body),dictionary=loadDictionary();
@@ -27,11 +28,13 @@ export function finalSoundState(syx,writes,opts={}){
       const i='ABCD'.indexOf(channel);
       for(const p of dictionary.params.filter(p=>p.block===r.eid&&p.param<r.words&&statuses.has(p.status))){
         const raw=body.readUInt16LE(r.start+(i*r.words+p.param)*2),value=decodeValue(p,raw);
-        if(value!==undefined&&!(typeof value==='number'&&!Number.isFinite(value)))parameters.push({block:r.family,channel,name:p.name,label:p.label,raw,value,unit:unitFor(p),status:p.status,scope:'stored value; type-specific visibility not fully validated'});
+        const applicability=typeApplicability(p,body.readUInt16LE(r.start+i*r.words*2));
+        if(applicability.covered&&!applicability.allowed)continue;
+        if(value!==undefined&&!(typeof value==='number'&&!Number.isFinite(value)))parameters.push({block:r.family,channel,name:p.name,label:applicability.label??p.label,raw,value,unit:unitFor(p),status:p.status,scope:applicability.covered?'stored value; Chorus/Drive type policy passed; tempo/modifiers not validated':'stored value; type-specific visibility not validated',typeApplicability:applicability});
       }
     }
   }
-  return {name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalRows:describeRows(body),scenes,controls:effective,channels,parameters,outputSha256:sha256(syx)};
+  return {name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalRows:describeRows(body),scenes,controls:effective,channels,parameters,typeApplicability:typePolicySummary(),outputSha256:sha256(syx)};
 }
 function unitFor(p){
   // Only explicit, already used units; unknown units stay labelled as editor values.
@@ -66,7 +69,7 @@ export function renderFinalSoundText(state,spec){
   lines.push('','SÕLTUVUSED JA KONTROLLITASE','Kanalimuudatus mõjutab kõiki seda kanalit kasutavaid stseene. Määramata väärtused pärinevad alusest või kopeeritud täiskanalimallist.',
     'Cab-mallid kasutavad olemasolevat Dyna-Cab teeki. Väliseid User IR-faile ei paigaldata; muutmata IR/pedaali/globaalseadistuse sõltuvused säilivad alusfailist.',
     'Offline-kontroll läbitud: lõppfaili kaadrid, CRC, sisu, marsruutimine ja deklareeritud muudatused. Selle lõppfaili import, heli ja CPU pole uue kontrolliga kinnitatud.',
-    'Valideerimisraporti parameters sisaldab salvestatud väärtusi; kõigi tüüpide juhtelementide nähtavus pole veel täielikult valideeritud. Tundmatud sõnad säilivad toorandmetena.',
+    'Choruse ja Drive’i parameetriloend ning tabelikirjutused järgivad FW13 tüübi nähtavusreegleid. Muude plokkide nähtavus ning tempo- ja modifikaatoriseosed pole veel kontrollitud. Peidetud salvestatud sõnad säilivad toorandmetena.',
     '','KASUTAMINE','1. Säilita pooleliolev töö ning impordi fail FM3-Editi tööpuhvrisse.',
     `2. Kontrolli veateateid, valitud Scene ${state.selectedScene}, kanaleid ja soovitud helitasemeid.`,
     '3. Uut eksporti küsi ainult konkreetse seni kinnitamata katse jaoks; varasemaid piisavaid tõendeid kasuta uuesti.',
