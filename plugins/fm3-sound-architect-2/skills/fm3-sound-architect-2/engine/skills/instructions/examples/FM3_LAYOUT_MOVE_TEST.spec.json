@@ -1,0 +1,12 @@
+{
+  "purpose": "Kahe rea ruudustiku vaba paigutuse seadmekatse: plokid liiguvad soundi järjekorda, Compressor/Phaser/Chorus lisatakse (kõigis stseenides bypass), Chorus A Rate seatakse tabelikodeerijaga. Bonamassa seaded muidu samad.",
+  "composer": {
+    "schemaVersion": 1, "firmware": 13, "baseProfile": "jb-composer",
+    "name": "FM3 LAYOUT MOVE TEST",
+    "compressorChannels": [{"channel": "A", "type": "Optical Compressor"}],
+    "phaserChannels": [{"channel": "A", "type": "Classic Vibe"}],
+    "chorusChannels": [{"channel": "A", "type": "Japan CE-2"}]
+  },
+  "layout": {"row2": ["compressor", "drive", "phaser", "amp", "cab"], "row3": ["chorus", "delay", "reverb"]},
+  "controls": [{"block": "chorus", "channel": "A", "param": "CHORUS_RATE", "value": 1.2}]
+}
