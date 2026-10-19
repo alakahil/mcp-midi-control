@@ -1,0 +1,23 @@
+[
+  {
+    "displayNumber": 25,
+    "name": "Triangle Chorus",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 26,
+    "name": "Vibrato",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 27,
+    "name": "Warm Stereo",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  }
+]

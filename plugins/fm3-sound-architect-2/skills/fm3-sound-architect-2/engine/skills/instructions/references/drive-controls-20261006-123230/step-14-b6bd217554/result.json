@@ -1,0 +1,74 @@
+{
+  "index": 14,
+  "status": "passed",
+  "step": {
+    "id": "C-level",
+    "kind": "control",
+    "channel": "C",
+    "binaryId": 0,
+    "field": "Level",
+    "pid": 3,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "C-level",
+      "kind": "control",
+      "channel": "C",
+      "binaryId": 0,
+      "field": "Level",
+      "pid": 3,
+      "value": 2,
+      "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8642,
+        "before": 255,
+        "after": 51
+      },
+      {
+        "offset": 8643,
+        "before": 127,
+        "after": 51
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Level",
+      "userConfirmedDisplayValue": 2,
+      "rawBefore": 32767,
+      "rawAfter": 13107,
+      "candidateRaw": 13107,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "ac65db04d25ed2aabab4503f42fdacb3c4c3160611995bc77f8fc2c384b88d59",
+    "rawRxSha256": "5c3ea8d31fe3edb9363c480ae3cfb7da5ebb51e9872ba56c2997a817bdc1fadf",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 0
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

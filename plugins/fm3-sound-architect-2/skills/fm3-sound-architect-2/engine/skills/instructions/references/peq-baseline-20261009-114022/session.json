@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "kind": "FM3_PEQ_BASE_SESSION",
+  "collector": "0.1.0",
+  "baselineSha256": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be"
+}

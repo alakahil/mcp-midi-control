@@ -1,0 +1,32 @@
+{
+  "paired": true,
+  "matchedWords": 424,
+  "syxSha256": "541eae276fcc8240ac2035997604f8d260d087f1d8d0fe43b1fc701d08edb376",
+  "rawRxSha256": "30e7d43eef9d4975c1253821faf01eddb93ac48a0120155435ca6788d7626d80",
+  "channels": [
+    {
+      "channel": "A",
+      "mode": 1,
+      "slot1": 16,
+      "slot2": 16
+    },
+    {
+      "channel": "B",
+      "mode": 1,
+      "slot1": 17,
+      "slot2": 17
+    },
+    {
+      "channel": "C",
+      "mode": 1,
+      "slot1": 18,
+      "slot2": 18
+    },
+    {
+      "channel": "D",
+      "mode": 1,
+      "slot1": 19,
+      "slot2": 19
+    }
+  ]
+}

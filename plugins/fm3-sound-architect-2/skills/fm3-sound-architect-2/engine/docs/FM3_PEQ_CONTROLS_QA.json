@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-09",
+  "scope": "Offline synthetic control workflow; no real device I/O",
+  "independentForwardRun": {
+    "completedPoints": 12,
+    "failedInterruptedAttemptsPreserved": 1,
+    "simulatedGetCalls": 13,
+    "resumeFromFirstUnfinishedPoint": true,
+    "completedResumeAndExportWithoutDeviceCall": true,
+    "negativeChecks": [
+      "unrelated body change",
+      "wrong candidate word",
+      "reply checksum",
+      "repeated GET metadata",
+      "missing input flush",
+      "wrong SYX hash",
+      "conflicting decoded values",
+      "tampered comparison"
+    ]
+  },
+  "resolvedFinding": {
+    "issue": "Finite but implausibly off-target display numbers could be retained as paired captures",
+    "change": "Display values must be within max(0.01, 0.5% of target) to accommodate rounding; this is a capture-target tolerance, not a verified device parameter range",
+    "regressionCases": [
+      "500Hz rejects 1e99 and 1000",
+      "Q0.707 accepts displayed 0.71",
+      "500Hz accepts displayed 499.99",
+      "Level -3 rejects +/-1000 and +2"
+    ]
+  },
+  "tests": "../skills/instructions/scripts/peq-control-collector/TEST_RESULTS.json",
+  "hardwareEvidence": "Only the separate actual baseline 132/132 pair has been received; parameter controls remain pending",
+  "generatorSupport": false
+}

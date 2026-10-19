@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 5,
+    "expectedId": 4,
+    "name": "1x10 SF Princetone",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 6,
+    "expectedId": 5,
+    "name": "1x12 AC20",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 7,
+    "expectedId": 6,
+    "name": "1x12 Black Magick",
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 8,
+    "expectedId": 7,
+    "name": "1x12 Car Ambler",
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

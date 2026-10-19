@@ -1,0 +1,208 @@
+{
+  "prototype": "time-0.1.0",
+  "spec": {
+    "name": "FM3 SA TEST TIME",
+    "delayTimeMs": 400,
+    "delayFeedback": 25,
+    "reverbTimeS": 2.5,
+    "reverbPredelayMs": 40
+  },
+  "requests": [
+    {
+      "eid": 70,
+      "pid": 8,
+      "offset": 7408,
+      "min": 1,
+      "max": 16000,
+      "testMin": 50,
+      "testMax": 1000,
+      "unit": "ms",
+      "label": "Delay A Time",
+      "key": "delayTimeMs",
+      "value": 400,
+      "raw": 1634
+    },
+    {
+      "eid": 70,
+      "pid": 10,
+      "offset": 7412,
+      "min": -100,
+      "max": 100,
+      "testMin": 0,
+      "testMax": 50,
+      "unit": "%",
+      "label": "Delay A Feedback",
+      "key": "delayFeedback",
+      "value": 25,
+      "raw": 40959
+    },
+    {
+      "eid": 66,
+      "pid": 1,
+      "offset": 9566,
+      "min": 0.1,
+      "max": 100,
+      "testMin": 0.5,
+      "testMax": 5,
+      "unit": "s",
+      "label": "Reverb A Time",
+      "key": "reverbTimeS",
+      "value": 2.5,
+      "raw": 1574
+    },
+    {
+      "eid": 66,
+      "pid": 9,
+      "offset": 9582,
+      "min": 0,
+      "max": 1000,
+      "testMin": 0,
+      "testMax": 100,
+      "unit": "ms",
+      "label": "Reverb A Pre-Delay",
+      "key": "reverbPredelayMs",
+      "value": 40,
+      "raw": 2621
+    }
+  ],
+  "tempo": "Delay A Tempo NONE; Reverb A Pre-Delay Tempo NONE",
+  "toneDefaults": {
+    "prototype": "tone-0.1.0",
+    "spec": {
+      "name": "FM3 SA TEST TIME",
+      "midB": 5,
+      "trebleB": 4,
+      "presenceB": 2,
+      "levelB": -18,
+      "delayMixA": 15,
+      "reverbMixA": 12
+    },
+    "defaults": {
+      "gainB": 5,
+      "delayScene2": true,
+      "reverbScene1": "A"
+    },
+    "requests": [
+      {
+        "eid": 58,
+        "pid": 9,
+        "offset": 4962,
+        "min": 0,
+        "max": 10,
+        "label": "Amp B Mid",
+        "unit": "/10",
+        "key": "midB",
+        "value": 5,
+        "raw": 32767
+      },
+      {
+        "eid": 58,
+        "pid": 10,
+        "offset": 4964,
+        "min": 0,
+        "max": 10,
+        "label": "Amp B Treble",
+        "unit": "/10",
+        "key": "trebleB",
+        "value": 4,
+        "raw": 26214
+      },
+      {
+        "eid": 58,
+        "pid": 26,
+        "offset": 4996,
+        "min": 0,
+        "max": 10,
+        "label": "Amp B Presence",
+        "unit": "/10",
+        "key": "presenceB",
+        "value": 2,
+        "raw": 13107
+      },
+      {
+        "eid": 58,
+        "pid": 1,
+        "offset": 4946,
+        "min": -80,
+        "max": 20,
+        "label": "Amp B Level",
+        "unit": "dB",
+        "key": "levelB",
+        "value": -18,
+        "raw": 40631
+      },
+      {
+        "eid": 70,
+        "pid": 0,
+        "offset": 7392,
+        "min": 0,
+        "max": 100,
+        "label": "Delay A Mix",
+        "unit": "%",
+        "key": "delayMixA",
+        "value": 15,
+        "raw": 9830
+      },
+      {
+        "eid": 66,
+        "pid": 13,
+        "offset": 9590,
+        "min": 0,
+        "max": 100,
+        "label": "Reverb A Mix",
+        "unit": "%",
+        "key": "reverbMixA",
+        "value": 12,
+        "raw": 7864
+      }
+    ],
+    "changedBodyOffsets": [
+      4946,
+      4947,
+      4962,
+      4963,
+      4964,
+      4965,
+      4996,
+      4997,
+      7392,
+      7393,
+      9590,
+      9591
+    ],
+    "sha256": "1e5fbd8449847e2f7122204688ecaae93049173aa856d7c2824f3d073e6c7273",
+    "firmwareTarget": 13,
+    "checks": {
+      "frameChecksums": true,
+      "presetCrc": true,
+      "footer": true,
+      "exactExpectedBody": true,
+      "rawParamReadback": true,
+      "headerPreserved": true
+    },
+    "hardware": "pending for EQ/level/mix",
+    "audio": "unconfirmed"
+  },
+  "changedBodyOffsets": [
+    7408,
+    7409,
+    7412,
+    7413,
+    7422,
+    9566,
+    9567,
+    9582,
+    9583
+  ],
+  "sha256": "81f5f2cecbc0cbd3facf4039124e82366d4f49bf63dd8339ea7bc7f6174f1b53",
+  "checks": {
+    "frames": true,
+    "crc": true,
+    "footer": true,
+    "exactBody": true,
+    "rawReadback": true,
+    "headersPreserved": true
+  },
+  "hardware": "pending for times/feedback/tempo",
+  "audio": "unconfirmed"
+}

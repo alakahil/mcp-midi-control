@@ -1,0 +1,98 @@
+{
+  "index": 73,
+  "step": {
+    "id": "074-type",
+    "kind": "type",
+    "stage": "types",
+    "label": "7 Band Bass Pedal — Type ja tegelik juhtpaneel",
+    "channel": "A",
+    "typeName": "7 Band Bass Pedal",
+    "bandCount": 7,
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "074-type",
+      "kind": "type",
+      "stage": "types",
+      "label": "7 Band Bass Pedal — Type ja tegelik juhtpaneel",
+      "channel": "A",
+      "typeName": "7 Band Bass Pedal",
+      "bandCount": 7,
+      "allowUnchanged": true
+    },
+    "previousSha256": "eebf820f01dda9773ec397b60ea44b0a7cbb7b8f4a45028d4327784405a27f1d",
+    "syxSha256": "37ce773f7ceca8c67e4da043b5eb8f3499e5a08cdd0975ddb9ebf407d6335193",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 15,
+        "offset": 8384,
+        "before": 7,
+        "after": 17
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "ui": {
+      "typeName": "7 Band Bass Pedal",
+      "bandLabels": [
+        "62",
+        "125",
+        "250",
+        "500",
+        "1K",
+        "2K",
+        "4K"
+      ],
+      "masterQVisible": true,
+      "extraControls": ""
+    }
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "37ce773f7ceca8c67e4da043b5eb8f3499e5a08cdd0975ddb9ebf407d6335193",
+    "bodySha256": "c9547535b2d1f3c957bd4689a5316f5df91584418dd68d7dde7031bae283fd70",
+    "rawRxSha256": "cfb0f033b4439264053cda5c86f05dd3d3b78dc0f61ac0d96ba0f636e9527853",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 9,
+    "name": "Dual Delay",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 10,
+    "name": "Dual Head Tape",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 11,
+    "name": "Ducking Delay",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 12,
+    "name": "Graphite Copy Delay",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "index": 3,
+  "step": {
+    "id": "004-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "3 Band Console — kõigi nähtavate ribade minimum",
+    "channel": "A",
+    "typeName": "3 Band Console",
+    "bandCount": 3,
+    "endpoint": "minimum"
+  },
+  "status": "failed",
+  "comparison": {
+    "step": {
+      "id": "004-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "3 Band Console — kõigi nähtavate ribade minimum",
+      "channel": "A",
+      "typeName": "3 Band Console",
+      "bandCount": 3,
+      "endpoint": "minimum"
+    },
+    "previousSha256": "2e7ca7025b6242be7e2c55b8760b7753d5bf4e68bc82629e75be873fedaf350a",
+    "syxSha256": "1d105d1b3108e1b715b702741f02369f799430323ab49669543bc2a307909cfc",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 34132,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 35498,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 36863,
+        "after": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 GEQ FULL",
+      "after": "FM3 GEQ SEL_3",
+      "beforeHex": "464d33204745512046554c4c2020202020202020202020202020202020202000",
+      "afterHex": "464d33204745512053454c5f3320202020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "error": "Sisesta tegelik arv; mitut näitu eralda semikooloniga"
+}

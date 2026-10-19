@@ -1,0 +1,139 @@
+FM3 SOUND ARCHITECT — ÜHINE PRESET
+Preset: FM3 PEQ BAND3 TEST
+Eesmärk: V3 helitasakaal koos PEQ Band 3 Peaking kontrollkatsega: Scene 2 sees, teistes bypass; 1000 Hz, Q1.4, Gain +3 dB, Level0.
+FM3 Mk II Turbo, firmware 13. Kasutaja senine kontekst: Ibanez humbuckeritega; OUT 1 stereo FOH.
+Alus: examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx (jb-newlook). Valitud Scene 2 säilib.
+Rida 2: Input 1 → Drive 1 → Amp 1 → Cab 1 → Filter 1 → PEQ 1 → Send 1
+Rida 3: Return 1 → Delay 1 → Reverb 1 → Output 1
+
+KÜSITUD KANALIMALLID
+Lisatud filter: rida 2, veerg 9; küsitud stseenivalikud on allpool, muud stseenid A/bypass. Kogu väljundkeha kattub kinnitatud seadmeekspordiga.
+Lisatud peq: rida 2, veerg 10; küsitud stseenivalikud on allpool, muud stseenid A/bypass. Kogu väljundkeha kattub kinnitatud seadmeekspordiga.
+drive B: T808 OD; täielik kogutud kanalimall.
+  drive 2 /10, tone 7 /10, level 2 /10, mix 25%
+reverb D: Room: Medium Room; täielik kogutud kanalimall.
+filter C: Peaking; täielik kogutud kanalimall.
+  frequencyHz: 1000 Hz [mõõdetud punkt; küsitud 1000]
+  q: 1.4  [mõõdetud punkt; küsitud 1.4]
+  gainDb: 3 dB [mõõdetud punkt; küsitud 3]
+  levelDb: 0 dB [mõõdetud punkt; küsitud 0]
+peq A: Band 3 Peaking; muud ribad alusest; täielik kogutud kanalimall.
+  band3.frequencyHz: 1000 Hz [mõõdetud punkt; küsitud 1000]
+  band3.q: 1.4  [mõõdetud punkt; küsitud 1.4]
+  band3.gainDb: 3 dB [mõõdetud punkt; küsitud 3]
+  levelDb: 0 dB [mõõdetud punkt; küsitud 0]
+PEQ: kirjutatakse ainult kanali A Band 3 Peaking mõõdetud Frequency/Q/Gain ja üldine Level. Muud ribad/tüübid pärinevad algmallist; teisi kanaleid ei seadistata.
+Amp A: Double Verb Vibrato; täielik kogutud kanalimall koos Leveliga.
+Amp D: Plexi 50W High 1; täielik kogutud kanalimall koos Leveliga.
+Cab A: 2x12 Double Verb; mõlemad Dyna-Cab pesad ja kogu kogutud kanal, sh mikrofonid, segu, filtrid ning tasemed.
+Cab B: 4x12 Rumble EV12L; mõlemad Dyna-Cab pesad ja kogu kogutud kanal, sh mikrofonid, segu, filtrid ning tasemed.
+Cab D: 4x12 Rumble EV12S; mõlemad Dyna-Cab pesad ja kogu kogutud kanal, sh mikrofonid, segu, filtrid ning tasemed.
+
+PARAMEETRID
+Amp B Gain: 5.00 /10 [määratud kirjelduses]
+Amp B Bass: 4.00 /10 [määratud kirjelduses]
+Amp B Mid: 6.50 /10 [määratud kirjelduses]
+Amp B Treble: 5.20 /10 [määratud kirjelduses]
+Amp B Presence: 3.00 /10 [määratud kirjelduses]
+Amp B Level: -1.00 dB [määratud kirjelduses]
+Delay A Mix: 15.00 % [määratud kirjelduses]
+Reverb A Mix: 20.00 % [alusfailist]
+Delay A Time: 399.91 ms [määratud kirjelduses]
+Delay A Feedback: 25.00 % [määratud kirjelduses]
+Reverb A Time: 1.64 s [alusfailist]
+Reverb A Pre-Delay: 30.00 ms [alusfailist]
+Delay A Tempo: NONE  [määratud kirjelduses]
+Reverb A Pre-Delay Tempo: NONE  [alusfailist]
+Scene 2 Delay: bypass  [stseenikirjeldusest]
+Scene 1 Reverb kanal: A  [stseenikirjeldusest]
+Amp A Level: -12.00 dB [kirjelduses -12 dB; examples/JB_EIGHT_SCENES_V2_export.syx]
+
+KANALITE MÕJU
+amp A: stseenid 1, 5; efekt sees stseenides 1, 5.
+amp B: stseenid 2, 3; efekt sees stseenides 2, 3.
+amp D: stseenid 4; efekt sees stseenides 4.
+cab A: stseenid 1, 5; efekt sees stseenides 1, 5.
+cab B: stseenid 2, 3, 6, 7, 8; efekt sees stseenides 2, 3, 6, 7, 8.
+cab D: stseenid 4; efekt sees stseenides 4.
+delay A: stseenid 1, 2, 3, 4, 5, 6, 7, 8; efekt sees stseenides 5, 6, 8.
+filter C: stseenid 8; efekt sees stseenides 8.
+drive B: stseenid 3, 6, 7, 8; efekt sees stseenides 3, 6, 7, 8.
+peq A: stseenid 1, 2, 3, 4, 5, 6, 7, 8; efekt sees stseenides 2.
+reverb D: stseenid 6, 7, 8; efekt sees stseenides 6, 7, 8.
+
+STSEENID 1–8
+Scene 1: Clean Edge
+  amp A: Double Verb Vibrato; sees; Level -12.00 dB
+  cab A: 2x12 Double Verb + 2x12 Double Verb; sees
+  delay A: Deluxe Mind Guy; bypass
+  filter A: Null; bypass
+  drive A: Full OD; bypass
+  peq A: Parametric EQ; bypass
+  reverb A: Room: Large Room; sees
+Scene 2: Rhythm Fat
+  amp B: Brit Silver; sees; Level -1.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; bypass
+  filter A: Null; bypass
+  drive A: Full OD; bypass
+  peq A: Parametric EQ; sees
+  reverb B: Room: Large Room; sees
+Scene 3: Rhythm Push
+  amp B: Brit Silver; sees; Level -1.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; bypass
+  filter A: Null; bypass
+  drive B: T808 OD; sees
+  peq A: Parametric EQ; bypass
+  reverb B: Room: Large Room; sees
+Scene 4: Plexi Crunch
+  amp D: Plexi 50W High 1; sees; Level -8.16 dB
+  cab D: 4x12 Rumble EV12S + 4x12 Rumble EV12S; sees
+  delay A: Deluxe Mind Guy; bypass
+  filter A: Null; bypass
+  drive A: Full OD; bypass
+  peq A: Parametric EQ; bypass
+  reverb B: Room: Large Room; sees
+Scene 5: Clean Echo
+  amp A: Double Verb Vibrato; sees; Level -12.00 dB
+  cab A: 2x12 Double Verb + 2x12 Double Verb; sees
+  delay A: Deluxe Mind Guy; sees
+  filter A: Null; bypass
+  drive A: Full OD; bypass
+  peq A: Parametric EQ; bypass
+  reverb A: Room: Large Room; sees
+Scene 6: JB SOLO
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; sees
+  filter A: Null; bypass
+  drive B: T808 OD; sees
+  peq A: Parametric EQ; bypass
+  reverb D: Room: Medium Room; sees
+Scene 7: Solo Direct
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; bypass
+  filter A: Null; bypass
+  drive B: T808 OD; sees
+  peq A: Parametric EQ; bypass
+  reverb D: Room: Medium Room; sees
+Scene 8: Solo Mid Focus
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; sees
+  filter C: Peaking; sees
+  drive B: T808 OD; sees
+  peq A: Parametric EQ; bypass
+  reverb D: Room: Medium Room; sees
+
+Olemasolevate plokkide määramata seaded, kanalivalikud, bypass, lülitid ja modifierid säilivad alusfailist. Kogutud mallid pole tingimata tehasevaikeväärtused.
+Tüübimalli valik üksi ei aktiveeri efekti. Stseenikirjeldus määrab kanalid ja efekti sees/bypass oleku; lisatud plokid algavad A/bypass. Kanalite mõju on eespool.
+NewLook-alusel lisatakse üksnes küsitud toetatud plokid vabade shuntide asemele. Send/Return ja kaks rida säilivad. Väliseid IR-e ei lisata. Rotary A on piiratud mõõdetud punktidega.
+Failitasemel kontrollitud: GET/SYX komponenditõendid, kõik sisubaidid, lubatud alad, routing, kaadrid, CRC, footer, pikkused ja lõputäide.
+Selle täpse SYX-faili import ja tagasieksport on kinnitatud: kõik kehabaidid kattuvad. Korduskatset pole vaja. Heli ja CPU kohta hinnangut ei lisandu.
+
+KASUTAMINE
+Impordi soovi korral FM3-Editi tööpuhvrisse. Stseenid ja heliseaded kattuvad raportis nimetatud seadmeekspordiga. Täiendavat ekspordikatset ei nõuta.
+Tööriist ei ühenda seadet ega saada MIDI/SET/SAVE-käske.
+SHA-256: 3869051de07add62df3e528b3f53cd70e236ef9fe5c61bb1a342879f465d0f98

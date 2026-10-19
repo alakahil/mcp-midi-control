@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "JB RHYTHM LEVEL -3",
+  "purpose": "Tasemete peenhäälestus: Scene 2 Amp B Level -4 -> -3 dB ehk veel +1 dB. Scene 6 jääb seniseks. Kasutaja viimane OUTPUT 1 Left/Right näit oli Scene 2 puhul umbes -3 dB; uue katse sobivus kinnitatakse kuulamisega.",
+  "gainB": 5,
+  "bassB": 4,
+  "midB": 6.5,
+  "trebleB": 5.2,
+  "presenceB": 3,
+  "levelB": -3,
+  "cabModelB": "4x12 Rumble EV12L",
+  "driveChannels": [
+    {
+      "channel": "B",
+      "type": "T808 OD",
+      "drive": 2,
+      "tone": 7,
+      "level": 2,
+      "mix": 25
+    }
+  ],
+  "delayTimeMs": 400,
+  "delayTempoA": "NONE",
+  "delayFeedback": 25,
+  "delayMixA": 15,
+  "reverbChannels": [
+    {
+      "channel": "D",
+      "type": "Room: Medium Room"
+    }
+  ],
+  "scene6Name": "JB SOLO",
+  "phaserScene6Bypass": true,
+  "reverbScene6": "D",
+  "delayScene6Bypass": false,
+  "ampScene6": "C"
+}

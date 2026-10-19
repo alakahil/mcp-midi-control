@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "generatedSha256": "ac147e26173f32dd91b2b2be5fd4e429107ca185fee3fa09f435e1df7740a446",
+  "hardwareExportSha256": "8ecff27b3da708c0a1f84febab7d6c2059022fec1c01e10a4b383f79718ecb69",
+  "fullFilesIdentical": false,
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [],
+  "channels": [
+    {
+      "channel": "A",
+      "type": "4-Voice Analog",
+      "binaryId": 13,
+      "all32WordsPreserved": true
+    },
+    {
+      "channel": "B",
+      "type": "Mx134 Stereo",
+      "binaryId": 26,
+      "all32WordsPreserved": true
+    },
+    {
+      "channel": "C",
+      "type": "Japan CE-2",
+      "binaryId": 4,
+      "all32WordsPreserved": true
+    },
+    {
+      "channel": "D",
+      "type": "Warm Stereo",
+      "binaryId": 5,
+      "all32WordsPreserved": true
+    }
+  ],
+  "presetNameChange": {
+    "before": "FM3_FLANGER_ABCD_TEST_export",
+    "after": "FM3_FLANGER_ABCD_TEST_export"
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 64,
+      "after": 252,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 173,
+      "after": 249,
+      "field": "CRC"
+    }
+  ],
+  "sceneChannelsBefore": [
+    0,
+    3,
+    0,
+    0,
+    2,
+    0,
+    0,
+    2
+  ],
+  "sceneChannelsAfter": [
+    0,
+    3,
+    0,
+    0,
+    2,
+    0,
+    0,
+    2
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footerChecksum": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all128ChorusWordsPreserved": true,
+    "scenesAndBypassPreserved": true,
+    "dumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyNameAndCrc": true
+  },
+  "scope": "Hardware roundtrip verified only if reported checks pass for this ABCD specimen; 108 general type/channel combinations are offline tested only. Audio and CPU not assessed.",
+  "encoding": {
+    "compressedBytesBefore": 4933,
+    "compressedBytesAfter": 4933,
+    "compressedRepresentationIdentical": false,
+    "paddingBeforeAllZero": true,
+    "paddingAfterAllZero": true,
+    "note": "Compressed encoding and its checksums may differ while decompressed data is byte-identical; no body normalization performed."
+  }
+}

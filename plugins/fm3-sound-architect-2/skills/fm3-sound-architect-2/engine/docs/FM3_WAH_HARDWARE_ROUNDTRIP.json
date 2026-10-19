@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "generatedSha256": "16372f21a74abd572be434f9567f4d5559c1b0015c981dcd1b3e03fc9a5a913b",
+  "hardwareExportSha256": "8e5dfddfe0ef6d20032cafd5e697d602b550005041588075d12a21dbf60a633a",
+  "fullFilesIdentical": false,
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [],
+  "channels": [
+    {
+      "channel": "A",
+      "type": "Clyde",
+      "binaryId": 1,
+      "all25WordsPreserved": true
+    },
+    {
+      "channel": "B",
+      "type": "Paragon",
+      "binaryId": 8,
+      "all25WordsPreserved": true
+    },
+    {
+      "channel": "C",
+      "type": "Cry Babe",
+      "binaryId": 2,
+      "all25WordsPreserved": true
+    },
+    {
+      "channel": "D",
+      "type": "Vx846",
+      "binaryId": 3,
+      "all25WordsPreserved": true
+    }
+  ],
+  "presetNameChange": {
+    "before": "FM3_CHORUS_ABCD_TEST_export.",
+    "after": "FM3_CHORUS_ABCD_TEST_export."
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 202,
+      "after": 73,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 22,
+      "after": 166,
+      "field": "CRC"
+    }
+  ],
+  "sceneChannelsBefore": [
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "sceneChannelsAfter": [
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footerChecksum": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all100WahWordsPreserved": true,
+    "scenesAndBypassPreserved": true,
+    "dumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyNameAndCrc": true
+  },
+  "scope": "Hardware roundtrip verified only if reported checks pass for this ABCD specimen; 36 general type/channel combinations are offline tested only. Audio and CPU not assessed.",
+  "encoding": {
+    "compressedBytesBefore": 4938,
+    "compressedBytesAfter": 4938,
+    "compressedRepresentationIdentical": false,
+    "paddingBeforeAllZero": true,
+    "paddingAfterAllZero": true,
+    "note": "Compressed encoding and its checksums may differ while decompressed data is byte-identical; no body normalization performed."
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "effectId": 90,
+  "firmwareDeclared": 13,
+  "source": "User FM3-Edit screenshot 2026-10-07 12.14.45; display numbers are collection order, not device IDs",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "Barber Pole",
+      "binaryId": 7
+    },
+    {
+      "displayNumber": 2,
+      "name": "Block 90",
+      "binaryId": 4
+    },
+    {
+      "displayNumber": 3,
+      "name": "Borg Phaser",
+      "binaryId": 13
+    },
+    {
+      "displayNumber": 4,
+      "name": "Classic Vibe",
+      "binaryId": 5
+    },
+    {
+      "displayNumber": 5,
+      "name": "Digital Mono",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Digital Stereo",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "FAS Vibe",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 8,
+      "name": "Modern Vibe",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "Mutated Twin-Phaser",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Naughty Rock",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Script 45",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Script 90",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 13,
+      "name": "Stereo 8-Stage",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 14,
+      "name": "Stripe 90",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 15,
+      "name": "Treadle Phaser",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 16,
+      "name": "Ultra-Super-Mega Phaser",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 17,
+      "name": "Virtuoso Phaser",
+      "binaryId": null
+    }
+  ]
+}

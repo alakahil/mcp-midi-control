@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "block": "Compressor1",
+  "firmwareDeclared": 13,
+  "count": 19,
+  "source": "User FM3-Edit Type menu screenshot 2026-10-06 18.38.14",
+  "sourceImage": "compressor-types-20261006.png",
+  "sourceSha256": "dcd0ab7e8799e5439bb53391a0fe2a3a77ad831fb63bed61815fbe9a8fb4e06a",
+  "status": "Names only; binary IDs and full templates pending GET/SYX evidence",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "Analog Compressor",
+      "binaryId": 6
+    },
+    {
+      "displayNumber": 2,
+      "name": "Analog Sustainer",
+      "binaryId": 14
+    },
+    {
+      "displayNumber": 3,
+      "name": "Citrus Juicer",
+      "binaryId": 18
+    },
+    {
+      "displayNumber": 4,
+      "name": "Classic VCA Compressor",
+      "binaryId": 13
+    },
+    {
+      "displayNumber": 5,
+      "name": "Compander",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Dynami-Comp Classic",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "Dynami-Comp Modern",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 8,
+      "name": "Dynami-Comp Soft",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "Dynamics Processor",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Econo-Dyno-Comp",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "JFET Pedal Compressor",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "JFET Studio Compressor",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 13,
+      "name": "Modern VCA Compressor",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 14,
+      "name": "Optical Compressor",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 15,
+      "name": "Rockguy Compressor",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 16,
+      "name": "Vari-Mu Tube Compressor",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 17,
+      "name": "VCA Bus Compressor",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 18,
+      "name": "VCA FB Sustainer",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 19,
+      "name": "VCA FF Sustainer",
+      "binaryId": null
+    }
+  ],
+  "batches": [
+    [
+      {
+        "channel": "A",
+        "name": "Analog Compressor"
+      },
+      {
+        "channel": "B",
+        "name": "Analog Sustainer"
+      },
+      {
+        "channel": "C",
+        "name": "Citrus Juicer"
+      },
+      {
+        "channel": "D",
+        "name": "Classic VCA Compressor"
+      }
+    ],
+    [
+      {
+        "channel": "A",
+        "name": "Compander"
+      },
+      {
+        "channel": "B",
+        "name": "Dynami-Comp Classic"
+      },
+      {
+        "channel": "C",
+        "name": "Dynami-Comp Modern"
+      },
+      {
+        "channel": "D",
+        "name": "Dynami-Comp Soft"
+      }
+    ],
+    [
+      {
+        "channel": "A",
+        "name": "Dynamics Processor"
+      },
+      {
+        "channel": "B",
+        "name": "Econo-Dyno-Comp"
+      },
+      {
+        "channel": "C",
+        "name": "JFET Pedal Compressor"
+      },
+      {
+        "channel": "D",
+        "name": "JFET Studio Compressor"
+      }
+    ],
+    [
+      {
+        "channel": "A",
+        "name": "Modern VCA Compressor"
+      },
+      {
+        "channel": "B",
+        "name": "Optical Compressor"
+      },
+      {
+        "channel": "C",
+        "name": "Rockguy Compressor"
+      },
+      {
+        "channel": "D",
+        "name": "Vari-Mu Tube Compressor"
+      }
+    ],
+    [
+      {
+        "channel": "A",
+        "name": "VCA Bus Compressor"
+      },
+      {
+        "channel": "B",
+        "name": "VCA FB Sustainer"
+      },
+      {
+        "channel": "C",
+        "name": "VCA FF Sustainer"
+      }
+    ]
+  ]
+}

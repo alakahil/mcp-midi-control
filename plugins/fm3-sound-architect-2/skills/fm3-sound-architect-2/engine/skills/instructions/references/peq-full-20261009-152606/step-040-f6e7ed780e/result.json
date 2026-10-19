@@ -1,0 +1,130 @@
+{
+  "index": 40,
+  "step": {
+    "id": "041-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 1 Q → 1.4 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 1.4,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 40,
+    "step": {
+      "id": "041-numeric",
+      "stage": "numeric",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 1 Q → 1.4 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Q",
+          "candidatePid": 5,
+          "value": 1.4,
+          "band": 1,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "4c9a1563ad7375189e79bbfea02bd225732e7188699573d2e518b80b9213f86d",
+    "syxSha256": "059dfb74c1661aadfdd5318ae20fbd91164b0eddd9bcaca11c101e5d2c8c3f4d",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 5,
+        "offset": 8744,
+        "before": 27833,
+        "after": 37555
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 1.4,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 37555
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 PEQ FULL_30",
+      "after": "FM3 PEQ FULL_40",
+      "beforeHex": "464d33205045512046554c4c5f33302020202020202020202020202020202000",
+      "afterHex": "464d33205045512046554c4c5f34302020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 1.4,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": 1.4
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "059dfb74c1661aadfdd5318ae20fbd91164b0eddd9bcaca11c101e5d2c8c3f4d",
+    "bodySha256": "ab3f9b2097608a97cf524b37b243f8e0fd22fc3ff3a82bfc91bb2c6231517bfb",
+    "rawRxSha256": "599df8e49ebed2b1d598256fada8e79bbf8ed94e2d33758dce8583e3de5b210e",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

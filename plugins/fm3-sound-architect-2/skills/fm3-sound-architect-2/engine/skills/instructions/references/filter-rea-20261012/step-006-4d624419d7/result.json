@@ -1,0 +1,97 @@
+{
+  "index": 6,
+  "step": {
+    "id": "07",
+    "label": "Q — C Peaking 1.0",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Q",
+        "parameterId": 2,
+        "value": 1.0,
+        "unit": "",
+        "mode": "numeric",
+        "minimum": 0.1,
+        "maximum": 10.0,
+        "options": [],
+        "parameterName": "FILTER_Q"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 6,
+    "step": {
+      "id": "07",
+      "label": "Q — C Peaking 1.0",
+      "activeChannel": "C",
+      "targets": [
+        {
+          "channel": "C",
+          "type": "Peaking",
+          "binaryId": 6,
+          "parameter": "Q",
+          "parameterId": 2,
+          "value": 1,
+          "unit": "",
+          "mode": "numeric",
+          "minimum": 0.1,
+          "maximum": 10,
+          "options": [],
+          "parameterName": "FILTER_Q"
+        }
+      ],
+      "reason": "missing endpoint or independent check",
+      "allowUnchanged": true
+    },
+    "previousSha256": "fdf354f5ac18372b6924bb04aee77426c399e43f4fe4d29e3b903de7db56bf71",
+    "syxSha256": "783be4134f270b0309877978f8864962ab35c58f9bdc7a6f50da959718203b2f",
+    "bodySha256": "efaf22fa93c87cfcc2256c6dca30a2a64d672ec9d6717c326c0b55afea9ccde4",
+    "changedWords": [
+      {
+        "channel": "C",
+        "pid": 2,
+        "offset": 7766,
+        "before": 27833,
+        "after": 32767
+      }
+    ],
+    "targets": [
+      {
+        "channel": "C",
+        "pid": 2,
+        "before": 27833,
+        "after": 32767,
+        "wordChanged": true
+      }
+    ],
+    "presetNameChange": null,
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "pending-real-display-and-GET-pair; unchanged words are not isolated-change evidence"
+  },
+  "observations": [
+    {
+      "channel": "C",
+      "parameterId": 2,
+      "requestedValue": 1.0,
+      "displayText": "1.0",
+      "displayValue": 1.0
+    }
+  ],
+  "displayConfirmed": true,
+  "getAuthorized": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "783be4134f270b0309877978f8864962ab35c58f9bdc7a6f50da959718203b2f",
+    "bodySha256": "efaf22fa93c87cfcc2256c6dca30a2a64d672ec9d6717c326c0b55afea9ccde4",
+    "rawRxSha256": "fff61f2298b312b15fc4d6cc3dfd2e496993c2444476139215ed5fccf365739a"
+  }
+}

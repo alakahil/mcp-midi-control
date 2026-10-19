@@ -1,0 +1,77 @@
+{
+  "index": 0,
+  "step": {
+    "id": "C-frequency-500",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Frequency",
+    "value": 500,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 500 Hz. Ekspordi terve preset."
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 0,
+    "step": {
+      "id": "C-frequency-500",
+      "channel": "C",
+      "type": "Peaking",
+      "binaryId": 6,
+      "parameter": "Frequency",
+      "value": 500,
+      "unit": "Hz",
+      "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 500 Hz. Ekspordi terve preset."
+    },
+    "previousSha256": "b3d406ce0bf847dadd20ba4b36553e8a54cc4939fe4808ee7e389e40d63ae2a3",
+    "syxSha256": "8aebe5daf5308b2bfa531bde1f1dc17fe7c91fb4365d382dcdea9c1e2d5b179e",
+    "changedWords": [
+      {
+        "pid": 1,
+        "offset": 7764,
+        "before": 37113,
+        "after": 30538
+      }
+    ],
+    "presetNameChange": {
+      "before": "FM3 NEWLOOK FILTER TEST",
+      "after": "FM3_FILTER_C_SEL_001",
+      "beforeHex": "464d33204e45574c4f4f4b2046494c5445522054455354000000000000000000",
+      "afterHex": "464d335f46494c5445525f435f53454c5f303031202020202020202020202000"
+    },
+    "scene2ChannelChange": {
+      "before": "A",
+      "after": "C"
+    },
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "isolated-word-pending-display-and-audit"
+  },
+  "displayValue": 500.0,
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "8aebe5daf5308b2bfa531bde1f1dc17fe7c91fb4365d382dcdea9c1e2d5b179e",
+    "rawRxSha256": "bbca2514f304409e03df179a72ef57876dc23da3f3c404b9c7f992617863ec74",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 3
+      },
+      {
+        "channel": "B",
+        "binaryId": 1
+      },
+      {
+        "channel": "C",
+        "binaryId": 6
+      },
+      {
+        "channel": "D",
+        "binaryId": 8
+      }
+    ],
+    "scene2Bypass": true
+  }
+}

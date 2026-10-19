@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-drive-c",
+  "type": "Zen Master",
+  "channel": "C",
+  "drive": 2,
+  "tone": 7,
+  "level": 2,
+  "mix": 25
+}

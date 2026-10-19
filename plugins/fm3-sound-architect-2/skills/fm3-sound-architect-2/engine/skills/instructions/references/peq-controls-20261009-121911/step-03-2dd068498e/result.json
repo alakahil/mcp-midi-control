@@ -1,0 +1,15 @@
+{
+  "index": 3,
+  "step": {
+    "id": "A-band-3-q-0.707",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Q",
+    "candidatePid": 7,
+    "value": 0.707,
+    "unit": "",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Q väärtuseks 0.707 . Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  "status": "skipped",
+  "reason": "väärtus juba sama"
+}

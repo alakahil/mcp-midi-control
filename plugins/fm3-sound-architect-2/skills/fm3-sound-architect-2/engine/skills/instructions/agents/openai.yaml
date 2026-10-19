@@ -1,0 +1,4 @@
+interface:
+  default_prompt: Aita mul valmistada FM3 preset.
+  display_name: FM3 Sound Architect
+  short_description: FM3 soundid, presetid ja SYX-valideerimine

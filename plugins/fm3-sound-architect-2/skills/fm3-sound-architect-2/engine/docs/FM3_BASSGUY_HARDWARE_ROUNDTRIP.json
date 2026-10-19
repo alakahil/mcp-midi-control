@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-01",
+  "firmware": 13,
+  "firmwareBasis": "Earlier confirmation in this hardware session",
+  "userConfirmation": "Kõik klapib",
+  "generatedSha256": "c26040df7946e9450dd0a4282be7b72d205c9c376f18e7baacfea9639206e8d2",
+  "exportSha256": "0207f5a040c4dd5dd354f26c3fde81e1240fe0ef9135cc7b882db8617e273a25",
+  "wholeFileIdentical": false,
+  "bodyBytes": 14222,
+  "bodyDifferences": [],
+  "checks": {
+    "frames": true,
+    "crc": true,
+    "footer": true
+  },
+  "amp": {
+    "block": "Amp",
+    "cols": 144,
+    "rows": 4,
+    "offset": 4622,
+    "params_offset": 4668,
+    "scene_channels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "scene_bypass": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "channels": {
+      "A": {
+        "type_id": 18,
+        "type": "USA MK IV Rhythm 1",
+        "drive": 7,
+        "bass": 5,
+        "mid": 3.6,
+        "treble": 6,
+        "master_volume": 5,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 4,
+        "negative_feedback": 10
+      },
+      "B": {
+        "type_id": 0,
+        "type": "59 Bassguy Bright",
+        "drive": 7,
+        "bass": 5,
+        "mid": 5,
+        "treble": 5,
+        "master_volume": 10,
+        "depth": 0,
+        "sag": 1.49,
+        "presence": 5,
+        "negative_feedback": 3.2
+      },
+      "C": {
+        "type_id": 24,
+        "type": "USA MK IV Lead Bright",
+        "drive": 6.7,
+        "bass": 1.5,
+        "mid": 6.6,
+        "treble": 5.81,
+        "master_volume": 4,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 4.3,
+        "negative_feedback": 10
+      },
+      "D": {
+        "type_id": 77,
+        "type": "USA MK IV Lead Mid",
+        "drive": 5,
+        "bass": 1,
+        "mid": 6.72,
+        "treble": 6.4,
+        "master_volume": 4,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 1,
+        "negative_feedback": 10
+      }
+    }
+  },
+  "audio": "not separately assessed",
+  "cpu": "not separately assessed",
+  "scope": "Exact FM3 SA TEST BASSGUY example only"
+}

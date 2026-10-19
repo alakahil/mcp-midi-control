@@ -1,0 +1,18 @@
+{
+  "index": 7,
+  "step": {
+    "id": "008-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Modern — Depth maximum",
+    "channel": "A",
+    "typeName": "Modern",
+    "parameter": "Depth",
+    "mode": "numeric",
+    "point": "maximum",
+    "unit": "%",
+    "allowUnchanged": true
+  },
+  "status": "failed",
+  "error": "Muutus väljaspool Enhancer parameetreid või Scene 2 Enhancer kanalivalikut, bait 7488. GET-i ei saadetud."
+}

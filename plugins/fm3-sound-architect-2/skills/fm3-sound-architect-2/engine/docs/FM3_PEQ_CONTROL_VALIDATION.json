@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-09",
+  "sourceArchive": "FM3_PEQ_CONTROLS_20261009T121911_30a644ed.zip",
+  "sourceArchiveSha256": "ab7c9b090bb382a34b5fe21234c38c8eb7fb11cd4e2fd8636c050297188e11d3",
+  "sourceLibraryFileId": "libfile_78c60e21662c8191ae4f8e2b85dd187d",
+  "actualHardwareEvidence": true,
+  "completedPlanSteps": 12,
+  "pairedMeasurements": 11,
+  "matchedWordsPerPair": 132,
+  "singleIsolatedWordPerMeasurement": true,
+  "allOtherPresetBodyBytesPreserved": true,
+  "chunkPrefixesPreserved": true,
+  "baselineAndPlanIdenticalToCollector": true,
+  "band3TypeLabel": "Peaking",
+  "band3TypeRaw": 0,
+  "skipped": [
+    {
+      "index": 3,
+      "step": {
+        "id": "A-band-3-q-0.707",
+        "channel": "A",
+        "band": 3,
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": 0.707,
+        "unit": "",
+        "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Q väärtuseks 0.707 . Type ja muud juhid jäta samaks. Ekspordi terve preset."
+      },
+      "reason": "väärtus juba sama"
+    }
+  ],
+  "librarySha256": "f111b767d57a9354ff6ac32c0e39e9684940e373f7ad79aab3dd904c95fd4ce0",
+  "measurements": [
+    {
+      "index": 0,
+      "field": "frequencyHz",
+      "parameterId": 2,
+      "targetValue": 500,
+      "displayValue": 499.99,
+      "raw": 22903
+    },
+    {
+      "index": 1,
+      "field": "frequencyHz",
+      "parameterId": 2,
+      "targetValue": 1000,
+      "displayValue": 1000.0,
+      "raw": 32767
+    },
+    {
+      "index": 2,
+      "field": "frequencyHz",
+      "parameterId": 2,
+      "targetValue": 2000,
+      "displayValue": 2000.0,
+      "raw": 42631
+    },
+    {
+      "index": 4,
+      "field": "q",
+      "parameterId": 7,
+      "targetValue": 1.4,
+      "displayValue": 1.4,
+      "raw": 37555
+    },
+    {
+      "index": 5,
+      "field": "q",
+      "parameterId": 7,
+      "targetValue": 2,
+      "displayValue": 2.0,
+      "raw": 42631
+    },
+    {
+      "index": 6,
+      "field": "gainDb",
+      "parameterId": 12,
+      "targetValue": -3,
+      "displayValue": -3.0,
+      "raw": 27852
+    },
+    {
+      "index": 7,
+      "field": "gainDb",
+      "parameterId": 12,
+      "targetValue": 3,
+      "displayValue": 3.0,
+      "raw": 37682
+    },
+    {
+      "index": 8,
+      "field": "gainDb",
+      "parameterId": 12,
+      "targetValue": 0,
+      "displayValue": 0.0,
+      "raw": 32767
+    },
+    {
+      "index": 9,
+      "field": "levelDb",
+      "parameterId": 20,
+      "targetValue": -3,
+      "displayValue": -3.0,
+      "raw": 50461
+    },
+    {
+      "index": 10,
+      "field": "levelDb",
+      "parameterId": 20,
+      "targetValue": 3,
+      "displayValue": 3.0,
+      "raw": 54393
+    },
+    {
+      "index": 11,
+      "field": "levelDb",
+      "parameterId": 20,
+      "targetValue": 0,
+      "displayValue": 0.0,
+      "raw": 52427
+    }
+  ],
+  "audioAndCpu": "Not assessed; PEQ bypassed in Scene2 during capture",
+  "files": {
+    "baseline.syx": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+    "plan.json": "32fa9f366c33c5ad51b044ccc03a61d06551afa970c6506b742b64a6196ffc9d",
+    "session.json": "4740854819fdeebd76250b2d0f428be4917fe8f91083f12e54caeaa9663c72b3",
+    "setup.json": "9284b46f80a53dc0cd8bfd03bb246c9114414117a17edaba7825998a34459ea2",
+    "step-00-857f52b604/capture.json": "8a242388754fcd2803f3dea4654a1d45cc9d7fa106a3bac55c077e43f7333627",
+    "step-00-857f52b604/donor.syx": "f51b325e132fb2c89d2a0b4ff6c8b2109c80df13cd04757c958920bd3b66c75d",
+    "step-00-857f52b604/result.json": "61c4e20290230a36e5e8537617c01c5999dd3d174da93b3b25f8d5b9c6b6257a",
+    "step-01-74ecd9d308/capture.json": "f698a93b5b757a489c4760912c647004377866741d5a510ee233cdf986a13279",
+    "step-01-74ecd9d308/donor.syx": "1d1214917d2adc7ccc9180e245b96c84474266a9114e7b532b21f1296326b428",
+    "step-01-74ecd9d308/result.json": "d8242a6566c6c2279533bb4812e0392ef366b88113552ca9b9140382facbdad0",
+    "step-02-de67ead283/capture.json": "590b6ef9fd006d34a221a831a4bb40ed7ee3fa5afc49fbb243277d8824995ab1",
+    "step-02-de67ead283/donor.syx": "8d3ecba4bf710c54a36cb0d9a60422c7157f04bd95cc68b31ff43b0fb8d2c692",
+    "step-02-de67ead283/result.json": "4d26199577cb6786cadf1537ced1bf0752c5d2dcd7ab1ce3905938a655efa68c",
+    "step-03-2dd068498e/result.json": "5e105be45cbeca034cea97910d2b3bcc58363ed5093f39349f8983648fd3f1eb",
+    "step-04-866e8e81f7/capture.json": "b905ac8ffcc5ab9bdee615bf126d1f562e404dfc474a9975cd47519cfb94d3bb",
+    "step-04-866e8e81f7/donor.syx": "292f202bdad6222d18976f1a436300c89f79e0ff2ab75e9d5538904950a8b5d1",
+    "step-04-866e8e81f7/result.json": "03368729912f8280561fd0108624ad73937ac33b7f5a02c777d14db24cd78a3e",
+    "step-05-99b854f4ad/capture.json": "cfb332feacfeb26fdb34a3e8e0b3ddd9963fb6c83841563250eca85ff3131122",
+    "step-05-99b854f4ad/donor.syx": "cfce26649a627bcd363a1d30f757cafaf8c85c59a3603ddabaed74a271a5c889",
+    "step-05-99b854f4ad/result.json": "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019",
+    "step-06-8562727232/capture.json": "9782097d9b9615efd1f5f2cc418ad6fd6adbb9a64546ad3405a0b8f84645d8e0",
+    "step-06-8562727232/donor.syx": "65e6e976edbcaeb05c84e0e338ec9da85020a585df84a8a30c828f61c70d21c1",
+    "step-06-8562727232/result.json": "61d56fb07e89e2e808bd3028c86eb4979b67cd58303badcbd4025ed460d0f105",
+    "step-07-1ae83d27c3/capture.json": "ba43c268349f3bf6ddee05f81ccdfc05d3854025eac684cc53573c5e079a9c7a",
+    "step-07-1ae83d27c3/donor.syx": "48bdbbe5dd0e475999d16198c4ba9ea7a37ed9ae8290035329837dafce2b3365",
+    "step-07-1ae83d27c3/result.json": "0ede78f1a8f9b812ef9e71a050ed88ea3cfa04e439c5b7020fbfc6f52f0c8a3a",
+    "step-08-01047bcbc6/capture.json": "e0d3f8e2cbfe249d09db0a5122b167da601da2a161d733e38854d0b2e61be54d",
+    "step-08-01047bcbc6/donor.syx": "cfce26649a627bcd363a1d30f757cafaf8c85c59a3603ddabaed74a271a5c889",
+    "step-08-01047bcbc6/result.json": "f28c822a0ac12897b157346a79dbac6e73124d04184be048def5f8482fe612cc",
+    "step-09-482eb52126/capture.json": "d515b1b9b37e6e701aa9458fbdbf1444245f4bb00ef928854c6197b2fe6979dc",
+    "step-09-482eb52126/donor.syx": "bb89b137431c65ab064195583871a4f145f6a02535cf4e0c01613a03c68f310a",
+    "step-09-482eb52126/result.json": "64c1269cb2d3f023ccfe0a4ae9e9b415baa6cb3df21fe0ff9ad8f08fc89c2819",
+    "step-10-bf76de2c3c/capture.json": "53973d213ebe84b425fc495bcfc8c1e35a31a51104734234580414e1d5965e33",
+    "step-10-bf76de2c3c/donor.syx": "6a6a0665c5aeb5393e8c30ba6799ee70cd9d4ba84c48d0e40735861b934c3eda",
+    "step-10-bf76de2c3c/result.json": "db6b9a8336b99f6d8d746ab94f2b9df4209accce4aeb325f0165f840b8bfaa73",
+    "step-11-d2ca99be3c/capture.json": "f1d15a2e0f836fbf9b125e38695208e6616008cb0fa6c92561ce06e545a18c93",
+    "step-11-d2ca99be3c/donor.syx": "cfce26649a627bcd363a1d30f757cafaf8c85c59a3603ddabaed74a271a5c889",
+    "step-11-d2ca99be3c/result.json": "b9e8fbf8ba93b1a36cf702d304a2a1ea4b0f855e11dc0baef5e600da08ff72af"
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 13,
+    "name": "Echo: Fields Of Pyrite",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 14,
+    "name": "Hall: Asylum",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 15,
+    "name": "Hall: Chorus Hall",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 16,
+    "name": "Hall: Colosseum",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,631 @@
+{
+ "purpose": "Chickenfoot – Soap On A Rope (2009), Joe Satriani. Marshall JVM410H + Greenback 4x12, Satchurator (DS-1 põhine) lead-tõukeks, DD-3 laadi digitaalne delay, humbucker-kitarr. V3: tämber originaali eraldatud kitarriraja järgi (originaalis +4…6 dB 500 Hz–1 kHz, −3…7 dB 1,6–6 kHz, vähem 125 Hz): Mid üles, Treble/Presence/Bass alla; Output Scene 5 +1 dB. V2 tasemed, phaser ja Scene 8 +1 dB säilivad.",
+ "composer": {
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "SATCH SOAP ON A ROPE V3",
+  "ampChannels": [
+   {
+    "channel": "A",
+    "model": "Brit JVM Crunch Red"
+   },
+   {
+    "channel": "B",
+    "model": "Brit JVM OD1 Orange"
+   },
+   {
+    "channel": "C",
+    "model": "Brit JVM Crunch Green"
+   },
+   {
+    "channel": "D",
+    "model": "JS410 Lead Orange"
+   }
+  ],
+  "cabChannels": [
+   {
+    "channel": "A",
+    "model": "4x12 Friedman GB"
+   },
+   {
+    "channel": "B",
+    "model": "4x12 Friedman GB"
+   },
+   {
+    "channel": "C",
+    "model": "4x12 Friedman GB"
+   },
+   {
+    "channel": "D",
+    "model": "4x12 1960TV"
+   }
+  ],
+  "driveChannels": [
+   {
+    "channel": "A",
+    "type": "DS1 Distortion Mod"
+   },
+   {
+    "channel": "B",
+    "type": "T808 OD"
+   }
+  ],
+  "delayChannels": [
+   {
+    "channel": "A",
+    "type": "Digital Mono"
+   },
+   {
+    "channel": "B",
+    "type": "Digital Stereo"
+   }
+  ],
+  "reverbChannels": [
+   {
+    "channel": "A",
+    "type": "Room: Recording Studio A"
+   },
+   {
+    "channel": "B",
+    "type": "Plate: Medium Plate"
+   }
+  ],
+  "scenes": [
+   {
+    "scene": 1,
+    "name": "RIFF",
+    "blocks": {
+     "amp": {
+      "channel": "A",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "A",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": false
+     },
+     "phaser": {
+      "channel": "A",
+      "bypass": true
+     }
+    }
+   },
+   {
+    "scene": 2,
+    "name": "RIFF PUSH",
+    "blocks": {
+     "amp": {
+      "channel": "A",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "A",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "B",
+      "bypass": false
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": false
+     },
+     "phaser": {
+      "channel": "A",
+      "bypass": true
+     }
+    }
+   },
+   {
+    "scene": 3,
+    "name": "SOLO",
+    "blocks": {
+     "amp": {
+      "channel": "B",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "B",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": false
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": false
+     },
+     "reverb": {
+      "channel": "B",
+      "bypass": false
+     },
+     "phaser": {
+      "channel": "A",
+      "bypass": false
+     }
+    }
+   },
+   {
+    "scene": 4,
+    "name": "SOLO JS410",
+    "blocks": {
+     "amp": {
+      "channel": "D",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "D",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": false
+     },
+     "delay": {
+      "channel": "B",
+      "bypass": false
+     },
+     "reverb": {
+      "channel": "B",
+      "bypass": false
+     },
+     "phaser": {
+      "channel": "A",
+      "bypass": false
+     }
+    }
+   },
+   {
+    "scene": 5,
+    "name": "CRUNCH",
+    "blocks": {
+     "amp": {
+      "channel": "C",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "C",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": false
+     },
+     "phaser": {
+      "channel": "A",
+      "bypass": true
+     }
+    }
+   },
+   {
+    "scene": 6,
+    "name": "RIFF DRY",
+    "blocks": {
+     "amp": {
+      "channel": "A",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "A",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": true
+     },
+     "phaser": {
+      "channel": "A",
+      "bypass": true
+     }
+    }
+   },
+   {
+    "scene": 7,
+    "name": "SOLO DRY",
+    "blocks": {
+     "amp": {
+      "channel": "B",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "B",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": false
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": false
+     },
+     "phaser": {
+      "channel": "A",
+      "bypass": true
+     }
+    }
+   },
+   {
+    "scene": 8,
+    "name": "SOLO LONG DLY",
+    "blocks": {
+     "amp": {
+      "channel": "B",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "B",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": false
+     },
+     "delay": {
+      "channel": "B",
+      "bypass": false
+     },
+     "reverb": {
+      "channel": "B",
+      "bypass": false
+     },
+     "phaser": {
+      "channel": "A",
+      "bypass": false
+     }
+    }
+   }
+  ],
+  "phaserChannels": [
+   {
+    "channel": "A",
+    "type": "Script 90"
+   }
+  ]
+ },
+ "layout": {
+  "row2": [
+   "drive",
+   "phaser",
+   "amp",
+   "cab"
+  ],
+  "row3": [
+   "delay",
+   "reverb"
+  ],
+  "columns": {
+   "drive": 4,
+   "phaser": 5,
+   "amp": 6,
+   "cab": 8,
+   "delay": 9,
+   "reverb": 10
+  }
+ },
+ "allow": [
+  "linear-by-structure"
+ ],
+ "controls": [
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_DRIVE",
+   "value": 6.5
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_BASS",
+   "value": 5.0
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_MID",
+   "value": 7.5
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_TREBLE",
+   "value": 4.5
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_PRESENCE",
+   "value": 4.0
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_DRIVE",
+   "value": 6.0
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_BASS",
+   "value": 4.0
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_MID",
+   "value": 7.5
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_TREBLE",
+   "value": 5.0
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_PRESENCE",
+   "value": 4.5
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_DRIVE",
+   "value": 5.0
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_BASS",
+   "value": 5.0
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_MID",
+   "value": 7.0
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_TREBLE",
+   "value": 4.5
+  },
+  {
+   "block": "amp",
+   "channel": "D",
+   "param": "DISTORT_DRIVE",
+   "value": 6.0
+  },
+  {
+   "block": "amp",
+   "channel": "D",
+   "param": "DISTORT_BASS",
+   "value": 3.5
+  },
+  {
+   "block": "amp",
+   "channel": "D",
+   "param": "DISTORT_MID",
+   "value": 7.0
+  },
+  {
+   "block": "amp",
+   "channel": "D",
+   "param": "DISTORT_TREBLE",
+   "value": 5.0
+  },
+  {
+   "block": "drive",
+   "channel": "A",
+   "param": "FUZZ_DRIVE",
+   "value": 2.5
+  },
+  {
+   "block": "drive",
+   "channel": "A",
+   "param": "FUZZ_TONE",
+   "value": 6.0
+  },
+  {
+   "block": "drive",
+   "channel": "A",
+   "param": "FUZZ_LEVEL",
+   "value": 6.5
+  },
+  {
+   "block": "drive",
+   "channel": "A",
+   "param": "FUZZ_MIX",
+   "value": 100
+  },
+  {
+   "block": "drive",
+   "channel": "B",
+   "param": "FUZZ_DRIVE",
+   "value": 1.5
+  },
+  {
+   "block": "drive",
+   "channel": "B",
+   "param": "FUZZ_TONE",
+   "value": 5.5
+  },
+  {
+   "block": "drive",
+   "channel": "B",
+   "param": "FUZZ_LEVEL",
+   "value": 7.0
+  },
+  {
+   "block": "drive",
+   "channel": "B",
+   "param": "FUZZ_MIX",
+   "value": 100
+  },
+  {
+   "block": "delay",
+   "channel": "A",
+   "param": "DELAY_TEMPO",
+   "value": "NONE"
+  },
+  {
+   "block": "delay",
+   "channel": "A",
+   "param": "DELAY_TIME",
+   "value": 380
+  },
+  {
+   "block": "delay",
+   "channel": "A",
+   "param": "DELAY_FEED",
+   "value": 22
+  },
+  {
+   "block": "delay",
+   "channel": "A",
+   "param": "DELAY_MIX",
+   "value": 16
+  },
+  {
+   "block": "delay",
+   "channel": "B",
+   "param": "DELAY_TEMPO",
+   "value": "NONE"
+  },
+  {
+   "block": "delay",
+   "channel": "B",
+   "param": "DELAY_TIME",
+   "value": 480
+  },
+  {
+   "block": "delay",
+   "channel": "B",
+   "param": "DELAY_FEED",
+   "value": 32
+  },
+  {
+   "block": "delay",
+   "channel": "B",
+   "param": "DELAY_MIX",
+   "value": 24
+  },
+  {
+   "block": "reverb",
+   "channel": "A",
+   "param": "REVERB_MIX",
+   "value": 12
+  },
+  {
+   "block": "reverb",
+   "channel": "B",
+   "param": "REVERB_MIX",
+   "value": 18
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_LEVEL",
+   "value": -10.0
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_LEVEL",
+   "value": -10.5
+  },
+  {
+   "block": "amp",
+   "channel": "D",
+   "param": "DISTORT_LEVEL",
+   "value": -7.0
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE8",
+   "value": 1.0
+  },
+  {
+   "block": "out1",
+   "channel": "B",
+   "param": "OUTPUT_SCENE8",
+   "value": 1.0
+  },
+  {
+   "block": "out1",
+   "channel": "C",
+   "param": "OUTPUT_SCENE8",
+   "value": 1.0
+  },
+  {
+   "block": "out1",
+   "channel": "D",
+   "param": "OUTPUT_SCENE8",
+   "value": 1.0
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE5",
+   "value": 1.0
+  },
+  {
+   "block": "out1",
+   "channel": "B",
+   "param": "OUTPUT_SCENE5",
+   "value": 1.0
+  },
+  {
+   "block": "out1",
+   "channel": "C",
+   "param": "OUTPUT_SCENE5",
+   "value": 1.0
+  },
+  {
+   "block": "out1",
+   "channel": "D",
+   "param": "OUTPUT_SCENE5",
+   "value": 1.0
+  }
+ ],
+ "selectedScene": 1
+}

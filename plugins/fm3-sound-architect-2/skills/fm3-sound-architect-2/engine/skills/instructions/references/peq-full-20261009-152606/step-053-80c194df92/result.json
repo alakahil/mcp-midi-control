@@ -1,0 +1,313 @@
+{
+  "index": 53,
+  "step": {
+    "id": "054-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Gain → maksimumi (nupp lõpuni paremale); Band 2 Gain → maksimumi (nupp lõpuni paremale); Band 3 Gain → maksimumi (nupp lõpuni paremale); Band 4 Gain → maksimumi (nupp lõpuni paremale); Band 5 Gain → maksimumi (nupp lõpuni paremale). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 53,
+    "step": {
+      "id": "054-numeric",
+      "stage": "numeric",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Gain → maksimumi (nupp lõpuni paremale); Band 2 Gain → maksimumi (nupp lõpuni paremale); Band 3 Gain → maksimumi (nupp lõpuni paremale); Band 4 Gain → maksimumi (nupp lõpuni paremale); Band 5 Gain → maksimumi (nupp lõpuni paremale). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Gain",
+          "candidatePid": 10,
+          "value": null,
+          "band": 1,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "dB"
+        },
+        {
+          "parameter": "Gain",
+          "candidatePid": 11,
+          "value": null,
+          "band": 2,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "dB"
+        },
+        {
+          "parameter": "Gain",
+          "candidatePid": 12,
+          "value": null,
+          "band": 3,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "dB"
+        },
+        {
+          "parameter": "Gain",
+          "candidatePid": 13,
+          "value": null,
+          "band": 4,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "dB"
+        },
+        {
+          "parameter": "Gain",
+          "candidatePid": 14,
+          "value": null,
+          "band": 5,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "dB"
+        }
+      ]
+    },
+    "previousSha256": "1d521881eacbb711ea83824e21681b849c7bae4f3debc045827c9f1042972aae",
+    "syxSha256": "a1982acec4fe7525d132d60e95c2cbb0c8141e1b10870853329eae70fa0c6cc8",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 10,
+        "offset": 8754,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 11,
+        "offset": 8756,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 12,
+        "offset": 8758,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 13,
+        "offset": 8760,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 14,
+        "offset": 8762,
+        "before": 0,
+        "after": 65534
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB",
+        "raw": 65534
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB",
+        "raw": 65534
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB",
+        "raw": 65534
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB",
+        "raw": 65534
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB",
+        "raw": 65534
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      "displayValue": 20.0
+    },
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      "displayValue": 20.0
+    },
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      "displayValue": 20.0
+    },
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      "displayValue": 20.0
+    },
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      "displayValue": 20.0
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "a1982acec4fe7525d132d60e95c2cbb0c8141e1b10870853329eae70fa0c6cc8",
+    "bodySha256": "6889f2744bb79fb3c85f7d74d7af88233de71cd17524ab0a015987a4d960423b",
+    "rawRxSha256": "3b1bd7da96265ff0cde88887955319591af780fd3d729eb9abdb259e20a76e4a",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

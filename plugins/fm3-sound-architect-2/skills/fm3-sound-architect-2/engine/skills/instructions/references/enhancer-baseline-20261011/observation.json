@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-11",
+  "source": "User screenshot opened visually; original SYX passed structure-only insertion validation",
+  "screenshot": "enhancer-modern-type-menu.png",
+  "screenshotSha256": "58949141fb1389f38483d1ee405fdac81974d0fea6d393022de736db37d5b11f",
+  "baselineFile": "examples/FM3_ENHANCER_BASELINE.syx",
+  "baselineSha256": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+  "firmwareDisplayed": "13.00",
+  "scene": 2,
+  "channel": "A",
+  "type": "Modern",
+  "typeMenuOrder": [
+    "Classic",
+    "Modern",
+    "Stereoizer"
+  ],
+  "channelButtons": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "visibleValues": {
+    "Width": "50.0 %",
+    "Depth": "50.0 %",
+    "Low Cut": "100.0 Hz",
+    "High Cut": "2000.0 Hz",
+    "Level": "0.0 dB"
+  },
+  "buttonsVisible": [
+    "Scene Ignore",
+    "Bypass"
+  ],
+  "cpuSnapshotPercent": 52.3,
+  "cpuMaximumConfirmed": false,
+  "audioConfirmed": false,
+  "bypassModeMenuConfirmed": false,
+  "classicControlsConfirmed": false,
+  "stereoizerControlsConfirmed": false,
+  "getSyxPairVerified": false,
+  "generatorSupport": false
+}

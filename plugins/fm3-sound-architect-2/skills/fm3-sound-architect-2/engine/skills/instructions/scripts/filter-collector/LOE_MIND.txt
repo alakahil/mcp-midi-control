@@ -1,0 +1,41 @@
+FM3 FILTER KOGUJA — firmware 13, 18 tüüpi
+
+Vajalik Python3 ja Node, nagu varasemate kogujate puhul.
+Paki ZIP lahti Downloads-kausta. Käsk varasema USB-pordiga:
+python3 ~/Downloads/FM3_FILTER_COLLECTOR/FM3_FILTER_BATCH.py --port /dev/cu.usbmodem211104
+Kui ühenduse port on muutunud, kasuta enda FM3 tegelikku /dev/cu.* porti.
+
+1. Jäta seadmesse äsja eksporditud FM3_FILTER_BASELINE.syx seisund:
+Scene2, Filter1 kanal A, Type Null. Selles failis on Filter aktiivne.
+Kui muutsid midagi, impordi kaasasolev baseline.syx tööpuhvrisse.
+Esimese kontrolli eel ära lülita bypass'i ega vali teisi tüüpe.
+Sulge FM3-Edit/Fractal-Bot. Käivita käsk ja kinnita terminalis jah.
+Koguja teeb ühe GET-lugemise ning võrdleb kõiki 148 sõna alusfailiga.
+
+2. Pärast edukat algkontrolli ava FM3-Edit ja lülita Filter1 Scene2-s bypass'i.
+Hoia Scene2 valitud ja Filter edaspidi bypass'is. Nüüd muuda ainult terminalis
+nimetatud A–D kanalite Type-valikuid. Esimene rühm:
+A All-Pass; B Auto-Wah; C Band-Pass; D Envelope Filter.
+Type-valikuga automaatselt muutunud parameetreid ära taasta.
+
+3. Ekspordi terve preset (näiteks FM3_FILTER_CAPTURE_001.syx), lohista see
+terminali ning kinnita, et A–D nimed vastavad küsitule. Sulge FM3-Edit ja
+kinnita jah: üks GET, kontrollsummad ja kõigi 148 sõna võrdlus ekspordiga.
+Ava FM3-Edit uuesti ja jätka järgmise rühmaga. Muude plokkide seaded,
+stseen ja ühendused säilivad. Ära liiguta expression-pedaali.
+
+4. Null saadakse algkontrollist; ülejäänud 17 tüüpi viie rühmaga (4+4+4+4+1).
+Viimases rühmas nimetamata kanalid jäta samaks. Lõpus laadi tulemuste ZIP
+vestlusse. See sisaldab nii GET-vastuseid kui nende paarilisi SYX-faile.
+
+q = väljasta seniste tulemustega ZIP ja lõpeta. Sama käsk jätkab kontrollitud
+tulemustest. Säilita FM3_FILTER_COLLECTOR kaust koos FM3_FILTER_SESSIONiga.
+--export-only teeb ZIP-i ilma seadmega ühenduseta.
+Vea korral automaatset korduspäringut ei tehta. Paranda põhjus ja käivita uuesti.
+Kui Type valik oli vale, paranda valik, ekspordi uuesti ja jätka sama käsuga.
+
+Koguja ei saada SET/SAVE/Store ega preseti/kanali muutmise käske.
+Tüübinimed pärinevad sinu pildilt; loendi järjekord ei ole binaarne ID.
+Esimene päris Filteri GET/SYX-paar on veel ootel. Faili-, sessiooni- ja
+vastusekontrollid on testitud sünteetiliste vastustega, ilma FM3 ühenduseta.
+Frequency/Q/Gain/Level skaalad ja Order pole selle kogumisega veel kinnitatud.

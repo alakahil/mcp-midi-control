@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 53,
+    "name": "Room: Large Room",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 54,
+    "name": "Room: Large Tiled Room",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 55,
+    "name": "Room: Large Wooden Room",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 56,
+    "name": "Room: Medium Room",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

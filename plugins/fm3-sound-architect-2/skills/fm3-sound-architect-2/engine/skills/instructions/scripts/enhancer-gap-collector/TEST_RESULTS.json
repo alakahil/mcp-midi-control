@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-12",
+  "passed": true,
+  "syntheticOnly": true,
+  "deviceConnectionMade": false,
+  "steps": 13,
+  "missingControls": 12,
+  "classicOnly": true,
+  "panLeftMinimumUnchangedAccepted": true,
+  "pairedWordsEach": 48,
+  "mockGets": 13,
+  "resumeAfter6": true,
+  "completedAndExportNoGet": true,
+  "initialQuitNoGet": true,
+  "sourceHashChecked": true,
+  "originalSessionBundledUnchanged": true
+}

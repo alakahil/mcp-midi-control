@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-rotary-controls",
+  "rotaryA": {
+    "rateHz": 5,
+    "mixPercent": 25,
+    "levelDb": -6,
+    "hiDepthPercent": 50,
+    "lowDepthPercent": 50
+  }
+}

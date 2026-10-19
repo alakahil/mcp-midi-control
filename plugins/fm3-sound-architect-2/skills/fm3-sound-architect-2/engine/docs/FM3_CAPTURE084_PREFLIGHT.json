@@ -1,0 +1,38 @@
+{
+  "version": "0.29.27",
+  "sha256": "4fcf8a670f563c943a0dce5042b734d0d905213e41a8113ae503ffd58c76c392",
+  "channels": [
+    {
+      "channel": "A",
+      "id": 333,
+      "name": "Brit JVM Crunch Green"
+    },
+    {
+      "channel": "B",
+      "id": 334,
+      "name": "Brit JVM Crunch Orange"
+    },
+    {
+      "channel": "C",
+      "id": 335,
+      "name": "Brit JVM Crunch Red"
+    },
+    {
+      "channel": "D",
+      "id": 331,
+      "name": "Deluxe Tweed Normal"
+    }
+  ],
+  "checks": {
+    "integrity": true,
+    "sameBase": true,
+    "unknownTemplateGenerationBlocked": true,
+    "corruptInputRejected": true
+  },
+  "pairedGET": false,
+  "coverage": {
+    "ready": 335,
+    "missing": 1,
+    "total": 336
+  }
+}

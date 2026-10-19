@@ -1,0 +1,19 @@
+{
+  "index": 52,
+  "step": {
+    "id": "053-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Classic — Level middle",
+    "channel": "A",
+    "typeName": "Classic",
+    "parameter": "Level",
+    "mode": "numeric",
+    "point": "middle",
+    "unit": "dB",
+    "allowUnchanged": true
+  },
+  "status": "skipped",
+  "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+  "automatic": true
+}

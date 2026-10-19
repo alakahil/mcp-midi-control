@@ -1,0 +1,74 @@
+{
+  "index": 15,
+  "status": "passed",
+  "step": {
+    "id": "C-mix",
+    "kind": "control",
+    "channel": "C",
+    "binaryId": 0,
+    "field": "Mix",
+    "pid": 4,
+    "value": 25,
+    "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "C-mix",
+      "kind": "control",
+      "channel": "C",
+      "binaryId": 0,
+      "field": "Mix",
+      "pid": 4,
+      "value": 25,
+      "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8644,
+        "before": 254,
+        "after": 0
+      },
+      {
+        "offset": 8645,
+        "before": 255,
+        "after": 64
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Mix",
+      "userConfirmedDisplayValue": 25,
+      "rawBefore": 65534,
+      "rawAfter": 16384,
+      "candidateRaw": 16384,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "b5f73ad2545695615e4c68a9cd38049d45143b8ffa0acb02c7d09370a3d036ee",
+    "rawRxSha256": "f13738322f3011aed3ab859d845729ad5670cbda7429391552ebfac3da06dd92",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 0
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

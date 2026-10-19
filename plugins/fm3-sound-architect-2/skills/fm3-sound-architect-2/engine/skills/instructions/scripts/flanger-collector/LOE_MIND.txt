@@ -1,0 +1,14 @@
+FM3 Flanger tüüpide partiikogumine — firmware 13
+
+Esimesed 4 tüüpi on kinnitatud GET/SYX paariga kaasas; 27 on puudu.
+Vajalikud Python 3 ja Node, nagu eelmistel kogujatel.
+Paki Downloads-kausta ja käivita:
+python3 ~/Downloads/FM3_FLANGER_COLLECTOR/FM3_FLANGER_BATCH.py --session ~/Documents/FM3_FLANGER_SESSION --port /dev/cu.usbmodem211104
+
+Muuda ainult Flanger 1 kanalite Type-valikuid programmi järgi; tüübi automaatseid muudatusi ära taasta. Muud plokid ja stseen jäta samaks.
+Esimene uus nelik: A Binary Flange, B Cancel Flange, C Count of Flanging, D Cuda Flange.
+Ekspordi terve preset SYX-failina ja lohista Terminali. Sulge FM3-Edit enne GET-kinnitust.
+Iga neliku kohta üks kinnitatud GET; SET/SAVE ega automaatseid korduspäringuid pole.
+Esimese uue neliku eduka kontrolli järel sisesta q ja saada tulemuste ZIP vestlusse.
+Jätkamiseks kasuta sama käsku ja sessioonikausta. Viimases rühmas muuda ainult nimetatud kanaleid.
+Säilita FM3_FLANGER_SESSION kaust ja viimane tulemuste ZIP.

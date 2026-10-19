@@ -1,0 +1,75 @@
+{
+  "types": {
+    "Modern": {
+      "numeric": [
+        "Width",
+        "Depth",
+        "Low Cut",
+        "High Cut",
+        "Level"
+      ],
+      "enums": {
+        "Scene Ignore": [
+          "ON",
+          "OFF"
+        ]
+      },
+      "units": {
+        "Width": "%",
+        "Depth": "%",
+        "Low Cut": "Hz",
+        "High Cut": "Hz",
+        "Level": "dB"
+      },
+      "extraControls": ""
+    },
+    "Classic": {
+      "numeric": [
+        "Width",
+        "Pan L",
+        "Pan R",
+        "Balance",
+        "Level"
+      ],
+      "enums": {
+        "Invert": [
+          "Both",
+          "Left",
+          "None",
+          "Right"
+        ],
+        "Scene Ignore": [
+          "ON",
+          "OFF"
+        ]
+      },
+      "units": {
+        "Width": "%",
+        "Pan L": "number",
+        "Pan R": "number",
+        "Balance": "number",
+        "Level": "dB"
+      },
+      "extraControls": ""
+    },
+    "Stereoizer": {
+      "numeric": [
+        "Width",
+        "Depth",
+        "Level"
+      ],
+      "enums": {
+        "Scene Ignore": [
+          "ON",
+          "OFF"
+        ]
+      },
+      "units": {
+        "Width": "%",
+        "Depth": "%",
+        "Level": "dB"
+      },
+      "extraControls": ""
+    }
+  }
+}

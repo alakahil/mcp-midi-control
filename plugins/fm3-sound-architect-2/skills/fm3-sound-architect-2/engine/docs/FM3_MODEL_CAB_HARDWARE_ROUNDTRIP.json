@@ -1,0 +1,169 @@
+{
+  "date": "2026-10-01",
+  "firmware": 13,
+  "firmwareBasis": "Previously confirmed session firmware; not encoded as a firmware assertion in SYX",
+  "userConfirmation": "Kõik oli nii nagu soovitud",
+  "generatedSha256": "8eebafcf3ea9d29706465a2aa3804b6765c0d676c1d44bdbc32112c8e98bad30",
+  "exportSha256": "21bb5641b2d4d9c0ad9daf6cd0058f691c12338ae75738e1500ca4e1c03e9c13",
+  "bodyBytes": 14222,
+  "bodyDifferences": [],
+  "rawHeaderDifferences": [
+    {
+      "offset": 4,
+      "generated": 131,
+      "exported": 27
+    },
+    {
+      "offset": 5,
+      "generated": 103,
+      "exported": 51
+    }
+  ],
+  "checks": {
+    "frames": true,
+    "presetCrc": true,
+    "footer": true,
+    "dumpHeaderSame": true
+  },
+  "name": "FM3 SA TEST MODEL CAB",
+  "amp": {
+    "block": "Amp",
+    "cols": 144,
+    "rows": 4,
+    "offset": 4622,
+    "params_offset": 4668,
+    "scene_channels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "scene_bypass": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "channels": {
+      "A": {
+        "type_id": 18,
+        "type": "USA MK IV Rhythm 1",
+        "drive": 7,
+        "bass": 5,
+        "mid": 3.6,
+        "treble": 6,
+        "master_volume": 5,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 4,
+        "negative_feedback": 10
+      },
+      "B": {
+        "type_id": 23,
+        "type": "USA MK IV Lead",
+        "drive": 3,
+        "bass": 5,
+        "mid": 5,
+        "treble": 5,
+        "master_volume": 4,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 5,
+        "negative_feedback": 10
+      },
+      "C": {
+        "type_id": 24,
+        "type": "USA MK IV Lead Bright",
+        "drive": 6.7,
+        "bass": 1.5,
+        "mid": 6.6,
+        "treble": 5.81,
+        "master_volume": 4,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 4.3,
+        "negative_feedback": 10
+      },
+      "D": {
+        "type_id": 77,
+        "type": "USA MK IV Lead Mid",
+        "drive": 5,
+        "bass": 1,
+        "mid": 6.72,
+        "treble": 6.4,
+        "master_volume": 4,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 1,
+        "negative_feedback": 10
+      }
+    }
+  },
+  "cab": {
+    "block": "Cab",
+    "cols": 106,
+    "rows": 4,
+    "offset": 5820,
+    "params_offset": 5866,
+    "scene_channels": [
+      "D",
+      "C",
+      "C",
+      "B",
+      "D",
+      "B",
+      "C",
+      "B"
+    ],
+    "scene_bypass": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "bank1": "LEGACY",
+    "cab1": 127,
+    "channels": {
+      "A": {
+        "mode": "LEGACY"
+      },
+      "B": {
+        "mode": "DYNA-CAB",
+        "dynacab1_id": 38,
+        "dynacab1": "4x12 RECTO SLANT",
+        "dynacab2": "4x12 RECTO SLANT",
+        "mic": "Dynamic 1"
+      },
+      "C": {
+        "mode": "DYNA-CAB",
+        "dynacab1_id": 39,
+        "dynacab1": "4x12 RECTO STRAIGHT",
+        "dynacab2": "4x12 RECTO STRAIGHT",
+        "mic": "Dynamic 1"
+      },
+      "D": {
+        "mode": "DYNA-CAB",
+        "dynacab1_id": 25,
+        "dynacab1": "2x12 CHIEFMAN",
+        "dynacab2": "2x12 CHIEFMAN",
+        "mic": "Dynamic 1"
+      }
+    }
+  },
+  "audio": "not separately confirmed",
+  "cpu": "not separately confirmed",
+  "scope": "Only the tested Lead + Scene2 RECTO STRAIGHT combination; other selections not hardware-confirmed",
+  "interpretation": "All 14222 decompressed body bytes identical, including offset 0. Complete SYX differs; compressed representation and header checksum differ. Both independently pass integrity validation."
+}

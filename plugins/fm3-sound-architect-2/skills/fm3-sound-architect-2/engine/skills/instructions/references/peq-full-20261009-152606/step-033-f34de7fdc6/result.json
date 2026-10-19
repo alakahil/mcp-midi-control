@@ -1,0 +1,125 @@
+{
+  "index": 33,
+  "step": {
+    "id": "034-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 2 Frequency → 750 Hz. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": 750,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 33,
+    "step": {
+      "id": "034-numeric",
+      "stage": "numeric",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 2 Frequency → 750 Hz. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Frequency",
+          "candidatePid": 1,
+          "value": 750,
+          "band": 2,
+          "channel": "A",
+          "endpoint": null,
+          "unit": "Hz"
+        }
+      ]
+    },
+    "previousSha256": "87a4e10b7dd7764fa8891bc3d50a64a4ad81b50aee26e0065777bae9f371ad01",
+    "syxSha256": "8b7e7df6ce8783cf38458b2cc6b5c64087ea1f1c9cd4df49db9f3031da768bea",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8736,
+        "before": 19728,
+        "after": 28673
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": 750,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz",
+        "raw": 28673
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": 750,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      },
+      "displayValue": 749.99
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "8b7e7df6ce8783cf38458b2cc6b5c64087ea1f1c9cd4df49db9f3031da768bea",
+    "bodySha256": "48ba76722c1d1deec1fae5346ab79abf7f5b8b7e76228247c54c328a90317403",
+    "rawRxSha256": "ff1a629730692a617f858206875bb345443a6181bae1fcec6317edd44521b0b7",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

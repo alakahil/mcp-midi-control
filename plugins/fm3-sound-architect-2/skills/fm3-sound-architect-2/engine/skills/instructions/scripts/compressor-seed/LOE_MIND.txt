@@ -1,0 +1,17 @@
+FM3 COMPRESSOR — esimese neliku kontroll
+
+Vajalik Maci python3. Lisapakke pole vaja.
+1. Jäta seadmesse FM3_COMPRESSOR_SELECTION_001.syx ekspordi seisund:
+A Analog Compressor, B Analog Sustainer, C Citrus Juicer, D Classic VCA Compressor.
+Kui oled vahepeal presetti muutnud või vahetanud, impordi kaasasolev SYX
+FM3-Editi tööpuhvrisse oma tööd säilitades. Ära kirjuta presetikohta üle.
+2. Sulge FM3-Edit ja teised FM3 ühendust kasutavad programmid.
+3. Paki ZIP lahti Downloads kausta. Terminalis:
+python3 ~/Downloads/FM3_COMPRESSOR_SEED/FM3_COMPRESSOR_SEED.py /dev/cu.usbmodem211104
+Kui port erineb, kasuta programmi väljastatud tegelikku porti.
+4. Loe kinnitus ja kirjuta GET. Saadetakse üks 10-baidine GET.
+SET/SAVE/Store ega automaatset korduspäringut ei tehta.
+5. Saada loodud FM3_COMPRESSOR_SEED_RESULT_...zip vestlusse.
+
+SYX on kontrollitud, kuid päris GET-vastus on veel ootel.
+Võrdleme kõiki 148 väärtust, mitte ainult nelja tüübi-ID-d.

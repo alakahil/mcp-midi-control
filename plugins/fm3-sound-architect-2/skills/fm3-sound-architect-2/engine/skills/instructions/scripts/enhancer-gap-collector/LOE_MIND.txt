@@ -1,0 +1,51 @@
+FM3 ENHANCER LISA — ainult Classicu puuduvad mõõtmised
+12.10.2026 / koguja 0.1.0
+
+Senisest täiskogumisest on üle kontrollitud 74 edukat GET/SYX paari.
+A–D kanalikatseid, Pan Righti, Balance'i, Invertit ega Moderni/Stereoizeri
+Levelit ja Scene Ignore'it korrata ei ole vaja.
+
+LISAPLAAN: 13 SAMMU
+1. Modern → Classic (üks Type-kinnitus koos GET-iga).
+2.–6. Pan Left: miinimum, maksimum ja kolm eri kasvavat vaheväärtust.
+7.–11. Level: miinimum, maksimum ja kolm eri kasvavat vaheväärtust.
+12.–13. Scene Ignore: ON ja OFF.
+
+Kui näit on juba õige, jäta see muutmata, kuid ekspordi ikkagi terve preset
+ja tee GET. Näiteks Pan Left võib esimesel mõõtmisel juba olla −100.
+See on lubatud ja läheb mõõtmisena kirja. s jätab tõendi kogumata ning
+miinimumi puudumisel jäävad ka selle juhi järgmised punktid mõõtmata.
+
+ALGUS
+1. Paki FM3_ENHANCER_LISA.zip Downloads-kausta eraldi FM3_ENHANCER_LISA kaustaks.
+2. Ava FM3-Editis uue kausta ALUSTA_SIIT.syx. See on senise kogumise viimase
+   eduka ekspordi muutmata koopia. Vali Scene 2, Enhancer A, Modern, bypass.
+3. Käivita Terminalis:
+
+   python3 ~/Downloads/FM3_ENHANCER_LISA/FM3_ENHANCER_LISA.py --port /dev/cu.usbmodem211104
+
+4. Esimene katse palub valida Classicu. Muuda ainult Type Classicuks,
+   ekspordi terve preset SYX-faili ja lohista fail terminali.
+   Sulge FM3-Edit/Fractal-Bot enne jah-kinnitust ja ühte GET-päringut.
+5. Pärast PASS jätka terminali juhiste järgi samast olekust. ALUSTA_SIIT.syx
+   ei impordita üksikute mõõtmiste vahel uuesti.
+
+Pan Lefti mugavad vahepunktid: −80, 0, 80; piirväärtused loe ekraanilt.
+Leveli mugavad vahepunktid: −70, −30, 10 dB; piirväärtused loe ekraanilt.
+Jäta teised parameetrid ja kõik ülejäänud plokid muutmata.
+Enhancer peab jääma Scene 2-s bypass'i.
+
+Pausiks q; jätkamiseks sama käsk. Jätkamisel taasta terminalis nimetatud
+viimase eduka donor.syx faili olek. Algküsimusi ega kogu 86-sammulist plaani
+ei korrata. Uus sessioon on FM3_ENHANCER_LISA_SESSION kaustas.
+
+Saada programmi loodud FM3_ENHANCER_LISA_<aeg>_<tunnus>.zip.
+Algne 74 mõõtmisega ZIP on source-session.zip nime all muutmata kaasas
+ning lisatakse ka tulemuste ZIP-i. Vana sessiooni ei kirjutata üle.
+
+Ainult seniste tulemuste eksport:
+
+   python3 ~/Downloads/FM3_ENHANCER_LISA/FM3_ENHANCER_LISA.py --export-only
+
+Vaja on Python 3 ja Node'i. Koguja saadab ainult kinnitatud GET-päringuid.
+Timeout ei tekita automaatset kordust. Seadistused muudad ise FM3-Editis.

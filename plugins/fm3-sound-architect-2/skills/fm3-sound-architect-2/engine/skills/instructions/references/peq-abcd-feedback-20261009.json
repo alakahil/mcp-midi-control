@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-09",
+  "userText": "CPU 47-48. Type Blocking juures pole Q-d (FM3_PEQ_ABCD_CHECK failis oli Q väärtus kontrollimiseks antud)",
+  "cpuPercent": [
+    47,
+    48
+  ],
+  "audio": "No explicit listening verdict in this message",
+  "blockingQ": "No visible Q control according to user; reject new Blocking q writes and omit Q from effective values/checklist. Preserve the stored inactive Q word.",
+  "removedNoOpSpecFields": [
+    {
+      "channel": "A",
+      "band": 1,
+      "q": 0.707
+    },
+    {
+      "channel": "A",
+      "band": 5,
+      "q": 0.707
+    }
+  ],
+  "exportFile": "examples/FM3_PEQ_ABCD_TEST_export.syx",
+  "exportLibraryFileId": "libfile_178113e2e4008191b94dab8d95226c32",
+  "exportSha256": "b4794f55fe14565029ebaca6f2e9d7cac39572b5d33bcc0a2c9802e5cc6a6c5b",
+  "originalSpec": "references/peq-abcd-original.spec.json",
+  "originalCheck": "references/peq-abcd-original-check.txt",
+  "displayConfirmation": "User reported the Blocking Q omission; other displayed intermediate values were not explicitly confirmed."
+}

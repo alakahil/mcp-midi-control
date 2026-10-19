@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "generatedSha256": "82ad17c95f5a5f40a8d632a16fc9ca4e7720b2b6f6b9b3d6c760447c45ac805e",
+  "hardwareExportSha256": "51da4b0e1ba43bef27f39c8dec08571bcfd49f452559e7869c18398c0d639eb3",
+  "fullFilesIdentical": false,
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [],
+  "channels": [
+    {
+      "channel": "A",
+      "type": "Barber Pole",
+      "binaryId": 7,
+      "all35WordsPreserved": true
+    },
+    {
+      "channel": "B",
+      "type": "Modern Vibe",
+      "binaryId": 16,
+      "all35WordsPreserved": true
+    },
+    {
+      "channel": "C",
+      "type": "Script 90",
+      "binaryId": 3,
+      "all35WordsPreserved": true
+    },
+    {
+      "channel": "D",
+      "type": "Virtuoso Phaser",
+      "binaryId": 12,
+      "all35WordsPreserved": true
+    }
+  ],
+  "presetNameChange": {
+    "before": "FM3_COMPRESSOR_ABCD_TEST_export",
+    "after": "FM3_COMPRESSOR_ABCD_TEST_export"
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 192,
+      "after": 7,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 249,
+      "after": 157,
+      "field": "CRC"
+    }
+  ],
+  "sceneChannelsBefore": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0
+  ],
+  "sceneChannelsAfter": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footerChecksum": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all140PhaserWordsPreserved": true,
+    "scenesAndBypassPreserved": true,
+    "dumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyNameAndCrc": true
+  },
+  "scope": "Hardware import/export verified for this ABCD specimen; 68 general type/channel combinations offline tested only. Audio and CPU not assessed.",
+  "encoding": {
+    "compressedBytesBefore": 4927,
+    "compressedBytesAfter": 4927,
+    "compressedRepresentationIdentical": false,
+    "paddingBeforeAllZero": true,
+    "paddingAfterAllZero": true,
+    "note": "Compressed encoding and its checksums may differ while decompressed data is byte-identical; no body normalization performed."
+  }
+}

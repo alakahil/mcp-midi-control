@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-12",
+  "passed": true,
+  "generator": "jb-composer-0.13.0-dev",
+  "measuredPoints": 17,
+  "isolatedPointAndAliasWholeBodyCases": 21,
+  "additionalDisplayAliases": 4,
+  "exactDeviceBodyReplays": 17,
+  "bodyBytes": 13146,
+  "normalization": "None",
+  "allOriginal12804BytesReconstructedEveryTime": true,
+  "invalidRequestsRejected": 22,
+  "unseenActiveCombinationNotHardwareApproved": true,
+  "sourceInputsPreserved": true,
+  "roundingReportedInTxtAndJson": true,
+  "exampleSyxSha256": "de962b07755ccd0b54839dbca9817653ac40130edf7d776df1a2e70ebc3a6777",
+  "exampleKnownDeviceBody": {
+    "file": "references/filter-controls-20261008-165150/step-17-a076dc8f4f/donor.syx",
+    "sha256": "5be74c3f11b097732cb276c22b7c757470b3a8087660afb0888d6d43c022fc49",
+    "bodySha256": "af2217bbb992a552310b900d78584db9994b94c15a5a3aa5e59a48bb00c12ef8",
+    "scope": "Every decompressed body byte matches this actual paired device export; generated filename/encoding is separate. No repeat export needed for identical body.",
+    "audio": "Filter bypassed; active effect audio and CPU not assessed"
+  },
+  "examplePresetName": "FM3 FILTER CONTROLS VERIFIED",
+  "measurements": "A High-Pass frequency; B Low-Pass frequency; C Peaking frequency/Q/Gain/Level; exact listed points only",
+  "skipped": "Q 0.707 was skipped in the old collection; now supplied by the 2026-10-12 supplemental evidence",
+  "audio": "Filter remained bypassed in the device evidence; no active sound or CPU approval",
+  "sourceCollectionDate": "2026-10-08"
+}

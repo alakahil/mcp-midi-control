@@ -1,0 +1,78 @@
+{
+  "generator": "rotary-controls-0.1.0",
+  "spec": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-rotary-controls",
+    "rotaryA": {
+      "rateHz": 5,
+      "mixPercent": 25,
+      "levelDb": -6,
+      "hiDepthPercent": 50,
+      "lowDepthPercent": 50
+    }
+  },
+  "controls": [
+    {
+      "key": "rateHz",
+      "value": 5,
+      "parameterId": 0,
+      "raw": 32767
+    },
+    {
+      "key": "mixPercent",
+      "value": 25,
+      "parameterId": 5,
+      "raw": 16384
+    },
+    {
+      "key": "levelDb",
+      "value": -6,
+      "parameterId": 6,
+      "raw": 48495
+    },
+    {
+      "key": "hiDepthPercent",
+      "value": 50,
+      "parameterId": 2,
+      "raw": 32767
+    },
+    {
+      "key": "lowDepthPercent",
+      "value": 50,
+      "parameterId": 1,
+      "raw": 32767
+    }
+  ],
+  "baseSha256": "07f557d31cfc76d0c1152fc7c82283b1044fc11aef1ab9d2655d32e279f7f061",
+  "outputSha256": "e62b9acfc249996e550e87a467ebf645f5016518599b4f5e0034215dc42089bd",
+  "changedBodyOffsets": [
+    9868,
+    9869,
+    9870,
+    9871,
+    9872,
+    9873,
+    9878,
+    9879,
+    9880,
+    9881
+  ],
+  "checks": {
+    "pairedEvidence": true,
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "exactBodyReadback": true,
+    "onlyRequestedAControlsChanged": true,
+    "headersPreserved": true
+  },
+  "hardware": "Pending",
+  "audio": "Not evaluated",
+  "limitations": [
+    "Only measured points on channel A",
+    "Tempo None in pinned evidence bases",
+    "No interpolation or B-D control edits",
+    "Only pinned collected Rotary bases"
+  ]
+}

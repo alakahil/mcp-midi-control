@@ -1,0 +1,21 @@
+FM3 SOUND ARCHITECT — CHORUS ARENDUSKATSE
+Sihtseade: FM3 Mk II Turbo, firmware 13. Eesmärk: Chorus tüübimallide kontrollimport.
+Presetinimi säilib alusfailist; failinimi eristab katset.
+Chorus1 A: 4-Voice Analog (ID 13); täielik 32-sõnaline kogutud mall.
+Chorus1 B: Mx134 Stereo (ID 26); täielik 32-sõnaline kogutud mall.
+Chorus1 C: Japan CE-2 (ID 4); täielik 32-sõnaline kogutud mall.
+Chorus1 D: Warm Stereo (ID 5); täielik 32-sõnaline kogutud mall.
+Kõik parameetrid pärinevad vastavast kogutud mallist; neid ei kirjutata eraldi.
+Need pole tingimata tehaseseaded. Kõik muud plokid, routing, stseenid, bypass ja määramata kanalid säilivad alusfailist.
+Chorus stseenikanalid 1–8: A, D, A, A, C, A, A, C.
+Kontekst: Ibanez humbuckeritega, OUT 1 stereo FOH. Heli, tasemed ja CPU pole selles katses hinnatud.
+Cab/IR-valikud, lülitid ja expression säilivad alusfailist. Uusi väliseid IR-e ei lisata.
+Kontrollitud offline: GET/SYX lähtepaarid, täpsed kanalisõnad, kaadrid, CRC/footer ja kõigi muude body-baitide säilimine.
+Seadmeimport ja heli: OOTEL. See on tehniline arenduskatse.
+
+1. Säilita praegune töö. Impordi SYX FM3-Editis tööpuhvrisse; ära kirjuta oma presetikohta üle.
+2. Ava Chorus1 ja vaata järjest kanaleid A–D. Kontrolli ülal nimetatud Type-valikuid; ära paranda seadeid enne eksporti.
+3. Ekspordi terve preset nimega FM3_CHORUS_ABCD_TEST_export.syx ning saada vestlusse.
+Kanali vaatamine võib muuta praeguse stseeni Chorus-kanalivalikut; see erinevus tuleb tagasiekspordis eraldi raporteerida.
+Tööriist ei saada MIDI/SET/SAVE-käske.
+SHA-256: ac147e26173f32dd91b2b2be5fd4e429107ca185fee3fa09f435e1df7740a446

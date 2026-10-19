@@ -1,0 +1,20 @@
+{
+  "version": "0.32.0",
+  "independentReference": "JB_SCENE2_SELECTED.syx",
+  "bodyIdenticalBytes": 14222,
+  "comparisonWithScene6Test": {
+    "onlyDifferentBodyOffset": 0,
+    "generated": 1,
+    "reference": 5
+  },
+  "tests": {
+    "isolatedAndBoundaryCases": 5,
+    "rejectedCases": 20,
+    "oldByteIdenticalFixtures": 4,
+    "oldControlIsolation": 16,
+    "oldIndependentExports": 8,
+    "oldRejectedCases": 12
+  },
+  "hardware": "generated file not reimported; independent exported body match only",
+  "notes": "Name terminator at195 preserved. Packed rawPatch is compressed; full-body comparison plus header checks and frame/CRC/footer integrity used."
+}

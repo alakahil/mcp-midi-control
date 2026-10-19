@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-flanger-multi",
+  "flangerChannels": [
+    {
+      "channel": "A",
+      "type": "80's Rack Flanger"
+    },
+    {
+      "channel": "B",
+      "type": "Vowel Flanger"
+    },
+    {
+      "channel": "C",
+      "type": "MXF-117"
+    },
+    {
+      "channel": "D",
+      "type": "Zero Flanger"
+    }
+  ]
+}

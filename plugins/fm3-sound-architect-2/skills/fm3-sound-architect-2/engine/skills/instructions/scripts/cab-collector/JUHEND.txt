@@ -1,0 +1,22 @@
+FM3 CAB KOGUJA 0.2.2 — firmware 13
+
+Parandus 0.2.2: üldine dekooderi tüübiskanner pidas CAB ID37 väärtust ekslikult INPUT-päiseks. CAB-koguja kontrollib nüüd kaadreid, CRC-d, footerit, valideeritud baasi kõigi CAB-väliste baitide võrdsust ning CAB paigutust/režiime/stseenikanaleid. Üldine generaatori kontroll jääb muutmata.
+
+Varasem parandus: kuvatav 24 2x12 65 Bassguy = binaar-ID24; kuvatav 25 2x12 5153 Stealth = ID23. Nende järjekord erineb binaar-ID järjestusest. Vastendus kinnitatud kontrollitud kasutajaekspordiga; GET/SYX paarid tuleb endiselt koguda. Ülejäänud vastendused kontrollitakse iga neliku juures. See hõlmab ainult 45 nähtavat Dyna-Cab valikut, mitte Legacy/Factory/User IR-e.
+
+Paki FM3_CAB_COLLECTOR_0.2.2 kaust Downloads-kausta. Vajalikud python3 ja node. Säilita senine sessioon!
+Käivitus:
+python3 ~/Downloads/FM3_CAB_COLLECTOR_0.2.2/FM3_CAB_BATCH.py --session ~/Documents/FM3_CAB_SESSION --port /dev/cu.usbmodem211104
+
+JÄTKAMINE PÄRAST INPUT-VEATEADET: säilita FM3_CAB_SELECTION_011.syx seisund (A Lerxst, B Rumble EV12L, C Rumble EV12S, D Solo 100; mõlemad pesad samad). Sama fail sobib uuesti eelkontrolliks. Kasuta sama sessioonikausta. Kontrolli pakutud nelikut, sulge FM3-Edit/Fractal-Bot ja kinnita üks GET. Pärast esimest edukat paari q ja kumulatiivne ZIP vestlusse.
+
+Igas nimetatud A/B/C/D kanalis vali CAB1 JA CAB2 jaoks sama etteantud kabinet. Ära muuda mikrofone, muid parameetreid, plokke ega routingut. CAB-kanali valimine võib muuta aktiivse stseeni CAB-kanaliseost; see salvestatakse lähteandmetes, kuid ei kuulu kanalimalli. Save/Store pole vajalik. Ekspordi terve preset, lohista failitee Terminali koguja küsimuse juurde ja vajuta Enter. Ära sisesta SYX failiteed eraldi shelli käsuna.
+
+Sulge FM3-Edit/Fractal-Bot ning kirjuta jah alles siis, kui kabinetinimed vastavad juhisele. Järgneb üks GET, 424/424 kontroll ja järgmine nelik. Automaatset korduspäringut pole. Pärast parandatud neliku esimest edukat paari kirjuta järgmise failitee küsimuse juures q ning saada ZIP kontrolliks.
+
+Koguja 0.2.0 esimene päris Mac/FM3 paar on kontrollitud. Versiooni 0.2.2 vastenduse ja jätkamise muudatused on testitud offline; uus riistvarapaar on veel kontrollimata. Varasemaid paare ei kirjutata ümber. Koguja jätab tõendatud valikud vahele; viimasel nelikul jäta nimetamata kanalid samaks.
+
+q lõpetab ja teeb kumulatiivse ZIP-i. Jätkamiseks käivita sama käsk sama sessiooniga. Ainult ZIP:
+python3 ~/Downloads/FM3_CAB_COLLECTOR_0.2.2/FM3_CAB_BATCH.py --session ~/Documents/FM3_CAB_SESSION --export-only
+
+Port võib muutuda. Kasuta eraldi FM3_CAB_SESSION, mitte Amp-sessiooni. Säilita sessioon ja uusim ZIP. Tõrke korral saada veateade ja vastav SYX; ära korda GET-i enne põhjuse lahendamist. CAB kirjutusfunktsiooni generaatorisse pole veel lisatud.

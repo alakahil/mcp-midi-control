@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-02",
+  "syxSha256": "a99761d8a3849057b0482bdd3b2d1af574f876706a8a6af523248d395f994701",
+  "getSha256": "52d7b2c2cff0e6b4ba95588fb2cfe69d73322d7f53e02b7a2bb65ef04b76e1a8",
+  "getChecks": {
+    "frames": true,
+    "checksums": true,
+    "sevenBit": true,
+    "wordCounts": true
+  },
+  "matchedWords": 576,
+  "totalWords": 576,
+  "source": {
+    "file": "FM3_AMP_CAPTURE_007.syx",
+    "index": 0,
+    "sha256": "a99761d8a3849057b0482bdd3b2d1af574f876706a8a6af523248d395f994701",
+    "ignoredSceneSelections": [
+      {
+        "scene": 2,
+        "base": 1,
+        "donor": 0,
+        "action": "Not copied; output keeps base scene selection"
+      }
+    ]
+  },
+  "results": [
+    {
+      "model": "Recto2 Red Modern",
+      "id": 28,
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Euro Blue",
+      "id": 29,
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Euro Red",
+      "id": 30,
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Shiver Clean",
+      "id": 31,
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    }
+  ],
+  "hardware": "User exported and read device state; generated combinations not imported or audio-tested"
+}

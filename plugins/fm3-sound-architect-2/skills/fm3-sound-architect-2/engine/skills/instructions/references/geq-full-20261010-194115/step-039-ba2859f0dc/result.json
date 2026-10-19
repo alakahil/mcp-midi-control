@@ -1,0 +1,131 @@
+{
+  "index": 39,
+  "step": {
+    "id": "040-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "5 Band Constant Q — kõigi nähtavate ribade minimum",
+    "channel": "A",
+    "typeName": "5 Band Constant Q",
+    "bandCount": 5,
+    "endpoint": "minimum"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "040-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "5 Band Constant Q — kõigi nähtavate ribade minimum",
+      "channel": "A",
+      "typeName": "5 Band Constant Q",
+      "bandCount": 5,
+      "endpoint": "minimum"
+    },
+    "previousSha256": "d06c57b23cd1b75fac760e21a7f363d784fdcc6be081ce0a35a59b0a4f9a0e1a",
+    "syxSha256": "e2730d78b73831f35f329dc3576217a1d18f197310673205ada87c210f93e46d",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 34132,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 35498,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 36863,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 3,
+        "offset": 8360,
+        "before": 38228,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 4,
+        "offset": 8362,
+        "before": 39593,
+        "after": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 GEQ SEL_30",
+      "after": "FM3 GEQ SEL_40",
+      "beforeHex": "464d33204745512053454c5f3330202020202020202020202020202020202000",
+      "afterHex": "464d33204745512053454c5f3430202020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "200",
+      "400",
+      "800",
+      "1600",
+      "3200"
+    ],
+    "displayValues": [
+      -12.0,
+      -12.0,
+      -12.0,
+      -12.0,
+      -12.0
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "e2730d78b73831f35f329dc3576217a1d18f197310673205ada87c210f93e46d",
+    "bodySha256": "3121d1b5eb31f727a29a70124b1dd07ce540a68804ec6c13024f029c83886b1a",
+    "rawRxSha256": "9ffb05c5ecbce10750cae1c69f00fcd88b23a8bae6b6e57ef93889d8d7152e95",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "index": 1,
+  "status": "failed",
+  "step": {
+    "id": "A-type",
+    "kind": "type",
+    "channel": "A",
+    "binaryId": 19,
+    "name": "BB Pre",
+    "instruction": "Vali Drive1 kanal A ja Type: BB Pre. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+  },
+  "error": "Raw header changed"
+}

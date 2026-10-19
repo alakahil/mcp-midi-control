@@ -1,0 +1,74 @@
+{
+  "index": 18,
+  "status": "passed",
+  "step": {
+    "id": "D-tone",
+    "kind": "control",
+    "channel": "D",
+    "binaryId": 26,
+    "field": "Tone",
+    "pid": 2,
+    "value": 7,
+    "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "D-tone",
+      "kind": "control",
+      "channel": "D",
+      "binaryId": 26,
+      "field": "Tone",
+      "pid": 2,
+      "value": 7,
+      "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8728,
+        "before": 255,
+        "after": 50
+      },
+      {
+        "offset": 8729,
+        "before": 127,
+        "after": 179
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Tone",
+      "userConfirmedDisplayValue": 7,
+      "rawBefore": 32767,
+      "rawAfter": 45874,
+      "candidateRaw": 45874,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "3ab94c53347516e0543d6c96f87e4eb9e80491dfc60a7d318760a127f4ac1165",
+    "rawRxSha256": "ad3dc1b49942d8d2a20c0f72ebe1a27c077bd6d9eedcc161062038c21aceda16",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 0
+      },
+      {
+        "channel": "D",
+        "binaryId": 26
+      }
+    ]
+  }
+}

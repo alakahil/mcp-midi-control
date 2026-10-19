@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-08",
+  "userFeedback": {
+    "scene2MeterDbApprox": -19,
+    "meterLocation": "not specified",
+    "scene6MeterDb": null,
+    "perceivedBalance": "Scene2 too quiet compared with Scene6 and other scenes; solo should be only a little louder",
+    "delayAndReverbAssessment": "not supplied"
+  },
+  "purpose": "First +6dB rhythm adjustment trial, not a calibrated final balance",
+  "baseHardwareExportSha256": "0838937628b863e253c64c170ab96ae2bde6d3c0f9d4d3083382e4967ce5fc68",
+  "outputSha256": "2035c0da1c8d04cc39d8d4b7e7308d7efcbce9d642047cc636f0c4bf154c5b2e",
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [
+    4946,
+    4947
+  ],
+  "control": {
+    "block": "Amp1",
+    "channel": "B",
+    "parameter": "Level",
+    "parameterId": 1,
+    "offset": 4946,
+    "beforeRaw": 40631,
+    "afterRaw": 44563,
+    "beforeDb": -18.000122074037904,
+    "afterDb": -12.000183111056856,
+    "requestedDeltaDb": 6,
+    "affectedScenes": [
+      2
+    ]
+  },
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "onlyAmpBLevelBodyWordChanged": true,
+    "allOtherBodyBytesPreserved": true,
+    "scene6Unchanged": true,
+    "headersPreservedExceptNameAndCrc": true
+  },
+  "hardware": "New level trial not imported/exported yet",
+  "audio": "New level trial not heard",
+  "nextStep": "Compare same phrase and same meter in Scene2 and Scene6; return both values and whole preset export after selecting Scene2. Do not infer final balance from the old -19dB reading alone."
+}

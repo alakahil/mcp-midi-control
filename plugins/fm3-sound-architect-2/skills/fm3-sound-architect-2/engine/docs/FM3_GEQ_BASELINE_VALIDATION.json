@@ -1,0 +1,254 @@
+{
+  "checker": "geq-insertion-preflight-0.1.0",
+  "status": "structure-only",
+  "baseSha256": "b4794f55fe14565029ebaca6f2e9d7cac39572b5d33bcc0a2c9802e5cc6a6c5b",
+  "exportSha256": "51f5f3e297bec66f9bf36e0482e1e360bea93ec35fd09f7c80b1e88c78a2470b",
+  "bodySha256": "0b37cf799113232edcd05ad8cace8467a90c6b1aedf569a2b6be1b0a73ff5e98",
+  "baseBodyBytes": 13456,
+  "bodyBytes": 13662,
+  "presetName": {
+    "before": "FM3 PEQ ABCD TEST",
+    "after": "FM3 PEQ ABCD TEST",
+    "beforeRawHex": "464d332050455120414243442054455354000000000000000000000000000000",
+    "afterRawHex": "464d332050455120414243442054455354000000000000000000000000000000"
+  },
+  "selectedScene": 2,
+  "geq": {
+    "candidateEffectId": 50,
+    "row": 2,
+    "column": 11,
+    "offset": 8308,
+    "recordBytes": 206,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "parameterWords": [
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      0,
+      52427,
+      32767,
+      0,
+      0,
+      4,
+      32767,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      0,
+      52427,
+      32767,
+      0,
+      0,
+      4,
+      32767,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      0,
+      52427,
+      32767,
+      0,
+      0,
+      4,
+      32767,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      32767,
+      0,
+      52427,
+      32767,
+      0,
+      0,
+      4,
+      32767,
+      0,
+      0,
+      0
+    ],
+    "parameterSemantics": "Unverified; do not infer from table labels or neutral appearance"
+  },
+  "records": [
+    {
+      "eid": 58,
+      "offset": 4610,
+      "wordsPerChannel": 144,
+      "channels": 4
+    },
+    {
+      "eid": 62,
+      "offset": 5808,
+      "wordsPerChannel": 106,
+      "channels": 4
+    },
+    {
+      "eid": 70,
+      "offset": 6702,
+      "wordsPerChannel": 89,
+      "channels": 4
+    },
+    {
+      "eid": 186,
+      "offset": 7460,
+      "wordsPerChannel": 6,
+      "channels": 1
+    },
+    {
+      "eid": 182,
+      "offset": 7518,
+      "wordsPerChannel": 2,
+      "channels": 1
+    },
+    {
+      "eid": 114,
+      "offset": 7568,
+      "wordsPerChannel": 37,
+      "channels": 4
+    },
+    {
+      "eid": 118,
+      "offset": 7910,
+      "wordsPerChannel": 44,
+      "channels": 4
+    },
+    {
+      "eid": 50,
+      "offset": 8308,
+      "wordsPerChannel": 20,
+      "channels": 4
+    },
+    {
+      "eid": 37,
+      "offset": 8514,
+      "wordsPerChannel": 10,
+      "channels": 4
+    },
+    {
+      "eid": 42,
+      "offset": 8640,
+      "wordsPerChannel": 26,
+      "channels": 4
+    },
+    {
+      "eid": 54,
+      "offset": 8894,
+      "wordsPerChannel": 33,
+      "channels": 4
+    },
+    {
+      "eid": 66,
+      "offset": 9204,
+      "wordsPerChannel": 71,
+      "channels": 4
+    }
+  ],
+  "headerChanges": [
+    {
+      "offset": 4,
+      "field": "CRC",
+      "before": 175,
+      "after": 122
+    },
+    {
+      "offset": 5,
+      "field": "CRC",
+      "before": 151,
+      "after": 85
+    },
+    {
+      "offset": 72,
+      "field": "encodedSize",
+      "before": 144,
+      "after": 94
+    },
+    {
+      "offset": 73,
+      "field": "encodedSize",
+      "before": 52,
+      "after": 53
+    },
+    {
+      "offset": 74,
+      "field": "encodedSize",
+      "before": 217,
+      "after": 29
+    },
+    {
+      "offset": 75,
+      "field": "encodedSize",
+      "before": 17,
+      "after": 18
+    }
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "chunkPrefixesPreserved": true,
+    "encodedSizesAndPadding": true,
+    "onlyDeclaredGridWordChanged": true,
+    "allOriginalRecordsAndSystemBytesPreserved": true,
+    "all13456BaseBytesReconstructed": true
+  },
+  "generatorSupport": false,
+  "parameterPairVerified": false,
+  "audio": "Not assessed by this check",
+  "next": "Inspect the actual GEQ record and user settings, then prepare a separately confirmed read-only GET/SYX pair. No automatic device query."
+}

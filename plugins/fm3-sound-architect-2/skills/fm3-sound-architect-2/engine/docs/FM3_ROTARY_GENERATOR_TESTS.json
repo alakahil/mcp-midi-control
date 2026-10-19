@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "isolated": 12,
+  "combinations": 72,
+  "replays": 8,
+  "additionalBases": 8,
+  "rejected": 17,
+  "outputSha256": "e62b9acfc249996e550e87a467ebf645f5016518599b4f5e0034215dc42089bd",
+  "hardware": "Pending"
+}

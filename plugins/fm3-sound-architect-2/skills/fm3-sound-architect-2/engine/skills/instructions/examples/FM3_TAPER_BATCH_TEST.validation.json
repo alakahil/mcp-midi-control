@@ -1,0 +1,325 @@
+{
+  "encoder": "fm3-table-encoder 0.74.0",
+  "dictionarySha256": "4a31bb556f44a19f5e425e0e3aae9627f7e5f8da0804a4b9fe9ccf915f9d449f",
+  "base": "jb-balanced",
+  "baseSha256": "7df04a541f45ef0d73e08de3583f0cd8a34f061392a28aa6691875689563b902",
+  "outputSha256": "3f8c96c3d4988648a72964e28b6371a91ff0a067e3d79179c0ab03f8c6991cdf",
+  "bytes": 24680,
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "bodyReadback": true,
+    "noCollateralChanges": true,
+    "headerPreserved": true
+  },
+  "experimental": true,
+  "hardwareImport": "not tested",
+  "audio": "not tested",
+  "rows": [
+    {
+      "nr": 1,
+      "block": "drive",
+      "channel": "D",
+      "name": "FUZZ_SLEW",
+      "label": "Slew Rate",
+      "class": "0x5",
+      "range": [
+        0.10000000149011612,
+        10
+      ],
+      "raw": 16384,
+      "predictLinear": 2.575,
+      "predictLog": 0.3162,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 2,
+      "block": "wah",
+      "channel": "D",
+      "name": "WAH_DRIVE",
+      "label": "Drive",
+      "class": "0x5",
+      "range": [
+        0.009999999776482582,
+        1
+      ],
+      "raw": 16384,
+      "predictLinear": 0.2575,
+      "predictLog": 0.0316,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 3,
+      "block": "wah",
+      "channel": "D",
+      "name": "WAH_Q",
+      "label": "Resonance Q",
+      "class": "0x5",
+      "range": [
+        2,
+        20
+      ],
+      "raw": 16384,
+      "predictLinear": 6.5,
+      "predictLog": 3.5566,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 4,
+      "block": "flanger",
+      "channel": "D",
+      "name": "FLANGER_FOCUS",
+      "label": "Bass Focus",
+      "class": "0x5",
+      "range": [
+        20,
+        2000
+      ],
+      "raw": 16384,
+      "predictLinear": 515,
+      "predictLog": 63.2456,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 5,
+      "block": "flanger",
+      "channel": "D",
+      "name": "OLD_FLANGER_DRIVE",
+      "label": "Drive",
+      "class": "0x5",
+      "range": [
+        0.004999999888241291,
+        5
+      ],
+      "raw": 16384,
+      "predictLinear": 1.2537,
+      "predictLog": 0.0281,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 6,
+      "block": "chorus",
+      "channel": "D",
+      "name": "CHORUS_DRIVE",
+      "label": "Drive",
+      "class": "0x5",
+      "range": [
+        0.05000000074505806,
+        50
+      ],
+      "raw": 16384,
+      "predictLinear": 12.5375,
+      "predictLog": 0.2812,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 7,
+      "block": "delay",
+      "channel": "D",
+      "name": "DELAY_COMPTHRESH",
+      "label": "Threshold",
+      "class": "0x6",
+      "range": [
+        -100,
+        -20
+      ],
+      "raw": 16384,
+      "predictLinear": -80,
+      "predictLog": null,
+      "predictKnob": null
+    },
+    {
+      "nr": 8,
+      "block": "delay",
+      "channel": "D",
+      "name": "DELAY_Q",
+      "label": "Resonance",
+      "class": "0x5",
+      "range": [
+        0.20000000298023224,
+        20
+      ],
+      "raw": 16384,
+      "predictLinear": 5.15,
+      "predictLog": 0.6325,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 9,
+      "block": "delay",
+      "channel": "D",
+      "name": "DELAY_DRIVE",
+      "label": "Drive",
+      "class": "0x5",
+      "range": [
+        0.05000000074505806,
+        50
+      ],
+      "raw": 16384,
+      "predictLinear": 12.5375,
+      "predictLog": 0.2812,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 10,
+      "block": "reverb",
+      "channel": "D",
+      "name": "REVERB_DRIVE",
+      "label": "Drive",
+      "class": "0x5",
+      "range": [
+        0.009999999776482582,
+        1
+      ],
+      "raw": 16384,
+      "predictLinear": 0.2575,
+      "predictLog": 0.0316,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 11,
+      "block": "reverb",
+      "channel": "D",
+      "name": "REVERB_REVERBLEVEL",
+      "label": "Late Level",
+      "class": "0x6",
+      "range": [
+        -40,
+        10
+      ],
+      "raw": 16384,
+      "predictLinear": -27.5,
+      "predictLog": null,
+      "predictKnob": null
+    },
+    {
+      "nr": 12,
+      "block": "reverb",
+      "channel": "D",
+      "name": "REVERB_EARLYLEVEL",
+      "label": "Early Level",
+      "class": "0x6",
+      "range": [
+        -40,
+        10
+      ],
+      "raw": 16384,
+      "predictLinear": -27.5,
+      "predictLog": null,
+      "predictKnob": null
+    },
+    {
+      "nr": 13,
+      "block": "cab",
+      "channel": "D",
+      "name": "CABINET_DRIVE",
+      "label": "Drive",
+      "class": "0x5",
+      "range": [
+        0.0010000000474974513,
+        1
+      ],
+      "raw": 16384,
+      "predictLinear": 0.2508,
+      "predictLog": 0.0056,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 14,
+      "block": "cab",
+      "channel": "D",
+      "name": "CABINET_LEVEL2",
+      "label": "Level",
+      "class": "0x6",
+      "range": [
+        -40,
+        0
+      ],
+      "raw": 16384,
+      "predictLinear": -30,
+      "predictLog": null,
+      "predictKnob": null
+    },
+    {
+      "nr": 15,
+      "block": "cab",
+      "channel": "D",
+      "name": "CABINET_LEVEL1",
+      "label": "Level",
+      "class": "0x6",
+      "range": [
+        -40,
+        0
+      ],
+      "raw": 16384,
+      "predictLinear": -30,
+      "predictLog": null,
+      "predictKnob": null
+    },
+    {
+      "nr": 16,
+      "block": "amp",
+      "channel": "D",
+      "name": "DISTORT_PAHARDNESS",
+      "label": "Hardness",
+      "class": "0x5",
+      "range": [
+        0.25,
+        4
+      ],
+      "raw": 16384,
+      "predictLinear": 1.1875,
+      "predictLog": 0.5,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 17,
+      "block": "amp",
+      "channel": "D",
+      "name": "DISTORT_CLARITY",
+      "label": "Out Comp Clarity",
+      "class": "0x5",
+      "range": [
+        0.009999999776482582,
+        1
+      ],
+      "raw": 16384,
+      "predictLinear": 0.2575,
+      "predictLog": 0.0316,
+      "predictKnob": 2.5
+    },
+    {
+      "nr": 18,
+      "block": "compressor",
+      "channel": "D",
+      "name": "COMP_THRESH2",
+      "label": "Threshold",
+      "class": "0x6",
+      "range": [
+        -60,
+        20
+      ],
+      "raw": 16384,
+      "predictLinear": -40,
+      "predictLog": null,
+      "predictKnob": null
+    },
+    {
+      "nr": 19,
+      "block": "compressor",
+      "channel": "D",
+      "name": "COMP_THRESH",
+      "label": "Threshold",
+      "class": "0x6",
+      "range": [
+        -60,
+        20
+      ],
+      "raw": 16384,
+      "predictLinear": -40,
+      "predictLog": null,
+      "predictKnob": null
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "generator": "drive-c-0.1.0",
+  "baseSha256": "bffe9dd559b443ebe3822532e951a27cb0a827600cb929d52dfccd3228d611ca",
+  "outputSha256": "cba4f5ae80deb50d868cbd99f830430c709902c8c30208dc5419032428032cb4",
+  "spec": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-drive-c",
+    "type": "Zen Master",
+    "channel": "C",
+    "drive": 2,
+    "tone": 7,
+    "level": 2,
+    "mix": 25
+  },
+  "values": {
+    "drive": 2,
+    "tone": 7,
+    "level": 2,
+    "mix": 25
+  },
+  "changedBodyOffsets": [
+    8636,
+    8638,
+    8639,
+    8640,
+    8641,
+    8642,
+    8643,
+    8644,
+    8645,
+    8656,
+    8664,
+    8665,
+    8700,
+    8702,
+    8704,
+    8706
+  ],
+  "selectedScene": 2,
+  "sceneDriveChannels": [
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "B",
+    "D",
+    "B"
+  ],
+  "checks": {
+    "fullIntegrity": true,
+    "bodyReadback": true,
+    "onlyChannelCChanged": true,
+    "headerPreserved": true
+  },
+  "hardware": "Zen Master C test specimen (Drive2/Tone7/Level2/Mix25) hardware roundtrip verified; other combinations not individually imported",
+  "limitations": [
+    "Zen Master C only",
+    "Two exact known bases only",
+    "Only empirically tested control values",
+    "Type selection loads all 44 captured words; scenes and bypass preserved"
+  ]
+}

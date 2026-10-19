@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 1,
+    "name": "4-Voice Analog",
+    "binaryId": 13,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 2,
+    "name": "8-Voice Analog",
+    "binaryId": 14,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 3,
+    "name": "8-Voice Stereo",
+    "binaryId": 8,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 4,
+    "name": "80's Style",
+    "binaryId": 6,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

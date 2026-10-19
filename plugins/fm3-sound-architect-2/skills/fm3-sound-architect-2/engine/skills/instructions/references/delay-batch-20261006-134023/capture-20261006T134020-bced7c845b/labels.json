@@ -1,0 +1,23 @@
+[
+  {
+    "displayNumber": 25,
+    "name": "Vintage Digital",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 26,
+    "name": "Wandering Delays",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 27,
+    "name": "Worn Tape",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  }
+]

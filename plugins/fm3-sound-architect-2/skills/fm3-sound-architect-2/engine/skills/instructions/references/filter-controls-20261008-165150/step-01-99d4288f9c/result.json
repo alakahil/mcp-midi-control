@@ -1,0 +1,68 @@
+{
+  "index": 1,
+  "step": {
+    "id": "C-frequency-1000",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Frequency",
+    "value": 1000,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 1000 Hz. Ekspordi terve preset."
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 1,
+    "step": {
+      "id": "C-frequency-1000",
+      "channel": "C",
+      "type": "Peaking",
+      "binaryId": 6,
+      "parameter": "Frequency",
+      "value": 1000,
+      "unit": "Hz",
+      "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 1000 Hz. Ekspordi terve preset."
+    },
+    "previousSha256": "8aebe5daf5308b2bfa531bde1f1dc17fe7c91fb4365d382dcdea9c1e2d5b179e",
+    "syxSha256": "dca6e7993897082eb9e84ae086aebf4db0f16a1d889b5cc24eeb71f8e2e5db7a",
+    "changedWords": [
+      {
+        "pid": 1,
+        "offset": 7764,
+        "before": 30538,
+        "after": 37113
+      }
+    ],
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "isolated-word-pending-display-and-audit"
+  },
+  "displayValue": 1000.0,
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "dca6e7993897082eb9e84ae086aebf4db0f16a1d889b5cc24eeb71f8e2e5db7a",
+    "rawRxSha256": "581c2b0cf8de10fa1dd281ef6455a08bd26ee730ff26816d73547ce137a7b797",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 3
+      },
+      {
+        "channel": "B",
+        "binaryId": 1
+      },
+      {
+        "channel": "C",
+        "binaryId": 6
+      },
+      {
+        "channel": "D",
+        "binaryId": 8
+      }
+    ],
+    "scene2Bypass": true
+  }
+}

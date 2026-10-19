@@ -1,0 +1,21 @@
+FM3 SOUND ARCHITECT — WAH ARENDUSKATSE
+Sihtseade: FM3 Mk II Turbo, firmware 13. Eesmärk: Wah tüübimallide kontrollimport.
+Presetinimi säilib alusfailist; failinimi eristab katset.
+Wah1 A: Clyde (ID 1); täielik 25-sõnaline kogutud mall.
+Wah1 B: Paragon (ID 8); täielik 25-sõnaline kogutud mall.
+Wah1 C: Cry Babe (ID 2); täielik 25-sõnaline kogutud mall.
+Wah1 D: Vx846 (ID 3); täielik 25-sõnaline kogutud mall.
+Kõik parameetrid pärinevad vastavast kogutud mallist; neid ei kirjutata eraldi.
+Need pole tingimata tehaseseaded. Kõik muud plokid, routing, stseenid, bypass ja määramata kanalid säilivad alusfailist.
+Wah stseenikanalid 1–8: A, D, A, A, A, A, A, A.
+Kontekst: Ibanez humbuckeritega, OUT 1 stereo FOH. Heli, tasemed ja CPU pole selles katses hinnatud.
+Cab/IR-valikud, lülitid ja expression säilivad alusfailist. Uusi väliseid IR-e ei lisata.
+Kontrollitud offline: GET/SYX lähtepaarid, täpsed kanalisõnad, kaadrid, CRC/footer ja kõigi muude body-baitide säilimine.
+Seadmeimport ja heli: OOTEL. See on tehniline arenduskatse.
+
+1. Säilita praegune töö. Impordi SYX FM3-Editis tööpuhvrisse; ära kirjuta oma presetikohta üle.
+2. Ava Wah1 ja vaata järjest kanaleid A–D. Kontrolli ülal nimetatud Type-valikuid; ära paranda seadeid enne eksporti ega liiguta expression-pedaali.
+3. Ekspordi terve preset nimega FM3_WAH_ABCD_TEST_export.syx ning saada vestlusse.
+Kanali vaatamine võib muuta praeguse stseeni Wah-kanalivalikut; see erinevus tuleb tagasiekspordis eraldi raporteerida.
+Tööriist ei saada MIDI/SET/SAVE-käske.
+SHA-256: 16372f21a74abd572be434f9567f4d5559c1b0015c981dcd1b3e03fc9a5a913b

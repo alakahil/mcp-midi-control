@@ -1,0 +1,195 @@
+{
+  "index": 1,
+  "step": {
+    "id": "02",
+    "label": "Frequency — A/B/C maksimum",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "binaryId": 3,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20000,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "binaryId": 1,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20000,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20000,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 1,
+    "step": {
+      "id": "02",
+      "label": "Frequency — A/B/C maksimum",
+      "activeChannel": "C",
+      "targets": [
+        {
+          "channel": "A",
+          "type": "High-Pass",
+          "binaryId": 3,
+          "parameter": "Frequency",
+          "parameterId": 1,
+          "value": 20000,
+          "unit": "Hz",
+          "mode": "numeric",
+          "minimum": 20,
+          "maximum": 20000,
+          "options": [],
+          "parameterName": "FILTER_FREQ"
+        },
+        {
+          "channel": "B",
+          "type": "Low-Pass",
+          "binaryId": 1,
+          "parameter": "Frequency",
+          "parameterId": 1,
+          "value": 20000,
+          "unit": "Hz",
+          "mode": "numeric",
+          "minimum": 20,
+          "maximum": 20000,
+          "options": [],
+          "parameterName": "FILTER_FREQ"
+        },
+        {
+          "channel": "C",
+          "type": "Peaking",
+          "binaryId": 6,
+          "parameter": "Frequency",
+          "parameterId": 1,
+          "value": 20000,
+          "unit": "Hz",
+          "mode": "numeric",
+          "minimum": 20,
+          "maximum": 20000,
+          "options": [],
+          "parameterName": "FILTER_FREQ"
+        }
+      ],
+      "reason": "missing endpoint or independent check",
+      "allowUnchanged": true
+    },
+    "previousSha256": "15b7379736423f48f9b490c3fe18d916aef0c291ccbcffc8f4b8c194f1654362",
+    "syxSha256": "c8019bc44ef12f310c4488abda28a88127267a26492110086341032e152724cb",
+    "bodySha256": "9a6a766eadb1b52a464c20e658efe628ade59b5ad70b3ca447f4a2a39b6dd462",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 7616,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "B",
+        "pid": 1,
+        "offset": 7690,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "C",
+        "pid": 1,
+        "offset": 7764,
+        "before": 0,
+        "after": 65534
+      }
+    ],
+    "targets": [
+      {
+        "channel": "A",
+        "pid": 1,
+        "before": 0,
+        "after": 65534,
+        "wordChanged": true
+      },
+      {
+        "channel": "B",
+        "pid": 1,
+        "before": 0,
+        "after": 65534,
+        "wordChanged": true
+      },
+      {
+        "channel": "C",
+        "pid": 1,
+        "before": 0,
+        "after": 65534,
+        "wordChanged": true
+      }
+    ],
+    "presetNameChange": null,
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "pending-real-display-and-GET-pair; unchanged words are not isolated-change evidence"
+  },
+  "observations": [
+    {
+      "channel": "A",
+      "parameterId": 1,
+      "requestedValue": 20000,
+      "displayText": "20000",
+      "displayValue": 20000.0
+    },
+    {
+      "channel": "B",
+      "parameterId": 1,
+      "requestedValue": 20000,
+      "displayText": "20000",
+      "displayValue": 20000.0
+    },
+    {
+      "channel": "C",
+      "parameterId": 1,
+      "requestedValue": 20000,
+      "displayText": "20000",
+      "displayValue": 20000.0
+    }
+  ],
+  "displayConfirmed": true,
+  "getAuthorized": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "c8019bc44ef12f310c4488abda28a88127267a26492110086341032e152724cb",
+    "bodySha256": "9a6a766eadb1b52a464c20e658efe628ade59b5ad70b3ca447f4a2a39b6dd462",
+    "rawRxSha256": "6a9ec994f692549c93ad374b354da7a266677fdd605833d0d0effb275fd1f155"
+  }
+}

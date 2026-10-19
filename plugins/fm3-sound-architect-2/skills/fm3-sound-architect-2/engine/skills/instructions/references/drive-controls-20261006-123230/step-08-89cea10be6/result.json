@@ -1,0 +1,74 @@
+{
+  "index": 8,
+  "status": "passed",
+  "step": {
+    "id": "B-tone",
+    "kind": "control",
+    "channel": "B",
+    "binaryId": 6,
+    "field": "Tone",
+    "pid": 2,
+    "value": 7,
+    "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "B-tone",
+      "kind": "control",
+      "channel": "B",
+      "binaryId": 6,
+      "field": "Tone",
+      "pid": 2,
+      "value": 7,
+      "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8552,
+        "before": 255,
+        "after": 50
+      },
+      {
+        "offset": 8553,
+        "before": 127,
+        "after": 179
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Tone",
+      "userConfirmedDisplayValue": 7,
+      "rawBefore": 32767,
+      "rawAfter": 45874,
+      "candidateRaw": 45874,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "9414e4eac1720fb822ce4e1a656f2ec5ef37ffdd738221467f2a087ac1a94b7b",
+    "rawRxSha256": "b4b7a28340c1e93a8c25f86f6eb896bb640f34058345266778306ad504bf6d07",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 26
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

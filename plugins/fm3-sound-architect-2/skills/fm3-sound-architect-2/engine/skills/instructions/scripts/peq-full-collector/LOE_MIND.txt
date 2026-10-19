@@ -1,0 +1,82 @@
+FM3 PEQ FULL — PEQ laienduse kogumine, firmware 13
+
+Eesmärk: viis riba, kõik sinu piltidel nähtavad Type-valikud, Blocking Slope,
+Frequency/Q/Gain väärtusvahemikud, Level/Balance, Bypass Mode, Solo ja Scene
+Ignore ning A–D sõltumatud kanalid ja Scene 2 kanalivalik.
+See on mõõtmispakett. Uus PEQ kirjutustugi lisatakse pärast tegelike tulemuste
+analüüsi ja loodud preseti kontrollimporti/tagasieksporti. Praegune töötav
+A/Band 3 tugi ja kuuldud kontrollpreset jäävad alles.
+
+ALUSTAMINE
+1. Paki FM3_PEQ_FULL.zip lahti Downloads-kausta. Tekib kaust FM3_PEQ_FULL.
+   See on uus kaust; ära asenda ega kustuta varasemaid kogumissessioone.
+2. Säilita pooleliolev töö. Impordi paketis olev baseline.syx FM3-Editis
+   tööpuhvrisse, mitte salvestatud preseti asemele. See on sinu varem
+   kontrollitud PEQ algpreset, sisemise nimega JB EIGHT SCENES V3.
+   Uut algfaili eksporti ega algpaari GET-i ei küsita.
+3. Vali Scene 2. PEQ 1 kanal A peab olema bypass. Hoia see kogu kogumise ajal
+   bypass'is. Kõik muud stseenid, plokid, nende tasemed ja kaks rida jäävad samaks.
+   Piirväärtuste, Solo ja Mute katsete ajal ära kasuta kogumispresetit mängimiseks.
+4. Käivita Terminalis:
+   python3 ~/Downloads/FM3_PEQ_FULL/FM3_PEQ_FULL.py --port /dev/cu.usbmodem211104
+   See on sinu viimati töötanud port; muutuse korral kasuta tegelikku porti.
+   Python 3 ja Node on vajalikud, pip/npm ega lisateeke pole vaja paigaldada.
+
+KOGUMINE
+5. Programm annab ühe selge muudatuse või ühe nimetatud juhtide rühma.
+   Muuda ainult neid. Muudatused on järjestikused: eelmisi ära nulli ja
+   baseline-i sammude vahel uuesti ära impordi.
+6. Ekspordi TERVE preset .syx-failina ja lohista see terminali. Faili ja
+   preseti nime muutmine on lubatud; 32 nimebaidi erinevus salvestatakse eraldi.
+7. Kontrolli programmi küsitud ekraaniväärtusi. Enter kinnitab sihi; ümarduse
+   korral kirjuta tegelik arv näidatud ühikus. Sagedused kirjuta Hz, nt 1 kHz
+   asemel 1000. Koma ja punkt on mõlemad lubatud.
+   Miinimumi/maksimumi korral tuleb tegelik näit alati kirjutada — neid piire
+   ei eeldata tabelist. Leveli miinimumi -∞ korral kirjuta -inf.
+   ON = nupp sees, OFF = väljas. Puuduva juhiga kasuta s, ära vali teist juhti.
+8. Sulge FM3-Edit ja Fractal-Bot. „jah” lubab ÜHE PEQ GET-lugemise.
+   Enne seda on eksport juba failitasemel kontrollitud. PASS tähendab, et
+   kõik 132 sõna (33 × 4 kanalit) kattusid sama seisundi GET-vastusega.
+9. Ava FM3-Edit ja jätka samast seisust. Lõpus saada programmi nimetatud ZIP.
+
+NELI ETAPPI (kokku 84 kavandatud sammu)
+  1–32: viie riba tüübid ja ribade 1/5 Blocking Slope 6–36 dB/oct.
+ 33–56: Frequency/Q/Gain. Esmalt uute ribade üksikjuhid, siis viie riba
+        piirväärtused ja vahepunktid koos; vana Band 3 kogumist ei korrata.
+ 57–77: Level, Balance, Bypass Mode, S1–S5 Solo ja Scene Ignore.
+ 78–84: PEQ A täiskanali kopeerimine B/C/D-sse, iga sihtkanali eraldi Gain
+        ning lõpus Scene 2 PEQ A valimine. Kopeeri A, mitte äsja muudetud B/C.
+        Sihtkanali kõik 33 sõna peavad täpselt vastama allikale enne eraldi
+        Gain-katset. Kogu plokki, presetit ega stseeni ei kopeerita.
+
+PAUS JA JÄTKAMINE
+q teeb tulemuste ZIP-i ja lõpetab. Saad selle saata ka poole etapi pealt.
+Sama käsk jätkab pooleli jäänud sammust. Edukaid GET-e ei korrata.
+Hoia FM3_PEQ_FULL_SESSION kaust alles. Enne jätkamist taasta programmi
+näidatud VIIMASE EDUKA SYX-i olek tööpuhvrisse (esimesel korral baseline.syx).
+Kui peatusid poole muudatuse pealt, ei pruugi seade enam sellele vastata.
+
+s jätab punkti mõõtmata ja küsib põhjuse/tegeliku menüü või näidu. Kui väärtus
+oli juba sama, märgi see; seda ei esitata uue isoleeritud mõõtmisena. Kui juht
+puudub või ei salvestu presetti, kirjuta täpselt, mida nägid. Hoia pärast
+vahelejätmist viimase eduka ekspordi olek. Kui järgmine samm nõuab vahele
+jäänud Type-valikut, peatu q-ga ja saada senine ZIP analüüsiks.
+
+Kui tuleb PEATATUD, säilivad fail ja saadud toorvastus. Automaatset uut GET-i
+ei saadeta. Saada tulemuste ZIP koos teatega; ära muuda sessioonifaile käsitsi
+ega tee korduskatseid teadmata põhjusega. Edasi saab sama käsuga.
+Ainult olemasolevate tõendite kontroll ja ZIP (seadet ei avata):
+python3 ~/Downloads/FM3_PEQ_FULL/FM3_PEQ_FULL.py --export-only
+
+Programm saadab ainult fikseeritud GET-i f0000174111f36003df7. SET, SAVE,
+STORE, automaatne kanalivahetus ja korduspäring puuduvad. FM3-Editi muudatused
+ja tööpuhvrisse importimise teeb kasutaja. Kogumispreset ei asenda sinu
+muusikalist presetit; pärast tööd taasta enda kasutatav preset.
+
+ANDMETE TÕLGENDAMINE
+Type-vahetus võib muuta sama riba seotud sõnu; need raporteeritakse eraldi,
+mitte ei nimetata isoleeritud tüübikoodiks. Muud ribad/plokid jäävad kaitstuks.
+Solo/Scene Ignore kontroll võib anda muutumatu SYX-i. See salvestatakse kui
+muutumatu püsisisu, mitte valmis kirjutustugi. GET/SYX vastuolu peatab katse.
+84 sammu läbimine ei anna automaatselt õigust toetada kõiki vahemikke: päris
+tulemuste analüüs ja uue A–D preseti seadmekontroll peavad veel läbima.

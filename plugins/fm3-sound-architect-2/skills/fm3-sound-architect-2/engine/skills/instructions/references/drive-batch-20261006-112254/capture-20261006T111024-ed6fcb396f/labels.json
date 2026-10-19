@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 33,
+    "name": "Hoodoo Drive",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 34,
+    "name": "Horizon Precision Drive",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 35,
+    "name": "Integral Pre",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 36,
+    "name": "Jam Ray",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

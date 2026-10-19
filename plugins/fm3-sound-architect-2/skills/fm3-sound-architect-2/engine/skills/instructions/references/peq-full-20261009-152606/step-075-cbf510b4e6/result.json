@@ -1,0 +1,131 @@
+{
+  "index": 75,
+  "step": {
+    "id": "076-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Scene Ignore ON. Muuda ainult: Scene Ignore → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Scene Ignore",
+        "candidatePid": 32,
+        "value": "ON",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "mirrored": true
+      }
+    ],
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 75,
+    "step": {
+      "id": "076-common",
+      "stage": "common",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Scene Ignore ON. Muuda ainult: Scene Ignore → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Scene Ignore",
+          "candidatePid": 32,
+          "value": "ON",
+          "band": null,
+          "channel": "A",
+          "endpoint": null,
+          "unit": "",
+          "mirrored": true
+        }
+      ],
+      "allowUnchanged": true
+    },
+    "previousSha256": "d97b37ad93e1be9435b7625ed2973b635a0eb425dc271fedd4135ad7d9052896",
+    "syxSha256": "6242ee005548a92a05fe2374ad488d979a58177e55af3347599e1f538a2ad2dc",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 32,
+        "offset": 8798,
+        "before": 0,
+        "after": 1
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Scene Ignore",
+        "candidatePid": 32,
+        "value": "ON",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "mirrored": true,
+        "raw": 1
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Scene Ignore",
+        "candidatePid": 32,
+        "value": "ON",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "mirrored": true
+      },
+      "displayValue": "ON"
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "6242ee005548a92a05fe2374ad488d979a58177e55af3347599e1f538a2ad2dc",
+    "bodySha256": "a0859580c114eeb5d15d1bde3c003cddf3967ac64aa0b49c30ff98fc91fd2766",
+    "rawRxSha256": "290c0bb78682a3304f648a07760db76664af2032d40aa7e794f79ed39726ef83",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

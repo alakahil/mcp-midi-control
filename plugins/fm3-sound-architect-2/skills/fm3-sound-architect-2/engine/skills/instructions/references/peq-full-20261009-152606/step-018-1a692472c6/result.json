@@ -1,0 +1,125 @@
+{
+  "index": 18,
+  "step": {
+    "id": "019-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Shelving. Muuda ainult: Band 4 Type → Shelving . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Shelving",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 18,
+    "step": {
+      "id": "019-types",
+      "stage": "types",
+      "kind": "type",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Shelving. Muuda ainult: Band 4 Type → Shelving . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Type",
+          "candidatePid": 18,
+          "value": "Shelving",
+          "band": 4,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "08271e50734e5e4f91041bab9ba2df2a5b29b1173da02629192a49bbd99710ff",
+    "syxSha256": "b0950ffaf11bcb428588f2dd96ee4239e03fa7e0d95ea06ae78bb58ba3faa8dc",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 18,
+        "offset": 8770,
+        "before": 3,
+        "after": 1
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Shelving",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 1
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Shelving",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": "Shelving"
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "b0950ffaf11bcb428588f2dd96ee4239e03fa7e0d95ea06ae78bb58ba3faa8dc",
+    "bodySha256": "2cb965726d98e1f07da9fe1b99e47fdfaea38431cc85fefffa38365cc353b588",
+    "rawRxSha256": "c1ef262a1521e36d8ff5b24ba454d812adc92dc93a2473eceae154b749efe19b",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

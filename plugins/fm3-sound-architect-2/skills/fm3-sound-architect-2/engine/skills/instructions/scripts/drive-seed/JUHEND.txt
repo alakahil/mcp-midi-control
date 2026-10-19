@@ -1,0 +1,14 @@
+FM3 Drive esimese GET/SYX paari kontroll
+
+1. Jäta seadmesse FM3_DRIVE_SELECTION_001.syx ekspordi seisund.
+   Drive A='77 Custom OD, B=Angry Chuck, C=BB Pre, D=BB Pre AT.
+2. Sulge FM3-Edit. Ava Terminal lahtipakitud kaustas.
+3. Käivita:
+   python3 FM3_DRIVE_SEED.py /dev/cu.usbmodem211104
+   Kui port erineb, programm loetleb saadaolevad pordid ega saada midagi.
+4. Kinnita üks GET, kirjutades GET ja vajutades Enter.
+5. Lohista loodud FM3_DRIVE_SEED_RESULT_....zip vestlusse, ka vea korral.
+
+Programm ei muuda presetit ega saada SET/SAVE-käske. Automaatset kordust pole.
+SYX-i 176 sõna vastendus on esialgne kuni esimese seadmevastuse kinnitamiseni.
+Vajalik macOS ja Python 3; lisapakette ega Node'i pole vaja.

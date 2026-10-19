@@ -1,0 +1,251 @@
+{
+  "date": "2026-10-08",
+  "archiveSha256": "9e74986af47b5fe109ef2c6c3565c10673cdd3b5682868072198fac05065ebc7",
+  "passed": true,
+  "captures": [
+    {
+      "capture": "capture-20261008T131620-16f88ce479",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "9a254a1af26b64025cb9a281fb53845e7e7f95a6713ea2ec5d2b7e670edbfd80",
+      "rawRxSha256": "3cd223827ac680a8aaf239409c989ffb125c68b2dbfa9d610eb2ea8b4e0f655c",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 0
+        },
+        {
+          "channel": "B",
+          "binaryId": 0
+        },
+        {
+          "channel": "C",
+          "binaryId": 0
+        },
+        {
+          "channel": "D",
+          "binaryId": 0
+        }
+      ],
+      "scene2Bypass": false,
+      "frameLengths": [
+        12,
+        454,
+        8
+      ],
+      "labels": [
+        "Null"
+      ]
+    },
+    {
+      "capture": "capture-20261008T131757-b9456dddc4",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "1a5c43562ea976d5ba93329579543b2be921673a74f73a37c35879954edf7585",
+      "rawRxSha256": "5d78fdb221f5b1f44140415a21f67b4e7e3bfb011efd1b2b923143926bbf7da2",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 14
+        },
+        {
+          "channel": "B",
+          "binaryId": 16
+        },
+        {
+          "channel": "C",
+          "binaryId": 2
+        },
+        {
+          "channel": "D",
+          "binaryId": 15
+        }
+      ],
+      "scene2Bypass": true,
+      "frameLengths": [
+        12,
+        454,
+        8
+      ],
+      "labels": [
+        "All-Pass",
+        "Auto-Wah",
+        "Band-Pass",
+        "Envelope Filter"
+      ]
+    },
+    {
+      "capture": "capture-20261008T131907-12b4650b71",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "ca5ebd9d91a17c83ae12b8111e0c257913ba95a2b6bbe06500570d3c4d26389e",
+      "rawRxSha256": "f75e35a1b163ac5c98a66cc8984c4b4cf3a8c08107cbaf42ec8f79646ecfbdeb",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 13
+        },
+        {
+          "channel": "B",
+          "binaryId": 12
+        },
+        {
+          "channel": "C",
+          "binaryId": 3
+        },
+        {
+          "channel": "D",
+          "binaryId": 5
+        }
+      ],
+      "scene2Bypass": true,
+      "frameLengths": [
+        12,
+        454,
+        8
+      ],
+      "labels": [
+        "Feedback Comb",
+        "Feedforward Comb",
+        "High-Pass",
+        "High-Shelf"
+      ]
+    },
+    {
+      "capture": "capture-20261008T131953-ff68f537b0",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "4ad9d59e2532698c65f5fc4f0cc997e1da0e9009796f21d0bbc663f929676679",
+      "rawRxSha256": "e58d26e28dcf3f157022e624d93c5fbcfd3dedfcbe9b322e6cbb4cfc85bfb0ec",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 10
+        },
+        {
+          "channel": "B",
+          "binaryId": 1
+        },
+        {
+          "channel": "C",
+          "binaryId": 4
+        },
+        {
+          "channel": "D",
+          "binaryId": 9
+        }
+      ],
+      "scene2Bypass": true,
+      "frameLengths": [
+        12,
+        454,
+        8
+      ],
+      "labels": [
+        "High-Shelf 2",
+        "Low-Pass",
+        "Low-Shelf",
+        "Low-Shelf 2"
+      ]
+    },
+    {
+      "capture": "capture-20261008T132055-400fabfd5d",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "98ed2ad57285e612498ad45e9603d4efcd153b387fbf7903cf019daafce2a551",
+      "rawRxSha256": "a9acfa2a699f4a6b1a696d9568f4eda9ac5e7dee97af74cc32d060f5d5ff27ee",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 7
+        },
+        {
+          "channel": "B",
+          "binaryId": 6
+        },
+        {
+          "channel": "C",
+          "binaryId": 11
+        },
+        {
+          "channel": "D",
+          "binaryId": 8
+        }
+      ],
+      "scene2Bypass": true,
+      "frameLengths": [
+        12,
+        454,
+        8
+      ],
+      "labels": [
+        "Notch",
+        "Peaking",
+        "Peaking 2",
+        "Tilt EQ"
+      ]
+    },
+    {
+      "capture": "capture-20261008T132131-9226fea59b",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "9d43f55cd8ab46dcb2eb45bfae151e4436384bea5b3a46488cc957e0c42baf04",
+      "rawRxSha256": "4a4cd76d0f71b1b490b75aa20e5adf013bb6479c08e08e55b5e8bf4065ccc12c",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 17
+        },
+        {
+          "channel": "B",
+          "binaryId": 6
+        },
+        {
+          "channel": "C",
+          "binaryId": 11
+        },
+        {
+          "channel": "D",
+          "binaryId": 8
+        }
+      ],
+      "scene2Bypass": true,
+      "frameLengths": [
+        12,
+        454,
+        8
+      ],
+      "labels": [
+        "Touch-Wah"
+      ]
+    }
+  ],
+  "types": 18,
+  "uniqueIds": 18,
+  "wordsPerCapture": 148,
+  "totalPairedWords": 888,
+  "librarySha256": "283b85c5c4c5121a754b0f70157c8d54c6c83c53bed9236e878eb81e396f3997",
+  "typeIds": {
+    "All-Pass": 14,
+    "Auto-Wah": 16,
+    "Band-Pass": 2,
+    "Envelope Filter": 15,
+    "Feedback Comb": 13,
+    "Feedforward Comb": 12,
+    "High-Pass": 3,
+    "High-Shelf": 5,
+    "High-Shelf 2": 10,
+    "Low-Pass": 1,
+    "Low-Shelf": 4,
+    "Low-Shelf 2": 9,
+    "Notch": 7,
+    "Null": 0,
+    "Peaking": 6,
+    "Peaking 2": 11,
+    "Tilt EQ": 8,
+    "Touch-Wah": 17
+  },
+  "nonFilterBodyChanges": "None beyond allowed Scene2 Filter channel/bypass",
+  "hardware": "Six actual user device GET/SYX pairs verified; generated Filter imports remain separate",
+  "numericControls": "Not measured; no Frequency/Q/Gain/Level/Order scaling claim"
+}

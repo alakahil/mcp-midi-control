@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-01",
+  "firmware": 13,
+  "userConfirmation": "Kõik oodatavad väärtused vastasid tõele",
+  "generatedSha256": "8caa32b17ad1564e56baa96c2a3a47f54591833af14a10aa523f638174c307e4",
+  "exportSha256": "3d2699d5e7ac5cdd1fe626cc6c09676c80d0a8c799ba5e3439694a4e0c99d86d",
+  "bodyBytes": 14222,
+  "bodyDifferences": [
+    {
+      "offset": 0,
+      "generated": 1,
+      "exported": 0
+    }
+  ],
+  "name": "FM3 SA TEST TONE",
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "headerSame": true
+  },
+  "values": [
+    {
+      "effectId": 58,
+      "channel": 1,
+      "params": [
+        {
+          "paramId": 1,
+          "name": "DISTORT_LEVEL",
+          "label": "Amp1 Level",
+          "kind": "float",
+          "raw": 40631,
+          "value": -18.000122074037904,
+          "unit": "db"
+        },
+        {
+          "paramId": 7,
+          "name": "DISTORT_DRIVE",
+          "label": "Gain",
+          "kind": "float",
+          "raw": 32767,
+          "value": 5,
+          "unit": "knob_0_10"
+        },
+        {
+          "paramId": 9,
+          "name": "DISTORT_MID",
+          "label": "Mid",
+          "kind": "float",
+          "raw": 32767,
+          "value": 5,
+          "unit": "knob_0_10"
+        },
+        {
+          "paramId": 10,
+          "name": "DISTORT_TREBLE",
+          "label": "Treble",
+          "kind": "float",
+          "raw": 26214,
+          "value": 4.000061037018952,
+          "unit": "knob_0_10"
+        },
+        {
+          "paramId": 26,
+          "name": "DISTORT_PRESENCE",
+          "label": "Presence",
+          "kind": "float",
+          "raw": 13107,
+          "value": 2.000030518509476,
+          "unit": "knob_0_10"
+        }
+      ]
+    },
+    {
+      "effectId": 66,
+      "channel": 0,
+      "params": [
+        {
+          "paramId": 13,
+          "name": "REVERB_MIX",
+          "label": "Mix",
+          "kind": "float",
+          "raw": 7864,
+          "value": 11.999877925962096,
+          "unit": "percent"
+        }
+      ]
+    },
+    {
+      "effectId": 70,
+      "channel": 0,
+      "params": [
+        {
+          "paramId": 0,
+          "name": "DELAY_MIX",
+          "label": "Mix",
+          "kind": "float",
+          "raw": 9830,
+          "value": 14.999847407452622,
+          "unit": "percent"
+        }
+      ]
+    }
+  ],
+  "audio": "not separately confirmed",
+  "cpu": "not separately confirmed"
+}

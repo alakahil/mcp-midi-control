@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 65,
+    "name": "Suhr Riot Ge (R)",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 66,
+    "name": "Suhr Riot LED (L)",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 67,
+    "name": "Suhr Riot LED/Si (M)",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 68,
+    "name": "Sunrise Splendor",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

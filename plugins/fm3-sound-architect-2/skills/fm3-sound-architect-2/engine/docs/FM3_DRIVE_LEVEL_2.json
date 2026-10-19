@@ -1,0 +1,39 @@
+{
+  "baseSha256": "651b1e29dc0d5d91d2070cbdd368c88c4b00bf050e0b0ea1fb1a32ec3181f119",
+  "editedSha256": "2cd1e6519317e43238312c09a6c3badf5972265758f481b184cf9d2ea6ee0cf6",
+  "integrity": "Both full presets pass inspect",
+  "bodyLength": 14222,
+  "differences": [
+    {
+      "offset": 8642,
+      "before": 255,
+      "after": 51
+    },
+    {
+      "offset": 8643,
+      "before": 127,
+      "after": 51
+    }
+  ],
+  "effectId": 118,
+  "channel": "C",
+  "type": "Zen Master",
+  "paramId": 3,
+  "offset": 8642,
+  "points": [
+    {
+      "display": 5,
+      "raw": 32767,
+      "source": "User screenshot and matching SYX"
+    },
+    {
+      "display": 2,
+      "raw": 13107,
+      "source": "Requested isolated edit and user export"
+    }
+  ],
+  "candidateEncoding": "round(display / 10 * 65534)",
+  "unit": "No unit displayed; not labelled dB",
+  "otherBodyBytesUnchanged": true,
+  "status": "Level 5.00 and 2.00 consistent; other types/channels and generated hardware import pending"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 25,
+    "expectedId": 23,
+    "name": "2x12 5153 Stealth",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 27,
+    "expectedId": 26,
+    "name": "2x12 Class-A 30W",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 28,
+    "expectedId": 27,
+    "name": "2x12 Double Verb",
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 29,
+    "expectedId": 28,
+    "name": "2x12 Lead 80",
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

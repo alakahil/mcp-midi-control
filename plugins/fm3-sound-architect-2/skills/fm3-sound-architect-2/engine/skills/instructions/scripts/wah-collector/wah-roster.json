@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "effectId": 94,
+  "firmwareDeclared": 13,
+  "source": "User FM3-Edit screenshot 2026-10-07 13.48.39; display numbers are not device IDs",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "Clyde",
+      "binaryId": 1
+    },
+    {
+      "displayNumber": 2,
+      "name": "Color-Tone",
+      "binaryId": 4
+    },
+    {
+      "displayNumber": 3,
+      "name": "Cry Babe",
+      "binaryId": 2
+    },
+    {
+      "displayNumber": 4,
+      "name": "FAS Wah",
+      "binaryId": 0
+    },
+    {
+      "displayNumber": 5,
+      "name": "Funk Wah",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Mortal",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "Paragon",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 8,
+      "name": "Vx845",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "Vx846",
+      "binaryId": null
+    }
+  ]
+}

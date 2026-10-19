@@ -1,0 +1,92 @@
+{
+  "index": 170,
+  "step": {
+    "id": "171-control",
+    "kind": "control",
+    "stage": "common",
+    "label": "Balance -25",
+    "channel": "A",
+    "typeName": "10 Band Variable Q",
+    "parameter": "Balance",
+    "allowUnchanged": true,
+    "value": -25
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "171-control",
+      "kind": "control",
+      "stage": "common",
+      "label": "Balance -25",
+      "channel": "A",
+      "typeName": "10 Band Variable Q",
+      "parameter": "Balance",
+      "allowUnchanged": true,
+      "value": -25
+    },
+    "previousSha256": "c34fc1009009b313d68356e3a1f6b94af18fd9175fe09697b4fa4260f676d782",
+    "syxSha256": "d9ded66e2647d135e11a7f953c2b0d96860fde140f2df68fffd7b57277ff8ed3",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 12,
+        "offset": 8378,
+        "before": 65534,
+        "after": 24575
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 GEQ SEL_160",
+      "after": "FM3 GEQ SEL_170",
+      "beforeHex": "464d33204745512053454c5f3136302020202020202020202020202020202000",
+      "afterHex": "464d33204745512053454c5f3137302020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "displayValue": -25.0
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "d9ded66e2647d135e11a7f953c2b0d96860fde140f2df68fffd7b57277ff8ed3",
+    "bodySha256": "2f3d1c28ba629d84a83c40b243fb8d2fa200145062ddb287dbc521f4935ee345",
+    "rawRxSha256": "64fa18492f6b35c4619f2838ce5fcc971478b5daf46b36369421bb823ff8aadd",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

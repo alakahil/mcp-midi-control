@@ -1,0 +1,18 @@
+{
+  "index": 34,
+  "step": {
+    "id": "035-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Classic — Pan L minimum",
+    "channel": "A",
+    "typeName": "Classic",
+    "parameter": "Pan L",
+    "mode": "numeric",
+    "point": "minimum",
+    "unit": "number",
+    "allowUnchanged": true
+  },
+  "status": "skipped",
+  "reason": "oli juba miinimumis -100"
+}

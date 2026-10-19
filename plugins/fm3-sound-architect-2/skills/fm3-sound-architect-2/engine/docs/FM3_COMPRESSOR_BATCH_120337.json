@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-07",
+  "collected": 19,
+  "remaining": 0,
+  "earlierCapturesByteIdentical": true,
+  "pairs": [
+    {
+      "capture": "capture-001",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "35649bcb52a46a87876e3b611a649c94d29dda503184e159f3e9b5817cfde1ea",
+      "rawRxSha256": "fa3b2f24bafd2b3189ded17e083ffd5ee76c22cb95f9ad5f1568cfb285a7cba4",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 6
+        },
+        {
+          "channel": "B",
+          "binaryId": 14
+        },
+        {
+          "channel": "C",
+          "binaryId": 18
+        },
+        {
+          "channel": "D",
+          "binaryId": 13
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261007T115807-d0cfbbdf4a",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "9ec2236d6b88131d85e506537f3935473750b155105f865a19f1ad10a0e92473",
+      "rawRxSha256": "5c5b311a6b034ba192d6eb2e34097377947d66044e1e580d780ba29cbdffc101",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 12
+        },
+        {
+          "channel": "B",
+          "binaryId": 7
+        },
+        {
+          "channel": "C",
+          "binaryId": 2
+        },
+        {
+          "channel": "D",
+          "binaryId": 17
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261007T120144-996b0952db",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "82b10d742b9f747a66086ecf12f78efb134fd163a96a1db9ff96acb768ae9611",
+      "rawRxSha256": "da910c9ca0d4b9fad8bdd59bcbe7cf21ac6c37502a0c4a6dcd402a8e2ed66c53",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 3
+        },
+        {
+          "channel": "B",
+          "binaryId": 1
+        },
+        {
+          "channel": "C",
+          "binaryId": 15
+        },
+        {
+          "channel": "D",
+          "binaryId": 8
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261007T120240-84b116f01b",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "8e6451976fa8d7e5a62f91dacbd3eb255f3044621e660efdf9ed2162bc29bcb1",
+      "rawRxSha256": "56522d84036ab0b976f610d8c69635fb58b3a3a81ea1a3098d6f94e1695686e9",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 0
+        },
+        {
+          "channel": "B",
+          "binaryId": 4
+        },
+        {
+          "channel": "C",
+          "binaryId": 16
+        },
+        {
+          "channel": "D",
+          "binaryId": 5
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261007T120335-cba8c1eb81",
+      "paired": true,
+      "matchedWords": 148,
+      "syxSha256": "e36dd5005dcc2a7b496e99a70c2d12ad4a7b15ba4375dfe1a2c110f5d25eac79",
+      "rawRxSha256": "45174eb197c4be3548d187494705c2d4a788696d30bc0a9775298a82a9851857",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 10
+        },
+        {
+          "channel": "B",
+          "binaryId": 11
+        },
+        {
+          "channel": "C",
+          "binaryId": 9
+        },
+        {
+          "channel": "D",
+          "binaryId": 5
+        }
+      ]
+    }
+  ]
+}

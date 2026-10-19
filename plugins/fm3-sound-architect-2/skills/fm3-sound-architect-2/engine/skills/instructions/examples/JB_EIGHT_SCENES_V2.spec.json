@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "JB EIGHT SCENES V2",
+  "purpose": "Bonamassa V2: clean-stseenide 1 ja 5 Amp A Level -12 dB ehk 3 dB vaiksem; ülejäänud kuus stseeni säilivad.",
+  "gainB": 5,
+  "bassB": 4,
+  "midB": 6.5,
+  "trebleB": 5.2,
+  "presenceB": 3,
+  "levelB": -3,
+  "driveChannels": [
+    {
+      "channel": "B",
+      "type": "T808 OD",
+      "drive": 2,
+      "tone": 7,
+      "level": 2,
+      "mix": 25
+    }
+  ],
+  "delayTimeMs": 400,
+  "delayTempoA": "NONE",
+  "delayFeedback": 25,
+  "delayMixA": 15,
+  "reverbChannels": [
+    {
+      "channel": "D",
+      "type": "Room: Medium Room"
+    }
+  ],
+  "scenes": [
+    {
+      "scene": 1,
+      "name": "Clean Edge",
+      "blocks": {
+        "amp": {
+          "channel": "A",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "A",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false
+        },
+        "filter": {
+          "bypass": true
+        }
+      }
+    },
+    {
+      "scene": 2,
+      "name": "Rhythm Fat",
+      "blocks": {
+        "amp": {
+          "channel": "B",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true
+        },
+        "reverb": {
+          "channel": "B",
+          "bypass": false
+        },
+        "filter": {
+          "bypass": true
+        }
+      }
+    },
+    {
+      "scene": 3,
+      "name": "Rhythm Push",
+      "blocks": {
+        "amp": {
+          "channel": "B",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true
+        },
+        "reverb": {
+          "channel": "B",
+          "bypass": false
+        },
+        "filter": {
+          "bypass": true
+        }
+      }
+    },
+    {
+      "scene": 4,
+      "name": "Plexi Crunch",
+      "blocks": {
+        "amp": {
+          "channel": "D",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "D",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true
+        },
+        "reverb": {
+          "channel": "B",
+          "bypass": false
+        },
+        "filter": {
+          "bypass": true
+        }
+      }
+    },
+    {
+      "scene": 5,
+      "name": "Clean Echo",
+      "blocks": {
+        "amp": {
+          "channel": "A",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "A",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false
+        },
+        "filter": {
+          "bypass": true
+        }
+      }
+    },
+    {
+      "scene": 6,
+      "name": "JB SOLO",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false
+        },
+        "reverb": {
+          "channel": "D",
+          "bypass": false
+        },
+        "filter": {
+          "bypass": true
+        }
+      }
+    },
+    {
+      "scene": 7,
+      "name": "Solo Direct",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true
+        },
+        "reverb": {
+          "channel": "D",
+          "bypass": false
+        },
+        "filter": {
+          "bypass": true
+        }
+      }
+    },
+    {
+      "scene": 8,
+      "name": "Solo Mid Focus",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false
+        },
+        "reverb": {
+          "channel": "D",
+          "bypass": false
+        },
+        "filter": {
+          "channel": "C",
+          "bypass": false
+        }
+      }
+    }
+  ],
+  "ampChannels": [
+    {
+      "channel": "A",
+      "model": "Double Verb Vibrato"
+    },
+    {
+      "channel": "D",
+      "model": "Plexi 50W High 1"
+    }
+  ],
+  "cabChannels": [
+    {
+      "channel": "A",
+      "model": "2x12 Double Verb"
+    },
+    {
+      "channel": "B",
+      "model": "4x12 Rumble EV12L"
+    },
+    {
+      "channel": "D",
+      "model": "4x12 Rumble EV12S"
+    }
+  ],
+  "filterChannels": [
+    {
+      "channel": "C",
+      "type": "Peaking",
+      "frequencyHz": 1000,
+      "q": 1.4,
+      "gainDb": 3,
+      "levelDb": 0
+    }
+  ],
+  "ampLevels": [
+    {
+      "channel": "A",
+      "levelDb": -12
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+FM3 ENHANCER — jätkamine sammust 8/86
+12.10.2026 / koguja 0.2.1
+
+See juhis käib FM3_ENHANCER_JATKA.zip paketi kohta.
+Esimesed seitse GET/SYX paari on üle kontrollitud ja sessioonis alles.
+Kaks ebaõnnestunud katset säilivad samuti; neid ei loeta tehtud mõõtmisteks.
+
+1. Kui vana koguja veel ootab, lõpeta q-ga.
+2. Paki ZIP Downloads-kausta. Tekib eraldi FM3_ENHANCER_JATKA kaust.
+3. Ava FM3-Editis selle kausta JATKA_SIIT.syx.
+   See on viimase eduka ekspordi muutmata koopia.
+   Vali Scene 2, Enhancer 1, kanal A, Modern.
+   Enhancer peab olema bypass'is ehk efekt välja lülitatud.
+   Width on 90%, Depth on 0%.
+4. Käivita Terminalis:
+
+   python3 ~/Downloads/FM3_ENHANCER_JATKA/FM3_ENHANCER_FULL.py --port /dev/cu.usbmodem211104
+
+5. Pärast seniste mõõtmiste kontrolli tuleb Katse 8/86: Modern — Depth maximum.
+   Muuda ainult Depth maksimumini. Jäta Bypass-olek muutmata.
+   Ekspordi terve preset uude SYX-faili ja lohista see terminali.
+   Sisesta tegelik Depth-ekraaninäit. Sulge FM3-Edit/Fractal-Bot ja vasta jah,
+   kui oled valmis üheks GET-päringuks. Pärast PASS-teadet jätka järgmist sammu.
+
+Ära alusta baseline.syx-ist ega korda seitset edukat sammu.
+JATKA_SIIT.syx tuleb taastada ainult selle jätkamise alguses.
+Järgnevad muudatused tee järjest terminali juhiste järgi.
+
+Pausiks q; jätkamiseks sama ülaltoodud käsk. Hilisemal jätkamisel taasta
+terminalis nimetatud viimase eduka donor.syx faili olek.
+
+Tõrke põhjus: Depth-maksimumi ekspordis oli Enhancer Scene 2-s aktiivne,
+kuigi kogumiseks peab see olema bypass'is. GET-i nendel katsetel ei saadetud.
+Uus versioon nimetab selle vea otse. Tehtud mõõtmisi ümber ei kirjutata.
+
+Saada järgmine programmi loodud FM3_ENHANCER_FULL_V2_<aeg>_<tunnus>.zip.
+Säilita vana kaust, kuni kogumine ja lõppaudit on valmis.

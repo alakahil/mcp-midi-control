@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-wah-multi",
+  "wahChannels": [
+    {
+      "channel": "A",
+      "type": "Clyde"
+    },
+    {
+      "channel": "B",
+      "type": "Paragon"
+    },
+    {
+      "channel": "C",
+      "type": "Cry Babe"
+    },
+    {
+      "channel": "D",
+      "type": "Vx846"
+    }
+  ]
+}

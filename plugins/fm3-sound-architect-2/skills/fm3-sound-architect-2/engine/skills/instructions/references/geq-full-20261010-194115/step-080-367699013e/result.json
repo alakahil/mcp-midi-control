@@ -1,0 +1,94 @@
+{
+  "index": 80,
+  "step": {
+    "id": "081-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "7 Band Bass Pedal — Master Q 1.4",
+    "channel": "A",
+    "typeName": "7 Band Bass Pedal",
+    "parameter": "Master Q",
+    "value": 1.4,
+    "requiresMasterQ": true,
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "081-control",
+      "kind": "control",
+      "stage": "types",
+      "label": "7 Band Bass Pedal — Master Q 1.4",
+      "channel": "A",
+      "typeName": "7 Band Bass Pedal",
+      "parameter": "Master Q",
+      "value": 1.4,
+      "requiresMasterQ": true,
+      "allowUnchanged": true
+    },
+    "previousSha256": "37db26c6d533edeb0448ad1c4bd7b7a5310a9b4af9cda5c7efa11034995bcd16",
+    "syxSha256": "7e8c2a0309173cd8b56d12de22c99c1ebc108c4e29e42c06940ddea03d926813",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 16,
+        "offset": 8386,
+        "before": 65534,
+        "after": 37555
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 GEQ SEL_70",
+      "after": "FM3 GEQ SEL_80",
+      "beforeHex": "464d33204745512053454c5f3730202020202020202020202020202020202000",
+      "afterHex": "464d33204745512053454c5f3830202020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "displayValue": 1.4
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "7e8c2a0309173cd8b56d12de22c99c1ebc108c4e29e42c06940ddea03d926813",
+    "bodySha256": "a0d5cc5a6d1054c177c10bac810f663a1a2b14979d1a6c1dc30287fe5474a9e7",
+    "rawRxSha256": "48291b52b44d9961378c3b24395e27c8262a3b62148b9ee27be6a0439cd44eeb",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

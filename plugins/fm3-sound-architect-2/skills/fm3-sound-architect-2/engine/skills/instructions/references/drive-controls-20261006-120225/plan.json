@@ -1,0 +1,199 @@
+[
+  {
+    "id": "baseline",
+    "kind": "baseline",
+    "instruction": "Impordi kaasasolev baseline.syx FM3-Editi. Ära muuda midagi. Ekspordi terve preset failina 00_BASELINE.syx."
+  },
+  {
+    "id": "A-type",
+    "kind": "type",
+    "channel": "A",
+    "binaryId": 19,
+    "name": "BB Pre",
+    "instruction": "Vali Drive1 kanal A ja Type: BB Pre. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+  },
+  {
+    "id": "A-drive",
+    "kind": "control",
+    "channel": "A",
+    "binaryId": 19,
+    "field": "Drive",
+    "pid": 1,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal A ja tüüp BB Pre. Muuda ainult Drive väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "A-tone",
+    "kind": "control",
+    "channel": "A",
+    "binaryId": 19,
+    "field": "Tone",
+    "pid": 2,
+    "value": 7,
+    "instruction": "Jäta Drive1 kanal A ja tüüp BB Pre. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "A-level",
+    "kind": "control",
+    "channel": "A",
+    "binaryId": 19,
+    "field": "Level",
+    "pid": 3,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal A ja tüüp BB Pre. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "A-mix",
+    "kind": "control",
+    "channel": "A",
+    "binaryId": 19,
+    "field": "Mix",
+    "pid": 4,
+    "value": 25,
+    "instruction": "Jäta Drive1 kanal A ja tüüp BB Pre. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "B-type",
+    "kind": "type",
+    "channel": "B",
+    "binaryId": 6,
+    "name": "T808 OD",
+    "instruction": "Vali Drive1 kanal B ja Type: T808 OD. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+  },
+  {
+    "id": "B-drive",
+    "kind": "control",
+    "channel": "B",
+    "binaryId": 6,
+    "field": "Drive",
+    "pid": 1,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Drive väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "B-tone",
+    "kind": "control",
+    "channel": "B",
+    "binaryId": 6,
+    "field": "Tone",
+    "pid": 2,
+    "value": 7,
+    "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "B-level",
+    "kind": "control",
+    "channel": "B",
+    "binaryId": 6,
+    "field": "Level",
+    "pid": 3,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "B-mix",
+    "kind": "control",
+    "channel": "B",
+    "binaryId": 6,
+    "field": "Mix",
+    "pid": 4,
+    "value": 25,
+    "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "C-type",
+    "kind": "type",
+    "channel": "C",
+    "binaryId": 0,
+    "name": "Rat Distortion",
+    "instruction": "Vali Drive1 kanal C ja Type: Rat Distortion. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+  },
+  {
+    "id": "C-drive",
+    "kind": "control",
+    "channel": "C",
+    "binaryId": 0,
+    "field": "Drive",
+    "pid": 1,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Drive väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "C-tone",
+    "kind": "control",
+    "channel": "C",
+    "binaryId": 0,
+    "field": "Tone",
+    "pid": 2,
+    "value": 7,
+    "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "C-level",
+    "kind": "control",
+    "channel": "C",
+    "binaryId": 0,
+    "field": "Level",
+    "pid": 3,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "C-mix",
+    "kind": "control",
+    "channel": "C",
+    "binaryId": 0,
+    "field": "Mix",
+    "pid": 4,
+    "value": 25,
+    "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "D-type",
+    "kind": "type",
+    "channel": "D",
+    "binaryId": 26,
+    "name": "Zen Master",
+    "instruction": "Vali Drive1 kanal D ja Type: Zen Master. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+  },
+  {
+    "id": "D-drive",
+    "kind": "control",
+    "channel": "D",
+    "binaryId": 26,
+    "field": "Drive",
+    "pid": 1,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Drive väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "D-tone",
+    "kind": "control",
+    "channel": "D",
+    "binaryId": 26,
+    "field": "Tone",
+    "pid": 2,
+    "value": 7,
+    "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "D-level",
+    "kind": "control",
+    "channel": "D",
+    "binaryId": 26,
+    "field": "Level",
+    "pid": 3,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  {
+    "id": "D-mix",
+    "kind": "control",
+    "channel": "D",
+    "binaryId": 26,
+    "field": "Mix",
+    "pid": 4,
+    "value": 25,
+    "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  }
+]

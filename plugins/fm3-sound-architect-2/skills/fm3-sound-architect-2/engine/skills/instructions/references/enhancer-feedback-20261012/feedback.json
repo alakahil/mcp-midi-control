@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-12",
+  "verbatim": "Suurim CPU 52.7%. Enhancer toimib",
+  "export": {
+    "file": "examples/FM3_ENHANCER_ABCD_TEST_export.syx",
+    "sha256": "463aaf84ce2bafc4f531f03b6d1af6c441ec98028bc5a1767d90111062f32edf",
+    "libraryFileId": "libfile_8a6c90da6fe0819194a20f98c1d745d8"
+  },
+  "cpu": {
+    "maximumObservedPercent": 52.7,
+    "source": "User report",
+    "scope": "This combined Enhancer A-D test; not a universal maximum"
+  },
+  "audio": {
+    "userReport": "Enhancer toimib",
+    "meaning": "User confirms Enhancer works; no separate assertion of equal loudness, mono compatibility or every parameter display"
+  },
+  "limits": [
+    "Exact generated combination only; new compositions require their own evidence",
+    "Scene Ignore ON/OFF words measured previously; all-scene behavior not independently tested",
+    "No screenshots of each control supplied for this roundtrip"
+  ]
+}

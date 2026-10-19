@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-08",
+  "sourceFile": "skills/instructions/scripts/filter-collector/baseline.syx",
+  "sourceSha256": "9a254a1af26b64025cb9a281fb53845e7e7f95a6713ea2ec5d2b7e670edbfd80",
+  "bytes": 24680,
+  "bodyBytes": 13146,
+  "compressedBytes": 4365,
+  "presetName": "JB NEWLOOK RHYTHM SOLO",
+  "selectedScene": 2,
+  "filter": {
+    "eid": 114,
+    "row": 2,
+    "column": 9,
+    "recordStart": 7568,
+    "recordEnd": 7910,
+    "parameterStart": 7614,
+    "wordsPerChannel": 37,
+    "totalWords": 148,
+    "channels": [
+      {
+        "channel": "A",
+        "typeWord": 0
+      },
+      {
+        "channel": "B",
+        "typeWord": 0
+      },
+      {
+        "channel": "C",
+        "typeWord": 0
+      },
+      {
+        "channel": "D",
+        "typeWord": 0
+      }
+    ],
+    "sceneChannels": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "sceneBypass": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "screenshotSelection": "Null",
+    "typePid": "0 candidate from existing catalog and zero words; requires first real GET/SYX pair",
+    "activeInSuppliedBaseline": true
+  },
+  "checks": {
+    "framesCrcFooter": true,
+    "removeFilterAndRestoreOneShuntEqualsAll12804NewLookBodyBytes": true,
+    "allPriorBlockRecordsScenesLevelsAndSystemDataPreserved": true
+  },
+  "typeList": {
+    "count": 18,
+    "source": "skills/instructions/references/filter-20261008/type-list.png",
+    "displayOrderIsNotBinaryId": true
+  },
+  "hardware": "User-exported baseline only; first live Filter GET/SYX pair pending",
+  "generator": "Filter writing and insertion not enabled; numeric scaling and Order unconfirmed"
+}

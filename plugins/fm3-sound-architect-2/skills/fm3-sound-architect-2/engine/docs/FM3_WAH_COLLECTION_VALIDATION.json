@@ -1,0 +1,83 @@
+{
+  "count": 9,
+  "captures": [
+    {
+      "paired": true,
+      "matchedWords": 100,
+      "syxSha256": "96280e726f4871a6bd5d63770acd595d4ba1cfcc36c8c9931e9686ae93cbb604",
+      "rawRxSha256": "9fe3112ea4fce22a373b50d146ca30c6f741fda99528a2a50b0b89f2f9e79d0e",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 1
+        },
+        {
+          "channel": "B",
+          "binaryId": 4
+        },
+        {
+          "channel": "C",
+          "binaryId": 2
+        },
+        {
+          "channel": "D",
+          "binaryId": 0
+        }
+      ],
+      "capture": "capture-001"
+    },
+    {
+      "paired": true,
+      "matchedWords": 100,
+      "syxSha256": "bbea475c96b5e6dd3dc325e9ca5d74a634e8c9a94c686cde2213d3b993426917",
+      "rawRxSha256": "a2274e0b9ad6758f40f24fd69f9825c23e3437722fb2585f5b710d5ef8fdcfe6",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 5
+        },
+        {
+          "channel": "B",
+          "binaryId": 6
+        },
+        {
+          "channel": "C",
+          "binaryId": 8
+        },
+        {
+          "channel": "D",
+          "binaryId": 7
+        }
+      ],
+      "capture": "capture-20261007T140016-c794e00bb5"
+    },
+    {
+      "paired": true,
+      "matchedWords": 100,
+      "syxSha256": "a6759a734e9f1f9717280175567e8fd82ff6816b9171feb9cab314aacd844e8f",
+      "rawRxSha256": "2ad4508cda9edbbaf2b584f30608a265e6c7230b90f6120e9614f245756d27e1",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 3
+        },
+        {
+          "channel": "B",
+          "binaryId": 6
+        },
+        {
+          "channel": "C",
+          "binaryId": 8
+        },
+        {
+          "channel": "D",
+          "binaryId": 7
+        }
+      ],
+      "capture": "capture-20261007T140114-a590705c88"
+    }
+  ],
+  "matchedWords": 300,
+  "earlierCapturesPreserved": true,
+  "generatorIntegration": false
+}

@@ -1,0 +1,164 @@
+{
+  "status": "passed",
+  "captures": 5,
+  "matchedWords": 2280,
+  "count": 16,
+  "librarySha256": "4817534c8265e22be7ade32ae974278710f0f84357d008742eb09dd4130a4584",
+  "baselineSha256": "a7ba0f77b53d542902561e051d15256b041e71e652264e319309f9154ba2d1d2",
+  "layout": {
+    "bodyBytes": 14870,
+    "header": 8882,
+    "scenes": 8892,
+    "bypass": 8908,
+    "size": 8924,
+    "count": 8926,
+    "parameters": 8928,
+    "stride": 228,
+    "totalWords": 456
+  },
+  "checks": {
+    "allGetSyxPairs": true,
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "onlyPitchParametersAndSceneSelectionsChanged": true,
+    "nonSelectedChannelsPreserved": true,
+    "baselineExact": true,
+    "uniqueIds0to15": true
+  },
+  "proofs": [
+    {
+      "capture": "capture-20261007T153125-b17a97eec7",
+      "paired": true,
+      "matchedWords": 456,
+      "syxSha256": "a7ba0f77b53d542902561e051d15256b041e71e652264e319309f9154ba2d1d2",
+      "rawRxSha256": "140b78033b76f82406a6ed6ef8b7d4e5ec4d8bb256c6e5c8e4f0ca76fb226dd9",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 0
+        },
+        {
+          "channel": "B",
+          "binaryId": 0
+        },
+        {
+          "channel": "C",
+          "binaryId": 0
+        },
+        {
+          "channel": "D",
+          "binaryId": 0
+        }
+      ],
+      "nonSelectedChannelsPreserved": true
+    },
+    {
+      "capture": "capture-20261007T153251-32882a2cb4",
+      "paired": true,
+      "matchedWords": 456,
+      "syxSha256": "c9225ee45a473b427f42cce05c72c48eb0c0a6c13829711a701abd3b34a8a4d6",
+      "rawRxSha256": "12aa55a5462995e29933fbd94ac3def9a4fc228c98fa0a2d30460af54a35ace1",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 9
+        },
+        {
+          "channel": "B",
+          "binaryId": 10
+        },
+        {
+          "channel": "C",
+          "binaryId": 6
+        },
+        {
+          "channel": "D",
+          "binaryId": 8
+        }
+      ],
+      "nonSelectedChannelsPreserved": true
+    },
+    {
+      "capture": "capture-20261007T153441-c02d8d43dd",
+      "paired": true,
+      "matchedWords": 456,
+      "syxSha256": "85f502dad8972374506ff02cd8aead63f5bf777d64929e42dc1fc53f39e5d46f",
+      "rawRxSha256": "c8442eb03b54eb214e186cdf1bc0b2de42a316998e1220fa11b0aea6d0c16060",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 11
+        },
+        {
+          "channel": "B",
+          "binaryId": 2
+        },
+        {
+          "channel": "C",
+          "binaryId": 15
+        },
+        {
+          "channel": "D",
+          "binaryId": 4
+        }
+      ],
+      "nonSelectedChannelsPreserved": true
+    },
+    {
+      "capture": "capture-20261007T153537-0539bbe6cb",
+      "paired": true,
+      "matchedWords": 456,
+      "syxSha256": "f9694067db3a6c3f253fd39ddcb8977fab9354e857885be22e19c388dd22af96",
+      "rawRxSha256": "594445ec7ec727b2e371a8ce8e69339ea3db02a66366fc2f43933553c455d3d6",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 7
+        },
+        {
+          "channel": "B",
+          "binaryId": 3
+        },
+        {
+          "channel": "C",
+          "binaryId": 12
+        },
+        {
+          "channel": "D",
+          "binaryId": 1
+        }
+      ],
+      "nonSelectedChannelsPreserved": true
+    },
+    {
+      "capture": "capture-20261007T153632-72d46bca9a",
+      "paired": true,
+      "matchedWords": 456,
+      "syxSha256": "7c678e99a14501505a601fb7c707f37b5c4e2766a79913a0b768a95cffa562ad",
+      "rawRxSha256": "d9c05716010a267df5852491e2341791cc1aa9fee2d6cd7aa9096ffe4b900cc7",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 5
+        },
+        {
+          "channel": "B",
+          "binaryId": 13
+        },
+        {
+          "channel": "C",
+          "binaryId": 14
+        },
+        {
+          "channel": "D",
+          "binaryId": 1
+        }
+      ],
+      "nonSelectedChannelsPreserved": true
+    }
+  ],
+  "generator": "Not yet integrated",
+  "hardware": "Generated preset import pending",
+  "audio": "Not evaluated"
+}

@@ -1,0 +1,96 @@
+{
+  "firmwareDeclared": 13,
+  "source": "User FM3-Edit screenshot, 2026-10-08; names/order visible, IDs not inferred from order",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "All-Pass",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 2,
+      "name": "Auto-Wah",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 3,
+      "name": "Band-Pass",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 4,
+      "name": "Envelope Filter",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 5,
+      "name": "Feedback Comb",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Feedforward Comb",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "High-Pass",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 8,
+      "name": "High-Shelf",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "High-Shelf 2",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Low-Pass",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Low-Shelf",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Low-Shelf 2",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 13,
+      "name": "Notch",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 14,
+      "name": "Null",
+      "binaryId": 0
+    },
+    {
+      "displayNumber": 15,
+      "name": "Peaking",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 16,
+      "name": "Peaking 2",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 17,
+      "name": "Tilt EQ",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 18,
+      "name": "Touch-Wah",
+      "binaryId": null
+    }
+  ]
+}

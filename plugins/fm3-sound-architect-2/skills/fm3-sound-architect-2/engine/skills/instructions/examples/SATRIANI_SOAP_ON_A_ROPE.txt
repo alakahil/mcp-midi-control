@@ -1,0 +1,43 @@
+SATCH SOAP ON A ROPE — Chickenfoot "Soap On A Rope" (2009), Joe Satriani
+Kitarr: humbuckeritega (Satriani: Ibanez JS, DiMarzio humbuckerid).
+
+ALLIKAD JA VALIKUD
+Satriani tuurivarustus 2009: Marshall JVM410H, kaks Greenback-kõlaritega Marshalli 4x12 kappi,
+Vox Satchurator (DS-1 põhine), Boss DD-3 delay, Big Bad Wah. Lugu: sünkopeeritud "chunky" riff,
+funky, ZZ Topi ja Montrose'i hõnguga; soolos Satriani laulev lead.
+  Amp A  Brit JVM Crunch Red   (riff)       Gain 6.5 Bass 5.0 Mid 6.5 Treble 5.5 Presence 5.0
+  Amp B  Brit JVM OD1 Orange   (soolo)      Gain 6.0 Bass 4.5 Mid 6.5 Treble 6.0 Presence 5.5
+  Amp C  Brit JVM Crunch Green (kergem)     Gain 5.0 Bass 5.0 Mid 6.0 Treble 5.5
+  Amp D  JS410 Lead Orange     (Satriani signatuur, hilisem)  Gain 6.0 Bass 4.5 Mid 6.0 Treble 6.0
+  Cab    4x12 Friedman GB (Greenback) A–C; D 4x12 1960TV
+  Drive A DS1 Distortion Mod (Satchuratori asendus soolotõukeks): Drive 2.5 Tone 6.0 Level 6.5
+  Drive B T808 OD (riffi tõuge): Drive 1.5 Tone 5.5 Level 7.0
+  Delay A Digital Mono 380 ms, Feedback 22 %, Mix 16 %   |  Delay B Digital Stereo 480 ms, 32 %, 24 %
+  Reverb A Room: Recording Studio A, Mix 12 %            |  Reverb B Plate: Medium Plate, Mix 18 %
+Ampi Level on mudelimallist (FM3 vaikeväärtus): A −8, B −14, C −9, D −8 dB.
+
+PAIGUTUS (kaks rida)
+  Rida 2: In 1 → Drive (v4) → Amp (v6) → Cab (v8) → Send
+  Rida 3: Return → Delay (v9) → Reverb (v10) → Out 1
+
+STSEENID
+  1 RIFF           Amp A, Reverb A                    (avaneb sellega)
+  2 RIFF PUSH      Amp A + T808 tõuge, Reverb A
+  3 SOLO           Amp B + DS1 Mod, Delay A, Plate
+  4 SOLO JS410     Amp D + DS1 Mod, Delay B, Plate
+  5 CRUNCH         Amp C, Reverb A
+  6 RIFF DRY       Amp A, ilma reverbita
+  7 SOLO DRY       Amp B + DS1 Mod, ilma delayta, Reverb A
+  8 SOLO LONG DLY  Amp B + DS1 Mod, Delay B, Plate
+
+TEGEVUS
+1. Impordi SYX tühjale presetikohale. Alusta madala helitugevusega.
+2. Mängi riffi stseenides 1, 2 ja 5 ning soolot stseenides 3, 4, 7 ja 8.
+3. Kirjuta, mis kõlab hästi ja mis mitte: tasemed stseenide vahel, gain, bass/kõrged, delay.
+   Ütle ka suurim CPU % (FM3-Editi ülaosas).
+4. Kui midagi muudad FM3-Editis ja see meeldib, ekspordi preset ja saada fail – võtan muudatused aluseks.
+Wah'i pole lisatud, sest see vajab expression-pedaali; kui sul on pedaal ja soovid wah'i, lisan selle.
+
+Kontrollitud: kaadrid, CRC, footer, kogu keha tagasilugemine, ainult kirjeldatud baidid muutunud,
+ahel katkematu. Seadmeimport, heli ja CPU: katsetamata.
+SHA-256: e08b7a70bdd734930cd9500a6f980389f58e3f01caa74a6657463449f9c86fcc

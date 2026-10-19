@@ -1,0 +1,41 @@
+KATSE LÕPETATUD 2026-10-12: import/eksport kinnitatud, kõik13804 sisubaiti säilisid.
+Kasutaja: Enhancer toimib; suurim nähtud CPU52,7%. Seda katset ei ole vaja korrata.
+Allpool on algne katsejuhend ajaloona.
+
+FM3 ENHANCER A–D: ÜKS ÜHINE KATSE
+
+Kogumine on lõpetatud. Uut kogujat ega MIDI-käsku pole vaja.
+
+1. Säilita praegune töö ja impordi FM3_ENHANCER_ABCD_TEST.syx
+   FM3-Editi tööpuhvrisse. Preseti nimi: FM3 ENHANCER ABCD TEST.
+2. Vaata üle Enhancer 1 (rida 3, veerg 11, Reverb 1 järel).
+   Vali need stseenid ja kontrolli Enhanceri nähtavaid seadeid:
+
+   Scene 2 → A / Modern
+   Width 20%, Depth 20%, Low Cut 100 Hz, High Cut 2000 Hz, Level −1 dB.
+
+   Scene 3 → B / Classic
+   Width 50%, Pan Left −80, Pan Right +80, Balance 0,
+   Invert None, Level −1 dB. Pan-väärtused on ühikuta.
+
+   Scene 4 → C / Stereoizer
+   Width 20%, Depth 20%, Level −1 dB.
+
+   Scene 6 → D / Modern
+   Width 35%, Depth 50%, Low Cut 200 Hz, High Cut 5000 Hz, Level −0.5 dB.
+
+   Kõigis neljas stseenis on Enhancer sees; Scene Ignore on OFF.
+   Ülejäänud stseenides on Enhancer A/bypass. Bypass Mode menüüd ei otsita.
+   Kui näit erineb, kirjuta erinevus üles, kuid ära paranda enne eksporti.
+3. Mängi nendes neljas stseenis ja märgi suurim nähtud CPU-protsent.
+   Kirjelda, kas Enhancer toimis ja kas heli/tase oli sobiv.
+4. Vali tagasi Scene 2. Ekspordi terve preset nimega
+   FM3_ENHANCER_ABCD_TEST_export.syx ja saada see koos CPU-näidu ning
+   lühikese helikommentaariga. Kui tegid muudatusi, kirjelda neid.
+
+See katse säilitab senised GEQ/PEQ/V3 seaded. Varasem GEQ CPU50% ei ole
+selle uue koosluse mõõtmine. Käesolev fail on kontrollitud failitasemel;
+seadme import/eksport, heli ja CPU ootavad seda ühte katset.
+
+Pakis: .syx (imporditav preset), .txt (täielik ülevaade),
+.spec.json (seadete kirjeldus), .validation.json (failikontroll) ja CHECK.txt.

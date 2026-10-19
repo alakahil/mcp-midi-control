@@ -1,0 +1,42 @@
+{
+  "version": "0.30.4",
+  "collectorVersion": "0.2.1",
+  "date": "2026-10-05",
+  "evidenceLevel": "controlled user exports; GET/SYX for these selections pending",
+  "mapping": [
+    {
+      "displayNumber": 24,
+      "name": "2x12 65 Bassguy",
+      "id": 24
+    },
+    {
+      "displayNumber": 25,
+      "name": "2x12 5153 Stealth",
+      "id": 23
+    }
+  ],
+  "bodyWordChanges": [
+    {
+      "offset": 5820,
+      "before": 0,
+      "after": 3,
+      "meaning": "scene2 CAB channel A to D"
+    },
+    {
+      "offset": 6660,
+      "before": 24,
+      "after": 23,
+      "meaning": "D CAB1 Bassguy to Stealth"
+    }
+  ],
+  "offlineTests": {
+    "passed": 4,
+    "real007Accepted": true,
+    "mixedSlotsRejected": true,
+    "existingSessionResume": true,
+    "nonSequentialIdLabels": "mocked pair proof unit test, not hardware evidence"
+  },
+  "transportSHA256": "0e55e9dfa4bf6538c6e9bc3e0a38b3331c101fcf86eb47ad7e5fee78ebf4f14a",
+  "newHardwareTest": false,
+  "newCabWritingSupport": false
+}

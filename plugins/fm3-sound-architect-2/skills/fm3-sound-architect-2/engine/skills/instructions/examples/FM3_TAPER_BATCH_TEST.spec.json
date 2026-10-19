@@ -1,0 +1,121 @@
+{
+  "name": "FM3 TAPER BATCH TEST",
+  "experimental": true,
+  "n": 0.25,
+  "controls": [
+    {
+      "block": "drive",
+      "channel": "D",
+      "param": "FUZZ_SLEW",
+      "raw": 16384
+    },
+    {
+      "block": "wah",
+      "channel": "D",
+      "param": "WAH_DRIVE",
+      "raw": 16384
+    },
+    {
+      "block": "wah",
+      "channel": "D",
+      "param": "WAH_Q",
+      "raw": 16384
+    },
+    {
+      "block": "flanger",
+      "channel": "D",
+      "param": "FLANGER_FOCUS",
+      "raw": 16384
+    },
+    {
+      "block": "flanger",
+      "channel": "D",
+      "param": "OLD_FLANGER_DRIVE",
+      "raw": 16384
+    },
+    {
+      "block": "chorus",
+      "channel": "D",
+      "param": "CHORUS_DRIVE",
+      "raw": 16384
+    },
+    {
+      "block": "delay",
+      "channel": "D",
+      "param": "DELAY_COMPTHRESH",
+      "raw": 16384
+    },
+    {
+      "block": "delay",
+      "channel": "D",
+      "param": "DELAY_Q",
+      "raw": 16384
+    },
+    {
+      "block": "delay",
+      "channel": "D",
+      "param": "DELAY_DRIVE",
+      "raw": 16384
+    },
+    {
+      "block": "reverb",
+      "channel": "D",
+      "param": "REVERB_DRIVE",
+      "raw": 16384
+    },
+    {
+      "block": "reverb",
+      "channel": "D",
+      "param": "REVERB_REVERBLEVEL",
+      "raw": 16384
+    },
+    {
+      "block": "reverb",
+      "channel": "D",
+      "param": "REVERB_EARLYLEVEL",
+      "raw": 16384
+    },
+    {
+      "block": "cab",
+      "channel": "D",
+      "param": "CABINET_DRIVE",
+      "raw": 16384
+    },
+    {
+      "block": "cab",
+      "channel": "D",
+      "param": "CABINET_LEVEL2",
+      "raw": 16384
+    },
+    {
+      "block": "cab",
+      "channel": "D",
+      "param": "CABINET_LEVEL1",
+      "raw": 16384
+    },
+    {
+      "block": "amp",
+      "channel": "D",
+      "param": "DISTORT_PAHARDNESS",
+      "raw": 16384
+    },
+    {
+      "block": "amp",
+      "channel": "D",
+      "param": "DISTORT_CLARITY",
+      "raw": 16384
+    },
+    {
+      "block": "compressor",
+      "channel": "D",
+      "param": "COMP_THRESH2",
+      "raw": 16384
+    },
+    {
+      "block": "compressor",
+      "channel": "D",
+      "param": "COMP_THRESH",
+      "raw": 16384
+    }
+  ]
+}

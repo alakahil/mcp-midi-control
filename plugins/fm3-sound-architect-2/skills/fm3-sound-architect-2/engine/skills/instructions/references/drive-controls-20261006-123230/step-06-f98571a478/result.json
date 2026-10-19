@@ -1,0 +1,148 @@
+{
+  "index": 6,
+  "status": "passed",
+  "step": {
+    "id": "B-type",
+    "kind": "type",
+    "channel": "B",
+    "binaryId": 6,
+    "name": "T808 OD",
+    "instruction": "Vali Drive1 kanal B ja Type: T808 OD. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+  },
+  "comparison": {
+    "step": {
+      "id": "B-type",
+      "kind": "type",
+      "channel": "B",
+      "binaryId": 6,
+      "name": "T808 OD",
+      "instruction": "Vali Drive1 kanal B ja Type: T808 OD. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+    },
+    "changes": [
+      {
+        "offset": 8426,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "offset": 8548,
+        "before": 12,
+        "after": 6
+      },
+      {
+        "offset": 8552,
+        "before": 132,
+        "after": 255
+      },
+      {
+        "offset": 8553,
+        "before": 56,
+        "after": 127
+      },
+      {
+        "offset": 8554,
+        "before": 84,
+        "after": 255
+      },
+      {
+        "offset": 8555,
+        "before": 209,
+        "after": 127
+      },
+      {
+        "offset": 8560,
+        "before": 254,
+        "after": 211
+      },
+      {
+        "offset": 8561,
+        "before": 255,
+        "after": 171
+      },
+      {
+        "offset": 8564,
+        "before": 119,
+        "after": 0
+      },
+      {
+        "offset": 8565,
+        "before": 89,
+        "after": 0
+      },
+      {
+        "offset": 8568,
+        "before": 9,
+        "after": 6
+      },
+      {
+        "offset": 8570,
+        "before": 255,
+        "after": 71
+      },
+      {
+        "offset": 8571,
+        "before": 127,
+        "after": 129
+      },
+      {
+        "offset": 8576,
+        "before": 158,
+        "after": 36
+      },
+      {
+        "offset": 8577,
+        "before": 128,
+        "after": 122
+      },
+      {
+        "offset": 8612,
+        "before": 2,
+        "after": 18
+      },
+      {
+        "offset": 8616,
+        "before": 2,
+        "after": 18
+      },
+      {
+        "offset": 8620,
+        "before": 0,
+        "after": 255
+      },
+      {
+        "offset": 8621,
+        "before": 0,
+        "after": 127
+      }
+    ],
+    "presetNameChange": null,
+    "observation": null,
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "df2fff3f83e7d940e2f5248d97a7716e7dd4ad09a3109763cfa6541020e60cb7",
+    "rawRxSha256": "f0d5044c5dd75c6b8b1a0a9fdc67f8c2ce87bc4bd68865cee310fd02ffa8b3d8",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 26
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "interface": {
+    "capabilities": [
+      "skills"
+    ],
+    "category": "Other",
+    "composerIcon": "./assets/fm3-sound-architect-icon.svg",
+    "defaultPrompt": [
+      "Aita mul valmistada FM3 preset.",
+      "Nõusta mind FM3 helide ja seadistuste osas."
+    ],
+    "developerName": "Jan Viileberg",
+    "displayName": "FM3 Sound Architect",
+    "logo": "./assets/fm3-sound-architect-icon.png",
+    "longDescription": "FM3 SYX/TXT generaator ja 336 Amp-kanalimalli, sealhulgas firmware 13 viis uut mudelit. Mudelite kogumine lõpetatud; genereeritud presetite seadme- ja helikontroll eraldi.",
+    "shortDescription": "FM3 soundid ja presetid"
+  },
+  "name": "gpt-f6d733bbe6de2ad9598d015e521f4c4a",
+  "version": "0.73.0",
+  "description": "FM3 SYX/TXT generaator ja 336 Amp-kanalimalli, sealhulgas firmware 13 viis uut mudelit. Mudelite kogumine lõpetatud; genereeritud presetite seadme- ja helikontroll eraldi.",
+  "author": {
+    "name": "Jan Viileberg"
+  },
+  "keywords": [],
+  "skills": "./skills"
+}

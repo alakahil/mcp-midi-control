@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-09",
+  "pluginVersion": "0.62.2",
+  "preset": "FM3 PEQ BAND3 TEST",
+  "generatedSha256": "3869051de07add62df3e528b3f53cd70e236ef9fe5c61bb1a342879f465d0f98",
+  "userStatement": "CPU 47-48. Kõlas hästi tunnetasin vahet.",
+  "listening": {
+    "status": "accepted-by-user",
+    "differencePerceived": true,
+    "scope": "Current PEQ control preset, not all PEQ settings."
+  },
+  "cpu": {
+    "minPercent": 47,
+    "maxPercent": 48,
+    "source": "user-observed",
+    "scope": "Current specimen; scene coverage and measurement conditions not specified. Not a stress test or maximum for other configurations."
+  },
+  "screenshots": [
+    {
+      "band": 1,
+      "file": "peq-ui-20261009/band-1-type-menu.png",
+      "originalFilename": "Screenshot 2026-10-09 at 12.21.03.png",
+      "libraryFileId": "libfile_4ae055f150a88191bb16d3cf76f2fc56",
+      "sha256": "81398867bbaf4bf0c9d09d2e79f37c4b70ec842087a4e7597e10f4479b67f211",
+      "visibleTypes": [
+        "Blocking",
+        "Peaking",
+        "Peaking 2",
+        "Shelving",
+        "Shelving 2"
+      ]
+    },
+    {
+      "band": 2,
+      "file": "peq-ui-20261009/band-2-type-menu.png",
+      "originalFilename": "Screenshot 2026-10-09 at 12.21.15.png",
+      "libraryFileId": "libfile_898905c744a08191a0bf298ea2816e2d",
+      "sha256": "bdd68d91f56ded33bd89da9d644630f4ed0aa57a7b7196b3b4a6401a9e65adf7",
+      "visibleTypes": [
+        "Peaking",
+        "Peaking 2",
+        "Shelving",
+        "Shelving 2"
+      ]
+    },
+    {
+      "band": 3,
+      "file": "peq-ui-20261009/band-3-type-menu.png",
+      "originalFilename": "Screenshot 2026-10-09 at 12.21.24.png",
+      "libraryFileId": "libfile_8255b6757b9881919a3e8bcd7467818d",
+      "sha256": "8b1a91a50a1c118d67279f8b81512f168233b0a9a74a51159c7e666dd3595f08",
+      "visibleTypes": [
+        "Peaking",
+        "Peaking 2"
+      ]
+    },
+    {
+      "band": 4,
+      "file": "peq-ui-20261009/band-4-type-menu.png",
+      "originalFilename": "Screenshot 2026-10-09 at 12.21.31.png",
+      "libraryFileId": "libfile_a82d41248a208191bf439f7beae92731",
+      "sha256": "23b28488e51086d795af167498a0260d3d9226258ff1c5ebe2c584b73036e759",
+      "visibleTypes": [
+        "Peaking",
+        "Peaking 2",
+        "Shelving",
+        "Shelving 2"
+      ]
+    },
+    {
+      "band": 5,
+      "file": "peq-ui-20261009/band-5-type-menu.png",
+      "originalFilename": "Screenshot 2026-10-09 at 12.21.41.png",
+      "libraryFileId": "libfile_0b85563c4c288191b2efc6bfa38e8a92",
+      "sha256": "7e3d38a0df25851e317c45f8625cd71e69b0a37bc01a5ade56181d5e8fb908e7",
+      "visibleTypes": [
+        "Blocking",
+        "Peaking",
+        "Peaking 2",
+        "Shelving",
+        "Shelving 2"
+      ]
+    }
+  ],
+  "uiEvidenceScope": "Channel A Type menus for bands 1-5. Images show bypass, Band 3 2000 Hz / 0 dB, not the generated active 1000 Hz / +3 dB state. Menu inventory only, not raw enums, ranges or B/C/D validation.",
+  "binaryValidationPromotedByScreenshots": false,
+  "currentSupport": "Only PEQ A, Band 3 fixed Peaking, exact measured Frequency/Q/Gain and Level points; explicit scene bypass. Other bands and B/C/D are preserved, not freely writable.",
+  "all132WordsMeaning": "Baseline GET/SYX matching confirms the existing 33 words x 4 channels, not every parameter semantic or independent B/C/D writes and scene selection.",
+  "nextRecommendation": "Before Graphic EQ, extend PEQ to other bands/types, useful ranges, A-D independent settings and scene channel selection. Collect only missing evidence, without repeating completed A/Band 3 measurements or this preset import/export/listening/CPU question.",
+  "historicalReports": "0.62.1 generated reports retain capture-time audio/CPU pending labels. This dated record supersedes those labels for this specimen. Generator behavior and support limits are unchanged."
+}

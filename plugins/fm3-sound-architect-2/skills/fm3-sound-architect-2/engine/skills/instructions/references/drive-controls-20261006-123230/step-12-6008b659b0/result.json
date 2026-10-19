@@ -1,0 +1,15 @@
+{
+  "index": 12,
+  "status": "skipped",
+  "reason": "väärtus oli sama",
+  "step": {
+    "id": "C-drive",
+    "kind": "control",
+    "channel": "C",
+    "binaryId": 0,
+    "field": "Drive",
+    "pid": 1,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Drive väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  }
+}

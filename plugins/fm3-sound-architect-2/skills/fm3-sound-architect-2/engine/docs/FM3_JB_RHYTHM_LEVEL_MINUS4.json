@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-08",
+  "userFeedback": {
+    "previousTrial": "JB_RHYTHM_LEVEL_PLUS6.syx",
+    "meterLocation": "OUTPUT 1 Left/Right",
+    "scene2MeterDbApprox": -13,
+    "scene6MeterDbApproxRange": [
+      2,
+      3
+    ],
+    "correction": "Latest user message explicitly corrects Scene2 to negative -13dB",
+    "request": "Raise Scene2 by approximately 8dB more; preserve Scene6 at its previous level",
+    "delayAndReverbAssessment": "not supplied"
+  },
+  "purpose": "Second listening trial: Amp B -12 to -4dB; total +14dB from original -18dB",
+  "previousTrialSha256": "2035c0da1c8d04cc39d8d4b7e7308d7efcbce9d642047cc636f0c4bf154c5b2e",
+  "outputSha256": "c17103edba82c66476a592efa13279c0d5843cb6aeac8b95bdddeebe6a0b89de",
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [
+    4946,
+    4947
+  ],
+  "control": {
+    "block": "Amp1",
+    "channel": "B",
+    "parameter": "Level",
+    "parameterId": 1,
+    "offset": 4946,
+    "beforeRaw": 44563,
+    "afterRaw": 49806,
+    "beforeDb": -12.000183111056856,
+    "afterDb": -3.999755851924192,
+    "requestedDeltaDb": 8,
+    "totalDeltaFromOriginalDb": 14,
+    "affectedScenes": [
+      2
+    ]
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 66,
+      "after": 94,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 50,
+      "after": 85,
+      "field": "CRC"
+    },
+    {
+      "offset": 24,
+      "before": 43,
+      "after": 45,
+      "field": "presetName"
+    },
+    {
+      "offset": 25,
+      "before": 54,
+      "after": 52,
+      "field": "presetName"
+    },
+    {
+      "offset": 74,
+      "before": 60,
+      "after": 62,
+      "field": "compressedSize"
+    }
+  ],
+  "encoding": {
+    "compressedBytesBefore": 4924,
+    "compressedBytesAfter": 4926,
+    "decompressedSizePreserved": 14222,
+    "paddingAllZero": true,
+    "note": "Compressed-size header is correctly updated from 4924 to 4926 bytes; no extra musical parameter changed."
+  },
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "onlyAmpBLevelBodyWordChanged": true,
+    "allOtherBodyBytesPreserved": true,
+    "scene6Unchanged": true,
+    "headersPreservedExceptNameCrcAndCompressedSize": true,
+    "specPreservedExceptNamePurposeLevel": true
+  },
+  "previousTrialStatus": "User reported output-meter readings after testing; binary re-export not supplied",
+  "hardware": "This second trial has not been imported or re-exported",
+  "audio": "This second trial has not been heard; final perceived balance remains pending",
+  "nextStep": "Compare Scene2 and Scene6 using the same phrase and OUTPUT 1 Left/Right meters. Report both readings and perceived balance. Once acceptable, select Scene2 and export the whole preset as JB_RHYTHM_LEVEL_MINUS4_export.syx. No intermediate export required."
+}

@@ -1,0 +1,125 @@
+{
+  "index": 58,
+  "step": {
+    "id": "059-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ ploki Level; lõpus 0 dB taastamine. Muuda ainult: Level → maksimumi (nupp lõpuni paremale). Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Level",
+        "candidatePid": 20,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 58,
+    "step": {
+      "id": "059-common",
+      "stage": "common",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ ploki Level; lõpus 0 dB taastamine. Muuda ainult: Level → maksimumi (nupp lõpuni paremale). Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Level",
+          "candidatePid": 20,
+          "value": null,
+          "band": null,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "dB"
+        }
+      ]
+    },
+    "previousSha256": "c5933cd2b8fe125b398009b84e7c87699ede5a14cbb263afb8336b1ed1672f67",
+    "syxSha256": "33a6c6b7791e276cfec463e511557b6e1067acca9b6a15c9c0def407471abb51",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 20,
+        "offset": 8774,
+        "before": 0,
+        "after": 65534
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Level",
+        "candidatePid": 20,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB",
+        "raw": 65534
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Level",
+        "candidatePid": 20,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      "displayValue": 20.0
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "33a6c6b7791e276cfec463e511557b6e1067acca9b6a15c9c0def407471abb51",
+    "bodySha256": "ce0f75e11b18f2349137cf11687fec692f362324c4cd55af67a7bea4112243e0",
+    "rawRxSha256": "b3b9501c2763fdc5dfa3dc993cb3fc75fcb2287bfd8b134078ebcab60641d3ec",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

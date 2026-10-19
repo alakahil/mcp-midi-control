@@ -1,0 +1,125 @@
+{
+  "index": 78,
+  "step": {
+    "id": "079-channels",
+    "stage": "channels",
+    "kind": "controls",
+    "channel": "B",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal B. Sõltumatu sihtkanali kontroll. Muuda ainult: Band 3 Gain → -3 dB. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": -3,
+        "band": 3,
+        "channel": "B",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 78,
+    "step": {
+      "id": "079-channels",
+      "stage": "channels",
+      "kind": "controls",
+      "channel": "B",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal B. Sõltumatu sihtkanali kontroll. Muuda ainult: Band 3 Gain → -3 dB. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Gain",
+          "candidatePid": 12,
+          "value": -3,
+          "band": 3,
+          "channel": "B",
+          "endpoint": null,
+          "unit": "dB"
+        }
+      ]
+    },
+    "previousSha256": "ed78aabc39e2cc3b684c9ea94c06a4f4efaa25107f9d826c26e25acee7820baf",
+    "syxSha256": "58381b54b6db4052f6a21a150de0169c036c70442c5be055118a7c6558617731",
+    "changedWords": [
+      {
+        "channel": "B",
+        "pid": 12,
+        "offset": 8824,
+        "before": 42597,
+        "after": 27852
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": -3,
+        "band": 3,
+        "channel": "B",
+        "endpoint": null,
+        "unit": "dB",
+        "raw": 27852
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": -3,
+        "band": 3,
+        "channel": "B",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      "displayValue": -3.0
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "58381b54b6db4052f6a21a150de0169c036c70442c5be055118a7c6558617731",
+    "bodySha256": "b620e0ec9e308bc75de3423df259952b7cc16e215885e0456906a567c0301446",
+    "rawRxSha256": "9222b8a192b3c514e747dc09a274fda18990b0db8e0c8533a9cfec1734dd4080",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "B",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

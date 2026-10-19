@@ -1,0 +1,67 @@
+FM3 SOUND ARCHITECT — BONAMASSA ÜHISE KOOSTAJA KATSE
+Preset: JB RHYTHM LEVEL +6
+Eesmärk: Kuulamiskatse: tõsta ainult Scene 2 kasutatava Amp B Level väärtust 6 dB (-18 -> -12 dB). Soolo jääb seniseks; lõplik tasakaal vajab sama mängu ja mõõdiku võrdlust.
+FM3 Mk II Turbo, firmware 13. Ibanez humbuckeritega; OUT 1 stereo FOH.
+Alus: JB_YDOM_RHYTHM.syx. Stseen 2 on rütm; stseen 6 on soolo.
+Signaaliahel: Input 1 → Comp 1 → Wah 1 → Phaser 1 → Drive 1 → Amp 1 → Cab 1 → Chorus 1 → Flanger 1 → Delay 1 → Reverb 1 → Output 1
+
+STSEENID 2 JA 6
+Scene 2: Rhythm Fat
+  amp B: Brit Silver; sees; Level -12.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  drive A: Full OD; bypass
+  delay A: Deluxe Mind Guy; bypass
+  reverb B: Room: Large Room; sees
+  phaser A: ID 5; bypass
+Scene 6: JB SOLO
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  drive B: T808 OD; sees
+  delay A: Deluxe Mind Guy; sees
+  reverb D: Room: Medium Room; sees
+  phaser D: ID 3; bypass
+
+PÕHIVÄÄRTUSED
+Amp B Gain: 5.00 /10 [määratud kirjelduses]
+Amp B Bass: 4.00 /10 [määratud kirjelduses]
+Amp B Mid: 6.50 /10 [määratud kirjelduses]
+Amp B Treble: 5.20 /10 [määratud kirjelduses]
+Amp B Presence: 3.00 /10 [määratud kirjelduses]
+Amp B Level: -12.00 dB [määratud kirjelduses]
+Delay A Mix: 15.00 % [määratud kirjelduses]
+Reverb A Mix: 20.00 % [alusfailist]
+Delay A Time: 399.91 ms [määratud kirjelduses]
+Delay A Feedback: 25.00 % [määratud kirjelduses]
+Reverb A Time: 1.64 s [alusfailist]
+Reverb A Pre-Delay: 30.00 ms [alusfailist]
+Delay A Tempo: NONE  [määratud kirjelduses]
+Reverb A Pre-Delay Tempo: NONE  [alusfailist]
+Scene 2 Delay: bypass  [alusfailist]
+Scene 1 Reverb kanal: A  [alusfailist]
+Drive B T808 OD: drive 2 /10, tone 7 /10, level 2 /10, mix 25%
+
+KANALITE MÕJU
+amp B kasutavad stseenid 2 (bypass-olek on eraldi).
+cab B kasutavad stseenid 2, 4, 6, 8 (bypass-olek on eraldi).
+drive B kasutavad stseenid 6, 8 (bypass-olek on eraldi).
+delay A kasutavad stseenid 1, 2, 3, 4, 5, 6, 7, 8 (bypass-olek on eraldi).
+reverb D kasutavad stseenid 6 (bypass-olek on eraldi).
+
+Määramata seaded säilivad alusfailist; tüübivalik kopeerib terve kogutud kanalimalli. Mallid ei ole tingimata tehasevaikeväärtused.
+Kabinetid: olemasolevad Dyna-Cab valikud. Uusi väliseid IR-e ei lisata. Lülitid, expression ja modifierid säilivad alusfailist.
+Täiendavat soolotõstet ei lisata. Kanalite tegelikud Level-väärtused on eespool; tajutav helitugevus vajab kuulamist.
+Failitasemel kontrollitud: sisubaidid, lubatud muudatusalad, routing, kaadrid, CRC ja footer.
+Uue kombinatsiooni seadmeimport, heli, tasemed ja CPU: OOTEL.
+
+KONTROLLIMPORT
+1. Säilita praegune töö ja impordi SYX FM3-Editi tööpuhvrisse.
+2. Vaata Scene 2 ja Scene 6 seadeid eespool oleva loendi järgi ning kuula mõlemat.
+3. Enne eksporti vali tagasi Scene 2; ära paranda katse väärtusi ega liiguta expression-pedaali.
+4. Esmalt anna mõlema stseeni mõõdikunäit ja kuulamishinnang. Kui tasakaal sobib, ekspordi terve preset nimega JB_RHYTHM_LEVEL_PLUS6_export.syx.
+5. Kirjelda eraldi rütmi/soolo taset ning Delay/Reverbi sobivust.
+Tööriist ei ühenda seadet ega saada MIDI/SET/SAVE-käske.
+SHA-256: 2035c0da1c8d04cc39d8d4b7e7308d7efcbce9d642047cc636f0c4bf154c5b2e
+
+TASEMEKATSE: võrreldes kinnitatud eelmise failiga muutus sisus ainult Amp B Level: -18 -> -12 dB (+6 dB); seda kanalit kasutab ainult Scene 2.
+Kasutaja eelnev Scene 2 mõõdiku näit oli ligikaudu -19 dB; mõõdiku liik/asukoht ja Scene 6 näit pole teada. See ei ole Amp Level seadistus.
+Mängi Scene 2 ja 6 sama fraasi sama tugevalt. Märgi mõlema näit samal mõõdikul ning kirjelda kuuldavat tasakaalu. Lõplikku sobivust pole kinnitatud.

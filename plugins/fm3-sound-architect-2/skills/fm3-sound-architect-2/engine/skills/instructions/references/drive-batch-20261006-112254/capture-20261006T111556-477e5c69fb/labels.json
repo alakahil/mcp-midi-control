@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 57,
+    "name": "PI Fuzz - Triangle",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 58,
+    "name": "Plus Distortion",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 59,
+    "name": "Rat Distortion",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 60,
+    "name": "Royal Bass DI",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

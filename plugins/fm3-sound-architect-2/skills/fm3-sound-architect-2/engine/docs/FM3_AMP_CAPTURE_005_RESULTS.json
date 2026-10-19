@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-02",
+  "syxSha256": "155b1b643a387d469eda43ecc68cb1afff6213c8b3e0dd1dd311aa9a24a71c2e",
+  "getSha256": "36e9b53ddba043c5a93c65083efb9daae2af2d75a93b30c6473c8aae656945a3",
+  "getChecks": {
+    "frames": true,
+    "checksums": true,
+    "sevenBit": true,
+    "wordCounts": true
+  },
+  "matchedWords": 576,
+  "totalWords": 576,
+  "source": {
+    "file": "FM3_AMP_CAPTURE_005.syx",
+    "index": 0,
+    "sha256": "155b1b643a387d469eda43ecc68cb1afff6213c8b3e0dd1dd311aa9a24a71c2e",
+    "ignoredSceneSelections": [
+      {
+        "scene": 2,
+        "base": 1,
+        "donor": 3,
+        "action": "Not copied; output keeps base scene selection"
+      }
+    ]
+  },
+  "results": [
+    {
+      "model": "Hipower Normal",
+      "id": 16,
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Hipower Brilliant",
+      "id": 17,
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "USA Pre Clean",
+      "id": 19,
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "USA MK IIC+",
+      "id": 21,
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    }
+  ],
+  "hardware": "User exported and read device state; generated combinations not imported or audio-tested",
+  "decoderCorrection": "ID21 USA MK IIC+ restored from existing catalog and confirmed user model selection; malformed ID65535 still rejected atomically"
+}

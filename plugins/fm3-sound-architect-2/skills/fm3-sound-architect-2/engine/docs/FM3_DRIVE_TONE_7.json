@@ -1,0 +1,29 @@
+{
+  "baseSha256": "71de0ce085aaa94b222ba35fa6e5ca0b8ed51465886be19564b690471cb96913",
+  "editedSha256": "4cc268bdbc68b10159fb7d0fe7c4a3f17ac0336ac02e0d1fdfe4e740fba484c9",
+  "integrity": "Both full presets pass inspect",
+  "bodyLength": 14222,
+  "differences": [
+    {
+      "offset": 8640,
+      "before": 255,
+      "after": 50
+    },
+    {
+      "offset": 8641,
+      "before": 127,
+      "after": 179
+    }
+  ],
+  "effectId": 118,
+  "channel": "C",
+  "type": "Zen Master",
+  "paramId": 2,
+  "offset": 8640,
+  "userRequestedValue": 7,
+  "rawBefore": 32767,
+  "rawAfter": 45874,
+  "drive8Preserved": true,
+  "otherBodyBytesUnchanged": true,
+  "status": "One explicit Tone value confirmed; second point, other controls and generated hardware import pending"
+}

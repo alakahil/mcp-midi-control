@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 30,
+    "expectedId": 29,
+    "name": "2x12 Texas Star",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 31,
+    "expectedId": 30,
+    "name": "4x10 Bassguy RI",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 32,
+    "expectedId": 31,
+    "name": "4x12 1960TV",
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 33,
+    "expectedId": 32,
+    "name": "4x12 5153",
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

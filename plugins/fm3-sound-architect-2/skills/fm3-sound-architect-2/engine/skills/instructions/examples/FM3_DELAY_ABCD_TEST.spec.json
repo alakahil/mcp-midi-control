@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-delay-multi",
+  "delayChannels": [
+    {
+      "channel": "A",
+      "type": "Digital Stereo"
+    },
+    {
+      "channel": "B",
+      "type": "2290 w/ Modulation"
+    },
+    {
+      "channel": "C",
+      "type": "Mono Tape"
+    },
+    {
+      "channel": "D",
+      "type": "Ping-Pong"
+    }
+  ]
+}

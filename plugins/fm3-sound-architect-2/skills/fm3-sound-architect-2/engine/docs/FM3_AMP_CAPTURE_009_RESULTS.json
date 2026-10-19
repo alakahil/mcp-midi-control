@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-02",
+  "syxSha256": "6504aea06031425c5bb81b881e8a4afcf99f8169e4c6bbb0604f0c78c6406edc",
+  "getSha256": "77c537dba510a1de98bf23ae8c7ba7a32825ff47811121049914ecebf74c64f2",
+  "getChecks": {
+    "frames": true,
+    "checksums": true,
+    "sevenBit": true,
+    "wordCounts": true
+  },
+  "matchedWords": 576,
+  "totalWords": 576,
+  "source": {
+    "file": "FM3_AMP_CAPTURE_009.syx",
+    "index": 0,
+    "sha256": "6504aea06031425c5bb81b881e8a4afcf99f8169e4c6bbb0604f0c78c6406edc",
+    "ignoredSceneSelections": [
+      {
+        "scene": 2,
+        "base": 1,
+        "donor": 0,
+        "action": "Not copied; output keeps base scene selection"
+      }
+    ]
+  },
+  "results": [
+    {
+      "model": "Solo 100 Lead",
+      "id": 36,
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Friedman BE V1",
+      "id": 37,
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Friedman HBE V1",
+      "id": 38,
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "PVH 6160 Block Lead",
+      "id": 39,
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    }
+  ],
+  "hardware": "User exported and read device state; generated combinations not imported or audio-tested"
+}

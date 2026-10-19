@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "kind": "FM3_GEQ_FULL",
+  "collector": "0.1.0",
+  "firmwareDeclared": 13,
+  "baselineSha256": "51f5f3e297bec66f9bf36e0482e1e360bea93ec35fd09f7c80b1e88c78a2470b",
+  "setupSha256": "fe55e349903b79693f541fbfbf1e3b65d462f8ef3cea4e0ce19a7129240a37a2",
+  "planSha256": "a8b6555f5e6068d20e8829433bb9ea939af32c65d79b8b4c7acb69751333c665"
+}

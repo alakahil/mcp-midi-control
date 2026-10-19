@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 21,
+    "name": "Hall: Mechanic's Hall",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 22,
+    "name": "Hall: Medium Hall",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 23,
+    "name": "Hall: Music Hall",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 24,
+    "name": "Hall: Nashville Church",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

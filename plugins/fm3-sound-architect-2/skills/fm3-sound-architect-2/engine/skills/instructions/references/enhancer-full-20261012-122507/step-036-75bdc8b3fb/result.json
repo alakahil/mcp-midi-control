@@ -1,0 +1,19 @@
+{
+  "index": 36,
+  "step": {
+    "id": "037-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Classic — Pan L lower",
+    "channel": "A",
+    "typeName": "Classic",
+    "parameter": "Pan L",
+    "mode": "numeric",
+    "point": "lower",
+    "unit": "number",
+    "allowUnchanged": true
+  },
+  "status": "skipped",
+  "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+  "automatic": true
+}

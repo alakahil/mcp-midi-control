@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 49,
+    "name": "OD 250",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 50,
+    "name": "OD 250 Gray",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 51,
+    "name": "OD-One Overdrive",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 52,
+    "name": "Paradigm Shifter",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

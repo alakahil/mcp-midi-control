@@ -1,0 +1,1302 @@
+{
+  "composer": {
+    "generator": "jb-composer-0.12.1",
+    "knownDeviceBody": null,
+    "spec": {
+      "schemaVersion": 1,
+      "firmware": 13,
+      "baseProfile": "jb-composer",
+      "name": "FM3 LAYOUT MOVE TEST",
+      "compressorChannels": [
+        {
+          "channel": "A",
+          "type": "Optical Compressor"
+        }
+      ],
+      "phaserChannels": [
+        {
+          "channel": "A",
+          "type": "Classic Vibe"
+        }
+      ],
+      "chorusChannels": [
+        {
+          "channel": "A",
+          "type": "Japan CE-2"
+        }
+      ]
+    },
+    "baseId": "jb-newlook",
+    "baseFile": "examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
+    "baseSha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
+    "baseLayout": "newlook",
+    "sourceBodyBytes": 12804,
+    "bodyBytes": 13774,
+    "insertions": [
+      {
+        "family": "compressor",
+        "eid": 46,
+        "row": 2,
+        "column": 2,
+        "replacedShunt": 1024,
+        "donor": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+        "donorSha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+        "recordBytes": 342,
+        "defaultScenes": "A, bypass",
+        "sceneAssignments": [],
+        "hardware": "Pending generated-layout import/export"
+      },
+      {
+        "family": "phaser",
+        "eid": 90,
+        "row": 2,
+        "column": 5,
+        "replacedShunt": 1026,
+        "donor": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+        "donorSha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+        "recordBytes": 326,
+        "defaultScenes": "A, bypass",
+        "sceneAssignments": [],
+        "hardware": "Pending generated-layout import/export"
+      },
+      {
+        "family": "chorus",
+        "eid": 78,
+        "row": 3,
+        "column": 3,
+        "replacedShunt": 1032,
+        "donor": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+        "donorSha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+        "recordBytes": 302,
+        "defaultScenes": "A, bypass",
+        "sceneAssignments": [],
+        "hardware": "Pending generated-layout import/export"
+      }
+    ],
+    "changeOffsetReference": "assembled body after declared insertions",
+    "signalRows": [
+      "Input 1 → Comp 1 → Drive 1 → Phaser 1 → Amp 1 → Cab 1 → Send 1",
+      "Return 1 → Chorus 1 → Delay 1 → Reverb 1 → Output 1"
+    ],
+    "outputSha256": "e222654d5568875ead6191f110073d4b587c2410ed2ef497e425da04340ccfda",
+    "components": {
+      "compressor": [
+        {
+          "channel": "A",
+          "type": "Optical Compressor",
+          "binaryId": 4,
+          "sourceChannel": "B",
+          "sourceCapture": "capture-20261007T120240-84b116f01b",
+          "sourceSyxSha256": "8e6451976fa8d7e5a62f91dacbd3eb255f3044621e660efdf9ed2162bc29bcb1",
+          "words": [
+            16384,
+            15163,
+            39000,
+            36322,
+            47512,
+            1,
+            1,
+            1,
+            14652,
+            0,
+            0,
+            65534,
+            4,
+            32767,
+            0,
+            0,
+            1,
+            0,
+            32767,
+            0,
+            65534,
+            32767,
+            42631,
+            27833,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            39455,
+            21845,
+            32767,
+            32767,
+            0,
+            0,
+            32767
+          ],
+          "affectedScenes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "activeScenes": []
+        }
+      ],
+      "chorus": [
+        {
+          "channel": "A",
+          "type": "Japan CE-2",
+          "binaryId": 4,
+          "sourceChannel": "C",
+          "sourceCapture": "capture-20261007T133821-22c7fe39ff",
+          "sourceSyxSha256": "a1c463de9e735e4ebb600065185be73e2210157e6e27034b748aa057ec79d01b",
+          "words": [
+            4,
+            1,
+            22903,
+            0,
+            32767,
+            49971,
+            6567,
+            0,
+            1,
+            0,
+            32767,
+            51772,
+            32767,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            15269,
+            13321,
+            49151,
+            0,
+            32767,
+            32767,
+            32767,
+            0,
+            0,
+            2353,
+            65534,
+            65534
+          ],
+          "affectedScenes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "activeScenes": []
+        }
+      ],
+      "phaser": [
+        {
+          "channel": "A",
+          "type": "Classic Vibe",
+          "binaryId": 5,
+          "sourceChannel": "D",
+          "sourceCapture": "capture-001",
+          "sourceSyxSha256": "3c27ba2f65c0df93449b01c9d2db23004316ed646840a39238d4bf240faa4cb6",
+          "words": [
+            5,
+            1,
+            25498,
+            0,
+            0,
+            32767,
+            32767,
+            11703,
+            21254,
+            0,
+            22150,
+            34733,
+            52427,
+            32767,
+            0,
+            0,
+            0,
+            1,
+            0,
+            45874,
+            0,
+            22903,
+            0,
+            1,
+            3,
+            32767,
+            32767,
+            49903,
+            21404,
+            45806,
+            32767,
+            0,
+            24318,
+            47195,
+            1
+          ],
+          "affectedScenes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "activeScenes": []
+        }
+      ]
+    },
+    "sceneEdits": [],
+    "effective": [
+      {
+        "key": "gainB",
+        "label": "Amp B Gain",
+        "unit": "/10",
+        "raw": 32767,
+        "value": 5,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "bassB",
+        "label": "Amp B Bass",
+        "unit": "/10",
+        "raw": 26214,
+        "value": 4.000061037018952,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "midB",
+        "label": "Amp B Mid",
+        "unit": "/10",
+        "raw": 42597,
+        "value": 6.499984740745262,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "trebleB",
+        "label": "Amp B Treble",
+        "unit": "/10",
+        "raw": 34078,
+        "value": 5.200048829615161,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "presenceB",
+        "label": "Amp B Presence",
+        "unit": "/10",
+        "raw": 19660,
+        "value": 2.999969481490524,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "levelB",
+        "label": "Amp B Level",
+        "unit": "dB",
+        "raw": 50461,
+        "value": -3.000274666585284,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "delayMixA",
+        "label": "Delay A Mix",
+        "unit": "%",
+        "raw": 9830,
+        "value": 14.999847407452622,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "reverbMixA",
+        "label": "Reverb A Mix",
+        "unit": "%",
+        "raw": 13107,
+        "value": 20.00030518509476,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "delayTimeMs",
+        "label": "Delay A Time",
+        "unit": "ms",
+        "raw": 1634,
+        "value": 399.9130222479934,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "delayFeedback",
+        "label": "Delay A Feedback",
+        "unit": "%",
+        "raw": 40959,
+        "value": 25.0007629627369,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "reverbTimeS",
+        "label": "Reverb A Time",
+        "unit": "s",
+        "raw": 1010,
+        "value": 1.6396435438093206,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "reverbPredelayMs",
+        "label": "Reverb A Pre-Delay",
+        "unit": "ms",
+        "raw": 1966,
+        "value": 29.99969481490524,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "delayTempoA",
+        "label": "Delay A Tempo",
+        "unit": "",
+        "raw": 0,
+        "value": "NONE",
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "reverbPredelayTempoA",
+        "label": "Reverb A Pre-Delay Tempo",
+        "unit": "",
+        "raw": 0,
+        "value": "NONE",
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "delayScene2",
+        "label": "Scene 2 Delay",
+        "unit": "",
+        "raw": 1,
+        "value": false,
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      },
+      {
+        "key": "reverbScene1",
+        "label": "Scene 1 Reverb kanal",
+        "unit": "",
+        "raw": 0,
+        "value": "A",
+        "requested": null,
+        "source": "base",
+        "displaySupported": true
+      }
+    ],
+    "affectedChannels": [
+      {
+        "family": "chorus",
+        "channel": "A",
+        "scenes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "activeScenes": []
+      },
+      {
+        "family": "compressor",
+        "channel": "A",
+        "scenes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "activeScenes": []
+      },
+      {
+        "family": "phaser",
+        "channel": "A",
+        "scenes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "activeScenes": []
+      }
+    ],
+    "scenes": [
+      {
+        "scene": 1,
+        "name": "Clean",
+        "blocks": {
+          "amp": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 18,
+            "type": "USA MK IV Rhythm 1",
+            "levelDb": -9.000213629566332
+          },
+          "cab": {
+            "channel": "D",
+            "bypass": false,
+            "mode": "DYNA-CAB",
+            "cabs": [
+              {
+                "id": 25,
+                "name": "2x12 Chiefman"
+              },
+              {
+                "id": 25,
+                "name": "2x12 Chiefman"
+              }
+            ]
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Japan CE-2"
+          },
+          "compressor": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Optical Compressor"
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 14,
+            "type": "Deluxe Mind Guy"
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 14,
+            "type": "Full OD"
+          },
+          "phaser": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 5,
+            "type": "Classic Vibe"
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 2,
+            "type": "Room: Large Room"
+          }
+        }
+      },
+      {
+        "scene": 2,
+        "name": "Rhythm Fat",
+        "blocks": {
+          "amp": {
+            "channel": "B",
+            "bypass": false,
+            "typeId": 103,
+            "type": "Brit Silver",
+            "levelDb": -3.000274666585284
+          },
+          "cab": {
+            "channel": "B",
+            "bypass": false,
+            "mode": "DYNA-CAB",
+            "cabs": [
+              {
+                "id": 40,
+                "name": "4x12 Rumble EV12L"
+              },
+              {
+                "id": 40,
+                "name": "4x12 Rumble EV12L"
+              }
+            ]
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Japan CE-2"
+          },
+          "compressor": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Optical Compressor"
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 14,
+            "type": "Deluxe Mind Guy"
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 14,
+            "type": "Full OD"
+          },
+          "phaser": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 5,
+            "type": "Classic Vibe"
+          },
+          "reverb": {
+            "channel": "B",
+            "bypass": false,
+            "typeId": 2,
+            "type": "Room: Large Room"
+          }
+        }
+      },
+      {
+        "scene": 3,
+        "name": "Lead Bright",
+        "blocks": {
+          "amp": {
+            "channel": "C",
+            "bypass": false,
+            "typeId": 24,
+            "type": "USA MK IV Lead Bright",
+            "levelDb": -8.000732444227424
+          },
+          "cab": {
+            "channel": "C",
+            "bypass": false,
+            "mode": "DYNA-CAB",
+            "cabs": [
+              {
+                "id": 39,
+                "name": "4x12 Recto Straight"
+              },
+              {
+                "id": 39,
+                "name": "4x12 Recto Straight"
+              }
+            ]
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Japan CE-2"
+          },
+          "compressor": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Optical Compressor"
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 14,
+            "type": "Deluxe Mind Guy"
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 14,
+            "type": "Full OD"
+          },
+          "phaser": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 5,
+            "type": "Classic Vibe"
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 2,
+            "type": "Room: Large Room"
+          }
+        }
+      },
+      {
+        "scene": 4,
+        "name": "Mid Gain",
+        "blocks": {
+          "amp": {
+            "channel": "D",
+            "bypass": false,
+            "typeId": 77,
+            "type": "USA MK IV Lead Mid",
+            "levelDb": -8.159428693502605
+          },
+          "cab": {
+            "channel": "B",
+            "bypass": false,
+            "mode": "DYNA-CAB",
+            "cabs": [
+              {
+                "id": 40,
+                "name": "4x12 Rumble EV12L"
+              },
+              {
+                "id": 40,
+                "name": "4x12 Rumble EV12L"
+              }
+            ]
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Japan CE-2"
+          },
+          "compressor": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Optical Compressor"
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 14,
+            "type": "Deluxe Mind Guy"
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 14,
+            "type": "Full OD"
+          },
+          "phaser": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 5,
+            "type": "Classic Vibe"
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 2,
+            "type": "Room: Large Room"
+          }
+        }
+      },
+      {
+        "scene": 5,
+        "name": "Clean Comp Chorus",
+        "blocks": {
+          "amp": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 18,
+            "type": "USA MK IV Rhythm 1",
+            "levelDb": -9.000213629566332
+          },
+          "cab": {
+            "channel": "D",
+            "bypass": false,
+            "mode": "DYNA-CAB",
+            "cabs": [
+              {
+                "id": 25,
+                "name": "2x12 Chiefman"
+              },
+              {
+                "id": 25,
+                "name": "2x12 Chiefman"
+              }
+            ]
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Japan CE-2"
+          },
+          "compressor": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Optical Compressor"
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 14,
+            "type": "Deluxe Mind Guy"
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 14,
+            "type": "Full OD"
+          },
+          "phaser": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 5,
+            "type": "Classic Vibe"
+          },
+          "reverb": {
+            "channel": "C",
+            "bypass": false,
+            "typeId": 53,
+            "type": "Hall: Colosseum"
+          }
+        }
+      },
+      {
+        "scene": 6,
+        "name": "JB SOLO",
+        "blocks": {
+          "amp": {
+            "channel": "C",
+            "bypass": false,
+            "typeId": 24,
+            "type": "USA MK IV Lead Bright",
+            "levelDb": -8.000732444227424
+          },
+          "cab": {
+            "channel": "B",
+            "bypass": false,
+            "mode": "DYNA-CAB",
+            "cabs": [
+              {
+                "id": 40,
+                "name": "4x12 Rumble EV12L"
+              },
+              {
+                "id": 40,
+                "name": "4x12 Rumble EV12L"
+              }
+            ]
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Japan CE-2"
+          },
+          "compressor": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Optical Compressor"
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 14,
+            "type": "Deluxe Mind Guy"
+          },
+          "drive": {
+            "channel": "B",
+            "bypass": false,
+            "typeId": 6,
+            "type": "T808 OD"
+          },
+          "phaser": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 5,
+            "type": "Classic Vibe"
+          },
+          "reverb": {
+            "channel": "D",
+            "bypass": false,
+            "typeId": 1,
+            "type": "Room: Medium Room"
+          }
+        }
+      },
+      {
+        "scene": 7,
+        "name": "Drive Lead Brt",
+        "blocks": {
+          "amp": {
+            "channel": "C",
+            "bypass": false,
+            "typeId": 24,
+            "type": "USA MK IV Lead Bright",
+            "levelDb": -8.000732444227424
+          },
+          "cab": {
+            "channel": "C",
+            "bypass": false,
+            "mode": "DYNA-CAB",
+            "cabs": [
+              {
+                "id": 39,
+                "name": "4x12 Recto Straight"
+              },
+              {
+                "id": 39,
+                "name": "4x12 Recto Straight"
+              }
+            ]
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Japan CE-2"
+          },
+          "compressor": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Optical Compressor"
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 14,
+            "type": "Deluxe Mind Guy"
+          },
+          "drive": {
+            "channel": "D",
+            "bypass": false,
+            "typeId": 46,
+            "type": "Box o' Crunch"
+          },
+          "phaser": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 5,
+            "type": "Classic Vibe"
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 2,
+            "type": "Room: Large Room"
+          }
+        }
+      },
+      {
+        "scene": 8,
+        "name": "Lead Mid FX",
+        "blocks": {
+          "amp": {
+            "channel": "D",
+            "bypass": false,
+            "typeId": 77,
+            "type": "USA MK IV Lead Mid",
+            "levelDb": -8.159428693502605
+          },
+          "cab": {
+            "channel": "B",
+            "bypass": false,
+            "mode": "DYNA-CAB",
+            "cabs": [
+              {
+                "id": 40,
+                "name": "4x12 Rumble EV12L"
+              },
+              {
+                "id": 40,
+                "name": "4x12 Rumble EV12L"
+              }
+            ]
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Japan CE-2"
+          },
+          "compressor": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 4,
+            "type": "Optical Compressor"
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 14,
+            "type": "Deluxe Mind Guy"
+          },
+          "drive": {
+            "channel": "B",
+            "bypass": false,
+            "typeId": 6,
+            "type": "T808 OD"
+          },
+          "phaser": {
+            "channel": "A",
+            "bypass": true,
+            "typeId": 5,
+            "type": "Classic Vibe"
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": false,
+            "typeId": 2,
+            "type": "Room: Large Room"
+          }
+        }
+      }
+    ],
+    "selectedScene": 2,
+    "exportFilename": "FM3_LAYOUT_MOVE_TEST_export.syx",
+    "changedBodyOffsets": [
+      6748,
+      6757,
+      6758,
+      6759,
+      6760,
+      6762,
+      6763,
+      6766,
+      6770,
+      6771,
+      6788,
+      6789,
+      6790,
+      6791,
+      6794,
+      6806,
+      6807,
+      7054,
+      7055,
+      7056,
+      7057,
+      7058,
+      7059,
+      7060,
+      7066,
+      7067,
+      7074,
+      7084,
+      7085,
+      7116,
+      7117,
+      7122,
+      7123,
+      9040,
+      9041,
+      9046,
+      9047,
+      9058,
+      9059,
+      9074,
+      9075
+    ],
+    "allowedBodyOffsets": [
+      6748,
+      6749,
+      6750,
+      6751,
+      6752,
+      6753,
+      6754,
+      6755,
+      6756,
+      6757,
+      6758,
+      6759,
+      6760,
+      6761,
+      6762,
+      6763,
+      6764,
+      6765,
+      6766,
+      6767,
+      6768,
+      6769,
+      6770,
+      6771,
+      6772,
+      6773,
+      6774,
+      6775,
+      6776,
+      6777,
+      6778,
+      6779,
+      6780,
+      6781,
+      6782,
+      6783,
+      6784,
+      6785,
+      6786,
+      6787,
+      6788,
+      6789,
+      6790,
+      6791,
+      6792,
+      6793,
+      6794,
+      6795,
+      6796,
+      6797,
+      6798,
+      6799,
+      6800,
+      6801,
+      6802,
+      6803,
+      6804,
+      6805,
+      6806,
+      6807,
+      6808,
+      6809,
+      6810,
+      6811,
+      7050,
+      7051,
+      7052,
+      7053,
+      7054,
+      7055,
+      7056,
+      7057,
+      7058,
+      7059,
+      7060,
+      7061,
+      7062,
+      7063,
+      7064,
+      7065,
+      7066,
+      7067,
+      7068,
+      7069,
+      7070,
+      7071,
+      7072,
+      7073,
+      7074,
+      7075,
+      7076,
+      7077,
+      7078,
+      7079,
+      7080,
+      7081,
+      7082,
+      7083,
+      7084,
+      7085,
+      7086,
+      7087,
+      7088,
+      7089,
+      7090,
+      7091,
+      7092,
+      7093,
+      7094,
+      7095,
+      7096,
+      7097,
+      7098,
+      7099,
+      7100,
+      7101,
+      7102,
+      7103,
+      7104,
+      7105,
+      7106,
+      7107,
+      7108,
+      7109,
+      7110,
+      7111,
+      7112,
+      7113,
+      7114,
+      7115,
+      7116,
+      7117,
+      7118,
+      7119,
+      7120,
+      7121,
+      7122,
+      7123,
+      9036,
+      9037,
+      9038,
+      9039,
+      9040,
+      9041,
+      9042,
+      9043,
+      9044,
+      9045,
+      9046,
+      9047,
+      9048,
+      9049,
+      9050,
+      9051,
+      9052,
+      9053,
+      9054,
+      9055,
+      9056,
+      9057,
+      9058,
+      9059,
+      9060,
+      9061,
+      9062,
+      9063,
+      9064,
+      9065,
+      9066,
+      9067,
+      9068,
+      9069,
+      9070,
+      9071,
+      9072,
+      9073,
+      9074,
+      9075,
+      9076,
+      9077,
+      9078,
+      9079,
+      9080,
+      9081,
+      9082,
+      9083,
+      9084,
+      9085,
+      9086,
+      9087,
+      9088,
+      9089,
+      9090,
+      9091,
+      9092,
+      9093,
+      9094,
+      9095,
+      9096,
+      9097,
+      9098,
+      9099,
+      9100,
+      9101,
+      9102,
+      9103,
+      9104,
+      9105
+    ],
+    "checks": {
+      "frameChecksums": true,
+      "presetCrc": true,
+      "footer": true,
+      "exactBodyReadback": true,
+      "onlyDeclaredRegionsChanged": true,
+      "routingPreserved": false,
+      "onlyDeclaredSlotInsertions": true,
+      "existingBlockRecordsPreservedDuringInsertion": true,
+      "selectedScenePreserved": true,
+      "unrelatedHeadersPreserved": true,
+      "encodedSizesAndPadding": true,
+      "componentEvidence": true
+    },
+    "hardware": "New composition pending device import/export; base and component specimens have separate evidence.",
+    "audio": "Not assessed for this composition",
+    "cpu": "Not supplied for this composition",
+    "limitations": [
+      "Only listed SHA-pinned bases; new blocks only on declared jb-newlook shunts",
+      "New inserted layouts require device import/export confirmation; no arbitrary routing or block removal",
+      "Amp/Cab full templates target A-D, including collected levels; unselected channels preserved; Gain/EQ scalars still target B; ampLevels adds measured A/C/D points and B alias",
+      "Drive scalar overrides retain measured type/channel/value combinations",
+      "Delay A scalar overrides only type14; Reverb A only type2; Rotary A only measured points",
+      "scenes defines names/channels/bypass for present or inserted effects; duplicate legacy assignments are rejected; new blocks default to A/bypass",
+      "Shared channel changes affect every scene using that channel",
+      "Filter copies all 37 paired words then applies only listed measured type/channel/values; recorded display rounding is explicit; no interpolation or Order",
+      "PEQ A-D starts from a fully paired 33-word baseline; five bands, measured enums and fitted numeric scales; per-value evidence is reported. Hardware proof is matched only to exact full bodies; Blocking has no Q/Gain control; PID23/24 remain opaque",
+      "No new output boost, modifier/expression or external IR writing"
+    ]
+  },
+  "layout": {
+    "stage": "fm3-layout 0.75.0",
+    "outputSha256": "f44f4ddbd53602aa78ee521297ea6423d51078e6584b853b1a25f949c14b3e59",
+    "bytes": 24680,
+    "checks": {
+      "twoRows": true,
+      "chainContinuous": true,
+      "recordsUnchanged": "only declared control/scene bytes",
+      "systemTailPreserved": true,
+      "frameChecksums": true,
+      "presetCrc": true,
+      "footer": true,
+      "bodyReadback": true
+    },
+    "rows": [
+      "In 1(1) → compressor(3) → drive(5) → phaser(7) → amp(9) → cab(11) → Send(12)",
+      "Return(1) → chorus(3) → delay(7) → reverb(10) → Out 1(12)"
+    ],
+    "writes": [
+      {
+        "block": "chorus",
+        "channel": "A",
+        "name": "CHORUS_RATE",
+        "label": "Rate",
+        "status": "taper-class-verified",
+        "kind": "log",
+        "value": 1.2,
+        "raw": 35362,
+        "before": 22903,
+        "offset": 6752,
+        "display": 1.200039482676594
+      }
+    ],
+    "sceneEdits": [],
+    "composerOutputSha256": "e222654d5568875ead6191f110073d4b587c2410ed2ef497e425da04340ccfda"
+  }
+}

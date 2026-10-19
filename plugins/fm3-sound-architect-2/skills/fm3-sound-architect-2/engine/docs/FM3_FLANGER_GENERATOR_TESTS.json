@@ -1,0 +1,8 @@
+{
+  "combinations": 124,
+  "independentCaptureBodyReplays": 8,
+  "replayScenePolicy": "Only Flanger scene-channel choices copied explicitly from base; no other differences normalized",
+  "additionalPinnedBases": 2,
+  "invalidRequestsRejected": 17,
+  "hardwareImport": "pending"
+}

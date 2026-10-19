@@ -1,0 +1,127 @@
+{
+  "index": 65,
+  "step": {
+    "id": "066-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 1 Solo (S1) nupp ON; teiste ribade Solo peab olema OFF. Muuda ainult: Band 1 Solo → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 25,
+        "value": "ON",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 65,
+    "step": {
+      "id": "066-common",
+      "stage": "common",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 1 Solo (S1) nupp ON; teiste ribade Solo peab olema OFF. Muuda ainult: Band 1 Solo → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Solo",
+          "candidatePid": 25,
+          "value": "ON",
+          "band": 1,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ],
+      "allowUnchanged": true
+    },
+    "previousSha256": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+    "syxSha256": "cc4278db6f7242ff210c51096d4d78be8b6ec2438c0d7e7f54026c09edac598c",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 25,
+        "offset": 8784,
+        "before": 0,
+        "after": 1
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 25,
+        "value": "ON",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 1
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Solo",
+        "candidatePid": 25,
+        "value": "ON",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": "ON"
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "cc4278db6f7242ff210c51096d4d78be8b6ec2438c0d7e7f54026c09edac598c",
+    "bodySha256": "30f2510a14f65f2cc26c292ed244695fcb56153c40c5a1a13537d7e78bde4379",
+    "rawRxSha256": "373960344aeca1be297b22dba0738b344ef11862533348c8fd20cf1879daa98c",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,14 @@
+FM3 Wah tüüpide partiikogumine — firmware 13
+
+Esimesed 4 tüüpi on kinnitatud GET/SYX paariga kaasas; 5 on puudu.
+Vajalikud Python 3 ja Node, nagu eelmistel kogujatel.
+Paki Downloads-kausta ja käivita:
+python3 ~/Downloads/FM3_WAH_COLLECTOR/FM3_WAH_BATCH.py --session ~/Documents/FM3_WAH_SESSION --port /dev/cu.usbmodem211104
+
+Muuda ainult Wah 1 kanalite Type-valikuid programmi järgi; tüübi automaatseid muudatusi ära taasta. Muud plokid ja stseen jäta samaks. Ära liiguta expression-pedaali.
+Esimene uus nelik: A Funk Wah, B Mortal, C Paragon, D Vx845.
+Ekspordi terve preset SYX-failina ja lohista Terminali. Sulge FM3-Edit enne GET-kinnitust.
+Iga neliku kohta üks kinnitatud GET; SET/SAVE ega automaatseid korduspäringuid pole.
+Esimese uue neliku eduka kontrolli järel sisesta q ja saada tulemuste ZIP vestlusse.
+Jätkamiseks kasuta sama käsku ja sessioonikausta. Viimases rühmas muuda ainult nimetatud kanaleid.
+Säilita FM3_WAH_SESSION kaust ja viimane tulemuste ZIP.

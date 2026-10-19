@@ -1,0 +1,3127 @@
+{
+  "profile": "jb-composer",
+  "schemaVersion": 1,
+  "firmware": 13,
+  "bases": [
+    {
+      "id": "jb-original",
+      "file": "examples/JB_YDOM_RHYTHM.syx",
+      "sha256": "bffe9dd559b443ebe3822532e951a27cb0a827600cb929d52dfccd3228d611ca",
+      "bodyBytes": 14222,
+      "blocks": [
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "flanger",
+        "wah"
+      ],
+      "fields": [
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "flangerChannels",
+        "phaserChannels",
+        "wahChannels"
+      ]
+    },
+    {
+      "id": "jb-balanced",
+      "file": "examples/JB_RHYTHM_LEVEL_MINUS3.syx",
+      "sha256": "7df04a541f45ef0d73e08de3583f0cd8a34f061392a28aa6691875689563b902",
+      "bodyBytes": 14222,
+      "blocks": [
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "flanger",
+        "wah"
+      ],
+      "fields": [
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "flangerChannels",
+        "phaserChannels",
+        "wahChannels"
+      ]
+    },
+    {
+      "id": "jb-balanced-export",
+      "file": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+      "sha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+      "bodyBytes": 14222,
+      "blocks": [
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "flanger",
+        "wah"
+      ],
+      "fields": [
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "flangerChannels",
+        "phaserChannels",
+        "wahChannels"
+      ]
+    },
+    {
+      "id": "jb-tremolo",
+      "file": "examples/FM3_TREMOLO_ABCD_TEST_export.syx",
+      "sha256": "de7dfc12cbcd2ad517f10f13d392f8b859aee75e94286152d14b80fe9d1596f1",
+      "bodyBytes": 14134,
+      "blocks": [
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "wah",
+        "tremolo"
+      ],
+      "fields": [
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "phaserChannels",
+        "wahChannels",
+        "tremoloChannels"
+      ]
+    },
+    {
+      "id": "jb-rotary",
+      "file": "examples/FM3_ROTARY_A_TEST_export.syx",
+      "sha256": "4eda4d22b89fb843ce47ab011bf01290a2cdbaabb9fe0219038faa5f5f0e7095",
+      "bodyBytes": 14126,
+      "blocks": [
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "wah",
+        "rotary"
+      ],
+      "fields": [
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "phaserChannels",
+        "wahChannels",
+        "rotaryA"
+      ]
+    },
+    {
+      "id": "jb-pitch",
+      "file": "examples/FM3_PITCH_ABCD_TEST_export.syx",
+      "sha256": "1b7ffc02a8e56749677a24fc55b192b0cb414dc960c3af408c17e3d78fc918a8",
+      "bodyBytes": 14870,
+      "blocks": [
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "wah",
+        "pitch"
+      ],
+      "fields": [
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "phaserChannels",
+        "wahChannels",
+        "pitchChannels"
+      ]
+    },
+    {
+      "id": "jb-newlook",
+      "file": "examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
+      "sha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
+      "bodyBytes": 12804,
+      "blocks": [
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb"
+      ],
+      "fields": [
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "flangerChannels",
+        "phaserChannels",
+        "wahChannels",
+        "tremoloChannels",
+        "pitchChannels",
+        "filterChannels",
+        "peqChannels",
+        "geqChannels",
+        "enhancerChannels",
+        "rotaryA",
+        "addedBlockScenes"
+      ]
+    }
+  ],
+  "templates": {
+    "amp": {
+      "count": 336,
+      "names": [
+        "59 Bassguy Bright",
+        "65 Bassguy Normal",
+        "Vibrato Verb",
+        "Deluxe Verb Vibrato",
+        "Double Verb Vibrato",
+        "JR Blues",
+        "Class-A 15W TB",
+        "Class-A 30W",
+        "Class-A 30W TB",
+        "Brit JM45",
+        "Plexi 50W Normal",
+        "Plexi 50W High 1",
+        "1987X Normal",
+        "1987X Treble",
+        "Brit 800 2204 High",
+        "Brit Super",
+        "Hipower Normal",
+        "Hipower Brilliant",
+        "USA MK IV Rhythm 1",
+        "USA Pre Clean",
+        "USA MK IV Rhythm 2",
+        "USA MK IIC+",
+        "USA MK IIC+ Bright",
+        "USA MK IV Lead",
+        "USA MK IV Lead Bright",
+        "Recto2 Orange Vintage",
+        "Recto2 Orange Modern",
+        "Recto2 Red Vintage",
+        "Recto2 Red Modern",
+        "Euro Blue",
+        "Euro Red",
+        "Shiver Clean",
+        "Shiver Lead",
+        "Euro Uber",
+        "Solo 99 Clean",
+        "Solo 100 Rhythm",
+        "Solo 100 Lead",
+        "Friedman BE V1",
+        "Friedman HBE V1",
+        "PVH 6160 Block Lead",
+        "Mr Z MZ-38",
+        "CA3+ Rhythm",
+        "CA3+ Lead",
+        "Wrecker Rocket",
+        "Cornfed M50",
+        "Carol-Ann OD-2",
+        "Fryette D60 Less",
+        "Fryette D60 More",
+        "Brit Brown",
+        "Citrus RV50",
+        "Jazz 120",
+        "Energyball",
+        "ODS-100 Clean",
+        "ODS-100 HRM",
+        "FAS Rhythm",
+        "FAS Lead 1",
+        "FAS Lead 2",
+        "FAS Modern",
+        "Das Metall",
+        "Brit Pre",
+        "Buddah DuoMaster",
+        "Matchbox Chiefman 1",
+        "Matchbox Chiefman 2",
+        "Cameron CCV 1A",
+        "Cameron CCV 2A",
+        "SV Bass 2",
+        "Tube Pre",
+        "FAS Brown",
+        "Big Hair",
+        "Solo 99 Lead",
+        "Supertweed",
+        "Texas Star Lead",
+        "FAS Wreck",
+        "Brit JVM OD1 Orange",
+        "Brit JVM OD2 Orange",
+        "FAS 6160",
+        "Legend 100",
+        "USA MK IV Lead Mid",
+        "USA MK IV Lead Mid Bright",
+        "Princetone 5F2",
+        "Blankenship Leeds",
+        "5153 100W Green",
+        "5153 100W Blue",
+        "5153 100W Red",
+        "Solo 88 Rhythm",
+        "Div/13 CJ",
+        "Herbie CH2-",
+        "Herbie CH2+",
+        "Herbie CH3",
+        "Dirty Shirley 1",
+        "Dizzy V4 Blue 2",
+        "Dizzy V4 Blue 3",
+        "Dizzy V4 Blue 4",
+        "Suhr Badger 18",
+        "Suhr Badger 30",
+        "Princetone AA964",
+        "Supremo Trem",
+        "Atomica Low",
+        "Atomica High",
+        "Deluxe Tweed Jumped",
+        "Spawn Q-Rod OD2-1",
+        "Spawn Q-Rod OD2-2",
+        "Spawn Q-Rod OD2-3",
+        "Brit Silver",
+        "Spawn Nitrous 2",
+        "FAS Crunch",
+        "Two Stone J35 PAB",
+        "Fox ODS",
+        "Hot Kitty",
+        "Band-Commander",
+        "Super Verb Vibrato",
+        "Vibra-King",
+        "Gibtone Scout",
+        "PVH 6160+ Lead",
+        "Solo 100 Clean",
+        "USA Pre LD2 Green",
+        "USA Pre LD2 Yellow",
+        "CA3+ Clean",
+        "Fox ODS Mid",
+        "Brit JVM OD1 Green",
+        "Brit JVM OD2 Green",
+        "Vibrato Lux",
+        "Brit 800 Mod",
+        "Nuclear-Tone",
+        "Bludojai Clean",
+        "Bludojai Lead PAB",
+        "Plexi 100W High",
+        "Plexi 100W Normal",
+        "Ruby Rocket Bright",
+        "AC-20 EF86 Bass",
+        "Princetone Reverb",
+        "Comet Concourse",
+        "FAS Modern II",
+        "Carol-Ann Triptik Modern",
+        "Carol-Ann Triptik Classic",
+        "Carol-Ann Triptik Clean",
+        "Thordendal Vintage",
+        "Thordendal Modern",
+        "ODS-100 HRM Mid",
+        "Euro Blue Modern",
+        "Euro Red Modern",
+        "Plexi 50W Jumped",
+        "AC-20 EF86 Treble",
+        "Comet 60",
+        "Hipower Jumped",
+        "Plexi 100W Jumped",
+        "Brit JM45 Jumped",
+        "1987X Jumped",
+        "Recto1 Orange Normal",
+        "Recto1 Red",
+        "ODS-100 Ford PAB",
+        "Bogfish Strato",
+        "Bogfish Brown",
+        "5F1 Tweed",
+        "Wrecker Express",
+        "Two Stone J35",
+        "ODS-100 Ford",
+        "Mr Z MZ-8",
+        "Car Ambler",
+        "USA Metro Blues",
+        "Wrecker Liverpool",
+        "Citrus Terrier",
+        "Citrus A30 Clean",
+        "Citrus A30 Dirty",
+        "Div/13 FT37 Low",
+        "Div/13 FT37 High",
+        "Matchbox D-30",
+        "FAS Class-A",
+        "USA Bass 400 1",
+        "USA Bass 400 2",
+        "Citrus Bass 200",
+        "FAS Bass",
+        "Tremolo Lux",
+        "FAS Brootalz",
+        "Recto1 Orange Modern",
+        "Angle Severe 1",
+        "Angle Severe 2",
+        "USA Pre LD2 Red",
+        "USA Pre LD1 Red",
+        "Texas Star Clean",
+        "AC-20 12AX7 Treble",
+        "Vibrato Verb AA",
+        "Vibrato Verb AB",
+        "Carol-Ann Tucana Lead",
+        "JR Blues Fat",
+        "Solo 88 Lead",
+        "Brit AFS100 1",
+        "Brit AFS100 2",
+        "Class-A 30W Hot",
+        "Dizzy V4 Silver 3",
+        "Dizzy V4 Silver 2",
+        "Dizzy V4 Silver 4",
+        "1959SLP Normal",
+        "1959SLP Treble",
+        "1959SLP Jumped",
+        "FAS Modern III",
+        "ODS-100 Ford PAB Mid",
+        "Mr Z Highway 66",
+        "6G4 Super",
+        "6G12 Concert",
+        "65 Bassguy Bass",
+        "Vibra-King Fat",
+        "Spawn Q-Rod OD1-1",
+        "Spawn Q-Rod OD1-2",
+        "Spawn Q-Rod OD1-3",
+        "Carol-Ann Tucana Clean",
+        "Brit JVM OD1 Red",
+        "Brit JVM OD2 Red",
+        "Cameron CCV 1B",
+        "Cameron CCV 2B",
+        "Cameron CCV 2C",
+        "Cameron CCV 2D",
+        "Friedman Small Box",
+        "5153 50W Blue",
+        "Div/13 CJ Boost",
+        "USA MK IIC+ Deep",
+        "USA MK IIC+ Deep Bright",
+        "5F8 Tweed Bright",
+        "Double Verb Silverface",
+        "Vibrato Verb Custom",
+        "JMPre-1 OD1",
+        "JMPre-1 OD2",
+        "JMPre-1 OD1 Bass Shift",
+        "JMPre-1 OD2 Bass Shift",
+        "Deluxe Verb Normal",
+        "Double Verb Normal",
+        "Super Verb Normal",
+        "Bludojai Lead",
+        "Plexi 50W 6550",
+        "FAS Hot Rod",
+        "PVH 6160+ Crunch",
+        "PVH 6160+ Clean",
+        "Solo 88 Clean",
+        "Class-A 30W Bright",
+        "Plexi 50W High 2",
+        "Spawn Nitrous 1",
+        "Ruby Rocket",
+        "AC-20 12AX7 Bass",
+        "Plexi 100W 1970",
+        "JS410 Lead Orange",
+        "JS410 Lead Red",
+        "JS410 Crunch Orange",
+        "JS410 Crunch Red",
+        "Friedman BE V2",
+        "Friedman HBE V2",
+        "Dweezil's Bassguy",
+        "Friedman BE V3",
+        "Friedman HBE V3",
+        "USA MK IIC++",
+        "Legend 100 II",
+        "Capt Hook 2B",
+        "Capt Hook 3B",
+        "Capt Hook 2A",
+        "Capt Hook 3A",
+        "Capt Hook 1A",
+        "Capt Hook 1B",
+        "Dirty Shirley 2",
+        "Brit 800 #34",
+        "5F1 Tweed EC",
+        "Friedman BE V1 Fat",
+        "Friedman HBE V1 Fat",
+        "Plexi 2204",
+        "Friedman HBE C45",
+        "Porta-Bass",
+        "SV Bass 1",
+        "FAS Skull Crusher",
+        "USA JP IIC+ Red",
+        "USA JP IIC+ Yellow",
+        "USA JP IIC+ Green",
+        "Wrecker Express Bright",
+        "Wrecker Liverpool Bright",
+        "Matchbox D-30 EF86",
+        "FAS Express",
+        "Triple Crest 2",
+        "Triple Crest 3",
+        "PVH 6160+ Crunch Bright",
+        "PVH 6160+ Clean Bright",
+        "Plexi 50W 6CA7",
+        "Solo 99 Lead Bright",
+        "Archean",
+        "Archean Bright",
+        "Archean Clean",
+        "59 Bassguy Jumped",
+        "Deluxe Tweed Bright",
+        "USA JP IIC+ Red Shred",
+        "USA JP IIC+ Yellow Shred",
+        "Friedman BE C45",
+        "Friedman BE 2010",
+        "Friedman HBE 2010",
+        "FAS Buttery",
+        "59 Bassguy Normal",
+        "5F8 Tweed Normal",
+        "5F8 Tweed Jumped",
+        "JMPre-1 Clean1",
+        "JMPre-1 Clean1 Bass Shift",
+        "JMPre-1 Clean2",
+        "JMPre-1 Clean2 Bass Shift",
+        "Diamante Fire",
+        "PVH 6160 Block Crunch",
+        "Plexi Studio 20",
+        "Plexi 50W 6CA7 Jumped",
+        "Herbie MK3",
+        "59 Bassguy RI Jumped",
+        "Revv Gen Purple 1",
+        "Revv Gen Purple 2",
+        "Revv Gen Purple 3",
+        "Revv Gen Red 1",
+        "Revv Gen Red 2",
+        "Revv Gen Red 3",
+        "Revv Gen Green 1",
+        "Revv Gen Green 2",
+        "Revv Gen Green 3",
+        "JS410 Lead Green",
+        "5153 100W Stealth Blue",
+        "Brit 800 2203 High",
+        "5153 100W Stealth Green",
+        "5153 100W Stealth Red",
+        "USA MK V Green",
+        "Brit 800 2204 Low",
+        "Brit 800 2203 Low",
+        "USA MK V Red IIC+",
+        "USA MK V Red IIC+ Bright",
+        "USA MK V Red MKIV",
+        "USA MK V Red MKIV Bright",
+        "USA MK V Red XT",
+        "USA MK V Red XT Bright",
+        "Class-A 30W Brilliant",
+        "FAS Stealth Blue",
+        "Brit 800 Studio 20",
+        "Supro Black Magick",
+        "Deluxe 6G3",
+        "Brit JVM Crunch Green",
+        "Brit JVM Crunch Orange",
+        "Brit JVM Crunch Red",
+        "PVH 6160 Block Clean",
+        "Deluxe Tweed Normal"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "cab": {
+      "count": 45,
+      "names": [
+        "1x8 5F1 Tweed",
+        "1x8 Princetone",
+        "1x10 BF Princetone",
+        "1x10 Metro Blues",
+        "1x10 SF Princetone",
+        "1x12 AC20",
+        "1x12 Black Magick",
+        "1x12 Car Ambler",
+        "1x12 Deluxe Tweed",
+        "1x12 Deluxe Verb",
+        "1x12 Div13 CJ11",
+        "1x12 G12T-100",
+        "1x12 Hot Kitty",
+        "1x12 Jr Blues",
+        "1x12 Nuclear Tone",
+        "1x12 Scholz",
+        "1x12 Tweed 20112",
+        "1x12 Vibrato Lux",
+        "1x15 Heart Key",
+        "1x15 Portabass",
+        "1x15 Vibroverb",
+        "2x10 Heart Key",
+        "2x10 Super 6G4",
+        "2x12 65 Bassguy",
+        "2x12 5153 Stealth",
+        "2x12 Chiefman",
+        "2x12 Class-A 30W",
+        "2x12 Double Verb",
+        "2x12 Lead 80",
+        "2x12 Texas Star",
+        "4x10 Bassguy RI",
+        "4x12 1960TV",
+        "4x12 5153",
+        "4x12 5153 Stealth",
+        "4x12 Citrus",
+        "4x12 Friedman GB",
+        "4x12 Friedman V30",
+        "4x12 Lerxst",
+        "4x12 Recto Slant",
+        "4x12 Recto Straight",
+        "4x12 Rumble EV12L",
+        "4x12 Rumble EV12S",
+        "4x12 Solo 100",
+        "4x12 USA Mc90",
+        "8x10 SV Bass"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "drive": {
+      "count": 87,
+      "names": [
+        "'77 Custom OD",
+        "Angry Chuck",
+        "BB Pre",
+        "BB Pre AT",
+        "Bender Fuzz",
+        "Bit Crusher",
+        "Blackglass 7K",
+        "Blues OD",
+        "Bosom Boost",
+        "Box o' Crunch",
+        "Colortone Booster",
+        "Colortone OD",
+        "Compulsion Distortion HP",
+        "Compulsion Distortion LP",
+        "DS1 Distortion",
+        "DS1 Distortion Mod",
+        "Esoteric ACB",
+        "Esoteric Bass RCB",
+        "Esoteric RCB",
+        "Eternal Love",
+        "Face Fuzz",
+        "FAS Boost",
+        "FAS LED-Drive",
+        "Fat Rat",
+        "FET Boost",
+        "FET Preamp",
+        "Full OD",
+        "Gauss Drive",
+        "Griddle Cake",
+        "Guardian Photon Speed",
+        "Hard Fuzz",
+        "Heartpedal 11",
+        "Hoodoo Drive",
+        "Horizon Precision Drive",
+        "Integral Pre",
+        "Jam Ray",
+        "Klone Chiron",
+        "M-Zone Distortion",
+        "Master Fuzz",
+        "Maxoff 808",
+        "MCMLXXXI Drive",
+        "Micro Boost",
+        "Mid Boost",
+        "MOSFET Distortion",
+        "NoAmp Bass DI",
+        "NoAmp Bass Pre",
+        "Nobelium OVD-1",
+        "Octave Distortion",
+        "OD 250",
+        "OD 250 Gray",
+        "OD-One Overdrive",
+        "Paradigm Shifter",
+        "PI Fuzz",
+        "PI Fuzz - Bass",
+        "PI Fuzz - Ram's Head",
+        "PI Fuzz - Russian",
+        "PI Fuzz - Triangle",
+        "Plus Distortion",
+        "Rat Distortion",
+        "Royal Bass DI",
+        "SDD Preamp",
+        "Shimmer Drive",
+        "Shred Distortion",
+        "Sonic Drive",
+        "Suhr Riot Ge (R)",
+        "Suhr Riot LED (L)",
+        "Suhr Riot LED/Si (M)",
+        "Sunrise Splendor",
+        "Sunrise Splendor Hi-Cut",
+        "Super Fuzz",
+        "Super OD",
+        "Swedish Metal",
+        "T808 Mod",
+        "T808 OD",
+        "Tape Distortion",
+        "Timothy Down",
+        "Timothy Mid",
+        "Timothy Up",
+        "Tone of Kings",
+        "Treble Boost",
+        "TS9DX +",
+        "TS9DX Hot",
+        "Tube Drive 3-Knob",
+        "Tube Drive 4-Knob",
+        "Tube Drive 5-Knob",
+        "Valve Screamer VS9",
+        "Zen Master"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "delay": {
+      "count": 27,
+      "names": [
+        "2290 w/ Modulation",
+        "Ambient Stereo",
+        "Analog Mono",
+        "Analog Stereo",
+        "Deluxe Mind Guy",
+        "Digital Mono",
+        "Digital Stereo",
+        "DM-Two Delay",
+        "Dual Delay",
+        "Dual Head Tape",
+        "Ducking Delay",
+        "Graphite Copy Delay",
+        "Lo-Fi Tape",
+        "Mono BBD",
+        "Mono Tape",
+        "Pan Delay",
+        "Ping-Pong",
+        "Reverse Delay",
+        "Stereo BBD",
+        "Stereo Mind Guy",
+        "Stereo Tape",
+        "Stereo Trem Delay",
+        "Surround Delay",
+        "Sweep Delay",
+        "Vintage Digital",
+        "Wandering Delays",
+        "Worn Tape"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "reverb": {
+      "count": 79,
+      "names": [
+        "Chamber: Deep Chamber",
+        "Chamber: Large Chamber",
+        "Chamber: Medium Chamber",
+        "Chamber: Small Chamber",
+        "Cloud: Cirrocumulus",
+        "Cloud: Cumulonimbus",
+        "Cloud: Nimbostratus",
+        "Cloud: Stratocumulus",
+        "Echo: Echo Hall",
+        "Echo: Echo Pitch Plate",
+        "Echo: Echo Plate",
+        "Echo: Echo Room",
+        "Echo: Fields Of Pyrite",
+        "Hall: Asylum",
+        "Hall: Chorus Hall",
+        "Hall: Colosseum",
+        "Hall: Concert Hall",
+        "Hall: Large Deep Hall",
+        "Hall: Large Hall",
+        "Hall: Marble Hall",
+        "Hall: Mechanic's Hall",
+        "Hall: Medium Hall",
+        "Hall: Music Hall",
+        "Hall: Nashville Church",
+        "Hall: North Church",
+        "Hall: Opera House",
+        "Hall: Small Hall",
+        "Hall: South Church",
+        "Hall: St. Albans Cathedral",
+        "Hall: St. George's Church",
+        "Hall: Symphony Hall",
+        "Hall: Tunnel",
+        "Hall: Wide Hall",
+        "Hall: York Minster Cathedral",
+        "Huge: Cavern",
+        "Huge: Deep Space",
+        "Huge: Gymnasium",
+        "Huge: Ice Castle",
+        "Huge: Mausoleum",
+        "Huge: Stone Quarry",
+        "Huge: Warehouse",
+        "Plate: Gold Plate",
+        "Plate: Large Plate",
+        "Plate: London Plate",
+        "Plate: Medium Plate",
+        "Plate: Small Plate",
+        "Plate: Sun Plate",
+        "Plate: Vocal Plate",
+        "Room: Ambience",
+        "Room: Drum Room",
+        "Room: Hallway",
+        "Room: Huge Room",
+        "Room: Large Room",
+        "Room: Large Tiled Room",
+        "Room: Large Wooden Room",
+        "Room: Medium Room",
+        "Room: Recording Studio A",
+        "Room: Recording Studio C",
+        "Room: Small Room",
+        "Room: Studio",
+        "Sfx: Andromeda",
+        "Sfx: Aquarius",
+        "Sfx: Capricorn",
+        "Sfx: Centaurus",
+        "Sfx: Gemini",
+        "Sfx: Pegasus",
+        "Sfx: Pleiades",
+        "Sfx: Sagittarius",
+        "Sfx: Ursa Major",
+        "Spring: British Spring",
+        "Spring: Deluxe Spring",
+        "Spring: Large Spring",
+        "Spring: Lush Spring",
+        "Spring: Medium Spring",
+        "Spring: Small Spring",
+        "Spring: Studio Spring",
+        "Spring: Tube Spring",
+        "Spring: Vibra-King",
+        "Spring: Vibra-King Custom"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "compressor": {
+      "count": 19,
+      "names": [
+        "Analog Compressor",
+        "Analog Sustainer",
+        "Citrus Juicer",
+        "Classic VCA Compressor",
+        "Compander",
+        "Dynami-Comp Classic",
+        "Dynami-Comp Modern",
+        "Dynami-Comp Soft",
+        "Dynamics Processor",
+        "Econo-Dyno-Comp",
+        "JFET Pedal Compressor",
+        "JFET Studio Compressor",
+        "Modern VCA Compressor",
+        "Optical Compressor",
+        "Rockguy Compressor",
+        "Vari-Mu Tube Compressor",
+        "VCA Bus Compressor",
+        "VCA FB Sustainer",
+        "VCA FF Sustainer"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "chorus": {
+      "count": 27,
+      "names": [
+        "4-Voice Analog",
+        "8-Voice Analog",
+        "8-Voice Stereo",
+        "80's Style",
+        "Analog Mono",
+        "Analog Stereo",
+        "Digital Mono",
+        "Digital Stereo",
+        "Dimension 1",
+        "Dimension 2",
+        "Dimension 3",
+        "Dual Chorus",
+        "Japan CE-1 Chorus",
+        "Japan CE-1 Vibrato",
+        "Japan CE-2",
+        "Japan CE-2 Bass",
+        "Japan Ch-1",
+        "Mx134 Stereo",
+        "Mx234",
+        "Rockguy",
+        "Small Copy",
+        "Stereo Tri-Chorus",
+        "Tape Chorus",
+        "Tape Flanger",
+        "Triangle Chorus",
+        "Vibrato",
+        "Warm Stereo"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "flanger": {
+      "count": 31,
+      "names": [
+        "80's Rack Flanger",
+        "Analog Mono",
+        "Analog Stereo",
+        "BBF-2",
+        "Binary Flange",
+        "Cancel Flange",
+        "Count of Flanging",
+        "Cuda Flange",
+        "D/AD 185",
+        "Deluxe Mystery",
+        "Digital Mono",
+        "Digital Stereo",
+        "Electric Mystery",
+        "FAS Flanger",
+        "Harmonoflange",
+        "Hemisflange",
+        "Lofty Flange",
+        "Manual Thru-Zero Flanger",
+        "Melodic Flange",
+        "MXF-117",
+        "Pop Flanger",
+        "Scion Stereo Flange",
+        "Spirit Flange",
+        "Starship Flanger",
+        "Step Flanger",
+        "Stereo Jet",
+        "Thru-Zero",
+        "Trippy Flanger",
+        "Tubular",
+        "Vowel Flanger",
+        "Zero Flanger"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "phaser": {
+      "count": 17,
+      "names": [
+        "Barber Pole",
+        "Block 90",
+        "Borg Phaser",
+        "Classic Vibe",
+        "Digital Mono",
+        "Digital Stereo",
+        "FAS Vibe",
+        "Modern Vibe",
+        "Mutated Twin-Phaser",
+        "Naughty Rock",
+        "Script 45",
+        "Script 90",
+        "Stereo 8-Stage",
+        "Stripe 90",
+        "Treadle Phaser",
+        "Ultra-Super-Mega Phaser",
+        "Virtuoso Phaser"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "wah": {
+      "count": 9,
+      "names": [
+        "Clyde",
+        "Color-Tone",
+        "Cry Babe",
+        "FAS Wah",
+        "Funk Wah",
+        "Mortal",
+        "Paragon",
+        "Vx845",
+        "Vx846"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "tremolo": {
+      "count": 7,
+      "names": [
+        "Bias Trem",
+        "Harmonic Trem",
+        "Neon Trem",
+        "Optical Trem 1",
+        "Optical Trem 2",
+        "Panner",
+        "VCA Trem"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "pitch": {
+      "count": 16,
+      "names": [
+        "Advanced Whammy",
+        "Arpeggiator",
+        "Classic Whammy",
+        "Crystal Echoes",
+        "Custom Shifter",
+        "Dual Chromatic",
+        "Dual Detune",
+        "Dual Detune Delay",
+        "Dual Diatonic",
+        "Octave Divider",
+        "Quad Chromatic",
+        "Quad Chromatic Delay",
+        "Quad Detune",
+        "Quad Diatonic",
+        "Quad Diatonic Delay",
+        "Virtual Capo"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "filter": {
+      "count": 18,
+      "names": [
+        "All-Pass",
+        "Auto-Wah",
+        "Band-Pass",
+        "Envelope Filter",
+        "Feedback Comb",
+        "Feedforward Comb",
+        "High-Pass",
+        "High-Shelf",
+        "High-Shelf 2",
+        "Low-Pass",
+        "Low-Shelf",
+        "Low-Shelf 2",
+        "Notch",
+        "Null",
+        "Peaking",
+        "Peaking 2",
+        "Tilt EQ",
+        "Touch-Wah"
+      ],
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    }
+  },
+  "modelSelection": {
+    "ampChannels": "1..4 unique {channel, model} entries",
+    "cabChannels": "1..4 unique {channel, model} entries",
+    "legacy": "ampModelB/cabModelB remain supported; combining either with its Channels entry B is rejected",
+    "policy": "Full collected channel including its levels; unselected channels are preserved; Gain/EQ scalars still target B; ampLevels adds measured A/C/D points and B alias"
+  },
+  "controls": {
+    "gainB": {
+      "values": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "unit": "/10",
+      "scope": "Amp B"
+    },
+    "bassB": {
+      "values": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "unit": "/10",
+      "scope": "Amp B"
+    },
+    "midB": {
+      "minimum": 0,
+      "maximum": 10,
+      "unit": "/10",
+      "scope": "Amp B"
+    },
+    "trebleB": {
+      "minimum": 0,
+      "maximum": 10,
+      "unit": "/10",
+      "scope": "Amp B"
+    },
+    "presenceB": {
+      "minimum": 0,
+      "maximum": 10,
+      "unit": "/10",
+      "scope": "Amp B"
+    },
+    "levelB": {
+      "minimum": -80,
+      "maximum": 20,
+      "unit": "dB",
+      "scope": "Amp B"
+    },
+    "delayMixA": {
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "%",
+      "scope": "Delay A type14"
+    },
+    "reverbMixA": {
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "%",
+      "scope": "Reverb A type2"
+    },
+    "delayTimeMs": {
+      "minimum": 50,
+      "maximum": 1000,
+      "unit": "ms",
+      "scope": "Delay A type14"
+    },
+    "delayFeedback": {
+      "minimum": 0,
+      "maximum": 50,
+      "unit": "%",
+      "scope": "Delay A type14"
+    },
+    "reverbTimeS": {
+      "minimum": 0.5,
+      "maximum": 5,
+      "unit": "s",
+      "scope": "Reverb A type2"
+    },
+    "reverbPredelayMs": {
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "ms",
+      "scope": "Reverb A type2"
+    },
+    "delayTempoA": {
+      "values": [
+        "NONE"
+      ],
+      "unit": "",
+      "scope": "Delay A type14"
+    },
+    "reverbPredelayTempoA": {
+      "values": [
+        "NONE"
+      ],
+      "unit": "",
+      "scope": "Reverb A type2"
+    },
+    "delayScene2": {
+      "values": [
+        true,
+        false
+      ],
+      "unit": "",
+      "scope": "existing scene control"
+    },
+    "reverbScene1": {
+      "values": [
+        "A",
+        "B"
+      ],
+      "unit": "",
+      "scope": "existing scene control"
+    }
+  },
+  "rotaryA": {
+    "rateHz": [
+      2,
+      5,
+      6.5
+    ],
+    "mixPercent": [
+      25,
+      50,
+      75
+    ],
+    "levelDb": [
+      -6,
+      0
+    ],
+    "hiDepthPercent": [
+      25,
+      50
+    ],
+    "lowDepthPercent": [
+      25,
+      50
+    ]
+  },
+  "filterControls": {
+    "mode": "exact measured points; target values and recorded display aliases",
+    "groups": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "field": "frequencyHz",
+        "parameterId": 1,
+        "unit": "Hz",
+        "values": [
+          500,
+          1000,
+          2000,
+          1999.9
+        ],
+        "readback": [
+          {
+            "targetValue": 500,
+            "displayValue": 500,
+            "raw": 30538
+          },
+          {
+            "targetValue": 1000,
+            "displayValue": 1000,
+            "raw": 37113
+          },
+          {
+            "targetValue": 2000,
+            "displayValue": 1999.9,
+            "raw": 43689
+          }
+        ]
+      },
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "field": "q",
+        "parameterId": 2,
+        "unit": "",
+        "values": [
+          1.4,
+          2
+        ],
+        "readback": [
+          {
+            "targetValue": 1.4,
+            "displayValue": 1.4,
+            "raw": 37555
+          },
+          {
+            "targetValue": 2,
+            "displayValue": 2,
+            "raw": 42631
+          }
+        ]
+      },
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "field": "gainDb",
+        "parameterId": 3,
+        "unit": "dB",
+        "values": [
+          -3,
+          3,
+          0
+        ],
+        "readback": [
+          {
+            "targetValue": -3,
+            "displayValue": -3,
+            "raw": 27852
+          },
+          {
+            "targetValue": 3,
+            "displayValue": 3,
+            "raw": 37682
+          },
+          {
+            "targetValue": 0,
+            "displayValue": 0,
+            "raw": 32767
+          }
+        ]
+      },
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "field": "levelDb",
+        "parameterId": 4,
+        "unit": "dB",
+        "values": [
+          -6,
+          0,
+          3
+        ],
+        "readback": [
+          {
+            "targetValue": -6,
+            "displayValue": -6,
+            "raw": 48495
+          },
+          {
+            "targetValue": 0,
+            "displayValue": 0,
+            "raw": 52427
+          },
+          {
+            "targetValue": 3,
+            "displayValue": 3,
+            "raw": 54393
+          }
+        ]
+      },
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "field": "frequencyHz",
+        "parameterId": 1,
+        "unit": "Hz",
+        "values": [
+          80,
+          120,
+          250
+        ],
+        "readback": [
+          {
+            "targetValue": 80,
+            "displayValue": 80,
+            "raw": 13152
+          },
+          {
+            "targetValue": 120,
+            "displayValue": 120,
+            "raw": 16998
+          },
+          {
+            "targetValue": 250,
+            "displayValue": 250,
+            "raw": 23962
+          }
+        ]
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "field": "frequencyHz",
+        "parameterId": 1,
+        "unit": "Hz",
+        "values": [
+          4000,
+          3999.9,
+          6000,
+          6000.1,
+          8000,
+          7999.9
+        ],
+        "readback": [
+          {
+            "targetValue": 4000,
+            "displayValue": 3999.9,
+            "raw": 50265
+          },
+          {
+            "targetValue": 6000,
+            "displayValue": 6000.1,
+            "raw": 54112
+          },
+          {
+            "targetValue": 8000,
+            "displayValue": 7999.9,
+            "raw": 56841
+          }
+        ]
+      }
+    ],
+    "librarySha256": "02cc7820c37b19b9f5983023117c7e8f0108b73705d32d09f3eecc01ec0aa4ac",
+    "unmeasured": [
+      "Q 0.707 was skipped; no write override",
+      "Other types/channels/values and Order",
+      "No continuous ranges or interpolation"
+    ],
+    "evidence": "docs/FM3_FILTER_CONTROL_VALIDATION.json"
+  },
+  "peqControls": {
+    "channels": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "librarySha256": "401974575dc6db81356758a12aa6c86b7453c981b3873530b9315eef923ab67f",
+    "mode": "Measured enums/anchors; scale-derived intermediate values explicitly identified",
+    "bands": [
+      {
+        "band": 1,
+        "types": [
+          "Shelving",
+          "Peaking",
+          "Blocking",
+          "Shelving 2",
+          "Peaking 2"
+        ],
+        "frequencyHz": {
+          "minimum": 20,
+          "maximum": 2000,
+          "scale": "log"
+        },
+        "q": {
+          "minimum": 0.1,
+          "maximum": 10,
+          "scale": "log",
+          "exceptType": "Blocking"
+        },
+        "gainDb": {
+          "minimum": -20,
+          "maximum": 20,
+          "exceptType": "Blocking"
+        },
+        "slopeDbPerOct": [
+          6,
+          12,
+          18,
+          24,
+          30,
+          36
+        ],
+        "slopeRequiresType": "Blocking",
+        "solo": "boolean"
+      },
+      {
+        "band": 2,
+        "types": [
+          "Peaking",
+          "Shelving",
+          "Shelving 2",
+          "Peaking 2"
+        ],
+        "frequencyHz": {
+          "minimum": 100,
+          "maximum": 10000,
+          "scale": "log"
+        },
+        "q": {
+          "minimum": 0.1,
+          "maximum": 10,
+          "scale": "log",
+          "exceptType": "Blocking"
+        },
+        "gainDb": {
+          "minimum": -20,
+          "maximum": 20,
+          "exceptType": "Blocking"
+        },
+        "solo": "boolean"
+      },
+      {
+        "band": 3,
+        "types": [
+          "Peaking",
+          "Peaking 2"
+        ],
+        "frequencyHz": {
+          "minimum": 100,
+          "maximum": 10000,
+          "scale": "log"
+        },
+        "q": {
+          "minimum": 0.1,
+          "maximum": 10,
+          "scale": "log",
+          "exceptType": "Blocking"
+        },
+        "gainDb": {
+          "minimum": -20,
+          "maximum": 20,
+          "exceptType": "Blocking"
+        },
+        "solo": "boolean"
+      },
+      {
+        "band": 4,
+        "types": [
+          "Peaking",
+          "Shelving",
+          "Shelving 2",
+          "Peaking 2"
+        ],
+        "frequencyHz": {
+          "minimum": 100,
+          "maximum": 10000,
+          "scale": "log"
+        },
+        "q": {
+          "minimum": 0.1,
+          "maximum": 10,
+          "scale": "log",
+          "exceptType": "Blocking"
+        },
+        "gainDb": {
+          "minimum": -20,
+          "maximum": 20,
+          "exceptType": "Blocking"
+        },
+        "solo": "boolean"
+      },
+      {
+        "band": 5,
+        "types": [
+          "Shelving",
+          "Peaking",
+          "Blocking",
+          "Shelving 2",
+          "Peaking 2"
+        ],
+        "frequencyHz": {
+          "minimum": 200,
+          "maximum": 20000,
+          "scale": "log"
+        },
+        "q": {
+          "minimum": 0.1,
+          "maximum": 10,
+          "scale": "log",
+          "exceptType": "Blocking"
+        },
+        "gainDb": {
+          "minimum": -20,
+          "maximum": 20,
+          "exceptType": "Blocking"
+        },
+        "slopeDbPerOct": [
+          6,
+          12,
+          18,
+          24,
+          30,
+          36
+        ],
+        "slopeRequiresType": "Blocking",
+        "solo": "boolean"
+      }
+    ],
+    "levelDb": {
+      "minimum": -80,
+      "maximum": 20
+    },
+    "balance": {
+      "minimum": -100,
+      "maximum": 100,
+      "measuredAnchors": [
+        -100,
+        0,
+        100
+      ],
+      "intermediateStatus": "linear inference; test values -10/+10 survived import/export; screen values not explicitly reported"
+    },
+    "bypassMode": [
+      "Thru",
+      "Mute"
+    ],
+    "sceneIgnore": "boolean; persistent word verified, scene behavior not independently measured",
+    "legacyBand3": "Existing A-only exact-point band3 syntax remains supported; use bands for full scope",
+    "reservedPids": [
+      23,
+      24
+    ],
+    "audit": {
+      "passedSteps": 84,
+      "excludedAttempts": 4,
+      "pairedWordsPerStep": 132,
+      "numericAnchors": 82,
+      "enumAnchors": 46,
+      "allScaleTargetsExact": true,
+      "typeCoupledChanges": 0,
+      "channelCopies": [
+        77,
+        79,
+        81
+      ],
+      "independentChannelGain": [
+        78,
+        80,
+        82
+      ],
+      "sceneSelections": [
+        77,
+        79,
+        81,
+        83
+      ]
+    },
+    "evidence": "docs/FM3_PEQ_FULL_VALIDATION.json",
+    "hardware": "Exact FM3_PEQ_ABCD_TEST import/export confirmed, all 13456 body bytes; CPU 47–48%. Other combinations remain separate."
+  },
+  "geqControls": {
+    "channels": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "librarySha256": "c0bb60d52c1819ecbea4a959d3cfa8d19501c46735da05a086a93333d459e8d0",
+    "types": [
+      {
+        "name": "3 Band Console",
+        "id": 11,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "Low",
+            "label": "Low",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "Mid",
+            "label": "Mid",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "High",
+            "label": "High",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "3 Band Passive",
+        "id": 10,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "Low",
+            "label": "Low",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "Mid",
+            "label": "Mid",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "High",
+            "label": "High",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "4 Band JMPre-1",
+        "id": 15,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "Bass",
+            "label": "Bass",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "Mid",
+            "label": "Mid",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "Treble",
+            "label": "Treble",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "Presence",
+            "label": "Presence",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "4 Band Passive",
+        "id": 9,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "Low",
+            "label": "Low",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "Low Mid",
+            "label": "Low Mid",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "High Mid",
+            "label": "High Mid",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "High",
+            "label": "High",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "5 Band Constant Q",
+        "id": 3,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "200",
+            "label": "200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "400",
+            "label": "400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "800",
+            "label": "800",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "1600",
+            "label": "1600",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "3200",
+            "label": "3200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "5 Band Mark",
+        "id": 14,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "80",
+            "label": "80",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "240",
+            "label": "240",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "750",
+            "label": "750",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "2200",
+            "label": "2200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "6600",
+            "label": "6600",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "5 Band Passive",
+        "id": 8,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "Low",
+            "label": "Low",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "Low Mid",
+            "label": "Low Mid",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "Mid",
+            "label": "Mid",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "High Mid",
+            "label": "High Mid",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "High",
+            "label": "High",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "5 Band Variable Q",
+        "id": 7,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "200",
+            "label": "200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "400",
+            "label": "400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "800",
+            "label": "800",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "1600",
+            "label": "1600",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "3200",
+            "label": "3200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "7 Band Bass Pedal",
+        "id": 17,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "62",
+            "label": "62",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "125",
+            "label": "125",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "250",
+            "label": "250",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "500",
+            "label": "500",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "1K",
+            "label": "1K",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "2K",
+            "label": "2K",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "4K",
+            "label": "4K",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "7 Band Constant Q",
+        "id": 2,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "python3 100",
+            "label": "100",
+            "labelStatus": "Confirmed from screenshot 2026-10-11",
+            "pid": 0,
+            "labelEvidence": "references/geq-feedback-20261011/scene4-geq-c.png"
+          },
+          {
+            "band": 2,
+            "capturedLabel": "200",
+            "label": "200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "400",
+            "label": "400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "800",
+            "label": "800",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "1600",
+            "label": "1600",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "3200",
+            "label": "3200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "6400",
+            "label": "6400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "7 Band Pedal",
+        "id": 16,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "100",
+            "label": "100",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "200",
+            "label": "200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "400",
+            "label": "400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "800",
+            "label": "800",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "1.6K",
+            "label": "1.6K",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "3.2K",
+            "label": "3.2K",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "6.4K",
+            "label": "6.4K",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "7 Band Variable Q",
+        "id": 6,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "100",
+            "label": "100",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "200",
+            "label": "200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "400",
+            "label": "400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "800",
+            "label": "800",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "1600",
+            "label": "1600",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "3200",
+            "label": "3200",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "6400",
+            "label": "6400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "8 Band Constant Q",
+        "id": 1,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "80",
+            "label": "80",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "160",
+            "label": "160",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "320",
+            "label": "320",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "640",
+            "label": "640",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "1250",
+            "label": "1250",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "2500",
+            "label": "2500",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "5000",
+            "label": "5000",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          },
+          {
+            "band": 8,
+            "capturedLabel": "10k",
+            "label": "10k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 7
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "8 Band Variable Q",
+        "id": 5,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "80",
+            "label": "80",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "160",
+            "label": "160",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "320",
+            "label": "320",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "640",
+            "label": "640",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "1250",
+            "label": "1250",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "2500",
+            "label": "2500",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "5000",
+            "label": "5000",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          },
+          {
+            "band": 8,
+            "capturedLabel": "10k",
+            "label": "10k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 7
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "10 Band 2/3 Oct Const Q",
+        "id": 12,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "100",
+            "label": "100",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "160",
+            "label": "160",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "250",
+            "label": "250",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "400",
+            "label": "400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "640",
+            "label": "640",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "1000",
+            "label": "1000",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "1600",
+            "label": "1600",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          },
+          {
+            "band": 8,
+            "capturedLabel": "2500",
+            "label": "2500",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 7
+          },
+          {
+            "band": 9,
+            "capturedLabel": "4000",
+            "label": "4000",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 8
+          },
+          {
+            "band": 10,
+            "capturedLabel": "6400",
+            "label": "6400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 9
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "10 Band 2/3 Oct Var Q",
+        "id": 13,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "100",
+            "label": "100",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "160",
+            "label": "160",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "250",
+            "label": "250",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "400",
+            "label": "400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "640",
+            "label": "640",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "1000",
+            "label": "1000",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "1600",
+            "label": "1600",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          },
+          {
+            "band": 8,
+            "capturedLabel": "2500",
+            "label": "2500",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 7
+          },
+          {
+            "band": 9,
+            "capturedLabel": "4000",
+            "label": "4000",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 8
+          },
+          {
+            "band": 10,
+            "capturedLabel": "6400",
+            "label": "6400",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 9
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "10 Band Constant Q",
+        "id": 0,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "31",
+            "label": "31",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "63",
+            "label": "63",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "125",
+            "label": "125",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "250",
+            "label": "250",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "500",
+            "label": "500",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "1k",
+            "label": "1k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "2k",
+            "label": "2k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          },
+          {
+            "band": 8,
+            "capturedLabel": "4k",
+            "label": "4k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 7
+          },
+          {
+            "band": 9,
+            "capturedLabel": "8k",
+            "label": "8k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 8
+          },
+          {
+            "band": 10,
+            "capturedLabel": "16k",
+            "label": "16k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 9
+          }
+        ],
+        "masterQVisible": true
+      },
+      {
+        "name": "10 Band Variable Q",
+        "id": 4,
+        "bands": [
+          {
+            "band": 1,
+            "capturedLabel": "31",
+            "label": "31",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 0
+          },
+          {
+            "band": 2,
+            "capturedLabel": "63",
+            "label": "63",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 1
+          },
+          {
+            "band": 3,
+            "capturedLabel": "125",
+            "label": "125",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 2
+          },
+          {
+            "band": 4,
+            "capturedLabel": "250",
+            "label": "250",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 3
+          },
+          {
+            "band": 5,
+            "capturedLabel": "500",
+            "label": "500",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 4
+          },
+          {
+            "band": 6,
+            "capturedLabel": "1k",
+            "label": "1k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 5
+          },
+          {
+            "band": 7,
+            "capturedLabel": "2k",
+            "label": "2k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 6
+          },
+          {
+            "band": 8,
+            "capturedLabel": "4k",
+            "label": "4k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 7
+          },
+          {
+            "band": 9,
+            "capturedLabel": "8k",
+            "label": "8k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 8
+          },
+          {
+            "band": 10,
+            "capturedLabel": "16k",
+            "label": "16k",
+            "labelStatus": "User-confirmed screen label",
+            "pid": 9
+          }
+        ],
+        "masterQVisible": true
+      }
+    ],
+    "gainDb": {
+      "minimum": -12,
+      "maximum": 12
+    },
+    "masterQ": {
+      "minimum": 0.1,
+      "maximum": 10,
+      "scale": "log"
+    },
+    "levelDb": {
+      "minimum": -80,
+      "maximum": 20
+    },
+    "balance": {
+      "minimum": -100,
+      "maximum": 100
+    },
+    "bypassMode": [
+      "Thru",
+      "Mute"
+    ],
+    "sceneIgnore": "boolean; persistent word measured on A, full behavior not independently tested",
+    "reservedPids": [
+      10,
+      14,
+      17,
+      18
+    ],
+    "frequency": "Type-specific fixed labels; not editable. Use 1-based band indices. 7 Band Constant Q first label confirmed as 100 Hz from screenshot.",
+    "audit": {
+      "passedSteps": 184,
+      "excludedAttempts": 8,
+      "pairedWordsPerStep": 80,
+      "matchedWordsTotal": 14720,
+      "typeCount": 18,
+      "numericAnchors": 557,
+      "enumAnchors": 4,
+      "typeCoupledChanges": 0,
+      "channelCopies": [
+        177,
+        179,
+        181
+      ],
+      "independentChannelGain": [
+        178,
+        180,
+        182
+      ],
+      "sceneSelections": [
+        177,
+        179,
+        181,
+        183
+      ],
+      "collectorResume": "184/184 verified using unchanged original resume()",
+      "pendingLabels": [],
+      "hardware": "Exact combined preset import/export confirmed; user reports GEQ worked and maximum observed CPU50%. Other combinations remain separate.",
+      "resolvedLabels": [
+        {
+          "type": "7 Band Constant Q",
+          "band": 1,
+          "label": "100",
+          "frequencyHz": 100,
+          "status": "Confirmed from screenshot 2026-10-11",
+          "originalCapturedLabel": "python3 100",
+          "rawCollectionEvidenceUnchanged": true
+        }
+      ]
+    },
+    "hardware": "Exact FM3_GEQ_ABCD_TEST import/export confirmed, all 13662 body bytes. User reports GEQ worked; maximum observed CPU50%. Other compositions require their own evidence."
+  },
+  "enhancerControls": {
+    "channels": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "librarySha256": "95d2146076e33175209d5270d93e7568ac5cc6695d1bf3b108b2adfabe4d2a21",
+    "types": [
+      {
+        "name": "Modern",
+        "id": 0,
+        "visibleNumeric": [
+          "Width",
+          "Depth",
+          "Low Cut",
+          "High Cut",
+          "Level"
+        ],
+        "visibleEnums": [
+          "Scene Ignore"
+        ]
+      },
+      {
+        "name": "Classic",
+        "id": 1,
+        "visibleNumeric": [
+          "Width",
+          "Pan L",
+          "Pan R",
+          "Balance",
+          "Level"
+        ],
+        "visibleEnums": [
+          "Invert",
+          "Scene Ignore"
+        ]
+      },
+      {
+        "name": "Stereoizer",
+        "id": 2,
+        "visibleNumeric": [
+          "Width",
+          "Depth",
+          "Level"
+        ],
+        "visibleEnums": [
+          "Scene Ignore"
+        ]
+      }
+    ],
+    "parameters": {
+      "width": {
+        "minimum": 0,
+        "maximum": 100,
+        "scale": "linear"
+      },
+      "depth": {
+        "minimum": 0,
+        "maximum": 100,
+        "scale": "linear"
+      },
+      "lowCutHz": {
+        "minimum": 20,
+        "maximum": 2000,
+        "scale": "log"
+      },
+      "highCutHz": {
+        "minimum": 200,
+        "maximum": 20000,
+        "scale": "log"
+      },
+      "levelDb": {
+        "minimum": -80,
+        "maximum": 20,
+        "scale": "linear"
+      },
+      "invert": [
+        "None",
+        "Right",
+        "Left",
+        "Both"
+      ],
+      "panLeft": {
+        "minimum": -100,
+        "maximum": 100,
+        "scale": "linear"
+      },
+      "panRight": {
+        "minimum": -100,
+        "maximum": 100,
+        "scale": "linear"
+      },
+      "balance": {
+        "minimum": -100,
+        "maximum": 100,
+        "scale": "linear"
+      },
+      "sceneIgnore": "boolean"
+    },
+    "required": [
+      "channel",
+      "type",
+      "levelDb"
+    ],
+    "sceneIgnore": "Persistent A word measured on all three types; full all-scene behavior not independently tested",
+    "bypass": "Use scene bypass; Bypass Mode is not exposed",
+    "opaquePids": [
+      5
+    ],
+    "audit": {
+      "passedSteps": 87,
+      "fullSessionPairs": 74,
+      "supplementPairs": 13,
+      "resolvedSkippedSteps": 12,
+      "excludedAttempts": 2,
+      "pairedWordsPerStep": 48,
+      "matchedWordsTotal": 4176,
+      "typeCount": 3,
+      "numericAnchors": 68,
+      "enumAnchors": 10,
+      "channelCopies": [
+        79,
+        81,
+        83
+      ],
+      "independentChannelWidth": [
+        80,
+        82,
+        84
+      ],
+      "sceneSelections": [
+        79,
+        81,
+        83,
+        85
+      ],
+      "opaquePids": [
+        5
+      ],
+      "bypass": "Scene header control; no Bypass Mode menu observed",
+      "panLeft": "-100..100, unitless. Measured points -100,+100,0,+40,+80; three distinct interior values are valid regardless of collector point labels.",
+      "hardware": "Exact FM3_ENHANCER_ABCD_TEST import/export confirmed; all 13804 body bytes."
+    },
+    "hardwareEvidence": {
+      "generatedFile": "examples/FM3_ENHANCER_ABCD_TEST.syx",
+      "generatedSha256": "a545aa8bb7f659b10dc2a7beb4a902e1377bbeef995381d2dc6ece55ef14965b",
+      "exportFile": "examples/FM3_ENHANCER_ABCD_TEST_export.syx",
+      "exportSha256": "463aaf84ce2bafc4f531f03b6d1af6c441ec98028bc5a1767d90111062f32edf",
+      "bodySha256": "0dd583acf671f1c556b8d676415456ad2412a05acb8b9b2400f93dbedddec728"
+    },
+    "cpu": {
+      "maximumObservedPercent": 52.7,
+      "source": "User report",
+      "scope": "This combined Enhancer A-D test; not a universal maximum"
+    },
+    "audio": {
+      "userReport": "Enhancer toimib",
+      "meaning": "User confirms Enhancer works; no separate assertion of equal loudness, mono compatibility or every parameter display"
+    },
+    "hardware": "Exact combined A-D specimen imported and re-exported unchanged. User reports Enhancer works; maximum observed CPU52.7%. Other compositions require their own device evidence."
+  },
+  "ampLevels": {
+    "field": "ampLevels",
+    "entryFields": [
+      "channel",
+      "levelDb"
+    ],
+    "channels": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "pendingChannels": [],
+    "A": {
+      "modelId": 4,
+      "model": "Double Verb Vibrato",
+      "valuesDb": [
+        -12
+      ],
+      "evidence": "examples/JB_EIGHT_SCENES_V2_export.syx"
+    },
+    "B": {
+      "minimum": -80,
+      "maximum": 20,
+      "policy": "Existing levelB scope; specifying both forms is rejected"
+    },
+    "C": {
+      "modelId": 24,
+      "model": "USA MK IV Lead Bright",
+      "valuesDb": [
+        -11
+      ],
+      "evidence": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
+    },
+    "D": {
+      "modelId": 11,
+      "model": "Plexi 50W High 1",
+      "valuesDb": [
+        -11
+      ],
+      "evidence": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
+    },
+    "policy": "A/C/D use exact observed words on the listed models, no interpolation or other-model inference. No Gain/EQ/Master or per-scene output control."
+  },
+  "defaultBase": "jb-newlook",
+  "newlookLayout": {
+    "insertion": "Exact separate Chorus, Pitch and Filter insertion specimens confirmed; other combinations offline-tested only",
+    "hardwareEvidence": "docs/FM3_NEWLOOK_HARDWARE_ROUNDTRIP.json",
+    "pitchHardwareEvidence": "docs/FM3_NEWLOOK_PITCH_HARDWARE_ROUNDTRIP.json",
+    "filterHardwareEvidence": "docs/FM3_NEWLOOK_FILTER_HARDWARE_ROUNDTRIP.json",
+    "slots": {
+      "compressor": {
+        "row": 2,
+        "column": 2
+      },
+      "wah": {
+        "row": 2,
+        "column": 3
+      },
+      "phaser": {
+        "row": 2,
+        "column": 5
+      },
+      "pitch": {
+        "row": 3,
+        "column": 2
+      },
+      "chorus": {
+        "row": 3,
+        "column": 3
+      },
+      "flanger": {
+        "row": 3,
+        "column": 4
+      },
+      "rotary": {
+        "row": 3,
+        "column": 5
+      },
+      "tremolo": {
+        "row": 3,
+        "column": 6
+      },
+      "filter": {
+        "row": 2,
+        "column": 9
+      },
+      "peq": {
+        "row": 2,
+        "column": 10
+      },
+      "geq": {
+        "row": 2,
+        "column": 11
+      },
+      "enhancer": {
+        "row": 3,
+        "column": 11
+      }
+    },
+    "activation": "New blocks default to A/bypass; scenes (or legacy addedBlockScenes) explicitly selects requested channels and bypass states"
+  },
+  "scenes": {
+    "numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "name": "1..31 printable ASCII characters, no edge spaces",
+    "blockFields": {
+      "channel": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "bypass": "boolean"
+    },
+    "families": "Only present or explicitly inserted composer blocks; no Input/Output/Send/Return",
+    "partialUpdates": true,
+    "duplicateOrLegacyConflicts": "rejected",
+    "newBlockActivation": "requires an explicitly requested channel template"
+  },
+  "limitations": [
+    "Automatic known-block insertion only on jb-newlook serial shunts; other bases retain their existing grid",
+    "Amp/Cab full templates target A-D; scalar controls keep their existing measured scope",
+    "Scene names, effect channels and bypass are supported; no per-scene output level or modifier writing",
+    "Filter A-D templates on NewLook; exact measured controls only: A High-Pass frequency, B Low-Pass frequency, C Peaking frequency/Q/Gain/Level",
+    "PEQ five bands and A-D: measured types/slopes, numeric scales and common controls; intermediate values and new combinations require independent device checks; opaque PID23/24 preserved",
+    "GEQ 18 types and A-D: paired templates and audited scales; intermediate values and new compositions require separate device checks",
+    "Unknown bases, fields, incompatible blocks and unmeasured values are rejected"
+  ]
+}

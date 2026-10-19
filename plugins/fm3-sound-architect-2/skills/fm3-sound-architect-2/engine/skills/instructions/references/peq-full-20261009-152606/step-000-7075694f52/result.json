@@ -1,0 +1,23 @@
+{
+  "index": 0,
+  "step": {
+    "id": "001-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 1 Type Peaking 2. Muuda ainult: Band 1 Type → Peaking 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 15,
+        "value": "Peaking 2",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "failed",
+  "error": "Muutus väljaspool PEQ parameetreid või Scene 2 PEQ kanalivalikut, bait 8714. GET-i ei saadetud."
+}

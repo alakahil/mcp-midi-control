@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "effectId": 106,
+  "firmwareDeclared": 13,
+  "source": "User FM3-Edit screenshot 2026-10-07 14.27.46; display numbers are not device IDs",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "Bias Trem",
+      "binaryId": 2
+    },
+    {
+      "displayNumber": 2,
+      "name": "Harmonic Trem",
+      "binaryId": 3
+    },
+    {
+      "displayNumber": 3,
+      "name": "Neon Trem",
+      "binaryId": 6
+    },
+    {
+      "displayNumber": 4,
+      "name": "Optical Trem 1",
+      "binaryId": 4
+    },
+    {
+      "displayNumber": 5,
+      "name": "Optical Trem 2",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Panner",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "VCA Trem",
+      "binaryId": null
+    }
+  ]
+}

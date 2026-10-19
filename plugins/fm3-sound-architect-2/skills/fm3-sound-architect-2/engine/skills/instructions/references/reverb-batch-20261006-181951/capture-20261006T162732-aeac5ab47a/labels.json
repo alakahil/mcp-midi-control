@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 29,
+    "name": "Hall: St. Albans Cathedral",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 30,
+    "name": "Hall: St. George's Church",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 31,
+    "name": "Hall: Symphony Hall",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 32,
+    "name": "Hall: Tunnel",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "kind": "FM3_ENHANCER_FULL",
+  "collector": "0.2.0",
+  "prefilledSetupSha256": "521477571bc3fae233f33f0544dd1eadd1f260e16a4477f5d6da4fbd1df07a49",
+  "firmwareDeclared": 13,
+  "baselineSha256": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+  "setupSha256": "521477571bc3fae233f33f0544dd1eadd1f260e16a4477f5d6da4fbd1df07a49",
+  "planSha256": "63f9eebaeb646eb18fffb01a58e887a8963bf7fc473827b1d7d27802cac280d2"
+}

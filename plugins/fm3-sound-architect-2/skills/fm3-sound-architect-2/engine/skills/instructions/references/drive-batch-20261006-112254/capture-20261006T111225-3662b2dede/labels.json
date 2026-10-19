@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 41,
+    "name": "MCMLXXXI Drive",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 42,
+    "name": "Micro Boost",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 43,
+    "name": "Mid Boost",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 44,
+    "name": "MOSFET Distortion",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

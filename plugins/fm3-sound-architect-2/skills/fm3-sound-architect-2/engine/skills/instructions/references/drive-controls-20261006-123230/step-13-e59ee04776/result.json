@@ -1,0 +1,15 @@
+{
+  "index": 13,
+  "status": "skipped",
+  "reason": "Rat Distortion tüübil puudub tone parameeter",
+  "step": {
+    "id": "C-tone",
+    "kind": "control",
+    "channel": "C",
+    "binaryId": 0,
+    "field": "Tone",
+    "pid": 2,
+    "value": 7,
+    "instruction": "Jäta Drive1 kanal C ja tüüp Rat Distortion. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  }
+}

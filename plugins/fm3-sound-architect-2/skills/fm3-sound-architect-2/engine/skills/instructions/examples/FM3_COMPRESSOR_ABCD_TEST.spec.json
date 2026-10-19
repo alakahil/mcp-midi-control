@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-compressor-multi",
+  "compressorChannels": [
+    {
+      "channel": "A",
+      "type": "Citrus Juicer"
+    },
+    {
+      "channel": "B",
+      "type": "Dynami-Comp Soft"
+    },
+    {
+      "channel": "C",
+      "type": "JFET Studio Compressor"
+    },
+    {
+      "channel": "D",
+      "type": "Optical Compressor"
+    }
+  ]
+}

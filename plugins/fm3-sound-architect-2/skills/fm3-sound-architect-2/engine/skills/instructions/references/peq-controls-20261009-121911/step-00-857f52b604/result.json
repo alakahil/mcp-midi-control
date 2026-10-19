@@ -1,0 +1,83 @@
+{
+  "index": 0,
+  "step": {
+    "id": "A-band-3-frequency-500",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Frequency",
+    "candidatePid": 2,
+    "value": 500,
+    "unit": "Hz",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Frequency väärtuseks 500 Hz. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  "status": "passed",
+  "band3TypeLabel": "Peaking",
+  "comparison": {
+    "index": 0,
+    "step": {
+      "id": "A-band-3-frequency-500",
+      "channel": "A",
+      "band": 3,
+      "parameter": "Frequency",
+      "candidatePid": 2,
+      "value": 500,
+      "unit": "Hz",
+      "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Frequency väärtuseks 500 Hz. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+    },
+    "previousSha256": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+    "syxSha256": "f51b325e132fb2c89d2a0b4ff6c8b2109c80df13cd04757c958920bd3b66c75d",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8738,
+        "before": 29592,
+        "after": 22903
+      }
+    ],
+    "presetNameChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "typesChannelsAndBypassPreserved": true,
+    "mappingStatus": "one-candidate-word-isolated-awaiting-display-and-pair-audit"
+  },
+  "displayValue": 499.99,
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "f51b325e132fb2c89d2a0b4ff6c8b2109c80df13cd04757c958920bd3b66c75d",
+    "bodySha256": "1ddf1c59f22e6ebb6ae19a0e60d038a3c6f7b6970c47bee7690e385243ff31f0",
+    "rawRxSha256": "18ed477107c147757998bd0ad84f730498cfac6a215a63275f5ec4a591f92484",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

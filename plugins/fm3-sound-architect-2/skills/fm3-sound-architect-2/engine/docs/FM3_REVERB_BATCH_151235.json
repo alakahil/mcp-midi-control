@@ -1,0 +1,138 @@
+{
+  "pairs": [
+    {
+      "capture": "capture-001",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "cbecae70f0d0dd6dd65c318f582c1b20a07fd98465a30a01ea661a8be9e353e8",
+      "rawRxSha256": "b31ae719b3c8c4ae624de0406c078d4da48b7a246b6d6ae153b2f0789e7d73fd",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 33
+        },
+        {
+          "channel": "B",
+          "binaryId": 8
+        },
+        {
+          "channel": "C",
+          "binaryId": 7
+        },
+        {
+          "channel": "D",
+          "binaryId": 6
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 1,
+          "name": "Chamber: Deep Chamber",
+          "binaryId": 33,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 2,
+          "name": "Chamber: Large Chamber",
+          "binaryId": 8,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 3,
+          "name": "Chamber: Medium Chamber",
+          "binaryId": 7,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 4,
+          "name": "Chamber: Small Chamber",
+          "binaryId": 6,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T151228-65854467e6",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "bd425a8871d10c1aa5bf63cc6f3c79edcc2044c1eb64d6b94722d0e3f2ab27fd",
+      "rawRxSha256": "c17d9621ce93de89a73950bd5b6ef226a78e4435e7fb937744d45f02c375ad70",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 47
+        },
+        {
+          "channel": "B",
+          "binaryId": 48
+        },
+        {
+          "channel": "C",
+          "binaryId": 49
+        },
+        {
+          "channel": "D",
+          "binaryId": 50
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 5,
+          "name": "Cloud: Cirrocumulus",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 6,
+          "name": "Cloud: Cumulonimbus",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 7,
+          "name": "Cloud: Nimbostratus",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 8,
+          "name": "Cloud: Stratocumulus",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    }
+  ],
+  "collected": 8,
+  "remaining": 71,
+  "next": [
+    {
+      "displayNumber": 9,
+      "name": "Echo: Echo Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Echo: Echo Pitch Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Echo: Echo Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Echo: Echo Room",
+      "binaryId": null
+    }
+  ]
+}

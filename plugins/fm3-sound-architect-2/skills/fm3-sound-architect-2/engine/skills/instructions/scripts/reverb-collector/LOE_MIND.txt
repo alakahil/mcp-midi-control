@@ -1,0 +1,21 @@
+FM3 REVERB KOGUJA
+
+Paki ZIP Downloads-kausta. Vajalikud olemasolevad Python3 ja Node.
+Käivita:
+python3 ~/Downloads/FM3_REVERB_COLLECTOR/FM3_REVERB_BATCH.py --session ~/Documents/FM3_REVERB_SESSION --port /dev/cu.usbmodem211104
+
+Esimesed 4 tüüpi on kaasas kinnitatud GET/SYX paarina; puudu 75.
+Esimesel käivitusel jäta FM3-sse praegune FM3_REVERB_SELECTION_001.syx seisund.
+Järgmine nelik: A Cloud: Cirrocumulus; B Cloud: Cumulonimbus;
+C Cloud: Nimbostratus; D Cloud: Stratocumulus.
+Skript annab ette kuni 4 tüüpi. Muuda ainult Reverb1 kanalite Type-valikuid.
+Jäta tüübi automaatsed seaded alles; muud plokid, bypass ja stseen säilita.
+Ekspordi terve SYX, lohista selle failitee Terminali ja vajuta Enter.
+Kontrolli ekraaninimed, sulge FM3-Edit/Fractal-Bot, kirjuta jah ühe GET-i jaoks.
+Esimese uue neliku järel kirjuta järgmise SYX küsimuse juures q ja saada ZIP vestlusse.
+Sama käsk jätkab hiljem pooleli jäänud kohast. q teeb tulemuse ZIP-i Documents-kausta.
+Säilita ~/Documents/FM3_REVERB_SESSION. Ära kasuta Delay/Drive sessioonikausta.
+Jätkamisel peab FM3-s olema viimase eduka kogumise seisund; vajadusel impordi
+selles sessioonis viimase eduka capture-kausta donor.syx.
+Save/Store pole vajalik. Üks kasutaja kinnitatud GET neliku kohta;
+SET/SAVE ja automaatne korduspäring puuduvad. Vigased katsed säilivad.

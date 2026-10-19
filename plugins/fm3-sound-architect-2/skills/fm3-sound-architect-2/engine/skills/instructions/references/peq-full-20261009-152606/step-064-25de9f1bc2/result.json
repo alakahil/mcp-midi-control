@@ -1,0 +1,89 @@
+{
+  "index": 64,
+  "step": {
+    "id": "065-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Bypass Mode; kui sellist valikut pole, s ja täpne nähtav valikuloend. Muuda ainult: Bypass Mode → Thru . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Bypass Mode",
+        "candidatePid": 22,
+        "value": "Thru",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "failed",
+  "comparison": {
+    "index": 64,
+    "step": {
+      "id": "065-common",
+      "stage": "common",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Bypass Mode; kui sellist valikut pole, s ja täpne nähtav valikuloend. Muuda ainult: Bypass Mode → Thru . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Bypass Mode",
+          "candidatePid": 22,
+          "value": "Thru",
+          "band": null,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "a53a4a0d8d1248eec80d164414bee6017b50ec3975e7fd9f00732ac8b62c4e9c",
+    "syxSha256": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 22,
+        "offset": 8778,
+        "before": 1,
+        "after": 0
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Bypass Mode",
+        "candidatePid": 22,
+        "value": "Thru",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Bypass Mode",
+        "candidatePid": 22,
+        "value": "Thru",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": "Thru"
+    }
+  ],
+  "displayConfirmed": true,
+  "error": "[Errno 16] Resource busy: '/dev/cu.usbmodem211104'"
+}

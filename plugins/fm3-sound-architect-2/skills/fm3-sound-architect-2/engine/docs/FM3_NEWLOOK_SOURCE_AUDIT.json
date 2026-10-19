@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-08",
+  "input": "JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
+  "sha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
+  "bodyBytes": 12804,
+  "source": "User firmware-13 export and FM3-Edit screenshot",
+  "selectedScene": 2,
+  "removed": [
+    "compressor",
+    "wah",
+    "phaser",
+    "chorus",
+    "flanger"
+  ],
+  "added": [
+    "send",
+    "return"
+  ],
+  "allExistingRecordsByteIdentical": [
+    {
+      "eid": 58,
+      "bytes": 1198
+    },
+    {
+      "eid": 62,
+      "bytes": 894
+    },
+    {
+      "eid": 70,
+      "bytes": 758
+    },
+    {
+      "eid": 118,
+      "bytes": 398
+    },
+    {
+      "eid": 37,
+      "bytes": 126
+    },
+    {
+      "eid": 42,
+      "bytes": 254
+    },
+    {
+      "eid": 66,
+      "bytes": 614
+    }
+  ],
+  "opaqueSystemTailByteIdentical": true,
+  "nonGridPrefixChanges": [
+    {
+      "offset": 1584,
+      "before": 14,
+      "after": 0,
+      "note": "Former Wah modifier source disabled by user editor export; preserved as-is"
+    }
+  ],
+  "exactOldToNewReconstruction": true,
+  "ampBLevelRaw": 50461,
+  "ampCLevelRaw": 47184,
+  "screenshotCpuPercent": 44.6,
+  "cpuScope": "Screenshot only, Scene2, not an all-scene maximum or new-generated-layout result",
+  "audio": "User changed layout; no new listening assessment inferred"
+}

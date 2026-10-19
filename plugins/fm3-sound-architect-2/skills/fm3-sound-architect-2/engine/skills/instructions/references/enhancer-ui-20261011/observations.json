@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-11",
+  "firmwareDisplayed": "13.00",
+  "presetNameDisplayed": "FM3 ENH_SEL",
+  "sceneDisplayed": 2,
+  "channelDisplayed": "A",
+  "screenshots": {
+    "modern.png": "b0660d913fc09cf6132c838a6f35686f1fc3adde9e669e6a4074ebe186b64ae3",
+    "classic-invert-menu.png": "1afce11b0b5ac99e70ff01209e45fd5e683dc5d2338c8b4cabd18da42532cfb0",
+    "stereoizer.png": "1f64bffd16aad0b3da279607d8e0ef2df0a875b9dd9b19e5c059a2612eabf7a5"
+  },
+  "controlsByType": {
+    "Modern": {
+      "numeric": [
+        "Width",
+        "Depth",
+        "Low Cut",
+        "High Cut",
+        "Level"
+      ],
+      "enums": {
+        "Scene Ignore": [
+          "ON",
+          "OFF"
+        ]
+      },
+      "units": {
+        "Width": "%",
+        "Depth": "%",
+        "Low Cut": "Hz",
+        "High Cut": "Hz",
+        "Level": "dB"
+      },
+      "extraControls": ""
+    },
+    "Classic": {
+      "numeric": [
+        "Width",
+        "Pan L",
+        "Pan R",
+        "Balance",
+        "Level"
+      ],
+      "enums": {
+        "Invert": [
+          "Both",
+          "Left",
+          "None",
+          "Right"
+        ],
+        "Scene Ignore": [
+          "ON",
+          "OFF"
+        ]
+      },
+      "units": {
+        "Width": "%",
+        "Pan L": "number",
+        "Pan R": "number",
+        "Balance": "number",
+        "Level": "dB"
+      },
+      "extraControls": ""
+    },
+    "Stereoizer": {
+      "numeric": [
+        "Width",
+        "Depth",
+        "Level"
+      ],
+      "enums": {
+        "Scene Ignore": [
+          "ON",
+          "OFF"
+        ]
+      },
+      "units": {
+        "Width": "%",
+        "Depth": "%",
+        "Level": "dB"
+      },
+      "extraControls": ""
+    }
+  },
+  "visibleDisplays": {
+    "Modern": {
+      "Width": "50.0 %",
+      "Depth": "50.0 %",
+      "Low Cut": "100.0 Hz",
+      "High Cut": "2000.0 Hz",
+      "Level": "0.0 dB"
+    },
+    "Classic": {
+      "Width": "50.0 %",
+      "Pan Left": "-100.0",
+      "Pan Right": "100.0",
+      "Balance": "0.0",
+      "Level": "0.0 dB",
+      "Invert": "None"
+    },
+    "Stereoizer": {
+      "Width": "50.0 %",
+      "Depth": "50.0 %",
+      "Level": "0.0 dB"
+    }
+  },
+  "classicInvertMenuOrder": [
+    "Both",
+    "Left",
+    "None",
+    "Right"
+  ],
+  "bypassButtonVisibleAllTypes": true,
+  "bypassModeMenuVisibleAllTypes": false,
+  "sceneIgnoreButtonVisibleAllTypes": true,
+  "libraryMenuIsNotEffectParameter": true,
+  "cpuSnapshotsPercent": {
+    "Modern": 52.2,
+    "Classic": 50.9,
+    "Stereoizer": 51.9
+  },
+  "cpuMaximumConfirmed": false,
+  "parameterRangesConfirmed": false,
+  "parameterCodingConfirmed": false,
+  "hardwareGetPairConfirmed": false,
+  "newSyxProvidedWithTheseImages": false
+}

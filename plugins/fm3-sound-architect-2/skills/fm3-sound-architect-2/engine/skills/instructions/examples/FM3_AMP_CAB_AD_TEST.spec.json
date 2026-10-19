@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "FM3 AMP CAB AD TEST",
+  "purpose": "A/D Ampi ja A/C/D Cabi mudelivaliku koostajakatse. Scene2 ja Scene6 kogu senine sound ning NewLooki kaks rida säilivad.",
+  "ampChannels": [
+    {
+      "channel": "A",
+      "model": "Double Verb Vibrato"
+    },
+    {
+      "channel": "D",
+      "model": "Brit JVM Crunch Orange"
+    }
+  ],
+  "cabChannels": [
+    {
+      "channel": "A",
+      "model": "2x12 Double Verb"
+    },
+    {
+      "channel": "C",
+      "model": "4x12 Friedman V30"
+    },
+    {
+      "channel": "D",
+      "model": "4x12 Lerxst"
+    }
+  ],
+  "scenes": [
+    {
+      "scene": 1,
+      "name": "AMP CAB A TEST",
+      "blocks": {
+        "amp": {
+          "channel": "A",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "A",
+          "bypass": false
+        }
+      }
+    },
+    {
+      "scene": 4,
+      "name": "AMP CAB D TEST",
+      "blocks": {
+        "amp": {
+          "channel": "D",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "D",
+          "bypass": false
+        }
+      }
+    }
+  ]
+}

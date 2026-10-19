@@ -1,0 +1,64 @@
+KATSE LÕPETATUD 2026-10-11. Kõik 13 662 kehabaidi säilisid.
+Kasutaja: GEQ toimis; suurim täheldatud CPU 50%.
+Scene4 esimese riba silt on pildilt kinnitatud 100 Hz.
+Allolev juhend on ajalooline. Sama katset pole vaja korrata.
+
+FM3 GEQ A–D — ÜKS ÜHINE KONTROLL
+FM3 Mk II Turbo / firmware 13
+
+GEQ 184-sammuline kogumine on kontrollitud ja lõpetatud.
+Terminali, uut GET-i ega kogumise kordamist pole vaja.
+See uus nelja eri tüübiga kooslus ootab veel seadmekinnitust.
+
+1. Säilita praegune töö ja impordi FM3_GEQ_ABCD_TEST.syx FM3-Editi
+   tööpuhvrisse. Ära kirjuta enda presetikohta enne, kui soovid seda säilitada.
+   Alusta tavalisest madalamal kuulamisnivool.
+
+2. GEQ1 asub 2. real / 11. veerus, PEQ1 ja Send1 vahel.
+   Kaks rida, Send/Return ning senised Amp/Cab/PEQ ja muud seaded säilivad.
+   PEQ-d pole tarvis uuesti läbi kontrollida.
+
+3. Kontrolli järgnevat nelja stseeni. Gain-numbrid on VASAKULT PAREMALE.
+
+   Scene 2 → GEQ A: 10 Band Variable Q, SEES
+   Ribad: 31 / 63 / 125 / 250 / 500 / 1k / 2k / 4k / 8k / 16k
+   Gain: -1.5 / -1 / -0.5 / 0 / +0.5 / +1 / +1.5 / +0.5 / -1 / -1.5 dB
+   Master Q 1.00, Level -1.00 dB
+
+   Scene 3 → GEQ B: 5 Band Mark, SEES
+   Ribad: 80 / 240 / 750 / 2200 / 6600
+   Gain: -1 / +0.5 / +1.5 / +0.5 / -1 dB
+   Master Q 1.40, Level -0.50 dB
+
+   Scene 4 → GEQ C: 7 Band Constant Q, SEES
+   Ribad: [esimese riba silt täpsustada] / 200 / 400 / 800 / 1600 / 3200 / 6400
+   Gain: -1 / -0.5 / 0 / +1 / +0.5 / -0.5 / -1 dB
+   Master Q 0.80, Level -0.75 dB
+   Palun kirjuta esimese riba tegelik silt või saada üks pilt sellest vaatest.
+   Kogumisfailis oli sisestatud „python3 100”; uut mõõtmist pole vaja.
+
+   Scene 6 → GEQ D: 3 Band Console, SEES
+   Ribad: Low / Mid / High
+   Gain: -0.5 / +1.5 / -1 dB
+   Master Q 1.20, Level -1.00 dB
+
+   Kõik kanalid: Balance 0, Bypass Mode Thru, Scene Ignore OFF.
+   Scene 1/5/7/8: GEQ A, BYPASS.
+   Väike viimase kümnendkoha erinevus võib tuleneda kvantimisest;
+   erinev väärtus või puuduva juhiga vaade märgi lihtsalt vastusesse.
+   Ära muuda väärtusi selleks, et need tabeliga klappima panna.
+
+4. Kuula GEQ mõju. Soovi korral võrdle Scene 2-s GEQ sees/bypass;
+   enne eksporti taasta GEQ SEES. Kontrolli ka Scene 3/4/6 kanalivalikut.
+   Kirjuta selle preseti CPU (võimalusel nelja katsetatud stseeni suurim näit)
+   ja lühike kuulamismulje. Varasem 47–48% oli PEQ katse tulemus.
+
+5. Enne eksporti vali tagasi SCENE 2, GEQ A ja GEQ SEES.
+   Ekspordi TERVE PRESET, mitte ainult GEQ plokk, nimega:
+   FM3_GEQ_ABCD_TEST_export.syx
+   Saada eksporditud fail siia koos CPU, võimalike erinevuste ning
+   Scene 4 esimese GEQ riba sildiga.
+
+Uue koosluse kontrollimport muudab tööpuhvrit; programm ise ei ühenda
+seadet ega saada MIDI/SET/SAVE-käske. Täpne spec ja failikontrolli raport
+on pakis kaasas. Pärast kinnitust jätkame Enhanceriga.

@@ -1,0 +1,130 @@
+{
+  "index": 60,
+  "step": {
+    "id": "061-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ Balance; sisesta ekraanil nähtav arv. Muuda ainult: Balance → miinimumi (nupp lõpuni vasakule). Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Balance",
+        "candidatePid": 21,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 60,
+    "step": {
+      "id": "061-common",
+      "stage": "common",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ Balance; sisesta ekraanil nähtav arv. Muuda ainult: Balance → miinimumi (nupp lõpuni vasakule). Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Balance",
+          "candidatePid": 21,
+          "value": null,
+          "band": null,
+          "channel": "A",
+          "endpoint": "minimum",
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "b2933e08f5431c60c7a72fca615f1c65dca851935febf37aca0b3c6ed98ffe51",
+    "syxSha256": "0a25527766b9dce6b38556b67095d0a7bc5c15d82edc7808b98cb145dea04643",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 21,
+        "offset": 8776,
+        "before": 32767,
+        "after": 0
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Balance",
+        "candidatePid": 21,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "",
+        "raw": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 PEQ FULL_50",
+      "after": "FM3 PEQ FULL_60",
+      "beforeHex": "464d33205045512046554c4c5f35302020202020202020202020202020202000",
+      "afterHex": "464d33205045512046554c4c5f36302020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Balance",
+        "candidatePid": 21,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      "displayValue": -100.0
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "0a25527766b9dce6b38556b67095d0a7bc5c15d82edc7808b98cb145dea04643",
+    "bodySha256": "f98282522b005f708fc837b4b5f10263fb2898c82a599d1bf95180f9ad1c9be4",
+    "rawRxSha256": "c8f5ea3273a452bf47536fd001d141c43bd8fd016d1d45d3f6bdad9f31c72df1",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

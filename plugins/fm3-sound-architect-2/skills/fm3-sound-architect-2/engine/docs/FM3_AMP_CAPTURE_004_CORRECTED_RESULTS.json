@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-01",
+  "source": {
+    "file": "FM3_AMP_CAPTURE_004_corrected.syx",
+    "index": 0,
+    "sha256": "7bfadae01975d70b00c675d2ed07c68574061f0a49406178272015f29db39e86",
+    "ignoredSceneSelections": [
+      {
+        "scene": 2,
+        "base": 1,
+        "donor": 2,
+        "action": "Not copied; output keeps base scene selection"
+      }
+    ]
+  },
+  "results": [
+    {
+      "name": "1987X Normal",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "f24444f3a5f0f1534ce28297870641210279cc5a099131b35bff5118fd245edd"
+    },
+    {
+      "name": "1987X Treble",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "a651f66f0f2e25b3de10a9e9664da3cbe9c1e73aa021d0bbdc62ee0fcfd59aeb"
+    },
+    {
+      "name": "Brit 800 2204 High",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "81843fcd820f182dcee9b4699df53346f0b29d6618e2b52f401b87f66f9f6362"
+    },
+    {
+      "name": "Brit Super",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "3f092ea3a1a7922e2f2503a1640b809399b51fcd1b26b2fe8d9b7e6a586ac203"
+    }
+  ],
+  "bundledId14Verified": true,
+  "hardware": "Source export only; generated combinations checked offline"
+}

@@ -1,0 +1,8 @@
+{
+  "combinations": 28,
+  "independentCaptureBodyReplays": 2,
+  "replayScenePolicy": "Only Tremolo scene-channel choices copied explicitly from base; no other differences normalized",
+  "additionalPinnedBases": 1,
+  "invalidRequestsRejected": 18,
+  "hardwareImport": "pending"
+}

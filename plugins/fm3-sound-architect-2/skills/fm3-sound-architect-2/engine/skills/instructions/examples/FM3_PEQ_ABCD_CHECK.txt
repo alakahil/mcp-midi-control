@@ -1,0 +1,44 @@
+FM3 PEQ ABCD TEST — PARANDATUD VÄÄRTUSTE LOEND
+2026-10-09: import/tagasieksport kinnitatud, kõik 13 456 sisubaiti kattuvad.
+CPU 47–48%. Kordusimporti, uut GET-i ega eksporti pole vaja.
+
+Parandus: Blocking-tüübil puudub Q. Kontrolli selle tüübi puhul Frequency
+ja Slope; Q-d pole vaja otsida ega seadistada. Teiste tüüpide Q on allpool.
+SYX jäi täpselt samaks; vigased Q read eemaldati ainult kirjeldusest.
+
+Scene 2: PEQ A sees. Scene 3: B sees. Scene 4: C sees. Scene 6: D sees.
+Stseenides 1, 5, 7 ja 8 PEQ bypass.
+C/D Balance −10/+10 on sihilikud testväärtused. V3 vanade plokkide tasemed
+ning kahe rea Send/Return paigutus säilivad.
+Kõigil kanalitel: Bypass Mode Thru, Solo1–5 OFF, Scene Ignore OFF.
+Sagedus võib ekraanil ümarduda. Loend näitab küsitud sihte, mitte kasutaja
+poolt iga vaheväärtuse eraldi kinnitatud ekraaninäitude registrit.
+
+KANAL A | Level -0.5 dB | Balance 0
+Band 1: Blocking | 85 Hz | Slope 12 dB/oct
+Band 2: Peaking | 350 Hz | Q 0.8 | Gain -1.5 dB
+Band 3: Peaking | 900 Hz | Q 1.1 | Gain 1 dB
+Band 4: Peaking | 2800 Hz | Q 0.9 | Gain -1 dB
+Band 5: Blocking | 6500 Hz | Slope 12 dB/oct
+
+KANAL B | Level -0.5 dB | Balance 0
+Band 1: Peaking 2 | 120 Hz | Q 0.8 | Gain -1 dB
+Band 2: Peaking 2 | 420 Hz | Q 1.2 | Gain -1.5 dB
+Band 3: Peaking 2 | 1200 Hz | Q 1.3 | Gain 1.5 dB
+Band 4: Peaking 2 | 3100 Hz | Q 1.1 | Gain -1 dB
+Band 5: Peaking 2 | 7200 Hz | Q 0.8 | Gain -1 dB
+
+KANAL C | Level -0.75 dB | Balance -10
+Band 1: Shelving 2 | 150 Hz | Q 0.9 | Gain -1 dB
+Band 2: Shelving | 500 Hz | Q 0.8 | Gain -0.5 dB
+Band 3: Peaking | 1800 Hz | Q 1.2 | Gain 1 dB
+Band 4: Shelving | 3600 Hz | Q 0.8 | Gain -0.5 dB
+Band 5: Shelving 2 | 5500 Hz | Q 0.9 | Gain -1 dB
+
+KANAL D | Level -1 dB | Balance 10
+Band 1: Shelving | 180 Hz | Q 0.8 | Gain -0.5 dB
+Band 2: Shelving 2 | 600 Hz | Q 0.9 | Gain -0.5 dB
+Band 3: Peaking 2 | 1400 Hz | Q 1.5 | Gain 2 dB
+Band 4: Shelving 2 | 4000 Hz | Q 0.9 | Gain -0.5 dB
+Band 5: Shelving | 8000 Hz | Q 0.8 | Gain -1 dB
+

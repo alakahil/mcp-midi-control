@@ -1,0 +1,15 @@
+{
+  "index": 3,
+  "status": "skipped",
+  "reason": "BB Pre tüübil puudub Tone parameeter",
+  "step": {
+    "id": "A-tone",
+    "kind": "control",
+    "channel": "A",
+    "binaryId": 19,
+    "field": "Tone",
+    "pid": 2,
+    "value": 7,
+    "instruction": "Jäta Drive1 kanal A ja tüüp BB Pre. Muuda ainult Tone väärtuseks 7.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  }
+}

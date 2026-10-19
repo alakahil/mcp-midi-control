@@ -1,0 +1,98 @@
+{
+  "source": "FM3_CAB_BATCH_20261005T085919_6dfba380.zip",
+  "pairs": [
+    {
+      "folder": "capture-001",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "4a53db28f249982d7c57e2ffbf74ffb74adf14c360030dfd9d1009291878cf2b",
+      "rawRxSha256": "fd9a2a185e5f164e763c5091ff14ecbdd71b5f03277e965dcbda1cad0070fb65",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 1,
+          "slot2": 0
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 38,
+          "slot2": 38
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 39,
+          "slot2": 39
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 25,
+          "slot2": 25
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T085910-d82850c9cc",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "dcc48a3bfbe17ef8e303f2dcf32a664c3f66edd4a6b75c533cd4d79aa44c0c11",
+      "rawRxSha256": "6ac3dab987f46575f20aa3d895ed7138906bd917f1c14391867242e5bdc127fc",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 0,
+          "slot2": 0
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 1,
+          "slot2": 1
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 2,
+          "slot2": 2
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 3,
+          "slot2": 3
+        }
+      ]
+    }
+  ],
+  "collectedChoices": 7,
+  "remaining": 38,
+  "next": [
+    {
+      "displayNumber": 5,
+      "expectedId": 4,
+      "name": "1x10 SF Princetone"
+    },
+    {
+      "displayNumber": 6,
+      "expectedId": 5,
+      "name": "1x12 AC20"
+    },
+    {
+      "displayNumber": 7,
+      "expectedId": 6,
+      "name": "1x12 Black Magick"
+    },
+    {
+      "displayNumber": 8,
+      "expectedId": 7,
+      "name": "1x12 Car Ambler"
+    }
+  ],
+  "collectorMacTest": "confirmed for this capture",
+  "newCabGeneratorWriting": "not enabled",
+  "audio": "not tested"
+}

@@ -1,0 +1,42 @@
+{
+  "version": "0.31.0",
+  "date": "2026-10-05",
+  "registryTemplates": 45,
+  "registrySha256": "887cc3220cdc46ded15e8fc8daf4c3c014b7aee9118fba8b54545484ad5e6b0f",
+  "tests": {
+    "independentDonorChannelComparisons": 45,
+    "cabOnlyExactBodyPreservation": 45,
+    "combinedAmpCab": 45,
+    "invalidNewSpecs": 6,
+    "corruptTemplateRejected": true,
+    "corruptChecksumRejected": true,
+    "wrongBaseRejected": true,
+    "legacyByteIdenticalFiles": 4,
+    "isolatedControls": 16,
+    "independentGainBass": 8,
+    "legacyInvalidSpecs": 12,
+    "legacyModelCabCombinations": 15
+  },
+  "example": {
+    "name": "FM3 SA TEST CAB BASSGUY",
+    "sha256": "ff2a8877a2849c1260f9254648e19015762b2a47ea88ed2afeff59d5ddf34126",
+    "changedBodyBytes": 23,
+    "allBodyChangesInside": [
+      6066,
+      6278
+    ],
+    "cabModelB": "2x12 65 Bassguy",
+    "slotIds": [
+      24,
+      24
+    ],
+    "affectedScenes": [
+      2,
+      4,
+      6,
+      8
+    ]
+  },
+  "hardware": "pending import and full-body roundtrip",
+  "audio": "not assessed"
+}

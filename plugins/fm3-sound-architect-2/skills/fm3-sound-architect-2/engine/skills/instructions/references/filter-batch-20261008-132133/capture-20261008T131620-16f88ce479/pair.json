@@ -1,0 +1,25 @@
+{
+  "paired": true,
+  "matchedWords": 148,
+  "syxSha256": "9a254a1af26b64025cb9a281fb53845e7e7f95a6713ea2ec5d2b7e670edbfd80",
+  "rawRxSha256": "3cd223827ac680a8aaf239409c989ffb125c68b2dbfa9d610eb2ea8b4e0f655c",
+  "channels": [
+    {
+      "channel": "A",
+      "binaryId": 0
+    },
+    {
+      "channel": "B",
+      "binaryId": 0
+    },
+    {
+      "channel": "C",
+      "binaryId": 0
+    },
+    {
+      "channel": "D",
+      "binaryId": 0
+    }
+  ],
+  "scene2Bypass": false
+}

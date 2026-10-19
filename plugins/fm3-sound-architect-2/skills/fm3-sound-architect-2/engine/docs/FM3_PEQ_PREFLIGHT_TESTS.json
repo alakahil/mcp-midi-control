@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-09",
+  "passed": true,
+  "syntheticOnly": true,
+  "positiveCases": 13,
+  "rejectedCases": 35,
+  "noHardwareEvidence": true,
+  "noGeneratorSupportAdded": true,
+  "scope": "Only PEQ insertion structure on unchanged musical V3; candidate ID54, observed record length, opaque parameters. Fixtures never written to disk."
+}

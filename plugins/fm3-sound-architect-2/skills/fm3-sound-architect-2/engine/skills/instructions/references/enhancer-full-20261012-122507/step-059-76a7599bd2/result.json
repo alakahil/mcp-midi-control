@@ -1,0 +1,17 @@
+{
+  "index": 59,
+  "step": {
+    "id": "060-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Classic — Scene Ignore OFF",
+    "channel": "A",
+    "typeName": "Classic",
+    "parameter": "Scene Ignore",
+    "mode": "enum",
+    "value": "OFF",
+    "allowUnchanged": true
+  },
+  "status": "skipped",
+  "reason": "juba mõõdetud"
+}

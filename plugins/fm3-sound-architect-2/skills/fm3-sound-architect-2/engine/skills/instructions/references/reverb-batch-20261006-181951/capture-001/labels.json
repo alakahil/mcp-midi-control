@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 1,
+    "name": "Chamber: Deep Chamber",
+    "binaryId": 33,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 2,
+    "name": "Chamber: Large Chamber",
+    "binaryId": 8,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 3,
+    "name": "Chamber: Medium Chamber",
+    "binaryId": 7,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 4,
+    "name": "Chamber: Small Chamber",
+    "binaryId": 6,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "baseSha256": "2cd1e6519317e43238312c09a6c3badf5972265758f481b184cf9d2ea6ee0cf6",
+  "editedSha256": "059d90d1cce46c507d9715597aff717c24048b6ab93a19cc9f7a541209714f64",
+  "differences": [
+    {
+      "offset": 8644,
+      "before": 254,
+      "after": 0
+    },
+    {
+      "offset": 8645,
+      "before": 255,
+      "after": 64
+    }
+  ],
+  "points": [
+    {
+      "percent": 100,
+      "raw": 65534
+    },
+    {
+      "percent": 25,
+      "raw": 16384
+    }
+  ],
+  "candidateEncoding": "round(percent/100*65534)",
+  "otherBodyBytesUnchanged": true,
+  "integrity": "Full inspect PASS"
+}

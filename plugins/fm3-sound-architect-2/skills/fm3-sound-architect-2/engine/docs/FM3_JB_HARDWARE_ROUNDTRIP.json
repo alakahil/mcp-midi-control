@@ -1,0 +1,101 @@
+{
+  "files": [
+    {
+      "name": "JB_RHYTHM_SOLO_GENERATED.syx",
+      "sha256": "4d51565e9f3e23d79688f92d8a6f48e2ec12b703c86ec65fe94dff6a11e92b18",
+      "bytes": 24680,
+      "bodyBytes": 14222,
+      "preset": "JB YDOM RHYTHM",
+      "scene6": "JB SOLO",
+      "amp": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "A",
+        "C",
+        "C",
+        "D"
+      ],
+      "reverb": [
+        "A",
+        "B",
+        "A",
+        "A",
+        "C",
+        "D",
+        "A",
+        "A"
+      ],
+      "phaser": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "delayScene2Bypass": 1,
+      "delayScene6Bypass": 0
+    },
+    {
+      "name": "JB_RHYTHM_SOLO_GENERATED_export..syx",
+      "sha256": "2c6b907ddf9f1773a12aaa444ff5d0ba5630650fb978524ae1b03f5e951cb39f",
+      "bytes": 24680,
+      "bodyBytes": 14222,
+      "preset": "JB YDOM RHYTHM",
+      "scene6": "JB SOLO",
+      "amp": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "A",
+        "C",
+        "C",
+        "D"
+      ],
+      "reverb": [
+        "A",
+        "B",
+        "A",
+        "A",
+        "C",
+        "D",
+        "A",
+        "A"
+      ],
+      "phaser": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "delayScene2Bypass": 1,
+      "delayScene6Bypass": 0
+    }
+  ],
+  "bodyDiff": [],
+  "rawHeaderDiff": [
+    {
+      "offset": 4,
+      "before": 61,
+      "after": 108
+    },
+    {
+      "offset": 5,
+      "before": 44,
+      "after": 89
+    }
+  ],
+  "dumpHeaderDiff": [],
+  "wholeFileIdentical": false,
+  "integrity": "both pass frames, 7-bit data, CRC, footer and validation",
+  "conclusion": "Generated preset import/export confirmed for this exact combination: all14222 body bytes identical including offset0; whole SYX not byte-identical. Audio, levels and CPU not assessed."
+}

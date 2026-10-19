@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-01",
+  "source": {
+    "file": "FM3_AMP_CAPTURE_004.syx",
+    "index": 0,
+    "sha256": "fed17e1112348ef3b973c33198b8bf9f47d60b281699902b1667c74b4adeb187",
+    "ignoredSceneSelections": [
+      {
+        "scene": 2,
+        "base": 1,
+        "donor": 0,
+        "action": "Not copied; output keeps base scene selection"
+      }
+    ]
+  },
+  "results": [
+    {
+      "model": "1987X Normal",
+      "modelId": 12,
+      "sourceChannel": "A",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "4af1fd8b888ea8af4b01d7aa60f7bd15430d1caa4d6ac2c19d5e0f61ced77754"
+    },
+    {
+      "model": "1987X Treble",
+      "modelId": 13,
+      "sourceChannel": "B",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "399f349cc8c3f8cd98b9f5ed1d71ee2e3f6c3398cdb57b213d5ac46a8f8c8d57"
+    },
+    {
+      "model": "Brit 800 2203 High",
+      "modelId": 314,
+      "sourceChannel": "C",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "37dd78ba95f455fdfe831f3f72d127168ed1756d3a12790724cfb1691bc62ea3"
+    },
+    {
+      "model": "Brit Super",
+      "modelId": 15,
+      "sourceChannel": "D",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "8a8ff16bb592e10f909e96836216709464d061d28e9acbf11bc1b4fe03df8848"
+    }
+  ],
+  "planDifference": {
+    "channel": "C",
+    "expected": {
+      "id": 14,
+      "name": "Brit 800 2204 High"
+    },
+    "actual": {
+      "id": 314,
+      "name": "Brit 800 2203 High"
+    },
+    "action": "Actual model imported; missing ID14 moved to later ID314 capture slot"
+  },
+  "decoderCorrection": "Added missing ID12 name from existing AMP_ROSTER; raw and decoded IDs agree",
+  "atomicImportRegression": true,
+  "hardware": "User source export; generated combinations not separately hardware-confirmed"
+}

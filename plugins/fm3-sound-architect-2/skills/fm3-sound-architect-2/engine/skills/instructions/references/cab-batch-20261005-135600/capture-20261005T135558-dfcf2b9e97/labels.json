@@ -1,0 +1,16 @@
+[
+  {
+    "displayNumber": 44,
+    "expectedId": 43,
+    "name": "4x12 USA Mc90",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 45,
+    "expectedId": 44,
+    "name": "8x10 SV Bass",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  }
+]

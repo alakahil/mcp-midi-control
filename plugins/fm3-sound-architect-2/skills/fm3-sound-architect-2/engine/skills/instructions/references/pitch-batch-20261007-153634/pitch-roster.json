@@ -1,0 +1,84 @@
+{
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "Advanced Whammy",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 2,
+      "name": "Arpeggiator",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 3,
+      "name": "Classic Whammy",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 4,
+      "name": "Crystal Echoes",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 5,
+      "name": "Custom Shifter",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Dual Chromatic",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "Dual Detune",
+      "binaryId": 0
+    },
+    {
+      "displayNumber": 8,
+      "name": "Dual Detune Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "Dual Diatonic",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Octave Divider",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Quad Chromatic",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Quad Chromatic Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 13,
+      "name": "Quad Detune",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 14,
+      "name": "Quad Diatonic",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 15,
+      "name": "Quad Diatonic Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 16,
+      "name": "Virtual Capo",
+      "binaryId": null
+    }
+  ]
+}

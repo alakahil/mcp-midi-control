@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-08",
+  "userFeedback": {
+    "previousTrial": "JB_RHYTHM_LEVEL_MINUS4.syx",
+    "meterLocation": "OUTPUT 1 Left/Right",
+    "scene2MeterDbApprox": -3,
+    "scene6LatestReading": "Not repeated; earlier reported +2 to +3dB",
+    "request": "Raise Scene2 by 1dB more, then user expects balance to be OK",
+    "acceptance": "Conditional on the requested additional 1dB; new specimen not yet heard"
+  },
+  "previousTrialSha256": "c17103edba82c66476a592efa13279c0d5843cb6aeac8b95bdddeebe6a0b89de",
+  "outputSha256": "7df04a541f45ef0d73e08de3583f0cd8a34f061392a28aa6691875689563b902",
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [
+    4946,
+    4947
+  ],
+  "control": {
+    "block": "Amp1",
+    "channel": "B",
+    "parameter": "Level",
+    "parameterId": 1,
+    "offset": 4946,
+    "beforeRaw": 49806,
+    "afterRaw": 50461,
+    "beforeDb": -3.999755851924192,
+    "afterDb": -3.000274666585284,
+    "requestedDeltaDb": 1,
+    "totalDeltaFromOriginalDb": 15,
+    "affectedScenes": [
+      2
+    ]
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 94,
+      "after": 144,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 85,
+      "after": 130,
+      "field": "CRC"
+    },
+    {
+      "offset": 25,
+      "before": 52,
+      "after": 51,
+      "field": "presetName"
+    },
+    {
+      "offset": 74,
+      "before": 62,
+      "after": 60,
+      "field": "compressedSize"
+    }
+  ],
+  "encoding": {
+    "compressedBytesBefore": 4926,
+    "compressedBytesAfter": 4924,
+    "decompressedSizePreserved": 14222,
+    "paddingAllZero": true
+  },
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "onlyAmpBLevelBodyWordChanged": true,
+    "allOtherBodyBytesPreserved": true,
+    "scene6Unchanged": true,
+    "headersPreservedExceptNameCrcAndCompressedSize": true
+  },
+  "previousTrialStatus": "User reported Scene2 OUTPUT 1 Left/Right around -3dB after trying the -4dB Amp Level specimen; no binary re-export supplied",
+  "hardware": "New -3dB Amp Level specimen import and roundtrip pending",
+  "audio": "New +1dB change awaiting user confirmation; delay/reverb and CPU not assessed",
+  "nextStep": "User imports and listens. If the requested +1dB is suitable, select Scene2 and export whole preset as JB_RHYTHM_LEVEL_MINUS3_export.syx for exact comparison. Do not request earlier trial exports."
+}

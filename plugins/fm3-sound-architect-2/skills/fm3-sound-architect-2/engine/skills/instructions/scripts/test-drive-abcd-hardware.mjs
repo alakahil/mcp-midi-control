@@ -1,0 +1,9 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
+const read=n=>fs.readFileSync(new URL('../examples/'+n,import.meta.url)),sha=b=>createHash('sha256').update(b).digest('hex');
+const generated=read('FM3_DRIVE_ABCD_TEST.syx'),returned=read('FM3_DRIVE_ABCD_TEST_export.syx'),a=inspectStructure(generated),b=inspectStructure(returned);
+assert.deepEqual(Buffer.from(a.raw.body),Buffer.from(b.raw.body));assert.deepEqual(a.parsed.headerPayload,b.parsed.headerPayload);
+for(let i=0;i<72;i++)if(i!==4&&i!==5)assert.equal(a.raw.rawPatch[i],b.raw.rawPatch[i]);
+const expected=JSON.parse(read('FM3_DRIVE_ABCD_TEST.validation.json'));
+const channels=expected.channels.map(c=>{const start=8460+'ABCD'.indexOf(c.channel)*88;const words=Array.from({length:44},(_,i)=>Buffer.from(b.raw.body).readUInt16LE(start+2*i));assert.deepEqual(words,c.words);return {channel:c.channel,type:c.type,binaryId:c.binaryId,explicitControls:c.explicitControls,all44WordsPreserved:true};});
+const report={date:'2026-10-06',generatedSha256:sha(generated),hardwareExportSha256:sha(returned),fullFilesIdentical:generated.equals(returned),bodyBytes:b.raw.body.length,changedBodyOffsets:[],channels,checks:{frameChecksums:true,presetCrc:true,footerChecksum:true,entireBodyIdentical:true,all176DriveWordsPreserved:true,scenesAndBypassPreserved:true,headersPreservedExceptCrc:true},scope:'Hardware roundtrip verified for this four-channel specimen. Other 87-type/channel transplants remain offline verified only. No listening assessment.'};
+fs.writeFileSync(new URL('../../../docs/FM3_DRIVE_ABCD_HARDWARE_ROUNDTRIP.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));

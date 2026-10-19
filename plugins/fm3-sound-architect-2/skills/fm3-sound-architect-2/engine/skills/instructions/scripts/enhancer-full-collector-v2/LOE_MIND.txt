@@ -1,0 +1,85 @@
+FM3 ENHANCER FULL V2 — alginfo on piltidelt täidetud
+12.10.2026 / koguja 0.2.1 / FM3 firmware 13
+
+JUBA ALUSTATUD KOGUMINE
+Kui said FM3_ENHANCER_JATKA.zip paketi, järgi selle JATKAMINE.txt juhist.
+See sisaldab senist sessiooni ja JATKA_SIIT.syx faili. Ära alusta baseline'ist;
+taasta JATKA_SIIT.syx ning jätka sammust 8/86.
+Versioon 0.2.1 selgitab Scene 2 Bypass-oleku muutust eraldi veateatega.
+V2 plaan ja sessioonivorming 0.2.0 säilivad, tehtud mõõtmised jäävad alles.
+
+ALGUS
+1. Kui vana koguja ootab vastust, lõpeta see q-ga.
+2. Paki FM3_ENHANCER_FULL_V2.zip Downloads kausta. Tekib uus eraldi kaust
+   FM3_ENHANCER_FULL_V2. Vana kausta pole vaja kustutada ega üle kirjutada.
+3. Ava FM3-Editis UUE kausta baseline.syx. Vali Scene 2, Enhancer 1,
+   kanal A, tüüp Modern ja hoia Enhancer bypass'is.
+4. Käivita Terminalis:
+
+   python3 ~/Downloads/FM3_ENHANCER_FULL_V2/FM3_ENHANCER_FULL.py --port /dev/cu.usbmodem211104
+
+   Kasuta tegelikku USB-porti, kui see on muutunud. Portide loend:
+
+   ls /dev/cu.usbmodem*
+
+5. Koguja alustab kohe katsega 1/86. Vajuta Enter, et kasutada paketi
+   muutmata baseline.syx faili. Uut eksporti pole esimeseks sammuks vaja.
+6. Sulge FM3-Edit/Fractal-Bot ja vasta jah: tehakse üks GET ning kontrollitakse
+   kõigi 48 parameetrisõna vastavust alusfailile. Oota PASS-teadet.
+
+JUHTIDE ALGKÜSIMUSI ENAM EI OLE
+Sinu kolmest pildist on juba täidetud:
+- Modern: Width, Depth, Low Cut, High Cut, Level ja Scene Ignore.
+- Classic: Width, Pan Left, Pan Right, Balance, Level, Invert ja Scene Ignore.
+- Stereoizer: Width, Depth, Level ja Scene Ignore.
+- Invert-valikud: Both; Left; None; Right.
+
+Bypass Mode'i menüüd ei küsita. Olemasolevat Bypass-nuppu hoia kogumise ajal
+nii, et Enhancer oleks bypass'is. Library menüü ei kuulu heliparameetritesse.
+Pan Left, Pan Right ja Balance sisesta arvuna, nagu pildil; nendele pole
+protsendimärki juurde oletatud. Ühikud ja menüüloendid on paketis olemas.
+
+IGAL JÄRGMISEL SAMMUL
+1. Ava FM3-Edit ja tee ainult terminalis nimetatud muudatus.
+2. Ekspordi terve preset SYX-failina ja lohista fail Terminali.
+3. Arvulise juhi puhul sisesta tegelik ekraaninäit. Loendeid ega ühikuid
+   uuesti sisestama ei pea. Menüüväärtuse juures võib Enter kinnitada sihtnime.
+4. Sulge FM3-Edit/Fractal-Bot ja vasta jah, et teha üks GET.
+5. Pärast PASS: GET/SYX 48/48 jätka samast olekust.
+
+Baseline'i üksikute mõõtmiste vahel uuesti ei impordita. Kõik muudatused on
+järjestikused. Iga arvulise juhi kohta: miinimum, maksimum ja kolm eri
+vaheväärtust madalast kõrgemani. Näiteks 0–100% vahemikus 25, 50 ja 75.
+Piirväärtused tuleb lugeda seadmest; pildid neid ei tõenda.
+
+Kümnendkoma ja punkt sobivad. Näiteks 0,5; 100 Hz; 1 kHz; -6 dB.
+Panoraami korral sobivad nii -25/25 kui ka L25/25R või Center.
+Leveli miinimumi jaoks sobib -inf, kui ekraanil on miinus lõpmatus.
+Kolm vaheväärtust peavad erinema üksteisest ja piiridest ning kasvama.
+
+PAUS JA JÄTKAMINE
+- q annab seniste tulemuste ZIP-i ja lõpetab. Ka esimese sammu juures võib q.
+- Jätkamiseks käivita täpselt sama V2 käsk. Programm kontrollib seniseid
+  mõõtmisi ilma uute GET-ideta ja jätkab esimesest lõpetamata sammust.
+- Pärast pausi taasta terminalis näidatud viimase eduka donor.syx faili olek.
+- s jätab ühe punkti koos põhjusega mõõtmata. AlgGET/SYX paari ei saa vahele jätta.
+- Viga või timeout ei tekita automaatset korduspäringut. Katsed säilivad.
+- Vana koguja sessiooni V2 ümber ei kirjuta. Kui seal on juba õnnestunud
+  GET-mõõtmisi, säilita ka vana sessioonikaust ja selle ZIP.
+
+Ainult praeguste tulemuste ZIP ilma GET-ita:
+
+   python3 ~/Downloads/FM3_ENHANCER_FULL_V2/FM3_ENHANCER_FULL.py --export-only
+
+Saada vestlusse programmi näidatud FM3_ENHANCER_FULL_V2_<aeg>_<tunnus>.zip.
+See sisaldab edukaid, vahele jäetud ja ebaõnnestunud katseid. Ootamatu vea
+korral saada osaline ZIP koos veateatega; korduvaid katseid pole vaja ise teha.
+
+Kõik seaded muudad ise FM3-Editis. Koguja saadab ainult ühe kinnitatud GET-i
+mõõtmise kohta. SET/SAVE/STORE ega automaatseid seadmemuudatusi ei ole.
+Hoia Enhancer Scene 2-s bypass'is ja kuulamishelitugevus madalal.
+Muutmata peavad säilima kõik muud plokid, stseenid, modifikaatorid ja ühendused.
+
+Vaja on Python 3 ja Node'i; uusi Python mooduleid ei paigaldata.
+Kogumise järel auditeerime päris andmed, lisame Enhanceri kirjutustoe ning
+teeme ühe ühise importimise/tagasiekspordi/kuulamise ja CPU kontrolli.

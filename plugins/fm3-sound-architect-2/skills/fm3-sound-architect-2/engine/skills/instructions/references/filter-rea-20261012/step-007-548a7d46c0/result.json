@@ -1,0 +1,97 @@
+{
+  "index": 7,
+  "step": {
+    "id": "08",
+    "label": "Gain — C Peaking -20 dB",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Gain",
+        "parameterId": 3,
+        "value": -20,
+        "unit": "dB",
+        "mode": "numeric",
+        "minimum": -20.0,
+        "maximum": 20.0,
+        "options": [],
+        "parameterName": "FILTER_GAIN"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 7,
+    "step": {
+      "id": "08",
+      "label": "Gain — C Peaking -20 dB",
+      "activeChannel": "C",
+      "targets": [
+        {
+          "channel": "C",
+          "type": "Peaking",
+          "binaryId": 6,
+          "parameter": "Gain",
+          "parameterId": 3,
+          "value": -20,
+          "unit": "dB",
+          "mode": "numeric",
+          "minimum": -20,
+          "maximum": 20,
+          "options": [],
+          "parameterName": "FILTER_GAIN"
+        }
+      ],
+      "reason": "missing endpoint or independent check",
+      "allowUnchanged": true
+    },
+    "previousSha256": "783be4134f270b0309877978f8864962ab35c58f9bdc7a6f50da959718203b2f",
+    "syxSha256": "211ef621621c8546c50be76af9fef0370761b8e476f51670871febe17c556833",
+    "bodySha256": "0424f381f155d749bd7231857017013379e1ea5814af5e8a8684de333c76d47f",
+    "changedWords": [
+      {
+        "channel": "C",
+        "pid": 3,
+        "offset": 7768,
+        "before": 32767,
+        "after": 0
+      }
+    ],
+    "targets": [
+      {
+        "channel": "C",
+        "pid": 3,
+        "before": 32767,
+        "after": 0,
+        "wordChanged": true
+      }
+    ],
+    "presetNameChange": null,
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "pending-real-display-and-GET-pair; unchanged words are not isolated-change evidence"
+  },
+  "observations": [
+    {
+      "channel": "C",
+      "parameterId": 3,
+      "requestedValue": -20,
+      "displayText": "-20",
+      "displayValue": -20.0
+    }
+  ],
+  "displayConfirmed": true,
+  "getAuthorized": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "211ef621621c8546c50be76af9fef0370761b8e476f51670871febe17c556833",
+    "bodySha256": "0424f381f155d749bd7231857017013379e1ea5814af5e8a8684de333c76d47f",
+    "rawRxSha256": "2981fb62d9237e30627dbfae14fef3419e813de76a51536e54317c4c1b87634a"
+  }
+}

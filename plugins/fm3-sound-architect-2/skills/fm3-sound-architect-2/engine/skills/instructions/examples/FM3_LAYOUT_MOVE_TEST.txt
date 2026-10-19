@@ -1,0 +1,24 @@
+FM3 LAYOUT MOVE TEST — kahe rea vaba paigutuse seadmekatse (0.75.0)
+
+MIDA SEE KONTROLLIB
+Plokkide liigutamist ruudustikus (uus). Plokkide lisamine on varem kinnitatud.
+Alus: sinu JB_RHYTHM_LEVEL_MINUS3_NewLook.syx. Bonamassa seaded ja stseenid on samad.
+
+Oodatav paigutus FM3-Editis:
+  Rida 2: In 1 (v1) → Comp (v3) → Drive (v5) → Phaser (v7) → Amp (v9) → Cab (v11) → Send (v12)
+  Rida 3: Return (v1) → Chorus (v3) → Delay (v7) → Reverb (v10) → Out 1 (v12)
+  Read 1 ja 4 tühjad; vahepealsed lahtrid on ühendatud hallid shuntid.
+Comp (Optical Compressor), Phaser (Classic Vibe) ja Chorus (Japan CE-2) on lisatud ja
+kõigis stseenides BYPASS, seega heli peaks olema sama mis NewLook-alusel.
+Chorus kanal A Rate = 1.20 Hz (tabelikodeerija kontroll lisatud ploki sees).
+
+TEGEVUS
+1. Impordi see SYX FM3-Editis tühjale presetikohale. Ära muuda midagi.
+2. Vaata, kas ruudustik on nagu ülal ja kõik ühendusjooned on katkematud.
+3. Vali Chorus, kanal A: kas Rate näitab 1.20 Hz?
+4. Ekspordi preset muutmata kujul nimega FM3_LAYOUT_MOVE_TEST_export.syx ja saada see vestlusse.
+   (Vajadusel kirjuta ka CPU % ja kas heli kõlab nagu tavaliselt — madalal helitugevusel.)
+
+Kui midagi on teisiti (plokk vales kohas, katkine joon, import ebaõnnestub), tee ekraanipilt.
+SHA-256: f44f4ddbd53602aa78ee521297ea6423d51078e6584b853b1a25f949c14b3e59
+Tööriist ei ühenda seadet ega saada MIDI-käske.

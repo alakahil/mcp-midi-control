@@ -1,0 +1,144 @@
+{
+  "index": 93,
+  "step": {
+    "id": "094-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "7 Band Pedal — kõigi nähtavate ribade minimum",
+    "channel": "A",
+    "typeName": "7 Band Pedal",
+    "bandCount": 7,
+    "endpoint": "minimum"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "094-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "7 Band Pedal — kõigi nähtavate ribade minimum",
+      "channel": "A",
+      "typeName": "7 Band Pedal",
+      "bandCount": 7,
+      "endpoint": "minimum"
+    },
+    "previousSha256": "09bed21b2801d63e1e8303cd2f23aae6b5838f6e191dcc481d0ee4e7f5c36bdf",
+    "syxSha256": "4c788ec057b3e44f0f3ad2082ae5ff7ddfcafa9c9a6a212362b7f3056b6ff119",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 34132,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 35498,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 36863,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 3,
+        "offset": 8360,
+        "before": 38228,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 4,
+        "offset": 8362,
+        "before": 39593,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 5,
+        "offset": 8364,
+        "before": 40959,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 8366,
+        "before": 42324,
+        "after": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "100",
+      "200",
+      "400",
+      "800",
+      "1.6K",
+      "3.2K",
+      "6.4K"
+    ],
+    "displayValues": [
+      -12.0,
+      -12.0,
+      -12.0,
+      -12.0,
+      -12.0,
+      -12.0,
+      -12.0
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "4c788ec057b3e44f0f3ad2082ae5ff7ddfcafa9c9a6a212362b7f3056b6ff119",
+    "bodySha256": "915559d66e36c54ab5cb2328144cbf80e8dd7c960c9b6c5e73b8a961add7399d",
+    "rawRxSha256": "be8ab8a54fb4f95e4d63f520efaff49c0eeb32b9ae3d54c557018456dd83d3d3",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

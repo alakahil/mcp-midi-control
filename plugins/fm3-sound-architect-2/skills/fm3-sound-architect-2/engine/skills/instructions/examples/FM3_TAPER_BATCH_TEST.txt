@@ -1,0 +1,34 @@
+FM3 TAPER BATCH TEST — kõverate partiikatse (0.74.0)
+Alus: JB_RHYTHM_LEVEL_MINUS3.syx. Muudetud ainult kanal D: 19 parameetrit toorväärtusele 16384 (25% skaalast).
+Kõik muud baidid, stseenid, routing ja nimi peale preseti nime on alusega identsed (kontrollitud).
+
+TEGEVUS
+1. Säilita pooleli olev töö. Impordi see SYX FM3-Editis TÜHJALE presetikohale; ära salvesta olemasoleva peale.
+2. Ava iga allolev plokk, vali kanal D ja kirjuta üles näidatud väärtus täpselt nagu ekraanil.
+   Kui parameetrit selle ploki tüübi juures ei kuvata, kirjuta "ei kuva".
+3. Saada väärtused vestlusse (nt "1: 3.2, 2: -40 ..."). Eksporti pole vaja; kuulamist pole vaja.
+
+Klass 0x05: sisemine vahemik; võimalik, et FM3-Edit näitab 0–10 nuppu (siis oleks näit 2.50).
+Nr | Plokk | Parameeter (FM3-Edit silt) | Vahemik | Kui lineaarne | Kui logaritmiline | Kui 0–10 nupp
+1 | drive D | Slew Rate (FUZZ_SLEW) | 0.10…10.0 | 2.58 | 0.32 | 2.50
+2 | wah D | Drive (WAH_DRIVE) | 0.01…1.00 | 0.26 | 0.03 | 2.50
+3 | wah D | Resonance Q (WAH_Q) | 2.00…20.0 | 6.50 | 3.56 | 2.50
+4 | flanger D | Bass Focus (FLANGER_FOCUS) | 20.0…2000 | 515 | 63.2 | 2.50
+5 | flanger D | Drive (OLD_FLANGER_DRIVE) | 0.00…5.00 | 1.25 | 0.03 | 2.50
+6 | chorus D | Drive (CHORUS_DRIVE) | 0.05…50.0 | 12.5 | 0.28 | 2.50
+7 | delay D | Threshold (DELAY_COMPTHRESH) | -100…-20.0 | -80.0 | — | —
+8 | delay D | Resonance (DELAY_Q) | 0.20…20.0 | 5.15 | 0.63 | 2.50
+9 | delay D | Drive (DELAY_DRIVE) | 0.05…50.0 | 12.5 | 0.28 | 2.50
+10 | reverb D | Drive (REVERB_DRIVE) | 0.01…1.00 | 0.26 | 0.03 | 2.50
+11 | reverb D | Late Level (REVERB_REVERBLEVEL) | -40.0…10.0 | -27.5 | — | —
+12 | reverb D | Early Level (REVERB_EARLYLEVEL) | -40.0…10.0 | -27.5 | — | —
+13 | cab D | Drive (CABINET_DRIVE) | 0.00…1.00 | 0.25 | 0.01 | 2.50
+14 | cab D | Level (CABINET_LEVEL2) | -40.0…0.00 | -30.0 | — | —
+15 | cab D | Level (CABINET_LEVEL1) | -40.0…0.00 | -30.0 | — | —
+16 | amp D | Hardness (DISTORT_PAHARDNESS) | 0.25…4.00 | 1.19 | 0.50 | 2.50
+17 | amp D | Out Comp Clarity (DISTORT_CLARITY) | 0.01…1.00 | 0.26 | 0.03 | 2.50
+18 | compressor D | Threshold (COMP_THRESH2) | -60.0…20.0 | -40.0 | — | —
+19 | compressor D | Threshold (COMP_THRESH) | -60.0…20.0 | -40.0 | — | —
+
+SHA-256: 3f8c96c3d4988648a72964e28b6371a91ff0a067e3d79179c0ab03f8c6991cdf
+Tööriist ei ühenda seadet ega saada MIDI-käske.

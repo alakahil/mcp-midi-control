@@ -1,0 +1,143 @@
+{
+  "remaining": 19,
+  "next": [
+    {
+      "displayNumber": 9,
+      "name": "Dual Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Dual Head Tape",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Ducking Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Graphite Copy Delay",
+      "binaryId": null
+    }
+  ],
+  "captures": [
+    {
+      "folder": "capture-001",
+      "status": "match",
+      "proof": {
+        "paired": true,
+        "matchedWords": 356,
+        "syxSha256": "8de5c706189008d0b0d3269559f945ee7d508257a7260464ee1d4fc27ce607a2",
+        "rawRxSha256": "1dcd2ad6023b543b31b7b8dbd0894a63a94b9d9854119070e6f639a2da02a13d",
+        "channels": [
+          {
+            "channel": "A",
+            "binaryId": 12
+          },
+          {
+            "channel": "B",
+            "binaryId": 13
+          },
+          {
+            "channel": "C",
+            "binaryId": 2
+          },
+          {
+            "channel": "D",
+            "binaryId": 3
+          }
+        ]
+      },
+      "labels": [
+        {
+          "displayNumber": 1,
+          "name": "2290 w/ Modulation",
+          "binaryId": 12,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 2,
+          "name": "Ambient Stereo",
+          "binaryId": 13,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 3,
+          "name": "Analog Mono",
+          "binaryId": 2,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 4,
+          "name": "Analog Stereo",
+          "binaryId": 3,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261006T125747-db13a53ab6",
+      "status": "captured",
+      "proof": {
+        "paired": true,
+        "matchedWords": 356,
+        "syxSha256": "9923f742aa5062a49fa241bcf28a127961a83cf9d0a7aec447dd6ac8fec4bb56",
+        "rawRxSha256": "b7998593476d57e5b1551e5df46440230b36f577ddf01146cce2700d22d5fb80",
+        "channels": [
+          {
+            "channel": "A",
+            "binaryId": 14
+          },
+          {
+            "channel": "B",
+            "binaryId": 0
+          },
+          {
+            "channel": "C",
+            "binaryId": 1
+          },
+          {
+            "channel": "D",
+            "binaryId": 20
+          }
+        ]
+      },
+      "labels": [
+        {
+          "displayNumber": 5,
+          "name": "Deluxe Mind Guy",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 6,
+          "name": "Digital Mono",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 7,
+          "name": "Digital Stereo",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 8,
+          "name": "DM-Two Delay",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    }
+  ]
+}

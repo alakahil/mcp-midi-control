@@ -1,0 +1,21 @@
+FM3 SOUND ARCHITECT — TREMOLO ARENDUSKATSE
+Sihtseade: FM3 Mk II Turbo, firmware 13. Eesmärk: Tremolo tüübimallide kontrollimport.
+Presetinimi säilib alusfailist; failinimi eristab katset.
+Tremolo1 A: Bias Trem (ID 2); täielik 22-sõnaline kogutud mall.
+Tremolo1 B: Optical Trem 2 (ID 5); täielik 22-sõnaline kogutud mall.
+Tremolo1 C: Neon Trem (ID 6); täielik 22-sõnaline kogutud mall.
+Tremolo1 D: Panner (ID 1); täielik 22-sõnaline kogutud mall.
+Kõik parameetrid pärinevad vastavast kogutud mallist; neid ei kirjutata eraldi.
+Need pole tingimata tehaseseaded. Kõik muud plokid, routing, stseenid, bypass ja määramata kanalid säilivad alusfailist.
+Tremolo stseenikanalid 1–8: A, D, A, A, A, A, A, A.
+Kontekst: Ibanez humbuckeritega, OUT 1 stereo FOH. Heli, tasemed ja CPU pole selles katses hinnatud.
+Cab/IR-valikud, lülitid ja expression säilivad alusfailist. Uusi väliseid IR-e ei lisata.
+Kontrollitud offline: GET/SYX lähtepaarid, täpsed kanalisõnad, kaadrid, CRC/footer ja kõigi muude body-baitide säilimine.
+Seadmeimport ja heli: OOTEL. See on tehniline arenduskatse.
+
+1. Säilita praegune töö. Impordi SYX FM3-Editis tööpuhvrisse; ära kirjuta oma presetikohta üle.
+2. Ava Tremolo1 ja vaata järjest kanaleid A–D. Kontrolli ülal nimetatud Type-valikuid; ära paranda seadeid enne eksporti ega liiguta expression-pedaali.
+3. Ekspordi terve preset nimega FM3_TREMOLO_ABCD_TEST_export.syx ning saada vestlusse.
+Kanali vaatamine võib muuta praeguse stseeni Tremolo-kanalivalikut; see erinevus tuleb tagasiekspordis eraldi raporteerida.
+Tööriist ei saada MIDI/SET/SAVE-käske.
+SHA-256: bef7d082b6e79751a8a2f14f92516941965ac6f0b35b1178db3afad4ecd5880c

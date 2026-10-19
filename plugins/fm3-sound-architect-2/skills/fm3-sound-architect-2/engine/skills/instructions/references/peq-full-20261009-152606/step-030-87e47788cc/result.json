@@ -1,0 +1,130 @@
+{
+  "index": 30,
+  "step": {
+    "id": "031-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 5 Type Shelving. Muuda ainult: Band 5 Type → Shelving . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 19,
+        "value": "Shelving",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 30,
+    "step": {
+      "id": "031-types",
+      "stage": "types",
+      "kind": "type",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 5 Type Shelving. Muuda ainult: Band 5 Type → Shelving . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Type",
+          "candidatePid": 19,
+          "value": "Shelving",
+          "band": 5,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "8c0b209cd6c2e5cc11be0dbbe1ad721b0ac1287e3f1fad975e69ceba6d88e749",
+    "syxSha256": "51569ec7260290115ff0742d48090793f747f9a72ec18fa458314fe13feca0ba",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 19,
+        "offset": 8772,
+        "before": 2,
+        "after": 0
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Type",
+        "candidatePid": 19,
+        "value": "Shelving",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 PEQ FULL_20",
+      "after": "FM3 PEQ FULL_30",
+      "beforeHex": "464d33205045512046554c4c5f32302020202020202020202020202020202000",
+      "afterHex": "464d33205045512046554c4c5f33302020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Type",
+        "candidatePid": 19,
+        "value": "Shelving",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": "Shelving"
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "51569ec7260290115ff0742d48090793f747f9a72ec18fa458314fe13feca0ba",
+    "bodySha256": "6fc8a4400d7998477418e7a71c9ca9865070395ad23a7dc5395b365fd48b6573",
+    "rawRxSha256": "51fe8751d043b668e0dce8cf8f5c1de8ffb1c030b9d51b9c4963275f4212fb64",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "index": 168,
+  "step": {
+    "id": "169-control",
+    "kind": "control",
+    "stage": "common",
+    "label": "Balance minimum",
+    "channel": "A",
+    "typeName": "10 Band Variable Q",
+    "parameter": "Balance",
+    "allowUnchanged": true,
+    "endpoint": "minimum"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "169-control",
+      "kind": "control",
+      "stage": "common",
+      "label": "Balance minimum",
+      "channel": "A",
+      "typeName": "10 Band Variable Q",
+      "parameter": "Balance",
+      "allowUnchanged": true,
+      "endpoint": "minimum"
+    },
+    "previousSha256": "b764e0bfde6568b4bba00aa633f9857935360e9e9ad961b86975d307ea7227ab",
+    "syxSha256": "7837e1f26c2fe17df4309d7ba089350d7ea48edfa48bfc19a537931d80e9ae1d",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 12,
+        "offset": 8378,
+        "before": 32767,
+        "after": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "displayValue": -100.0
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "7837e1f26c2fe17df4309d7ba089350d7ea48edfa48bfc19a537931d80e9ae1d",
+    "bodySha256": "705471f740c84e323b3e307fe223181a0e943d57a2bf70e2e3d3d58a94e4d8b6",
+    "rawRxSha256": "1dd467ebff28f7b709439fe28e8ba6edd6e975c7f0d8a8b3500f203900342f45",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

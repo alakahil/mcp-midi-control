@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 21,
+    "name": "Pop Flanger",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 22,
+    "name": "Scion Stereo Flange",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 23,
+    "name": "Spirit Flange",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 24,
+    "name": "Starship Flanger",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

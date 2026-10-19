@@ -1,0 +1,48 @@
+{
+  "baseSha256": "4cc268bdbc68b10159fb7d0fe7c4a3f17ac0336ac02e0d1fdfe4e740fba484c9",
+  "editedSha256": "651b1e29dc0d5d91d2070cbdd368c88c4b00bf050e0b0ea1fb1a32ec3181f119",
+  "integrity": "Both full presets pass inspect",
+  "bodyLength": 14222,
+  "differences": [
+    {
+      "offset": 8640,
+      "before": 50,
+      "after": 204
+    },
+    {
+      "offset": 8641,
+      "before": 179,
+      "after": 76
+    }
+  ],
+  "effectId": 118,
+  "channel": "C",
+  "type": "Zen Master",
+  "paramId": 2,
+  "offset": 8640,
+  "points": [
+    {
+      "display": 7,
+      "raw": 45874
+    },
+    {
+      "display": 3,
+      "raw": 19660
+    }
+  ],
+  "candidateEncoding": "round(display / 10 * 65534)",
+  "otherBodyBytesUnchanged": true,
+  "screenshot": {
+    "file": "zen-master-tone3-level5.png",
+    "channel": "C",
+    "type": "Zen Master",
+    "drive": 8,
+    "voice": 5,
+    "tone": 3,
+    "mixPercent": 100,
+    "level": 5,
+    "levelUnitDisplayed": null,
+    "balance": 0
+  },
+  "status": "Tone encoding matches both tested values; Level 5.00 observed without unit, Level edits and generator hardware import pending"
+}

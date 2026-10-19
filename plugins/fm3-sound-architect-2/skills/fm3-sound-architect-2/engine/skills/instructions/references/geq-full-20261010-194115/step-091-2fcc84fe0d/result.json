@@ -1,0 +1,45 @@
+{
+  "index": 91,
+  "step": {
+    "id": "092-type",
+    "kind": "type",
+    "stage": "types",
+    "label": "7 Band Pedal — Type ja tegelik juhtpaneel",
+    "channel": "A",
+    "typeName": "7 Band Pedal",
+    "bandCount": 7,
+    "allowUnchanged": true
+  },
+  "status": "failed",
+  "comparison": {
+    "step": {
+      "id": "092-type",
+      "kind": "type",
+      "stage": "types",
+      "label": "7 Band Pedal — Type ja tegelik juhtpaneel",
+      "channel": "A",
+      "typeName": "7 Band Pedal",
+      "bandCount": 7,
+      "allowUnchanged": true
+    },
+    "previousSha256": "b0a35c3d215f83bdb3002f0150f92ffa5203da2cfbd29af87c5fcb4d9aede60f",
+    "syxSha256": "b3c05806575a727b88cdcc4de33828ae20fbe6d0835c1f801a61e8e010b04567",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 15,
+        "offset": 8384,
+        "before": 2,
+        "after": 16
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "error": "Vasta jah või ei"
+}

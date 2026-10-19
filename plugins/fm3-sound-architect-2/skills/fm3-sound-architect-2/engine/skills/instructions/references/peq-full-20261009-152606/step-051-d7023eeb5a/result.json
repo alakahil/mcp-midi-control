@@ -1,0 +1,125 @@
+{
+  "index": 51,
+  "step": {
+    "id": "052-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 5 Gain → 3 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": 3,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 51,
+    "step": {
+      "id": "052-numeric",
+      "stage": "numeric",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 5 Gain → 3 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Gain",
+          "candidatePid": 14,
+          "value": 3,
+          "band": 5,
+          "channel": "A",
+          "endpoint": null,
+          "unit": "dB"
+        }
+      ]
+    },
+    "previousSha256": "f62f8d56ffd159b99f4dc442d53fb993daa20d2ac5ce5e71056614f2f392f930",
+    "syxSha256": "634ce20bd46c9e068d8f9faf2293800ecb95ad060b088ea0970abb18c8b291d6",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 14,
+        "offset": 8762,
+        "before": 32767,
+        "after": 37682
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": 3,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB",
+        "raw": 37682
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": 3,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      "displayValue": 3
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "634ce20bd46c9e068d8f9faf2293800ecb95ad060b088ea0970abb18c8b291d6",
+    "bodySha256": "9b784d9c85e2922a0c9d8d0d2d52c3ae8231b1298129e90328ad07f258ee56bf",
+    "rawRxSha256": "41c7e31e57265c6340c2e0d0c402b363da1cbf0c73c787596b544ebce804f765",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 13,
+    "name": "Modern VCA Compressor",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 14,
+    "name": "Optical Compressor",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 15,
+    "name": "Rockguy Compressor",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 16,
+    "name": "Vari-Mu Tube Compressor",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

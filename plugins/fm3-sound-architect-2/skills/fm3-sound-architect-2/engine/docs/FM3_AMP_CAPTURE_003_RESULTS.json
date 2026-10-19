@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-01",
+  "source": {
+    "file": "FM3_AMP_CAPTURE_003.syx",
+    "index": 0,
+    "sha256": "746acad646d9e07e0ba410afa1f9859951d0c7ce903f653117b69b40d093a317",
+    "ignoredSceneSelections": [
+      {
+        "scene": 2,
+        "base": 1,
+        "donor": 0,
+        "action": "Not copied; output keeps base scene selection"
+      }
+    ]
+  },
+  "results": [
+    {
+      "model": "Class-A 30W TB",
+      "sourceChannel": "A",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "1210c8288404b797a7a60c56361c0f9ec6587ca54199fba02d81e474c8a6a6a4"
+    },
+    {
+      "model": "Brit JM45",
+      "sourceChannel": "B",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "080f19574bdbf3b9daf07fbd06f70718f59e008f38f7b6c1d3d21adcbe425581"
+    },
+    {
+      "model": "Plexi 50W Normal",
+      "sourceChannel": "C",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "56ee001c6d414bb545e2c19b25fe8d21d8cf3cb0408ada94e3bf43ac425d0d38"
+    },
+    {
+      "model": "Plexi 50W High 1",
+      "sourceChannel": "D",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "sha256": "8fe79dd8805f4e62445a13abf62f81477ef45d1f88259968a809a5ce167880b0"
+    }
+  ],
+  "hardware": "User source export; generated combinations not separately hardware-confirmed"
+}

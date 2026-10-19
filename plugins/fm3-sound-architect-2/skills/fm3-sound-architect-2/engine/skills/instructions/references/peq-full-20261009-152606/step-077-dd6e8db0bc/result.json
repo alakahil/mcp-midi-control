@@ -1,0 +1,213 @@
+{
+  "index": 77,
+  "step": {
+    "id": "078-channels",
+    "stage": "channels",
+    "kind": "copy-channel",
+    "channel": "B",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal B. Kopeeri ainult PEQ kanali A kõik seaded kanalisse B FM3-Editi kanalikopeerimisega. Seejärel vali PEQ kanal B. Ära kopeeri tervet presetit ega vaheta Scene 2. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [],
+    "sourceChannel": "A"
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 77,
+    "step": {
+      "id": "078-channels",
+      "stage": "channels",
+      "kind": "copy-channel",
+      "channel": "B",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal B. Kopeeri ainult PEQ kanali A kõik seaded kanalisse B FM3-Editi kanalikopeerimisega. Seejärel vali PEQ kanal B. Ära kopeeri tervet presetit ega vaheta Scene 2. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [],
+      "sourceChannel": "A"
+    },
+    "previousSha256": "d97b37ad93e1be9435b7625ed2973b635a0eb425dc271fedd4135ad7d9052896",
+    "syxSha256": "ed78aabc39e2cc3b684c9ea94c06a4f4efaa25107f9d826c26e25acee7820baf",
+    "changedWords": [
+      {
+        "channel": "B",
+        "pid": 0,
+        "offset": 8800,
+        "before": 32767,
+        "after": 55670
+      },
+      {
+        "channel": "B",
+        "pid": 1,
+        "offset": 8802,
+        "before": 19728,
+        "after": 55670
+      },
+      {
+        "channel": "B",
+        "pid": 2,
+        "offset": 8804,
+        "before": 29592,
+        "after": 60458
+      },
+      {
+        "channel": "B",
+        "pid": 3,
+        "offset": 8806,
+        "before": 39455,
+        "after": 62359
+      },
+      {
+        "channel": "B",
+        "pid": 4,
+        "offset": 8808,
+        "before": 39455,
+        "after": 62359
+      },
+      {
+        "channel": "B",
+        "pid": 5,
+        "offset": 8810,
+        "before": 27833,
+        "after": 52495
+      },
+      {
+        "channel": "B",
+        "pid": 6,
+        "offset": 8812,
+        "before": 27833,
+        "after": 52495
+      },
+      {
+        "channel": "B",
+        "pid": 7,
+        "offset": 8814,
+        "before": 27833,
+        "after": 52495
+      },
+      {
+        "channel": "B",
+        "pid": 8,
+        "offset": 8816,
+        "before": 27833,
+        "after": 52495
+      },
+      {
+        "channel": "B",
+        "pid": 9,
+        "offset": 8818,
+        "before": 27833,
+        "after": 52495
+      },
+      {
+        "channel": "B",
+        "pid": 10,
+        "offset": 8820,
+        "before": 32767,
+        "after": 42597
+      },
+      {
+        "channel": "B",
+        "pid": 11,
+        "offset": 8822,
+        "before": 32767,
+        "after": 42597
+      },
+      {
+        "channel": "B",
+        "pid": 12,
+        "offset": 8824,
+        "before": 32767,
+        "after": 42597
+      },
+      {
+        "channel": "B",
+        "pid": 13,
+        "offset": 8826,
+        "before": 32767,
+        "after": 42597
+      },
+      {
+        "channel": "B",
+        "pid": 14,
+        "offset": 8828,
+        "before": 32767,
+        "after": 42597
+      },
+      {
+        "channel": "B",
+        "pid": 15,
+        "offset": 8830,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "channel": "B",
+        "pid": 19,
+        "offset": 8838,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "channel": "B",
+        "pid": 30,
+        "offset": 8860,
+        "before": 1,
+        "after": 5
+      },
+      {
+        "channel": "B",
+        "pid": 31,
+        "offset": 8862,
+        "before": 1,
+        "after": 5
+      }
+    ],
+    "requestedWords": [],
+    "sceneChannelChange": {
+      "scene": 2,
+      "before": "A",
+      "after": "B"
+    },
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "ed78aabc39e2cc3b684c9ea94c06a4f4efaa25107f9d826c26e25acee7820baf",
+    "bodySha256": "c87b28b9f7e5ac721f4878650f6ff13eda43158985761b9a8d9cc5ee65e36d5e",
+    "rawRxSha256": "541293b8337a405139104fbc5fc6b8360458c8228430551708cf052da86564ea",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "B",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

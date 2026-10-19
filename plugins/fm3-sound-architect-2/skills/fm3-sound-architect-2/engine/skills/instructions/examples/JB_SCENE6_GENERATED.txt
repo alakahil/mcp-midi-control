@@ -1,0 +1,12 @@
+FM3 SOUND ARCHITECT — JB SCENE 6
+Preset: JB YDOM RHYTHM
+Siht: FM3 Mk II Turbo, firmware 13.
+Scene 6 nimi: JB SOLO
+Scene 6 Phaser: bypass; kanal D säilitatud.
+Scene 6 Amp kanal: B
+Scene 6 Reverb kanal: A
+Scene 6 Delay: bypass
+Valitud stseen: 2, säilitatud alusfailist.
+Määramata juhte, kõiki muid sisubaite ja presetinime säilitati.
+JB SOLO + bypass vastendub sõltumatule seadmeekspordile; selle genereeritud faili uut importi ega heli pole katsetatud.
+SHA-256: 618ec1e615fe0cac7f334ccb0922eef1cdcd47481af6099d57c4cac6757decdc

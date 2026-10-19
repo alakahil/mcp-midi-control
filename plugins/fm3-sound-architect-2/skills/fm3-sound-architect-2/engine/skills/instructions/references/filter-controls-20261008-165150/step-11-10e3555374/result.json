@@ -1,0 +1,68 @@
+{
+  "index": 11,
+  "step": {
+    "id": "C-level-3",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Level",
+    "value": 3,
+    "unit": "dB",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Level väärtuseks 3 dB. Ekspordi terve preset."
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 11,
+    "step": {
+      "id": "C-level-3",
+      "channel": "C",
+      "type": "Peaking",
+      "binaryId": 6,
+      "parameter": "Level",
+      "value": 3,
+      "unit": "dB",
+      "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Level väärtuseks 3 dB. Ekspordi terve preset."
+    },
+    "previousSha256": "26d2e073130b7a3dbd17bfa5414a265432b108b612b66544c4e089249acb9818",
+    "syxSha256": "77f6c1037c72877cb4b7207cd3d71e965e8c126cbf2ad70a29eba3b5dde1a316",
+    "changedWords": [
+      {
+        "pid": 4,
+        "offset": 7770,
+        "before": 52427,
+        "after": 54393
+      }
+    ],
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "isolated-word-pending-display-and-audit"
+  },
+  "displayValue": 3.0,
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "77f6c1037c72877cb4b7207cd3d71e965e8c126cbf2ad70a29eba3b5dde1a316",
+    "rawRxSha256": "021a2795f307afe88f4a59b5bf0f109750a4d6f3d49d7467b57bb4aa9507dd8c",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 3
+      },
+      {
+        "channel": "B",
+        "binaryId": 1
+      },
+      {
+        "channel": "C",
+        "binaryId": 6
+      },
+      {
+        "channel": "D",
+        "binaryId": 8
+      }
+    ],
+    "scene2Bypass": true
+  }
+}

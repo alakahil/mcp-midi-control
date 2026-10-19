@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "collectorVersion": 2,
+  "readBufferBytes": 256,
+  "receiveTimeoutMs": 20000,
+  "rxChunks": [
+    {
+      "afterMs": 20004,
+      "bytes": 256
+    }
+  ],
+  "date": "2026-10-01T13:58:15.855Z",
+  "port": "/dev/cu.usbmodem11104",
+  "firmwareDeclared": 13,
+  "referenceFile": "FM3_AMP_CAPTURE_004_corrected.syx",
+  "referenceSha256": "7bfadae01975d70b00c675d2ed07c68574061f0a49406178272015f29db39e86",
+  "txHex": "f0000174111f3a0031f7",
+  "txCalls": 1,
+  "rawRxHex": "f000017411743a0040041ef7f000017411750002000000416b027f7f010000000000000000000c00003266027f7f017f7f017f7f017e7f030000004c6a032474010000000000000060032f76005730030100000200000000005710020a00000e5a007f7f013667007f7f01796201760e026e65020000000000000000000468010100007f7f01426b01030000414001000000000000074d027426027325027f7f020000006b62027f7f015170000000001f0a007f7f017f7f017f7f010000007f7f017f7f017f7f017f7f017f7f017f7f017f7f017f7f017f7f012275013b16027e7f037e7f03020000010000074d023959017f7f017f7f017f7f01000000552a",
+  "frames": [
+    [
+      240,
+      0,
+      1,
+      116,
+      17,
+      116,
+      58,
+      0,
+      64,
+      4,
+      30,
+      247
+    ]
+  ],
+  "status": "failed",
+  "error": "No complete Amp reply within 20 seconds"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 37,
+    "name": "Huge: Gymnasium",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 38,
+    "name": "Huge: Ice Castle",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 39,
+    "name": "Huge: Mausoleum",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 40,
+    "name": "Huge: Stone Quarry",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

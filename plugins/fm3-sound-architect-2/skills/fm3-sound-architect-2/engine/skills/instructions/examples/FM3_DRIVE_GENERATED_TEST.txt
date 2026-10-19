@@ -1,0 +1,9 @@
+FM3 Drive kontrollpreset
+Drive1 C: Zen Master
+drive: 2
+tone: 7
+level: 2
+mix: 25%
+Kõik muud kanalid, stseenid ja bypass säilivad alusfailist.
+See on tehniline katse, heli pole häälestatud.
+Zen Master C katse (Drive2/Tone7/Level2/Mix25) seadme kaudu tagasieksport kinnitatud; teisi kombinatsioone pole eraldi imporditud.

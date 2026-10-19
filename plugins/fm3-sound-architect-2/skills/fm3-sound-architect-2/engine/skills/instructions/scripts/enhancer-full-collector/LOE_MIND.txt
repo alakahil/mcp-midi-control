@@ -1,0 +1,109 @@
+FM3 ENHANCER FULL — üks jätkatav kogumispakett
+11.10.2026 / algküsimuste parandus 0.1.1 / FM3 firmware 13
+
+PARANDUS: Modern-vaates Bypass Mode menüüd ei ole. Varasem vaikeloend küsis
+seda ekslikult. Nüüd on Moderni valikuloendis ainult Scene Ignore; Classicu
+ettepanek on Invert;Scene Ignore ja Stereoizeril Scene Ignore. Kinnita need
+tegeliku vaate järgi. Bypass-nupp ei ole Bypass Mode'i valikumenüü.
+Kui mõni küsitud menüü puudub, vasta selle küsimusele puudub või -.
+See eemaldab juhi selle Type plaanist, jätkamata väljamõeldud menüüväärtusega.
+Olemasolevat setup.json-i ega mõõtmisandmeid parandus ümber ei kirjuta.
+
+ALGUS
+1. Paki ZIP lahti Downloads kausta. Tulemuseks peab olema FM3_ENHANCER_FULL kaust.
+2. Ava FM3-Edit. Paketi baseline.syx on sinu muutmata FM3_ENHANCER_BASELINE.syx.
+   Kui sama fail on endiselt muutmata lahti, pole uut importi vaja.
+3. Käivita Terminalis:
+
+   python3 ~/Downloads/FM3_ENHANCER_FULL/FM3_ENHANCER_FULL.py --port /dev/cu.usbmodem211104
+
+   Kui USB-port on muutunud, kasuta tegelikku porti. Portide vaatamiseks:
+
+   ls /dev/cu.usbmodem*
+
+   Vaja on Python 3 ja Node'i. Uusi Python mooduleid pole vaja paigaldada.
+
+ESIMESED KÜSIMUSED: TEGELIKUD JUHID
+Programm küsib järjest Modern, Classic ja Stereoizer juhtpaneeli kohta.
+Vali nimetatud Type FM3-Editis ning vaata kõiki juhte, vajadusel keri paneeli.
+Siin veel GET-päringuid ei tehta. Type muutused on ajutised: pärast küsimusi
+taasta paketi baseline.syx, nagu programm palub.
+
+- Enter kinnitab etteantud arvuliste juhtide loendi AINULT siis, kui see
+  vastab sinu ekraanile. Erinevuse korral kirjuta kõik tegelikult olemasolevad
+  juhid semikooloniga eraldatult. Ära lisa peidetud või puuduvaid juhte.
+- Valikute/lülitite loend on eraldi: Invert, Bypass Mode, Scene Ignore.
+  Phase Invert jaoks kasuta loendis nime Invert; Pan Left/Right jaoks Pan L/R.
+- Inverti KÕIK valikud tuleb lugeda menüüst ja sisestada semikoolonitega.
+  Bypass Mode lisa loendisse ainult siis, kui näed päriselt selle menüüd.
+  Menüü puudumisel vasta puudub või -. Valikute arv ega järjekord pole eeldatud.
+- Kinnita ühikud. Panoraami L/R-näidu korral kirjuta ühikuks L/R.
+- Kui näed loendivälist juhti, kirjuta see viimasesse vastusesse. Programm
+  peatub enne GET-i: saada pilt, et saaksime selle samasse paketti lisada.
+
+PÄRAST ALGKÜSIMUSI
+Taasta FM3-Editis paketi baseline.syx tööpuhvrisse.
+Vali Scene 2, Enhancer 1 kanal A ja bypass. Teised plokid ja seaded säilita.
+Esimene kogumissamm kasutab olemasolevat baseline.syx faili; uut eksporti
+pole vaja. Kinnita Modern ja juhtide loend, sulge FM3-Edit/Fractal-Bot,
+seejärel vasta "jah". Üks GET peab sobima alusfaili kõigi 48 parameetrisõnaga.
+
+KOGUMINE
+Koguja katab kõik alguses kinnitatud juhid kolmel tüübil ning kanalid A–D.
+Iga arvulise juhi kohta on viis punkti: miinimum, maksimum ning kolm
+üksteisest erinevat vaheväärtust järjest madalast kõrgemani. Nii ei eeldata
+vale väärtusvahemikku ega ühikut. Vaheväärtuseks vali mugav ümmargune arv.
+Näiteks 0–100% vahemikus sobivad 25%, 50%, 75%. Sageduste puhul sobivad
+kolm selgelt erinevat piirsageduste vahele jäävat väärtust.
+
+Iga järgmine samm:
+1. Ava FM3-Edit ja tee AINULT terminalis nimetatud muudatus.
+2. Ekspordi terve preset SYX-failina ja lohista fail Terminali.
+3. Sisesta tegelik ekraaninäit. Kümnendkoma ja punkt sobivad.
+   Sobivad ka 1 kHz, 100 Hz, -6 dB, L25, 25R ja Center.
+   Leveli miinimumi jaoks sobib -inf, kui nii on ekraanil.
+4. Sulge FM3-Edit/Fractal-Bot ja vasta "jah", et teha üks GET.
+5. Oota PASS: GET/SYX 48/48 teadet ja jätka samast olekust.
+
+Ära taasta baseline'i üksikute mõõtmiste vahel. See kustutaks juba tehtud
+järjestikused muudatused. Alguses kinnitatud loendist sõltub sammude arv;
+juhendis pakutud loendite ja nelja Invert valiku korral on 86 sammu.
+Kui tegelikke juhte või menüüvalikuid on rohkem/vähem, kohandub sama plaan.
+
+Lõpus kopeerid kogu A kanali B/C/D-sse, muudad igas sihtkanalis ainult Width'i
+ja valid viimaks Scene 2-s uuesti A. Kõik 12 sõna peavad koopias kattuma ning
+Width'i muutmisel peavad muud kanalid säilima.
+
+PAUS JA JÄTKAMINE
+- q lõpetab kogumise ja väljastab seniste tulemuste ZIP-i.
+- Käivita hiljem täpselt sama käsk. Senised mõõtmised kontrollitakse GET-ita
+  ning töö jätkub esimesest lõpetamata sammust.
+- Taasta terminalis näidatud VIIMASE EDUKA donor.syx faili olek, eriti pärast
+  pausi, ebaõnnestunud katset või s kasutamist. Ära kustuta sessioonikausta.
+- s jätab punkti koos põhjusega mõõtmata. Esimest GET/SYX algpaari ei saa
+  vahele jätta. Puuduva piirmõõtmise sõltuvad punktid jäetakse GET-ita vahele.
+- Vea või timeout'i järel automaatset korduspäringut ei tehta. Andmed säilivad.
+- Algküsimustes enne sessiooni loomist q korral mõõtmis-ZIP-i veel ei teki.
+
+Ainult olemasolevate tulemuste ZIP, ilma GET-ita:
+
+   python3 ~/Downloads/FM3_ENHANCER_FULL/FM3_ENHANCER_FULL.py --export-only
+
+Saada vestlusse programmi näidatud FM3_ENHANCER_FULL_<aeg>_<tunnus>.zip.
+Eraldi algGET-paketti pole vaja tagasi saata. Ootamatu peatumise korral sobib
+osaline ZIP koos veatekstiga; ebaõnnestunud katsed jäta alles.
+
+KONTROLLI ULATUS
+Kõik muud plokid, stseenid, modifikaatorid ja ühendused peavad säilima.
+Lubatud on ainult jooksva sammu Enhanceri muudatus ning kanalikatses Scene 2
+Enhanceri kanalivalik. Presetinime muudatus raporteeritakse eraldi.
+Kõik 48 GET/SYX sõna peavad kattuma; muudetud faili kontrollitakse ENNE GET-i.
+
+Seadme muudatused teed ise FM3-Editis. Koguja saadab ühe kinnitatud GET-i
+mõõtmise kohta, ei SET/SAVE/STORE käske ega automaatseid kordusi.
+Hoia Enhancer kogu mõõtmise ajal Scene 2-s bypass'is ja kuulamishelitugevus madal.
+
+Kogumise PASS kinnitab konkreetse GET/SYX paari. Parameetrite tähendused ja
+skaalad auditeerime tulemuste põhjal; alles siis lisame Enhanceri kirjutustoe
+ja teeme ühe ühise impordi/tagasiekspordi/kuulamise ning CPU kontrolli.
+PEQ/GEQ senist kogumist pole vaja korrata.

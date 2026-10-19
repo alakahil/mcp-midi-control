@@ -1,0 +1,74 @@
+{
+  "index": 5,
+  "status": "passed",
+  "step": {
+    "id": "A-mix",
+    "kind": "control",
+    "channel": "A",
+    "binaryId": 19,
+    "field": "Mix",
+    "pid": 4,
+    "value": 25,
+    "instruction": "Jäta Drive1 kanal A ja tüüp BB Pre. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "A-mix",
+      "kind": "control",
+      "channel": "A",
+      "binaryId": 19,
+      "field": "Mix",
+      "pid": 4,
+      "value": 25,
+      "instruction": "Jäta Drive1 kanal A ja tüüp BB Pre. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8468,
+        "before": 254,
+        "after": 0
+      },
+      {
+        "offset": 8469,
+        "before": 255,
+        "after": 64
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Mix",
+      "userConfirmedDisplayValue": 25,
+      "rawBefore": 65534,
+      "rawAfter": 16384,
+      "candidateRaw": 16384,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "8d0490896a7c3dbdc9465a32fc8c155938bf8688cb4f5c64eda918912977639f",
+    "rawRxSha256": "419556dd60f862837091689176874dc6cfd0f265b060d0617bd6292bc164bd4e",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 12
+      },
+      {
+        "channel": "C",
+        "binaryId": 26
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

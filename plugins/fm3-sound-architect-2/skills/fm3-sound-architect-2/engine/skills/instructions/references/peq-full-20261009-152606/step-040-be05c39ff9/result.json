@@ -1,0 +1,23 @@
+{
+  "index": 40,
+  "step": {
+    "id": "041-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 1 Q → 1.4 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 1.4,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "failed",
+  "error": "Muutus väljaspool PEQ parameetreid või Scene 2 PEQ kanalivalikut, bait 7618. GET-i ei saadetud."
+}

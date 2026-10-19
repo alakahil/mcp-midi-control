@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 38,
+    "expectedId": 37,
+    "name": "4x12 Lerxst",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 41,
+    "expectedId": 40,
+    "name": "4x12 Rumble EV12L",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 42,
+    "expectedId": 41,
+    "name": "4x12 Rumble EV12S",
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 43,
+    "expectedId": 42,
+    "name": "4x12 Solo 100",
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

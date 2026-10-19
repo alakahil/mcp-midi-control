@@ -1,0 +1,50 @@
+{
+  "registrySha256": "95d2146076e33175209d5270d93e7568ac5cc6695d1bf3b108b2adfabe4d2a21",
+  "passedSteps": 87,
+  "fullSessionPairs": 74,
+  "supplementPairs": 13,
+  "resolvedSkippedSteps": 12,
+  "excludedAttempts": 2,
+  "pairedWordsPerStep": 48,
+  "matchedWordsTotal": 4176,
+  "typeCount": 3,
+  "numericAnchors": 68,
+  "enumAnchors": 10,
+  "channelCopies": [
+    79,
+    81,
+    83
+  ],
+  "independentChannelWidth": [
+    80,
+    82,
+    84
+  ],
+  "sceneSelections": [
+    79,
+    81,
+    83,
+    85
+  ],
+  "opaquePids": [
+    5
+  ],
+  "bypass": "Scene header control; no Bypass Mode menu observed",
+  "panLeft": "-100..100, unitless. Measured points -100,+100,0,+40,+80; three distinct interior values are valid regardless of collector point labels.",
+  "hardware": "Measured GET/SYX states confirmed; newly generated composition awaits import/export, listening and CPU",
+  "typeCoupledChanges": [
+    {
+      "source": "full",
+      "index": 78,
+      "changes": [
+        {
+          "channel": "A",
+          "pid": 10,
+          "offset": 7526,
+          "before": 58981,
+          "after": 32767
+        }
+      ]
+    }
+  ]
+}

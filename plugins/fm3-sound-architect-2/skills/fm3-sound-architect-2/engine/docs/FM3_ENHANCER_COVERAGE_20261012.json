@@ -1,0 +1,765 @@
+{
+  "date": "2026-10-12",
+  "sourceZipSha256": "98c35922cf15ced5b2c843aabc7534b9860f084cdc0528a3ecc4966e5d7c780b",
+  "revalidated": true,
+  "planSteps": 86,
+  "statuses": {
+    "passed": 74,
+    "failed": 2,
+    "skipped": 12
+  },
+  "pairedWordsEach": 48,
+  "copyAndIndependentChannelsValidated": true,
+  "allOtherBodyBytesPreserved": true,
+  "skipped": [
+    {
+      "index": 34,
+      "label": "Classic — Pan L minimum",
+      "reason": "oli juba miinimumis -100",
+      "automatic": false
+    },
+    {
+      "index": 35,
+      "label": "Classic — Pan L maximum",
+      "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+      "automatic": true
+    },
+    {
+      "index": 36,
+      "label": "Classic — Pan L lower",
+      "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+      "automatic": true
+    },
+    {
+      "index": 37,
+      "label": "Classic — Pan L middle",
+      "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+      "automatic": true
+    },
+    {
+      "index": 38,
+      "label": "Classic — Pan L upper",
+      "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+      "automatic": true
+    },
+    {
+      "index": 49,
+      "label": "Classic — Level minimum",
+      "reason": "juba mõõdetud, samad väärtused",
+      "automatic": false
+    },
+    {
+      "index": 50,
+      "label": "Classic — Level maximum",
+      "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+      "automatic": true
+    },
+    {
+      "index": 51,
+      "label": "Classic — Level lower",
+      "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+      "automatic": true
+    },
+    {
+      "index": 52,
+      "label": "Classic — Level middle",
+      "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+      "automatic": true
+    },
+    {
+      "index": 53,
+      "label": "Classic — Level upper",
+      "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+      "automatic": true
+    },
+    {
+      "index": 58,
+      "label": "Classic — Scene Ignore ON",
+      "reason": "juba mõõdetud",
+      "automatic": false
+    },
+    {
+      "index": 59,
+      "label": "Classic — Scene Ignore OFF",
+      "reason": "juba mõõdetud",
+      "automatic": false
+    }
+  ],
+  "measuredPoints": [
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "minimum",
+      "display": 0.0,
+      "rawWord": 0,
+      "candidatePid": 0,
+      "folder": "step-001-7c78b568bd"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "maximum",
+      "display": 100.0,
+      "rawWord": 65534,
+      "candidatePid": 0,
+      "folder": "step-002-ebb2d1a1d2"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "lower",
+      "display": 20.0,
+      "rawWord": 13107,
+      "candidatePid": 0,
+      "folder": "step-003-953d9ddeb7"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "middle",
+      "display": 50.0,
+      "rawWord": 32767,
+      "candidatePid": 0,
+      "folder": "step-004-0876b34511"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "upper",
+      "display": 90.0,
+      "rawWord": 58981,
+      "candidatePid": 0,
+      "folder": "step-005-db331d03d6"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "minimum",
+      "display": 0.0,
+      "rawWord": 0,
+      "candidatePid": 1,
+      "folder": "step-006-002de45c41"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "maximum",
+      "display": 100.0,
+      "rawWord": 65534,
+      "candidatePid": 1,
+      "folder": "step-007-10c32c018a"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "lower",
+      "display": 20.0,
+      "rawWord": 13107,
+      "candidatePid": 1,
+      "folder": "step-008-b065f4bd56"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "middle",
+      "display": 50.0,
+      "rawWord": 32767,
+      "candidatePid": 1,
+      "folder": "step-009-01dd63104e"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "upper",
+      "display": 80.0,
+      "rawWord": 52427,
+      "candidatePid": 1,
+      "folder": "step-010-c7d239cbec"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "point": "minimum",
+      "display": 20.0,
+      "rawWord": 0,
+      "candidatePid": 2,
+      "folder": "step-011-4afe8e3074"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "point": "maximum",
+      "display": 2000.0,
+      "rawWord": 65534,
+      "candidatePid": 2,
+      "folder": "step-012-121956b84f"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "point": "lower",
+      "display": 50.0,
+      "rawWord": 13039,
+      "candidatePid": 2,
+      "folder": "step-013-6fe53655fb"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "point": "middle",
+      "display": 200.0,
+      "rawWord": 32767,
+      "candidatePid": 2,
+      "folder": "step-014-161c7e2616"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "point": "upper",
+      "display": 1200.0,
+      "rawWord": 58265,
+      "candidatePid": 2,
+      "folder": "step-015-cbac7d29e6"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "point": "minimum",
+      "display": 200.0,
+      "rawWord": 0,
+      "candidatePid": 3,
+      "folder": "step-016-b764c5a2c1"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "point": "maximum",
+      "display": 20000.0,
+      "rawWord": 65534,
+      "candidatePid": 3,
+      "folder": "step-017-8847d341d0"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "point": "lower",
+      "display": 500.0,
+      "rawWord": 13039,
+      "candidatePid": 3,
+      "folder": "step-018-7002384e17"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "point": "middle",
+      "display": 1900.0,
+      "rawWord": 32037,
+      "candidatePid": 3,
+      "folder": "step-019-84404523c8"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "point": "upper",
+      "display": 12500.0,
+      "rawWord": 58846,
+      "candidatePid": 3,
+      "folder": "step-020-4ad545da37"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "minimum",
+      "display": -80.0,
+      "rawWord": 0,
+      "candidatePid": 4,
+      "folder": "step-021-1ea1bf8987"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "maximum",
+      "display": 20.0,
+      "rawWord": 65534,
+      "candidatePid": 4,
+      "folder": "step-022-b3ad3da7ef"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "lower",
+      "display": -70.0,
+      "rawWord": 6553,
+      "candidatePid": 4,
+      "folder": "step-023-3a582b1975"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "middle",
+      "display": -30.0,
+      "rawWord": 32767,
+      "candidatePid": 4,
+      "folder": "step-024-fd37afb938"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "upper",
+      "display": 10.0,
+      "rawWord": 58981,
+      "candidatePid": 4,
+      "folder": "step-025-dd5711eb1d"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "point": null,
+      "display": "ON",
+      "rawWord": 1,
+      "candidatePid": 11,
+      "folder": "step-026-9b2e94b561"
+    },
+    {
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "point": null,
+      "display": "OFF",
+      "rawWord": 0,
+      "candidatePid": 11,
+      "folder": "step-027-7faa2fe22a"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "minimum",
+      "display": 0.0,
+      "rawWord": 0,
+      "candidatePid": 0,
+      "folder": "step-029-0215cbf97e"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "maximum",
+      "display": 100.0,
+      "rawWord": 65534,
+      "candidatePid": 0,
+      "folder": "step-030-38df6e6528"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "lower",
+      "display": 20.0,
+      "rawWord": 13107,
+      "candidatePid": 0,
+      "folder": "step-031-9e1cebbac9"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "middle",
+      "display": 50.0,
+      "rawWord": 32767,
+      "candidatePid": 0,
+      "folder": "step-032-27aa2f1050"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "upper",
+      "display": 80.0,
+      "rawWord": 52427,
+      "candidatePid": 0,
+      "folder": "step-033-4320fd3b93"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "point": "minimum",
+      "display": -100.0,
+      "rawWord": 0,
+      "candidatePid": 9,
+      "folder": "step-039-e6902f3774"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "point": "maximum",
+      "display": 100.0,
+      "rawWord": 65534,
+      "candidatePid": 9,
+      "folder": "step-040-4f0cf5829e"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "point": "lower",
+      "display": -80.0,
+      "rawWord": 6553,
+      "candidatePid": 9,
+      "folder": "step-041-18c2adce6c"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "point": "middle",
+      "display": 0.0,
+      "rawWord": 32767,
+      "candidatePid": 9,
+      "folder": "step-042-807e673987"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "point": "upper",
+      "display": 80.0,
+      "rawWord": 58981,
+      "candidatePid": 9,
+      "folder": "step-043-96673b4796"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "point": "minimum",
+      "display": -100.0,
+      "rawWord": 0,
+      "candidatePid": 10,
+      "folder": "step-044-ae5b14d69f"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "point": "maximum",
+      "display": 100.0,
+      "rawWord": 65534,
+      "candidatePid": 10,
+      "folder": "step-045-90f79794e8"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "point": "lower",
+      "display": -80.0,
+      "rawWord": 6553,
+      "candidatePid": 10,
+      "folder": "step-046-f4a75f2f11"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "point": "middle",
+      "display": 0.0,
+      "rawWord": 32767,
+      "candidatePid": 10,
+      "folder": "step-047-c20957d9b9"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "point": "upper",
+      "display": 80.0,
+      "rawWord": 58981,
+      "candidatePid": 10,
+      "folder": "step-048-02e5375899"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Invert",
+      "point": null,
+      "display": "Both",
+      "rawWord": 3,
+      "candidatePid": 7,
+      "folder": "step-054-465ee64ab4"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Invert",
+      "point": null,
+      "display": "Left",
+      "rawWord": 2,
+      "candidatePid": 7,
+      "folder": "step-055-dbc6ea9d5e"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Invert",
+      "point": null,
+      "display": "None",
+      "rawWord": 0,
+      "candidatePid": 7,
+      "folder": "step-056-9854318154"
+    },
+    {
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Invert",
+      "point": null,
+      "display": "Right",
+      "rawWord": 1,
+      "candidatePid": 7,
+      "folder": "step-057-93db4b5bf1"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "minimum",
+      "display": 0.0,
+      "rawWord": 0,
+      "candidatePid": 0,
+      "folder": "step-061-2f6e8fe150"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "maximum",
+      "display": 100.0,
+      "rawWord": 65534,
+      "candidatePid": 0,
+      "folder": "step-062-b4415644f9"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "lower",
+      "display": 20.0,
+      "rawWord": 13107,
+      "candidatePid": 0,
+      "folder": "step-063-5852218883"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "middle",
+      "display": 50.0,
+      "rawWord": 32767,
+      "candidatePid": 0,
+      "folder": "step-064-b09dd4206f"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "point": "upper",
+      "display": 80.0,
+      "rawWord": 52427,
+      "candidatePid": 0,
+      "folder": "step-065-aaa727278d"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "minimum",
+      "display": 0.0,
+      "rawWord": 0,
+      "candidatePid": 1,
+      "folder": "step-066-acd6c5762f"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "maximum",
+      "display": 100.0,
+      "rawWord": 65534,
+      "candidatePid": 1,
+      "folder": "step-067-297532ddfd"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "lower",
+      "display": 20.0,
+      "rawWord": 13107,
+      "candidatePid": 1,
+      "folder": "step-068-da7c463625"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "middle",
+      "display": 50.0,
+      "rawWord": 32767,
+      "candidatePid": 1,
+      "folder": "step-069-03bf3547f0"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "point": "upper",
+      "display": 80.0,
+      "rawWord": 52427,
+      "candidatePid": 1,
+      "folder": "step-070-9e9bf21fb8"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "minimum",
+      "display": -80.0,
+      "rawWord": 0,
+      "candidatePid": 4,
+      "folder": "step-071-fc34b16651"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "maximum",
+      "display": 20.0,
+      "rawWord": 65534,
+      "candidatePid": 4,
+      "folder": "step-072-ea672a19cb"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "lower",
+      "display": -70.0,
+      "rawWord": 6553,
+      "candidatePid": 4,
+      "folder": "step-073-3063299f49"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "middle",
+      "display": -30.0,
+      "rawWord": 32767,
+      "candidatePid": 4,
+      "folder": "step-074-3706bb3a65"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "point": "upper",
+      "display": 10.0,
+      "rawWord": 58981,
+      "candidatePid": 4,
+      "folder": "step-075-200120ad09"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "point": null,
+      "display": "ON",
+      "rawWord": 1,
+      "candidatePid": 11,
+      "folder": "step-076-e5b66a7554"
+    },
+    {
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "point": null,
+      "display": "OFF",
+      "rawWord": 0,
+      "candidatePid": 11,
+      "folder": "step-077-429c1cc706"
+    },
+    {
+      "type": "Modern",
+      "channel": "B",
+      "parameter": "Width",
+      "point": null,
+      "display": 25.0,
+      "rawWord": 16384,
+      "candidatePid": 0,
+      "folder": "step-080-a942162a76"
+    },
+    {
+      "type": "Modern",
+      "channel": "C",
+      "parameter": "Width",
+      "point": null,
+      "display": 75.0,
+      "rawWord": 49151,
+      "candidatePid": 0,
+      "folder": "step-082-1d3627d4b6"
+    },
+    {
+      "type": "Modern",
+      "channel": "D",
+      "parameter": "Width",
+      "point": null,
+      "display": 35.0,
+      "rawWord": 22937,
+      "candidatePid": 0,
+      "folder": "step-084-1514ac015b"
+    }
+  ],
+  "typeMapping": {
+    "Modern": 0,
+    "Classic": 1,
+    "Stereoizer": 2
+  },
+  "invertMapping": {
+    "None": 0,
+    "Right": 1,
+    "Left": 2,
+    "Both": 3
+  },
+  "generatorSupport": false,
+  "supplementPlanSteps": 13,
+  "supplementControls": 12,
+  "hardwareAudioCpuOfGeneratedPresetPending": true
+}

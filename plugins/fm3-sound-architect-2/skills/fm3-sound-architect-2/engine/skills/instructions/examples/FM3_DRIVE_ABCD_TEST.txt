@@ -1,0 +1,8 @@
+FM3 Drive nelja kanali kontrollpreset
+A: BB Pre; {"drive":2,"level":2,"mix":25}
+B: T808 OD; {"drive":2,"tone":7,"level":2,"mix":25}
+C: Rat Distortion; {"level":2,"mix":25}
+D: Zen Master; {"drive":2,"tone":7,"level":2,"mix":25}
+Määramata seaded pärinevad kogutud tüübi kanalist.
+Stseenid ja bypass säilivad alusfailist. Heli pole häälestatud.
+ABCD testpreseti seadme kaudu tagasieksport on kinnitatud; teisi kombinatsioone pole eraldi imporditud.

@@ -1,0 +1,74 @@
+{
+  "index": 9,
+  "status": "passed",
+  "step": {
+    "id": "B-level",
+    "kind": "control",
+    "channel": "B",
+    "binaryId": 6,
+    "field": "Level",
+    "pid": 3,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "B-level",
+      "kind": "control",
+      "channel": "B",
+      "binaryId": 6,
+      "field": "Level",
+      "pid": 3,
+      "value": 2,
+      "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8554,
+        "before": 255,
+        "after": 51
+      },
+      {
+        "offset": 8555,
+        "before": 127,
+        "after": 51
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Level",
+      "userConfirmedDisplayValue": 2,
+      "rawBefore": 32767,
+      "rawAfter": 13107,
+      "candidateRaw": 13107,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "260dbe9a5bd3ff34c8b408bf70dacd2fc902dded898a8cc861a7f08d03853c64",
+    "rawRxSha256": "d52d9a8ad2dcb383809b5ebe87bb0962676b84d403c69ffad4e094efb28b11eb",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 26
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

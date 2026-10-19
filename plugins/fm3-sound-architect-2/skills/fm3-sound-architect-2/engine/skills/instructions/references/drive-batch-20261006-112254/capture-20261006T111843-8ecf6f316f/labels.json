@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 69,
+    "name": "Sunrise Splendor Hi-Cut",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 70,
+    "name": "Super Fuzz",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 71,
+    "name": "Super OD",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 72,
+    "name": "Swedish Metal",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

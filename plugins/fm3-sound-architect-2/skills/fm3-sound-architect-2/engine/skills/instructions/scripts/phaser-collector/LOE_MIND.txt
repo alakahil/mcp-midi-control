@@ -1,0 +1,14 @@
+FM3 Phaser tüüpide partiikogumine — firmware 13
+
+Esimesed 4 tüüpi on kinnitatud GET/SYX paariga kaasas; 13 on puudu.
+Vajalikud Python 3 ja Node (samad eeldused nagu varasemal kogujal).
+Paki kaust Downloads-kausta. Käivita:
+python3 ~/Downloads/FM3_PHASER_COLLECTOR/FM3_PHASER_BATCH.py --session ~/Documents/FM3_PHASER_SESSION --port /dev/cu.usbmodem211104
+
+Muuda FM3-Editis ainult Phaser 1 kanalite Type-valikuid programmi juhiste järgi. Tüübi automaatseid muudatusi ära taasta. Muud plokid ja stseen jäta samaks.
+Esimene uus nelik: A Digital Mono, B Digital Stereo, C FAS Vibe, D Modern Vibe.
+Ekspordi terve preset SYX-failina. Lohista fail Terminali. Enne GET-kinnitust sulge FM3-Edit.
+Programm teeb ühe kinnitatud GET lugemispäringu; SET/SAVE ega automaatseid korduspäringuid ei ole.
+Esimese uue neliku eduka kontrolli järel sisesta q ja saada tekkinud ZIP vestlusse.
+Jätkamiseks kasuta sama käsku ja sama sessioonikausta. Viimases rühmas muuda ainult nimetatud kanalit.
+Säilita FM3_PHASER_SESSION kaust ja viimane tulemuste ZIP.

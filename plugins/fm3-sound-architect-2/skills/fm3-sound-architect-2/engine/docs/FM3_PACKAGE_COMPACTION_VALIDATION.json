@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-12",
+  "passed": true,
+  "sourceVersion": "0.71.0",
+  "candidateVersion": "0.72.0",
+  "sourceRelease": "pluginrel_6accb294144c819188915fe15499350c",
+  "sourceArchiveEntries": 5042,
+  "archivedFiles": 990,
+  "uniqueHistoricalContents": 164,
+  "allArchivedFilesMatchCurrentRemoteAndRestoredBytes": true,
+  "activeAmpRegistryUnchanged": true,
+  "retainedGeneratorCodeUnchangedFromTested0711": true,
+  "retainedFilesChangedFrom0711": [
+    ".codex-plugin/plugin.json",
+    "plugin.json",
+    "skills/instructions/SKILL.md"
+  ],
+  "manifestMetadataAndPromptsPreserved": true,
+  "ampValidation": {
+    "passed": true,
+    "ampReady": 336,
+    "missing": 0,
+    "verifiedInlineTemplates": 331,
+    "latestSessionSuccessfulPairs": 81,
+    "latestSessionHistoricalFailed": 1,
+    "archivedFilesRestoredByteExactly": 990,
+    "ampLibraryUnchanged": true
+  },
+  "compactArchiveAndPackageChecks": {
+    "passed": true,
+    "wrongBytesRejected": true,
+    "pathTraversalRejected": true,
+    "symlinkRejected": true,
+    "differentExistingFilePreserved": true,
+    "sameFileRestoreIdempotent": true,
+    "releaseBudgetBoundaryChecked": true
+  },
+  "presetValidation": {
+    "enhancerOriginalEvidenceBodyReplays": 87,
+    "enhancerBodyBytes": 13804,
+    "enhancerUnchangedWords": 48,
+    "byteIdenticalGeneratedPresets": [
+      "JB_EIGHT_SCENES_V3",
+      "FM3_PEQ_ABCD_TEST",
+      "FM3_GEQ_ABCD_TEST",
+      "FM3_ENHANCER_ABCD_TEST"
+    ],
+    "invalidEnhancerRequestsRejected": 27,
+    "userObservedMaximumCpuPercent": 52.7,
+    "scope": "Existing exact hardware specimen; this validation performs no hardware I/O"
+  },
+  "publishStatus": "Prepared candidate; publication must be verified separately",
+  "candidateFileCount": 2866,
+  "candidateDirectoryCount": 699,
+  "candidateConservativeArchiveEntries": 3566,
+  "releaseBudget": 4000,
+  "headroomToPlatformLimit": 1434
+}

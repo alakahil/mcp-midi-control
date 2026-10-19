@@ -1,0 +1,53 @@
+{
+  "generator": "jb-scenes-0.3.0",
+  "spec": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-ydom-rhythm",
+    "name": "JB YDOM RHYTHM",
+    "scene6Name": "JB SOLO",
+    "phaserScene6Bypass": true,
+    "reverbScene6": "D",
+    "delayScene6Bypass": false,
+    "ampScene6": "C"
+  },
+  "baseSha256": "bffe9dd559b443ebe3822532e951a27cb0a827600cb929d52dfccd3228d611ca",
+  "outputSha256": "4d51565e9f3e23d79688f92d8a6f48e2ec12b703c86ec65fe94dff6a11e92b18",
+  "changedBodyOffsets": [
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    4630,
+    7382,
+    9228,
+    9538
+  ],
+  "selectedScene": 2,
+  "ampScene6": "C",
+  "reverbScene6": "D",
+  "delayScene6Bypass": false,
+  "scene6Name": "JB SOLO",
+  "phaserScene6Bypass": true,
+  "checks": {
+    "frames": true,
+    "crc": true,
+    "footer": true,
+    "exactExpectedBody": true,
+    "noCollateralChanges": true,
+    "selectedScenePreserved": true,
+    "headerPreserved": true
+  },
+  "hardware": "JB SOLO + Phaser bypass, Reverb A/D, Delay bypass/on and Amp B/C have independent hardware-export references; this generated file not reimported.",
+  "audio": "not assessed",
+  "limitations": [
+    "Exact original JB source only",
+    "Scene 6 only; no Phaser type/channel or routing changes",
+    "Other names are file-validated, not individually hardware-tested"
+  ]
+}

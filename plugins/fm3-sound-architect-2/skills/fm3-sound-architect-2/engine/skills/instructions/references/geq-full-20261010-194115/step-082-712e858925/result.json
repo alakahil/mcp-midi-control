@@ -1,0 +1,45 @@
+{
+  "index": 82,
+  "step": {
+    "id": "083-type",
+    "kind": "type",
+    "stage": "types",
+    "label": "7 Band Constant Q — Type ja tegelik juhtpaneel",
+    "channel": "A",
+    "typeName": "7 Band Constant Q",
+    "bandCount": 7,
+    "allowUnchanged": true
+  },
+  "status": "failed",
+  "comparison": {
+    "step": {
+      "id": "083-type",
+      "kind": "type",
+      "stage": "types",
+      "label": "7 Band Constant Q — Type ja tegelik juhtpaneel",
+      "channel": "A",
+      "typeName": "7 Band Constant Q",
+      "bandCount": 7,
+      "allowUnchanged": true
+    },
+    "previousSha256": "b63db4594328a3811705b290d4d287c8dcabbda19f6c4fe6f10c310683ae378e",
+    "syxSha256": "665b1dc0d92fc2b3394dbedf8d5e7b5e1420b09947ab3daea6d09aaf468d0926",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 15,
+        "offset": 8384,
+        "before": 17,
+        "after": 2
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "error": "Vasta jah või ei"
+}

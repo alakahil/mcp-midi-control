@@ -1,0 +1,99 @@
+{
+  "index": 10,
+  "step": {
+    "id": "011-type",
+    "kind": "type",
+    "stage": "types",
+    "label": "3 Band Passive — Type ja tegelik juhtpaneel",
+    "channel": "A",
+    "typeName": "3 Band Passive",
+    "bandCount": 3,
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "011-type",
+      "kind": "type",
+      "stage": "types",
+      "label": "3 Band Passive — Type ja tegelik juhtpaneel",
+      "channel": "A",
+      "typeName": "3 Band Passive",
+      "bandCount": 3,
+      "allowUnchanged": true
+    },
+    "previousSha256": "a6d1173ca3b62fa0a5abcfbd9c3c5e24f093471e5852e4ab17015b7bfcb6eeb3",
+    "syxSha256": "7f3bf20c35ec791b09706cccbeb2b9bfa05171bc8caaf33eff3b0f9607a0f8cc",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 15,
+        "offset": 8384,
+        "before": 11,
+        "after": 10
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 GEQ SEL_3",
+      "after": "FM3 GEQ SEL_10",
+      "beforeHex": "464d33204745512053454c5f3320202020202020202020202020202020202000",
+      "afterHex": "464d33204745512053454c5f3130202020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "ui": {
+      "typeName": "3 Band Passive",
+      "bandLabels": [
+        "Low",
+        "Mid",
+        "High"
+      ],
+      "masterQVisible": true,
+      "extraControls": ""
+    }
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "7f3bf20c35ec791b09706cccbeb2b9bfa05171bc8caaf33eff3b0f9607a0f8cc",
+    "bodySha256": "ce09b9916746eacc80c4494a9e01f28e99e36cf13d78a1547d45196ced07afe9",
+    "rawRxSha256": "d328acf8f0d199f85abb0f4f1cfd8fd46a7577ab0d51b00140f98047a73434a8",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "date": "2026-10-09",
+  "generator": "jb-composer-0.10.1",
+  "passed": true,
+  "generatedFile": "examples/FM3_PEQ_ABCD_TEST.syx",
+  "generatedSha256": "a94e6fe3cc4b0f76434b56b93809c15f973810ee1635cdc91f87153e604395da",
+  "exportFile": "examples/FM3_PEQ_ABCD_TEST_export.syx",
+  "exportSha256": "b4794f55fe14565029ebaca6f2e9d7cac39572b5d33bcc0a2c9802e5cc6a6c5b",
+  "bodySha256": "e78189a469c6cfe436bd586715e3d4cc6a91dd4b1539b90f5da9a8b20482df46",
+  "hardwareExportLibraryFileId": "libfile_178113e2e4008191b94dab8d95226c32",
+  "fullFilesIdentical": false,
+  "bodyBytes": 13456,
+  "changedBodyOffsets": [],
+  "presetName": "FM3 PEQ ABCD TEST",
+  "selectedScene": 2,
+  "headerChanges": [
+    {
+      "offset": 4,
+      "field": "CRC",
+      "before": 76,
+      "after": 175
+    },
+    {
+      "offset": 5,
+      "field": "CRC",
+      "before": 201,
+      "after": 151
+    }
+  ],
+  "peq": {
+    "effectId": 54,
+    "recordOffset": 8688,
+    "recordBytes": 310,
+    "matchedParameterWords": 132,
+    "sceneChannels": [
+      "A",
+      "A",
+      "B",
+      "C",
+      "A",
+      "D",
+      "A",
+      "A"
+    ],
+    "activeScenes": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "channels": [
+      {
+        "channel": "A",
+        "values": {
+          "bands": [
+            {
+              "band": 1,
+              "type": "Blocking",
+              "frequencyHz": 84.99749092189239,
+              "slopeDbPerOct": 12,
+              "solo": false
+            },
+            {
+              "band": 2,
+              "type": "Peaking",
+              "frequencyHz": 349.9882533921358,
+              "q": 0.8000253204032962,
+              "gainDb": -1.500289925840022,
+              "solo": false
+            },
+            {
+              "band": 3,
+              "type": "Peaking",
+              "frequencyHz": 900.0212309381711,
+              "q": 1.0999757196471296,
+              "gainDb": 0.999786370433668,
+              "solo": false
+            },
+            {
+              "band": 4,
+              "type": "Peaking",
+              "frequencyHz": 2799.9946455743348,
+              "q": 0.9000212309381711,
+              "gainDb": -0.999786370433668,
+              "solo": false
+            },
+            {
+              "band": 5,
+              "type": "Blocking",
+              "frequencyHz": 6500.053857695757,
+              "slopeDbPerOct": 12,
+              "solo": false
+            }
+          ],
+          "levelDb": -0.4992828150273141,
+          "balance": 0,
+          "bypassMode": "Thru",
+          "sceneIgnore": false
+        }
+      },
+      {
+        "channel": "B",
+        "values": {
+          "bands": [
+            {
+              "band": 1,
+              "type": "Peaking 2",
+              "frequencyHz": 120.00268140927163,
+              "q": 0.8000253204032962,
+              "gainDb": -0.999786370433668,
+              "solo": false
+            },
+            {
+              "band": 2,
+              "type": "Peaking 2",
+              "frequencyHz": 419.99971966216367,
+              "q": 1.20003947444369,
+              "gainDb": -1.500289925840022,
+              "solo": false
+            },
+            {
+              "band": 3,
+              "type": "Peaking 2",
+              "frequencyHz": 1200.0394744436899,
+              "q": 1.3000382020586418,
+              "gainDb": 1.500289925840022,
+              "solo": false
+            },
+            {
+              "band": 4,
+              "type": "Peaking 2",
+              "frequencyHz": 3099.902273061281,
+              "q": 1.0999757196471296,
+              "gainDb": -0.999786370433668,
+              "solo": false
+            },
+            {
+              "band": 5,
+              "type": "Peaking 2",
+              "frequencyHz": 7199.815813325742,
+              "q": 0.8000253204032962,
+              "gainDb": -0.999786370433668,
+              "solo": false
+            }
+          ],
+          "levelDb": -0.4992828150273141,
+          "balance": 0,
+          "bypassMode": "Thru",
+          "sceneIgnore": false
+        }
+      },
+      {
+        "channel": "C",
+        "values": {
+          "bands": [
+            {
+              "band": 1,
+              "type": "Shelving 2",
+              "frequencyHz": 149.99860423014832,
+              "q": 0.9000212309381711,
+              "gainDb": -0.999786370433668,
+              "solo": false
+            },
+            {
+              "band": 2,
+              "type": "Shelving",
+              "frequencyHz": 499.99472502728327,
+              "q": 0.8000253204032962,
+              "gainDb": -0.499893185216834,
+              "solo": false
+            },
+            {
+              "band": 3,
+              "type": "Peaking",
+              "frequencyHz": 1800.0614524264424,
+              "q": 1.20003947444369,
+              "gainDb": 0.999786370433668,
+              "solo": false
+            },
+            {
+              "band": 4,
+              "type": "Shelving",
+              "frequencyHz": 3599.907906662871,
+              "q": 0.8000253204032962,
+              "gainDb": -0.499893185216834,
+              "solo": false
+            },
+            {
+              "band": 5,
+              "type": "Shelving 2",
+              "frequencyHz": 5500.149041960606,
+              "q": 0.9000212309381711,
+              "gainDb": -0.999786370433668,
+              "solo": false
+            }
+          ],
+          "levelDb": -0.749534592730484,
+          "balance": -10.00091555528428,
+          "bypassMode": "Thru",
+          "sceneIgnore": false
+        }
+      },
+      {
+        "channel": "D",
+        "values": {
+          "bands": [
+            {
+              "band": 1,
+              "type": "Shelving",
+              "frequencyHz": 180.0042461876342,
+              "q": 0.8000253204032962,
+              "gainDb": -0.499893185216834,
+              "solo": false
+            },
+            {
+              "band": 2,
+              "type": "Shelving 2",
+              "frequencyHz": 600.0134070463582,
+              "q": 0.9000212309381711,
+              "gainDb": -0.499893185216834,
+              "solo": false
+            },
+            {
+              "band": 3,
+              "type": "Peaking 2",
+              "frequencyHz": 1399.9825528918054,
+              "q": 1.5000018672393332,
+              "gainDb": 2.000183111056856,
+              "solo": false
+            },
+            {
+              "band": 4,
+              "type": "Shelving 2",
+              "frequencyHz": 4000.084400899103,
+              "q": 0.9000212309381711,
+              "gainDb": -0.499893185216834,
+              "solo": false
+            },
+            {
+              "band": 5,
+              "type": "Shelving",
+              "frequencyHz": 8000.168801798206,
+              "q": 0.8000253204032962,
+              "gainDb": -0.999786370433668,
+              "solo": false
+            }
+          ],
+          "levelDb": -0.999786370433668,
+          "balance": 10.00091555528428,
+          "bypassMode": "Thru",
+          "sceneIgnore": false
+        }
+      }
+    ],
+    "valueLabels": "Decoded numeric values; not a claim that every intermediate value was separately screen-confirmed"
+  },
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all132PeqWordsPreserved": true,
+    "allOriginal13146V3BytesReconstructed": true,
+    "existingLevelsAndScenesPreserved": true,
+    "sendReturnAndTwoRowsPreserved": true,
+    "presetNameAndSelectedScenePreserved": true,
+    "chunkPrefixesAndDumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyCrc": true,
+    "encodedLengthsAndZeroPadding": true,
+    "correctedSpecRegeneratesIdenticalSyx": true,
+    "blockingQHiddenAndRejected": true,
+    "invalidBlockingQRequestsRejected": 8,
+    "nonBlockingQStillSupported": true,
+    "renamedFileNotFalselySubmittedConfirmed": true,
+    "newCombinationNotFalselyConfirmed": true
+  },
+  "encoding": {
+    "compressedBytesBefore": 4569,
+    "compressedBytesAfter": 4569,
+    "compressedRepresentationIdentical": false
+  },
+  "cpu": {
+    "minimumPercent": 47,
+    "maximumPercent": 48,
+    "source": "User report for this specimen; not a universal maximum"
+  },
+  "audio": "No explicit listening verdict supplied for this specimen",
+  "display": "User explicitly reports Blocking has no Q control. Other intermediate screen values not explicitly confirmed.",
+  "next": "Do not repeat import/export or GET collection. Corrected checklist uses unchanged SYX. Next planned block: Graphic EQ, then Enhancer."
+}

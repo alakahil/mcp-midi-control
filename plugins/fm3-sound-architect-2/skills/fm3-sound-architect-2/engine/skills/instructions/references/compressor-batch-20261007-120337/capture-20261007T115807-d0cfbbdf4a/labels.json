@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 5,
+    "name": "Compander",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 6,
+    "name": "Dynami-Comp Classic",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 7,
+    "name": "Dynami-Comp Modern",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 8,
+    "name": "Dynami-Comp Soft",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,99 @@
+{
+  "index": 118,
+  "step": {
+    "id": "119-type",
+    "kind": "type",
+    "stage": "types",
+    "label": "8 Band Variable Q — Type ja tegelik juhtpaneel",
+    "channel": "A",
+    "typeName": "8 Band Variable Q",
+    "bandCount": 8,
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "119-type",
+      "kind": "type",
+      "stage": "types",
+      "label": "8 Band Variable Q — Type ja tegelik juhtpaneel",
+      "channel": "A",
+      "typeName": "8 Band Variable Q",
+      "bandCount": 8,
+      "allowUnchanged": true
+    },
+    "previousSha256": "c1afa7b2af589408a16167051ed4a49b287322824fe851c3c3dc3badae92d24f",
+    "syxSha256": "f0a60d1859debda9f24edd9be82c78998e31d98fb63ea1c5ba407dc5f92f618e",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 15,
+        "offset": 8384,
+        "before": 1,
+        "after": 5
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "ui": {
+      "typeName": "8 Band Variable Q",
+      "bandLabels": [
+        "80",
+        "160",
+        "320",
+        "640",
+        "1250",
+        "2500",
+        "5000",
+        "10k"
+      ],
+      "masterQVisible": true,
+      "extraControls": ""
+    }
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "f0a60d1859debda9f24edd9be82c78998e31d98fb63ea1c5ba407dc5f92f618e",
+    "bodySha256": "29ee12c9e24212568bd90e42c789e5e7aeb5c79f567adc68043ba78867bffe5d",
+    "rawRxSha256": "f8498cf1e1f318a95c514f2a63f1174f2357bf51c581c3faa4a9b6ca1fb6a305",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "index": 81,
+  "step": {
+    "id": "082-copy-channel",
+    "kind": "copy-channel",
+    "stage": "channels",
+    "label": "Kopeeri kogu A kanal → C",
+    "channel": "C",
+    "sourceChannel": "A",
+    "typeName": "Modern"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "082-copy-channel",
+      "kind": "copy-channel",
+      "stage": "channels",
+      "label": "Kopeeri kogu A kanal → C",
+      "channel": "C",
+      "sourceChannel": "A",
+      "typeName": "Modern"
+    },
+    "previousSha256": "f5b0ba39b0cde6d515e8b68a453e12477079cea63f14f3a27663b266794cd899",
+    "syxSha256": "aa364a3adce67b488d6c3ea331896e3ab19f8eb45c725a80c794fdea776c4aec",
+    "changedWords": [
+      {
+        "channel": "C",
+        "pid": 0,
+        "offset": 7554,
+        "before": 32767,
+        "after": 52427
+      },
+      {
+        "channel": "C",
+        "pid": 1,
+        "offset": 7556,
+        "before": 32767,
+        "after": 52427
+      },
+      {
+        "channel": "C",
+        "pid": 2,
+        "offset": 7558,
+        "before": 22903,
+        "after": 58265
+      },
+      {
+        "channel": "C",
+        "pid": 3,
+        "offset": 7560,
+        "before": 32767,
+        "after": 58846
+      },
+      {
+        "channel": "C",
+        "pid": 4,
+        "offset": 7562,
+        "before": 52427,
+        "after": 58981
+      },
+      {
+        "channel": "C",
+        "pid": 7,
+        "offset": 7568,
+        "before": 0,
+        "after": 1
+      },
+      {
+        "channel": "C",
+        "pid": 9,
+        "offset": 7572,
+        "before": 65534,
+        "after": 58981
+      }
+    ],
+    "sceneChannelChange": {
+      "scene": 2,
+      "before": "B",
+      "after": "C"
+    },
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, candidate PID mappings, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {},
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 122,
+    "matchedWords": 48,
+    "wordsPerChannel": 12,
+    "channels": 4,
+    "syxSha256": "aa364a3adce67b488d6c3ea331896e3ab19f8eb45c725a80c794fdea776c4aec",
+    "bodySha256": "5b658d047aa2431cc6ba685305def205a367748742655a33dd389e8b2733d143",
+    "rawRxSha256": "eef7e6a6d5705d7fc880b797d6815ff2715b1139174e1d7b720b655328de206e",
+    "frameLengths": [
+      12,
+      154,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "C",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

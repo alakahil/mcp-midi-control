@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="FM3 Sound Architect icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172433"/>
+      <stop offset="1" stop-color="#071019"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#405365"/>
+      <stop offset="1" stop-color="#182633"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd078"/>
+      <stop offset="0.5" stop-color="#ff8b2f"/>
+      <stop offset="1" stop-color="#f05a25"/>
+    </linearGradient>
+    <linearGradient id="knob" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#43d4dc"/>
+      <stop offset="1" stop-color="#0c8093"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="58" y="58" width="396" height="396" rx="55" fill="#0a111a" stroke="#05090e" stroke-width="12"/>
+  <rect x="71" y="71" width="370" height="370" rx="43" fill="url(#panel)" stroke="#5d6d7a" stroke-width="4"/>
+  <g fill="#172432" stroke="#0c141e" stroke-width="7">
+    <circle cx="137" cy="111" r="18"/><circle cx="191" cy="111" r="18"/><circle cx="245" cy="111" r="18"/>
+    <circle cx="299" cy="111" r="18"/><circle cx="353" cy="111" r="18"/>
+  </g>
+  <rect x="103" y="145" width="306" height="139" rx="24" fill="#081722" stroke="#187985" stroke-width="7"/>
+  <path d="M121 221 C149 221 154 183 182 183 S214 260 245 260 S275 198 307 198 S342 242 367 242 S390 204 393 204" fill="none" stroke="#ff8b2f" stroke-width="13" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M121 221 C149 221 154 183 182 183 S214 260 245 260 S275 198 307 198 S342 242 367 242 S390 204 393 204" fill="none" stroke="url(#wave)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="386" cy="166" r="8" fill="#ffc35c"/>
+  <g fill="#10202d" stroke="#526875" stroke-width="4">
+    <rect x="111" y="315" width="68" height="27" rx="13"/><rect x="222" y="315" width="68" height="27" rx="13"/><rect x="333" y="315" width="68" height="27" rx="13"/>
+  </g>
+  <g stroke="#24c5ce" stroke-width="7" stroke-linecap="round">
+    <path d="M126 328h35"/><path d="M237 328h35"/><path d="M348 328h35"/>
+  </g>
+  <g fill="url(#knob)" stroke="#071018" stroke-width="12">
+    <circle cx="145" cy="391" r="29"/><circle cx="256" cy="391" r="29"/><circle cx="367" cy="391" r="29"/>
+  </g>
+  <g fill="#9be8ea">
+    <circle cx="145" cy="391" r="7"/><circle cx="256" cy="391" r="7"/><circle cx="367" cy="391" r="7"/>
+  </g>
+  <path d="M423 201c34 7 46 25 46 43 0 17-11 33-32 42" fill="none" stroke="#f47a2b" stroke-width="9" stroke-linecap="round"/>
+  <path d="M423 201c34 7 46 25 46 43 0 17-11 33-32 42" fill="none" stroke="#ffc15f" stroke-width="4" stroke-linecap="round"/>
+</svg>

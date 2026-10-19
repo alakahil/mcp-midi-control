@@ -1,0 +1,15 @@
+{
+  "index": 39,
+  "step": {
+    "id": "040-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "5 Band Constant Q — kõigi nähtavate ribade minimum",
+    "channel": "A",
+    "typeName": "5 Band Constant Q",
+    "bandCount": 5,
+    "endpoint": "minimum"
+  },
+  "status": "failed",
+  "error": "Ootamatu GEQ muutus: kanal A, PID 16. GET-i ei saadetud."
+}

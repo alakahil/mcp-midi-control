@@ -1,0 +1,68 @@
+{
+  "index": 17,
+  "step": {
+    "id": "B-frequency-8000",
+    "channel": "B",
+    "type": "Low-Pass",
+    "binaryId": 1,
+    "parameter": "Frequency",
+    "value": 8000,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal B (Low-Pass); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 8000 Hz. Ekspordi terve preset."
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 17,
+    "step": {
+      "id": "B-frequency-8000",
+      "channel": "B",
+      "type": "Low-Pass",
+      "binaryId": 1,
+      "parameter": "Frequency",
+      "value": 8000,
+      "unit": "Hz",
+      "instruction": "Hoia Scene2. Vali Filter1 kanal B (Low-Pass); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 8000 Hz. Ekspordi terve preset."
+    },
+    "previousSha256": "e48805facfddea065c061f9fc4a01f6770be768b4356935059967c859bc95387",
+    "syxSha256": "5be74c3f11b097732cb276c22b7c757470b3a8087660afb0888d6d43c022fc49",
+    "changedWords": [
+      {
+        "pid": 1,
+        "offset": 7690,
+        "before": 54112,
+        "after": 56841
+      }
+    ],
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "isolated-word-pending-display-and-audit"
+  },
+  "displayValue": 7999.9,
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "5be74c3f11b097732cb276c22b7c757470b3a8087660afb0888d6d43c022fc49",
+    "rawRxSha256": "37756d6ce7222d0da873e8609e63cae4d5cad6a0dbe54ac92f1a0607c691889a",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 3
+      },
+      {
+        "channel": "B",
+        "binaryId": 1
+      },
+      {
+        "channel": "C",
+        "binaryId": 6
+      },
+      {
+        "channel": "D",
+        "binaryId": 8
+      }
+    ],
+    "scene2Bypass": true
+  }
+}

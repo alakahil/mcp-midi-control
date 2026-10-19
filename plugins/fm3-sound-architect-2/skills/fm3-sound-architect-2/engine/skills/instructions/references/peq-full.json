@@ -1,0 +1,2130 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "effectId": 54,
+  "wordsPerChannel": 33,
+  "channels": 4,
+  "evidenceDirectory": "peq-full-20261009-152606",
+  "archiveSha256": "0ebd7ed218deb0c5590f68cf4631b4feda25cf08dbc6e32273c065553e468c2f",
+  "files": {
+    "baseline.syx": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+    "plan.json": "c85c220b4f07b33c42939cf49c8d06d64b0ff1290d78e339167d186818dd4fb2",
+    "session.json": "613bc54c21468ae6dfcddc73ae47f131f1b69476e28d6b664d6202e5ad587be1",
+    "step-000-4fab9bf4d9/capture.json": "4824a5d452d0fb6cb88fa31ba2ba3f55c546458d225196a9765bacca010781ee",
+    "step-000-4fab9bf4d9/donor.syx": "f0640bacca4ca4e6b3b97d0685dd3ac31d3e75a5e7c69165a0a292b53b0b43b5",
+    "step-000-4fab9bf4d9/result.json": "ee6f7a49036edf2fc3f3286565670f4a36593f1e013ac8dc4e498b80586fbabd",
+    "step-000-7075694f52/donor.syx": "b71442f879084ef252618881bf4b29d3ba91c575c838494a35c297e46ee8dcae",
+    "step-000-7075694f52/result.json": "bdcacf69113cc649e8a660a085ade74ffa0750560c98bbaf51b5091200cc74f5",
+    "step-001-266480cf27/capture.json": "121f1c4b62f6189dcddeefd92e6455fee484271b0ebacd4406a2fec952f32259",
+    "step-001-266480cf27/donor.syx": "d7c9731f2a38eeb703602dd82a5384e782ddb091df590e480d875a5eb14de2bd",
+    "step-001-266480cf27/result.json": "4a1b0d49b4e7afe68f3f3f53a6dcf486b9b18ba7beb000f214d1f1ecd97d4ce9",
+    "step-002-292771e940/capture.json": "087207dfe2a6c6ea0a0beb049b239e1306e5cc8230c9cc2f8dfb88949f72290e",
+    "step-002-292771e940/donor.syx": "d55eb57086e2e76adb0f3ca2eacb23969a8ac1472b8bbcd1b1a2d3eb640caaeb",
+    "step-002-292771e940/result.json": "fd74fec6c1dfb6da442d735aeb9b754e4aeb2e05aed94174a568f1e8e324d9b9",
+    "step-003-ee68893cff/capture.json": "32a9aaf3937101e214305abadda37cd111d37afd50b3271cfdc8f97ebc5781e1",
+    "step-003-ee68893cff/donor.syx": "637d0919241ce60199111eb4bf1cb7d5eb76da635c162eec88479c4b813f326a",
+    "step-003-ee68893cff/result.json": "ab7e21242bb2a9fd4dfb056919c92e3575f7c1ce3ea136c99ab8b616a7c4f511",
+    "step-004-91d5cac337/capture.json": "12cf3d463609734701b0de6a1d216a8c50068059310e5496e04a68adc35c04f9",
+    "step-004-91d5cac337/donor.syx": "d55eb57086e2e76adb0f3ca2eacb23969a8ac1472b8bbcd1b1a2d3eb640caaeb",
+    "step-004-91d5cac337/result.json": "e540a32c193fb61328c375c794459e74ea8932bcf58b129dc78f6b8d362898fc",
+    "step-005-4fdec28f7c/capture.json": "27d63ed2337591d1ee367e414cd0456e0d59fafce0e383e638647ecd0f3ab225",
+    "step-005-4fdec28f7c/donor.syx": "d0fc4e48d522b15b56a137ead11f24619b64fc2fcd007a25689b629422773235",
+    "step-005-4fdec28f7c/result.json": "1ec9e2aa5b1443bd3db9b573a6d326c7993d269d0d8c0d0b85d1436f4d04855f",
+    "step-006-ae997fa2da/capture.json": "fd68d58fcb1990b5f4edaea68a1379e5cf8a2c734ed39c75f92b1938a0e7dfed",
+    "step-006-ae997fa2da/donor.syx": "d3931bb2ad46936c4c0099d3b0e69d604c508108093c9c29f68d522b5fcb0ac0",
+    "step-006-ae997fa2da/result.json": "c98099a3dcf29980d79d7bb7af338c705de735f2f937c9810cfd49d658f81d45",
+    "step-007-0a1aa29025/capture.json": "230e64990dc141bbb225d7f840c9a02e66a43bcb851cdd6c68fffd9e6ed19a62",
+    "step-007-0a1aa29025/donor.syx": "66bb1c3db6c5b78af0791ca84b5d48219256d6bc661f5db449d99d93cf3d36f6",
+    "step-007-0a1aa29025/result.json": "310c6250379a6b173b4134db585414fa0ebfab9419fcea3de928c946fe1901ea",
+    "step-008-da14cb200e/capture.json": "7381070c22f61633fd4725332e41f3945991491ec0e67268279b422468e03e87",
+    "step-008-da14cb200e/donor.syx": "da73c515edef768fc53c6e6e624c95121031ea6ecab8e6ff6511fb23c473cf9f",
+    "step-008-da14cb200e/result.json": "65f778f680f2f63f84a2afd1e1b9765844a776f870cf94f93edf0162c8454727",
+    "step-009-01712b61a4/capture.json": "ea04468933eec6c603ef7701cf060eec23e36b49bf2298c248539fba32efc8d6",
+    "step-009-01712b61a4/donor.syx": "fb2a2e7bebce9743a389ab75c453390fbd26e329b86becd4837d500350fd0ece",
+    "step-009-01712b61a4/result.json": "f9a418da41c2b840e4d534ab287765b230816bfc95b3cb26c459d2749126a69b",
+    "step-010-8eee1d3f78/capture.json": "a400c87c087ce6373e0fceffe722c51fb717f5c2ed7483e310cabb641a5099c6",
+    "step-010-8eee1d3f78/donor.syx": "738de0a673122cac141ae3adadb1b963b492bc4bba00263f9cbc89c676bb2a7c",
+    "step-010-8eee1d3f78/result.json": "97bd30a496b7ce86df844327013eae785b29c579850be80b002bdeba23b211af",
+    "step-011-2f6d72929d/capture.json": "e4bb461943619fb0f4a06271318ade72c04b2c5b805c6fb3d32e67a073483f62",
+    "step-011-2f6d72929d/donor.syx": "6b2004edfd9bc9146e37f9eb60a5813887ea7193d706e05efef877abd5467f77",
+    "step-011-2f6d72929d/result.json": "2aa50ed292bf2777769f8a810c42cfd4500e9139deb6de626f573bf3786fb5d5",
+    "step-012-953f98ce28/capture.json": "944f4f286e0347409d95d98b34494dc158017ff3501ceb78d891f5c671094b27",
+    "step-012-953f98ce28/donor.syx": "b90bec61097e006c46a075787ad2a8a366cf277e924f00a80c310ab62acbaa11",
+    "step-012-953f98ce28/result.json": "1918a3ef66083fd6c6ded02e91c5f3979c0afa2e3bb3476b37da7471610a27d3",
+    "step-013-49cb94704b/capture.json": "950b3b6181e10693604cc393e266d058562084241b2a4b02756c87cb2284751b",
+    "step-013-49cb94704b/donor.syx": "a7af32d523c57d01ba6b7caf5597a76510dd8adde416ca669c36c03f067aae23",
+    "step-013-49cb94704b/result.json": "a5c9dd4d38c645c33b6706b99f9b6e14c71d243a01a71c71c3aefd8b94515618",
+    "step-014-dad3bb686a/capture.json": "38b866bca666e6f161fb155e2d124ed2db9a505cf0f3eb46629fd0c22c7b9468",
+    "step-014-dad3bb686a/donor.syx": "738de0a673122cac141ae3adadb1b963b492bc4bba00263f9cbc89c676bb2a7c",
+    "step-014-dad3bb686a/result.json": "35c2478d57191f93d5cb9007c854d63d9c05d3b1725c0e5953d73081c6f5579b",
+    "step-015-1501552ade/capture.json": "554a704c193bc5802344f0dbe733c37c7613e34780561b4a3b3b3eb00e4cba7e",
+    "step-015-1501552ade/donor.syx": "e178a29c71a60d36c3559d08b951c98aa5bd133f34a86fb7bf5484ddd95770c8",
+    "step-015-1501552ade/result.json": "e72e52a16122fa442a2fe058a12801f51029944750e48de094f1316fb8736a55",
+    "step-016-a91056e3a8/capture.json": "b606cd7f0f41264bede9429c32e8d1e7d11514932cc69a26cf85be8e501e9358",
+    "step-016-a91056e3a8/donor.syx": "738de0a673122cac141ae3adadb1b963b492bc4bba00263f9cbc89c676bb2a7c",
+    "step-016-a91056e3a8/result.json": "2a8ac6c128568446e33b39195ee3a59c9d3886900a83ee1b3e7387f8f3b3f09e",
+    "step-017-41dcb6bc6b/capture.json": "c4bcff15c24c7ca8cf30ab272274e91af35afa67f8fd9dd32c35db4da0dc3318",
+    "step-017-41dcb6bc6b/donor.syx": "08271e50734e5e4f91041bab9ba2df2a5b29b1173da02629192a49bbd99710ff",
+    "step-017-41dcb6bc6b/result.json": "411c5b7669dc5f81c069bbef5943b2eb945ed9f6e7ced240612155d9138b5a0a",
+    "step-018-1a692472c6/capture.json": "e2b727b668702441524209529aa5508b22a138b282855ea21127386ef2f098e1",
+    "step-018-1a692472c6/donor.syx": "b0950ffaf11bcb428588f2dd96ee4239e03fa7e0d95ea06ae78bb58ba3faa8dc",
+    "step-018-1a692472c6/result.json": "90b74efb9a1438bf52deb767363d78704625d189f36d75508f45d8aac0065b43",
+    "step-019-442d5032f9/capture.json": "6693a2e8341de233498a6570323e41adf609dc9795230d66e17271a400c50684",
+    "step-019-442d5032f9/donor.syx": "fc3f21b33950c2fee5c983302529ab8fe4f9e893028378c4240aa5f65092cb04",
+    "step-019-442d5032f9/result.json": "4882c04e15aa958abfa0ec659191de5487f1396dbbfbc344e348d066cd2b9fd4",
+    "step-020-856d3f219b/capture.json": "ec3b1005ea97134a5954a8bb2b68acc758d381bf54b34620139d5b81cbf45775",
+    "step-020-856d3f219b/donor.syx": "93a565be09f6d85be12b229a24d151b10ed9e0859f7717dd23ee3d5e12c9b329",
+    "step-020-856d3f219b/result.json": "a4015f8782dc50e3ada02f8ceece58b60803d5b0239b81575d352ece34394cc2",
+    "step-021-d257a9b39a/capture.json": "888535451babef2823b8b2a25d4cc2f69b9a56b182bf7326a5468f3d009d9bd8",
+    "step-021-d257a9b39a/donor.syx": "7c3d1b54f3fd750ac7ceb9e423a7b4dd13153c4c0f0c8b142c0e520aef91be58",
+    "step-021-d257a9b39a/result.json": "33525711c8b7bf0c1cbd3e471974605e89ccebbbe1dd92ed01fb65e35a805633",
+    "step-022-0a9267993a/capture.json": "53eeef914124f44a668173c066033ac8338f6f01682df21ccea9cfa645c13d50",
+    "step-022-0a9267993a/donor.syx": "28dc8d9de6005466d3488accba99a4e84ba721f905aef7a9ae775c0071c5c231",
+    "step-022-0a9267993a/result.json": "246a9500c1689e3882def90e258244bd3d02a5447dc6d55d4f56f28ae0cef1aa",
+    "step-023-92e3581d71/capture.json": "09255334587ba3d30156a816726bd9fe95c08903df9c04ca08688aa4f5ce1562",
+    "step-023-92e3581d71/donor.syx": "aca393eb48f54daa00aa8a929f93072d51f93a128c82895748656e878a62f4cd",
+    "step-023-92e3581d71/result.json": "6316ad0b96e5cbb5ceb3d27839f77720c1ea60261d65fb0db673d628cbcffd59",
+    "step-024-ec9e00ad68/capture.json": "19ea354fa0feff1cfaa882ef69517b894bd019c7e66905cae11edc0d6675c32f",
+    "step-024-ec9e00ad68/donor.syx": "e00713b651d2780fe5bfa4a3f69a871ec95ad5b3a7c498918de9b8ff69f39938",
+    "step-024-ec9e00ad68/result.json": "0a9c55d62afd8586b93e4cce9f075ee9837902797f89a4c5d63dee102d5fe180",
+    "step-025-59ae6d50cd/capture.json": "fe87b216ba1129733fdb57fa500ff6f279bd1211b8ffbc2024cca82e76c70309",
+    "step-025-59ae6d50cd/donor.syx": "aca393eb48f54daa00aa8a929f93072d51f93a128c82895748656e878a62f4cd",
+    "step-025-59ae6d50cd/result.json": "9c1e1ea44a45fc59c98f7da7a1c0f360ecc31795533eda2b6faa299441c4f26d",
+    "step-026-4c24c36f3c/capture.json": "4f999fb701231160870d4d244f563580e86e0fe23cf89ad46427ea62d85178c2",
+    "step-026-4c24c36f3c/donor.syx": "ee15abc1da4b02e06467a7ddb351ff051f3adb9a17acd58f730ee8ccde2d3080",
+    "step-026-4c24c36f3c/result.json": "d490804550a9e8ebddf26f965f89fb221d29f0235b7bd0a1b7595644c93a4822",
+    "step-027-65a387d3f4/capture.json": "d792cd497f3c7a118054b742640a47870f857e09c3d5cedd7c155cf023f4724c",
+    "step-027-65a387d3f4/donor.syx": "281d58916241accaf74968986ce4893ed9253789478d14cd2494cc20ca1ae2ef",
+    "step-027-65a387d3f4/result.json": "975388c54025baa6edce68bb627367d886d13f09d4a68349f178d7f36d3d9b9e",
+    "step-028-6a4a23a86d/capture.json": "6cbb6139e946d48991bede406c5520a04e45f55349a1add6a5e1352b0327b119",
+    "step-028-6a4a23a86d/donor.syx": "b607a44f810b3cf3c2eda33d4cf2b98d01d29d99fe43ad611a665fbdf6ee6c63",
+    "step-028-6a4a23a86d/result.json": "95911cba471c5b37a433a6d288222496d204e2be6d86590ede3342cda7341eaf",
+    "step-029-ef132c65e1/capture.json": "feef3aaa01eb9f1afc19f0531cbce6bfba90afdd224f5e675536e1b7e945812a",
+    "step-029-ef132c65e1/donor.syx": "8c0b209cd6c2e5cc11be0dbbe1ad721b0ac1287e3f1fad975e69ceba6d88e749",
+    "step-029-ef132c65e1/result.json": "9ef9854edfaca18dc31cb802f7b8081fc2d1a240d887252b8ee1241c0b8a59bf",
+    "step-030-87e47788cc/capture.json": "3dd80c8f3c674559797673ec8d295e0129173181bfc1668ce0ca5930ad184550",
+    "step-030-87e47788cc/donor.syx": "51569ec7260290115ff0742d48090793f747f9a72ec18fa458314fe13feca0ba",
+    "step-030-87e47788cc/result.json": "573bbdbcaa22c61e356f72a465758ca30c0370495121f2dd204e474c2462d155",
+    "step-031-37ff947865/capture.json": "70bceaaecae3eade1b583e654bf2e591507a80ca4afae7c510d48cb10c03ac2b",
+    "step-031-37ff947865/donor.syx": "37f44c5e577b8a09d4d8b05403a2b6daec1ff4f780b79e573b3c29567c2da96a",
+    "step-031-37ff947865/result.json": "bca1b97be8f276ec66b0dee8f43d5ceaa04c00347f21893e033bb50a36d648ec",
+    "step-032-bb4e22eb6b/capture.json": "0645fa42fbe74f347a09da85edad29e1f7cdd5d3f520ffe0e23ed787e98c3cf5",
+    "step-032-bb4e22eb6b/donor.syx": "87a4e10b7dd7764fa8891bc3d50a64a4ad81b50aee26e0065777bae9f371ad01",
+    "step-032-bb4e22eb6b/result.json": "f18cf232dc83519130220faa3bcac14651a85e535bc91233b303feae2142cbb1",
+    "step-033-f34de7fdc6/capture.json": "b3fd7a0e3ec35c8b747026a18b8c397769840fb715e40b744c06cdebfeb8bc0c",
+    "step-033-f34de7fdc6/donor.syx": "8b7e7df6ce8783cf38458b2cc6b5c64087ea1f1c9cd4df49db9f3031da768bea",
+    "step-033-f34de7fdc6/result.json": "2ca9998a7c808f22bdba450cb9249b85774fc0ae3bcba89ac83df754878da774",
+    "step-034-5d3661c966/capture.json": "2905ed75a9fca6a10fff14463544836dc34de7031f0f352d623edb643401e424",
+    "step-034-5d3661c966/donor.syx": "4fc3b812dd9cf584691c34e81ef13d473272982190dcfeb122c0f5336ecde004",
+    "step-034-5d3661c966/result.json": "b9bbc4d597ed769534aca1568a35157f9ba57ec60f712decb1b0ca21eaa3cdbb",
+    "step-035-d18cea2c50/capture.json": "28288e1ca876080b462f29149ab0a5d20831cd95ddbcaa32193c045f2f34c2a9",
+    "step-035-d18cea2c50/donor.syx": "8abf1b6c0da45f6103cf74acbc8215a8fe8e3b3294035e2f81677daed5bf7eb1",
+    "step-035-d18cea2c50/result.json": "bca197bd56cff3b6deddc230567ff76d3da899a0e61c588ee2e8081889c38593",
+    "step-036-9e9839b9c4/capture.json": "32d4bbe21ce3ff38ecf2d0a3a3ce5674daffdc1ac87ba622bbb2e234fb13c52e",
+    "step-036-9e9839b9c4/donor.syx": "5fa626dfc69c3aaf26cd1eedc125afeefd67858b3fc874bf9b7f121765c49d9c",
+    "step-036-9e9839b9c4/result.json": "6d49dc4c3034af2320dfceab59a99a873ff568020bbc9062e62b55c8bba8f9eb",
+    "step-037-967a89d337/capture.json": "cdca9c47755c5a281af5727415250ab3cff099a1cae83e1ecc259b245c2ca4e3",
+    "step-037-967a89d337/donor.syx": "ede3b445736910496358d9b3d495cc7ede275fe2801db7f934edfa44edf34509",
+    "step-037-967a89d337/result.json": "4efec4d585ecd523ef9d1169c7591bcfe1020beb1d65bf9a45be86a01915d9d6",
+    "step-038-bfc0914f78/capture.json": "6caa48d96b3677e9be6e50f20abe8714a320500399d6f3d40f149ade848bfee7",
+    "step-038-bfc0914f78/donor.syx": "8f697854dda4ab9645dc3e1a32d7f3f4167d1a2d69114a9f600f03b35c7d489b",
+    "step-038-bfc0914f78/result.json": "5e17b98b8008dc17389a872ce99a897ac37f411e7b0bb3057542ce9fdd042c8c",
+    "step-039-382b696907/capture.json": "cf2366c6a16a5149a21aaa963ce10c50cda0a1a38ddc3f95bc1743d43e3454bc",
+    "step-039-382b696907/donor.syx": "4c9a1563ad7375189e79bbfea02bd225732e7188699573d2e518b80b9213f86d",
+    "step-039-382b696907/result.json": "adf389bfec75e9346f00fbb72328b0e5e5b944e94bfbd483eebd4a7be82f9833",
+    "step-040-4cf823c376/donor.syx": "a4edc6f55c1b2da4e48e68742632feef6894790c7ed5dcf0fd710c015aa523c5",
+    "step-040-4cf823c376/result.json": "ff50511b739610cc87a44bcfa794cba4972bc59caab548df8e320049f3a6e2b1",
+    "step-040-be05c39ff9/donor.syx": "c3a66505c32f853f278e95db78debce99059cc53b83a4e9525eedfdf862f2e32",
+    "step-040-be05c39ff9/result.json": "ff50511b739610cc87a44bcfa794cba4972bc59caab548df8e320049f3a6e2b1",
+    "step-040-f6e7ed780e/capture.json": "baae23f0ed9334ab89d08212b734e1043a1d1fb880f282cff067cedc0905cd89",
+    "step-040-f6e7ed780e/donor.syx": "059dfb74c1661aadfdd5318ae20fbd91164b0eddd9bcaca11c101e5d2c8c3f4d",
+    "step-040-f6e7ed780e/result.json": "f977ed7a50e04102380cd9af9d519723a4414d2981003c9be1ceecb60fa9130a",
+    "step-041-f3ea5a6d36/capture.json": "5fc66181b42763bf46fdd583f9c38e63d6b7acf5e2d04a7ca0b2f66676bd81a5",
+    "step-041-f3ea5a6d36/donor.syx": "aa75f6a838f0337531a2b280ca9b8d22c4f5c835983449b45a0041abab88f558",
+    "step-041-f3ea5a6d36/result.json": "dea24f2d9a7dbc61ba5533d727753a1971eabd13c70f08504064471e7e4cf774",
+    "step-042-c4d822093b/capture.json": "e4871c8b7b6c291b5485ff27939ece91f22d6e7f4a7e158d0bc510a4407409b3",
+    "step-042-c4d822093b/donor.syx": "bf8fbf8c52d3c1fcafe5354db5076275f73141e379775f3beed3df9ea10f345d",
+    "step-042-c4d822093b/result.json": "e1de06d80c003258189806da8a1a7ea05e723ba069f2d2454d13c1b66fdfff9a",
+    "step-043-c4a3b4a152/capture.json": "23ce5ad5568d14a54aa85a8e619c53ea096608d74e3ac07b0b1eabc4f66465a6",
+    "step-043-c4a3b4a152/donor.syx": "337cc803b5345e3e167ac3988c2dec9d3d06d3a6bccdb78c32fa68bb6305d1a3",
+    "step-043-c4a3b4a152/result.json": "7681b9d226b3db8ae4840e22d6732de7acb5fcae238c7f8f0b03e6da7f4398bd",
+    "step-044-ab5426295f/capture.json": "b1902dba341ae6324d50aa0440858f51de606737fc582fb2d98e6706ac288ec5",
+    "step-044-ab5426295f/donor.syx": "8849135e4e53ae41b27a9bec362c557c9a584569e696de6fba6fdb520d27a34c",
+    "step-044-ab5426295f/result.json": "cc804c421bd292acb377e623f4e5f880ef117ff9a80422f178ffc58bd1a97c62",
+    "step-045-2f02d09886/capture.json": "6e2e0d11ddebe78b867734e3dd9e8e1393db08c5b123d62fc157e1e988b26520",
+    "step-045-2f02d09886/donor.syx": "77a7e06c606d8177cf949649becb8396fc482f581b348edb894e6cc2e740e04c",
+    "step-045-2f02d09886/result.json": "5268f934aab7818c435e4abb042a247b2dc72fd549a9e03e2f02061f56b5fd18",
+    "step-046-f7b6d92502/capture.json": "8f0a9f5c6b7e5eaac697c03422d956f08e0eef8e2b7ebd93d7c7b7b388de7391",
+    "step-046-f7b6d92502/donor.syx": "1a2eb96d828dfe42b01bf76e7b421978458e5d8f6fd26febfa43dff03346ab79",
+    "step-046-f7b6d92502/result.json": "b030e34794eb4fabec591d2ba2fbb09a1771f6459ba29818a37cc560eae05903",
+    "step-047-e5436bb6b0/capture.json": "79d862b9c80f18096777961ca5eaec970828319df37172c335333652a90aa623",
+    "step-047-e5436bb6b0/donor.syx": "3feeca9581a9ef37af31d14e5a951e4771aa4fef4f8e3951839c0aef13a89339",
+    "step-047-e5436bb6b0/result.json": "f65c97a8d7cc6da47e132092254763c3b6ea75710b867fab49db2f3fd020c1c7",
+    "step-048-6688abc93b/capture.json": "2cb478b8744a778f12b1f2f71dfc94ecc20cdca2d21895074c051c42bccc5390",
+    "step-048-6688abc93b/donor.syx": "1c6e6c6deef07ed3ab836ab53e3fd96d69bf8e7d073a172202d9beff0860e2fc",
+    "step-048-6688abc93b/result.json": "4d865ac134ca5684cfd071ac5330d118f6e9dafa6d57325031b1aaaa0b81d93b",
+    "step-049-e0ab3c0cd4/capture.json": "b4abab56d8e0fe278d1fb561a59beeafe3666adc3a94f902d50daf074307023a",
+    "step-049-e0ab3c0cd4/donor.syx": "7b3ac9e1c2ad1f14007754270f1fb39e0b67ca061403d679be9059de1a75abd1",
+    "step-049-e0ab3c0cd4/result.json": "d0cda8dde8850ef92745bbad1cf10e0db33a4d3854dc9b24b6b0bb4be2ea6ca5",
+    "step-050-033a27192b/capture.json": "cd35779103537855f43c7676144d0299b5229f14f6216a56d37daaf2e85ecc8c",
+    "step-050-033a27192b/donor.syx": "f62f8d56ffd159b99f4dc442d53fb993daa20d2ac5ce5e71056614f2f392f930",
+    "step-050-033a27192b/result.json": "3c9efa1589b355022170fefe0d34ce1ca955e17c56fc93d28c21420581b8c38c",
+    "step-051-d7023eeb5a/capture.json": "a2e5c6943bc108bd93f1e3315c14ec2a5faa87a802da3a84395f27a8a5745586",
+    "step-051-d7023eeb5a/donor.syx": "634ce20bd46c9e068d8f9faf2293800ecb95ad060b088ea0970abb18c8b291d6",
+    "step-051-d7023eeb5a/result.json": "8141114c636c8f276396b1ded0eb74fec48d2e1debc505ee76a5718134c54781",
+    "step-052-c0d4f25c5f/capture.json": "6669e58b59a52a4685f42d0205b53b8aac516b3e684f13d8317ccee67751c2a0",
+    "step-052-c0d4f25c5f/donor.syx": "1d521881eacbb711ea83824e21681b849c7bae4f3debc045827c9f1042972aae",
+    "step-052-c0d4f25c5f/result.json": "13db83e661984c08922cd1f7f25086e1489fbaed557d7600a03a52aeba5eb5ae",
+    "step-053-80c194df92/capture.json": "7f7a51637e2deaedf50ef575bb80c25b20d566cd08f95487b06060e6748e4e32",
+    "step-053-80c194df92/donor.syx": "a1982acec4fe7525d132d60e95c2cbb0c8141e1b10870853329eae70fa0c6cc8",
+    "step-053-80c194df92/result.json": "4a0a3f222a9f723686fabfd95d49b22784385865fd40720286af0053b0ef255b",
+    "step-054-231d084525/capture.json": "77203807c69f368d81e9ee0fd65f648df9050d97a187f2a6412baa28d6969ed2",
+    "step-054-231d084525/donor.syx": "42e4a55dc7c47e3f69d3be961947ff2205cc9615f8152a0d3e9dfd0c8e0c08e9",
+    "step-054-231d084525/result.json": "e768d3d47a6b3d927351a5da6a6147137ce20964c9b387195a6affc72aa34eaa",
+    "step-055-8564246c00/capture.json": "9d8be3208f532bf4106df5f6dfba2245a19fb7604b26fe6d935f4355037a0f77",
+    "step-055-8564246c00/donor.syx": "b2933e08f5431c60c7a72fca615f1c65dca851935febf37aca0b3c6ed98ffe51",
+    "step-055-8564246c00/result.json": "8e9ab9d8f355fa0ea891ed880f741727d943e0d7d08be4ad022ed8dd64338229",
+    "step-056-53e9b7f52a/capture.json": "4ce285d32c67477d59a0b714e01c513a25de8e3c91ae7bddcd256576409593c5",
+    "step-056-53e9b7f52a/donor.syx": "a5c260bf44f997d9f3aa08985ba4eaec8c3ab7e2438742e1cd3b4a3ebcb916ab",
+    "step-056-53e9b7f52a/result.json": "e8f908efdda215b02a961c71197a161e711fcffbac9d920d98993f9041e10a88",
+    "step-057-4e5ea7ba9c/capture.json": "fac87a10e56286262921decd9340eaa4a83f0b136017612d0f5b372ddddb83fb",
+    "step-057-4e5ea7ba9c/donor.syx": "c5933cd2b8fe125b398009b84e7c87699ede5a14cbb263afb8336b1ed1672f67",
+    "step-057-4e5ea7ba9c/result.json": "c0e09d4c92d473e23d0985b3eaac2fd3bc215ed312a61c5f5c2743f58a5d791a",
+    "step-058-b29125d122/capture.json": "dee405ab64ef3d63fa59a420bb5af96a41958dc5c369f76ae5fd8f5b9eb9a81f",
+    "step-058-b29125d122/donor.syx": "33a6c6b7791e276cfec463e511557b6e1067acca9b6a15c9c0def407471abb51",
+    "step-058-b29125d122/result.json": "6ac776fef0411f834ffc8775fad30f6d0ef0b777d50446193961e2b7093af038",
+    "step-059-0e6d271056/capture.json": "4d051a13dd4d55ebff1b68241e6405d10a20736b22087a46de7966f0688740bf",
+    "step-059-0e6d271056/donor.syx": "b2933e08f5431c60c7a72fca615f1c65dca851935febf37aca0b3c6ed98ffe51",
+    "step-059-0e6d271056/result.json": "8fa3736113b1e2b4a9d561b68863924a49b95446aa2b3924937d4a9ce75263d9",
+    "step-060-59c8f8ddf5/capture.json": "e7efe51bf9c79b5868f2037cf7e9b039a8c3a43c1799b69701b9696efd71cd05",
+    "step-060-59c8f8ddf5/donor.syx": "0a25527766b9dce6b38556b67095d0a7bc5c15d82edc7808b98cb145dea04643",
+    "step-060-59c8f8ddf5/result.json": "274d814cbcb3487d9aa01d196b4a6804b7743471d99bb8e0dc2e2d51d2fb9a87",
+    "step-061-232765908c/capture.json": "627e288b6a165406901f812f7fea7c92ce1a5c7988e3e71bb69b7e2e079f6331",
+    "step-061-232765908c/donor.syx": "abd84cf6cb49872ce99095fcaa008a1743ecf94532b20ebd2fdbdaa0c4e27ecc",
+    "step-061-232765908c/result.json": "0f781ddd57571c40fed4eecf8ea570dd0ecfaef94a7eaa5e64db71bbedeb9502",
+    "step-062-68ad77fa0b/capture.json": "6f52b26a229b45c1cbbf8b1dbf3207e5dd9e9454d96abd333a9065b64d8976ac",
+    "step-062-68ad77fa0b/donor.syx": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+    "step-062-68ad77fa0b/result.json": "1a89b88ef1afc309fe5b976ded7910a99d4bf83972e5743aa2292c0d8c959777",
+    "step-063-e523b8536b/capture.json": "c75730c7a8fcfcc8ef1187ae3cc214affbe6dc4b605cd2aabb2856362f2dbbd2",
+    "step-063-e523b8536b/donor.syx": "a53a4a0d8d1248eec80d164414bee6017b50ec3975e7fd9f00732ac8b62c4e9c",
+    "step-063-e523b8536b/result.json": "82de0435ea7b4e75eaaad0121b9cbdf2873d5e6316508663aba1898ffdc27210",
+    "step-064-25de9f1bc2/capture.json": "82568abcb6a6a584029e607290801a9d19b1e543d65ed6407039eead6e12ac6a",
+    "step-064-25de9f1bc2/donor.syx": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+    "step-064-25de9f1bc2/result.json": "f9c9dbaba543065adae98f375d8a56b7918970e5d4faf45e2e15447824122b49",
+    "step-064-edd49982d2/capture.json": "aa9869b4935b24d945e3e5508bd3603ce1a3fa792a24d04a961d371af4b2d53b",
+    "step-064-edd49982d2/donor.syx": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+    "step-064-edd49982d2/result.json": "6d61bcd326fdcb98952b447d32f8198cf57033f14e9daf5d524e89f1bd7885c0",
+    "step-065-df57682508/capture.json": "0bf9115919499f6ee0dba137c137d80bf022f364839d6b76b615c01a3e5f5fbf",
+    "step-065-df57682508/donor.syx": "cc4278db6f7242ff210c51096d4d78be8b6ec2438c0d7e7f54026c09edac598c",
+    "step-065-df57682508/result.json": "29516528f18aa8b67ae18d8ff5fd279ddb7d4cb952dc825c56c43623c856b83f",
+    "step-066-baf8534b52/capture.json": "720f08a19fce8cd54e37db6bd37f6611918f915749c19a99d23d99b535b18d65",
+    "step-066-baf8534b52/donor.syx": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+    "step-066-baf8534b52/result.json": "c68bb850e576ca1fc3e94b036bf355f097b944e2956117cb3aecdd210ff0c708",
+    "step-067-a9106af4ee/capture.json": "373603b22e19272248fddc11bef4098bc3a7ae93a456e328505724443122d38b",
+    "step-067-a9106af4ee/donor.syx": "29d1a3254f9b3278473fb3a3a9d8b4bfa0fed7ad9f872d04911a42048a06ad0d",
+    "step-067-a9106af4ee/result.json": "56140411889a9aa31074cbf734729a9b57d31b345b01f0da59051281b8a10364",
+    "step-068-443c06ed69/capture.json": "c3cdc07fb6daaee73aae616027cc09724aa2969dfc595da5a5421df04d8ae898",
+    "step-068-443c06ed69/donor.syx": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+    "step-068-443c06ed69/result.json": "97eb7827a1ce5cb3ee7d187965953c8f52b9b0a2a57e682d973a7f2724323323",
+    "step-069-543adb3126/capture.json": "0495b6b239152a6a724b3f18a0fd7119930a27abd7801f75a217ce6961f27e06",
+    "step-069-543adb3126/donor.syx": "1514de27f7110fd69e62c17927d8f57d23904aae9df298e565242d2314a5adbb",
+    "step-069-543adb3126/result.json": "ac6b75b1d7a5b6960163d983ecba14c796585f0bb7de61e099f78de6689ab5de",
+    "step-070-802e4b14d6/capture.json": "6604335620e51fd9d86024861f6ae44c5d73464d6e3bba0678b6ee242000b22d",
+    "step-070-802e4b14d6/donor.syx": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+    "step-070-802e4b14d6/result.json": "26ea18987dcbb2493df3959af5a83091e40184a2b3d8c06c2bb49e1bf25f8bb7",
+    "step-071-27fc9f07a5/capture.json": "f0b55d88d0b40de7fe062c4a66d4692498a65b06b41f55e06699e9096e57bbfb",
+    "step-071-27fc9f07a5/donor.syx": "dbdbc056180ab46ff461135960d403d2af4a59fcc9bb6bceebfb2b97d24d3936",
+    "step-071-27fc9f07a5/result.json": "6094b04993302f1ccdb8cefda319268c9db986abf0b63c0af1519ca63eb737b2",
+    "step-072-099cb307c1/capture.json": "439883ae04a03cbb4772a12a48ba0916361dc26baa494475732eb702ca8b903a",
+    "step-072-099cb307c1/donor.syx": "d97b37ad93e1be9435b7625ed2973b635a0eb425dc271fedd4135ad7d9052896",
+    "step-072-099cb307c1/result.json": "aca15d8ce51786142d2b87110d62f4e12bf3845f6c5b6f6faa04c5f83a994628",
+    "step-073-f19e4ea4f5/capture.json": "314ce6cac7277578e2c18e438675b77d24abe44bc55b7905c1d245537cf0e1b8",
+    "step-073-f19e4ea4f5/donor.syx": "fe4d841d5063009c5a90c93cd50dde5d4435a8355fa66cb45a003792f9b945f6",
+    "step-073-f19e4ea4f5/result.json": "04dc9a8cb25aebc9af143ffc6a1660dd458ae1c20a5a4b45ba304e943d210e60",
+    "step-074-72beefa380/capture.json": "1722d08225a82bb28756f377ce33f1f11f6246fe87c4f327958f780de5ab9b95",
+    "step-074-72beefa380/donor.syx": "d97b37ad93e1be9435b7625ed2973b635a0eb425dc271fedd4135ad7d9052896",
+    "step-074-72beefa380/result.json": "1fb334dde9574cd2b398830074f00a4537e768e3498ef6f7097c663568eb4463",
+    "step-075-cbf510b4e6/capture.json": "bfb792e3a3a6ea94b942dde2f28e35a9d94e3aa0c7256b1e03351bfbed8d34e2",
+    "step-075-cbf510b4e6/donor.syx": "6242ee005548a92a05fe2374ad488d979a58177e55af3347599e1f538a2ad2dc",
+    "step-075-cbf510b4e6/result.json": "6d1729eb9fa1c8c1ad7d99adba1e00d04bc53c8f53ea941a464778f7b50f8b08",
+    "step-076-1d7d1720a6/capture.json": "4a85b724efa3f6f2fb36ab1a8d2ba5154ec715d630546d67581bba7568e07a56",
+    "step-076-1d7d1720a6/donor.syx": "d97b37ad93e1be9435b7625ed2973b635a0eb425dc271fedd4135ad7d9052896",
+    "step-076-1d7d1720a6/result.json": "647c140e1a9d4268c66d1fb961d2daf2f7bb927c808ab6df0f3829d116635797",
+    "step-077-dd6e8db0bc/capture.json": "73cfdfd4248d8dbd46e9196f6f9c56b635fba4091a48140cbcf9c75cfd6153a9",
+    "step-077-dd6e8db0bc/donor.syx": "ed78aabc39e2cc3b684c9ea94c06a4f4efaa25107f9d826c26e25acee7820baf",
+    "step-077-dd6e8db0bc/result.json": "c87d049e81042bb2ce943784f39f7d4fbbb175db8728e34a76a976d4ce55b43e",
+    "step-078-36a47a3c27/capture.json": "d8e11a047956cf87998a81ce6eeb4198e0a20edcc368a8a034ed2846ba92571b",
+    "step-078-36a47a3c27/donor.syx": "58381b54b6db4052f6a21a150de0169c036c70442c5be055118a7c6558617731",
+    "step-078-36a47a3c27/result.json": "e2790e0053f6f7d28b1f7abbc0e89a4a3b0d1fa27f6958731d1751333bfd5335",
+    "step-079-d4c9491b00/capture.json": "2722c9da6265aca9589e8d2c67ef57917593069be70d5b123e36509a22396c33",
+    "step-079-d4c9491b00/donor.syx": "dcce4201f6c0d1e8bfe720a1c1f56e3c5a1e2802c95fd6cc93dc7984da2c5fac",
+    "step-079-d4c9491b00/result.json": "0972e17b52d7b8ffb1faee1fc1637f3f22f7a74b4083de047b52013ee1969005",
+    "step-080-7dbcc1079a/capture.json": "963bcfcc036803bd86eb68b7cec937d6e953e01173d04c31cb474df948e8f973",
+    "step-080-7dbcc1079a/donor.syx": "c8a4a17b2c1ed06e9d040518bd1d1bf876f94d6fd4df3f0a80564659842a56e7",
+    "step-080-7dbcc1079a/result.json": "856cc674c268d58da3ee636a877fa8e67c958c63e36eca8776e29395cc02602a",
+    "step-081-8ce17a4958/capture.json": "ec3316a05af24e6f80f3a2e9b28720bb6da376037f7628b79eb16c4f13bf6fc0",
+    "step-081-8ce17a4958/donor.syx": "e39bd7b97263def924bcddc66a11db0de54f0e331943401974d7eb72981a85cc",
+    "step-081-8ce17a4958/result.json": "7b945a5d0016cf4d4c754a96fe4689709389c4f3e876c4cd4255cb7819c205e9",
+    "step-082-928fdfb73c/capture.json": "aba15404998f02e17d420d9f46efd3bf62e7d879fa6e00862d19f34faaeef52f",
+    "step-082-928fdfb73c/donor.syx": "ba637b278cc75f1ca4dc156af7e489ef5460add19a379076ea8145775813f432",
+    "step-082-928fdfb73c/result.json": "9eb7930cd8fbc5eef47e58698a3ea7a77ae8c8fd85a418b6dfcdf6057edc1001",
+    "step-083-9fa26e1d99/capture.json": "def09152c0fa9e6fc19830ae7400b0b49f6773a215270cbbbeb8c435b9a948b8",
+    "step-083-9fa26e1d99/donor.syx": "4bb6609805652c1ff2b88c33b7f73adfc86fad09ce7542fcf789c3ff776519a4",
+    "step-083-9fa26e1d99/result.json": "c35854da978e6bc8ad768721db27c6e70312180f8c20898fddffc1989aef9ad4"
+  },
+  "passed": [
+    {
+      "index": 0,
+      "folder": "step-000-4fab9bf4d9",
+      "previousFile": "baseline.syx"
+    },
+    {
+      "index": 1,
+      "folder": "step-001-266480cf27",
+      "previousFile": "step-000-4fab9bf4d9/donor.syx"
+    },
+    {
+      "index": 2,
+      "folder": "step-002-292771e940",
+      "previousFile": "step-001-266480cf27/donor.syx"
+    },
+    {
+      "index": 3,
+      "folder": "step-003-ee68893cff",
+      "previousFile": "step-002-292771e940/donor.syx"
+    },
+    {
+      "index": 4,
+      "folder": "step-004-91d5cac337",
+      "previousFile": "step-003-ee68893cff/donor.syx"
+    },
+    {
+      "index": 5,
+      "folder": "step-005-4fdec28f7c",
+      "previousFile": "step-004-91d5cac337/donor.syx"
+    },
+    {
+      "index": 6,
+      "folder": "step-006-ae997fa2da",
+      "previousFile": "step-005-4fdec28f7c/donor.syx"
+    },
+    {
+      "index": 7,
+      "folder": "step-007-0a1aa29025",
+      "previousFile": "step-006-ae997fa2da/donor.syx"
+    },
+    {
+      "index": 8,
+      "folder": "step-008-da14cb200e",
+      "previousFile": "step-007-0a1aa29025/donor.syx"
+    },
+    {
+      "index": 9,
+      "folder": "step-009-01712b61a4",
+      "previousFile": "step-008-da14cb200e/donor.syx"
+    },
+    {
+      "index": 10,
+      "folder": "step-010-8eee1d3f78",
+      "previousFile": "step-009-01712b61a4/donor.syx"
+    },
+    {
+      "index": 11,
+      "folder": "step-011-2f6d72929d",
+      "previousFile": "step-010-8eee1d3f78/donor.syx"
+    },
+    {
+      "index": 12,
+      "folder": "step-012-953f98ce28",
+      "previousFile": "step-011-2f6d72929d/donor.syx"
+    },
+    {
+      "index": 13,
+      "folder": "step-013-49cb94704b",
+      "previousFile": "step-012-953f98ce28/donor.syx"
+    },
+    {
+      "index": 14,
+      "folder": "step-014-dad3bb686a",
+      "previousFile": "step-013-49cb94704b/donor.syx"
+    },
+    {
+      "index": 15,
+      "folder": "step-015-1501552ade",
+      "previousFile": "step-014-dad3bb686a/donor.syx"
+    },
+    {
+      "index": 16,
+      "folder": "step-016-a91056e3a8",
+      "previousFile": "step-015-1501552ade/donor.syx"
+    },
+    {
+      "index": 17,
+      "folder": "step-017-41dcb6bc6b",
+      "previousFile": "step-016-a91056e3a8/donor.syx"
+    },
+    {
+      "index": 18,
+      "folder": "step-018-1a692472c6",
+      "previousFile": "step-017-41dcb6bc6b/donor.syx"
+    },
+    {
+      "index": 19,
+      "folder": "step-019-442d5032f9",
+      "previousFile": "step-018-1a692472c6/donor.syx"
+    },
+    {
+      "index": 20,
+      "folder": "step-020-856d3f219b",
+      "previousFile": "step-019-442d5032f9/donor.syx"
+    },
+    {
+      "index": 21,
+      "folder": "step-021-d257a9b39a",
+      "previousFile": "step-020-856d3f219b/donor.syx"
+    },
+    {
+      "index": 22,
+      "folder": "step-022-0a9267993a",
+      "previousFile": "step-021-d257a9b39a/donor.syx"
+    },
+    {
+      "index": 23,
+      "folder": "step-023-92e3581d71",
+      "previousFile": "step-022-0a9267993a/donor.syx"
+    },
+    {
+      "index": 24,
+      "folder": "step-024-ec9e00ad68",
+      "previousFile": "step-023-92e3581d71/donor.syx"
+    },
+    {
+      "index": 25,
+      "folder": "step-025-59ae6d50cd",
+      "previousFile": "step-024-ec9e00ad68/donor.syx"
+    },
+    {
+      "index": 26,
+      "folder": "step-026-4c24c36f3c",
+      "previousFile": "step-025-59ae6d50cd/donor.syx"
+    },
+    {
+      "index": 27,
+      "folder": "step-027-65a387d3f4",
+      "previousFile": "step-026-4c24c36f3c/donor.syx"
+    },
+    {
+      "index": 28,
+      "folder": "step-028-6a4a23a86d",
+      "previousFile": "step-027-65a387d3f4/donor.syx"
+    },
+    {
+      "index": 29,
+      "folder": "step-029-ef132c65e1",
+      "previousFile": "step-028-6a4a23a86d/donor.syx"
+    },
+    {
+      "index": 30,
+      "folder": "step-030-87e47788cc",
+      "previousFile": "step-029-ef132c65e1/donor.syx"
+    },
+    {
+      "index": 31,
+      "folder": "step-031-37ff947865",
+      "previousFile": "step-030-87e47788cc/donor.syx"
+    },
+    {
+      "index": 32,
+      "folder": "step-032-bb4e22eb6b",
+      "previousFile": "step-031-37ff947865/donor.syx"
+    },
+    {
+      "index": 33,
+      "folder": "step-033-f34de7fdc6",
+      "previousFile": "step-032-bb4e22eb6b/donor.syx"
+    },
+    {
+      "index": 34,
+      "folder": "step-034-5d3661c966",
+      "previousFile": "step-033-f34de7fdc6/donor.syx"
+    },
+    {
+      "index": 35,
+      "folder": "step-035-d18cea2c50",
+      "previousFile": "step-034-5d3661c966/donor.syx"
+    },
+    {
+      "index": 36,
+      "folder": "step-036-9e9839b9c4",
+      "previousFile": "step-035-d18cea2c50/donor.syx"
+    },
+    {
+      "index": 37,
+      "folder": "step-037-967a89d337",
+      "previousFile": "step-036-9e9839b9c4/donor.syx"
+    },
+    {
+      "index": 38,
+      "folder": "step-038-bfc0914f78",
+      "previousFile": "step-037-967a89d337/donor.syx"
+    },
+    {
+      "index": 39,
+      "folder": "step-039-382b696907",
+      "previousFile": "step-038-bfc0914f78/donor.syx"
+    },
+    {
+      "index": 40,
+      "folder": "step-040-f6e7ed780e",
+      "previousFile": "step-039-382b696907/donor.syx"
+    },
+    {
+      "index": 41,
+      "folder": "step-041-f3ea5a6d36",
+      "previousFile": "step-040-f6e7ed780e/donor.syx"
+    },
+    {
+      "index": 42,
+      "folder": "step-042-c4d822093b",
+      "previousFile": "step-041-f3ea5a6d36/donor.syx"
+    },
+    {
+      "index": 43,
+      "folder": "step-043-c4a3b4a152",
+      "previousFile": "step-042-c4d822093b/donor.syx"
+    },
+    {
+      "index": 44,
+      "folder": "step-044-ab5426295f",
+      "previousFile": "step-043-c4a3b4a152/donor.syx"
+    },
+    {
+      "index": 45,
+      "folder": "step-045-2f02d09886",
+      "previousFile": "step-044-ab5426295f/donor.syx"
+    },
+    {
+      "index": 46,
+      "folder": "step-046-f7b6d92502",
+      "previousFile": "step-045-2f02d09886/donor.syx"
+    },
+    {
+      "index": 47,
+      "folder": "step-047-e5436bb6b0",
+      "previousFile": "step-046-f7b6d92502/donor.syx"
+    },
+    {
+      "index": 48,
+      "folder": "step-048-6688abc93b",
+      "previousFile": "step-047-e5436bb6b0/donor.syx"
+    },
+    {
+      "index": 49,
+      "folder": "step-049-e0ab3c0cd4",
+      "previousFile": "step-048-6688abc93b/donor.syx"
+    },
+    {
+      "index": 50,
+      "folder": "step-050-033a27192b",
+      "previousFile": "step-049-e0ab3c0cd4/donor.syx"
+    },
+    {
+      "index": 51,
+      "folder": "step-051-d7023eeb5a",
+      "previousFile": "step-050-033a27192b/donor.syx"
+    },
+    {
+      "index": 52,
+      "folder": "step-052-c0d4f25c5f",
+      "previousFile": "step-051-d7023eeb5a/donor.syx"
+    },
+    {
+      "index": 53,
+      "folder": "step-053-80c194df92",
+      "previousFile": "step-052-c0d4f25c5f/donor.syx"
+    },
+    {
+      "index": 54,
+      "folder": "step-054-231d084525",
+      "previousFile": "step-053-80c194df92/donor.syx"
+    },
+    {
+      "index": 55,
+      "folder": "step-055-8564246c00",
+      "previousFile": "step-054-231d084525/donor.syx"
+    },
+    {
+      "index": 56,
+      "folder": "step-056-53e9b7f52a",
+      "previousFile": "step-055-8564246c00/donor.syx"
+    },
+    {
+      "index": 57,
+      "folder": "step-057-4e5ea7ba9c",
+      "previousFile": "step-056-53e9b7f52a/donor.syx"
+    },
+    {
+      "index": 58,
+      "folder": "step-058-b29125d122",
+      "previousFile": "step-057-4e5ea7ba9c/donor.syx"
+    },
+    {
+      "index": 59,
+      "folder": "step-059-0e6d271056",
+      "previousFile": "step-058-b29125d122/donor.syx"
+    },
+    {
+      "index": 60,
+      "folder": "step-060-59c8f8ddf5",
+      "previousFile": "step-059-0e6d271056/donor.syx"
+    },
+    {
+      "index": 61,
+      "folder": "step-061-232765908c",
+      "previousFile": "step-060-59c8f8ddf5/donor.syx"
+    },
+    {
+      "index": 62,
+      "folder": "step-062-68ad77fa0b",
+      "previousFile": "step-061-232765908c/donor.syx"
+    },
+    {
+      "index": 63,
+      "folder": "step-063-e523b8536b",
+      "previousFile": "step-062-68ad77fa0b/donor.syx"
+    },
+    {
+      "index": 64,
+      "folder": "step-064-edd49982d2",
+      "previousFile": "step-063-e523b8536b/donor.syx"
+    },
+    {
+      "index": 65,
+      "folder": "step-065-df57682508",
+      "previousFile": "step-064-edd49982d2/donor.syx"
+    },
+    {
+      "index": 66,
+      "folder": "step-066-baf8534b52",
+      "previousFile": "step-065-df57682508/donor.syx"
+    },
+    {
+      "index": 67,
+      "folder": "step-067-a9106af4ee",
+      "previousFile": "step-066-baf8534b52/donor.syx"
+    },
+    {
+      "index": 68,
+      "folder": "step-068-443c06ed69",
+      "previousFile": "step-067-a9106af4ee/donor.syx"
+    },
+    {
+      "index": 69,
+      "folder": "step-069-543adb3126",
+      "previousFile": "step-068-443c06ed69/donor.syx"
+    },
+    {
+      "index": 70,
+      "folder": "step-070-802e4b14d6",
+      "previousFile": "step-069-543adb3126/donor.syx"
+    },
+    {
+      "index": 71,
+      "folder": "step-071-27fc9f07a5",
+      "previousFile": "step-070-802e4b14d6/donor.syx"
+    },
+    {
+      "index": 72,
+      "folder": "step-072-099cb307c1",
+      "previousFile": "step-071-27fc9f07a5/donor.syx"
+    },
+    {
+      "index": 73,
+      "folder": "step-073-f19e4ea4f5",
+      "previousFile": "step-072-099cb307c1/donor.syx"
+    },
+    {
+      "index": 74,
+      "folder": "step-074-72beefa380",
+      "previousFile": "step-073-f19e4ea4f5/donor.syx"
+    },
+    {
+      "index": 75,
+      "folder": "step-075-cbf510b4e6",
+      "previousFile": "step-074-72beefa380/donor.syx"
+    },
+    {
+      "index": 76,
+      "folder": "step-076-1d7d1720a6",
+      "previousFile": "step-075-cbf510b4e6/donor.syx"
+    },
+    {
+      "index": 77,
+      "folder": "step-077-dd6e8db0bc",
+      "previousFile": "step-076-1d7d1720a6/donor.syx"
+    },
+    {
+      "index": 78,
+      "folder": "step-078-36a47a3c27",
+      "previousFile": "step-077-dd6e8db0bc/donor.syx"
+    },
+    {
+      "index": 79,
+      "folder": "step-079-d4c9491b00",
+      "previousFile": "step-078-36a47a3c27/donor.syx"
+    },
+    {
+      "index": 80,
+      "folder": "step-080-7dbcc1079a",
+      "previousFile": "step-079-d4c9491b00/donor.syx"
+    },
+    {
+      "index": 81,
+      "folder": "step-081-8ce17a4958",
+      "previousFile": "step-080-7dbcc1079a/donor.syx"
+    },
+    {
+      "index": 82,
+      "folder": "step-082-928fdfb73c",
+      "previousFile": "step-081-8ce17a4958/donor.syx"
+    },
+    {
+      "index": 83,
+      "folder": "step-083-9fa26e1d99",
+      "previousFile": "step-082-928fdfb73c/donor.syx"
+    }
+  ],
+  "excludedAttempts": [
+    {
+      "index": 0,
+      "folder": "step-000-7075694f52",
+      "error": "Muutus väljaspool PEQ parameetreid või Scene 2 PEQ kanalivalikut, bait 8714. GET-i ei saadetud."
+    },
+    {
+      "index": 40,
+      "folder": "step-040-4cf823c376",
+      "error": "Muutus väljaspool PEQ parameetreid või Scene 2 PEQ kanalivalikut, bait 7618. GET-i ei saadetud."
+    },
+    {
+      "index": 40,
+      "folder": "step-040-be05c39ff9",
+      "error": "Muutus väljaspool PEQ parameetreid või Scene 2 PEQ kanalivalikut, bait 7618. GET-i ei saadetud."
+    },
+    {
+      "index": 64,
+      "folder": "step-064-25de9f1bc2",
+      "error": "[Errno 16] Resource busy: '/dev/cu.usbmodem211104'"
+    }
+  ],
+  "anchors": [
+    {
+      "index": 0,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Type",
+      "pid": 15,
+      "target": "Peaking 2",
+      "display": "Peaking 2",
+      "unit": "",
+      "raw": 4
+    },
+    {
+      "index": 1,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Type",
+      "pid": 15,
+      "target": "Shelving 2",
+      "display": "Shelving 2",
+      "unit": "",
+      "raw": 3
+    },
+    {
+      "index": 2,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Type",
+      "pid": 15,
+      "target": "Blocking",
+      "display": "Blocking",
+      "unit": "",
+      "raw": 2
+    },
+    {
+      "index": 3,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Slope",
+      "pid": 30,
+      "target": 6,
+      "display": 6,
+      "unit": "dB/oct",
+      "raw": 0
+    },
+    {
+      "index": 4,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Slope",
+      "pid": 30,
+      "target": 12,
+      "display": 12,
+      "unit": "dB/oct",
+      "raw": 1
+    },
+    {
+      "index": 5,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Slope",
+      "pid": 30,
+      "target": 18,
+      "display": 18,
+      "unit": "dB/oct",
+      "raw": 2
+    },
+    {
+      "index": 6,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Slope",
+      "pid": 30,
+      "target": 24,
+      "display": 24,
+      "unit": "dB/oct",
+      "raw": 3
+    },
+    {
+      "index": 7,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Slope",
+      "pid": 30,
+      "target": 30,
+      "display": 30,
+      "unit": "dB/oct",
+      "raw": 4
+    },
+    {
+      "index": 8,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Slope",
+      "pid": 30,
+      "target": 36,
+      "display": 36,
+      "unit": "dB/oct",
+      "raw": 5
+    },
+    {
+      "index": 9,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Type",
+      "pid": 15,
+      "target": "Shelving",
+      "display": "Shelving",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 10,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Type",
+      "pid": 15,
+      "target": "Peaking",
+      "display": "Peaking",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 11,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Type",
+      "pid": 16,
+      "target": "Peaking 2",
+      "display": "Peaking 2",
+      "unit": "",
+      "raw": 3
+    },
+    {
+      "index": 12,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Type",
+      "pid": 16,
+      "target": "Shelving",
+      "display": "Shelving",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 13,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Type",
+      "pid": 16,
+      "target": "Shelving 2",
+      "display": "Shelving 2",
+      "unit": "",
+      "raw": 2
+    },
+    {
+      "index": 14,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Type",
+      "pid": 16,
+      "target": "Peaking",
+      "display": "Peaking",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 15,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Type",
+      "pid": 17,
+      "target": "Peaking 2",
+      "display": "Peaking 2",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 16,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Type",
+      "pid": 17,
+      "target": "Peaking",
+      "display": "Peaking",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 17,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Type",
+      "pid": 18,
+      "target": "Peaking 2",
+      "display": "Peaking 2",
+      "unit": "",
+      "raw": 3
+    },
+    {
+      "index": 18,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Type",
+      "pid": 18,
+      "target": "Shelving",
+      "display": "Shelving",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 19,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Type",
+      "pid": 18,
+      "target": "Shelving 2",
+      "display": "Shelving 2",
+      "unit": "",
+      "raw": 2
+    },
+    {
+      "index": 20,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Type",
+      "pid": 18,
+      "target": "Peaking",
+      "display": "Peaking",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 21,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Type",
+      "pid": 19,
+      "target": "Peaking 2",
+      "display": "Peaking 2",
+      "unit": "",
+      "raw": 4
+    },
+    {
+      "index": 22,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Type",
+      "pid": 19,
+      "target": "Shelving 2",
+      "display": "Shelving 2",
+      "unit": "",
+      "raw": 3
+    },
+    {
+      "index": 23,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Type",
+      "pid": 19,
+      "target": "Blocking",
+      "display": "Blocking",
+      "unit": "",
+      "raw": 2
+    },
+    {
+      "index": 24,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Slope",
+      "pid": 31,
+      "target": 6,
+      "display": 6,
+      "unit": "dB/oct",
+      "raw": 0
+    },
+    {
+      "index": 25,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Slope",
+      "pid": 31,
+      "target": 12,
+      "display": 12,
+      "unit": "dB/oct",
+      "raw": 1
+    },
+    {
+      "index": 26,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Slope",
+      "pid": 31,
+      "target": 18,
+      "display": 18,
+      "unit": "dB/oct",
+      "raw": 2
+    },
+    {
+      "index": 27,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Slope",
+      "pid": 31,
+      "target": 24,
+      "display": 24,
+      "unit": "dB/oct",
+      "raw": 3
+    },
+    {
+      "index": 28,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Slope",
+      "pid": 31,
+      "target": 30,
+      "display": 30,
+      "unit": "dB/oct",
+      "raw": 4
+    },
+    {
+      "index": 29,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Slope",
+      "pid": 31,
+      "target": 36,
+      "display": 36,
+      "unit": "dB/oct",
+      "raw": 5
+    },
+    {
+      "index": 30,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Type",
+      "pid": 19,
+      "target": "Shelving",
+      "display": "Shelving",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 31,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Type",
+      "pid": 19,
+      "target": "Peaking",
+      "display": "Peaking",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 32,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Frequency",
+      "pid": 0,
+      "target": 300,
+      "display": 300,
+      "unit": "Hz",
+      "raw": 38537
+    },
+    {
+      "index": 33,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Frequency",
+      "pid": 1,
+      "target": 750,
+      "display": 749.99,
+      "unit": "Hz",
+      "raw": 28673
+    },
+    {
+      "index": 34,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Frequency",
+      "pid": 3,
+      "target": 2500,
+      "display": 2499.9,
+      "unit": "Hz",
+      "raw": 45806
+    },
+    {
+      "index": 35,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Frequency",
+      "pid": 4,
+      "target": 6000,
+      "display": 6000,
+      "unit": "Hz",
+      "raw": 48401
+    },
+    {
+      "index": 36,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Frequency",
+      "pid": 0,
+      "target": null,
+      "display": 20.0,
+      "unit": "Hz",
+      "raw": 0
+    },
+    {
+      "index": 36,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Frequency",
+      "pid": 1,
+      "target": null,
+      "display": 100.0,
+      "unit": "Hz",
+      "raw": 0
+    },
+    {
+      "index": 36,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Frequency",
+      "pid": 2,
+      "target": null,
+      "display": 100.0,
+      "unit": "Hz",
+      "raw": 0
+    },
+    {
+      "index": 36,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Frequency",
+      "pid": 3,
+      "target": null,
+      "display": 100.0,
+      "unit": "Hz",
+      "raw": 0
+    },
+    {
+      "index": 36,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Frequency",
+      "pid": 4,
+      "target": null,
+      "display": 200.0,
+      "unit": "Hz",
+      "raw": 0
+    },
+    {
+      "index": 37,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Frequency",
+      "pid": 0,
+      "target": null,
+      "display": 2000.0,
+      "unit": "Hz",
+      "raw": 65534
+    },
+    {
+      "index": 37,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Frequency",
+      "pid": 1,
+      "target": null,
+      "display": 10000.0,
+      "unit": "Hz",
+      "raw": 65534
+    },
+    {
+      "index": 37,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Frequency",
+      "pid": 2,
+      "target": null,
+      "display": 10000.0,
+      "unit": "Hz",
+      "raw": 65534
+    },
+    {
+      "index": 37,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Frequency",
+      "pid": 3,
+      "target": null,
+      "display": 10000.0,
+      "unit": "Hz",
+      "raw": 65534
+    },
+    {
+      "index": 37,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Frequency",
+      "pid": 4,
+      "target": null,
+      "display": 20000.0,
+      "unit": "Hz",
+      "raw": 65534
+    },
+    {
+      "index": 38,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Frequency",
+      "pid": 0,
+      "target": 100,
+      "display": 100,
+      "unit": "Hz",
+      "raw": 22903
+    },
+    {
+      "index": 38,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Frequency",
+      "pid": 1,
+      "target": 300,
+      "display": 300,
+      "unit": "Hz",
+      "raw": 15634
+    },
+    {
+      "index": 38,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Frequency",
+      "pid": 2,
+      "target": 1500,
+      "display": 1500,
+      "unit": "Hz",
+      "raw": 38537
+    },
+    {
+      "index": 38,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Frequency",
+      "pid": 3,
+      "target": 3300,
+      "display": 3299.9,
+      "unit": "Hz",
+      "raw": 49757
+    },
+    {
+      "index": 38,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Frequency",
+      "pid": 4,
+      "target": 9000,
+      "display": 9000.1,
+      "unit": "Hz",
+      "raw": 54171
+    },
+    {
+      "index": 39,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Frequency",
+      "pid": 0,
+      "target": 1000,
+      "display": 999.99,
+      "unit": "Hz",
+      "raw": 55670
+    },
+    {
+      "index": 39,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Frequency",
+      "pid": 1,
+      "target": 5000,
+      "display": 4999.9,
+      "unit": "Hz",
+      "raw": 55670
+    },
+    {
+      "index": 39,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Frequency",
+      "pid": 2,
+      "target": 7000,
+      "display": 6999.8,
+      "unit": "Hz",
+      "raw": 60458
+    },
+    {
+      "index": 39,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Frequency",
+      "pid": 3,
+      "target": 8000,
+      "display": 8000.2,
+      "unit": "Hz",
+      "raw": 62359
+    },
+    {
+      "index": 39,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Frequency",
+      "pid": 4,
+      "target": 16000,
+      "display": 16000,
+      "unit": "Hz",
+      "raw": 62359
+    },
+    {
+      "index": 40,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Q",
+      "pid": 5,
+      "target": 1.4,
+      "display": 1.4,
+      "unit": "",
+      "raw": 37555
+    },
+    {
+      "index": 41,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Q",
+      "pid": 6,
+      "target": 1.4,
+      "display": 1.4,
+      "unit": "",
+      "raw": 37555
+    },
+    {
+      "index": 42,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Q",
+      "pid": 8,
+      "target": 1.4,
+      "display": 1.4,
+      "unit": "",
+      "raw": 37555
+    },
+    {
+      "index": 43,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Q",
+      "pid": 9,
+      "target": 1.4,
+      "display": 1.4,
+      "unit": "",
+      "raw": 37555
+    },
+    {
+      "index": 44,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Q",
+      "pid": 5,
+      "target": null,
+      "display": 0.1,
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 44,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Q",
+      "pid": 6,
+      "target": null,
+      "display": 0.1,
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 44,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Q",
+      "pid": 7,
+      "target": null,
+      "display": 0.1,
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 44,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Q",
+      "pid": 8,
+      "target": null,
+      "display": 0.1,
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 44,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Q",
+      "pid": 9,
+      "target": null,
+      "display": 0.1,
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 45,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Q",
+      "pid": 5,
+      "target": null,
+      "display": 10.0,
+      "unit": "",
+      "raw": 65534
+    },
+    {
+      "index": 45,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Q",
+      "pid": 6,
+      "target": null,
+      "display": 10.0,
+      "unit": "",
+      "raw": 65534
+    },
+    {
+      "index": 45,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Q",
+      "pid": 7,
+      "target": null,
+      "display": 10.0,
+      "unit": "",
+      "raw": 65534
+    },
+    {
+      "index": 45,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Q",
+      "pid": 8,
+      "target": null,
+      "display": 10.0,
+      "unit": "",
+      "raw": 65534
+    },
+    {
+      "index": 45,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Q",
+      "pid": 9,
+      "target": null,
+      "display": 10.0,
+      "unit": "",
+      "raw": 65534
+    },
+    {
+      "index": 46,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Q",
+      "pid": 5,
+      "target": 0.707,
+      "display": 0.707,
+      "unit": "",
+      "raw": 27833
+    },
+    {
+      "index": 46,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Q",
+      "pid": 6,
+      "target": 0.707,
+      "display": 0.707,
+      "unit": "",
+      "raw": 27833
+    },
+    {
+      "index": 46,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Q",
+      "pid": 7,
+      "target": 0.707,
+      "display": 0.707,
+      "unit": "",
+      "raw": 27833
+    },
+    {
+      "index": 46,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Q",
+      "pid": 8,
+      "target": 0.707,
+      "display": 0.707,
+      "unit": "",
+      "raw": 27833
+    },
+    {
+      "index": 46,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Q",
+      "pid": 9,
+      "target": 0.707,
+      "display": 0.707,
+      "unit": "",
+      "raw": 27833
+    },
+    {
+      "index": 47,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Q",
+      "pid": 5,
+      "target": 4,
+      "display": 4,
+      "unit": "",
+      "raw": 52495
+    },
+    {
+      "index": 47,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Q",
+      "pid": 6,
+      "target": 4,
+      "display": 4,
+      "unit": "",
+      "raw": 52495
+    },
+    {
+      "index": 47,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Q",
+      "pid": 7,
+      "target": 4,
+      "display": 4,
+      "unit": "",
+      "raw": 52495
+    },
+    {
+      "index": 47,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Q",
+      "pid": 8,
+      "target": 4,
+      "display": 4,
+      "unit": "",
+      "raw": 52495
+    },
+    {
+      "index": 47,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Q",
+      "pid": 9,
+      "target": 4,
+      "display": 4,
+      "unit": "",
+      "raw": 52495
+    },
+    {
+      "index": 48,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Gain",
+      "pid": 10,
+      "target": 3,
+      "display": 3,
+      "unit": "dB",
+      "raw": 37682
+    },
+    {
+      "index": 49,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Gain",
+      "pid": 11,
+      "target": 3,
+      "display": 3,
+      "unit": "dB",
+      "raw": 37682
+    },
+    {
+      "index": 50,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Gain",
+      "pid": 13,
+      "target": 3,
+      "display": 3,
+      "unit": "dB",
+      "raw": 37682
+    },
+    {
+      "index": 51,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Gain",
+      "pid": 14,
+      "target": 3,
+      "display": 3,
+      "unit": "dB",
+      "raw": 37682
+    },
+    {
+      "index": 52,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Gain",
+      "pid": 10,
+      "target": null,
+      "display": -20.0,
+      "unit": "dB",
+      "raw": 0
+    },
+    {
+      "index": 52,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Gain",
+      "pid": 11,
+      "target": null,
+      "display": -20.0,
+      "unit": "dB",
+      "raw": 0
+    },
+    {
+      "index": 52,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Gain",
+      "pid": 12,
+      "target": null,
+      "display": -20.0,
+      "unit": "dB",
+      "raw": 0
+    },
+    {
+      "index": 52,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Gain",
+      "pid": 13,
+      "target": null,
+      "display": -20.0,
+      "unit": "dB",
+      "raw": 0
+    },
+    {
+      "index": 52,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Gain",
+      "pid": 14,
+      "target": null,
+      "display": -20.0,
+      "unit": "dB",
+      "raw": 0
+    },
+    {
+      "index": 53,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Gain",
+      "pid": 10,
+      "target": null,
+      "display": 20.0,
+      "unit": "dB",
+      "raw": 65534
+    },
+    {
+      "index": 53,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Gain",
+      "pid": 11,
+      "target": null,
+      "display": 20.0,
+      "unit": "dB",
+      "raw": 65534
+    },
+    {
+      "index": 53,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Gain",
+      "pid": 12,
+      "target": null,
+      "display": 20.0,
+      "unit": "dB",
+      "raw": 65534
+    },
+    {
+      "index": 53,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Gain",
+      "pid": 13,
+      "target": null,
+      "display": 20.0,
+      "unit": "dB",
+      "raw": 65534
+    },
+    {
+      "index": 53,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Gain",
+      "pid": 14,
+      "target": null,
+      "display": 20.0,
+      "unit": "dB",
+      "raw": 65534
+    },
+    {
+      "index": 54,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Gain",
+      "pid": 10,
+      "target": -6,
+      "display": -6.0,
+      "unit": "dB",
+      "raw": 22937
+    },
+    {
+      "index": 54,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Gain",
+      "pid": 11,
+      "target": -6,
+      "display": -6.0,
+      "unit": "dB",
+      "raw": 22937
+    },
+    {
+      "index": 54,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Gain",
+      "pid": 12,
+      "target": -6,
+      "display": -6.0,
+      "unit": "dB",
+      "raw": 22937
+    },
+    {
+      "index": 54,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Gain",
+      "pid": 13,
+      "target": -6,
+      "display": -6.0,
+      "unit": "dB",
+      "raw": 22937
+    },
+    {
+      "index": 54,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Gain",
+      "pid": 14,
+      "target": -6,
+      "display": -6.0,
+      "unit": "dB",
+      "raw": 22937
+    },
+    {
+      "index": 55,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Gain",
+      "pid": 10,
+      "target": 6,
+      "display": 6.0,
+      "unit": "dB",
+      "raw": 42597
+    },
+    {
+      "index": 55,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Gain",
+      "pid": 11,
+      "target": 6,
+      "display": 6.0,
+      "unit": "dB",
+      "raw": 42597
+    },
+    {
+      "index": 55,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Gain",
+      "pid": 12,
+      "target": 6,
+      "display": 6.0,
+      "unit": "dB",
+      "raw": 42597
+    },
+    {
+      "index": 55,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Gain",
+      "pid": 13,
+      "target": 6,
+      "display": 6.0,
+      "unit": "dB",
+      "raw": 42597
+    },
+    {
+      "index": 55,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Gain",
+      "pid": 14,
+      "target": 6,
+      "display": 6.0,
+      "unit": "dB",
+      "raw": 42597
+    },
+    {
+      "index": 56,
+      "channel": "A",
+      "band": null,
+      "parameter": "Level",
+      "pid": 20,
+      "target": -6,
+      "display": -6.0,
+      "unit": "dB",
+      "raw": 48495
+    },
+    {
+      "index": 57,
+      "channel": "A",
+      "band": null,
+      "parameter": "Level",
+      "pid": 20,
+      "target": null,
+      "display": -80.0,
+      "unit": "dB",
+      "raw": 0
+    },
+    {
+      "index": 58,
+      "channel": "A",
+      "band": null,
+      "parameter": "Level",
+      "pid": 20,
+      "target": null,
+      "display": 20.0,
+      "unit": "dB",
+      "raw": 65534
+    },
+    {
+      "index": 59,
+      "channel": "A",
+      "band": null,
+      "parameter": "Level",
+      "pid": 20,
+      "target": 0,
+      "display": 0.0,
+      "unit": "dB",
+      "raw": 52427
+    },
+    {
+      "index": 60,
+      "channel": "A",
+      "band": null,
+      "parameter": "Balance",
+      "pid": 21,
+      "target": null,
+      "display": -100.0,
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 61,
+      "channel": "A",
+      "band": null,
+      "parameter": "Balance",
+      "pid": 21,
+      "target": null,
+      "display": 100.0,
+      "unit": "",
+      "raw": 65534
+    },
+    {
+      "index": 62,
+      "channel": "A",
+      "band": null,
+      "parameter": "Balance",
+      "pid": 21,
+      "target": 0,
+      "display": 0.0,
+      "unit": "",
+      "raw": 32767
+    },
+    {
+      "index": 63,
+      "channel": "A",
+      "band": null,
+      "parameter": "Bypass Mode",
+      "pid": 22,
+      "target": "Mute",
+      "display": "Mute",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 64,
+      "channel": "A",
+      "band": null,
+      "parameter": "Bypass Mode",
+      "pid": 22,
+      "target": "Thru",
+      "display": "Thru",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 65,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Solo",
+      "pid": 25,
+      "target": "ON",
+      "display": "ON",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 66,
+      "channel": "A",
+      "band": 1,
+      "parameter": "Solo",
+      "pid": 25,
+      "target": "OFF",
+      "display": "OFF",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 67,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Solo",
+      "pid": 26,
+      "target": "ON",
+      "display": "ON",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 68,
+      "channel": "A",
+      "band": 2,
+      "parameter": "Solo",
+      "pid": 26,
+      "target": "OFF",
+      "display": "OFF",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 69,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Solo",
+      "pid": 27,
+      "target": "ON",
+      "display": "ON",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 70,
+      "channel": "A",
+      "band": 3,
+      "parameter": "Solo",
+      "pid": 27,
+      "target": "OFF",
+      "display": "OFF",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 71,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Solo",
+      "pid": 28,
+      "target": "ON",
+      "display": "ON",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 72,
+      "channel": "A",
+      "band": 4,
+      "parameter": "Solo",
+      "pid": 28,
+      "target": "OFF",
+      "display": "OFF",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 73,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Solo",
+      "pid": 29,
+      "target": "ON",
+      "display": "ON",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 74,
+      "channel": "A",
+      "band": 5,
+      "parameter": "Solo",
+      "pid": 29,
+      "target": "OFF",
+      "display": "OFF",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 75,
+      "channel": "A",
+      "band": null,
+      "parameter": "Scene Ignore",
+      "pid": 32,
+      "target": "ON",
+      "display": "ON",
+      "unit": "",
+      "raw": 1
+    },
+    {
+      "index": 76,
+      "channel": "A",
+      "band": null,
+      "parameter": "Scene Ignore",
+      "pid": 32,
+      "target": "OFF",
+      "display": "OFF",
+      "unit": "",
+      "raw": 0
+    },
+    {
+      "index": 78,
+      "channel": "B",
+      "band": 3,
+      "parameter": "Gain",
+      "pid": 12,
+      "target": -3,
+      "display": -3.0,
+      "unit": "dB",
+      "raw": 27852
+    },
+    {
+      "index": 80,
+      "channel": "C",
+      "band": 3,
+      "parameter": "Gain",
+      "pid": 12,
+      "target": 0,
+      "display": 0.0,
+      "unit": "dB",
+      "raw": 32767
+    },
+    {
+      "index": 82,
+      "channel": "D",
+      "band": 3,
+      "parameter": "Gain",
+      "pid": 12,
+      "target": 3,
+      "display": 3.0,
+      "unit": "dB",
+      "raw": 37682
+    }
+  ],
+  "scope": "Actual device screen + paired GET/SYX evidence. New generated combinations and unmeasured interpolated values require independent import/display/export check."
+}

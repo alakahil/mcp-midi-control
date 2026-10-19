@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-05",
+  "firmware": 13,
+  "userConfirmed": "Scene2 CAB B both slots display24 2x12 65 Bassguy",
+  "generatedSha256": "ff2a8877a2849c1260f9254648e19015762b2a47ea88ed2afeff59d5ddf34126",
+  "exportedSha256": "33ed3f078a1b7cf9830d0fca67e3d7c0a45d8a0c4126ef36a9651611137f1b37",
+  "bytes": [
+    24680,
+    24680
+  ],
+  "bodyBytes": [
+    14222,
+    14222
+  ],
+  "fullFileIdentical": false,
+  "bodyIdentical": true,
+  "bodyDifferences": [],
+  "cabBIdentical": true,
+  "cabBWords": 106,
+  "cabBSlotIds": [
+    24,
+    24
+  ],
+  "cab": {
+    "block": "Cab",
+    "cols": 106,
+    "rows": 4,
+    "offset": 5820,
+    "params_offset": 5866,
+    "scene_channels": [
+      "D",
+      "B",
+      "C",
+      "B",
+      "D",
+      "B",
+      "C",
+      "B"
+    ],
+    "scene_bypass": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "bank1": "LEGACY",
+    "cab1": 127,
+    "channels": {
+      "A": {
+        "mode": "LEGACY"
+      },
+      "B": {
+        "mode": "DYNA-CAB",
+        "dynacab1_id": 24,
+        "dynacab1": "2x12 65 BASSGUY",
+        "dynacab2": "2x12 65 BASSGUY",
+        "mic": "Dynamic 1"
+      },
+      "C": {
+        "mode": "DYNA-CAB",
+        "dynacab1_id": 39,
+        "dynacab1": "4x12 RECTO STRAIGHT",
+        "dynacab2": "4x12 RECTO STRAIGHT",
+        "mic": "Dynamic 1"
+      },
+      "D": {
+        "mode": "DYNA-CAB",
+        "dynacab1_id": 25,
+        "dynacab1": "2x12 CHIEFMAN",
+        "dynacab2": "2x12 CHIEFMAN",
+        "mic": "Dynamic 1"
+      }
+    }
+  },
+  "checks": {
+    "generatedFramesCrcFooter": true,
+    "exportedFramesCrcFooter": true
+  },
+  "audio": "not assessed",
+  "cpu": "not assessed",
+  "scope": "This generated Bassguy CAB B example only; not all 45 generated combinations"
+}

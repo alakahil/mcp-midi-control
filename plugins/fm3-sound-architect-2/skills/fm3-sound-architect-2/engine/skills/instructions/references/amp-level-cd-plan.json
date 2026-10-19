@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-09",
+  "status": "completed",
+  "baseFile": "examples/JB_EIGHT_SCENES_V2_export.syx",
+  "baseSha256": "db508e85b3e0ef015dce6b562699f16e20e5179917069d52de8ac22caf5da32d",
+  "finalMusicalPreset": "JB_EIGHT_SCENES_V2.syx",
+  "controls": [
+    {
+      "channel": "C",
+      "selectScene": 6,
+      "modelId": 24,
+      "model": "USA MK IV Lead Bright",
+      "parameter": "Level",
+      "requestedDb": -11,
+      "bodyOffset": 5234,
+      "observedRaw": 45218,
+      "actualDb": -11.000701925717948,
+      "displayDb": -11
+    },
+    {
+      "channel": "D",
+      "selectScene": 4,
+      "modelId": 11,
+      "model": "Plexi 50W High 1",
+      "parameter": "Level",
+      "requestedDb": -11,
+      "bodyOffset": 5522,
+      "observedRaw": 45218,
+      "actualDb": -11.000701925717948,
+      "displayDb": -11
+    }
+  ],
+  "selectedSceneBeforeExport": 2,
+  "exportFilename": "FM3_AMP_CD_LEVEL_CHECK_export.syx",
+  "allowedBodyWordOffsets": [
+    5234,
+    5522
+  ],
+  "method": "User changes only the two Level controls on their existing scene channels; one whole preset export; no GET and no automatic device writes.",
+  "audio": "Temporary test values, not requested permanent solo/crunch balance",
+  "actualUploadedFilename": "FM3_AMP_CD_LEVEL_CHECK_export(1).syx",
+  "packagedEvidence": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx",
+  "exportSha256": "aac60417ad82db7be996bbc1dd6026a2ff9a5a246bdf4966c116ab33cd87c237",
+  "actualBodyChanges": [
+    5234,
+    5235,
+    5522,
+    5523
+  ],
+  "bodySha256": "2dd66a505053273fd72dd9400458e6a45f805672aa92ff418fa5ebf21b6b07e4",
+  "repeatExportRequired": false
+}

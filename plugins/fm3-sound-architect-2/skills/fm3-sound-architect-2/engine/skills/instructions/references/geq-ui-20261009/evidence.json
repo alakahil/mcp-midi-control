@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-09",
+  "source": "User supplied FM3-Edit screenshots, directly viewed",
+  "files": [
+    {
+      "path": "controls.png",
+      "originalName": "Screenshot 2026-10-09 at 16.20.14.png",
+      "libraryFileId": "libfile_e130d807b8308191b93ed9917c060093",
+      "sha256": "f55b026d467cc85911cd21947c8079e7779e5166e2e46f03fd31a48606de9c6a"
+    },
+    {
+      "path": "types.png",
+      "originalName": "Screenshot 2026-10-09 at 16.14.18.png",
+      "libraryFileId": "libfile_0ab0a93cae048191a18432e5325063b9",
+      "sha256": "7311a8377c96205bb7165ab5d9f1ab3ea294dcd9d06c63303334f4352f6028c8"
+    }
+  ],
+  "baselineSha256": "51f5f3e297bec66f9bf36e0482e1e360bea93ec35fd09f7c80b1e88c78a2470b",
+  "observed": {
+    "channel": "A",
+    "bypass": true,
+    "type": "10 Band Variable Q",
+    "bandLabels": [
+      "31",
+      "63",
+      "125",
+      "250",
+      "500",
+      "1k",
+      "2k",
+      "4k",
+      "8k",
+      "16k"
+    ],
+    "gains": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "masterQ": 1,
+    "level": 0,
+    "balance": 0,
+    "bypassMode": "Thru",
+    "controls": [
+      "Scene Ignore",
+      "Zero All"
+    ],
+    "mixVisible": false,
+    "types": [
+      {
+        "name": "3 Band Console",
+        "bands": 3
+      },
+      {
+        "name": "3 Band Passive",
+        "bands": 3
+      },
+      {
+        "name": "4 Band JMPre-1",
+        "bands": 4
+      },
+      {
+        "name": "4 Band Passive",
+        "bands": 4
+      },
+      {
+        "name": "5 Band Constant Q",
+        "bands": 5
+      },
+      {
+        "name": "5 Band Mark",
+        "bands": 5
+      },
+      {
+        "name": "5 Band Passive",
+        "bands": 5
+      },
+      {
+        "name": "5 Band Variable Q",
+        "bands": 5
+      },
+      {
+        "name": "7 Band Bass Pedal",
+        "bands": 7
+      },
+      {
+        "name": "7 Band Constant Q",
+        "bands": 7
+      },
+      {
+        "name": "7 Band Pedal",
+        "bands": 7
+      },
+      {
+        "name": "7 Band Variable Q",
+        "bands": 7
+      },
+      {
+        "name": "8 Band Constant Q",
+        "bands": 8
+      },
+      {
+        "name": "8 Band Variable Q",
+        "bands": 8
+      },
+      {
+        "name": "10 Band 2/3 Oct Const Q",
+        "bands": 10
+      },
+      {
+        "name": "10 Band 2/3 Oct Var Q",
+        "bands": 10
+      },
+      {
+        "name": "10 Band Constant Q",
+        "bands": 10
+      },
+      {
+        "name": "10 Band Variable Q",
+        "bands": 10
+      }
+    ]
+  },
+  "limits": "UI labels only. Not enum values, type-specific scales, actual GET or generator validation."
+}

@@ -1,0 +1,125 @@
+{
+  "index": 82,
+  "step": {
+    "id": "083-channels",
+    "stage": "channels",
+    "kind": "controls",
+    "channel": "D",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal D. Sõltumatu sihtkanali kontroll. Muuda ainult: Band 3 Gain → 3 dB. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": 3,
+        "band": 3,
+        "channel": "D",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 82,
+    "step": {
+      "id": "083-channels",
+      "stage": "channels",
+      "kind": "controls",
+      "channel": "D",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal D. Sõltumatu sihtkanali kontroll. Muuda ainult: Band 3 Gain → 3 dB. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Gain",
+          "candidatePid": 12,
+          "value": 3,
+          "band": 3,
+          "channel": "D",
+          "endpoint": null,
+          "unit": "dB"
+        }
+      ]
+    },
+    "previousSha256": "e39bd7b97263def924bcddc66a11db0de54f0e331943401974d7eb72981a85cc",
+    "syxSha256": "ba637b278cc75f1ca4dc156af7e489ef5460add19a379076ea8145775813f432",
+    "changedWords": [
+      {
+        "channel": "D",
+        "pid": 12,
+        "offset": 8956,
+        "before": 42597,
+        "after": 37682
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": 3,
+        "band": 3,
+        "channel": "D",
+        "endpoint": null,
+        "unit": "dB",
+        "raw": 37682
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": 3,
+        "band": 3,
+        "channel": "D",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      "displayValue": 3.0
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "ba637b278cc75f1ca4dc156af7e489ef5460add19a379076ea8145775813f432",
+    "bodySha256": "e286ee6bc4161d169ef22e5805d7abc675c4816964d416fc3841ae9c04cdef02",
+    "rawRxSha256": "0d5d95e9c9a03c9da29fdbecfbc0174a8504af4bbb07aa24b64ec43051ea0463",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "D",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

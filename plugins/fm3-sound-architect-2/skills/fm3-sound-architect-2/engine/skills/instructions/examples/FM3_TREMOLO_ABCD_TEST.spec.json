@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-tremolo-multi",
+  "tremoloChannels": [
+    {
+      "channel": "A",
+      "type": "Bias Trem"
+    },
+    {
+      "channel": "B",
+      "type": "Optical Trem 2"
+    },
+    {
+      "channel": "C",
+      "type": "Neon Trem"
+    },
+    {
+      "channel": "D",
+      "type": "Panner"
+    }
+  ]
+}

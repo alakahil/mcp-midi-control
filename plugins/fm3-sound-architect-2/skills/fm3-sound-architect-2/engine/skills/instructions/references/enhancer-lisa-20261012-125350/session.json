@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "kind": "FM3_ENHANCER_GAPS",
+  "collector": "0.1.0",
+  "sourceZipSha256": "98c35922cf15ced5b2c843aabc7534b9860f084cdc0528a3ecc4966e5d7c780b",
+  "prefilledSetupSha256": "521477571bc3fae233f33f0544dd1eadd1f260e16a4477f5d6da4fbd1df07a49",
+  "firmwareDeclared": 13,
+  "startSha256": "355898b615b52f9bff56f39c4b24ac8bbe9f081e94188ee7764f157c0e158d96",
+  "setupSha256": "521477571bc3fae233f33f0544dd1eadd1f260e16a4477f5d6da4fbd1df07a49",
+  "planSha256": "557650773795c5d40d94cdbeebc3bc97e5a3fcc4e1c5df1e96a73d6f7d708f74"
+}

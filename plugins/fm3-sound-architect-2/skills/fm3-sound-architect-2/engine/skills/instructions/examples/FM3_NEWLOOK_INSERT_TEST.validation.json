@@ -1,0 +1,810 @@
+{
+  "generator": "jb-composer-0.3.0",
+  "spec": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-composer",
+    "name": "FM3 NEWLOOK INSERT TEST",
+    "purpose": "Kahe rea paigutuse automaatse plokilisamise kontroll: ainult Chorus rida 3 veerg 3. Chorus on kõigis stseenides bypass, Scene 6 valib B. Bonamassa olemasolevad seaded säilivad.",
+    "chorusChannels": [
+      {
+        "channel": "B",
+        "type": "4-Voice Analog"
+      }
+    ],
+    "addedBlockScenes": {
+      "chorus": [
+        {
+          "scene": 6,
+          "channel": "B",
+          "bypass": true
+        }
+      ]
+    }
+  },
+  "baseId": "jb-newlook",
+  "baseFile": "examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
+  "baseSha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
+  "baseLayout": "newlook",
+  "sourceBodyBytes": 12804,
+  "bodyBytes": 13106,
+  "insertions": [
+    {
+      "family": "chorus",
+      "eid": 78,
+      "row": 3,
+      "column": 3,
+      "replacedShunt": 1032,
+      "donor": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+      "donorSha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+      "recordBytes": 302,
+      "defaultScenes": "A, bypass",
+      "sceneAssignments": [
+        {
+          "scene": 6,
+          "channel": "B",
+          "bypass": true
+        }
+      ],
+      "hardware": "Pending generated-layout import/export"
+    }
+  ],
+  "changeOffsetReference": "assembled body after declared insertions",
+  "signalRows": [
+    "Input 1 → Drive 1 → Amp 1 → Cab 1 → Send 1",
+    "Return 1 → Chorus 1 → Delay 1 → Reverb 1 → Output 1"
+  ],
+  "outputSha256": "3b12cf473112e102cfa5329b5d4a9dde7c46da00b5c558198b51e11bba13c0ec",
+  "components": {
+    "chorus": [
+      {
+        "channel": "B",
+        "type": "4-Voice Analog",
+        "binaryId": 13,
+        "sourceChannel": "A",
+        "sourceCapture": "capture-001",
+        "sourceSyxSha256": "b605ea0a8a33649c0a449f4ab9f60ad78e073016641a4cdbfdc1300566aadaa3",
+        "words": [
+          13,
+          2,
+          22903,
+          0,
+          49151,
+          55670,
+          26135,
+          65534,
+          0,
+          1,
+          32767,
+          52427,
+          32767,
+          0,
+          0,
+          0,
+          0,
+          32767,
+          0,
+          0,
+          0,
+          0,
+          49151,
+          0,
+          32767,
+          32767,
+          32767,
+          0,
+          0,
+          65534,
+          65534,
+          65534
+        ],
+        "affectedScenes": [
+          6
+        ],
+        "activeScenes": []
+      }
+    ]
+  },
+  "effective": [
+    {
+      "key": "gainB",
+      "label": "Amp B Gain",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "bassB",
+      "label": "Amp B Bass",
+      "unit": "/10",
+      "raw": 26214,
+      "value": 4.000061037018952,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "midB",
+      "label": "Amp B Mid",
+      "unit": "/10",
+      "raw": 42597,
+      "value": 6.499984740745262,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "trebleB",
+      "label": "Amp B Treble",
+      "unit": "/10",
+      "raw": 34078,
+      "value": 5.200048829615161,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "presenceB",
+      "label": "Amp B Presence",
+      "unit": "/10",
+      "raw": 19660,
+      "value": 2.999969481490524,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "levelB",
+      "label": "Amp B Level",
+      "unit": "dB",
+      "raw": 50461,
+      "value": -3.000274666585284,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayMixA",
+      "label": "Delay A Mix",
+      "unit": "%",
+      "raw": 9830,
+      "value": 14.999847407452622,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbMixA",
+      "label": "Reverb A Mix",
+      "unit": "%",
+      "raw": 13107,
+      "value": 20.00030518509476,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayTimeMs",
+      "label": "Delay A Time",
+      "unit": "ms",
+      "raw": 1634,
+      "value": 399.9130222479934,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayFeedback",
+      "label": "Delay A Feedback",
+      "unit": "%",
+      "raw": 40959,
+      "value": 25.0007629627369,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbTimeS",
+      "label": "Reverb A Time",
+      "unit": "s",
+      "raw": 1010,
+      "value": 1.6396435438093206,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbPredelayMs",
+      "label": "Reverb A Pre-Delay",
+      "unit": "ms",
+      "raw": 1966,
+      "value": 29.99969481490524,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayTempoA",
+      "label": "Delay A Tempo",
+      "unit": "",
+      "raw": 0,
+      "value": "NONE",
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbPredelayTempoA",
+      "label": "Reverb A Pre-Delay Tempo",
+      "unit": "",
+      "raw": 0,
+      "value": "NONE",
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayScene2",
+      "label": "Scene 2 Delay",
+      "unit": "",
+      "raw": 1,
+      "value": false,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbScene1",
+      "label": "Scene 1 Reverb kanal",
+      "unit": "",
+      "raw": 0,
+      "value": "A",
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    }
+  ],
+  "affectedChannels": [
+    {
+      "family": "chorus",
+      "channel": "B",
+      "scenes": [
+        6
+      ],
+      "activeScenes": []
+    }
+  ],
+  "scenes": [
+    {
+      "scene": 1,
+      "name": "Clean",
+      "blocks": {
+        "amp": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 18,
+          "type": "USA MK IV Rhythm 1",
+          "levelDb": -9.000213629566332
+        },
+        "cab": {
+          "channel": "D",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 25,
+              "name": "2x12 Chiefman"
+            },
+            {
+              "id": 25,
+              "name": "2x12 Chiefman"
+            }
+          ]
+        },
+        "chorus": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 12,
+          "type": "Dimension 3"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        }
+      }
+    },
+    {
+      "scene": 2,
+      "name": "Rhythm Fat",
+      "blocks": {
+        "amp": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 103,
+          "type": "Brit Silver",
+          "levelDb": -3.000274666585284
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "chorus": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 12,
+          "type": "Dimension 3"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        }
+      }
+    },
+    {
+      "scene": 3,
+      "name": "Lead Bright",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false,
+          "typeId": 24,
+          "type": "USA MK IV Lead Bright",
+          "levelDb": -8.000732444227424
+        },
+        "cab": {
+          "channel": "C",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 39,
+              "name": "4x12 Recto Straight"
+            },
+            {
+              "id": 39,
+              "name": "4x12 Recto Straight"
+            }
+          ]
+        },
+        "chorus": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 12,
+          "type": "Dimension 3"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        }
+      }
+    },
+    {
+      "scene": 4,
+      "name": "Mid Gain",
+      "blocks": {
+        "amp": {
+          "channel": "D",
+          "bypass": false,
+          "typeId": 77,
+          "type": "USA MK IV Lead Mid",
+          "levelDb": -8.159428693502605
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "chorus": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 12,
+          "type": "Dimension 3"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        }
+      }
+    },
+    {
+      "scene": 5,
+      "name": "Clean Comp Chorus",
+      "blocks": {
+        "amp": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 18,
+          "type": "USA MK IV Rhythm 1",
+          "levelDb": -9.000213629566332
+        },
+        "cab": {
+          "channel": "D",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 25,
+              "name": "2x12 Chiefman"
+            },
+            {
+              "id": 25,
+              "name": "2x12 Chiefman"
+            }
+          ]
+        },
+        "chorus": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 12,
+          "type": "Dimension 3"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "C",
+          "bypass": false,
+          "typeId": 53,
+          "type": "Hall: Colosseum"
+        }
+      }
+    },
+    {
+      "scene": 6,
+      "name": "JB SOLO",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false,
+          "typeId": 24,
+          "type": "USA MK IV Lead Bright",
+          "levelDb": -8.000732444227424
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "chorus": {
+          "channel": "B",
+          "bypass": true,
+          "typeId": 13,
+          "type": "4-Voice Analog"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 6,
+          "type": "T808 OD"
+        },
+        "reverb": {
+          "channel": "D",
+          "bypass": false,
+          "typeId": 1,
+          "type": "Room: Medium Room"
+        }
+      }
+    },
+    {
+      "scene": 7,
+      "name": "Drive Lead Brt",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false,
+          "typeId": 24,
+          "type": "USA MK IV Lead Bright",
+          "levelDb": -8.000732444227424
+        },
+        "cab": {
+          "channel": "C",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 39,
+              "name": "4x12 Recto Straight"
+            },
+            {
+              "id": 39,
+              "name": "4x12 Recto Straight"
+            }
+          ]
+        },
+        "chorus": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 12,
+          "type": "Dimension 3"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "D",
+          "bypass": false,
+          "typeId": 46,
+          "type": "Box o' Crunch"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        }
+      }
+    },
+    {
+      "scene": 8,
+      "name": "Lead Mid FX",
+      "blocks": {
+        "amp": {
+          "channel": "D",
+          "bypass": false,
+          "typeId": 77,
+          "type": "USA MK IV Lead Mid",
+          "levelDb": -8.159428693502605
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "chorus": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 12,
+          "type": "Dimension 3"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 6,
+          "type": "T808 OD"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        }
+      }
+    }
+  ],
+  "selectedScene": 2,
+  "exportFilename": "FM3_NEWLOOK_INSERT_TEST_export.syx",
+  "changedBodyOffsets": [
+    6812,
+    6816,
+    6817,
+    6821,
+    6822,
+    6823,
+    6824,
+    6825,
+    6826,
+    6827,
+    6832,
+    6833,
+    6848,
+    6849,
+    6854,
+    6855
+  ],
+  "allowedBodyOffsets": [
+    6812,
+    6813,
+    6814,
+    6815,
+    6816,
+    6817,
+    6818,
+    6819,
+    6820,
+    6821,
+    6822,
+    6823,
+    6824,
+    6825,
+    6826,
+    6827,
+    6828,
+    6829,
+    6830,
+    6831,
+    6832,
+    6833,
+    6834,
+    6835,
+    6836,
+    6837,
+    6838,
+    6839,
+    6840,
+    6841,
+    6842,
+    6843,
+    6844,
+    6845,
+    6846,
+    6847,
+    6848,
+    6849,
+    6850,
+    6851,
+    6852,
+    6853,
+    6854,
+    6855,
+    6856,
+    6857,
+    6858,
+    6859,
+    6860,
+    6861,
+    6862,
+    6863,
+    6864,
+    6865,
+    6866,
+    6867,
+    6868,
+    6869,
+    6870,
+    6871,
+    6872,
+    6873,
+    6874,
+    6875
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "exactBodyReadback": true,
+    "onlyDeclaredRegionsChanged": true,
+    "routingPreserved": false,
+    "onlyDeclaredSlotInsertions": true,
+    "existingBlockRecordsPreservedDuringInsertion": true,
+    "selectedScenePreserved": true,
+    "unrelatedHeadersPreserved": true,
+    "encodedSizesAndPadding": true,
+    "componentEvidence": true
+  },
+  "hardware": "New composition pending device import/export; base and component specimens have separate evidence.",
+  "audio": "Not assessed for this composition",
+  "limitations": [
+    "Only listed SHA-pinned bases; new blocks only on declared jb-newlook shunts",
+    "New inserted layouts require device import/export confirmation; no arbitrary routing or block removal",
+    "Amp/Cab templates target B only; Amp B scalar ranges preserved",
+    "Drive scalar overrides retain measured type/channel/value combinations",
+    "Delay A scalar overrides only type14; Reverb A only type2; Rotary A only measured points",
+    "Existing scene controls retained; addedBlockScenes only applies to newly inserted blocks; new blocks default to A/bypass",
+    "Shared channel changes affect every scene using that channel",
+    "No new output boost, modifier/expression or external IR writing"
+  ]
+}

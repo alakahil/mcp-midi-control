@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-08",
+  "generator": "jb-composer-0.4.0",
+  "passed": true,
+  "wholeBodyCases": 11,
+  "allSceneFieldsChecked": 1096,
+  "bases": 7,
+  "allEightScenes": true,
+  "partialUpdatesPreserved": true,
+  "inputsUnchanged": true,
+  "rejectedRequests": 40,
+  "heldOutHardwareReproductions": 3,
+  "musicalRhythmSoloBodyEqualsUserExport": true,
+  "unchangedDeviceBodyRecognizedWithoutRepeatExport": true,
+  "legacyConflictsRejected": true,
+  "insertedChannelActivationRequiresExplicitTemplate": true,
+  "finalSceneReportAndEffectiveControlsVerified": true,
+  "schema": "Structure and field coverage only; full schema validator not used",
+  "hardware": "New interface reproduces existing hardware-confirmed specimens exactly. Arbitrary new scene plans have offline tests, not blanket hardware/audio approval."
+}

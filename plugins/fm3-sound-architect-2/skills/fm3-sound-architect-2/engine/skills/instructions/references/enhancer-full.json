@@ -1,0 +1,2142 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "effectId": 122,
+  "wordsPerChannel": 12,
+  "evidenceDirectories": {
+    "full": "enhancer-full-20261012-122507",
+    "supplement": "enhancer-lisa-20261012-125350"
+  },
+  "files": {
+    "full/baseline.syx": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+    "full/plan.json": "63f9eebaeb646eb18fffb01a58e887a8963bf7fc473827b1d7d27802cac280d2",
+    "full/prefilled_setup.json": "521477571bc3fae233f33f0544dd1eadd1f260e16a4477f5d6da4fbd1df07a49",
+    "full/session.json": "5e6e9395bb979d40543d608386ad2e26dbaab9bc8364dfed6ae0fb1139e38476",
+    "full/setup.json": "521477571bc3fae233f33f0544dd1eadd1f260e16a4477f5d6da4fbd1df07a49",
+    "full/step-000-4ab592a252/capture.json": "cb137b540ce1de4739517ab4d6422a222cf0753b1d92eea6e0554e6887b034de",
+    "full/step-000-4ab592a252/donor.syx": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+    "full/step-000-4ab592a252/result.json": "33764b95d0ebaab7df112a311f8c73116d0a2121cad303024f71e881478b6523",
+    "full/step-001-7c78b568bd/capture.json": "e2b8041dd67579fb423ec682311ae449e6068c075109d22b92538e27b940a7c1",
+    "full/step-001-7c78b568bd/donor.syx": "80de01f8a783a0abeda8c90f405d6fcfd64027b2d5b04219af02e510f3803fc5",
+    "full/step-001-7c78b568bd/result.json": "0d484cdfad051123b42aec62b49ecc9bdd0d7225d77110ff0ed6755e7d86aebd",
+    "full/step-002-ebb2d1a1d2/capture.json": "394f21deba86526e07ab15c99a14d1c325e1209b6db8de2ece6ba0f9c62a4b5e",
+    "full/step-002-ebb2d1a1d2/donor.syx": "dad66dfde7d1bbb1aa56d2c051bd33df68b405df2c357b94e360b5b0f729c243",
+    "full/step-002-ebb2d1a1d2/result.json": "0291fa70ce4434f9d9925869b5d1892c540f213b31414a20d3c314614d9aa6aa",
+    "full/step-003-953d9ddeb7/capture.json": "26c1c9acfc4f7d59297525035ab5611c663ab9c27f4f5987618f6d24752e8df4",
+    "full/step-003-953d9ddeb7/donor.syx": "7b974ff5cca4b9ac16bbb3f47ada3cf27545d5bd0c7b7a116ba40e221d905709",
+    "full/step-003-953d9ddeb7/result.json": "a01435036244d5a70c811b14ec181113803aed0a70443baf58a0d415cde0688b",
+    "full/step-004-0876b34511/capture.json": "d05fe2be6bacd8796738a91d5574b6b9cc8dfdc07b3aef8c48883bc5f8469d89",
+    "full/step-004-0876b34511/donor.syx": "598f0114663830649d130eac986981a9c5f9a08a0bca4b772b811f90aa03e5a6",
+    "full/step-004-0876b34511/result.json": "45675451ea285ad4cdda0b6bdf0e28077cb347e2b429535ee81e15d08ef3393e",
+    "full/step-005-db331d03d6/capture.json": "adfedce34ddc990ed956d021cfd768817cd36292bedb6aa8b3862d460bd5b856",
+    "full/step-005-db331d03d6/donor.syx": "75cb2958d8d97fc51a82e67710e55d7f92eb7879abb55369f0c58796ed1201b1",
+    "full/step-005-db331d03d6/result.json": "f96cd4e9ada8141fd51708409c084c54887409509073937214d5e021055d41b7",
+    "full/step-006-002de45c41/capture.json": "99f4bd6be4621ccd9ec4f4ab8b22573f1b92c6919c078b902d69dc282778cb47",
+    "full/step-006-002de45c41/donor.syx": "2dd97b0244aac764facd0ab52811689e6041bc65c9ae34fbd5742bf1d36194b8",
+    "full/step-006-002de45c41/result.json": "8c209932d45f9406d2ebc2844c8235872c8deb2f0081ee676a6abcce4ee0044c",
+    "full/step-007-0c0be9c96b/donor.syx": "b20540d946cfd848ec292f9a903d031e7e355158ae78f5e5445adf6961914f46",
+    "full/step-007-0c0be9c96b/result.json": "eecc4f8c9d17513157511f1416753697dcadb6301a56c40ce048b84c27343b73",
+    "full/step-007-10c32c018a/capture.json": "b5848890def0c95177da0de07ad7657c91de105b403d662ae5c66be5135c36cd",
+    "full/step-007-10c32c018a/donor.syx": "f581b8d9c0b76a97eb3ef52a4259e5709f13b45abb6411d877611c5a44f78a81",
+    "full/step-007-10c32c018a/result.json": "e58bf8909ddbb576b6bf0a0aef5cf5e29866f671eb779075c77a4df7874c1996",
+    "full/step-007-2aa5aa2ee7/donor.syx": "b20540d946cfd848ec292f9a903d031e7e355158ae78f5e5445adf6961914f46",
+    "full/step-007-2aa5aa2ee7/result.json": "eecc4f8c9d17513157511f1416753697dcadb6301a56c40ce048b84c27343b73",
+    "full/step-008-b065f4bd56/capture.json": "e2fb7bc623a2b277a254025799d58a1a6922cc039ce7e6621b583e0a20d8b798",
+    "full/step-008-b065f4bd56/donor.syx": "0e08ed312dbf8943c9626207babb8a701a6844c92e4ef7302fdd76ad43b8dd2a",
+    "full/step-008-b065f4bd56/result.json": "e4aa68d976cbc52c45decc2df6b4a5e902fe0d45dd3f4d3e8859d13e26146779",
+    "full/step-009-01dd63104e/capture.json": "d4523f448d438e9196b02166e1bbeb088e903a1891f83716052a603540e3fa58",
+    "full/step-009-01dd63104e/donor.syx": "c4d5c71f2c5e0c62999d89fbbd938d900531e435efa1d36ab1a427663c34f6d4",
+    "full/step-009-01dd63104e/result.json": "a6811acb2bf622643358b5b1186dc043fc57ec39bbaa6b3fd7d6f05304991ce9",
+    "full/step-010-c7d239cbec/capture.json": "2734227c6e297ea26541198a29e78283c1938027f9720ae5fd8748024c4fa8ce",
+    "full/step-010-c7d239cbec/donor.syx": "e5152a80d3159b354dfc39e25aebeee47d8cbe636b32fe61eb9c90932407a440",
+    "full/step-010-c7d239cbec/result.json": "2a8f32e1852775bdf93801f74b5e9a8d9e902b8ff41a0a2ca88b6519b3572c6a",
+    "full/step-011-4afe8e3074/capture.json": "f4cb4089dbd6e5006532dbb54dce045361e7c3250bd2451ac788b769fd17c957",
+    "full/step-011-4afe8e3074/donor.syx": "7abb91cc0a72e010b953427541b17a11eaa9e3bd58a2c2a888dc45b80d0d1e7b",
+    "full/step-011-4afe8e3074/result.json": "f0e7bbe1b4036af303638dda66c51d545f0450c8ba50fdfb972d399dc9589fff",
+    "full/step-012-121956b84f/capture.json": "fe329cac03c625790b36b655ae36456e451896d625ed9c2779002e3c6e776db6",
+    "full/step-012-121956b84f/donor.syx": "0c8563b6f3744879370b019e8d7abf6eb1409d4c035bad3ac7317978a11bd5e4",
+    "full/step-012-121956b84f/result.json": "dcd798f416e533861ad9d5610a8cd8733f661f9f1871696b2ac9a1edf54fb012",
+    "full/step-013-6fe53655fb/capture.json": "fb80f363d6fe1fe759b4d52fb95f7081e9bb1d80633dfe151d8aad1ec330ae6d",
+    "full/step-013-6fe53655fb/donor.syx": "af2177bee0bf694319df17256676d4aa067c6a6e75ca4e183a3201825b0959e3",
+    "full/step-013-6fe53655fb/result.json": "7594974fe0edc70cf57b8ab6c1c9aee369cf8a332a31cd2921931803adee13d9",
+    "full/step-014-161c7e2616/capture.json": "7c5584c81d3f866f3a3291bfdf5adf4f4ae3a71ea348fab1bd6df1e73cff668b",
+    "full/step-014-161c7e2616/donor.syx": "001f909252f85188fb5c2911bfbd365df6b871ef4ecdbd1bb0fa5fbd2a475d2a",
+    "full/step-014-161c7e2616/result.json": "893f06db2b200ed09807b6560fae4ea3b69a1f65e57521dda3ae23f3cf8ed3df",
+    "full/step-015-cbac7d29e6/capture.json": "9b18d52517da610d74b8d49f6a5fb567fe3ce62be1895caea5b3b013e3d0b50f",
+    "full/step-015-cbac7d29e6/donor.syx": "9e576e59062d41c58def68f666f7f6d688622f5979bc447354323d9d48cc9cd3",
+    "full/step-015-cbac7d29e6/result.json": "0554f114450681f036533fec6f1acb4283183fc967bfa665b9db7713e00d8609",
+    "full/step-016-b764c5a2c1/capture.json": "f4bbbcecb473da67294d1a13cc65ac4d97a82016ace17d7aa0d6a8ed6b8ab489",
+    "full/step-016-b764c5a2c1/donor.syx": "1d0e4bac8fb5bf371cef62f31acf5b43e83e41a0b737a5bdb70a68d7ebca1c04",
+    "full/step-016-b764c5a2c1/result.json": "df03d7aa1ee9c5c9e2e718b3f716cba37da216d0cfe9723a423071b69b390ec2",
+    "full/step-017-8847d341d0/capture.json": "d03557d3448f5539005da1960283413b8c38ea66b99921eca742ae83ecd416b9",
+    "full/step-017-8847d341d0/donor.syx": "45c832e3e546a71191dab65cb0132f66a3a63fb55dd0fcf324f706778b3d9d2d",
+    "full/step-017-8847d341d0/result.json": "f4e0d1698f7bf55ee422a859270a49688017593885a7c6a84ade218c72dfabd1",
+    "full/step-018-7002384e17/capture.json": "5d0e6fe7bf9027350a390074be682056ac8b55476583420b581f3cd6d278cf62",
+    "full/step-018-7002384e17/donor.syx": "1a8b7e8ece47556150862e690a2907d137e99ab46abf7f56ca6d72166e7a2a00",
+    "full/step-018-7002384e17/result.json": "ef7e72e7a406c70fcd6b60273e7883ecbc51342ecfc973491418de0143013641",
+    "full/step-019-84404523c8/capture.json": "06960a4c30e8a4eb0c13359f3e67805b95e19adedeba743fa9f35de27eac3cdf",
+    "full/step-019-84404523c8/donor.syx": "e99e599952f73a237119e8b102dc512210ed89e489128ca096d346b60ded6257",
+    "full/step-019-84404523c8/result.json": "a500647a9f20995719b870a072dd4608dd946241bc592213b0107b4b3d5a5f75",
+    "full/step-020-4ad545da37/capture.json": "0704596dbdae59e838ee8fee9ec0774d1ccbda92f935193c216f5c6b7bfafbfb",
+    "full/step-020-4ad545da37/donor.syx": "eac946712becba6aac808c4ba5f61c27face1154704059a64d7730372665ba81",
+    "full/step-020-4ad545da37/result.json": "2e91c3684f1d71c27541ab75b5431b993c193755b0f7981693fa3f52ac6f62d9",
+    "full/step-021-1ea1bf8987/capture.json": "80816bd29feaa63880b74ec9ca962ac5445feac1476ca390beced7c5c13c9629",
+    "full/step-021-1ea1bf8987/donor.syx": "f9a38b6223c99423b1382c02645d0fea71e387408a958967078c14c52cb585c7",
+    "full/step-021-1ea1bf8987/result.json": "9d9fbf47d8fd20c33e2c935acd8a36ea954b1f70f9eaab99940e874ae4713d97",
+    "full/step-022-b3ad3da7ef/capture.json": "f581cdbc7c8665feac23f09c52fa287982934bf46a06f71d8cfcb32e386c9733",
+    "full/step-022-b3ad3da7ef/donor.syx": "f7cf6a63262f000e14569a56f8eb850f196ec045de090b72ab52a830f47fd6ce",
+    "full/step-022-b3ad3da7ef/result.json": "174280cb71ac045849f63e8be310cdd19dc318960065d86357717c803a4dd9d2",
+    "full/step-023-3a582b1975/capture.json": "d365376a2b47c872e3cb941db3d1ae1a6c54bfc5528073a1da48ac0cd433256e",
+    "full/step-023-3a582b1975/donor.syx": "03ca58fa64fc6004a4648d6fce79fa115c82e8d2393728cb51f1cdc1eebd8d56",
+    "full/step-023-3a582b1975/result.json": "09531d56100c69aff40862c60187416b578522cfa5abf592668eff2cf653b00b",
+    "full/step-024-fd37afb938/capture.json": "db7cfbb2991aac07eea9c651c62ed2ada65e1f327aa0d16ebf625638503bf898",
+    "full/step-024-fd37afb938/donor.syx": "c9f7b048dc98d1bae2c88bc48a2c506b909bc39779b0c1bea003998174f6e8a6",
+    "full/step-024-fd37afb938/result.json": "5d4f2abd7d6b2aadaa08cdeddbd4ed60344fdf4d8d7499f2347f3db5d548dbaf",
+    "full/step-025-dd5711eb1d/capture.json": "c9cc51428f2e1cc661a387e56e07b844a0263400d3a08f8a97f09340636bac61",
+    "full/step-025-dd5711eb1d/donor.syx": "7bf597a11eeeea89de1ca9e5dfa19b82d9811c18fb3af98cff6868dc9e4c1cb9",
+    "full/step-025-dd5711eb1d/result.json": "05ef29f1adc0f4deacf99e19ea5678abd5675aedde28531570e194e8035c3137",
+    "full/step-026-9b2e94b561/capture.json": "a01443d484c6b78620e6748701fce0482d97492045b5a7024be9ecb7aa7990d4",
+    "full/step-026-9b2e94b561/donor.syx": "c2e3264e5424a70537f51b13964e92d3ebf479772012e3d429b3a1eacefd8560",
+    "full/step-026-9b2e94b561/result.json": "4a4eaef1622bb406f66a2b8c4478bd37962cf3fb6c925bbdee430eea1f5bcd60",
+    "full/step-027-7faa2fe22a/capture.json": "cffeb1714eaba45e6255fff549304b2fdbd9d3e3e69b9e6f9a2444c9b36303fb",
+    "full/step-027-7faa2fe22a/donor.syx": "7bf597a11eeeea89de1ca9e5dfa19b82d9811c18fb3af98cff6868dc9e4c1cb9",
+    "full/step-027-7faa2fe22a/result.json": "42392ddcb8dd29b2ac6ef3502833e296552769e0d12a01aa9645f7e898db229f",
+    "full/step-028-050eadc488/capture.json": "f2d52fbea1d47b17dcf1186cef3fe9bf7e0354cf33766fe73091685ea6bf9620",
+    "full/step-028-050eadc488/donor.syx": "86cb4e9213f14cc5e0fff67cb21c488214138f43d967d1fc5c8361dfe75bdaef",
+    "full/step-028-050eadc488/result.json": "2244faceaaf298fe5514ed85456248a1e42c22196a40bd55b558a65012d2c1dc",
+    "full/step-029-0215cbf97e/capture.json": "8af5e51956e5a2ca0b6e05ca5ac8785fff41823d540f81a331078ddd90ed50b8",
+    "full/step-029-0215cbf97e/donor.syx": "af640629f7e705eb6a08413bda68c85d4f21164b8200f39cc2985f1680b74040",
+    "full/step-029-0215cbf97e/result.json": "7624f62353a4cdb2e9fb133c5d8a36b15a8fc8346683da338ae3067019f0da8f",
+    "full/step-030-38df6e6528/capture.json": "72c99e022d7f9ff6dc9d1058c28ac0dd766aae6369aba93d9409bedfea744e3f",
+    "full/step-030-38df6e6528/donor.syx": "53675d6dfbcce04442235bd283071ca5c52ecac00a4b7035ed0fbbb5fef6c38e",
+    "full/step-030-38df6e6528/result.json": "28fa6bbc076ff436bb5174adea5436ef6e9dfb0be3c3169b04bb6379a8786988",
+    "full/step-031-9e1cebbac9/capture.json": "658e91e55e9f9bc2946cb29a1fc16646dc71fd35a2248a904f75dcb6d57d508c",
+    "full/step-031-9e1cebbac9/donor.syx": "79eec29b79e030b624ae5348e4db46a6a4099ff045024a55adc104b0f033a780",
+    "full/step-031-9e1cebbac9/result.json": "a04a00eab2b0d2a23b0ba6abaac955bdea1381174c8676645f24a9d8b90bcc4e",
+    "full/step-032-27aa2f1050/capture.json": "efa6a488ff5947f1a86bbda561c9f81e407efd696ca7f10bc32a082edd1812a3",
+    "full/step-032-27aa2f1050/donor.syx": "7b0ae0b34a33cdbef7b0f9c145ecff6789df519c0aec44cc5205c7bd1460abc9",
+    "full/step-032-27aa2f1050/result.json": "cee4524dfa25d2c55b62b540694325e7d98862e03ec63fd9f4f538e739ab4446",
+    "full/step-033-4320fd3b93/capture.json": "e8300d3d21f5680fe298e492bdf73096bb30ccf5a9f9908f1588dfe122de3247",
+    "full/step-033-4320fd3b93/donor.syx": "f7cf2f3574feb90d7e12cef22127591a9c1886e1afc604e9978ac3feff9a128d",
+    "full/step-033-4320fd3b93/result.json": "c1fee438f59997342bf81e78a6898b1f85ee49873002e55bf5a45d2f546c8397",
+    "full/step-034-515cc3d90e/result.json": "7c37fe75c70ed1749c6f33d7bc5537e7615d18479386e87a52c0d0ca9d4ccee1",
+    "full/step-035-20470d39b4/result.json": "567f820bc5b813df026cdc81a74778b4d54140e4023e94e5a113d21826a78a24",
+    "full/step-036-75bdc8b3fb/result.json": "4069a48094298eb33b348323e34ac2b10e56775deea829fdfb8fb586268fde78",
+    "full/step-037-a2ae78c5d9/result.json": "2a2e72163aacfda72cc2eff48fef7616de999e0b6b71b284a6e5d12aacee8a65",
+    "full/step-038-11d7e0abf1/result.json": "7fce52747b096cf75bd8d15dfa3f1fccf1b47f3865eb66e9de7fc6ec788d0623",
+    "full/step-039-e6902f3774/capture.json": "50651639f98475ab15a276607f31ccef1e1945032f73bcb9a665f1e795cb230e",
+    "full/step-039-e6902f3774/donor.syx": "113e6f4911df6aa43435318ade37e98ebc8f78c9e483ed618697507edb82d267",
+    "full/step-039-e6902f3774/result.json": "01e9b0235b5327a6388389fdd7691534edaddb007a1c9ac28437833e91836d33",
+    "full/step-040-4f0cf5829e/capture.json": "8a73ba1d4803e967d219740915ce0b795daa80c64fa366f0954ebe2d39d48c95",
+    "full/step-040-4f0cf5829e/donor.syx": "f7cf2f3574feb90d7e12cef22127591a9c1886e1afc604e9978ac3feff9a128d",
+    "full/step-040-4f0cf5829e/result.json": "dfa19dec8fbef6334b1cbe62bb5388babfb6f85dce08d5013248a60ca4832818",
+    "full/step-041-18c2adce6c/capture.json": "00966dad5d5cf504dd815641c45d553941136c90463cac5ddabb71cbb77c5f49",
+    "full/step-041-18c2adce6c/donor.syx": "c00f6395afbce9272c0ecf082d5f49448dbff6bd9c4fe5f710582b62b0304c53",
+    "full/step-041-18c2adce6c/result.json": "521115a37b6b7f109b87d8d967ca20b4656258d29042323dbc0f8d4714789b1f",
+    "full/step-042-807e673987/capture.json": "2ba486058d3268b38e6263582013c2eccf05cb044274207f3da52cb2537e4dad",
+    "full/step-042-807e673987/donor.syx": "d6e21c340694edfad1c2f69fec656c9514a8a9617a9133b5eaf245cb03628e71",
+    "full/step-042-807e673987/result.json": "d51196054df1ba4635db13ce875869ad4ad061c023f9fe4ff0a373cf2f432fc2",
+    "full/step-043-96673b4796/capture.json": "5c441f36b03d7ee7f2771f6692b0aacc2480d91cb23e33b72373d3c98de6fdf9",
+    "full/step-043-96673b4796/donor.syx": "bd12bb48cd47a5d205db085d966e910a7bd3afa11d60862ff3819a7de58e3690",
+    "full/step-043-96673b4796/result.json": "07d6d53a48679cbe2a5e9446374933c42e99c732422a251ddfbc3a2b7eb51e86",
+    "full/step-044-ae5b14d69f/capture.json": "d9df0fa66d682dfcda25b40bb6b1ab1d1db0871286209a2c46bef17603961077",
+    "full/step-044-ae5b14d69f/donor.syx": "ce96e2fd538273fcdd7e023634400cd79b76d3843ec0f0e449e4540b65816f95",
+    "full/step-044-ae5b14d69f/result.json": "9d8da0e3b02783afd105f34217002b054cda1799e457ab4449ea285b390c736d",
+    "full/step-045-90f79794e8/capture.json": "0048878384a389af3a5ae4c962f492da29765d0516d6a878a6ac9924a2824941",
+    "full/step-045-90f79794e8/donor.syx": "4f8c7dbc6406c7f2c3d92f6a55494ba99bc2cef550dad1788a9161625b2ffb9f",
+    "full/step-045-90f79794e8/result.json": "1a1d4db10e690963873587d684505c5c73650ee840d0b6fc2e0faf4a4f01a7a6",
+    "full/step-046-f4a75f2f11/capture.json": "f1320dcd767434d169af7b5acc047f498d793029e9a7dfb792593786ab2343c4",
+    "full/step-046-f4a75f2f11/donor.syx": "a42cc04f6c048ffcee69d73386de81ffe7bf68342d985228de4b6a270ff0b5a7",
+    "full/step-046-f4a75f2f11/result.json": "38577d1a9a68b77b9bd4eb28de8d662eb9b3f75492a7a3637ce919ade05692fb",
+    "full/step-047-c20957d9b9/capture.json": "3b7378b660ceede66a51967c816426bdf5700be45e035679db8f2dae1f30dab4",
+    "full/step-047-c20957d9b9/donor.syx": "bd12bb48cd47a5d205db085d966e910a7bd3afa11d60862ff3819a7de58e3690",
+    "full/step-047-c20957d9b9/result.json": "0f26ff9518b5fee3dea499953202fc85afa10124701b4d3e0a13aae26283bd10",
+    "full/step-048-02e5375899/capture.json": "cde2550967f1643a5d947f9fc2ed9cab99fd9376613afd90412de97b44c661b6",
+    "full/step-048-02e5375899/donor.syx": "7617bea10d4b630eac89598feb64f1f279f22895df240546329ef8353014ef0b",
+    "full/step-048-02e5375899/result.json": "d6f9ed3bb46d0ac404d9c7e1cebb3f0309718d51f2d57d04557d58ae48985032",
+    "full/step-049-7b3a525850/result.json": "e4f994ccdabf109f0840a3447a6a44c64dd4e4c591153b2f3cf266f653626ff4",
+    "full/step-050-15fe2f90cf/result.json": "56875f9b972e904c3320cb65df5b81dafac730589fca6c67df87b6e4f1f43568",
+    "full/step-051-c5a12346b2/result.json": "c542eb026503bb5ab8d5faee2aba583644a6ad72b0d81fa4d30f29564277fdfa",
+    "full/step-052-3e5f814e63/result.json": "0372336dbabe57f2dd8a339f0cb16fa91a9c74aac3750a5a1c2463dbf0fea45c",
+    "full/step-053-68c2252d1d/result.json": "cbcdfc09dcaca80f4112964d47a6b12787890f9c33d5027cb41e1eaa0cd53793",
+    "full/step-054-465ee64ab4/capture.json": "16dc18a33226d3c3c8a173dbdb75555aa0db5f07859cbdbea39af678eefca6d3",
+    "full/step-054-465ee64ab4/donor.syx": "a48918998d7044ba135ebd7953afd02b2a84ce20b63ed0eddd688a988a1b0804",
+    "full/step-054-465ee64ab4/result.json": "f485eebb337d3ab9fb1205f2d6e843ba01b3ea1eb24926b5d31e195ae22165a9",
+    "full/step-055-dbc6ea9d5e/capture.json": "165d391a4a3405e46ba97d336e095a5ae3d355e4e3a2f7b6c8e023a86551214f",
+    "full/step-055-dbc6ea9d5e/donor.syx": "5a9cb44d71c8dfc3df771d67740d8b617b2996bab19e3cb5da7f6f5e7c1d6eec",
+    "full/step-055-dbc6ea9d5e/result.json": "06908a4f40018047a1bff2c52b81b5402af19b7e06aba3424aecd1fb437f1c63",
+    "full/step-056-9854318154/capture.json": "7b99853bf3a84826d0ae24c4fe3719b33505c048315dcaaad4ef9746d04cdf06",
+    "full/step-056-9854318154/donor.syx": "7617bea10d4b630eac89598feb64f1f279f22895df240546329ef8353014ef0b",
+    "full/step-056-9854318154/result.json": "8cdadbf79ff80df9365263d0baa65edd969fa3dc538c391b9a1ccbe888f84e36",
+    "full/step-057-93db4b5bf1/capture.json": "04d58cc3127c169613e5f3b15b68b74d17b5836807256ad24f8c699829198ec9",
+    "full/step-057-93db4b5bf1/donor.syx": "853f16544264421d0ebea5c0c458efb1d161ae05a0cc3567558ca08f99588c23",
+    "full/step-057-93db4b5bf1/result.json": "4b849ed301e44e8cdd966fbb5433ecaf68643ed5965ca1181e216bf67b35d79a",
+    "full/step-058-ba380dccee/result.json": "c221ba05eee457210a96d0a5fa507794b91683720ab866b3a66dc7e50dbd31d8",
+    "full/step-059-76a7599bd2/result.json": "36529f11782e13221175f786cc9ebfa20c4c082d7f89783cdb6362bd1127b6bc",
+    "full/step-060-a86cbe7a1b/capture.json": "192ee0bc82e8e882ca9ef7f21e5fbd79ada785182defc7c0b120d2f0eeab0525",
+    "full/step-060-a86cbe7a1b/donor.syx": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723",
+    "full/step-060-a86cbe7a1b/result.json": "5e5b3b4ab584ffcf4b8f9905d994042f7da41120bf0d215cfb2ea0aa93727427",
+    "full/step-061-2f6e8fe150/capture.json": "f65d203a22018a22128f3cd05e395b9735cdfb7eb84a0208a3fb43c850f6f662",
+    "full/step-061-2f6e8fe150/donor.syx": "7858702ee2beab8bde72493ee9de8b4f3d511520a2f7b52b72e24843119248fc",
+    "full/step-061-2f6e8fe150/result.json": "55d1f61cbc06098c40a3a3daf0cc932ace092c3e45436a099d1cc3409a6332b8",
+    "full/step-062-b4415644f9/capture.json": "334b63e4de914d56d5af7041c8fbbbf346bf69f98c4d23d6f68daf45fc74eeb2",
+    "full/step-062-b4415644f9/donor.syx": "cb5e9d68da7b9726f299e23dbb46f9c61d7f45028836cbc4a60fa7110d76e560",
+    "full/step-062-b4415644f9/result.json": "bdba7a2a9ff3e023bfd93b72633ff5139e9a8a13bf77bba6dac60b92577d567f",
+    "full/step-063-5852218883/capture.json": "1b3a1c8bd20471ab5464caf90f9389e182875c48c6e0a86f96030dbfb014f849",
+    "full/step-063-5852218883/donor.syx": "c341b0e49ee00edcea1729ac19be40dec70f17a8181e52a74464241e509d78d3",
+    "full/step-063-5852218883/result.json": "3a3793bdca3cc6e89d267f6815f95220b4d42ee40566d10189aaf0a5af1cd04f",
+    "full/step-064-b09dd4206f/capture.json": "34fbed88ec383108a6407251da33729cb06f7606f140a0995807ede77c48c56a",
+    "full/step-064-b09dd4206f/donor.syx": "40be64a74947d2f885ecb750347321b5fecfc5c1649f1a920ff7aa0e5c0272ee",
+    "full/step-064-b09dd4206f/result.json": "17ea0e2210a8334dfb57e3d37d5ff97cf027e0add4743bf855d4d275b4b4494e",
+    "full/step-065-aaa727278d/capture.json": "f5525bdd641d8be79d76b957ebf7f83300dc6d8acf279b85473eb68abd6e2b19",
+    "full/step-065-aaa727278d/donor.syx": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723",
+    "full/step-065-aaa727278d/result.json": "bccd13143c400ec8f06a8c71cc106c0058d31ca0c91078cd984b72875a4ac113",
+    "full/step-066-acd6c5762f/capture.json": "8ebb35dff7625a259a9837a711881388478bd4398723d7d08b5906044e1ca56c",
+    "full/step-066-acd6c5762f/donor.syx": "2c6430e9a1dd7dcd7c32a62a69791fec8b97255d63385dadb52369efd31cbd51",
+    "full/step-066-acd6c5762f/result.json": "1fc097e984c7fa376a8e7884d84d4fd02daa58820fffe855c1232aec4dc9aadc",
+    "full/step-067-297532ddfd/capture.json": "3331cacef546f5e8f6a71ed9b7664de70aedad54ac4c754d26633581999faff4",
+    "full/step-067-297532ddfd/donor.syx": "7c1608c0816b0c507b5b6be2e906524667b7d217f6397e52aba7d3ab472f2994",
+    "full/step-067-297532ddfd/result.json": "777d799fbc86269cc181be424258d8cb5a3f04790a31c3b245e4218facb1a430",
+    "full/step-068-da7c463625/capture.json": "5dd7fa3e0db0839c7ac544c9edfb1ac555aa9ba96353ed1e41e39688c3670416",
+    "full/step-068-da7c463625/donor.syx": "4f24b9916a6c4cc102baa7ceeca7547c2f94c2e31be40cc527dbed6dc5b79dbb",
+    "full/step-068-da7c463625/result.json": "a645495eddc398d7e5b24320c3ea71c2e6240ab2451b87c3e5e3c9d6c33ce5ec",
+    "full/step-069-03bf3547f0/capture.json": "486f1c9557910ad96854a5e573d1471f2c9d33e0e5d7ca15e96172e65931ccb5",
+    "full/step-069-03bf3547f0/donor.syx": "8cf021c9d8c160216a1df90a38d44e01a99f552693aec0b52eb600fd78ea65dd",
+    "full/step-069-03bf3547f0/result.json": "dc838c8ec6f95433567f11d397b5ee8af66a53fb377a070d2d9537a74232718d",
+    "full/step-070-9e9bf21fb8/capture.json": "84245843655cbaafab9b396cb56a994ca6399b379695b69fdaab420ee023726f",
+    "full/step-070-9e9bf21fb8/donor.syx": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723",
+    "full/step-070-9e9bf21fb8/result.json": "7967d566cd5d3312bca2619784ab873a530db89a49498ec3568d0bdf85059c70",
+    "full/step-071-fc34b16651/capture.json": "03001aebd776a135884c1b2b2753d5a21e05368a5dd84eb1415a58ca19f91388",
+    "full/step-071-fc34b16651/donor.syx": "b18a2ffb500fbe91b0d9aa09647cbc2eaccc27d9d581c38366defb1d2c364573",
+    "full/step-071-fc34b16651/result.json": "3b5d82765ff9e3192904fad59ddc56d297f18e783f146aaaaaa208b6eba1109c",
+    "full/step-072-ea672a19cb/capture.json": "e824bb69aa469c65ecac92b1975fc923c8682c082dd15f47700fbe13800c07ea",
+    "full/step-072-ea672a19cb/donor.syx": "e3d9d938eac3da1e56c339996cb545ff020d3d24b516ff1c0a375e45734a56b8",
+    "full/step-072-ea672a19cb/result.json": "7ebf115dbdfe39f97c5f267975bf28fd3b39e563f10a205e77abeda68f12a340",
+    "full/step-073-3063299f49/capture.json": "068a83004f5c2da8c791a98a757c6d782c21db25a9f2080a2f17bacd674c8f17",
+    "full/step-073-3063299f49/donor.syx": "0e2777bddfc1d950428d8c5ff392c6b095bb3fc59f337d1a3d7115db53bac30f",
+    "full/step-073-3063299f49/result.json": "5b8a34a788d6cdbe370ab34ceec5a81499d391c7e4ff8542e4d73c7f8a38656a",
+    "full/step-074-3706bb3a65/capture.json": "eedc9dae306686bc28bd90f982340b53218b3031bee95d5a0cba21dc7e6a5a3e",
+    "full/step-074-3706bb3a65/donor.syx": "82fdddb091ecec14f6c934a1b34b9749f2be1d238b35d4e8c8fbb512ad5bc887",
+    "full/step-074-3706bb3a65/result.json": "52c79c5ac4826dbdc2d878fd69db9999234c0cea18e04a1fb473f9833f7d0ec5",
+    "full/step-075-200120ad09/capture.json": "c34aa2c71e268907e045ab6952ba18d25b66bf3930cc2124adf71d0472e5c164",
+    "full/step-075-200120ad09/donor.syx": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723",
+    "full/step-075-200120ad09/result.json": "97ab834da5bf6dc55233a62ea3e1229c387d28e8c56195707903ab493f58088b",
+    "full/step-076-e5b66a7554/capture.json": "59581dd3f44b2b12ac582c1b2468318fb47bc90f5d1558c7e221c2eebde85529",
+    "full/step-076-e5b66a7554/donor.syx": "c94a42dc0c81d861ae6fa892e24541917924125595393cd3a314671c10d2f2a6",
+    "full/step-076-e5b66a7554/result.json": "26fd4407c7d1fec1edd7f62a9eb35d8063fd697568fff1c0d4ee851e40c17181",
+    "full/step-077-429c1cc706/capture.json": "e5b22822e85a45ca4c83d8bb833c97e5bd2e25ab9ca64d58d15ea8a0f240c7db",
+    "full/step-077-429c1cc706/donor.syx": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723",
+    "full/step-077-429c1cc706/result.json": "d45e68f1c999b3a9133dd9661df2d4229102e85586da932cec0fcc0d07618eb4",
+    "full/step-078-2f1faa4331/capture.json": "6aa6349536160c6376d7c490d805508dbe0a8b0be595ea1a71f4496814c2a47b",
+    "full/step-078-2f1faa4331/donor.syx": "4e304356b1e620fcec9081dc20cdb9a9e2b3a2438b99919378c8f02e78da476a",
+    "full/step-078-2f1faa4331/result.json": "a2f8fc4b15e6891a6f3893b6b389ebcdc964950e324dd79b4d6a048934d536c2",
+    "full/step-079-2ade7b25e5/capture.json": "09989aeec1d6341e2b6307a978b09d44f497913736f9df230d75a18b0e9ea489",
+    "full/step-079-2ade7b25e5/donor.syx": "396d5d8f45bd5050a99582378fb2fae557094dc92d210a25dc749820a2b85fef",
+    "full/step-079-2ade7b25e5/result.json": "b593d7c9a45ac749c08c0f1acafc839cdd9a8cb39a95d87015fa8f7522e5db0f",
+    "full/step-080-a942162a76/capture.json": "0feea4847b8e999e4616d1ec872198e8d8e82cee6b8218b1b5194c37b333d930",
+    "full/step-080-a942162a76/donor.syx": "f5b0ba39b0cde6d515e8b68a453e12477079cea63f14f3a27663b266794cd899",
+    "full/step-080-a942162a76/result.json": "6b5f36e9289f78bbddc4149cb253648f913fe3271d3e2c248a74cd17608a4edd",
+    "full/step-081-e8fcc71a28/capture.json": "27717e1696862a8c1eb689c679d345a2939172c158fccfcda91ffed4878a268a",
+    "full/step-081-e8fcc71a28/donor.syx": "aa364a3adce67b488d6c3ea331896e3ab19f8eb45c725a80c794fdea776c4aec",
+    "full/step-081-e8fcc71a28/result.json": "73146392fc6300989d0d9a1765069b7c4621075ebe1fe2e8da9aa05e7d468e38",
+    "full/step-082-1d3627d4b6/capture.json": "6b8eb8238734395be2a8f76d1037319d02599a4f497afac27337fddcb38d3d14",
+    "full/step-082-1d3627d4b6/donor.syx": "1348d6ae91ce59036b464594763c761d269e4f1ab50e31d58a796f22ba79bf3c",
+    "full/step-082-1d3627d4b6/result.json": "221070c4e1fa19a8dc571a1046724196edd66c3db401894992fc15b0163ab37d",
+    "full/step-083-cc16bd1807/capture.json": "e1a9c09595838b2264b4235cf3efe1971dcbbaeeabb7763a8050ef1db336adc7",
+    "full/step-083-cc16bd1807/donor.syx": "1b4ffa383ffd9901c593254e9862dce0a4c2fba613c4e1d62f278e80105b56b6",
+    "full/step-083-cc16bd1807/result.json": "092fa098754ae5ee418c0cc79d0d525f12049732917f0827303dd2185bf1af17",
+    "full/step-084-1514ac015b/capture.json": "5380d04ef63fe1a15b2f23864b2d973c98609f5efadd9484e3238cc911b91ac7",
+    "full/step-084-1514ac015b/donor.syx": "590725a1a80e8506e9c02a496b266b77dee036ea07f08137bdc1e33c9c9fb7df",
+    "full/step-084-1514ac015b/result.json": "c9e657e1f56d06dba2c8722891baacb9f38b10cd428d3375445743ccf6483c7d",
+    "full/step-085-4ce1514d33/capture.json": "5ff87ddde35fd0a0c47a00f3dd85db6090045bc6ab8c4fe2fcdadc2bc4bde602",
+    "full/step-085-4ce1514d33/donor.syx": "355898b615b52f9bff56f39c4b24ac8bbe9f081e94188ee7764f157c0e158d96",
+    "full/step-085-4ce1514d33/result.json": "fbbc9a41c60309756794ced69c28246b859658d2327faf147986f86ca6cfd091",
+    "supplement/ALUSTA_SIIT.syx": "355898b615b52f9bff56f39c4b24ac8bbe9f081e94188ee7764f157c0e158d96",
+    "supplement/baseline.syx": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+    "supplement/plan.json": "557650773795c5d40d94cdbeebc3bc97e5a3fcc4e1c5df1e96a73d6f7d708f74",
+    "supplement/prefilled_setup.json": "521477571bc3fae233f33f0544dd1eadd1f260e16a4477f5d6da4fbd1df07a49",
+    "supplement/session.json": "f10181eb9f5d421dfa9b33a165b00e882e2a10f318616486a33dcaaf3da44ab2",
+    "supplement/setup.json": "521477571bc3fae233f33f0544dd1eadd1f260e16a4477f5d6da4fbd1df07a49",
+    "supplement/source-session.zip": "98c35922cf15ced5b2c843aabc7534b9860f084cdc0528a3ecc4966e5d7c780b",
+    "supplement/step-000-12c5d381c8/capture.json": "36f55c7e39bb74a242d86154cdacbec955fec657f0af3b7d3261ae32371ad521",
+    "supplement/step-000-12c5d381c8/donor.syx": "1db13011e2fc019ec859cd9928596930a60eb822339c45d9a131540caa8a19d7",
+    "supplement/step-000-12c5d381c8/result.json": "1e17b59368f87d1bdef9caa45ff196179c8c1753da1d3d9c4b49784efa4048b6",
+    "supplement/step-001-e07dc9868c/capture.json": "6d7ca6b1ad1b427e3a52e0252dc0262d7edd26e9570fb892dfc3ee12b140bd9f",
+    "supplement/step-001-e07dc9868c/donor.syx": "1db13011e2fc019ec859cd9928596930a60eb822339c45d9a131540caa8a19d7",
+    "supplement/step-001-e07dc9868c/result.json": "0b56a5fbb1de10c0252aa31f3c4efbca36568cc9b781ca510e049f64b1d26358",
+    "supplement/step-002-fd3e2de61c/capture.json": "87ead4b30af359479c700f4ab0a868078104ec1617a161e2d973347c859f1cd8",
+    "supplement/step-002-fd3e2de61c/donor.syx": "41ffec55529a891bb8a7f4aaf55ffc26557a5b9251d46cb0acf2e4102413af80",
+    "supplement/step-002-fd3e2de61c/result.json": "3198ea5619fc8d81131d703c8e5a25feee2ebef3e04d386e462f34845bd9c363",
+    "supplement/step-003-45bc89c4c5/capture.json": "aba7d6d1325380b8de02ebea44e3843937cf609f05455901bf5d431e3459bbba",
+    "supplement/step-003-45bc89c4c5/donor.syx": "8d23d21e2be021edda313d76ee03a2796b5f2e4ebe4605c09ea7847a0fdb337d",
+    "supplement/step-003-45bc89c4c5/result.json": "1f8c3de8b31812df3c1f3276a2ec2a03fd7d8d9d617ab976fb10655c55cc3aac",
+    "supplement/step-004-2c8a975c43/capture.json": "eda6f689c08181216099ba2f18536133ef4f296bdc96c63c723b20fd5038e3d7",
+    "supplement/step-004-2c8a975c43/donor.syx": "951a009eecb38e669565b05933af568cdec6249a0ca357052fd7d5741533dd6f",
+    "supplement/step-004-2c8a975c43/result.json": "7cbf96951ff7af48108896ebdb1b5c0191a5cb75fb0c7e04d9403ee51e178b7e",
+    "supplement/step-005-7f082d6938/capture.json": "dd3eb05b45578c6be95e869301fc68f93613354d95c5bc0dd2513b4c11879203",
+    "supplement/step-005-7f082d6938/donor.syx": "6924cdf8280752d4535f6c8d604c65bc9575cbb0bfe3e8b5aba94fa7fa192c2e",
+    "supplement/step-005-7f082d6938/result.json": "92f5ebc5da43adc6364ec5ed7c6e35e0fc0cb58ba77c138c558af25b47cc1fb4",
+    "supplement/step-006-49617f4df5/capture.json": "6db73626ee88352f9eb62236e22f18f4aa2a849c913f9f0ec0d4dfd8a7d00f48",
+    "supplement/step-006-49617f4df5/donor.syx": "38918b5c2b37253a53839c0050faa64a57d2d36edbef2a8c07dbcb3d299306b0",
+    "supplement/step-006-49617f4df5/result.json": "c2fc6c37d93340f2ca12eccbcf9b7a6290d56af428dca533eabef0829302f332",
+    "supplement/step-007-ffa21a8daf/capture.json": "b49e91b8f7e3e9ee75f62836db0444ae4d8de444f5c1411e0be8f7f4aa56a9bd",
+    "supplement/step-007-ffa21a8daf/donor.syx": "d4b752532b624756b81df3b6d6a939c0852281fce59b7c895677ebfe7a2ae5c7",
+    "supplement/step-007-ffa21a8daf/result.json": "11079c34cc64d10241256412019a2d408a7de783c8edef9cb961c51a8510ba1b",
+    "supplement/step-008-f58e3878de/capture.json": "13dda88ee71af41e84b178a48101e662c2d94622e7d333f638ed1578aec4607f",
+    "supplement/step-008-f58e3878de/donor.syx": "434bab8175f98043bd7a49cffdb5938818f229a6f5344a28f021c547316815f5",
+    "supplement/step-008-f58e3878de/result.json": "4bcc131d28ab207aeaf13280340289a6878e9fcd058b3f375fff678e85dcab7f",
+    "supplement/step-009-bcfbd1c48a/capture.json": "48321f042ba80fabe69acae97068f1e16dfa212600224468972313fb5de26068",
+    "supplement/step-009-bcfbd1c48a/donor.syx": "2eeaf7c03720272330e1359ca77c552f8ca140a151331f34e494080ea81b188e",
+    "supplement/step-009-bcfbd1c48a/result.json": "f65cfd382fbf5495f98a8ab0409e0191c8d8a461a14203e702475ebef1c3ff1f",
+    "supplement/step-010-4a1e4473d1/capture.json": "a895ee194c3d9323970453a307e27581dd4fc2db201dd1b29063cab741882cfc",
+    "supplement/step-010-4a1e4473d1/donor.syx": "6924cdf8280752d4535f6c8d604c65bc9575cbb0bfe3e8b5aba94fa7fa192c2e",
+    "supplement/step-010-4a1e4473d1/result.json": "2fa0bec050f53ad0e4cf3c4357997f19a3192e5ec436ab591414227618b68897",
+    "supplement/step-011-3d66698af2/capture.json": "7c9dc03fe28472b8b51a5bc93cf2058d50da7b59c1f3fbf878646dc96d2512d1",
+    "supplement/step-011-3d66698af2/donor.syx": "4db77a9a4e8a6441cd88fb2c689b2ed5876b8ebe9411961736f422a9146a379e",
+    "supplement/step-011-3d66698af2/result.json": "c4ca234064c681ef5214d14707ae75aeee86755fedc3f1c152a2ee8590ddd71c",
+    "supplement/step-012-f1c400ab68/capture.json": "4c25c32ef87ce2ff72a1bdf73d361291fd0bcf2b397aa27ebd624e56238966cb",
+    "supplement/step-012-f1c400ab68/donor.syx": "6924cdf8280752d4535f6c8d604c65bc9575cbb0bfe3e8b5aba94fa7fa192c2e",
+    "supplement/step-012-f1c400ab68/result.json": "8d51873d1083dd8f1645b373767e2180e40493b440dd6ca2ffdf322ede2ebbb8"
+  },
+  "passed": [
+    {
+      "source": "full",
+      "index": 0,
+      "folder": "step-000-4ab592a252",
+      "previousFile": "baseline.syx",
+      "kind": "baseline"
+    },
+    {
+      "source": "full",
+      "index": 1,
+      "folder": "step-001-7c78b568bd",
+      "previousFile": "step-000-4ab592a252/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 2,
+      "folder": "step-002-ebb2d1a1d2",
+      "previousFile": "step-001-7c78b568bd/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 3,
+      "folder": "step-003-953d9ddeb7",
+      "previousFile": "step-002-ebb2d1a1d2/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 4,
+      "folder": "step-004-0876b34511",
+      "previousFile": "step-003-953d9ddeb7/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 5,
+      "folder": "step-005-db331d03d6",
+      "previousFile": "step-004-0876b34511/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 6,
+      "folder": "step-006-002de45c41",
+      "previousFile": "step-005-db331d03d6/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 7,
+      "folder": "step-007-10c32c018a",
+      "previousFile": "step-006-002de45c41/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 8,
+      "folder": "step-008-b065f4bd56",
+      "previousFile": "step-007-10c32c018a/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 9,
+      "folder": "step-009-01dd63104e",
+      "previousFile": "step-008-b065f4bd56/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 10,
+      "folder": "step-010-c7d239cbec",
+      "previousFile": "step-009-01dd63104e/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 11,
+      "folder": "step-011-4afe8e3074",
+      "previousFile": "step-010-c7d239cbec/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 12,
+      "folder": "step-012-121956b84f",
+      "previousFile": "step-011-4afe8e3074/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 13,
+      "folder": "step-013-6fe53655fb",
+      "previousFile": "step-012-121956b84f/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 14,
+      "folder": "step-014-161c7e2616",
+      "previousFile": "step-013-6fe53655fb/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 15,
+      "folder": "step-015-cbac7d29e6",
+      "previousFile": "step-014-161c7e2616/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 16,
+      "folder": "step-016-b764c5a2c1",
+      "previousFile": "step-015-cbac7d29e6/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 17,
+      "folder": "step-017-8847d341d0",
+      "previousFile": "step-016-b764c5a2c1/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 18,
+      "folder": "step-018-7002384e17",
+      "previousFile": "step-017-8847d341d0/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 19,
+      "folder": "step-019-84404523c8",
+      "previousFile": "step-018-7002384e17/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 20,
+      "folder": "step-020-4ad545da37",
+      "previousFile": "step-019-84404523c8/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 21,
+      "folder": "step-021-1ea1bf8987",
+      "previousFile": "step-020-4ad545da37/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 22,
+      "folder": "step-022-b3ad3da7ef",
+      "previousFile": "step-021-1ea1bf8987/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 23,
+      "folder": "step-023-3a582b1975",
+      "previousFile": "step-022-b3ad3da7ef/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 24,
+      "folder": "step-024-fd37afb938",
+      "previousFile": "step-023-3a582b1975/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 25,
+      "folder": "step-025-dd5711eb1d",
+      "previousFile": "step-024-fd37afb938/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 26,
+      "folder": "step-026-9b2e94b561",
+      "previousFile": "step-025-dd5711eb1d/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 27,
+      "folder": "step-027-7faa2fe22a",
+      "previousFile": "step-026-9b2e94b561/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 28,
+      "folder": "step-028-050eadc488",
+      "previousFile": "step-027-7faa2fe22a/donor.syx",
+      "kind": "type"
+    },
+    {
+      "source": "full",
+      "index": 29,
+      "folder": "step-029-0215cbf97e",
+      "previousFile": "step-028-050eadc488/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 30,
+      "folder": "step-030-38df6e6528",
+      "previousFile": "step-029-0215cbf97e/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 31,
+      "folder": "step-031-9e1cebbac9",
+      "previousFile": "step-030-38df6e6528/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 32,
+      "folder": "step-032-27aa2f1050",
+      "previousFile": "step-031-9e1cebbac9/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 33,
+      "folder": "step-033-4320fd3b93",
+      "previousFile": "step-032-27aa2f1050/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 39,
+      "folder": "step-039-e6902f3774",
+      "previousFile": "step-033-4320fd3b93/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 40,
+      "folder": "step-040-4f0cf5829e",
+      "previousFile": "step-039-e6902f3774/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 41,
+      "folder": "step-041-18c2adce6c",
+      "previousFile": "step-040-4f0cf5829e/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 42,
+      "folder": "step-042-807e673987",
+      "previousFile": "step-041-18c2adce6c/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 43,
+      "folder": "step-043-96673b4796",
+      "previousFile": "step-042-807e673987/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 44,
+      "folder": "step-044-ae5b14d69f",
+      "previousFile": "step-043-96673b4796/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 45,
+      "folder": "step-045-90f79794e8",
+      "previousFile": "step-044-ae5b14d69f/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 46,
+      "folder": "step-046-f4a75f2f11",
+      "previousFile": "step-045-90f79794e8/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 47,
+      "folder": "step-047-c20957d9b9",
+      "previousFile": "step-046-f4a75f2f11/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 48,
+      "folder": "step-048-02e5375899",
+      "previousFile": "step-047-c20957d9b9/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 54,
+      "folder": "step-054-465ee64ab4",
+      "previousFile": "step-048-02e5375899/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 55,
+      "folder": "step-055-dbc6ea9d5e",
+      "previousFile": "step-054-465ee64ab4/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 56,
+      "folder": "step-056-9854318154",
+      "previousFile": "step-055-dbc6ea9d5e/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 57,
+      "folder": "step-057-93db4b5bf1",
+      "previousFile": "step-056-9854318154/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 60,
+      "folder": "step-060-a86cbe7a1b",
+      "previousFile": "step-057-93db4b5bf1/donor.syx",
+      "kind": "type"
+    },
+    {
+      "source": "full",
+      "index": 61,
+      "folder": "step-061-2f6e8fe150",
+      "previousFile": "step-060-a86cbe7a1b/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 62,
+      "folder": "step-062-b4415644f9",
+      "previousFile": "step-061-2f6e8fe150/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 63,
+      "folder": "step-063-5852218883",
+      "previousFile": "step-062-b4415644f9/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 64,
+      "folder": "step-064-b09dd4206f",
+      "previousFile": "step-063-5852218883/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 65,
+      "folder": "step-065-aaa727278d",
+      "previousFile": "step-064-b09dd4206f/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 66,
+      "folder": "step-066-acd6c5762f",
+      "previousFile": "step-065-aaa727278d/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 67,
+      "folder": "step-067-297532ddfd",
+      "previousFile": "step-066-acd6c5762f/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 68,
+      "folder": "step-068-da7c463625",
+      "previousFile": "step-067-297532ddfd/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 69,
+      "folder": "step-069-03bf3547f0",
+      "previousFile": "step-068-da7c463625/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 70,
+      "folder": "step-070-9e9bf21fb8",
+      "previousFile": "step-069-03bf3547f0/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 71,
+      "folder": "step-071-fc34b16651",
+      "previousFile": "step-070-9e9bf21fb8/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 72,
+      "folder": "step-072-ea672a19cb",
+      "previousFile": "step-071-fc34b16651/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 73,
+      "folder": "step-073-3063299f49",
+      "previousFile": "step-072-ea672a19cb/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 74,
+      "folder": "step-074-3706bb3a65",
+      "previousFile": "step-073-3063299f49/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 75,
+      "folder": "step-075-200120ad09",
+      "previousFile": "step-074-3706bb3a65/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 76,
+      "folder": "step-076-e5b66a7554",
+      "previousFile": "step-075-200120ad09/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 77,
+      "folder": "step-077-429c1cc706",
+      "previousFile": "step-076-e5b66a7554/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 78,
+      "folder": "step-078-2f1faa4331",
+      "previousFile": "step-077-429c1cc706/donor.syx",
+      "kind": "type"
+    },
+    {
+      "source": "full",
+      "index": 79,
+      "folder": "step-079-2ade7b25e5",
+      "previousFile": "step-078-2f1faa4331/donor.syx",
+      "kind": "copy-channel"
+    },
+    {
+      "source": "full",
+      "index": 80,
+      "folder": "step-080-a942162a76",
+      "previousFile": "step-079-2ade7b25e5/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 81,
+      "folder": "step-081-e8fcc71a28",
+      "previousFile": "step-080-a942162a76/donor.syx",
+      "kind": "copy-channel"
+    },
+    {
+      "source": "full",
+      "index": 82,
+      "folder": "step-082-1d3627d4b6",
+      "previousFile": "step-081-e8fcc71a28/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 83,
+      "folder": "step-083-cc16bd1807",
+      "previousFile": "step-082-1d3627d4b6/donor.syx",
+      "kind": "copy-channel"
+    },
+    {
+      "source": "full",
+      "index": 84,
+      "folder": "step-084-1514ac015b",
+      "previousFile": "step-083-cc16bd1807/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "full",
+      "index": 85,
+      "folder": "step-085-4ce1514d33",
+      "previousFile": "step-084-1514ac015b/donor.syx",
+      "kind": "select-channel"
+    },
+    {
+      "source": "supplement",
+      "index": 0,
+      "folder": "step-000-12c5d381c8",
+      "previousFile": "ALUSTA_SIIT.syx",
+      "kind": "type"
+    },
+    {
+      "source": "supplement",
+      "index": 1,
+      "folder": "step-001-e07dc9868c",
+      "previousFile": "step-000-12c5d381c8/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 2,
+      "folder": "step-002-fd3e2de61c",
+      "previousFile": "step-001-e07dc9868c/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 3,
+      "folder": "step-003-45bc89c4c5",
+      "previousFile": "step-002-fd3e2de61c/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 4,
+      "folder": "step-004-2c8a975c43",
+      "previousFile": "step-003-45bc89c4c5/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 5,
+      "folder": "step-005-7f082d6938",
+      "previousFile": "step-004-2c8a975c43/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 6,
+      "folder": "step-006-49617f4df5",
+      "previousFile": "step-005-7f082d6938/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 7,
+      "folder": "step-007-ffa21a8daf",
+      "previousFile": "step-006-49617f4df5/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 8,
+      "folder": "step-008-f58e3878de",
+      "previousFile": "step-007-ffa21a8daf/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 9,
+      "folder": "step-009-bcfbd1c48a",
+      "previousFile": "step-008-f58e3878de/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 10,
+      "folder": "step-010-4a1e4473d1",
+      "previousFile": "step-009-bcfbd1c48a/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 11,
+      "folder": "step-011-3d66698af2",
+      "previousFile": "step-010-4a1e4473d1/donor.syx",
+      "kind": "control"
+    },
+    {
+      "source": "supplement",
+      "index": 12,
+      "folder": "step-012-f1c400ab68",
+      "previousFile": "step-011-3d66698af2/donor.syx",
+      "kind": "control"
+    }
+  ],
+  "skipped": [
+    {
+      "source": "full",
+      "folder": "step-034-515cc3d90e",
+      "index": 34,
+      "parameter": "Pan L",
+      "point": "minimum",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-035-20470d39b4",
+      "index": 35,
+      "parameter": "Pan L",
+      "point": "maximum",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-036-75bdc8b3fb",
+      "index": 36,
+      "parameter": "Pan L",
+      "point": "lower",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-037-a2ae78c5d9",
+      "index": 37,
+      "parameter": "Pan L",
+      "point": "middle",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-038-11d7e0abf1",
+      "index": 38,
+      "parameter": "Pan L",
+      "point": "upper",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-049-7b3a525850",
+      "index": 49,
+      "parameter": "Level",
+      "point": "minimum",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-050-15fe2f90cf",
+      "index": 50,
+      "parameter": "Level",
+      "point": "maximum",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-051-c5a12346b2",
+      "index": 51,
+      "parameter": "Level",
+      "point": "lower",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-052-3e5f814e63",
+      "index": 52,
+      "parameter": "Level",
+      "point": "middle",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-053-68c2252d1d",
+      "index": 53,
+      "parameter": "Level",
+      "point": "upper",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-058-ba380dccee",
+      "index": 58,
+      "parameter": "Scene Ignore",
+      "point": "ON",
+      "resolvedBy": "supplement"
+    },
+    {
+      "source": "full",
+      "folder": "step-059-76a7599bd2",
+      "index": 59,
+      "parameter": "Scene Ignore",
+      "point": "OFF",
+      "resolvedBy": "supplement"
+    }
+  ],
+  "excludedAttempts": [
+    {
+      "source": "full",
+      "folder": "step-007-0c0be9c96b",
+      "index": 7,
+      "error": "Muutus väljaspool Enhancer parameetreid või Scene 2 Enhancer kanalivalikut, bait 7488. GET-i ei saadetud."
+    },
+    {
+      "source": "full",
+      "folder": "step-007-2aa5aa2ee7",
+      "index": 7,
+      "error": "Muutus väljaspool Enhancer parameetreid või Scene 2 Enhancer kanalivalikut, bait 7488. GET-i ei saadetud."
+    }
+  ],
+  "models": [
+    {
+      "source": "full",
+      "index": 0,
+      "folder": "step-000-4ab592a252",
+      "name": "Modern",
+      "binaryId": 0,
+      "words": [
+        32767,
+        32767,
+        22903,
+        32767,
+        52427,
+        0,
+        0,
+        0,
+        0,
+        65534,
+        32767,
+        0
+      ],
+      "sourceSha256": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+      "visibleNumeric": [
+        "Width",
+        "Depth",
+        "Low Cut",
+        "High Cut",
+        "Level"
+      ],
+      "visibleEnums": [
+        "Scene Ignore"
+      ]
+    },
+    {
+      "source": "full",
+      "index": 28,
+      "folder": "step-028-050eadc488",
+      "name": "Classic",
+      "binaryId": 1,
+      "words": [
+        58981,
+        52427,
+        58265,
+        58846,
+        58981,
+        0,
+        1,
+        0,
+        0,
+        65534,
+        32767,
+        0
+      ],
+      "sourceSha256": "86cb4e9213f14cc5e0fff67cb21c488214138f43d967d1fc5c8361dfe75bdaef",
+      "visibleNumeric": [
+        "Width",
+        "Pan L",
+        "Pan R",
+        "Balance",
+        "Level"
+      ],
+      "visibleEnums": [
+        "Invert",
+        "Scene Ignore"
+      ]
+    },
+    {
+      "source": "full",
+      "index": 60,
+      "folder": "step-060-a86cbe7a1b",
+      "name": "Stereoizer",
+      "binaryId": 2,
+      "words": [
+        52427,
+        52427,
+        58265,
+        58846,
+        58981,
+        0,
+        2,
+        1,
+        0,
+        58981,
+        58981,
+        0
+      ],
+      "sourceSha256": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723",
+      "visibleNumeric": [
+        "Width",
+        "Depth",
+        "Level"
+      ],
+      "visibleEnums": [
+        "Scene Ignore"
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "source": "full",
+      "index": 1,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 0,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 2,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 100,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 3,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 20,
+      "raw": 13107,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 4,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 50,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 5,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 90,
+      "raw": 58981,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 6,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 0,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 7,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 100,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 8,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 20,
+      "raw": 13107,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 9,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 50,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 10,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 80,
+      "raw": 52427,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 11,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "pid": 2,
+      "value": 20,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 12,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "pid": 2,
+      "value": 2000,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 13,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "pid": 2,
+      "value": 50,
+      "raw": 13039,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 14,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "pid": 2,
+      "value": 200,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 15,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Low Cut",
+      "pid": 2,
+      "value": 1200,
+      "raw": 58265,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 16,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "pid": 3,
+      "value": 200,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 17,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "pid": 3,
+      "value": 20000,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 18,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "pid": 3,
+      "value": 500,
+      "raw": 13039,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 19,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "pid": 3,
+      "value": 1900,
+      "raw": 32037,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 20,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "High Cut",
+      "pid": 3,
+      "value": 12500,
+      "raw": 58846,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 21,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": -80,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 22,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": 20,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 23,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": -70,
+      "raw": 6553,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 24,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": -30,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 25,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": 10,
+      "raw": 58981,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 26,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "pid": 11,
+      "value": "ON",
+      "raw": 1,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 27,
+      "type": "Modern",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "pid": 11,
+      "value": "OFF",
+      "raw": 0,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 29,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 0,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 30,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 100,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 31,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 20,
+      "raw": 13107,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 32,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 50,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 33,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 80,
+      "raw": 52427,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 39,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "pid": 9,
+      "value": -100,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 40,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "pid": 9,
+      "value": 100,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 41,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "pid": 9,
+      "value": -80,
+      "raw": 6553,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 42,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "pid": 9,
+      "value": 0,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 43,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan R",
+      "pid": 9,
+      "value": 80,
+      "raw": 58981,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 44,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "pid": 10,
+      "value": -100,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 45,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "pid": 10,
+      "value": 100,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 46,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "pid": 10,
+      "value": -80,
+      "raw": 6553,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 47,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "pid": 10,
+      "value": 0,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 48,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Balance",
+      "pid": 10,
+      "value": 80,
+      "raw": 58981,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 54,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Invert",
+      "pid": 7,
+      "value": "Both",
+      "raw": 3,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 55,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Invert",
+      "pid": 7,
+      "value": "Left",
+      "raw": 2,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 56,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Invert",
+      "pid": 7,
+      "value": "None",
+      "raw": 0,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 57,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Invert",
+      "pid": 7,
+      "value": "Right",
+      "raw": 1,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 61,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 0,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 62,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 100,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 63,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 20,
+      "raw": 13107,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 64,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 50,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 65,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 80,
+      "raw": 52427,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 66,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 0,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 67,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 100,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 68,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 20,
+      "raw": 13107,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 69,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 50,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 70,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Depth",
+      "pid": 1,
+      "value": 80,
+      "raw": 52427,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 71,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": -80,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "full",
+      "index": 72,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": 20,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "full",
+      "index": 73,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": -70,
+      "raw": 6553,
+      "point": "lower"
+    },
+    {
+      "source": "full",
+      "index": 74,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": -30,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "full",
+      "index": 75,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": 10,
+      "raw": 58981,
+      "point": "upper"
+    },
+    {
+      "source": "full",
+      "index": 76,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "pid": 11,
+      "value": "ON",
+      "raw": 1,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 77,
+      "type": "Stereoizer",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "pid": 11,
+      "value": "OFF",
+      "raw": 0,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 80,
+      "type": "Modern",
+      "channel": "B",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 25,
+      "raw": 16384,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 82,
+      "type": "Modern",
+      "channel": "C",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 75,
+      "raw": 49151,
+      "point": null
+    },
+    {
+      "source": "full",
+      "index": 84,
+      "type": "Modern",
+      "channel": "D",
+      "parameter": "Width",
+      "pid": 0,
+      "value": 35,
+      "raw": 22937,
+      "point": null
+    },
+    {
+      "source": "supplement",
+      "index": 1,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan L",
+      "pid": 8,
+      "value": -100,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "supplement",
+      "index": 2,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan L",
+      "pid": 8,
+      "value": 100,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "supplement",
+      "index": 3,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan L",
+      "pid": 8,
+      "value": 0,
+      "raw": 32767,
+      "point": "lower"
+    },
+    {
+      "source": "supplement",
+      "index": 4,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan L",
+      "pid": 8,
+      "value": 40,
+      "raw": 45874,
+      "point": "middle"
+    },
+    {
+      "source": "supplement",
+      "index": 5,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Pan L",
+      "pid": 8,
+      "value": 80,
+      "raw": 58981,
+      "point": "upper"
+    },
+    {
+      "source": "supplement",
+      "index": 6,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": -80,
+      "raw": 0,
+      "point": "minimum"
+    },
+    {
+      "source": "supplement",
+      "index": 7,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": 20,
+      "raw": 65534,
+      "point": "maximum"
+    },
+    {
+      "source": "supplement",
+      "index": 8,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": -70,
+      "raw": 6553,
+      "point": "lower"
+    },
+    {
+      "source": "supplement",
+      "index": 9,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": -30,
+      "raw": 32767,
+      "point": "middle"
+    },
+    {
+      "source": "supplement",
+      "index": 10,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Level",
+      "pid": 4,
+      "value": 10,
+      "raw": 58981,
+      "point": "upper"
+    },
+    {
+      "source": "supplement",
+      "index": 11,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "pid": 11,
+      "value": "ON",
+      "raw": 1,
+      "point": null
+    },
+    {
+      "source": "supplement",
+      "index": 12,
+      "type": "Classic",
+      "channel": "A",
+      "parameter": "Scene Ignore",
+      "pid": 11,
+      "value": "OFF",
+      "raw": 0,
+      "point": null
+    }
+  ],
+  "typeSnapshots": [
+    {
+      "source": "full",
+      "index": 0,
+      "folder": "step-000-4ab592a252",
+      "name": "Modern",
+      "binaryId": 0,
+      "words": [
+        32767,
+        32767,
+        22903,
+        32767,
+        52427,
+        0,
+        0,
+        0,
+        0,
+        65534,
+        32767,
+        0
+      ],
+      "sourceSha256": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41"
+    },
+    {
+      "source": "full",
+      "index": 28,
+      "folder": "step-028-050eadc488",
+      "name": "Classic",
+      "binaryId": 1,
+      "words": [
+        58981,
+        52427,
+        58265,
+        58846,
+        58981,
+        0,
+        1,
+        0,
+        0,
+        65534,
+        32767,
+        0
+      ],
+      "sourceSha256": "86cb4e9213f14cc5e0fff67cb21c488214138f43d967d1fc5c8361dfe75bdaef"
+    },
+    {
+      "source": "full",
+      "index": 60,
+      "folder": "step-060-a86cbe7a1b",
+      "name": "Stereoizer",
+      "binaryId": 2,
+      "words": [
+        52427,
+        52427,
+        58265,
+        58846,
+        58981,
+        0,
+        2,
+        1,
+        0,
+        58981,
+        58981,
+        0
+      ],
+      "sourceSha256": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723"
+    },
+    {
+      "source": "full",
+      "index": 78,
+      "folder": "step-078-2f1faa4331",
+      "name": "Modern",
+      "binaryId": 0,
+      "words": [
+        52427,
+        52427,
+        58265,
+        58846,
+        58981,
+        0,
+        0,
+        1,
+        0,
+        58981,
+        32767,
+        0
+      ],
+      "sourceSha256": "4e304356b1e620fcec9081dc20cdb9a9e2b3a2438b99919378c8f02e78da476a"
+    },
+    {
+      "source": "supplement",
+      "index": 0,
+      "folder": "step-000-12c5d381c8",
+      "name": "Classic",
+      "binaryId": 1,
+      "words": [
+        52427,
+        52427,
+        58265,
+        58846,
+        58981,
+        0,
+        1,
+        1,
+        0,
+        58981,
+        32767,
+        0
+      ],
+      "sourceSha256": "1db13011e2fc019ec859cd9928596930a60eb822339c45d9a131540caa8a19d7"
+    }
+  ],
+  "typeCoupledChanges": [
+    {
+      "source": "full",
+      "index": 78,
+      "changes": [
+        {
+          "channel": "A",
+          "pid": 10,
+          "offset": 7526,
+          "before": 58981,
+          "after": 32767
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "passedSteps": 87,
+    "fullSessionPairs": 74,
+    "supplementPairs": 13,
+    "resolvedSkippedSteps": 12,
+    "excludedAttempts": 2,
+    "pairedWordsPerStep": 48,
+    "matchedWordsTotal": 4176,
+    "typeCount": 3,
+    "numericAnchors": 68,
+    "enumAnchors": 10,
+    "channelCopies": [
+      79,
+      81,
+      83
+    ],
+    "independentChannelWidth": [
+      80,
+      82,
+      84
+    ],
+    "sceneSelections": [
+      79,
+      81,
+      83,
+      85
+    ],
+    "opaquePids": [
+      5
+    ],
+    "bypass": "Scene header control; no Bypass Mode menu observed",
+    "panLeft": "-100..100, unitless. Measured points -100,+100,0,+40,+80; three distinct interior values are valid regardless of collector point labels.",
+    "hardware": "Measured GET/SYX states confirmed; newly generated composition awaits import/export, listening and CPU"
+  }
+}

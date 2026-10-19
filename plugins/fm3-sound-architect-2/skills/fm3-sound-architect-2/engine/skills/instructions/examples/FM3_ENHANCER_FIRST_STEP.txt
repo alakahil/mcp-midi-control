@@ -1,0 +1,31 @@
+FM3 ENHANCER — ESIMENE SAMM
+11.10.2026
+
+Alus: sinu kontrollitud FM3_GEQ_ABCD_TEST_export.syx, muutmata kujul.
+GEQ toimis; kasutaja vaadeldud suurim CPU oli 50%. See käis GEQ katse kohta.
+FM3_ENHANCER_START.syx ei sisalda veel Enhancerit.
+
+1. Kui sama GEQ-testpreset on FM3-Editis endiselt muutmata kujul lahti,
+   jätka sellega. Muidu impordi FM3_ENHANCER_START.syx sobivasse testpesasse.
+2. Vali Scene 2.
+3. Asenda rea 3, veeru 11 shunt plokiga Enhancer 1.
+   See asub alumises kasutatavas reas Reverb 1 ja Out 1 vahel.
+   Loenda ridu ja veerge kogu ruudustiku vasakust ülanurgast alates ühest.
+   Säilita samad ühendused ning kõik teised plokid ja nende seaded.
+4. Vali Enhanceri kanal A ja pane see Scene 2-s bypass'i.
+   Jäta lisatud ploki Type ja kõik parameetrid algväärtustele.
+5. Ekspordi tervikpreset nimega FM3_ENHANCER_BASELINE.syx.
+
+Saada tagasi:
+- FM3_ENHANCER_BASELINE.syx;
+- pilt avatud Enhanceri Type-rippmenüüst, et kõik tüübinimed oleksid näha;
+- pilt Enhanceri põhivaatest, kus paistavad parameetrid, nende väärtused
+  ja kanalinupud. Type-menüü pildistamisel ära vali teist tüüpi.
+
+Praegu pole terminali ega GET-päringut vaja.
+Seejärel teen tegeliku ekspordi ja nähtavate juhtnuppude põhjal ühe jätkatava
+kogumispaketi. See sisaldab ka esimest GET/SYX võrdlust, nii et eraldi
+algGET-paketti ei tule. GEQ ja PEQ kogumist ei korrata.
+
+Alusfaili SHA-256:
+1663e891e6bc1a7cb89a1bc0540a48ce8d61527911267682bc3082bf06e70c3e

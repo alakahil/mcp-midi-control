@@ -1,0 +1,143 @@
+{
+  "index": 1,
+  "status": "passed",
+  "step": {
+    "id": "A-type",
+    "kind": "type",
+    "channel": "A",
+    "binaryId": 19,
+    "name": "BB Pre",
+    "instruction": "Vali Drive1 kanal A ja Type: BB Pre. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+  },
+  "comparison": {
+    "step": {
+      "id": "A-type",
+      "kind": "type",
+      "channel": "A",
+      "binaryId": 19,
+      "name": "BB Pre",
+      "instruction": "Vali Drive1 kanal A ja Type: BB Pre. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+    },
+    "changes": [
+      {
+        "offset": 8460,
+        "before": 14,
+        "after": 19
+      },
+      {
+        "offset": 8464,
+        "before": 222,
+        "after": 255
+      },
+      {
+        "offset": 8465,
+        "before": 175,
+        "after": 127
+      },
+      {
+        "offset": 8466,
+        "before": 88,
+        "after": 255
+      },
+      {
+        "offset": 8467,
+        "before": 228,
+        "after": 127
+      },
+      {
+        "offset": 8472,
+        "before": 126,
+        "after": 254
+      },
+      {
+        "offset": 8473,
+        "before": 157,
+        "after": 255
+      },
+      {
+        "offset": 8476,
+        "before": 0,
+        "after": 76
+      },
+      {
+        "offset": 8477,
+        "before": 0,
+        "after": 5
+      },
+      {
+        "offset": 8482,
+        "before": 204,
+        "after": 71
+      },
+      {
+        "offset": 8483,
+        "before": 140,
+        "after": 129
+      },
+      {
+        "offset": 8488,
+        "before": 158,
+        "after": 36
+      },
+      {
+        "offset": 8489,
+        "before": 128,
+        "after": 122
+      },
+      {
+        "offset": 8524,
+        "before": 6,
+        "after": 3
+      },
+      {
+        "offset": 8526,
+        "before": 1,
+        "after": 2
+      },
+      {
+        "offset": 8528,
+        "before": 2,
+        "after": 3
+      },
+      {
+        "offset": 8530,
+        "before": 1,
+        "after": 2
+      }
+    ],
+    "presetNameChange": {
+      "before": "JB YDOM RHYTHM",
+      "after": "00_BASELINE",
+      "beforeHex": "4a422059444f4d2052485954484d0000000000000000000000000000000000",
+      "afterHex": "30305f424153454c494e452020202020202020202020202020202020202020"
+    },
+    "observation": null,
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "2a61dc350a91f9c6032f1781132d72b52703e78763369f9228a292f8d62453ca",
+    "rawRxSha256": "26c9d6eead4ace8cac06d79042b789e4c3aafb573e85c5e97f4fc54cea0afddc",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 12
+      },
+      {
+        "channel": "C",
+        "binaryId": 26
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}
