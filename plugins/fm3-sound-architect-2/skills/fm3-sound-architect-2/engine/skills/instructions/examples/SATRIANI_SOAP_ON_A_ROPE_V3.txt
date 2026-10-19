@@ -1,0 +1,28 @@
+SATCH SOAP ON A ROPE V3 — tämber originaali eraldatud kitarriraja järgi
+
+V2 tulemus (kasutaja 2026-10-15): Output Scene 8 +1 dB töötab ja on kuuldavalt valjem; teised stseenid
+ühtlased, Scene 5 veidi vaiksem. Phaser V2-s: Script 90, Rate 0.60 Hz, Depth 10, Mix 50 %.
+
+ANALÜÜS (scripts/fm3-audio-compare.py; originaal = Logicu eraldatud soolokitarr, 23,6 s)
+Originaal vs sinu FM3 (mõlemad klipid sama suunaga):
+  500 Hz – 1 kHz   originaalis +4…+6 dB   → keskmisi juurde
+  1,6 – 6 kHz      originaalis −3…−7 dB   → kõrgeid ja presence'it vähemaks
+  125 Hz           sinu soolos selgelt rohkem → bassi vähemaks (eriti Amp D)
+  Stereo: originaal lai (külg/kesk −4 dB, L/R korrelatsioon muutub ajas −0,4…0,8), FM3 kitsas.
+Phaserit ja delay aega ei saanud mõõta: meetod ei leidnud ka sinu salvestusest teadaolevat 0,6 Hz phaserit
+ega 480 ms delay'd, seega neid järeldusi ei tehta.
+
+MUUDATUSED V2 → V3 (Ampi kanalid)
+  A Crunch Red   Mid 6.5→7.5  Treble 5.5→4.5  Presence 5.0→4.0
+  B OD1 Orange   Mid 6.5→7.5  Treble 6.0→5.0  Presence 5.5→4.5  Bass 4.5→4.0
+  C Crunch Green Mid 6.0→7.0  Treble 5.5→4.5
+  D JS410 Lead   Mid 6.0→7.0  Treble 6.0→5.0  Bass 4.5→3.5
+  Output Scene 5 +1 dB (Scene 8 +1 dB jääb)
+Muu (tasemed, phaser, delay, reverb, paigutus, stseenid) nagu V2-s.
+
+TEGEVUS
+1. Impordi V3 (V2 jäta võrdluseks alles).
+2. Võrdle soolot (Scene 3/4) V2 ja V3 vahel: kas V3 on originaalile lähemal (paksem, vähem "kriipiv")?
+3. Kontrolli taset: keskmiste lisamine võib tõsta helitugevust ~1 dB; ütle tipud nagu enne.
+4. Soovi korral salvesta sama soolo V3-ga ja saada – mõõdan uuesti.
+SHA-256: 9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f
