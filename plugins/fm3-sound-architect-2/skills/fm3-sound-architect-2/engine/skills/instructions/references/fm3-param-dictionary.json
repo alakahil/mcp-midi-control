@@ -4,7 +4,7 @@
   "names": "forgefx-midi 0.4.3 FM3_PARAMS (mined from FM3-Edit)",
   "fm3edit": "FM3-Edit 1.07.17"
  },
- "encoding": "wire = round(n*65534); n=(v/mult-min)/(max-min) linear, n=ln((v/mult)/min)/ln(max/min) log",
+ "encoding": "wire = round(n*65534); n=(v/mult-min)/(max-min) linear, n=ln((v/mult)/min)/ln(max/min) log; knob (flags class 0x5): display = n*mult, internal min/max is DSP range",
  "measuredPointsMatched": "280/280",
  "params": [
   {
@@ -6517,7 +6517,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0601",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 166,
@@ -6547,7 +6547,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0601",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 166,
@@ -6734,7 +6734,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0601",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 166,
@@ -6749,7 +6749,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0601",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 162,
@@ -8651,7 +8651,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 154,
@@ -8711,7 +8711,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 154,
@@ -8762,7 +8762,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 154,
@@ -8822,7 +8822,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 154,
@@ -8873,7 +8873,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 154,
@@ -8933,7 +8933,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 154,
@@ -9250,7 +9250,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 146,
@@ -9496,7 +9496,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0601",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 138,
@@ -11935,14 +11935,14 @@
    "param": 6,
    "name": "FUZZ_SLEW",
    "label": "Slew Rate",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.10000000149011612,
    "max": 10.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 118,
@@ -12335,14 +12335,14 @@
    "param": 28,
    "name": "FILTER_SENS",
    "label": "Sensitivity",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.10000000149011612,
    "max": 40.0,
    "displayMultiplier": 10.0,
    "step": 0.0,
    "flags": "0x0500",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 114,
@@ -12380,14 +12380,14 @@
    "param": 25,
    "name": "FILTER_EVFQ",
    "label": "Peak",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 1.0,
    "max": 20.0,
    "displayMultiplier": 10.0,
    "step": 0.0,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 114,
@@ -16345,14 +16345,14 @@
    "param": 3,
    "name": "FORMANT_Q",
    "label": "Resonance",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 4.0,
    "max": 40.0,
    "displayMultiplier": 10.0,
    "step": 0.0,
    "flags": "0x0500",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 98,
@@ -16664,14 +16664,14 @@
    "param": 10,
    "name": "WAH_DRIVE",
    "label": "Drive",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.009999999776482582,
    "max": 1.0,
    "displayMultiplier": 10.0,
    "step": 0.0,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 94,
@@ -16772,14 +16772,14 @@
    "param": 3,
    "name": "WAH_Q",
    "label": "Resonance Q",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 2.0,
    "max": 20.0,
    "displayMultiplier": 10.0,
    "step": 0.0,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 94,
@@ -17599,14 +17599,14 @@
    "param": 17,
    "name": "ROTARY_DRIVE",
    "label": "Drive",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.05000000074505806,
    "max": 50.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0500",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 86,
@@ -18086,14 +18086,14 @@
    "param": 26,
    "name": "FLANGER_FOCUS",
    "label": "Bass Focus",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 20.0,
    "max": 2000.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 82,
@@ -18192,14 +18192,14 @@
    "param": 20,
    "name": "OLD_FLANGER_DRIVE",
    "label": "Drive",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.004999999888241291,
    "max": 5.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0500",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 82,
@@ -18904,14 +18904,14 @@
    "param": 20,
    "name": "CHORUS_DRIVE",
    "label": "Drive",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.05000000074505806,
    "max": 50.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 78,
@@ -20347,14 +20347,14 @@
    "param": 65,
    "name": "MULTITAP_DRIVE",
    "label": "Drive",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.5,
    "max": 500.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 74,
@@ -22193,7 +22193,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 70,
@@ -22423,14 +22423,14 @@
    "param": 58,
    "name": "DELAY_Q",
    "label": "Resonance",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.20000000298023224,
    "max": 20.0,
    "displayMultiplier": 10.0,
    "step": 0.0,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 70,
@@ -23345,14 +23345,14 @@
    "param": 22,
    "name": "DELAY_DRIVE",
    "label": "Drive",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.05000000074505806,
    "max": 50.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0500",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 70,
@@ -24506,14 +24506,14 @@
    "param": 32,
    "name": "REVERB_DRIVE",
    "label": "Drive",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.009999999776482582,
    "max": 1.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 66,
@@ -24882,7 +24882,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 66,
@@ -24897,7 +24897,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 66,
@@ -26338,14 +26338,14 @@
    "param": 33,
    "name": "CABINET_DRIVE",
    "label": "Drive",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.0010000000474974513,
    "max": 1.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 62,
@@ -26722,7 +26722,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 62,
@@ -26737,7 +26737,7 @@
    "step": 0.05000000074505806,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 62,
@@ -27845,14 +27845,14 @@
    "param": 90,
    "name": "DISTORT_PAHARDNESS",
    "label": "Hardness",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.25,
    "max": 4.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 58,
@@ -28121,14 +28121,14 @@
    "param": 72,
    "name": "DISTORT_CLARITY",
    "label": "Out Comp Clarity",
-   "kind": "class-5",
+   "kind": "knob",
    "min": 0.009999999776482582,
    "max": 1.0,
    "displayMultiplier": 10.0,
    "step": 0.0010000000474974513,
    "flags": "0x0580",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 58,
@@ -30886,7 +30886,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 46,
@@ -31361,7 +31361,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 42,
@@ -48215,7 +48215,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -48300,7 +48300,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -48315,7 +48315,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -48330,7 +48330,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -48345,7 +48345,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -48379,7 +48379,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -48394,7 +48394,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -48409,7 +48409,7 @@
    "step": 0.10000000149011612,
    "flags": "0x0681",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -52288,7 +52288,7 @@
    "step": 0.02500000037252903,
    "flags": "0x0680",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -52453,7 +52453,7 @@
    "step": 0.02500000037252903,
    "flags": "0x0680",
    "enum": null,
-   "status": "unverified-taper"
+   "status": "taper-class-verified"
   },
   {
    "block": 1,
@@ -52849,5 +52849,12 @@
    "enum": null,
    "status": "linear-by-structure"
   }
- ]
+ ],
+ "taperBatch": {
+  "file": "references/taper-batch-20261013.json",
+  "classes": {
+   "0x5": "knob display n*mult, 10/10 points",
+   "0x6": "linear dB, 5/5 points"
+  }
+ }
 }

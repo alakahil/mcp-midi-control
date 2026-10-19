@@ -21,6 +21,12 @@ const base=fs.readFileSync(new URL('../examples/JB_RHYTHM_LEVEL_MINUS3.syx',impo
 const r=writeTableControls(base,{name:'TABLE ENCODER TEST',controls:[{block:'amp',channel:'B',param:'DISTORT_MID',value:6.5},{block:'reverb',channel:'A',param:'REVERB_TIME',value:2.2},{block:'chorus',channel:'A',param:'CHORUS_RATE',value:1.5}]});
 check(r.writes.length===3&&r.report.checks.noCollateralChanges,'write path');
 // 4. gate: unverified taper refused without experimental
-let refused=false;try{writeTableControls(base,{name:'X',controls:[{block:'wah',channel:'D',param:'WAH_Q',value:5}]})}catch(e){refused=/not writable/.test(e.message)}
+let refused=false;try{writeTableControls(base,{name:'X',controls:[{block:'amp',channel:'D',param:'DISTORT_RESOLUTION',value:0.5}]})}catch(e){refused=/not writable/.test(e.message)}
 check(refused,'unverified status must be refused');
-console.log(JSON.stringify({measuredPoints:ok,controlParity:par,writePath:r.writes.map(w=>[w.name,w.raw,+w.display.toFixed(3)]),gate:'ok'}));
+// 5. taper batch 2026-10-13: user-read FM3-Edit displays
+const tb=JSON.parse(fs.readFileSync(new URL('../references/taper-batch-20261013.json',import.meta.url)));let tbn=0;
+for(const r of tb.readings){if(r.display===null)continue;const p=[...d.byKey.values()].find(x=>x.name===r.name);
+  check(Math.abs(decodeValue(p,r.raw)-r.display)<0.006,`taper batch ${r.name}: decoded ${decodeValue(p,r.raw)} vs read ${r.display}`);
+  check(Math.abs(encodeValue(p,r.display)-r.raw)<=1,`taper batch ${r.name}: encode`);tbn++}
+check(tbn===15,'Expected 15 taper batch readings');
+console.log(JSON.stringify({measuredPoints:ok,taperBatch:tbn,controlParity:par,writePath:r.writes.map(w=>[w.name,w.raw,+w.display.toFixed(3)]),gate:'ok'}));

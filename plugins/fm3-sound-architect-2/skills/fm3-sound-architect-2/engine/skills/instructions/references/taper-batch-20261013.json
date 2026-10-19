@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "firmware": 13,
+ "date": "2026-10-13",
+ "file": "examples/FM3_TAPER_BATCH_TEST.syx",
+ "sha256": "3f8c96c3d4988648a72964e28b6371a91ff0a067e3d79179c0ab03f8c6991cdf",
+ "editor": "FM3-Edit 1.07.17",
+ "method": "user read FM3-Edit display after single import; no export",
+ "readings": [
+  {
+   "nr": 1,
+   "name": "FUZZ_SLEW",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 2,
+   "name": "WAH_DRIVE",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 3,
+   "name": "WAH_Q",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 4,
+   "name": "FLANGER_FOCUS",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 5,
+   "name": "OLD_FLANGER_DRIVE",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 6,
+   "name": "CHORUS_DRIVE",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 7,
+   "name": "DELAY_COMPTHRESH",
+   "channel": "D",
+   "raw": 16384,
+   "display": -80.0,
+   "note": "user also reported Ducker -30 (different, unmodified parameter)"
+  },
+  {
+   "nr": 8,
+   "name": "DELAY_Q",
+   "display": null,
+   "note": "not shown for Digital Mono"
+  },
+  {
+   "nr": 9,
+   "name": "DELAY_DRIVE",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 10,
+   "name": "REVERB_DRIVE",
+   "display": null,
+   "note": "not shown for Room: Medium Room"
+  },
+  {
+   "nr": 11,
+   "name": "REVERB_REVERBLEVEL",
+   "channel": "A/B (scene 2 = B)",
+   "raw": 52427,
+   "display": 0.0,
+   "note": "read on base channel, raw from base"
+  },
+  {
+   "nr": 12,
+   "name": "REVERB_EARLYLEVEL",
+   "channel": "A/B (scene 2 = B)",
+   "raw": 48495,
+   "display": -3.0,
+   "note": "read on base channel, raw from base"
+  },
+  {
+   "nr": 13,
+   "name": "CABINET_DRIVE",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 14,
+   "name": "CABINET_LEVEL2",
+   "channel": "D",
+   "raw": 16384,
+   "display": -30.0
+  },
+  {
+   "nr": 15,
+   "name": "CABINET_LEVEL1",
+   "channel": "D",
+   "raw": 16384,
+   "display": -30.0
+  },
+  {
+   "nr": 16,
+   "name": "DISTORT_PAHARDNESS",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 17,
+   "name": "DISTORT_CLARITY",
+   "channel": "D",
+   "raw": 16384,
+   "display": 2.5
+  },
+  {
+   "nr": 18,
+   "name": "COMP_THRESH2",
+   "display": null,
+   "note": "not shown for Econo-Dyno-Comp"
+  },
+  {
+   "nr": 19,
+   "name": "COMP_THRESH",
+   "display": null,
+   "note": "not shown for Econo-Dyno-Comp"
+  }
+ ],
+ "conclusion": {
+  "0x5": "knob: display = n*displayMultiplier (10/10)",
+  "0x6": "linear over min..max (5/5)"
+ }
+}

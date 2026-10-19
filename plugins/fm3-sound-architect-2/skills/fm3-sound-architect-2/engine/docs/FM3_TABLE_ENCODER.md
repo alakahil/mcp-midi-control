@@ -1,8 +1,8 @@
-# Tabelipõhine kodeerija — 0.74.0, 2026-10-13
+# Tabelipõhine kodeerija — 0.74.1, 2026-10-13
 
 `scripts/fm3-table-encoder.mjs` kodeerib iga FM3 parameetri FM3-Editis kuvatavast
 väärtusest 16-bitiseks sõnaks. Toorväärtusi pole vaja eraldi mõõta. Allikas on
-`references/fm3-param-dictionary.json` (SHA-256 `4a31bb55…f9d449f`): FracTool 3.87
+`references/fm3-param-dictionary.json` (SHA-256 `c9bab52b…a18550f7c`): FracTool 3.87
 sisseehitatud FM3 tabel (model 0x11, vorming 0x0146; 2892 parameetrit, 488 valikuloendit)
 koos forgefx-midi FM3 nimedega. Analüüsiaruanne:
 `../claude-analysis-20261013/FM3_PARAMEETRITE_ANALUUS_20261013.md`.
@@ -11,6 +11,7 @@ koos forgefx-midi FM3 nimedega. Analüüsiaruanne:
 
     n = (v/mult − min)/(max − min)        lineaarne
     n = ln((v/mult)/min)/ln(max/min)      logaritmiline (flags kõrgema baidi nibble 0x4)
+    n = v/mult                            nupp (klass 0x5: FM3-Edit näitab 0–10; sisemine min/max on DSP vahemik)
     wire = round(n × 65534)
 
 Nihe presetis: `block.start + kanal × words × 2 + pid × 2`. `block.start` tuleb
@@ -29,7 +30,7 @@ olemasolevast `fm3-composer-bases.mjs` paigutusest.
 | --- | --- |
 | measured, taper-class-verified, enum-labels-crosschecked | jah |
 | linear-by-structure, enum-labels | ainult `--allow=…` võtmega |
-| unverified-taper (klassid 0x0/0x2/0x5/0x6/0xF) | ei; ainult `--experimental` partiikatses |
+| unverified-taper (klassid 0x0/0x2/0xF; 36 kirjet, presetides praktiliselt kasutamata: monitorid, TenTap, Pitchi noodid, globaalsed) | ei; ainult `--experimental` |
 
 Seadme import ja heli on uute väärtuste puhul katsetamata. Ühtki varasemat mõõtmist ega kinnitatud presetikatset ei korrata ega muudeta.
 
@@ -47,3 +48,13 @@ Standardalusel on 19 klassi 0x05/0x06 parameetrit kanalis D toorväärtusel 1638
 Kasutaja impordib faili ühe korra ja loeb FM3-Editist 19 näitu. Eksporti ega kuulamist pole vaja.
 Tabelis on iga parameetri kohta lineaarse, logaritmilise ja 0–10 nupuskaala ennustus.
 Kui tulemus selgub, tõstetakse klass vastavale kontrolltasemele ja kodeerija lubab selle kirjutamise.
+
+### Tulemus 2026-10-13 (0.74.1)
+
+Kasutaja impordis faili ühe korra ja luges FM3-Editist näidud: `references/taper-batch-20261013.json`.
+
+- **Klass 0x05 = nupp.** Näit = n × 10. Kõik 10 nähtavat parameetrit näitasid 2.50. Lineaarne ja logaritmiline ennustus olid valed.
+- **Klass 0x06 = lineaarne dB.** Kinnitavad Cab Level 1/2 −30.00 ja Delay Compander −80 kanalil D ning Reverb Early/Late Level −3.00/0.00.
+  Reverbi kaks näitu loeti Scene 2 kanalilt B; need vastavad aluse toorväärtustele 48495/52427 ja on samuti kehtivad punktid.
+- Ei kuvatud: Delay Q (Digital Mono), Reverb Drive (Medium Room), Compressor Threshold 1/2 (Econo-Dyno-Comp). Need kuuluvad samadesse klassidesse.
+- Klassid 0x05 (17 parameetrit) ja 0x06 (29 parameetrit) on nüüd staatusega taper-class-verified ja vaikimisi kirjutatavad.

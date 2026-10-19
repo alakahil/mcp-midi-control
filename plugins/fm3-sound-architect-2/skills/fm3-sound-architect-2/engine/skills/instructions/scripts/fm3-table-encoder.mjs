@@ -1,4 +1,4 @@
-// FM3 table-based parameter encoder (0.74.0).
+// FM3 table-based parameter encoder (0.74.1). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
 import fs from 'node:fs';
@@ -9,7 +9,7 @@ import {composerBases,layouts,checkComposerStructure} from './fm3-composer-bases
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(v,m)=>{if(!v)throw Error(m)};
-export const dictionaryHash='4a31bb556f44a19f5e425e0e3aae9627f7e5f8da0804a4b9fe9ccf915f9d449f';
+export const dictionaryHash='c9bab52b5bb4c6f47cc1ded0be902f06f75fb18b876e6fd265e7802a18550f7c';
 // Statuses writable without an explicit opt-in. 'measured' and
 // 'taper-class-verified' share the exact curve class of 280/280 hardware points.
 export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','enum-labels-crosschecked']);
@@ -43,8 +43,9 @@ export function encodeValue(p,value,opts={}){
     const i=typeof value==='number'?value:p.enum.findIndex(x=>x.toLowerCase()===String(value).toLowerCase());
     check(Number.isInteger(i)&&i>=0&&i<p.enum.length,`${p.name}: unknown option ${value}`);return i;
   }
-  check(p.kind==='linear'||p.kind==='log'||opts.experimental===true,`${p.name}: kind ${p.kind} has no encoder`);
+  check(['linear','log','knob'].includes(p.kind)||opts.experimental===true,`${p.name}: kind ${p.kind} has no encoder`);
   check(typeof value==='number'&&Number.isFinite(value),`${p.name}: numeric value required`);
+  if(p.kind==='knob'){const m=p.displayMultiplier||1;check(value>=0&&value<=m+1e-9,`${p.name}: ${value} outside 0…${m}`);return Math.round(value/m*65534)}
   const v=value/(p.displayMultiplier||1),lo=p.min,hi=p.max,eps=1e-6*Math.max(1,Math.abs(hi-lo));
   check(v>=lo-eps&&v<=hi+eps,`${p.name}: ${value} outside ${lo*(p.displayMultiplier||1)}…${hi*(p.displayMultiplier||1)}`);
   const n=p.kind==='log'?Math.log(v/lo)/Math.log(hi/lo):(v-lo)/(hi-lo);
@@ -53,6 +54,7 @@ export function encodeValue(p,value,opts={}){
 export function decodeValue(p,raw){
   if(p.kind==='enum')return p.enum[raw];
   const n=raw/65534,m=p.displayMultiplier||1;
+  if(p.kind==='knob')return n*m;
   return (p.kind==='log'?p.min*Math.pow(p.max/p.min,n):p.min+n*(p.max-p.min))*m;
 }
 
@@ -88,7 +90,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
   check(Buffer.from(before.parsed.headerPayload).equals(Buffer.from(after.parsed.headerPayload)),'Dump header changed');
   const raw=Buffer.from(after.raw.rawPatch);check(raw.readUInt16LE(72)===actual.length&&raw.readUInt16LE(74)===after.raw.compSize,'Invalid encoded size');
   check(raw.subarray(76+after.raw.compSize).every(v=>v===0),'Nonzero output padding');
-  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.0',dictionarySha256:dictionaryHash,base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
+  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.1',dictionarySha256:dictionaryHash,base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 
