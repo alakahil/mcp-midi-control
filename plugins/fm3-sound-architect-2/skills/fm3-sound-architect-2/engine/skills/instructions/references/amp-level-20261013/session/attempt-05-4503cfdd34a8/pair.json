@@ -1,0 +1,31 @@
+{
+  "paired": true,
+  "effectId": 58,
+  "matchedWords": 576,
+  "wordsPerChannel": 144,
+  "channels": 4,
+  "syxSha256": "532738c9a5e33fd2714174d59bbed0d71b2dbe980d100cb1517e99c5df3aad25",
+  "bodySha256": "2e4aef23dda1ca55f439ce7d181e4e5ec3abac86ade0a042938466c08f43c576",
+  "rawRxSha256": "0792fa0e1bbff00e33ff315b4a56bad0ea6d5734d8bd94d4fa218c01a47f3534",
+  "frameLengths": [
+    12,
+    778,
+    778,
+    202,
+    8
+  ],
+  "models": {
+    "A": 4,
+    "B": 103,
+    "C": 24,
+    "D": 11
+  },
+  "levelsRaw": {
+    "A": 65534,
+    "B": 0,
+    "C": 32767,
+    "D": 48495
+  },
+  "generatorSupportExpanded": false,
+  "scope": "Raw GET/SYX agreement. Display labels still depend on the operator; scale and model generality require a separate audit."
+}

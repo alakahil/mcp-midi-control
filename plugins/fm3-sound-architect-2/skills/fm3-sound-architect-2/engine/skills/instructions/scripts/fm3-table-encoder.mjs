@@ -20,7 +20,7 @@ let cache=null;
 export function loadDictionary(){
   if(cache)return cache;
   const bytes=fs.readFileSync(new URL('../references/fm3-param-dictionary.json',import.meta.url));
-  check(sha(bytes)===dictionaryHash,'Parameter dictionary changed; revalidate (validate.py) before use');
+  check(sha(bytes)===dictionaryHash,'Parameter dictionary changed; run test-table-encoder.mjs and review evidence before use');
   const d=JSON.parse(bytes);check(d.params.length===2892,'Unexpected dictionary size');
   const byKey=new Map(),byName=new Map();
   for(const p of d.params){byKey.set(p.block+':'+p.param,p);if(p.name)byName.set(p.family+':'+p.name,p)}
@@ -36,8 +36,29 @@ function gate(p,opts){
   if(opts.experimental===true&&p.status==='unverified-taper')return;
   check(ok.includes(p.status),`${p.name??p.block+':'+p.param}: status ${p.status} is not writable${p.status==='unverified-taper'?' (batch test only)':''}`);
 }
+export function assertFields(value,fields,label){
+  check(value&&typeof value==='object'&&!Array.isArray(value),label+' must be an object');
+  check(Object.keys(value).every(k=>fields.includes(k)),'Unknown '+label+' field');
+}
+export function channelIndex(channel){
+  check(typeof channel==='string'&&/^[ABCD]$/.test(channel),'Channel must be exactly A, B, C or D');
+  return 'ABCD'.indexOf(channel);
+}
+export function validateOptions(opts){
+  assertFields(opts,['allow','experimental'],'encoder options');
+  check(opts.allow===undefined||(Array.isArray(opts.allow)&&opts.allow.every(x=>OPT_IN_STATUSES.includes(x))&&new Set(opts.allow).size===opts.allow.length),'Unknown/duplicate allow status');
+  check(opts.experimental===undefined||typeof opts.experimental==='boolean','experimental must be boolean');
+}
+export function validateControl(c,experimental=false){
+  assertFields(c,experimental?['block','channel','param','value','raw']:['block','channel','param','value'],'control');
+  check(Object.hasOwn(FAMILY_BY_SLUG,c.block),'Unknown control block');
+  channelIndex(c.channel);
+  check((typeof c.param==='string'&&c.param.length>0)||(Number.isInteger(c.param)&&c.param>=0),'Invalid parameter');
+  check(Object.hasOwn(c,'raw')!==Object.hasOwn(c,'value'),'Exactly one control value is required');
+}
 // display value (as FM3-Edit shows it) -> 16-bit wire word
 export function encodeValue(p,value,opts={}){
+  validateOptions(opts);
   gate(p,opts);
   if(p.kind==='enum'){
     const i=typeof value==='number'?value:p.enum.findIndex(x=>x.trim().toLowerCase()===String(value).trim().toLowerCase());
@@ -61,6 +82,8 @@ export function decodeValue(p,raw){
 // Write table controls into an unchanged bundled composer base.
 // controls: [{block:'amp',channel:'B',param:'DISTORT_MID'|9,value:6.5}]
 export function writeTableControls(baseBytes,spec,opts={}){
+  assertFields(spec,['name','controls'],'table spec');
+  validateOptions(opts);
   const base=composerBases.find(b=>b.sha256===sha(baseBytes));check(base,'Unrecognised base; use a listed, unchanged composer base');
   const blocks=layouts[base.layout];
   check(typeof spec.name==='string'&&/^[ -~]{1,31}$/.test(spec.name),'Name must be 1–31 printable ASCII characters');
@@ -69,9 +92,10 @@ export function writeTableControls(baseBytes,spec,opts={}){
   checkComposerStructure(body,{...base,blocks});
   const writes=[],allowed=new Set(),seen=new Set();
   for(const c of spec.controls){
+    validateControl(c,opts.experimental===true);
     const l=blocks[c.block];check(l,`Block ${c.block} not in base layout ${base.layout}`);
     const p=findParam(c.block,c.param);check(p.block===l.eid,'Family/effect mismatch');
-    const ch='ABCD'.indexOf(c.channel);check(ch>=0,'Channel must be A–D');
+    const ch=channelIndex(c.channel);
     check(p.param<l.words,'Parameter outside block word range');
     const offset=l.start+ch*l.words*2+p.param*2;check(!seen.has(offset),'Duplicate control');seen.add(offset);
     // Direct raw words are allowed only for experimental batch tests.

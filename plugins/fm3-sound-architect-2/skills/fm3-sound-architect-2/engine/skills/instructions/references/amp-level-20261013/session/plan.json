@@ -1,0 +1,18 @@
+{
+  "kind": "fm3-amp-level-abcd-v1",
+  "firmware": "13.0",
+  "baselineSha256": "aac60417ad82db7be996bbc1dd6026a2ff9a5a246bdf4966c116ab33cd87c237",
+  "baselineSource": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx",
+  "effectId": 58,
+  "parameterId": 1,
+  "wordsPerChannel": 144,
+  "models": {"A": 4, "B": 103, "C": 24, "D": 11},
+  "steps": [
+    {"index": 0, "levelDb": {"A": -80, "B": -30, "C": -6, "D": 0}},
+    {"index": 1, "levelDb": {"A": -30, "B": -6, "C": 0, "D": 20}},
+    {"index": 2, "levelDb": {"A": -6, "B": 0, "C": 20, "D": -80}},
+    {"index": 3, "levelDb": {"A": 0, "B": 20, "C": -80, "D": -30}},
+    {"index": 4, "levelDb": {"A": 20, "B": -80, "C": -30, "D": -6}}
+  ],
+  "scope": "20 candidate points on four existing models; no interpolation or generator-support expansion before evidence audit. Display labels are confirmed by the operator, not decoded from SYX."
+}

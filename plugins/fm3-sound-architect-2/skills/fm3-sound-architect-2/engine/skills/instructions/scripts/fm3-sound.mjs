@@ -1,23 +1,45 @@
-// FM3 sound composer (0.75.0): jb-composer (templates, inserted blocks, scenes)
-// → two-row layout chosen by the sound → table controls. Offline only.
-// spec: {composer:{...jb-composer spec on jb-newlook...}, layout:{row2:[...],row3:[...],columns?},
-//        blockScenes?:{block:[{scene,channel,bypass}]}, controls?:[{block,channel,param,value}], allow?:[...]}
+// Offline sound pipeline: templates -> layout -> scenes -> controls -> final readback.
 import fs from 'node:fs';
-import {createHash} from 'node:crypto';
-import {generatePreset} from './fm3-generate.mjs';
-import {arrangeSound} from './fm3-layout.mjs';
-const check=(v,m)=>{if(!v)throw Error(m)};const sha=b=>createHash('sha256').update(b).digest('hex');
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {generatePreset,getComposerCapabilities} from './fm3-generate.mjs';
+import {arrangeSound,SLUG_BY_EID} from './fm3-layout.mjs';
+import {assertFields,validateOptions,loadDictionary,DEFAULT_STATUSES,OPT_IN_STATUSES,FAMILY_BY_SLUG} from './fm3-table-encoder.mjs';
+import {finalSoundState,renderFinalSoundText} from './fm3-final-state.mjs';
+import {writePresetOutputs,sha256} from './fm3-output.mjs';
+const check=(v,m)=>{if(!v)throw Error(m)};
+export function getSoundCapabilities(base){
+  const composer=getComposerCapabilities(base),d=loadDictionary();
+  return {profile:'fm3-sound',revision:'0.3.1',firmware:13,base:'jb-newlook',composer,
+    fields:['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
+    outputs:['.syx','.txt','.spec.json','.validation.json'],
+    layout:{rows:[2,3],maxBlocksPerRow:10,blocks:Object.values(SLUG_BY_EID),policy:'Exactly the composed blocks; no removal, duplicates or arbitrary 4-row graph'},
+    table:{defaultStatuses:DEFAULT_STATUSES,optInStatuses:OPT_IN_STATUSES,families:FAMILY_BY_SLUG,dictionaryEntries:d.params.length,
+      policy:'Entry counts are not validated device coverage. Type visibility/tempo dependencies remain partial; use full templates for model/type changes.'},
+    outputSceneLevels:{supported:true,block:'out1',parameters:'OUTPUT_SCENE1..8',rangeDb:[-20,20],channels:['A','B','C','D']},
+    limitations:['No device connection','New output hardware/audio/CPU unconfirmed','Experimental raw/taper writes excluded from this entry point','Global settings, arbitrary routing and all FM3 families are not implemented']};
+}
 export function composeSound(base,spec){
-  check(spec&&spec.composer&&spec.layout,'spec.composer and spec.layout are required');
-  check(Object.keys(spec).every(k=>['composer','layout','blockScenes','controls','allow','purpose','selectedScene'].includes(k)),'Unsupported sound field');
+  assertFields(spec,['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],'sound');
+  check(spec.composer&&spec.layout,'spec.composer and spec.layout are required');
+  validateOptions({allow:spec.allow});
+  if(Object.hasOwn(spec,'controls'))check(Array.isArray(spec.controls),'controls must be an array');
+  if(Object.hasOwn(spec,'blockScenes'))assertFields(spec.blockScenes,Object.values(SLUG_BY_EID),'blockScenes');
+  if(spec.purpose!==undefined)check(typeof spec.purpose==='string'&&spec.purpose.length<=4000&&!/[\x00-\x1f]/.test(spec.purpose),'Invalid sound purpose');
+  if(spec.context!==undefined){assertFields(spec.context,['guitar','pickups','output'],'context');for(const v of Object.values(spec.context))check(typeof v==='string'&&v.length>0&&v.length<=300&&!/[\x00-\x1f]/.test(v),'Invalid context value');}
   const first=generatePreset(base,spec.composer);
   check(first.report.baseId==='jb-newlook','Sound composer requires the jb-newlook base');
-  const second=arrangeSound(first.syx,spec,{allow:(spec.allow??[])});
-  return {syx:second.syx,composerReport:first.report,layoutReport:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}};
+  const second=arrangeSound(first.syx,spec,{allow:spec.allow??[]});
+  const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
+  const report={generator:'fm3-sound-0.3.1',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+    checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
+    hardware:'not tested for this final output',audio:'not tested',cpu:'not tested',...state,
+    stages:{composer:{scope:'intermediate; not final settings',...first.report},layout:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};
+  return {syx:second.syx,txt:renderFinalSoundText(state,spec),report,composerReport:first.report,layoutReport:report.stages.layout};
 }
-if(process.argv[1]&&new URL(import.meta.url).pathname===fs.realpathSync(process.argv[1])){
-  try{const [b,s,stem]=process.argv.slice(2);check(b&&s&&stem,'Usage: node fm3-sound.mjs examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx SPEC.json OUTPUT_STEM');
-    const r=composeSound(fs.readFileSync(b),JSON.parse(fs.readFileSync(s,'utf8')));
-    fs.writeFileSync(stem+'.syx',r.syx,{flag:'wx'});fs.writeFileSync(stem+'.validation.json',JSON.stringify({composer:r.composerReport,layout:r.layoutReport},null,2)+'\n',{flag:'wx'});
-    console.log(JSON.stringify({sha256:sha(r.syx),rows:r.layoutReport.rows,writes:r.layoutReport.writes.length},null,2));
-  }catch(e){console.error(e.message);process.exitCode=1}}
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+  try{const [b,s,stem,...extra]=process.argv.slice(2);
+    if(b==='--capabilities'){check(!stem&&!extra.length,'Usage: --capabilities [BASE.syx]');console.log(JSON.stringify(getSoundCapabilities(s?fs.readFileSync(s):undefined),null,2));}
+    else{check(b&&s&&stem&&!extra.length,'Usage: node fm3-sound.mjs BASE.syx SPEC.json OUTPUT_STEM');const spec=JSON.parse(fs.readFileSync(s,'utf8')),r=composeSound(fs.readFileSync(b),spec);writePresetOutputs(stem,r,spec);console.log(JSON.stringify({sha256:r.report.outputSha256,rows:r.report.signalRows,outputs:4}));}
+  }catch(e){console.error(e.message);process.exitCode=1;}
+}

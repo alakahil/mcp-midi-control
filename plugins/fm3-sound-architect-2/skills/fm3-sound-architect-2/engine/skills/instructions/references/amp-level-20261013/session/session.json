@@ -1,0 +1,17 @@
+{
+  "kind": "fm3-amp-level-abcd-v1",
+  "collectorVersion": "1.0.0",
+  "createdAt": "2026-10-13T09:35:29.376860+00:00",
+  "firmwareDeclared": "13.0",
+  "packageHashes": {
+    "FM3_AMP_LEVEL.py": "20746514d8e3b4dfcac2b814fcadf81e8fa6219bfda9f5e3548a2c9cf9afa432",
+    "amp_transport.py": "054332edae4fc40164e55037c5bf1a3f6a595b0fce524af8d1356ff558e62447",
+    "level-check.mjs": "772829b06a732f4bdaced7e343515b95b279933aa0750c9f6534bc0b5798b352",
+    "fm3-prototype.mjs": "89e431a782fb24d02202f4a03ea70a17d60cc7bff7b8749cfcc3b952a1bfe8a6",
+    "fm3-codec.mjs": "17693f90b9ddb24bcad0b79d204dc1ab9e2d2ff02a7a4629c4be6bcfb16d3c67",
+    "plan.json": "28410b1deef4d6be59620bcf3ccd35b6dc05fdda33ba3431b7551d487fa05fe9",
+    "ALUSTA_SIIT.syx": "aac60417ad82db7be996bbc1dd6026a2ff9a5a246bdf4966c116ab33cd87c237"
+  },
+  "monitoringMutedConfirmed": true,
+  "scope": "Candidate measurements, not new generator support"
+}

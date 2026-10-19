@@ -1,0 +1,31 @@
+{
+  "repository": "https://github.com/sKuhLight/forgefx-midi",
+  "commit": "553d24b7409302908d5c7e46a71b45e07dffdc05",
+  "sourceDirectory": "test/gen3/fm3/fixtures",
+  "license": "Apache-2.0",
+  "device": "FM3",
+  "firmware": "upstream corpus; not promoted to FW13 hardware proof",
+  "scope": "Captured SYX with upstream expected decoded values, not independent validation of every display scale",
+  "files": {
+    "preset-42.params.expected.json": "adf84cd81a82d64144076f5da42a2c11c41023025834cbf7854b0c06855f7f02",
+    "preset-42.syx": "c91be2fba05d044efa7eb76deb0e7f057d1e0d19543dd61542839a50019407e7",
+    "preset-45.params.expected.json": "1105807d3fcf6e712d63cbfa7e31bf43787b09bb13505387f7dcc84bc033cda0",
+    "preset-45.syx": "c895537b34cfb97c6e56074346bfdbdfaf1789bfe06a2ed979c7433607859635",
+    "preset-5.params.expected.json": "8d1f3a089dfa529e5594eb5653d25030eb6ff98c05e82dbb021b575634a45a62",
+    "preset-5.syx": "d9fda0e4581de4f700f0a7a1f27ebae2e60ed7235f7f4a8ea69451adf7896007",
+    "preset-55.params.expected.json": "216143973dc4c5f1d803b668f8d1f84df95e0eb0041f91462f39f0fdcdd37373",
+    "preset-55.syx": "a74ea948a4a57f0c3b315152ace59fa17a017e287b5a193bffa77a00ba874198",
+    "preset-62.params.expected.json": "5cdc7525467c4b6656045c80f4b411b896291c1ad30f421da7213a6da18c726b",
+    "preset-62.syx": "376fe9691ad09e864ba8c8db73bdf95cb3a6fd93f3cf9161c5190e1b50275b0d",
+    "preset-63.params.expected.json": "293ba4e16a08ceca91ba3e0ef62cbfedd2bdd926ae2e87b3ba3baeb5eadef0a6",
+    "preset-63.syx": "2b4d149a1ca645feefe7facf945d8f944584086c1dfc4a1723e4c78a091d9e35",
+    "preset-67.params.expected.json": "04b60311800c0a736f537237752bf5700f54c4bb22a984054b46fcb5b121db4c",
+    "preset-67.syx": "9c3d3825cccb0e708727a04a6b53928c2023156e25ec3218fcf01740aaf63c4d",
+    "preset-79.params.expected.json": "4c571234453b9266da06ed28390f68215cb1a168d019c60ce46ac31429dcdcec",
+    "preset-79.syx": "c4b9b38aea16c31d63af95eb6889f90d24cb090bd1eb8bc49367c21d0cb6614b",
+    "preset-82.params.expected.json": "952dcba8c5c4ceb2f14f960318ede47e5476a3b087a31762d5c8e88c02dd7ab3",
+    "preset-82.syx": "04e1562f8d63e98ec3e213837f1028ae74132708bbec1b540a1d20bf591003c9",
+    "preset-96.params.expected.json": "e69eba14a71d2b3f653247f7ff40437c9558cda47545a065d0980029e1b8ccb3",
+    "preset-96.syx": "bdb19870a9fdcf6b400d0d0dcc8cce176ec39cf8473391e8a552d0406d58b599"
+  }
+}

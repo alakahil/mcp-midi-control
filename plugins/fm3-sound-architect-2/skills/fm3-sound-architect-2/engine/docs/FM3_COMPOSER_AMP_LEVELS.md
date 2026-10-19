@@ -1,21 +1,26 @@
-# Ampi Level kanalite kaupa — 0.58.0
+# Ampi Level kanalite kaupa — plugin 0.2.2
 
-Koostaja `jb-composer-0.8.1` lisab välja `ampLevels` (kanal ja `levelDb`).
+Koostaja väli `ampLevels` määrab kanali ja `levelDb` väärtuse. Algne tugi
+lisandus koostajas `jb-composer-0.8.1`; praegune mõõtepunktide revisjon on
+`amp-level-points-2026-10-13`.
 See käsitleb ainult Levelit, mitte Gaini, EQ-d, Master Volume'i ega stseeni
 väljundtaset. Mudelivalik rakendub enne Levelit. Ühine kanal mõjutab kõiki
 seda kasutavaid stseene. Olemasolevate profiilide `levelB` säilib.
 
 | Kanal | Praegu kirjutatav | Tõend |
 | --- | --- | --- |
-| A | Double Verb Vibrato, täpselt −12 dB | V1/V2 kasutaja eksportide üksiksõna muutus |
-| B | −80…20 dB, senise `levelB` toega sama ulatus | Olemasolev kood ja varasemad B katsed; see ei kinnita kogu vahemikku seadmel |
-| C | USA MK IV Lead Bright, täpselt −11 dB | Ühine C/D eksport, ainult vastavad Level-sõnad muutusid |
-| D | Plexi 50W High 1, täpselt −11 dB | Ühine C/D eksport, ainult vastavad Level-sõnad muutusid |
+| A | Double Verb Vibrato: −80, −30, −12, −6, 0, +20 dB | Varasem −12 dB eksport ja viis uut GET/SYX paari |
+| B | −80…20 dB, senise `levelB` toega sama ulatus | Brit Silveril on uutes paarides kinnitatud −80, −30, −6, 0, +20 dB; kogu vahemik ja teised mudelid ei saa sellest uut seadmekinnitust |
+| C | USA MK IV Lead Bright: −80, −30, −11, −6, 0, +20 dB | Varasem −11 dB eksport ja viis uut GET/SYX paari |
+| D | Plexi 50W High 1: −80, −30, −11, −6, 0, +20 dB | Varasem −11 dB eksport ja viis uut GET/SYX paari |
 
 Näide: `"ampLevels":[{"channel":"A","levelDb":-12}]`. B võib kasutada
 vana `levelB` välja või loendit; mõlemad korraga samas kirjelduses annavad
 vea ka sama väärtuse korral. Duplikaatkanalid, lisaväljad ja mõõtmata A
-mudel/väärtus lükatakse tagasi. C/D töötavad loetletud mudelite täpsetel −11 dB punktidel. Teiste mudelite või väärtuste küsimine annab vea; interpolatsiooni ei lisatud.
+mudel/väärtus lükatakse tagasi. A/C/D töötavad tabelis loetletud mudelite
+täpsetel väärtustel. Teiste mudelite või väärtuste küsimine annab vea;
+interpolatsiooni ei lisatud. Uute punktide tõendid ja kogu sisu taasesituse
+kontroll on kirjas `FM3_AMP_LEVEL_ABCD_VALIDATION.json` failis.
 
 ## A-kanali tõend ja Bonamassa V2
 
@@ -72,3 +77,28 @@ Muusikaline `JB_EIGHT_SCENES_V2.syx` säilitab C varasema −8 dB ning D
 ligikaudu −8,16 dB. C/D −11 dB olid ajutised mõõtepunktid. Taasta V2 ning
 jätka clean-stseenide 1/5 taseme kuulamisega. Kuulamise järel sobivuse
 kinnitust ega uut CPU-mõõtmist pole selle ekspordiga lisandunud.
+
+## Mõõtmised integreeritud — plugin 0.2.2
+
+Viiesammuline kogumine on lõpetatud. Kõigis viies paaris kattuvad 576 Amp-sõna
+ning säilivad kõik muud presetikeha baidid. Generaator taastab iga ekspordi
+kogu 13 146-baidise keha. Kokku lisandus 20 mõõtepunkti: A/C/D jaoks 15 uut
+kirjutatavat punkti ja B viiele varasemale väärtusele uus mudelipõhine tõend.
+
+| Kinnitatud näit | Toorsõna kõigil neljal mõõdetud kanalil |
+| --- | --- |
+| −80 dB | 0 |
+| −30 dB | 32767 |
+| −6 dB | 48495 |
+| 0 dB | 52427 |
+| +20 dB | 65534 |
+
+Allikas `skills/instructions/references/amp-level-20261013/` säilitab originaalse
+ZIP-i, kõik ekspordid, päringuvastused ning räsiga seotud indeksi. Failide räsid
+kontrollitakse igal tõendi kasutusel; muutmata sisu lahtipakkimist võib korrata
+mälus hoitava tulemuse kaudu. Muudetud või osaline preset ei päri kogu faili
+seadmekinnitust. Uus nimi/tihendus ei saa eraldi impordikinnitust.
+
+Vt `FM3_AMP_LEVEL_ABCD_DEVELOPMENT.md`. Sama kogumist ei ole vaja korrata.
+Kuulamist ega CPU-d selles vaigistatud tasemekatses ei hinnatud; muusikaline
+V2 ja selle varasem balanss säilivad.

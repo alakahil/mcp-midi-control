@@ -1,0 +1,961 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FM3 two-row sound specification 0.3.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "composer": {
+      "$ref": "fm3-spec.schema.json"
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "row2": {
+          "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "amp",
+              "cab",
+              "drive",
+              "delay",
+              "reverb",
+              "phaser",
+              "compressor",
+              "chorus",
+              "flanger",
+              "wah",
+              "tremolo",
+              "rotary",
+              "pitch",
+              "filter",
+              "peq",
+              "geq",
+              "enhancer"
+            ]
+          }
+        },
+        "row3": {
+          "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "amp",
+              "cab",
+              "drive",
+              "delay",
+              "reverb",
+              "phaser",
+              "compressor",
+              "chorus",
+              "flanger",
+              "wah",
+              "tremolo",
+              "rotary",
+              "pitch",
+              "filter",
+              "peq",
+              "geq",
+              "enhancer"
+            ]
+          }
+        },
+        "columns": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "amp": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "cab": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "drive": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "delay": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "reverb": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "phaser": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "compressor": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "chorus": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "flanger": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "wah": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "tremolo": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "rotary": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "pitch": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "filter": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "peq": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "geq": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            },
+            "enhancer": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
+            }
+          }
+        }
+      },
+      "required": [
+        "row2",
+        "row3"
+      ]
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "block": {
+            "enum": [
+              "amp",
+              "cab",
+              "drive",
+              "delay",
+              "reverb",
+              "phaser",
+              "compressor",
+              "chorus",
+              "flanger",
+              "wah",
+              "tremolo",
+              "rotary",
+              "pitch",
+              "filter",
+              "peq",
+              "geq",
+              "enhancer",
+              "out1"
+            ]
+          },
+          "channel": {
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "param": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "string",
+                "minLength": 1
+              }
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "string"
+            ]
+          }
+        },
+        "required": [
+          "block",
+          "channel",
+          "param",
+          "value"
+        ]
+      }
+    },
+    "blockScenes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "amp": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "cab": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "drive": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "delay": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "reverb": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "phaser": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "compressor": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "chorus": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "flanger": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "wah": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "tremolo": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "rotary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "pitch": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "filter": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "peq": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "geq": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        },
+        "enhancer": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "allow": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "linear-by-structure",
+          "enum-labels"
+        ]
+      }
+    },
+    "selectedScene": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 8
+    },
+    "purpose": {
+      "type": "string",
+      "maxLength": 4000,
+      "pattern": "^[^\\u0000-\\u001f]*$"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "guitar": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "pattern": "^[^\\u0000-\\u001f]*$"
+        },
+        "pickups": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "pattern": "^[^\\u0000-\\u001f]*$"
+        },
+        "output": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "pattern": "^[^\\u0000-\\u001f]*$"
+        }
+      }
+    }
+  },
+  "required": [
+    "composer",
+    "layout"
+  ]
+}

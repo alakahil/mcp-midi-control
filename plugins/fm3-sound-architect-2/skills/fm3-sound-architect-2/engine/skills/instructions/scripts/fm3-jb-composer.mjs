@@ -137,20 +137,7 @@ export function generateJBComposer(base,spec,ampLibrary){
     check(actual.subarray(write.start,write.start+expected.length).equals(expected),'Full '+write.family+' '+write.channel+' template readback mismatch');
   }
   for(const w of ampLevelWrites)check(actual.readUInt16LE(w.offset)===w.raw,'Amp Level readback failed: '+w.channel);
-  const cabLib=JSON.parse(read('lookup/cab-library.json'));
-  const sceneSummary=Array.from({length:8},(_,i)=>({scene:i+1,name:after.decoded.scene_names[i],blocks:Object.fromEntries(Object.entries(blocks).map(([family,l])=>{
-    const channel=actual.readUInt16LE(l.header+10+2*i),start=l.start+channel*l.words*2,bypass=actual.readUInt16LE(l.header+26+2*i)===1;
-    const typeId=l.typePid===undefined?null:actual.readUInt16LE(start+l.typePid*2);
-    const type=family==='amp'?catalog.models.find(m=>m.id===typeId)?.name:lib[family]?.models.find(m=>m.binaryId===typeId)?.name;
-    const extra={};
-    if(family==='cab'){const mode=actual.readUInt16LE(start+62);extra.mode=mode===1?'DYNA-CAB':'inherited';if(mode===1)extra.cabs=[85,86].map(pid=>{const id=actual.readUInt16LE(start+pid*2);return {id,name:cabLib.templates.find(t=>t.expectedId===id)?.name??'ID '+id}})}
-    if(family==='amp')extra.levelDb=-80+actual.readUInt16LE(start+2)/65534*100;
-    if(family==='rotary')extra.type='Rotary';
-    if(family==='peq'){extra.type='Parametric EQ';Object.assign(extra,decodePeqChannel(Array.from({length:33},(_,j)=>actual.readUInt16LE(start+2*j))));}
-    if(family==='enhancer')Object.assign(extra,decodeEnhancerChannel(Array.from({length:12},(_,j)=>actual.readUInt16LE(start+2*j))));
-    if(family==='geq')Object.assign(extra,decodeGeqChannel(Array.from({length:20},(_,j)=>actual.readUInt16LE(start+2*j))));
-    return [family,{channel:'ABCD'[channel],bypass,...(typeId!==null?{typeId,type:type??'ID '+typeId}:{}),...extra}];
-  }))}));
+  const sceneSummary=describeComposerScenes(after,blocks);
   for(const insertion of insertions){
     const assigned=new Set([...insertion.sceneAssignments.map(s=>s.scene),...sceneEdits.filter(e=>e.family===insertion.family).map(e=>e.scene)]);
     insertion.sceneAssignments=[...assigned].sort((a,b)=>a-b).map(scene=>{const state=sceneSummary[scene-1].blocks[insertion.family];return {scene,channel:state.channel,bypass:state.bypass};});
@@ -200,4 +187,22 @@ function renderText(after,r){
   for(const s of r.scenes){lines.push(`Scene ${s.scene}: ${s.name}`);for(const [family,b] of Object.entries(s.blocks))lines.push(`  ${family} ${b.channel}: ${b.type??b.cabs?.map(c=>c.name).join(' + ')??b.mode}; ${b.bypass?'bypass':'sees'}${b.levelDb===undefined?'':'; Level '+b.levelDb.toFixed(2)+' dB'}`)}
   lines.push('','Olemasolevate plokkide määramata seaded, kanalivalikud, bypass, lülitid ja modifierid säilivad alusfailist. Kogutud mallid pole tingimata tehasevaikeväärtused.','Tüübimalli valik üksi ei aktiveeri efekti. Stseenikirjeldus määrab kanalid ja efekti sees/bypass oleku; lisatud plokid algavad A/bypass. Kanalite mõju on eespool.','NewLook-alusel lisatakse üksnes küsitud toetatud plokid vabade shuntide asemele. Send/Return ja kaks rida säilivad. Väliseid IR-e ei lisata. Rotary A on piiratud mõõdetud punktidega.','Failitasemel kontrollitud: GET/SYX komponenditõendid, kõik sisubaidid, lubatud alad, routing, kaadrid, CRC, footer, pikkused ja lõputäide.',r.knownDeviceBody?.submittedFileConfirmed?'Selle täpse SYX-faili import ja tagasieksport on kinnitatud: kõik kehabaidid kattuvad. Korduskatset pole vaja. Selle koosluse heli- ja CPU-tõendid on raportis.':r.knownDeviceBody?'Kogu lahtipakitud sisu kattub varasema kasutaja seadmeekspordiga. Uue nimega faili pole eraldi seadmesse imporditud; sama sisu korduseksporti pole vaja. Uut kuulamis- või CPU-hinnangut ei lisandu.':'Selle uue kombinatsiooni seadmeimport, heli, tasemed ja CPU: OOTEL. Aluse ja varasemate üksikplokkide kinnitused ei kinnita automaatselt uut kombinatsiooni.','','KASUTAMINE',...(r.knownDeviceBody?['Impordi soovi korral FM3-Editi tööpuhvrisse. Stseenid ja heliseaded kattuvad raportis nimetatud seadmeekspordiga. Täiendavat ekspordikatset ei nõuta.']:['1. Säilita praegune töö ja impordi SYX FM3-Editi tööpuhvrisse.','2. Kontrolli FM3-Editi võimalikke veateateid. Täpseks tagasivõrdluseks ära muuda parameetreid, kanalivalikuid ega expression-pedaali asendit.',`3. Enne eksporti vali tagasi Scene ${r.selectedScene}. Kui muutsid ise seadeid, märgi need ekspordi juurde.`,`4. Ekspordi terve preset nimega ${r.exportFilename} ja saada võrdluseks.`,'5. Kirjelda kuuldavat tasakaalu ja vajalike efektide sobivust.']),'Tööriist ei ühenda seadet ega saada MIDI/SET/SAVE-käske.',`SHA-256: ${r.outputSha256}`);
   return lines.join('\n')+'\n';
+}
+
+export function describeComposerScenes(after,blocks){
+  const actual=Buffer.from(after.raw.body),lib=composerLibraries();
+  const cabLib=JSON.parse(read('lookup/cab-library.json'));
+  return Array.from({length:8},(_,i)=>({scene:i+1,name:after.decoded.scene_names[i],blocks:Object.fromEntries(Object.entries(blocks).map(([family,l])=>{
+    const channel=actual.readUInt16LE(l.header+10+2*i),start=l.start+channel*l.words*2,bypass=actual.readUInt16LE(l.header+26+2*i)===1;
+    const typeId=l.typePid===undefined?null:actual.readUInt16LE(start+l.typePid*2);
+    const type=family==='amp'?catalog.models.find(m=>m.id===typeId)?.name:lib[family]?.models.find(m=>m.binaryId===typeId)?.name;
+    const extra={};
+    if(family==='cab'){const mode=actual.readUInt16LE(start+62);extra.mode=mode===1?'DYNA-CAB':'inherited';if(mode===1)extra.cabs=[85,86].map(pid=>{const id=actual.readUInt16LE(start+pid*2);return {id,name:cabLib.templates.find(t=>t.expectedId===id)?.name??'ID '+id}})}
+    if(family==='amp')extra.levelDb=-80+actual.readUInt16LE(start+2)/65534*100;
+    if(family==='rotary')extra.type='Rotary';
+    if(family==='peq'){extra.type='Parametric EQ';Object.assign(extra,decodePeqChannel(Array.from({length:33},(_,j)=>actual.readUInt16LE(start+2*j))));}
+    if(family==='enhancer')Object.assign(extra,decodeEnhancerChannel(Array.from({length:12},(_,j)=>actual.readUInt16LE(start+2*j))));
+    if(family==='geq')Object.assign(extra,decodeGeqChannel(Array.from({length:20},(_,j)=>actual.readUInt16LE(start+2*j))));
+    return [family,{channel:'ABCD'[channel],bypass,...(typeId!==null?{typeId,type:type??'ID '+typeId}:{}),...extra}];
+  }))}));
 }

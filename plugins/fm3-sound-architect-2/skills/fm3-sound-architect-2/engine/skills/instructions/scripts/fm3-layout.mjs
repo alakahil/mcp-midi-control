@@ -5,7 +5,7 @@
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
-import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG} from './fm3-table-encoder.mjs';
+import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG,assertFields,channelIndex,validateControl,validateOptions} from './fm3-table-encoder.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(v,m)=>{if(!v)throw Error(m)};
@@ -44,6 +44,9 @@ export function spreadColumns(n){check(n<=10,'Max 10 blocks per row');return Arr
 
 // layout: {row2:[slug...], row3:[slug...], columns?:{slug:1-based col}}
 export function planGrid(body,layout){
+  assertFields(layout,['row2','row3','columns'],'layout');
+  check(Array.isArray(layout.row2)&&Array.isArray(layout.row3),'layout.row2 and row3 must be arrays');
+  if(layout.columns!==undefined)assertFields(layout.columns,[...layout.row2,...layout.row3],'layout.columns');
   const grid=readGrid(body),placed=grid.filter(g=>g.id&&g.id<SHUNT_MIN&&!Object.values(IO).includes(g.id));
   const fixed=[[1,0,IO.in1],[1,11,IO.send],[2,0,IO.ret],[2,11,IO.out1]];
   for(const [r,c,id] of fixed)check(grid.find(g=>g.row===r&&g.col===c).id===id,'Base is not a two-row In/Send/Return/Out layout');
@@ -84,11 +87,15 @@ export function describeRows(body){
 
 // Table controls on any record layout (positions found by scanning records).
 export function applyTableControls(body,controls,opts={},allow=()=>{}){
+  validateOptions(opts);
+  check(!opts.experimental,'Sound controls do not allow experimental writes');
+  check(Array.isArray(controls),'controls must be an array');
   const {records}=scanRecords(body),writes=[],seen=new Set();
   for(const c of controls){
+    validateControl(c);
     const r=records.find(x=>x.family===c.block);check(r,`Block ${c.block} is not placed in this preset`);
     const p=findParam(c.block,c.param);check(p.block===r.eid&&p.param<r.words,'Parameter/record mismatch');
-    const ch='ABCD'.indexOf(c.channel);check(ch>=0,'Channel must be A–D');
+    const ch=channelIndex(c.channel);check(ch<r.channels,'Channel absent in block');
     const offset=r.start+ch*r.words*2+p.param*2;check(!seen.has(offset),'Duplicate control');seen.add(offset);
     const raw=encodeValue(p,c.value,opts);
     writes.push({block:c.block,channel:c.channel,name:p.name,label:p.label,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
@@ -98,13 +105,16 @@ export function applyTableControls(body,controls,opts={},allow=()=>{}){
 }
 // Scene channel/bypass for any placed block: {block:[{scene,channel,bypass}]}
 export function applyBlockScenes(body,blockScenes,allow=()=>{}){
+  assertFields(blockScenes,Object.keys(SLUG_BY_EID).map(k=>SLUG_BY_EID[k]),'blockScenes');
   const {records}=scanRecords(body),edits=[];
   for(const [family,list] of Object.entries(blockScenes)){
     const r=records.find(x=>x.family===family);check(r&&r.channels===4,`Block ${family} is not placed`);
     check(Array.isArray(list)&&list.length<=8,'Up to 8 scene entries');const seen=new Set();
     for(const s of list){
+      assertFields(s,['scene','channel','bypass'],'block scene');
+      check(Object.hasOwn(s,'channel')||Object.hasOwn(s,'bypass'),'Empty block scene');
       check(Number.isInteger(s.scene)&&s.scene>=1&&s.scene<=8&&!seen.has(s.scene),'Invalid scene');seen.add(s.scene);
-      if(s.channel!==undefined){check(/^[ABCD]$/.test(s.channel),'Invalid channel');const o=r.header+10+2*(s.scene-1);body.writeUInt16LE('ABCD'.indexOf(s.channel),o);allow(o,2)}
+      if(s.channel!==undefined){channelIndex(s.channel);const o=r.header+10+2*(s.scene-1);body.writeUInt16LE('ABCD'.indexOf(s.channel),o);allow(o,2)}
       if(s.bypass!==undefined){check(typeof s.bypass==='boolean','bypass must be boolean');const o=r.header+26+2*(s.scene-1);body.writeUInt16LE(s.bypass?1:0,o);allow(o,2)}
       edits.push({family,...s});
     }
