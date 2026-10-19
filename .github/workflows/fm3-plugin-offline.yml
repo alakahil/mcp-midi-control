@@ -1,9 +1,9 @@
 name: FM3 plugin offline
 on:
   push:
-    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', '.github/workflows/fm3-plugin-offline.yml']
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', '.github/workflows/fm3-plugin-offline.yml']
   pull_request:
-    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', '.github/workflows/fm3-plugin-offline.yml']
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', '.github/workflows/fm3-plugin-offline.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -16,6 +16,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify parameter evidence and coverage freshness
+        run: |
+          python3 tools/fm3/test-parameter-evidence.py
+          python3 tools/fm3/parameter-evidence.py
       - name: Run the required offline suite
         run: python3 tools/fm3/test-offline.py --output "$RUNNER_TEMP/fm3-tests"
       - name: Build the tested commit

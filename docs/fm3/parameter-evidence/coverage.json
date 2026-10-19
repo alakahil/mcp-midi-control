@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 1,
+  "scope": "Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.",
+  "inventory": {
+    "filePaths": 2254,
+    "uniqueContents": 2050,
+    "archivePaths": 990,
+    "archiveContents": 164
+  },
+  "catalogRows": 2021,
+  "catalogKeys": 1999,
+  "aliasRows": 22,
+  "dictionaryRows": 2892,
+  "unionKeys": 3223,
+  "joins": {
+    "both": 1668,
+    "catalog-only": 331,
+    "dictionary-only": 1224
+  },
+  "dictionaryStatusClaims": {
+    "enum-labels": 350,
+    "enum-labels-crosschecked": 138,
+    "linear-by-structure": 626,
+    "measured": 22,
+    "n/a": 760,
+    "taper-class-verified": 960,
+    "unverified-taper": 36
+  },
+  "observations": {
+    "paired-point": 846,
+    "screen-reading-no-export": 15,
+    "syx-export-no-get": 2
+  },
+  "pairedCapturesReplayed": 335,
+  "parametersWithPairedPoint": 67,
+  "catalogKeysWithPairedPoint": 67,
+  "excludedOrSkippedRecords": 32,
+  "templatesWithSourceHash": 734,
+  "composerTemplateDeclarations": {
+    "amp": 336,
+    "cab": 45,
+    "drive": 87,
+    "delay": 27,
+    "reverb": 79,
+    "compressor": 19,
+    "chorus": 27,
+    "flanger": 31,
+    "phaser": 17,
+    "wah": 9,
+    "tremolo": 7,
+    "pitch": 16,
+    "filter": 18
+  },
+  "families": [
+    {
+      "family": null,
+      "catalogKeys": 0,
+      "dictionaryKeys": 7,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "CABINET",
+      "catalogKeys": 105,
+      "dictionaryKeys": 106,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 34,
+      "tableOptInOnBundledBase": 27
+    },
+    {
+      "family": "CHORUS",
+      "catalogKeys": 29,
+      "dictionaryKeys": 32,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 28,
+      "tableOptInOnBundledBase": 3
+    },
+    {
+      "family": "COMP",
+      "catalogKeys": 37,
+      "dictionaryKeys": 37,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 33,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "CONTROLLERS",
+      "catalogKeys": 141,
+      "dictionaryKeys": 130,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "CROSSOVER",
+      "catalogKeys": 15,
+      "dictionaryKeys": 0,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "DELAY",
+      "catalogKeys": 88,
+      "dictionaryKeys": 89,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 80,
+      "tableOptInOnBundledBase": 3
+    },
+    {
+      "family": "DISTORT",
+      "catalogKeys": 143,
+      "dictionaryKeys": 144,
+      "pairedPointKeys": 1,
+      "tableDefaultOnBundledBase": 131,
+      "tableOptInOnBundledBase": 1
+    },
+    {
+      "family": "ENHANCER",
+      "catalogKeys": 12,
+      "dictionaryKeys": 12,
+      "pairedPointKeys": 10,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "FC",
+      "catalogKeys": 28,
+      "dictionaryKeys": 0,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "FDBKRET",
+      "catalogKeys": 6,
+      "dictionaryKeys": 6,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "FDBKSEND",
+      "catalogKeys": 2,
+      "dictionaryKeys": 2,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "FILTER",
+      "catalogKeys": 37,
+      "dictionaryKeys": 37,
+      "pairedPointKeys": 5,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "FLANGER",
+      "catalogKeys": 33,
+      "dictionaryKeys": 33,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 30,
+      "tableOptInOnBundledBase": 2
+    },
+    {
+      "family": "FORMANT",
+      "catalogKeys": 12,
+      "dictionaryKeys": 12,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "FUZZ",
+      "catalogKeys": 43,
+      "dictionaryKeys": 44,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 40,
+      "tableOptInOnBundledBase": 4
+    },
+    {
+      "family": "GATE",
+      "catalogKeys": 19,
+      "dictionaryKeys": 19,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "GEQ",
+      "catalogKeys": 21,
+      "dictionaryKeys": 20,
+      "pairedPointKeys": 15,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "GLOBAL",
+      "catalogKeys": 173,
+      "dictionaryKeys": 1024,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "INPUT",
+      "catalogKeys": 10,
+      "dictionaryKeys": 10,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "IRCAPTURE",
+      "catalogKeys": 3,
+      "dictionaryKeys": 0,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "IRPLAYER",
+      "catalogKeys": 13,
+      "dictionaryKeys": 0,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "LOOPER",
+      "catalogKeys": 24,
+      "dictionaryKeys": 24,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "MEGATAP",
+      "catalogKeys": 35,
+      "dictionaryKeys": 35,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "MIDIBLOCK",
+      "catalogKeys": 13,
+      "dictionaryKeys": 257,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "MIXER",
+      "catalogKeys": 17,
+      "dictionaryKeys": 21,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "MOD",
+      "catalogKeys": 25,
+      "dictionaryKeys": 25,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "MULTICOMP",
+      "catalogKeys": 37,
+      "dictionaryKeys": 37,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "MULTIPLEXER",
+      "catalogKeys": 7,
+      "dictionaryKeys": 7,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "MULTITAP",
+      "catalogKeys": 121,
+      "dictionaryKeys": 121,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "OUTPUT",
+      "catalogKeys": 26,
+      "dictionaryKeys": 26,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "PEQ",
+      "catalogKeys": 33,
+      "dictionaryKeys": 33,
+      "pairedPointKeys": 31,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "PHASER",
+      "catalogKeys": 35,
+      "dictionaryKeys": 35,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 18,
+      "tableOptInOnBundledBase": 16
+    },
+    {
+      "family": "PITCH",
+      "catalogKeys": 114,
+      "dictionaryKeys": 114,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 44,
+      "tableOptInOnBundledBase": 60
+    },
+    {
+      "family": "PLEX",
+      "catalogKeys": 95,
+      "dictionaryKeys": 96,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "PRESET",
+      "catalogKeys": 51,
+      "dictionaryKeys": 0,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "RESONATOR",
+      "catalogKeys": 40,
+      "dictionaryKeys": 40,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "REVERB",
+      "catalogKeys": 71,
+      "dictionaryKeys": 71,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 62,
+      "tableOptInOnBundledBase": 8
+    },
+    {
+      "family": "RINGMOD",
+      "catalogKeys": 13,
+      "dictionaryKeys": 13,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "ROTARY",
+      "catalogKeys": 21,
+      "dictionaryKeys": 21,
+      "pairedPointKeys": 5,
+      "tableDefaultOnBundledBase": 13,
+      "tableOptInOnBundledBase": 7
+    },
+    {
+      "family": "RTA",
+      "catalogKeys": 6,
+      "dictionaryKeys": 0,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "SYNTH",
+      "catalogKeys": 42,
+      "dictionaryKeys": 42,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "TENTAP",
+      "catalogKeys": 49,
+      "dictionaryKeys": 48,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "TONEMATCH",
+      "catalogKeys": 25,
+      "dictionaryKeys": 0,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "TREMOLO",
+      "catalogKeys": 22,
+      "dictionaryKeys": 22,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 12,
+      "tableOptInOnBundledBase": 8
+    },
+    {
+      "family": "VOCODER",
+      "catalogKeys": 67,
+      "dictionaryKeys": 0,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "VOLUME",
+      "catalogKeys": 15,
+      "dictionaryKeys": 15,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 0,
+      "tableOptInOnBundledBase": 0
+    },
+    {
+      "family": "WAH",
+      "catalogKeys": 25,
+      "dictionaryKeys": 25,
+      "pairedPointKeys": 0,
+      "tableDefaultOnBundledBase": 18,
+      "tableOptInOnBundledBase": 7
+    }
+  ]
+}
