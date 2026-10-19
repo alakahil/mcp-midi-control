@@ -73,14 +73,18 @@
         "paramId": 8,
         "name": "CABINET_LEVEL1",
         "displayLabel": "Level",
-        "unit": "numeric"
+        "unit": "db",
+        "displayMin": -40,
+        "displayMax": 0
       },
       {
         "family": "CABINET",
         "paramId": 9,
         "name": "CABINET_LEVEL2",
         "displayLabel": "Level",
-        "unit": "numeric"
+        "unit": "db",
+        "displayMin": -40,
+        "displayMax": 0
       },
       {
         "family": "CABINET",
@@ -192,13 +196,17 @@
         "family": "CABINET",
         "paramId": 24,
         "name": "CABINET_MUTE1",
-        "unit": "unverified"
+        "unit": "enum",
+        "displayMin": 0,
+        "displayMax": 2
       },
       {
         "family": "CABINET",
         "paramId": 25,
         "name": "CABINET_MUTE2",
-        "unit": "unverified"
+        "unit": "enum",
+        "displayMin": 0,
+        "displayMax": 2
       },
       {
         "family": "CABINET",
@@ -239,7 +247,9 @@
         "family": "CABINET",
         "paramId": 31,
         "name": "CABINET_MODE",
-        "unit": "unverified"
+        "unit": "enum",
+        "displayMin": 0,
+        "displayMax": 1
       },
       {
         "family": "CABINET",
@@ -267,35 +277,47 @@
         "paramId": 35,
         "name": "CABINET_ROOMMIX",
         "displayLabel": "Room Level",
-        "unit": "numeric"
+        "unit": "percent",
+        "displayMin": 0,
+        "displayMax": 100
       },
       {
         "family": "CABINET",
         "paramId": 36,
         "name": "CABINET_ROOMSIZE",
         "displayLabel": "Room Size",
-        "unit": "numeric"
+        "unit": "numeric",
+        "displayMin": 3,
+        "displayMax": 30
       },
       {
         "family": "CABINET",
         "paramId": 37,
         "name": "CABINET_MICSPACE",
         "displayLabel": "Mic Spacing",
-        "unit": "numeric"
+        "unit": "cm",
+        "displayMin": 0,
+        "displayMax": 100
       },
       {
         "family": "CABINET",
         "paramId": 38,
         "name": "CABINET_LOCUT",
         "displayLabel": "Low Cut",
-        "unit": "numeric"
+        "unit": "hz",
+        "displayMin": 20,
+        "displayMax": 2000,
+        "scaling": "log10"
       },
       {
         "family": "CABINET",
         "paramId": 39,
         "name": "CABINET_HICUT",
         "displayLabel": "High Cut",
-        "unit": "numeric"
+        "unit": "hz",
+        "displayMin": 200,
+        "displayMax": 20000,
+        "scaling": "log10"
       },
       {
         "family": "CABINET",
@@ -309,7 +331,10 @@
         "paramId": 41,
         "name": "CABINET_PROXFREQ",
         "displayLabel": "Proximity Frequency",
-        "unit": "numeric"
+        "unit": "hz",
+        "displayMin": 20,
+        "displayMax": 200,
+        "scaling": "log10"
       },
       {
         "family": "CABINET",
@@ -330,21 +355,27 @@
         "paramId": 44,
         "name": "CABINET_BASS",
         "displayLabel": "Bass",
-        "unit": "numeric"
+        "unit": "db",
+        "displayMin": -12,
+        "displayMax": 12
       },
       {
         "family": "CABINET",
         "paramId": 45,
         "name": "CABINET_MID",
         "displayLabel": "Mid",
-        "unit": "numeric"
+        "unit": "db",
+        "displayMin": -12,
+        "displayMax": 12
       },
       {
         "family": "CABINET",
         "paramId": 46,
         "name": "CABINET_TREBLE",
         "displayLabel": "Treble",
-        "unit": "numeric"
+        "unit": "db",
+        "displayMin": -12,
+        "displayMax": 12
       },
       {
         "family": "CABINET",
@@ -393,49 +424,64 @@
         "paramId": 53,
         "name": "CABINET_FLOORLVL",
         "displayLabel": "Floor Reflections",
-        "unit": "numeric"
+        "unit": "bipolar_percent",
+        "displayMin": -100,
+        "displayMax": 100
       },
       {
         "family": "CABINET",
         "paramId": 54,
         "name": "CABINET_AIR",
         "displayLabel": "Air",
-        "unit": "numeric"
+        "unit": "percent",
+        "displayMin": 0,
+        "displayMax": 100
       },
       {
         "family": "CABINET",
         "paramId": 55,
         "name": "CABINET_AIRFREQ",
         "displayLabel": "Frequency",
-        "unit": "numeric"
+        "unit": "hz",
+        "displayMin": 2000,
+        "displayMax": 20000,
+        "scaling": "log10"
       },
       {
         "family": "CABINET",
         "paramId": 56,
         "name": "CABINET_ROOMSHAPE",
         "displayLabel": "Room Shape",
-        "unit": "enum"
+        "unit": "enum",
+        "displayMin": 0,
+        "displayMax": 1
       },
       {
         "family": "CABINET",
         "paramId": 57,
         "name": "CABINET_LFDAMPING",
         "displayLabel": "LF Damping",
-        "unit": "numeric"
+        "unit": "numeric",
+        "displayMin": 0,
+        "displayMax": 10
       },
       {
         "family": "CABINET",
         "paramId": 58,
         "name": "CABINET_HFDAMPING",
         "displayLabel": "HF Damping",
-        "unit": "numeric"
+        "unit": "numeric",
+        "displayMin": 0,
+        "displayMax": 10
       },
       {
         "family": "CABINET",
         "paramId": 59,
         "name": "CABINET_DIFFUSION",
         "displayLabel": "Room Diffusion",
-        "unit": "numeric"
+        "unit": "percent",
+        "displayMin": 0,
+        "displayMax": 100
       },
       {
         "family": "CABINET",
@@ -455,14 +501,20 @@
         "paramId": 62,
         "name": "CABINET_LOCUT1",
         "displayLabel": "Low Cut",
-        "unit": "numeric"
+        "unit": "hz",
+        "displayMin": 20,
+        "displayMax": 200,
+        "scaling": "log10"
       },
       {
         "family": "CABINET",
         "paramId": 63,
         "name": "CABINET_LOCUT2",
         "displayLabel": "Low Cut",
-        "unit": "numeric"
+        "unit": "hz",
+        "displayMin": 20,
+        "displayMax": 200,
+        "scaling": "log10"
       },
       {
         "family": "CABINET",
@@ -483,14 +535,20 @@
         "paramId": 66,
         "name": "CABINET_HICUT1",
         "displayLabel": "High Cut",
-        "unit": "numeric"
+        "unit": "hz",
+        "displayMin": 2000,
+        "displayMax": 20000,
+        "scaling": "log10"
       },
       {
         "family": "CABINET",
         "paramId": 67,
         "name": "CABINET_HICUT2",
         "displayLabel": "High Cut",
-        "unit": "numeric"
+        "unit": "hz",
+        "displayMin": 2000,
+        "displayMax": 20000,
+        "scaling": "log10"
       },
       {
         "family": "CABINET",
@@ -653,29 +711,37 @@
         "family": "CABINET",
         "paramId": 93,
         "name": "CABINET_DYNACAB_R1",
-        "displayLabel": "DynaCab",
-        "unit": "unverified"
+        "displayLabel": "Position",
+        "unit": "percent",
+        "displayMin": 0,
+        "displayMax": 100
       },
       {
         "family": "CABINET",
         "paramId": 94,
         "name": "CABINET_DYNACAB_R2",
-        "displayLabel": "DynaCab",
-        "unit": "unverified"
+        "displayLabel": "Position",
+        "unit": "percent",
+        "displayMin": 0,
+        "displayMax": 100
       },
       {
         "family": "CABINET",
         "paramId": 97,
         "name": "CABINET_DYNACAB_Z1",
         "displayLabel": "Distance",
-        "unit": "numeric"
+        "unit": "cm",
+        "displayMin": 0,
+        "displayMax": 24
       },
       {
         "family": "CABINET",
         "paramId": 98,
         "name": "CABINET_DYNACAB_Z2",
         "displayLabel": "Distance",
-        "unit": "numeric"
+        "unit": "cm",
+        "displayMin": 0,
+        "displayMax": 24
       },
       {
         "family": "CABINET",
@@ -3124,7 +3190,10 @@
         "family": "DISTORT",
         "paramId": 17,
         "name": "DISTORT_WSLPF",
-        "unit": "unverified"
+        "unit": "hz",
+        "displayMin": 400,
+        "displayMax": 40000,
+        "scaling": "linear"
       },
       {
         "family": "DISTORT",
@@ -3167,7 +3236,10 @@
         "family": "DISTORT",
         "paramId": 23,
         "name": "DISTORT_OFFSET1",
-        "unit": "unverified"
+        "unit": "numeric",
+        "displayMin": -1,
+        "displayMax": 1,
+        "scaling": "linear"
       },
       {
         "family": "DISTORT",
@@ -3237,7 +3309,7 @@
         "family": "DISTORT",
         "paramId": 32,
         "name": "DISTORT_DRIVETYPE",
-        "unit": "unverified"
+        "unit": "enum"
       },
       {
         "family": "DISTORT",
@@ -3250,7 +3322,10 @@
         "family": "DISTORT",
         "paramId": 34,
         "name": "DISTORT_WSHPF",
-        "unit": "unverified"
+        "unit": "hz",
+        "displayMin": 2,
+        "displayMax": 2000,
+        "scaling": "log10"
       },
       {
         "family": "DISTORT",
@@ -3286,13 +3361,16 @@
         "family": "DISTORT",
         "paramId": 39,
         "name": "DISTORT_FBTYPE",
-        "unit": "unverified"
+        "unit": "enum"
       },
       {
         "family": "DISTORT",
         "paramId": 40,
         "name": "DISTORT_PI_RATIO",
-        "unit": "unverified"
+        "unit": "numeric",
+        "displayMin": 0,
+        "displayMax": 1,
+        "scaling": "linear"
       },
       {
         "family": "DISTORT",
@@ -3612,7 +3690,9 @@
         "family": "DISTORT",
         "paramId": 84,
         "name": "DISTORT_VERSION",
-        "unit": "unverified"
+        "unit": "numeric",
+        "displayMin": 0,
+        "displayMax": 0
       },
       {
         "family": "DISTORT",
