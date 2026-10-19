@@ -32,6 +32,15 @@
       "required": true
     },
     {
+      "id": "test-delay-reverb-applicability",
+      "command": [
+        "node",
+        "scripts/test-delay-reverb-applicability.mjs"
+      ],
+      "scope": "106 captured Delay/Reverb templates on A-D; model/algorithm bindings, page/control predicates, final Spring Tank Type, scalar/raw selector refusal, atomic failures and final guide; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-layout",
       "command": [
         "node",

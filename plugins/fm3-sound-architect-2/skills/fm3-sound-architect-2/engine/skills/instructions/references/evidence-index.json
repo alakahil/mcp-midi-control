@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2052,
-  "filePaths": 2256,
+  "uniqueContents": 2053,
+  "filePaths": 2257,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -4541,6 +4541,12 @@
         "references/geq-full-20261010-194115/step-101-3a0d67d7e5/capture.json"
       ]
     },
+    "5f062f0cca465c8576b8857260af693a03563bb6b8672257e4bda533b4605b21": {
+      "bytes": 229417,
+      "paths": [
+        "references/fm3-delay-reverb-applicability.json"
+      ]
+    },
     "5f289a5d650766d159ba92381b253f08f0fec458ff668179ff03a0029422a66f": {
       "bytes": 24680,
       "paths": [
@@ -5313,6 +5319,12 @@
       "bytes": 7270,
       "paths": [
         "references/peq-full-20261009-152606/step-031-37ff947865/capture.json"
+      ]
+    },
+    "70f30d413ba0a970941df0631203f9f8ae01d6480867e3ae03df29d407546c78": {
+      "bytes": 8786,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "7110d73d4bae83a90cc51418002f85bbb864c1b96bed900b3794f438e545d754": {
@@ -8090,12 +8102,6 @@
       "bytes": 4963,
       "paths": [
         "references/geq-full-20261010-194115/step-114-2f81507b82/capture.json"
-      ]
-    },
-    "a9d0a23d785f1f376425d843c55b72c465b54a4b7ea59d6fbff7bc5bd62d1d48": {
-      "bytes": 8381,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "a9e3657cbe6f5aefb9697e6fcde4a6de306d8d4db328927d67faa265455c22d9": {

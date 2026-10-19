@@ -82,9 +82,10 @@ ei avaldata; editorit ei käivitata.
 Regressioon katab 21 paari kanalitel A–D, päringu järjekorra, atomaarse tõrjumise,
 toorsõnaga möödumise, lõppjuhendi ning etappidevahelise vastuolu. Kõik 32 kirjet,
 kanalipiirangud ja tundmatud allikad saavad eraldi sünteetilised tarkvarakatsed.
-Need pole uued riistvaratõendid. Maatriksis jääb 688 skalaari; 21 SYX-katses on
+Need pole uued riistvaratõendid. Selle etapi maatriksis jäi 688 skalaari; 21 SYX-katses oli
 42 907 lubatud kirjutust, 856 tüübivälistust, 577 tempovälistust ja 72
 modifikaatorivälistust. 899 ajaloolist vaatlust / 85 mõõdetud võtit ei muutu.
+Kehtiva maatriksi lisapiirangud on [Delay/Reverbi juhendis](FM3_DELAY_REVERB_APPLICABILITY.md).
 
 Muude perede tüübisobivus, ülejäänud tempo-seosed, kontrollerite loomine ja
 dünaamika, GLOBAL, suvaline routing, uue faili import, heli ja CPU jäävad eraldi

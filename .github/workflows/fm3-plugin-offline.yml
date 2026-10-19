@@ -25,6 +25,8 @@ jobs:
           python3 tools/fm3/type_applicability.py
           python3 tools/fm3/test-parameter-dependencies.py
           python3 tools/fm3/parameter_dependencies.py
+          python3 tools/fm3/test-delay-reverb-applicability.py
+          python3 tools/fm3/delay_reverb_applicability.py
           python3 tools/fm3/parameter-evidence.py
           python3 tools/fm3/metadata_reconciliation.py
           node tools/fm3/encoder-matrix.mjs

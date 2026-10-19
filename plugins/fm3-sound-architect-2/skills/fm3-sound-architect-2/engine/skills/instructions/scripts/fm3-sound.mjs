@@ -21,7 +21,7 @@ export function getSoundCapabilities(base){
       blockedParameters:d.params.filter(p=>p.status==='blocked-hidden-editor').map(p=>({family:p.family,pid:p.param,name:p.name,reason:'Hidden in FM3-Edit 1.07.17; no write support'})),
       cabPosition:{parameters:['CABINET_DYNACAB_R1','CABINET_DYNACAB_R2'],displayRange:[0,10],unit:'unitless'},
       typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),
-      policy:'Entry counts are not validated device coverage. Chorus/Drive explicit table writes follow final-channel type policy; 21 tempo pairs and read-only modifier target checks are enforced; other dependencies remain outside this scope. Use full templates for model/type changes.'},
+      policy:'Entry counts are not validated device coverage. Chorus/Drive and Delay/Reverb explicit table writes follow final-channel type/algorithm policy; Delay/Reverb model and internal selector changes require full channel templates; 21 tempo pairs and read-only modifier target checks are enforced; other dependencies remain outside this scope. Use full templates for model/type changes.'},
     outputSceneLevels:{supported:true,block:'out1',parameters:'OUTPUT_SCENE1..8',rangeDb:[-20,20],channels:['A','B','C','D']},
     limitations:['No device connection','New output hardware/audio/CPU unconfirmed','Experimental raw/taper writes excluded from this entry point','Global settings, arbitrary routing and all FM3 families are not implemented']};
 }

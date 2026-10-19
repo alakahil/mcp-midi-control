@@ -113,6 +113,11 @@ Choruse ja Drive’i tabelijuhid kontrollitakse lõpliku kanali tüübi järgi;
 sobimatu väärtus põhjustab vea ka PID või experimental/raw kaudu.
 [Tüübisobivuse juhend](engine/docs/FM3_TYPE_APPLICABILITY.md) kirjeldab
 FW13 reegleid ja piire. Eelista mudelivahetuseks täiskanalimalle.
+[Delay/Reverbi juhend](engine/docs/FM3_DELAY_REVERB_APPLICABILITY.md) eristab
+mudelit ja sisemist algoritmi: nende valijate muutmine nõuab täiskanalimalli.
+Üksik nime-, PID- või raw-kirjutus ei ole lubatud. Muud juhid kontrollitakse
+kanali lõpliku mudeli/algoritmi paari järgi; vedrukaja Scattering nõuab lõplikku
+Tank Type SERIES-PARALLEL olekut, sõltumata päringu järjekorrast.
 [Tempo- ja modifikaatorijuhend](engine/docs/FM3_PARAMETER_DEPENDENCIES.md) kirjeldab
 21 tempo-seost ning olemasolevate modifikaatorite lugemist. Time/Rate kirjutus
 nõuab lõpliku kanali Tempo NONE olekut; aktiivse modifikaatori sihtmärgile

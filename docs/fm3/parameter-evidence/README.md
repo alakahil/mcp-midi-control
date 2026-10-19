@@ -12,6 +12,8 @@ python3 tools/fm3/test-type-applicability.py
 python3 tools/fm3/type_applicability.py
 python3 tools/fm3/test-parameter-dependencies.py
 python3 tools/fm3/parameter_dependencies.py
+python3 tools/fm3/test-delay-reverb-applicability.py
+python3 tools/fm3/delay_reverb_applicability.py
 python3 tools/fm3/parameter-evidence.py
 python3 tools/fm3/metadata_reconciliation.py
 node tools/fm3/encoder-matrix.mjs
@@ -50,9 +52,11 @@ The installed private plugin remains at 0.3.2. The PR now includes a 0.3.3 sourc
 
 [Encoder matrix](encoder-matrix.json) tests every table-eligible parameter's scalar policy, fixed normalized-position anchors, all option indices/labels, invalid inputs and roundtrips. It also replays the already indexed measurements; PEQ slope values use their explicit dB/OCT option label. It runs three batched writes on every bundled base across all A-D slots, independently calculates offsets and expected raw values, and checks the complete output body for collateral changes. Batched software presets are kept in memory and are not supplied for device import.
 
-The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. Chorus/Drive batch writes now follow the FW13 final-channel type policy: incompatible candidates are counted as exclusions, not successful writes. Scalar conformance remains separate. The 21 tempo dependencies and existing modifier targets now gate explicit writes too: 577 tempo and 72 modifier exclusions are separate from 856 type exclusions, leaving 42,907 accepted writes. Effective BPM/controller evaluation, other-family visibility, arbitrary presets, audio and CPU remain outside this matrix. Changing the matrix or its inputs requires regeneration in the command order above.
+The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. Chorus/Drive and Delay/Reverb batch writes follow the FW13 final-channel type/algorithm policy: incompatible candidates are counted as exclusions, not successful writes. Scalar conformance remains separate. The 21 tempo dependencies and existing modifier targets gate explicit writes too. There are 39,869 accepted writes, 3,676 type/algorithm exclusions, 459 tempo exclusions, 72 modifier exclusions and 336 model/internal-selector exclusions requiring full templates. Effective BPM/controller evaluation, other-family visibility, arbitrary presets, audio and CPU remain outside this matrix. Changing the matrix or its inputs requires regeneration in the command order above.
 
 The bounded type policy is documented in the packaged `engine/docs/FM3_TYPE_APPLICABILITY.md`. Reproduce extraction with `python3 tools/fm3/type_applicability.py --editor /path/to/FM3-Edit.exe`; without `--editor`, verify the committed receipt against its pages, native name/PID bindings, dictionary and FW13 cache. `test-type-applicability.py` covers compiler failures, and the packaged Node regression reuses all 114 captured Chorus/Drive type templates on A–D. No new hardware measurements are inferred from either check.
+
+The separate `engine/docs/FM3_DELAY_REVERB_APPLICABILITY.md` documents model/internal-selector bindings and Spring Tank Type conditions. Reproduce with `python3 tools/fm3/delay_reverb_applicability.py --editor /path/to/FM3-Edit.exe`; normal CI verifies the pinned receipt/cache/templates. The new regression covers all 106 captured Delay/Reverb templates on A–D: 24,484 accepted writes, 5,752 inapplicable writes rejected and 848 full-template requirements checked. Model/internal-selector scalar or raw writes are rejected. The XML-derived unqualified-page fallback is an explicit authoring policy, not execution of native UI logic; XML-only Reverb IDs 9/10 remain unsupported. No dictionary scale or hardware evidence is promoted.
 
 The six-field check replays the already bundled FW13 cache without network access.
 To repeat direct PE64 descriptor mining and XML comment/condition analysis, obtain

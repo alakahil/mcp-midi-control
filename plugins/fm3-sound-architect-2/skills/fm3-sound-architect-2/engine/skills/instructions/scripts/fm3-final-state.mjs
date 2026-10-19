@@ -5,7 +5,7 @@ import {layouts,filterDonor,peqDonor,geqDonor,enhancerDonor} from './fm3-compose
 import {describeComposerScenes} from './fm3-jb-composer.mjs';
 import {loadDictionary,decodeValue,DEFAULT_STATUSES,OPT_IN_STATUSES,findParam} from './fm3-table-encoder.mjs';
 import {sha256} from './fm3-output.mjs';
-import {typeApplicability,typePolicySummary} from './fm3-type-applicability.mjs';
+import {typeApplicability,typePolicySummary,readTypeState} from './fm3-type-applicability.mjs';
 import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks);
 export function finalSoundState(syx,writes,opts={}){
@@ -30,9 +30,9 @@ export function finalSoundState(syx,writes,opts={}){
       const i='ABCD'.indexOf(channel);
       for(const p of dictionary.params.filter(p=>p.block===r.eid&&p.param<r.words&&statuses.has(p.status))){
         const raw=body.readUInt16LE(r.start+(i*r.words+p.param)*2),value=decodeValue(p,raw);
-        const applicability=typeApplicability(p,body.readUInt16LE(r.start+i*r.words*2));
+        const applicability=typeApplicability(p,readTypeState(p,pid=>body.readUInt16LE(r.start+(i*r.words+pid)*2)));
         if(applicability.covered&&!applicability.allowed)continue;
-        if(value!==undefined&&!(typeof value==='number'&&!Number.isFinite(value)))parameters.push({block:r.family,channel,name:p.name,label:applicability.label??p.label,raw,value,unit:unitFor(p),status:p.status,dependencies:dependencyState(body,{effectId:r.eid,pid:p.param,channel,offset:r.start+(i*r.words+p.param)*2},{modifiers}),scope:applicability.covered?'stored value; Chorus/Drive type policy passed; bounded dependencies reported separately':'stored value; type-specific visibility not validated',typeApplicability:applicability});
+        if(value!==undefined&&!(typeof value==='number'&&!Number.isFinite(value)))parameters.push({block:r.family,channel,name:p.name,label:applicability.label??p.label,raw,value,unit:unitFor(p),status:p.status,dependencies:dependencyState(body,{effectId:r.eid,pid:p.param,channel,offset:r.start+(i*r.words+p.param)*2},{modifiers}),scope:applicability.covered?'stored value; bounded type/algorithm policy passed; dependencies reported separately':'stored value; type-specific visibility not validated',typeApplicability:applicability});
       }
     }
   }
@@ -73,7 +73,7 @@ export function renderFinalSoundText(state,spec){
   lines.push('','SÕLTUVUSED JA KONTROLLITASE','Kanalimuudatus mõjutab kõiki seda kanalit kasutavaid stseene. Määramata väärtused pärinevad alusest või kopeeritud täiskanalimallist.',
     'Cab-mallid kasutavad olemasolevat Dyna-Cab teeki. Väliseid User IR-faile ei paigaldata; muutmata IR/pedaali/globaalseadistuse sõltuvused säilivad alusfailist.',
     'Offline-kontroll läbitud: lõppfaili kaadrid, CRC, sisu, marsruutimine ja deklareeritud muudatused. Selle lõppfaili import, heli ja CPU pole uue kontrolliga kinnitatud.',
-    'Choruse ja Drive’i parameetriloend ning tabelikirjutused järgivad FW13 tüübi nähtavusreegleid. 21 tempo-seost ja olemasolevad modifikaatorisihtmärgid on eraldi kontrollitud; muud sõltuvused ja muude plokkide tüübinähtavus jäävad katmata. Tempo või modifikaatori juhitud parameetri salvestatud väärtus ei tõenda hetkel kõlavat väärtust. Peidetud salvestatud sõnad säilivad toorandmetena.',
+    'Choruse, Drive’i, Delay ja Reverbi parameetriloend ning tabelikirjutused järgivad piiratud FW13 tüübi- ja algoritmireegleid. Delay ja Reverbi mudelivahetus nõuab täiskanalimalli. 21 tempo-seost ja olemasolevad modifikaatorisihtmärgid on eraldi kontrollitud; muud sõltuvused ja muude plokkide tüübinähtavus jäävad katmata. Tempo või modifikaatori juhitud parameetri salvestatud väärtus ei tõenda hetkel kõlavat väärtust. Peidetud salvestatud sõnad säilivad toorandmetena.',
     '','KASUTAMINE','1. Säilita pooleliolev töö ning impordi fail FM3-Editi tööpuhvrisse.',
     `2. Kontrolli veateateid, valitud Scene ${state.selectedScene}, kanaleid ja soovitud helitasemeid.`,
     '3. Uut eksporti küsi ainult konkreetse seni kinnitamata katse jaoks; varasemaid piisavaid tõendeid kasuta uuesti.',

@@ -71,7 +71,8 @@ kanalite eraldatust, käskude järjekorda, toorsõnaga möödumise keeldu, veaga
 päringu atomaarset tõrjumist, koostaja lõplikku tüüpi ja juhendi filtreerimist.
 Tüübietapi tabelimaatriksis oli 43 556 lubatud kirjutust ning 856 tüübi tõttu
 välistatud kandidaati. Järgnev sõltuvuskontroll eristab neist veel 577 tempo-
-ja 72 modifikaatorivälistust; praegu jääb 21 SYX-katses 42 907 lubatud kirjutust.
+ja 72 modifikaatorivälistust; selles etapis jäi 21 SYX-katses 42 907 lubatud kirjutust.
+Kehtiv maatriks ning järgmise etapi piirid on [Delay/Reverbi juhendis](FM3_DELAY_REVERB_APPLICABILITY.md).
 
 Tempo NONE ja modifikaatorite järgnev etapp on kirjeldatud
 [eraldi juhendis](FM3_PARAMETER_DEPENDENCIES.md). Muude efektiperede üldise
