@@ -10,9 +10,9 @@
 //     slot, never the amp; blocks are never auto-placed),
 //   - injection is EVIDENCE-GATED per device: it fires only where the
 //     cab cut params are display-calibrated in that device's own
-//     catalog. Today that is the FM9 (device-true ranges from its own
-//     editor cache); the Axe-Fx III and FM3 cab cuts are registered but
-//     uncalibrated raw-wire passthrough, so those devices inject
+//     catalog. FM9 has device-true editor-cache ranges and FM3 has
+//     hardware-validated cut/room overrides. The Axe-Fx III cab cuts remain
+//     uncalibrated raw-wire passthrough, so that device injects
 //     NOTHING (writing "80" through their passthrough encode would be
 //     a guessed near-zero normalized wire value, not 80 Hz),
 //   - the filter-slope selector (order) is NEVER injected on gen-3 (no
@@ -176,8 +176,8 @@ console.log('Case 6: no cab block placed injects NOTHING (never auto-place)');
   check('cabPolish is undefined', cabPolish === undefined);
 }
 
-// ── Case 7: III and FM3 are evidence-gated OFF (uncalibrated cab cuts) ──
-console.log('Case 7: III + FM3 inject NOTHING (cab cuts registered but uncalibrated)');
+// ── Case 7: partial FM3 ranges enable cuts; III remains gated OFF ──
+console.log('Case 7: FM3 measured ranges enable defaults; III stays uncalibrated');
 {
   const spec: PresetSlotSpec[] = [
     { slot: { row: 2, col: 4 }, block_type: 'cab' },
@@ -185,12 +185,32 @@ console.log('Case 7: III + FM3 inject NOTHING (cab cuts registered but uncalibra
   const iii = inject(spec, iiiCab);
   check('Axe-Fx III: no injection, slots untouched', iii.cabPolish === undefined && iii.slots === spec);
   const fm3 = inject(spec, fm3Cab);
-  check('FM3: no injection, slots untouched', fm3.cabPolish === undefined && fm3.slots === spec);
-  // Sanity-pin the gate premise so a future calibration drop flips this
-  // case loudly instead of silently: III/FM3 locut has no display range,
-  // FM9 locut does (device-true 20..2000 from its own editor cache).
+  const params = fm3.slots[0].params as Record<string, Record<string, number>>;
+  check('FM3: measured ranges enable channel-A defaults',
+    fm3.cabPolish?.channels.join(',') === 'A'
+      && params?.A?.locut === 80 && params?.A?.hicut === 6500 && params?.A?.roommix === 8);
+  check('FM3: slope remains uninjected', params?.A?.order === undefined);
+  check('FM3: caller spec unchanged', spec[0].params === undefined && fm3.slots !== spec);
+  // Historical FM3 fw13 GET-only pairs from ranges.ts: pin the calibrated
+  // encoding as well as the display bounds. These are offline replays.
+  for (const [key, display, raw] of [['locut', 60, 15634], ['hicut', 10000, 55670], ['roommix', 1, 655]] as const) {
+    const schema = fm3Cab?.params[key];
+    check(`FM3 ${key}: continuous encoding matches measured ${display} -> ${raw}`,
+      schema?.wire_kind === 'continuous' && schema.encode(display) === raw);
+  }
   check('gate premise: III cab locut has no calibrated display range', iiiCab?.params['locut']?.display_min === undefined);
-  check('gate premise: FM3 cab locut has no calibrated display range', fm3Cab?.params['locut']?.display_min === undefined);
+  check('gate premise: FM3 cab locut is display-calibrated 20..2000 Hz',
+    fm3Cab?.params.locut?.display_min === 20 && fm3Cab?.params.locut?.display_max === 2000);
+  // Removing one required calibration must close the gate again (no partial
+  // injection). Existing device evidence must never become unconditional.
+  const uncalibrated = {
+    ...fm3Cab,
+    params: { ...fm3Cab.params, locut: { ...fm3Cab.params.locut, display_min: undefined, display_max: undefined } },
+  };
+  const gated = inject(spec, uncalibrated);
+  check('FM3: missing cut calibration suppresses all defaults', gated.cabPolish === undefined && gated.slots === spec);
+  const explicit: PresetSlotSpec[] = [{ slot: { row: 2, col: 4 }, block_type: 'cab', params: { locut: 100 } }];
+  check('FM3: explicit cut suppresses defaults', inject(explicit, fm3Cab).slots === explicit);
   check(
     'gate premise: FM9 cab locut is display-calibrated 20..2000 Hz',
     fm9Cab?.params['locut']?.display_min === 20 && fm9Cab?.params['locut']?.display_max === 2000,

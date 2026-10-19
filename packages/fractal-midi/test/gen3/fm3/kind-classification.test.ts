@@ -1,5 +1,5 @@
 /**
- * FM3 kind-classification guard (the FAMILY-JOIN corrected state).
+ * FM3 kind-classification guard (partial FM3 ranges + family-join fallback).
  *
  * Owns: the FM3-side data the catalog boundary's kind-classification is gated
  * on — the family-join discrete-ordinal overlay (`FM3_FAMILY_JOIN_DISCRETE`,
@@ -19,14 +19,16 @@
  * gen3-paramid-reuse-across-model-bytes).
  *
  * EVIDENCE: family-pattern (STRONG per the shipping bar), community-beta.
- * ORACLE PENDING: an FM3 SET→GET roundtrip (queued for Drew's next FM3
- * session) is the hardware confirm; when it lands, regenerate against it with
- * `scripts/generate-gen3-roundtrip-discrete.ts` and rewrite this suite again
- * against the device's own data.
+ * FM3_RANGES now supplies a small hand-authored set of FM3 overrides; it is
+ * not a complete editor-cache or roundtrip classification oracle. Guard its
+ * device-local addresses and enum counts below while retaining the sibling
+ * evidence for uncovered selectors. A complete FM3 roundtrip overlay, when
+ * available, must supersede that fallback deliberately.
  */
 import * as fm3 from '../../../src/gen3/fm3/index.js';
 import {
   FM3_PARAMS,
+  FM3_RANGES,
   FM3_FAMILY_JOIN_DISCRETE,
   FM3_FAMILY_JOIN_PROVENANCE,
 } from '../../../src/gen3/fm3/index.js';
@@ -39,20 +41,67 @@ function unitOf(family: string, name: string): string | undefined {
 }
 
 const byName = new Map(FM3_PARAMS.map((p) => [p.name, p]));
+const byAddress = new Map(FM3_PARAMS.map((p) => [`${p.family}:${p.paramId}`, p]));
 
 const cases: Array<() => void> = [];
 
 // ── Export surface (documented; a change here is a classification-story change) ─
 cases.push(() => {
   const got = Object.keys(fm3).sort().join(',');
-  const want = 'FM3_FAMILIES,FM3_FAMILY_JOIN_DISCRETE,FM3_FAMILY_JOIN_PROVENANCE,FM3_PARAMS,FM3_PARAMS_BY_FAMILY';
+  const want = 'FM3_FAMILIES,FM3_FAMILY_JOIN_DISCRETE,FM3_FAMILY_JOIN_PROVENANCE,FM3_PARAMS,FM3_PARAMS_BY_FAMILY,FM3_RANGES';
   assert(got === want, `FM3 export surface changed: ${got} (documented: ${want})`);
 });
-// A true FM3 oracle still does NOT exist: no roundtrip overlay, no cache
-// ranges. When either lands, the family-join overlay must be superseded by a
-// regeneration against the device's own data — rewrite this suite then.
+// Partial ranges do not replace the full family-join classification. A future
+// device-own roundtrip overlay does require a deliberate precedence rewrite.
 cases.push(() => assert(!('FM3_ROUNDTRIP_DISCRETE' in fm3), 'FM3 now exports FM3_ROUNDTRIP_DISCRETE — a device-own roundtrip oracle landed; regenerate and rewrite this suite against it (supersede the family join)'));
-cases.push(() => assert(!('FM3_RANGES' in fm3), 'FM3 now exports FM3_RANGES — device-cache ranges landed; rewrite this suite against them (supersede the family join)'));
+
+// ── Partial FM3 range overrides ────────────────────────────────────────────
+// Join by this device's (family, paramId), never by a sibling's paramId.
+for (const [family, rows] of Object.entries(FM3_RANGES)) {
+  for (const [id, row] of Object.entries(rows)) {
+    cases.push(() => {
+      const param = byAddress.get(`${family}:${id}`);
+      assert(param !== undefined, `FM3 range ${family}:${id} has no FM3 catalog param`);
+      assert(Number.isFinite(row.displayMin) && Number.isFinite(row.displayMax)
+        && row.displayMin <= row.displayMax, `FM3 range ${family}:${id} has invalid bounds`);
+      // Equal bounds are intentional for the read-only DISTORT_VERSION row.
+      if (row.kind === 'enum') {
+        assert(Number.isInteger(row.enumCount) && row.enumCount > 1
+          && row.displayMin === 0 && row.displayMax === row.enumCount - 1,
+        `FM3 range ${family}:${id} has inconsistent enum bounds/count`);
+        // Overlap is allowed: FM3 evidence wins, and these existing sibling
+        // bounds agree. A future disagreement needs an explicit review.
+        const siblingMax = FM3_FAMILY_JOIN_DISCRETE[param!.name];
+        assert(siblingMax === undefined || siblingMax === row.displayMax,
+          `FM3 ${param!.name}: device enum bound disagrees with sibling evidence`);
+      }
+    });
+  }
+}
+
+// Device-own anchors (FM3 fw13 GET-only + editor evidence, cited in params.ts).
+for (const [id, name, count] of [
+  [24, 'CABINET_MUTE1', 3], [25, 'CABINET_MUTE2', 3],
+  [31, 'CABINET_MODE', 2], [42, 'CABINET_INPUTSEL', 4],
+  [43, 'CABINET_PRETYPE', 12], [47, 'CABINET_OVERSAMPLE', 2],
+  [56, 'CABINET_ROOMSHAPE', 2],
+] as const) {
+  cases.push(() => {
+    assert(byAddress.get(`CABINET:${id}`)?.name === name, `FM3 ${name} address drift`);
+    const row = FM3_RANGES.CABINET[id];
+    assert(row.kind === 'enum' && row.enumCount === count, `FM3 ${name} enum evidence drift`);
+  });
+}
+// A float display range alone is NOT proof of continuous wire encoding.
+// ZOOM still carries the binary selector evidence in the family-join overlay.
+cases.push(() => assert(FM3_RANGES.CABINET[40].kind === 'float'
+  && unitOf('CABINET', 'CABINET_ZOOM') === 'enum'
+  && FM3_FAMILY_JOIN_DISCRETE.CABINET_ZOOM === 1,
+'FM3 ZOOM must retain its selector classification despite a float display range'));
+cases.push(() => assert(FM3_RANGES.CABINET[8].kind === 'float'
+  && FM3_RANGES.CABINET[8].displayMin === -40 && FM3_RANGES.CABINET[8].displayMax === 0
+  && FM3_FAMILY_JOIN_DISCRETE.CABINET_LEVEL1 === undefined,
+'FM3 LEVEL1 must retain its measured -40..0 dB continuous range'));
 
 // ── Overlay: derived invariants ─────────────────────────────────────────────
 // Every overlay key must join to a real device-true FM3 catalog param — an
