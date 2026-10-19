@@ -1,0 +1,54 @@
+{
+  "step": {
+    "index": 0,
+    "levelDb": {
+      "A": -80,
+      "B": -30,
+      "C": -6,
+      "D": 0
+    }
+  },
+  "previousSha256": "aac60417ad82db7be996bbc1dd6026a2ff9a5a246bdf4966c116ab33cd87c237",
+  "syxSha256": "d78ffff4bdc240899a36a95479cab16a03f9e62eb752426f20334bff6c629df0",
+  "changedWords": [
+    {
+      "channel": "A",
+      "parameterId": 1,
+      "offset": 4658,
+      "before": 44563,
+      "after": 0
+    },
+    {
+      "channel": "B",
+      "parameterId": 1,
+      "offset": 4946,
+      "before": 50461,
+      "after": 32767
+    },
+    {
+      "channel": "C",
+      "parameterId": 1,
+      "offset": 5234,
+      "before": 45218,
+      "after": 48495
+    },
+    {
+      "channel": "D",
+      "parameterId": 1,
+      "offset": 5522,
+      "before": 45218,
+      "after": 52427
+    }
+  ],
+  "models": {
+    "A": 4,
+    "B": 103,
+    "C": 24,
+    "D": 11
+  },
+  "allOtherBodyBytesPreserved": true,
+  "chunkPrefixesPreserved": true,
+  "presetNameChange": null,
+  "generatorSupportExpanded": false,
+  "labelsRequireOperatorConfirmation": true
+}

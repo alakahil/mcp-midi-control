@@ -1,0 +1,34 @@
+name: FM3 plugin offline
+on:
+  push:
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', '.github/workflows/fm3-plugin-offline.yml']
+  pull_request:
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', '.github/workflows/fm3-plugin-offline.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run the required offline suite
+        run: python3 tools/fm3/test-offline.py --output "$RUNNER_TEMP/fm3-tests"
+      - name: Build the tested commit
+        run: python3 tools/fm3/build-release.py --commit HEAD --tests "$RUNNER_TEMP/fm3-tests/summary.json" --output "$RUNNER_TEMP/fm3-release"
+      - name: Verify the unpacked package
+        run: |
+          FM3_PACKAGE_VERSION="$(node -p "require('./plugins/fm3-sound-architect-2/plugin.json').version")"
+          tar -xzf "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2-$FM3_PACKAGE_VERSION.tar.gz" -C "$RUNNER_TEMP/fm3-release"
+          node "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-self-check.mjs" "$GITHUB_SHA"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fm3-offline-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/fm3-tests
+            ${{ runner.temp }}/fm3-release

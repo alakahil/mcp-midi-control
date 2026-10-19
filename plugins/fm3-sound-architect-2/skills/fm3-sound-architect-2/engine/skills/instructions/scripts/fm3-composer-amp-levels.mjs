@@ -2,6 +2,7 @@
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {readPinnedComposerFile} from './fm3-composer-components.mjs';
+import {ampLevelMeasurementIndex,ampLevelMeasuredValues,measuredAmpLevel,matchMeasuredAmpLevelBody} from './fm3-amp-level-measurements.mjs';
 const check=(ok,message)=>{if(!ok)throw Error(message)};
 const sha=b=>createHash('sha256').update(b).digest('hex');
 export const ampLevelEvidenceFile='examples/JB_EIGHT_SCENES_V2_export.syx';
@@ -55,7 +56,12 @@ export function verifyAmpCDLevelEvidence(){
   return {body:b,changedOffsets:changes,points,file:ampCDLevelEvidenceFile,sha256:ampCDLevelEvidenceSha,bodySha256:ampCDLevelBodySha,headerChanges};
 }
 export function ampLevelCapabilities(){
-  return {field:'ampLevels',entryFields:['channel','levelDb'],channels:['A','B','C','D'],pendingChannels:[],A:{modelId:4,model:'Double Verb Vibrato',valuesDb:[-12],evidence:ampLevelEvidenceFile},B:{minimum:-80,maximum:20,policy:'Existing levelB scope; specifying both forms is rejected'},C:{modelId:24,model:'USA MK IV Lead Bright',valuesDb:[-11],evidence:ampCDLevelEvidenceFile},D:{modelId:11,model:'Plexi 50W High 1',valuesDb:[-11],evidence:ampCDLevelEvidenceFile},policy:'A/C/D use exact observed words on the listed models, no interpolation or other-model inference. No Gain/EQ/Master or per-scene output control.'};
+  return {field:'ampLevels',revision:'amp-level-points-2026-10-13',entryFields:['channel','levelDb'],channels:['A','B','C','D'],pendingChannels:[],
+    A:{modelId:4,model:'Double Verb Vibrato',valuesDb:[-80,-30,-12,-6,0,20],evidence:ampLevelEvidenceFile,additionalEvidence:ampLevelMeasurementIndex},
+    B:{minimum:-80,maximum:20,measured:{modelId:103,model:'Brit Silver',valuesDb:[...ampLevelMeasuredValues],evidence:ampLevelMeasurementIndex},policy:'Existing levelB scope; specifying both forms is rejected. Only the listed five Brit Silver points have new paired evidence; other values/models retain the prior scope.'},
+    C:{modelId:24,model:'USA MK IV Lead Bright',valuesDb:[-80,-30,-11,-6,0,20],evidence:ampCDLevelEvidenceFile,additionalEvidence:ampLevelMeasurementIndex},
+    D:{modelId:11,model:'Plexi 50W High 1',valuesDb:[-80,-30,-11,-6,0,20],evidence:ampCDLevelEvidenceFile,additionalEvidence:ampLevelMeasurementIndex},
+    policy:'A/C/D use exact observed words on the listed models, no interpolation or other-model inference. No Gain/EQ/Master or per-scene output control.'};
 }
 export function applyAmpLevels(body,layout,spec,allow){
   if(!Object.hasOwn(spec,'ampLevels'))return [];
@@ -74,13 +80,21 @@ export function applyAmpLevels(body,layout,spec,allow){
       check(!Object.hasOwn(spec,'levelB'),'levelB conflicts with ampLevels channel B');
       check(levelDb>=-80&&levelDb<=20,'Unsupported Amp B Level');
       raw=Math.round((levelDb+80)/100*65534);evidence='Existing levelB encoding and scope';
+      if(modelId===103&&ampLevelMeasuredValues.includes(levelDb)){
+        const point=measuredAmpLevel(channel,modelId,levelDb);
+        check(point&&point.raw===raw,'Existing B encoding differs from measured point');evidence=point.file;
+      }
+    }else if(ampLevelMeasuredValues.includes(levelDb)){
+      const point=measuredAmpLevel(channel,modelId,levelDb);
+      check(point,'Amp '+channel+' Level point is not measured on model '+modelId);
+      raw=point.raw;evidence=point.file;
     }else if(channel==='A'){
       const point=verifyAmpLevelEvidence();
-      check(modelId===point.modelId&&levelDb===point.displayDb,'Amp A Level supports only measured Double Verb Vibrato -12 dB');
+      check(modelId===point.modelId&&levelDb===point.displayDb,'Amp A Level requires Double Verb Vibrato and an exact supported value: -80, -30, -12, -6, 0, 20 dB');
       raw=point.raw;evidence=point.file;
     }else{
       const point=verifyAmpCDLevelEvidence().points.find(p=>p.channel===channel);
-      check(modelId===point.modelId&&levelDb===point.displayDb,'Amp '+channel+' Level supports only measured '+point.model+' -11 dB');
+      check(modelId===point.modelId&&levelDb===point.displayDb,'Amp '+channel+' Level requires '+point.model+' and an exact supported value: -80, -30, -11, -6, 0, 20 dB');
       raw=point.raw;evidence=point.file;
     }
     writes.push({channel,modelId,parameterId:1,offset,valueDb:levelDb,displayValueDb:-80+raw/65534*100,beforeRaw:body.readUInt16LE(offset),raw,evidence});
@@ -92,7 +106,7 @@ export function applyAmpLevels(body,layout,spec,allow){
 export function matchAmpLevelDeviceBody(body,syx){
   const hash=sha(body);
   const proof=hash===ampLevelBodySha?verifyAmpLevelEvidence():hash===ampCDLevelBodySha?verifyAmpCDLevelEvidence():null;
-  if(!proof)return null;
+  if(!proof)return matchMeasuredAmpLevelBody(body,sha(syx),hash);
   check(proof.body.equals(body),'Entire Amp Level device body mismatch');
   return {file:proof.file,sha256:proof.sha256,bodySha256:proof.bodySha256,submittedFileConfirmed:sha(syx)===proof.sha256,scope:'Entire unnormalised body matches the named actual user Level export. New names/encodings are not separately import-confirmed; other values/models and listening are not inferred.'};
 }

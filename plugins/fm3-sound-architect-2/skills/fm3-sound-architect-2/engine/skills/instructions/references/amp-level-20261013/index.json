@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "firmware": "13.0",
+  "sourceLibraryFileId": "libfile_53abdabe155881918cc1e616c8f857bc",
+  "originalArchiveSha256": "d45e0d73a3ac0f2666ba111f6196c7d2db33c2c11948e0483068f0bbc9e11f9e",
+  "models": {
+    "A": 4,
+    "B": 103,
+    "C": 24,
+    "D": 11
+  },
+  "measuredRawByDb": {
+    "-80": 0,
+    "-30": 32767,
+    "-6": 48495,
+    "0": 52427,
+    "20": 65534
+  },
+  "captures": [
+    {
+      "index": 0,
+      "directory": "session/attempt-01-5119a8cf782a",
+      "levelDb": {
+        "A": -80,
+        "B": -30,
+        "C": -6,
+        "D": 0
+      },
+      "syxSha256": "d78ffff4bdc240899a36a95479cab16a03f9e62eb752426f20334bff6c629df0",
+      "bodySha256": "bbd0d425080c818f46d9d3d78c28effe7fc5c2822b0e7e93f3cd147b4ba16b11",
+      "rawRxSha256": "f947f505c2ea517fb6c1804890a872ebeb7ecd54b52c88178941914fa9e5abf5"
+    },
+    {
+      "index": 1,
+      "directory": "session/attempt-02-00963834b87c",
+      "levelDb": {
+        "A": -30,
+        "B": -6,
+        "C": 0,
+        "D": 20
+      },
+      "syxSha256": "29835ab86331fa8a62f5ba9b220af70d3a3da71639a8fd6903be891db232567d",
+      "bodySha256": "b3b3cf4ed254d2a89b0f2f77959ed19da9219f349749dfe82d53d316f6fe03aa",
+      "rawRxSha256": "da4386d26b5393909e41d3631f1caae5afca55f2bb6181aae836aee2da1d1d1a"
+    },
+    {
+      "index": 2,
+      "directory": "session/attempt-03-671cf070bf2b",
+      "levelDb": {
+        "A": -6,
+        "B": 0,
+        "C": 20,
+        "D": -80
+      },
+      "syxSha256": "e39c9be29e5de3b1fbe13df473fdcf24267c8702f6ba469ead58aa1aa3e33868",
+      "bodySha256": "562124421876aa6124d405915de5994ab834eb923b44beab7c56496df9c0e311",
+      "rawRxSha256": "6a42b6a5a15a1f01fe05613698dd54abd7012c4030b01ac63b59add4354f4e56"
+    },
+    {
+      "index": 3,
+      "directory": "session/attempt-04-8b0ff3595c9e",
+      "levelDb": {
+        "A": 0,
+        "B": 20,
+        "C": -80,
+        "D": -30
+      },
+      "syxSha256": "6a420507cfe2c2c6b955a1b11ff452a5a91df873726e267e7c8e038e367d7e78",
+      "bodySha256": "f6c09e472f75e47d8e0c6524053b0bd2ad04a522adc1632e0842ce50a6b978ce",
+      "rawRxSha256": "66193928a2cb3326d831b1c286632d74b0de9ab9afba3c59800c2e860517fd68"
+    },
+    {
+      "index": 4,
+      "directory": "session/attempt-05-4503cfdd34a8",
+      "levelDb": {
+        "A": 20,
+        "B": -80,
+        "C": -30,
+        "D": -6
+      },
+      "syxSha256": "532738c9a5e33fd2714174d59bbed0d71b2dbe980d100cb1517e99c5df3aad25",
+      "bodySha256": "2e4aef23dda1ca55f439ce7d181e4e5ec3abac86ade0a042938466c08f43c576",
+      "rawRxSha256": "0792fa0e1bbff00e33ff315b4a56bad0ea6d5734d8bd94d4fa218c01a47f3534"
+    }
+  ],
+  "points": [
+    {
+      "channel": "A",
+      "modelId": 4,
+      "levelDb": -80,
+      "raw": 0,
+      "stepIndex": 0
+    },
+    {
+      "channel": "B",
+      "modelId": 103,
+      "levelDb": -30,
+      "raw": 32767,
+      "stepIndex": 0
+    },
+    {
+      "channel": "C",
+      "modelId": 24,
+      "levelDb": -6,
+      "raw": 48495,
+      "stepIndex": 0
+    },
+    {
+      "channel": "D",
+      "modelId": 11,
+      "levelDb": 0,
+      "raw": 52427,
+      "stepIndex": 0
+    },
+    {
+      "channel": "A",
+      "modelId": 4,
+      "levelDb": -30,
+      "raw": 32767,
+      "stepIndex": 1
+    },
+    {
+      "channel": "B",
+      "modelId": 103,
+      "levelDb": -6,
+      "raw": 48495,
+      "stepIndex": 1
+    },
+    {
+      "channel": "C",
+      "modelId": 24,
+      "levelDb": 0,
+      "raw": 52427,
+      "stepIndex": 1
+    },
+    {
+      "channel": "D",
+      "modelId": 11,
+      "levelDb": 20,
+      "raw": 65534,
+      "stepIndex": 1
+    },
+    {
+      "channel": "A",
+      "modelId": 4,
+      "levelDb": -6,
+      "raw": 48495,
+      "stepIndex": 2
+    },
+    {
+      "channel": "B",
+      "modelId": 103,
+      "levelDb": 0,
+      "raw": 52427,
+      "stepIndex": 2
+    },
+    {
+      "channel": "C",
+      "modelId": 24,
+      "levelDb": 20,
+      "raw": 65534,
+      "stepIndex": 2
+    },
+    {
+      "channel": "D",
+      "modelId": 11,
+      "levelDb": -80,
+      "raw": 0,
+      "stepIndex": 2
+    },
+    {
+      "channel": "A",
+      "modelId": 4,
+      "levelDb": 0,
+      "raw": 52427,
+      "stepIndex": 3
+    },
+    {
+      "channel": "B",
+      "modelId": 103,
+      "levelDb": 20,
+      "raw": 65534,
+      "stepIndex": 3
+    },
+    {
+      "channel": "C",
+      "modelId": 24,
+      "levelDb": -80,
+      "raw": 0,
+      "stepIndex": 3
+    },
+    {
+      "channel": "D",
+      "modelId": 11,
+      "levelDb": -30,
+      "raw": 32767,
+      "stepIndex": 3
+    },
+    {
+      "channel": "A",
+      "modelId": 4,
+      "levelDb": 20,
+      "raw": 65534,
+      "stepIndex": 4
+    },
+    {
+      "channel": "B",
+      "modelId": 103,
+      "levelDb": -80,
+      "raw": 0,
+      "stepIndex": 4
+    },
+    {
+      "channel": "C",
+      "modelId": 24,
+      "levelDb": -30,
+      "raw": 32767,
+      "stepIndex": 4
+    },
+    {
+      "channel": "D",
+      "modelId": 11,
+      "levelDb": -6,
+      "raw": 48495,
+      "stepIndex": 4
+    }
+  ],
+  "files": {
+    "original-session.zip": "d45e0d73a3ac0f2666ba111f6196c7d2db33c2c11948e0483068f0bbc9e11f9e",
+    "session/attempt-01-5119a8cf782a/attempt.json": "54e535c35ca1750983efe2f6a7e26ad3a123546a55eb85d9911e770e987558cc",
+    "session/attempt-01-5119a8cf782a/capture.json": "5fd7aa38e5ba55bb9bc1bfe84d1052394a250300ece562c5fc917833df5ee543",
+    "session/attempt-01-5119a8cf782a/comparison.json": "f24855f7fffa4932bc794a5ad82b0077a73f523fc8b1d1172a477894bc8b7ccd",
+    "session/attempt-01-5119a8cf782a/donor.syx": "d78ffff4bdc240899a36a95479cab16a03f9e62eb752426f20334bff6c629df0",
+    "session/attempt-01-5119a8cf782a/pair.json": "87f81f0e76aea8183f01f28ce1444443b1b075cdeb5e8de59e74cf4b81367db0",
+    "session/attempt-02-00963834b87c/attempt.json": "598ae5c6765d0d5fe2034143eea5068ab9fbca9280d733f7aec9f95f51e2f175",
+    "session/attempt-02-00963834b87c/capture.json": "c406b6c9efcdf656aa9557899cae2faba594c67a32fa5df054b55f3f805b7540",
+    "session/attempt-02-00963834b87c/comparison.json": "e498540d514bcc5bc075c1bfeb44a6830f0f76e09aa9336461e736c7e1d55156",
+    "session/attempt-02-00963834b87c/donor.syx": "29835ab86331fa8a62f5ba9b220af70d3a3da71639a8fd6903be891db232567d",
+    "session/attempt-02-00963834b87c/pair.json": "07bfdbfbe420aad40b212979b2e2d7cc63553180bf3a8a89df54414c7d6662db",
+    "session/attempt-03-671cf070bf2b/attempt.json": "4f7b6f8687923536f5266526e956bb1546a0611e46685ea0c8c72d9afc617fb8",
+    "session/attempt-03-671cf070bf2b/capture.json": "45243cbc5651bf8d8553b870028c7b8f04b035553dd1d60af1d4a1c579e60c0e",
+    "session/attempt-03-671cf070bf2b/comparison.json": "9a4b6af91acc87b7a767f7b7a8c8d1fc823e468e1413a98fb765d36de5aebddc",
+    "session/attempt-03-671cf070bf2b/donor.syx": "e39c9be29e5de3b1fbe13df473fdcf24267c8702f6ba469ead58aa1aa3e33868",
+    "session/attempt-03-671cf070bf2b/pair.json": "6d75fe892249c1275fca849b1b14f5300848513510a44b8b6ff06024e888f0b7",
+    "session/attempt-04-8b0ff3595c9e/attempt.json": "ae3a4ce3c4d5ffe3edf2863f5a719ab41829f120c995aced4753d9d5ab122b10",
+    "session/attempt-04-8b0ff3595c9e/capture.json": "8bec00802d3db920de0ec5eaff96d456c134483f69ac9d93a41f71999c6b2f73",
+    "session/attempt-04-8b0ff3595c9e/comparison.json": "0081b32879f003b6829379df995efec817475f93259127f441a97380ba67f6c1",
+    "session/attempt-04-8b0ff3595c9e/donor.syx": "6a420507cfe2c2c6b955a1b11ff452a5a91df873726e267e7c8e038e367d7e78",
+    "session/attempt-04-8b0ff3595c9e/pair.json": "ceb4725483ecf940b455a86876e3741faf86cd3b8e7c59092d842838e45c919f",
+    "session/attempt-05-4503cfdd34a8/attempt.json": "cc7ae987aba9c0732d860170f2b4c2805adbb3c8b1a0566bfa2d2ab614f7972e",
+    "session/attempt-05-4503cfdd34a8/capture.json": "7ef5377ac79aa259287c1d5eb11a78595c587639cc5025bab992264fe35a2e66",
+    "session/attempt-05-4503cfdd34a8/comparison.json": "b6efef92f03e0911f6eb64509f93444ab4b698862e42aef24e5acb0cf187e695",
+    "session/attempt-05-4503cfdd34a8/donor.syx": "532738c9a5e33fd2714174d59bbed0d71b2dbe980d100cb1517e99c5df3aad25",
+    "session/attempt-05-4503cfdd34a8/pair.json": "a05b4d44c26df7a5d0bf98428210aefcd6f416a1a713edf15cfe6869e3b062c6",
+    "session/baseline.syx": "aac60417ad82db7be996bbc1dd6026a2ff9a5a246bdf4966c116ab33cd87c237",
+    "session/plan.json": "28410b1deef4d6be59620bcf3ccd35b6dc05fdda33ba3431b7551d487fa05fe9",
+    "session/session.json": "596f6467480225547038dbdcccfb8a9cb144279c2664591a021a5c84fc027fd0"
+  },
+  "scope": "Exact observed points on these four model/channel combinations. Display labels operator-confirmed. No interpolated A/C/D values or other model inference. No audio or CPU claim."
+}

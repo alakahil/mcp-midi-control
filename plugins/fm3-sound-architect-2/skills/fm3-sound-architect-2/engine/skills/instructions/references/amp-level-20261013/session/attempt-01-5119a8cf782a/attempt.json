@@ -1,0 +1,18 @@
+{
+  "index": 0,
+  "step": {
+    "index": 0,
+    "levelDb": {
+      "A": -80,
+      "B": -30,
+      "C": -6,
+      "D": 0
+    }
+  },
+  "createdAt": "2026-10-13T09:37:20.602856+00:00",
+  "status": "passed",
+  "syxSha256": "d78ffff4bdc240899a36a95479cab16a03f9e62eb752426f20334bff6c629df0",
+  "labelsConfirmed": true,
+  "confirmedAt": "2026-10-13T09:37:27.102375+00:00",
+  "completedAt": "2026-10-13T09:37:27.201922+00:00"
+}

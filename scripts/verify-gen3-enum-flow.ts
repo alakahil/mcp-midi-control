@@ -30,6 +30,11 @@ import {
   FM9_ROUNDTRIP_DISCRETE,
 } from '../packages/fractal-midi/dist/gen3/fm9/index.js';
 import { PARAMS_BY_FAMILY as III_PARAMS_BY_FAMILY } from '../packages/fractal-midi/dist/gen3/axe-fx-iii/index.js';
+import {
+  FM3_PARAMS_BY_FAMILY,
+  FM3_RANGES,
+  FM3_FAMILY_JOIN_DISCRETE,
+} from '../packages/fractal-midi/dist/gen3/fm3/index.js';
 
 let ok = 0;
 let fail = 0;
@@ -175,6 +180,52 @@ check('FM9 chorus.voices accepts maxOrdinal', fm9Rt.encodeParamOrThrow('chorus',
 let voicesRefused = false;
 try { fm9Rt.encodeParamOrThrow('chorus', 'voices', voicesMax + 1, 'FM9'); } catch { voicesRefused = true; }
 check(`FM9 chorus.voices refuses ordinal > ${voicesMax}`, voicesRefused);
+
+// FM3 has partial device-own ranges, not a complete cache/roundtrip oracle.
+// Exercise the real catalog boundary with both sources, as factory.ts does.
+const fm3 = createModernCatalog({
+  blocks: AXE_FX_III_BLOCKS,
+  paramsByFamily: FM3_PARAMS_BY_FAMILY,
+  resolveEffectId,
+  dropEmptyMappedBlocks: true,
+  deviceRanges: FM3_RANGES,
+  roundtripDiscreteOrdinals: FM3_FAMILY_JOIN_DISCRETE,
+});
+for (const [slug, key, max] of [
+  // Device-own enum ranges (FM3 fw13 GET-only evidence in params.ts).
+  ['cab', 'mode', 1], ['cab', 'inputsel', 3], ['cab', 'pretype', 11],
+  ['cab', 'oversample', 1], ['cab', 'roomshape', 1],
+  // ZOOM has a float display range but remains a discrete selector.
+  ['cab', 'zoom', 1],
+  // No FM3 range rows yet: the family-join fallback must keep working.
+  ['cab', 'type1', 188], ['chorus', 'voices', 4], ['delay', 'model', 28],
+] as const) {
+  check(`fm3 ${slug}.${key} routes DISCRETE`, fm3.blocks[slug]?.params[key]?.wire_kind === 'discrete');
+  check(`fm3 ${slug}.${key} accepts top ordinal ${max}`,
+    fm3.encodeParamOrThrow(slug, key, max, 'FM3') === max);
+  for (const bad of [-1, 0.5, max + 1]) {
+    let refused = false;
+    try { fm3.encodeParamOrThrow(slug, key, bad, 'FM3'); } catch { refused = true; }
+    check(`fm3 ${slug}.${key} refuses invalid ordinal ${bad}`, refused);
+  }
+}
+// FM3 evidence takes precedence over a contradictory sibling bound.
+const fm3Precedence = createModernCatalog({
+  blocks: AXE_FX_III_BLOCKS,
+  paramsByFamily: FM3_PARAMS_BY_FAMILY,
+  resolveEffectId,
+  dropEmptyMappedBlocks: true,
+  deviceRanges: FM3_RANGES,
+  roundtripDiscreteOrdinals: { ...FM3_FAMILY_JOIN_DISCRETE, CABINET_INPUTSEL: 99 },
+});
+let fm3RangeWins = false;
+try { fm3Precedence.encodeParamOrThrow('cab', 'inputsel', 4, 'FM3'); } catch { fm3RangeWins = true; }
+check('fm3 device-own inputsel count overrides the sibling bound', fm3RangeWins);
+// Measured SET/GET pairs already recorded in FM3 ranges.ts (no new I/O).
+check('fm3 cab.level1 stays CONTINUOUS', fm3.blocks.cab.params.level1.wire_kind === 'continuous');
+check('fm3 cab.level1 -12 dB encodes measured raw 45874', fm3.encodeParamOrThrow('cab', 'level1', -12, 'FM3') === 45874);
+check('fm3 cab.level2 -3 dB encodes measured raw 60619', fm3.encodeParamOrThrow('cab', 'level2', -3, 'FM3') === 60619);
+check('fm3 reverb.time stays CONTINUOUS without a range override', fm3.blocks.reverb.params.time.wire_kind === 'continuous');
 
 console.log(`gen3-enum-flow: ${ok} ok, ${fail} fail`);
 process.exit(fail > 0 ? 1 : 0);

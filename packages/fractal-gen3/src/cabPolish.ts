@@ -25,12 +25,12 @@
  * device's own catalog. Today that is TRUE on the FM9 (device-true
  * ranges mined from its own FM9-Edit editor cache: CABINET_LOCUT
  * 20..2000 Hz, CABINET_HICUT 200..20000 Hz, CABINET_ROOMMIX 0..100) and
- * FALSE on the III and FM3 (their cab cut/room params are registered
- * but uncalibrated raw-wire passthrough), so the III and FM3 inject
- * NOTHING until their own range evidence lands; guessing the normalized
- * wire for 80 Hz would violate the no-guessed-wire-values rule. The
- * probe below reads the catalog schema, so a future device-true range
- * table lights injection up without touching this module.
+ * also TRUE on FM3 (its fw13 hardware-validated overrides cover those
+ * cut/room ranges). The III remains uncalibrated raw-wire passthrough
+ * and injects NOTHING; guessing a normalized wire value would violate
+ * the no-guessed-wire-values rule. The probe below reads each device's
+ * catalog schema, so the existing FM3 overrides enable injection without
+ * changing this module's logic.
  *
  * The filter-slope selector (CABINET_ORDER, stripped key `order`) is
  * deliberately NEVER injected on gen-3: no device catalog carries a name
@@ -126,7 +126,7 @@ function classifyShape(params: PresetSlotSpec['params']): 'empty' | 'flat' | 'ne
  * Pure function: returns NEW slot objects (the input spec is never
  * mutated) plus the `auto_applied` report, or the input untouched when
  * nothing injects (no cab placed, caller has cab opinions, or this
- * device's catalog cannot display-encode the cuts, the III/FM3 case).
+ * device's catalog cannot display-encode the cuts, currently the III case).
  *
  * Ordering: defaults are appended AFTER each channel window's own spec
  * params (insertion order is write order on the gen-3 apply path), so a

@@ -4,336 +4,6 @@
   "firmware": 13,
   "bases": [
     {
-      "id": "jb-original",
-      "file": "examples/JB_YDOM_RHYTHM.syx",
-      "sha256": "bffe9dd559b443ebe3822532e951a27cb0a827600cb929d52dfccd3228d611ca",
-      "bodyBytes": 14222,
-      "blocks": [
-        "amp",
-        "cab",
-        "drive",
-        "delay",
-        "reverb",
-        "phaser",
-        "compressor",
-        "chorus",
-        "flanger",
-        "wah"
-      ],
-      "fields": [
-        "scenes",
-        "ampChannels",
-        "cabChannels",
-        "ampLevels",
-        "gainB",
-        "bassB",
-        "midB",
-        "trebleB",
-        "presenceB",
-        "levelB",
-        "delayMixA",
-        "reverbMixA",
-        "delayTimeMs",
-        "delayFeedback",
-        "reverbTimeS",
-        "reverbPredelayMs",
-        "delayTempoA",
-        "reverbPredelayTempoA",
-        "delayScene2",
-        "reverbScene1",
-        "ampModelB",
-        "cabModelB",
-        "scene6Name",
-        "phaserScene6Bypass",
-        "reverbScene6",
-        "delayScene6Bypass",
-        "ampScene6",
-        "driveChannels",
-        "delayChannels",
-        "reverbChannels",
-        "compressorChannels",
-        "chorusChannels",
-        "flangerChannels",
-        "phaserChannels",
-        "wahChannels"
-      ]
-    },
-    {
-      "id": "jb-balanced",
-      "file": "examples/JB_RHYTHM_LEVEL_MINUS3.syx",
-      "sha256": "7df04a541f45ef0d73e08de3583f0cd8a34f061392a28aa6691875689563b902",
-      "bodyBytes": 14222,
-      "blocks": [
-        "amp",
-        "cab",
-        "drive",
-        "delay",
-        "reverb",
-        "phaser",
-        "compressor",
-        "chorus",
-        "flanger",
-        "wah"
-      ],
-      "fields": [
-        "scenes",
-        "ampChannels",
-        "cabChannels",
-        "ampLevels",
-        "gainB",
-        "bassB",
-        "midB",
-        "trebleB",
-        "presenceB",
-        "levelB",
-        "delayMixA",
-        "reverbMixA",
-        "delayTimeMs",
-        "delayFeedback",
-        "reverbTimeS",
-        "reverbPredelayMs",
-        "delayTempoA",
-        "reverbPredelayTempoA",
-        "delayScene2",
-        "reverbScene1",
-        "ampModelB",
-        "cabModelB",
-        "scene6Name",
-        "phaserScene6Bypass",
-        "reverbScene6",
-        "delayScene6Bypass",
-        "ampScene6",
-        "driveChannels",
-        "delayChannels",
-        "reverbChannels",
-        "compressorChannels",
-        "chorusChannels",
-        "flangerChannels",
-        "phaserChannels",
-        "wahChannels"
-      ]
-    },
-    {
-      "id": "jb-balanced-export",
-      "file": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
-      "sha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
-      "bodyBytes": 14222,
-      "blocks": [
-        "amp",
-        "cab",
-        "drive",
-        "delay",
-        "reverb",
-        "phaser",
-        "compressor",
-        "chorus",
-        "flanger",
-        "wah"
-      ],
-      "fields": [
-        "scenes",
-        "ampChannels",
-        "cabChannels",
-        "ampLevels",
-        "gainB",
-        "bassB",
-        "midB",
-        "trebleB",
-        "presenceB",
-        "levelB",
-        "delayMixA",
-        "reverbMixA",
-        "delayTimeMs",
-        "delayFeedback",
-        "reverbTimeS",
-        "reverbPredelayMs",
-        "delayTempoA",
-        "reverbPredelayTempoA",
-        "delayScene2",
-        "reverbScene1",
-        "ampModelB",
-        "cabModelB",
-        "scene6Name",
-        "phaserScene6Bypass",
-        "reverbScene6",
-        "delayScene6Bypass",
-        "ampScene6",
-        "driveChannels",
-        "delayChannels",
-        "reverbChannels",
-        "compressorChannels",
-        "chorusChannels",
-        "flangerChannels",
-        "phaserChannels",
-        "wahChannels"
-      ]
-    },
-    {
-      "id": "jb-tremolo",
-      "file": "examples/FM3_TREMOLO_ABCD_TEST_export.syx",
-      "sha256": "de7dfc12cbcd2ad517f10f13d392f8b859aee75e94286152d14b80fe9d1596f1",
-      "bodyBytes": 14134,
-      "blocks": [
-        "amp",
-        "cab",
-        "drive",
-        "delay",
-        "reverb",
-        "phaser",
-        "compressor",
-        "chorus",
-        "wah",
-        "tremolo"
-      ],
-      "fields": [
-        "scenes",
-        "ampChannels",
-        "cabChannels",
-        "ampLevels",
-        "gainB",
-        "bassB",
-        "midB",
-        "trebleB",
-        "presenceB",
-        "levelB",
-        "delayMixA",
-        "reverbMixA",
-        "delayTimeMs",
-        "delayFeedback",
-        "reverbTimeS",
-        "reverbPredelayMs",
-        "delayTempoA",
-        "reverbPredelayTempoA",
-        "delayScene2",
-        "reverbScene1",
-        "ampModelB",
-        "cabModelB",
-        "scene6Name",
-        "phaserScene6Bypass",
-        "reverbScene6",
-        "delayScene6Bypass",
-        "ampScene6",
-        "driveChannels",
-        "delayChannels",
-        "reverbChannels",
-        "compressorChannels",
-        "chorusChannels",
-        "phaserChannels",
-        "wahChannels",
-        "tremoloChannels"
-      ]
-    },
-    {
-      "id": "jb-rotary",
-      "file": "examples/FM3_ROTARY_A_TEST_export.syx",
-      "sha256": "4eda4d22b89fb843ce47ab011bf01290a2cdbaabb9fe0219038faa5f5f0e7095",
-      "bodyBytes": 14126,
-      "blocks": [
-        "amp",
-        "cab",
-        "drive",
-        "delay",
-        "reverb",
-        "phaser",
-        "compressor",
-        "chorus",
-        "wah",
-        "rotary"
-      ],
-      "fields": [
-        "scenes",
-        "ampChannels",
-        "cabChannels",
-        "ampLevels",
-        "gainB",
-        "bassB",
-        "midB",
-        "trebleB",
-        "presenceB",
-        "levelB",
-        "delayMixA",
-        "reverbMixA",
-        "delayTimeMs",
-        "delayFeedback",
-        "reverbTimeS",
-        "reverbPredelayMs",
-        "delayTempoA",
-        "reverbPredelayTempoA",
-        "delayScene2",
-        "reverbScene1",
-        "ampModelB",
-        "cabModelB",
-        "scene6Name",
-        "phaserScene6Bypass",
-        "reverbScene6",
-        "delayScene6Bypass",
-        "ampScene6",
-        "driveChannels",
-        "delayChannels",
-        "reverbChannels",
-        "compressorChannels",
-        "chorusChannels",
-        "phaserChannels",
-        "wahChannels",
-        "rotaryA"
-      ]
-    },
-    {
-      "id": "jb-pitch",
-      "file": "examples/FM3_PITCH_ABCD_TEST_export.syx",
-      "sha256": "1b7ffc02a8e56749677a24fc55b192b0cb414dc960c3af408c17e3d78fc918a8",
-      "bodyBytes": 14870,
-      "blocks": [
-        "amp",
-        "cab",
-        "drive",
-        "delay",
-        "reverb",
-        "phaser",
-        "compressor",
-        "chorus",
-        "wah",
-        "pitch"
-      ],
-      "fields": [
-        "scenes",
-        "ampChannels",
-        "cabChannels",
-        "ampLevels",
-        "gainB",
-        "bassB",
-        "midB",
-        "trebleB",
-        "presenceB",
-        "levelB",
-        "delayMixA",
-        "reverbMixA",
-        "delayTimeMs",
-        "delayFeedback",
-        "reverbTimeS",
-        "reverbPredelayMs",
-        "delayTempoA",
-        "reverbPredelayTempoA",
-        "delayScene2",
-        "reverbScene1",
-        "ampModelB",
-        "cabModelB",
-        "scene6Name",
-        "phaserScene6Bypass",
-        "reverbScene6",
-        "delayScene6Bypass",
-        "ampScene6",
-        "driveChannels",
-        "delayChannels",
-        "reverbChannels",
-        "compressorChannels",
-        "chorusChannels",
-        "phaserChannels",
-        "wahChannels",
-        "pitchChannels"
-      ]
-    },
-    {
       "id": "jb-newlook",
       "file": "examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
       "sha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
@@ -1409,7 +1079,11 @@
           500,
           1000,
           2000,
-          1999.9
+          1999.9,
+          20,
+          20000,
+          3200,
+          3199.9
         ],
         "readback": [
           {
@@ -1426,6 +1100,21 @@
             "targetValue": 2000,
             "displayValue": 1999.9,
             "raw": 43689
+          },
+          {
+            "targetValue": 20,
+            "displayValue": 20,
+            "raw": 0
+          },
+          {
+            "targetValue": 20000,
+            "displayValue": 20000,
+            "raw": 65534
+          },
+          {
+            "targetValue": 3200,
+            "displayValue": 3199.9,
+            "raw": 48148
           }
         ]
       },
@@ -1437,7 +1126,11 @@
         "unit": "",
         "values": [
           1.4,
-          2
+          2,
+          0.1,
+          10,
+          0.707,
+          1
         ],
         "readback": [
           {
@@ -1449,6 +1142,26 @@
             "targetValue": 2,
             "displayValue": 2,
             "raw": 42631
+          },
+          {
+            "targetValue": 0.1,
+            "displayValue": 0.1,
+            "raw": 0
+          },
+          {
+            "targetValue": 10,
+            "displayValue": 10,
+            "raw": 65534
+          },
+          {
+            "targetValue": 0.707,
+            "displayValue": 0.707,
+            "raw": 27833
+          },
+          {
+            "targetValue": 1,
+            "displayValue": 1,
+            "raw": 32767
           }
         ]
       },
@@ -1461,7 +1174,10 @@
         "values": [
           -3,
           3,
-          0
+          0,
+          -20,
+          20,
+          -10
         ],
         "readback": [
           {
@@ -1478,6 +1194,21 @@
             "targetValue": 0,
             "displayValue": 0,
             "raw": 32767
+          },
+          {
+            "targetValue": -20,
+            "displayValue": -20,
+            "raw": 0
+          },
+          {
+            "targetValue": 20,
+            "displayValue": 20,
+            "raw": 65534
+          },
+          {
+            "targetValue": -10,
+            "displayValue": -10,
+            "raw": 16384
           }
         ]
       },
@@ -1490,7 +1221,10 @@
         "values": [
           -6,
           0,
-          3
+          3,
+          -80,
+          20,
+          -30
         ],
         "readback": [
           {
@@ -1507,6 +1241,21 @@
             "targetValue": 3,
             "displayValue": 3,
             "raw": 54393
+          },
+          {
+            "targetValue": -80,
+            "displayValue": -80,
+            "raw": 0
+          },
+          {
+            "targetValue": 20,
+            "displayValue": 20,
+            "raw": 65534
+          },
+          {
+            "targetValue": -30,
+            "displayValue": -30,
+            "raw": 32767
           }
         ]
       },
@@ -1519,7 +1268,10 @@
         "values": [
           80,
           120,
-          250
+          250,
+          20,
+          20000,
+          750
         ],
         "readback": [
           {
@@ -1536,6 +1288,21 @@
             "targetValue": 250,
             "displayValue": 250,
             "raw": 23962
+          },
+          {
+            "targetValue": 20,
+            "displayValue": 20,
+            "raw": 0
+          },
+          {
+            "targetValue": 20000,
+            "displayValue": 20000,
+            "raw": 65534
+          },
+          {
+            "targetValue": 750,
+            "displayValue": 750,
+            "raw": 34384
           }
         ]
       },
@@ -1551,7 +1318,11 @@
           6000,
           6000.1,
           8000,
-          7999.9
+          7999.9,
+          20,
+          20000,
+          1600,
+          1599.9
         ],
         "readback": [
           {
@@ -1568,17 +1339,81 @@
             "targetValue": 8000,
             "displayValue": 7999.9,
             "raw": 56841
+          },
+          {
+            "targetValue": 20,
+            "displayValue": 20,
+            "raw": 0
+          },
+          {
+            "targetValue": 20000,
+            "displayValue": 20000,
+            "raw": 65534
+          },
+          {
+            "targetValue": 1600,
+            "displayValue": 1599.9,
+            "raw": 41572
+          }
+        ]
+      },
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "field": "order",
+        "parameterId": 7,
+        "unit": "",
+        "values": [
+          "4th",
+          "2nd"
+        ],
+        "readback": [
+          {
+            "targetValue": "4th",
+            "displayValue": "4th",
+            "raw": 1
+          },
+          {
+            "targetValue": "2nd",
+            "displayValue": "2nd",
+            "raw": 0
+          }
+        ]
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "field": "order",
+        "parameterId": 7,
+        "unit": "",
+        "values": [
+          "4th",
+          "2nd"
+        ],
+        "readback": [
+          {
+            "targetValue": "4th",
+            "displayValue": "4th",
+            "raw": 1
+          },
+          {
+            "targetValue": "2nd",
+            "displayValue": "2nd",
+            "raw": 0
           }
         ]
       }
     ],
     "librarySha256": "02cc7820c37b19b9f5983023117c7e8f0108b73705d32d09f3eecc01ec0aa4ac",
+    "supplementSha256": "e667bb04bbb29ac0fab55ca48b63031ed4adb551f588b19dc3e99f0cbb575d9b",
+    "measuredPoints": 40,
+    "pairedExports": 32,
     "unmeasured": [
-      "Q 0.707 was skipped; no write override",
-      "Other types/channels/values and Order",
-      "No continuous ranges or interpolation"
+      "Other type/channel/value combinations",
+      "No continuous ranges or interpolation",
+      "Active Filter audio and CPU not assessed by this collection"
     ],
-    "evidence": "docs/FM3_FILTER_CONTROL_VALIDATION.json"
+    "evidence": "docs/FM3_FILTER_REA_AUDIT_20261012.json"
   },
   "peqControls": {
     "channels": [
@@ -2989,6 +2824,7 @@
   },
   "ampLevels": {
     "field": "ampLevels",
+    "revision": "amp-level-points-2026-10-13",
     "entryFields": [
       "channel",
       "levelDb"
@@ -3004,30 +2840,60 @@
       "modelId": 4,
       "model": "Double Verb Vibrato",
       "valuesDb": [
-        -12
+        -80,
+        -30,
+        -12,
+        -6,
+        0,
+        20
       ],
-      "evidence": "examples/JB_EIGHT_SCENES_V2_export.syx"
+      "evidence": "examples/JB_EIGHT_SCENES_V2_export.syx",
+      "additionalEvidence": "references/amp-level-20261013/index.json"
     },
     "B": {
       "minimum": -80,
       "maximum": 20,
-      "policy": "Existing levelB scope; specifying both forms is rejected"
+      "measured": {
+        "modelId": 103,
+        "model": "Brit Silver",
+        "valuesDb": [
+          -80,
+          -30,
+          -6,
+          0,
+          20
+        ],
+        "evidence": "references/amp-level-20261013/index.json"
+      },
+      "policy": "Existing levelB scope; specifying both forms is rejected. Only the listed five Brit Silver points have new paired evidence; other values/models retain the prior scope."
     },
     "C": {
       "modelId": 24,
       "model": "USA MK IV Lead Bright",
       "valuesDb": [
-        -11
+        -80,
+        -30,
+        -11,
+        -6,
+        0,
+        20
       ],
-      "evidence": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
+      "evidence": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx",
+      "additionalEvidence": "references/amp-level-20261013/index.json"
     },
     "D": {
       "modelId": 11,
       "model": "Plexi 50W High 1",
       "valuesDb": [
-        -11
+        -80,
+        -30,
+        -11,
+        -6,
+        0,
+        20
       ],
-      "evidence": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
+      "evidence": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx",
+      "additionalEvidence": "references/amp-level-20261013/index.json"
     },
     "policy": "A/C/D use exact observed words on the listed models, no interpolation or other-model inference. No Gain/EQ/Master or per-scene output control."
   },

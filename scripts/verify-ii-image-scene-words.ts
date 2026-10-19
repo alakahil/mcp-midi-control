@@ -1,7 +1,7 @@
 /**
  * Axe-Fx II scene-state word codec goldens.
  *
- * Section 1 (always runs, pure CPU): bit semantics + RMW encode.
+ * Section 1 (always runs, pure CPU): bit semantics + synthetic dump replay.
  *
  * Section 2 (capture-gated):
  *   a. CORPUS SURVEY: every placed block with a located scene word
@@ -38,6 +38,10 @@ import {
   applySceneStateToDump,
   II_IMAGE_WORDS,
   II_PRESET_DUMP_LEN,
+  II_IMAGE_FORMAT_TAG,
+  II_TLV_CHAIN_START,
+  framesFromImage,
+  serializeIIPresetDumpFrames,
   type IISceneStateOp,
 } from 'fractal-midi/gen2/axe-fx-ii';
 
@@ -72,6 +76,43 @@ console.log('Section 1: scene-state bit semantics');
   check('encode: clearing Y s1 from 0x0100 yields 0', w === 0);
   w = encodeSceneStateWord(w, { blockWireId: 0, scene: 8, bypassed: true });
   check('encode: bypass s8 sets bit 7', w === 0x0080);
+}
+
+// Always exercise the full dump path even when the private BK-070 captures
+// are absent in a public checkout. Expected words/mirror bits are constructed
+// directly, without using the scene encoder under test.
+{
+  const words = new Uint16Array(II_IMAGE_WORDS);
+  words[0] = II_IMAGE_FORMAT_TAG;
+  let cursor = II_TLV_CHAIN_START;
+  for (const [id, length] of [[106, 236], [139, 8], [140, 20], [141, 96]]) {
+    words[cursor] = id; words[cursor + 1] = length; cursor += 2 + length;
+  }
+  words[36] = 106; words[37] = 0x02; // Amp at (1,2), connected to input.
+  const amp = parseIIImageTlv(words).blocks.find((b) => b.wireId === 106)!;
+  const index = sceneStateWordIndex(amp)!;
+  const reserved = new Uint8Array(II_IMAGE_WORDS);
+  const header = new Uint8Array([0, 0, 0, 0x20]);
+  const baseline = serializeIIPresetDumpFrames(framesFromImage({ words, reserved }, header));
+  for (let scene = 1; scene <= 8; scene++) {
+    for (const field of ['bypassed', 'channelY'] as const) {
+      const expectedWords = words.slice();
+      const expectedReserved = reserved.slice();
+      expectedWords[index] = 1 << (scene - 1 + (field === 'channelY' ? 8 : 0));
+      expectedReserved[index] = (expectedWords[index] & 0x1f) << 2;
+      const expected = serializeIIPresetDumpFrames(framesFromImage(
+        { words: expectedWords, reserved: expectedReserved }, header,
+      ));
+      const result = applySceneStateToDump(baseline, [{ blockWireId: 106, scene, [field]: true }]);
+      check(`synthetic: ${field} scene ${scene} matches full expected dump`,
+        result.ok && Buffer.from(result.patchedBytes).equals(Buffer.from(expected)));
+      if (result.ok) {
+        const restored = applySceneStateToDump(result.patchedBytes, [{ blockWireId: 106, scene, [field]: false }]);
+        check(`synthetic: ${field} scene ${scene} restores baseline byte-for-byte`,
+          restored.ok && Buffer.from(restored.patchedBytes).equals(Buffer.from(baseline)));
+      }
+    }
+  }
 }
 
 // ═════════════════════════════════════════════════════════════════════
@@ -131,7 +172,10 @@ if (corpus.length > 0) {
 
 // ── 2b: paired-capture replay ──
 const CAPTURE_DIR = 'samples/captured';
-if (existsSync(CAPTURE_DIR)) {
+// The shared directory exists in public checkouts too. Gate on BK-070 input
+// files, not directory existence; any partial corpus still fails the original
+// >=25 successful-replay requirement below.
+if (existsSync(CAPTURE_DIR) && readdirSync(CAPTURE_DIR).some((f) => /^bk070-.*-(baseline|after)\.syx$/.test(f))) {
   const baselines = readdirSync(CAPTURE_DIR)
     .filter((f) => f.startsWith('bk070-') && f.endsWith('-baseline.syx'))
     .sort();
@@ -207,7 +251,7 @@ if (existsSync(CAPTURE_DIR)) {
     failures.join('; '),
   );
 } else {
-  console.log(`  skip  ${CAPTURE_DIR} (not present)`);
+  console.log(`  skip  BK-070 paired captures not present in ${CAPTURE_DIR}`);
   skipped++;
 }
 

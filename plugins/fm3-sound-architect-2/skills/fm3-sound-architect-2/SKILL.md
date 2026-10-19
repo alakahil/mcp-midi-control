@@ -19,8 +19,9 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Koostaja versioon on `jb-composer-0.13.0-dev`; see on kaasatud ja kontrollitud
-generaatori identifikaator, mitte väide uue preseti seadme- või helikontrolli kohta.
+Plugina versioon on `0.3.2`; ühine käivituspunkt on `fm3-preset.mjs`.
+Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
+ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
 Algse plugina identiteet ja vana serveriversioon jäävad eraldi; vana plugina
 arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeeritud.
@@ -64,26 +65,37 @@ Tee väljundid töökausta väljaspool skill'i/plugina lähtefaile.
 2. Küsi kirjutustugi ja toetatud alusfailid:
 
    ```bash
-   node "$FM3_ENGINE/scripts/fm3-generate.mjs" --capabilities "$FM3_ENGINE/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx"
+   node "$FM3_ENGINE/scripts/fm3-preset.mjs" --capabilities "$FM3_ENGINE/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx"
    ```
 
    `$FM3_ENGINE` peab olema enne määratud MOOTORi tegelikuks absoluutseks teeks.
-3. Koosta üks JSON-kirjeldus skeemi
+3. Mallidel põhineva preseti jaoks koosta JSON skeemi
    [fm3-spec.schema.json](engine/skills/instructions/scripts/fm3-spec.schema.json)
    järgi: `schemaVersion:1`, `firmware:13`, `baseProfile:"jb-composer"`, nimi,
-   vajalikud mallid/juhid ning `scenes`. Loe soovitud efektipere juhendit allpool.
+   vajalikud mallid/juhid ning `scenes`. Paigutuse või tabelijuhtide jaoks kasuta
+   [soundi skeemi](engine/skills/instructions/scripts/fm3-sound.schema.json):
+   eelmine kirjeldus läheb väljale `composer`; lisa `layout` ning vajadusel
+   `controls`, `blockScenes`, `selectedScene`, `purpose`, `context`. Alusta toimivast
+   `examples/SATRIANI_SOAP_ON_A_ROPE_V3.spec.json` näitest, kui siht seda eeldab.
+   `context` väljad on `guitar`, `pickups`, `output`; ära mõtle kasutajainfot välja.
+   Loe soovitud efektipere juhendit allpool.
 4. Kasuta kontrollitud alusfaili. Eelistatud NewLook-alus on
    `MOOTOR/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx`. Ära sööda tundmatut
    kasutaja presetit automaatselt sellesse piiratud kirjutajasse.
 5. Käivita generaator:
 
    ```bash
-   node "$FM3_ENGINE/scripts/fm3-generate.mjs" "$FM3_ENGINE/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx" "/ABS/PRESET.spec.json" "/ABS/PRESET"
+   node "$FM3_ENGINE/scripts/fm3-preset.mjs" "$FM3_ENGINE/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx" "/ABS/PRESET.spec.json" "/ABS/PRESET"
    ```
 
    Asenda näidisteed tegelike uute väljundite absoluutsete teedega.
-6. Kontrolli loodud `.validation.json` raportit ning nõutud mudelite, väärtuste,
-   stseenide, kanalite ja bypass'i vastavust. Generaator dekodeerib faili tagasi,
+6. Käivita `node "$FM3_ENGINE/scripts/fm3-preset.mjs" --verify "/ABS/PRESET"`.
+   Edukas käivitus väljastab `.syx`, `.txt`, `.spec.json`, `.validation.json`;
+   olemasolevat samanimelist väljundit ei kirjutata üle. Puuduv raport või räside
+   erinevus tähendab poolikut või muudetud komplekti. Kontrolli raportit ning nõutud mudelite, väärtuste,
+   stseenide, kanalite ja bypass'i vastavust. Põhiraport ja TXT kirjeldavad soundi
+   lõplikku SYX-i; `stages.composer` on vahetulemus, mitte lõplik seadistus.
+   Generaator dekodeerib faili tagasi,
    kontrollib kaadreid, CRC/footer'it ja ainult lubatud sisumuudatusi; veast ei minda üle.
 7. Anna päriselt loodud `.syx` ja `.txt` failid, vajadusel spec ja raport.
    TXT peab kirjeldama eesmärki, seadet/firmware'i, pilli ja ühendust, signaaliahelat,
@@ -165,9 +177,9 @@ Loe arhiive ajutises analüüsikaustas; ära lisa välispakettide sõltuvusi,
 FM3-Editi rakendust ega Ghidra projekte plugina paketti. [REA arendusjuhendi](engine/docs/FM3_REA_DEVELOPMENT.md)
 varasemad keskkonnatakistused on ajaloolised. Ära muuda kaitse- ega protsessikontrolle.
 
-## Claude'i arendus 0.3.0 — tabelikodeerija, vaba paigutus, soundid
+## Ühendatud 0.3.2 — tabelikodeerija, paigutus ja soundid
 
-Lisatud teise AI-platvormi SA2 v0.2.0 peale; ükski olemasolev fail pole muudetud. Kõik teed on MOOTORIS
+Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõik teed on MOOTORIS
 (`engine/skills/instructions/`) või `engine/docs/`. Detailid: `engine/docs/FM3_TABLE_ENCODER.md`,
 `engine/docs/FM3_LAYOUT.md`.
 
@@ -177,7 +189,7 @@ Lisatud teise AI-platvormi SA2 v0.2.0 peale; ükski olemasolev fail pole muudetu
   Tõendid: 280/280 seadmepunkti, 15/15 partiikatse näitu (`references/taper-batch-20261013.json`),
   12/12 senist juhti. Vaikimisi kirjutatakse measured / taper-class-verified / enum-labels-crosschecked;
   linear-by-structure ja enum-labels vajavad `allow`; unverified-taper (36 kirjet) mitte kunagi.
-- **Kahe rea vaba paigutus** `scripts/fm3-layout.mjs`: rida 2 In 1 → … → Send, rida 3 Return → … → Out 1,
+- **Kahe rea paigutus** `scripts/fm3-layout.mjs`: rida 2 In 1 → … → Send, rida 3 Return → … → Out 1,
   read 1/4 tühjad; plokkide järjekorra määrab sound. Ruudustiku liigutamine on **seadmel kinnitatud**
   (`examples/FM3_LAYOUT_MOVE_TEST_export.syx` keha identne).
 - **Soundi koostaja** `scripts/fm3-sound.mjs` (jb-newlook): `composer` → `layout` → `blockScenes` →
@@ -187,9 +199,13 @@ Lisatud teise AI-platvormi SA2 v0.2.0 peale; ükski olemasolev fail pole muudetu
 - **Helivõrdlus** `scripts/fm3-audio-compare.py REF FM3`: kolmandikoktaavi tämber ja stereolaius
   (eelista eraldatud kitarrirada). Efektide tuvastamine EI ole valideeritud — ära väida helianalüüsi
   põhjal phaserit/delay'd.
-- Testid: `node scripts/test-table-encoder.mjs`, `node scripts/test-layout.mjs`.
-  Teadaolev SA2 eelne probleem: `scripts/test-composer-filter.mjs` kukub läbi ka puhtas v0.2.0-s
-  (aegunud ootus Filteri juhtide keelamisele pärast REA laiendust); pole selle muudatusega seotud.
+- Käivita vajadusel `node scripts/test-sound-release.mjs` ja `node scripts/test-upstream-fm3.mjs`.
+  Täielik offline-komplekt on `references/offline-suite.json`; ajaloolised testid
+  käivita ajutises koopias, sest osa kirjutab tulemusi fixture-kaustadesse.
+  Filteri aegunud negatiivne test on parandatud: mõõdetud 2nd order peab õnnestuma,
+  tundmatu 3rd peab ebaõnnestuma.
+- Loe [väljalaske ja laadimise töövoogu](engine/docs/FM3_RELEASE_WORKFLOW.md).
+  Uus test ei muuda klassi/struktuuri põhjal tuletatud parameetrit seadmepunktina mõõdetuks.
 
 ## Tõendite säilitamine ja avaldamine
 
@@ -207,11 +223,34 @@ python3 "$FM3_ENGINE/scripts/fm3-evidence-archive.py" verify
 
 Taasta vanad `skills/instructions/references/batch-*` teed ainult ajutisse mootori
 töökoopiasse. Algne kataloog, mallid ja lähteandmed peavad säilima kontrollitavana.
-Ära paki taastatud ajalugu tagasi avaldatavasse pluginasse. Enne väljalaset käivita
-`MOOTOR/scripts/fm3-package.py` tegeliku plugina juurkaustaga; eelarve on 4000
+Ära paki taastatud ajalugu tagasi avaldatavasse pluginasse. Väljalase peab vastama ühele puhtale Git commit'ile. Kasuta repo
+`tools/fm3/test-offline.py` ja `tools/fm3/build-release.py` töövoogu; vana
+`fm3-package.py` sobib inventuuriks, mitte commit'iga sidumata väljalaskeks. Eelarve on 4000
 faili/kausta/juurkausta kirjet. Kopeeri ainult selle oskuse failid, säilita uue
 plugina identiteet ja privaatsus ning uuenda olemasolevat pluginat, mitte ära loo kolmandat.
 
 Riistvaraaudit on ainult kasutaja kinnitatud GET/read-only päringud. Ära saada
 tooreid SET-käske ega salvesta automaatselt FM3 presetikohtadele. Kontrollimpordi
 teeb kasutaja FM3-Editis teadlikult, säilitades oma töö; see muudab tööpuhvrit.
+
+## Laadimise kontroll
+
+Enne avaldatud väljalaske kasutusvalmis kinnitamist kontrolli päriselt laaditud
+plugina teed, manifesti, versiooni ja eeldatavat täispikka commit-räsi:
+
+```bash
+node "$FM3_ENGINE/scripts/fm3-self-check.mjs" EXPECTED_COMMIT_SHA
+```
+
+Kasuta väljalaskekviitungist teada olevat commit'i; ära vali väärtust kontrollitava
+faili enda põhjal. Skript kontrollib kogu paketi faililoendit ja räsisid ning
+teeb teadaoleva preseti kordusgenereerimise. Värskelt lahtipakitud arhiivi kontroll
+ei tõenda automaatselt hosti avastust/laadimist. Kui sessioon näeb vana oskust,
+puuduvaid engine-faile või erinevat versiooni, märgi laadimine kinnitamata.
+Ära kirjuta hosti hallatud skill-kausta käsitsi üle, et kontroll näiliselt läbiks.
+Väikese kasutusülesande offline-genereerimine ja failide kontroll lõpetavad
+laadimise kontrolli; heli, FM3 import ja CPU on eraldi tõendid.
+
+0.3.2 säilitab 0.3.1 generaatori käitumise ning kirjutab ühilduvusmanifesti
+platvormi kinnitatud ASCII-paokoodidega JSON-vormingus. Nii jäävad avaldatud
+failide räsid commit’ist ehitatud paketi manifestiga täpselt vastavusse.

@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "device": "FM3 Mk II Turbo",
+  "firmware": 13,
+  "hardwareIO": false,
+  "tests": [
+    {
+      "id": "test-table-encoder",
+      "command": [
+        "node",
+        "scripts/test-table-encoder.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-layout",
+      "command": [
+        "node",
+        "scripts/test-layout.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-generate",
+      "command": [
+        "node",
+        "scripts/test-generate.mjs",
+        "references",
+        "examples"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-jb-composer",
+      "command": [
+        "node",
+        "scripts/test-jb-composer.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-jb-composer-hardware",
+      "command": [
+        "node",
+        "scripts/test-jb-composer-hardware.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-integration",
+      "command": [
+        "node",
+        "scripts/test-composer-integration.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-scenes",
+      "command": [
+        "node",
+        "scripts/test-composer-scenes.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-amp-cab",
+      "command": [
+        "node",
+        "scripts/test-composer-amp-cab.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-amp-cab-hardware",
+      "command": [
+        "node",
+        "scripts/test-composer-amp-cab-hardware.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-amp-levels",
+      "command": [
+        "node",
+        "scripts/test-composer-amp-levels.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-amp-cd-levels",
+      "command": [
+        "node",
+        "scripts/test-composer-amp-cd-levels.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-filter",
+      "command": [
+        "node",
+        "scripts/test-composer-filter.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-filter-controls",
+      "command": [
+        "node",
+        "scripts/test-composer-filter-controls.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-filter-rea",
+      "command": [
+        "node",
+        "scripts/test-composer-filter-rea.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-peq-full",
+      "command": [
+        "node",
+        "scripts/test-composer-peq-full.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-peq-full-hardware",
+      "command": [
+        "node",
+        "scripts/test-composer-peq-full-hardware.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-geq-full",
+      "command": [
+        "node",
+        "scripts/test-composer-geq-full.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-geq-hardware",
+      "command": [
+        "node",
+        "scripts/test-composer-geq-hardware.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-enhancer-full",
+      "command": [
+        "node",
+        "scripts/test-composer-enhancer-full.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-enhancer-hardware",
+      "command": [
+        "node",
+        "scripts/test-composer-enhancer-hardware.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-newlook",
+      "command": [
+        "node",
+        "scripts/test-composer-newlook.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-newlook-hardware",
+      "command": [
+        "node",
+        "scripts/test-composer-newlook-hardware.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-newlook-filter-hardware",
+      "command": [
+        "node",
+        "scripts/test-composer-newlook-filter-hardware.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-newlook-pitch-hardware",
+      "command": [
+        "node",
+        "scripts/test-composer-newlook-pitch-hardware.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-composer-amp-level-measurements",
+      "command": [
+        "node",
+        "scripts/test-composer-amp-level-measurements.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-sound-release",
+      "command": [
+        "node",
+        "scripts/test-sound-release.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "test-upstream-fm3",
+      "command": [
+        "node",
+        "scripts/test-upstream-fm3.mjs"
+      ],
+      "scope": "offline replay / assertions; inspect named test for type, channel and point coverage",
+      "required": true
+    },
+    {
+      "id": "amp-history-integrity",
+      "command": [
+        "python3",
+        "scripts/fm3-evidence-archive.py",
+        "verify"
+      ],
+      "scope": "Compressed original evidence integrity",
+      "required": true
+    }
+  ]
+}

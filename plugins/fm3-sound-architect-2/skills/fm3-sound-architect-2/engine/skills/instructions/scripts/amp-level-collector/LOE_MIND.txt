@@ -1,0 +1,95 @@
+FM3 AMP LEVEL A–D — kogumispakett 1.0.0 / plugin 0.2.1
+
+EESMÄRK
+Viis uut SYX-eksporti ja viis Amp GET-vastust annavad 20 kandidaatmõõtepunkti:
+iga kanali jaoks −80, −30, −6, 0 ja +20 dB. Väärtused on sammudes nihutatud,
+et kanaleid oleks lihtsam eristada. Mõõtmata dB-skaalat kogur ei eelda.
+
+Olemasolevat algmõõtmist ega A −12 / C,D −11 dB katseid ei korrata.
+ALUSTA_SIIT.syx on sinu varasem kontrollitud FM3_AMP_CD_LEVEL_CHECK_export.syx,
+baitidentne koopia, SHA-256:
+aac60417ad82db7be996bbc1dd6026a2ff9a5a246bdf4966c116ab33cd87c237
+
+Kanali mudelid: A Double Verb Vibrato (4), B Brit Silver (103),
+C USA MK IV Lead Bright (24), D Plexi 50W High 1 (11).
+See katse ei kinnita kõigi 336 Amp-mudeli skaalat ega muuda generaatori tuge.
+
+ETTEVALMISTUS
+1. Paki ZIP lahti. Vajalikud on macOS, Python 3.9+ ja Node.js 18+.
+   Kogu kaust peab jääma kokku; pip- ega npm-pakette pole vaja.
+2. Säilita pooleliolev preset. Vaigista füüsiline kuulamisahel, sest katse
+   sisaldab +20 dB. Ära vaigista presetis plokke ega muuda selle väljundtaset.
+3. Laadi ALUSTA_SIIT.syx FM3-Editis ajutiseks katseks, ära kirjuta oma
+   presetikohta üle. Vali Scene 2 ja Amp B. Firmware peab olema 13.0.
+4. Ava Terminal, kirjuta cd ja tühik, lohista see lahtipakitud kaust aknasse
+   ning vajuta Enter. Seejärel vaata ühendatud portide nimesid:
+
+   python3 FM3_AMP_LEVEL.py --list-ports
+
+5. Käivita kogur oma FM3 tegeliku pordinimega. Näiteks AINULT juhul, kui
+   eelmises loendis oli sama FM3 port:
+
+   python3 FM3_AMP_LEVEL.py --port /dev/cu.usbmodem211104
+
+TÖÖKÄIK
+Kogur küsib firmware kinnitust ja näitab ühe sammu nelja Leveli väärtust.
+Muuda FM3-Editis A/B/C/D kanalite Levelit; Gain ja Master Volume jäävad samaks.
+Naase Scene 2-s Amp B-le. Ära muuda stseenide seoseid ega muid parameetreid.
+Ekspordi üks presetifail ning lohista see Terminali küsimuse järele.
+
+Kogur kontrollib faili enne seadme avamist. Lubatud on ainult neli Amp Leveli
+toorsõna ja presetinime muutus (nimi raporteeritakse eraldi). Muud sisubaidid,
+stseenivalik, mudelid, kaadrite kontrollsummad ja preset CRC peavad sobima.
+
+Kontrolli ekraanilt kõik neli küsitud dB-näitu, siis sulge FM3-Edit seadme
+olekut muutmata. Kirjuta jah, et lubada üks Amp GET. Skript võrdleb vastuse
+kõiki 576 Amp-sõna SYX-iga. Näitudest tehakse sinu kinnitusel kandidaadid;
+fail ise ei tõenda, milliseid dB-silte sa ekraanil nägid.
+
+Järgmise sammu jaoks ava FM3-Edit uuesti ning jätka samast seadmeolekust.
+Kogur ei saada SET-, SAVE-, kanali-, mudeli- ega presetivahetuse käske.
+Automaatset kordus-GET-i ei tehta. Iga uus katse vajab uut jah-kinnitust.
+
+Samm       A       B       C       D        (dB)
+1        −80     −30      −6       0
+2        −30      −6       0     +20
+3         −6       0     +20     −80
+4          0     +20     −80     −30
+5        +20     −80     −30      −6
+
+Kui FM3-Edit ei võimalda täpselt küsitud väärtust, peatu q-ga ja anna teada
+näidatav piirväärtus. Ära kinnita ümardatud või asendatud väärtust õigeks.
+
+PAUS JA JÄTKAMINE
+Iga küsimuse juures q peatab töö. Iga eduka sammu järel ja väljumisel
+uuendatakse FM3_AMP_LEVEL_session_TULEMUSED.zip. Pooleli ja ebaõnnestunud
+katsed säilivad, kuid ei lähe lõpetatud sammudena arvesse.
+
+Jätka sama käivituskäsuga. Kogur kontrollib varasemad failid ja paarid uuesti
+ning näitab viimast edukat donor.syx faili. Kui oled vahepeal teist presetti
+kasutanud, laadi see donor.syx FM3-Editis tagasi. Kui edukat sammu veel pole,
+kasuta ALUSTA_SIIT.syx. Seejärel muuda ainult järgmist küsitud Levelite rida.
+
+Kui offline-kontroll peatab katse, ei ole GET-i saadetud. Kui viga tekib
+GET-i ajal või pärast seda, on see katse säilitatud. Paranda põhjus ja
+käivita uuesti: ebaõnnestunud sammu saab uue ekspordi ning kinnitusega korrata.
+Kui viga kordub, laadi juba olemasolev tulemuste ZIP vestlusse.
+
+Ainult olemasolevate failide kontroll (ilma seadme avamiseta):
+   python3 FM3_AMP_LEVEL.py --status
+Ainult tulemuste pakkimine (ilma seadme avamiseta):
+   python3 FM3_AMP_LEVEL.py --export-only
+
+PÄRAST KATSET
+Laadi FM3_AMP_LEVEL_session_TULEMUSED.zip sellesse vestlusse, ka pooleli jäädes.
+Taasta enne kuulamisahela sisselülitamist oma muusikaline preset. Kaasas on
+TAASTA_MUUSIKALINE_V2.syx, varasema JB_EIGHT_SCENES_V2.syx täpne koopia:
+A −12 dB, B −3 dB ning varasemad C/D tasemed. Mõõtepreseti +20 dB väärtustega
+ära kuula ega salvesta üle oma tavapreseti.
+
+MIDA ON KONTROLLITUD
+TEST_RESULTS.json kirjeldab sünteetilisi offline- ja virtuaalse serial-pordi
+katseid. Selle uue koguri kasutust füüsilise FM3-ga ja Macis ei ole veel
+kinnitatud. Need tarkvaratestid ei ole seadme mõõtmistõendid ega uue skaala
+kirjutusluba. Mõõtmiste laekumisel auditeeritakse toorväärtused, dB-sildid,
+kanalite eraldatus ja ulatus enne generaatori laiendamist.
