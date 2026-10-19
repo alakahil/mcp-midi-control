@@ -1,0 +1,24 @@
+SATCH SOAP ON A ROPE V2 — muudatused V1 suhtes (kasutaja kuulamise ja Output L/R mõõtmise põhjal)
+
+Mõõdetud V1 (Output tipp): Amp A stseenid 1/2/6 ≈ 0 dB (kuni +0.5), Amp B stseenid 3/7/8 ≈ −5 dB,
+Amp D stseen 4 ja Amp C stseen 5 ≈ −2 dB. CPU max 61 % (Scene 4).
+
+1. TASEMED (Ampi Level, mõjub kõigile stseenidele, mis seda kanalit kasutavad)
+   Amp A −8 → −10 dB (riff −2 dB)     → oodatav tipp ≈ −2 dB
+   Amp B −14 → −10.5 dB (+3.5 dB)     → oodatav tipp ≈ −1.5 dB (soolo veidi riffist valjem)
+   Amp C −9 dB (muutmata)             → ≈ −2 dB
+   Amp D −8 → −7 dB (+1 dB)           → ≈ −1 dB
+2. OUTPUT SCENE LEVEL: Scene 8 = +1.0 dB (ülejäänud 0 dB). See on ka kontroll:
+   vali Output 1 plokk → Scene Levels → Scene 8 peab näitama +1.0 dB.
+3. PHASER: Script 90 (MXR Phase 90), rida 2 Drive'i ja Ampi vahel (v5).
+   Sees stseenides 3 SOLO, 4 SOLO JS410, 8 SOLO LONG DLY. Stseen 7 SOLO DRY on võrdluseks ilma phaserita.
+   Seaded on Script 90 kogutud mallist (Rate/Mix vaikimisi).
+
+Paigutus: In 1 → Drive (v4) → Phaser (v5) → Amp (v6) → Cab (v8) → Send | Return → Delay (v9) → Reverb (v10) → Out 1
+
+TEGEVUS
+1. Impordi tühjale presetikohale (V1 võib alles jääda võrdluseks).
+2. Kontrolli Output 1 → Scene 8 Level = +1.0 dB.
+3. Mõõda samamoodi Output L/R tipud stseenides 1–8 ja ütle CPU max (phaser lisab paar %).
+4. Kuula soolot 3 vs 7: kas phaser on õiges suunas? Kui Rate/sügavus vajab muutmist, kirjelda (aeglasem/kiirem, rohkem/vähem).
+SHA-256: a300ef3e9fbc5e36ed3b95ae5b7b182e51161c1fdd1d10a4c9850cd1e4cd1673
