@@ -1,4 +1,4 @@
-# Kahe rea vaba paigutus — 0.75.0, 2026-10-14
+# Kahe rea vaba paigutus — 0.75.1, 2026-10-14
 
 Kasutaja nõue: preset on alati kahel real; plokkide järjekorra ja asukoha määrab sound.
 
@@ -31,5 +31,8 @@ ahel on katkematu ning kaadrid, CRC ja footer on korras.
 ## Seadmekatse
 
 `examples/FM3_LAYOUT_MOVE_TEST.{syx,txt,spec.json,validation.json}`: Comp, Drive ja Phaser enne Ampi,
-Chorus reas 3 enne Delay't; lisatud plokid on bypassis. Ruudustiku liigutamine on seadmel OOTEL,
-kuni kasutaja eksport on võrreldud. Ploki eemaldamist ei toetata.
+Chorus reas 3 enne Delay't; lisatud plokid on bypassis. Ploki eemaldamist ei toetata.
+
+**Tulemus 2026-10-14: kinnitatud.** `FM3_LAYOUT_MOVE_TEST_export.syx` (SHA-256 `b8fb3b2c79598f7e8245de1b4f95f08c739cb060cd17853a4fd4fabc55f0a44c`):
+kogu keha (13 774 baiti) on identne genereeritud failiga, CRC on korras ning erinevad ainult raw-päise baidid 4–5.
+Kasutaja kinnitas FM3-Editis: paigutus vastas oodatule, ühendused olid katkematud ja Chorus A Rate oli 1.20 Hz.
