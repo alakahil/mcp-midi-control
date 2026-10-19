@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2053,
-  "filePaths": 2257,
+  "uniqueContents": 2054,
+  "filePaths": 2258,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -2991,6 +2991,12 @@
         "references/peq-baseline-20261009-114022/session.json"
       ]
     },
+    "3cfe8a40d48d0901f8801b7f7a4b49129802e765cc8080ec5ce4ec2cea439aaf": {
+      "bytes": 218653,
+      "paths": [
+        "references/fm3-modulation-dynamics-applicability.json"
+      ]
+    },
     "3d2699d5e7ac5cdd1fe626cc6c09676c80d0a8c799ba5e3439694a4e0c99d86d": {
       "bytes": 24680,
       "paths": [
@@ -5319,12 +5325,6 @@
       "bytes": 7270,
       "paths": [
         "references/peq-full-20261009-152606/step-031-37ff947865/capture.json"
-      ]
-    },
-    "70f30d413ba0a970941df0631203f9f8ae01d6480867e3ae03df29d407546c78": {
-      "bytes": 8786,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "7110d73d4bae83a90cc51418002f85bbb864c1b96bed900b3794f438e545d754": {
@@ -10876,6 +10876,12 @@
       "bytes": 2324,
       "paths": [
         "references/enhancer-full-20261012-122507/step-040-4f0cf5829e/result.json"
+      ]
+    },
+    "dff3fa476728eea6f2d65f443f4cbd0419c6b86e99ede4be9bb442152d46aa1e": {
+      "bytes": 9200,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "e00713b651d2780fe5bfa4a3f69a871ec95ad5b3a7c498918de9b8ff69f39938": {

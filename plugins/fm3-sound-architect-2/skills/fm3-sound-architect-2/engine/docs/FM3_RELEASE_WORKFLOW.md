@@ -19,6 +19,8 @@ Drive Oversampling on blokeeritud. Lisatud on Chorus/Drive tüübisobivus ning
 [21 tempo-seose ja olemasolevate modifikaatorisihtide kontroll](FM3_PARAMETER_DEPENDENCIES.md).
 Delay/Reverbi [mudeli, algoritmi ja tingimuslike juhikute kontroll](FM3_DELAY_REVERB_APPLICABILITY.md)
 nõuab mudelivahetuseks täielikku kanalimalli ning arvestab Spring Tank Type'i.
+[Flangeri, Phaseri ja Compressori kontroll](FM3_MODULATION_DYNAMICS_APPLICABILITY.md)
+lisab 67 mudeli nähtavuse, Phaseri Mode'i ning kinnitatud Flangeri nimealiased.
 Uusi seadmemõõtmisi ei lisatud.
 Välised metaandmete ja kodeerimismaatriksi kontrollid asuvad repo
 `tools/fm3/` ning `docs/fm3/parameter-evidence/` kaustades.
@@ -80,7 +82,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 31 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 32 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.

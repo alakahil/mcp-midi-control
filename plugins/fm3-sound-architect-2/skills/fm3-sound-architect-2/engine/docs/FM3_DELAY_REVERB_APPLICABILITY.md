@@ -81,10 +81,12 @@ kirjutust, 5752 sobimatuna tõrjutud kirjutust ja 848 täiskanalimalli nõude ko
 Test kontrollib toorsõnu ja kogu keha muutusi, päringu järjekorda, vale kanali
 kasutamist, tundmatut/mittesobivat algoritmi ning lõppjuhendi nähtavust.
 
-Ühises seitsme baasi / 21 SYX-katse maatriksis on 39 869 lubatud kirjutust,
+Selle etapi seitsme baasi / 21 SYX-katse maatriksis oli 39 869 lubatud kirjutust,
 3676 tüübi/algoritmi-, 459 tempo-, 72 modifikaatori- ja 336 täiskanalimalli nõude
 tõttu välistatud kandidaati. Väljajätud ei ole läbitud kirjutuskatsed. 688 skalaari
 kodeerimispoliitika ning 899 ajaloolist vaatlust / 85 mõõdetud võtit ei muutu.
+Järgmine [Flangeri/Phaseri/Compressori etapp](FM3_MODULATION_DYNAMICS_APPLICABILITY.md)
+lisab maatriksile nende perede piirangud; kehtivad arvud on repo encoder-matrix.json failis.
 
 Kasutaja füüsilisi toiminguid: **0**. Uusi mõõtmisi, seadmeimporti, heli ega CPU-d
 ei testitud. Muu tüübisobivus, kontrollerite dünaamika, üldine routing ja GLOBAL

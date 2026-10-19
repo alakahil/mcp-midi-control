@@ -41,6 +41,15 @@
       "required": true
     },
     {
+      "id": "test-modulation-dynamics-applicability",
+      "command": [
+        "node",
+        "scripts/test-modulation-dynamics-applicability.mjs"
+      ],
+      "scope": "67 captured Flanger/Phaser/Compressor templates on A-D; native/legacy alias bindings, model/Mode checks, variant visibility, read-only slots, atomic rejection and final guide; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-layout",
       "command": [
         "node",

@@ -1,4 +1,4 @@
-// FM3 table-based parameter encoder (0.74.6). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
+// FM3 table-based parameter encoder (0.74.7). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
 import fs from 'node:fs';
@@ -8,6 +8,7 @@ import {authorGen3PresetFromIR,reencodeRawPatch,reencodeDumpFromRawPatch} from '
 import {composerBases,layouts,checkComposerStructure} from './fm3-composer-bases.mjs';
 import {validateDependencyWrites,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 import {validateTypeWrites,typePolicySummary} from './fm3-type-applicability.mjs';
+import {nativeParameterId} from './fm3-modulation-dynamics-applicability.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(v,m)=>{if(!v)throw Error(m)};
@@ -30,7 +31,8 @@ export function loadDictionary(){
 }
 export function findParam(family,param){
   const d=loadDictionary(),fam=FAMILY_BY_SLUG[family]??family;
-  const p=typeof param==='number'?[...d.byKey.values()].find(x=>x.family===fam&&x.param===param):d.byName.get(fam+':'+param)??d.byName.get(fam+':'+fam+'_'+String(param).toUpperCase());
+  const byPid=pid=>[...d.byKey.values()].find(x=>x.family===fam&&x.param===pid);
+  const p=typeof param==='number'?byPid(param):d.byName.get(fam+':'+param)??d.byName.get(fam+':'+fam+'_'+String(param).toUpperCase())??byPid(nativeParameterId(fam,param));
   check(p,`Unknown parameter ${family}/${param}`);return p;
 }
 function gate(p,opts){
@@ -122,7 +124,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
   check(Buffer.from(before.parsed.headerPayload).equals(Buffer.from(after.parsed.headerPayload)),'Dump header changed');
   const raw=Buffer.from(after.raw.rawPatch);check(raw.readUInt16LE(72)===actual.length&&raw.readUInt16LE(74)===after.raw.compSize,'Invalid encoded size');
   check(raw.subarray(76+after.raw.compSize).every(v=>v===0),'Nonzero output padding');
-  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.6',dictionarySha256:dictionaryHash,typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
+  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.7',dictionarySha256:dictionaryHash,typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 

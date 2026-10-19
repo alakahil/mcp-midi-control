@@ -174,13 +174,14 @@ const sourcePaths = [out + 'registry.json', out + 'metadata-reconciliation.json'
   engine + 'references/fm3-type-applicability.json', engine + 'scripts/fm3-type-applicability.mjs',
   engine + 'references/fm3-parameter-dependencies.json', engine + 'scripts/fm3-parameter-dependencies.mjs',
   engine + 'references/fm3-delay-reverb-applicability.json', engine + 'scripts/fm3-delay-reverb-applicability.mjs',
+  engine + 'references/fm3-modulation-dynamics-applicability.json', engine + 'scripts/fm3-modulation-dynamics-applicability.mjs',
   engine + 'scripts/drive-collector/fm3-prototype.mjs', engine + 'scripts/drive-collector/fm3-codec.mjs', engine + 'scripts/fm3-codec.mjs',
   ...composerBases.map(b => engine + b.file)];
 const result = {schemaVersion: 1, scope: {
   softwareOnly: true, deviceIO: false, newHardwareEvidence: false, generatedPresetsDelivered: false,
   parameterEligibility: 'Accepted table policy, implemented scalar kind, and at least one bundled base layout. Other parameters remain outside this matrix.',
   curveOracle: 'Fixed normalized positions plus independent endpoint interpolation; one wire LSB tolerance for floating point/quantized historical displays.',
-  limits: 'Chorus/Drive type policy, Delay/Reverb final model/algorithm/control predicates, 21 tempo pairs and read-only modifier targets enforced. Delay/Reverb model/internal-selector scalar writes require full templates. Exclusions counted separately; scalar conformance is not unconditional write permission. No arbitrary preset, other-family visibility, DSP/audio/CPU, effective tempo/controller evaluation or routing validation.'},
+  limits: 'Chorus/Drive type policy, Delay/Reverb and Flanger/Phaser/Compressor final model/selector predicates, 21 tempo pairs and read-only modifier targets enforced. Delay/Reverb/Flanger/Phaser/Compressor model/internal-selector writes require full templates. Exclusions counted separately; scalar conformance is not unconditional write permission. No arbitrary preset, other-family visibility, automatic compressor timing/makeup, DSP/audio/CPU, effective tempo/controller evaluation or routing validation.'},
   sources: Object.fromEntries(sourcePaths.map(path => [path, sha(read(path))])),
   summary: {eligibleParameterKeys: eligible.length, numericPositionChecks: numericChecks, enumChecks, rejectionChecks, roundtripChecks,
     existingObservationsChecked: observationResults.length, existingObservationKeys: new Set(observationResults.map(x => x.parameter)).size,

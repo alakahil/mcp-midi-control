@@ -118,6 +118,13 @@ mudelit ja sisemist algoritmi: nende valijate muutmine nõuab täiskanalimalli.
 Üksik nime-, PID- või raw-kirjutus ei ole lubatud. Muud juhid kontrollitakse
 kanali lõpliku mudeli/algoritmi paari järgi; vedrukaja Scattering nõuab lõplikku
 Tank Type SERIES-PARALLEL olekut, sõltumata päringu järjekorrast.
+[Flangeri, Phaseri ja Compressori juhend](engine/docs/FM3_MODULATION_DYNAMICS_APPLICABILITY.md)
+katab veel 67 mudelit. Nende mudelivahetus ja Phaseri Mode nõuavad täiskanalimalli.
+Flangeri praegune MANUAL on PID 5; DRYDELAY on PID 6. Vana täpne nimi
+OLD_FLANGER_MANUAL jääb PID 6 ehk Dry Delay juurde. Kasuta uusi nimesid;
+vanade nimede aadresse ära tõlgenda ümber. Compressori Type on PID 12;
+Companderi Ratio/Time/Transients kasutab eraldi välju. Automaatne
+kompressoriajastus ja -võimendus ei ole selle nähtavuskontrolliga valideeritud.
 [Tempo- ja modifikaatorijuhend](engine/docs/FM3_PARAMETER_DEPENDENCIES.md) kirjeldab
 21 tempo-seost ning olemasolevate modifikaatorite lugemist. Time/Rate kirjutus
 nõuab lõpliku kanali Tempo NONE olekut; aktiivse modifikaatori sihtmärgile

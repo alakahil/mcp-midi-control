@@ -1,23 +1,26 @@
 // Bounded XML-derived authoring policy. Scalar curve support is a separate axis.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-import {algorithmApplicability,algorithmState,algorithmPolicySummary,templateOnlyParameter} from './fm3-delay-reverb-applicability.mjs';
-export {templateOnlyParameter};
+import {algorithmApplicability,algorithmState,algorithmPolicySummary,templateOnlyParameter as delayReverbTemplateOnly} from './fm3-delay-reverb-applicability.mjs';
+import {modulationApplicability,modulationState,modulationPolicySummary,modulationTemplateOnly} from './fm3-modulation-dynamics-applicability.mjs';
+export const templateOnlyParameter=p=>delayReverbTemplateOnly(p)||modulationTemplateOnly(p);
 export const typePolicyHash='9fdc92ed23349838699db18dbcce223602ae6a22984cef5e5728e35150a49f99';
 const bytes=fs.readFileSync(new URL('../references/fm3-type-applicability.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==typePolicyHash)throw Error('Type applicability policy changed; review and regenerate');
 const policy=JSON.parse(bytes);
-const familyFor={chorus:'CHORUS',drive:'FUZZ',delay:'DELAY',reverb:'REVERB'};
+const familyFor={chorus:'CHORUS',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',flanger:'FLANGER',phaser:'PHASER',compressor:'COMP'};
 export function typePolicySummary(){
   return {sha256:typePolicyHash,firmware:policy.firmware,source:'FM3-Edit '+policy.editor,
     families:Object.fromEntries(Object.entries(policy.families).map(([family,f])=>[family,{types:f.types.length,parameters:Object.keys(f.parameters).length,restrictedParameters:Object.values(f.parameters).filter(p=>p.allowedTypes.length<f.types.length).length}])),
     algorithmApplicability:algorithmPolicySummary(),
+    modulationDynamics:modulationPolicySummary(),
     rule:'Explicit writes checked against final per-channel type; stored hidden words preserved',
-    limits:'Bounded XML-derived authoring policies, not executed native UI or DSP validation. Chorus/Drive coverage is in families; Delay/Reverb in algorithmApplicability. Tempo/modifier scope is reported separately; other-family visibility remains unverified.'};
+    limits:'Bounded XML-derived authoring policies, not executed native UI or DSP validation. Chorus/Drive coverage is in families; Delay/Reverb in algorithmApplicability; Flanger/Phaser/Compressor in modulationDynamics. Tempo/modifier scope is reported separately; other-family visibility remains unverified.'};
 }
-export function readTypeState(p,read){return algorithmState(p,read)??read(policy.families[p.family]?.typePid??0);}
+export function readTypeState(p,read){return algorithmState(p,read)??modulationState(p,read)??read(policy.families[p.family]?.typePid??0);}
 export function typeApplicability(p,type){
   const algorithm=algorithmApplicability(p,type);if(algorithm.covered)return algorithm;
+  const modulation=modulationApplicability(p,type);if(modulation.covered)return modulation;
   const f=policy.families[p.family];
   if(!f)return {covered:false};
   const rule=f.parameters[p.param];
