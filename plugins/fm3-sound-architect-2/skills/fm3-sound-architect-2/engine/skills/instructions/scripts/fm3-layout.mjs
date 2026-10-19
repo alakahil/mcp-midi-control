@@ -135,6 +135,7 @@ export function arrangeSound(syx,spec,opts={}){
   const plan=planGrid(body,spec.layout);const g=writeGrid(body,plan);g.copy(body);allow(GRID.start,GRID.end-GRID.start);
   const sceneEdits=spec.blockScenes?applyBlockScenes(body,spec.blockScenes,allow):[];
   const writes=spec.controls?applyTableControls(body,spec.controls,opts,allow):[];
+  if(spec.selectedScene!==undefined){check(Number.isInteger(spec.selectedScene)&&spec.selectedScene>=1&&spec.selectedScene<=8,'selectedScene must be 1..8');body[0]=spec.selectedScene-1;allow(0,1)}
   const recordsAfter=scanRecords(body);
   check(recordsAfter.tail===recordsBefore.tail&&body.subarray(recordsAfter.tail).equals(original.subarray(recordsBefore.tail)),'System tail changed');
   check(recordsAfter.records.length===recordsBefore.records.length,'Record set changed');

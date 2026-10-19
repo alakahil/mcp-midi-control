@@ -9,7 +9,7 @@ import {arrangeSound} from './fm3-layout.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};const sha=b=>createHash('sha256').update(b).digest('hex');
 export function composeSound(base,spec){
   check(spec&&spec.composer&&spec.layout,'spec.composer and spec.layout are required');
-  check(Object.keys(spec).every(k=>['composer','layout','blockScenes','controls','allow','purpose'].includes(k)),'Unsupported sound field');
+  check(Object.keys(spec).every(k=>['composer','layout','blockScenes','controls','allow','purpose','selectedScene'].includes(k)),'Unsupported sound field');
   const first=generatePreset(base,spec.composer);
   check(first.report.baseId==='jb-newlook','Sound composer requires the jb-newlook base');
   const second=arrangeSound(first.syx,spec,{allow:(spec.allow??[])});

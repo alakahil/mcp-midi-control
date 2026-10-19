@@ -40,7 +40,7 @@ function gate(p,opts){
 export function encodeValue(p,value,opts={}){
   gate(p,opts);
   if(p.kind==='enum'){
-    const i=typeof value==='number'?value:p.enum.findIndex(x=>x.toLowerCase()===String(value).toLowerCase());
+    const i=typeof value==='number'?value:p.enum.findIndex(x=>x.trim().toLowerCase()===String(value).trim().toLowerCase());
     check(Number.isInteger(i)&&i>=0&&i<p.enum.length,`${p.name}: unknown option ${value}`);return i;
   }
   check(['linear','log','knob'].includes(p.kind)||opts.experimental===true,`${p.name}: kind ${p.kind} has no encoder`);
