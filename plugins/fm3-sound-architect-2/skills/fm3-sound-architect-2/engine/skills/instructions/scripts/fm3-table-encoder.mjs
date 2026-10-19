@@ -1,4 +1,4 @@
-// FM3 table-based parameter encoder (0.74.2). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
+// FM3 table-based parameter encoder (0.74.3). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
 import fs from 'node:fs';
@@ -9,7 +9,7 @@ import {composerBases,layouts,checkComposerStructure} from './fm3-composer-bases
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(v,m)=>{if(!v)throw Error(m)};
-export const dictionaryHash='c9bab52b5bb4c6f47cc1ded0be902f06f75fb18b876e6fd265e7802a18550f7c';
+export const dictionaryHash='a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730';
 // Statuses writable without an explicit opt-in. 'measured' and
 // 'taper-class-verified' share the exact curve class of 280/280 hardware points.
 export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','enum-labels-crosschecked']);
@@ -97,6 +97,8 @@ export function writeTableControls(baseBytes,spec,opts={}){
     validateControl(c,opts.experimental===true);
     const l=blocks[c.block];check(l,`Block ${c.block} not in base layout ${base.layout}`);
     const p=findParam(c.block,c.param);check(p.block===l.eid,'Family/effect mismatch');
+    // Hidden editor controls are not enabled even by experimental raw writes.
+    check(p.status!=='blocked-hidden-editor',`${p.name}: hidden in the pinned FM3 editor; not writable`);
     const ch=channelIndex(c.channel);
     check(p.param<l.words,'Parameter outside block word range');
     const offset=l.start+ch*l.words*2+p.param*2;check(!seen.has(offset),'Duplicate control');seen.add(offset);
@@ -116,7 +118,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
   check(Buffer.from(before.parsed.headerPayload).equals(Buffer.from(after.parsed.headerPayload)),'Dump header changed');
   const raw=Buffer.from(after.raw.rawPatch);check(raw.readUInt16LE(72)===actual.length&&raw.readUInt16LE(74)===after.raw.compSize,'Invalid encoded size');
   check(raw.subarray(76+after.raw.compSize).every(v=>v===0),'Nonzero output padding');
-  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.2',dictionarySha256:dictionaryHash,base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
+  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.3',dictionarySha256:dictionaryHash,base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 

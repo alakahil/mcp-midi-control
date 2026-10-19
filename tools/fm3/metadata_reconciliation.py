@@ -7,6 +7,7 @@ import json
 import math
 from pathlib import Path
 import re
+from six_field_resolution import verify as verify_resolution
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'docs/fm3/parameter-evidence'
@@ -93,6 +94,8 @@ def build():
     dictionary = json.loads(dictionary_path.read_text())['params']
     registry = json.loads(registry_path.read_text())
     ranges = parse_ranges(RANGES.read_text())
+    resolution_path = OUT / 'six-field-resolution.json'
+    resolution = verify_resolution(json.loads(resolution_path.read_text()))
     families = {p['family'] for p in dictionary}
     gaps, aliases, catalog_ranges, unnamed_writable = [], [], [], []
     for row in registry['parameters']:
@@ -116,7 +119,7 @@ def build():
                     'catalogRange': [c['displayMin'], c['displayMax']], 'dictionaryRange': bounds(p),
                     'resolution': 'Open source discrepancy; catalog overlays may be inherited. Do not rewrite either source automatically.'})
     by_key = {(p['family'], p['param']): (i, p) for i, p in enumerate(dictionary)}
-    references, conflicts = [], []
+    references, conflicts, resolved_scales = [], [], []
     for family, entries in ranges.items():
         for pid, entry in entries.items():
             pair = by_key.get((family, int(pid)))
@@ -129,7 +132,10 @@ def build():
                     'dictionaryRow': i, 'reference': entry, 'dictionaryRange': bounds(p), 'agrees': agrees}
             references.append(item)
             if not agrees:
-                conflicts.append({**item, 'resolution': 'Open scale conflict; inspect FM3-specific calibration/cache evidence before changing the writer.'})
+                if family == 'CABINET' and int(pid) in (93, 94) and bounds(p) == [0, 10] and [entry['displayMin'], entry['displayMax']] == [0, 100]:
+                    resolved_scales.append({**item, 'resolution': resolution['cabPosition'], 'evidence': 'six-field-resolution.json'})
+                else:
+                    conflicts.append({**item, 'resolution': 'Open scale conflict; inspect FM3-specific calibration/cache evidence before changing the writer.'})
     duplicates = []
     for i, p in enumerate(dictionary):
         if p['kind'] != 'enum':
@@ -141,7 +147,7 @@ def build():
             if len(indices) > 1:
                 duplicates.append({'parameter': f'{p["family"]}:{p["param"]}', 'dictionaryRow': i,
                     'normalizedLabel': label, 'indices': indices, 'resolution': 'Numeric indices remain distinct; a label resolves to its first match.'})
-    sources = [catalog_path, dictionary_path, registry_path, RANGES, Path(__file__).resolve(),
+    sources = [catalog_path, dictionary_path, registry_path, RANGES, resolution_path, Path(__file__).resolve(),
                ROOT / 'packages/fractal-midi/src/gen3/fm3/params.ts',
                ROOT / 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md']
     return {'schemaVersion': 1, 'policy': {
@@ -154,9 +160,11 @@ def build():
                     'aliasKeys': len(aliases), 'aliasExtraRows': sum(len(p['catalogRows']) - 1 for p in aliases),
                     'catalogRangeDifferenceRows': len(catalog_ranges), 'catalogRangeDifferenceKeys': len({p['parameter'] for p in catalog_ranges}),
                     'fm3ReferenceRanges': len(references), 'fm3ReferenceRangeConflicts': len(conflicts),
+                    'resolvedScaleRepresentations': len(resolved_scales), 'resolvedSymbols': 4,
                     'unnamedWritableKeys': unnamed_writable, 'duplicateEnumLabelGroups': len(duplicates), 'userPhysicalActions': 0},
         'categories': CATEGORIES, 'gaps': gaps, 'aliases': aliases, 'catalogRangeDifferences': catalog_ranges,
-        'fm3ReferenceRanges': references, 'scaleConflicts': conflicts, 'duplicateEnumLabels': duplicates}
+        'fm3ReferenceRanges': references, 'scaleConflicts': conflicts, 'resolvedScaleRepresentations': resolved_scales,
+        'sixFieldResolution': resolution, 'duplicateEnumLabels': duplicates}
 
 
 def markdown(d):
@@ -168,11 +176,11 @@ def markdown(d):
     lines += ['', f'Kokku {s["gaps"]} ühepoolset pere/PID kirjet. {s["aliasExtraRows"]} vana Flangeri lisanime jäävad alles ilma parameetrite arvu suurendamata.', '',
         '## Skaalad ja nimeta väljad', '',
         f'Kataloogi ja sõnastiku vahel on {s["catalogRangeDifferenceRows"]} erineva vahemikuga rida ({s["catalogRangeDifferenceKeys"]} parameetrit). Kataloogi kuvasemantika sisaldab ka teiste allikate ülekatteid; ükski erinevus ei anna automaatselt alust väärtuse muutmiseks.', '',
-        f'Repo FM3-spetsiifilise `FM3_RANGES` allika {s["fm3ReferenceRanges"]} vahemikust erinevad sõnastikuga {s["fm3ReferenceRangeConflicts"]}:', '',
+        f'Repo FM3-spetsiifilise `FM3_RANGES` allika {s["fm3ReferenceRanges"]} vahemiku võrdluses on lahendamata vastuolusid {s["fm3ReferenceRangeConflicts"]}. DynaCab R1/R2 kaks kuvasüsteemi on eristatud FW13 cache’i alusel:', '',
         '| Parameeter | FM3 kalibreering | Sõnastik |', '|---|---|---|']
-    lines += [f'| `{p["parameter"]}` | {p["reference"]["displayMin"]} … {p["reference"]["displayMax"]} | {p["dictionaryRange"][0]} … {p["dictionaryRange"][1]} |' for p in d['scaleConflicts']]
-    lines += ['', 'Need on lahendamata allikavastuolud. Enne generaatori skaala muutmist tuleb siduda vastava firmware’i juht, ühik ja algne kalibreering või redaktori cache. Selle auditi käigus ajaloolisi kalibreerimise toorvastuseid uuesti ei kontrollitud.', '',
-        'Tabelikirjutaja lubab tehniliselt ka nimeta kirjeid: ' + ', '.join(f'`{k}`' for k in s['unnamedWritableKeys']) + '. Nende tähendus vajab eraldi kontrolli; arvutus- ja baiditest ei anna neile nime ega seadmekinnitust.', '',
+    lines += [f'| `{p["parameter"]}` | {p["reference"]["displayMin"]} … {p["reference"]["displayMax"]} | {p["dictionaryRange"][0]} … {p["dictionaryRange"][1]} |' for p in d['scaleConflicts'] + d['resolvedScaleRepresentations']]
+    lines += ['', 'Generaatori sisend on FM3-Editi kuvatav 0–10. Varasem 0–100 protsendiesitus teisendub jagamisel kümnega; näiteks 25% vastab 2.5-le, mitte 25-le. Varasemad kalibreerimisväited säilivad algallikas; nende toorvastuseid ei korratud. Vahemälu kuvakordaja 10 ja FM3 enda binaari nimeseosed on taasesitatud: [kuue välja tõendid](six-field-resolution.json).', '',
+        'Nimeta kirjutatavaid kirjeid: ' + str(len(s['unnamedWritableKeys'])) + '. CHORUS:29/30/31 on Delay Range, Low ja High/EQ. FUZZ:43 on Oversampling, kuid FM3-Editis välja kommenteeritud ning nüüd kirjutamisel blokeeritud ka experimental/raw režiimis. See ei ole uus seadmemõõtmine.', '',
         f'Valikuloendites on {s["duplicateEnumLabelGroups"]} korduva normaliseeritud nimega rühma. Numbrilised indeksid säilivad eraldi; nimega sisestus valib esimese vaste.', '',
         '## Automaatne testimaatriks', '',
         '[encoder-matrix.json](encoder-matrix.json) eristab arvutus-, baidi- ja olemasolevate mõõtepunktide kontrollid. Tarkvaratesti läbimine ei suurenda seadmel mõõdetud parameetrite arvu. Täpsed lähteräsid, iga erinevuse kategooria ja allikaindeksid: [metadata-reconciliation.json](metadata-reconciliation.json).', '']

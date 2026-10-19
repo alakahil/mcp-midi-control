@@ -1581,7 +1581,7 @@
         "VOCODER:9"
       ],
       "completed": "All 1555 gaps structurally classified in metadata-reconciliation.json; aliases retained, independent ranges compared.",
-      "action": "Resolve Cab DynaCab R1/R2 scale conflicts and identify four unnamed writable descriptors using original FM3 calibration/cache evidence. Review remaining GLOBAL and missing-family semantics without guessed ID offsets.",
+      "action": "Six targeted fields resolved by FM3-Edit 1.07.17 descriptors and FW13 cache: three named Chorus controls, one hidden Drive control blocked, Cab display 0..10 distinguished from normalized percent. Review remaining GLOBAL and missing-family semantics without guessed ID offsets.",
       "doneWhen": "Each mismatch is classified as alias, unnamed/reserved slot, different scope, or proven FM3 omission; no other-device ID is substituted."
     },
     {
@@ -1993,7 +1993,6 @@
         "FUZZ:40",
         "FUZZ:41",
         "FUZZ:42",
-        "FUZZ:43",
         "FUZZ:5",
         "FUZZ:6",
         "FUZZ:7",

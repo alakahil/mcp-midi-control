@@ -18,8 +18,9 @@
     "dictionary-only": 1224
   },
   "dictionaryStatusClaims": {
+    "blocked-hidden-editor": 1,
     "enum-labels": 350,
-    "enum-labels-crosschecked": 138,
+    "enum-labels-crosschecked": 137,
     "linear-by-structure": 626,
     "measured": 22,
     "n/a": 760,
@@ -179,7 +180,7 @@
       "catalogKeys": 43,
       "dictionaryKeys": 44,
       "pairedPointKeys": 5,
-      "tableDefaultOnBundledBase": 40,
+      "tableDefaultOnBundledBase": 39,
       "tableOptInOnBundledBase": 4
     },
     {

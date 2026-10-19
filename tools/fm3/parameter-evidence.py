@@ -394,7 +394,7 @@ def build():
         {'id': 'metadata-join-gaps', 'priority': 1, 'userPhysicalActions': 0,
          'parameterIds': [p['id'] for p in rows if p['join'] != 'both'],
          'completed': 'All 1555 gaps structurally classified in metadata-reconciliation.json; aliases retained, independent ranges compared.',
-         'action': 'Resolve Cab DynaCab R1/R2 scale conflicts and identify four unnamed writable descriptors using original FM3 calibration/cache evidence. Review remaining GLOBAL and missing-family semantics without guessed ID offsets.',
+         'action': 'Six targeted fields resolved by FM3-Edit 1.07.17 descriptors and FW13 cache: three named Chorus controls, one hidden Drive control blocked, Cab display 0..10 distinguished from normalized percent. Review remaining GLOBAL and missing-family semantics without guessed ID offsets.',
          'doneWhen': 'Each mismatch is classified as alias, unnamed/reserved slot, different scope, or proven FM3 omission; no other-device ID is substituted.'},
         {'id': 'offline-encoder-matrix', 'priority': 2, 'userPhysicalActions': 0,
          'parameterIds': [p['id'] for p in rows if p.get('tableEncoder', {}).get('available') and p['id'] not in measured],

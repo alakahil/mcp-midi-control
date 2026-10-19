@@ -7854,6 +7854,12 @@
         "examples/FM3_ENHANCER_ABCD_TEST.syx"
       ]
     },
+    "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730": {
+      "bytes": 957570,
+      "paths": [
+        "references/fm3-param-dictionary.json"
+      ]
+    },
     "a5839e8297ff963b1ac81478a111c4cd0fd5c88049d997fa2fc67ad4afaca7f1": {
       "bytes": 24680,
       "paths": [
@@ -9686,12 +9692,6 @@
       "bytes": 24680,
       "paths": [
         "references/drive-controls-20261006-123230/step-17-d9cc5aa516/donor.syx"
-      ]
-    },
-    "c9bab52b5bb4c6f47cc1ded0be902f06f75fb18b876e6fd265e7802a18550f7c": {
-      "bytes": 957310,
-      "paths": [
-        "references/fm3-param-dictionary.json"
       ]
     },
     "c9cc51428f2e1cc661a387e56e07b844a0263400d3a08f8a97f09340636bac61": {

@@ -140,7 +140,7 @@ const result = {schemaVersion: 1, scope: {
   softwareOnly: true, deviceIO: false, newHardwareEvidence: false, generatedPresetsDelivered: false,
   parameterEligibility: 'Accepted table policy, implemented scalar kind, and at least one bundled base layout. Other parameters remain outside this matrix.',
   curveOracle: 'Fixed normalized positions plus independent endpoint interpolation; one wire LSB tolerance for floating point/quantized historical displays.',
-  limits: 'No arbitrary preset, model visibility, DSP/audio/CPU, routing or modifier validation. Known source-scale conflicts remain open.'},
+  limits: 'No arbitrary preset, model visibility, DSP/audio/CPU, routing or modifier validation. DynaCab display/percent distinction is documented separately; hidden Drive Oversampling is blocked.'},
   sources: Object.fromEntries(sourcePaths.map(path => [path, sha(read(path))])),
   summary: {eligibleParameterKeys: eligible.length, numericPositionChecks: numericChecks, enumChecks, rejectionChecks, roundtripChecks,
     existingObservationsChecked: observationResults.length, existingObservationKeys: new Set(observationResults.map(x => x.parameter)).size,

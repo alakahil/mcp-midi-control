@@ -12,9 +12,11 @@
 
 0.3.3 kandidaat lisab logaritmiliste juhikute mittepositiivse sisendi tõrjumise.
 Kandidaat ei ole uus avaldatud pluginaväljalase: avaldamine, täpne commit ja
-käivitajajuhendi uuendus tuleb kinnitada väljalaskekviitungis. Cab DynaCab R1/R2
-vahemike 0–10 ja 0–100 allikavastuolu jääb lahendamata; skaalasid ei muudeta
-oletuse põhjal. Välised metaandmete ja kodeerimismaatriksi kontrollid asuvad repo
+käivitajajuhendi uuendus tuleb kinnitada väljalaskekviitungis. Kuue välja
+metaandmed on [lahendatud FM3 enda allikatega](FM3_METADATA_RESOLUTION.md):
+DynaCab kuvatav skaala on 0–10; kolm Choruse sümbolit on lisatud; peidetud
+Drive Oversampling on blokeeritud. Uusi seadmemõõtmisi ei lisatud.
+Välised metaandmete ja kodeerimismaatriksi kontrollid asuvad repo
 `tools/fm3/` ning `docs/fm3/parameter-evidence/` kaustades.
 
 0.3.2 sisaldab 0.3.1 ühendatud arendust. 0.3.1 ühendas GitHubi 0.3.0 tabeli/paigutuse ja avaldatud privaatse 0.2.2

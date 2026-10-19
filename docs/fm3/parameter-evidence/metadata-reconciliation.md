@@ -10,7 +10,8 @@ Erinevused on liigitatud olemasolevate allikate järgi. Liigitus ei kinnita tund
 | `high-id-editor-control` | 42 |
 | `midi-row-action` | 8 |
 | `midi-slot-without-scalar-definition` | 252 |
-| `unnamed-active-descriptor` | 8 |
+| `named-dictionary-gap` | 4 |
+| `unnamed-active-descriptor` | 4 |
 | `unnamed-family` | 7 |
 | `unnamed-unused-slot` | 15 |
 
@@ -20,16 +21,16 @@ Kokku 1555 ühepoolset pere/PID kirjet. 22 vana Flangeri lisanime jäävad alles
 
 Kataloogi ja sõnastiku vahel on 36 erineva vahemikuga rida (36 parameetrit). Kataloogi kuvasemantika sisaldab ka teiste allikate ülekatteid; ükski erinevus ei anna automaatselt alust väärtuse muutmiseks.
 
-Repo FM3-spetsiifilise `FM3_RANGES` allika 40 vahemikust erinevad sõnastikuga 2:
+Repo FM3-spetsiifilise `FM3_RANGES` allika 40 vahemiku võrdluses on lahendamata vastuolusid 0. DynaCab R1/R2 kaks kuvasüsteemi on eristatud FW13 cache’i alusel:
 
 | Parameeter | FM3 kalibreering | Sõnastik |
 |---|---|---|
 | `CABINET:93` | 0 … 100 | 0.0 … 10.0 |
 | `CABINET:94` | 0 … 100 | 0.0 … 10.0 |
 
-Need on lahendamata allikavastuolud. Enne generaatori skaala muutmist tuleb siduda vastava firmware’i juht, ühik ja algne kalibreering või redaktori cache. Selle auditi käigus ajaloolisi kalibreerimise toorvastuseid uuesti ei kontrollitud.
+Generaatori sisend on FM3-Editi kuvatav 0–10. Varasem 0–100 protsendiesitus teisendub jagamisel kümnega; näiteks 25% vastab 2.5-le, mitte 25-le. Varasemad kalibreerimisväited säilivad algallikas; nende toorvastuseid ei korratud. Vahemälu kuvakordaja 10 ja FM3 enda binaari nimeseosed on taasesitatud: [kuue välja tõendid](six-field-resolution.json).
 
-Tabelikirjutaja lubab tehniliselt ka nimeta kirjeid: `CHORUS:29`, `CHORUS:30`, `CHORUS:31`, `FUZZ:43`. Nende tähendus vajab eraldi kontrolli; arvutus- ja baiditest ei anna neile nime ega seadmekinnitust.
+Nimeta kirjutatavaid kirjeid: 0. CHORUS:29/30/31 on Delay Range, Low ja High/EQ. FUZZ:43 on Oversampling, kuid FM3-Editis välja kommenteeritud ning nüüd kirjutamisel blokeeritud ka experimental/raw režiimis. See ei ole uus seadmemõõtmine.
 
 Valikuloendites on 5 korduva normaliseeritud nimega rühma. Numbrilised indeksid säilivad eraldi; nimega sisestus valib esimese vaste.
 

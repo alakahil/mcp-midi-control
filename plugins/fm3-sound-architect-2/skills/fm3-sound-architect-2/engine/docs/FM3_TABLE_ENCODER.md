@@ -1,8 +1,8 @@
-# Tabelipõhine kodeerija — 0.74.2, 2026-10-19
+# Tabelipõhine kodeerija — 0.74.3, 2026-10-19
 
 `scripts/fm3-table-encoder.mjs` kodeerib iga FM3 parameetri FM3-Editis kuvatavast
 väärtusest 16-bitiseks sõnaks. Toorväärtusi pole vaja eraldi mõõta. Allikas on
-`references/fm3-param-dictionary.json` (SHA-256 `c9bab52b…a18550f7c`): FracTool 3.87
+`references/fm3-param-dictionary.json` (SHA-256 `a54e0ba2…a664d730`): FracTool 3.87
 sisseehitatud FM3 tabel (model 0x11, vorming 0x0146; 2892 parameetrit, 488 valikuloendit)
 koos forgefx-midi FM3 nimedega. Analüüsiaruanne:
 `../claude-analysis-20261013/FM3_PARAMEETRITE_ANALUUS_20261013.md`.
@@ -67,6 +67,10 @@ ujuvkomatolerants lubaks väga väikest nulli või negatiivset sisendit. Regress
 kontrollib Amp Master Vol Cap nulli ja väikest negatiivset väärtust nii üksiku
 kodeerimise kui ka tervikliku kirjutuse kaudu; korrektne alampiir jääb lubatuks.
 
-Cab DynaCab R1/R2 puhul on sõnastiku 0–10 ning repo FM3 kalibreeringu 0–100
-vahemikud vastuolus. See versioon ei muuda skaalasid ega kinnita neid parameetreid
-uue mõõtmisega; nende tabelijuhtide kasutamine ootab allikate kooskõlastamist.
+## 0.74.3 metaandmete lahendus
+
+FM3-Edit 1.07.17 enda binaari ja FW13 vahemälu järgi lisati nimed
+CHORUS_DELAYRANGE, CHORUS_BASS ja CHORUS_TREBLE. FUZZ_OVERSAMPLE
+on tuvastatud, kuid redaktoris peidetud ning kirjutamisel blokeeritud ka
+experimental/raw režiimis. DynaCab R1/R2 sisend jääb kuvatavale 0–10 skaalale;
+0–100 protsendiesitus ei ole otsene sisend. [Tõendid ja piirid](FM3_METADATA_RESOLUTION.md).

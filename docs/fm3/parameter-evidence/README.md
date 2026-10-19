@@ -6,6 +6,8 @@ Run from the repository root with Python 3.10+ and Node 22+; no npm installation
 
 ```sh
 python3 tools/fm3/test-parameter-evidence.py
+python3 tools/fm3/test-six-field-resolution.py
+python3 tools/fm3/six_field_resolution.py
 python3 tools/fm3/parameter-evidence.py
 python3 tools/fm3/metadata_reconciliation.py
 node tools/fm3/encoder-matrix.mjs
@@ -40,8 +42,22 @@ The installed private plugin remains at 0.3.2. The PR now includes a 0.3.3 sourc
 
 ## Metadata reconciliation and software matrix
 
-[Metadata reconciliation](metadata-reconciliation.md) classifies all one-sided keys, retains aliases, compares independently authored FM3 ranges and identifies unnamed writable fields and repeated enum labels. Classification is not resolution of unknown semantics. Two DynaCab R1/R2 scale conflicts remain open; no dictionary range is changed by this audit.
+[Metadata reconciliation](metadata-reconciliation.md) classifies all one-sided keys, retains aliases, compares independently authored FM3 ranges and identifies unnamed writable fields and repeated enum labels. Classification is not resolution of unknown semantics. The two DynaCab scale representations are now reconciled against the original FW13 cache: the generator uses 0..10 display units, while the historical 0..100 source is preserved as normalized-percent evidence. Four missing symbols are resolved from FM3-Edit 1.07.17 itself. Drive Oversampling is present in descriptors/cache but all five UI controls are comments, so scalar and experimental raw writes are blocked. See [six-field-resolution.json](six-field-resolution.json) and the packaged [explanation](../../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_METADATA_RESOLUTION.md).
 
 [Encoder matrix](encoder-matrix.json) tests every table-eligible parameter's scalar policy, fixed normalized-position anchors, all option indices/labels, invalid inputs and roundtrips. It also replays the already indexed measurements; PEQ slope values use their explicit dB/OCT option label. It runs three batched writes on every bundled base across all A-D slots, independently calculates offsets and expected raw values, and checks the complete output body for collateral changes. Batched software presets are kept in memory and are not supplied for device import.
 
 The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. It does not establish type visibility, DSP validity, arbitrary-preset support, audio or CPU behavior. Changing the matrix or its inputs requires regeneration in the command order above.
+
+The six-field check replays the already bundled FW13 cache without network access.
+To repeat direct PE64 descriptor mining and XML comment/condition analysis, obtain
+the pinned official FM3-Edit 1.07.17 executable and run:
+
+```sh
+python3 tools/fm3/six_field_resolution.py --editor /path/to/FM3-Edit.exe
+```
+
+Only the reviewed metadata, offsets, hashes and reproduction code are stored;
+the vendor executable, full layout XML and raw decompile listings are not added.
+The editor is read as bytes and never executed. The no-editor CI path replays
+the cache and checks the recorded bindings against the dictionary; it does not
+claim to repeat PE extraction without the binary.

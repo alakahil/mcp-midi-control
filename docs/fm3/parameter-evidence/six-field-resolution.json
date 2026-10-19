@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "device": "FM3",
+    "firmware": "13.0",
+    "editor": "1.07.17",
+    "deviceIO": false,
+    "newHardwareMeasurements": false,
+    "method": "Direct FM3 PE64 descriptor pointers and contiguous family tables; active XML by symbol; pinned user cache with lossless replay. No cross-device ID transfer or positional XML join."
+  },
+  "sources": {
+    "editorUrl": "https://www.fractalaudio.com/downloads/FM3-Edit/FM3-Edit-Win-v1p07p17.exe",
+    "installerSha256": "f51794035954426e30753677b5b796a7fc3bebb3302366521228d94aeaab9f8f",
+    "editorSha256": "c06f993530057214205a64330116a823e5b31507610d1792c1f3617725d6e927",
+    "editorBytes": 19309680,
+    "layoutSha256": "0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2",
+    "cacheArchive": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/research/FM3_CACHE_AUDIT_20261012.zip",
+    "archiveSha256": "d062655c8bab67aa5c589ce6aac8611e7a14fe18af87fa5ec350088d31389199",
+    "cacheMember": "FM3_CACHE_AUDIT_20261012/effectDefinitions_11_13p0.cache",
+    "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4"
+  },
+  "cacheValidation": {
+    "all_bytes_consumed": true,
+    "byte_roundtrip_equal": true,
+    "section_count": 45,
+    "record_count": 2509
+  },
+  "fields": [
+    {
+      "parameter": "CABINET:93",
+      "name": "CABINET_DYNACAB_R1",
+      "descriptor": {
+        "pid": 93,
+        "name": "CABINET_DYNACAB_R1",
+        "descriptorOffset": 18654944,
+        "nameOffset": 8234648,
+        "tableOffset": 18653504,
+        "tableRows": 105
+      },
+      "cacheSection": 11,
+      "cacheRecord": {
+        "offset": 88290,
+        "end_offset": 88322,
+        "param_id": 93,
+        "typecode": 50,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          10.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f000020416f12833a",
+        "labels": [],
+        "tail_flags_raw": 16,
+        "auxiliary_u32_raw": []
+      },
+      "editorUI": {
+        "active": [
+          {
+            "control": {
+              "name": "DynaCab",
+              "parameterName": "CABINET_DYNACAB_R1",
+              "secondaryParameterName": "CABINET_DYNACAB_Z1",
+              "type": "dynaCabControl",
+              "positionExact": "310,96"
+            },
+            "conditions": [
+              {
+                "tag": "Page",
+                "pageNum": "0",
+                "name": "Cab",
+                "layout": "LAYOUT_MIXER1",
+                "version_gtet": "6,03",
+                "parameterName": "CABINET_MODE",
+                "value": "1"
+              },
+              {
+                "tag": "EffectVariant",
+                "value": "",
+                "name": "Cabinet"
+              }
+            ]
+          },
+          {
+            "control": {
+              "name": "Position",
+              "parameterName": "CABINET_DYNACAB_R1",
+              "type": "knobMiniReadout",
+              "positionExact": "398,295"
+            },
+            "conditions": [
+              {
+                "tag": "Page",
+                "pageNum": "0",
+                "name": "Cab",
+                "layout": "LAYOUT_MIXER1",
+                "version_gtet": "6,03",
+                "parameterName": "CABINET_MODE",
+                "value": "1"
+              },
+              {
+                "tag": "EffectVariant",
+                "value": "",
+                "name": "Cabinet"
+              }
+            ]
+          }
+        ],
+        "commentedOccurrences": 0
+      },
+      "decision": "resolved-editor-and-cache"
+    },
+    {
+      "parameter": "CABINET:94",
+      "name": "CABINET_DYNACAB_R2",
+      "descriptor": {
+        "pid": 94,
+        "name": "CABINET_DYNACAB_R2",
+        "descriptorOffset": 18654960,
+        "nameOffset": 8234576,
+        "tableOffset": 18653504,
+        "tableRows": 105
+      },
+      "cacheSection": 11,
+      "cacheRecord": {
+        "offset": 88322,
+        "end_offset": 88354,
+        "param_id": 94,
+        "typecode": 50,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          10.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f000020416f12833a",
+        "labels": [],
+        "tail_flags_raw": 16,
+        "auxiliary_u32_raw": []
+      },
+      "editorUI": {
+        "active": [
+          {
+            "control": {
+              "name": "DynaCab",
+              "parameterName": "CABINET_DYNACAB_R2",
+              "secondaryParameterName": "CABINET_DYNACAB_Z2",
+              "type": "dynaCabControl",
+              "positionExact": "740,96"
+            },
+            "conditions": [
+              {
+                "tag": "Page",
+                "pageNum": "0",
+                "name": "Cab",
+                "layout": "LAYOUT_MIXER1",
+                "version_gtet": "6,03",
+                "parameterName": "CABINET_MODE",
+                "value": "1"
+              },
+              {
+                "tag": "EffectVariant",
+                "value": "",
+                "name": "Cabinet"
+              }
+            ]
+          },
+          {
+            "control": {
+              "name": "Position",
+              "parameterName": "CABINET_DYNACAB_R2",
+              "type": "knobMiniReadout",
+              "positionExact": "828,295"
+            },
+            "conditions": [
+              {
+                "tag": "Page",
+                "pageNum": "0",
+                "name": "Cab",
+                "layout": "LAYOUT_MIXER1",
+                "version_gtet": "6,03",
+                "parameterName": "CABINET_MODE",
+                "value": "1"
+              },
+              {
+                "tag": "EffectVariant",
+                "value": "",
+                "name": "Cabinet"
+              }
+            ]
+          }
+        ],
+        "commentedOccurrences": 0
+      },
+      "decision": "resolved-editor-and-cache"
+    },
+    {
+      "parameter": "CHORUS:29",
+      "name": "CHORUS_DELAYRANGE",
+      "descriptor": {
+        "pid": 29,
+        "name": "CHORUS_DELAYRANGE",
+        "descriptorOffset": 18668592,
+        "nameOffset": 8249168,
+        "tableOffset": 18668128,
+        "tableRows": 32
+      },
+      "cacheSection": 16,
+      "cacheRecord": {
+        "offset": 203258,
+        "end_offset": 203290,
+        "param_id": 29,
+        "typecode": 1074,
+        "numeric_fields": [
+          0.0010000000474974513,
+          0.03999999910593033,
+          1000.0,
+          9.999999747378752e-06
+        ],
+        "numeric_fields_hex": "6f12833a0ad7233d00007a44acc52737",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "editorUI": {
+        "active": [
+          {
+            "control": {
+              "col": "5",
+              "name": "Delay Range",
+              "type": "knob",
+              "parameterName": "CHORUS_DELAYRANGE"
+            },
+            "conditions": [
+              {
+                "tag": "Page",
+                "pageNum": "1",
+                "name": "Expert",
+                "layout": "LAYOUT_MIXER3",
+                "parameterName": "CHORUS_TYPE",
+                "value": ""
+              },
+              {
+                "tag": "EffectVariant",
+                "version_gtet": "13,00",
+                "name": "Chorus GTET 13.00"
+              }
+            ]
+          }
+        ],
+        "commentedOccurrences": 0
+      },
+      "decision": "resolved-editor-and-cache"
+    },
+    {
+      "parameter": "CHORUS:30",
+      "name": "CHORUS_BASS",
+      "descriptor": {
+        "pid": 30,
+        "name": "CHORUS_BASS",
+        "descriptorOffset": 18668608,
+        "nameOffset": 8249112,
+        "tableOffset": 18668128,
+        "tableRows": 32
+      },
+      "cacheSection": 16,
+      "cacheRecord": {
+        "offset": 203290,
+        "end_offset": 203322,
+        "param_id": 30,
+        "typecode": 50,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          10.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f000020416f12833a",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "editorUI": {
+        "active": [
+          {
+            "control": {
+              "name": "Low",
+              "type": "knob",
+              "parameterName": "CHORUS_BASS"
+            },
+            "conditions": [
+              {
+                "tag": "Page",
+                "pageNum": "0",
+                "name": "Basic",
+                "layout": "LAYOUT_MIXER3",
+                "parameterName": "CHORUS_TYPE",
+                "value": "2,3,5,6,7,8,13,14,21"
+              },
+              {
+                "tag": "EffectVariant",
+                "version_gtet": "13,00",
+                "name": "Chorus GTET 13.00"
+              }
+            ]
+          }
+        ],
+        "commentedOccurrences": 0
+      },
+      "decision": "resolved-editor-and-cache"
+    },
+    {
+      "parameter": "CHORUS:31",
+      "name": "CHORUS_TREBLE",
+      "descriptor": {
+        "pid": 31,
+        "name": "CHORUS_TREBLE",
+        "descriptorOffset": 18668624,
+        "nameOffset": 8249128,
+        "tableOffset": 18668128,
+        "tableRows": 32
+      },
+      "cacheSection": 16,
+      "cacheRecord": {
+        "offset": 203322,
+        "end_offset": 203354,
+        "param_id": 31,
+        "typecode": 50,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          10.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f000020416f12833a",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "editorUI": {
+        "active": [
+          {
+            "control": {
+              "name": "High",
+              "type": "knob",
+              "parameterName": "CHORUS_TREBLE"
+            },
+            "conditions": [
+              {
+                "tag": "Page",
+                "pageNum": "0",
+                "name": "Basic",
+                "layout": "LAYOUT_MIXER3",
+                "parameterName": "CHORUS_TYPE",
+                "value": "2,3,5,6,7,8,13,14,21"
+              },
+              {
+                "tag": "EffectVariant",
+                "version_gtet": "13,00",
+                "name": "Chorus GTET 13.00"
+              }
+            ]
+          },
+          {
+            "control": {
+              "name": "EQ",
+              "type": "knob",
+              "parameterName": "CHORUS_TREBLE"
+            },
+            "conditions": [
+              {
+                "tag": "Page",
+                "pageNum": "0",
+                "name": "Basic",
+                "layout": "LAYOUT_MIXER3",
+                "parameterName": "CHORUS_TYPE",
+                "value": "20"
+              },
+              {
+                "tag": "EffectVariant",
+                "version_gtet": "13,00",
+                "name": "Chorus GTET 13.00"
+              }
+            ]
+          }
+        ],
+        "commentedOccurrences": 0
+      },
+      "decision": "resolved-editor-and-cache"
+    },
+    {
+      "parameter": "FUZZ:43",
+      "name": "FUZZ_OVERSAMPLE",
+      "descriptor": {
+        "pid": 43,
+        "name": "FUZZ_OVERSAMPLE",
+        "descriptorOffset": 18689904,
+        "nameOffset": 8253896,
+        "tableOffset": 18689216,
+        "tableRows": 44
+      },
+      "cacheSection": 25,
+      "cacheRecord": {
+        "offset": 233773,
+        "end_offset": 233823,
+        "param_id": 43,
+        "typecode": 16,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "000000000000803f0000803f00000000",
+        "labels": [
+          "NORMAL",
+          "HIGH"
+        ],
+        "tail_flags_raw": 32768,
+        "auxiliary_u32_raw": []
+      },
+      "editorUI": {
+        "active": [],
+        "commentedOccurrences": 5
+      },
+      "decision": "blocked-hidden-editor"
+    }
+  ],
+  "cabPosition": {
+    "canonicalDisplayRange": [
+      0,
+      10
+    ],
+    "unit": "unitless",
+    "legacyRange": [
+      0,
+      100
+    ],
+    "legacyInterpretation": "normalized travel percent, not FM3-Edit display units",
+    "conversion": "display = percent / 10; wire = round(display / 10 * 65534)",
+    "historicalClaimReplayed": false,
+    "note": "Cache numeric field 3 is the display multiplier, not a default. Preserve prior 0..100 source claims as historical; do not feed their percentages directly to the display-value writer."
+  }
+}

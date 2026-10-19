@@ -257,7 +257,9 @@ failide räsid commit’ist ehitatud paketi manifestiga täpselt vastavusse.
 
 
 0.3.3 parandab logaritmilise juhiku null- ja negatiivsete sisendite kontrolli.
-Ära kasuta Cab DynaCab R1/R2 tabelijuhte enne skaala kooskõlastamist: olemasolevad
-FM3 allikad annavad vastuoluliselt 0–10 ja 0–100. See ei puuduta kinnitatud
-Cab-mallide kasutamist. Kontrolli avaldatud versiooni eraldi väljalaskekviitungist;
-lähtekoodis olev versiooninumber üksi ei kinnita avaldamist.
+DynaCab R1/R2 sisend on **0–10**, mitte protsent. Choruse Delay Range,
+Low ning High/EQ on nüüd nimeliselt leitavad; järgi nende FW13 tüübipiire.
+Drive Oversampling on redaktoris peidetud ja kirjutamisel blokeeritud.
+Vaata [kuue välja lahendust](engine/docs/FM3_METADATA_RESOLUTION.md).
+Kontrolli avaldatud versiooni eraldi väljalaskekviitungist; lähtekoodis olev
+versiooninumber üksi ei kinnita avaldamist.
