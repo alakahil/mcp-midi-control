@@ -15,7 +15,9 @@ Kandidaat ei ole uus avaldatud pluginaväljalase: avaldamine, täpne commit ja
 käivitajajuhendi uuendus tuleb kinnitada väljalaskekviitungis. Kuue välja
 metaandmed on [lahendatud FM3 enda allikatega](FM3_METADATA_RESOLUTION.md):
 DynaCab kuvatav skaala on 0–10; kolm Choruse sümbolit on lisatud; peidetud
-Drive Oversampling on blokeeritud. Uusi seadmemõõtmisi ei lisatud.
+Drive Oversampling on blokeeritud. Lisatud on Chorus/Drive tüübisobivus ning
+[21 tempo-seose ja olemasolevate modifikaatorisihtide kontroll](FM3_PARAMETER_DEPENDENCIES.md).
+Uusi seadmemõõtmisi ei lisatud.
 Välised metaandmete ja kodeerimismaatriksi kontrollid asuvad repo
 `tools/fm3/` ning `docs/fm3/parameter-evidence/` kaustades.
 

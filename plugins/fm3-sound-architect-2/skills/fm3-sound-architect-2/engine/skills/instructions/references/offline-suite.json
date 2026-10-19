@@ -23,6 +23,15 @@
       "required": true
     },
     {
+      "id": "test-parameter-dependencies",
+      "command": [
+        "node",
+        "scripts/test-parameter-dependencies.mjs"
+      ],
+      "scope": "21 tempo pairs A-D, atomic final-state gates, existing seven-base modifier evidence, synthetic channel/32-record/unknown-source cases; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-layout",
       "command": [
         "node",

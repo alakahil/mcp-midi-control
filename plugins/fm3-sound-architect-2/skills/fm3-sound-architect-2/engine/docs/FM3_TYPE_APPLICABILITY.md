@@ -69,10 +69,12 @@ Uus regressioon kasutab kõiki 114 olemasolevat tüübimalli kanalitel A–D:
 15 428 lubatud kirjutust ning 2 884 tagasi lükatud kirjutust. Kontrollitakse ka
 kanalite eraldatust, käskude järjekorda, toorsõnaga möödumise keeldu, veaga
 päringu atomaarset tõrjumist, koostaja lõplikku tüüpi ja juhendi filtreerimist.
-Tabelimaatriksi 21 SYX-katses on 43 556 lubatud kirjutust; 856 sobimatut
-kandidaati loetakse eraldi välistusteks, mitte läbitud kirjutusteks.
+Tüübietapi tabelimaatriksis oli 43 556 lubatud kirjutust ning 856 tüübi tõttu
+välistatud kandidaati. Järgnev sõltuvuskontroll eristab neist veel 577 tempo-
+ja 72 modifikaatorivälistust; praegu jääb 21 SYX-katses 42 907 lubatud kirjutust.
 
-Muude efektiperede üldise tabelikirjutaja tüübisobivus, Tempo NONE seosed ja
-modifikaatorid vajavad järgmist etappi. Spetsiifiliste PEQ/Enhanceri koostajate
+Tempo NONE ja modifikaatorite järgnev etapp on kirjeldatud
+[eraldi juhendis](FM3_PARAMETER_DEPENDENCIES.md). Muude efektiperede üldise
+tabelikirjutaja tüübisobivus ning katmata sõltuvused vajavad jätkutööd. Spetsiifiliste PEQ/Enhanceri koostajate
 varasemad piirangud jäävad eraldi. GLOBAL, muud kataloogilüngad, import, heli ja
 CPU ei saa sellest kontrollist uut kinnitust. Kasutaja füüsilisi toiminguid: **0**.

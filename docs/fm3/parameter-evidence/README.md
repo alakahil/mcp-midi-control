@@ -8,6 +8,10 @@ Run from the repository root with Python 3.10+ and Node 22+; no npm installation
 python3 tools/fm3/test-parameter-evidence.py
 python3 tools/fm3/test-six-field-resolution.py
 python3 tools/fm3/six_field_resolution.py
+python3 tools/fm3/test-type-applicability.py
+python3 tools/fm3/type_applicability.py
+python3 tools/fm3/test-parameter-dependencies.py
+python3 tools/fm3/parameter_dependencies.py
 python3 tools/fm3/parameter-evidence.py
 python3 tools/fm3/metadata_reconciliation.py
 node tools/fm3/encoder-matrix.mjs
@@ -46,7 +50,7 @@ The installed private plugin remains at 0.3.2. The PR now includes a 0.3.3 sourc
 
 [Encoder matrix](encoder-matrix.json) tests every table-eligible parameter's scalar policy, fixed normalized-position anchors, all option indices/labels, invalid inputs and roundtrips. It also replays the already indexed measurements; PEQ slope values use their explicit dB/OCT option label. It runs three batched writes on every bundled base across all A-D slots, independently calculates offsets and expected raw values, and checks the complete output body for collateral changes. Batched software presets are kept in memory and are not supplied for device import.
 
-The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. Chorus/Drive batch writes now follow the FW13 final-channel type policy: incompatible candidates are counted as exclusions, not successful writes. Scalar conformance remains separate. Other-family visibility, tempo/modifiers, DSP validity, arbitrary-preset support, audio and CPU behavior are outside this matrix. Changing the matrix or its inputs requires regeneration in the command order above.
+The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. Chorus/Drive batch writes now follow the FW13 final-channel type policy: incompatible candidates are counted as exclusions, not successful writes. Scalar conformance remains separate. The 21 tempo dependencies and existing modifier targets now gate explicit writes too: 577 tempo and 72 modifier exclusions are separate from 856 type exclusions, leaving 42,907 accepted writes. Effective BPM/controller evaluation, other-family visibility, arbitrary presets, audio and CPU remain outside this matrix. Changing the matrix or its inputs requires regeneration in the command order above.
 
 The bounded type policy is documented in the packaged `engine/docs/FM3_TYPE_APPLICABILITY.md`. Reproduce extraction with `python3 tools/fm3/type_applicability.py --editor /path/to/FM3-Edit.exe`; without `--editor`, verify the committed receipt against its pages, native name/PID bindings, dictionary and FW13 cache. `test-type-applicability.py` covers compiler failures, and the packaged Node regression reuses all 114 captured Chorus/Drive type templates on A–D. No new hardware measurements are inferred from either check.
 
@@ -63,3 +67,5 @@ the vendor executable, full layout XML and raw decompile listings are not added.
 The editor is read as bytes and never executed. The no-editor CI path replays
 the cache and checks the recorded bindings against the dictionary; it does not
 claim to repeat PE extraction without the binary.
+
+The packaged `engine/docs/FM3_PARAMETER_DEPENDENCIES.md` records the nine-family tempo scope and read-only modifier profile. Reproduce the receipt with `python3 tools/fm3/parameter_dependencies.py --editor /path/to/FM3-Edit.exe`; normal CI checks the pinned receipt/cache/dictionary without redistributing or executing the editor. The 32 serialized records do not imply 32 usable modifiers. Synthetic tests are not new device evidence.

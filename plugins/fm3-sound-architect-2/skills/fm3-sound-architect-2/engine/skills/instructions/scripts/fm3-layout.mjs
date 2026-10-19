@@ -6,6 +6,7 @@ import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
 import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG,assertFields,channelIndex,validateControl,validateOptions} from './fm3-table-encoder.mjs';
+import {validateDependencyWrites} from './fm3-parameter-dependencies.mjs';
 import {validateTypeWrites} from './fm3-type-applicability.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -99,9 +100,10 @@ export function applyTableControls(body,controls,opts={},allow=()=>{}){
     const ch=channelIndex(c.channel);check(ch<r.channels,'Channel absent in block');
     const offset=r.start+ch*r.words*2+p.param*2;check(!seen.has(offset),'Duplicate control');seen.add(offset);
     const raw=encodeValue(p,c.value,opts);
-    writes.push({block:c.block,channel:c.channel,pid:p.param,name:p.name,label:p.label,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
+    writes.push({effectId:p.block,block:c.block,channel:c.channel,pid:p.param,name:p.name,label:p.label,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
   }
   validateTypeWrites(body,writes);
+  validateDependencyWrites(body,writes);
   for(const {raw,offset} of writes){body.writeUInt16LE(raw,offset);allow(offset,2)}
   return writes;
 }

@@ -1,0 +1,3966 @@
+{
+  "schemaVersion": 1,
+  "firmware": "13.0",
+  "editor": "1.07.17",
+  "sources": {
+    "editorSha256": "c06f993530057214205a64330116a823e5b31507610d1792c1f3617725d6e927",
+    "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4",
+    "layoutSha256": "0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2",
+    "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
+    "manual": {
+      "url": "https://www.fractalaudio.com/downloads/manuals/FM3/FM3-Owners-Manual.pdf",
+      "printedPages": [
+        57,
+        92
+      ],
+      "revision": "7.x July 2023; behavior only, FW13 bindings independently verified"
+    },
+    "blocksGuide": {
+      "url": "https://www.fractalaudio.com/downloads/manuals/fas-guides/Fractal-Audio-Blocks-Guide.pdf",
+      "topic": "Reverb Pre-Delay Tempo"
+    }
+  },
+  "descriptors": {
+    "CHORUS": {
+      "pid": 18,
+      "name": "CHORUS_RATE2",
+      "descriptorOffset": 18668416,
+      "nameOffset": 8248912,
+      "tableOffset": 18668128,
+      "tableRows": 32,
+      "bindings": [
+        [
+          0,
+          "CHORUS_TYPE"
+        ],
+        [
+          1,
+          "CHORUS_VOICES"
+        ],
+        [
+          2,
+          "CHORUS_RATE"
+        ],
+        [
+          3,
+          "CHORUS_TEMPO"
+        ],
+        [
+          4,
+          "CHORUS_DEPTH"
+        ],
+        [
+          5,
+          "CHORUS_HICUT"
+        ],
+        [
+          6,
+          "CHORUS_DELAYTIME"
+        ],
+        [
+          7,
+          "CHORUS_LFOPHASE"
+        ],
+        [
+          8,
+          "CHORUS_LFOTYPE"
+        ],
+        [
+          9,
+          "CHORUS_AUTO"
+        ],
+        [
+          10,
+          "CHORUS_MIX"
+        ],
+        [
+          11,
+          "CHORUS_LEVEL"
+        ],
+        [
+          12,
+          "CHORUS_PAN"
+        ],
+        [
+          13,
+          "CHORUS_BYPASSMODE"
+        ],
+        [
+          14,
+          "CHORUS_GLOBALMIX"
+        ],
+        [
+          15,
+          "CHORUS_BYPASS"
+        ],
+        [
+          16,
+          "CHORUS_PHASEREV"
+        ],
+        [
+          17,
+          "CHORUS_WIDTH"
+        ],
+        [
+          18,
+          "CHORUS_RATE2"
+        ],
+        [
+          19,
+          "CHORUS_DEPTH2"
+        ],
+        [
+          20,
+          "CHORUS_DRIVE"
+        ],
+        [
+          21,
+          "CHORUS_LOWCUT"
+        ],
+        [
+          22,
+          "CHORUS_SPREAD"
+        ],
+        [
+          23,
+          "CHORUS_MODE"
+        ],
+        [
+          24,
+          "CHORUS_DEPTHL"
+        ],
+        [
+          25,
+          "CHORUS_DEPTHC"
+        ],
+        [
+          26,
+          "CHORUS_DEPTHR"
+        ],
+        [
+          27,
+          "CHORUS_TEMPO2"
+        ],
+        [
+          28,
+          "CHORUS_SCENEIGNORE"
+        ],
+        [
+          29,
+          "CHORUS_DELAYRANGE"
+        ],
+        [
+          30,
+          "CHORUS_BASS"
+        ],
+        [
+          31,
+          "CHORUS_TREBLE"
+        ]
+      ]
+    },
+    "DELAY": {
+      "pid": 26,
+      "name": "DELAY_TIMER",
+      "descriptorOffset": 18677152,
+      "nameOffset": 8241800,
+      "tableOffset": 18676736,
+      "tableRows": 89,
+      "bindings": [
+        [
+          6,
+          "DELAY_MODEL"
+        ],
+        [
+          7,
+          "DELAY_TYPE"
+        ],
+        [
+          8,
+          "DELAY_TIME"
+        ],
+        [
+          9,
+          "DELAY_RATIO"
+        ],
+        [
+          10,
+          "DELAY_FEED"
+        ],
+        [
+          11,
+          "DELAY_FEEDL"
+        ],
+        [
+          12,
+          "DELAY_FEEDR"
+        ],
+        [
+          13,
+          "DELAY_DELAYPAN"
+        ],
+        [
+          14,
+          "DELAY_SPREAD"
+        ],
+        [
+          15,
+          "DELAY_TEMPO"
+        ],
+        [
+          16,
+          "DELAY_LOCUT"
+        ],
+        [
+          17,
+          "DELAY_HICUT"
+        ],
+        [
+          18,
+          "DELAY_RATE1"
+        ],
+        [
+          19,
+          "DELAY_RATE2"
+        ],
+        [
+          20,
+          "DELAY_DEPTH1"
+        ],
+        [
+          21,
+          "DELAY_DEPTH2"
+        ],
+        [
+          22,
+          "DELAY_DRIVE"
+        ],
+        [
+          0,
+          "DELAY_MIX"
+        ],
+        [
+          1,
+          "DELAY_LEVEL"
+        ],
+        [
+          2,
+          "DELAY_PAN"
+        ],
+        [
+          3,
+          "DELAY_BYPASSMODE"
+        ],
+        [
+          4,
+          "DELAY_GLOBALMIX"
+        ],
+        [
+          5,
+          "DELAY_BYPASS"
+        ],
+        [
+          23,
+          "DELAY_GAIN"
+        ],
+        [
+          24,
+          "DELAY_LFO1TYPE"
+        ],
+        [
+          25,
+          "DELAY_LFO2TYPE"
+        ],
+        [
+          26,
+          "DELAY_TIMER"
+        ],
+        [
+          27,
+          "DELAY_HOLD"
+        ],
+        [
+          28,
+          "DELAY_MSTRFDBK"
+        ],
+        [
+          29,
+          "DELAY_TEMPOR"
+        ],
+        [
+          30,
+          "DELAY_FEEDLR"
+        ],
+        [
+          31,
+          "DELAY_FEEDRL"
+        ],
+        [
+          32,
+          "DELAY_LEVELL"
+        ],
+        [
+          33,
+          "DELAY_LEVELR"
+        ],
+        [
+          34,
+          "DELAY_PANL"
+        ],
+        [
+          35,
+          "DELAY_PANR"
+        ],
+        [
+          36,
+          "DELAY_LFO1PHASE"
+        ],
+        [
+          37,
+          "DELAY_LFO2PHASE"
+        ],
+        [
+          38,
+          "DELAY_SPLICETIME"
+        ],
+        [
+          39,
+          "DELAY_RUN"
+        ],
+        [
+          40,
+          "DELAY_MODE"
+        ],
+        [
+          41,
+          "DELAY_LPF_ORDER"
+        ],
+        [
+          42,
+          "DELAY_ATTEN"
+        ],
+        [
+          43,
+          "DELAY_THRESH"
+        ],
+        [
+          44,
+          "DELAY_RELEASE"
+        ],
+        [
+          45,
+          "DELAY_DIFFUSE"
+        ],
+        [
+          46,
+          "DELAY_DIFFTIME"
+        ],
+        [
+          47,
+          "DELAY_PHASEREV"
+        ],
+        [
+          48,
+          "DELAY_LFO1TARGET"
+        ],
+        [
+          49,
+          "DELAY_LFO2TARGET"
+        ],
+        [
+          50,
+          "DELAY_LFO1TEMPO"
+        ],
+        [
+          51,
+          "DELAY_LFO2TEMPO"
+        ],
+        [
+          52,
+          "DELAY_RATE3"
+        ],
+        [
+          53,
+          "DELAY_LFO3TYPE"
+        ],
+        [
+          54,
+          "DELAY_LFO3PHASE"
+        ],
+        [
+          55,
+          "DELAY_LFO3TEMPO"
+        ],
+        [
+          56,
+          "DELAY_FSTART"
+        ],
+        [
+          57,
+          "DELAY_FSTOP"
+        ],
+        [
+          58,
+          "DELAY_Q"
+        ],
+        [
+          59,
+          "DELAY_FILTERQ"
+        ],
+        [
+          60,
+          "DELAY_BITREDUCE"
+        ],
+        [
+          61,
+          "DELAY_FREQ1"
+        ],
+        [
+          62,
+          "DELAY_FREQ2"
+        ],
+        [
+          63,
+          "DELAY_Q1"
+        ],
+        [
+          64,
+          "DELAY_Q2"
+        ],
+        [
+          65,
+          "DELAY_GAIN1"
+        ],
+        [
+          66,
+          "DELAY_GAIN2"
+        ],
+        [
+          67,
+          "DELAY_MAXDEPTH"
+        ],
+        [
+          68,
+          "DELAY_SPEED"
+        ],
+        [
+          69,
+          "DELAY_OFFSET"
+        ],
+        [
+          70,
+          "DELAY_HPF_ORDER"
+        ],
+        [
+          71,
+          "DELAY_COMPANDER"
+        ],
+        [
+          72,
+          "DELAY_COMPTIME"
+        ],
+        [
+          73,
+          "DELAY_COMPTHRESH"
+        ],
+        [
+          74,
+          "DELAY_MSTRTIME"
+        ],
+        [
+          75,
+          "DELAY_DIFFRATE"
+        ],
+        [
+          76,
+          "DELAY_DIFFDEPTH"
+        ],
+        [
+          77,
+          "DELAY_LFO4TYPE"
+        ],
+        [
+          78,
+          "DELAY_RATE4"
+        ],
+        [
+          79,
+          "DELAY_LFO4TEMPO"
+        ],
+        [
+          80,
+          "DELAY_DEPTH4"
+        ],
+        [
+          81,
+          "DELAY_LFO4PHASE"
+        ],
+        [
+          82,
+          "DELAY_LFO4TARGET"
+        ],
+        [
+          83,
+          "DELAY_SCENEIGNORE"
+        ],
+        [
+          84,
+          "DELAY_STACKFDBK"
+        ],
+        [
+          85,
+          "DELAY_HOLDFDBK"
+        ],
+        [
+          86,
+          "DELAY_KILLDRY"
+        ],
+        [
+          87,
+          "DELAY_SVFTYPE"
+        ],
+        [
+          88,
+          "DELAY_DRYDIFFUSE"
+        ]
+      ]
+    },
+    "FILTER": {
+      "pid": 18,
+      "name": "FILTER_LFOFREQ",
+      "descriptorOffset": 18652704,
+      "nameOffset": 8240136,
+      "tableOffset": 18652416,
+      "tableRows": 37,
+      "bindings": [
+        [
+          0,
+          "FILTER_TYPE"
+        ],
+        [
+          1,
+          "FILTER_FREQ"
+        ],
+        [
+          2,
+          "FILTER_Q"
+        ],
+        [
+          3,
+          "FILTER_GAIN"
+        ],
+        [
+          4,
+          "FILTER_LEVEL"
+        ],
+        [
+          5,
+          "FILTER_BAL"
+        ],
+        [
+          6,
+          "FILTER_BYPASSMODE"
+        ],
+        [
+          7,
+          "FILTER_ORDER"
+        ],
+        [
+          8,
+          "FILTER_BYPASS"
+        ],
+        [
+          9,
+          "FILTER_PANL"
+        ],
+        [
+          10,
+          "FILTER_PANR"
+        ],
+        [
+          11,
+          "FILTER_PHASE"
+        ],
+        [
+          12,
+          "FILTER_LOWCUT"
+        ],
+        [
+          13,
+          "FILTER_HICUT"
+        ],
+        [
+          14,
+          "FILTER_COMBTIME"
+        ],
+        [
+          15,
+          "FILTER_FEEDBACK"
+        ],
+        [
+          16,
+          "FILTER_LFOENABLE"
+        ],
+        [
+          17,
+          "FILTER_LFOTYPE"
+        ],
+        [
+          18,
+          "FILTER_LFOFREQ"
+        ],
+        [
+          19,
+          "FILTER_LFODUTY"
+        ],
+        [
+          20,
+          "FILTER_MODFREQ"
+        ],
+        [
+          21,
+          "FILTER_QUANTIZE"
+        ],
+        [
+          22,
+          "FILTER_APORDER"
+        ],
+        [
+          23,
+          "FILTER_SCENEIGNORE"
+        ],
+        [
+          24,
+          "FILTER_EVFTYPE"
+        ],
+        [
+          25,
+          "FILTER_EVFQ"
+        ],
+        [
+          26,
+          "FILTER_START"
+        ],
+        [
+          27,
+          "FILTER_STOP"
+        ],
+        [
+          28,
+          "FILTER_SENS"
+        ],
+        [
+          29,
+          "FILTER_ATTACK"
+        ],
+        [
+          30,
+          "FILTER_RELEASE"
+        ],
+        [
+          31,
+          "FILTER_BETA"
+        ],
+        [
+          32,
+          "FILTER_SOURCE"
+        ],
+        [
+          33,
+          "FILTER_DETMON"
+        ],
+        [
+          34,
+          "FILTER_EMPH"
+        ],
+        [
+          35,
+          "FILTER_TEMPO"
+        ],
+        [
+          36,
+          "FILTER_MIX"
+        ]
+      ]
+    },
+    "MOD": {
+      "pid": 0,
+      "name": "MOD_CTRLID",
+      "descriptorOffset": 18665760,
+      "nameOffset": 8232688,
+      "tableOffset": 18665760,
+      "tableRows": 25,
+      "bindings": [
+        [
+          0,
+          "MOD_CTRLID"
+        ],
+        [
+          1,
+          "MOD_MIN"
+        ],
+        [
+          2,
+          "MOD_MAX"
+        ],
+        [
+          3,
+          "MOD_STARTPT"
+        ],
+        [
+          4,
+          "MOD_MIDPT"
+        ],
+        [
+          5,
+          "MOD_ENDPT"
+        ],
+        [
+          6,
+          "MOD_SLOPE"
+        ],
+        [
+          7,
+          "MOD_ATTACK"
+        ],
+        [
+          8,
+          "MOD_EFFECTID"
+        ],
+        [
+          9,
+          "MOD_PARAM"
+        ],
+        [
+          10,
+          "MOD_AUTOENGAGE"
+        ],
+        [
+          11,
+          "MOD_PCRESET"
+        ],
+        [
+          12,
+          "MOD_OFFVAL"
+        ],
+        [
+          13,
+          "MOD_SCALE"
+        ],
+        [
+          14,
+          "MOD_OFFSET"
+        ],
+        [
+          15,
+          "MOD_RELEASE"
+        ],
+        [
+          16,
+          "MOD_RATE"
+        ],
+        [
+          17,
+          "MOD_CHANNEL"
+        ],
+        [
+          18,
+          "MOD_XMARK"
+        ],
+        [
+          19,
+          "MOD_YMARK"
+        ],
+        [
+          20,
+          "MOD_CTRLID2"
+        ],
+        [
+          21,
+          "MOD_SCALE1"
+        ],
+        [
+          22,
+          "MOD_SCALE2"
+        ],
+        [
+          23,
+          "MOD_OPERATION"
+        ],
+        [
+          24,
+          "MOD_DAMPING"
+        ]
+      ]
+    },
+    "PHASER": {
+      "pid": 2,
+      "name": "PHASER_RATE",
+      "descriptorOffset": 18671632,
+      "nameOffset": 8251152,
+      "tableOffset": 18671600,
+      "tableRows": 35,
+      "bindings": [
+        [
+          0,
+          "PHASER_TYPE"
+        ],
+        [
+          1,
+          "PHASER_ORDER"
+        ],
+        [
+          2,
+          "PHASER_RATE"
+        ],
+        [
+          3,
+          "PHASER_LFOTYPE"
+        ],
+        [
+          4,
+          "PHASER_TEMPO"
+        ],
+        [
+          5,
+          "PHASER_DEPTH"
+        ],
+        [
+          6,
+          "PHASER_FEEDBACK"
+        ],
+        [
+          7,
+          "PHASER_FMIN"
+        ],
+        [
+          8,
+          "PHASER_FMAX"
+        ],
+        [
+          9,
+          "PHASER_LFOPHASE"
+        ],
+        [
+          10,
+          "PHASER_BIAS"
+        ],
+        [
+          11,
+          "PHASER_MIX"
+        ],
+        [
+          12,
+          "PHASER_LEVEL"
+        ],
+        [
+          13,
+          "PHASER_PAN"
+        ],
+        [
+          14,
+          "PHASER_BYPASSMODE"
+        ],
+        [
+          15,
+          "PHASER_GLOBALMIX"
+        ],
+        [
+          16,
+          "PHASER_BYPASS"
+        ],
+        [
+          17,
+          "PHASER_MODE"
+        ],
+        [
+          18,
+          "PHASER_FBTAP"
+        ],
+        [
+          19,
+          "PHASER_TONE"
+        ],
+        [
+          20,
+          "PHASER_DIRECTION"
+        ],
+        [
+          21,
+          "PHASER_Q"
+        ],
+        [
+          22,
+          "PHASER_LFORESET"
+        ],
+        [
+          23,
+          "PHASER_LFOQUANTIZE"
+        ],
+        [
+          24,
+          "PHASER_VCR_CURVE"
+        ],
+        [
+          25,
+          "PHASER_VCRK"
+        ],
+        [
+          26,
+          "PHASER_LFOBETA"
+        ],
+        [
+          27,
+          "PHASER_LFOLPF"
+        ],
+        [
+          28,
+          "PHASER_ATTACK"
+        ],
+        [
+          29,
+          "PHASER_RELEASE"
+        ],
+        [
+          30,
+          "PHASER_MANUAL"
+        ],
+        [
+          31,
+          "PHASER_SCENEIGNORE"
+        ],
+        [
+          32,
+          "PHASER_HPF"
+        ],
+        [
+          33,
+          "PHASER_LPF"
+        ],
+        [
+          34,
+          "PHASER_LFOMODE"
+        ]
+      ]
+    },
+    "PITCH": {
+      "pid": 48,
+      "name": "PITCH_SPLICE2",
+      "descriptorOffset": 18669888,
+      "nameOffset": 8252672,
+      "tableOffset": 18669120,
+      "tableRows": 114,
+      "bindings": [
+        [
+          0,
+          "PITCH_TYPE"
+        ],
+        [
+          1,
+          "PITCH_PITCHMODE"
+        ],
+        [
+          2,
+          "PITCH_CTRL"
+        ],
+        [
+          3,
+          "PITCH_UCTRL"
+        ],
+        [
+          4,
+          "PITCH_HARM1"
+        ],
+        [
+          5,
+          "PITCH_HARM2"
+        ],
+        [
+          6,
+          "PITCH_HARM3"
+        ],
+        [
+          7,
+          "PITCH_HARM4"
+        ],
+        [
+          8,
+          "PITCH_KEY"
+        ],
+        [
+          9,
+          "PITCH_SCALE"
+        ],
+        [
+          10,
+          "PITCH_QUANTIZE"
+        ],
+        [
+          11,
+          "PITCH_DETUNE1"
+        ],
+        [
+          12,
+          "PITCH_DETUNE2"
+        ],
+        [
+          13,
+          "PITCH_DETUNE3"
+        ],
+        [
+          14,
+          "PITCH_DETUNE4"
+        ],
+        [
+          15,
+          "PITCH_SHIFT1"
+        ],
+        [
+          16,
+          "PITCH_SHIFT2"
+        ],
+        [
+          17,
+          "PITCH_SHIFT3"
+        ],
+        [
+          18,
+          "PITCH_SHIFT4"
+        ],
+        [
+          19,
+          "PITCH_LEVEL1"
+        ],
+        [
+          20,
+          "PITCH_LEVEL2"
+        ],
+        [
+          21,
+          "PITCH_LEVEL3"
+        ],
+        [
+          22,
+          "PITCH_LEVEL4"
+        ],
+        [
+          23,
+          "PITCH_PAN1"
+        ],
+        [
+          24,
+          "PITCH_PAN2"
+        ],
+        [
+          25,
+          "PITCH_PAN3"
+        ],
+        [
+          26,
+          "PITCH_PAN4"
+        ],
+        [
+          27,
+          "PITCH_DELAY1"
+        ],
+        [
+          28,
+          "PITCH_DELAY2"
+        ],
+        [
+          29,
+          "PITCH_DELAY3"
+        ],
+        [
+          30,
+          "PITCH_DELAY4"
+        ],
+        [
+          31,
+          "PITCH_FEEDBACK1"
+        ],
+        [
+          32,
+          "PITCH_FEEDBACK2"
+        ],
+        [
+          33,
+          "PITCH_FEEDBACK3"
+        ],
+        [
+          34,
+          "PITCH_FEEDBACK4"
+        ],
+        [
+          35,
+          "PITCH_TRACKMODE"
+        ],
+        [
+          36,
+          "PITCH_TRACKING"
+        ],
+        [
+          37,
+          "PITCH_FORMCORRECT"
+        ],
+        [
+          38,
+          "PITCH_MIX"
+        ],
+        [
+          39,
+          "PITCH_LEVEL"
+        ],
+        [
+          40,
+          "PITCH_PAN"
+        ],
+        [
+          41,
+          "PITCH_BYPASSMODE"
+        ],
+        [
+          42,
+          "PITCH_GLOBALMIX"
+        ],
+        [
+          43,
+          "PITCH_GAIN"
+        ],
+        [
+          44,
+          "PITCH_BYPASS"
+        ],
+        [
+          45,
+          "PITCH_XFADE"
+        ],
+        [
+          46,
+          "PITCH_XFADETYPE"
+        ],
+        [
+          47,
+          "PITCH_SPLICE1"
+        ],
+        [
+          48,
+          "PITCH_SPLICE2"
+        ],
+        [
+          49,
+          "PITCH_DTEMPO1"
+        ],
+        [
+          50,
+          "PITCH_DTEMPO2"
+        ],
+        [
+          51,
+          "PITCH_DTEMPO3"
+        ],
+        [
+          52,
+          "PITCH_DTEMPO4"
+        ],
+        [
+          53,
+          "PITCH_STEMPO1"
+        ],
+        [
+          54,
+          "PITCH_STEMPO2"
+        ],
+        [
+          55,
+          "PITCH_FBTYPE"
+        ],
+        [
+          56,
+          "PITCH_DIRECTION"
+        ],
+        [
+          57,
+          "PITCH_LPFREQ"
+        ],
+        [
+          58,
+          "PITCH_GLIDE"
+        ],
+        [
+          59,
+          "PITCH_MDELAY"
+        ],
+        [
+          60,
+          "PITCH_MFDBK"
+        ],
+        [
+          61,
+          "PITCH_MPAN"
+        ],
+        [
+          62,
+          "PITCH_MLEVEL"
+        ],
+        [
+          63,
+          "PITCH_CUSTOMNOTES"
+        ],
+        [
+          64,
+          "PITCH_NOTE2"
+        ],
+        [
+          65,
+          "PITCH_NOTE3"
+        ],
+        [
+          66,
+          "PITCH_NOTE4"
+        ],
+        [
+          67,
+          "PITCH_NOTE5"
+        ],
+        [
+          68,
+          "PITCH_NOTE6"
+        ],
+        [
+          69,
+          "PITCH_NOTE7"
+        ],
+        [
+          70,
+          "PITCH_NOTE8"
+        ],
+        [
+          71,
+          "PITCH_CUSTOMSCALE1"
+        ],
+        [
+          72,
+          "PITCH_CUSTOMSCALE2"
+        ],
+        [
+          73,
+          "PITCH_NUMSTEPS"
+        ],
+        [
+          74,
+          "PITCH_NUMREPEATS"
+        ],
+        [
+          75,
+          "PITCH_ARPRUN"
+        ],
+        [
+          76,
+          "PITCH_TEMPO"
+        ],
+        [
+          77,
+          "PITCH_STEP1"
+        ],
+        [
+          78,
+          "PITCH_STEP2"
+        ],
+        [
+          79,
+          "PITCH_STEP3"
+        ],
+        [
+          80,
+          "PITCH_STEP4"
+        ],
+        [
+          81,
+          "PITCH_STEP5"
+        ],
+        [
+          82,
+          "PITCH_STEP6"
+        ],
+        [
+          83,
+          "PITCH_STEP7"
+        ],
+        [
+          84,
+          "PITCH_STEP8"
+        ],
+        [
+          85,
+          "PITCH_STEP9"
+        ],
+        [
+          86,
+          "PITCH_STEP10"
+        ],
+        [
+          87,
+          "PITCH_STEP11"
+        ],
+        [
+          88,
+          "PITCH_STEP12"
+        ],
+        [
+          89,
+          "PITCH_STEP13"
+        ],
+        [
+          90,
+          "PITCH_STEP14"
+        ],
+        [
+          91,
+          "PITCH_STEP15"
+        ],
+        [
+          92,
+          "PITCH_STEP16"
+        ],
+        [
+          93,
+          "PITCH_AMPSHAPE"
+        ],
+        [
+          94,
+          "PITCH_AMPALPHA"
+        ],
+        [
+          95,
+          "PITCH_PANSHAPE"
+        ],
+        [
+          96,
+          "PITCH_PANALPHA"
+        ],
+        [
+          97,
+          "PITCH_TIME1"
+        ],
+        [
+          98,
+          "PITCH_TIME2"
+        ],
+        [
+          99,
+          "PITCH_SOURCE"
+        ],
+        [
+          100,
+          "PITCH_INMODE"
+        ],
+        [
+          101,
+          "PITCH_LEARN"
+        ],
+        [
+          102,
+          "PITCH_HPFREQ"
+        ],
+        [
+          103,
+          "PITCH_FDBKMODE"
+        ],
+        [
+          104,
+          "PITCH_LFORATE"
+        ],
+        [
+          105,
+          "PITCH_LFOTEMPO"
+        ],
+        [
+          106,
+          "PITCH_LFODEPTH"
+        ],
+        [
+          107,
+          "PITCH_TONIC"
+        ],
+        [
+          108,
+          "PITCH_TEMPERAMENT"
+        ],
+        [
+          109,
+          "PITCH_DIFFMIX"
+        ],
+        [
+          110,
+          "PITCH_DIFFTIME"
+        ],
+        [
+          111,
+          "PITCH_SCENEIGNORE"
+        ],
+        [
+          112,
+          "PITCH_KILLDRY"
+        ],
+        [
+          113,
+          "PITCH_THRESH"
+        ]
+      ]
+    },
+    "REVERB": {
+      "pid": 9,
+      "name": "REVERB_PREDELAY",
+      "descriptorOffset": 18660864,
+      "nameOffset": 8238480,
+      "tableOffset": 18660720,
+      "tableRows": 71,
+      "bindings": [
+        [
+          0,
+          "REVERB_TYPE"
+        ],
+        [
+          1,
+          "REVERB_TIME"
+        ],
+        [
+          2,
+          "REVERB_HICUT"
+        ],
+        [
+          3,
+          "REVERB_HFRATIO"
+        ],
+        [
+          4,
+          "REVERB_DIFFUSION"
+        ],
+        [
+          5,
+          "REVERB_SIZE"
+        ],
+        [
+          6,
+          "REVERB_REVERBDELAY"
+        ],
+        [
+          7,
+          "REVERB_EARLYLEVEL"
+        ],
+        [
+          8,
+          "REVERB_REVERBLEVEL"
+        ],
+        [
+          9,
+          "REVERB_PREDELAY"
+        ],
+        [
+          10,
+          "REVERB_LOWCUT"
+        ],
+        [
+          11,
+          "REVERB_DEPTH"
+        ],
+        [
+          12,
+          "REVERB_RATE"
+        ],
+        [
+          13,
+          "REVERB_MIX"
+        ],
+        [
+          14,
+          "REVERB_LEVEL"
+        ],
+        [
+          15,
+          "REVERB_PAN"
+        ],
+        [
+          16,
+          "REVERB_BYPASSMODE"
+        ],
+        [
+          17,
+          "REVERB_GLOBALMIX"
+        ],
+        [
+          18,
+          "REVERB_GAIN"
+        ],
+        [
+          19,
+          "REVERB_DENSITY"
+        ],
+        [
+          20,
+          "REVERB_INPDIFF"
+        ],
+        [
+          21,
+          "REVERB_INDIFFTIME"
+        ],
+        [
+          22,
+          "REVERB_BYPASS"
+        ],
+        [
+          23,
+          "REVERB_NUMSPRINGS"
+        ],
+        [
+          24,
+          "REVERB_TONE"
+        ],
+        [
+          25,
+          "REVERB_WIDTH"
+        ],
+        [
+          26,
+          "REVERB_FREQ1"
+        ],
+        [
+          27,
+          "REVERB_FREQ2"
+        ],
+        [
+          28,
+          "REVERB_Q1"
+        ],
+        [
+          29,
+          "REVERB_Q2"
+        ],
+        [
+          30,
+          "REVERB_GAIN1"
+        ],
+        [
+          31,
+          "REVERB_GAIN2"
+        ],
+        [
+          32,
+          "REVERB_DRIVE"
+        ],
+        [
+          33,
+          "REVERB_LFTIME"
+        ],
+        [
+          34,
+          "REVERB_LFXOVER"
+        ],
+        [
+          35,
+          "REVERB_SPREAD"
+        ],
+        [
+          36,
+          "REVERB_ATTEN"
+        ],
+        [
+          37,
+          "REVERB_THRESH"
+        ],
+        [
+          38,
+          "REVERB_RELEASE"
+        ],
+        [
+          39,
+          "REVERB_EARLYDIFF"
+        ],
+        [
+          40,
+          "REVERB_EARLYDIFFTIME"
+        ],
+        [
+          41,
+          "REVERB_EARLYDECAY"
+        ],
+        [
+          42,
+          "REVERB_EARLYSEND"
+        ],
+        [
+          43,
+          "REVERB_QUALITY"
+        ],
+        [
+          44,
+          "REVERB_HOLD"
+        ],
+        [
+          45,
+          "REVERB_BASETYPE"
+        ],
+        [
+          46,
+          "REVERB_LFOPHASE"
+        ],
+        [
+          47,
+          "REVERB_INPUTSELECT"
+        ],
+        [
+          48,
+          "REVERB_DISPERSION"
+        ],
+        [
+          49,
+          "REVERB_LOWSLOPE"
+        ],
+        [
+          50,
+          "REVERB_HIGHSLOPE"
+        ],
+        [
+          53,
+          "REVERB_PITCHMIX"
+        ],
+        [
+          54,
+          "REVERB_SHIFT1"
+        ],
+        [
+          55,
+          "REVERB_SHIFT2"
+        ],
+        [
+          56,
+          "REVERB_PITCHFDBK"
+        ],
+        [
+          57,
+          "REVERB_PITCHDIR"
+        ],
+        [
+          58,
+          "REVERB_PITCHTIME"
+        ],
+        [
+          59,
+          "REVERB_PITCHPOS"
+        ],
+        [
+          60,
+          "REVERB_PITCHMOD"
+        ],
+        [
+          61,
+          "REVERB_PITCHBAL"
+        ],
+        [
+          51,
+          "REVERB_SCENEIGNORE"
+        ],
+        [
+          62,
+          "REVERB_PREDLYTEMPO"
+        ],
+        [
+          63,
+          "REVERB_PREDLYFDBK"
+        ],
+        [
+          64,
+          "REVERB_PREDLYMIX"
+        ],
+        [
+          65,
+          "REVERB_PITCHLPF"
+        ],
+        [
+          66,
+          "REVERB_SPRINGTYPE"
+        ],
+        [
+          67,
+          "REVERB_TONETYPE"
+        ],
+        [
+          68,
+          "REVERB_PREDLYTAP"
+        ],
+        [
+          52,
+          "REVERB_KILLDRY"
+        ],
+        [
+          69,
+          "REVERB_LOWQ"
+        ],
+        [
+          70,
+          "REVERB_HIGHQ"
+        ]
+      ]
+    },
+    "ROTARY": {
+      "pid": 0,
+      "name": "ROTARY_RATE",
+      "descriptorOffset": 18672176,
+      "nameOffset": 8251672,
+      "tableOffset": 18672176,
+      "tableRows": 21,
+      "bindings": [
+        [
+          0,
+          "ROTARY_RATE"
+        ],
+        [
+          1,
+          "ROTARY_LFDEPTH"
+        ],
+        [
+          2,
+          "ROTARY_HFDEPTH"
+        ],
+        [
+          3,
+          "ROTARY_HFLEVEL"
+        ],
+        [
+          4,
+          "ROTARY_TEMPO"
+        ],
+        [
+          5,
+          "ROTARY_MIX"
+        ],
+        [
+          6,
+          "ROTARY_LEVEL"
+        ],
+        [
+          7,
+          "ROTARY_PAN"
+        ],
+        [
+          8,
+          "ROTARY_BYPASSMODE"
+        ],
+        [
+          9,
+          "ROTARY_GLOBALMIX"
+        ],
+        [
+          10,
+          "ROTARY_HFLENGTH"
+        ],
+        [
+          11,
+          "ROTARY_BYPASS"
+        ],
+        [
+          12,
+          "ROTARY_WIDTH"
+        ],
+        [
+          13,
+          "ROTARY_LOWRATE"
+        ],
+        [
+          14,
+          "ROTARY_LOWTIME"
+        ],
+        [
+          15,
+          "ROTARY_HIGHTIME"
+        ],
+        [
+          16,
+          "ROTARY_SPREAD"
+        ],
+        [
+          17,
+          "ROTARY_DRIVE"
+        ],
+        [
+          18,
+          "ROTARY_MICDIST"
+        ],
+        [
+          19,
+          "ROTARY_INPUTSELECT"
+        ],
+        [
+          20,
+          "ROTARY_SCENEIGNORE"
+        ]
+      ]
+    },
+    "TREMOLO": {
+      "pid": 2,
+      "name": "TREMOLO_RATE",
+      "descriptorOffset": 18653168,
+      "nameOffset": 8252336,
+      "tableOffset": 18653136,
+      "tableRows": 22,
+      "bindings": [
+        [
+          0,
+          "TREMOLO_TYPE"
+        ],
+        [
+          1,
+          "TREMOLO_LFOTYPE"
+        ],
+        [
+          2,
+          "TREMOLO_RATE"
+        ],
+        [
+          3,
+          "TREMOLO_DEPTH"
+        ],
+        [
+          4,
+          "TREMOLO_DUTY"
+        ],
+        [
+          5,
+          "TREMOLO_TEMPO"
+        ],
+        [
+          6,
+          "TREMOLO_MIX"
+        ],
+        [
+          7,
+          "TREMOLO_LEVEL"
+        ],
+        [
+          8,
+          "TREMOLO_PAN"
+        ],
+        [
+          9,
+          "TREMOLO_BYPASSMODE"
+        ],
+        [
+          10,
+          "TREMOLO_GLOBALMIX"
+        ],
+        [
+          11,
+          "TREMOLO_PHASE"
+        ],
+        [
+          12,
+          "TREMOLO_WIDTH"
+        ],
+        [
+          13,
+          "TREMOLO_CENTER"
+        ],
+        [
+          14,
+          "TREMOLO_BYPASS"
+        ],
+        [
+          15,
+          "TREMOLO_STARTPHASE"
+        ],
+        [
+          16,
+          "TREMOLO_ORDER"
+        ],
+        [
+          17,
+          "TREMOLO_XOVER"
+        ],
+        [
+          18,
+          "TREMOLO_THRESH"
+        ],
+        [
+          19,
+          "TREMOLO_SCENEIGNORE"
+        ],
+        [
+          20,
+          "TREMOLO_BETA"
+        ],
+        [
+          21,
+          "TREMOLO_DUCKING"
+        ]
+      ]
+    },
+    "FLANGER": {
+      "rows": [
+        {
+          "pid": 1,
+          "name": "FLANGER_RATE",
+          "descriptorOffset": 18689952,
+          "nameOffset": 8249192
+        },
+        {
+          "pid": 2,
+          "name": "FLANGER_TEMPO",
+          "descriptorOffset": 18689968,
+          "nameOffset": 8249208
+        }
+      ],
+      "bindings": [
+        [
+          1,
+          "FLANGER_RATE"
+        ],
+        [
+          2,
+          "FLANGER_TEMPO"
+        ]
+      ],
+      "scope": "Individual unique native descriptors; dictionary OLD_FLANGER aliases retained"
+    }
+  },
+  "tempoLocks": [
+    {
+      "family": "CHORUS",
+      "effectId": 78,
+      "targetPid": 2,
+      "target": "CHORUS_RATE",
+      "nativeTarget": "CHORUS_RATE",
+      "tempoPid": 3,
+      "tempo": "CHORUS_TEMPO",
+      "nativeTempo": "CHORUS_TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "CHORUS",
+      "effectId": 78,
+      "targetPid": 18,
+      "target": "CHORUS_RATE2",
+      "nativeTarget": "CHORUS_RATE2",
+      "tempoPid": 27,
+      "tempo": "CHORUS_TEMPO2",
+      "nativeTempo": "CHORUS_TEMPO2",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "DELAY",
+      "effectId": 70,
+      "targetPid": 18,
+      "target": "DELAY_RATE1",
+      "nativeTarget": "DELAY_RATE1",
+      "tempoPid": 50,
+      "tempo": "DELAY_LFO1TEMPO",
+      "nativeTempo": "DELAY_LFO1TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "DELAY",
+      "effectId": 70,
+      "targetPid": 19,
+      "target": "DELAY_RATE2",
+      "nativeTarget": "DELAY_RATE2",
+      "tempoPid": 51,
+      "tempo": "DELAY_LFO2TEMPO",
+      "nativeTempo": "DELAY_LFO2TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "DELAY",
+      "effectId": 70,
+      "targetPid": 52,
+      "target": "DELAY_RATE3",
+      "nativeTarget": "DELAY_RATE3",
+      "tempoPid": 55,
+      "tempo": "DELAY_LFO3TEMPO",
+      "nativeTempo": "DELAY_LFO3TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "DELAY",
+      "effectId": 70,
+      "targetPid": 78,
+      "target": "DELAY_RATE4",
+      "nativeTarget": "DELAY_RATE4",
+      "tempoPid": 79,
+      "tempo": "DELAY_LFO4TEMPO",
+      "nativeTempo": "DELAY_LFO4TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "DELAY",
+      "effectId": 70,
+      "targetPid": 8,
+      "target": "DELAY_TIME",
+      "nativeTarget": "DELAY_TIME",
+      "tempoPid": 15,
+      "tempo": "DELAY_TEMPO",
+      "nativeTempo": "DELAY_TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "DELAY",
+      "effectId": 70,
+      "targetPid": 26,
+      "target": "DELAY_TIMER",
+      "nativeTarget": "DELAY_TIMER",
+      "tempoPid": 29,
+      "tempo": "DELAY_TEMPOR",
+      "nativeTempo": "DELAY_TEMPOR",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "FILTER",
+      "effectId": 114,
+      "targetPid": 18,
+      "target": "FILTER_LFOFREQ",
+      "nativeTarget": "FILTER_LFOFREQ",
+      "tempoPid": 35,
+      "tempo": "FILTER_TEMPO",
+      "nativeTempo": "FILTER_TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "FLANGER",
+      "effectId": 82,
+      "targetPid": 1,
+      "target": "OLD_FLANGER_RATE",
+      "nativeTarget": "FLANGER_RATE",
+      "tempoPid": 2,
+      "tempo": "OLD_FLANGER_TEMPO",
+      "nativeTempo": "FLANGER_TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "PHASER",
+      "effectId": 90,
+      "targetPid": 2,
+      "target": "PHASER_RATE",
+      "nativeTarget": "PHASER_RATE",
+      "tempoPid": 4,
+      "tempo": "PHASER_TEMPO",
+      "nativeTempo": "PHASER_TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "PITCH",
+      "effectId": 110,
+      "targetPid": 27,
+      "target": "PITCH_DELAY1",
+      "nativeTarget": "PITCH_DELAY1",
+      "tempoPid": 49,
+      "tempo": "PITCH_DTEMPO1",
+      "nativeTempo": "PITCH_DTEMPO1",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "PITCH",
+      "effectId": 110,
+      "targetPid": 28,
+      "target": "PITCH_DELAY2",
+      "nativeTarget": "PITCH_DELAY2",
+      "tempoPid": 50,
+      "tempo": "PITCH_DTEMPO2",
+      "nativeTempo": "PITCH_DTEMPO2",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "PITCH",
+      "effectId": 110,
+      "targetPid": 29,
+      "target": "PITCH_DELAY3",
+      "nativeTarget": "PITCH_DELAY3",
+      "tempoPid": 51,
+      "tempo": "PITCH_DTEMPO3",
+      "nativeTempo": "PITCH_DTEMPO3",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "PITCH",
+      "effectId": 110,
+      "targetPid": 30,
+      "target": "PITCH_DELAY4",
+      "nativeTarget": "PITCH_DELAY4",
+      "tempoPid": 52,
+      "tempo": "PITCH_DTEMPO4",
+      "nativeTempo": "PITCH_DTEMPO4",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "PITCH",
+      "effectId": 110,
+      "targetPid": 104,
+      "target": "PITCH_LFORATE",
+      "nativeTarget": "PITCH_LFORATE",
+      "tempoPid": 105,
+      "tempo": "PITCH_LFOTEMPO",
+      "nativeTempo": "PITCH_LFOTEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "PITCH",
+      "effectId": 110,
+      "targetPid": 47,
+      "target": "PITCH_SPLICE1",
+      "nativeTarget": "PITCH_SPLICE1",
+      "tempoPid": 53,
+      "tempo": "PITCH_STEMPO1",
+      "nativeTempo": "PITCH_STEMPO1",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "PITCH",
+      "effectId": 110,
+      "targetPid": 48,
+      "target": "PITCH_SPLICE2",
+      "nativeTarget": "PITCH_SPLICE2",
+      "tempoPid": 54,
+      "tempo": "PITCH_STEMPO2",
+      "nativeTempo": "PITCH_STEMPO2",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "ROTARY",
+      "effectId": 86,
+      "targetPid": 0,
+      "target": "ROTARY_RATE",
+      "nativeTarget": "ROTARY_RATE",
+      "tempoPid": 4,
+      "tempo": "ROTARY_TEMPO",
+      "nativeTempo": "ROTARY_TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "TREMOLO",
+      "effectId": 106,
+      "targetPid": 2,
+      "target": "TREMOLO_RATE",
+      "nativeTarget": "TREMOLO_RATE",
+      "tempoPid": 5,
+      "tempo": "TREMOLO_TEMPO",
+      "nativeTempo": "TREMOLO_TEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "active-FW13-XML-lock"
+    },
+    {
+      "family": "REVERB",
+      "effectId": 66,
+      "targetPid": 9,
+      "target": "REVERB_PREDELAY",
+      "nativeTarget": "REVERB_PREDELAY",
+      "tempoPid": 62,
+      "tempo": "REVERB_PREDLYTEMPO",
+      "nativeTempo": "REVERB_PREDLYTEMPO",
+      "labels": [
+        "NONE ",
+        "1/64 TRIP",
+        "1/64",
+        "1/64 DOT",
+        "1/32 TRIP",
+        "1/32",
+        "1/32 DOT",
+        "1/16 TRIP",
+        "1/16",
+        "1/16 DOT",
+        "1/8 TRIP",
+        "1/8",
+        "1/8 DOT",
+        "1/4 TRIP",
+        "1/4",
+        "1/4 DOT",
+        "1/2 TRIP",
+        "1/2",
+        "1/2 DOT",
+        "1 TRIP",
+        "1",
+        "1 DOT",
+        "2",
+        "3",
+        "4",
+        "4/3",
+        "5/4",
+        "5/64",
+        "7/64",
+        "9/64",
+        "10/64 (5/32)",
+        "11/64",
+        "13/64",
+        "14/64 (7/32)",
+        "15/64",
+        "17/64",
+        "18/64 (9/32)",
+        "19/64",
+        "20/64 (5/16)",
+        "21/64",
+        "22/64 (11/32)",
+        "23/64",
+        "25/64",
+        "26/64 (13/32)",
+        "27/64",
+        "28/64 (7/16)",
+        "29/64",
+        "30/64 (15/32)",
+        "31/64",
+        "33/64",
+        "34/64 (17/32)",
+        "35/64",
+        "36/64 (9/16)",
+        "37/64",
+        "38/64 (19/32)",
+        "39/64",
+        "40/64 (5/8)",
+        "41/64",
+        "42/64 (21/32)",
+        "43/64",
+        "44/64 (11/16)",
+        "45/64",
+        "46/64 (23/32)",
+        "47/64",
+        "49/64",
+        "50/64 (25/32)",
+        "51/64",
+        "52/64 (13/16)",
+        "53/64",
+        "54/64 (27/32)",
+        "55/64",
+        "56/64 (7/8)",
+        "57/64",
+        "58/64 (29/32)",
+        "59/64",
+        "60/64 (15/16)",
+        "61/64",
+        "62/64 (31/32)",
+        "63/64"
+      ],
+      "noneRaw": 0,
+      "source": "blocks-guide-pre-delay-and-existing-control"
+    }
+  ],
+  "modifiers": {
+    "cacheSection": 3,
+    "sources": [
+      "NONE",
+      "LFO 1A",
+      "LFO 1B",
+      "LFO 2A",
+      "LFO 2B",
+      "ADSR 1",
+      "ADSR 2",
+      "Sequencer",
+      "Envelope Follower",
+      "Pitch Follower ",
+      "PEDAL 1 (EXP/SW TIP)",
+      "PEDAL 2 (EXP/SW TIP)",
+      "PEDAL 1 (SW RING)",
+      "PEDAL 2 (SW RING)",
+      "External 1",
+      "External 2",
+      "External 3",
+      "External 4",
+      "External 5",
+      "External 6",
+      "External 7",
+      "External 8",
+      "External 9",
+      "External 10",
+      "External 11",
+      "External 12",
+      "External 13",
+      "External 14",
+      "External 15",
+      "External 16",
+      "Scene Controller 1",
+      "Scene Controller 2",
+      "Scene Controller 3",
+      "Scene Controller 4",
+      "FC 1 Pedal 1",
+      "FC 1 Pedal 2",
+      "FC 1 Pedal 3",
+      "FC 1 Pedal 4",
+      "FC 1 Ext. Switch 1",
+      "FC 1 Ext. Switch 2",
+      "FC 1 Ext. Switch 3",
+      "FC 1 Ext. Switch 4",
+      "FC 2 Pedal 1",
+      "FC 2 Pedal 2",
+      "FC 2 Pedal 3",
+      "FC 2 Pedal 4",
+      "FC 2 Ext. Switch 1",
+      "FC 2 Ext. Switch 2",
+      "FC 2 Ext. Switch 3",
+      "FC 2 Ext. Switch 4",
+      "Control Switch 1",
+      "Control Switch 2",
+      "Control Switch 3",
+      "Control Switch 4",
+      "Control Switch 5",
+      "Control Switch 6",
+      "Manual 1",
+      "Manual 2",
+      "Manual 3",
+      "Manual 4",
+      "Manual 5"
+    ],
+    "channels": [
+      "ALL",
+      "CHAN A",
+      "CHAN B",
+      "CHAN C",
+      "CHAN D"
+    ],
+    "layout": {
+      "header": 1538,
+      "records": 32,
+      "recordBytes": 96,
+      "headerBytes": 46,
+      "words": 25,
+      "firstId": 3,
+      "end": 4610
+    },
+    "scope": "Read-only layout of seven SHA-pinned bundled bases; serialized record count is not a usable-modifier capacity claim. NewLook source 14->0 is independently documented in FM3_COMPOSER_NEWLOOK.md. Secondary-source operations remain unsupported."
+  },
+  "policy": "Explicit time/rate writes require final channel Tempo NONE. Active or unknown modifier targets reject explicit static writes. Channel scope ALL/A-D is honored. Preserve untouched stored words; no modifier writes or DSP evaluation.",
+  "limits": "21 bounded tempo pairs in nine families, not all FM3 dependencies. Other-family type visibility, effective BPM-derived values and controller dynamics remain unverified."
+}

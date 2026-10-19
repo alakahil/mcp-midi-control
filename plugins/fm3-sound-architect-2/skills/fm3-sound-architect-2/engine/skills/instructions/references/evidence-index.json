@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2051,
-  "filePaths": 2255,
+  "uniqueContents": 2052,
+  "filePaths": 2256,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -540,6 +540,12 @@
       "bytes": 24680,
       "paths": [
         "examples/JB_EIGHT_SCENES_V3.syx"
+      ]
+    },
+    "0a209c8709b043500cf222252a1ee98abaff389a39c014d936e350e32cbedab6": {
+      "bytes": 71669,
+      "paths": [
+        "references/fm3-parameter-dependencies.json"
       ]
     },
     "0a25527766b9dce6b38556b67095d0a7bc5c15d82edc7808b98cb145dea04643": {
@@ -8086,6 +8092,12 @@
         "references/geq-full-20261010-194115/step-114-2f81507b82/capture.json"
       ]
     },
+    "a9d0a23d785f1f376425d843c55b72c465b54a4b7ea59d6fbff7bc5bd62d1d48": {
+      "bytes": 8381,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "a9e3657cbe6f5aefb9697e6fcde4a6de306d8d4db328927d67faa265455c22d9": {
       "bytes": 5025,
       "paths": [
@@ -9236,12 +9248,6 @@
       "bytes": 3306,
       "paths": [
         "references/peq-full-20261009-152606/step-057-4e5ea7ba9c/result.json"
-      ]
-    },
-    "c0f92f9cf6b26c54978bf967f167b26c952466006e0db32b00e93c806a53b73e": {
-      "bytes": 8030,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "c17103edba82c66476a592efa13279c0d5843cb6aeac8b95bdddeebe6a0b89de": {

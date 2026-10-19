@@ -3,10 +3,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {generatePreset,getComposerCapabilities} from './fm3-generate.mjs';
-import {arrangeSound,SLUG_BY_EID} from './fm3-layout.mjs';
+import {arrangeSound,SLUG_BY_EID,scanRecords} from './fm3-layout.mjs';
 import {assertFields,validateOptions,loadDictionary,DEFAULT_STATUSES,OPT_IN_STATUSES,FAMILY_BY_SLUG} from './fm3-table-encoder.mjs';
 import {finalSoundState,renderFinalSoundText} from './fm3-final-state.mjs';
 import {writePresetOutputs,sha256} from './fm3-output.mjs';
+import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
+import {validateLegacyDependencies,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 import {typePolicySummary} from './fm3-type-applicability.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
@@ -18,8 +20,8 @@ export function getSoundCapabilities(base){
     table:{defaultStatuses:DEFAULT_STATUSES,optInStatuses:OPT_IN_STATUSES,families:FAMILY_BY_SLUG,dictionaryEntries:d.params.length,
       blockedParameters:d.params.filter(p=>p.status==='blocked-hidden-editor').map(p=>({family:p.family,pid:p.param,name:p.name,reason:'Hidden in FM3-Edit 1.07.17; no write support'})),
       cabPosition:{parameters:['CABINET_DYNACAB_R1','CABINET_DYNACAB_R2'],displayRange:[0,10],unit:'unitless'},
-      typeApplicability:typePolicySummary(),
-      policy:'Entry counts are not validated device coverage. Chorus/Drive explicit table writes follow final-channel type policy; other families, tempo and modifiers remain unchecked. Use full templates for model/type changes.'},
+      typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),
+      policy:'Entry counts are not validated device coverage. Chorus/Drive explicit table writes follow final-channel type policy; 21 tempo pairs and read-only modifier target checks are enforced; other dependencies remain outside this scope. Use full templates for model/type changes.'},
     outputSceneLevels:{supported:true,block:'out1',parameters:'OUTPUT_SCENE1..8',rangeDb:[-20,20],channels:['A','B','C','D']},
     limitations:['No device connection','New output hardware/audio/CPU unconfirmed','Experimental raw/taper writes excluded from this entry point','Global settings, arbitrary routing and all FM3 families are not implemented']};
 }
@@ -34,6 +36,8 @@ export function composeSound(base,spec){
   const first=generatePreset(base,spec.composer);
   check(first.report.baseId==='jb-newlook','Sound composer requires the jb-newlook base');
   const second=arrangeSound(first.syx,spec,{allow:spec.allow??[]});
+  const finalBody=Buffer.from(inspectStructure(second.syx).raw.body);
+  validateLegacyDependencies(finalBody,Object.fromEntries(scanRecords(finalBody).records.map(r=>[r.family,r])),spec.composer);
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const report={generator:'fm3-sound-0.3.3',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},

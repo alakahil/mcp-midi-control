@@ -1,4 +1,4 @@
-// FM3 table-based parameter encoder (0.74.4). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
+// FM3 table-based parameter encoder (0.74.5). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
 import fs from 'node:fs';
@@ -6,6 +6,7 @@ import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {authorGen3PresetFromIR,reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
 import {composerBases,layouts,checkComposerStructure} from './fm3-composer-bases.mjs';
+import {validateDependencyWrites,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 import {validateTypeWrites,typePolicySummary} from './fm3-type-applicability.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -105,9 +106,10 @@ export function writeTableControls(baseBytes,spec,opts={}){
     const offset=l.start+ch*l.words*2+p.param*2;check(!seen.has(offset),'Duplicate control');seen.add(offset);
     // Direct raw words are allowed only for experimental batch tests.
     const raw=c.raw!==undefined?(check(opts.experimental===true&&Number.isInteger(c.raw)&&c.raw>=0&&c.raw<=65534,'raw words require --experimental and 0…65534'),c.raw):encodeValue(p,c.value,opts);
-    writes.push({block:c.block,channel:c.channel,name:p.name,label:p.label,pid:p.param,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
+    writes.push({effectId:p.block,block:c.block,channel:c.channel,name:p.name,label:p.label,pid:p.param,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
   }
   validateTypeWrites(original,writes);
+  validateDependencyWrites(original,writes);
   for(const {raw,offset} of writes){body.writeUInt16LE(raw,offset);allowed.add(offset);allowed.add(offset+1)}
   checkComposerStructure(body,{...base,blocks});
   const renamed=authorGen3PresetFromIR(baseBytes,{name:spec.name,blocks:[]},17);check(renamed.skipped.length===0,'Name authoring skipped');
@@ -120,7 +122,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
   check(Buffer.from(before.parsed.headerPayload).equals(Buffer.from(after.parsed.headerPayload)),'Dump header changed');
   const raw=Buffer.from(after.raw.rawPatch);check(raw.readUInt16LE(72)===actual.length&&raw.readUInt16LE(74)===after.raw.compSize,'Invalid encoded size');
   check(raw.subarray(76+after.raw.compSize).every(v=>v===0),'Nonzero output padding');
-  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.4',dictionarySha256:dictionaryHash,typeApplicability:typePolicySummary(),base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
+  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.5',dictionarySha256:dictionaryHash,typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 

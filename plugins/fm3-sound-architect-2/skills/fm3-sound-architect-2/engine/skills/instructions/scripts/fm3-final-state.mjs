@@ -6,16 +6,18 @@ import {describeComposerScenes} from './fm3-jb-composer.mjs';
 import {loadDictionary,decodeValue,DEFAULT_STATUSES,OPT_IN_STATUSES,findParam} from './fm3-table-encoder.mjs';
 import {sha256} from './fm3-output.mjs';
 import {typeApplicability,typePolicySummary} from './fm3-type-applicability.mjs';
+import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks);
 export function finalSoundState(syx,writes,opts={}){
   const after=inspectStructure(syx),body=Buffer.from(after.raw.body),{records}=scanRecords(body),dictionary=loadDictionary();
   const blocks=Object.fromEntries(records.filter(r=>SLUG_BY_EID[r.eid]).map(r=>[r.family,{...r,typePid:definitions[r.family]?.typePid}]));
   const scenes=describeComposerScenes(after,blocks);
   const channels=records.map(r=>({block:r.family,effectId:r.eid,wordsPerChannel:r.words,channels:Array.from({length:r.channels},(_,i)=>({channel:'ABCD'[i],words:Array.from({length:r.words},(_,pid)=>body.readUInt16LE(r.start+(i*r.words+pid)*2))}))}));
+  const modifiers=readModifiers(body).map(m=>({...m,targetName:dictionary.params.find(p=>p.block===m.effectId&&p.param===m.pid)?.name??'unknown target'}));
   const effective=writes.map(w=>{
     const raw=body.readUInt16LE(w.offset);if(raw!==w.raw)throw Error('Final control readback failed: '+w.name);
     const p=findParam(w.block,w.name);
-    return {...w,raw,display:decodeValue(p,raw),unit:unitFor(p),source:'final-syx'};
+    return {...w,dependencies:dependencyState(body,{...w,effectId:p.block,pid:p.param},{modifiers}),raw,display:decodeValue(p,raw),unit:unitFor(p),source:'final-syx'};
   });
   // Human-readable retained/changed settings, preserving opaque values in channels[].words.
   const statuses=new Set([...DEFAULT_STATUSES,...(opts.allow??[])]);
@@ -30,11 +32,11 @@ export function finalSoundState(syx,writes,opts={}){
         const raw=body.readUInt16LE(r.start+(i*r.words+p.param)*2),value=decodeValue(p,raw);
         const applicability=typeApplicability(p,body.readUInt16LE(r.start+i*r.words*2));
         if(applicability.covered&&!applicability.allowed)continue;
-        if(value!==undefined&&!(typeof value==='number'&&!Number.isFinite(value)))parameters.push({block:r.family,channel,name:p.name,label:applicability.label??p.label,raw,value,unit:unitFor(p),status:p.status,scope:applicability.covered?'stored value; Chorus/Drive type policy passed; tempo/modifiers not validated':'stored value; type-specific visibility not validated',typeApplicability:applicability});
+        if(value!==undefined&&!(typeof value==='number'&&!Number.isFinite(value)))parameters.push({block:r.family,channel,name:p.name,label:applicability.label??p.label,raw,value,unit:unitFor(p),status:p.status,dependencies:dependencyState(body,{effectId:r.eid,pid:p.param,channel,offset:r.start+(i*r.words+p.param)*2},{modifiers}),scope:applicability.covered?'stored value; Chorus/Drive type policy passed; bounded dependencies reported separately':'stored value; type-specific visibility not validated',typeApplicability:applicability});
       }
     }
   }
-  return {name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalRows:describeRows(body),scenes,controls:effective,channels,parameters,typeApplicability:typePolicySummary(),outputSha256:sha256(syx)};
+  return {name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalRows:describeRows(body),scenes,controls:effective,channels,parameters,dependencies:dependencyPolicySummary(),modifiers,typeApplicability:typePolicySummary(),outputSha256:sha256(syx)};
 }
 function unitFor(p){
   // Only explicit, already used units; unknown units stay labelled as editor values.
@@ -47,6 +49,7 @@ function unitFor(p){
   if(['FUZZ_MIX','DELAY_MIX','DELAY_FEED','REVERB_MIX'].includes(p.name))return '%';
   return 'FM3-Editi skaala';
 }
+const dependencyNote=p=>p.dependencies?.mode==='tempo'?`; salvestatud väärtus, juhib ${p.dependencies.tempo.name}=${p.dependencies.tempo.label.trim()}`:p.dependencies?.mode==='modifier'?`; salvestatud väärtus, juhib modifikaator ${p.dependencies.modifiers.map(m=>(m.uncertain?'ebaselge allikas':m.sourceName)+' ('+m.channelScope+')').join(', ')}`:'';
 const fmt=v=>typeof v==='number'?String(Number(v.toFixed(4))):String(v);
 export function renderFinalSoundText(state,spec){
   const context=spec.context??{};
@@ -60,16 +63,17 @@ export function renderFinalSoundText(state,spec){
     if(['peq','geq','enhancer'].includes(family))lines.push('    '+JSON.stringify(b));
   }}
   lines.push('','TABELIGA MÄÄRATUD PARAMEETRID — LÕPPFAILIST');
-  for(const w of state.controls)lines.push(`${w.block} ${w.channel} ${w.label??w.name} (${w.name}): ${fmt(w.display)} ${w.unit}; küsitud ${fmt(w.value)}; raw ${w.raw}; ${w.status}.`);
+  for(const w of state.controls)lines.push(`${w.block} ${w.channel} ${w.label??w.name} (${w.name}): ${fmt(w.display)} ${w.unit}; küsitud ${fmt(w.value)}; raw ${w.raw}; ${w.status}${dependencyNote(w)}.`);
   const written=new Set(state.controls.map(p=>p.block+':'+p.channel+':'+p.name));
   const explicitChannels=new Set(Object.entries(spec.composer).filter(([k,v])=>k.endsWith('Channels')&&Array.isArray(v)).flatMap(([k,v])=>v.filter(c=>Object.keys(c).some(x=>!['channel','type','model'].includes(x))).map(c=>k.slice(0,-8)+':'+c.channel)));
   const mainNames=new Set(['DISTORT_DRIVE','DISTORT_BASS','DISTORT_MID','DISTORT_TREBLE','DISTORT_PRESENCE','DISTORT_LEVEL','FUZZ_DRIVE','FUZZ_TONE','FUZZ_LEVEL','FUZZ_MIX','DELAY_TIME','DELAY_TEMPO','DELAY_FEED','DELAY_MIX','REVERB_TIME','REVERB_MIX']);
   lines.push('','MUUD PÕHISEADED LÕPPFAILIST','Ümardatud salvestatud väärtused; detailne loend ja toorsõnad on validation.json failis.');
-  for(const p of state.parameters.filter(p=>(mainNames.has(p.name)||explicitChannels.has(p.block+':'+p.channel))&&!written.has(p.block+':'+p.channel+':'+p.name)))lines.push(`${p.block} ${p.channel} ${p.label??p.name}: ${fmt(p.value)} ${p.unit} [${p.status}]`);
+  for(const p of state.parameters.filter(p=>(mainNames.has(p.name)||explicitChannels.has(p.block+':'+p.channel))&&!written.has(p.block+':'+p.channel+':'+p.name)))lines.push(`${p.block} ${p.channel} ${p.label??p.name}: ${fmt(p.value)} ${p.unit} [${p.status}]${dependencyNote(p)}`);
+  for(const m of state.modifiers.filter(m=>m.active))lines.push(`Modifikaator: ${m.targetName}; allikas ${m.uncertain?'ebaselge':m.sourceName}; kanal ${m.channelScope}. Salvestatud väärtus ei tõenda kontrolleri hetkeväärtust.`);
   lines.push('','SÕLTUVUSED JA KONTROLLITASE','Kanalimuudatus mõjutab kõiki seda kanalit kasutavaid stseene. Määramata väärtused pärinevad alusest või kopeeritud täiskanalimallist.',
     'Cab-mallid kasutavad olemasolevat Dyna-Cab teeki. Väliseid User IR-faile ei paigaldata; muutmata IR/pedaali/globaalseadistuse sõltuvused säilivad alusfailist.',
     'Offline-kontroll läbitud: lõppfaili kaadrid, CRC, sisu, marsruutimine ja deklareeritud muudatused. Selle lõppfaili import, heli ja CPU pole uue kontrolliga kinnitatud.',
-    'Choruse ja Drive’i parameetriloend ning tabelikirjutused järgivad FW13 tüübi nähtavusreegleid. Muude plokkide nähtavus ning tempo- ja modifikaatoriseosed pole veel kontrollitud. Peidetud salvestatud sõnad säilivad toorandmetena.',
+    'Choruse ja Drive’i parameetriloend ning tabelikirjutused järgivad FW13 tüübi nähtavusreegleid. 21 tempo-seost ja olemasolevad modifikaatorisihtmärgid on eraldi kontrollitud; muud sõltuvused ja muude plokkide tüübinähtavus jäävad katmata. Tempo või modifikaatori juhitud parameetri salvestatud väärtus ei tõenda hetkel kõlavat väärtust. Peidetud salvestatud sõnad säilivad toorandmetena.',
     '','KASUTAMINE','1. Säilita pooleliolev töö ning impordi fail FM3-Editi tööpuhvrisse.',
     `2. Kontrolli veateateid, valitud Scene ${state.selectedScene}, kanaleid ja soovitud helitasemeid.`,
     '3. Uut eksporti küsi ainult konkreetse seni kinnitamata katse jaoks; varasemaid piisavaid tõendeid kasuta uuesti.',

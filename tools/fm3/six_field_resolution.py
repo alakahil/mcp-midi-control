@@ -41,7 +41,7 @@ def cache_records():
     return parsed, {(s['section_tag'], r['param_id']): r for s in parsed['sections'] for r in s['records']}
 
 
-def mine_editor(data, targets=TARGETS, include_rows=False):
+def mine_editor(data, targets=TARGETS, include_rows=False, symbol_only=False):
     """Read the editor's own PE64 pointers, then contiguous 16-byte descriptors."""
     require(data[:2] == b'MZ', 'Not a PE file')
     pe = struct.unpack_from('<I', data, 60)[0]
@@ -91,6 +91,9 @@ def mine_editor(data, targets=TARGETS, include_rows=False):
                     pass
         require(len(rows) == 1, 'Missing/ambiguous FM3 descriptor: '+symbol)
         row = rows[0]
+        if symbol_only:
+            result.append(row)
+            continue
         start = row['descriptorOffset']
         for _ in range(512):
             try:

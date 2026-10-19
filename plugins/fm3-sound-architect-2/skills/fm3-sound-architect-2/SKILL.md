@@ -112,9 +112,14 @@ Genereerimine ei salvesta midagi FM3 presetikohta ega paigalda User IR-i.
 Choruse ja Drive’i tabelijuhid kontrollitakse lõpliku kanali tüübi järgi;
 sobimatu väärtus põhjustab vea ka PID või experimental/raw kaudu.
 [Tüübisobivuse juhend](engine/docs/FM3_TYPE_APPLICABILITY.md) kirjeldab
-FW13 reegleid ja piire. Eelista mudelivahetuseks täiskanalimalle. Muude perede
-tüübisobivus ning tempo- ja modifikaatoriseosed ei ole üldises tabelikirjutajas
-veel automaatselt kontrollitud; ära järelda skalaari olemasolust universaalset luba.
+FW13 reegleid ja piire. Eelista mudelivahetuseks täiskanalimalle.
+[Tempo- ja modifikaatorijuhend](engine/docs/FM3_PARAMETER_DEPENDENCIES.md) kirjeldab
+21 tempo-seost ning olemasolevate modifikaatorite lugemist. Time/Rate kirjutus
+nõuab lõpliku kanali Tempo NONE olekut; aktiivse modifikaatori sihtmärgile
+käsiväärtust ei kirjutata. Ära lülita modifikaatorit vaikimisi välja. TXT eristab
+salvestatud väärtust tempo või kontrolleri juhitud väärtusest. Muude perede
+tüübisobivus ja katmata sõltuvused jäävad piiranguks; skalaari olemasolu ei anna
+universaalset kirjutusluba.
 
 ## Toetatud põhivõimalused
 
