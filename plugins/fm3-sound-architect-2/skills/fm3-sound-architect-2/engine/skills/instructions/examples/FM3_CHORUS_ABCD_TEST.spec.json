@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-chorus-multi",
+  "chorusChannels": [
+    {
+      "channel": "A",
+      "type": "4-Voice Analog"
+    },
+    {
+      "channel": "B",
+      "type": "Mx134 Stereo"
+    },
+    {
+      "channel": "C",
+      "type": "Japan CE-2"
+    },
+    {
+      "channel": "D",
+      "type": "Warm Stereo"
+    }
+  ]
+}

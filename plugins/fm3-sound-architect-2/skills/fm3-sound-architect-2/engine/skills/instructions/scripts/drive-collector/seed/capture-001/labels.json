@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 1,
+    "name": "'77 Custom OD",
+    "binaryId": 78,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 2,
+    "name": "Angry Chuck",
+    "binaryId": 79,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 3,
+    "name": "BB Pre",
+    "binaryId": 19,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 4,
+    "name": "BB Pre AT",
+    "binaryId": 61,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,72 @@
+FM3 FILTERI JUHTIDE KOGUJA 0.1.1 — firmware 13
+
+1. Paki ZIP lahti Downloads-kausta. Kausta nimi: FM3_FILTER_CONTROLS.
+2. Kasuta kinnitatud FM3_NEWLOOK_FILTER_TEST preseti seisundit.
+   Kaasasolev baseline.syx on sinu täpselt kontrollitud tagasieksport.
+   Vajadusel impordi see FM3-Editi tööpuhvrisse. Uut algkontrolli ega
+   muutmata preseti tagasieksporti ei küsita.
+3. Käivita Terminalis:
+   python3 ~/Downloads/FM3_FILTER_CONTROLS/FM3_FILTER_CONTROLS.py --port /dev/cu.usbmodem211104
+   See on sinu varasem port; kui see on muutunud, kasuta tegelikku FM3 porti.
+   Vajalikud on varasemast olemas Python 3 ja Node. Lisapakette pole vaja.
+
+ESIMENE SAMM
+Hoia Scene2. Filter1 peab jääma bypass'i.
+Vali Filter1 kanal C: seal on juba Peaking. Type-valikut ära muuda.
+Muuda ainult Frequency väärtuseks 500 Hz. Ekspordi TERVE preset,
+nt FM3_FILTER_C_FREQ_500.syx. Lohista fail Terminali ja vajuta Enter.
+Kontrolli ekraaniväärtust; Enter kinnitab ülesandes oleva arvu.
+Kui editor ümardab, sisesta täpne nähtav arv ülesande ühikus (sagedus Hz).
+Sulge FM3-Edit ja Fractal-Bot ning sisesta jah, lubades ühe GET-lugemise.
+Pärast PASS-i ava FM3-Edit ja järgi järgmist sammu.
+
+KOGUMISPLAAN — 18 mõõtepunkti, üks juht korraga
+C Peaking: Frequency 500 / 1000 / 2000 Hz
+C Peaking: Q 0.707 / 1.4 / 2.0
+C Peaking: Gain -3 / +3 / 0 dB
+C Peaking: Level -6 / 0 / +3 dB
+A High-Pass: Frequency 80 / 120 / 250 Hz
+B Low-Pass: Frequency 4000 / 6000 / 8000 Hz
+
+Muutused on järjestikused. Ära taasta iga katse eel algväärtusi.
+Hoia Scene2, kõik Type-valikud, Order, bypass, muud plokid, stseenid
+ja expression muutmata. Kanalit vaheta ainult ülesande järgi.
+Faili ja preseti nimi võivad muutuda; sisemise nime muutus näidatakse
+terminalis ja salvestatakse raportisse. Muud päiseväljad jäävad kontrolli alla.
+Ära lülita Filterit kogumise ajal sisse. Save/Store pole vajalik.
+
+PAUS JA JÄTKAMINE
+q lõpetab ja väljastab tulemuste ZIP-i. Sama käsk jätkab tehtud sammudest;
+programm näitab viimast edukat SYX-i, mille olek tuleb tööpuhvris taastada.
+Säilita kogu FM3_FILTER_CONTROLS kaust koos FM3_FILTER_CONTROLS_SESSIONiga
+ning viimane tulemuste ZIP kuni andmete kinnitamiseni.
+s jätab sammu mõõtmata (nt juht puudub või väärtus oli juba sama).
+Põhjus tuleb kirja panna; vahele jäetud punkt EI OLE mõõdetud tõend.
+Pärast s-i taasta programmi näidatud viimase eduka faili olek.
+
+VIGA
+Programm peatub, säilitab andmed ja ei korda GET-i automaatselt.
+Jätkamiseks käivita sama käsk ning taasta näidatud viimase eduka faili olek.
+Ära muuda sessiooni faile käsitsi.
+Ainult tulemuste ZIP-i tegemiseks, seadet avamata:
+python3 ~/Downloads/FM3_FILTER_CONTROLS/FM3_FILTER_CONTROLS.py --export-only
+
+LÕPETAMINE
+Saada programmi väljastatud FM3_FILTER_CONTROLS_<aeg>_<tunnus>.zip vestlusse.
+Programm kontrollib iga ekspordi kaadreid, CRC-d, säilinud andmeid ning
+GET/SYX vastavust 148/148 parameetrisõna ulatuses. Päring on üks Filter1
+GET: f0000174111f720079f7. SET/SAVE/Store ega kanali- või presetivaliku
+käske ei saadeta. Kõik muudatused tehakse FM3-Editis käsitsi.
+
+See koguja mõõdab seoseid; parameetrite binaar-ID-sid ja skaalasid ei eeldata.
+Mitme sõna seotud muutus salvestatakse analüüsiks. Kogumine ei luba veel
+generaatoris neid juhte kirjutada ega kinnita suvalisi vaheväärtusi, kogu
+vahemikku, teisi Filteri tüüpe, aktiivse efekti heli või CPU-d.
+
+NIMEVEA PARANDUSE PAIGALDAMINE (0.1.0 → 0.1.1)
+Kui varem ilmus Preset header/name changed at 11, kopeeri parandus-ZIPi
+control-check.mjs ja FM3_FILTER_CONTROLS.py olemasoleva koguja kausta
+samanimeliste failide asemele. Ära kustuta ega asenda sessioonikausta.
+Käivita sama käsk. Anna sama tõrjutud SYX uuesti, kui FM3 olek vastab sellele
+endiselt; uut eksporti üksnes nimevea tõttu pole vaja. Seniseid edukaid samme
+ei korrata. Kui olekut vahepeal muutsid, taasta SYX-i seisund enne GET-i.

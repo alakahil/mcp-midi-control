@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-09",
+  "passed": true,
+  "syntheticOnly": true,
+  "deviceConnectionMade": false,
+  "completeSequentialSteps": 12,
+  "mockGetCalls": 12,
+  "pairedWordsEach": 132,
+  "scopeNegativeCases": 37,
+  "pairNegativeCases": 9,
+  "renameAtByte11AcceptedAndRecorded": true,
+  "chunkPrefixMutationsRejected": 16,
+  "singleControlGateBeforeGet": true,
+  "completedResumeAndExportWithoutGet": true,
+  "quitSkipCancelResume": true,
+  "failureEvidencePreserved": true,
+  "incompleteEvidenceCases": 4,
+  "timeoutRequiresNewConfirmation": true,
+  "splitReplyShapes": [
+    132,
+    66,
+    33
+  ],
+  "actualDisplayRoundingAcceptedAndOffTargetValuesRejected": true,
+  "hardware": "Only the earlier baseline 132/132 pair is hardware evidence; control collection is pending."
+}

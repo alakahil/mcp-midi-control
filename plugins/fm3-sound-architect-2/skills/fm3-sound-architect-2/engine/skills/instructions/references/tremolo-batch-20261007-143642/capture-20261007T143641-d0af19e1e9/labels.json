@@ -1,0 +1,23 @@
+[
+  {
+    "displayNumber": 5,
+    "name": "Optical Trem 2",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 6,
+    "name": "Panner",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 7,
+    "name": "VCA Trem",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  }
+]

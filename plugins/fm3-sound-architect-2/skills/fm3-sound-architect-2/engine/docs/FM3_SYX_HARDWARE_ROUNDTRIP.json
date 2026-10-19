@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-01",
+  "firmwareUserReported": "13",
+  "userConfirmed": {
+    "import": true,
+    "gain": 5
+  },
+  "audioConfirmed": false,
+  "generatedSha256": "22cc6e0f6643c32386920d94851eced7201f14ea349af3f8cc711441686e0388",
+  "exportSha256": "fe57cf8306ae6525020c2cc15643af73ab58f329313a6e335513db80cf442748",
+  "lengths": [
+    24680,
+    24680
+  ],
+  "fileDiffBytes": 2635,
+  "bodyDiff": [],
+  "headerA": [
+    127,
+    0,
+    0,
+    64,
+    0
+  ],
+  "headerB": [
+    127,
+    0,
+    0,
+    64,
+    0
+  ],
+  "name": "FM3 SA TEST G5",
+  "amp": {
+    "block": "Amp",
+    "cols": 144,
+    "rows": 4,
+    "offset": 4622,
+    "params_offset": 4668,
+    "scene_channels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "scene_bypass": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "channels": {
+      "A": {
+        "type_id": 18,
+        "type": "USA MK IV Rhythm 1",
+        "drive": 7,
+        "bass": 5,
+        "mid": 3.6,
+        "treble": 6,
+        "master_volume": 5,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 4,
+        "negative_feedback": 10
+      },
+      "B": {
+        "type_id": 20,
+        "type": "USA MK IV Rhythm 2",
+        "drive": 5,
+        "bass": 1.8,
+        "mid": 6.15,
+        "treble": 3,
+        "master_volume": 5,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 0,
+        "negative_feedback": 10
+      },
+      "C": {
+        "type_id": 24,
+        "type": "USA MK IV Lead Bright",
+        "drive": 6.7,
+        "bass": 1.5,
+        "mid": 6.6,
+        "treble": 5.81,
+        "master_volume": 4,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 4.3,
+        "negative_feedback": 10
+      },
+      "D": {
+        "type_id": 77,
+        "type": "USA MK IV Lead Mid",
+        "drive": 5,
+        "bass": 1,
+        "mid": 6.72,
+        "treble": 6.4,
+        "master_volume": 4,
+        "depth": 0,
+        "sag": 1.07,
+        "presence": 1,
+        "negative_feedback": 10
+      }
+    }
+  },
+  "validation": {
+    "ok": true,
+    "issues": [],
+    "blockCount": 9,
+    "blockNames": [
+      "Amp",
+      "Cab",
+      "Comp",
+      "Analog Stereo",
+      "Vol/Pan",
+      "PEQ",
+      "Classic Vibe",
+      "Large Room",
+      "Clyde"
+    ]
+  },
+  "rawDiffByteCount": 2149,
+  "decompressedBodyBytes": 14222,
+  "bodyExactMatch": true,
+  "scope": "Only this Gain B=5.00 import; no general firmware compatibility or audio claim"
+}

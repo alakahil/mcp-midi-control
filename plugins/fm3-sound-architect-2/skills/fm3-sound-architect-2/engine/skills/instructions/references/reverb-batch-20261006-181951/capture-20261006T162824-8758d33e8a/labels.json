@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 33,
+    "name": "Hall: Wide Hall",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 34,
+    "name": "Hall: York Minster Cathedral",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 35,
+    "name": "Huge: Cavern",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 36,
+    "name": "Huge: Deep Space",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-08",
+  "generator": "jb-composer-0.2.0",
+  "passed": true,
+  "compatibleBases": 6,
+  "structuralLayouts": 4,
+  "allComponentCases": 6,
+  "fullChannelTransfersInAllComponentCases": 188,
+  "builtinAmpTransfers": 30,
+  "scalarAndSceneIsolationCases": 18,
+  "newFamilySubsetCases": 30,
+  "rejectedRequests": 94,
+  "acceptedBonamassaFileByteIdentical": true,
+  "acceptedExportNoopBodyIdentical": true,
+  "inputsPreserved": true,
+  "allTargetsComparedAgainstIndependentWholeBodyOracle": true,
+  "affectedAndActiveScenesVerified": true,
+  "txtAllRequestedTemplatesAndExportNames": true,
+  "capabilityInventoryVerified": true,
+  "schema": "Structure and field coverage checked; full Draft2020-12 validator unavailable",
+  "hardware": "New extended combinations are offline-tested only; need one representative cross-layout device roundtrip",
+  "audio": "New combinations not assessed"
+}

@@ -1,0 +1,130 @@
+{
+  "index": 20,
+  "step": {
+    "id": "021-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Peaking. Muuda ainult: Band 4 Type → Peaking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Peaking",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 20,
+    "step": {
+      "id": "021-types",
+      "stage": "types",
+      "kind": "type",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Peaking. Muuda ainult: Band 4 Type → Peaking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Type",
+          "candidatePid": 18,
+          "value": "Peaking",
+          "band": 4,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "fc3f21b33950c2fee5c983302529ab8fe4f9e893028378c4240aa5f65092cb04",
+    "syxSha256": "93a565be09f6d85be12b229a24d151b10ed9e0859f7717dd23ee3d5e12c9b329",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 18,
+        "offset": 8770,
+        "before": 2,
+        "after": 0
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Peaking",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 PEQ FULL_10",
+      "after": "FM3 PEQ FULL_20",
+      "beforeHex": "464d33205045512046554c4c5f31302020202020202020202020202020202000",
+      "afterHex": "464d33205045512046554c4c5f32302020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Peaking",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": "Peaking"
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "93a565be09f6d85be12b229a24d151b10ed9e0859f7717dd23ee3d5e12c9b329",
+    "bodySha256": "5f2ca105e31af63e6585d00a987d5436e62780362b1a8e20e6bc09bfb47db19b",
+    "rawRxSha256": "11a304060b98f897aacc004e15e11edae06c8191a7851ac34c486ba09d4d788f",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

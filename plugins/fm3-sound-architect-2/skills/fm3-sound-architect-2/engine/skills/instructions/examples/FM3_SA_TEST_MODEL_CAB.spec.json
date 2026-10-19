@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "name": "FM3 SA TEST MODEL CAB",
+  "purpose": "Amp B Lead kanalimalli ja Scene 2 Cab C valiku arenduskatse; riistvaral kinnitamata.",
+  "ampModelB": "USA MK IV Lead",
+  "cabScene2": "4x12 RECTO STRAIGHT"
+}

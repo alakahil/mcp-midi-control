@@ -1,0 +1,21 @@
+FM3 SOUND ARCHITECT — FLANGER ARENDUSKATSE
+Sihtseade: FM3 Mk II Turbo, firmware 13. Eesmärk: Flanger tüübimallide kontrollimport.
+Presetinimi säilib alusfailist; failinimi eristab katset.
+Flanger1 A: 80's Rack Flanger (ID 24); täielik 33-sõnaline kogutud mall.
+Flanger1 B: Vowel Flanger (ID 30); täielik 33-sõnaline kogutud mall.
+Flanger1 C: MXF-117 (ID 8); täielik 33-sõnaline kogutud mall.
+Flanger1 D: Zero Flanger (ID 6); täielik 33-sõnaline kogutud mall.
+Kõik parameetrid pärinevad vastavast kogutud mallist; neid ei kirjutata eraldi.
+Need pole tingimata tehaseseaded. Kõik muud plokid, routing, stseenid, bypass ja määramata kanalid säilivad alusfailist.
+Flanger stseenikanalid 1–8: A, A, A, A, B, A, A, A.
+Kontekst: Ibanez humbuckeritega, OUT 1 stereo FOH. Heli, tasemed ja CPU pole selles katses hinnatud.
+Cab/IR-valikud, lülitid ja expression säilivad alusfailist. Uusi väliseid IR-e ei lisata.
+Kontrollitud offline: GET/SYX lähtepaarid, täpsed kanalisõnad, kaadrid, CRC/footer ja kõigi muude body-baitide säilimine.
+Seadmeimport ja heli: OOTEL. See on tehniline arenduskatse.
+
+1. Säilita praegune töö. Impordi SYX FM3-Editis tööpuhvrisse; ära kirjuta oma presetikohta üle.
+2. Ava Flanger1 ja vaata järjest kanaleid A–D. Kontrolli ülal nimetatud Type-valikuid; ära paranda seadeid enne eksporti.
+3. Ekspordi terve preset nimega FM3_FLANGER_ABCD_TEST_export.syx ning saada vestlusse.
+Kanali vaatamine võib muuta praeguse stseeni Flanger-kanalivalikut; see erinevus tuleb tagasiekspordis eraldi raporteerida.
+Tööriist ei saada MIDI/SET/SAVE-käske.
+SHA-256: 692d7c47f860d44f737c21f33fb33cb01e86f1e8a8ea37cf843f64ef8ebf056d

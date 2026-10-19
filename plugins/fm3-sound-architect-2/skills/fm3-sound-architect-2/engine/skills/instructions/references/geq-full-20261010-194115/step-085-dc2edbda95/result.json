@@ -1,0 +1,144 @@
+{
+  "index": 85,
+  "step": {
+    "id": "086-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "7 Band Constant Q — kõigi nähtavate ribade maximum",
+    "channel": "A",
+    "typeName": "7 Band Constant Q",
+    "bandCount": 7,
+    "endpoint": "maximum"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "086-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "7 Band Constant Q — kõigi nähtavate ribade maximum",
+      "channel": "A",
+      "typeName": "7 Band Constant Q",
+      "bandCount": 7,
+      "endpoint": "maximum"
+    },
+    "previousSha256": "d7e4fa50ea0089745d04a9c868c80515cec13bad7583e7bb5cda638f8c967532",
+    "syxSha256": "73a514fa6d630139eff5eca46565f987e578e581646a1193f82f9e7a709a08a0",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 3,
+        "offset": 8360,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 4,
+        "offset": 8362,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 5,
+        "offset": 8364,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 8366,
+        "before": 0,
+        "after": 65534
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "python3 100",
+      "200",
+      "400",
+      "800",
+      "1600",
+      "3200",
+      "6400"
+    ],
+    "displayValues": [
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "73a514fa6d630139eff5eca46565f987e578e581646a1193f82f9e7a709a08a0",
+    "bodySha256": "81bb1cc1f8d70365beb80292e139a135e863925c766f14663e72290793757114",
+    "rawRxSha256": "0fe3ad25a5b76287b63623dbef8806cf9a062996ed4fecf9fe2d4761d7033e16",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

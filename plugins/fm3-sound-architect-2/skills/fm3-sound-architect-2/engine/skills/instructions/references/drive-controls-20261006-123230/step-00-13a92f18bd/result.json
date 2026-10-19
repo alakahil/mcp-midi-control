@@ -1,0 +1,45 @@
+{
+  "index": 0,
+  "status": "passed",
+  "step": {
+    "id": "baseline",
+    "kind": "baseline",
+    "instruction": "Impordi kaasasolev baseline.syx FM3-Editi. Ära muuda midagi. Ekspordi terve preset failina 00_BASELINE.syx."
+  },
+  "comparison": {
+    "step": {
+      "id": "baseline",
+      "kind": "baseline",
+      "instruction": "Impordi kaasasolev baseline.syx FM3-Editi. Ära muuda midagi. Ekspordi terve preset failina 00_BASELINE.syx."
+    },
+    "changes": [],
+    "observation": null,
+    "integrity": true,
+    "onlyPlannedChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "e2e560791223667892e7f3116024bcdccacb1097ba41205d9f27277ebd3b60f9",
+    "rawRxSha256": "c14fa6822f08aa3e9b302460b93f44332ed477ae97a0937598b8835b2becb6d9",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 14
+      },
+      {
+        "channel": "B",
+        "binaryId": 12
+      },
+      {
+        "channel": "C",
+        "binaryId": 26
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "generator": "unified-0.2.0",
+  "selections": {
+    "amp": {
+      "model": "USA MK IV Lead",
+      "sourceChannel": "B",
+      "targetChannel": "B",
+      "affectedScenes": [
+        2,
+        6
+      ],
+      "policy": "Entire saved channel settings, then explicit controls; not universal factory defaults",
+      "hardware": "not tested for new selections"
+    },
+    "cab": {
+      "name": "4x12 RECTO STRAIGHT",
+      "channel": "C",
+      "affectedScenes": [
+        2
+      ],
+      "mode": "DYNA-CAB",
+      "policy": "Select existing whole Cab channel; mic/mix/filter settings remain from that channel",
+      "hardware": "not tested"
+    }
+  },
+  "modelReadback": {
+    "ampB": {
+      "type_id": 23,
+      "type": "USA MK IV Lead",
+      "drive": 3,
+      "bass": 5,
+      "mid": 5,
+      "treble": 5,
+      "master_volume": 4,
+      "depth": 0,
+      "sag": 1.07,
+      "presence": 5,
+      "negative_feedback": 10
+    },
+    "cabScene2": {
+      "channel": "C",
+      "mode": "DYNA-CAB",
+      "dynacab1_id": 39,
+      "dynacab1": "4x12 RECTO STRAIGHT",
+      "dynacab2": "4x12 RECTO STRAIGHT",
+      "mic": "Dynamic 1"
+    }
+  },
+  "spec": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "name": "FM3 SA TEST MODEL CAB",
+    "purpose": "Amp B Lead kanalimalli ja Scene 2 Cab C valiku arenduskatse; riistvaral kinnitamata.",
+    "ampModelB": "USA MK IV Lead",
+    "cabScene2": "4x12 RECTO STRAIGHT"
+  },
+  "baseSha256": "fecac6a61d3a33c547a12e69b5056fd8750f9ded789e44672744d2e32e29c2c4",
+  "outputSha256": "8eebafcf3ea9d29706465a2aa3804b6765c0d676c1d44bdbc32112c8e98bad30",
+  "effective": [
+    {
+      "key": "gainB",
+      "label": "Amp B Gain",
+      "unit": "/10",
+      "raw": 19660,
+      "value": 2.999969481490524,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "bassB",
+      "label": "Amp B Bass",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "midB",
+      "label": "Amp B Mid",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "trebleB",
+      "label": "Amp B Treble",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "presenceB",
+      "label": "Amp B Presence",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "levelB",
+      "label": "Amp B Level",
+      "unit": "dB",
+      "raw": 43252,
+      "value": -14.000671407208472,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "delayMixA",
+      "label": "Delay A Mix",
+      "unit": "%",
+      "raw": 7864,
+      "value": 11.999877925962096,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbMixA",
+      "label": "Reverb A Mix",
+      "unit": "%",
+      "raw": 13107,
+      "value": 20.00030518509476,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "delayTimeMs",
+      "label": "Delay A Time",
+      "unit": "ms",
+      "raw": 2044,
+      "value": 500.00747703482165,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "delayFeedback",
+      "label": "Delay A Feedback",
+      "unit": "%",
+      "raw": 42597,
+      "value": 29.99969481490524,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbTimeS",
+      "label": "Reverb A Time",
+      "unit": "s",
+      "raw": 1010,
+      "value": 1.6396435438093206,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbPredelayMs",
+      "label": "Reverb A Pre-Delay",
+      "unit": "ms",
+      "raw": 1966,
+      "value": 29.99969481490524,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "delayTempoA",
+      "label": "Delay A Tempo",
+      "unit": "",
+      "raw": 14,
+      "value": "1/4",
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbPredelayTempoA",
+      "label": "Reverb A Pre-Delay Tempo",
+      "unit": "",
+      "raw": 0,
+      "value": "NONE",
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "delayScene2",
+      "label": "Scene 2 Delay",
+      "unit": "",
+      "raw": 1,
+      "value": false,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbScene1",
+      "label": "Scene 1 Reverb kanal",
+      "unit": "",
+      "raw": 0,
+      "value": "A",
+      "requested": null,
+      "source": "base"
+    }
+  ],
+  "changedBodyOffsets": [
+    4956,
+    4960,
+    4961,
+    4962,
+    4963,
+    4964,
+    4965,
+    4966,
+    4967,
+    4968,
+    4969,
+    4980,
+    4981,
+    4990,
+    4991,
+    4996,
+    4997,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008,
+    5012,
+    5013,
+    5014,
+    5015,
+    5022,
+    5026,
+    5032,
+    5033,
+    5034,
+    5035,
+    5036,
+    5037,
+    5048,
+    5049,
+    5058,
+    5060,
+    5061,
+    5062,
+    5063,
+    5064,
+    5065,
+    5066,
+    5067,
+    5082,
+    5083,
+    5104,
+    5108,
+    5109,
+    5148,
+    5149,
+    5162,
+    5163,
+    5164,
+    5165,
+    5173,
+    5204,
+    5223,
+    5820
+  ],
+  "checks": {
+    "frames": true,
+    "crc": true,
+    "footer": true,
+    "exactExpectedBody": true,
+    "rawReadback": true,
+    "headerPreserved": true
+  },
+  "hardware": "Selected reference combinations verified on firmware13; this output needs evidence comparison before claiming an exact match.",
+  "audio": "not assessed",
+  "limitations": [
+    "Original base only",
+    "Amp B and Delay/Reverb A controls only",
+    "Only bundled Amp templates and existing Scene2 Dyna-Cab channels; no external IR/routing writing",
+    "Unknown body offset0 export difference remains tracked"
+  ]
+}

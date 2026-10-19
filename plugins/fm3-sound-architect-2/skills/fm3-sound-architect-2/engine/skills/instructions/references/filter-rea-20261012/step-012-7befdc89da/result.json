@@ -1,0 +1,97 @@
+{
+  "index": 12,
+  "step": {
+    "id": "13",
+    "label": "Level — C Peaking -30 dB",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Level",
+        "parameterId": 4,
+        "value": -30,
+        "unit": "dB",
+        "mode": "numeric",
+        "minimum": -80.0,
+        "maximum": 20.0,
+        "options": [],
+        "parameterName": "FILTER_LEVEL"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 12,
+    "step": {
+      "id": "13",
+      "label": "Level — C Peaking -30 dB",
+      "activeChannel": "C",
+      "targets": [
+        {
+          "channel": "C",
+          "type": "Peaking",
+          "binaryId": 6,
+          "parameter": "Level",
+          "parameterId": 4,
+          "value": -30,
+          "unit": "dB",
+          "mode": "numeric",
+          "minimum": -80,
+          "maximum": 20,
+          "options": [],
+          "parameterName": "FILTER_LEVEL"
+        }
+      ],
+      "reason": "missing endpoint or independent check",
+      "allowUnchanged": true
+    },
+    "previousSha256": "5c2ae9ea33f2ca200072283512689d4c3fe82910197b1abf098984015b0a389e",
+    "syxSha256": "da989795983a54aa5840cf989d973f8193149f2ab50d6b379d866f824f7d10ee",
+    "bodySha256": "78149b60d9c7f5cdb2f59ce4404f8dca060f22faa97a6695fcba7602c7a05e5a",
+    "changedWords": [
+      {
+        "channel": "C",
+        "pid": 4,
+        "offset": 7770,
+        "before": 65534,
+        "after": 32767
+      }
+    ],
+    "targets": [
+      {
+        "channel": "C",
+        "pid": 4,
+        "before": 65534,
+        "after": 32767,
+        "wordChanged": true
+      }
+    ],
+    "presetNameChange": null,
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "pending-real-display-and-GET-pair; unchanged words are not isolated-change evidence"
+  },
+  "observations": [
+    {
+      "channel": "C",
+      "parameterId": 4,
+      "requestedValue": -30,
+      "displayText": "-30.0",
+      "displayValue": -30.0
+    }
+  ],
+  "displayConfirmed": true,
+  "getAuthorized": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "da989795983a54aa5840cf989d973f8193149f2ab50d6b379d866f824f7d10ee",
+    "bodySha256": "78149b60d9c7f5cdb2f59ce4404f8dca060f22faa97a6695fcba7602c7a05e5a",
+    "rawRxSha256": "67a46010216d8ea06ccf9f9126945e5489f9846d81ee933a8174ddce575ddb95"
+  }
+}

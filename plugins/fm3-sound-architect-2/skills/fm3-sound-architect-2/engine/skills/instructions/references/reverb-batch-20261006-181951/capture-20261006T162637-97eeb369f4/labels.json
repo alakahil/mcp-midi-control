@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 25,
+    "name": "Hall: North Church",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 26,
+    "name": "Hall: Opera House",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 27,
+    "name": "Hall: Small Hall",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 28,
+    "name": "Hall: South Church",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

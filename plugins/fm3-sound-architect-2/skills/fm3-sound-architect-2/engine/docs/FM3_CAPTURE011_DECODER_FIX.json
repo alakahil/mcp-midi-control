@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-03",
+  "version": "0.29.15",
+  "sourceSha256": "bc3b55cc1be7530c74308b8f6d00581dfefee4e0cab859ba043314479837e2a5",
+  "correction": {
+    "id": 46,
+    "name": "Fryette D60 Less",
+    "evidence": "Existing bundled AMP_ROSTER and amp-catalog agree; TYPE_BINARY_IDS.Amp omitted the entry"
+  },
+  "actualIds": [
+    44,
+    45,
+    46,
+    47
+  ],
+  "offlineChecks": [
+    "SYX frames/CRC/footer and same-base validation pass",
+    "correct-group preflight passes; wrong-group rejected",
+    "unknown model 65535 rejected without partial import",
+    "guided collector simulated pair, resume, q, ZIP and mismatch regression pass"
+  ],
+  "getPair": "Not supplied for capture011; user must resume and collect one confirmed GET",
+  "bundledTemplates": 42,
+  "hardwareTest": "Updated client not yet tested on user Mac; no transport changes"
+}

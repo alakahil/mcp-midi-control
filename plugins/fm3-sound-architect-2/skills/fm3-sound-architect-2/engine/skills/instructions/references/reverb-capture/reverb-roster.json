@@ -1,0 +1,403 @@
+{
+  "source": "User FM3-Edit screenshot Screenshot 2026-10-06 at 14.59.11.png",
+  "firmwareDeclared": 13,
+  "count": 79,
+  "note": "Display numbers are not binary IDs. All GET/SYX type mappings pending. Category prefixes preserved exactly as shown.",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "Chamber: Deep Chamber",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 2,
+      "name": "Chamber: Large Chamber",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 3,
+      "name": "Chamber: Medium Chamber",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 4,
+      "name": "Chamber: Small Chamber",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 5,
+      "name": "Cloud: Cirrocumulus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Cloud: Cumulonimbus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "Cloud: Nimbostratus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 8,
+      "name": "Cloud: Stratocumulus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "Echo: Echo Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Echo: Echo Pitch Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Echo: Echo Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Echo: Echo Room",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 13,
+      "name": "Echo: Fields Of Pyrite",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 14,
+      "name": "Hall: Asylum",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 15,
+      "name": "Hall: Chorus Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 16,
+      "name": "Hall: Colosseum",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 17,
+      "name": "Hall: Concert Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 18,
+      "name": "Hall: Large Deep Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 19,
+      "name": "Hall: Large Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 20,
+      "name": "Hall: Marble Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 21,
+      "name": "Hall: Mechanic's Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 22,
+      "name": "Hall: Medium Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 23,
+      "name": "Hall: Music Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 24,
+      "name": "Hall: Nashville Church",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 25,
+      "name": "Hall: North Church",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 26,
+      "name": "Hall: Opera House",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 27,
+      "name": "Hall: Small Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 28,
+      "name": "Hall: South Church",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 29,
+      "name": "Hall: St. Albans Cathedral",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 30,
+      "name": "Hall: St. George's Church",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 31,
+      "name": "Hall: Symphony Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 32,
+      "name": "Hall: Tunnel",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 33,
+      "name": "Hall: Wide Hall",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 34,
+      "name": "Hall: York Minster Cathedral",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 35,
+      "name": "Huge: Cavern",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 36,
+      "name": "Huge: Deep Space",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 37,
+      "name": "Huge: Gymnasium",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 38,
+      "name": "Huge: Ice Castle",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 39,
+      "name": "Huge: Mausoleum",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 40,
+      "name": "Huge: Stone Quarry",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 41,
+      "name": "Huge: Warehouse",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 42,
+      "name": "Plate: Gold Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 43,
+      "name": "Plate: Large Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 44,
+      "name": "Plate: London Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 45,
+      "name": "Plate: Medium Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 46,
+      "name": "Plate: Small Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 47,
+      "name": "Plate: Sun Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 48,
+      "name": "Plate: Vocal Plate",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 49,
+      "name": "Room: Ambience",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 50,
+      "name": "Room: Drum Room",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 51,
+      "name": "Room: Hallway",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 52,
+      "name": "Room: Huge Room",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 53,
+      "name": "Room: Large Room",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 54,
+      "name": "Room: Large Tiled Room",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 55,
+      "name": "Room: Large Wooden Room",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 56,
+      "name": "Room: Medium Room",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 57,
+      "name": "Room: Recording Studio A",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 58,
+      "name": "Room: Recording Studio C",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 59,
+      "name": "Room: Small Room",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 60,
+      "name": "Room: Studio",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 61,
+      "name": "Sfx: Andromeda",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 62,
+      "name": "Sfx: Aquarius",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 63,
+      "name": "Sfx: Capricorn",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 64,
+      "name": "Sfx: Centaurus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 65,
+      "name": "Sfx: Gemini",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 66,
+      "name": "Sfx: Pegasus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 67,
+      "name": "Sfx: Pleiades",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 68,
+      "name": "Sfx: Sagittarius",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 69,
+      "name": "Sfx: Ursa Major",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 70,
+      "name": "Spring: British Spring",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 71,
+      "name": "Spring: Deluxe Spring",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 72,
+      "name": "Spring: Large Spring",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 73,
+      "name": "Spring: Lush Spring",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 74,
+      "name": "Spring: Medium Spring",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 75,
+      "name": "Spring: Small Spring",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 76,
+      "name": "Spring: Studio Spring",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 77,
+      "name": "Spring: Tube Spring",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 78,
+      "name": "Spring: Vibra-King",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 79,
+      "name": "Spring: Vibra-King Custom",
+      "binaryId": null
+    }
+  ]
+}

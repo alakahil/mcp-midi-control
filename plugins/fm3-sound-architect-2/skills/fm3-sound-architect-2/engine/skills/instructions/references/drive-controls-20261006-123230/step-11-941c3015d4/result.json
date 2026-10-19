@@ -1,0 +1,153 @@
+{
+  "index": 11,
+  "status": "passed",
+  "step": {
+    "id": "C-type",
+    "kind": "type",
+    "channel": "C",
+    "binaryId": 0,
+    "name": "Rat Distortion",
+    "instruction": "Vali Drive1 kanal C ja Type: Rat Distortion. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+  },
+  "comparison": {
+    "step": {
+      "id": "C-type",
+      "kind": "type",
+      "channel": "C",
+      "binaryId": 0,
+      "name": "Rat Distortion",
+      "instruction": "Vali Drive1 kanal C ja Type: Rat Distortion. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+    },
+    "changes": [
+      {
+        "offset": 8426,
+        "before": 1,
+        "after": 2
+      },
+      {
+        "offset": 8636,
+        "before": 26,
+        "after": 0
+      },
+      {
+        "offset": 8640,
+        "before": 50,
+        "after": 255
+      },
+      {
+        "offset": 8641,
+        "before": 179,
+        "after": 127
+      },
+      {
+        "offset": 8642,
+        "before": 51,
+        "after": 255
+      },
+      {
+        "offset": 8643,
+        "before": 51,
+        "after": 127
+      },
+      {
+        "offset": 8644,
+        "before": 0,
+        "after": 254
+      },
+      {
+        "offset": 8645,
+        "before": 64,
+        "after": 255
+      },
+      {
+        "offset": 8648,
+        "before": 254,
+        "after": 138
+      },
+      {
+        "offset": 8649,
+        "before": 255,
+        "after": 22
+      },
+      {
+        "offset": 8654,
+        "before": 254,
+        "after": 35
+      },
+      {
+        "offset": 8655,
+        "before": 255,
+        "after": 250
+      },
+      {
+        "offset": 8658,
+        "before": 255,
+        "after": 196
+      },
+      {
+        "offset": 8659,
+        "before": 127,
+        "after": 128
+      },
+      {
+        "offset": 8700,
+        "before": 7,
+        "after": 3
+      },
+      {
+        "offset": 8702,
+        "before": 2,
+        "after": 1
+      },
+      {
+        "offset": 8704,
+        "before": 7,
+        "after": 3
+      },
+      {
+        "offset": 8706,
+        "before": 3,
+        "after": 1
+      },
+      {
+        "offset": 8708,
+        "before": 255,
+        "after": 0
+      },
+      {
+        "offset": 8709,
+        "before": 127,
+        "after": 0
+      }
+    ],
+    "presetNameChange": null,
+    "observation": null,
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "88643237cba6c4bf7d1092802145ce9ab9e010eec1207deb3bc2bdccd3167ae3",
+    "rawRxSha256": "622617ac5157c6360f9d6ceffdd7d3bd77a50f3437b58b83e86311234373fdcd",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 0
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

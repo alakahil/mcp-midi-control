@@ -1,0 +1,78 @@
+{
+  "index": 0,
+  "step": {
+    "id": "001-baseline",
+    "kind": "baseline",
+    "stage": "baseline",
+    "label": "Muutmata Modern-alusfaili üks GET",
+    "channel": "A",
+    "typeName": "Modern",
+    "source": "bundled",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "001-baseline",
+      "kind": "baseline",
+      "stage": "baseline",
+      "label": "Muutmata Modern-alusfaili üks GET",
+      "channel": "A",
+      "typeName": "Modern",
+      "source": "bundled",
+      "allowUnchanged": true
+    },
+    "previousSha256": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+    "syxSha256": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+    "changedWords": [],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": false,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, candidate PID mappings, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "typeName": "Modern",
+    "controlsConfirmed": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 122,
+    "matchedWords": 48,
+    "wordsPerChannel": 12,
+    "channels": 4,
+    "syxSha256": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+    "bodySha256": "33e4e6f65b9284e36ca07449b8aadab9506ee56254d1fc8247a83c6116ca2e99",
+    "rawRxSha256": "63f81af6d5c17e284e0d72043819ed307d2b095ce73b20933db85a3595355bfe",
+    "frameLengths": [
+      12,
+      154,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

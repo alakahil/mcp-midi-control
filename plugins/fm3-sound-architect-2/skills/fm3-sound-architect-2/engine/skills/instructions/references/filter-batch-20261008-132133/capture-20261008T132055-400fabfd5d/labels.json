@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 13,
+    "name": "Notch",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 15,
+    "name": "Peaking",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 16,
+    "name": "Peaking 2",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 17,
+    "name": "Tilt EQ",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,393 @@
+{
+  "Baaspreset.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "Baaspreset_InenticalExport.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S1_Reverb_channelB.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_AmpBass_4.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_AmpBass_5.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_AmpBass_6.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_AmpBass_7.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_AmpGain_4.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_AmpGain_5.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_AmpGain_6.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_AmpGain_7.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_AmpModelLead.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_Delay_Bypass.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "S2_Delay_Engaged.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "TestE_Delay_Bypass.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "Test_3_AmpGain5_1.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  },
+  "Test_3_AmpGain5_2_IdenticalTo1.syx": {
+    "validation": {
+      "ok": true,
+      "issues": [],
+      "blockCount": 9,
+      "blockNames": [
+        "Amp",
+        "Cab",
+        "Comp",
+        "Analog Stereo",
+        "Vol/Pan",
+        "PEQ",
+        "Classic Vibe",
+        "Large Room",
+        "Clyde"
+      ]
+    },
+    "crc": true,
+    "footer": true,
+    "framingRoundtrip": true,
+    "bodyRoundtrip": true,
+    "roundtripCrc": true
+  }
+}

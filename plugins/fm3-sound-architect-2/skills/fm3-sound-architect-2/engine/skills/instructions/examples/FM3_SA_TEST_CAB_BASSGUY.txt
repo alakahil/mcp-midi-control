@@ -1,0 +1,38 @@
+FM3 SOUND ARCHITECT — PIIRATUD GENERAATOR
+Preset: FM3 SA TEST CAB BASSGUY
+Eesmärk: CAB B tervikkanali kirjutuse kontroll: mõlemad pesad 24 2x12 65 Bassguy. Muud plokid ja stseeniseosed säilivad baasist. Mitte valmis artistipreset.
+Siht: FM3 Mk II Turbo, firmware 13. Alus: kasutaja Baaspreset.syx.
+Amp B Gain: 3.000 /10 [säilitatud alusfailist]
+Amp B Bass: 1.800 /10 [säilitatud alusfailist]
+Amp B Mid: 6.146 /10 [säilitatud alusfailist]
+Amp B Treble: 3.000 /10 [säilitatud alusfailist]
+Amp B Presence: 0.000 /10 [säilitatud alusfailist]
+Amp B Level: -14.001 dB [säilitatud alusfailist]
+Delay A Mix: 12.000 % [säilitatud alusfailist]
+Reverb A Mix: 20.000 % [säilitatud alusfailist]
+Delay A Time: 500.007 ms [säilitatud alusfailist]
+Delay A Feedback: 30.000 % [säilitatud alusfailist]
+Reverb A Time: 1.640 s [säilitatud alusfailist]
+Reverb A Pre-Delay: 30.000 ms [säilitatud alusfailist]
+Delay A Tempo: 1/4  [säilitatud alusfailist]
+Reverb A Pre-Delay Tempo: NONE  [säilitatud alusfailist]
+Scene 2 Delay: bypass  [säilitatud alusfailist]
+Scene 1 Reverb kanal: A  [säilitatud alusfailist]
+Määramata juhtseadised säilivad; Amp-mudeli selgesõnaline valik asendab kogu Amp B kanali malliga enne üksikparameetrite rakendamist.
+Amp B mudel USA MK IV Rhythm 2; muudatused mõjutavad Scene 2 ja 6. Delay A kasutavad kõik 8 stseeni.
+Reverb A kasutavad stseenid 1, 3, 4, 6, 7, 8. Muud kanalid säilivad.
+Scene 2 Cab kanal B: 2x12 65 Bassguy; teine Cab: 2x12 65 Bassguy. Dyna-Cab teegi olemasolu tuleb seadmel kontrollida.
+ARENDUSKATSE: uus mudeli/Cab-valik on failitasemel kontrollitud; selle väljundi riistvaraimport ja heli on kinnitamata.
+Amp-valik kopeerib terve salvestatud kanali, seejärel rakendatakse selgesõnalised juhtseadised. cabScene2 valib olemasoleva kanali; cabModelB asendab CAB B täiskanalimalliga koos mikrofoni-, miksimis- ja filtriseadetega.
+CAB B mõlemad pesad: 24: 2x12 65 Bassguy. Mõjutatud stseenid: 2, 4, 6, 8.
+CAB B kogu 106-sõnaline kanal kopeeriti allikast capture-20261005T133541-cc529ee779, kanal D; sealhulgas mikrofonid, segu, filtrid ja tasemed. Need ei ole universaalsed tehase vaikeväärtused.
+Uue CAB B kirjutuse import/tagasieksport ja heli on veel kontrollimata. Kontrolli Scene 2, Cab B mõlemat pesa ning ekspordi preset tagasi.
+Routing, muud efektid, lülitid ja expression pärinevad baasist. Väliseid User IR-e ei kirjutata ega paigaldata.
+Kitarr ja ühendus: kasutaja senine kontrollseadistus, selle faili jaoks eraldi määramata.
+Failikontrollid läbitud. Kirjutusfunktsioonidel on firmware13 võrdluskatsed; uusi väärtusi/kombinatsioone ei nimetata automaatselt riistvaral kinnitatuks.
+Artistisoundi täpsus, heli ja CPU pole selle generaatoriga hinnatud.
+
+Impordi FM3-Editis oma tööd säilitades ning olemasolevat presetikohta üle kirjutamata.
+Kontrolli soovitud parameetreid õigel kanalil ja stseenis. Vajadusel ekspordi kontrolliks tagasi.
+Tööriist ei ühenda seadet ega saada MIDI/SET-käske.
+SHA-256: ff2a8877a2849c1260f9254648e19015762b2a47ea88ed2afeff59d5ddf34126

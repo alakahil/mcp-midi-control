@@ -1,0 +1,83 @@
+{
+  "index": 6,
+  "step": {
+    "id": "A-band-3-gain--3",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Gain",
+    "candidatePid": 12,
+    "value": -3,
+    "unit": "dB",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Gain väärtuseks -3 dB. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  "status": "passed",
+  "band3TypeLabel": "Peaking",
+  "comparison": {
+    "index": 6,
+    "step": {
+      "id": "A-band-3-gain--3",
+      "channel": "A",
+      "band": 3,
+      "parameter": "Gain",
+      "candidatePid": 12,
+      "value": -3,
+      "unit": "dB",
+      "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Gain väärtuseks -3 dB. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+    },
+    "previousSha256": "cfce26649a627bcd363a1d30f757cafaf8c85c59a3603ddabaed74a271a5c889",
+    "syxSha256": "65e6e976edbcaeb05c84e0e338ec9da85020a585df84a8a30c828f61c70d21c1",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 12,
+        "offset": 8758,
+        "before": 32767,
+        "after": 27852
+      }
+    ],
+    "presetNameChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "typesChannelsAndBypassPreserved": true,
+    "mappingStatus": "one-candidate-word-isolated-awaiting-display-and-pair-audit"
+  },
+  "displayValue": -3.0,
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "65e6e976edbcaeb05c84e0e338ec9da85020a585df84a8a30c828f61c70d21c1",
+    "bodySha256": "2bdd859cfa528c0509dcc59ffb8539ca6fe1a126e155e7c93b970130b7c304fd",
+    "rawRxSha256": "6b8b67f19721ce12b70d1aa71a661b39ee300e254946ebcc02d20cac4c34a559",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

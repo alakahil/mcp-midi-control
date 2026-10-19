@@ -1,0 +1,48 @@
+JB EIGHT SCENES V2
+Bonamassa põhjal kujundatud 8 stseeni — clean 3 dB vaiksem
+Ibanez humbuckeritega · FM3 Mk II Turbo / firmware 13 · OUT1 stereo FOH
+
+Scene 2 rütmi ja Scene 6 soolo senised seaded on säilitatud. Kuue uue variandi helitugevuste ja kõla hinnang on veel ootel. V1 kohta teatas kasutaja 2026-10-09 CPU-näiduks 45,7–46,7%; mõõdetud stseenid ja mõõtetingimused ei ole täpsustatud.
+
+STSEENID
+1. Clean Edge — Puhtama kõla lähtevariant; Drive ja Delay väljas.
+2. Rhythm Fat — Sinu kinnitatud Bonamassa rütm.
+3. Rhythm Push — Sama rütm koos T808-ga; tihedam rütmikäik.
+4. Plexi Crunch — Plexi crunch koos EV12S kabinetiga.
+5. Clean Echo — Esimese stseeni võimendi koos senise 400 ms kajaga.
+6. JB SOLO — Sinu kinnitatud soolo.
+7. Solo Direct — Sama soolo ilma Delayta; Reverb jääb alles.
+8. Solo Mid Focus — Sama soolo, lisaks 1 kHz keskala rõhutus.
+
+SIGNAALIAHEL
+Rida 2: Input 1 → Drive 1 → Amp 1 → Cab 1 → Filter 1 → Send 1
+Rida 3: Return 1 → Delay 1 → Reverb 1 → Output 1
+
+VÕIMENDI- JA KABINETIKANALID
+Amp A: Double Verb Vibrato; Gain 7.00, Level -12.00 dB. Kasutatav Cab: 2x12 Double Verb.
+Amp B: Brit Silver; Gain 5.00, Level -3.00 dB. Kasutatav Cab: 4x12 Rumble EV12L.
+Amp C: USA MK IV Lead Bright; Gain 6.70, Level -8.00 dB. Kasutatav Cab: 4x12 Rumble EV12L (Cab B).
+Amp D: Plexi 50W High 1; Gain 5.00, Level -8.16 dB. Kasutatav Cab: 4x12 Rumble EV12S.
+Need Level-arvud on Ampi parameetrid, mitte OUTPUT1 mõõdiku näidud. Mudelite kuuldavat valjust ei saa nende arvude järgi võrdsustada.
+A ja D kasutavad kogutud täiskanalimalle. Uute stseenide tasakaal vajab kuulamist; tugevam löök võib puhtama kõla varianti kergelt küllastada.
+
+EFEKTID
+Drive B: senine T808 OD, Drive 2, Tone 7, Level 2, Mix 25%. Sees stseenides 3, 6, 7 ja 8.
+Delay A: senine ligikaudu 400 ms, Feedback 25%, Mix 15%, Tempo NONE. Sees stseenides 5, 6 ja 8.
+Reverb: senised A Large Room, B Large Room ja D Medium Room kanalid. A on stseenides 1/5, B stseenides 2/3/4, D stseenides 6/7/8.
+Filter C Peaking: Frequency 1000 Hz, Q 1.4, Gain +3 dB, Level 0 dB. Aktiivne ainult stseenis 8. See rõhutab keskala; +3 dB ei tähenda kogu väljundi +3 dB võimendust.
+Stseenid 6, 7 ja 8 jagavad Amp C-d ning Drive B-d. Nende kanalite muutmine mõjutab kõiki neid stseene.
+
+MUUDATUS V2
+Scene 1 ja Scene 5 kasutavad Amp A-d. Level langes -9,00 dB-lt -12,00 dB-le. Kõik muud sisubaidid ja ülejäänud kuus stseeni säilisid. Gain, Master ja EQ jäid samaks.
+
+KONTROLL
+Kasutaja 2026-10-09 JB_EIGHT_SCENES_V2_export.syx muutis ainult Amp A Leveli ühte 16-bitist sõna. Koostaja taastab kõik selle ekspordi 13 146 sisubaiti täpselt. Väljundi sisemine nimi on JB EIGHT SCENES V2; kasutaja ekspordis oli nimi veel V1. Uue nimega faili pole eraldi imporditud, kuid sama sisu korduseksporti ei ole vaja. Kontrollsummad ja pikkused läbivad.
+
+KUULAMINE
+Võrdle Scene 1 ja 5 uut taset Scene 2-ga. Pärast -3 dB muudatust pole sobivust veel kinnitatud. V1 CPU vaatlus oli 45,7–46,7%; V2 jaoks eraldi näitu pole saadetud.
+
+C/D LEVELI KONTROLL LÕPETATUD — 2026-10-09
+Amp C USA MK IV Lead Bright ja Amp D Plexi 50W High 1 täpsed -11 dB punktid on tegeliku ekspordiga kinnitatud ning koostajas olemas. Muutusid ainult nende kahe Leveli sõnad; muud andmed säilisid. Korduseksporti ega GET-i pole vaja.
+Selles muusikalises V2 failis on C ja D varasemad tasemed alles: C ligikaudu -8 dB, D ligikaudu -8,16 dB. Testi ajutiste tasemete taastamiseks ava JB_EIGHT_SCENES_V2.syx uuesti. Järgmiseks kuula, kas Scene 1 ja 5 uus -3 dB tasakaal sobib.
+SYX SHA-256: aed7727e29b12765a661708ca29fcf211cc8901a4655edbec53738920adf565f

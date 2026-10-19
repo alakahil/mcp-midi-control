@@ -1,0 +1,160 @@
+{
+  "index": 92,
+  "step": {
+    "id": "093-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "7 Band Pedal — eristatav ribamuster",
+    "channel": "A",
+    "typeName": "7 Band Pedal",
+    "bandCount": 7,
+    "values": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "093-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "7 Band Pedal — eristatav ribamuster",
+      "channel": "A",
+      "typeName": "7 Band Pedal",
+      "bandCount": 7,
+      "values": [
+        0.5,
+        1,
+        1.5,
+        2,
+        2.5,
+        3,
+        3.5
+      ]
+    },
+    "previousSha256": "b3c05806575a727b88cdcc4de33828ae20fbe6d0835c1f801a61e8e010b04567",
+    "syxSha256": "09bed21b2801d63e1e8303cd2f23aae6b5838f6e191dcc481d0ee4e7f5c36bdf",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 32767,
+        "after": 34132
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 32767,
+        "after": 35498
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 32767,
+        "after": 36863
+      },
+      {
+        "channel": "A",
+        "pid": 3,
+        "offset": 8360,
+        "before": 32767,
+        "after": 38228
+      },
+      {
+        "channel": "A",
+        "pid": 4,
+        "offset": 8362,
+        "before": 32767,
+        "after": 39593
+      },
+      {
+        "channel": "A",
+        "pid": 5,
+        "offset": 8364,
+        "before": 32767,
+        "after": 40959
+      },
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 8366,
+        "before": 32767,
+        "after": 42324
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "100",
+      "200",
+      "400",
+      "800",
+      "1.6K",
+      "3.2K",
+      "6.4K"
+    ],
+    "displayValues": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "09bed21b2801d63e1e8303cd2f23aae6b5838f6e191dcc481d0ee4e7f5c36bdf",
+    "bodySha256": "65b791ea444bfeb7932ae72ec46ddebcbfd18a52c81ad60e3843abdf7e159df9",
+    "rawRxSha256": "31cc0cf63bf388b611b08f64c2fa68ae907bb62a603dbd30ed5be212b4c9db63",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

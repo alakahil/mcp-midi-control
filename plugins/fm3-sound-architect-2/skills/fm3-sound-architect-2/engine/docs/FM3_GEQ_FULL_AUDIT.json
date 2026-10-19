@@ -1,0 +1,37 @@
+{
+  "passedSteps": 184,
+  "excludedAttempts": 8,
+  "pairedWordsPerStep": 80,
+  "matchedWordsTotal": 14720,
+  "typeCount": 18,
+  "numericAnchors": 557,
+  "enumAnchors": 4,
+  "typeCoupledChanges": 0,
+  "channelCopies": [
+    177,
+    179,
+    181
+  ],
+  "independentChannelGain": [
+    178,
+    180,
+    182
+  ],
+  "sceneSelections": [
+    177,
+    179,
+    181,
+    183
+  ],
+  "collectorResume": "184/184 verified using unchanged original resume()",
+  "pendingLabels": [
+    {
+      "type": "7 Band Constant Q",
+      "band": 1,
+      "captured": "python3 100",
+      "candidate": "100",
+      "status": "Not substituted in evidence or confirmed as frequency"
+    }
+  ],
+  "hardware": "Captured samples verified; newly generated combination pending import/export, listening and CPU"
+}

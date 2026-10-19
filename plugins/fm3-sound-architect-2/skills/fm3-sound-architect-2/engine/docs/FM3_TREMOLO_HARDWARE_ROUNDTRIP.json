@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "generatedSha256": "bef7d082b6e79751a8a2f14f92516941965ac6f0b35b1178db3afad4ecd5880c",
+  "hardwareExportSha256": "de7dfc12cbcd2ad517f10f13d392f8b859aee75e94286152d14b80fe9d1596f1",
+  "fullFilesIdentical": false,
+  "bodyBytes": 14134,
+  "changedBodyOffsets": [],
+  "channels": [
+    {
+      "channel": "A",
+      "type": "Bias Trem",
+      "binaryId": 2,
+      "all22WordsPreserved": true
+    },
+    {
+      "channel": "B",
+      "type": "Optical Trem 2",
+      "binaryId": 5,
+      "all22WordsPreserved": true
+    },
+    {
+      "channel": "C",
+      "type": "Neon Trem",
+      "binaryId": 6,
+      "all22WordsPreserved": true
+    },
+    {
+      "channel": "D",
+      "type": "Panner",
+      "binaryId": 1,
+      "all22WordsPreserved": true
+    }
+  ],
+  "presetNameChange": {
+    "before": "FM3_WAH_ABCD_TEST_export",
+    "after": "FM3_WAH_ABCD_TEST_export"
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 143,
+      "after": 209,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 110,
+      "after": 195,
+      "field": "CRC"
+    }
+  ],
+  "sceneChannelsBefore": [
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "sceneChannelsAfter": [
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footerChecksum": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all88TremoloWordsPreserved": true,
+    "scenesAndBypassPreserved": true,
+    "dumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyNameAndCrc": true
+  },
+  "scope": "Hardware roundtrip verified only if reported checks pass for this ABCD specimen; 28 general type/channel combinations are offline tested only. Audio and CPU not assessed.",
+  "encoding": {
+    "compressedBytesBefore": 4880,
+    "compressedBytesAfter": 4880,
+    "compressedRepresentationIdentical": false,
+    "paddingBeforeAllZero": true,
+    "paddingAfterAllZero": true,
+    "note": "Compressed encoding and its checksums may differ while decompressed data is byte-identical; no body normalization performed."
+  }
+}

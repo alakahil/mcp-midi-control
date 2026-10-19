@@ -1,0 +1,143 @@
+{
+  "source": "User FM3-Edit screenshot 2026-10-06 12.42.04",
+  "firmwareDeclared": 13,
+  "count": 27,
+  "note": "Display numbers are not binary IDs. GET/SYX pairing pending.",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "2290 w/ Modulation",
+      "binaryId": 12
+    },
+    {
+      "displayNumber": 2,
+      "name": "Ambient Stereo",
+      "binaryId": 13
+    },
+    {
+      "displayNumber": 3,
+      "name": "Analog Mono",
+      "binaryId": 2
+    },
+    {
+      "displayNumber": 4,
+      "name": "Analog Stereo",
+      "binaryId": 3
+    },
+    {
+      "displayNumber": 5,
+      "name": "Deluxe Mind Guy",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Digital Mono",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "Digital Stereo",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 8,
+      "name": "DM-Two Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "Dual Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Dual Head Tape",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Ducking Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Graphite Copy Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 13,
+      "name": "Lo-Fi Tape",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 14,
+      "name": "Mono BBD",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 15,
+      "name": "Mono Tape",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 16,
+      "name": "Pan Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 17,
+      "name": "Ping-Pong",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 18,
+      "name": "Reverse Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 19,
+      "name": "Stereo BBD",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 20,
+      "name": "Stereo Mind Guy",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 21,
+      "name": "Stereo Tape",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 22,
+      "name": "Stereo Trem Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 23,
+      "name": "Surround Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 24,
+      "name": "Sweep Delay",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 25,
+      "name": "Vintage Digital",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 26,
+      "name": "Wandering Delays",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 27,
+      "name": "Worn Tape",
+      "binaryId": null
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+FM3 PEQ CONTROLS — firmware 13, esimene sihitud juhtide kogumine
+
+Algkontroll on valmis: sinu PEQ alus ja päris GET-vastus klapivad 132/132.
+Seda ei korrata. Kogume nüüd kanal A keskmise (Band 3) riba Frequency,
+Q ja Gain ning PEQ üldise Leveli. Kokku 12 punkti; s jätab punkti mõõtmata.
+
+1. Paki kaust FM3_PEQ_CONTROLS Downloads-kausta.
+2. FM3-Editis jäta lähteolekuks senine PEQ algpreset: Scene 2, PEQ 1 A bypass.
+   Kui oled vahepeal muutnud, impordi kaasasolev baseline.syx tööpuhvrisse.
+   Uut algfaili eksporti pole vaja. Salvestamist presetikohale pole vaja.
+3. Terminalis käivita:
+   python3 ~/Downloads/FM3_PEQ_CONTROLS/FM3_PEQ_CONTROLS.py --port /dev/cu.usbmodem211104
+   Kui FM3 port muutus, kasuta oma tegelikku porti. Python 3 ja Node on vajalikud;
+   lisateeke ega pip/npm paigaldust pole vaja.
+4. Kirjuta programmi küsides Band 3 Type täpne tekst. Ära tüüpi muuda.
+   Kui Type-välja ei näe, kirjuta „ei näe”. Seda ei loeta kinnitatud tüübitabeliks.
+5. Tee ekraanil ainult programmi nimetatud muudatus. Ekspordi terve preset
+   oma valitud nimega .syx faili ja lohista see terminali. Nimevahetus on lubatud.
+   Hoia Scene 2, PEQ A bypass; teised ribad, kanalid, stseenid ja plokid samana.
+6. Kontrolli näidatavat väärtust. Enter kinnitab sihi; ümarduse korral sisesta
+   tegelik ekraaniväärtus samas ühikus. Muutused on järjestikused, eelmisi ei nullita.
+   Oluliselt sihist erinev arv peatab sammu enne GET-i; kontrolli juhti ja ühikut.
+7. Sulge FM3-Edit ja Fractal-Bot. „jah” lubab ühe PEQ GET-lugemise.
+   Pärast PASS-i ava FM3-Edit ja jätka järgmisest juhisest.
+8. Saada programmi nimetatud tulemuste ZIP vestlusse.
+
+Punktid: Band 3 Frequency 500/1000/2000 Hz; Q 0.707/1.4/2;
+Band 3 Gain -3/+3/0 dB; ploki Level -3/+3/0 dB.
+Kui sihtväärtus on juba sama või juht puudub, vali s ja täpsusta põhjus.
+Vahelejätmise järel peab seade vastama programmi viimasele edukale failile.
+Kogumine ei kinnita veel kogu väärtusvahemikku ega luba PEQ generaatorikirjutust.
+
+q lõpetab ja teeb ZIP-i. Sama käsk jätkab pooleli jäänud punktist, juba kinnitatud
+punkte ei korrata. Hoia FM3_PEQ_CONTROLS_SESSION kaust alles. Jätkamisel taasta
+programmi näidatud viimane edukas SYX tööpuhvrisse, siis muuda järgmist juhti.
+Kui viga peatas sammu, jäävad fail ja saadud vastus alles; kontrolli põhjust.
+Ära muuda sessioonifaile käsitsi. Uus katse vajab uut „jah” kinnitust.
+Ainult ZIP-i väljastamiseks:
+python3 ~/Downloads/FM3_PEQ_CONTROLS/FM3_PEQ_CONTROLS.py --export-only
+
+Programm saadab ainult fikseeritud PEQ GET-i f0000174111f36003df7,
+ühe päringu kinnitatud katse kohta. SET/SAVE/STORE, presetivahetus ja automaatne
+korduspäring puuduvad. Vigane eksport peatab sammu enne seadme avamist.
+Toimingud FM3-Editis teeb kasutaja. Kaasas olevad kontrollid töötavad failidel.

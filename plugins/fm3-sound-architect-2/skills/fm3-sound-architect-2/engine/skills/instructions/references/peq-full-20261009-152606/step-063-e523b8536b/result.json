@@ -1,0 +1,125 @@
+{
+  "index": 63,
+  "step": {
+    "id": "064-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Bypass Mode; kui sellist valikut pole, s ja täpne nähtav valikuloend. Muuda ainult: Bypass Mode → Mute . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Bypass Mode",
+        "candidatePid": 22,
+        "value": "Mute",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 63,
+    "step": {
+      "id": "064-common",
+      "stage": "common",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Bypass Mode; kui sellist valikut pole, s ja täpne nähtav valikuloend. Muuda ainult: Bypass Mode → Mute . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Bypass Mode",
+          "candidatePid": 22,
+          "value": "Mute",
+          "band": null,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+    "syxSha256": "a53a4a0d8d1248eec80d164414bee6017b50ec3975e7fd9f00732ac8b62c4e9c",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 22,
+        "offset": 8778,
+        "before": 0,
+        "after": 1
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Bypass Mode",
+        "candidatePid": 22,
+        "value": "Mute",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 1
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Bypass Mode",
+        "candidatePid": 22,
+        "value": "Mute",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": "Mute"
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "a53a4a0d8d1248eec80d164414bee6017b50ec3975e7fd9f00732ac8b62c4e9c",
+    "bodySha256": "42f788b459ead8ae138e10c86dc8a7f15d84ed7d169f0b59dd7ce33f74e91ed0",
+    "rawRxSha256": "8818f5cf946d6fb5ec1bd04dd3d030a8e942f02d6f0d247ef601c8e2de56a4a3",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

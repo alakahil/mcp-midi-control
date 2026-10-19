@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-12",
+  "generator": "jb-composer-0.12.1",
+  "passed": true,
+  "generatedFile": "examples/FM3_ENHANCER_ABCD_TEST.syx",
+  "generatedSha256": "a545aa8bb7f659b10dc2a7beb4a902e1377bbeef995381d2dc6ece55ef14965b",
+  "exportFile": "examples/FM3_ENHANCER_ABCD_TEST_export.syx",
+  "exportSha256": "463aaf84ce2bafc4f531f03b6d1af6c441ec98028bc5a1767d90111062f32edf",
+  "bodySha256": "0dd583acf671f1c556b8d676415456ad2412a05acb8b9b2400f93dbedddec728",
+  "hardwareExportLibraryFileId": "libfile_8a6c90da6fe0819194a20f98c1d745d8",
+  "fullFilesIdentical": false,
+  "bodyBytes": 13804,
+  "changedBodyOffsets": [],
+  "presetName": "FM3 ENHANCER ABCD TEST",
+  "selectedScene": 2,
+  "headerChanges": [
+    {
+      "offset": 4,
+      "field": "CRC",
+      "before": 115,
+      "after": 98
+    },
+    {
+      "offset": 5,
+      "field": "CRC",
+      "before": 13,
+      "after": 117
+    }
+  ],
+  "enhancer": {
+    "effectId": 122,
+    "recordOffset": 7460,
+    "recordBytes": 142,
+    "matchedParameterWords": 48,
+    "sceneChannels": [
+      "A",
+      "A",
+      "B",
+      "C",
+      "A",
+      "D",
+      "A",
+      "A"
+    ],
+    "activeScenes": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "channels": [
+      {
+        "channel": "A",
+        "values": {
+          "type": "Modern",
+          "width": 20.00030518509476,
+          "depth": 20.00030518509476,
+          "lowCutHz": 99.99894500545665,
+          "highCutHz": 2000,
+          "levelDb": -0.999786370433668,
+          "sceneIgnore": false
+        }
+      },
+      {
+        "channel": "B",
+        "values": {
+          "type": "Classic",
+          "width": 50,
+          "levelDb": -0.999786370433668,
+          "invert": "None",
+          "panLeft": -80.00122074037904,
+          "panRight": 80.00122074037904,
+          "balance": 0,
+          "sceneIgnore": false
+        }
+      },
+      {
+        "channel": "C",
+        "values": {
+          "type": "Stereoizer",
+          "width": 20.00030518509476,
+          "depth": 20.00030518509476,
+          "levelDb": -0.999786370433668,
+          "sceneIgnore": false
+        }
+      },
+      {
+        "channel": "D",
+        "values": {
+          "type": "Modern",
+          "width": 35.00015259254738,
+          "depth": 50,
+          "lowCutHz": 200,
+          "highCutHz": 4999.8945011021715,
+          "levelDb": -0.4992828150273141,
+          "sceneIgnore": false
+        }
+      }
+    ],
+    "valueEvidence": "All values retained in device export; not individually pictured"
+  },
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all48EnhancerWordsPreserved": true,
+    "allOriginal13662GeqBytesReconstructed": true,
+    "existingLevelsAndScenesPreserved": true,
+    "sendReturnAndTwoRowsPreserved": true,
+    "presetNameAndSelectedScenePreserved": true,
+    "chunkPrefixesAndDumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyCrc": true,
+    "encodedLengthsAndZeroPadding": true,
+    "unchangedSpecRegeneratesIdenticalSyx": true,
+    "renamedFileNotFalselySubmittedConfirmed": true,
+    "newCombinationNotFalselyConfirmed": true
+  },
+  "encoding": {
+    "compressedBytesBefore": 4754,
+    "compressedBytesAfter": 4754,
+    "compressedRepresentationIdentical": false
+  },
+  "cpu": {
+    "maximumObservedPercent": 52.7,
+    "source": "User report",
+    "scope": "This combined Enhancer A-D test; not a universal maximum"
+  },
+  "audio": {
+    "userReport": "Enhancer toimib",
+    "meaning": "User confirms Enhancer works; no separate assertion of equal loudness, mono compatibility or every parameter display"
+  },
+  "limits": [
+    "Exact generated combination only; new compositions require their own evidence",
+    "Scene Ignore ON/OFF words measured previously; all-scene behavior not independently tested",
+    "No screenshots of each control supplied for this roundtrip"
+  ],
+  "next": "Enhancer integration and this combined preset are confirmed. Do not request repeated collection/import/export/CPU for this specimen. New compositions have separate device evidence."
+}

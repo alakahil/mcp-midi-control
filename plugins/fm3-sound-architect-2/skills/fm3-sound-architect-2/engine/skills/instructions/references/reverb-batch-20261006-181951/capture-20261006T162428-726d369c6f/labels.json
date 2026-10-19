@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 17,
+    "name": "Hall: Concert Hall",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 18,
+    "name": "Hall: Large Deep Hall",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 19,
+    "name": "Hall: Large Hall",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 20,
+    "name": "Hall: Marble Hall",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

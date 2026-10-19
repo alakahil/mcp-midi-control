@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "effectId": 78,
+  "firmwareDeclared": 13,
+  "source": "User FM3-Edit screenshot 2026-10-07 13.04.51; display numbers are not device IDs",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "4-Voice Analog",
+      "binaryId": 13
+    },
+    {
+      "displayNumber": 2,
+      "name": "8-Voice Analog",
+      "binaryId": 14
+    },
+    {
+      "displayNumber": 3,
+      "name": "8-Voice Stereo",
+      "binaryId": 8
+    },
+    {
+      "displayNumber": 4,
+      "name": "80's Style",
+      "binaryId": 6
+    },
+    {
+      "displayNumber": 5,
+      "name": "Analog Mono",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Analog Stereo",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "Digital Mono",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 8,
+      "name": "Digital Stereo",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "Dimension 1",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Dimension 2",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Dimension 3",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Dual Chorus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 13,
+      "name": "Japan CE-1 Chorus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 14,
+      "name": "Japan CE-1 Vibrato",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 15,
+      "name": "Japan CE-2",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 16,
+      "name": "Japan CE-2 Bass",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 17,
+      "name": "Japan Ch-1",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 18,
+      "name": "Mx134 Stereo",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 19,
+      "name": "Mx234",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 20,
+      "name": "Rockguy",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 21,
+      "name": "Small Copy",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 22,
+      "name": "Stereo Tri-Chorus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 23,
+      "name": "Tape Chorus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 24,
+      "name": "Tape Flanger",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 25,
+      "name": "Triangle Chorus",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 26,
+      "name": "Vibrato",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 27,
+      "name": "Warm Stereo",
+      "binaryId": null
+    }
+  ]
+}

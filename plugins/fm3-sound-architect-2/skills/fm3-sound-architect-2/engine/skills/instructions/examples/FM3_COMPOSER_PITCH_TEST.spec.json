@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "FM3 COMPOSER PITCH TEST",
+  "purpose": "Ühise koostaja tehniline kooskasutuse katse: Amp/Cab, Drive, Delay, Reverb, Compressor, Chorus, Phaser, Wah ja Pitch ühes failis. Pitchiga aluse nihkunud plokiasukohtade kontroll; kuulamisega kinnitatud Bonamassa preset jääb eraldi alles.",
+  "ampModelB": "Brit Silver",
+  "cabModelB": "4x12 Rumble EV12L",
+  "gainB": 5,
+  "bassB": 4,
+  "midB": 6.5,
+  "trebleB": 5.2,
+  "presenceB": 3,
+  "levelB": -3,
+  "driveChannels": [
+    {
+      "channel": "B",
+      "type": "T808 OD",
+      "drive": 2,
+      "tone": 7,
+      "level": 2,
+      "mix": 25
+    }
+  ],
+  "delayChannels": [
+    {
+      "channel": "A",
+      "type": "Deluxe Mind Guy"
+    }
+  ],
+  "delayTimeMs": 400,
+  "delayTempoA": "NONE",
+  "delayFeedback": 25,
+  "delayMixA": 15,
+  "reverbChannels": [
+    {
+      "channel": "A",
+      "type": "Room: Large Room"
+    },
+    {
+      "channel": "D",
+      "type": "Room: Medium Room"
+    }
+  ],
+  "reverbMixA": 12,
+  "reverbTimeS": 2.5,
+  "reverbPredelayMs": 40,
+  "reverbPredelayTempoA": "NONE",
+  "compressorChannels": [
+    {
+      "channel": "C",
+      "type": "Analog Compressor"
+    }
+  ],
+  "chorusChannels": [
+    {
+      "channel": "D",
+      "type": "4-Voice Analog"
+    }
+  ],
+  "phaserChannels": [
+    {
+      "channel": "B",
+      "type": "Classic Vibe"
+    }
+  ],
+  "wahChannels": [
+    {
+      "channel": "C",
+      "type": "Clyde"
+    }
+  ],
+  "pitchChannels": [
+    {
+      "channel": "B",
+      "type": "Virtual Capo"
+    },
+    {
+      "channel": "C",
+      "type": "Dual Detune"
+    }
+  ],
+  "scene6Name": "JB SOLO",
+  "phaserScene6Bypass": true,
+  "reverbScene6": "D",
+  "delayScene6Bypass": false,
+  "ampScene6": "C"
+}

@@ -1,0 +1,95 @@
+{
+  "index": 19,
+  "step": {
+    "id": "020-type",
+    "kind": "type",
+    "stage": "types",
+    "label": "4 Band JMPre-1 — Type ja tegelik juhtpaneel",
+    "channel": "A",
+    "typeName": "4 Band JMPre-1",
+    "bandCount": 4,
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "020-type",
+      "kind": "type",
+      "stage": "types",
+      "label": "4 Band JMPre-1 — Type ja tegelik juhtpaneel",
+      "channel": "A",
+      "typeName": "4 Band JMPre-1",
+      "bandCount": 4,
+      "allowUnchanged": true
+    },
+    "previousSha256": "7f3bf20c35ec791b09706cccbeb2b9bfa05171bc8caaf33eff3b0f9607a0f8cc",
+    "syxSha256": "49591bcfeafb93ced10a4407a1abf2078f66e47aa43110117b173df2811da23d",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 15,
+        "offset": 8384,
+        "before": 10,
+        "after": 15
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "ui": {
+      "typeName": "4 Band JMPre-1",
+      "bandLabels": [
+        "Bass",
+        "Mid",
+        "Treble",
+        "Presence"
+      ],
+      "masterQVisible": true,
+      "extraControls": ""
+    }
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "49591bcfeafb93ced10a4407a1abf2078f66e47aa43110117b173df2811da23d",
+    "bodySha256": "10a2cf916cb6d886de29621ca89656f47df11ea99b6fbb990b51da91bdc72042",
+    "rawRxSha256": "c12f2c6ab517b152bc13b590a7fccddea093e70565eab576555dff78da028caa",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

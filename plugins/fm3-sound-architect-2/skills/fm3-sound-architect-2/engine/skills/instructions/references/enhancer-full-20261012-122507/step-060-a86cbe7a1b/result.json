@@ -1,0 +1,84 @@
+{
+  "index": 60,
+  "step": {
+    "id": "061-type",
+    "kind": "type",
+    "stage": "types",
+    "label": "Type Stereoizer",
+    "channel": "A",
+    "typeName": "Stereoizer",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "061-type",
+      "kind": "type",
+      "stage": "types",
+      "label": "Type Stereoizer",
+      "channel": "A",
+      "typeName": "Stereoizer",
+      "allowUnchanged": true
+    },
+    "previousSha256": "853f16544264421d0ebea5c0c458efb1d161ae05a0cc3567558ca08f99588c23",
+    "syxSha256": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 7518,
+        "before": 1,
+        "after": 2
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, candidate PID mappings, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "typeName": "Stereoizer",
+    "controlsConfirmed": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 122,
+    "matchedWords": 48,
+    "wordsPerChannel": 12,
+    "channels": 4,
+    "syxSha256": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723",
+    "bodySha256": "928c023b53b4bb0621008264d7964185ea0decec8f3d4062e2a2c3ec528e15f8",
+    "rawRxSha256": "f18d55f7218a08d4c397249a36e7532fd5ed3578e8c3de82500138fce529dff9",
+    "frameLengths": [
+      12,
+      154,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

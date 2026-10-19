@@ -1,0 +1,442 @@
+{
+  "source": "FM3-Edit screenshot supplied 2026-10-06 10:42:02; firmware13 context",
+  "count": 87,
+  "idStatus": "unverified; display numbers are NOT binary IDs",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "'77 Custom OD",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 2,
+      "name": "Angry Chuck",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 3,
+      "name": "BB Pre",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 4,
+      "name": "BB Pre AT",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 5,
+      "name": "Bender Fuzz",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Bit Crusher",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "Blackglass 7K",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 8,
+      "name": "Blues OD",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "Bosom Boost",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Box o' Crunch",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Colortone Booster",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Colortone OD",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 13,
+      "name": "Compulsion Distortion HP",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 14,
+      "name": "Compulsion Distortion LP",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 15,
+      "name": "DS1 Distortion",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 16,
+      "name": "DS1 Distortion Mod",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 17,
+      "name": "Esoteric ACB",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 18,
+      "name": "Esoteric Bass RCB",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 19,
+      "name": "Esoteric RCB",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 20,
+      "name": "Eternal Love",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 21,
+      "name": "Face Fuzz",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 22,
+      "name": "FAS Boost",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 23,
+      "name": "FAS LED-Drive",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 24,
+      "name": "Fat Rat",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 25,
+      "name": "FET Boost",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 26,
+      "name": "FET Preamp",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 27,
+      "name": "Full OD",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 28,
+      "name": "Gauss Drive",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 29,
+      "name": "Griddle Cake",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 30,
+      "name": "Guardian Photon Speed",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 31,
+      "name": "Hard Fuzz",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 32,
+      "name": "Heartpedal 11",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 33,
+      "name": "Hoodoo Drive",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 34,
+      "name": "Horizon Precision Drive",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 35,
+      "name": "Integral Pre",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 36,
+      "name": "Jam Ray",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 37,
+      "name": "Klone Chiron",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 38,
+      "name": "M-Zone Distortion",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 39,
+      "name": "Master Fuzz",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 40,
+      "name": "Maxoff 808",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 41,
+      "name": "MCMLXXXI Drive",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 42,
+      "name": "Micro Boost",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 43,
+      "name": "Mid Boost",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 44,
+      "name": "MOSFET Distortion",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 45,
+      "name": "NoAmp Bass DI",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 46,
+      "name": "NoAmp Bass Pre",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 47,
+      "name": "Nobelium OVD-1",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 48,
+      "name": "Octave Distortion",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 49,
+      "name": "OD 250",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 50,
+      "name": "OD 250 Gray",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 51,
+      "name": "OD-One Overdrive",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 52,
+      "name": "Paradigm Shifter",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 53,
+      "name": "PI Fuzz",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 54,
+      "name": "PI Fuzz - Bass",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 55,
+      "name": "PI Fuzz - Ram's Head",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 56,
+      "name": "PI Fuzz - Russian",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 57,
+      "name": "PI Fuzz - Triangle",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 58,
+      "name": "Plus Distortion",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 59,
+      "name": "Rat Distortion",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 60,
+      "name": "Royal Bass DI",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 61,
+      "name": "SDD Preamp",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 62,
+      "name": "Shimmer Drive",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 63,
+      "name": "Shred Distortion",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 64,
+      "name": "Sonic Drive",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 65,
+      "name": "Suhr Riot Ge (R)",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 66,
+      "name": "Suhr Riot LED (L)",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 67,
+      "name": "Suhr Riot LED/Si (M)",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 68,
+      "name": "Sunrise Splendor",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 69,
+      "name": "Sunrise Splendor Hi-Cut",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 70,
+      "name": "Super Fuzz",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 71,
+      "name": "Super OD",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 72,
+      "name": "Swedish Metal",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 73,
+      "name": "T808 Mod",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 74,
+      "name": "T808 OD",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 75,
+      "name": "Tape Distortion",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 76,
+      "name": "Timothy Down",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 77,
+      "name": "Timothy Mid",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 78,
+      "name": "Timothy Up",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 79,
+      "name": "Tone of Kings",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 80,
+      "name": "Treble Boost",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 81,
+      "name": "TS9DX +",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 82,
+      "name": "TS9DX Hot",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 83,
+      "name": "Tube Drive 3-Knob",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 84,
+      "name": "Tube Drive 4-Knob",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 85,
+      "name": "Tube Drive 5-Knob",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 86,
+      "name": "Valve Screamer VS9",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 87,
+      "name": "Zen Master",
+      "binaryId": null
+    }
+  ]
+}

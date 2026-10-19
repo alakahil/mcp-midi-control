@@ -1,0 +1,361 @@
+FM3 SOUND ARCHITECT — ÜHINE PRESET
+Preset: FM3 ENHANCER ABCD TEST
+Eesmärk: Enhanceri Modern/Classic/Stereoizer ja A–D ühine seadme-, heli- ja CPU-kontroll. Kõik senised GEQ, PEQ ja V3 seaded säilivad.
+FM3 Mk II Turbo, firmware 13. Kasutaja senine kontekst: Ibanez humbuckeritega; OUT 1 stereo FOH.
+Alus: examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx (jb-newlook). Valitud Scene 2 säilib.
+Rida 2: Input 1 → Drive 1 → Amp 1 → Cab 1 → Filter 1 → PEQ 1 → GEQ 1 → Send 1
+Rida 3: Return 1 → Delay 1 → Reverb 1 → Enhancer 1 → Output 1
+
+KÜSITUD KANALIMALLID
+Lisatud filter: rida 2, veerg 9; küsitud stseenivalikud on allpool, muud stseenid A/bypass. Kogu väljundkeha kattub kinnitatud seadmeekspordiga.
+Lisatud peq: rida 2, veerg 10; küsitud stseenivalikud on allpool, muud stseenid A/bypass. Kogu väljundkeha kattub kinnitatud seadmeekspordiga.
+Lisatud geq: rida 2, veerg 11; küsitud stseenivalikud on allpool, muud stseenid A/bypass. Kogu väljundkeha kattub kinnitatud seadmeekspordiga.
+Lisatud enhancer: rida 3, veerg 11; küsitud stseenivalikud on allpool, muud stseenid A/bypass. Kogu väljundkeha kattub kinnitatud seadmeekspordiga.
+drive B: T808 OD; täielik kogutud kanalimall.
+  drive 2 /10, tone 7 /10, level 2 /10, mix 25%
+reverb D: Room: Medium Room; täielik kogutud kanalimall.
+filter C: Peaking; täielik kogutud kanalimall.
+  frequencyHz: 1000 Hz [mõõdetud punkt; küsitud 1000]
+  q: 1.4  [mõõdetud punkt; küsitud 1.4]
+  gainDb: 3 dB [mõõdetud punkt; küsitud 3]
+  levelDb: 0 dB [mõõdetud punkt; küsitud 0]
+peq A: Parametric EQ, bands 1–5; täielik kogutud kanalimall, seejärel küsitud parameetrid.
+  bands.1.type: Blocking  [measured enum; küsitud Blocking]
+  bands.1.frequencyHz: 84.99749092189239 Hz [scale-derived; independent device check pending; küsitud 85; ekraani ümardus]
+  bands.1.slopeDbPerOct: 12 dB/oct [measured enum; küsitud 12]
+  bands.1.solo: OFF  [measured enum; küsitud OFF]
+  bands.2.type: Peaking  [measured enum; küsitud Peaking]
+  bands.2.frequencyHz: 349.9882533921358 Hz [scale-derived; independent device check pending; küsitud 350; ekraani ümardus]
+  bands.2.q: 0.8000253204032962  [scale-derived; independent device check pending; küsitud 0.8; ekraani ümardus]
+  bands.2.gainDb: -1.500289925840022 dB [scale-derived; independent device check pending; küsitud -1.5; ekraani ümardus]
+  bands.2.solo: OFF  [measured enum; küsitud OFF]
+  bands.3.type: Peaking  [measured enum; küsitud Peaking]
+  bands.3.frequencyHz: 900.0212309381711 Hz [scale-derived; independent device check pending; küsitud 900; ekraani ümardus]
+  bands.3.q: 1.0999757196471296  [scale-derived; independent device check pending; küsitud 1.1; ekraani ümardus]
+  bands.3.gainDb: 0.999786370433668 dB [scale-derived; independent device check pending; küsitud 1; ekraani ümardus]
+  bands.3.solo: OFF  [measured enum; küsitud OFF]
+  bands.4.type: Peaking  [measured enum; küsitud Peaking]
+  bands.4.frequencyHz: 2799.9946455743348 Hz [scale-derived; independent device check pending; küsitud 2800; ekraani ümardus]
+  bands.4.q: 0.9000212309381711  [scale-derived; independent device check pending; küsitud 0.9; ekraani ümardus]
+  bands.4.gainDb: -0.999786370433668 dB [scale-derived; independent device check pending; küsitud -1; ekraani ümardus]
+  bands.4.solo: OFF  [measured enum; küsitud OFF]
+  bands.5.type: Blocking  [measured enum; küsitud Blocking]
+  bands.5.frequencyHz: 6500.053857695757 Hz [scale-derived; independent device check pending; küsitud 6500; ekraani ümardus]
+  bands.5.slopeDbPerOct: 12 dB/oct [measured enum; küsitud 12]
+  bands.5.solo: OFF  [measured enum; küsitud OFF]
+  levelDb: -0.4992828150273141 dB [scale-derived; independent device check pending; küsitud -0.5; ekraani ümardus]
+  balance: 0  [measured point; küsitud 0]
+  bypassMode: Thru  [measured enum; küsitud Thru]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+peq B: Parametric EQ, bands 1–5; täielik kogutud kanalimall, seejärel küsitud parameetrid.
+  bands.1.type: Peaking 2  [measured enum; küsitud Peaking 2]
+  bands.1.frequencyHz: 120.00268140927163 Hz [scale-derived; independent device check pending; küsitud 120; ekraani ümardus]
+  bands.1.q: 0.8000253204032962  [scale-derived; independent device check pending; küsitud 0.8; ekraani ümardus]
+  bands.1.gainDb: -0.999786370433668 dB [scale-derived; independent device check pending; küsitud -1; ekraani ümardus]
+  bands.1.solo: OFF  [measured enum; küsitud OFF]
+  bands.2.type: Peaking 2  [measured enum; küsitud Peaking 2]
+  bands.2.frequencyHz: 419.99971966216367 Hz [scale-derived; independent device check pending; küsitud 420; ekraani ümardus]
+  bands.2.q: 1.20003947444369  [scale-derived; independent device check pending; küsitud 1.2; ekraani ümardus]
+  bands.2.gainDb: -1.500289925840022 dB [scale-derived; independent device check pending; küsitud -1.5; ekraani ümardus]
+  bands.2.solo: OFF  [measured enum; küsitud OFF]
+  bands.3.type: Peaking 2  [measured enum; küsitud Peaking 2]
+  bands.3.frequencyHz: 1200.0394744436899 Hz [scale-derived; independent device check pending; küsitud 1200; ekraani ümardus]
+  bands.3.q: 1.3000382020586418  [scale-derived; independent device check pending; küsitud 1.3; ekraani ümardus]
+  bands.3.gainDb: 1.500289925840022 dB [scale-derived; independent device check pending; küsitud 1.5; ekraani ümardus]
+  bands.3.solo: OFF  [measured enum; küsitud OFF]
+  bands.4.type: Peaking 2  [measured enum; küsitud Peaking 2]
+  bands.4.frequencyHz: 3099.902273061281 Hz [scale-derived; independent device check pending; küsitud 3100; ekraani ümardus]
+  bands.4.q: 1.0999757196471296  [scale-derived; independent device check pending; küsitud 1.1; ekraani ümardus]
+  bands.4.gainDb: -0.999786370433668 dB [scale-derived; independent device check pending; küsitud -1; ekraani ümardus]
+  bands.4.solo: OFF  [measured enum; küsitud OFF]
+  bands.5.type: Peaking 2  [measured enum; küsitud Peaking 2]
+  bands.5.frequencyHz: 7199.815813325742 Hz [scale-derived; independent device check pending; küsitud 7200; ekraani ümardus]
+  bands.5.q: 0.8000253204032962  [scale-derived; independent device check pending; küsitud 0.8; ekraani ümardus]
+  bands.5.gainDb: -0.999786370433668 dB [scale-derived; independent device check pending; küsitud -1; ekraani ümardus]
+  bands.5.solo: OFF  [measured enum; küsitud OFF]
+  levelDb: -0.4992828150273141 dB [scale-derived; independent device check pending; küsitud -0.5; ekraani ümardus]
+  balance: 0  [measured point; küsitud 0]
+  bypassMode: Thru  [measured enum; küsitud Thru]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+peq C: Parametric EQ, bands 1–5; täielik kogutud kanalimall, seejärel küsitud parameetrid.
+  bands.1.type: Shelving 2  [measured enum; küsitud Shelving 2]
+  bands.1.frequencyHz: 149.99860423014832 Hz [scale-derived; independent device check pending; küsitud 150; ekraani ümardus]
+  bands.1.q: 0.9000212309381711  [scale-derived; independent device check pending; küsitud 0.9; ekraani ümardus]
+  bands.1.gainDb: -0.999786370433668 dB [scale-derived; independent device check pending; küsitud -1; ekraani ümardus]
+  bands.1.solo: OFF  [measured enum; küsitud OFF]
+  bands.2.type: Shelving  [measured enum; küsitud Shelving]
+  bands.2.frequencyHz: 499.99472502728327 Hz [scale-derived; independent device check pending; küsitud 500; ekraani ümardus]
+  bands.2.q: 0.8000253204032962  [scale-derived; independent device check pending; küsitud 0.8; ekraani ümardus]
+  bands.2.gainDb: -0.499893185216834 dB [scale-derived; independent device check pending; küsitud -0.5; ekraani ümardus]
+  bands.2.solo: OFF  [measured enum; küsitud OFF]
+  bands.3.type: Peaking  [measured enum; küsitud Peaking]
+  bands.3.frequencyHz: 1800.0614524264424 Hz [scale-derived; independent device check pending; küsitud 1800; ekraani ümardus]
+  bands.3.q: 1.20003947444369  [scale-derived; independent device check pending; küsitud 1.2; ekraani ümardus]
+  bands.3.gainDb: 0.999786370433668 dB [scale-derived; independent device check pending; küsitud 1; ekraani ümardus]
+  bands.3.solo: OFF  [measured enum; küsitud OFF]
+  bands.4.type: Shelving  [measured enum; küsitud Shelving]
+  bands.4.frequencyHz: 3599.907906662871 Hz [scale-derived; independent device check pending; küsitud 3600; ekraani ümardus]
+  bands.4.q: 0.8000253204032962  [scale-derived; independent device check pending; küsitud 0.8; ekraani ümardus]
+  bands.4.gainDb: -0.499893185216834 dB [scale-derived; independent device check pending; küsitud -0.5; ekraani ümardus]
+  bands.4.solo: OFF  [measured enum; küsitud OFF]
+  bands.5.type: Shelving 2  [measured enum; küsitud Shelving 2]
+  bands.5.frequencyHz: 5500.149041960606 Hz [scale-derived; independent device check pending; küsitud 5500; ekraani ümardus]
+  bands.5.q: 0.9000212309381711  [scale-derived; independent device check pending; küsitud 0.9; ekraani ümardus]
+  bands.5.gainDb: -0.999786370433668 dB [scale-derived; independent device check pending; küsitud -1; ekraani ümardus]
+  bands.5.solo: OFF  [measured enum; küsitud OFF]
+  levelDb: -0.749534592730484 dB [scale-derived; independent device check pending; küsitud -0.75; ekraani ümardus]
+  balance: -10.00091555528428  [scale-derived; independent device check pending; küsitud -10; ekraani ümardus]
+  bypassMode: Thru  [measured enum; küsitud Thru]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+peq D: Parametric EQ, bands 1–5; täielik kogutud kanalimall, seejärel küsitud parameetrid.
+  bands.1.type: Shelving  [measured enum; küsitud Shelving]
+  bands.1.frequencyHz: 180.0042461876342 Hz [scale-derived; independent device check pending; küsitud 180; ekraani ümardus]
+  bands.1.q: 0.8000253204032962  [scale-derived; independent device check pending; küsitud 0.8; ekraani ümardus]
+  bands.1.gainDb: -0.499893185216834 dB [scale-derived; independent device check pending; küsitud -0.5; ekraani ümardus]
+  bands.1.solo: OFF  [measured enum; küsitud OFF]
+  bands.2.type: Shelving 2  [measured enum; küsitud Shelving 2]
+  bands.2.frequencyHz: 600.0134070463582 Hz [scale-derived; independent device check pending; küsitud 600; ekraani ümardus]
+  bands.2.q: 0.9000212309381711  [scale-derived; independent device check pending; küsitud 0.9; ekraani ümardus]
+  bands.2.gainDb: -0.499893185216834 dB [scale-derived; independent device check pending; küsitud -0.5; ekraani ümardus]
+  bands.2.solo: OFF  [measured enum; küsitud OFF]
+  bands.3.type: Peaking 2  [measured enum; küsitud Peaking 2]
+  bands.3.frequencyHz: 1399.9825528918054 Hz [scale-derived; independent device check pending; küsitud 1400; ekraani ümardus]
+  bands.3.q: 1.5000018672393332  [scale-derived; independent device check pending; küsitud 1.5; ekraani ümardus]
+  bands.3.gainDb: 2.000183111056856 dB [scale-derived; independent device check pending; küsitud 2; ekraani ümardus]
+  bands.3.solo: OFF  [measured enum; küsitud OFF]
+  bands.4.type: Shelving 2  [measured enum; küsitud Shelving 2]
+  bands.4.frequencyHz: 4000.084400899103 Hz [scale-derived; independent device check pending; küsitud 4000; ekraani ümardus]
+  bands.4.q: 0.9000212309381711  [scale-derived; independent device check pending; küsitud 0.9; ekraani ümardus]
+  bands.4.gainDb: -0.499893185216834 dB [scale-derived; independent device check pending; küsitud -0.5; ekraani ümardus]
+  bands.4.solo: OFF  [measured enum; küsitud OFF]
+  bands.5.type: Shelving  [measured enum; küsitud Shelving]
+  bands.5.frequencyHz: 8000.168801798206 Hz [scale-derived; independent device check pending; küsitud 8000; ekraani ümardus]
+  bands.5.q: 0.8000253204032962  [scale-derived; independent device check pending; küsitud 0.8; ekraani ümardus]
+  bands.5.gainDb: -0.999786370433668 dB [scale-derived; independent device check pending; küsitud -1; ekraani ümardus]
+  bands.5.solo: OFF  [measured enum; küsitud OFF]
+  levelDb: -0.999786370433668 dB [scale-derived; independent device check pending; küsitud -1; ekraani ümardus]
+  balance: 10.00091555528428  [scale-derived; independent device check pending; küsitud 10; ekraani ümardus]
+  bypassMode: Thru  [measured enum; küsitud Thru]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+geq A: 10 Band Variable Q; täielik kogutud kanalimall.
+  bands.1.gainDb: -1.5 dB [scale-derived; independent screen check pending; küsitud -1.5]
+  bands.2.gainDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  bands.3.gainDb: -0.5 dB [scale-derived; independent screen check pending; küsitud -0.5]
+  bands.4.gainDb: 0 dB [measured point; küsitud 0]
+  bands.5.gainDb: 0.5 dB [scale-derived; independent screen check pending; küsitud 0.5]
+  bands.6.gainDb: 1 dB [scale-derived; independent screen check pending; küsitud 1]
+  bands.7.gainDb: 1.5 dB [scale-derived; independent screen check pending; küsitud 1.5]
+  bands.8.gainDb: 0.5 dB [scale-derived; independent screen check pending; küsitud 0.5]
+  bands.9.gainDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  bands.10.gainDb: -1.5 dB [scale-derived; independent screen check pending; küsitud -1.5]
+  masterQ: 1  [measured point; küsitud 1]
+  levelDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  balance: 0  [measured point; küsitud 0]
+  bypassMode: Thru  [measured enum; küsitud Thru]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+geq B: 5 Band Mark; täielik kogutud kanalimall.
+  bands.1.gainDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  bands.2.gainDb: 0.5 dB [scale-derived; independent screen check pending; küsitud 0.5]
+  bands.3.gainDb: 1.5 dB [measured point; küsitud 1.5]
+  bands.4.gainDb: 0.5 dB [scale-derived; independent screen check pending; küsitud 0.5]
+  bands.5.gainDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  masterQ: 1.4  [measured point; küsitud 1.4]
+  levelDb: -0.5 dB [scale-derived; independent screen check pending; küsitud -0.5]
+  balance: 0  [scale-derived; independent screen check pending; küsitud 0]
+  bypassMode: Thru  [measured enum; küsitud Thru]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+geq C: 7 Band Constant Q; täielik kogutud kanalimall.
+  bands.1.gainDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  bands.2.gainDb: -0.5 dB [scale-derived; independent screen check pending; küsitud -0.5]
+  bands.3.gainDb: 0 dB [measured point; küsitud 0]
+  bands.4.gainDb: 1 dB [scale-derived; independent screen check pending; küsitud 1]
+  bands.5.gainDb: 0.5 dB [scale-derived; independent screen check pending; küsitud 0.5]
+  bands.6.gainDb: -0.5 dB [scale-derived; independent screen check pending; küsitud -0.5]
+  bands.7.gainDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  masterQ: 0.8  [scale-derived; independent screen check pending; küsitud 0.8]
+  levelDb: -0.75 dB [scale-derived; independent screen check pending; küsitud -0.75]
+  balance: 0  [scale-derived; independent screen check pending; küsitud 0]
+  bypassMode: Thru  [measured enum; küsitud Thru]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+geq D: 3 Band Console; täielik kogutud kanalimall.
+  bands.1.gainDb: -0.5 dB [scale-derived; independent screen check pending; küsitud -0.5]
+  bands.2.gainDb: 1.5 dB [scale-derived; independent screen check pending; küsitud 1.5]
+  bands.3.gainDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  masterQ: 1.2  [scale-derived; independent screen check pending; küsitud 1.2]
+  levelDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  balance: 0  [scale-derived; independent screen check pending; küsitud 0]
+  bypassMode: Thru  [measured enum; küsitud Thru]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+enhancer A: Modern; täielik kogutud kanalimall.
+  width: 20 % [measured point; küsitud 20]
+  depth: 20 % [measured point; küsitud 20]
+  lowCutHz: 100 Hz [scale-derived; independent screen check pending; küsitud 100]
+  highCutHz: 2000 Hz [scale-derived; independent screen check pending; küsitud 2000]
+  levelDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+enhancer B: Classic; täielik kogutud kanalimall.
+  width: 50 % [measured point; küsitud 50]
+  levelDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  invert: None  [measured enum; küsitud None]
+  panLeft: -80  [scale-derived; independent screen check pending; küsitud -80]
+  panRight: 80  [measured point; küsitud 80]
+  balance: 0  [measured point; küsitud 0]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+enhancer C: Stereoizer; täielik kogutud kanalimall.
+  width: 20 % [measured point; küsitud 20]
+  depth: 20 % [measured point; küsitud 20]
+  levelDb: -1 dB [scale-derived; independent screen check pending; küsitud -1]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+enhancer D: Modern; täielik kogutud kanalimall.
+  width: 35 % [measured point; küsitud 35]
+  depth: 50 % [measured point; küsitud 50]
+  lowCutHz: 200 Hz [measured point; küsitud 200]
+  highCutHz: 4999.89 Hz [scale-derived; independent screen check pending; küsitud 5000; ekraani ümardus]
+  levelDb: -0.5 dB [scale-derived; independent screen check pending; küsitud -0.5]
+  sceneIgnore: OFF  [measured enum; küsitud OFF]
+Enhancer: Modern, Classic ja Stereoizer; kanalid A–D. Level on alati määratud. Pan Left/Pan Right/Balance on ühikuta −100…+100. Bypass on stseenivalik; Bypass Mode menüüd ei ole kinnitatud. PID5 ja valitud tüübi peidetud parameetrid säilivad kogutud mallist. Mõõtepunktid ja skaalast tuletatud väärtused on eristatud. Selle täpse koosluse seadmering ja Enhanceri toimimine on kinnitatud; suurim kasutaja nähtud CPU52,7%.
+GEQ: 18 tüüpi, A–D, Gain −12…+12 dB, Master Q 0.1…10, Level −80…+20 dB, Balance −100…+100. Ribad määratakse järjekorranumbriga; sagedused sõltuvad Type valikust. Mõõdetud punkt ja skaalast tuletatud väärtus on eraldi. 7 Band Constant Q esimene silt on pildilt kinnitatud 100 Hz. Riistvarakinnitus kehtib ainult täpse allpool tuvastatud koosluse kohta.
+PEQ: viis riba, kanalid A–D. Blocking kasutab Frequency ja Slope; Q ja Gain puuduvad. Mõõdetud punktid ja skaalast arvutatud vaheväärtused on eristatud. Uue kombinatsiooni seadmekontroll on eraldi. Määramata sõnad säilivad algmallist; PID23/24 ei kirjutata.
+Selle katse CPU: User observed a maximum of 52.7% for this specimen (2026-10-12); not a universal maximum.
+Selle katse kuulamine: User reports Enhancer works (2026-10-12).
+Amp A: Double Verb Vibrato; täielik kogutud kanalimall koos Leveliga.
+Amp D: Plexi 50W High 1; täielik kogutud kanalimall koos Leveliga.
+Cab A: 2x12 Double Verb; mõlemad Dyna-Cab pesad ja kogu kogutud kanal, sh mikrofonid, segu, filtrid ning tasemed.
+Cab B: 4x12 Rumble EV12L; mõlemad Dyna-Cab pesad ja kogu kogutud kanal, sh mikrofonid, segu, filtrid ning tasemed.
+Cab D: 4x12 Rumble EV12S; mõlemad Dyna-Cab pesad ja kogu kogutud kanal, sh mikrofonid, segu, filtrid ning tasemed.
+
+PARAMEETRID
+Amp B Gain: 5.00 /10 [määratud kirjelduses]
+Amp B Bass: 4.00 /10 [määratud kirjelduses]
+Amp B Mid: 6.50 /10 [määratud kirjelduses]
+Amp B Treble: 5.20 /10 [määratud kirjelduses]
+Amp B Presence: 3.00 /10 [määratud kirjelduses]
+Amp B Level: -1.00 dB [määratud kirjelduses]
+Delay A Mix: 15.00 % [määratud kirjelduses]
+Reverb A Mix: 20.00 % [alusfailist]
+Delay A Time: 399.91 ms [määratud kirjelduses]
+Delay A Feedback: 25.00 % [määratud kirjelduses]
+Reverb A Time: 1.64 s [alusfailist]
+Reverb A Pre-Delay: 30.00 ms [alusfailist]
+Delay A Tempo: NONE  [määratud kirjelduses]
+Reverb A Pre-Delay Tempo: NONE  [alusfailist]
+Scene 2 Delay: bypass  [stseenikirjeldusest]
+Scene 1 Reverb kanal: A  [stseenikirjeldusest]
+Amp A Level: -12.00 dB [kirjelduses -12 dB; examples/JB_EIGHT_SCENES_V2_export.syx]
+
+KANALITE MÕJU
+amp A: stseenid 1, 5; efekt sees stseenides 1, 5.
+amp B: stseenid 2, 3; efekt sees stseenides 2, 3.
+amp D: stseenid 4; efekt sees stseenides 4.
+cab A: stseenid 1, 5; efekt sees stseenides 1, 5.
+cab B: stseenid 2, 3, 6, 7, 8; efekt sees stseenides 2, 3, 6, 7, 8.
+cab D: stseenid 4; efekt sees stseenides 4.
+delay A: stseenid 1, 2, 3, 4, 5, 6, 7, 8; efekt sees stseenides 5, 6, 8.
+enhancer A: stseenid 1, 2, 5, 7, 8; efekt sees stseenides 2.
+enhancer B: stseenid 3; efekt sees stseenides 3.
+enhancer C: stseenid 4; efekt sees stseenides 4.
+enhancer D: stseenid 6; efekt sees stseenides 6.
+filter C: stseenid 8; efekt sees stseenides 8.
+drive B: stseenid 3, 6, 7, 8; efekt sees stseenides 3, 6, 7, 8.
+geq A: stseenid 1, 2, 5, 7, 8; efekt sees stseenides 2.
+geq B: stseenid 3; efekt sees stseenides 3.
+geq C: stseenid 4; efekt sees stseenides 4.
+geq D: stseenid 6; efekt sees stseenides 6.
+peq A: stseenid 1, 2, 5, 7, 8; efekt sees stseenides 2.
+peq B: stseenid 3; efekt sees stseenides 3.
+peq C: stseenid 4; efekt sees stseenides 4.
+peq D: stseenid 6; efekt sees stseenides 6.
+reverb D: stseenid 6, 7, 8; efekt sees stseenides 6, 7, 8.
+
+STSEENID 1–8
+Scene 1: Clean Edge
+  amp A: Double Verb Vibrato; sees; Level -12.00 dB
+  cab A: 2x12 Double Verb + 2x12 Double Verb; sees
+  delay A: Deluxe Mind Guy; bypass
+  enhancer A: Modern; bypass; Level -1.00 dB
+  filter A: Null; bypass
+  drive A: Full OD; bypass
+  geq A: 10 Band Variable Q; bypass; Level -1.00 dB
+  peq A: Parametric EQ; bypass; Level -0.50 dB
+  reverb A: Room: Large Room; sees
+Scene 2: Rhythm Fat
+  amp B: Brit Silver; sees; Level -1.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; bypass
+  enhancer A: Modern; sees; Level -1.00 dB
+  filter A: Null; bypass
+  drive A: Full OD; bypass
+  geq A: 10 Band Variable Q; sees; Level -1.00 dB
+  peq A: Parametric EQ; sees; Level -0.50 dB
+  reverb B: Room: Large Room; sees
+Scene 3: Rhythm Push
+  amp B: Brit Silver; sees; Level -1.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; bypass
+  enhancer B: Classic; sees; Level -1.00 dB
+  filter A: Null; bypass
+  drive B: T808 OD; sees
+  geq B: 5 Band Mark; sees; Level -0.50 dB
+  peq B: Parametric EQ; sees; Level -0.50 dB
+  reverb B: Room: Large Room; sees
+Scene 4: Plexi Crunch
+  amp D: Plexi 50W High 1; sees; Level -8.16 dB
+  cab D: 4x12 Rumble EV12S + 4x12 Rumble EV12S; sees
+  delay A: Deluxe Mind Guy; bypass
+  enhancer C: Stereoizer; sees; Level -1.00 dB
+  filter A: Null; bypass
+  drive A: Full OD; bypass
+  geq C: 7 Band Constant Q; sees; Level -0.75 dB
+  peq C: Parametric EQ; sees; Level -0.75 dB
+  reverb B: Room: Large Room; sees
+Scene 5: Clean Echo
+  amp A: Double Verb Vibrato; sees; Level -12.00 dB
+  cab A: 2x12 Double Verb + 2x12 Double Verb; sees
+  delay A: Deluxe Mind Guy; sees
+  enhancer A: Modern; bypass; Level -1.00 dB
+  filter A: Null; bypass
+  drive A: Full OD; bypass
+  geq A: 10 Band Variable Q; bypass; Level -1.00 dB
+  peq A: Parametric EQ; bypass; Level -0.50 dB
+  reverb A: Room: Large Room; sees
+Scene 6: JB SOLO
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; sees
+  enhancer D: Modern; sees; Level -0.50 dB
+  filter A: Null; bypass
+  drive B: T808 OD; sees
+  geq D: 3 Band Console; sees; Level -1.00 dB
+  peq D: Parametric EQ; sees; Level -1.00 dB
+  reverb D: Room: Medium Room; sees
+Scene 7: Solo Direct
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; bypass
+  enhancer A: Modern; bypass; Level -1.00 dB
+  filter A: Null; bypass
+  drive B: T808 OD; sees
+  geq A: 10 Band Variable Q; bypass; Level -1.00 dB
+  peq A: Parametric EQ; bypass; Level -0.50 dB
+  reverb D: Room: Medium Room; sees
+Scene 8: Solo Mid Focus
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; sees
+  enhancer A: Modern; bypass; Level -1.00 dB
+  filter C: Peaking; sees
+  drive B: T808 OD; sees
+  geq A: 10 Band Variable Q; bypass; Level -1.00 dB
+  peq A: Parametric EQ; bypass; Level -0.50 dB
+  reverb D: Room: Medium Room; sees
+
+Olemasolevate plokkide määramata seaded, kanalivalikud, bypass, lülitid ja modifierid säilivad alusfailist. Kogutud mallid pole tingimata tehasevaikeväärtused.
+Tüübimalli valik üksi ei aktiveeri efekti. Stseenikirjeldus määrab kanalid ja efekti sees/bypass oleku; lisatud plokid algavad A/bypass. Kanalite mõju on eespool.
+NewLook-alusel lisatakse üksnes küsitud toetatud plokid vabade shuntide asemele. Send/Return ja kaks rida säilivad. Väliseid IR-e ei lisata. Rotary A on piiratud mõõdetud punktidega.
+Failitasemel kontrollitud: GET/SYX komponenditõendid, kõik sisubaidid, lubatud alad, routing, kaadrid, CRC, footer, pikkused ja lõputäide.
+Selle täpse SYX-faili import ja tagasieksport on kinnitatud: kõik kehabaidid kattuvad. Korduskatset pole vaja. Selle koosluse heli- ja CPU-tõendid on raportis.
+
+KASUTAMINE
+Impordi soovi korral FM3-Editi tööpuhvrisse. Stseenid ja heliseaded kattuvad raportis nimetatud seadmeekspordiga. Täiendavat ekspordikatset ei nõuta.
+Tööriist ei ühenda seadet ega saada MIDI/SET/SAVE-käske.
+SHA-256: a545aa8bb7f659b10dc2a7beb4a902e1377bbeef995381d2dc6ece55ef14965b

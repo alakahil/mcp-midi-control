@@ -1,0 +1,122 @@
+[
+  {
+    "id": "A-band-3-frequency-500",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Frequency",
+    "candidatePid": 2,
+    "value": 500,
+    "unit": "Hz",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Frequency väärtuseks 500 Hz. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-band-3-frequency-1000",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Frequency",
+    "candidatePid": 2,
+    "value": 1000,
+    "unit": "Hz",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Frequency väärtuseks 1000 Hz. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-band-3-frequency-2000",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Frequency",
+    "candidatePid": 2,
+    "value": 2000,
+    "unit": "Hz",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Frequency väärtuseks 2000 Hz. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-band-3-q-0.707",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Q",
+    "candidatePid": 7,
+    "value": 0.707,
+    "unit": "",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Q väärtuseks 0.707 . Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-band-3-q-1.4",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Q",
+    "candidatePid": 7,
+    "value": 1.4,
+    "unit": "",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Q väärtuseks 1.4 . Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-band-3-q-2",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Q",
+    "candidatePid": 7,
+    "value": 2,
+    "unit": "",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Q väärtuseks 2 . Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-band-3-gain--3",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Gain",
+    "candidatePid": 12,
+    "value": -3,
+    "unit": "dB",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Gain väärtuseks -3 dB. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-band-3-gain-3",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Gain",
+    "candidatePid": 12,
+    "value": 3,
+    "unit": "dB",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Gain väärtuseks 3 dB. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-band-3-gain-0",
+    "channel": "A",
+    "band": 3,
+    "parameter": "Gain",
+    "candidatePid": 12,
+    "value": 0,
+    "unit": "dB",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Band 3 Gain väärtuseks 0 dB. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-level--3",
+    "channel": "A",
+    "band": null,
+    "parameter": "Level",
+    "candidatePid": 20,
+    "value": -3,
+    "unit": "dB",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Level väärtuseks -3 dB. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-level-3",
+    "channel": "A",
+    "band": null,
+    "parameter": "Level",
+    "candidatePid": 20,
+    "value": 3,
+    "unit": "dB",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Level väärtuseks 3 dB. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  },
+  {
+    "id": "A-level-0",
+    "channel": "A",
+    "band": null,
+    "parameter": "Level",
+    "candidatePid": 20,
+    "value": 0,
+    "unit": "dB",
+    "instruction": "Hoia Scene 2, PEQ 1 kanal A bypass. Muuda ainult Level väärtuseks 0 dB. Type ja muud juhid jäta samaks. Ekspordi terve preset."
+  }
+]

@@ -1,0 +1,131 @@
+{
+  "workflow": "Independent offline generation using bundled FM3 Sound Architect 2 skill",
+  "generator": "jb-composer-0.13.0-dev",
+  "preset": "FM3 FILTER READY",
+  "schemaValidation": "Runtime passed; standalone Draft 2020-12 validator unavailable in default Python",
+  "checks": {
+    "framesCrcFooterAndGeneralPresetValidation": true,
+    "name": true,
+    "sha256MatchesGeneratorReport": true,
+    "filterABCWordsMatchRawReadback": true,
+    "allEightFilterScenesABypass": true,
+    "scene2ABypass": true,
+    "filterRow2Column9": true,
+    "original12804BodyBytesRecoveredExactly": true,
+    "txtValuesAndShaMatch": true,
+    "txtUtf8": true
+  },
+  "generatorChecks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "exactBodyReadback": true,
+    "onlyDeclaredRegionsChanged": true,
+    "routingPreserved": false,
+    "onlyDeclaredSlotInsertions": true,
+    "existingBlockRecordsPreservedDuringInsertion": true,
+    "selectedScenePreserved": true,
+    "unrelatedHeadersPreserved": true,
+    "encodedSizesAndPadding": true,
+    "componentEvidence": true
+  },
+  "routingNote": "routingPreserved:false is expected because the declared Filter insertion replaces one shunt; onlyDeclaredSlotInsertions:true passed.",
+  "filterRawReadback": [
+    {
+      "channel": "A",
+      "parameters": {
+        "0": 3,
+        "1": 34384,
+        "7": 1
+      }
+    },
+    {
+      "channel": "B",
+      "parameters": {
+        "0": 1,
+        "1": 41572,
+        "7": 0
+      }
+    },
+    {
+      "channel": "C",
+      "parameters": {
+        "0": 6,
+        "1": 48148,
+        "2": 27833,
+        "3": 32767,
+        "4": 52427
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "scene": 1,
+      "channel": "A",
+      "bypass": true
+    },
+    {
+      "scene": 2,
+      "channel": "A",
+      "bypass": true
+    },
+    {
+      "scene": 3,
+      "channel": "A",
+      "bypass": true
+    },
+    {
+      "scene": 4,
+      "channel": "A",
+      "bypass": true
+    },
+    {
+      "scene": 5,
+      "channel": "A",
+      "bypass": true
+    },
+    {
+      "scene": 6,
+      "channel": "A",
+      "bypass": true
+    },
+    {
+      "scene": 7,
+      "channel": "A",
+      "bypass": true
+    },
+    {
+      "scene": 8,
+      "channel": "A",
+      "bypass": true
+    }
+  ],
+  "baseBodyBytes": 12804,
+  "outputBodyBytes": 13146,
+  "knownDeviceBody": null,
+  "outputSha256": "30ca80a6b26280b723fe7b1a310970a67fd5d56ca40d34cab16dd9585238036f",
+  "limitations": [
+    "This newly composed body has no exact known device-export match.",
+    "No device import/export was performed.",
+    "Active Filter audio, audible level balance, CPU and artist similarity were not assessed.",
+    "No device/MIDI/SET/SAVE commands and no network calls were sent."
+  ],
+  "files": {
+    "FM3_FILTER_READY.syx": {
+      "bytes": 24680,
+      "sha256": "30ca80a6b26280b723fe7b1a310970a67fd5d56ca40d34cab16dd9585238036f"
+    },
+    "FM3_FILTER_READY.txt": {
+      "bytes": 5548,
+      "sha256": "5f21ba449b18064ae586b48f12ae36b921d0d4e4b402e591251fe14c8d57b258"
+    },
+    "FM3_FILTER_READY.spec.json": {
+      "bytes": 821,
+      "sha256": "df1e24c0997fccb6f229a97fd7220e3dddd67c165e35977584ab3116b95f97af"
+    },
+    "FM3_FILTER_READY.validation.json": {
+      "bytes": 28129,
+      "sha256": "0e3e08ebdf8e43dbbf31bae352b5466bd1b707aa231dd1a9c30b92e2d28f4f79"
+    }
+  }
+}

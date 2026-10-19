@@ -1,0 +1,234 @@
+{
+  "firmware": 13,
+  "source": "Screenshot 2026-10-05 at 08.44.26.png",
+  "sourceLibraryId": "libfile_b20abd7c6f3c81918d79319656e50727",
+  "scope": "45 visible Dyna-Cab choices, not Legacy/Factory/User IRs",
+  "idMapping": "Collection expectation: displayNumber-1 except display24=ID24 (65 Bassguy) and display25=ID23 (5153 Stealth), established by controlled user exports FM3_CAB_SELECTION_007.syx and FM3_CAB_ID_CHECK.syx. These two still require GET/SYX pairs; verify all remaining expectations independently.",
+  "models": [
+    {
+      "displayNumber": 1,
+      "expectedId": 0,
+      "name": "1x8 5F1 Tweed"
+    },
+    {
+      "displayNumber": 2,
+      "expectedId": 1,
+      "name": "1x8 Princetone"
+    },
+    {
+      "displayNumber": 3,
+      "expectedId": 2,
+      "name": "1x10 BF Princetone"
+    },
+    {
+      "displayNumber": 4,
+      "expectedId": 3,
+      "name": "1x10 Metro Blues"
+    },
+    {
+      "displayNumber": 5,
+      "expectedId": 4,
+      "name": "1x10 SF Princetone"
+    },
+    {
+      "displayNumber": 6,
+      "expectedId": 5,
+      "name": "1x12 AC20"
+    },
+    {
+      "displayNumber": 7,
+      "expectedId": 6,
+      "name": "1x12 Black Magick"
+    },
+    {
+      "displayNumber": 8,
+      "expectedId": 7,
+      "name": "1x12 Car Ambler"
+    },
+    {
+      "displayNumber": 9,
+      "expectedId": 8,
+      "name": "1x12 Deluxe Tweed"
+    },
+    {
+      "displayNumber": 10,
+      "expectedId": 9,
+      "name": "1x12 Deluxe Verb"
+    },
+    {
+      "displayNumber": 11,
+      "expectedId": 10,
+      "name": "1x12 Div13 CJ11"
+    },
+    {
+      "displayNumber": 12,
+      "expectedId": 11,
+      "name": "1x12 G12T-100"
+    },
+    {
+      "displayNumber": 13,
+      "expectedId": 12,
+      "name": "1x12 Hot Kitty"
+    },
+    {
+      "displayNumber": 14,
+      "expectedId": 13,
+      "name": "1x12 Jr Blues"
+    },
+    {
+      "displayNumber": 15,
+      "expectedId": 14,
+      "name": "1x12 Nuclear Tone"
+    },
+    {
+      "displayNumber": 16,
+      "expectedId": 15,
+      "name": "1x12 Scholz"
+    },
+    {
+      "displayNumber": 17,
+      "expectedId": 16,
+      "name": "1x12 Tweed 20112"
+    },
+    {
+      "displayNumber": 18,
+      "expectedId": 17,
+      "name": "1x12 Vibrato Lux"
+    },
+    {
+      "displayNumber": 19,
+      "expectedId": 18,
+      "name": "1x15 Heart Key"
+    },
+    {
+      "displayNumber": 20,
+      "expectedId": 19,
+      "name": "1x15 Portabass"
+    },
+    {
+      "displayNumber": 21,
+      "expectedId": 20,
+      "name": "1x15 Vibroverb"
+    },
+    {
+      "displayNumber": 22,
+      "expectedId": 21,
+      "name": "2x10 Heart Key"
+    },
+    {
+      "displayNumber": 23,
+      "expectedId": 22,
+      "name": "2x10 Super 6G4"
+    },
+    {
+      "displayNumber": 24,
+      "expectedId": 24,
+      "name": "2x12 65 Bassguy"
+    },
+    {
+      "displayNumber": 25,
+      "expectedId": 23,
+      "name": "2x12 5153 Stealth"
+    },
+    {
+      "displayNumber": 26,
+      "expectedId": 25,
+      "name": "2x12 Chiefman"
+    },
+    {
+      "displayNumber": 27,
+      "expectedId": 26,
+      "name": "2x12 Class-A 30W"
+    },
+    {
+      "displayNumber": 28,
+      "expectedId": 27,
+      "name": "2x12 Double Verb"
+    },
+    {
+      "displayNumber": 29,
+      "expectedId": 28,
+      "name": "2x12 Lead 80"
+    },
+    {
+      "displayNumber": 30,
+      "expectedId": 29,
+      "name": "2x12 Texas Star"
+    },
+    {
+      "displayNumber": 31,
+      "expectedId": 30,
+      "name": "4x10 Bassguy RI"
+    },
+    {
+      "displayNumber": 32,
+      "expectedId": 31,
+      "name": "4x12 1960TV"
+    },
+    {
+      "displayNumber": 33,
+      "expectedId": 32,
+      "name": "4x12 5153"
+    },
+    {
+      "displayNumber": 34,
+      "expectedId": 33,
+      "name": "4x12 5153 Stealth"
+    },
+    {
+      "displayNumber": 35,
+      "expectedId": 34,
+      "name": "4x12 Citrus"
+    },
+    {
+      "displayNumber": 36,
+      "expectedId": 35,
+      "name": "4x12 Friedman GB"
+    },
+    {
+      "displayNumber": 37,
+      "expectedId": 36,
+      "name": "4x12 Friedman V30"
+    },
+    {
+      "displayNumber": 38,
+      "expectedId": 37,
+      "name": "4x12 Lerxst"
+    },
+    {
+      "displayNumber": 39,
+      "expectedId": 38,
+      "name": "4x12 Recto Slant"
+    },
+    {
+      "displayNumber": 40,
+      "expectedId": 39,
+      "name": "4x12 Recto Straight"
+    },
+    {
+      "displayNumber": 41,
+      "expectedId": 40,
+      "name": "4x12 Rumble EV12L"
+    },
+    {
+      "displayNumber": 42,
+      "expectedId": 41,
+      "name": "4x12 Rumble EV12S"
+    },
+    {
+      "displayNumber": 43,
+      "expectedId": 42,
+      "name": "4x12 Solo 100"
+    },
+    {
+      "displayNumber": 44,
+      "expectedId": 43,
+      "name": "4x12 USA Mc90"
+    },
+    {
+      "displayNumber": 45,
+      "expectedId": 44,
+      "name": "8x10 SV Bass"
+    }
+  ]
+}

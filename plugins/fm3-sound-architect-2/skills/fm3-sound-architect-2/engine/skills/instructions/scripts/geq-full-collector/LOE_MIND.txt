@@ -1,0 +1,84 @@
+FM3 GEQ FULL — üks jätkatav kogumispakett
+2026-10-09 / koguja 0.1.0 / firmware 13
+
+ALGUS
+1. Paki ZIP lahti Downloads kausta. Tulemuseks peab olema FM3_GEQ_FULL kaust.
+2. Ava FM3-Editis selles kaustas olev baseline.syx tööpuhvrisse.
+   Kui sinu FM3_GEQ_BASELINE on endiselt muutmata lahti, ei pea uuesti importima.
+   Scene 2, GEQ1 kanal A, GEQ bypass. Muud plokid ja ühendused jäta samaks.
+3. Käivita Terminalis:
+
+   python3 ~/Downloads/FM3_GEQ_FULL/FM3_GEQ_FULL.py --port /dev/cu.usbmodem211104
+
+   Kasuta oma tegelikku porti, kui see on muutunud. Vaja on Python 3 ja Node'i;
+   uusi Python mooduleid ei paigaldata.
+4. Vaata Bypass Mode menüüd. Enter kinnitab, et seal on ainult Thru ja Mute.
+   Kui seal on rohkem valikuid, sisesta kõik nimed semikoolonitega.
+   Valitud režiim peab alguses jääma Thru. Märgi ka muud nähtavad üldjuhid.
+5. Esimene samm kasutab paketi baseline.syx faili, uut eksporti pole vaja.
+   Kinnita ekraanivaade ja sulge FM3-Edit/Fractal-Bot enne vastust "jah".
+   Programm loeb ühe GET-iga GEQ 80 sõna ja võrdleb neid alusfailiga.
+
+KOGUMINE
+Kõik on samas plaanis: algpaar, 18 Type valikut, iga tüübi nähtavate ribade
+nimetused ja Gain-punktid/piirid, Zero All, olemasolul Master Q,
+Level, Balance, kõik kinnitatud Bypass Mode valikud, Scene Ignore ning A–D.
+Thru/Mute menüü korral on kuni 184 sammu. Master Q puudumisel jäävad selle
+tüübi neli Q-sammu automaatselt vahele. Lisanduv Bypass Mode lisab ühe sammu.
+
+Iga järgmine samm:
+- ava FM3-Edit ja tee ainult terminalis kirjeldatud muudatus;
+- ekspordi terve preset SYX-failina ja lohista fail Terminali;
+- sisesta/kinnita tegelikud ekraaninäidud;
+- sulge FM3-Edit/Fractal-Bot ja vasta "jah", et teha üks GET;
+- oota PASS-teadet ja mine edasi samast olekust.
+
+Tüübi puhul kirjuta ribade tegelikud nimetused vasakult paremale, eraldajaks ;.
+Näiteks: Bass;Mid;Treble või 31;63;125;250;500;1k;2k;4k;8k;16k.
+Ära tuleta neid tabelist. Programm küsib, kas Master Q on nähtav (jah/ei).
+Märgi eraldi muud selle tüübi juhid; neid ei käsitleta automaatselt valideerituna.
+
+Eristatav Gain-muster on vasakult paremale 0.5;1;1.5;2;... dB.
+Miinimumi ja maksimumi juures tuleb sisestada tegelik ekraaninäit.
+Kui kõigi nähtavate ribade piir on sama, piisab ühest arvust; muidu anna kõik
+väärtused semikoolonitega. Koma ja punkt sobivad kümnendmärgiks.
+Leveli miinimumi puhul sobib ka -inf, kui ekraan näitab miinus lõpmatust.
+Kui mõni sihtväärtus või juht pole saadaval, kasuta s ning kirjelda tegelikku
+vaadet. Ära vali lihtsalt lähimat teist väärtust.
+
+PAUS JA JÄTKAMINE
+- q: lõpetab kogumise ja väljastab seniste tulemuste ZIP-i.
+- Käivita hiljem täpselt sama käsk. Programm kontrollib seniseid paare ja
+  jätkab esimesest lõpetamata sammust. Ära kustuta ega nimeta sessioonikausta.
+- Taasta terminalis näidatud viimase eduka donor.syx faili olek tööpuhvrisse.
+  See on tähtis, kui vahepeal muutsid heli, jätsid katse vahele või katkestasid.
+- s: jätab ühe mõõtmise koos kohustusliku põhjusega mõõtmata; esimese
+  algpaari puhul s ei kehti. Puuduva Type sõltuvad katsed jäävad samuti vahele.
+- Viga või timeout: andmed ja ebaõnnestunud katse säilivad; korduspäringut
+  automaatselt ei tehta. Jätkamiseks kasuta sama käsku ja kinnita uus GET.
+- Algküsimustes enne sessiooni loomist q vajutades mõõtmis-ZIP-i veel ei teki.
+
+Ainult olemasolevate andmete ZIP, ilma ühegi GET-ita:
+
+   python3 ~/Downloads/FM3_GEQ_FULL/FM3_GEQ_FULL.py --export-only
+
+Saada vestlusse programmi näidatud FM3_GEQ_FULL_<aeg>_<tunnus>.zip.
+See sisaldab nii edukaid, vahele jäetud kui ka ebaõnnestunud katseid.
+Sa ei pea vahepeal eraldi algpaari paketti tagastama; tee sama kogumine lõpuni
+või saada osaline ZIP, kui programm peatub ootamatu muutuse juures.
+
+MIDA KONTROLLITAKSE
+Iga fail kontrollitakse enne GET-i. Muud plokid, stseenid, tasemed ja routing
+peavad säilima. Lubatud on sammu GEQ muudatus ja kanalikatsetes Scene 2 GEQ
+kanalivalik. Preseti nime muutus raporteeritakse eraldi ega tekita varasemat
+"Preset header/name changed at 11" viga. 80/80 GET/SYX peab kokku langema.
+
+Kõik seadme muudatused teed ise FM3-Editis. Koguja saadab ainult ühe kinnitatud
+GET-i mõõtmise kohta; SET/SAVE/STORE käskusid ega automaatseid kordusi ei ole.
+Piirväärtuste kogumisel hoia GEQ bypass ja kuulamishelitugevus madalal.
+
+Tulemuste audit kinnitab seosed tegelike nimede, sõnade ja skaalade vahel.
+Kogumise PASS ei tähenda veel, et kõik GEQ kirjutusvõimalused oleksid pluginas
+valmis või kuulamisega kontrollitud. Pärast auditit lisandub GEQ ühisesse
+presetikoostajasse ja järgneb üks ühine impordi/tagasiekspordi/kuulamise katse.
+PEQ seniseid katseid ja CPU mõõtmist praegu korrata ei ole vaja.

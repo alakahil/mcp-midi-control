@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "name": "FM3 SA TEST TIME",
+  "purpose": "Varasemal riistvarakatsel kinnitatud kombinatsiooni taasesitus ühtse generaatoriga.",
+  "gainB": 5,
+  "midB": 5,
+  "trebleB": 4,
+  "presenceB": 2,
+  "levelB": -18,
+  "delayMixA": 15,
+  "reverbMixA": 12,
+  "delayScene2": true,
+  "reverbScene1": "A",
+  "delayTimeMs": 400,
+  "delayFeedback": 25,
+  "reverbTimeS": 2.5,
+  "reverbPredelayMs": 40,
+  "delayTempoA": "NONE",
+  "reverbPredelayTempoA": "NONE"
+}

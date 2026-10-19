@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 61,
+    "name": "Sfx: Andromeda",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 62,
+    "name": "Sfx: Aquarius",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 63,
+    "name": "Sfx: Capricorn",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 64,
+    "name": "Sfx: Centaurus",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

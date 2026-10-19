@@ -1,0 +1,34 @@
+FM3 GRAPHIC EQ — ESIMENE LISAMISKATSE
+2026-10-09
+
+Alus: äsja kinnitatud FM3 PEQ ABCD TEST. Paketi FM3_GEQ_START.syx on sinu
+muutmata tagasieksport; preseti sisemine nimi jääb FM3 PEQ ABCD TEST.
+
+1. Kui sama preset on FM3-Editis veel muutmata kujul avatud, jätka sealt.
+   Muidu ava paketi FM3_GEQ_START.syx tööpuhvris. Vali Scene 2.
+2. Asenda PEQ 1 ja Send 1 vaheline shunt plokiga Graphic EQ 1.
+   FM3 ruudustikus: teine rida, 11. veerg (12-veerulises vaates).
+   See on PEQ-ga samal real, mitte Send/Returni järgmisel signaalireal.
+   Lõik pärast lisamist: Filter 1 → PEQ 1 → Graphic EQ 1 → Send 1.
+3. Vali uues Graphic EQ plokis kanal A ja lülita ainult GEQ bypass'i.
+   PEQ jääb Scene 2-s kanalile A ja aktiivseks.
+   Ära muuda GEQ tüüpi, ribade väärtusi ega üldjuhte: jätame lisamise algoleku.
+4. Hoia Scene 2 valituna ja ekspordi terve preset failina FM3_GEQ_BASELINE.syx.
+   Lisa see fail vestlusse. Preseti sisemist nime pole vaja muuta.
+5. Lisa võimalusel üks pilt GEQ juhtpaneelist, kus paistavad Type ja ribade
+   sagedusnimetused. Kui Type-menüüd pole näha, näita olemasolevat vaadet.
+
+Muud plokid, kanalid, stseenid, tasemed ning Send/Return ühendus jäävad samaks.
+C/D Balance −10/+10 ja senine PEQ kuuluvad sellesse kontrollitud alusfaili;
+ära muuda neid selles lisamiskatses. CPU-d ega kuulamishinnangut nüüd ei küsita.
+Terminali, uut GET-i ega muid mõõtmisi esimeses sammus vaja ei ole.
+
+MIS JÄRGNEB
+Kontrollin uue GEQ kirje pikkust ja kanalite arvu ning ülejäänud 13 456
+algbaidi säilimist. Seejärel valmistan sellele päris kirjele vastava ühe
+kinnitusega GET/SYX algkontrolli ja vajalike parameetrite kogumise.
+GEQ kirjutustugi ei ole veel koostajas; enne päris ekspordi kontrolli ei
+arva me tüüpe, sagedusribasid ega skaalasid tabelite põhjal kinnitatuks.
+
+Alusfaili SHA-256:
+b4794f55fe14565029ebaca6f2e9d7cac39572b5d33bcc0a2c9802e5cc6a6c5b

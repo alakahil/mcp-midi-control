@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-pitch-multi",
+  "pitchChannels": [
+    {
+      "channel": "A",
+      "type": "Advanced Whammy"
+    },
+    {
+      "channel": "B",
+      "type": "Virtual Capo"
+    },
+    {
+      "channel": "C",
+      "type": "Crystal Echoes"
+    },
+    {
+      "channel": "D",
+      "type": "Dual Detune"
+    }
+  ]
+}

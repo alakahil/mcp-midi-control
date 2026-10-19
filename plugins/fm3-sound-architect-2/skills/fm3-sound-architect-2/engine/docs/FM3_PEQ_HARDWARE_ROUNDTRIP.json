@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-09",
+  "generatedFile": "examples/FM3_PEQ_BAND3_TEST.syx",
+  "hardwareExportFile": "examples/FM3_PEQ_BAND3_TEST_export.syx",
+  "generatedSha256": "3869051de07add62df3e528b3f53cd70e236ef9fe5c61bb1a342879f465d0f98",
+  "hardwareExportSha256": "d4dc973e430ac37cd26be7ba92869fb514eada2e9d013bf72136f2538cfd11ab",
+  "hardwareExportLibraryFileId": "libfile_e85cad3b77b88191a98dddeea8805254",
+  "fullFilesIdentical": false,
+  "bodyBytes": 13456,
+  "bodySha256": "066d10740819f788d6a10f15777f859c927bf960c567d074255b98beaba3aa17",
+  "changedBodyOffsets": [],
+  "presetName": "FM3 PEQ BAND3 TEST",
+  "selectedScene": 2,
+  "headerChanges": [
+    {
+      "offset": 4,
+      "field": "CRC",
+      "before": 211,
+      "after": 17
+    },
+    {
+      "offset": 5,
+      "field": "CRC",
+      "before": 203,
+      "after": 43
+    }
+  ],
+  "peq": {
+    "effectId": 54,
+    "row": 2,
+    "column": 10,
+    "recordOffset": 8688,
+    "recordBytes": 310,
+    "matchedParameterWords": 132,
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "activeScenes": [
+      2
+    ],
+    "band3": {
+      "type": "Peaking",
+      "typeRaw": 0,
+      "frequencyHz": 1000,
+      "frequencyRaw": 32767,
+      "q": 1.4,
+      "qRaw": 37555,
+      "gainDb": 3,
+      "gainRaw": 37682
+    },
+    "levelDb": 0,
+    "levelRaw": 52427
+  },
+  "checks": {
+    "generatorReplayByteIdentical": true,
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all132PeqParameterWordsPreserved": true,
+    "allOriginal13146V3BytesReconstructed": true,
+    "existingBlocksLevelsAndScenesPreserved": true,
+    "sendReturnAndTwoRowsPreserved": true,
+    "presetNameAndSelectedScenePreserved": true,
+    "chunkPrefixesPreserved": true,
+    "dumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyCrc": true,
+    "encodedLengthsAndZeroPadding": true,
+    "renamedFileNotFalselySubmittedConfirmed": true,
+    "changedCombinationNotFalselyHardwareConfirmed": true
+  },
+  "encoding": {
+    "compressedBytesBefore": 4496,
+    "compressedBytesAfter": 4496,
+    "compressedRepresentationIdentical": false
+  },
+  "hardware": "Exact supplied active PEQ composition import/export confirmed. Do not repeat this export or any completed GET collection.",
+  "audio": "No listening feedback supplied",
+  "cpu": "Not supplied for this specimen",
+  "next": "Ask only for current CPU and listening feedback, then continue the agreed EQ work. Do not infer other bands/types/channels or general ranges."
+}

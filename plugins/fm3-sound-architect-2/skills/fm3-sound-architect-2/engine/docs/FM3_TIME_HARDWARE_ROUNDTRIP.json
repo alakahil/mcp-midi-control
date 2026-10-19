@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-01",
+  "firmware": 13,
+  "userConfirmation": "Kõik oodatavad väärtused olid õiged",
+  "generatedSha256": "81f5f2cecbc0cbd3facf4039124e82366d4f49bf63dd8339ea7bc7f6174f1b53",
+  "exportSha256": "7f0b7f56d53d3328f9791cfe974c797ac2a143079bf198480887294f946572e0",
+  "bodyBytes": 14222,
+  "bodyDifferences": [
+    {
+      "offset": 0,
+      "generated": 1,
+      "exported": 0
+    }
+  ],
+  "name": "FM3 SA TEST TIME",
+  "checks": {
+    "frames": true,
+    "presetCrc": true,
+    "footer": true,
+    "dumpHeaderSame": true
+  },
+  "values": [
+    {
+      "effectId": 66,
+      "channel": "A",
+      "params": [
+        {
+          "paramId": 1,
+          "name": "REVERB_TIME",
+          "label": "Time",
+          "kind": "float",
+          "raw": 1574,
+          "value": 2.4994048890652185,
+          "unit": "seconds"
+        },
+        {
+          "paramId": 9,
+          "name": "REVERB_PREDELAY",
+          "label": "Pre-Delay",
+          "kind": "float",
+          "raw": 2621,
+          "value": 39.99450666829432,
+          "unit": "ms"
+        },
+        {
+          "paramId": 62,
+          "name": "REVERB_PREDLYTEMPO",
+          "label": "Tempo",
+          "kind": "enum",
+          "raw": 0,
+          "value": null,
+          "unit": "enum",
+          "enumLabel": "NONE "
+        }
+      ]
+    },
+    {
+      "effectId": 70,
+      "channel": "A",
+      "params": [
+        {
+          "paramId": 8,
+          "name": "DELAY_TIME",
+          "label": "Time",
+          "kind": "float",
+          "raw": 1634,
+          "value": 399.9130222479934,
+          "unit": "ms"
+        },
+        {
+          "paramId": 10,
+          "name": "DELAY_FEED",
+          "label": "Feedback",
+          "kind": "float",
+          "raw": 40959,
+          "value": 25.0007629627369,
+          "unit": "numeric"
+        },
+        {
+          "paramId": 15,
+          "name": "DELAY_TEMPO",
+          "label": "Tempo",
+          "kind": "enum",
+          "raw": 0,
+          "value": null,
+          "unit": "enum",
+          "enumLabel": "NONE "
+        }
+      ]
+    }
+  ],
+  "audio": "not separately confirmed",
+  "cpu": "not separately confirmed"
+}

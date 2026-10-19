@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-drive-multi",
+  "driveChannels": [
+    {
+      "channel": "A",
+      "type": "BB Pre",
+      "drive": 2,
+      "level": 2,
+      "mix": 25
+    },
+    {
+      "channel": "B",
+      "type": "T808 OD",
+      "drive": 2,
+      "tone": 7,
+      "level": 2,
+      "mix": 25
+    },
+    {
+      "channel": "C",
+      "type": "Rat Distortion",
+      "level": 2,
+      "mix": 25
+    },
+    {
+      "channel": "D",
+      "type": "Zen Master",
+      "drive": 2,
+      "tone": 7,
+      "level": 2,
+      "mix": 25
+    }
+  ]
+}

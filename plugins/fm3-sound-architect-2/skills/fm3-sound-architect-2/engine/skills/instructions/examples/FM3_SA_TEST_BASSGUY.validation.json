@@ -1,0 +1,307 @@
+{
+  "generator": "unified-0.2.0",
+  "selections": {
+    "amp": {
+      "model": "59 Bassguy Bright",
+      "source": {
+        "file": "FM3_AMP_CAPTURE_001.syx",
+        "index": 0,
+        "sha256": "b22fdfb46f92a185868ac341c4bb18066134215bc6fbd53df939a26eb5c323e9",
+        "ignoredSceneSelections": [
+          {
+            "scene": 2,
+            "base": 1,
+            "donor": 0,
+            "action": "Not copied; output keeps base scene selection"
+          }
+        ],
+        "channel": "A",
+        "presetName": "FM3_AMP_CAPTURE_001"
+      },
+      "targetChannel": "B",
+      "affectedScenes": [
+        2,
+        6
+      ],
+      "policy": "Full imported channel then explicit controls",
+      "hardware": "not confirmed for this combination"
+    }
+  },
+  "modelReadback": {
+    "ampB": {
+      "type_id": 0,
+      "type": "59 Bassguy Bright",
+      "drive": 7,
+      "bass": 5,
+      "mid": 5,
+      "treble": 5,
+      "master_volume": 10,
+      "depth": 0,
+      "sag": 1.49,
+      "presence": 5,
+      "negative_feedback": 3.2
+    },
+    "cabScene2": {
+      "channel": "B",
+      "mode": "DYNA-CAB",
+      "dynacab1_id": 38,
+      "dynacab1": "4x12 RECTO SLANT",
+      "dynacab2": "4x12 RECTO SLANT",
+      "mic": "Dynamic 1"
+    }
+  },
+  "spec": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "name": "FM3 SA TEST BASSGUY",
+    "ampModelB": "59 Bassguy Bright",
+    "purpose": "Capture001 Amp A kanalimalli kirjutamine Amp B-sse; esimene genereeritud Bassguy kontrollkatse."
+  },
+  "baseSha256": "fecac6a61d3a33c547a12e69b5056fd8750f9ded789e44672744d2e32e29c2c4",
+  "outputSha256": "c26040df7946e9450dd0a4282be7b72d205c9c376f18e7baacfea9639206e8d2",
+  "effective": [
+    {
+      "key": "gainB",
+      "label": "Amp B Gain",
+      "unit": "/10",
+      "raw": 45874,
+      "value": 7.000030518509476,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "bassB",
+      "label": "Amp B Bass",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "midB",
+      "label": "Amp B Mid",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "trebleB",
+      "label": "Amp B Treble",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "presenceB",
+      "label": "Amp B Presence",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "levelB",
+      "label": "Amp B Level",
+      "unit": "dB",
+      "raw": 46529,
+      "value": -9.000213629566332,
+      "requested": null,
+      "source": "amp-template"
+    },
+    {
+      "key": "delayMixA",
+      "label": "Delay A Mix",
+      "unit": "%",
+      "raw": 7864,
+      "value": 11.999877925962096,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbMixA",
+      "label": "Reverb A Mix",
+      "unit": "%",
+      "raw": 13107,
+      "value": 20.00030518509476,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "delayTimeMs",
+      "label": "Delay A Time",
+      "unit": "ms",
+      "raw": 2044,
+      "value": 500.00747703482165,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "delayFeedback",
+      "label": "Delay A Feedback",
+      "unit": "%",
+      "raw": 42597,
+      "value": 29.99969481490524,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbTimeS",
+      "label": "Reverb A Time",
+      "unit": "s",
+      "raw": 1010,
+      "value": 1.6396435438093206,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbPredelayMs",
+      "label": "Reverb A Pre-Delay",
+      "unit": "ms",
+      "raw": 1966,
+      "value": 29.99969481490524,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "delayTempoA",
+      "label": "Delay A Tempo",
+      "unit": "",
+      "raw": 14,
+      "value": "1/4",
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbPredelayTempoA",
+      "label": "Reverb A Pre-Delay Tempo",
+      "unit": "",
+      "raw": 0,
+      "value": "NONE",
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "delayScene2",
+      "label": "Scene 2 Delay",
+      "unit": "",
+      "raw": 1,
+      "value": false,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "reverbScene1",
+      "label": "Scene 1 Reverb kanal",
+      "unit": "",
+      "raw": 0,
+      "value": "A",
+      "requested": null,
+      "source": "base"
+    }
+  ],
+  "changedBodyOffsets": [
+    4946,
+    4947,
+    4956,
+    4958,
+    4959,
+    4960,
+    4961,
+    4962,
+    4963,
+    4964,
+    4965,
+    4966,
+    4967,
+    4970,
+    4971,
+    4972,
+    4973,
+    4976,
+    4977,
+    4982,
+    4983,
+    4984,
+    4990,
+    4991,
+    4994,
+    4995,
+    4996,
+    4997,
+    4998,
+    4999,
+    5002,
+    5003,
+    5005,
+    5006,
+    5007,
+    5008,
+    5012,
+    5013,
+    5018,
+    5019,
+    5020,
+    5021,
+    5022,
+    5024,
+    5025,
+    5030,
+    5031,
+    5034,
+    5035,
+    5036,
+    5037,
+    5040,
+    5041,
+    5048,
+    5049,
+    5052,
+    5053,
+    5058,
+    5060,
+    5061,
+    5062,
+    5063,
+    5064,
+    5065,
+    5066,
+    5067,
+    5076,
+    5077,
+    5078,
+    5104,
+    5132,
+    5148,
+    5149,
+    5162,
+    5163,
+    5164,
+    5165,
+    5168,
+    5182,
+    5204,
+    5223
+  ],
+  "checks": {
+    "frames": true,
+    "crc": true,
+    "footer": true,
+    "exactExpectedBody": true,
+    "rawReadback": true,
+    "headerPreserved": true
+  },
+  "hardware": "Selected reference combinations verified on firmware13; this output needs evidence comparison before claiming an exact match.",
+  "audio": "not assessed",
+  "limitations": [
+    "Original base only",
+    "Amp B and Delay/Reverb A controls only",
+    "Requires a full bundled/imported Amp channel template; no model-ID-only writing; existing Scene2 Dyna-Cab channels only; no external IR/routing writing",
+    "Unknown body offset0 export difference remains tracked"
+  ]
+}

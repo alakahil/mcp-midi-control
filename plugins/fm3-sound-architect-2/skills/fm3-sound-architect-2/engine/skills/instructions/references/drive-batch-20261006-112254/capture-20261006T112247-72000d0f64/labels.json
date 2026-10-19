@@ -1,0 +1,23 @@
+[
+  {
+    "displayNumber": 85,
+    "name": "Tube Drive 5-Knob",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 86,
+    "name": "Valve Screamer VS9",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 87,
+    "name": "Zen Master",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  }
+]

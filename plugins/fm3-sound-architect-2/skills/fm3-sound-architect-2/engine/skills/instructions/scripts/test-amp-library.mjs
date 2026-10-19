@@ -1,0 +1,11 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {importAmpLibrary,coverage,resolveImportedTemplate,catalog} from './fm3-amp-library.mjs';import {generatePreset} from './fm3-generate.mjs';
+const read=n=>fs.readFileSync(new URL('../references/'+n,import.meta.url));const base=read('Baaspreset.syx'),lead=read('S2_AmpModelLead.syx');
+const lib=importAmpLibrary(base,[{name:'bank',bytes:Buffer.concat([base,lead])}],13);assert.equal(lib.accepted.length,2);assert.equal(Object.keys(lib.templates).length,5);assert.equal(coverage(lib).catalogEntries,331);assert.equal(coverage(lib).missing,289);
+const spec={schemaVersion:1,firmware:13,name:'IMPORT TEST',ampModelB:'USA MK IV Lead'};
+assert.deepEqual(generatePreset(base,spec,lib).syx,generatePreset(base,spec).syx);
+assert.throws(()=>generatePreset(base,{...spec,ampModelB:'Mr Z MZ-38'},lib),/Missing full channel/);
+for(const m of catalog.models.filter(m=>!m.bundledTemplate))assert.throws(()=>generatePreset(base,{...spec,ampModelB:m.name}),/Missing full channel/);
+const corrupted=structuredClone(lib);corrupted.templates['USA MK IV Lead'].channelBytesHex='00'.repeat(288);assert.throws(()=>resolveImportedTemplate(corrupted,'USA MK IV Lead'),/integrity/);
+assert.throws(()=>importAmpLibrary(base,[{name:'truncated',bytes:lead.subarray(0,-1)}],13));assert.throws(()=>importAmpLibrary(base,[{name:'lead',bytes:lead}],12));
+const rejected=importAmpLibrary(base,[{name:'changed-scene',bytes:fs.readFileSync(new URL('../examples/FM3_SA_TEST_MODEL_CAB_export.syx',import.meta.url))}],13);assert.equal(rejected.accepted.length,0);assert.match(rejected.rejected[0].reason,/non-Amp/);
+console.log('PASS: bank import, 5 full templates, imported generation equals bundled generation; 289 missing templates blocked; corrupt/wrong firmware/truncated/dependency-bearing inputs rejected.');

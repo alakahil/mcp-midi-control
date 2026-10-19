@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-01",
+  "sourceFile": "FM3_AMP_CAPTURE_001.syx",
+  "sourceSha256": "b22fdfb46f92a185868ac341c4bb18066134215bc6fbd53df939a26eb5c323e9",
+  "models": {
+    "A": "59 Bassguy Bright",
+    "B": "65 Bassguy Normal",
+    "C": "Vibrato Verb",
+    "D": "Deluxe Verb Vibrato"
+  },
+  "outsideAmpChannelDifferences": [
+    {
+      "offset": 4622,
+      "base": 1,
+      "donor": 0,
+      "meaning": "Scene 2 Amp channel B -> A",
+      "action": "Recorded but not copied into templates"
+    }
+  ],
+  "integrity": "frames/CRC/footer pass",
+  "softwareGeneration": "All four channels copied exactly to Amp B, all other body bytes preserved",
+  "hardware": "Source exported by user; new generated model-selection combinations not yet imported and confirmed"
+}

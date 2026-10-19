@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "sourceZip": "FM3_DELAY_BATCH_20261006T134023_9a69cb8f.zip",
+  "sourceZipSha256": "01c9b17ad0c84ebb414f8ab3bee47bd56030cfd517f65e92ab648625ad12fdb3",
+  "pairedCaptures": 7,
+  "matchedWordsPerCapture": 356,
+  "collectedTypes": 27,
+  "missingTypes": 0,
+  "uniqueBinaryIds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "checks": [
+    "Raw GET decoding and SYX word comparison",
+    "SysEx frames/checksums, preset CRC and footer",
+    "Non-Delay body unchanged against baseline",
+    "Roster name and binary ID uniqueness"
+  ],
+  "limitations": [
+    "Names are user-confirmed, not encoded in GET",
+    "Collected settings are not asserted to be factory defaults",
+    "No new generator support or hardware import established"
+  ],
+  "pairs": [
+    {
+      "capture": "capture-001",
+      "paired": true,
+      "matchedWords": 356,
+      "syxSha256": "8de5c706189008d0b0d3269559f945ee7d508257a7260464ee1d4fc27ce607a2",
+      "rawRxSha256": "1dcd2ad6023b543b31b7b8dbd0894a63a94b9d9854119070e6f639a2da02a13d",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 12
+        },
+        {
+          "channel": "B",
+          "binaryId": 13
+        },
+        {
+          "channel": "C",
+          "binaryId": 2
+        },
+        {
+          "channel": "D",
+          "binaryId": 3
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 1,
+          "name": "2290 w/ Modulation",
+          "binaryId": 12,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 2,
+          "name": "Ambient Stereo",
+          "binaryId": 13,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 3,
+          "name": "Analog Mono",
+          "binaryId": 2,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 4,
+          "name": "Analog Stereo",
+          "binaryId": 3,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T125747-db13a53ab6",
+      "paired": true,
+      "matchedWords": 356,
+      "syxSha256": "9923f742aa5062a49fa241bcf28a127961a83cf9d0a7aec447dd6ac8fec4bb56",
+      "rawRxSha256": "b7998593476d57e5b1551e5df46440230b36f577ddf01146cce2700d22d5fb80",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 14
+        },
+        {
+          "channel": "B",
+          "binaryId": 0
+        },
+        {
+          "channel": "C",
+          "binaryId": 1
+        },
+        {
+          "channel": "D",
+          "binaryId": 20
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 5,
+          "name": "Deluxe Mind Guy",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 6,
+          "name": "Digital Mono",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 7,
+          "name": "Digital Stereo",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 8,
+          "name": "DM-Two Delay",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T133641-f2366504ef",
+      "paired": true,
+      "matchedWords": 356,
+      "syxSha256": "6ae001e84816ab8ca24e956055da80468715d6609708453656f857a244a08f1b",
+      "rawRxSha256": "8db367aaa2cee25b46075d48df0184e734586433815d1f311ba9dc7ae3c7eafa",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 7
+        },
+        {
+          "channel": "B",
+          "binaryId": 25
+        },
+        {
+          "channel": "C",
+          "binaryId": 10
+        },
+        {
+          "channel": "D",
+          "binaryId": 19
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 9,
+          "name": "Dual Delay",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 10,
+          "name": "Dual Head Tape",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 11,
+          "name": "Ducking Delay",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 12,
+          "name": "Graphite Copy Delay",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T133736-15220b76d9",
+      "paired": true,
+      "matchedWords": 356,
+      "syxSha256": "7663349721e93f0dd898950bc6a60750c5012c86f7c48bf9f8f026de6445e084",
+      "rawRxSha256": "b8509dc1c59d91eff2f282ce1604fffa39a5a57b009959d4f60e11282a77703d",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 17
+        },
+        {
+          "channel": "B",
+          "binaryId": 15
+        },
+        {
+          "channel": "C",
+          "binaryId": 4
+        },
+        {
+          "channel": "D",
+          "binaryId": 22
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 13,
+          "name": "Lo-Fi Tape",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 14,
+          "name": "Mono BBD",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 15,
+          "name": "Mono Tape",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 16,
+          "name": "Pan Delay",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T133830-b175fdafea",
+      "paired": true,
+      "matchedWords": 356,
+      "syxSha256": "8d944fe083e3ce20cfac1e4fcdcc0d026df665d8b898931bab5f46e5826e1330",
+      "rawRxSha256": "b854ce3e00879571b7b5b4104dd7f0328aad9f26e2a281d22c4556eccfe0afbb",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 6
+        },
+        {
+          "channel": "B",
+          "binaryId": 8
+        },
+        {
+          "channel": "C",
+          "binaryId": 16
+        },
+        {
+          "channel": "D",
+          "binaryId": 18
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 17,
+          "name": "Ping-Pong",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 18,
+          "name": "Reverse Delay",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 19,
+          "name": "Stereo BBD",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 20,
+          "name": "Stereo Mind Guy",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T133921-ad82c78b3c",
+      "paired": true,
+      "matchedWords": 356,
+      "syxSha256": "76b30d01868183f97ce4833e3b3ec2436f4370d48ad9fc4557dcc7b6ee7d5189",
+      "rawRxSha256": "a42bed8623b8e87bdae09285f6f3050988428eb98dd8a3eb7fd3aaec6e444586",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 5
+        },
+        {
+          "channel": "B",
+          "binaryId": 23
+        },
+        {
+          "channel": "C",
+          "binaryId": 26
+        },
+        {
+          "channel": "D",
+          "binaryId": 9
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 21,
+          "name": "Stereo Tape",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 22,
+          "name": "Stereo Trem Delay",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 23,
+          "name": "Surround Delay",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 24,
+          "name": "Sweep Delay",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T134020-bced7c845b",
+      "paired": true,
+      "matchedWords": 356,
+      "syxSha256": "302b89248f0624ac93b8ae39c869ee1662dc25ca66cac8cde00e74b170cd8e96",
+      "rawRxSha256": "9a44598b1cf17078c69a11d992bfbf210aca2505bb620b4f783b28c8a2fa7298",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 11
+        },
+        {
+          "channel": "B",
+          "binaryId": 24
+        },
+        {
+          "channel": "C",
+          "binaryId": 21
+        },
+        {
+          "channel": "D",
+          "binaryId": 9
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 25,
+          "name": "Vintage Digital",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 26,
+          "name": "Wandering Delays",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 27,
+          "name": "Worn Tape",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    }
+  ]
+}

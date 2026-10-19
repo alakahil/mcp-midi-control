@@ -1,0 +1,20 @@
+FM3 SOUND ARCHITECT — ARENDUSKATSE
+Preset: FM3 SA TEST G5
+Sihtseade: FM3 / kasutaja FM3 Mk II Turbo. Firmware versioon vajab kasutaja kinnitust.
+Alus: kasutaja Baaspreset.syx (USA Mk IV), vormingusõna 0x0146.
+Muudetud Amp 1 kanal B (USA MK IV Rhythm 2):
+Gain = 5.00 / 10
+Kanalit B kasutavad selle aluse stseenid 2 ja 6; muudatus mõjutab mõlemat.
+Kõik muud lahtipakitud presetibaidid säilisid. Routing, Cab, efektid, kanalid ja stseeniseosed pärinevad alusfailist.
+Kitarr, ühendused, Cab/IR-sõltuvused, lülitid ja expression: säilitatud alusfailist, selles katses eraldi seadmel kinnitamata.
+Kontrollitud: kõik SysEx-kaadrid, CRC, footer, väärtuste tagasilugemine ja kõrvalmuudatuste puudumine.
+FM3 import, helisignaal, tasemed ja CPU: katsetamata. See ei ole valmis artistipreset.
+
+KONTROLLIMPORT
+1. Säilita pooleliolev töö ja olemasolev preset. Ava FM3-Edit ühendatud FM3-ga.
+2. Impordi see üksik SYX Preset-menüü kaudu kontrollimiseks; ära kirjuta oma presetikohta üle.
+3. Vali Scene 2 ja Amp kanal B. Kontrolli Gain 5.00 ning kuula madalal helitugevusel.
+4. Märgi üles firmware versioon. Kui import õnnestus, ekspordi preset FM3-Editist tagasi ja lisa fail vestlusse võrdluseks.
+
+SHA-256: 22cc6e0f6643c32386920d94851eced7201f14ea349af3f8cc711441686e0388
+Tööriist ei ühenda seadet ega saada MIDI/SET-käske.

@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-07",
+  "generatedSha256": "e62b9acfc249996e550e87a467ebf645f5016518599b4f5e0034215dc42089bd",
+  "hardwareExportSha256": "4eda4d22b89fb843ce47ab011bf01290a2cdbaabb9fe0219038faa5f5f0e7095",
+  "fullFilesIdentical": false,
+  "bodyBytes": 14126,
+  "changedBodyOffsets": [],
+  "channels": [
+    {
+      "channel": "A",
+      "all21WordsPreserved": true
+    },
+    {
+      "channel": "B",
+      "all21WordsPreserved": true
+    },
+    {
+      "channel": "C",
+      "all21WordsPreserved": true
+    },
+    {
+      "channel": "D",
+      "all21WordsPreserved": true
+    }
+  ],
+  "presetNameChange": {
+    "before": "FM3_ROTARY_BASELINE",
+    "after": "FM3_ROTARY_BASELINE"
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 142,
+      "after": 118,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 3,
+      "after": 103,
+      "field": "CRC"
+    }
+  ],
+  "sceneChannelsBefore": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "sceneChannelsAfter": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footerChecksum": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all84RotaryWordsPreserved": true,
+    "scenesAndBypassPreserved": true,
+    "dumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyNameAndCrc": true
+  },
+  "scope": "Hardware roundtrip verified only if reported checks pass for this Rotary A specimen; 72 measured-value combinations are offline tested only. Audio and CPU not assessed.",
+  "encoding": {
+    "compressedBytesBefore": 4898,
+    "compressedBytesAfter": 4898,
+    "compressedRepresentationIdentical": false,
+    "paddingBeforeAllZero": true,
+    "paddingAfterAllZero": true,
+    "note": "Compressed encoding and its checksums may differ while decompressed data is byte-identical; no body normalization performed."
+  }
+}

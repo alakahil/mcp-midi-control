@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 21,
+    "name": "Small Copy",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 22,
+    "name": "Stereo Tri-Chorus",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 23,
+    "name": "Tape Chorus",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 24,
+    "name": "Tape Flanger",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

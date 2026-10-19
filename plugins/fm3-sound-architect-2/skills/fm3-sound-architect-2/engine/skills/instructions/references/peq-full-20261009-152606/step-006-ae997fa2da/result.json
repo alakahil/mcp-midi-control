@@ -1,0 +1,125 @@
+{
+  "index": 6,
+  "step": {
+    "id": "007-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 1 Slope → 24 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 30,
+        "value": 24,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 6,
+    "step": {
+      "id": "007-types",
+      "stage": "types",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 1 Slope → 24 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Slope",
+          "candidatePid": 30,
+          "value": 24,
+          "band": 1,
+          "channel": "A",
+          "endpoint": null,
+          "unit": "dB/oct"
+        }
+      ]
+    },
+    "previousSha256": "d0fc4e48d522b15b56a137ead11f24619b64fc2fcd007a25689b629422773235",
+    "syxSha256": "d3931bb2ad46936c4c0099d3b0e69d604c508108093c9c29f68d522b5fcb0ac0",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 30,
+        "offset": 8794,
+        "before": 2,
+        "after": 3
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 30,
+        "value": 24,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct",
+        "raw": 3
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Slope",
+        "candidatePid": 30,
+        "value": 24,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      },
+      "displayValue": 24
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "d3931bb2ad46936c4c0099d3b0e69d604c508108093c9c29f68d522b5fcb0ac0",
+    "bodySha256": "6fccdce8b8b48669a475b51bf17ab5f5285d1678d9815f273dd6fe2d909a22a4",
+    "rawRxSha256": "38c7cb22daa5aaa3376eb622b9ee8417e77cff488e6bab18f50e29ae38e02d94",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,11 @@
+FM3 Tremolo/Panner tüüpide kogumine — firmware 13
+
+Esimesed 4 tüüpi on kaasas kinnitatud GET/SYX paarina. Puudu on 3.
+Paki Downloads-kausta. Vajalikud Python 3 ja Node.
+python3 ~/Downloads/FM3_TREMOLO_COLLECTOR/FM3_TREMOLO_BATCH.py --session ~/Documents/FM3_TREMOLO_SESSION --port /dev/cu.usbmodem211104
+
+Vali A Optical Trem 2, B Panner, C VCA Trem. D jäta Optical Trem 1 peale.
+Muuda ainult Type-valikuid; automaatselt muutunud parameetrid jäta alles. Muud plokid ja stseen jäta samaks.
+Ekspordi terve preset ja lohista SYX Terminali. Sulge FM3-Edit ja kinnita üks GET sõnaga jah.
+Saada tulemuste ZIP vestlusse. SET/SAVE, automaatsed korduspäringud ja pordivalik puuduvad.
+Säilita sessioonikaust ja tulemuste ZIP.

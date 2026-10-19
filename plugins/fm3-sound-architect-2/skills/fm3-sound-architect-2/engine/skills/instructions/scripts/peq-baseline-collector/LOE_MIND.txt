@@ -1,0 +1,30 @@
+FM3 PEQ ALGPAARI KONTROLL — 0.1.0
+
+Sinu FM3_PEQ_BASELINE.syx on failitasemel kontrollitud ja kaasas baseline.syx nime all.
+Uut eksporti ega PEQ seademuudatust praegu vaja ei ole.
+Järgnev üks GET loeb PEQ 1 kõik 132 parameetrisõna ja võrdleb neid selle SYX-iga.
+
+1. Paki ZIP lahti Downloads-kausta. Kausta nimi peab olema FM3_PEQ_BASE_CHECK.
+2. Jäta FM3 samasse seisundisse, millest tegid saadetud ekspordi:
+   JB EIGHT SCENES V3 koos PEQ-ga; valitud Scene 2; PEQ kanal A bypass'is.
+   Kui oled vahepeal midagi muutnud, impordi kaasasolev baseline.syx tööpuhvrisse.
+3. Sulge FM3-Edit ja Fractal-Bot.
+4. Käivita Terminalis senise pordiga:
+
+python3 ~/Downloads/FM3_PEQ_BASE_CHECK/FM3_PEQ_BASE_CHECK.py --port /dev/cu.usbmodem211104
+
+   Kui FM3 pordinimi on muutunud, asenda käsus port tegeliku FM3 pordiga.
+5. Kui programm küsib sama seisundi ja ühe GET-i kinnitust, kirjuta jah.
+6. Oodatav tulemus: PASS: PEQ GET/SYX 132/132.
+   Saada vestlusse programmi lõpus näidatud tulemuste ZIP.
+
+q lõpetab enne seadme avamist. SET/SAVE/STORE-käske ei saadeta.
+Vea korral säilivad andmed ja valmib tulemuste ZIP; automaatset kordust ei tehta.
+Sama käsu uus käivitus küsib ebaõnnestunud lugemise korduseks uuesti kinnitust.
+Kui paar on juba edukas, väljastab uus käivitus ZIP-i uut GET-i saatmata.
+Säilita FM3_PEQ_BASE_SESSION kaust, mis tekib programmi kõrvale.
+Vaja on python3 ja varasemate kogujatega kasutatud Node'i; pip-paigaldust ei ole vaja.
+
+See samm kinnitab PEQ andmeala GET/SYX vastavuse. Sageduste, Q, Gaini, tüübi
+ja Leveli nimed ning skaalad vajavad järgnevaid sihitud mõõtmisi. Generaator
+veel PEQ parameetreid ei kirjuta. Senine muusikaline V3 jääb võrdlusaluseks.

@@ -1,0 +1,15 @@
+{
+  "index": 3,
+  "step": {
+    "id": "C-q-0.707",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Q",
+    "value": 0.707,
+    "unit": "",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Q väärtuseks 0.707 . Ekspordi terve preset."
+  },
+  "status": "failed",
+  "error": "Ükski parameeter ei muutunud. Kui väärtus oli juba sama, kasuta s; muidu taasta viimane edukas fail."
+}

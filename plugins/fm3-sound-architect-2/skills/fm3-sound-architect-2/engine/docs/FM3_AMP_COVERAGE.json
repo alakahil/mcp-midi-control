@@ -1,0 +1,1688 @@
+{
+  "catalogEntries": 336,
+  "ready": 336,
+  "missing": 0,
+  "completeness": "All 336 identified entries (IDs 0–335) have channel templates, including the five firmware13 additions. This is model-template coverage, not validation of every generated preset or future firmware.",
+  "models": [
+    {
+      "id": 0,
+      "name": "59 Bassguy Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 1,
+      "name": "65 Bassguy Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 2,
+      "name": "Vibrato Verb",
+      "status": "bundled-template"
+    },
+    {
+      "id": 3,
+      "name": "Deluxe Verb Vibrato",
+      "status": "bundled-template"
+    },
+    {
+      "id": 4,
+      "name": "Double Verb Vibrato",
+      "status": "bundled-template"
+    },
+    {
+      "id": 5,
+      "name": "JR Blues",
+      "status": "bundled-template"
+    },
+    {
+      "id": 6,
+      "name": "Class-A 15W TB",
+      "status": "bundled-template"
+    },
+    {
+      "id": 7,
+      "name": "Class-A 30W",
+      "status": "bundled-template"
+    },
+    {
+      "id": 8,
+      "name": "Class-A 30W TB",
+      "status": "bundled-template"
+    },
+    {
+      "id": 9,
+      "name": "Brit JM45",
+      "status": "bundled-template"
+    },
+    {
+      "id": 10,
+      "name": "Plexi 50W Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 11,
+      "name": "Plexi 50W High 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 12,
+      "name": "1987X Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 13,
+      "name": "1987X Treble",
+      "status": "bundled-template"
+    },
+    {
+      "id": 14,
+      "name": "Brit 800 2204 High",
+      "status": "bundled-template"
+    },
+    {
+      "id": 15,
+      "name": "Brit Super",
+      "status": "bundled-template"
+    },
+    {
+      "id": 16,
+      "name": "Hipower Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 17,
+      "name": "Hipower Brilliant",
+      "status": "bundled-template"
+    },
+    {
+      "id": 18,
+      "name": "USA MK IV Rhythm 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 19,
+      "name": "USA Pre Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 20,
+      "name": "USA MK IV Rhythm 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 21,
+      "name": "USA MK IIC+",
+      "status": "bundled-template"
+    },
+    {
+      "id": 22,
+      "name": "USA MK IIC+ Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 23,
+      "name": "USA MK IV Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 24,
+      "name": "USA MK IV Lead Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 25,
+      "name": "Recto2 Orange Vintage",
+      "status": "bundled-template"
+    },
+    {
+      "id": 26,
+      "name": "Recto2 Orange Modern",
+      "status": "bundled-template"
+    },
+    {
+      "id": 27,
+      "name": "Recto2 Red Vintage",
+      "status": "bundled-template"
+    },
+    {
+      "id": 28,
+      "name": "Recto2 Red Modern",
+      "status": "bundled-template"
+    },
+    {
+      "id": 29,
+      "name": "Euro Blue",
+      "status": "bundled-template"
+    },
+    {
+      "id": 30,
+      "name": "Euro Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 31,
+      "name": "Shiver Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 32,
+      "name": "Shiver Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 33,
+      "name": "Euro Uber",
+      "status": "bundled-template"
+    },
+    {
+      "id": 34,
+      "name": "Solo 99 Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 35,
+      "name": "Solo 100 Rhythm",
+      "status": "bundled-template"
+    },
+    {
+      "id": 36,
+      "name": "Solo 100 Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 37,
+      "name": "Friedman BE V1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 38,
+      "name": "Friedman HBE V1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 39,
+      "name": "PVH 6160 Block Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 40,
+      "name": "Mr Z MZ-38",
+      "status": "bundled-template"
+    },
+    {
+      "id": 41,
+      "name": "CA3+ Rhythm",
+      "status": "bundled-template"
+    },
+    {
+      "id": 42,
+      "name": "CA3+ Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 43,
+      "name": "Wrecker Rocket",
+      "status": "bundled-template"
+    },
+    {
+      "id": 44,
+      "name": "Cornfed M50",
+      "status": "bundled-template"
+    },
+    {
+      "id": 45,
+      "name": "Carol-Ann OD-2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 46,
+      "name": "Fryette D60 Less",
+      "status": "bundled-template"
+    },
+    {
+      "id": 47,
+      "name": "Fryette D60 More",
+      "status": "bundled-template"
+    },
+    {
+      "id": 48,
+      "name": "Brit Brown",
+      "status": "bundled-template"
+    },
+    {
+      "id": 49,
+      "name": "Citrus RV50",
+      "status": "bundled-template"
+    },
+    {
+      "id": 50,
+      "name": "Jazz 120",
+      "status": "bundled-template"
+    },
+    {
+      "id": 51,
+      "name": "Energyball",
+      "status": "bundled-template"
+    },
+    {
+      "id": 52,
+      "name": "ODS-100 Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 53,
+      "name": "ODS-100 HRM",
+      "status": "bundled-template"
+    },
+    {
+      "id": 54,
+      "name": "FAS Rhythm",
+      "status": "bundled-template"
+    },
+    {
+      "id": 55,
+      "name": "FAS Lead 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 56,
+      "name": "FAS Lead 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 57,
+      "name": "FAS Modern",
+      "status": "bundled-template"
+    },
+    {
+      "id": 58,
+      "name": "Das Metall",
+      "status": "bundled-template"
+    },
+    {
+      "id": 59,
+      "name": "Brit Pre",
+      "status": "bundled-template"
+    },
+    {
+      "id": 60,
+      "name": "Buddah DuoMaster",
+      "status": "bundled-template"
+    },
+    {
+      "id": 61,
+      "name": "Matchbox Chiefman 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 62,
+      "name": "Matchbox Chiefman 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 63,
+      "name": "Cameron CCV 1A",
+      "status": "bundled-template"
+    },
+    {
+      "id": 64,
+      "name": "Cameron CCV 2A",
+      "status": "bundled-template"
+    },
+    {
+      "id": 65,
+      "name": "SV Bass 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 66,
+      "name": "Tube Pre",
+      "status": "bundled-template"
+    },
+    {
+      "id": 67,
+      "name": "FAS Brown",
+      "status": "bundled-template"
+    },
+    {
+      "id": 68,
+      "name": "Big Hair",
+      "status": "bundled-template"
+    },
+    {
+      "id": 69,
+      "name": "Solo 99 Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 70,
+      "name": "Supertweed",
+      "status": "bundled-template"
+    },
+    {
+      "id": 71,
+      "name": "Texas Star Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 72,
+      "name": "FAS Wreck",
+      "status": "bundled-template"
+    },
+    {
+      "id": 73,
+      "name": "Brit JVM OD1 Orange",
+      "status": "bundled-template"
+    },
+    {
+      "id": 74,
+      "name": "Brit JVM OD2 Orange",
+      "status": "bundled-template"
+    },
+    {
+      "id": 75,
+      "name": "FAS 6160",
+      "status": "bundled-template"
+    },
+    {
+      "id": 76,
+      "name": "Legend 100",
+      "status": "bundled-template"
+    },
+    {
+      "id": 77,
+      "name": "USA MK IV Lead Mid",
+      "status": "bundled-template"
+    },
+    {
+      "id": 78,
+      "name": "USA MK IV Lead Mid Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 79,
+      "name": "Princetone 5F2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 80,
+      "name": "Blankenship Leeds",
+      "status": "bundled-template"
+    },
+    {
+      "id": 81,
+      "name": "5153 100W Green",
+      "status": "bundled-template"
+    },
+    {
+      "id": 82,
+      "name": "5153 100W Blue",
+      "status": "bundled-template"
+    },
+    {
+      "id": 83,
+      "name": "5153 100W Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 84,
+      "name": "Solo 88 Rhythm",
+      "status": "bundled-template"
+    },
+    {
+      "id": 85,
+      "name": "Div/13 CJ",
+      "status": "bundled-template"
+    },
+    {
+      "id": 86,
+      "name": "Herbie CH2-",
+      "status": "bundled-template"
+    },
+    {
+      "id": 87,
+      "name": "Herbie CH2+",
+      "status": "bundled-template"
+    },
+    {
+      "id": 88,
+      "name": "Herbie CH3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 89,
+      "name": "Dirty Shirley 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 90,
+      "name": "Dizzy V4 Blue 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 91,
+      "name": "Dizzy V4 Blue 3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 92,
+      "name": "Dizzy V4 Blue 4",
+      "status": "bundled-template"
+    },
+    {
+      "id": 93,
+      "name": "Suhr Badger 18",
+      "status": "bundled-template"
+    },
+    {
+      "id": 94,
+      "name": "Suhr Badger 30",
+      "status": "bundled-template"
+    },
+    {
+      "id": 95,
+      "name": "Princetone AA964",
+      "status": "bundled-template"
+    },
+    {
+      "id": 96,
+      "name": "Supremo Trem",
+      "status": "bundled-template"
+    },
+    {
+      "id": 97,
+      "name": "Atomica Low",
+      "status": "bundled-template"
+    },
+    {
+      "id": 98,
+      "name": "Atomica High",
+      "status": "bundled-template"
+    },
+    {
+      "id": 99,
+      "name": "Deluxe Tweed Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 100,
+      "name": "Spawn Q-Rod OD2-1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 101,
+      "name": "Spawn Q-Rod OD2-2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 102,
+      "name": "Spawn Q-Rod OD2-3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 103,
+      "name": "Brit Silver",
+      "status": "bundled-template"
+    },
+    {
+      "id": 104,
+      "name": "Spawn Nitrous 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 105,
+      "name": "FAS Crunch",
+      "status": "bundled-template"
+    },
+    {
+      "id": 106,
+      "name": "Two Stone J35 PAB",
+      "status": "bundled-template"
+    },
+    {
+      "id": 107,
+      "name": "Fox ODS",
+      "status": "bundled-template"
+    },
+    {
+      "id": 108,
+      "name": "Hot Kitty",
+      "status": "bundled-template"
+    },
+    {
+      "id": 109,
+      "name": "Band-Commander",
+      "status": "bundled-template"
+    },
+    {
+      "id": 110,
+      "name": "Super Verb Vibrato",
+      "status": "bundled-template"
+    },
+    {
+      "id": 111,
+      "name": "Vibra-King",
+      "status": "bundled-template"
+    },
+    {
+      "id": 112,
+      "name": "Gibtone Scout",
+      "status": "bundled-template"
+    },
+    {
+      "id": 113,
+      "name": "PVH 6160+ Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 114,
+      "name": "Solo 100 Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 115,
+      "name": "USA Pre LD2 Green",
+      "status": "bundled-template"
+    },
+    {
+      "id": 116,
+      "name": "USA Pre LD2 Yellow",
+      "status": "bundled-template"
+    },
+    {
+      "id": 117,
+      "name": "CA3+ Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 118,
+      "name": "Fox ODS Mid",
+      "status": "bundled-template"
+    },
+    {
+      "id": 119,
+      "name": "Brit JVM OD1 Green",
+      "status": "bundled-template"
+    },
+    {
+      "id": 120,
+      "name": "Brit JVM OD2 Green",
+      "status": "bundled-template"
+    },
+    {
+      "id": 121,
+      "name": "Vibrato Lux",
+      "status": "bundled-template"
+    },
+    {
+      "id": 122,
+      "name": "Brit 800 Mod",
+      "status": "bundled-template"
+    },
+    {
+      "id": 123,
+      "name": "Nuclear-Tone",
+      "status": "bundled-template"
+    },
+    {
+      "id": 124,
+      "name": "Bludojai Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 125,
+      "name": "Bludojai Lead PAB",
+      "status": "bundled-template"
+    },
+    {
+      "id": 126,
+      "name": "Plexi 100W High",
+      "status": "bundled-template"
+    },
+    {
+      "id": 127,
+      "name": "Plexi 100W Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 128,
+      "name": "Ruby Rocket Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 129,
+      "name": "AC-20 EF86 Bass",
+      "status": "bundled-template"
+    },
+    {
+      "id": 130,
+      "name": "Princetone Reverb",
+      "status": "bundled-template"
+    },
+    {
+      "id": 131,
+      "name": "Comet Concourse",
+      "status": "bundled-template"
+    },
+    {
+      "id": 132,
+      "name": "FAS Modern II",
+      "status": "bundled-template"
+    },
+    {
+      "id": 133,
+      "name": "Carol-Ann Triptik Modern",
+      "status": "bundled-template"
+    },
+    {
+      "id": 134,
+      "name": "Carol-Ann Triptik Classic",
+      "status": "bundled-template"
+    },
+    {
+      "id": 135,
+      "name": "Carol-Ann Triptik Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 136,
+      "name": "Thordendal Vintage",
+      "status": "bundled-template"
+    },
+    {
+      "id": 137,
+      "name": "Thordendal Modern",
+      "status": "bundled-template"
+    },
+    {
+      "id": 138,
+      "name": "ODS-100 HRM Mid",
+      "status": "bundled-template"
+    },
+    {
+      "id": 139,
+      "name": "Euro Blue Modern",
+      "status": "bundled-template"
+    },
+    {
+      "id": 140,
+      "name": "Euro Red Modern",
+      "status": "bundled-template"
+    },
+    {
+      "id": 141,
+      "name": "Plexi 50W Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 142,
+      "name": "AC-20 EF86 Treble",
+      "status": "bundled-template"
+    },
+    {
+      "id": 143,
+      "name": "Comet 60",
+      "status": "bundled-template"
+    },
+    {
+      "id": 144,
+      "name": "Hipower Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 145,
+      "name": "Plexi 100W Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 146,
+      "name": "Brit JM45 Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 147,
+      "name": "1987X Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 148,
+      "name": "Recto1 Orange Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 149,
+      "name": "Recto1 Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 150,
+      "name": "ODS-100 Ford PAB",
+      "status": "bundled-template"
+    },
+    {
+      "id": 151,
+      "name": "Bogfish Strato",
+      "status": "bundled-template"
+    },
+    {
+      "id": 152,
+      "name": "Bogfish Brown",
+      "status": "bundled-template"
+    },
+    {
+      "id": 153,
+      "name": "5F1 Tweed",
+      "status": "bundled-template"
+    },
+    {
+      "id": 154,
+      "name": "Wrecker Express",
+      "status": "bundled-template"
+    },
+    {
+      "id": 155,
+      "name": "Two Stone J35",
+      "status": "bundled-template"
+    },
+    {
+      "id": 156,
+      "name": "ODS-100 Ford",
+      "status": "bundled-template"
+    },
+    {
+      "id": 157,
+      "name": "Mr Z MZ-8",
+      "status": "bundled-template"
+    },
+    {
+      "id": 158,
+      "name": "Car Ambler",
+      "status": "bundled-template"
+    },
+    {
+      "id": 159,
+      "name": "USA Metro Blues",
+      "status": "bundled-template"
+    },
+    {
+      "id": 160,
+      "name": "Wrecker Liverpool",
+      "status": "bundled-template"
+    },
+    {
+      "id": 161,
+      "name": "Citrus Terrier",
+      "status": "bundled-template"
+    },
+    {
+      "id": 162,
+      "name": "Citrus A30 Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 163,
+      "name": "Citrus A30 Dirty",
+      "status": "bundled-template"
+    },
+    {
+      "id": 164,
+      "name": "Div/13 FT37 Low",
+      "status": "bundled-template"
+    },
+    {
+      "id": 165,
+      "name": "Div/13 FT37 High",
+      "status": "bundled-template"
+    },
+    {
+      "id": 166,
+      "name": "Matchbox D-30",
+      "status": "bundled-template"
+    },
+    {
+      "id": 167,
+      "name": "FAS Class-A",
+      "status": "bundled-template"
+    },
+    {
+      "id": 168,
+      "name": "USA Bass 400 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 169,
+      "name": "USA Bass 400 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 170,
+      "name": "Citrus Bass 200",
+      "status": "bundled-template"
+    },
+    {
+      "id": 171,
+      "name": "FAS Bass",
+      "status": "bundled-template"
+    },
+    {
+      "id": 172,
+      "name": "Tremolo Lux",
+      "status": "bundled-template"
+    },
+    {
+      "id": 173,
+      "name": "FAS Brootalz",
+      "status": "bundled-template"
+    },
+    {
+      "id": 174,
+      "name": "Recto1 Orange Modern",
+      "status": "bundled-template"
+    },
+    {
+      "id": 175,
+      "name": "Angle Severe 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 176,
+      "name": "Angle Severe 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 177,
+      "name": "USA Pre LD2 Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 178,
+      "name": "USA Pre LD1 Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 179,
+      "name": "Texas Star Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 180,
+      "name": "AC-20 12AX7 Treble",
+      "status": "bundled-template"
+    },
+    {
+      "id": 181,
+      "name": "Vibrato Verb AA",
+      "status": "bundled-template"
+    },
+    {
+      "id": 182,
+      "name": "Vibrato Verb AB",
+      "status": "bundled-template"
+    },
+    {
+      "id": 183,
+      "name": "Carol-Ann Tucana Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 184,
+      "name": "JR Blues Fat",
+      "status": "bundled-template"
+    },
+    {
+      "id": 185,
+      "name": "Solo 88 Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 186,
+      "name": "Brit AFS100 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 187,
+      "name": "Brit AFS100 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 188,
+      "name": "Class-A 30W Hot",
+      "status": "bundled-template"
+    },
+    {
+      "id": 189,
+      "name": "Dizzy V4 Silver 3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 190,
+      "name": "Dizzy V4 Silver 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 191,
+      "name": "Dizzy V4 Silver 4",
+      "status": "bundled-template"
+    },
+    {
+      "id": 192,
+      "name": "1959SLP Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 193,
+      "name": "1959SLP Treble",
+      "status": "bundled-template"
+    },
+    {
+      "id": 194,
+      "name": "1959SLP Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 195,
+      "name": "FAS Modern III",
+      "status": "bundled-template"
+    },
+    {
+      "id": 196,
+      "name": "ODS-100 Ford PAB Mid",
+      "status": "bundled-template"
+    },
+    {
+      "id": 197,
+      "name": "Mr Z Highway 66",
+      "status": "bundled-template"
+    },
+    {
+      "id": 198,
+      "name": "6G4 Super",
+      "status": "bundled-template"
+    },
+    {
+      "id": 199,
+      "name": "6G12 Concert",
+      "status": "bundled-template"
+    },
+    {
+      "id": 200,
+      "name": "65 Bassguy Bass",
+      "status": "bundled-template"
+    },
+    {
+      "id": 201,
+      "name": "Vibra-King Fat",
+      "status": "bundled-template"
+    },
+    {
+      "id": 202,
+      "name": "Spawn Q-Rod OD1-1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 203,
+      "name": "Spawn Q-Rod OD1-2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 204,
+      "name": "Spawn Q-Rod OD1-3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 205,
+      "name": "Carol-Ann Tucana Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 206,
+      "name": "Brit JVM OD1 Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 207,
+      "name": "Brit JVM OD2 Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 208,
+      "name": "Cameron CCV 1B",
+      "status": "bundled-template"
+    },
+    {
+      "id": 209,
+      "name": "Cameron CCV 2B",
+      "status": "bundled-template"
+    },
+    {
+      "id": 210,
+      "name": "Cameron CCV 2C",
+      "status": "bundled-template"
+    },
+    {
+      "id": 211,
+      "name": "Cameron CCV 2D",
+      "status": "bundled-template"
+    },
+    {
+      "id": 212,
+      "name": "Friedman Small Box",
+      "status": "bundled-template"
+    },
+    {
+      "id": 213,
+      "name": "5153 50W Blue",
+      "status": "bundled-template"
+    },
+    {
+      "id": 214,
+      "name": "Div/13 CJ Boost",
+      "status": "bundled-template"
+    },
+    {
+      "id": 215,
+      "name": "USA MK IIC+ Deep",
+      "status": "bundled-template"
+    },
+    {
+      "id": 216,
+      "name": "USA MK IIC+ Deep Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 217,
+      "name": "5F8 Tweed Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 218,
+      "name": "Double Verb Silverface",
+      "status": "bundled-template"
+    },
+    {
+      "id": 219,
+      "name": "Vibrato Verb Custom",
+      "status": "bundled-template"
+    },
+    {
+      "id": 220,
+      "name": "JMPre-1 OD1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 221,
+      "name": "JMPre-1 OD2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 222,
+      "name": "JMPre-1 OD1 Bass Shift",
+      "status": "bundled-template"
+    },
+    {
+      "id": 223,
+      "name": "JMPre-1 OD2 Bass Shift",
+      "status": "bundled-template"
+    },
+    {
+      "id": 224,
+      "name": "Deluxe Verb Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 225,
+      "name": "Double Verb Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 226,
+      "name": "Super Verb Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 227,
+      "name": "Bludojai Lead",
+      "status": "bundled-template"
+    },
+    {
+      "id": 228,
+      "name": "Plexi 50W 6550",
+      "status": "bundled-template"
+    },
+    {
+      "id": 229,
+      "name": "FAS Hot Rod",
+      "status": "bundled-template"
+    },
+    {
+      "id": 230,
+      "name": "PVH 6160+ Crunch",
+      "status": "bundled-template"
+    },
+    {
+      "id": 231,
+      "name": "PVH 6160+ Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 232,
+      "name": "Solo 88 Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 233,
+      "name": "Class-A 30W Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 234,
+      "name": "Plexi 50W High 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 235,
+      "name": "Spawn Nitrous 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 236,
+      "name": "Ruby Rocket",
+      "status": "bundled-template"
+    },
+    {
+      "id": 237,
+      "name": "AC-20 12AX7 Bass",
+      "status": "bundled-template"
+    },
+    {
+      "id": 238,
+      "name": "Plexi 100W 1970",
+      "status": "bundled-template"
+    },
+    {
+      "id": 239,
+      "name": "JS410 Lead Orange",
+      "status": "bundled-template"
+    },
+    {
+      "id": 240,
+      "name": "JS410 Lead Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 241,
+      "name": "JS410 Crunch Orange",
+      "status": "bundled-template"
+    },
+    {
+      "id": 242,
+      "name": "JS410 Crunch Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 243,
+      "name": "Friedman BE V2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 244,
+      "name": "Friedman HBE V2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 245,
+      "name": "Dweezil's Bassguy",
+      "status": "bundled-template"
+    },
+    {
+      "id": 246,
+      "name": "Friedman BE V3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 247,
+      "name": "Friedman HBE V3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 248,
+      "name": "USA MK IIC++",
+      "status": "bundled-template"
+    },
+    {
+      "id": 249,
+      "name": "Legend 100 II",
+      "status": "bundled-template"
+    },
+    {
+      "id": 250,
+      "name": "Capt Hook 2B",
+      "status": "bundled-template"
+    },
+    {
+      "id": 251,
+      "name": "Capt Hook 3B",
+      "status": "bundled-template"
+    },
+    {
+      "id": 252,
+      "name": "Capt Hook 2A",
+      "status": "bundled-template"
+    },
+    {
+      "id": 253,
+      "name": "Capt Hook 3A",
+      "status": "bundled-template"
+    },
+    {
+      "id": 254,
+      "name": "Capt Hook 1A",
+      "status": "bundled-template"
+    },
+    {
+      "id": 255,
+      "name": "Capt Hook 1B",
+      "status": "bundled-template"
+    },
+    {
+      "id": 256,
+      "name": "Dirty Shirley 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 257,
+      "name": "Brit 800 #34",
+      "status": "bundled-template"
+    },
+    {
+      "id": 258,
+      "name": "5F1 Tweed EC",
+      "status": "bundled-template"
+    },
+    {
+      "id": 259,
+      "name": "Friedman BE V1 Fat",
+      "status": "bundled-template"
+    },
+    {
+      "id": 260,
+      "name": "Friedman HBE V1 Fat",
+      "status": "bundled-template"
+    },
+    {
+      "id": 261,
+      "name": "Plexi 2204",
+      "status": "bundled-template"
+    },
+    {
+      "id": 262,
+      "name": "Friedman HBE C45",
+      "status": "bundled-template"
+    },
+    {
+      "id": 263,
+      "name": "Porta-Bass",
+      "status": "bundled-template"
+    },
+    {
+      "id": 264,
+      "name": "SV Bass 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 265,
+      "name": "FAS Skull Crusher",
+      "status": "bundled-template"
+    },
+    {
+      "id": 266,
+      "name": "USA JP IIC+ Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 267,
+      "name": "USA JP IIC+ Yellow",
+      "status": "bundled-template"
+    },
+    {
+      "id": 268,
+      "name": "USA JP IIC+ Green",
+      "status": "bundled-template"
+    },
+    {
+      "id": 269,
+      "name": "Wrecker Express Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 270,
+      "name": "Wrecker Liverpool Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 271,
+      "name": "Matchbox D-30 EF86",
+      "status": "bundled-template"
+    },
+    {
+      "id": 272,
+      "name": "FAS Express",
+      "status": "bundled-template"
+    },
+    {
+      "id": 273,
+      "name": "Triple Crest 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 274,
+      "name": "Triple Crest 3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 275,
+      "name": "PVH 6160+ Crunch Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 276,
+      "name": "PVH 6160+ Clean Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 277,
+      "name": "Plexi 50W 6CA7",
+      "status": "bundled-template"
+    },
+    {
+      "id": 278,
+      "name": "Solo 99 Lead Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 279,
+      "name": "Archean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 280,
+      "name": "Archean Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 281,
+      "name": "Archean Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 282,
+      "name": "59 Bassguy Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 283,
+      "name": "Deluxe Tweed Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 284,
+      "name": "USA JP IIC+ Red Shred",
+      "status": "bundled-template"
+    },
+    {
+      "id": 285,
+      "name": "USA JP IIC+ Yellow Shred",
+      "status": "bundled-template"
+    },
+    {
+      "id": 286,
+      "name": "Friedman BE C45",
+      "status": "bundled-template"
+    },
+    {
+      "id": 287,
+      "name": "Friedman BE 2010",
+      "status": "bundled-template"
+    },
+    {
+      "id": 288,
+      "name": "Friedman HBE 2010",
+      "status": "bundled-template"
+    },
+    {
+      "id": 289,
+      "name": "FAS Buttery",
+      "status": "bundled-template"
+    },
+    {
+      "id": 290,
+      "name": "59 Bassguy Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 291,
+      "name": "5F8 Tweed Normal",
+      "status": "bundled-template"
+    },
+    {
+      "id": 292,
+      "name": "5F8 Tweed Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 293,
+      "name": "JMPre-1 Clean1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 294,
+      "name": "JMPre-1 Clean1 Bass Shift",
+      "status": "bundled-template"
+    },
+    {
+      "id": 295,
+      "name": "JMPre-1 Clean2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 296,
+      "name": "JMPre-1 Clean2 Bass Shift",
+      "status": "bundled-template"
+    },
+    {
+      "id": 297,
+      "name": "Diamante Fire",
+      "status": "bundled-template"
+    },
+    {
+      "id": 298,
+      "name": "PVH 6160 Block Crunch",
+      "status": "bundled-template"
+    },
+    {
+      "id": 299,
+      "name": "Plexi Studio 20",
+      "status": "bundled-template"
+    },
+    {
+      "id": 300,
+      "name": "Plexi 50W 6CA7 Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 301,
+      "name": "Herbie MK3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 302,
+      "name": "59 Bassguy RI Jumped",
+      "status": "bundled-template"
+    },
+    {
+      "id": 303,
+      "name": "Revv Gen Purple 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 304,
+      "name": "Revv Gen Purple 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 305,
+      "name": "Revv Gen Purple 3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 306,
+      "name": "Revv Gen Red 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 307,
+      "name": "Revv Gen Red 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 308,
+      "name": "Revv Gen Red 3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 309,
+      "name": "Revv Gen Green 1",
+      "status": "bundled-template"
+    },
+    {
+      "id": 310,
+      "name": "Revv Gen Green 2",
+      "status": "bundled-template"
+    },
+    {
+      "id": 311,
+      "name": "Revv Gen Green 3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 312,
+      "name": "JS410 Lead Green",
+      "status": "bundled-template"
+    },
+    {
+      "id": 313,
+      "name": "5153 100W Stealth Blue",
+      "status": "bundled-template"
+    },
+    {
+      "id": 314,
+      "name": "Brit 800 2203 High",
+      "status": "bundled-template"
+    },
+    {
+      "id": 315,
+      "name": "5153 100W Stealth Green",
+      "status": "bundled-template"
+    },
+    {
+      "id": 316,
+      "name": "5153 100W Stealth Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 317,
+      "name": "USA MK V Green",
+      "status": "bundled-template"
+    },
+    {
+      "id": 318,
+      "name": "Brit 800 2204 Low",
+      "status": "bundled-template"
+    },
+    {
+      "id": 319,
+      "name": "Brit 800 2203 Low",
+      "status": "bundled-template"
+    },
+    {
+      "id": 320,
+      "name": "USA MK V Red IIC+",
+      "status": "bundled-template"
+    },
+    {
+      "id": 321,
+      "name": "USA MK V Red IIC+ Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 322,
+      "name": "USA MK V Red MKIV",
+      "status": "bundled-template"
+    },
+    {
+      "id": 323,
+      "name": "USA MK V Red MKIV Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 324,
+      "name": "USA MK V Red XT",
+      "status": "bundled-template"
+    },
+    {
+      "id": 325,
+      "name": "USA MK V Red XT Bright",
+      "status": "bundled-template"
+    },
+    {
+      "id": 326,
+      "name": "Class-A 30W Brilliant",
+      "status": "bundled-template"
+    },
+    {
+      "id": 327,
+      "name": "FAS Stealth Blue",
+      "status": "bundled-template"
+    },
+    {
+      "id": 328,
+      "name": "Brit 800 Studio 20",
+      "status": "bundled-template"
+    },
+    {
+      "id": 329,
+      "name": "Supro Black Magick",
+      "status": "bundled-template"
+    },
+    {
+      "id": 330,
+      "name": "Deluxe 6G3",
+      "status": "bundled-template"
+    },
+    {
+      "id": 333,
+      "name": "Brit JVM Crunch Green",
+      "status": "bundled-template"
+    },
+    {
+      "id": 334,
+      "name": "Brit JVM Crunch Orange",
+      "status": "bundled-template"
+    },
+    {
+      "id": 335,
+      "name": "Brit JVM Crunch Red",
+      "status": "bundled-template"
+    },
+    {
+      "id": 332,
+      "name": "PVH 6160 Block Clean",
+      "status": "bundled-template"
+    },
+    {
+      "id": 331,
+      "name": "Deluxe Tweed Normal",
+      "status": "bundled-template"
+    }
+  ]
+}

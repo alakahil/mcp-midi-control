@@ -1,0 +1,116 @@
+{
+  "index": 2,
+  "step": {
+    "id": "003-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "3 Band Console — eristatav ribamuster",
+    "channel": "A",
+    "typeName": "3 Band Console",
+    "bandCount": 3,
+    "values": [
+      0.5,
+      1.0,
+      1.5
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "003-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "3 Band Console — eristatav ribamuster",
+      "channel": "A",
+      "typeName": "3 Band Console",
+      "bandCount": 3,
+      "values": [
+        0.5,
+        1,
+        1.5
+      ]
+    },
+    "previousSha256": "125e933d5aa690301ec4d0b0db2b64f36498d6a481e9c07ef4d92c6d03d4b018",
+    "syxSha256": "2e7ca7025b6242be7e2c55b8760b7753d5bf4e68bc82629e75be873fedaf350a",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 32767,
+        "after": 34132
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 32767,
+        "after": 35498
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 32767,
+        "after": 36863
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "Low",
+      "Mid",
+      "High"
+    ],
+    "displayValues": [
+      0.5,
+      1.0,
+      1.5
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "2e7ca7025b6242be7e2c55b8760b7753d5bf4e68bc82629e75be873fedaf350a",
+    "bodySha256": "e30659fa4b3fb04f9e617c42722bd2707612154328ba7285ab857c7e605a4974",
+    "rawRxSha256": "4acdcb2f0b49eb246cd35d7b19d7ce878154964c1881e84f158217049d2adbd5",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,5 @@
+Jäta FM3-sse viimase Delay ekspordi seisund. Sulge FM3-Edit ja Fractal-Bot.
+Käivita Terminalis python3, lohista FM3_DELAY_SEED.py sinna ning lisa tühik ja /dev/cu.usbmodem211104.
+Skript küsib kinnitust GET. Seejärel saadab ühe Delay1 GET-päringu ja salvestab tulemuse ZIP-i skripti kõrvale.
+Lohista tulemuse ZIP vestlusse. SET/SAVE käske ega automaatseid korduspäringuid pole.
+Kui seisund on vahepeal muutunud, impordi enne kaasasolev FM3_DELAY_SELECTION_001.syx.

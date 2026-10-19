@@ -1,0 +1,313 @@
+{
+  "index": 37,
+  "step": {
+    "id": "038-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Frequency → maksimumi (nupp lõpuni paremale); Band 2 Frequency → maksimumi (nupp lõpuni paremale); Band 3 Frequency → maksimumi (nupp lõpuni paremale); Band 4 Frequency → maksimumi (nupp lõpuni paremale); Band 5 Frequency → maksimumi (nupp lõpuni paremale). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 0,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 2,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 3,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 4,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 37,
+    "step": {
+      "id": "038-numeric",
+      "stage": "numeric",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Frequency → maksimumi (nupp lõpuni paremale); Band 2 Frequency → maksimumi (nupp lõpuni paremale); Band 3 Frequency → maksimumi (nupp lõpuni paremale); Band 4 Frequency → maksimumi (nupp lõpuni paremale); Band 5 Frequency → maksimumi (nupp lõpuni paremale). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Frequency",
+          "candidatePid": 0,
+          "value": null,
+          "band": 1,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "Hz"
+        },
+        {
+          "parameter": "Frequency",
+          "candidatePid": 1,
+          "value": null,
+          "band": 2,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "Hz"
+        },
+        {
+          "parameter": "Frequency",
+          "candidatePid": 2,
+          "value": null,
+          "band": 3,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "Hz"
+        },
+        {
+          "parameter": "Frequency",
+          "candidatePid": 3,
+          "value": null,
+          "band": 4,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "Hz"
+        },
+        {
+          "parameter": "Frequency",
+          "candidatePid": 4,
+          "value": null,
+          "band": 5,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": "Hz"
+        }
+      ]
+    },
+    "previousSha256": "5fa626dfc69c3aaf26cd1eedc125afeefd67858b3fc874bf9b7f121765c49d9c",
+    "syxSha256": "ede3b445736910496358d9b3d495cc7ede275fe2801db7f934edfa44edf34509",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8734,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8736,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8738,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 3,
+        "offset": 8740,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 4,
+        "offset": 8742,
+        "before": 0,
+        "after": 65534
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 0,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz",
+        "raw": 65534
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz",
+        "raw": 65534
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 2,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz",
+        "raw": 65534
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 3,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz",
+        "raw": 65534
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 4,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz",
+        "raw": 65534
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Frequency",
+        "candidatePid": 0,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      "displayValue": 2000.0
+    },
+    {
+      "control": {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      "displayValue": 10000.0
+    },
+    {
+      "control": {
+        "parameter": "Frequency",
+        "candidatePid": 2,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      "displayValue": 10000.0
+    },
+    {
+      "control": {
+        "parameter": "Frequency",
+        "candidatePid": 3,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      "displayValue": 10000.0
+    },
+    {
+      "control": {
+        "parameter": "Frequency",
+        "candidatePid": 4,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      "displayValue": 20000.0
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "ede3b445736910496358d9b3d495cc7ede275fe2801db7f934edfa44edf34509",
+    "bodySha256": "5b5917565efb7eb43f1effddb70b37fa9541d35156c7e43b5e2badde4b4437f6",
+    "rawRxSha256": "5f1944749552e0212f83c414c07b0a5b5d933c4dd621ea02f931808368649813",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

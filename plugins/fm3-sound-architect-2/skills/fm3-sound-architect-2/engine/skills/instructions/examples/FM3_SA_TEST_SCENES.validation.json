@@ -1,0 +1,20 @@
+{
+  "prototype": "scenes-0.1.0",
+  "spec": {
+    "name": "FM3 SA TEST SCENES",
+    "gainB": 5,
+    "delayScene2": true,
+    "reverbScene1": "B"
+  },
+  "sha256": "6febef6be602d7efdff33646148351aeae1fc8cf569fbbffd0bb8d21f1892696",
+  "sceneBodyDiff": [
+    7374,
+    9528
+  ],
+  "bodyBytes": 14222,
+  "checks": "frame checksums, CRC, footer, exact body, Reverb decode",
+  "delayEvidence": "independent S2_Delay_Bypass/Engaged exports; broad block decoder omits this Delay record",
+  "firmwareTarget": "13 (user confirmed)",
+  "hardwareImport": "pending for this scene candidate",
+  "audio": "unconfirmed"
+}

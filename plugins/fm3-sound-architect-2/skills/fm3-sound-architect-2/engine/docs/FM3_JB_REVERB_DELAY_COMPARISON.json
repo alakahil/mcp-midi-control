@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "name": "JB_SCENE2_SELECTED.syx",
+      "sha256": "31ccb88492116736753907dc2d81a53683b359bf27d79d98b13a26e07ce81847",
+      "scene6": "JB SOLO",
+      "reverb": [
+        "A",
+        "B",
+        "A",
+        "A",
+        "C",
+        "A",
+        "A",
+        "A"
+      ]
+    },
+    {
+      "name": "JB_SCENE6_REVERB_D_DELAY_ON.syx",
+      "sha256": "ed9291aefe56f10a7266b5bc0adada92754b416591781da8bd7f2a41cdbd1262",
+      "scene6": "JB SOLO",
+      "reverb": [
+        "A",
+        "B",
+        "A",
+        "A",
+        "C",
+        "D",
+        "A",
+        "A"
+      ]
+    }
+  ],
+  "bodyDiff": [
+    {
+      "offset": 0,
+      "before": 1,
+      "after": 5
+    },
+    {
+      "offset": 7382,
+      "before": 1,
+      "after": 0
+    },
+    {
+      "offset": 9538,
+      "before": 0,
+      "after": 3
+    }
+  ],
+  "rawHeaderDiff": [
+    {
+      "offset": 4,
+      "before": 21,
+      "after": 59
+    },
+    {
+      "offset": 5,
+      "before": 118,
+      "after": 234
+    }
+  ],
+  "dumpHeaderDiff": [],
+  "integrity": "both pass frames, CRC, footer and validation"
+}

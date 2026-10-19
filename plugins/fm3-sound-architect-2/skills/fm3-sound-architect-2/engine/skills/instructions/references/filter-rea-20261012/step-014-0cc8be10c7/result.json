@@ -1,0 +1,158 @@
+{
+  "index": 14,
+  "step": {
+    "id": "15",
+    "label": "Order — A High-Pass / B Low-Pass 2nd",
+    "activeChannel": "B",
+    "targets": [
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "binaryId": 3,
+        "parameter": "Order",
+        "parameterId": 7,
+        "value": "2nd",
+        "unit": "",
+        "mode": "enum",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "options": [
+          "2nd",
+          "4th"
+        ],
+        "parameterName": "FILTER_ORDER"
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "binaryId": 1,
+        "parameter": "Order",
+        "parameterId": 7,
+        "value": "2nd",
+        "unit": "",
+        "mode": "enum",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "options": [
+          "2nd",
+          "4th"
+        ],
+        "parameterName": "FILTER_ORDER"
+      }
+    ],
+    "reason": "cache enum exists, preset-word correspondence not yet measured",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 14,
+    "step": {
+      "id": "15",
+      "label": "Order — A High-Pass / B Low-Pass 2nd",
+      "activeChannel": "B",
+      "targets": [
+        {
+          "channel": "A",
+          "type": "High-Pass",
+          "binaryId": 3,
+          "parameter": "Order",
+          "parameterId": 7,
+          "value": "2nd",
+          "unit": "",
+          "mode": "enum",
+          "minimum": 0,
+          "maximum": 1,
+          "options": [
+            "2nd",
+            "4th"
+          ],
+          "parameterName": "FILTER_ORDER"
+        },
+        {
+          "channel": "B",
+          "type": "Low-Pass",
+          "binaryId": 1,
+          "parameter": "Order",
+          "parameterId": 7,
+          "value": "2nd",
+          "unit": "",
+          "mode": "enum",
+          "minimum": 0,
+          "maximum": 1,
+          "options": [
+            "2nd",
+            "4th"
+          ],
+          "parameterName": "FILTER_ORDER"
+        }
+      ],
+      "reason": "cache enum exists, preset-word correspondence not yet measured",
+      "allowUnchanged": true
+    },
+    "previousSha256": "214b273f00839a700e2ac20b64cf86cece20611c504b1db90995d55fb11fc863",
+    "syxSha256": "25e3905ab735f29afe6033b9c9c1c71cf3624d0131102f4340e90e42bdf3b8a3",
+    "bodySha256": "bca50f9838381511317688c180939f4c1ea7ca4ba065fe5d8fb4cf5e864e619d",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 7,
+        "offset": 7628,
+        "before": 1,
+        "after": 0
+      },
+      {
+        "channel": "B",
+        "pid": 7,
+        "offset": 7702,
+        "before": 1,
+        "after": 0
+      }
+    ],
+    "targets": [
+      {
+        "channel": "A",
+        "pid": 7,
+        "before": 1,
+        "after": 0,
+        "wordChanged": true
+      },
+      {
+        "channel": "B",
+        "pid": 7,
+        "before": 1,
+        "after": 0,
+        "wordChanged": true
+      }
+    ],
+    "presetNameChange": null,
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "pending-real-display-and-GET-pair; unchanged words are not isolated-change evidence"
+  },
+  "observations": [
+    {
+      "channel": "A",
+      "parameterId": 7,
+      "requestedValue": "2nd",
+      "displayText": "2nd",
+      "displayValue": "2nd"
+    },
+    {
+      "channel": "B",
+      "parameterId": 7,
+      "requestedValue": "2nd",
+      "displayText": "2nd",
+      "displayValue": "2nd"
+    }
+  ],
+  "displayConfirmed": true,
+  "getAuthorized": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "25e3905ab735f29afe6033b9c9c1c71cf3624d0131102f4340e90e42bdf3b8a3",
+    "bodySha256": "bca50f9838381511317688c180939f4c1ea7ca4ba065fe5d8fb4cf5e864e619d",
+    "rawRxSha256": "67a46010216d8ea06ccf9f9126945e5489f9846d81ee933a8174ddce575ddb95"
+  }
+}

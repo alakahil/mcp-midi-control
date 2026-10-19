@@ -1,0 +1,182 @@
+{
+  "count": 27,
+  "captures": [
+    {
+      "paired": true,
+      "matchedWords": 128,
+      "syxSha256": "b605ea0a8a33649c0a449f4ab9f60ad78e073016641a4cdbfdc1300566aadaa3",
+      "rawRxSha256": "eb3de111cdbbdfc7d9f496c3c977be07a1df84f971891ebdb9a0aec62fcdfe3c",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 13
+        },
+        {
+          "channel": "B",
+          "binaryId": 14
+        },
+        {
+          "channel": "C",
+          "binaryId": 8
+        },
+        {
+          "channel": "D",
+          "binaryId": 6
+        }
+      ],
+      "capture": "capture-001"
+    },
+    {
+      "paired": true,
+      "matchedWords": 128,
+      "syxSha256": "dcb8b00e38d998b9db76b6f23e0bec8827f8c195fd9d1ed44df4b12939190fb7",
+      "rawRxSha256": "bbed352b8de8a3406f548ab3d3a5c9232a9058124c9f6bf4c015e13081c4e853",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 2
+        },
+        {
+          "channel": "B",
+          "binaryId": 3
+        },
+        {
+          "channel": "C",
+          "binaryId": 0
+        },
+        {
+          "channel": "D",
+          "binaryId": 1
+        }
+      ],
+      "capture": "capture-20261007T131325-982ea66761"
+    },
+    {
+      "paired": true,
+      "matchedWords": 128,
+      "syxSha256": "d23bf2019a413a9b27bdef5eb6b5a959933c8bb372fc4d7ec4c2f8c3ae1e6fc6",
+      "rawRxSha256": "cb6abd79421e1bfe2d00c9a2009d38735c703c44c3dcd74af8a42af9041ad673",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 10
+        },
+        {
+          "channel": "B",
+          "binaryId": 11
+        },
+        {
+          "channel": "C",
+          "binaryId": 12
+        },
+        {
+          "channel": "D",
+          "binaryId": 16
+        }
+      ],
+      "capture": "capture-20261007T133730-3d3d9417aa"
+    },
+    {
+      "paired": true,
+      "matchedWords": 128,
+      "syxSha256": "a1c463de9e735e4ebb600065185be73e2210157e6e27034b748aa057ec79d01b",
+      "rawRxSha256": "d715a70c367c2aefee2313cf79285eef54350a01aeb25298013b6ad32afdca5b",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 18
+        },
+        {
+          "channel": "B",
+          "binaryId": 19
+        },
+        {
+          "channel": "C",
+          "binaryId": 4
+        },
+        {
+          "channel": "D",
+          "binaryId": 23
+        }
+      ],
+      "capture": "capture-20261007T133821-22c7fe39ff"
+    },
+    {
+      "paired": true,
+      "matchedWords": 128,
+      "syxSha256": "7f44b50baed5cea6064f9b3a50830162377421ea710bbfeddec8b7d5b8b0811b",
+      "rawRxSha256": "e9ea8cf0027803c9c7a78bbfa3978972efeac4e06af844ecfa583d166f25553a",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 20
+        },
+        {
+          "channel": "B",
+          "binaryId": 26
+        },
+        {
+          "channel": "C",
+          "binaryId": 21
+        },
+        {
+          "channel": "D",
+          "binaryId": 25
+        }
+      ],
+      "capture": "capture-20261007T133922-af47950280"
+    },
+    {
+      "paired": true,
+      "matchedWords": 128,
+      "syxSha256": "75fc4ddfd492c66a3a099c6bd3517ebde8846567158db42897b084b98ad09498",
+      "rawRxSha256": "84b283618ddd555abd7c6ac200ca8ab22f300c82725e6c5d17c5aa245860ab0c",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 22
+        },
+        {
+          "channel": "B",
+          "binaryId": 15
+        },
+        {
+          "channel": "C",
+          "binaryId": 9
+        },
+        {
+          "channel": "D",
+          "binaryId": 17
+        }
+      ],
+      "capture": "capture-20261007T134009-4a2150fef3"
+    },
+    {
+      "paired": true,
+      "matchedWords": 128,
+      "syxSha256": "6225c27568e79252f5cbd6c9ae811484fe198afae27507406a53e6739358e586",
+      "rawRxSha256": "541fa9f8e2ce800321d981000e7ec021ef126315739852c61c17b3cec02ab7c3",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 7
+        },
+        {
+          "channel": "B",
+          "binaryId": 24
+        },
+        {
+          "channel": "C",
+          "binaryId": 5
+        },
+        {
+          "channel": "D",
+          "binaryId": 17
+        }
+      ],
+      "capture": "capture-20261007T134054-b7a6531047"
+    }
+  ],
+  "earlierCapturesPreserved": true,
+  "generatorIntegration": false
+}

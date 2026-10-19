@@ -1,0 +1,125 @@
+{
+  "relocationRegression": true,
+  "cases": [
+    {
+      "name": "FM3_NEWLOOK_FILTER_TEST",
+      "byteIdentical": true,
+      "bytes": 24680,
+      "sha256": "63d7a9a4381bbe7bcc40179f0e79be0c7e5a6c4ebe66f475380bd1e24f0264cf",
+      "checks": {
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true,
+        "exactBodyReadback": true,
+        "onlyDeclaredRegionsChanged": true,
+        "routingPreserved": false,
+        "onlyDeclaredSlotInsertions": true,
+        "existingBlockRecordsPreservedDuringInsertion": true,
+        "selectedScenePreserved": true,
+        "unrelatedHeadersPreserved": true,
+        "encodedSizesAndPadding": true,
+        "componentEvidence": true
+      }
+    },
+    {
+      "name": "JB_EIGHT_SCENES_V3",
+      "byteIdentical": true,
+      "bytes": 24680,
+      "sha256": "0a17b54fcee104887b6707b29ae34ea7bec6e049a341c1ec8e77ec75c7b68683",
+      "checks": {
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true,
+        "exactBodyReadback": true,
+        "onlyDeclaredRegionsChanged": true,
+        "routingPreserved": false,
+        "onlyDeclaredSlotInsertions": true,
+        "existingBlockRecordsPreservedDuringInsertion": true,
+        "selectedScenePreserved": true,
+        "unrelatedHeadersPreserved": true,
+        "encodedSizesAndPadding": true,
+        "componentEvidence": true
+      }
+    },
+    {
+      "name": "FM3_PEQ_ABCD_TEST",
+      "byteIdentical": true,
+      "bytes": 24680,
+      "sha256": "a94e6fe3cc4b0f76434b56b93809c15f973810ee1635cdc91f87153e604395da",
+      "checks": {
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true,
+        "exactBodyReadback": true,
+        "onlyDeclaredRegionsChanged": true,
+        "routingPreserved": false,
+        "onlyDeclaredSlotInsertions": true,
+        "existingBlockRecordsPreservedDuringInsertion": true,
+        "selectedScenePreserved": true,
+        "unrelatedHeadersPreserved": true,
+        "encodedSizesAndPadding": true,
+        "componentEvidence": true
+      }
+    },
+    {
+      "name": "FM3_GEQ_ABCD_TEST",
+      "byteIdentical": true,
+      "bytes": 24680,
+      "sha256": "adf176e949c0645031775a5eeaaa68b1bcdabc36adb238a413848c832e0fff8b",
+      "checks": {
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true,
+        "exactBodyReadback": true,
+        "onlyDeclaredRegionsChanged": true,
+        "routingPreserved": false,
+        "onlyDeclaredSlotInsertions": true,
+        "existingBlockRecordsPreservedDuringInsertion": true,
+        "selectedScenePreserved": true,
+        "unrelatedHeadersPreserved": true,
+        "encodedSizesAndPadding": true,
+        "componentEvidence": true
+      }
+    },
+    {
+      "name": "FM3_ENHANCER_ABCD_TEST",
+      "byteIdentical": true,
+      "bytes": 24680,
+      "sha256": "a545aa8bb7f659b10dc2a7beb4a902e1377bbeef995381d2dc6ece55ef14965b",
+      "checks": {
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true,
+        "exactBodyReadback": true,
+        "onlyDeclaredRegionsChanged": true,
+        "routingPreserved": false,
+        "onlyDeclaredSlotInsertions": true,
+        "existingBlockRecordsPreservedDuringInsertion": true,
+        "selectedScenePreserved": true,
+        "unrelatedHeadersPreserved": true,
+        "encodedSizesAndPadding": true,
+        "componentEvidence": true
+      }
+    },
+    {
+      "name": "FM3_FILTER_REA_VERIFIED",
+      "byteIdentical": true,
+      "bytes": 24680,
+      "sha256": "bbaf2fc20367910eea1d7551947d1fd9a74da273ee8908e60974e34537a0c569",
+      "checks": {
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true,
+        "exactBodyReadback": true,
+        "onlyDeclaredRegionsChanged": true,
+        "routingPreserved": false,
+        "onlyDeclaredSlotInsertions": true,
+        "existingBlockRecordsPreservedDuringInsertion": true,
+        "selectedScenePreserved": true,
+        "unrelatedHeadersPreserved": true,
+        "encodedSizesAndPadding": true,
+        "componentEvidence": true
+      }
+    }
+  ]
+}

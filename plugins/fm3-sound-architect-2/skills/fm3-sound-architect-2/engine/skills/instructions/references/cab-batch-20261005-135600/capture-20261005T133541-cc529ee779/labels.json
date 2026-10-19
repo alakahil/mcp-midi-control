@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 21,
+    "expectedId": 20,
+    "name": "1x15 Vibroverb",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 22,
+    "expectedId": 21,
+    "name": "2x10 Heart Key",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 23,
+    "expectedId": 22,
+    "name": "2x10 Super 6G4",
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 24,
+    "expectedId": 24,
+    "name": "2x12 65 Bassguy",
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

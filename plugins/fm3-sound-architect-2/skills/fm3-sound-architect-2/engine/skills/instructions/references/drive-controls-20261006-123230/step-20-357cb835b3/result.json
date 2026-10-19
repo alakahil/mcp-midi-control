@@ -1,0 +1,74 @@
+{
+  "index": 20,
+  "status": "passed",
+  "step": {
+    "id": "D-mix",
+    "kind": "control",
+    "channel": "D",
+    "binaryId": 26,
+    "field": "Mix",
+    "pid": 4,
+    "value": 25,
+    "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "D-mix",
+      "kind": "control",
+      "channel": "D",
+      "binaryId": 26,
+      "field": "Mix",
+      "pid": 4,
+      "value": 25,
+      "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8732,
+        "before": 254,
+        "after": 0
+      },
+      {
+        "offset": 8733,
+        "before": 255,
+        "after": 64
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Mix",
+      "userConfirmedDisplayValue": 25,
+      "rawBefore": 65534,
+      "rawAfter": 16384,
+      "candidateRaw": 16384,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "72201a105984d332564f23bd2630924954effe8a81ea58f9ab4665d09c1b3a5f",
+    "rawRxSha256": "39d92e5d26fc889906ae7ef6c0d303907a0b4d718918f1990f2b0378b5dcfcda",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 0
+      },
+      {
+        "channel": "D",
+        "binaryId": 26
+      }
+    ]
+  }
+}

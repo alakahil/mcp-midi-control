@@ -1,0 +1,142 @@
+{
+  "index": 68,
+  "step": {
+    "id": "069-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "5 Band Variable Q — Zero All / ribad nulli",
+    "channel": "A",
+    "typeName": "5 Band Variable Q",
+    "bandCount": 5,
+    "values": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "zeroAll": true,
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "069-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "5 Band Variable Q — Zero All / ribad nulli",
+      "channel": "A",
+      "typeName": "5 Band Variable Q",
+      "bandCount": 5,
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "zeroAll": true,
+      "allowUnchanged": true
+    },
+    "previousSha256": "14505c8fc81330fa9abe14ffaaf24b5a7109a0bdae3fe905d14e1dff6c60e764",
+    "syxSha256": "9c969809e7343cc61bc610028c7f69fb81f968ba89e08f7390c24a7be2c95f39",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 3,
+        "offset": 8360,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 4,
+        "offset": 8362,
+        "before": 65534,
+        "after": 32767
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "200",
+      "400",
+      "800",
+      "1600",
+      "3200"
+    ],
+    "displayValues": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "9c969809e7343cc61bc610028c7f69fb81f968ba89e08f7390c24a7be2c95f39",
+    "bodySha256": "2c865ea22f58868539bef0beac95917076e76e2f254a4df6f1041e714eb8b5c3",
+    "rawRxSha256": "563741547cf3c2d4be1d55cde5cca8595e1d068a4276a077a71dd0f07298e8a3",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

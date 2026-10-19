@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 9,
+    "name": "Dynamics Processor",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 10,
+    "name": "Econo-Dyno-Comp",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 11,
+    "name": "JFET Pedal Compressor",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 12,
+    "name": "JFET Studio Compressor",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

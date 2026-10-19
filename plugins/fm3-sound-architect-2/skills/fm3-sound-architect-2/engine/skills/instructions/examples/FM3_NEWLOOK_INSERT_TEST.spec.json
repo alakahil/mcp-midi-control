@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "FM3 NEWLOOK INSERT TEST",
+  "purpose": "Kahe rea paigutuse automaatse plokilisamise kontroll: ainult Chorus rida 3 veerg 3. Chorus on kõigis stseenides bypass, Scene 6 valib B. Bonamassa olemasolevad seaded säilivad.",
+  "chorusChannels": [{"channel": "B", "type": "4-Voice Analog"}],
+  "addedBlockScenes": {
+    "chorus": [{"scene": 6, "channel": "B", "bypass": true}]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-06",
+  "generatedSha256": "ab578829879c02e41a6a71c867130cd5bfb55ad111cd0db776933d735123db4e",
+  "hardwareExportSha256": "d7813ce6c5d352da180e659e73fee0e5fe114b96eab8da1beb34570d9aa8f76a",
+  "fullFilesIdentical": false,
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [],
+  "channels": [
+    {
+      "channel": "A",
+      "type": "Chamber: Deep Chamber",
+      "binaryId": 33,
+      "all71WordsPreserved": true
+    },
+    {
+      "channel": "B",
+      "type": "Cloud: Cirrocumulus",
+      "binaryId": 47,
+      "all71WordsPreserved": true
+    },
+    {
+      "channel": "C",
+      "type": "Plate: Large Plate",
+      "binaryId": 11,
+      "all71WordsPreserved": true
+    },
+    {
+      "channel": "D",
+      "type": "Spring: Vibra-King Custom",
+      "binaryId": 78,
+      "all71WordsPreserved": true
+    }
+  ],
+  "presetNameChange": {
+    "before": "FM3_DELAY_ABCD_TEST_export",
+    "after": "FM3_DELAY_ABCD_TEST_export"
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 132,
+      "after": 19,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 22,
+      "after": 216,
+      "field": "CRC"
+    }
+  ],
+  "sceneChannelsBefore": [
+    0,
+    1,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0
+  ],
+  "sceneChannelsAfter": [
+    0,
+    1,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footerChecksum": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all284ReverbWordsPreserved": true,
+    "scenesAndBypassPreserved": true,
+    "dumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyNameAndCrc": true
+  },
+  "scope": "Hardware import/export verified for this ABCD specimen; 316 general type/channel combinations are offline tested only. Audio and CPU not assessed.",
+  "encoding": {
+    "compressedBytesBefore": 4929,
+    "compressedBytesAfter": 4929,
+    "compressedRepresentationIdentical": false,
+    "paddingBeforeAllZero": true,
+    "paddingAfterAllZero": true,
+    "note": "Compressed encoding and its checksums may differ while decompressed data is byte-identical; no body normalization performed."
+  }
+}

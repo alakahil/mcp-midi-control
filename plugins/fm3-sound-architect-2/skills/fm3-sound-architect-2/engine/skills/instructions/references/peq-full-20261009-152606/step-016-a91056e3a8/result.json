@@ -1,0 +1,125 @@
+{
+  "index": 16,
+  "step": {
+    "id": "017-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 3 Type Peaking. Muuda ainult: Band 3 Type → Peaking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 17,
+        "value": "Peaking",
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 16,
+    "step": {
+      "id": "017-types",
+      "stage": "types",
+      "kind": "type",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 3 Type Peaking. Muuda ainult: Band 3 Type → Peaking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Type",
+          "candidatePid": 17,
+          "value": "Peaking",
+          "band": 3,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "e178a29c71a60d36c3559d08b951c98aa5bd133f34a86fb7bf5484ddd95770c8",
+    "syxSha256": "738de0a673122cac141ae3adadb1b963b492bc4bba00263f9cbc89c676bb2a7c",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 17,
+        "offset": 8768,
+        "before": 1,
+        "after": 0
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Type",
+        "candidatePid": 17,
+        "value": "Peaking",
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Type",
+        "candidatePid": 17,
+        "value": "Peaking",
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": "Peaking"
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "738de0a673122cac141ae3adadb1b963b492bc4bba00263f9cbc89c676bb2a7c",
+    "bodySha256": "5f2ca105e31af63e6585d00a987d5436e62780362b1a8e20e6bc09bfb47db19b",
+    "rawRxSha256": "11a304060b98f897aacc004e15e11edae06c8191a7851ac34c486ba09d4d788f",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

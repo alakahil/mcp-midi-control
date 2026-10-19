@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-ydom-rhythm",
+  "name": "JB YDOM RHYTHM",
+  "scene6Name": "JB SOLO",
+  "phaserScene6Bypass": true
+}

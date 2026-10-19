@@ -1,0 +1,12 @@
+FM3 ROTARY A KONTROLLKATSE — firmware 13
+rateHz: 5
+mixPercent: 25
+levelDb: -6
+hiDepthPercent: 50
+lowDepthPercent: 50
+Tempo: None. Kanalid B–D, kõik muud parameetrid ja stseenid säilivad.
+Impordi SYX FM3-Editi tööpuhvrisse. Ava Rotary1 A ning kontrolli väärtusi.
+Ära muuda väärtusi ega liiguta expression-pedaali enne eksporti.
+Ekspordi terve preset nimega FM3_ROTARY_A_TEST_export.syx ja saada vestlusse.
+Seadmeimport ja heli veel kontrollimata. Sisemine nimi säilib alusfailist.
+SHA-256: e62b9acfc249996e550e87a467ebf645f5016518599b4f5e0034215dc42089bd

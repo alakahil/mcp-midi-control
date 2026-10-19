@@ -1,0 +1,19 @@
+{
+  "index": 51,
+  "step": {
+    "id": "052-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Classic — Level lower",
+    "channel": "A",
+    "typeName": "Classic",
+    "parameter": "Level",
+    "mode": "numeric",
+    "point": "lower",
+    "unit": "dB",
+    "allowUnchanged": true
+  },
+  "status": "skipped",
+  "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+  "automatic": true
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-09",
+  "passed": true,
+  "generator": "jb-composer-0.9.1",
+  "actualControlMeasurements": 11,
+  "isolatedPointAndAliasCases": 12,
+  "displayAliases": 1,
+  "exactDeviceBodyReplays": 11,
+  "baselineBodyReplay": true,
+  "allReplayBodyBytes": 13456,
+  "noNormalization": true,
+  "existingV3ByteIdentical": true,
+  "newSpecimenOriginalV3BytesReconstructed": 13146,
+  "newPeqRecordBytes": 310,
+  "newSpecimenSha256": "3869051de07add62df3e528b3f53cd70e236ef9fe5c61bb1a342879f465d0f98",
+  "newSpecimenKnownDeviceBody": {
+    "file": "examples/FM3_PEQ_BAND3_TEST_export.syx",
+    "sha256": "d4dc973e430ac37cd26be7ba92869fb514eada2e9d013bf72136f2538cfd11ab",
+    "bodySha256": "066d10740819f788d6a10f15777f859c927bf960c567d074255b98beaba3aa17",
+    "submittedFileConfirmed": true,
+    "scope": "Every unnormalised body byte matches the actual user import/export. submittedFileConfirmed applies only to the exact originally delivered SYX; new encodings/names are not separately imported.",
+    "audio": "No listening feedback supplied",
+    "cpu": "Not supplied for this specimen"
+  },
+  "newPeqActiveScenes": [
+    2
+  ],
+  "invalidRequestsRejected": 33,
+  "otherInsertionCombinationTested": true,
+  "defaultAllScenesBypass": true,
+  "sourceInputsPreserved": true,
+  "hardware": "Exact generated active specimen import/export confirmed; listening and CPU feedback still absent. Other combinations remain unverified."
+}

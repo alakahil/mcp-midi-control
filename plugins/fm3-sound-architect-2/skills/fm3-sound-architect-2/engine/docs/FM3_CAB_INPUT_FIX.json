@@ -1,0 +1,68 @@
+{
+  "collector": "0.2.2",
+  "file": "FM3_CAB_SELECTION_011.syx",
+  "cause": {
+    "falseInputHeaderOffset": 6026,
+    "effectId": 37,
+    "actually": "CAB A slot2 cabinet ID37",
+    "falseType": 65534
+  },
+  "changes": [
+    {
+      "offset": 5820,
+      "before": 0,
+      "after": 3
+    },
+    {
+      "offset": 6024,
+      "before": 0,
+      "after": 37
+    },
+    {
+      "offset": 6026,
+      "before": 0,
+      "after": 37
+    },
+    {
+      "offset": 6236,
+      "before": 38,
+      "after": 40
+    },
+    {
+      "offset": 6238,
+      "before": 38,
+      "after": 40
+    },
+    {
+      "offset": 6448,
+      "before": 39,
+      "after": 41
+    },
+    {
+      "offset": 6450,
+      "before": 39,
+      "after": 41
+    },
+    {
+      "offset": 6660,
+      "before": 25,
+      "after": 42
+    },
+    {
+      "offset": 6662,
+      "before": 25,
+      "after": 42
+    }
+  ],
+  "checks": {
+    "real011": true,
+    "corruptChecksumRejected": true,
+    "nonCabChangeRejected": true,
+    "invalidModeRejected": true,
+    "invalidSceneRejected": true,
+    "seedMatchedWords": 424,
+    "previousTestsPassed": 4
+  },
+  "hardwareGet011": "pending",
+  "scope": "CAB collector only; strict exact-baseline guard replaces heuristic type scanner for donor input"
+}

@@ -1,0 +1,328 @@
+{
+  "date": "2026-10-08",
+  "generatedFile": "examples/JB_RHYTHM_LEVEL_MINUS3.syx",
+  "hardwareExportFile": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+  "generatedSha256": "7df04a541f45ef0d73e08de3583f0cd8a34f061392a28aa6691875689563b902",
+  "hardwareExportSha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+  "fullFilesIdentical": false,
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [],
+  "selectedSceneBefore": 2,
+  "selectedSceneAfter": 2,
+  "presetNameBefore": "JB RHYTHM LEVEL -3",
+  "presetNameAfter": "JB RHYTHM LEVEL -3",
+  "ampBLevel": {
+    "requestedDb": -3,
+    "raw": 50461,
+    "decodedDb": -3.000274666585284,
+    "affectedScenes": [
+      2
+    ]
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 144,
+      "after": 232,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 130,
+      "after": 75,
+      "field": "CRC"
+    }
+  ],
+  "dumpHeaderChanges": [],
+  "blocks": {
+    "amp": {
+      "matchedWords": 576,
+      "wordsPerChannel": 144,
+      "allFourChannelsPreserved": true,
+      "sceneChannels": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "A",
+        "C",
+        "C",
+        "D"
+      ],
+      "sceneBypass": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "cab": {
+      "matchedWords": 424,
+      "wordsPerChannel": 106,
+      "allFourChannelsPreserved": true,
+      "sceneChannels": [
+        "D",
+        "B",
+        "C",
+        "B",
+        "D",
+        "B",
+        "C",
+        "B"
+      ],
+      "sceneBypass": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "drive": {
+      "matchedWords": 176,
+      "wordsPerChannel": 44,
+      "allFourChannelsPreserved": true,
+      "sceneChannels": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "D",
+        "B"
+      ],
+      "sceneBypass": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false
+      ]
+    },
+    "delay": {
+      "matchedWords": 356,
+      "wordsPerChannel": 89,
+      "allFourChannelsPreserved": true,
+      "sceneChannels": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "sceneBypass": [
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ]
+    },
+    "reverb": {
+      "matchedWords": 284,
+      "wordsPerChannel": 71,
+      "allFourChannelsPreserved": true,
+      "sceneChannels": [
+        "A",
+        "B",
+        "A",
+        "A",
+        "C",
+        "D",
+        "A",
+        "A"
+      ],
+      "sceneBypass": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "phaser": {
+      "matchedWords": 140,
+      "wordsPerChannel": 35,
+      "allFourChannelsPreserved": true,
+      "sceneChannels": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "D",
+        "A",
+        "A"
+      ],
+      "sceneBypass": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "scene": 2,
+      "name": "Rhythm Fat",
+      "blocks": {
+        "amp": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 103,
+          "type": "Brit Silver",
+          "levelDb": -3.000274666585284
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "reverb": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        },
+        "phaser": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 5,
+          "type": "ID 5"
+        }
+      }
+    },
+    {
+      "scene": 6,
+      "name": "JB SOLO",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false,
+          "typeId": 24,
+          "type": "USA MK IV Lead Bright",
+          "levelDb": -8.000732444227424
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 6,
+          "type": "T808 OD"
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "reverb": {
+          "channel": "D",
+          "bypass": false,
+          "typeId": 1,
+          "type": "Room: Medium Room"
+        },
+        "phaser": {
+          "channel": "D",
+          "bypass": true,
+          "typeId": 3,
+          "type": "ID 3"
+        }
+      }
+    }
+  ],
+  "checks": {
+    "generatorReplayByteIdentical": true,
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footerChecksum": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "allRequestedAndUnrequestedBodyBytesPreserved": true,
+    "scenesAndBypassPreserved": true,
+    "routingPreserved": true,
+    "presetNamePreserved": true,
+    "selectedScenePreserved": true,
+    "dumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyCrc": true
+  },
+  "encoding": {
+    "compressedBytesBefore": 4924,
+    "compressedBytesAfter": 4924,
+    "compressedRepresentationIdentical": false,
+    "paddingBeforeAllZero": true,
+    "paddingAfterAllZero": true,
+    "note": "Compression representation and CRC differ; all decompressed body bytes and other headers match exactly, with no normalization."
+  },
+  "hardware": "FM3 firmware13 import/export confirmed for this exact specimen",
+  "listening": {
+    "source": "User after receiving the final +1dB trial",
+    "quote": "Nüüd sobib",
+    "rhythmSoloBalance": "Accepted by the user",
+    "scope": "Current guitar, playing and monitoring setup; no independent reference recording comparison",
+    "finalOutputMeterReading": null,
+    "delayReverbSpecificAssessment": "Not separately supplied"
+  },
+  "cpu": "Not assessed",
+  "nextStep": "The unified preset roundtrip and user rhythm/solo level acceptance are complete. Do not repeat import/export or level measurement without a new concrete issue. Choose future parameter/effect work from the next musical request; Filter collection is not automatic."
+}

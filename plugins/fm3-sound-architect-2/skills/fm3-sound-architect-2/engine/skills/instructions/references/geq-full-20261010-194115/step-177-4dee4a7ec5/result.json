@@ -1,0 +1,77 @@
+{
+  "index": 177,
+  "step": {
+    "id": "178-copy-channel",
+    "kind": "copy-channel",
+    "stage": "channels",
+    "label": "Kopeeri kogu A kanal → B",
+    "channel": "B",
+    "sourceChannel": "A",
+    "typeName": "10 Band Variable Q"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "178-copy-channel",
+      "kind": "copy-channel",
+      "stage": "channels",
+      "label": "Kopeeri kogu A kanal → B",
+      "channel": "B",
+      "sourceChannel": "A",
+      "typeName": "10 Band Variable Q"
+    },
+    "previousSha256": "6ed7386c558f8e6840e31d8d4d9b92858a452e2f500043a4b60cf3a50e987dbd",
+    "syxSha256": "810810f858902e0dbcd5192d65f4d82d9837f06d209593f6fbbc3b2b06df75d9",
+    "changedWords": [],
+    "sceneChannelChange": {
+      "scene": 2,
+      "before": "A",
+      "after": "B"
+    },
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {},
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "810810f858902e0dbcd5192d65f4d82d9837f06d209593f6fbbc3b2b06df75d9",
+    "bodySha256": "59ff628c45d51ec4367a031b58f37e55702d11850afcb072dfa74ac6ed256897",
+    "rawRxSha256": "26e81612874fe8e6f3cd927aec03b7c276ad8ba13b02441cdd02ebee0b88e1e3",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "B",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

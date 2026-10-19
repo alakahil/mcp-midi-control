@@ -1,0 +1,313 @@
+{
+  "index": 44,
+  "step": {
+    "id": "045-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Q → miinimumi (nupp lõpuni vasakule); Band 2 Q → miinimumi (nupp lõpuni vasakule); Band 3 Q → miinimumi (nupp lõpuni vasakule); Band 4 Q → miinimumi (nupp lõpuni vasakule); Band 5 Q → miinimumi (nupp lõpuni vasakule). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 44,
+    "step": {
+      "id": "045-numeric",
+      "stage": "numeric",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Q → miinimumi (nupp lõpuni vasakule); Band 2 Q → miinimumi (nupp lõpuni vasakule); Band 3 Q → miinimumi (nupp lõpuni vasakule); Band 4 Q → miinimumi (nupp lõpuni vasakule); Band 5 Q → miinimumi (nupp lõpuni vasakule). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Q",
+          "candidatePid": 5,
+          "value": null,
+          "band": 1,
+          "channel": "A",
+          "endpoint": "minimum",
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 6,
+          "value": null,
+          "band": 2,
+          "channel": "A",
+          "endpoint": "minimum",
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 7,
+          "value": null,
+          "band": 3,
+          "channel": "A",
+          "endpoint": "minimum",
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 8,
+          "value": null,
+          "band": 4,
+          "channel": "A",
+          "endpoint": "minimum",
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 9,
+          "value": null,
+          "band": 5,
+          "channel": "A",
+          "endpoint": "minimum",
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "337cc803b5345e3e167ac3988c2dec9d3d06d3a6bccdb78c32fa68bb6305d1a3",
+    "syxSha256": "8849135e4e53ae41b27a9bec362c557c9a584569e696de6fba6fdb520d27a34c",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 5,
+        "offset": 8744,
+        "before": 37555,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 8746,
+        "before": 37555,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 7,
+        "offset": 8748,
+        "before": 27833,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 8,
+        "offset": 8750,
+        "before": 37555,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 9,
+        "offset": 8752,
+        "before": 37555,
+        "after": 0
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "",
+        "raw": 0
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "",
+        "raw": 0
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "",
+        "raw": 0
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "",
+        "raw": 0
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "",
+        "raw": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      "displayValue": 0.1
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      "displayValue": 0.1
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      "displayValue": 0.1
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      "displayValue": 0.1
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      "displayValue": 0.1
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "8849135e4e53ae41b27a9bec362c557c9a584569e696de6fba6fdb520d27a34c",
+    "bodySha256": "d5f28dae76036d72b718ca95af01c250a910ed6cc64fbbc6eed3827d9bf6b57c",
+    "rawRxSha256": "89e94e9e4f11432b4787119672cbbf938dfef0d7194d78a07a87ac2dc3294e25",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

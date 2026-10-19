@@ -1,0 +1,901 @@
+{
+  "date": "2026-10-04",
+  "version": "0.29.26",
+  "sessionCaptures": [
+    {
+      "id": "capture-20261002T120223-e59cd21f13e0",
+      "models": [
+        "Hipower Normal",
+        "1987X Treble",
+        "Brit 800 2204 High",
+        "Brit Super"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T120941-87d6d1205249",
+      "models": [
+        "Hipower Normal",
+        "Hipower Brilliant",
+        "USA Pre Clean",
+        "USA MK IIC+"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T122615-8506bc5648ea",
+      "models": [
+        "USA MK IIC+ Bright",
+        "Recto2 Orange Vintage",
+        "Recto2 Orange Modern",
+        "Recto2 Red Vintage"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T123506-3288f43cf20d",
+      "models": [
+        "Recto2 Red Modern",
+        "Euro Blue",
+        "Euro Red",
+        "Shiver Clean"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T171904-6a6ab0bcf027",
+      "models": [
+        "Shiver Lead",
+        "Euro Uber",
+        "Solo 99 Clean",
+        "Solo 100 Rhythm"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T172605-18bb3a17149c",
+      "models": [
+        "Solo 100 Lead",
+        "Friedman BE V1",
+        "Friedman HBE V1",
+        "PVH 6160 Block Lead"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T185529-e56f89fd027b",
+      "state": "failed",
+      "reason": "[Errno 2] No such file or directory: '/dev/cu.usbmodem11104'"
+    },
+    {
+      "id": "capture-20261003T185948-175bad205350",
+      "models": [
+        "Mr Z MZ-38",
+        "CA3+ Rhythm",
+        "CA3+ Lead",
+        "Wrecker Rocket"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T191514-45e34fab8347",
+      "models": [
+        "Cornfed M50",
+        "Carol-Ann OD-2",
+        "Fryette D60 Less",
+        "Fryette D60 More"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T191748-273a14f082e1",
+      "models": [
+        "Brit Brown",
+        "Citrus RV50",
+        "Jazz 120",
+        "Energyball"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T192716-763b7a0ed216",
+      "models": [
+        "ODS-100 Clean",
+        "ODS-100 HRM",
+        "FAS Rhythm",
+        "FAS Lead 1"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T192908-1c20b105a54f",
+      "models": [
+        "FAS Lead 2",
+        "FAS Modern",
+        "Das Metall",
+        "Brit Pre"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T193109-e76bcc49d1ea",
+      "models": [
+        "Buddah DuoMaster",
+        "Matchbox Chiefman 1",
+        "Matchbox Chiefman 2",
+        "Cameron CCV 1A"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T194018-ba4e73d65140",
+      "models": [
+        "Cameron CCV 2A",
+        "SV Bass 2",
+        "Tube Pre",
+        "FAS Brown"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195050-86cda4c4daea",
+      "models": [
+        "Big Hair",
+        "Solo 99 Lead",
+        "Supertweed",
+        "Texas Star Lead"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195235-94cdc6ce26a3",
+      "models": [
+        "FAS Wreck",
+        "Brit JVM OD1 Orange",
+        "Brit JVM OD2 Orange",
+        "FAS 6160"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195425-f47c5e05c220",
+      "models": [
+        "Legend 100",
+        "USA MK IV Lead Mid Bright",
+        "Princetone 5F2",
+        "Blankenship Leeds"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195623-3e2a3be4cd53",
+      "models": [
+        "5153 100W Green",
+        "5153 100W Blue",
+        "5153 100W Red",
+        "Solo 88 Rhythm"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T200328-ab505d0b4671",
+      "models": [
+        "Div/13 CJ",
+        "Herbie CH2-",
+        "Herbie CH2+",
+        "Herbie CH3"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T200542-278af4b9ddfe",
+      "models": [
+        "Dirty Shirley 1",
+        "Dizzy V4 Blue 2",
+        "Dizzy V4 Blue 3",
+        "Dizzy V4 Blue 4"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T200743-1cfd4138cb9f",
+      "models": [
+        "Suhr Badger 18",
+        "Suhr Badger 30",
+        "Princetone AA964",
+        "Supremo Trem"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T200940-6f96adeee983",
+      "models": [
+        "Atomica Low",
+        "Atomica High",
+        "Deluxe Tweed Jumped",
+        "Spawn Q-Rod OD2-1"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201127-fbf21cbcbd28",
+      "models": [
+        "Spawn Q-Rod OD2-2",
+        "Spawn Q-Rod OD2-3",
+        "Brit Silver",
+        "Spawn Nitrous 2"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201318-e74be21674c0",
+      "models": [
+        "FAS Crunch",
+        "Two Stone J35 PAB",
+        "Fox ODS",
+        "Hot Kitty"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201503-e5ad4b763b2f",
+      "models": [
+        "Band-Commander",
+        "Super Verb Vibrato",
+        "Vibra-King",
+        "Gibtone Scout"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201641-3d93491bc2bc",
+      "models": [
+        "PVH 6160+ Lead",
+        "Solo 100 Clean",
+        "USA Pre LD2 Green",
+        "USA Pre LD2 Yellow"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201836-f8a6e8ce94ee",
+      "models": [
+        "CA3+ Clean",
+        "Fox ODS Mid",
+        "Brit JVM OD1 Green",
+        "Brit JVM OD2 Green"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T202022-5bbcd5e32d6d",
+      "models": [
+        "Vibrato Lux",
+        "Brit 800 Mod",
+        "Nuclear-Tone",
+        "Bludojai Clean"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T052633-160754eaafbe",
+      "models": [
+        "Bludojai Lead PAB",
+        "Plexi 100W High",
+        "Plexi 100W Normal",
+        "Ruby Rocket Bright"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T052817-2f7556d852dc",
+      "models": [
+        "AC-20 EF86 Bass",
+        "Princetone Reverb",
+        "Comet Concourse",
+        "FAS Modern II"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T052947-5ccdf52bdee5",
+      "models": [
+        "Carol-Ann Triptik Modern",
+        "Carol-Ann Triptik Classic",
+        "Carol-Ann Triptik Clean",
+        "Thordendal Vintage"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053124-fd82326a6c03",
+      "models": [
+        "Thordendal Modern",
+        "ODS-100 HRM Mid",
+        "Euro Blue Modern",
+        "Euro Red Modern"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053255-bbbc97ec4c89",
+      "models": [
+        "Plexi 50W Jumped",
+        "AC-20 EF86 Treble",
+        "Comet 60",
+        "Hipower Jumped"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053429-77b511c1f498",
+      "models": [
+        "Plexi 100W Jumped",
+        "Brit JM45 Jumped",
+        "1987X Jumped",
+        "Recto1 Orange Normal"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053609-664509c76c6e",
+      "models": [
+        "Recto1 Red",
+        "ODS-100 Ford PAB",
+        "Bogfish Strato",
+        "Bogfish Brown"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053757-a5bddcf05cbb",
+      "models": [
+        "5F1 Tweed",
+        "Wrecker Express",
+        "Two Stone J35",
+        "ODS-100 Ford"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053933-2ef0050406e4",
+      "models": [
+        "Mr Z MZ-8",
+        "Car Ambler",
+        "USA Metro Blues",
+        "Wrecker Liverpool"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054108-ab79fc7e6663",
+      "models": [
+        "Citrus Terrier",
+        "Citrus A30 Clean",
+        "Citrus A30 Dirty",
+        "Div/13 FT37 Low"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054246-2dbc99fa3e55",
+      "models": [
+        "Div/13 FT37 High",
+        "Matchbox D-30",
+        "FAS Class-A",
+        "USA Bass 400 1"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054452-a13b77be21d6",
+      "models": [
+        "USA Bass 400 2",
+        "Citrus Bass 200",
+        "FAS Bass",
+        "Tremolo Lux"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054624-1091b9a1898c",
+      "models": [
+        "FAS Brootalz",
+        "Recto1 Orange Modern",
+        "Angle Severe 1",
+        "Angle Severe 2"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054758-5e8cf94f785c",
+      "models": [
+        "USA Pre LD2 Red",
+        "USA Pre LD1 Red",
+        "Texas Star Clean",
+        "AC-20 12AX7 Treble"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054931-872a64cb216e",
+      "models": [
+        "Vibrato Verb AA",
+        "Vibrato Verb AB",
+        "Carol-Ann Tucana Lead",
+        "JR Blues Fat"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055108-483e86b871bd",
+      "models": [
+        "Solo 88 Lead",
+        "Brit AFS100 1",
+        "Brit AFS100 2",
+        "Class-A 30W Hot"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055243-eb3d0b23485a",
+      "models": [
+        "Dizzy V4 Silver 3",
+        "Dizzy V4 Silver 2",
+        "Dizzy V4 Silver 4",
+        "1959SLP Normal"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055418-eef07e4e62f2",
+      "models": [
+        "1959SLP Treble",
+        "1959SLP Jumped",
+        "FAS Modern III",
+        "ODS-100 Ford PAB Mid"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055549-585fdb5617bd",
+      "models": [
+        "Mr Z Highway 66",
+        "6G4 Super",
+        "6G12 Concert",
+        "65 Bassguy Bass"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055727-7a2067d6248e",
+      "models": [
+        "Vibra-King Fat",
+        "Spawn Q-Rod OD1-1",
+        "Spawn Q-Rod OD1-2",
+        "Spawn Q-Rod OD1-3"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T060527-0356c6d57c78",
+      "models": [
+        "Carol-Ann Tucana Clean",
+        "Brit JVM OD1 Red",
+        "Brit JVM OD2 Red",
+        "Cameron CCV 1B"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T060651-9352068f7501",
+      "models": [
+        "Cameron CCV 2B",
+        "Cameron CCV 2C",
+        "Cameron CCV 2D",
+        "Friedman Small Box"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T060827-eaabd2ea1279",
+      "models": [
+        "5153 50W Blue",
+        "Div/13 CJ Boost",
+        "USA MK IIC+ Deep",
+        "USA MK IIC+ Deep Bright"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T060953-3ee37eaa409d",
+      "models": [
+        "5F8 Tweed Bright",
+        "Double Verb Silverface",
+        "Vibrato Verb Custom",
+        "JMPre-1 OD1"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T061124-6a985b14dfad",
+      "models": [
+        "JMPre-1 OD2",
+        "JMPre-1 OD1 Bass Shift",
+        "JMPre-1 OD2 Bass Shift",
+        "Deluxe Verb Normal"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T061255-480788cc2da4",
+      "models": [
+        "Double Verb Normal",
+        "Super Verb Normal",
+        "Bludojai Lead",
+        "Plexi 50W 6550"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T061425-e8be0bc4c6d4",
+      "models": [
+        "FAS Hot Rod",
+        "PVH 6160+ Crunch",
+        "PVH 6160+ Clean",
+        "Solo 88 Clean"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T061603-411652a6e266",
+      "models": [
+        "Class-A 30W Bright",
+        "Plexi 50W High 2",
+        "Spawn Nitrous 1",
+        "Ruby Rocket"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T061733-61325463c4bc",
+      "models": [
+        "AC-20 12AX7 Bass",
+        "Plexi 100W 1970",
+        "JS410 Lead Orange",
+        "JS410 Lead Red"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T061918-acc563d98e94",
+      "models": [
+        "JS410 Crunch Orange",
+        "JS410 Crunch Red",
+        "Friedman BE V2",
+        "Friedman HBE V2"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T062107-53ca22d2cccd",
+      "models": [
+        "Dweezil's Bassguy",
+        "Friedman BE V3",
+        "Friedman HBE V3",
+        "USA MK IIC++"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T063002-7b2684c02de1",
+      "models": [
+        "Legend 100 II",
+        "Capt Hook 2B",
+        "Capt Hook 3B",
+        "Capt Hook 2A"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T063224-2788e37cda5e",
+      "models": [
+        "Capt Hook 3A",
+        "Capt Hook 1A",
+        "Capt Hook 1B",
+        "Dirty Shirley 2"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T063348-26571544a58a",
+      "models": [
+        "Brit 800 #34",
+        "5F1 Tweed EC",
+        "Friedman BE V1 Fat",
+        "Friedman HBE V1 Fat"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T063519-78d45f14ec3f",
+      "models": [
+        "Plexi 2204",
+        "Friedman HBE C45",
+        "Porta-Bass",
+        "SV Bass 1"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T063705-ca3641192180",
+      "models": [
+        "FAS Skull Crusher",
+        "USA JP IIC+ Red",
+        "USA JP IIC+ Yellow",
+        "USA JP IIC+ Green"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T063854-d2726543196a",
+      "models": [
+        "Wrecker Express Bright",
+        "Wrecker Liverpool Bright",
+        "Matchbox D-30 EF86",
+        "FAS Express"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T064113-6efdc99418f9",
+      "models": [
+        "Triple Crest 2",
+        "Triple Crest 3",
+        "PVH 6160+ Crunch Bright",
+        "PVH 6160+ Clean Bright"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T064254-7c282bd25b52",
+      "models": [
+        "Plexi 50W 6CA7",
+        "Solo 99 Lead Bright",
+        "Archean",
+        "Archean Bright"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T065149-99d2e13f095f",
+      "models": [
+        "Archean Clean",
+        "59 Bassguy Jumped",
+        "Deluxe Tweed Bright",
+        "USA JP IIC+ Red Shred"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T065330-745c542db92c",
+      "models": [
+        "USA JP IIC+ Yellow Shred",
+        "Friedman BE C45",
+        "Friedman BE 2010",
+        "Friedman HBE 2010"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T065548-6244fdc94263",
+      "models": [
+        "FAS Buttery",
+        "59 Bassguy Normal",
+        "5F8 Tweed Normal",
+        "5F8 Tweed Jumped"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T115652-75b73cffd56e",
+      "models": [
+        "JMPre-1 Clean1",
+        "JMPre-1 Clean1 Bass Shift",
+        "JMPre-1 Clean2",
+        "JMPre-1 Clean2 Bass Shift"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T115826-baf4c70bf145",
+      "models": [
+        "Diamante Fire",
+        "PVH 6160 Block Crunch",
+        "Plexi Studio 20",
+        "Plexi 50W 6CA7 Jumped"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T115959-12d586d85114",
+      "models": [
+        "Herbie MK3",
+        "59 Bassguy RI Jumped",
+        "Revv Gen Purple 1",
+        "Revv Gen Purple 2"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T120205-c1f3269a15c4",
+      "models": [
+        "Revv Gen Purple 3",
+        "Revv Gen Red 1",
+        "Revv Gen Red 2",
+        "Revv Gen Red 3"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T120600-9c399a1e12ed",
+      "models": [
+        "Revv Gen Green 1",
+        "Revv Gen Green 2",
+        "Revv Gen Green 3",
+        "JS410 Lead Green"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T120745-443ffba09296",
+      "models": [
+        "5153 100W Stealth Blue",
+        "5153 100W Stealth Green",
+        "5153 100W Stealth Red",
+        "USA MK V Green"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T120946-29a1d8ac9bf5",
+      "models": [
+        "Brit 800 2204 Low",
+        "Brit 800 2203 Low",
+        "USA MK V Red IIC+",
+        "USA MK V Red IIC+ Bright"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T121300-d69158d054f4",
+      "models": [
+        "USA MK V Red MKIV",
+        "USA MK V Red MKIV Bright",
+        "USA MK V Red XT",
+        "USA MK V Red XT Bright"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T121433-bdf5beff7be8",
+      "models": [
+        "Class-A 30W Brilliant",
+        "FAS Stealth Blue",
+        "Brit 800 Studio 20",
+        "Supro Black Magick"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T121537-b465524a2282",
+      "models": [
+        "Deluxe 6G3",
+        "FAS Stealth Blue",
+        "Brit 800 Studio 20",
+        "Supro Black Magick"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T122720-16e22aabcd24",
+      "models": [
+        "Brit JVM Crunch Green",
+        "Brit JVM Crunch Orange",
+        "Brit JVM Crunch Red",
+        "PVH 6160 Block Clean"
+      ],
+      "state": "paired-verified"
+    }
+  ],
+  "conflicts": [],
+  "rejected": [],
+  "newPairs": [
+    {
+      "capture": "capture-20261004T122720-16e22aabcd24",
+      "ids": [
+        333,
+        334,
+        335,
+        332
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    }
+  ],
+  "newModels": [
+    {
+      "id": 333,
+      "name": "Brit JVM Crunch Green",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 334,
+      "name": "Brit JVM Crunch Orange",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 335,
+      "name": "Brit JVM Crunch Red",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 332,
+      "name": "PVH 6160 Block Clean",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    }
+  ],
+  "coverage": {
+    "ready": 335,
+    "missing": 0,
+    "total": 335
+  },
+  "next": [],
+  "hardware": "User device GET/SYX pairs confirmed; newly generated combinations not imported, listened to or CPU-tested"
+}

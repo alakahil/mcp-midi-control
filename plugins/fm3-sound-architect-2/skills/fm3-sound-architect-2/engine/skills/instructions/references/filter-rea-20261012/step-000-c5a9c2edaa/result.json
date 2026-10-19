@@ -1,0 +1,198 @@
+{
+  "index": 0,
+  "step": {
+    "id": "01",
+    "label": "Frequency — A/B/C miinimum",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "binaryId": 3,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "binaryId": 1,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 0,
+    "step": {
+      "id": "01",
+      "label": "Frequency — A/B/C miinimum",
+      "activeChannel": "C",
+      "targets": [
+        {
+          "channel": "A",
+          "type": "High-Pass",
+          "binaryId": 3,
+          "parameter": "Frequency",
+          "parameterId": 1,
+          "value": 20,
+          "unit": "Hz",
+          "mode": "numeric",
+          "minimum": 20,
+          "maximum": 20000,
+          "options": [],
+          "parameterName": "FILTER_FREQ"
+        },
+        {
+          "channel": "B",
+          "type": "Low-Pass",
+          "binaryId": 1,
+          "parameter": "Frequency",
+          "parameterId": 1,
+          "value": 20,
+          "unit": "Hz",
+          "mode": "numeric",
+          "minimum": 20,
+          "maximum": 20000,
+          "options": [],
+          "parameterName": "FILTER_FREQ"
+        },
+        {
+          "channel": "C",
+          "type": "Peaking",
+          "binaryId": 6,
+          "parameter": "Frequency",
+          "parameterId": 1,
+          "value": 20,
+          "unit": "Hz",
+          "mode": "numeric",
+          "minimum": 20,
+          "maximum": 20000,
+          "options": [],
+          "parameterName": "FILTER_FREQ"
+        }
+      ],
+      "reason": "missing endpoint or independent check",
+      "allowUnchanged": true
+    },
+    "previousSha256": "5be74c3f11b097732cb276c22b7c757470b3a8087660afb0888d6d43c022fc49",
+    "syxSha256": "15b7379736423f48f9b490c3fe18d916aef0c291ccbcffc8f4b8c194f1654362",
+    "bodySha256": "132b1e399fb1db5087a9eb40edcb90f1e232adab6cccbbb6edc6954ea33d499f",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 7616,
+        "before": 23962,
+        "after": 0
+      },
+      {
+        "channel": "B",
+        "pid": 1,
+        "offset": 7690,
+        "before": 56841,
+        "after": 0
+      },
+      {
+        "channel": "C",
+        "pid": 1,
+        "offset": 7764,
+        "before": 43689,
+        "after": 0
+      }
+    ],
+    "targets": [
+      {
+        "channel": "A",
+        "pid": 1,
+        "before": 23962,
+        "after": 0,
+        "wordChanged": true
+      },
+      {
+        "channel": "B",
+        "pid": 1,
+        "before": 56841,
+        "after": 0,
+        "wordChanged": true
+      },
+      {
+        "channel": "C",
+        "pid": 1,
+        "before": 43689,
+        "after": 0,
+        "wordChanged": true
+      }
+    ],
+    "presetNameChange": null,
+    "scene2ChannelChange": {
+      "before": "B",
+      "after": "C"
+    },
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "pending-real-display-and-GET-pair; unchanged words are not isolated-change evidence"
+  },
+  "observations": [
+    {
+      "channel": "A",
+      "parameterId": 1,
+      "requestedValue": 20,
+      "displayText": "20",
+      "displayValue": 20.0
+    },
+    {
+      "channel": "B",
+      "parameterId": 1,
+      "requestedValue": 20,
+      "displayText": "20",
+      "displayValue": 20.0
+    },
+    {
+      "channel": "C",
+      "parameterId": 1,
+      "requestedValue": 20,
+      "displayText": "20",
+      "displayValue": 20.0
+    }
+  ],
+  "displayConfirmed": true,
+  "getAuthorized": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "15b7379736423f48f9b490c3fe18d916aef0c291ccbcffc8f4b8c194f1654362",
+    "bodySha256": "132b1e399fb1db5087a9eb40edcb90f1e232adab6cccbbb6edc6954ea33d499f",
+    "rawRxSha256": "c0a4e352cab5f502755552fff99f1328ec0eefa06caa5eb2f9294ec577e06947"
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 73,
+    "name": "Spring: Lush Spring",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 74,
+    "name": "Spring: Medium Spring",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 75,
+    "name": "Spring: Small Spring",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 76,
+    "name": "Spring: Studio Spring",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,313 @@
+{
+  "index": 46,
+  "step": {
+    "id": "047-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Q → 0.707 ; Band 2 Q → 0.707 ; Band 3 Q → 0.707 ; Band 4 Q → 0.707 ; Band 5 Q → 0.707 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 0.707,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": 0.707,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": 0.707,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": 0.707,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": 0.707,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 46,
+    "step": {
+      "id": "047-numeric",
+      "stage": "numeric",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Q → 0.707 ; Band 2 Q → 0.707 ; Band 3 Q → 0.707 ; Band 4 Q → 0.707 ; Band 5 Q → 0.707 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Q",
+          "candidatePid": 5,
+          "value": 0.707,
+          "band": 1,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 6,
+          "value": 0.707,
+          "band": 2,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 7,
+          "value": 0.707,
+          "band": 3,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 8,
+          "value": 0.707,
+          "band": 4,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 9,
+          "value": 0.707,
+          "band": 5,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "77a7e06c606d8177cf949649becb8396fc482f581b348edb894e6cc2e740e04c",
+    "syxSha256": "1a2eb96d828dfe42b01bf76e7b421978458e5d8f6fd26febfa43dff03346ab79",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 5,
+        "offset": 8744,
+        "before": 65534,
+        "after": 27833
+      },
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 8746,
+        "before": 65534,
+        "after": 27833
+      },
+      {
+        "channel": "A",
+        "pid": 7,
+        "offset": 8748,
+        "before": 65534,
+        "after": 27833
+      },
+      {
+        "channel": "A",
+        "pid": 8,
+        "offset": 8750,
+        "before": 65534,
+        "after": 27833
+      },
+      {
+        "channel": "A",
+        "pid": 9,
+        "offset": 8752,
+        "before": 65534,
+        "after": 27833
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 0.707,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 27833
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": 0.707,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 27833
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": 0.707,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 27833
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": 0.707,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 27833
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": 0.707,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 27833
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 0.707,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": 0.707
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": 0.707,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": 0.707
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": 0.707,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": 0.707
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": 0.707,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": 0.707
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": 0.707,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": 0.707
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "1a2eb96d828dfe42b01bf76e7b421978458e5d8f6fd26febfa43dff03346ab79",
+    "bodySha256": "563c66778487e5dca6484a9ae718eb56f008a001148f46eb3c6e96b245265157",
+    "rawRxSha256": "a4b2d25de9630938b2572bf6e5f0907f4b23697385ddc40d9954d976d86c654e",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

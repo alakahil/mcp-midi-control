@@ -1,0 +1,2039 @@
+{
+  "date": "2026-10-04",
+  "version": "0.29.21",
+  "sessionCaptures": [
+    {
+      "id": "capture-20261002T120223-e59cd21f13e0",
+      "models": [
+        "Hipower Normal",
+        "1987X Treble",
+        "Brit 800 2204 High",
+        "Brit Super"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T120941-87d6d1205249",
+      "models": [
+        "Hipower Normal",
+        "Hipower Brilliant",
+        "USA Pre Clean",
+        "USA MK IIC+"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T122615-8506bc5648ea",
+      "models": [
+        "USA MK IIC+ Bright",
+        "Recto2 Orange Vintage",
+        "Recto2 Orange Modern",
+        "Recto2 Red Vintage"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T123506-3288f43cf20d",
+      "models": [
+        "Recto2 Red Modern",
+        "Euro Blue",
+        "Euro Red",
+        "Shiver Clean"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T171904-6a6ab0bcf027",
+      "models": [
+        "Shiver Lead",
+        "Euro Uber",
+        "Solo 99 Clean",
+        "Solo 100 Rhythm"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T172605-18bb3a17149c",
+      "models": [
+        "Solo 100 Lead",
+        "Friedman BE V1",
+        "Friedman HBE V1",
+        "PVH 6160 Block Lead"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T185529-e56f89fd027b",
+      "state": "failed",
+      "reason": "[Errno 2] No such file or directory: '/dev/cu.usbmodem11104'"
+    },
+    {
+      "id": "capture-20261003T185948-175bad205350",
+      "models": [
+        "Mr Z MZ-38",
+        "CA3+ Rhythm",
+        "CA3+ Lead",
+        "Wrecker Rocket"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T191514-45e34fab8347",
+      "models": [
+        "Cornfed M50",
+        "Carol-Ann OD-2",
+        "Fryette D60 Less",
+        "Fryette D60 More"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T191748-273a14f082e1",
+      "models": [
+        "Brit Brown",
+        "Citrus RV50",
+        "Jazz 120",
+        "Energyball"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T192716-763b7a0ed216",
+      "models": [
+        "ODS-100 Clean",
+        "ODS-100 HRM",
+        "FAS Rhythm",
+        "FAS Lead 1"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T192908-1c20b105a54f",
+      "models": [
+        "FAS Lead 2",
+        "FAS Modern",
+        "Das Metall",
+        "Brit Pre"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T193109-e76bcc49d1ea",
+      "models": [
+        "Buddah DuoMaster",
+        "Matchbox Chiefman 1",
+        "Matchbox Chiefman 2",
+        "Cameron CCV 1A"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T194018-ba4e73d65140",
+      "models": [
+        "Cameron CCV 2A",
+        "SV Bass 2",
+        "Tube Pre",
+        "FAS Brown"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195050-86cda4c4daea",
+      "models": [
+        "Big Hair",
+        "Solo 99 Lead",
+        "Supertweed",
+        "Texas Star Lead"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195235-94cdc6ce26a3",
+      "models": [
+        "FAS Wreck",
+        "Brit JVM OD1 Orange",
+        "Brit JVM OD2 Orange",
+        "FAS 6160"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195425-f47c5e05c220",
+      "models": [
+        "Legend 100",
+        "USA MK IV Lead Mid Bright",
+        "Princetone 5F2",
+        "Blankenship Leeds"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195623-3e2a3be4cd53",
+      "models": [
+        "5153 100W Green",
+        "5153 100W Blue",
+        "5153 100W Red",
+        "Solo 88 Rhythm"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T200328-ab505d0b4671",
+      "models": [
+        "Div/13 CJ",
+        "Herbie CH2-",
+        "Herbie CH2+",
+        "Herbie CH3"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T200542-278af4b9ddfe",
+      "models": [
+        "Dirty Shirley 1",
+        "Dizzy V4 Blue 2",
+        "Dizzy V4 Blue 3",
+        "Dizzy V4 Blue 4"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T200743-1cfd4138cb9f",
+      "models": [
+        "Suhr Badger 18",
+        "Suhr Badger 30",
+        "Princetone AA964",
+        "Supremo Trem"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T200940-6f96adeee983",
+      "models": [
+        "Atomica Low",
+        "Atomica High",
+        "Deluxe Tweed Jumped",
+        "Spawn Q-Rod OD2-1"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201127-fbf21cbcbd28",
+      "models": [
+        "Spawn Q-Rod OD2-2",
+        "Spawn Q-Rod OD2-3",
+        "Brit Silver",
+        "Spawn Nitrous 2"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201318-e74be21674c0",
+      "models": [
+        "FAS Crunch",
+        "Two Stone J35 PAB",
+        "Fox ODS",
+        "Hot Kitty"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201503-e5ad4b763b2f",
+      "models": [
+        "Band-Commander",
+        "Super Verb Vibrato",
+        "Vibra-King",
+        "Gibtone Scout"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201641-3d93491bc2bc",
+      "models": [
+        "PVH 6160+ Lead",
+        "Solo 100 Clean",
+        "USA Pre LD2 Green",
+        "USA Pre LD2 Yellow"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T201836-f8a6e8ce94ee",
+      "models": [
+        "CA3+ Clean",
+        "Fox ODS Mid",
+        "Brit JVM OD1 Green",
+        "Brit JVM OD2 Green"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T202022-5bbcd5e32d6d",
+      "models": [
+        "Vibrato Lux",
+        "Brit 800 Mod",
+        "Nuclear-Tone",
+        "Bludojai Clean"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T052633-160754eaafbe",
+      "models": [
+        "Bludojai Lead PAB",
+        "Plexi 100W High",
+        "Plexi 100W Normal",
+        "Ruby Rocket Bright"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T052817-2f7556d852dc",
+      "models": [
+        "AC-20 EF86 Bass",
+        "Princetone Reverb",
+        "Comet Concourse",
+        "FAS Modern II"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T052947-5ccdf52bdee5",
+      "models": [
+        "Carol-Ann Triptik Modern",
+        "Carol-Ann Triptik Classic",
+        "Carol-Ann Triptik Clean",
+        "Thordendal Vintage"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053124-fd82326a6c03",
+      "models": [
+        "Thordendal Modern",
+        "ODS-100 HRM Mid",
+        "Euro Blue Modern",
+        "Euro Red Modern"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053255-bbbc97ec4c89",
+      "models": [
+        "Plexi 50W Jumped",
+        "AC-20 EF86 Treble",
+        "Comet 60",
+        "Hipower Jumped"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053429-77b511c1f498",
+      "models": [
+        "Plexi 100W Jumped",
+        "Brit JM45 Jumped",
+        "1987X Jumped",
+        "Recto1 Orange Normal"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053609-664509c76c6e",
+      "models": [
+        "Recto1 Red",
+        "ODS-100 Ford PAB",
+        "Bogfish Strato",
+        "Bogfish Brown"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053757-a5bddcf05cbb",
+      "models": [
+        "5F1 Tweed",
+        "Wrecker Express",
+        "Two Stone J35",
+        "ODS-100 Ford"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T053933-2ef0050406e4",
+      "models": [
+        "Mr Z MZ-8",
+        "Car Ambler",
+        "USA Metro Blues",
+        "Wrecker Liverpool"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054108-ab79fc7e6663",
+      "models": [
+        "Citrus Terrier",
+        "Citrus A30 Clean",
+        "Citrus A30 Dirty",
+        "Div/13 FT37 Low"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054246-2dbc99fa3e55",
+      "models": [
+        "Div/13 FT37 High",
+        "Matchbox D-30",
+        "FAS Class-A",
+        "USA Bass 400 1"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054452-a13b77be21d6",
+      "models": [
+        "USA Bass 400 2",
+        "Citrus Bass 200",
+        "FAS Bass",
+        "Tremolo Lux"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054624-1091b9a1898c",
+      "models": [
+        "FAS Brootalz",
+        "Recto1 Orange Modern",
+        "Angle Severe 1",
+        "Angle Severe 2"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054758-5e8cf94f785c",
+      "models": [
+        "USA Pre LD2 Red",
+        "USA Pre LD1 Red",
+        "Texas Star Clean",
+        "AC-20 12AX7 Treble"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T054931-872a64cb216e",
+      "models": [
+        "Vibrato Verb AA",
+        "Vibrato Verb AB",
+        "Carol-Ann Tucana Lead",
+        "JR Blues Fat"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055108-483e86b871bd",
+      "models": [
+        "Solo 88 Lead",
+        "Brit AFS100 1",
+        "Brit AFS100 2",
+        "Class-A 30W Hot"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055243-eb3d0b23485a",
+      "models": [
+        "Dizzy V4 Silver 3",
+        "Dizzy V4 Silver 2",
+        "Dizzy V4 Silver 4",
+        "1959SLP Normal"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055418-eef07e4e62f2",
+      "models": [
+        "1959SLP Treble",
+        "1959SLP Jumped",
+        "FAS Modern III",
+        "ODS-100 Ford PAB Mid"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055549-585fdb5617bd",
+      "models": [
+        "Mr Z Highway 66",
+        "6G4 Super",
+        "6G12 Concert",
+        "65 Bassguy Bass"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261004T055727-7a2067d6248e",
+      "models": [
+        "Vibra-King Fat",
+        "Spawn Q-Rod OD1-1",
+        "Spawn Q-Rod OD1-2",
+        "Spawn Q-Rod OD1-3"
+      ],
+      "state": "paired-verified"
+    }
+  ],
+  "conflicts": [],
+  "rejected": [],
+  "newPairs": [
+    {
+      "capture": "capture-20261004T052633-160754eaafbe",
+      "ids": [
+        125,
+        126,
+        127,
+        128
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T052817-2f7556d852dc",
+      "ids": [
+        129,
+        130,
+        131,
+        132
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T052947-5ccdf52bdee5",
+      "ids": [
+        133,
+        134,
+        135,
+        136
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T053124-fd82326a6c03",
+      "ids": [
+        137,
+        138,
+        139,
+        140
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T053255-bbbc97ec4c89",
+      "ids": [
+        141,
+        142,
+        143,
+        144
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T053429-77b511c1f498",
+      "ids": [
+        145,
+        146,
+        147,
+        148
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T053609-664509c76c6e",
+      "ids": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T053757-a5bddcf05cbb",
+      "ids": [
+        153,
+        154,
+        155,
+        156
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T053933-2ef0050406e4",
+      "ids": [
+        157,
+        158,
+        159,
+        160
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T054108-ab79fc7e6663",
+      "ids": [
+        161,
+        162,
+        163,
+        164
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T054246-2dbc99fa3e55",
+      "ids": [
+        165,
+        166,
+        167,
+        168
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T054452-a13b77be21d6",
+      "ids": [
+        169,
+        170,
+        171,
+        172
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T054624-1091b9a1898c",
+      "ids": [
+        173,
+        174,
+        175,
+        176
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T054758-5e8cf94f785c",
+      "ids": [
+        177,
+        178,
+        179,
+        180
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T054931-872a64cb216e",
+      "ids": [
+        181,
+        182,
+        183,
+        184
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T055108-483e86b871bd",
+      "ids": [
+        185,
+        186,
+        187,
+        188
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T055243-eb3d0b23485a",
+      "ids": [
+        189,
+        190,
+        191,
+        192
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T055418-eef07e4e62f2",
+      "ids": [
+        193,
+        194,
+        195,
+        196
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T055549-585fdb5617bd",
+      "ids": [
+        197,
+        198,
+        199,
+        200
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261004T055727-7a2067d6248e",
+      "ids": [
+        201,
+        202,
+        203,
+        204
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    }
+  ],
+  "newModels": [
+    {
+      "id": 125,
+      "name": "Bludojai Lead PAB",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 126,
+      "name": "Plexi 100W High",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 127,
+      "name": "Plexi 100W Normal",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 128,
+      "name": "Ruby Rocket Bright",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 129,
+      "name": "AC-20 EF86 Bass",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 130,
+      "name": "Princetone Reverb",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 131,
+      "name": "Comet Concourse",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 132,
+      "name": "FAS Modern II",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 133,
+      "name": "Carol-Ann Triptik Modern",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 134,
+      "name": "Carol-Ann Triptik Classic",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 135,
+      "name": "Carol-Ann Triptik Clean",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 136,
+      "name": "Thordendal Vintage",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 137,
+      "name": "Thordendal Modern",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 138,
+      "name": "ODS-100 HRM Mid",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 139,
+      "name": "Euro Blue Modern",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 140,
+      "name": "Euro Red Modern",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 141,
+      "name": "Plexi 50W Jumped",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 142,
+      "name": "AC-20 EF86 Treble",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 143,
+      "name": "Comet 60",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 144,
+      "name": "Hipower Jumped",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 145,
+      "name": "Plexi 100W Jumped",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 146,
+      "name": "Brit JM45 Jumped",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 147,
+      "name": "1987X Jumped",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 148,
+      "name": "Recto1 Orange Normal",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 149,
+      "name": "Recto1 Red",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 150,
+      "name": "ODS-100 Ford PAB",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 151,
+      "name": "Bogfish Strato",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 152,
+      "name": "Bogfish Brown",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 153,
+      "name": "5F1 Tweed",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 154,
+      "name": "Wrecker Express",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 155,
+      "name": "Two Stone J35",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 156,
+      "name": "ODS-100 Ford",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 157,
+      "name": "Mr Z MZ-8",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 158,
+      "name": "Car Ambler",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 159,
+      "name": "USA Metro Blues",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 160,
+      "name": "Wrecker Liverpool",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 161,
+      "name": "Citrus Terrier",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 162,
+      "name": "Citrus A30 Clean",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 163,
+      "name": "Citrus A30 Dirty",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 164,
+      "name": "Div/13 FT37 Low",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 165,
+      "name": "Div/13 FT37 High",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 166,
+      "name": "Matchbox D-30",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 167,
+      "name": "FAS Class-A",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 168,
+      "name": "USA Bass 400 1",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 169,
+      "name": "USA Bass 400 2",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 170,
+      "name": "Citrus Bass 200",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 171,
+      "name": "FAS Bass",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 172,
+      "name": "Tremolo Lux",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 173,
+      "name": "FAS Brootalz",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 174,
+      "name": "Recto1 Orange Modern",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 175,
+      "name": "Angle Severe 1",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 176,
+      "name": "Angle Severe 2",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 177,
+      "name": "USA Pre LD2 Red",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 178,
+      "name": "USA Pre LD1 Red",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 179,
+      "name": "Texas Star Clean",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 180,
+      "name": "AC-20 12AX7 Treble",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 181,
+      "name": "Vibrato Verb AA",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 182,
+      "name": "Vibrato Verb AB",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 183,
+      "name": "Carol-Ann Tucana Lead",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 184,
+      "name": "JR Blues Fat",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 185,
+      "name": "Solo 88 Lead",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 186,
+      "name": "Brit AFS100 1",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 187,
+      "name": "Brit AFS100 2",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 188,
+      "name": "Class-A 30W Hot",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 189,
+      "name": "Dizzy V4 Silver 3",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 190,
+      "name": "Dizzy V4 Silver 2",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 191,
+      "name": "Dizzy V4 Silver 4",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 192,
+      "name": "1959SLP Normal",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 193,
+      "name": "1959SLP Treble",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 194,
+      "name": "1959SLP Jumped",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 195,
+      "name": "FAS Modern III",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 196,
+      "name": "ODS-100 Ford PAB Mid",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 197,
+      "name": "Mr Z Highway 66",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 198,
+      "name": "6G4 Super",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 199,
+      "name": "6G12 Concert",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 200,
+      "name": "65 Bassguy Bass",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 201,
+      "name": "Vibra-King Fat",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 202,
+      "name": "Spawn Q-Rod OD1-1",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 203,
+      "name": "Spawn Q-Rod OD1-2",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 204,
+      "name": "Spawn Q-Rod OD1-3",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    }
+  ],
+  "coverage": {
+    "ready": 206,
+    "missing": 125,
+    "total": 331
+  },
+  "next": [
+    205,
+    206,
+    207,
+    208
+  ],
+  "hardware": "User device GET/SYX pairs confirmed; newly generated combinations not imported, listened to or CPU-tested"
+}

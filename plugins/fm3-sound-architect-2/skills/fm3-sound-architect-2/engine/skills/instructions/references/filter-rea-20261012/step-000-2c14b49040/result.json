@@ -1,0 +1,56 @@
+{
+  "index": 0,
+  "step": {
+    "id": "01",
+    "label": "Frequency — A/B/C miinimum",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "binaryId": 3,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "binaryId": 1,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  "status": "failed",
+  "error": "Preseti andmete pikkus muutus"
+}

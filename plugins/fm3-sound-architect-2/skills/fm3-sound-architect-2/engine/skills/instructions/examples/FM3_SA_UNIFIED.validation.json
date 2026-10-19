@@ -1,0 +1,214 @@
+{
+  "generator": "unified-0.1.0",
+  "spec": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "name": "FM3 SA TEST TIME",
+    "purpose": "Varasemal riistvarakatsel kinnitatud kombinatsiooni taasesitus ühtse generaatoriga.",
+    "gainB": 5,
+    "midB": 5,
+    "trebleB": 4,
+    "presenceB": 2,
+    "levelB": -18,
+    "delayMixA": 15,
+    "reverbMixA": 12,
+    "delayScene2": true,
+    "reverbScene1": "A",
+    "delayTimeMs": 400,
+    "delayFeedback": 25,
+    "reverbTimeS": 2.5,
+    "reverbPredelayMs": 40,
+    "delayTempoA": "NONE",
+    "reverbPredelayTempoA": "NONE"
+  },
+  "baseSha256": "fecac6a61d3a33c547a12e69b5056fd8750f9ded789e44672744d2e32e29c2c4",
+  "outputSha256": "81f5f2cecbc0cbd3facf4039124e82366d4f49bf63dd8339ea7bc7f6174f1b53",
+  "effective": [
+    {
+      "key": "gainB",
+      "label": "Amp B Gain",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": 5,
+      "source": "requested"
+    },
+    {
+      "key": "bassB",
+      "label": "Amp B Bass",
+      "unit": "/10",
+      "raw": 11796,
+      "value": 1.7999816888943143,
+      "requested": null,
+      "source": "base"
+    },
+    {
+      "key": "midB",
+      "label": "Amp B Mid",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": 5,
+      "source": "requested"
+    },
+    {
+      "key": "trebleB",
+      "label": "Amp B Treble",
+      "unit": "/10",
+      "raw": 26214,
+      "value": 4.000061037018952,
+      "requested": 4,
+      "source": "requested"
+    },
+    {
+      "key": "presenceB",
+      "label": "Amp B Presence",
+      "unit": "/10",
+      "raw": 13107,
+      "value": 2.000030518509476,
+      "requested": 2,
+      "source": "requested"
+    },
+    {
+      "key": "levelB",
+      "label": "Amp B Level",
+      "unit": "dB",
+      "raw": 40631,
+      "value": -18.000122074037904,
+      "requested": -18,
+      "source": "requested"
+    },
+    {
+      "key": "delayMixA",
+      "label": "Delay A Mix",
+      "unit": "%",
+      "raw": 9830,
+      "value": 14.999847407452622,
+      "requested": 15,
+      "source": "requested"
+    },
+    {
+      "key": "reverbMixA",
+      "label": "Reverb A Mix",
+      "unit": "%",
+      "raw": 7864,
+      "value": 11.999877925962096,
+      "requested": 12,
+      "source": "requested"
+    },
+    {
+      "key": "delayTimeMs",
+      "label": "Delay A Time",
+      "unit": "ms",
+      "raw": 1634,
+      "value": 399.9130222479934,
+      "requested": 400,
+      "source": "requested"
+    },
+    {
+      "key": "delayFeedback",
+      "label": "Delay A Feedback",
+      "unit": "%",
+      "raw": 40959,
+      "value": 25.0007629627369,
+      "requested": 25,
+      "source": "requested"
+    },
+    {
+      "key": "reverbTimeS",
+      "label": "Reverb A Time",
+      "unit": "s",
+      "raw": 1574,
+      "value": 2.4994048890652185,
+      "requested": 2.5,
+      "source": "requested"
+    },
+    {
+      "key": "reverbPredelayMs",
+      "label": "Reverb A Pre-Delay",
+      "unit": "ms",
+      "raw": 2621,
+      "value": 39.99450666829432,
+      "requested": 40,
+      "source": "requested"
+    },
+    {
+      "key": "delayTempoA",
+      "label": "Delay A Tempo",
+      "unit": "",
+      "raw": 0,
+      "value": "NONE",
+      "requested": "NONE",
+      "source": "requested"
+    },
+    {
+      "key": "reverbPredelayTempoA",
+      "label": "Reverb A Pre-Delay Tempo",
+      "unit": "",
+      "raw": 0,
+      "value": "NONE",
+      "requested": "NONE",
+      "source": "requested"
+    },
+    {
+      "key": "delayScene2",
+      "label": "Scene 2 Delay",
+      "unit": "",
+      "raw": 0,
+      "value": true,
+      "requested": true,
+      "source": "requested"
+    },
+    {
+      "key": "reverbScene1",
+      "label": "Scene 1 Reverb kanal",
+      "unit": "",
+      "raw": 0,
+      "value": "A",
+      "requested": "A",
+      "source": "requested"
+    }
+  ],
+  "changedBodyOffsets": [
+    4946,
+    4947,
+    4958,
+    4959,
+    4962,
+    4963,
+    4964,
+    4965,
+    4996,
+    4997,
+    7374,
+    7392,
+    7393,
+    7408,
+    7409,
+    7412,
+    7413,
+    7422,
+    9566,
+    9567,
+    9582,
+    9583,
+    9590,
+    9591
+  ],
+  "checks": {
+    "frames": true,
+    "crc": true,
+    "footer": true,
+    "exactExpectedBody": true,
+    "rawReadback": true,
+    "headerPreserved": true
+  },
+  "hardware": "Selected reference combinations verified on firmware13; this output needs evidence comparison before claiming an exact match.",
+  "audio": "not assessed",
+  "limitations": [
+    "Original base only",
+    "Amp B and Delay/Reverb A controls only",
+    "No model/Cab/IR/routing editing",
+    "Unknown body offset0 export difference remains tracked"
+  ]
+}

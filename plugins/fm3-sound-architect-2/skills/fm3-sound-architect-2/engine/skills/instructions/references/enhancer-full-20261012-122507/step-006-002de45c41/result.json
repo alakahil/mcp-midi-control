@@ -1,0 +1,97 @@
+{
+  "index": 6,
+  "step": {
+    "id": "007-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Modern — Depth minimum",
+    "channel": "A",
+    "typeName": "Modern",
+    "parameter": "Depth",
+    "mode": "numeric",
+    "point": "minimum",
+    "unit": "%",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "007-control",
+      "kind": "control",
+      "stage": "types",
+      "label": "Modern — Depth minimum",
+      "channel": "A",
+      "typeName": "Modern",
+      "parameter": "Depth",
+      "mode": "numeric",
+      "point": "minimum",
+      "unit": "%",
+      "allowUnchanged": true
+    },
+    "previousSha256": "75cb2958d8d97fc51a82e67710e55d7f92eb7879abb55369f0c58796ed1201b1",
+    "syxSha256": "2dd97b0244aac764facd0ab52811689e6041bc65c9ae34fbd5742bf1d36194b8",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 7508,
+        "before": 32767,
+        "after": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 ENH ABCD TEST_2",
+      "after": "FM3 ENH ABCD TEST_6",
+      "beforeHex": "464d3320454e48204142434420544553545f3220202020202020202020202000",
+      "afterHex": "464d3320454e48204142434420544553545f3620202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, candidate PID mappings, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "displayText": "0.0",
+    "displayValue": 0.0
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 122,
+    "matchedWords": 48,
+    "wordsPerChannel": 12,
+    "channels": 4,
+    "syxSha256": "2dd97b0244aac764facd0ab52811689e6041bc65c9ae34fbd5742bf1d36194b8",
+    "bodySha256": "286728e8c67e8ec477467a4eb1f49145d511b1debbcaa4a81468a2f9f7403c64",
+    "rawRxSha256": "6bb777e0c1d0555dad2747d798f85a645845c20901ab099d9cc22397f1a865ba",
+    "frameLengths": [
+      12,
+      154,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

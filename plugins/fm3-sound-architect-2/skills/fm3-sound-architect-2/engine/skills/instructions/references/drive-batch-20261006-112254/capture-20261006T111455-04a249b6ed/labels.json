@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 53,
+    "name": "PI Fuzz",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 54,
+    "name": "PI Fuzz - Bass",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 55,
+    "name": "PI Fuzz - Ram's Head",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 56,
+    "name": "PI Fuzz - Russian",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

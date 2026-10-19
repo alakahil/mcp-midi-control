@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 65,
+    "name": "Sfx: Gemini",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 66,
+    "name": "Sfx: Pegasus",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 67,
+    "name": "Sfx: Pleiades",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 68,
+    "name": "Sfx: Sagittarius",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

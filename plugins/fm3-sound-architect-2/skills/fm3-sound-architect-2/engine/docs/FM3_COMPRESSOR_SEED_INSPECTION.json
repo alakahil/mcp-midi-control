@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-07",
+  "syxSha256": "35649bcb52a46a87876e3b611a649c94d29dda503184e159f3e9b5817cfde1ea",
+  "bodyBytes": 14222,
+  "headerOffset": 7004,
+  "paramsOffset": 7050,
+  "wordsPerChannel": 37,
+  "channels": 4,
+  "typeParameterId": 12,
+  "labels": [
+    {
+      "channel": "A",
+      "name": "Analog Compressor",
+      "binaryId": 6
+    },
+    {
+      "channel": "B",
+      "name": "Analog Sustainer",
+      "binaryId": 14
+    },
+    {
+      "channel": "C",
+      "name": "Citrus Juicer",
+      "binaryId": 18
+    },
+    {
+      "channel": "D",
+      "name": "Classic VCA Compressor",
+      "binaryId": 13
+    }
+  ],
+  "changedBodyOffsets": [
+    7016,
+    7054,
+    7055,
+    7056,
+    7057,
+    7060,
+    7074,
+    7084,
+    7085,
+    7122,
+    7123,
+    7128,
+    7129,
+    7130,
+    7131,
+    7134,
+    7148,
+    7196,
+    7197,
+    7202,
+    7203,
+    7204,
+    7205,
+    7208,
+    7222,
+    7264,
+    7265,
+    7270,
+    7271,
+    7276,
+    7277,
+    7278,
+    7279,
+    7282,
+    7296,
+    7338,
+    7339,
+    7344,
+    7345
+  ],
+  "sceneChannelsBefore": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "sceneChannelsAfter": [
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "checks": {
+    "checksums": true,
+    "onlyCompressorChannelsAndSceneSelectionChanged": true
+  },
+  "GET": "pending",
+  "note": "General decoder reports offsets and scenes shifted by 12 bytes; structural header at 7004 and explicit word checks are authoritative."
+}

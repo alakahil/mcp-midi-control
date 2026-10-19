@@ -1,0 +1,99 @@
+{
+  "index": 78,
+  "step": {
+    "id": "079-type",
+    "kind": "type",
+    "stage": "channels",
+    "label": "Tagasi Modern peale",
+    "channel": "A",
+    "typeName": "Modern",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "079-type",
+      "kind": "type",
+      "stage": "channels",
+      "label": "Tagasi Modern peale",
+      "channel": "A",
+      "typeName": "Modern",
+      "allowUnchanged": true
+    },
+    "previousSha256": "f4d5699d6adc8298ce4988309f3e442a49c5e7b39f8e8fe002b538d0302e4723",
+    "syxSha256": "4e304356b1e620fcec9081dc20cdb9a9e2b3a2438b99919378c8f02e78da476a",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 7518,
+        "before": 2,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 10,
+        "offset": 7526,
+        "before": 58981,
+        "after": 32767
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [
+      {
+        "channel": "A",
+        "pid": 10,
+        "offset": 7526,
+        "before": 58981,
+        "after": 32767
+      }
+    ],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, candidate PID mappings, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "typeName": "Modern",
+    "controlsConfirmed": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 122,
+    "matchedWords": 48,
+    "wordsPerChannel": 12,
+    "channels": 4,
+    "syxSha256": "4e304356b1e620fcec9081dc20cdb9a9e2b3a2438b99919378c8f02e78da476a",
+    "bodySha256": "b2d7873de0b454bfb35c962e93bca49ab2da74405363d160597f38f00477f3d8",
+    "rawRxSha256": "51da853e1eaf1247b5911c78fe0e2b1746c710180bbc69b94e9a1303c23039bf",
+    "frameLengths": [
+      12,
+      154,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

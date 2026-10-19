@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-06",
+  "generatedSha256": "6b870d0674a6ef94477fbac8dd3fa353983385a0380a0f106dbb03bab295d3c5",
+  "hardwareExportSha256": "6c0017301ed1ec513b4ed0d384cc04570ef0e532d4b38696ede1eca8084dc106",
+  "fullFilesIdentical": false,
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [],
+  "channels": [
+    {
+      "channel": "A",
+      "type": "BB Pre",
+      "binaryId": 19,
+      "explicitControls": {
+        "drive": 2,
+        "level": 2,
+        "mix": 25
+      },
+      "all44WordsPreserved": true
+    },
+    {
+      "channel": "B",
+      "type": "T808 OD",
+      "binaryId": 6,
+      "explicitControls": {
+        "drive": 2,
+        "tone": 7,
+        "level": 2,
+        "mix": 25
+      },
+      "all44WordsPreserved": true
+    },
+    {
+      "channel": "C",
+      "type": "Rat Distortion",
+      "binaryId": 0,
+      "explicitControls": {
+        "level": 2,
+        "mix": 25
+      },
+      "all44WordsPreserved": true
+    },
+    {
+      "channel": "D",
+      "type": "Zen Master",
+      "binaryId": 26,
+      "explicitControls": {
+        "drive": 2,
+        "tone": 7,
+        "level": 2,
+        "mix": 25
+      },
+      "all44WordsPreserved": true
+    }
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footerChecksum": true,
+    "entireBodyIdentical": true,
+    "all176DriveWordsPreserved": true,
+    "scenesAndBypassPreserved": true,
+    "headersPreservedExceptCrc": true
+  },
+  "scope": "Hardware roundtrip verified for this four-channel specimen. Other 87-type/channel transplants remain offline verified only. No listening assessment."
+}

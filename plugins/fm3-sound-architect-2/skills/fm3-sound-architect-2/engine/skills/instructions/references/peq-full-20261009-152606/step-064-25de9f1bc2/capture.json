@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "collectorVersion": "peq-full-0.1.0",
+  "firmwareDeclared": 13,
+  "date": "2026-10-09T12:10:12.568969+00:00",
+  "port": "/dev/cu.usbmodem211104",
+  "txHex": "f0000174111f36003df7",
+  "txCalls": 0,
+  "rxChunks": [],
+  "status": "failed",
+  "syxSha256": "fe802d71672768953c5c2ee8363f6fe61a23a8073e89c3c7b35587853d447f33",
+  "error": "[Errno 16] Resource busy: '/dev/cu.usbmodem211104'"
+}

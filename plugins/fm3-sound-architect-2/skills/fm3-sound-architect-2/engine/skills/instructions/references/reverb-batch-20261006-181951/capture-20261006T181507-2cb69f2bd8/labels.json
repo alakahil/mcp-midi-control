@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 57,
+    "name": "Room: Recording Studio A",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 58,
+    "name": "Room: Recording Studio C",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 59,
+    "name": "Room: Small Room",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 60,
+    "name": "Room: Studio",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

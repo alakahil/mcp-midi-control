@@ -1,0 +1,50 @@
+[
+  {
+    "step": 1,
+    "channel": "A",
+    "parameter": "Mix",
+    "value": "25 %"
+  },
+  {
+    "step": 2,
+    "channel": "A",
+    "parameter": "Mix",
+    "value": "75 %"
+  },
+  {
+    "step": 3,
+    "channel": "A",
+    "parameter": "Mix",
+    "value": "50 %"
+  },
+  {
+    "step": 4,
+    "channel": "A",
+    "parameter": "Level",
+    "value": "-6.0 dB"
+  },
+  {
+    "step": 5,
+    "channel": "A",
+    "parameter": "Level",
+    "value": "0.0 dB"
+  },
+  {
+    "step": 6,
+    "channel": "A",
+    "parameter": "Hi Depth",
+    "value": "50 %"
+  },
+  {
+    "step": 7,
+    "channel": "A",
+    "parameter": "Low Depth",
+    "value": "50 %"
+  },
+  {
+    "step": 8,
+    "channel": "A",
+    "parameter": "Rate",
+    "value": "5.000 Hz"
+  }
+]

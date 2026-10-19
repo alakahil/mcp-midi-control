@@ -1,0 +1,28 @@
+FM3 PARAMETRIC EQ — ESIMENE LISAMISKATSE
+2026-10-09
+
+Alus: JB EIGHT SCENES V3, mille stseenide helitasakaal on kuulamise järgi sobiv.
+Katse eesmärk: saada sinu firmware 13 seadmest esimene päris PEQ-plokiga preset.
+PEQ parameetrite kirjutustugi ei ole veel koostajasse lisatud.
+
+TEE FM3-EDITIS
+1. Ava JB EIGHT SCENES V3 tööpuhvris ja vali Scene 2.
+2. Lisa Parametric EQ 1 teise rea 10. veergu, olemasoleva shundi asemele.
+   See koht on kohe Filter 1 järel ja enne Send 1.
+   Nähtava ahela lõik: Cab 1 → Filter 1 → PEQ 1 → Send 1.
+3. PEQ-s vali kanal A ja lülita PEQ bypass'i. Ribade ja Leveli seadeid veel ära muuda.
+4. Jäta Scene 2 valituks ning ekspordi terve preset failina FM3_PEQ_BASELINE.syx.
+5. Lisa see SYX vestlusse.
+
+Teised plokid, nende parameetrid ja stseenide seaded peavad jääma V3 järgi.
+Hoia V3 algfail võrdluseks alles. Preseti sisemise nime muutmine pole vajalik;
+kui nimi siiski muutub, salvestab kontroll selle eraldi ega peata tööd üksnes nime tõttu.
+Terminali ega GET-päringut selles esimeses sammus vaja ei ole.
+
+MIS JÄRGNEB
+Kontrollin lisandunud PEQ kirjet ja võrdlen ülejäänud sisu V3-ga. Seejärel
+valmistan päris andmetele vastava parameetrite kogumise. Tabelite PID-d ja
+väärtusvahemikud on praegu ainult vihjed, mitte kinnitatud kirjutustugi.
+Kuuldavat EQ-parandust ja uut CPU-näitu hindame hiljem aktiivse PEQ-ga.
+
+V3 SHA-256: 0a17b54fcee104887b6707b29ae34ea7bec6e049a341c1ec8e77ec75c7b68683

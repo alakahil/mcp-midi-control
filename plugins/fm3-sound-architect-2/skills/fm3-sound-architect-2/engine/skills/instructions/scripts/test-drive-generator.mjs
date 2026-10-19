@@ -1,0 +1,12 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {generatePreset} from './fm3-generate.mjs';import {inspect} from './fm3-prototype.mjs';
+const ref=new URL('../references/',import.meta.url),read=p=>fs.readFileSync(new URL(p,ref));
+const spec={schemaVersion:1,firmware:13,baseProfile:'jb-drive-c',type:'Zen Master',channel:'C',drive:8,tone:3,level:2,mix:25};
+const donor=read('drive-batch-20261006-112254/capture-20261006T112247-72000d0f64/donor.syx'),fixture=read('drive-controls/FM3_DRIVE_C_MIX_25.syx');
+const r=generatePreset(donor,spec);assert.deepEqual(Buffer.from(inspect(r.syx).raw.body),Buffer.from(inspect(fixture).raw.body));
+const original=fs.readFileSync(new URL('../examples/JB_YDOM_RHYTHM.syx',import.meta.url));
+const testSpec={...spec,drive:2,tone:7},test=generatePreset(original,testSpec);
+assert.equal(inspect(test.syx).raw.body[0],inspect(original).raw.body[0]);
+for(const bad of [{channel:'A'},{type:'BB Pre'},{drive:4},{mix:NaN},{level:-2},{tone:11},{unknown:1},{firmware:12}])assert.throws(()=>generatePreset(original,{...spec,...bad}));
+assert.throws(()=>generatePreset(fixture,spec));
+for(const [name,data] of [['FM3_DRIVE_GENERATED_TEST.syx',test.syx],['FM3_DRIVE_GENERATED_TEST.txt',test.txt],['FM3_DRIVE_GENERATED_TEST.spec.json',JSON.stringify(testSpec,null,2)+'\n'],['FM3_DRIVE_GENERATED_TEST.validation.json',JSON.stringify(test.report,null,2)+'\n']])fs.writeFileSync(new URL('../examples/'+name,import.meta.url),data);
+console.log('PASS: exact independent full-body fixture, original-base Zen Master type transplant, 9 invalid inputs rejected');

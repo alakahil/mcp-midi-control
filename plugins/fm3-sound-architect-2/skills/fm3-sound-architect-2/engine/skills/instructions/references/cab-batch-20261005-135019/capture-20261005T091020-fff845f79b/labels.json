@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 9,
+    "expectedId": 8,
+    "name": "1x12 Deluxe Tweed",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 10,
+    "expectedId": 9,
+    "name": "1x12 Deluxe Verb",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 11,
+    "expectedId": 10,
+    "name": "1x12 Div13 CJ11",
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 12,
+    "expectedId": 11,
+    "name": "1x12 G12T-100",
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

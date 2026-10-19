@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 34,
+    "expectedId": 33,
+    "name": "4x12 5153 Stealth",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 35,
+    "expectedId": 34,
+    "name": "4x12 Citrus",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 36,
+    "expectedId": 35,
+    "name": "4x12 Friedman GB",
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 37,
+    "expectedId": 36,
+    "name": "4x12 Friedman V30",
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

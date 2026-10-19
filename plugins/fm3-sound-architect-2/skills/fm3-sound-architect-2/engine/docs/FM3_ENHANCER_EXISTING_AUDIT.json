@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-11",
+  "scope": "Bundled SYX files only; candidate Gen3 Enhancer EIDs122-125 from codec table, not confirmed firmware13 write support",
+  "files": 1129,
+  "uniqueContents": 578,
+  "readableUniqueContents": 578,
+  "found": [],
+  "failures": []
+}

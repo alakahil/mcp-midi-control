@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-11",
+  "userStatement": "CPU oli kõige suurem 50%, GEQ toimis",
+  "export": {
+    "file": "examples/FM3_GEQ_ABCD_TEST_export.syx",
+    "libraryFileId": "libfile_fe5f236dedb88191b83fa1b870097216",
+    "sha256": "1663e891e6bc1a7cb89a1bc0540a48ce8d61527911267682bc3082bf06e70c3e"
+  },
+  "cpu": {
+    "maximumObservedPercent": 50,
+    "source": "User report for this GEQ combined specimen; not a universal maximum"
+  },
+  "audio": "User reports GEQ worked; no artist-reference comparison claimed",
+  "screenshot": {
+    "file": "references/geq-feedback-20261011/scene4-geq-c.png",
+    "libraryFileId": "libfile_989a10f1ee2c81919942120b77ad786d",
+    "sha256": "4b6c213bdc0556084031b14b9246e0a6307c220ed3c389a0fe2a9d48d7637c8f",
+    "openedAndVisuallyRead": true,
+    "firmware": "13.00",
+    "scene": 4,
+    "presetName": "FM3 GEQ ABCD TEST",
+    "channel": "C",
+    "type": "7 Band Constant Q",
+    "bandLabels": [
+      "100",
+      "200",
+      "400",
+      "800",
+      "1600",
+      "3200",
+      "6400"
+    ],
+    "gainDb": [
+      -1,
+      -0.5,
+      0,
+      1,
+      0.5,
+      -0.5,
+      -1
+    ],
+    "masterQ": 0.8,
+    "balance": 0,
+    "levelDisplayDb": -0.7,
+    "levelRequestedDb": -0.75,
+    "levelDecodedDb": -0.749534592730484,
+    "levelExplanation": "The screenshot shows one decimal; the unchanged exported word decodes to -0.7495346 dB and displays as -0.7 dB. No parameter correction is required.",
+    "bypassMode": "Thru",
+    "cpuPercent": 49.4
+  },
+  "labelResolution": {
+    "type": "7 Band Constant Q",
+    "band": 1,
+    "label": "100",
+    "frequencyHz": 100,
+    "status": "Confirmed from screenshot 2026-10-11",
+    "originalCapturedLabel": "python3 100",
+    "rawCollectionEvidenceUnchanged": true
+  },
+  "limits": [
+    "Screenshot validates channel C only, not every A/B/D intermediate screen value",
+    "Exact full-body import/export evidence applies to this composition only",
+    "Scene Ignore behavior combinations remain separately untested"
+  ]
+}

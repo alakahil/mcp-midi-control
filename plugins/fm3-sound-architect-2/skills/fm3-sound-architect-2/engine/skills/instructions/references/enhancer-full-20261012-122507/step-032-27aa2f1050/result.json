@@ -1,0 +1,92 @@
+{
+  "index": 32,
+  "step": {
+    "id": "033-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Classic — Width middle",
+    "channel": "A",
+    "typeName": "Classic",
+    "parameter": "Width",
+    "mode": "numeric",
+    "point": "middle",
+    "unit": "%",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "033-control",
+      "kind": "control",
+      "stage": "types",
+      "label": "Classic — Width middle",
+      "channel": "A",
+      "typeName": "Classic",
+      "parameter": "Width",
+      "mode": "numeric",
+      "point": "middle",
+      "unit": "%",
+      "allowUnchanged": true
+    },
+    "previousSha256": "79eec29b79e030b624ae5348e4db46a6a4099ff045024a55adc104b0f033a780",
+    "syxSha256": "7b0ae0b34a33cdbef7b0f9c145ecff6789df519c0aec44cc5205c7bd1460abc9",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 7506,
+        "before": 13107,
+        "after": 32767
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, candidate PID mappings, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "displayText": "50.0",
+    "displayValue": 50.0
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 122,
+    "matchedWords": 48,
+    "wordsPerChannel": 12,
+    "channels": 4,
+    "syxSha256": "7b0ae0b34a33cdbef7b0f9c145ecff6789df519c0aec44cc5205c7bd1460abc9",
+    "bodySha256": "b22a8aaff36faa419328468bfb15286b8fafc9cfacfa15f3ef8f284166ca10a5",
+    "rawRxSha256": "8dc31d2d4b45d1fc8ad9f7e2a505561fa16b86f33f2385a0ad5cfa6fb9165c2d",
+    "frameLengths": [
+      12,
+      154,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

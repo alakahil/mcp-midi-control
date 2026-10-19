@@ -1,0 +1,23 @@
+[
+  {
+    "displayNumber": 77,
+    "name": "Spring: Tube Spring",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 78,
+    "name": "Spring: Vibra-King",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 79,
+    "name": "Spring: Vibra-King Custom",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  }
+]

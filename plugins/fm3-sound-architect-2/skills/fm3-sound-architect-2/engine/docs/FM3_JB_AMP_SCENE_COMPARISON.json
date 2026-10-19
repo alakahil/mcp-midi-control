@@ -1,0 +1,195 @@
+{
+  "files": [
+    {
+      "name": "JB_SCENE6_REVERB_D_DELAY_ON.syx",
+      "sha256": "ed9291aefe56f10a7266b5bc0adada92754b416591781da8bd7f2a41cdbd1262",
+      "amp": {
+        "block": "Amp",
+        "cols": 144,
+        "rows": 4,
+        "offset": 4622,
+        "params_offset": 4668,
+        "scene_channels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "scene_bypass": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "channels": {
+          "A": {
+            "type_id": 18,
+            "type": "USA MK IV Rhythm 1",
+            "drive": 7,
+            "bass": 5,
+            "mid": 3.6,
+            "treble": 6,
+            "master_volume": 5,
+            "depth": 0,
+            "sag": 1.07,
+            "presence": 4,
+            "negative_feedback": 10
+          },
+          "B": {
+            "type_id": 103,
+            "type": "Brit Silver",
+            "drive": 5,
+            "bass": 4,
+            "mid": 6.5,
+            "treble": 5.2,
+            "master_volume": 4,
+            "depth": 0,
+            "sag": 1.9,
+            "presence": 3,
+            "negative_feedback": 1.88
+          },
+          "C": {
+            "type_id": 24,
+            "type": "USA MK IV Lead Bright",
+            "drive": 6.7,
+            "bass": 1.5,
+            "mid": 6.6,
+            "treble": 5.81,
+            "master_volume": 4,
+            "depth": 0,
+            "sag": 1.07,
+            "presence": 4.3,
+            "negative_feedback": 10
+          },
+          "D": {
+            "type_id": 77,
+            "type": "USA MK IV Lead Mid",
+            "drive": 5,
+            "bass": 1,
+            "mid": 6.72,
+            "treble": 6.4,
+            "master_volume": 4,
+            "depth": 0,
+            "sag": 1.07,
+            "presence": 1,
+            "negative_feedback": 10
+          }
+        }
+      }
+    },
+    {
+      "name": "JB_SCENE6_AMP_C.syx",
+      "sha256": "be3cb384ca72f53f8c36bfdbe83d5ed4b00e780ee7f3917e1ac7cd436b3025a3",
+      "amp": {
+        "block": "Amp",
+        "cols": 144,
+        "rows": 4,
+        "offset": 4622,
+        "params_offset": 4668,
+        "scene_channels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "A",
+          "C",
+          "C",
+          "D"
+        ],
+        "scene_bypass": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "channels": {
+          "A": {
+            "type_id": 18,
+            "type": "USA MK IV Rhythm 1",
+            "drive": 7,
+            "bass": 5,
+            "mid": 3.6,
+            "treble": 6,
+            "master_volume": 5,
+            "depth": 0,
+            "sag": 1.07,
+            "presence": 4,
+            "negative_feedback": 10
+          },
+          "B": {
+            "type_id": 103,
+            "type": "Brit Silver",
+            "drive": 5,
+            "bass": 4,
+            "mid": 6.5,
+            "treble": 5.2,
+            "master_volume": 4,
+            "depth": 0,
+            "sag": 1.9,
+            "presence": 3,
+            "negative_feedback": 1.88
+          },
+          "C": {
+            "type_id": 24,
+            "type": "USA MK IV Lead Bright",
+            "drive": 6.7,
+            "bass": 1.5,
+            "mid": 6.6,
+            "treble": 5.81,
+            "master_volume": 4,
+            "depth": 0,
+            "sag": 1.07,
+            "presence": 4.3,
+            "negative_feedback": 10
+          },
+          "D": {
+            "type_id": 77,
+            "type": "USA MK IV Lead Mid",
+            "drive": 5,
+            "bass": 1,
+            "mid": 6.72,
+            "treble": 6.4,
+            "master_volume": 4,
+            "depth": 0,
+            "sag": 1.07,
+            "presence": 1,
+            "negative_feedback": 10
+          }
+        }
+      }
+    }
+  ],
+  "bodyDiff": [
+    {
+      "offset": 4630,
+      "before": 1,
+      "after": 2
+    }
+  ],
+  "rawHeaderDiff": [
+    {
+      "offset": 4,
+      "before": 59,
+      "after": 197
+    },
+    {
+      "offset": 5,
+      "before": 234,
+      "after": 138
+    }
+  ],
+  "dumpHeaderDiff": [],
+  "integrity": "both pass frames, CRC, footer and validation"
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "FM3 Sound Architect 2"
+  short_description: "FM3 kitarrisoundi kujundamise abiline"
+  default_prompt: "Kasuta $fm3-sound-architect-2, et aidata kujundada minu soovitud FM3 kitarrisoundi."
+
+policy:
+  allow_implicit_invocation: false

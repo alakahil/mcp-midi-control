@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-reverb-multi",
+  "reverbChannels": [
+    {
+      "channel": "A",
+      "type": "Chamber: Deep Chamber"
+    },
+    {
+      "channel": "B",
+      "type": "Cloud: Cirrocumulus"
+    },
+    {
+      "channel": "C",
+      "type": "Plate: Large Plate"
+    },
+    {
+      "channel": "D",
+      "type": "Spring: Vibra-King Custom"
+    }
+  ]
+}

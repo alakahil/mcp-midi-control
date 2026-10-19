@@ -1,0 +1,9 @@
+{
+  "kind": "FM3_FILTER_REA_LISA",
+  "version": "0.1.0",
+  "firmware": 13,
+  "planSha256": "ed27f1d6b4a6f605a3def86ad6896fd24d454f9eed67d15dc4c8215f153d447b",
+  "setupSha256": "72ce183e1abb881cc05a4cc7ccb96aefadef06dc9e581b8c5fc1f414efa67cc0",
+  "startSha256": "5be74c3f11b097732cb276c22b7c757470b3a8087660afb0888d6d43c022fc49",
+  "sourceEvidenceSha256": "97cf0a43cfa6d46d7fa4043ff074132df5691c9bdecbf2a645fd414796266699"
+}

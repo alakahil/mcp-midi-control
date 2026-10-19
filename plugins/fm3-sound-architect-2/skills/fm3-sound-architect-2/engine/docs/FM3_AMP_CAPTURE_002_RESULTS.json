@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-01",
+  "sourceSha256": "4fb335bcdccefb7f70b6a9af8a700e1f3a21a007dc967b8b187c07da81e30c8b",
+  "outsideAmpDifferences": [
+    {
+      "offset": 4622,
+      "base": 1,
+      "donor": 0
+    }
+  ],
+  "ignored": "Scene2 Amp channel A is not copied into generated presets",
+  "results": [
+    {
+      "model": "Double Verb Vibrato",
+      "sourceChannel": "A",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "integrityChecks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "generatedSha256": "e6bab8a19c9bf71bd3443e3770776433ee4a99fbdfe96cafa8d5db4ca7715394"
+    },
+    {
+      "model": "JR Blues",
+      "sourceChannel": "B",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "integrityChecks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "generatedSha256": "7cc62d885b075d1f4a5fd8060e5219518c474f641fceffdbc8a5a8dbf59b4c39"
+    },
+    {
+      "model": "Class-A 15W TB",
+      "sourceChannel": "C",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "integrityChecks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "generatedSha256": "fb79ee0f762c2ff0f5d8051a938f1016eaa7a7040ece2b434d1b5ea281896502"
+    },
+    {
+      "model": "Class-A 30W",
+      "sourceChannel": "D",
+      "targetChannel": "B",
+      "fullChannelIdentical": true,
+      "otherBodyBytesPreserved": true,
+      "integrityChecks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      },
+      "generatedSha256": "3903644404318dd1ad672a5d041f1fc1057aeea531263cdbfb09ead5b4148ec4"
+    }
+  ],
+  "hardware": "User-supplied source export; these four generated combinations not separately hardware-confirmed"
+}

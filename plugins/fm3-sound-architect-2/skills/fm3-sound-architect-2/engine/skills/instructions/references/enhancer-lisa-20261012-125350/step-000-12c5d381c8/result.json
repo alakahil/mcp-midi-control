@@ -1,0 +1,84 @@
+{
+  "index": 0,
+  "step": {
+    "id": "001-type",
+    "kind": "type",
+    "stage": "types",
+    "label": "Vali Type Classic",
+    "channel": "A",
+    "typeName": "Classic",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "001-type",
+      "kind": "type",
+      "stage": "types",
+      "label": "Vali Type Classic",
+      "channel": "A",
+      "typeName": "Classic",
+      "allowUnchanged": true
+    },
+    "previousSha256": "355898b615b52f9bff56f39c4b24ac8bbe9f081e94188ee7764f157c0e158d96",
+    "syxSha256": "1db13011e2fc019ec859cd9928596930a60eb822339c45d9a131540caa8a19d7",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 7518,
+        "before": 0,
+        "after": 1
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, candidate PID mappings, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "typeName": "Classic",
+    "controlsConfirmed": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 122,
+    "matchedWords": 48,
+    "wordsPerChannel": 12,
+    "channels": 4,
+    "syxSha256": "1db13011e2fc019ec859cd9928596930a60eb822339c45d9a131540caa8a19d7",
+    "bodySha256": "c7af9c17c74deded8923950e95a90245725aa9398e5a6a42d4231d2fc14339d1",
+    "rawRxSha256": "12dfbc577b1cb0680c16918b4121fcd4c1a2f5d0a4fef57400487d5d13b583d8",
+    "frameLengths": [
+      12,
+      154,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

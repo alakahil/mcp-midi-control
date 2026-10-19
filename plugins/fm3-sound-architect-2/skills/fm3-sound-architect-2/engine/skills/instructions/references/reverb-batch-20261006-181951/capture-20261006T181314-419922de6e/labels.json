@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 49,
+    "name": "Room: Ambience",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 50,
+    "name": "Room: Drum Room",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 51,
+    "name": "Room: Hallway",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 52,
+    "name": "Room: Huge Room",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

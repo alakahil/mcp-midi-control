@@ -1,0 +1,274 @@
+{
+  "date": "2026-10-12",
+  "pluginCandidateVersion": "0.73.0",
+  "publishedVersionObserved": "0.71.0",
+  "publishedReleaseObserved": "pluginrel_6accb294144c819188915fe15499350c",
+  "reaVersion": "6.4.0",
+  "reaSourceCommitReviewed": "fe4b94a661054cef7603a3f07aae71f1df0a701a",
+  "npmIntegrity": "sha512-Vj1zWfSlna5bphGoaoI/TcVBuYvze9u+OyPC3Shz8YkBqaCTqB4COnnRoX7XDwMpwI24ZlFEel2yEj0k8LTWEQ==",
+  "adoption": "source-import workflow active; application/native analysis blocked or not yet run",
+  "sourceAudit": {
+    "status": "source-import-verified",
+    "authority": "historical-reference",
+    "inventoryState": "partial",
+    "sourceFiles": 10,
+    "allSourceDigestsVerified": true,
+    "parseFailures": 0,
+    "relationships": {
+      "internal": 9,
+      "external": 24
+    },
+    "rootSha256": "4469fd3347c79934823ea4dbc149d7266acab02af03c72190edd441abbebdfb8",
+    "limitations": [
+      "Path identity is revalidated around operations; Node lacks portable descriptor-relative openat traversal, so a syscall-boundary pathname race remains."
+    ],
+    "meaning": "Static source/import map only. HistoricalSourceGraph authority is preserved; not runtime, hardware or parameter-scale proof."
+  },
+  "independentFilterCandidateCheck": {
+    "authority": "independent offline numerical cross-check; not REA decompilation",
+    "registrySha256": "02cc7820c37b19b9f5983023117c7e8f0108b73705d32d09f3eecc01ec0aa4ac",
+    "points": [
+      {
+        "index": 0,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "frequencyHz",
+        "targetValue": 500,
+        "displayValue": 500.0,
+        "measuredRaw": 30538,
+        "candidateRaw": 30538,
+        "matches": true
+      },
+      {
+        "index": 1,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "frequencyHz",
+        "targetValue": 1000,
+        "displayValue": 1000.0,
+        "measuredRaw": 37113,
+        "candidateRaw": 37113,
+        "matches": true
+      },
+      {
+        "index": 2,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "frequencyHz",
+        "targetValue": 2000,
+        "displayValue": 1999.9,
+        "measuredRaw": 43689,
+        "candidateRaw": 43689,
+        "matches": true
+      },
+      {
+        "index": 4,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "q",
+        "targetValue": 1.4,
+        "displayValue": 1.4,
+        "measuredRaw": 37555,
+        "candidateRaw": 37555,
+        "matches": true
+      },
+      {
+        "index": 5,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "q",
+        "targetValue": 2.0,
+        "displayValue": 2.0,
+        "measuredRaw": 42631,
+        "candidateRaw": 42631,
+        "matches": true
+      },
+      {
+        "index": 6,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "gainDb",
+        "targetValue": -3,
+        "displayValue": -3.0,
+        "measuredRaw": 27852,
+        "candidateRaw": 27852,
+        "matches": true
+      },
+      {
+        "index": 7,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "gainDb",
+        "targetValue": 3,
+        "displayValue": 3.0,
+        "measuredRaw": 37682,
+        "candidateRaw": 37682,
+        "matches": true
+      },
+      {
+        "index": 8,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "gainDb",
+        "targetValue": 0,
+        "displayValue": 0.0,
+        "measuredRaw": 32767,
+        "candidateRaw": 32767,
+        "matches": true
+      },
+      {
+        "index": 9,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "levelDb",
+        "targetValue": -6,
+        "displayValue": -6.0,
+        "measuredRaw": 48495,
+        "candidateRaw": 48495,
+        "matches": true
+      },
+      {
+        "index": 10,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "levelDb",
+        "targetValue": 0,
+        "displayValue": 0.0,
+        "measuredRaw": 52427,
+        "candidateRaw": 52427,
+        "matches": true
+      },
+      {
+        "index": 11,
+        "channel": "C",
+        "type": "Peaking",
+        "field": "levelDb",
+        "targetValue": 3,
+        "displayValue": 3.0,
+        "measuredRaw": 54393,
+        "candidateRaw": 54393,
+        "matches": true
+      },
+      {
+        "index": 12,
+        "channel": "A",
+        "type": "High-Pass",
+        "field": "frequencyHz",
+        "targetValue": 80,
+        "displayValue": 80.0,
+        "measuredRaw": 13152,
+        "candidateRaw": 13152,
+        "matches": true
+      },
+      {
+        "index": 13,
+        "channel": "A",
+        "type": "High-Pass",
+        "field": "frequencyHz",
+        "targetValue": 120,
+        "displayValue": 120.0,
+        "measuredRaw": 16998,
+        "candidateRaw": 16998,
+        "matches": true
+      },
+      {
+        "index": 14,
+        "channel": "A",
+        "type": "High-Pass",
+        "field": "frequencyHz",
+        "targetValue": 250,
+        "displayValue": 250.0,
+        "measuredRaw": 23962,
+        "candidateRaw": 23962,
+        "matches": true
+      },
+      {
+        "index": 15,
+        "channel": "B",
+        "type": "Low-Pass",
+        "field": "frequencyHz",
+        "targetValue": 4000,
+        "displayValue": 3999.9,
+        "measuredRaw": 50265,
+        "candidateRaw": 50265,
+        "matches": true
+      },
+      {
+        "index": 16,
+        "channel": "B",
+        "type": "Low-Pass",
+        "field": "frequencyHz",
+        "targetValue": 6000,
+        "displayValue": 6000.1,
+        "measuredRaw": 54112,
+        "candidateRaw": 54112,
+        "matches": true
+      },
+      {
+        "index": 17,
+        "channel": "B",
+        "type": "Low-Pass",
+        "field": "frequencyHz",
+        "targetValue": 8000,
+        "displayValue": 7999.9,
+        "measuredRaw": 56841,
+        "candidateRaw": 56841,
+        "matches": true
+      }
+    ],
+    "matched": 17,
+    "total": 17,
+    "encodingCandidate": "round(normalized target * 65534); log frequency/Q, linear Gain/Level",
+    "writePermissionChanged": false,
+    "limitations": [
+      "These are previously measured points; no new hardware evidence.",
+      "Matching these points does not validate endpoints, interpolation, other types/channels or skipped Q=0.707.",
+      "Production Filter writes remain restricted to the existing exact measured values."
+    ]
+  },
+  "applicationAnalysis": {
+    "status": "failed",
+    "exitCode": 1,
+    "code": "capability_unavailable",
+    "message": "Linux process ownership inspection requires a procps-compatible ps on REA's PATH before launching a child: Command failed: ps -axo pid=,ppid=,pgid=,uid=,stat=,command=\nfatal library error, lookup self\n",
+    "evidenceId": null,
+    "statistics": null,
+    "limitations": [],
+    "partialObservationIsSuccess": false
+  },
+  "nativeAnalysis": {
+    "status": "not-run",
+    "targetAvailable": false,
+    "engineConfigured": false
+  },
+  "mcpConnected": false,
+  "checks": {
+    "sourceHashesPreserved": true,
+    "sourceGraphTamperRejected": true,
+    "insidePluginOutputRejected": true,
+    "deepFailurePreservedAsFailure": true,
+    "filterRegressionPassed": true,
+    "filterDeviceBodiesReplayed": 17,
+    "filterInvalidRequestsRejected": 22,
+    "newWriteCapabilitiesEnabled": false,
+    "hardwareMeasurementsRepeated": false
+  },
+  "rawEvidence": {
+    "path": "skills/instructions/references/rea-pilot-20261012.json.gz",
+    "sha256": "485424a27673211c7e65d9fa5268c039f1a7194f70946cc2767e8d7cd810613b",
+    "gzipBytes": 29241
+  },
+  "package": {
+    "files": 2872,
+    "directories": 700,
+    "conservativeEntries": 3573,
+    "releaseBudget": 4000,
+    "headroomToPlatformLimit": 1427,
+    "retained0720FilesChanged": [
+      ".codex-plugin/plugin.json",
+      "plugin.json",
+      "skills/instructions/SKILL.md"
+    ],
+    "generatorAndMeasuredEvidenceUnchanged": true
+  }
+}

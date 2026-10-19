@@ -1,0 +1,244 @@
+{
+  "date": "2026-10-01",
+  "url": "https://www.fractalaudio.com/downloads/firmware-presets/fm3/10p0/FM3_Factory_Presets_10p0.zip",
+  "archiveSha256": "4da0ebf5f641e63c9cb900741fe34b001736116ac31f4eb51effc9d72ddb1f9f",
+  "presetsDecoded": 384,
+  "distinctModels": 273,
+  "sourcePresetFormat": "0x013e",
+  "targetPresetFormat": "0x0146",
+  "decision": "Not copied into current-format presets: firmware conversion and dependency validation missing",
+  "missingInFactoryArchive": [
+    {
+      "id": 12,
+      "name": "1987X Normal"
+    },
+    {
+      "id": 21,
+      "name": "USA MK IIC+"
+    },
+    {
+      "id": 23,
+      "name": "USA MK IV Lead"
+    },
+    {
+      "id": 46,
+      "name": "Fryette D60 Less"
+    },
+    {
+      "id": 63,
+      "name": "Cameron CCV 1A"
+    },
+    {
+      "id": 65,
+      "name": "SV Bass 2"
+    },
+    {
+      "id": 67,
+      "name": "FAS Brown"
+    },
+    {
+      "id": 90,
+      "name": "Dizzy V4 Blue 2"
+    },
+    {
+      "id": 91,
+      "name": "Dizzy V4 Blue 3"
+    },
+    {
+      "id": 105,
+      "name": "FAS Crunch"
+    },
+    {
+      "id": 112,
+      "name": "Gibtone Scout"
+    },
+    {
+      "id": 132,
+      "name": "FAS Modern II"
+    },
+    {
+      "id": 137,
+      "name": "Thordendal Modern"
+    },
+    {
+      "id": 143,
+      "name": "Comet 60"
+    },
+    {
+      "id": 157,
+      "name": "Mr Z MZ-8"
+    },
+    {
+      "id": 169,
+      "name": "USA Bass 400 2"
+    },
+    {
+      "id": 170,
+      "name": "Citrus Bass 200"
+    },
+    {
+      "id": 171,
+      "name": "FAS Bass"
+    },
+    {
+      "id": 173,
+      "name": "FAS Brootalz"
+    },
+    {
+      "id": 192,
+      "name": "1959SLP Normal"
+    },
+    {
+      "id": 195,
+      "name": "FAS Modern III"
+    },
+    {
+      "id": 198,
+      "name": "6G4 Super"
+    },
+    {
+      "id": 215,
+      "name": "USA MK IIC+ Deep"
+    },
+    {
+      "id": 221,
+      "name": "JMPre-1 OD2"
+    },
+    {
+      "id": 231,
+      "name": "PVH 6160+ Clean"
+    },
+    {
+      "id": 233,
+      "name": "Class-A 30W Bright"
+    },
+    {
+      "id": 262,
+      "name": "Friedman HBE C45"
+    },
+    {
+      "id": 265,
+      "name": "FAS Skull Crusher"
+    },
+    {
+      "id": 271,
+      "name": "Matchbox D-30 EF86"
+    },
+    {
+      "id": 276,
+      "name": "PVH 6160+ Clean Bright"
+    },
+    {
+      "id": 286,
+      "name": "Friedman BE C45"
+    },
+    {
+      "id": 287,
+      "name": "Friedman BE 2010"
+    },
+    {
+      "id": 288,
+      "name": "Friedman HBE 2010"
+    },
+    {
+      "id": 289,
+      "name": "FAS Buttery"
+    },
+    {
+      "id": 294,
+      "name": "JMPre-1 Clean1 Bass Shift"
+    },
+    {
+      "id": 295,
+      "name": "JMPre-1 Clean2"
+    },
+    {
+      "id": 296,
+      "name": "JMPre-1 Clean2 Bass Shift"
+    },
+    {
+      "id": 297,
+      "name": "Diamante Fire"
+    },
+    {
+      "id": 300,
+      "name": "Plexi 50W 6CA7 Jumped"
+    },
+    {
+      "id": 301,
+      "name": "Herbie MK3"
+    },
+    {
+      "id": 302,
+      "name": "59 Bassguy RI Jumped"
+    },
+    {
+      "id": 305,
+      "name": "Revv Gen Purple 3"
+    },
+    {
+      "id": 306,
+      "name": "Revv Gen Red 1"
+    },
+    {
+      "id": 308,
+      "name": "Revv Gen Red 3"
+    },
+    {
+      "id": 309,
+      "name": "Revv Gen Green 1"
+    },
+    {
+      "id": 310,
+      "name": "Revv Gen Green 2"
+    },
+    {
+      "id": 311,
+      "name": "Revv Gen Green 3"
+    },
+    {
+      "id": 312,
+      "name": "JS410 Lead Green"
+    },
+    {
+      "id": 313,
+      "name": "5153 100W Stealth Blue"
+    },
+    {
+      "id": 315,
+      "name": "5153 100W Stealth Green"
+    },
+    {
+      "id": 316,
+      "name": "5153 100W Stealth Red"
+    },
+    {
+      "id": 318,
+      "name": "Brit 800 2204 Low"
+    },
+    {
+      "id": 319,
+      "name": "Brit 800 2203 Low"
+    },
+    {
+      "id": 321,
+      "name": "USA MK V Red IIC+ Bright"
+    },
+    {
+      "id": 323,
+      "name": "USA MK V Red MKIV Bright"
+    },
+    {
+      "id": 325,
+      "name": "USA MK V Red XT Bright"
+    },
+    {
+      "id": 329,
+      "name": "Supro Black Magick"
+    },
+    {
+      "id": 330,
+      "name": "Deluxe 6G3"
+    }
+  ]
+}

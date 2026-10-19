@@ -1,0 +1,1923 @@
+[
+  {
+    "id": "001-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 1 Type Peaking 2. Muuda ainult: Band 1 Type → Peaking 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 15,
+        "value": "Peaking 2",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "002-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 1 Type Shelving 2. Muuda ainult: Band 1 Type → Shelving 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 15,
+        "value": "Shelving 2",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "003-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 1 Type Blocking. Muuda ainult: Band 1 Type → Blocking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 15,
+        "value": "Blocking",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "004-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 1 Slope → 6 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 30,
+        "value": 6,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "005-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 1 Slope → 12 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 30,
+        "value": 12,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "006-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 1 Slope → 18 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 30,
+        "value": 18,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "007-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 1 Slope → 24 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 30,
+        "value": 24,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "008-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 1 Slope → 30 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 30,
+        "value": 30,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "009-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 1 Slope → 36 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 30,
+        "value": 36,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "010-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 1 Type Shelving. Muuda ainult: Band 1 Type → Shelving . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 15,
+        "value": "Shelving",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "011-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 1 Type Peaking. Muuda ainult: Band 1 Type → Peaking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 15,
+        "value": "Peaking",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "012-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 2 Type Peaking 2. Muuda ainult: Band 2 Type → Peaking 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 16,
+        "value": "Peaking 2",
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "013-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 2 Type Shelving. Muuda ainult: Band 2 Type → Shelving . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 16,
+        "value": "Shelving",
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "014-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 2 Type Shelving 2. Muuda ainult: Band 2 Type → Shelving 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 16,
+        "value": "Shelving 2",
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "015-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 2 Type Peaking. Muuda ainult: Band 2 Type → Peaking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 16,
+        "value": "Peaking",
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "016-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 3 Type Peaking 2. Muuda ainult: Band 3 Type → Peaking 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 17,
+        "value": "Peaking 2",
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "017-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 3 Type Peaking. Muuda ainult: Band 3 Type → Peaking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 17,
+        "value": "Peaking",
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "018-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Peaking 2. Muuda ainult: Band 4 Type → Peaking 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Peaking 2",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "019-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Shelving. Muuda ainult: Band 4 Type → Shelving . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Shelving",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "020-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Shelving 2. Muuda ainult: Band 4 Type → Shelving 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Shelving 2",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "021-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Peaking. Muuda ainult: Band 4 Type → Peaking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Peaking",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "022-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 5 Type Peaking 2. Muuda ainult: Band 5 Type → Peaking 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 19,
+        "value": "Peaking 2",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "023-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 5 Type Shelving 2. Muuda ainult: Band 5 Type → Shelving 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 19,
+        "value": "Shelving 2",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "024-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 5 Type Blocking. Muuda ainult: Band 5 Type → Blocking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 19,
+        "value": "Blocking",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "025-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 5 Slope → 6 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 31,
+        "value": 6,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "026-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 5 Slope → 12 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 31,
+        "value": 12,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "027-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 5 Slope → 18 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 31,
+        "value": 18,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "028-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 5 Slope → 24 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 31,
+        "value": 24,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "029-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 5 Slope → 30 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 31,
+        "value": 30,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "030-types",
+    "stage": "types",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Blocking korral on Gain-nupu asemel Slope; puuduv valik jäta s-ga vahele. Muuda ainult: Band 5 Slope → 36 dB/oct. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Slope",
+        "candidatePid": 31,
+        "value": 36,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB/oct"
+      }
+    ]
+  },
+  {
+    "id": "031-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 5 Type Shelving. Muuda ainult: Band 5 Type → Shelving . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 19,
+        "value": "Shelving",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "032-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 5 Type Peaking. Muuda ainult: Band 5 Type → Peaking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 19,
+        "value": "Peaking",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "033-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 1 Frequency → 300 Hz. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 0,
+        "value": 300,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      }
+    ]
+  },
+  {
+    "id": "034-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 2 Frequency → 750 Hz. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": 750,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      }
+    ]
+  },
+  {
+    "id": "035-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 4 Frequency → 2500 Hz. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 3,
+        "value": 2500,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      }
+    ]
+  },
+  {
+    "id": "036-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 5 Frequency → 6000 Hz. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 4,
+        "value": 6000,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      }
+    ]
+  },
+  {
+    "id": "037-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Frequency → miinimumi (nupp lõpuni vasakule); Band 2 Frequency → miinimumi (nupp lõpuni vasakule); Band 3 Frequency → miinimumi (nupp lõpuni vasakule); Band 4 Frequency → miinimumi (nupp lõpuni vasakule); Band 5 Frequency → miinimumi (nupp lõpuni vasakule). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 0,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 2,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 3,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 4,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "Hz"
+      }
+    ]
+  },
+  {
+    "id": "038-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Frequency → maksimumi (nupp lõpuni paremale); Band 2 Frequency → maksimumi (nupp lõpuni paremale); Band 3 Frequency → maksimumi (nupp lõpuni paremale); Band 4 Frequency → maksimumi (nupp lõpuni paremale); Band 5 Frequency → maksimumi (nupp lõpuni paremale). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 0,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 2,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 3,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 4,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "Hz"
+      }
+    ]
+  },
+  {
+    "id": "039-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Frequency → 100 Hz; Band 2 Frequency → 300 Hz; Band 3 Frequency → 1500 Hz; Band 4 Frequency → 3300 Hz; Band 5 Frequency → 9000 Hz. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 0,
+        "value": 100,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": 300,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 2,
+        "value": 1500,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 3,
+        "value": 3300,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 4,
+        "value": 9000,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      }
+    ]
+  },
+  {
+    "id": "040-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Frequency → 1000 Hz; Band 2 Frequency → 5000 Hz; Band 3 Frequency → 7000 Hz; Band 4 Frequency → 8000 Hz; Band 5 Frequency → 16000 Hz. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Frequency",
+        "candidatePid": 0,
+        "value": 1000,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 1,
+        "value": 5000,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 2,
+        "value": 7000,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 3,
+        "value": 8000,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      },
+      {
+        "parameter": "Frequency",
+        "candidatePid": 4,
+        "value": 16000,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "Hz"
+      }
+    ]
+  },
+  {
+    "id": "041-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 1 Q → 1.4 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 1.4,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "042-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 2 Q → 1.4 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": 1.4,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "043-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 4 Q → 1.4 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": 1.4,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "044-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 5 Q → 1.4 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": 1.4,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "045-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Q → miinimumi (nupp lõpuni vasakule); Band 2 Q → miinimumi (nupp lõpuni vasakule); Band 3 Q → miinimumi (nupp lõpuni vasakule); Band 4 Q → miinimumi (nupp lõpuni vasakule); Band 5 Q → miinimumi (nupp lõpuni vasakule). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "046-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Q → maksimumi (nupp lõpuni paremale); Band 2 Q → maksimumi (nupp lõpuni paremale); Band 3 Q → maksimumi (nupp lõpuni paremale); Band 4 Q → maksimumi (nupp lõpuni paremale); Band 5 Q → maksimumi (nupp lõpuni paremale). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "047-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Q → 0.707 ; Band 2 Q → 0.707 ; Band 3 Q → 0.707 ; Band 4 Q → 0.707 ; Band 5 Q → 0.707 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 0.707,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": 0.707,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": 0.707,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": 0.707,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": 0.707,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "048-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Q → 4 ; Band 2 Q → 4 ; Band 3 Q → 4 ; Band 4 Q → 4 ; Band 5 Q → 4 . Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": 4,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": 4,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": 4,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": 4,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": 4,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "049-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 1 Gain → 3 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": 3,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "050-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 2 Gain → 3 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": 3,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "051-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 4 Gain → 3 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": 3,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "052-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Ühe seni mõõtmata riba juhi aadressikontroll. Muuda ainult: Band 5 Gain → 3 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": 3,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "053-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Gain → miinimumi (nupp lõpuni vasakule); Band 2 Gain → miinimumi (nupp lõpuni vasakule); Band 3 Gain → miinimumi (nupp lõpuni vasakule); Band 4 Gain → miinimumi (nupp lõpuni vasakule); Band 5 Gain → miinimumi (nupp lõpuni vasakule). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "054-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Gain → maksimumi (nupp lõpuni paremale); Band 2 Gain → maksimumi (nupp lõpuni paremale); Band 3 Gain → maksimumi (nupp lõpuni paremale); Band 4 Gain → maksimumi (nupp lõpuni paremale); Band 5 Gain → maksimumi (nupp lõpuni paremale). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "055-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Gain → -6 dB; Band 2 Gain → -6 dB; Band 3 Gain → -6 dB; Band 4 Gain → -6 dB; Band 5 Gain → -6 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": -6,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": -6,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": -6,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": -6,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": -6,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "056-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Gain → 6 dB; Band 2 Gain → 6 dB; Band 3 Gain → 6 dB; Band 4 Gain → 6 dB; Band 5 Gain → 6 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": 6,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": 6,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": 6,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": 6,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": 6,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "057-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ ploki Level; lõpus 0 dB taastamine. Muuda ainult: Level → -6 dB. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Level",
+        "candidatePid": 20,
+        "value": -6,
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "058-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ ploki Level; lõpus 0 dB taastamine. Muuda ainult: Level → miinimumi (nupp lõpuni vasakule). Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Level",
+        "candidatePid": 20,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "059-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ ploki Level; lõpus 0 dB taastamine. Muuda ainult: Level → maksimumi (nupp lõpuni paremale). Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Level",
+        "candidatePid": 20,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "060-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ ploki Level; lõpus 0 dB taastamine. Muuda ainult: Level → 0 dB. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Level",
+        "candidatePid": 20,
+        "value": 0,
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "061-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ Balance; sisesta ekraanil nähtav arv. Muuda ainult: Balance → miinimumi (nupp lõpuni vasakule). Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Balance",
+        "candidatePid": 21,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "minimum",
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "062-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ Balance; sisesta ekraanil nähtav arv. Muuda ainult: Balance → maksimumi (nupp lõpuni paremale). Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Balance",
+        "candidatePid": 21,
+        "value": null,
+        "band": null,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "063-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. PEQ Balance; sisesta ekraanil nähtav arv. Muuda ainult: Balance → 0 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Balance",
+        "candidatePid": 21,
+        "value": 0,
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "064-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Bypass Mode; kui sellist valikut pole, s ja täpne nähtav valikuloend. Muuda ainult: Bypass Mode → Mute . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Bypass Mode",
+        "candidatePid": 22,
+        "value": "Mute",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "065-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Bypass Mode; kui sellist valikut pole, s ja täpne nähtav valikuloend. Muuda ainult: Bypass Mode → Thru . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Bypass Mode",
+        "candidatePid": 22,
+        "value": "Thru",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  {
+    "id": "066-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 1 Solo (S1) nupp ON; teiste ribade Solo peab olema OFF. Muuda ainult: Band 1 Solo → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 25,
+        "value": "ON",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "067-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 1 Solo (S1) nupp OFF; teiste ribade Solo peab olema OFF. Muuda ainult: Band 1 Solo → OFF . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 25,
+        "value": "OFF",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "068-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 2 Solo (S2) nupp ON; teiste ribade Solo peab olema OFF. Muuda ainult: Band 2 Solo → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 26,
+        "value": "ON",
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "069-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 2 Solo (S2) nupp OFF; teiste ribade Solo peab olema OFF. Muuda ainult: Band 2 Solo → OFF . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 26,
+        "value": "OFF",
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "070-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 3 Solo (S3) nupp ON; teiste ribade Solo peab olema OFF. Muuda ainult: Band 3 Solo → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 27,
+        "value": "ON",
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "071-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 3 Solo (S3) nupp OFF; teiste ribade Solo peab olema OFF. Muuda ainult: Band 3 Solo → OFF . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 27,
+        "value": "OFF",
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "072-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 4 Solo (S4) nupp ON; teiste ribade Solo peab olema OFF. Muuda ainult: Band 4 Solo → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 28,
+        "value": "ON",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "073-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 4 Solo (S4) nupp OFF; teiste ribade Solo peab olema OFF. Muuda ainult: Band 4 Solo → OFF . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 28,
+        "value": "OFF",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "074-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 5 Solo (S5) nupp ON; teiste ribade Solo peab olema OFF. Muuda ainult: Band 5 Solo → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 29,
+        "value": "ON",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "075-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Band 5 Solo (S5) nupp OFF; teiste ribade Solo peab olema OFF. Muuda ainult: Band 5 Solo → OFF . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Solo",
+        "candidatePid": 29,
+        "value": "OFF",
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "076-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Scene Ignore ON. Muuda ainult: Scene Ignore → ON . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Scene Ignore",
+        "candidatePid": 32,
+        "value": "ON",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "mirrored": true
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "077-common",
+    "stage": "common",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Scene Ignore OFF. Muuda ainult: Scene Ignore → OFF . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Scene Ignore",
+        "candidatePid": 32,
+        "value": "OFF",
+        "band": null,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "mirrored": true
+      }
+    ],
+    "allowUnchanged": true
+  },
+  {
+    "id": "078-channels",
+    "stage": "channels",
+    "kind": "copy-channel",
+    "channel": "B",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal B. Kopeeri ainult PEQ kanali A kõik seaded kanalisse B FM3-Editi kanalikopeerimisega. Seejärel vali PEQ kanal B. Ära kopeeri tervet presetit ega vaheta Scene 2. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [],
+    "sourceChannel": "A"
+  },
+  {
+    "id": "079-channels",
+    "stage": "channels",
+    "kind": "controls",
+    "channel": "B",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal B. Sõltumatu sihtkanali kontroll. Muuda ainult: Band 3 Gain → -3 dB. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": -3,
+        "band": 3,
+        "channel": "B",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "080-channels",
+    "stage": "channels",
+    "kind": "copy-channel",
+    "channel": "C",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal C. Kopeeri ainult PEQ kanali A kõik seaded kanalisse C FM3-Editi kanalikopeerimisega. Seejärel vali PEQ kanal C. Ära kopeeri tervet presetit ega vaheta Scene 2. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [],
+    "sourceChannel": "A"
+  },
+  {
+    "id": "081-channels",
+    "stage": "channels",
+    "kind": "controls",
+    "channel": "C",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal C. Sõltumatu sihtkanali kontroll. Muuda ainult: Band 3 Gain → 0 dB. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": 0,
+        "band": 3,
+        "channel": "C",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "082-channels",
+    "stage": "channels",
+    "kind": "copy-channel",
+    "channel": "D",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal D. Kopeeri ainult PEQ kanali A kõik seaded kanalisse D FM3-Editi kanalikopeerimisega. Seejärel vali PEQ kanal D. Ära kopeeri tervet presetit ega vaheta Scene 2. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [],
+    "sourceChannel": "A"
+  },
+  {
+    "id": "083-channels",
+    "stage": "channels",
+    "kind": "controls",
+    "channel": "D",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal D. Sõltumatu sihtkanali kontroll. Muuda ainult: Band 3 Gain → 3 dB. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": 3,
+        "band": 3,
+        "channel": "D",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  {
+    "id": "084-channels",
+    "stage": "channels",
+    "kind": "select-channel",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali ainult PEQ kanal A; ära muuda parameetreid. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": []
+  }
+]

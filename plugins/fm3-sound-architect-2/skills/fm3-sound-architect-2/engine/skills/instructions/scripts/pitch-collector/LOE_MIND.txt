@@ -1,0 +1,21 @@
+FM3 PITCH KOGUJA — firmware 13, 16 tüüpi
+Vajalik Python3 ja Node. Paki ZIP lahti Downloads-kausta.
+python3 ~/Downloads/FM3_PITCH_COLLECTOR/FM3_PITCH_BATCH.py --port /dev/cu.usbmodem211104
+
+1. Jäta seadmesse enda FM3_PITCH_BASELINE.syx seisund (Pitch1 A Dual Detune).
+Kui muutsid seadeid, impordi kaasasolev baseline.syx tööpuhvrisse.
+2. Sulge FM3-Edit/Fractal-Bot. Kinnita terminalis jah: üks algseisundi GET.
+3. Ava FM3-Edit. Koguja näitab järgmisi A–D tüüpe. Muuda ainult Type.
+Ära taasta Type-valikuga automaatselt muutunud parameetreid.
+4. Ekspordi terve preset, lohista SYX terminali. Sulge FM3-Edit ja kinnita jah.
+Koguja teeb ühe GET-i ja võrdleb kõiki 456 Pitch-sõna ekspordiga.
+5. Ava Edit uuesti ja jätka. Lõpus laadi üks tulemuste ZIP vestlusse.
+
+q = ZIP ja lõpeta. Sama käsk jätkab kontrollitud tulemustest.
+Säilita koguja kaust koos FM3_PITCH_SESSION alamkaustaga.
+--export-only teeb ZIP-i ilma seadmega ühenduseta.
+Vea korral automaatset korduspäringut ei tehta; paranda põhjus ja käivita uuesti.
+SET/SAVE/Store käske ei saadeta. Muud plokid ja stseen jäta samaks;
+ära liiguta expression-pedaali. Viimases rühmas nimetamata kanal jäta samaks.
+Tüübinimed pärinevad sinu pildilt; ekraanijärjekord ei ole binaarne Type ID.
+Algse GET vastuse ja plokipaigutuse riistvarakontroll on veel ootel.

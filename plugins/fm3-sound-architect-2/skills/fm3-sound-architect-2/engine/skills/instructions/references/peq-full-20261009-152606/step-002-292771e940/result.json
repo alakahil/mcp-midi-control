@@ -1,0 +1,125 @@
+{
+  "index": 2,
+  "step": {
+    "id": "003-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 1 Type Blocking. Muuda ainult: Band 1 Type → Blocking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 15,
+        "value": "Blocking",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 2,
+    "step": {
+      "id": "003-types",
+      "stage": "types",
+      "kind": "type",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 1 Type Blocking. Muuda ainult: Band 1 Type → Blocking . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Type",
+          "candidatePid": 15,
+          "value": "Blocking",
+          "band": 1,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "d7c9731f2a38eeb703602dd82a5384e782ddb091df590e480d875a5eb14de2bd",
+    "syxSha256": "d55eb57086e2e76adb0f3ca2eacb23969a8ac1472b8bbcd1b1a2d3eb640caaeb",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 15,
+        "offset": 8764,
+        "before": 3,
+        "after": 2
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Type",
+        "candidatePid": 15,
+        "value": "Blocking",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 2
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Type",
+        "candidatePid": 15,
+        "value": "Blocking",
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": "Blocking"
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "d55eb57086e2e76adb0f3ca2eacb23969a8ac1472b8bbcd1b1a2d3eb640caaeb",
+    "bodySha256": "3a27aa79191cda16f186d7cad10af11778bf81d92ad54d108f1e3c0415a59ecc",
+    "rawRxSha256": "91f86ffda79d3ae53e6c0c51fb454cd461fcf192ffeea5a3be6151af9ee729e6",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

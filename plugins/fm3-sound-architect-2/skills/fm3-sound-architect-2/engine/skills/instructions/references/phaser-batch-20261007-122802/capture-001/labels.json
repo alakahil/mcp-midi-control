@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 1,
+    "name": "Barber Pole",
+    "binaryId": 7,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 2,
+    "name": "Block 90",
+    "binaryId": 4,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 3,
+    "name": "Borg Phaser",
+    "binaryId": 13,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 4,
+    "name": "Classic Vibe",
+    "binaryId": 5,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

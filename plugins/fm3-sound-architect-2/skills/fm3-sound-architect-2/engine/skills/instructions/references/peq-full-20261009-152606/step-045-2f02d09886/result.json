@@ -1,0 +1,313 @@
+{
+  "index": 45,
+  "step": {
+    "id": "046-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Q → maksimumi (nupp lõpuni paremale); Band 2 Q → maksimumi (nupp lõpuni paremale); Band 3 Q → maksimumi (nupp lõpuni paremale); Band 4 Q → maksimumi (nupp lõpuni paremale); Band 5 Q → maksimumi (nupp lõpuni paremale). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 45,
+    "step": {
+      "id": "046-numeric",
+      "stage": "numeric",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vii selle juhi kõik viis riba ekraani tegeliku piirväärtuseni; sisesta pärast iga riba tegelik näit. Muuda ainult: Band 1 Q → maksimumi (nupp lõpuni paremale); Band 2 Q → maksimumi (nupp lõpuni paremale); Band 3 Q → maksimumi (nupp lõpuni paremale); Band 4 Q → maksimumi (nupp lõpuni paremale); Band 5 Q → maksimumi (nupp lõpuni paremale). Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Q",
+          "candidatePid": 5,
+          "value": null,
+          "band": 1,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 6,
+          "value": null,
+          "band": 2,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 7,
+          "value": null,
+          "band": 3,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 8,
+          "value": null,
+          "band": 4,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": ""
+        },
+        {
+          "parameter": "Q",
+          "candidatePid": 9,
+          "value": null,
+          "band": 5,
+          "channel": "A",
+          "endpoint": "maximum",
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "8849135e4e53ae41b27a9bec362c557c9a584569e696de6fba6fdb520d27a34c",
+    "syxSha256": "77a7e06c606d8177cf949649becb8396fc482f581b348edb894e6cc2e740e04c",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 5,
+        "offset": 8744,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 8746,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 7,
+        "offset": 8748,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 8,
+        "offset": 8750,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 9,
+        "offset": 8752,
+        "before": 0,
+        "after": 65534
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "",
+        "raw": 65534
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "",
+        "raw": 65534
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "",
+        "raw": 65534
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "",
+        "raw": 65534
+      },
+      {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": "",
+        "raw": 65534
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 5,
+        "value": null,
+        "band": 1,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      "displayValue": 10.0
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 6,
+        "value": null,
+        "band": 2,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      "displayValue": 10.0
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 7,
+        "value": null,
+        "band": 3,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      "displayValue": 10.0
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 8,
+        "value": null,
+        "band": 4,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      "displayValue": 10.0
+    },
+    {
+      "control": {
+        "parameter": "Q",
+        "candidatePid": 9,
+        "value": null,
+        "band": 5,
+        "channel": "A",
+        "endpoint": "maximum",
+        "unit": ""
+      },
+      "displayValue": 10.0
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "77a7e06c606d8177cf949649becb8396fc482f581b348edb894e6cc2e740e04c",
+    "bodySha256": "2fc8e149240deded03d0fe973e6e0d98733267ae2268911c309531819c9a8806",
+    "rawRxSha256": "345097014ac54bdbd19abdef5ce653e77d80a92d968b28d742494370a53b7c28",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

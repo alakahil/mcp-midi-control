@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 41,
+    "name": "Huge: Warehouse",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 42,
+    "name": "Plate: Gold Plate",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 43,
+    "name": "Plate: Large Plate",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 44,
+    "name": "Plate: London Plate",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

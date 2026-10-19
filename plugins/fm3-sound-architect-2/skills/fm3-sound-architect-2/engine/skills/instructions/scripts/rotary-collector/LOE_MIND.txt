@@ -1,0 +1,22 @@
+FM3 ROTARY PARAMEETRITE KOGUJA — firmware 13
+Vajalik Python 3 ja Node. Paki ZIP lahti Downloads-kausta.
+Käivita:
+python3 ~/Downloads/FM3_ROTARY_COLLECTOR/FM3_ROTARY_BATCH.py --port /dev/cu.usbmodem211104
+
+Algseis: kaasasolev start.syx (sinu kontrollitud Rate 2 Hz eksport).
+Impordi see FM3-Editis tööpuhvrisse. Vali Rotary1 A, Tempo None.
+Programm juhendab kaheksat ühe parameetri muudatust:
+Mix 25%, 75%, 50%; Level -6 dB, 0 dB; Hi Depth 50%; Low Depth 50%; Rate 5 Hz.
+Iga kord ekspordi TERVE preset, lohista fail terminali, kinnita väärtus
+ja sulge FM3-Edit/Fractal-Bot enne ühte GET-päringut. Järgmiseks sammuks ava Edit.
+Koguja ei saada SET, SAVE ega Store käske. Port valitakse ainult käsurealt.
+GET/SYX kõik 84 sõna peavad kattuma. Muutuda võib üks A parameetrisõna;
+Rotary stseenikanalid võivad kanali vaatamisel muutuda. Kõik muu peab säilima.
+Parameetri nimi/väärtus on sinu ekraanikinnitus; skaalad kontrollitakse pärast kogumist.
+
+q lõpetab ning teeb ühe tulemuste ZIP-i. Saada see vestlusse.
+Jätkamiseks käivita sama käsk: kontrollitud sammud jäetakse vahele ning
+programm näitab viimase kontrollitud seisundi SYX-i, mille saad taastada.
+Vea korral ei tehta korduspäringut. Osaline kogumine säilib.
+Ainult ZIP: lisa samale käsule --export-only.
+Tulemused ja sessioon tekivad koguja kausta. Ära asenda seda kausta jätkamisel.

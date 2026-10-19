@@ -1,0 +1,42 @@
+{
+  "version": "0.29.25",
+  "sha256": "aa151ff76eae8e8169daf2d848583f0d75785f6e6485fb32e4486abbb371af38",
+  "channels": [
+    {
+      "channel": "A",
+      "id": 333,
+      "name": "Brit JVM Crunch Green"
+    },
+    {
+      "channel": "B",
+      "id": 334,
+      "name": "Brit JVM Crunch Orange"
+    },
+    {
+      "channel": "C",
+      "id": 335,
+      "name": "Brit JVM Crunch Red"
+    },
+    {
+      "channel": "D",
+      "id": 332,
+      "name": "PVH 6160 Block Clean"
+    }
+  ],
+  "checks": {
+    "syxChecksums": true,
+    "crc": true,
+    "footer": true,
+    "sameBase": true,
+    "corruptInputRejected": true,
+    "noNewBundledTemplates": true,
+    "generationBlockedUntilTemplateAvailable": true
+  },
+  "pairedGET": false,
+  "coverage": {
+    "ready": 331,
+    "missing": 4,
+    "total": 335
+  },
+  "pending": "Deluxe Tweed Normal name/ID confirmation and GET/SYX still required; ID331 not assigned"
+}

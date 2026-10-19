@@ -1,0 +1,14 @@
+FM3 SOUND ARCHITECT — STSEENIDE ARENDUSKATSE
+Nimi: FM3 SA TEST SCENES
+Siht: FM3 Mk II Turbo, kasutaja firmware 13.
+Amp B Gain: 5.00; mõjutab Scene 2 ja 6.
+Scene 1 Reverb kanal: B.
+Scene 2 Delay: sisse lülitatud.
+Ülejäänud lahtipakitud sisu säilitati baasist; muudatused piirduvad nimetatud parameetritega.
+Cab/IR, routing, muud efektid, lülitid ja expression pärinevad kasutaja Baaspreset.syx-ist.
+Failikontrollid läbitud; selle uue kombinatsiooni import ja heli ootavad kasutaja kontrolli.
+
+Säilita senine töö. Impordi FM3-Editis olemasolevat presetikohta üle kirjutamata.
+Kontrolli Scene 1 Reverb kanalit B; Scene 2 Delay aktiivsust ja Amp B Gain 5.00.
+Kuula madalal helitugevusel. Ekspordi preset tagasi ning lisa võrdluseks vestlusse.
+SHA-256: 6febef6be602d7efdff33646148351aeae1fc8cf569fbbffd0bb8d21f1892696

@@ -1,0 +1,63 @@
+{
+  "version": "0.30.1",
+  "firmware": 13,
+  "kind": "CAB selection differential and GET/SYX evidence",
+  "selection": {
+    "channel": "A",
+    "slot": 1,
+    "before": {
+      "display": "01: 1x8 5F1 Tweed",
+      "id": 0
+    },
+    "after": {
+      "display": "02: 1x8 Princetone",
+      "id": 1
+    },
+    "bodyDifferences": [
+      {
+        "offset": 6024,
+        "before": 0,
+        "after": 1
+      }
+    ]
+  },
+  "pair": {
+    "effectId": 62,
+    "words": 424,
+    "channels": 4,
+    "strideWords": 106,
+    "startOffset": 5854,
+    "rawBytes": 1312,
+    "frameLengths": [
+      12,
+      778,
+      514,
+      8
+    ],
+    "syxSha256": "4a53db28f249982d7c57e2ffbf74ffb74adf14c360030dfd9d1009291878cf2b",
+    "rawRxSha256": "fd9a2a185e5f164e763c5091ff14ecbdd71b5f03277e965dcbda1cad0070fb65"
+  },
+  "checks": {
+    "syxFrameChecksums": true,
+    "presetCRC": true,
+    "footer": true,
+    "getFrameChecksums": true,
+    "getSectionWordCounts": true,
+    "oneGET": true,
+    "full424WordMatch": true,
+    "otherBodyBytesPreservedInSelectionExport": true
+  },
+  "collectorTests": [
+    "recorded hardware response replay through pseudo-terminal",
+    "one GET",
+    "session resume",
+    "ZIP export",
+    "corrupt checksum rejected"
+  ],
+  "limitations": [
+    "Full Dyna-Cab roster not verified",
+    "batch interface not tested on user Mac",
+    "new CAB binary writing not enabled",
+    "no generated preset import or audio test"
+  ]
+}

@@ -1,0 +1,46 @@
+JB EIGHT SCENES V1
+Bonamassa põhjal kujundatud 8 stseeni
+Ibanez humbuckeritega · FM3 Mk II Turbo / firmware 13 · OUT1 stereo FOH
+
+Scene 2 rütmi ja Scene 6 soolo senised seaded on säilitatud. Kuue uue variandi helitugevuste ja kõla hinnang on veel ootel. Kasutaja teatas 2026-10-09 CPU-näiduks 45,7–46,7%; mõõdetud stseenid ja mõõtetingimused ei ole täpsustatud.
+
+STSEENID
+1. Clean Edge — Puhtama kõla lähtevariant; Drive ja Delay väljas.
+2. Rhythm Fat — Sinu kinnitatud Bonamassa rütm.
+3. Rhythm Push — Sama rütm koos T808-ga; tihedam rütmikäik.
+4. Plexi Crunch — Plexi crunch koos EV12S kabinetiga.
+5. Clean Echo — Esimese stseeni võimendi koos senise 400 ms kajaga.
+6. JB SOLO — Sinu kinnitatud soolo.
+7. Solo Direct — Sama soolo ilma Delayta; Reverb jääb alles.
+8. Solo Mid Focus — Sama soolo, lisaks 1 kHz keskala rõhutus.
+
+SIGNAALIAHEL
+Rida 2: Input 1 → Drive 1 → Amp 1 → Cab 1 → Filter 1 → Send 1
+Rida 3: Return 1 → Delay 1 → Reverb 1 → Output 1
+
+VÕIMENDI- JA KABINETIKANALID
+Amp A: Double Verb Vibrato; Gain 7.00, Level -9.00 dB. Kasutatav Cab: 2x12 Double Verb.
+Amp B: Brit Silver; Gain 5.00, Level -3.00 dB. Kasutatav Cab: 4x12 Rumble EV12L.
+Amp C: USA MK IV Lead Bright; Gain 6.70, Level -8.00 dB. Kasutatav Cab: 4x12 Rumble EV12L (Cab B).
+Amp D: Plexi 50W High 1; Gain 5.00, Level -8.16 dB. Kasutatav Cab: 4x12 Rumble EV12S.
+Need Level-arvud on Ampi parameetrid, mitte OUTPUT1 mõõdiku näidud. Mudelite kuuldavat valjust ei saa nende arvude järgi võrdsustada.
+A ja D kasutavad kogutud täiskanalimalle. Uute stseenide tasakaal vajab kuulamist; tugevam löök võib puhtama kõla varianti kergelt küllastada.
+
+EFEKTID
+Drive B: senine T808 OD, Drive 2, Tone 7, Level 2, Mix 25%. Sees stseenides 3, 6, 7 ja 8.
+Delay A: senine ligikaudu 400 ms, Feedback 25%, Mix 15%, Tempo NONE. Sees stseenides 5, 6 ja 8.
+Reverb: senised A Large Room, B Large Room ja D Medium Room kanalid. A on stseenides 1/5, B stseenides 2/3/4, D stseenides 6/7/8.
+Filter C Peaking: Frequency 1000 Hz, Q 1.4, Gain +3 dB, Level 0 dB. Aktiivne ainult stseenis 8. See rõhutab keskala; +3 dB ei tähenda kogu väljundi +3 dB võimendust.
+Stseenid 6, 7 ja 8 jagavad Amp C-d ning Drive B-d. Nende kanalite muutmine mõjutab kõiki neid stseene.
+
+SEADMEKONTROLL KINNITATUD — 2026-10-08
+JB_EIGHT_SCENES_V1_export.syx kattub loodud presetiga kõigi 13 146 sisubaidi osas, ilma normaliseerimiseta. Kõik kaheksa stseeni, kanaliseaded, efektide sisse/välja olekud, kahe rea Send/Return-ahel ning Scene2/6 senised seaded säilisid. Nimi ja valitud Scene2 säilisid. Kõik kaadri-, CRC-, footer-, pikkuse- ja lõputäite kontrollid läbivad. Tihendatud esitus ja sellele vastav CRC erinevad, preseti sisu on sama. Selle muutmata faili importi/tagasieksporti ei ole vaja korrata.
+
+KUULAMINE
+1. Kasuta võrdluseks tuttavaid Scene 2 ja Scene 6 sounde.
+2. Kuula uusi stseene 1, 3, 4, 5, 7 ja 8 sama mängulõiguga ning samade kitarri- ja väljundseadetega.
+3. Märgi, milline stseen on liiga vaikne/vali või vajab kõlamuutust. Soovi korral lisa OUTPUT 1 Left/Right näidud; need ei asenda kuuldava valjuse hinnangut.
+4. Kui seadeid muudad, kirjelda muudatusi ja saada muudetud preset eraldi.
+CPU: kasutaja teatatud 45,7–46,7% (2026-10-09). See on vaadeldud vahemik, mitte kõigi stseenide või edasiste muudatuste ülempiir. Kuue uue variandi kuuldav tasakaal ja heliline hinnang on veel ootel.
+Ekspordi SHA-256: 862f0088b9b50198a4484e5999ce72e44292db3855b70e23b3010683eab2fa27
+SYX SHA-256: 7515dd0154aa3b392ae1c7f46d30355904e2e5571daeef21d1d77a649fdf00e8

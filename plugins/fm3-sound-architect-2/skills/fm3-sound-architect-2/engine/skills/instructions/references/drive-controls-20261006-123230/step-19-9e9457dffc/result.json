@@ -1,0 +1,74 @@
+{
+  "index": 19,
+  "status": "passed",
+  "step": {
+    "id": "D-level",
+    "kind": "control",
+    "channel": "D",
+    "binaryId": 26,
+    "field": "Level",
+    "pid": 3,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "D-level",
+      "kind": "control",
+      "channel": "D",
+      "binaryId": 26,
+      "field": "Level",
+      "pid": 3,
+      "value": 2,
+      "instruction": "Jäta Drive1 kanal D ja tüüp Zen Master. Muuda ainult Level väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8730,
+        "before": 255,
+        "after": 51
+      },
+      {
+        "offset": 8731,
+        "before": 127,
+        "after": 51
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Level",
+      "userConfirmedDisplayValue": 2,
+      "rawBefore": 32767,
+      "rawAfter": 13107,
+      "candidateRaw": 13107,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "93caa34db72cf7c8cac5ceee670df56bb13c2ce322c77ebd45233f45a28965a9",
+    "rawRxSha256": "82f59b7b892f736ab2828624ccd84246255070d2db804af46c71584a6291bcf5",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 0
+      },
+      {
+        "channel": "D",
+        "binaryId": 26
+      }
+    ]
+  }
+}

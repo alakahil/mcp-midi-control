@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 1,
+    "name": "Bias Trem",
+    "binaryId": 2,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 2,
+    "name": "Harmonic Trem",
+    "binaryId": 3,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 3,
+    "name": "Neon Trem",
+    "binaryId": 6,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 4,
+    "name": "Optical Trem 1",
+    "binaryId": 4,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

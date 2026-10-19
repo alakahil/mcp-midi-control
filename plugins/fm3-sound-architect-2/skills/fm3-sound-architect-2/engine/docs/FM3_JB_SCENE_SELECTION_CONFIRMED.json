@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "file": "JB_SCENE6_TEST.syx",
+      "sha256": "f5c065b0d360e458652a6734cdb651bb392117e9d3aa6cc3b376356d14b1bae9",
+      "bytes": 24680,
+      "bodyBytes": 14222,
+      "scene6": "JB SOLO",
+      "phaserScene6Bypass": true
+    },
+    {
+      "file": "JB_SCENE2_SELECTED.syx",
+      "sha256": "31ccb88492116736753907dc2d81a53683b359bf27d79d98b13a26e07ce81847",
+      "bytes": 24680,
+      "bodyBytes": 14222,
+      "scene6": "JB SOLO",
+      "phaserScene6Bypass": true
+    }
+  ],
+  "bodyDiff": [
+    {
+      "offset": 0,
+      "before": 5,
+      "after": 1
+    }
+  ],
+  "rawHeaderDiff": [
+    {
+      "offset": 4,
+      "before": 74,
+      "after": 21
+    },
+    {
+      "offset": 5,
+      "before": 25,
+      "after": 118
+    }
+  ],
+  "dumpHeaderDiff": [],
+  "checks": "both inspect passed: frames, seven-bit data, frame checksums, CRC, footer, decoder validation",
+  "conclusion": {
+    "selectedSceneEvidence": "For this preset/firmware workflow, body offset0 is confirmed to follow selected Scene6=5 and Scene2=1. Other scene values were not independently tested.",
+    "otherBodyBytesIdentical": 14221,
+    "scene6NamePreserved": "JB SOLO",
+    "phaserScene6BypassPreserved": true,
+    "originalExperiment": "Name and Phaser bypass changes isolated; the additional offset0 difference is accounted for by scene selection.",
+    "generator": "unchanged; scene name and Phaser writer not yet added",
+    "audioAndCPU": "not assessed"
+  }
+}

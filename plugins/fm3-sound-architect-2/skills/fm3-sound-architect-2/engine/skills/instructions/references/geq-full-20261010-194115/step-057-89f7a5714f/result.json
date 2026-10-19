@@ -1,0 +1,126 @@
+{
+  "index": 57,
+  "step": {
+    "id": "058-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "5 Band Passive — kõigi nähtavate ribade minimum",
+    "channel": "A",
+    "typeName": "5 Band Passive",
+    "bandCount": 5,
+    "endpoint": "minimum"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "058-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "5 Band Passive — kõigi nähtavate ribade minimum",
+      "channel": "A",
+      "typeName": "5 Band Passive",
+      "bandCount": 5,
+      "endpoint": "minimum"
+    },
+    "previousSha256": "d62ed282c487daf46fa6c9bbac60710fea878be9604859678da68090eabba142",
+    "syxSha256": "c23449524d974d0f05ba888e05d14967cda2cbf38d5947ce4a6460ef756af5a7",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 34132,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 35498,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 36863,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 3,
+        "offset": 8360,
+        "before": 38228,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 4,
+        "offset": 8362,
+        "before": 39593,
+        "after": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "Low",
+      "Low Mid",
+      "Mid",
+      "High Mid",
+      "High"
+    ],
+    "displayValues": [
+      -12.0,
+      -12.0,
+      -12.0,
+      -12.0,
+      -12.0
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "c23449524d974d0f05ba888e05d14967cda2cbf38d5947ce4a6460ef756af5a7",
+    "bodySha256": "258ea509e04fac70cd004991c3ef182164dc27cb15f67ae7e4f2f5c378fe42e8",
+    "rawRxSha256": "769a86e245b39571a4d4ae56d74359297038949dbfa19fd361f9b7c64861b2b9",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

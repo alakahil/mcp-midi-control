@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "kind": "FM3_PEQ_CONTROLS",
+  "collector": "0.1.0",
+  "firmwareDeclared": 13,
+  "baselineSha256": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+  "planSha256": "32fa9f366c33c5ad51b044ccc03a61d06551afa970c6506b742b64a6196ffc9d"
+}

@@ -1,0 +1,212 @@
+{
+  "date": "2026-10-03",
+  "version": "0.29.17",
+  "missingEntriesRestored": [
+    {
+      "id": 65,
+      "name": "SV Bass 2"
+    },
+    {
+      "id": 67,
+      "name": "FAS Brown"
+    },
+    {
+      "id": 90,
+      "name": "Dizzy V4 Blue 2"
+    },
+    {
+      "id": 91,
+      "name": "Dizzy V4 Blue 3"
+    },
+    {
+      "id": 105,
+      "name": "FAS Crunch"
+    },
+    {
+      "id": 132,
+      "name": "FAS Modern II"
+    },
+    {
+      "id": 137,
+      "name": "Thordendal Modern"
+    },
+    {
+      "id": 143,
+      "name": "Comet 60"
+    },
+    {
+      "id": 157,
+      "name": "Mr Z MZ-8"
+    },
+    {
+      "id": 169,
+      "name": "USA Bass 400 2"
+    },
+    {
+      "id": 170,
+      "name": "Citrus Bass 200"
+    },
+    {
+      "id": 171,
+      "name": "FAS Bass"
+    },
+    {
+      "id": 173,
+      "name": "FAS Brootalz"
+    },
+    {
+      "id": 192,
+      "name": "1959SLP Normal"
+    },
+    {
+      "id": 195,
+      "name": "FAS Modern III"
+    },
+    {
+      "id": 198,
+      "name": "6G4 Super"
+    },
+    {
+      "id": 215,
+      "name": "USA MK IIC+ Deep"
+    },
+    {
+      "id": 221,
+      "name": "JMPre-1 OD2"
+    },
+    {
+      "id": 233,
+      "name": "Class-A 30W Bright"
+    },
+    {
+      "id": 265,
+      "name": "FAS Skull Crusher"
+    },
+    {
+      "id": 271,
+      "name": "Matchbox D-30 EF86"
+    },
+    {
+      "id": 276,
+      "name": "PVH 6160+ Clean Bright"
+    },
+    {
+      "id": 286,
+      "name": "Friedman BE C45"
+    },
+    {
+      "id": 287,
+      "name": "Friedman BE 2010"
+    },
+    {
+      "id": 288,
+      "name": "Friedman HBE 2010"
+    },
+    {
+      "id": 294,
+      "name": "JMPre-1 Clean1 Bass Shift"
+    },
+    {
+      "id": 295,
+      "name": "JMPre-1 Clean2"
+    },
+    {
+      "id": 296,
+      "name": "JMPre-1 Clean2 Bass Shift"
+    },
+    {
+      "id": 297,
+      "name": "Diamante Fire"
+    },
+    {
+      "id": 300,
+      "name": "Plexi 50W 6CA7 Jumped"
+    },
+    {
+      "id": 301,
+      "name": "Herbie MK3"
+    },
+    {
+      "id": 302,
+      "name": "59 Bassguy RI Jumped"
+    },
+    {
+      "id": 305,
+      "name": "Revv Gen Purple 3"
+    },
+    {
+      "id": 306,
+      "name": "Revv Gen Red 1"
+    },
+    {
+      "id": 308,
+      "name": "Revv Gen Red 3"
+    },
+    {
+      "id": 309,
+      "name": "Revv Gen Green 1"
+    },
+    {
+      "id": 310,
+      "name": "Revv Gen Green 2"
+    },
+    {
+      "id": 311,
+      "name": "Revv Gen Green 3"
+    },
+    {
+      "id": 312,
+      "name": "JS410 Lead Green"
+    },
+    {
+      "id": 315,
+      "name": "5153 100W Stealth Green"
+    },
+    {
+      "id": 318,
+      "name": "Brit 800 2204 Low"
+    },
+    {
+      "id": 321,
+      "name": "USA MK V Red IIC+ Bright"
+    },
+    {
+      "id": 323,
+      "name": "USA MK V Red MKIV Bright"
+    },
+    {
+      "id": 325,
+      "name": "USA MK V Red XT Bright"
+    }
+  ],
+  "basis": "All 331 catalog IDs/names agree with the existing bundled AMP_ROSTER. Existing decoder names had no conflicts. Only 44 absent decoder labels added.",
+  "capture016Sha256": "cfc14f63f2d2734b25bec34cae6aa739c8b9bf7763386a17ea9e2287fc2ad9b7",
+  "bundledTemplates": 54,
+  "remainingTemplates": 277,
+  "limits": "Naming-table consistency does not prove device support or full templates. Capture016 still needs same-state GET pairing. No transport or safety-check changes.",
+  "offlineChecks": [
+    "331/331 catalog labels decoded from synthetic IDs; these fixtures not imported as templates",
+    "Real capture016 same-base integrity and model IDs/names pass",
+    "Unknown ID65535 rejected atomically",
+    "Prior batch 12-channel generation and 9 pairs pass",
+    "Guided batch pair/resume/ZIP/mismatch regression pass"
+  ],
+  "capture016Models": [
+    {
+      "id": 64,
+      "name": "Cameron CCV 2A"
+    },
+    {
+      "id": 65,
+      "name": "SV Bass 2"
+    },
+    {
+      "id": 66,
+      "name": "Tube Pre"
+    },
+    {
+      "id": 67,
+      "name": "FAS Brown"
+    }
+  ]
+}

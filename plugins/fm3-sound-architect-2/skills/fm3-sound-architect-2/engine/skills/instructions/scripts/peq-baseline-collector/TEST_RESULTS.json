@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-09",
+  "passed": true,
+  "syntheticOnly": true,
+  "deviceConnectionMade": false,
+  "parameterWords": 132,
+  "replyShapesTested": [
+    132,
+    66,
+    33
+  ],
+  "invalidPairCasesRejected": 9,
+  "pseudoterminalSingleGet": true,
+  "pseudoterminalTimeoutNoRetry": true,
+  "staleQueuedResponseFlushed": true,
+  "incompleteEvidencePreservedCases": 4,
+  "explicitConfirmationRequired": true,
+  "quitBeforeDeviceOpen": true,
+  "completedResumeNoGet": true,
+  "failedResumeRequiresNewConfirmation": true,
+  "failureEvidenceAndZipPreserved": true,
+  "hardware": "First actual PEQ GET/SYX pair still pending"
+}

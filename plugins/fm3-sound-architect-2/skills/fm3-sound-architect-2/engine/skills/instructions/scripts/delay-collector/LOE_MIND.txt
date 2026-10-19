@@ -1,0 +1,18 @@
+FM3 DELAY KOGUJA
+
+Paki ZIP Downloads-kausta. Vajalikud olemasolevad Python3 ja Node.
+Käivita:
+python3 ~/Downloads/FM3_DELAY_COLLECTOR/FM3_DELAY_BATCH.py --session ~/Documents/FM3_DELAY_SESSION --port /dev/cu.usbmodem211104
+
+Esimesed4 tüüpi on kaasas kinnitatud GET/SYX paarina. Alles23 tüüpi.
+Alusta viimase FM3_DELAY_SELECTION_001.syx seisundist (kaasas baseline.syx).
+Skript annab ette kuni4 tüüpi A/B/C/D kanalitele. Muuda ainult Delay1 Type-valikuid.
+Jäta automaatsed seaded alles; muud plokid, bypass ja stseen säilita.
+Ekspordi terve SYX, lohista Terminali, kinnita ekraaninimed, sulge FM3-Edit
+ja kirjuta jah ühe GET-i jaoks. Ava Edit uuesti järgmise neliku jaoks.
+Esimese uue neliku järel kirjuta q ja saada tulemuse ZIP vestlusse.
+q salvestab ZIP-i Documents-kausta; sama käsk jätkab.
+Jätkamisel hoia FM3-s viimase eduka kogumise seisundit või impordi sessiooni
+viimase eduka capture-kausta donor.syx; ära alusta uuesti baseline-ist.
+Säilita Documents/FM3_DELAY_SESSION. Ära kasuta Drive sessioonikausta.
+Save/Store pole vajalik. Üks kinnitatud GET; SET/SAVE/retry puuduvad.

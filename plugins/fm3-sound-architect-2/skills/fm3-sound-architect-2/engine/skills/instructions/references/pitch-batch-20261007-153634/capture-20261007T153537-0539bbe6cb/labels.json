@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 10,
+    "name": "Octave Divider",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 11,
+    "name": "Quad Chromatic",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 12,
+    "name": "Quad Chromatic Delay",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 13,
+    "name": "Quad Detune",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

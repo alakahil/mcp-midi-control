@@ -1,0 +1,72 @@
+{
+  "files": [
+    {
+      "name": "Baaspreset.syx",
+      "path": "references/Baaspreset.syx"
+    },
+    {
+      "name": "Baaspreset_InenticalExport.syx",
+      "path": "references/Baaspreset_InenticalExport.syx"
+    },
+    {
+      "name": "S1_Reverb_channelB.syx",
+      "path": "references/S1_Reverb_channelB.syx"
+    },
+    {
+      "name": "S2_AmpBass_4.syx",
+      "path": "references/S2_AmpBass_4.syx"
+    },
+    {
+      "name": "S2_AmpBass_5.syx",
+      "path": "references/S2_AmpBass_5.syx"
+    },
+    {
+      "name": "S2_AmpBass_6.syx",
+      "path": "references/S2_AmpBass_6.syx"
+    },
+    {
+      "name": "S2_AmpBass_7.syx",
+      "path": "references/S2_AmpBass_7.syx"
+    },
+    {
+      "name": "S2_AmpGain_4.syx",
+      "path": "references/S2_AmpGain_4.syx"
+    },
+    {
+      "name": "S2_AmpGain_5.syx",
+      "path": "references/S2_AmpGain_5.syx"
+    },
+    {
+      "name": "S2_AmpGain_6.syx",
+      "path": "references/S2_AmpGain_6.syx"
+    },
+    {
+      "name": "S2_AmpGain_7.syx",
+      "path": "references/S2_AmpGain_7.syx"
+    },
+    {
+      "name": "S2_AmpModelLead.syx",
+      "path": "references/S2_AmpModelLead.syx"
+    },
+    {
+      "name": "S2_Delay_Bypass.syx",
+      "path": "references/S2_Delay_Bypass.syx"
+    },
+    {
+      "name": "S2_Delay_Engaged.syx",
+      "path": "references/S2_Delay_Engaged.syx"
+    },
+    {
+      "name": "TestE_Delay_Bypass.syx",
+      "path": "references/TestE_Delay_Bypass.syx"
+    },
+    {
+      "name": "Test_3_AmpGain5_1.syx",
+      "path": "references/Test_3_AmpGain5_1.syx"
+    },
+    {
+      "name": "Test_3_AmpGain5_2_IdenticalTo1.syx",
+      "path": "references/Test_3_AmpGain5_2_IdenticalTo1.syx"
+    }
+  ]
+}

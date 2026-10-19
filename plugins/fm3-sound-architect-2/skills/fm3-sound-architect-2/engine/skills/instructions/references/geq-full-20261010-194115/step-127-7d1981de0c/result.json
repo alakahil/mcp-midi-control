@@ -1,0 +1,45 @@
+{
+  "index": 127,
+  "step": {
+    "id": "128-type",
+    "kind": "type",
+    "stage": "types",
+    "label": "10 Band 2/3 Oct Const Q — Type ja tegelik juhtpaneel",
+    "channel": "A",
+    "typeName": "10 Band 2/3 Oct Const Q",
+    "bandCount": 10,
+    "allowUnchanged": true
+  },
+  "status": "failed",
+  "comparison": {
+    "step": {
+      "id": "128-type",
+      "kind": "type",
+      "stage": "types",
+      "label": "10 Band 2/3 Oct Const Q — Type ja tegelik juhtpaneel",
+      "channel": "A",
+      "typeName": "10 Band 2/3 Oct Const Q",
+      "bandCount": 10,
+      "allowUnchanged": true
+    },
+    "previousSha256": "92a77679a0a2dde7170bb1f0f8c9d5b32fc5fa03adccdb6823617a6d53f0cf2f",
+    "syxSha256": "d4b05c1d86ea8fd393a9c8affd18ac80e8fe72dc2e342067527cea5431857e9f",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 15,
+        "offset": 8384,
+        "before": 5,
+        "after": 12
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "error": "Ribade arv ei vasta Type nimele; säilita pilt ja kasuta s"
+}

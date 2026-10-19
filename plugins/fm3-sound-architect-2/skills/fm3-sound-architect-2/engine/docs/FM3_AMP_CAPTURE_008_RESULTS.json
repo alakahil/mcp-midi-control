@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-02",
+  "syxSha256": "8f8e8f712f38ab2315cccefd64c9f0cee25db21505f813176b412f4dec92ab8f",
+  "getSha256": "cec885c1ccf70b6dc27f4a4e99f24b26f9e1b556a1913ea0575de09ba69d86bd",
+  "getChecks": {
+    "frames": true,
+    "checksums": true,
+    "sevenBit": true,
+    "wordCounts": true
+  },
+  "matchedWords": 576,
+  "totalWords": 576,
+  "source": {
+    "file": "FM3_AMP_CAPTURE_008.syx",
+    "index": 0,
+    "sha256": "8f8e8f712f38ab2315cccefd64c9f0cee25db21505f813176b412f4dec92ab8f",
+    "ignoredSceneSelections": [
+      {
+        "scene": 2,
+        "base": 1,
+        "donor": 0,
+        "action": "Not copied; output keeps base scene selection"
+      }
+    ]
+  },
+  "results": [
+    {
+      "model": "Shiver Lead",
+      "id": 32,
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Euro Uber",
+      "id": 33,
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Solo 99 Clean",
+      "id": 34,
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Solo 100 Rhythm",
+      "id": 35,
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    }
+  ],
+  "hardware": "User exported and read device state; generated combinations not imported or audio-tested"
+}

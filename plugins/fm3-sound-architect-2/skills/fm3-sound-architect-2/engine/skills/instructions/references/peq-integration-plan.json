@@ -1,0 +1,275 @@
+{
+  "version": "0.5.0",
+  "date": "2026-10-09",
+  "status": "full-collection-ready-awaiting-hardware",
+  "goal": "Finish agreed five-band PEQ types, usable parameter ranges, common controls and A-D/scene support first; Graphic EQ then Enhancer afterwards.",
+  "musicalBaseline": {
+    "file": "examples/JB_EIGHT_SCENES_V3.syx",
+    "sha256": "0a17b54fcee104887b6707b29ae34ea7bec6e049a341c1ec8e77ec75c7b68683",
+    "listeningBalance": "accepted-by-user",
+    "bodyBytes": 13146,
+    "existingAmpLevelsDb": {
+      "A": -12,
+      "B": -1,
+      "C": -8,
+      "D": -8.16
+    }
+  },
+  "existingEvidenceAudit": {
+    "validSyxFilesInspected": 791,
+    "invalidFiles": 0,
+    "peqGridMatches": 0,
+    "scope": "Bundled examples and references; no external or device scan"
+  },
+  "firstStep": {
+    "baseline": "Musical V3 in FM3-Edit working buffer",
+    "selectedScene": 2,
+    "block": "Parametric EQ 1",
+    "candidateGen3EffectId": 54,
+    "position": {
+      "row": 2,
+      "column": 10,
+      "replacesShunt": 1029,
+      "after": "Filter 1",
+      "before": "Send 1"
+    },
+    "channel": "A",
+    "bypassInScene2": true,
+    "parameterAction": "Leave newly inserted PEQ parameters at their initial settings; do not measure controls yet.",
+    "exportFilename": "FM3_PEQ_BASELINE.syx",
+    "allowPresetRename": true,
+    "automaticDeviceRequests": false,
+    "status": "complete-do-not-repeat"
+  },
+  "checks": [
+    "All original 13146 V3 body bytes reconstruct exactly after removing only the PEQ record and restoring its shunt",
+    "All old block records, scenes, routing flags, modifier and system bytes preserved",
+    "Scene 2 selected, PEQ A bypassed",
+    "Preset rename explicitly reported, never treated as a parameter change",
+    "Frame checksums, CRC, footer, size fields and padding verified"
+  ],
+  "candidateParameterIds": {
+    "frequencyBands1to5": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "qBands1to5": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "gainBands1to5": [
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "typeBands1to5": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "level": 20,
+    "lowSlope": 30,
+    "highSlope": 31,
+    "balance": 21,
+    "bypassMode": 22,
+    "soloBands1to5": [
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "sceneIgnore": 32
+  },
+  "candidateMapStatus": "Band3 Frequency PID2, Q PID7, Gain PID12 and Level PID20 confirmed at listed points with actual device pairs. Band3 raw Type0 stayed fixed and user recorded Peaking. Other IDs/types/scales remain hints only.",
+  "nextAfterExport": [
+    "The earlier active specimen is complete; do not repeat it.",
+    "Collect missing full PEQ evidence with FM3_PEQ_FULL.",
+    "Audit captures before enabling new generator support, then perform one expanded A-D composition device roundtrip."
+  ],
+  "currentGeneratorSupport": {
+    "generator": "jb-composer-0.9.1",
+    "base": "jb-newlook",
+    "field": "peqChannels",
+    "channels": [
+      "A"
+    ],
+    "band3Type": "Peaking",
+    "frequencyHz": [
+      500,
+      499.99,
+      1000,
+      2000
+    ],
+    "q": [
+      1.4,
+      2
+    ],
+    "gainDb": [
+      -3,
+      0,
+      3
+    ],
+    "levelDb": [
+      -3,
+      0,
+      3
+    ],
+    "exactMeasuredPointsOnly": true,
+    "otherBandsTypesChannels": false,
+    "insertion": {
+      "row": 2,
+      "column": 10,
+      "effectId": 54,
+      "replacesShunt": 1029
+    },
+    "defaultAllScenes": "A/bypass",
+    "sceneActivation": "explicit",
+    "deviceValidation": "Exact supplied active specimen import/export confirmed; all 13456 body bytes identical. Other combinations and active sound/CPU not inferred."
+  },
+  "graphicEqSupport": false,
+  "enhancerSupport": false,
+  "noRepeat": "Do not repeat prior Amp/Cab/Filter/C-D Level captures or V3 balance listening. The PEQ-added export is a new specimen.",
+  "baselineEvidence": {
+    "file": "examples/FM3_PEQ_BASELINE.syx",
+    "sha256": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+    "bodySha256": "2cc6732f2a8b4afb1131766613a60b9825a483f90fc9a274e5ecdfceccc53112",
+    "bodyBytes": 13456,
+    "effectId": 54,
+    "headerOffset": 8688,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "parameterStart": 8734,
+    "matchedOriginalV3Bytes": 13146,
+    "selectedScene": 2,
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "allChannelWordsIdentical": true,
+    "pairVerified": true,
+    "matchedGetWords": 132,
+    "pairReport": "../../docs/FM3_PEQ_BASE_PAIR_VALIDATION.json",
+    "rawEvidenceDirectory": "references/peq-baseline-20261009-114022"
+  },
+  "nextStep": {
+    "status": "awaiting-full-peq-collection",
+    "collector": "scripts/peq-full-collector/FM3_PEQ_FULL.py",
+    "package": "FM3_PEQ_FULL.zip",
+    "steps": 84,
+    "stages": {
+      "typesAndSlopes": 32,
+      "numericControls": 24,
+      "commonControls": 21,
+      "channels": 7
+    },
+    "baseline": "examples/FM3_PEQ_BASELINE.syx",
+    "baselineRepeatRequired": false,
+    "repeatOldBand3Collection": false,
+    "repeatPreviousListeningCpu": false,
+    "readOnlyDeviceTransport": true,
+    "oneGetPerExplicitConfirmation": true,
+    "command": "python3 ~/Downloads/FM3_PEQ_FULL/FM3_PEQ_FULL.py --port /dev/cu.usbmodem211104",
+    "completion": "Real measurement review, new supported writer/schema, expanded preset import/display/export and scene tests. No claim of full support from a collector or synthetic test."
+  },
+  "completedBaselineGet": {
+    "collector": "scripts/peq-baseline-collector/FM3_PEQ_BASE_CHECK.py",
+    "package": "FM3_PEQ_BASE_CHECK.zip",
+    "txHex": "f0000174111f36003df7",
+    "expectedWords": 132,
+    "oneGetAfterExplicitConfirmation": true,
+    "repeatSuccessfulCapture": false,
+    "readOnly": true,
+    "requireSameBaselineDeviceState": true,
+    "newExportRequired": false,
+    "status": "complete-do-not-repeat",
+    "rawRxSha256": "7734f49341db58a132f2a9494c173a5b5f4cdfb5d9020ef3f4783396278f758f"
+  },
+  "completedControlCollection": {
+    "collector": "scripts/peq-control-collector/FM3_PEQ_CONTROLS.py",
+    "package": "FM3_PEQ_CONTROLS.zip",
+    "status": "complete-11-passed-1-skipped",
+    "scope": "PEQ 1 channel A, Band 3 Frequency/Q/Gain plus common Level",
+    "steps": 12,
+    "selectedScene": 2,
+    "peqChannel": "A",
+    "bypassInScene2": true,
+    "typeAction": "Keep unchanged; record exact Band 3 Type screen text without interpreting it as a verified enum",
+    "txHex": "f0000174111f36003df7",
+    "expectedWords": 132,
+    "oneGetAfterExplicitConfirmationPerStep": true,
+    "repeatSuccessfulCapture": false,
+    "readOnly": true,
+    "allowPresetRenameWithExplicitReport": true,
+    "baselineRepeatRequired": false,
+    "candidatePidsAreCollectionGatesNotVerifiedSemantics": true,
+    "skipDoesNotCountAsMeasurement": true,
+    "pairedMeasurements": 11,
+    "matchedWordsPerPair": 132,
+    "evidenceDirectory": "references/peq-controls-20261009-121911",
+    "validationReport": "../../docs/FM3_PEQ_CONTROL_VALIDATION.json",
+    "skipped": "Band 3 Q0.707: already same; no explicit write support"
+  },
+  "completedActiveSpecimen": {
+    "status": "import-export-and-user-listening-cpu-confirmed",
+    "file": "examples/FM3_PEQ_BAND3_TEST.syx",
+    "spec": "examples/FM3_PEQ_BAND3_TEST.spec.json",
+    "exportFilename": "FM3_PEQ_BAND3_TEST_export.syx",
+    "selectedScene": 2,
+    "peqChannel": "A",
+    "peqActiveScenes": [
+      2
+    ],
+    "band3": {
+      "type": "Peaking",
+      "frequencyHz": 1000,
+      "q": 1.4,
+      "gainDb": 3
+    },
+    "levelDb": 0,
+    "newGetRequired": false,
+    "preserveMusicalV3OutsidePeq": true,
+    "listen": "User: Kõlas hästi tunnetasin vahet.",
+    "cpu": "User observed 47-48%; scene coverage/conditions unspecified.",
+    "exportFile": "examples/FM3_PEQ_BAND3_TEST_export.syx",
+    "exportSha256": "d4dc973e430ac37cd26be7ba92869fb514eada2e9d013bf72136f2538cfd11ab",
+    "matchedBodyBytes": 13456,
+    "changedBodyBytes": 0,
+    "report": "../../docs/FM3_PEQ_HARDWARE_ROUNDTRIP.json",
+    "feedbackFile": "references/peq-user-feedback-20261009.json"
+  },
+  "userFeedback": {
+    "file": "references/peq-user-feedback-20261009.json",
+    "listening": "accepted-by-user",
+    "cpuPercent": [
+      47,
+      48
+    ]
+  }
+}

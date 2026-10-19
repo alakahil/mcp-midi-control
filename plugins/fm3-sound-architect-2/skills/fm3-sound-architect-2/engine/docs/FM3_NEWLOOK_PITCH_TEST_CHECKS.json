@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-08",
+  "reason": "User explicitly requested continuation of the pending Pitch composer test after NewLook Chorus confirmation",
+  "generatedFile": "examples/FM3_NEWLOOK_PITCH_TEST.syx",
+  "generatedSha256": "7cd158293247cc80083f316eb4916b31d37563f150d92a2dc257370bf4b0c3a2",
+  "sourceBase": "examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
+  "sourceBodyBytes": 12804,
+  "generatedBodyBytes": 13762,
+  "newBlock": {
+    "family": "pitch",
+    "eid": 110,
+    "header": 8346,
+    "parameterStart": 8392,
+    "wordsPerChannel": 114,
+    "channels": 4,
+    "recordBytes": 958,
+    "row": 3,
+    "column": 2,
+    "replacedShunt": 1031,
+    "gridOffset": 284
+  },
+  "channels": {
+    "B": "Virtual Capo",
+    "C": "Dual Detune"
+  },
+  "sceneAssignments": {
+    "2": {
+      "channel": "B",
+      "bypass": true
+    },
+    "6": {
+      "channel": "C",
+      "bypass": true
+    },
+    "otherScenes": {
+      "channel": "A",
+      "bypass": true
+    }
+  },
+  "checks": {
+    "allOriginalBodyBytesReconstructedExactlyAfterRemovingOnePitchRecordAndRestoringOneShuntId": true,
+    "allExistingBlockRecordsAndSceneStateUnchanged": true,
+    "inputOutputSendReturnAndSystemTailUnchanged": true,
+    "bothRequestedChannelsAll114WordsMatchCollectedLibrary": true,
+    "onlyPitchInserted": true,
+    "newPitchBypassedInAllScenes": true,
+    "selectedScene2Preserved": true,
+    "generatorFrameCrcFooterPaddingChecksPass": true
+  },
+  "scope": "Six families composed in one specification; existing settings reapplied without changing their bytes. No re-addition of Compressor/Chorus/Phaser/Wah. Replaces older FM3_COMPOSER_PITCH_TEST as the next requested test.",
+  "hardware": "Confirmed exact device roundtrip, all 13762 body bytes preserved",
+  "audio": "No Pitch listening claim; all scenes bypass Pitch",
+  "exportRequested": "FM3_NEWLOOK_PITCH_TEST_export.syx",
+  "hardwareEvidence": "FM3_NEWLOOK_PITCH_HARDWARE_ROUNDTRIP.json",
+  "exportStatus": "Received and verified; no repeat requested"
+}

@@ -1,0 +1,74 @@
+{
+  "index": 2,
+  "status": "passed",
+  "step": {
+    "id": "A-drive",
+    "kind": "control",
+    "channel": "A",
+    "binaryId": 19,
+    "field": "Drive",
+    "pid": 1,
+    "value": 2,
+    "instruction": "Jäta Drive1 kanal A ja tüüp BB Pre. Muuda ainult Drive väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "A-drive",
+      "kind": "control",
+      "channel": "A",
+      "binaryId": 19,
+      "field": "Drive",
+      "pid": 1,
+      "value": 2,
+      "instruction": "Jäta Drive1 kanal A ja tüüp BB Pre. Muuda ainult Drive väärtuseks 2.00. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8462,
+        "before": 194,
+        "after": 51
+      },
+      {
+        "offset": 8463,
+        "before": 85,
+        "after": 51
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Drive",
+      "userConfirmedDisplayValue": 2,
+      "rawBefore": 21954,
+      "rawAfter": 13107,
+      "candidateRaw": 13107,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "6b30541afb1c920d44c3894d910f3be2ccf7b67131639de096a2afe639ce2e89",
+    "rawRxSha256": "75c5a83d6c76df445ee2d12e91984100af45d211205f28f3a5190194479bfe9a",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 12
+      },
+      {
+        "channel": "C",
+        "binaryId": 26
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

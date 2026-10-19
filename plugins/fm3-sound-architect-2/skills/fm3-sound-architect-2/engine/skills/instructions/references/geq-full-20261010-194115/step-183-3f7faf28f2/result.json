@@ -1,0 +1,75 @@
+{
+  "index": 183,
+  "step": {
+    "id": "184-select-channel",
+    "kind": "select-channel",
+    "stage": "channels",
+    "label": "Scene 2 GEQ tagasi A peale",
+    "channel": "A",
+    "typeName": "10 Band Variable Q"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "184-select-channel",
+      "kind": "select-channel",
+      "stage": "channels",
+      "label": "Scene 2 GEQ tagasi A peale",
+      "channel": "A",
+      "typeName": "10 Band Variable Q"
+    },
+    "previousSha256": "3c21d84afaea428f7ec4e45ed39f69ed1d0c39e5935f5e71781578e4a5be66da",
+    "syxSha256": "c252f72e5264766dbabbdc2809af1268e281551914112fbd021cb712842dc6f1",
+    "changedWords": [],
+    "sceneChannelChange": {
+      "scene": 2,
+      "before": "D",
+      "after": "A"
+    },
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {},
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "c252f72e5264766dbabbdc2809af1268e281551914112fbd021cb712842dc6f1",
+    "bodySha256": "e661b00e3b50252378744cbccf655ef5092479e6a1d2578c90c2597336b40b29",
+    "rawRxSha256": "432b55ebd16a388cffcca61f702da018a1265ebab05ca146115f9e0d0c705fbd",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

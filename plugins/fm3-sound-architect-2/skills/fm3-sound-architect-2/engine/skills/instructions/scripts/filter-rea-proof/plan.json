@@ -1,0 +1,471 @@
+[
+  {
+    "id": "01",
+    "label": "Frequency — A/B/C miinimum",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "binaryId": 3,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "binaryId": 1,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "02",
+    "label": "Frequency — A/B/C maksimum",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "binaryId": 3,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20000,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "binaryId": 1,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20000,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 20000,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "03",
+    "label": "Frequency — A/B/C uued sisepunktid",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "binaryId": 3,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 750,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "binaryId": 1,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 1600,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      },
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Frequency",
+        "parameterId": 1,
+        "value": 3200,
+        "unit": "Hz",
+        "mode": "numeric",
+        "minimum": 20.0,
+        "maximum": 20000.0,
+        "options": [],
+        "parameterName": "FILTER_FREQ"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "04",
+    "label": "Q — C Peaking 0.1",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Q",
+        "parameterId": 2,
+        "value": 0.1,
+        "unit": "",
+        "mode": "numeric",
+        "minimum": 0.1,
+        "maximum": 10.0,
+        "options": [],
+        "parameterName": "FILTER_Q"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "05",
+    "label": "Q — C Peaking 10",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Q",
+        "parameterId": 2,
+        "value": 10,
+        "unit": "",
+        "mode": "numeric",
+        "minimum": 0.1,
+        "maximum": 10.0,
+        "options": [],
+        "parameterName": "FILTER_Q"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "06",
+    "label": "Q — C Peaking 0.707",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Q",
+        "parameterId": 2,
+        "value": 0.707,
+        "unit": "",
+        "mode": "numeric",
+        "minimum": 0.1,
+        "maximum": 10.0,
+        "options": [],
+        "parameterName": "FILTER_Q"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "07",
+    "label": "Q — C Peaking 1.0",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Q",
+        "parameterId": 2,
+        "value": 1.0,
+        "unit": "",
+        "mode": "numeric",
+        "minimum": 0.1,
+        "maximum": 10.0,
+        "options": [],
+        "parameterName": "FILTER_Q"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "08",
+    "label": "Gain — C Peaking -20 dB",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Gain",
+        "parameterId": 3,
+        "value": -20,
+        "unit": "dB",
+        "mode": "numeric",
+        "minimum": -20.0,
+        "maximum": 20.0,
+        "options": [],
+        "parameterName": "FILTER_GAIN"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "09",
+    "label": "Gain — C Peaking 20 dB",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Gain",
+        "parameterId": 3,
+        "value": 20,
+        "unit": "dB",
+        "mode": "numeric",
+        "minimum": -20.0,
+        "maximum": 20.0,
+        "options": [],
+        "parameterName": "FILTER_GAIN"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "10",
+    "label": "Gain — C Peaking -10 dB",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Gain",
+        "parameterId": 3,
+        "value": -10,
+        "unit": "dB",
+        "mode": "numeric",
+        "minimum": -20.0,
+        "maximum": 20.0,
+        "options": [],
+        "parameterName": "FILTER_GAIN"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "11",
+    "label": "Level — C Peaking -80 dB",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Level",
+        "parameterId": 4,
+        "value": -80,
+        "unit": "dB",
+        "mode": "numeric",
+        "minimum": -80.0,
+        "maximum": 20.0,
+        "options": [],
+        "parameterName": "FILTER_LEVEL"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "12",
+    "label": "Level — C Peaking 20 dB",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Level",
+        "parameterId": 4,
+        "value": 20,
+        "unit": "dB",
+        "mode": "numeric",
+        "minimum": -80.0,
+        "maximum": 20.0,
+        "options": [],
+        "parameterName": "FILTER_LEVEL"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "13",
+    "label": "Level — C Peaking -30 dB",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Level",
+        "parameterId": 4,
+        "value": -30,
+        "unit": "dB",
+        "mode": "numeric",
+        "minimum": -80.0,
+        "maximum": 20.0,
+        "options": [],
+        "parameterName": "FILTER_LEVEL"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  {
+    "id": "14",
+    "label": "Order — A High-Pass / B Low-Pass 4th",
+    "activeChannel": "B",
+    "targets": [
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "binaryId": 3,
+        "parameter": "Order",
+        "parameterId": 7,
+        "value": "4th",
+        "unit": "",
+        "mode": "enum",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "options": [
+          "2nd",
+          "4th"
+        ],
+        "parameterName": "FILTER_ORDER"
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "binaryId": 1,
+        "parameter": "Order",
+        "parameterId": 7,
+        "value": "4th",
+        "unit": "",
+        "mode": "enum",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "options": [
+          "2nd",
+          "4th"
+        ],
+        "parameterName": "FILTER_ORDER"
+      }
+    ],
+    "reason": "cache enum exists, preset-word correspondence not yet measured",
+    "allowUnchanged": true
+  },
+  {
+    "id": "15",
+    "label": "Order — A High-Pass / B Low-Pass 2nd",
+    "activeChannel": "B",
+    "targets": [
+      {
+        "channel": "A",
+        "type": "High-Pass",
+        "binaryId": 3,
+        "parameter": "Order",
+        "parameterId": 7,
+        "value": "2nd",
+        "unit": "",
+        "mode": "enum",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "options": [
+          "2nd",
+          "4th"
+        ],
+        "parameterName": "FILTER_ORDER"
+      },
+      {
+        "channel": "B",
+        "type": "Low-Pass",
+        "binaryId": 1,
+        "parameter": "Order",
+        "parameterId": 7,
+        "value": "2nd",
+        "unit": "",
+        "mode": "enum",
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "options": [
+          "2nd",
+          "4th"
+        ],
+        "parameterName": "FILTER_ORDER"
+      }
+    ],
+    "reason": "cache enum exists, preset-word correspondence not yet measured",
+    "allowUnchanged": true
+  }
+]

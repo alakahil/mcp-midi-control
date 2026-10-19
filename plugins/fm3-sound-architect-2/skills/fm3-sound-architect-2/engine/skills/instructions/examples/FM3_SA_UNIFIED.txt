@@ -1,0 +1,32 @@
+FM3 SOUND ARCHITECT — PIIRATUD GENERAATOR
+Preset: FM3 SA TEST TIME
+Eesmärk: Varasemal riistvarakatsel kinnitatud kombinatsiooni taasesitus ühtse generaatoriga.
+Siht: FM3 Mk II Turbo, firmware 13. Alus: kasutaja Baaspreset.syx.
+Amp B Gain: 5.000 /10 [soovitud 5.000]
+Amp B Bass: 1.800 /10 [säilitatud alusfailist]
+Amp B Mid: 5.000 /10 [soovitud 5.000]
+Amp B Treble: 4.000 /10 [soovitud 4.000]
+Amp B Presence: 2.000 /10 [soovitud 2.000]
+Amp B Level: -18.000 dB [soovitud -18.000]
+Delay A Mix: 15.000 % [soovitud 15.000]
+Reverb A Mix: 12.000 % [soovitud 12.000]
+Delay A Time: 399.913 ms [soovitud 400.000]
+Delay A Feedback: 25.001 % [soovitud 25.000]
+Reverb A Time: 2.499 s [soovitud 2.500]
+Reverb A Pre-Delay: 39.995 ms [soovitud 40.000]
+Delay A Tempo: NONE  [soovitud NONE]
+Reverb A Pre-Delay Tempo: NONE  [soovitud NONE]
+Scene 2 Delay: sees  [soovitud sees]
+Scene 1 Reverb kanal: A  [soovitud A]
+Määramata juhtseadiste baite ei muudeta; varjatud Gain/EQ/Level/Mix/Tempo vaikeväärtusi pole.
+Amp B mudel USA MK IV Rhythm 2; muudatused mõjutavad Scene 2 ja 6. Delay A kasutavad kõik 8 stseeni.
+Reverb A kasutavad stseenid 1, 3, 4, 6, 7, 8. Muud kanalid säilivad.
+Routing, Cab/IR, mudelid, muud efektid, lülitid ja expression pärinevad baasist. IR-sõltuvusi pole eraldi kinnitatud.
+Kitarr ja ühendus: kasutaja senine kontrollseadistus, selle faili jaoks eraldi määramata.
+Failikontrollid läbitud. Kirjutusfunktsioonidel on firmware13 võrdluskatsed; uusi väärtusi/kombinatsioone ei nimetata automaatselt riistvaral kinnitatuks.
+Artistisoundi täpsus, heli ja CPU pole selle generaatoriga hinnatud.
+
+Impordi FM3-Editis oma tööd säilitades ning olemasolevat presetikohta üle kirjutamata.
+Kontrolli soovitud parameetreid õigel kanalil ja stseenis. Vajadusel ekspordi kontrolliks tagasi.
+Tööriist ei ühenda seadet ega saada MIDI/SET-käske.
+SHA-256: 81f5f2cecbc0cbd3facf4039124e82366d4f49bf63dd8339ea7bc7f6174f1b53

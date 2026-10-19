@@ -1,0 +1,29 @@
+{
+  "baseSha256": "9515045ce201c745fba804c8d3d4f191bd1ea69967ab9a4e187ec1e06c825e12",
+  "editedSha256": "8db32aabad822e8228f8db00ae81f5de38c877c394524d51f46ef5d89ff9b256",
+  "integrity": "Both full presets pass inspect",
+  "bodyLength": 14222,
+  "differences": [
+    {
+      "offset": 8638,
+      "before": 255,
+      "after": 51
+    },
+    {
+      "offset": 8639,
+      "before": 127,
+      "after": 51
+    }
+  ],
+  "effectId": 118,
+  "channel": "C",
+  "type": "Zen Master",
+  "binaryTypeId": 26,
+  "paramId": 1,
+  "offset": 8638,
+  "userRequestedValue": 2,
+  "rawBefore": 32767,
+  "rawAfter": 13107,
+  "otherBodyBytesUnchanged": true,
+  "status": "One explicit Drive value confirmed; scale and generated hardware import still pending"
+}

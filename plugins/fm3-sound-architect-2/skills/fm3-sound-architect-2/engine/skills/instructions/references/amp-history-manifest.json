@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "file": "skills/instructions/references/amp-history.json.gz",
+  "sha256": "565f856ceebbdf39437bbc9689482f68597bb2f3f3c897744bc49fd0a77e8980",
+  "originalFiles": 990,
+  "uniqueContents": 164,
+  "duplicateCopiesRemoved": 826,
+  "originalBytes": 25599508,
+  "uniqueBytes": 4277899,
+  "packedBytes": 782159,
+  "sourcePluginVersion": "0.71.0",
+  "sourceRelease": "pluginrel_6accb294144c819188915fe15499350c",
+  "scope": [
+    "skills/instructions/references/batch-20261003",
+    "skills/instructions/references/batch-20261003-224026",
+    "skills/instructions/references/batch-20261003-225630",
+    "skills/instructions/references/batch-20261003-232027",
+    "skills/instructions/references/batch-20261004-085736",
+    "skills/instructions/references/batch-20261004-092114",
+    "skills/instructions/references/batch-20261004-095554",
+    "skills/instructions/references/batch-20261004-151539",
+    "skills/instructions/references/batch-20261004-152722",
+    "skills/instructions/references/batch-20261004-153604"
+  ],
+  "policy": "Lossless historical archive; original paths and all distinct byte strings retained. Active amp-library.json and generator code unchanged."
+}

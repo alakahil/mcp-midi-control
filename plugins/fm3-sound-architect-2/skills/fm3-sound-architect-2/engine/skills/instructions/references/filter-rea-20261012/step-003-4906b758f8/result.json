@@ -1,0 +1,97 @@
+{
+  "index": 3,
+  "step": {
+    "id": "04",
+    "label": "Q — C Peaking 0.1",
+    "activeChannel": "C",
+    "targets": [
+      {
+        "channel": "C",
+        "type": "Peaking",
+        "binaryId": 6,
+        "parameter": "Q",
+        "parameterId": 2,
+        "value": 0.1,
+        "unit": "",
+        "mode": "numeric",
+        "minimum": 0.1,
+        "maximum": 10.0,
+        "options": [],
+        "parameterName": "FILTER_Q"
+      }
+    ],
+    "reason": "missing endpoint or independent check",
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 3,
+    "step": {
+      "id": "04",
+      "label": "Q — C Peaking 0.1",
+      "activeChannel": "C",
+      "targets": [
+        {
+          "channel": "C",
+          "type": "Peaking",
+          "binaryId": 6,
+          "parameter": "Q",
+          "parameterId": 2,
+          "value": 0.1,
+          "unit": "",
+          "mode": "numeric",
+          "minimum": 0.1,
+          "maximum": 10,
+          "options": [],
+          "parameterName": "FILTER_Q"
+        }
+      ],
+      "reason": "missing endpoint or independent check",
+      "allowUnchanged": true
+    },
+    "previousSha256": "fae4d0648d58afe0a2670099c2999126a3c6bf1e892eaf592991b064362e29fd",
+    "syxSha256": "8d16bb9d0419b769fd5325a278e7261adc054ca1426a7ec102ec62028d7d1b2b",
+    "bodySha256": "d51fccf98aba1b1967c30cd47f905130868971ec04fa4aa0f350a1dd22bbf42d",
+    "changedWords": [
+      {
+        "channel": "C",
+        "pid": 2,
+        "offset": 7766,
+        "before": 42631,
+        "after": 0
+      }
+    ],
+    "targets": [
+      {
+        "channel": "C",
+        "pid": 2,
+        "before": 42631,
+        "after": 0,
+        "wordChanged": true
+      }
+    ],
+    "presetNameChange": null,
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "pending-real-display-and-GET-pair; unchanged words are not isolated-change evidence"
+  },
+  "observations": [
+    {
+      "channel": "C",
+      "parameterId": 2,
+      "requestedValue": 0.1,
+      "displayText": "0.100",
+      "displayValue": 0.1
+    }
+  ],
+  "displayConfirmed": true,
+  "getAuthorized": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 148,
+    "syxSha256": "8d16bb9d0419b769fd5325a278e7261adc054ca1426a7ec102ec62028d7d1b2b",
+    "bodySha256": "d51fccf98aba1b1967c30cd47f905130868971ec04fa4aa0f350a1dd22bbf42d",
+    "rawRxSha256": "b87215bc1020661ddb5431423a4c95f82992614cc38fe40d5dcdcac86c978e49"
+  }
+}

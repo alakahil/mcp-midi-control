@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 45,
+    "name": "NoAmp Bass DI",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 46,
+    "name": "NoAmp Bass Pre",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 47,
+    "name": "Nobelium OVD-1",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 48,
+    "name": "Octave Distortion",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

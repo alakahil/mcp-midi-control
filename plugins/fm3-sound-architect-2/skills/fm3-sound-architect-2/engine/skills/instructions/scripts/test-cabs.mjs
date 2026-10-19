@@ -1,0 +1,34 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {generatePreset} from './fm3-generate.mjs';
+import {inspect} from './fm3-prototype.mjs';
+import {inspectStructure} from './cab-collector/fm3-prototype.mjs';
+import {cabNames,resolveCab,inspectCabOutput} from './fm3-cabs.mjs';
+import {pair} from './cab-collector/cab-check.mjs';
+import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
+const base=fs.readFileSync(new URL('../references/Baaspreset.syx',import.meta.url)),before=inspect(base);
+const meta={schemaVersion:1,firmware:13,name:'FM3 CAB TEST'};
+const evidence=new URL('../references/cab-batch-20261005-135600/',import.meta.url);
+for(const name of cabNames){
+ const t=resolveCab(name),donor=new URL(t.source.folder+'/',evidence);
+ const proof=pair(donor.pathname);assert.equal(proof.syxSha256,t.source.syxSha256);
+ const raw=inspectStructure(fs.readFileSync(new URL('donor.syx',donor))).raw.body;
+ const start=5854+'ABCD'.indexOf(t.source.channel)*212;
+ const r=generatePreset(base,{...meta,cabModelB:name}),after=inspectStructure(r.syx);
+ assert.deepEqual(Buffer.from(after.raw.body.slice(6066,6278)),Buffer.from(raw.slice(start,start+212)));
+ for(let i=0;i<raw.length;i++)if(i<6066||i>=6278)assert.equal(after.raw.body[i],before.raw.body[i],name+' collateral '+i);
+ assert.deepEqual(after.decoded.blocks.find(b=>b.block==='Cab').scene_channels,before.decoded.blocks.find(b=>b.block==='Cab').scene_channels);
+ assert.equal(r.report.modelReadback.cabB.dynacab1_id,t.expectedId);assert.equal(r.report.modelReadback.cabB.dynacab2_id,t.expectedId);
+ assert.deepEqual(r.report.selections.cabTemplate.affectedScenes,[2,4,6,8]);
+ assert.ok(r.txt.includes(name));
+ const combined=generatePreset(base,{...meta,cabModelB:name,ampModelB:'59 Bassguy Bright',gainB:5,delayMixA:15});
+ assert.deepEqual(Buffer.from(inspectStructure(combined.syx).raw.body.slice(6066,6278)),t.raw);
+}
+for(const bad of [{cabModelB:'missing'},{cabModelB:24},{cabModelB:null},{cabModelB:'2x12 65 Bassguy',cabScene2:'4x12 RECTO SLANT'},{cabModelB:'2x12 65 Bassguy',cabModelA:'x'},{cabModelB:'2x12 65 Bassguy',firmware:14}])assert.throws(()=>generatePreset(base,{...meta,...bad}));
+const name='4x12 Lerxst',valid=generatePreset(base,{...meta,cabModelB:name}).syx,v=inspectStructure(valid);
+const changed=Buffer.from(v.raw.body);changed[6066]^=1;
+const wrong=Buffer.from(reencodeDumpFromRawPatch(valid,reencodeRawPatch(v.raw.rawPatch,changed)));
+assert.throws(()=>inspectCabOutput(wrong,before.raw.body,name),/Full CAB B/);
+const corrupt=Buffer.from(valid);corrupt[100]^=1;assert.throws(()=>inspectCabOutput(corrupt,before.raw.body,name),/checksum/);
+const wrongBase=Buffer.from(base);wrongBase[100]^=1;assert.throws(()=>generatePreset(wrongBase,{...meta,cabModelB:name}),/Unrecognised base/);
+console.log('PASS:45 independent paired donor channels;45 CAB-only outputs with exact non-CAB preservation;45 combined Amp/CAB outputs;6 invalid specs;template corruption/checksum/wrong base rejected. Hardware pending.');

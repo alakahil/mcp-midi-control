@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-10",
+  "generator": "jb-composer-0.11.0",
+  "passed": true,
+  "passedSteps": 184,
+  "excludedAttempts": 8,
+  "pairedWordsPerStep": 80,
+  "matchedWordsTotal": 14720,
+  "typeCount": 18,
+  "numericAnchors": 557,
+  "enumAnchors": 4,
+  "typeCoupledChanges": 0,
+  "channelCopies": [
+    177,
+    179,
+    181
+  ],
+  "independentChannelGain": [
+    178,
+    180,
+    182
+  ],
+  "sceneSelections": [
+    177,
+    179,
+    181,
+    183
+  ],
+  "collectorResume": "184/184 verified using unchanged original resume()",
+  "pendingLabels": [
+    {
+      "type": "7 Band Constant Q",
+      "band": 1,
+      "captured": "python3 100",
+      "candidate": "100",
+      "status": "Not substituted in evidence or confirmed as frequency"
+    }
+  ],
+  "hardware": "Captured samples verified; newly generated combination pending import/export, listening and CPU",
+  "exactBodyReplays": 184,
+  "comparisonScope": "All 13662 original body bytes compared for every accepted device export; neither body normalized.",
+  "priorSyxByteIdentical": [
+    "V3",
+    "PEQ Band3",
+    "PEQ A-D"
+  ],
+  "newPresetOriginalPeqBytesReconstructed": 13456,
+  "invalidRequestsRejected": 24,
+  "all18TypeTemplatesExact": true,
+  "reservedWordsPreserved": true,
+  "defaultBypass": true,
+  "unconfiguredChannelRejected": true,
+  "unsupportedBaseRejected": true,
+  "tamperedEvidenceRejected": true,
+  "newCombinationSha256": "adf176e949c0645031775a5eeaaa68b1bcdabc36adb238a413848c832e0fff8b",
+  "newCombinationHardware": "PENDING"
+}

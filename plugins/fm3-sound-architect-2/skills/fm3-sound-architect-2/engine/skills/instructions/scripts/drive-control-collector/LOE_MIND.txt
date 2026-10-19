@@ -1,0 +1,40 @@
+FM3 DRIVE KONTROLLKOGUJA 0.1.1 — firmware 13
+
+1. Paki ZIP Downloads-kausta lahti. Kausta nimi: FM3_DRIVE_CONTROLS.
+2. Terminalis käivita:
+python3 ~/Downloads/FM3_DRIVE_CONTROLS/FM3_DRIVE_CONTROLS.py --port /dev/cu.usbmodem211104
+Kui USB-port on muutunud, asenda see enda kinnitatud pordiga.
+Vajalikud on olemasolevad Python3 ja Node. Lisapakette pole vaja.
+
+3. Skript palub esmalt importida kaasasoleva baseline.syx FM3-Editi.
+See on eelmises katses seadmest tagasi eksporditud terve testpreset.
+Ära salvesta seda oma väärtusliku preseti kohale: Save/Store pole vajalik.
+4. Ekspordi terve preset, lohista fail Terminali ja vajuta Enter.
+5. Kinnita ekraanil soovitud väärtus, sulge FM3-Edit/Fractal-Bot ja kirjuta jah.
+See lubab ühe Drive GET-päringu. Skript ei saada SET/Save/Store käske.
+6. Ava FM3-Edit uuesti ja järgi järgmist ülesannet. Muuda ainult antud asja.
+
+21 sammu: algseis + neli tüübi/kanali valikut + 16 põhiseadete katset.
+A: BB Pre; B: T808 OD; C: Rat Distortion; D: Zen Master.
+Igas kanalis eraldi Drive2, Tone7, Level2, Mix25%.
+Tüübi valimisel jäta selle automaatsed muudatused alles.
+Ära muuda stseeni, bypass'i ega muid plokke.
+Kui põhiseade on juba sama või puudub, sisesta s ja põhjendus. Selline samm
+säilib märkmena, aga ei loe parameetri muutmise tõendiks.
+
+q lõpetab ja annab ühe ZIP-faili, mille saad vestlusse lohistada.
+Esimese kahe sammu järel võid teha q ja saata ZIP-i kontrolliks.
+Tulemused: ~/Documents/FM3_DRIVE_CONTROLS_SESSION
+Jätkamiseks käivita sama käsk; impordi skripti näidatud viimane edukas SYX.
+Ära impordi jätkamisel uuesti baseline.syx, kui algseis on juba kogutud.
+Vea puhul säilivad ka ebaõnnestunud katsed; automaatseid korduspäringuid pole.
+Järgmine käivitus kordab pooleli jäänud ülesannet.
+Ainult ZIP-i saamiseks:
+python3 ~/Downloads/FM3_DRIVE_CONTROLS/FM3_DRIVE_CONTROLS.py --export-only
+
+Koguja on võrguühenduseta testitud. Selle uue juhendatud töövoo Maci katse
+on veel ees. 87 tüübi varasemat kogumist ei korrata; see sessioon kogub
+nelja näidistüübi kanalite ja põhiseadete tõendeid, mitte kõigi tüüpide garantiid.
+
+0.1.1: preseti nime muutus ekspordil raporteeritakse eraldi ega peata katset.
+Olemasolev sessioon jätkub samast kohast. Plaan ei muutunud.

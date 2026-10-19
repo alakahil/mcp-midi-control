@@ -1,0 +1,23 @@
+[
+  {
+    "displayNumber": 29,
+    "name": "Tubular",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 30,
+    "name": "Vowel Flanger",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 31,
+    "name": "Zero Flanger",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  }
+]

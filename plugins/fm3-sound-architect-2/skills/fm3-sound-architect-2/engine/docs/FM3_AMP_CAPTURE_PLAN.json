@@ -1,0 +1,2109 @@
+{
+  "firmware": 13,
+  "base": "Baaspreset.syx",
+  "missingModels": 326,
+  "groups": [
+    {
+      "group": 1,
+      "file": "FM3_AMP_CAPTURE_001.syx",
+      "channels": {
+        "A": {
+          "id": 0,
+          "name": "59 Bassguy Bright"
+        },
+        "B": {
+          "id": 1,
+          "name": "65 Bassguy Normal"
+        },
+        "C": {
+          "id": 2,
+          "name": "Vibrato Verb"
+        },
+        "D": {
+          "id": 3,
+          "name": "Deluxe Verb Vibrato"
+        }
+      }
+    },
+    {
+      "group": 2,
+      "file": "FM3_AMP_CAPTURE_002.syx",
+      "channels": {
+        "A": {
+          "id": 4,
+          "name": "Double Verb Vibrato"
+        },
+        "B": {
+          "id": 5,
+          "name": "JR Blues"
+        },
+        "C": {
+          "id": 6,
+          "name": "Class-A 15W TB"
+        },
+        "D": {
+          "id": 7,
+          "name": "Class-A 30W"
+        }
+      }
+    },
+    {
+      "group": 3,
+      "file": "FM3_AMP_CAPTURE_003.syx",
+      "channels": {
+        "A": {
+          "id": 8,
+          "name": "Class-A 30W TB"
+        },
+        "B": {
+          "id": 9,
+          "name": "Brit JM45"
+        },
+        "C": {
+          "id": 10,
+          "name": "Plexi 50W Normal"
+        },
+        "D": {
+          "id": 11,
+          "name": "Plexi 50W High 1"
+        }
+      }
+    },
+    {
+      "group": 4,
+      "file": "FM3_AMP_CAPTURE_004.syx",
+      "channels": {
+        "A": {
+          "id": 12,
+          "name": "1987X Normal"
+        },
+        "B": {
+          "id": 13,
+          "name": "1987X Treble"
+        },
+        "C": {
+          "id": 14,
+          "name": "Brit 800 2204 High"
+        },
+        "D": {
+          "id": 15,
+          "name": "Brit Super"
+        }
+      },
+      "plannedChannels": {
+        "A": {
+          "id": 12,
+          "name": "1987X Normal"
+        },
+        "B": {
+          "id": 13,
+          "name": "1987X Treble"
+        },
+        "C": {
+          "id": 14,
+          "name": "Brit 800 2204 High"
+        },
+        "D": {
+          "id": 15,
+          "name": "Brit Super"
+        }
+      },
+      "status": "captured and corrected; ID314 also captured in first export",
+      "correctedFile": "FM3_AMP_CAPTURE_004_corrected.syx"
+    },
+    {
+      "group": 5,
+      "file": "FM3_AMP_CAPTURE_005.syx",
+      "channels": {
+        "A": {
+          "id": 16,
+          "name": "Hipower Normal"
+        },
+        "B": {
+          "id": 17,
+          "name": "Hipower Brilliant"
+        },
+        "C": {
+          "id": 19,
+          "name": "USA Pre Clean"
+        },
+        "D": {
+          "id": 21,
+          "name": "USA MK IIC+"
+        }
+      }
+    },
+    {
+      "group": 6,
+      "file": "FM3_AMP_CAPTURE_006.syx",
+      "channels": {
+        "A": {
+          "id": 22,
+          "name": "USA MK IIC+ Bright"
+        },
+        "B": {
+          "id": 25,
+          "name": "Recto2 Orange Vintage"
+        },
+        "C": {
+          "id": 26,
+          "name": "Recto2 Orange Modern"
+        },
+        "D": {
+          "id": 27,
+          "name": "Recto2 Red Vintage"
+        }
+      }
+    },
+    {
+      "group": 7,
+      "file": "FM3_AMP_CAPTURE_007.syx",
+      "channels": {
+        "A": {
+          "id": 28,
+          "name": "Recto2 Red Modern"
+        },
+        "B": {
+          "id": 29,
+          "name": "Euro Blue"
+        },
+        "C": {
+          "id": 30,
+          "name": "Euro Red"
+        },
+        "D": {
+          "id": 31,
+          "name": "Shiver Clean"
+        }
+      }
+    },
+    {
+      "group": 8,
+      "file": "FM3_AMP_CAPTURE_008.syx",
+      "channels": {
+        "A": {
+          "id": 32,
+          "name": "Shiver Lead"
+        },
+        "B": {
+          "id": 33,
+          "name": "Euro Uber"
+        },
+        "C": {
+          "id": 34,
+          "name": "Solo 99 Clean"
+        },
+        "D": {
+          "id": 35,
+          "name": "Solo 100 Rhythm"
+        }
+      }
+    },
+    {
+      "group": 9,
+      "file": "FM3_AMP_CAPTURE_009.syx",
+      "channels": {
+        "A": {
+          "id": 36,
+          "name": "Solo 100 Lead"
+        },
+        "B": {
+          "id": 37,
+          "name": "Friedman BE V1"
+        },
+        "C": {
+          "id": 38,
+          "name": "Friedman HBE V1"
+        },
+        "D": {
+          "id": 39,
+          "name": "PVH 6160 Block Lead"
+        }
+      }
+    },
+    {
+      "group": 10,
+      "file": "FM3_AMP_CAPTURE_010.syx",
+      "channels": {
+        "A": {
+          "id": 40,
+          "name": "Mr Z MZ-38"
+        },
+        "B": {
+          "id": 41,
+          "name": "CA3+ Rhythm"
+        },
+        "C": {
+          "id": 42,
+          "name": "CA3+ Lead"
+        },
+        "D": {
+          "id": 43,
+          "name": "Wrecker Rocket"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_RESULTS.json"
+    },
+    {
+      "group": 11,
+      "file": "FM3_AMP_CAPTURE_011.syx",
+      "channels": {
+        "A": {
+          "id": 44,
+          "name": "Cornfed M50"
+        },
+        "B": {
+          "id": 45,
+          "name": "Carol-Ann OD-2"
+        },
+        "C": {
+          "id": 46,
+          "name": "Fryette D60 Less"
+        },
+        "D": {
+          "id": 47,
+          "name": "Fryette D60 More"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_RESULTS.json"
+    },
+    {
+      "group": 12,
+      "file": "FM3_AMP_CAPTURE_012.syx",
+      "channels": {
+        "A": {
+          "id": 48,
+          "name": "Brit Brown"
+        },
+        "B": {
+          "id": 49,
+          "name": "Citrus RV50"
+        },
+        "C": {
+          "id": 50,
+          "name": "Jazz 120"
+        },
+        "D": {
+          "id": 51,
+          "name": "Energyball"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_RESULTS.json"
+    },
+    {
+      "group": 13,
+      "file": "FM3_AMP_CAPTURE_013.syx",
+      "channels": {
+        "A": {
+          "id": 52,
+          "name": "ODS-100 Clean"
+        },
+        "B": {
+          "id": 53,
+          "name": "ODS-100 HRM"
+        },
+        "C": {
+          "id": 54,
+          "name": "FAS Rhythm"
+        },
+        "D": {
+          "id": 55,
+          "name": "FAS Lead 1"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_224026_RESULTS.json"
+    },
+    {
+      "group": 14,
+      "file": "FM3_AMP_CAPTURE_014.syx",
+      "channels": {
+        "A": {
+          "id": 56,
+          "name": "FAS Lead 2"
+        },
+        "B": {
+          "id": 57,
+          "name": "FAS Modern"
+        },
+        "C": {
+          "id": 58,
+          "name": "Das Metall"
+        },
+        "D": {
+          "id": 59,
+          "name": "Brit Pre"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_224026_RESULTS.json"
+    },
+    {
+      "group": 15,
+      "file": "FM3_AMP_CAPTURE_015.syx",
+      "channels": {
+        "A": {
+          "id": 60,
+          "name": "Buddah DuoMaster"
+        },
+        "B": {
+          "id": 61,
+          "name": "Matchbox Chiefman 1"
+        },
+        "C": {
+          "id": 62,
+          "name": "Matchbox Chiefman 2"
+        },
+        "D": {
+          "id": 63,
+          "name": "Cameron CCV 1A"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_224026_RESULTS.json"
+    },
+    {
+      "group": 16,
+      "file": "FM3_AMP_CAPTURE_016.syx",
+      "channels": {
+        "A": {
+          "id": 64,
+          "name": "Cameron CCV 2A"
+        },
+        "B": {
+          "id": 65,
+          "name": "SV Bass 2"
+        },
+        "C": {
+          "id": 66,
+          "name": "Tube Pre"
+        },
+        "D": {
+          "id": 67,
+          "name": "FAS Brown"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_224026_RESULTS.json"
+    },
+    {
+      "group": 17,
+      "file": "FM3_AMP_CAPTURE_017.syx",
+      "channels": {
+        "A": {
+          "id": 68,
+          "name": "Big Hair"
+        },
+        "B": {
+          "id": 69,
+          "name": "Solo 99 Lead"
+        },
+        "C": {
+          "id": 70,
+          "name": "Supertweed"
+        },
+        "D": {
+          "id": 71,
+          "name": "Texas Star Lead"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_225630_RESULTS.json"
+    },
+    {
+      "group": 18,
+      "file": "FM3_AMP_CAPTURE_018.syx",
+      "channels": {
+        "A": {
+          "id": 72,
+          "name": "FAS Wreck"
+        },
+        "B": {
+          "id": 73,
+          "name": "Brit JVM OD1 Orange"
+        },
+        "C": {
+          "id": 74,
+          "name": "Brit JVM OD2 Orange"
+        },
+        "D": {
+          "id": 75,
+          "name": "FAS 6160"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_225630_RESULTS.json"
+    },
+    {
+      "group": 19,
+      "file": "FM3_AMP_CAPTURE_019.syx",
+      "channels": {
+        "A": {
+          "id": 76,
+          "name": "Legend 100"
+        },
+        "B": {
+          "id": 78,
+          "name": "USA MK IV Lead Mid Bright"
+        },
+        "C": {
+          "id": 79,
+          "name": "Princetone 5F2"
+        },
+        "D": {
+          "id": 80,
+          "name": "Blankenship Leeds"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_225630_RESULTS.json"
+    },
+    {
+      "group": 20,
+      "file": "FM3_AMP_CAPTURE_020.syx",
+      "channels": {
+        "A": {
+          "id": 81,
+          "name": "5153 100W Green"
+        },
+        "B": {
+          "id": 82,
+          "name": "5153 100W Blue"
+        },
+        "C": {
+          "id": 83,
+          "name": "5153 100W Red"
+        },
+        "D": {
+          "id": 84,
+          "name": "Solo 88 Rhythm"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_225630_RESULTS.json"
+    },
+    {
+      "group": 21,
+      "file": "FM3_AMP_CAPTURE_021.syx",
+      "channels": {
+        "A": {
+          "id": 85,
+          "name": "Div/13 CJ"
+        },
+        "B": {
+          "id": 86,
+          "name": "Herbie CH2-"
+        },
+        "C": {
+          "id": 87,
+          "name": "Herbie CH2+"
+        },
+        "D": {
+          "id": 88,
+          "name": "Herbie CH3"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 22,
+      "file": "FM3_AMP_CAPTURE_022.syx",
+      "channels": {
+        "A": {
+          "id": 89,
+          "name": "Dirty Shirley 1"
+        },
+        "B": {
+          "id": 90,
+          "name": "Dizzy V4 Blue 2"
+        },
+        "C": {
+          "id": 91,
+          "name": "Dizzy V4 Blue 3"
+        },
+        "D": {
+          "id": 92,
+          "name": "Dizzy V4 Blue 4"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 23,
+      "file": "FM3_AMP_CAPTURE_023.syx",
+      "channels": {
+        "A": {
+          "id": 93,
+          "name": "Suhr Badger 18"
+        },
+        "B": {
+          "id": 94,
+          "name": "Suhr Badger 30"
+        },
+        "C": {
+          "id": 95,
+          "name": "Princetone AA964"
+        },
+        "D": {
+          "id": 96,
+          "name": "Supremo Trem"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 24,
+      "file": "FM3_AMP_CAPTURE_024.syx",
+      "channels": {
+        "A": {
+          "id": 97,
+          "name": "Atomica Low"
+        },
+        "B": {
+          "id": 98,
+          "name": "Atomica High"
+        },
+        "C": {
+          "id": 99,
+          "name": "Deluxe Tweed Jumped"
+        },
+        "D": {
+          "id": 100,
+          "name": "Spawn Q-Rod OD2-1"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 25,
+      "file": "FM3_AMP_CAPTURE_025.syx",
+      "channels": {
+        "A": {
+          "id": 101,
+          "name": "Spawn Q-Rod OD2-2"
+        },
+        "B": {
+          "id": 102,
+          "name": "Spawn Q-Rod OD2-3"
+        },
+        "C": {
+          "id": 103,
+          "name": "Brit Silver"
+        },
+        "D": {
+          "id": 104,
+          "name": "Spawn Nitrous 2"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 26,
+      "file": "FM3_AMP_CAPTURE_026.syx",
+      "channels": {
+        "A": {
+          "id": 105,
+          "name": "FAS Crunch"
+        },
+        "B": {
+          "id": 106,
+          "name": "Two Stone J35 PAB"
+        },
+        "C": {
+          "id": 107,
+          "name": "Fox ODS"
+        },
+        "D": {
+          "id": 108,
+          "name": "Hot Kitty"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 27,
+      "file": "FM3_AMP_CAPTURE_027.syx",
+      "channels": {
+        "A": {
+          "id": 109,
+          "name": "Band-Commander"
+        },
+        "B": {
+          "id": 110,
+          "name": "Super Verb Vibrato"
+        },
+        "C": {
+          "id": 111,
+          "name": "Vibra-King"
+        },
+        "D": {
+          "id": 112,
+          "name": "Gibtone Scout"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 28,
+      "file": "FM3_AMP_CAPTURE_028.syx",
+      "channels": {
+        "A": {
+          "id": 113,
+          "name": "PVH 6160+ Lead"
+        },
+        "B": {
+          "id": 114,
+          "name": "Solo 100 Clean"
+        },
+        "C": {
+          "id": 115,
+          "name": "USA Pre LD2 Green"
+        },
+        "D": {
+          "id": 116,
+          "name": "USA Pre LD2 Yellow"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 29,
+      "file": "FM3_AMP_CAPTURE_029.syx",
+      "channels": {
+        "A": {
+          "id": 117,
+          "name": "CA3+ Clean"
+        },
+        "B": {
+          "id": 118,
+          "name": "Fox ODS Mid"
+        },
+        "C": {
+          "id": 119,
+          "name": "Brit JVM OD1 Green"
+        },
+        "D": {
+          "id": 120,
+          "name": "Brit JVM OD2 Green"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 30,
+      "file": "FM3_AMP_CAPTURE_030.syx",
+      "channels": {
+        "A": {
+          "id": 121,
+          "name": "Vibrato Lux"
+        },
+        "B": {
+          "id": 122,
+          "name": "Brit 800 Mod"
+        },
+        "C": {
+          "id": 123,
+          "name": "Nuclear-Tone"
+        },
+        "D": {
+          "id": 124,
+          "name": "Bludojai Clean"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261003_232027_RESULTS.json"
+    },
+    {
+      "group": 31,
+      "file": "FM3_AMP_CAPTURE_031.syx",
+      "channels": {
+        "A": {
+          "id": 125,
+          "name": "Bludojai Lead PAB"
+        },
+        "B": {
+          "id": 126,
+          "name": "Plexi 100W High"
+        },
+        "C": {
+          "id": 127,
+          "name": "Plexi 100W Normal"
+        },
+        "D": {
+          "id": 128,
+          "name": "Ruby Rocket Bright"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 32,
+      "file": "FM3_AMP_CAPTURE_032.syx",
+      "channels": {
+        "A": {
+          "id": 129,
+          "name": "AC-20 EF86 Bass"
+        },
+        "B": {
+          "id": 130,
+          "name": "Princetone Reverb"
+        },
+        "C": {
+          "id": 131,
+          "name": "Comet Concourse"
+        },
+        "D": {
+          "id": 132,
+          "name": "FAS Modern II"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 33,
+      "file": "FM3_AMP_CAPTURE_033.syx",
+      "channels": {
+        "A": {
+          "id": 133,
+          "name": "Carol-Ann Triptik Modern"
+        },
+        "B": {
+          "id": 134,
+          "name": "Carol-Ann Triptik Classic"
+        },
+        "C": {
+          "id": 135,
+          "name": "Carol-Ann Triptik Clean"
+        },
+        "D": {
+          "id": 136,
+          "name": "Thordendal Vintage"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 34,
+      "file": "FM3_AMP_CAPTURE_034.syx",
+      "channels": {
+        "A": {
+          "id": 137,
+          "name": "Thordendal Modern"
+        },
+        "B": {
+          "id": 138,
+          "name": "ODS-100 HRM Mid"
+        },
+        "C": {
+          "id": 139,
+          "name": "Euro Blue Modern"
+        },
+        "D": {
+          "id": 140,
+          "name": "Euro Red Modern"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 35,
+      "file": "FM3_AMP_CAPTURE_035.syx",
+      "channels": {
+        "A": {
+          "id": 141,
+          "name": "Plexi 50W Jumped"
+        },
+        "B": {
+          "id": 142,
+          "name": "AC-20 EF86 Treble"
+        },
+        "C": {
+          "id": 143,
+          "name": "Comet 60"
+        },
+        "D": {
+          "id": 144,
+          "name": "Hipower Jumped"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 36,
+      "file": "FM3_AMP_CAPTURE_036.syx",
+      "channels": {
+        "A": {
+          "id": 145,
+          "name": "Plexi 100W Jumped"
+        },
+        "B": {
+          "id": 146,
+          "name": "Brit JM45 Jumped"
+        },
+        "C": {
+          "id": 147,
+          "name": "1987X Jumped"
+        },
+        "D": {
+          "id": 148,
+          "name": "Recto1 Orange Normal"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 37,
+      "file": "FM3_AMP_CAPTURE_037.syx",
+      "channels": {
+        "A": {
+          "id": 149,
+          "name": "Recto1 Red"
+        },
+        "B": {
+          "id": 150,
+          "name": "ODS-100 Ford PAB"
+        },
+        "C": {
+          "id": 151,
+          "name": "Bogfish Strato"
+        },
+        "D": {
+          "id": 152,
+          "name": "Bogfish Brown"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 38,
+      "file": "FM3_AMP_CAPTURE_038.syx",
+      "channels": {
+        "A": {
+          "id": 153,
+          "name": "5F1 Tweed"
+        },
+        "B": {
+          "id": 154,
+          "name": "Wrecker Express"
+        },
+        "C": {
+          "id": 155,
+          "name": "Two Stone J35"
+        },
+        "D": {
+          "id": 156,
+          "name": "ODS-100 Ford"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 39,
+      "file": "FM3_AMP_CAPTURE_039.syx",
+      "channels": {
+        "A": {
+          "id": 157,
+          "name": "Mr Z MZ-8"
+        },
+        "B": {
+          "id": 158,
+          "name": "Car Ambler"
+        },
+        "C": {
+          "id": 159,
+          "name": "USA Metro Blues"
+        },
+        "D": {
+          "id": 160,
+          "name": "Wrecker Liverpool"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 40,
+      "file": "FM3_AMP_CAPTURE_040.syx",
+      "channels": {
+        "A": {
+          "id": 161,
+          "name": "Citrus Terrier"
+        },
+        "B": {
+          "id": 162,
+          "name": "Citrus A30 Clean"
+        },
+        "C": {
+          "id": 163,
+          "name": "Citrus A30 Dirty"
+        },
+        "D": {
+          "id": 164,
+          "name": "Div/13 FT37 Low"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 41,
+      "file": "FM3_AMP_CAPTURE_041.syx",
+      "channels": {
+        "A": {
+          "id": 165,
+          "name": "Div/13 FT37 High"
+        },
+        "B": {
+          "id": 166,
+          "name": "Matchbox D-30"
+        },
+        "C": {
+          "id": 167,
+          "name": "FAS Class-A"
+        },
+        "D": {
+          "id": 168,
+          "name": "USA Bass 400 1"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 42,
+      "file": "FM3_AMP_CAPTURE_042.syx",
+      "channels": {
+        "A": {
+          "id": 169,
+          "name": "USA Bass 400 2"
+        },
+        "B": {
+          "id": 170,
+          "name": "Citrus Bass 200"
+        },
+        "C": {
+          "id": 171,
+          "name": "FAS Bass"
+        },
+        "D": {
+          "id": 172,
+          "name": "Tremolo Lux"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 43,
+      "file": "FM3_AMP_CAPTURE_043.syx",
+      "channels": {
+        "A": {
+          "id": 173,
+          "name": "FAS Brootalz"
+        },
+        "B": {
+          "id": 174,
+          "name": "Recto1 Orange Modern"
+        },
+        "C": {
+          "id": 175,
+          "name": "Angle Severe 1"
+        },
+        "D": {
+          "id": 176,
+          "name": "Angle Severe 2"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 44,
+      "file": "FM3_AMP_CAPTURE_044.syx",
+      "channels": {
+        "A": {
+          "id": 177,
+          "name": "USA Pre LD2 Red"
+        },
+        "B": {
+          "id": 178,
+          "name": "USA Pre LD1 Red"
+        },
+        "C": {
+          "id": 179,
+          "name": "Texas Star Clean"
+        },
+        "D": {
+          "id": 180,
+          "name": "AC-20 12AX7 Treble"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 45,
+      "file": "FM3_AMP_CAPTURE_045.syx",
+      "channels": {
+        "A": {
+          "id": 181,
+          "name": "Vibrato Verb AA"
+        },
+        "B": {
+          "id": 182,
+          "name": "Vibrato Verb AB"
+        },
+        "C": {
+          "id": 183,
+          "name": "Carol-Ann Tucana Lead"
+        },
+        "D": {
+          "id": 184,
+          "name": "JR Blues Fat"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 46,
+      "file": "FM3_AMP_CAPTURE_046.syx",
+      "channels": {
+        "A": {
+          "id": 185,
+          "name": "Solo 88 Lead"
+        },
+        "B": {
+          "id": 186,
+          "name": "Brit AFS100 1"
+        },
+        "C": {
+          "id": 187,
+          "name": "Brit AFS100 2"
+        },
+        "D": {
+          "id": 188,
+          "name": "Class-A 30W Hot"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 47,
+      "file": "FM3_AMP_CAPTURE_047.syx",
+      "channels": {
+        "A": {
+          "id": 189,
+          "name": "Dizzy V4 Silver 3"
+        },
+        "B": {
+          "id": 190,
+          "name": "Dizzy V4 Silver 2"
+        },
+        "C": {
+          "id": 191,
+          "name": "Dizzy V4 Silver 4"
+        },
+        "D": {
+          "id": 192,
+          "name": "1959SLP Normal"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 48,
+      "file": "FM3_AMP_CAPTURE_048.syx",
+      "channels": {
+        "A": {
+          "id": 193,
+          "name": "1959SLP Treble"
+        },
+        "B": {
+          "id": 194,
+          "name": "1959SLP Jumped"
+        },
+        "C": {
+          "id": 195,
+          "name": "FAS Modern III"
+        },
+        "D": {
+          "id": 196,
+          "name": "ODS-100 Ford PAB Mid"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 49,
+      "file": "FM3_AMP_CAPTURE_049.syx",
+      "channels": {
+        "A": {
+          "id": 197,
+          "name": "Mr Z Highway 66"
+        },
+        "B": {
+          "id": 198,
+          "name": "6G4 Super"
+        },
+        "C": {
+          "id": 199,
+          "name": "6G12 Concert"
+        },
+        "D": {
+          "id": 200,
+          "name": "65 Bassguy Bass"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 50,
+      "file": "FM3_AMP_CAPTURE_050.syx",
+      "channels": {
+        "A": {
+          "id": 201,
+          "name": "Vibra-King Fat"
+        },
+        "B": {
+          "id": 202,
+          "name": "Spawn Q-Rod OD1-1"
+        },
+        "C": {
+          "id": 203,
+          "name": "Spawn Q-Rod OD1-2"
+        },
+        "D": {
+          "id": 204,
+          "name": "Spawn Q-Rod OD1-3"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_085736_RESULTS.json"
+    },
+    {
+      "group": 51,
+      "file": "FM3_AMP_CAPTURE_051.syx",
+      "channels": {
+        "A": {
+          "id": 205,
+          "name": "Carol-Ann Tucana Clean"
+        },
+        "B": {
+          "id": 206,
+          "name": "Brit JVM OD1 Red"
+        },
+        "C": {
+          "id": 207,
+          "name": "Brit JVM OD2 Red"
+        },
+        "D": {
+          "id": 208,
+          "name": "Cameron CCV 1B"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 52,
+      "file": "FM3_AMP_CAPTURE_052.syx",
+      "channels": {
+        "A": {
+          "id": 209,
+          "name": "Cameron CCV 2B"
+        },
+        "B": {
+          "id": 210,
+          "name": "Cameron CCV 2C"
+        },
+        "C": {
+          "id": 211,
+          "name": "Cameron CCV 2D"
+        },
+        "D": {
+          "id": 212,
+          "name": "Friedman Small Box"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 53,
+      "file": "FM3_AMP_CAPTURE_053.syx",
+      "channels": {
+        "A": {
+          "id": 213,
+          "name": "5153 50W Blue"
+        },
+        "B": {
+          "id": 214,
+          "name": "Div/13 CJ Boost"
+        },
+        "C": {
+          "id": 215,
+          "name": "USA MK IIC+ Deep"
+        },
+        "D": {
+          "id": 216,
+          "name": "USA MK IIC+ Deep Bright"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 54,
+      "file": "FM3_AMP_CAPTURE_054.syx",
+      "channels": {
+        "A": {
+          "id": 217,
+          "name": "5F8 Tweed Bright"
+        },
+        "B": {
+          "id": 218,
+          "name": "Double Verb Silverface"
+        },
+        "C": {
+          "id": 219,
+          "name": "Vibrato Verb Custom"
+        },
+        "D": {
+          "id": 220,
+          "name": "JMPre-1 OD1"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 55,
+      "file": "FM3_AMP_CAPTURE_055.syx",
+      "channels": {
+        "A": {
+          "id": 221,
+          "name": "JMPre-1 OD2"
+        },
+        "B": {
+          "id": 222,
+          "name": "JMPre-1 OD1 Bass Shift"
+        },
+        "C": {
+          "id": 223,
+          "name": "JMPre-1 OD2 Bass Shift"
+        },
+        "D": {
+          "id": 224,
+          "name": "Deluxe Verb Normal"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 56,
+      "file": "FM3_AMP_CAPTURE_056.syx",
+      "channels": {
+        "A": {
+          "id": 225,
+          "name": "Double Verb Normal"
+        },
+        "B": {
+          "id": 226,
+          "name": "Super Verb Normal"
+        },
+        "C": {
+          "id": 227,
+          "name": "Bludojai Lead"
+        },
+        "D": {
+          "id": 228,
+          "name": "Plexi 50W 6550"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 57,
+      "file": "FM3_AMP_CAPTURE_057.syx",
+      "channels": {
+        "A": {
+          "id": 229,
+          "name": "FAS Hot Rod"
+        },
+        "B": {
+          "id": 230,
+          "name": "PVH 6160+ Crunch"
+        },
+        "C": {
+          "id": 231,
+          "name": "PVH 6160+ Clean"
+        },
+        "D": {
+          "id": 232,
+          "name": "Solo 88 Clean"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 58,
+      "file": "FM3_AMP_CAPTURE_058.syx",
+      "channels": {
+        "A": {
+          "id": 233,
+          "name": "Class-A 30W Bright"
+        },
+        "B": {
+          "id": 234,
+          "name": "Plexi 50W High 2"
+        },
+        "C": {
+          "id": 235,
+          "name": "Spawn Nitrous 1"
+        },
+        "D": {
+          "id": 236,
+          "name": "Ruby Rocket"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 59,
+      "file": "FM3_AMP_CAPTURE_059.syx",
+      "channels": {
+        "A": {
+          "id": 237,
+          "name": "AC-20 12AX7 Bass"
+        },
+        "B": {
+          "id": 238,
+          "name": "Plexi 100W 1970"
+        },
+        "C": {
+          "id": 239,
+          "name": "JS410 Lead Orange"
+        },
+        "D": {
+          "id": 240,
+          "name": "JS410 Lead Red"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 60,
+      "file": "FM3_AMP_CAPTURE_060.syx",
+      "channels": {
+        "A": {
+          "id": 241,
+          "name": "JS410 Crunch Orange"
+        },
+        "B": {
+          "id": 242,
+          "name": "JS410 Crunch Red"
+        },
+        "C": {
+          "id": 243,
+          "name": "Friedman BE V2"
+        },
+        "D": {
+          "id": 244,
+          "name": "Friedman HBE V2"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 61,
+      "file": "FM3_AMP_CAPTURE_061.syx",
+      "channels": {
+        "A": {
+          "id": 245,
+          "name": "Dweezil's Bassguy"
+        },
+        "B": {
+          "id": 246,
+          "name": "Friedman BE V3"
+        },
+        "C": {
+          "id": 247,
+          "name": "Friedman HBE V3"
+        },
+        "D": {
+          "id": 248,
+          "name": "USA MK IIC++"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_092114_RESULTS.json"
+    },
+    {
+      "group": 62,
+      "file": "FM3_AMP_CAPTURE_062.syx",
+      "channels": {
+        "A": {
+          "id": 249,
+          "name": "Legend 100 II"
+        },
+        "B": {
+          "id": 250,
+          "name": "Capt Hook 2B"
+        },
+        "C": {
+          "id": 251,
+          "name": "Capt Hook 3B"
+        },
+        "D": {
+          "id": 252,
+          "name": "Capt Hook 2A"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 63,
+      "file": "FM3_AMP_CAPTURE_063.syx",
+      "channels": {
+        "A": {
+          "id": 253,
+          "name": "Capt Hook 3A"
+        },
+        "B": {
+          "id": 254,
+          "name": "Capt Hook 1A"
+        },
+        "C": {
+          "id": 255,
+          "name": "Capt Hook 1B"
+        },
+        "D": {
+          "id": 256,
+          "name": "Dirty Shirley 2"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 64,
+      "file": "FM3_AMP_CAPTURE_064.syx",
+      "channels": {
+        "A": {
+          "id": 257,
+          "name": "Brit 800 #34"
+        },
+        "B": {
+          "id": 258,
+          "name": "5F1 Tweed EC"
+        },
+        "C": {
+          "id": 259,
+          "name": "Friedman BE V1 Fat"
+        },
+        "D": {
+          "id": 260,
+          "name": "Friedman HBE V1 Fat"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 65,
+      "file": "FM3_AMP_CAPTURE_065.syx",
+      "channels": {
+        "A": {
+          "id": 261,
+          "name": "Plexi 2204"
+        },
+        "B": {
+          "id": 262,
+          "name": "Friedman HBE C45"
+        },
+        "C": {
+          "id": 263,
+          "name": "Porta-Bass"
+        },
+        "D": {
+          "id": 264,
+          "name": "SV Bass 1"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 66,
+      "file": "FM3_AMP_CAPTURE_066.syx",
+      "channels": {
+        "A": {
+          "id": 265,
+          "name": "FAS Skull Crusher"
+        },
+        "B": {
+          "id": 266,
+          "name": "USA JP IIC+ Red"
+        },
+        "C": {
+          "id": 267,
+          "name": "USA JP IIC+ Yellow"
+        },
+        "D": {
+          "id": 268,
+          "name": "USA JP IIC+ Green"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 67,
+      "file": "FM3_AMP_CAPTURE_067.syx",
+      "channels": {
+        "A": {
+          "id": 269,
+          "name": "Wrecker Express Bright"
+        },
+        "B": {
+          "id": 270,
+          "name": "Wrecker Liverpool Bright"
+        },
+        "C": {
+          "id": 271,
+          "name": "Matchbox D-30 EF86"
+        },
+        "D": {
+          "id": 272,
+          "name": "FAS Express"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 68,
+      "file": "FM3_AMP_CAPTURE_068.syx",
+      "channels": {
+        "A": {
+          "id": 273,
+          "name": "Triple Crest 2"
+        },
+        "B": {
+          "id": 274,
+          "name": "Triple Crest 3"
+        },
+        "C": {
+          "id": 275,
+          "name": "PVH 6160+ Crunch Bright"
+        },
+        "D": {
+          "id": 276,
+          "name": "PVH 6160+ Clean Bright"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 69,
+      "file": "FM3_AMP_CAPTURE_069.syx",
+      "channels": {
+        "A": {
+          "id": 277,
+          "name": "Plexi 50W 6CA7"
+        },
+        "B": {
+          "id": 278,
+          "name": "Solo 99 Lead Bright"
+        },
+        "C": {
+          "id": 279,
+          "name": "Archean"
+        },
+        "D": {
+          "id": 280,
+          "name": "Archean Bright"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 70,
+      "file": "FM3_AMP_CAPTURE_070.syx",
+      "channels": {
+        "A": {
+          "id": 281,
+          "name": "Archean Clean"
+        },
+        "B": {
+          "id": 282,
+          "name": "59 Bassguy Jumped"
+        },
+        "C": {
+          "id": 283,
+          "name": "Deluxe Tweed Bright"
+        },
+        "D": {
+          "id": 284,
+          "name": "USA JP IIC+ Red Shred"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 71,
+      "file": "FM3_AMP_CAPTURE_071.syx",
+      "channels": {
+        "A": {
+          "id": 285,
+          "name": "USA JP IIC+ Yellow Shred"
+        },
+        "B": {
+          "id": 286,
+          "name": "Friedman BE C45"
+        },
+        "C": {
+          "id": 287,
+          "name": "Friedman BE 2010"
+        },
+        "D": {
+          "id": 288,
+          "name": "Friedman HBE 2010"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 72,
+      "file": "FM3_AMP_CAPTURE_072.syx",
+      "channels": {
+        "A": {
+          "id": 289,
+          "name": "FAS Buttery"
+        },
+        "B": {
+          "id": 290,
+          "name": "59 Bassguy Normal"
+        },
+        "C": {
+          "id": 291,
+          "name": "5F8 Tweed Normal"
+        },
+        "D": {
+          "id": 292,
+          "name": "5F8 Tweed Jumped"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_095554_RESULTS.json"
+    },
+    {
+      "group": 73,
+      "file": "FM3_AMP_CAPTURE_073.syx",
+      "channels": {
+        "A": {
+          "id": 293,
+          "name": "JMPre-1 Clean1"
+        },
+        "B": {
+          "id": 294,
+          "name": "JMPre-1 Clean1 Bass Shift"
+        },
+        "C": {
+          "id": 295,
+          "name": "JMPre-1 Clean2"
+        },
+        "D": {
+          "id": 296,
+          "name": "JMPre-1 Clean2 Bass Shift"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 74,
+      "file": "FM3_AMP_CAPTURE_074.syx",
+      "channels": {
+        "A": {
+          "id": 297,
+          "name": "Diamante Fire"
+        },
+        "B": {
+          "id": 298,
+          "name": "PVH 6160 Block Crunch"
+        },
+        "C": {
+          "id": 299,
+          "name": "Plexi Studio 20"
+        },
+        "D": {
+          "id": 300,
+          "name": "Plexi 50W 6CA7 Jumped"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 75,
+      "file": "FM3_AMP_CAPTURE_075.syx",
+      "channels": {
+        "A": {
+          "id": 301,
+          "name": "Herbie MK3"
+        },
+        "B": {
+          "id": 302,
+          "name": "59 Bassguy RI Jumped"
+        },
+        "C": {
+          "id": 303,
+          "name": "Revv Gen Purple 1"
+        },
+        "D": {
+          "id": 304,
+          "name": "Revv Gen Purple 2"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 76,
+      "file": "FM3_AMP_CAPTURE_076.syx",
+      "channels": {
+        "A": {
+          "id": 305,
+          "name": "Revv Gen Purple 3"
+        },
+        "B": {
+          "id": 306,
+          "name": "Revv Gen Red 1"
+        },
+        "C": {
+          "id": 307,
+          "name": "Revv Gen Red 2"
+        },
+        "D": {
+          "id": 308,
+          "name": "Revv Gen Red 3"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 77,
+      "file": "FM3_AMP_CAPTURE_077.syx",
+      "channels": {
+        "A": {
+          "id": 309,
+          "name": "Revv Gen Green 1"
+        },
+        "B": {
+          "id": 310,
+          "name": "Revv Gen Green 2"
+        },
+        "C": {
+          "id": 311,
+          "name": "Revv Gen Green 3"
+        },
+        "D": {
+          "id": 312,
+          "name": "JS410 Lead Green"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 78,
+      "file": "FM3_AMP_CAPTURE_078.syx",
+      "channels": {
+        "A": {
+          "id": 313,
+          "name": "5153 100W Stealth Blue"
+        },
+        "B": {
+          "id": 314,
+          "name": "Brit 800 2203 High",
+          "status": "already captured in group004; skip"
+        },
+        "C": {
+          "id": 315,
+          "name": "5153 100W Stealth Green"
+        },
+        "D": {
+          "id": 316,
+          "name": "5153 100W Stealth Red"
+        }
+      },
+      "note": "ID314 already captured; skip this channel.",
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 79,
+      "file": "FM3_AMP_CAPTURE_079.syx",
+      "channels": {
+        "A": {
+          "id": 317,
+          "name": "USA MK V Green"
+        },
+        "B": {
+          "id": 318,
+          "name": "Brit 800 2204 Low"
+        },
+        "C": {
+          "id": 319,
+          "name": "Brit 800 2203 Low"
+        },
+        "D": {
+          "id": 320,
+          "name": "USA MK V Red IIC+"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 80,
+      "file": "FM3_AMP_CAPTURE_080.syx",
+      "channels": {
+        "A": {
+          "id": 321,
+          "name": "USA MK V Red IIC+ Bright"
+        },
+        "B": {
+          "id": 322,
+          "name": "USA MK V Red MKIV"
+        },
+        "C": {
+          "id": 323,
+          "name": "USA MK V Red MKIV Bright"
+        },
+        "D": {
+          "id": 324,
+          "name": "USA MK V Red XT"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 81,
+      "file": "FM3_AMP_CAPTURE_081.syx",
+      "channels": {
+        "A": {
+          "id": 325,
+          "name": "USA MK V Red XT Bright"
+        },
+        "B": {
+          "id": 326,
+          "name": "Class-A 30W Brilliant"
+        },
+        "C": {
+          "id": 327,
+          "name": "FAS Stealth Blue"
+        },
+        "D": {
+          "id": 328,
+          "name": "Brit 800 Studio 20"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 82,
+      "file": "FM3_AMP_CAPTURE_082.syx",
+      "channels": {
+        "A": {
+          "id": 329,
+          "name": "Supro Black Magick"
+        },
+        "B": {
+          "id": 330,
+          "name": "Deluxe 6G3"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified",
+      "report": "FM3_AMP_BATCH_20261004_151539_RESULTS.json"
+    },
+    {
+      "group": 83,
+      "file": "FM3_AMP_CAPTURE_083.syx",
+      "channels": {
+        "A": {
+          "id": 333,
+          "name": "Brit JVM Crunch Green"
+        },
+        "B": {
+          "id": 334,
+          "name": "Brit JVM Crunch Orange"
+        },
+        "C": {
+          "id": 335,
+          "name": "Brit JVM Crunch Red"
+        },
+        "D": {
+          "id": 332,
+          "name": "PVH 6160 Block Clean"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified"
+    },
+    {
+      "group": 84,
+      "file": "FM3_AMP_CAPTURE_084.syx",
+      "channels": {
+        "A": {
+          "id": 333,
+          "name": "Brit JVM Crunch Green"
+        },
+        "B": {
+          "id": 334,
+          "name": "Brit JVM Crunch Orange"
+        },
+        "C": {
+          "id": 335,
+          "name": "Brit JVM Crunch Red"
+        },
+        "D": {
+          "id": 331,
+          "name": "Deluxe Tweed Normal"
+        }
+      },
+      "status": "GET/SYX 576/576 verified; full-channel generation offline verified"
+    }
+  ],
+  "progress": {
+    "capturedGroups": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84
+    ],
+    "readyModels": 336,
+    "remainingModels": 0,
+    "nextGroup": null,
+    "scope": "All 336 identified models covered, including five firmware13 additions"
+  }
+}

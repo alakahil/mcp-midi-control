@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-02",
+  "syxSha256": "9b7a8c49449feba5fe1b1b94c859fbbf56948501725692cea9fdf66cdf745bc5",
+  "getSha256": "f7f9a2516b9664b68b08b3498df0e06b7caad5f316cd3331bf9cdca4186fc309",
+  "getChecks": {
+    "frames": true,
+    "checksums": true,
+    "sevenBit": true,
+    "wordCounts": true
+  },
+  "matchedWords": 576,
+  "totalWords": 576,
+  "source": {
+    "file": "FM3_AMP_CAPTURE_006.syx",
+    "index": 0,
+    "sha256": "9b7a8c49449feba5fe1b1b94c859fbbf56948501725692cea9fdf66cdf745bc5",
+    "ignoredSceneSelections": [
+      {
+        "scene": 2,
+        "base": 1,
+        "donor": 0,
+        "action": "Not copied; output keeps base scene selection"
+      }
+    ]
+  },
+  "results": [
+    {
+      "model": "USA MK IIC+ Bright",
+      "id": 22,
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Recto2 Orange Vintage",
+      "id": 25,
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Recto2 Orange Modern",
+      "id": 26,
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "model": "Recto2 Red Vintage",
+      "id": 27,
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    }
+  ],
+  "hardware": "User exported and read device state; generated combinations not imported or audio-tested"
+}

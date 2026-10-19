@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-11",
+  "passed": true,
+  "syntheticOnly": true,
+  "positiveCases": 18,
+  "rejectedCases": 36,
+  "noHardwareEvidence": true,
+  "noGeneratorSupportAdded": true,
+  "scope": "Only Enhancer insertion structure on exact GEQ A-D export; candidate ID122, observed record length, opaque parameters. Fixtures never written to disk."
+}

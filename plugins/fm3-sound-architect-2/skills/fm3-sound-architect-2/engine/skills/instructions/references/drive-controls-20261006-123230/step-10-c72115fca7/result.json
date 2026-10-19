@@ -1,0 +1,74 @@
+{
+  "index": 10,
+  "status": "passed",
+  "step": {
+    "id": "B-mix",
+    "kind": "control",
+    "channel": "B",
+    "binaryId": 6,
+    "field": "Mix",
+    "pid": 4,
+    "value": 25,
+    "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+  },
+  "comparison": {
+    "step": {
+      "id": "B-mix",
+      "kind": "control",
+      "channel": "B",
+      "binaryId": 6,
+      "field": "Mix",
+      "pid": 4,
+      "value": 25,
+      "instruction": "Jäta Drive1 kanal B ja tüüp T808 OD. Muuda ainult Mix väärtuseks 25%. Ekspordi terve preset. Kui väärtus oli juba sama, kasuta s (jäta katse vahele)."
+    },
+    "changes": [
+      {
+        "offset": 8556,
+        "before": 254,
+        "after": 0
+      },
+      {
+        "offset": 8557,
+        "before": 255,
+        "after": 64
+      }
+    ],
+    "presetNameChange": null,
+    "observation": {
+      "field": "Mix",
+      "userConfirmedDisplayValue": 25,
+      "rawBefore": 65534,
+      "rawAfter": 16384,
+      "candidateRaw": 16384,
+      "matchesCandidate": true
+    },
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "ebf19646d8f744a6ef1bf6f36fa535c20d056d7596ed25a347487374f37f11e9",
+    "rawRxSha256": "92ceb272a90bca49c983358a54d59b4620fd1a8a85d4e5b8923bdceed3a5818c",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 26
+      },
+      {
+        "channel": "D",
+        "binaryId": 46
+      }
+    ]
+  }
+}

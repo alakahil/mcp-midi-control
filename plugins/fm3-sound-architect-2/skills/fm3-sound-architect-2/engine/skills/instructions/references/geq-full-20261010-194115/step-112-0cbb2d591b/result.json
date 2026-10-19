@@ -1,0 +1,153 @@
+{
+  "index": 112,
+  "step": {
+    "id": "113-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "8 Band Constant Q — kõigi nähtavate ribade maximum",
+    "channel": "A",
+    "typeName": "8 Band Constant Q",
+    "bandCount": 8,
+    "endpoint": "maximum"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "113-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "8 Band Constant Q — kõigi nähtavate ribade maximum",
+      "channel": "A",
+      "typeName": "8 Band Constant Q",
+      "bandCount": 8,
+      "endpoint": "maximum"
+    },
+    "previousSha256": "3fa007b1c43d4297b0e73e5ceb7c6fb7903b1e6f6dd74ee8ab082edbb038ad5f",
+    "syxSha256": "1df48b2f883d5f528c37105f827108d27a2245e5d76884fca5545edb44e77d3e",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 3,
+        "offset": 8360,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 4,
+        "offset": 8362,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 5,
+        "offset": 8364,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 8366,
+        "before": 0,
+        "after": 65534
+      },
+      {
+        "channel": "A",
+        "pid": 7,
+        "offset": 8368,
+        "before": 0,
+        "after": 65534
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "80",
+      "160",
+      "320",
+      "640",
+      "1250",
+      "2500",
+      "5000",
+      "10k"
+    ],
+    "displayValues": [
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0,
+      12.0
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "1df48b2f883d5f528c37105f827108d27a2245e5d76884fca5545edb44e77d3e",
+    "bodySha256": "219071bc1b37975c53078a2ba69dc351236c6c47a3e2234c89692abce24fc843",
+    "rawRxSha256": "bb673df51e8aea258e543f8a5ba28df9a8770283c8d0449d95552c8a01c19455",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

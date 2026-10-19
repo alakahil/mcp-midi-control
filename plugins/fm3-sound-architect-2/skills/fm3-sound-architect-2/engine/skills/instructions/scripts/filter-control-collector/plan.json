@@ -1,0 +1,182 @@
+[
+  {
+    "id": "C-frequency-500",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Frequency",
+    "value": 500,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 500 Hz. Ekspordi terve preset."
+  },
+  {
+    "id": "C-frequency-1000",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Frequency",
+    "value": 1000,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 1000 Hz. Ekspordi terve preset."
+  },
+  {
+    "id": "C-frequency-2000",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Frequency",
+    "value": 2000,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 2000 Hz. Ekspordi terve preset."
+  },
+  {
+    "id": "C-q-0.707",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Q",
+    "value": 0.707,
+    "unit": "",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Q väärtuseks 0.707 . Ekspordi terve preset."
+  },
+  {
+    "id": "C-q-1.4",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Q",
+    "value": 1.4,
+    "unit": "",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Q väärtuseks 1.4 . Ekspordi terve preset."
+  },
+  {
+    "id": "C-q-2.0",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Q",
+    "value": 2.0,
+    "unit": "",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Q väärtuseks 2.0 . Ekspordi terve preset."
+  },
+  {
+    "id": "C-gain--3",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Gain",
+    "value": -3,
+    "unit": "dB",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Gain väärtuseks -3 dB. Ekspordi terve preset."
+  },
+  {
+    "id": "C-gain-3",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Gain",
+    "value": 3,
+    "unit": "dB",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Gain väärtuseks 3 dB. Ekspordi terve preset."
+  },
+  {
+    "id": "C-gain-0",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Gain",
+    "value": 0,
+    "unit": "dB",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Gain väärtuseks 0 dB. Ekspordi terve preset."
+  },
+  {
+    "id": "C-level--6",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Level",
+    "value": -6,
+    "unit": "dB",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Level väärtuseks -6 dB. Ekspordi terve preset."
+  },
+  {
+    "id": "C-level-0",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Level",
+    "value": 0,
+    "unit": "dB",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Level väärtuseks 0 dB. Ekspordi terve preset."
+  },
+  {
+    "id": "C-level-3",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Level",
+    "value": 3,
+    "unit": "dB",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Level väärtuseks 3 dB. Ekspordi terve preset."
+  },
+  {
+    "id": "A-frequency-80",
+    "channel": "A",
+    "type": "High-Pass",
+    "binaryId": 3,
+    "parameter": "Frequency",
+    "value": 80,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal A (High-Pass); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 80 Hz. Ekspordi terve preset."
+  },
+  {
+    "id": "A-frequency-120",
+    "channel": "A",
+    "type": "High-Pass",
+    "binaryId": 3,
+    "parameter": "Frequency",
+    "value": 120,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal A (High-Pass); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 120 Hz. Ekspordi terve preset."
+  },
+  {
+    "id": "A-frequency-250",
+    "channel": "A",
+    "type": "High-Pass",
+    "binaryId": 3,
+    "parameter": "Frequency",
+    "value": 250,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal A (High-Pass); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 250 Hz. Ekspordi terve preset."
+  },
+  {
+    "id": "B-frequency-4000",
+    "channel": "B",
+    "type": "Low-Pass",
+    "binaryId": 1,
+    "parameter": "Frequency",
+    "value": 4000,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal B (Low-Pass); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 4000 Hz. Ekspordi terve preset."
+  },
+  {
+    "id": "B-frequency-6000",
+    "channel": "B",
+    "type": "Low-Pass",
+    "binaryId": 1,
+    "parameter": "Frequency",
+    "value": 6000,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal B (Low-Pass); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 6000 Hz. Ekspordi terve preset."
+  },
+  {
+    "id": "B-frequency-8000",
+    "channel": "B",
+    "type": "Low-Pass",
+    "binaryId": 1,
+    "parameter": "Frequency",
+    "value": 8000,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal B (Low-Pass); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 8000 Hz. Ekspordi terve preset."
+  }
+]

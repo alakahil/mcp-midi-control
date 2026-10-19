@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 81,
+    "name": "TS9DX +",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 82,
+    "name": "TS9DX Hot",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 83,
+    "name": "Tube Drive 3-Knob",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 84,
+    "name": "Tube Drive 4-Knob",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

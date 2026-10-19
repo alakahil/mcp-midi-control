@@ -1,0 +1,1196 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-06",
+  "sourceArchives": [
+    {
+      "filename": "FM3_REVERB_BATCH_20261006T163055_4c894210.zip",
+      "sha256": "245d761c9f8129abcd2aa7ab369492270dd1f7f3fc62cc5d8cc1805f40243a7e"
+    },
+    {
+      "filename": "FM3_REVERB_BATCH_20261006T181951_d0397be1.zip",
+      "sha256": "a8b6360f88a4625e3359de485aad4be8e01691ce9612e2d39d3786f7348ee6a2"
+    }
+  ],
+  "earlierCapturesIdenticalInLatest": 10,
+  "collected": 79,
+  "remaining": 0,
+  "pairedCaptures": 20,
+  "matchedWordsPerCapture": 284,
+  "uniqueBinaryIds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78
+  ],
+  "pairs": [
+    {
+      "capture": "capture-001",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "cbecae70f0d0dd6dd65c318f582c1b20a07fd98465a30a01ea661a8be9e353e8",
+      "rawRxSha256": "b31ae719b3c8c4ae624de0406c078d4da48b7a246b6d6ae153b2f0789e7d73fd",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 33
+        },
+        {
+          "channel": "B",
+          "binaryId": 8
+        },
+        {
+          "channel": "C",
+          "binaryId": 7
+        },
+        {
+          "channel": "D",
+          "binaryId": 6
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 1,
+          "name": "Chamber: Deep Chamber",
+          "binaryId": 33,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 2,
+          "name": "Chamber: Large Chamber",
+          "binaryId": 8,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 3,
+          "name": "Chamber: Medium Chamber",
+          "binaryId": 7,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 4,
+          "name": "Chamber: Small Chamber",
+          "binaryId": 6,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T151228-65854467e6",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "bd425a8871d10c1aa5bf63cc6f3c79edcc2044c1eb64d6b94722d0e3f2ab27fd",
+      "rawRxSha256": "c17d9621ce93de89a73950bd5b6ef226a78e4435e7fb937744d45f02c375ad70",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 47
+        },
+        {
+          "channel": "B",
+          "binaryId": 48
+        },
+        {
+          "channel": "C",
+          "binaryId": 49
+        },
+        {
+          "channel": "D",
+          "binaryId": 50
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 5,
+          "name": "Cloud: Cirrocumulus",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 6,
+          "name": "Cloud: Cumulonimbus",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 7,
+          "name": "Cloud: Nimbostratus",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 8,
+          "name": "Cloud: Stratocumulus",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T161928-d4f991fee9",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "d020527e62552136c39f5b162c11cab49f3a59e28fcc8daf00df8fda74c89a6d",
+      "rawRxSha256": "dd8f24352d9e36ba60deebad4667570cd9907a392fafff1a8f7a3c8fe26e5f11",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 64
+        },
+        {
+          "channel": "B",
+          "binaryId": 72
+        },
+        {
+          "channel": "C",
+          "binaryId": 63
+        },
+        {
+          "channel": "D",
+          "binaryId": 65
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 9,
+          "name": "Echo: Echo Hall",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 10,
+          "name": "Echo: Echo Pitch Plate",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 11,
+          "name": "Echo: Echo Plate",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 12,
+          "name": "Echo: Echo Room",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T162239-dcae13261f",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "a88b56a1d2a5b2219f6c7e6e67417452d445619e78450a9138c81f9822bfe895",
+      "rawRxSha256": "7f19291c2804cbd03a58e1ca630c9bdbe36f0d5238c0a8cee604df599d2f2f5e",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 70
+        },
+        {
+          "channel": "B",
+          "binaryId": 36
+        },
+        {
+          "channel": "C",
+          "binaryId": 43
+        },
+        {
+          "channel": "D",
+          "binaryId": 53
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 13,
+          "name": "Echo: Fields Of Pyrite",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 14,
+          "name": "Hall: Asylum",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 15,
+          "name": "Hall: Chorus Hall",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 16,
+          "name": "Hall: Colosseum",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T162428-726d369c6f",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "b49284b82199d6ae4bd364545605a6ef2db1886a6adaaacbc5011caeddfcc25a",
+      "rawRxSha256": "8a0f6e8ba5ea2e92ebe03085a2d705e7377702b0b77c6f225b4df1cf281261c0",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 22
+        },
+        {
+          "channel": "B",
+          "binaryId": 23
+        },
+        {
+          "channel": "C",
+          "binaryId": 5
+        },
+        {
+          "channel": "D",
+          "binaryId": 73
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 17,
+          "name": "Hall: Concert Hall",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 18,
+          "name": "Hall: Large Deep Hall",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 19,
+          "name": "Hall: Large Hall",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 20,
+          "name": "Hall: Marble Hall",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T162539-bc722c23d0",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "91df6233fd7e93854d77105a6a17b68e19106d8d37632d70b851518111fb3a5b",
+      "rawRxSha256": "8104ed3989fd2bbdfeccf7b8e4dc8e889d1c24de71f79ff337e03d05bef5a26a",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 42
+        },
+        {
+          "channel": "B",
+          "binaryId": 4
+        },
+        {
+          "channel": "C",
+          "binaryId": 45
+        },
+        {
+          "channel": "D",
+          "binaryId": 75
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 21,
+          "name": "Hall: Mechanic's Hall",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 22,
+          "name": "Hall: Medium Hall",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 23,
+          "name": "Hall: Music Hall",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 24,
+          "name": "Hall: Nashville Church",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T162637-97eeb369f4",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "d5f03d7bc1e9d3481d9d9aef087a194b518efbada54af1d1c422f041078bf802",
+      "rawRxSha256": "2e79b53c644e196507a3e27af2d7eea02c836213c966f97b6e36c150eb03523b",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 25
+        },
+        {
+          "channel": "B",
+          "binaryId": 52
+        },
+        {
+          "channel": "C",
+          "binaryId": 3
+        },
+        {
+          "channel": "D",
+          "binaryId": 26
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 25,
+          "name": "Hall: North Church",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 26,
+          "name": "Hall: Opera House",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 27,
+          "name": "Hall: Small Hall",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 28,
+          "name": "Hall: South Church",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T162732-aeac5ab47a",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "7c887d176c3c1863c11bb72e906d38aea41c2c446d25ace629b4892e15a0ae2d",
+      "rawRxSha256": "f728b927dfd0c49d54a5b9cee91f508c436ec59c55673bf025a7a9480dece380",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 13
+        },
+        {
+          "channel": "B",
+          "binaryId": 12
+        },
+        {
+          "channel": "C",
+          "binaryId": 46
+        },
+        {
+          "channel": "D",
+          "binaryId": 32
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 29,
+          "name": "Hall: St. Albans Cathedral",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 30,
+          "name": "Hall: St. George's Church",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 31,
+          "name": "Hall: Symphony Hall",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 32,
+          "name": "Hall: Tunnel",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T162824-8758d33e8a",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "beb65330339ce812ab4cdf4fbe048d48e311e71ff901aec733a31e99b17f500e",
+      "rawRxSha256": "e3956194b4ad3feda8d8231bdca816ebd668a73171f0ddfb5166248c365b0919",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 41
+        },
+        {
+          "channel": "B",
+          "binaryId": 14
+        },
+        {
+          "channel": "C",
+          "binaryId": 18
+        },
+        {
+          "channel": "D",
+          "binaryId": 37
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 33,
+          "name": "Hall: Wide Hall",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 34,
+          "name": "Hall: York Minster Cathedral",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 35,
+          "name": "Huge: Cavern",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 36,
+          "name": "Huge: Deep Space",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T162931-a39ee1217c",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "3ae11b31bb9872a2cde577a33f9c3c9677f4e59792a66c9c1528281cf1296d9e",
+      "rawRxSha256": "6567633432d5c2e5192400cfa321c9c063c46204e2f622e90053ea8c9d60b1fe",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 35
+        },
+        {
+          "channel": "B",
+          "binaryId": 44
+        },
+        {
+          "channel": "C",
+          "binaryId": 74
+        },
+        {
+          "channel": "D",
+          "binaryId": 19
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 37,
+          "name": "Huge: Gymnasium",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 38,
+          "name": "Huge: Ice Castle",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 39,
+          "name": "Huge: Mausoleum",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 40,
+          "name": "Huge: Stone Quarry",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181122-93ff47bc0b",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "545f92d57f5edfd0f2ce21a62959c65e37611112b93e8b8c3603544bfbf67f28",
+      "rawRxSha256": "40caa0115808d6a89c3aff8cda16e66f638fc5513639e28418a405c4c86dc121",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 76
+        },
+        {
+          "channel": "B",
+          "binaryId": 71
+        },
+        {
+          "channel": "C",
+          "binaryId": 11
+        },
+        {
+          "channel": "D",
+          "binaryId": 27
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 41,
+          "name": "Huge: Warehouse",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 42,
+          "name": "Plate: Gold Plate",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 43,
+          "name": "Plate: Large Plate",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 44,
+          "name": "Plate: London Plate",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181224-b10804deb3",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "aea59ab6a43bcb9a50d631339e989af683694cc8765975e0a371fb304f09aeaa",
+      "rawRxSha256": "e53840cde3694e964766e00bc1ba815d1c58f96beb277a77b7403b81ccfc77ed",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 10
+        },
+        {
+          "channel": "B",
+          "binaryId": 9
+        },
+        {
+          "channel": "C",
+          "binaryId": 28
+        },
+        {
+          "channel": "D",
+          "binaryId": 40
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 45,
+          "name": "Plate: Medium Plate",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 46,
+          "name": "Plate: Small Plate",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 47,
+          "name": "Plate: Sun Plate",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 48,
+          "name": "Plate: Vocal Plate",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181314-419922de6e",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "45bfa0eba176d3bcf9d36e1af2d9c75770f19ebda1fa914374b5d08fd7164109",
+      "rawRxSha256": "097113a5ff54b1d4f7f48c1a28ceed7c9c63f217410d5af51b034be88be8aae7",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 21
+        },
+        {
+          "channel": "B",
+          "binaryId": 30
+        },
+        {
+          "channel": "C",
+          "binaryId": 31
+        },
+        {
+          "channel": "D",
+          "binaryId": 29
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 49,
+          "name": "Room: Ambience",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 50,
+          "name": "Room: Drum Room",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 51,
+          "name": "Room: Hallway",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 52,
+          "name": "Room: Huge Room",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181409-b0910aac4b",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "cf17e90f6392b59aabc572d07d7b012c0410223e30db91fe18202e092fd35d83",
+      "rawRxSha256": "0b4849926e720af5ee1b0c455320c632f9dce16db61d95d40469eea521648797",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 2
+        },
+        {
+          "channel": "B",
+          "binaryId": 39
+        },
+        {
+          "channel": "C",
+          "binaryId": 34
+        },
+        {
+          "channel": "D",
+          "binaryId": 1
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 53,
+          "name": "Room: Large Room",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 54,
+          "name": "Room: Large Tiled Room",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 55,
+          "name": "Room: Large Wooden Room",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 56,
+          "name": "Room: Medium Room",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181507-2cb69f2bd8",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "2c6b72036ea4dd946add75f00b23f07c82f2d6e7172f72233d057b9404b41219",
+      "rawRxSha256": "ab4c2429c674c4c2c939d320da73c7a9f01c6beb8ac95cfa026116f28381ab8c",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 38
+        },
+        {
+          "channel": "B",
+          "binaryId": 24
+        },
+        {
+          "channel": "C",
+          "binaryId": 0
+        },
+        {
+          "channel": "D",
+          "binaryId": 20
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 57,
+          "name": "Room: Recording Studio A",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 58,
+          "name": "Room: Recording Studio C",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 59,
+          "name": "Room: Small Room",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 60,
+          "name": "Room: Studio",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181600-223f1ba35d",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "906880d74edab640d0e42237e26908fa05d1ba7d1bac848b19abd0236a0c1e0a",
+      "rawRxSha256": "b877f4dfd49b424efc99db67f2348a025a23070f7aa1c302e93b76a85bc60ea6",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 58
+        },
+        {
+          "channel": "B",
+          "binaryId": 57
+        },
+        {
+          "channel": "C",
+          "binaryId": 56
+        },
+        {
+          "channel": "D",
+          "binaryId": 60
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 61,
+          "name": "Sfx: Andromeda",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 62,
+          "name": "Sfx: Aquarius",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 63,
+          "name": "Sfx: Capricorn",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 64,
+          "name": "Sfx: Centaurus",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181654-78dc7ade74",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "30900b51f4d2618f4b3eba920ef5d8f284b8e39664b409678c21ce68e3fa2fef",
+      "rawRxSha256": "c76f550a36abab1209074640b630aeb1ae2478c66982b76d147b1de3d1becd25",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 55
+        },
+        {
+          "channel": "B",
+          "binaryId": 59
+        },
+        {
+          "channel": "C",
+          "binaryId": 62
+        },
+        {
+          "channel": "D",
+          "binaryId": 54
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 65,
+          "name": "Sfx: Gemini",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 66,
+          "name": "Sfx: Pegasus",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 67,
+          "name": "Sfx: Pleiades",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 68,
+          "name": "Sfx: Sagittarius",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181746-53d3c337ed",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "80bd0da1fc02d50b72264cdd38ad0a06a4c3e3a99eefdb2a416bbfde3837705c",
+      "rawRxSha256": "ed21c0bb7ca02aa243719e42a98406bf91ed6ac4066b546bae2daa9fb3f3b768",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 61
+        },
+        {
+          "channel": "B",
+          "binaryId": 69
+        },
+        {
+          "channel": "C",
+          "binaryId": 51
+        },
+        {
+          "channel": "D",
+          "binaryId": 17
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 69,
+          "name": "Sfx: Ursa Major",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 70,
+          "name": "Spring: British Spring",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 71,
+          "name": "Spring: Deluxe Spring",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 72,
+          "name": "Spring: Large Spring",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181850-fb0113ff6e",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "f98f35f15d3e49a6b6890ec9a57ba7cc5c7b2628d33edaf11cc8386f85307a03",
+      "rawRxSha256": "bd1ce27de5733b8d65e6299002bfb739b943a2e4150bca045bebb03fabfc6523",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 77
+        },
+        {
+          "channel": "B",
+          "binaryId": 16
+        },
+        {
+          "channel": "C",
+          "binaryId": 15
+        },
+        {
+          "channel": "D",
+          "binaryId": 67
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 73,
+          "name": "Spring: Lush Spring",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 74,
+          "name": "Spring: Medium Spring",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 75,
+          "name": "Spring: Small Spring",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 76,
+          "name": "Spring: Studio Spring",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "capture": "capture-20261006T181944-6bb74fb981",
+      "paired": true,
+      "matchedWords": 284,
+      "syxSha256": "887fa4d2201fc5348e7027f8f731acfa6c28ac454750cb796968fa36a9eee059",
+      "rawRxSha256": "1b4ee05bced1b591c586d95b2223095e352b0fe0d4acb090333f86052b52023d",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 66
+        },
+        {
+          "channel": "B",
+          "binaryId": 68
+        },
+        {
+          "channel": "C",
+          "binaryId": 78
+        },
+        {
+          "channel": "D",
+          "binaryId": 67
+        }
+      ],
+      "labels": [
+        {
+          "displayNumber": 77,
+          "name": "Spring: Tube Spring",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 78,
+          "name": "Spring: Vibra-King",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 79,
+          "name": "Spring: Vibra-King Custom",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    }
+  ],
+  "scope": "User-confirmed names, independently decoded GET/SYX evidence; no new generator or hardware import established"
+}

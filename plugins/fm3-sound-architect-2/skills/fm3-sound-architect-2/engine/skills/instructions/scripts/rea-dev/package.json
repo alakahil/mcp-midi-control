@@ -1,0 +1,8 @@
+{
+  "name": "fm3-rea-dev-toolchain",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Optional FM3 development analysis tools; kept outside the plugin package.",
+  "engines": {"node": "^22.19.0 || ^24.11.0 || >=26.0.0"},
+  "dependencies": {"rea-agents": "6.4.0"}
+}

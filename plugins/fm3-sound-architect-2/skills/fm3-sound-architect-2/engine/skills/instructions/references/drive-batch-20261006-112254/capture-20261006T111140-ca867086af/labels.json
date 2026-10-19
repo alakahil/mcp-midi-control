@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 37,
+    "name": "Klone Chiron",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 38,
+    "name": "M-Zone Distortion",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 39,
+    "name": "Master Fuzz",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 40,
+    "name": "Maxoff 808",
+    "binaryId": null,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-01",
+  "firmware": "13 (previously confirmed by user)",
+  "userConfirmed": {
+    "scene1Reverb": "B",
+    "scene2DelayEngaged": true,
+    "scene2AmpBGain": 5
+  },
+  "audio": "not explicitly confirmed",
+  "generatedSha256": "6febef6be602d7efdff33646148351aeae1fc8cf569fbbffd0bb8d21f1892696",
+  "exportSha256": "c3a1daee81f80766768df3734ff8f83e15dbfa67c1daaf9c9340676dc1907293",
+  "bodyBytes": 14222,
+  "bodyDifferentBytes": 1,
+  "fileDifferentBytes": 5612,
+  "headerEqual": true,
+  "rawHeaderDifferences": [
+    4,
+    5
+  ],
+  "name": "FM3 SA TEST SCENES",
+  "reverbScene1": "B",
+  "ampBGain": 5,
+  "delayScene2StoredWord": 0,
+  "validation": {
+    "ok": true,
+    "issues": [],
+    "blockCount": 9,
+    "blockNames": [
+      "Amp",
+      "Cab",
+      "Comp",
+      "Analog Stereo",
+      "Vol/Pan",
+      "PEQ",
+      "Classic Vibe",
+      "Large Room",
+      "Clyde"
+    ]
+  },
+  "bodyDifferences": [
+    {
+      "offset": 0,
+      "generated": 1,
+      "exported": 0,
+      "meaning": "unverified; possible scene selection, not proven"
+    }
+  ]
+}

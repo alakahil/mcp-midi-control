@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-11",
+  "passed": true,
+  "scope": "Setup-only absent-menu regression",
+  "deviceConnectionMade": false,
+  "defaultPlanSteps": 86,
+  "explicitOptionalMenuSteps": 92,
+  "absentWordAndDashRemoveControl": true,
+  "noBogusMenuValueAdded": true,
+  "quitBeforeSetupSafe": true,
+  "existingSetupPreserved": true
+}

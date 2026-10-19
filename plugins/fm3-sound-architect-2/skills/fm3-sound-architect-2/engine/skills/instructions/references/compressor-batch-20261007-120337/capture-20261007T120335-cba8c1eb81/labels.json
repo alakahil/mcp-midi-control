@@ -1,0 +1,23 @@
+[
+  {
+    "displayNumber": 17,
+    "name": "VCA Bus Compressor",
+    "binaryId": null,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 18,
+    "name": "VCA FB Sustainer",
+    "binaryId": null,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 19,
+    "name": "VCA FF Sustainer",
+    "binaryId": null,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  }
+]

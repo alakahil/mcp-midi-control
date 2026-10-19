@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "janviileberg@gmail.com",
+    "name": "Jan Viileberg"
+  },
+  "description": "FM3 Mk II Turbo SYX/TXT generaator, 336 Amp- ja 45 Cab-malli, efektid, stseenid ning kontrollitud mõõteandmed.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "Interactive"
+        ],
+        "category": "Productivity",
+        "defaultPrompt": "Aita mul kujundada FM3-ga soovitud kitarrisound.",
+        "developerName": "Jan Viileberg",
+        "displayName": "FM3 Sound Architect 2",
+        "longDescription": "Eestikeelne FM3 Mk II Turbo soundi ja presetite abiline. Sisaldab varasema plugina generaatorit, kogutud mudeleid ning PEQ, GEQ, Enhanceri ja Filteri kontrolltõendeid. Loob toetatud seadistustele SYX/TXT failid; eristab failikontrolli, seadmekinnitust ja kuulamishinnangut.",
+        "shortDescription": "FM3 kitarrisoundi abiline"
+      }
+    }
+  },
+  "name": "fm3-sound-architect-2",
+  "version": "0.2.0"
+}

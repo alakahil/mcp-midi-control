@@ -1,0 +1,394 @@
+{
+  "archive": "FM3_CAB_BATCH_20261005T135019_2dde6871.zip",
+  "pairs": [
+    {
+      "folder": "capture-001",
+      "collector": "cab-probe-1",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "4a53db28f249982d7c57e2ffbf74ffb74adf14c360030dfd9d1009291878cf2b",
+      "rawRxSha256": "fd9a2a185e5f164e763c5091ff14ecbdd71b5f03277e965dcbda1cad0070fb65",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 1,
+          "slot2": 0
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 38,
+          "slot2": 38
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 39,
+          "slot2": 39
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 25,
+          "slot2": 25
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T085910-d82850c9cc",
+      "collector": "cab-batch-0.2.0",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "dcc48a3bfbe17ef8e303f2dcf32a664c3f66edd4a6b75c533cd4d79aa44c0c11",
+      "rawRxSha256": "6ac3dab987f46575f20aa3d895ed7138906bd917f1c14391867242e5bdc127fc",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 0,
+          "slot2": 0
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 1,
+          "slot2": 1
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 2,
+          "slot2": 2
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 3,
+          "slot2": 3
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T090830-f2ebf77f94",
+      "collector": "cab-batch-0.2.0",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "9b737cbe542560ffa7aeb207a9866c604d1903c6f1ff22695aa7984175e3afc5",
+      "rawRxSha256": "71b3279f3188fc1ec1323c1a5b21066ea814bfdce88f2d1b625d67dc88ec55e9",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 4,
+          "slot2": 4
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 5,
+          "slot2": 5
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 6,
+          "slot2": 6
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 7,
+          "slot2": 7
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T091020-fff845f79b",
+      "collector": "cab-batch-0.2.0",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "05b38718822a15934323b267e5526bfd0d312aeeb7549b00396a9e117e901c42",
+      "rawRxSha256": "7d816a90b288c482d2658e27c9406105259f13606455d201bc8ce293118109cc",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 8,
+          "slot2": 8
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 9,
+          "slot2": 9
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 10,
+          "slot2": 10
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 11,
+          "slot2": 11
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T091150-5c32acd860",
+      "collector": "cab-batch-0.2.0",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "9178a7f1aaac835a2a8ec4ec7ea9e76a513be255204ddced1579833e0db8e4e7",
+      "rawRxSha256": "b7d1602e6aa462a0ab42b6438de7a52d16d8344eaecd95c9ecda1d9a287c1c76",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 12,
+          "slot2": 12
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 13,
+          "slot2": 13
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 14,
+          "slot2": 14
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 15,
+          "slot2": 15
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T091341-b238d43a16",
+      "collector": "cab-batch-0.2.0",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "541eae276fcc8240ac2035997604f8d260d087f1d8d0fe43b1fc701d08edb376",
+      "rawRxSha256": "30e7d43eef9d4975c1253821faf01eddb93ac48a0120155435ca6788d7626d80",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 16,
+          "slot2": 16
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 17,
+          "slot2": 17
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 18,
+          "slot2": 18
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 19,
+          "slot2": 19
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T133541-cc529ee779",
+      "collector": "cab-batch-0.2.1",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "7d9be23ff16bf1377a766950b19247a3466121667f71802b55ff94991714c5fd",
+      "rawRxSha256": "a5c4eebe86b375e2d174d62ac37da33acbcc549938ba2ec60bdf989b5d661ce9",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 20,
+          "slot2": 20
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 21,
+          "slot2": 21
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 22,
+          "slot2": 22
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 24,
+          "slot2": 24
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T133736-ee13a3b472",
+      "collector": "cab-batch-0.2.1",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "3ad1cc6eab05978a33ef51875ff6720815978b86490e9cb2f7301fd4e903052e",
+      "rawRxSha256": "be58e40e4803ff600ccf2cc0b70d652b18c924710bd4669215da9633c3121af8",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 23,
+          "slot2": 23
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 26,
+          "slot2": 26
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 27,
+          "slot2": 27
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 28,
+          "slot2": 28
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T133906-c4a3d1a239",
+      "collector": "cab-batch-0.2.1",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "d8ac1c1b854726a006a217561b72e970512377f56e07723c0117a0a467d716e5",
+      "rawRxSha256": "d1231ce179a3fa331887e76fbada447426f5e42af822887ba355a9c20e9c620b",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 29,
+          "slot2": 29
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 30,
+          "slot2": 30
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 31,
+          "slot2": 31
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 32,
+          "slot2": 32
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T134029-d30a42c1ce",
+      "collector": "cab-batch-0.2.1",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "33e29ba4afb3d980b63990a80a5ba9232bcc141da1765ca47c0b16a27bae16f2",
+      "rawRxSha256": "e7928b93991c38f091316564db40fd6b8f244b14649d20cb2ea1f978589239e0",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 33,
+          "slot2": 33
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 34,
+          "slot2": 34
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 35,
+          "slot2": 35
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 36,
+          "slot2": 36
+        }
+      ]
+    },
+    {
+      "folder": "capture-20261005T134934-761c30e558",
+      "collector": "cab-batch-0.2.2",
+      "paired": true,
+      "matchedWords": 424,
+      "syxSha256": "925ddbb35c9da8e187fa007deef18663f0b09bbd2692c9bd71129c89cc34e5ce",
+      "rawRxSha256": "d2d55f55818fbcf1718f2390dbce2fcf9c327e0bba63d76e66fcbe8262b0ed42",
+      "channels": [
+        {
+          "channel": "A",
+          "mode": 1,
+          "slot1": 37,
+          "slot2": 37
+        },
+        {
+          "channel": "B",
+          "mode": 1,
+          "slot1": 40,
+          "slot2": 40
+        },
+        {
+          "channel": "C",
+          "mode": 1,
+          "slot1": 41,
+          "slot2": 41
+        },
+        {
+          "channel": "D",
+          "mode": 1,
+          "slot1": 42,
+          "slot2": 42
+        }
+      ]
+    }
+  ],
+  "covered": 43,
+  "remaining": 2,
+  "next": [
+    {
+      "displayNumber": 44,
+      "expectedId": 43,
+      "name": "4x12 USA Mc90"
+    },
+    {
+      "displayNumber": 45,
+      "expectedId": 44,
+      "name": "8x10 SV Bass"
+    }
+  ],
+  "newCabWritingSupport": false
+}

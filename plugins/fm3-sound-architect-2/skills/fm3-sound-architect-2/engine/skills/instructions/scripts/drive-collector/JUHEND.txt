@@ -1,0 +1,26 @@
+FM3 Drive jätkatav koguja 0.1.0 — firmware 13
+
+Esimesed 4 tüüpi on lisatud kinnitatud GET/SYX algseisuna.
+Jätka sama presetiga, millest eksportisid FM3_DRIVE_SELECTION_001.syx.
+Vajalik: Python 3 ja Node (sama mis varasema Amp/Cab koguja puhul).
+
+Terminal:
+cd ~/Downloads/FM3_DRIVE_COLLECTOR
+python3 FM3_DRIVE_BATCH.py --session ~/Documents/FM3_DRIVE_SESSION --port /dev/cu.usbmodem211104
+
+1. Ava FM3-Edit. Vali Drive1 kanalites ekraanil näidatud Type-nimed.
+   Muuda ainult Type'i. Tüübi automaatseid parameetrimuudatusi ära taasta.
+   Jäta muud plokid ja stseen samaks. Viimases grupis jäta kasutamata kanal samaks.
+2. Ekspordi TERVE preset SYX-ina. Lohista fail Terminali ja vajuta Enter.
+3. Kontrolli, et kanalite nimed vastavad juhisele. Sulge FM3-Edit/Fractal-Bot.
+   Kirjuta jah. Saadetakse üks GET. SET/SAVE ega automaatseid kordusi pole.
+4. Esimese uue neliku järel kirjuta q ja saada tekkinud ZIP vestlusse.
+5. Edaspidi jätkad sama käsuga. Juba kinnitatud nelikuid uuesti ei koguta.
+
+Ainult ZIP-i tegemine (seadet ei kasutata):
+python3 FM3_DRIVE_BATCH.py --session ~/Documents/FM3_DRIVE_SESSION --export-only
+
+Säilita kogu FM3_DRIVE_SESSION kaust. Vea korral andmed säilivad.
+Uute tüüpide ID-d õpitakse sinu kinnitatud ekraaninimedest ja GET/SYX paaridest;
+kuvanumber pole binaarne ID. Süsteem ei saa ekraaninimesid ise lugeda.
+Drive/Tone/Level/Mix väärtuste kirjutamise kontroll tehakse eraldi.

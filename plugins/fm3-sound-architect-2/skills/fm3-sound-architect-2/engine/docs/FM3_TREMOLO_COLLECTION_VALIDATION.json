@@ -1,0 +1,59 @@
+{
+  "count": 7,
+  "captures": [
+    {
+      "paired": true,
+      "matchedWords": 88,
+      "syxSha256": "5531dd4219ef3545042ed93ae713a7b0370628b76dc51f1ca375c5b4334f8c62",
+      "rawRxSha256": "098ff60ce5aa713ae37d2c2e1bff4e3a66afab847b7621c3468d9a2106dcab80",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 2
+        },
+        {
+          "channel": "B",
+          "binaryId": 3
+        },
+        {
+          "channel": "C",
+          "binaryId": 6
+        },
+        {
+          "channel": "D",
+          "binaryId": 4
+        }
+      ],
+      "capture": "capture-001"
+    },
+    {
+      "paired": true,
+      "matchedWords": 88,
+      "syxSha256": "329dbfb68d9c69f7035227e0df62143666e738d0685670149ba6c0ec6e1ac8db",
+      "rawRxSha256": "596dded61713ffa25e3ef4c51c7113912b8d152f3e9b004b8202f91dd4f63268",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 5
+        },
+        {
+          "channel": "B",
+          "binaryId": 1
+        },
+        {
+          "channel": "C",
+          "binaryId": 0
+        },
+        {
+          "channel": "D",
+          "binaryId": 4
+        }
+      ],
+      "capture": "capture-20261007T143641-d0af19e1e9"
+    }
+  ],
+  "matchedWords": 176,
+  "earlierCapturesPreserved": true,
+  "generatorIntegration": false,
+  "baselineChange": "User replaced Flanger with Tremolo/Panner; this collection uses the new donor layout"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 1,
+    "name": "Clyde",
+    "binaryId": 1,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 2,
+    "name": "Color-Tone",
+    "binaryId": 4,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 3,
+    "name": "Cry Babe",
+    "binaryId": 2,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 4,
+    "name": "FAS Wah",
+    "binaryId": 0,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "paired": true,
+  "matchedWords": 284,
+  "syxSha256": "cbecae70f0d0dd6dd65c318f582c1b20a07fd98465a30a01ea661a8be9e353e8",
+  "rawRxSha256": "b31ae719b3c8c4ae624de0406c078d4da48b7a246b6d6ae153b2f0789e7d73fd",
+  "channels": [
+    {
+      "channel": "A",
+      "binaryId": 33
+    },
+    {
+      "channel": "B",
+      "binaryId": 8
+    },
+    {
+      "channel": "C",
+      "binaryId": 7
+    },
+    {
+      "channel": "D",
+      "binaryId": 6
+    }
+  ],
+  "frameLengths": [
+    12,
+    778,
+    94,
+    8
+  ],
+  "typeParameterId": 0,
+  "collected": 4,
+  "remaining": 75,
+  "namesSource": "User-confirmed first four roster selections",
+  "collectorTests": [
+    "real GET/SYX pair",
+    "non-Reverb mutation rejected",
+    "repeated GET rejected",
+    "corrupt RX rejected",
+    "session init/resume and q ZIP"
+  ],
+  "newCollectorMacWorkflow": "pending"
+}

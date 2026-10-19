@@ -1,0 +1,1212 @@
+{
+  "verified": 87,
+  "remaining": 0,
+  "pairs": 22,
+  "failed": [],
+  "proofs": [
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "1237281a402f5ecc86e66f659bf7365faacef9e63fae5b6a9da6a7ef346326a0",
+      "rawRxSha256": "a422e1b2a1acf4711afc2d4f587446309c8518849afc27b8200e02f19065d3f6",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 78
+        },
+        {
+          "channel": "B",
+          "binaryId": 79
+        },
+        {
+          "channel": "C",
+          "binaryId": 19
+        },
+        {
+          "channel": "D",
+          "binaryId": 61
+        }
+      ],
+      "folder": "capture-001",
+      "labels": [
+        {
+          "displayNumber": 1,
+          "name": "'77 Custom OD",
+          "binaryId": 78,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 2,
+          "name": "Angry Chuck",
+          "binaryId": 79,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 3,
+          "name": "BB Pre",
+          "binaryId": 19,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 4,
+          "name": "BB Pre AT",
+          "binaryId": 61,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "ca81e868f65b003162aaa87bc2246d78f69f5332c043e340bff3b21134624f82",
+      "rawRxSha256": "776ad2301c24bae4b84005cba55d42b7c1e3dbef04bbc9b987dc59efb6119ac6",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 18
+        },
+        {
+          "channel": "B",
+          "binaryId": 22
+        },
+        {
+          "channel": "C",
+          "binaryId": 36
+        },
+        {
+          "channel": "D",
+          "binaryId": 15
+        }
+      ],
+      "folder": "capture-20261006T110100-23b81b0ef6",
+      "labels": [
+        {
+          "displayNumber": 5,
+          "name": "Bender Fuzz",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 6,
+          "name": "Bit Crusher",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 7,
+          "name": "Blackglass 7K",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 8,
+          "name": "Blues OD",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "ccbc36d929ce8887239adc654e1a0c1e4365eed2af23c85323af2ebc6501f40a",
+      "rawRxSha256": "fab9609bfcff5d5c39ae35482f05092310878aafc70fd5b694c8882c4d9276e2",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 63
+        },
+        {
+          "channel": "B",
+          "binaryId": 46
+        },
+        {
+          "channel": "C",
+          "binaryId": 72
+        },
+        {
+          "channel": "D",
+          "binaryId": 73
+        }
+      ],
+      "folder": "capture-20261006T110501-0e96926020",
+      "labels": [
+        {
+          "displayNumber": 9,
+          "name": "Bosom Boost",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 10,
+          "name": "Box o' Crunch",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 11,
+          "name": "Colortone Booster",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 12,
+          "name": "Colortone OD",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "16e4efa7f06ec7ddcfd08605583b9e2b83d34789cc862fdec78ffa9ba07f5733",
+      "rawRxSha256": "c219fc4ab9d475cd5d686e6314b548a80bd4dd69ba21f200931a982742703cbd",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 51
+        },
+        {
+          "channel": "B",
+          "binaryId": 49
+        },
+        {
+          "channel": "C",
+          "binaryId": 53
+        },
+        {
+          "channel": "D",
+          "binaryId": 54
+        }
+      ],
+      "folder": "capture-20261006T110554-7b0304f87e",
+      "labels": [
+        {
+          "displayNumber": 13,
+          "name": "Compulsion Distortion HP",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 14,
+          "name": "Compulsion Distortion LP",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 15,
+          "name": "DS1 Distortion",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 16,
+          "name": "DS1 Distortion Mod",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "0cc1824f14bc4e12e3545872bfe4fdb176fe4544ce05b667f875677316962e2d",
+      "rawRxSha256": "609d14cf274a4110db391e735fadfdafcab47683b90f0c9fcf70ac827556fff6",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 24
+        },
+        {
+          "channel": "B",
+          "binaryId": 60
+        },
+        {
+          "channel": "C",
+          "binaryId": 25
+        },
+        {
+          "channel": "D",
+          "binaryId": 23
+        }
+      ],
+      "folder": "capture-20261006T110645-8aad95e1f7",
+      "labels": [
+        {
+          "displayNumber": 17,
+          "name": "Esoteric ACB",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 18,
+          "name": "Esoteric Bass RCB",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 19,
+          "name": "Esoteric RCB",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 20,
+          "name": "Eternal Love",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "cad024b54a8126c637bc0665fff1b036c53e35c391b4ba9c20428ab55cd00ab3",
+      "rawRxSha256": "04926f777d151903fe26250c35e70688326db0c8c5a7b2f6a1426c0cac6a225b",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 21
+        },
+        {
+          "channel": "B",
+          "binaryId": 33
+        },
+        {
+          "channel": "C",
+          "binaryId": 28
+        },
+        {
+          "channel": "D",
+          "binaryId": 7
+        }
+      ],
+      "folder": "capture-20261006T110733-ee9ca4f3bc",
+      "labels": [
+        {
+          "displayNumber": 21,
+          "name": "Face Fuzz",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 22,
+          "name": "FAS Boost",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 23,
+          "name": "FAS LED-Drive",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 24,
+          "name": "Fat Rat",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "1f5446007c8226bf3b6a3317c64e3125b683ff57035ad44cb70c253af44690c0",
+      "rawRxSha256": "7ef5d84d5ca9afbd8a98772ab2c0115d1edc4552785efd5057a01a1c78111512",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 12
+        },
+        {
+          "channel": "B",
+          "binaryId": 30
+        },
+        {
+          "channel": "C",
+          "binaryId": 14
+        },
+        {
+          "channel": "D",
+          "binaryId": 67
+        }
+      ],
+      "folder": "capture-20261006T110839-7a1e03cf57",
+      "labels": [
+        {
+          "displayNumber": 25,
+          "name": "FET Boost",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 26,
+          "name": "FET Preamp",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 27,
+          "name": "Full OD",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 28,
+          "name": "Gauss Drive",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "bc20b5be5c1d74181d5fa53989b0af4ed966341a47235a1dd42730d08032dfd5",
+      "rawRxSha256": "f6b28de20d7fe7b5f336f64d819b2d906a65c80a66ed33d848c3e6d7a609357b",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 62
+        },
+        {
+          "channel": "B",
+          "binaryId": 80
+        },
+        {
+          "channel": "C",
+          "binaryId": 11
+        },
+        {
+          "channel": "D",
+          "binaryId": 40
+        }
+      ],
+      "folder": "capture-20261006T110933-d09071efa2",
+      "labels": [
+        {
+          "displayNumber": 29,
+          "name": "Griddle Cake",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 30,
+          "name": "Guardian Photon Speed",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 31,
+          "name": "Hard Fuzz",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 32,
+          "name": "Heartpedal 11",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "524a2d90393a17e1bfe800ddf893b44d9ebb0c3143995c6ecb369d485c501990",
+      "rawRxSha256": "2efeb60775319eb0490667f1e886927dc5dbfa9130c863b12b69908497df9a4a",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 50
+        },
+        {
+          "channel": "B",
+          "binaryId": 48
+        },
+        {
+          "channel": "C",
+          "binaryId": 69
+        },
+        {
+          "channel": "D",
+          "binaryId": 41
+        }
+      ],
+      "folder": "capture-20261006T111024-ed6fcb396f",
+      "labels": [
+        {
+          "displayNumber": 33,
+          "name": "Hoodoo Drive",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 34,
+          "name": "Horizon Precision Drive",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 35,
+          "name": "Integral Pre",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 36,
+          "name": "Jam Ray",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "dbb2daee46b178e6569ace86113f92d17ab6b9a14d2e0cb308969f16064a9930",
+      "rawRxSha256": "82e01a548394e16bfc02a821018d851e74f6ab9c90a51a02ce004ea400449cb7",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 59
+        },
+        {
+          "channel": "B",
+          "binaryId": 17
+        },
+        {
+          "channel": "C",
+          "binaryId": 20
+        },
+        {
+          "channel": "D",
+          "binaryId": 58
+        }
+      ],
+      "folder": "capture-20261006T111140-ca867086af",
+      "labels": [
+        {
+          "displayNumber": 37,
+          "name": "Klone Chiron",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 38,
+          "name": "M-Zone Distortion",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 39,
+          "name": "Master Fuzz",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 40,
+          "name": "Maxoff 808",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "59d3810d170095e394f486244d9d3e88df0a961af94d61571a959a188045ad93",
+      "rawRxSha256": "ffb66b4c15d651d005f9b255371b86ef7b4a36b8c4d9791963bd4b6c5c61a1f1",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 55
+        },
+        {
+          "channel": "B",
+          "binaryId": 32
+        },
+        {
+          "channel": "C",
+          "binaryId": 5
+        },
+        {
+          "channel": "D",
+          "binaryId": 74
+        }
+      ],
+      "folder": "capture-20261006T111225-3662b2dede",
+      "labels": [
+        {
+          "displayNumber": 41,
+          "name": "MCMLXXXI Drive",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 42,
+          "name": "Micro Boost",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 43,
+          "name": "Mid Boost",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 44,
+          "name": "MOSFET Distortion",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "f0e9374fc36f78c76227ee12074f7d361db9a516152b68ee518fc3f6ec1cd071",
+      "rawRxSha256": "1f148c037a5b2206a840c020b22eae485c107fa0cf25d64596dd6d877d548199",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 83
+        },
+        {
+          "channel": "B",
+          "binaryId": 84
+        },
+        {
+          "channel": "C",
+          "binaryId": 65
+        },
+        {
+          "channel": "D",
+          "binaryId": 9
+        }
+      ],
+      "folder": "capture-20261006T111313-4f9cf989d7",
+      "labels": [
+        {
+          "displayNumber": 45,
+          "name": "NoAmp Bass DI",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 46,
+          "name": "NoAmp Bass Pre",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 47,
+          "name": "Nobelium OVD-1",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 48,
+          "name": "Octave Distortion",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "5153d11ab2185c62dc0b858b957f51b56259b6b44e2c34e5f34401c9f7d203b1",
+      "rawRxSha256": "135218fc5cd0c73ed245a3ba7fc67aff2a5d066d8530c8d76ef0d9ff2e523ad5",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 43
+        },
+        {
+          "channel": "B",
+          "binaryId": 47
+        },
+        {
+          "channel": "C",
+          "binaryId": 64
+        },
+        {
+          "channel": "D",
+          "binaryId": 81
+        }
+      ],
+      "folder": "capture-20261006T111400-8da0a91e37",
+      "labels": [
+        {
+          "displayNumber": 49,
+          "name": "OD 250",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 50,
+          "name": "OD 250 Gray",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 51,
+          "name": "OD-One Overdrive",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 52,
+          "name": "Paradigm Shifter",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "53d6201c9b854d8a584db2cf157b1a8863fc10f3f9940285543cbefd114cfa9e",
+      "rawRxSha256": "8d07e364e7e805e49f0a137e49cd13991ee5401c594014b1e9b23251e3b43dbd",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 1
+        },
+        {
+          "channel": "B",
+          "binaryId": 82
+        },
+        {
+          "channel": "C",
+          "binaryId": 71
+        },
+        {
+          "channel": "D",
+          "binaryId": 75
+        }
+      ],
+      "folder": "capture-20261006T111455-04a249b6ed",
+      "labels": [
+        {
+          "displayNumber": 53,
+          "name": "PI Fuzz",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 54,
+          "name": "PI Fuzz - Bass",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 55,
+          "name": "PI Fuzz - Ram's Head",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 56,
+          "name": "PI Fuzz - Russian",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "ee710c416854ac121328609e763fd3f0e844102d81650d69f244bfc4070d27a6",
+      "rawRxSha256": "1e2ed0f2b1e51ebc439039b93cbec71f67b02eef08d0b369b0c390246a822539",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 70
+        },
+        {
+          "channel": "B",
+          "binaryId": 10
+        },
+        {
+          "channel": "C",
+          "binaryId": 0
+        },
+        {
+          "channel": "D",
+          "binaryId": 85
+        }
+      ],
+      "folder": "capture-20261006T111556-477e5c69fb",
+      "labels": [
+        {
+          "displayNumber": 57,
+          "name": "PI Fuzz - Triangle",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 58,
+          "name": "Plus Distortion",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 59,
+          "name": "Rat Distortion",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 60,
+          "name": "Royal Bass DI",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "3baf0a9bad47b5e581620eea2187ceed50f006dddb1bd69046ef1315f05eeaec",
+      "rawRxSha256": "c4911f4f7f835708b2849ecffdb0ec39ee9c685ac338d3c11d0b4b25a23a2173",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 29
+        },
+        {
+          "channel": "B",
+          "binaryId": 35
+        },
+        {
+          "channel": "C",
+          "binaryId": 16
+        },
+        {
+          "channel": "D",
+          "binaryId": 56
+        }
+      ],
+      "folder": "capture-20261006T111650-f6d8f84dbc",
+      "labels": [
+        {
+          "displayNumber": 61,
+          "name": "SDD Preamp",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 62,
+          "name": "Shimmer Drive",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 63,
+          "name": "Shred Distortion",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 64,
+          "name": "Sonic Drive",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "d9e44bbb4b206b17e3fefb62b169913dde4227efa4fb2e65b9793475a15869df",
+      "rawRxSha256": "8af86dbe418609469a7402a75ed22a9ecd5ec51ecbf5274b3294518566658015",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 31
+        },
+        {
+          "channel": "B",
+          "binaryId": 37
+        },
+        {
+          "channel": "C",
+          "binaryId": 42
+        },
+        {
+          "channel": "D",
+          "binaryId": 68
+        }
+      ],
+      "folder": "capture-20261006T111750-476b27dfbb",
+      "labels": [
+        {
+          "displayNumber": 65,
+          "name": "Suhr Riot Ge (R)",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 66,
+          "name": "Suhr Riot LED (L)",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 67,
+          "name": "Suhr Riot LED/Si (M)",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 68,
+          "name": "Sunrise Splendor",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "5b2f7ed97f938f36bf797c21e618d7cfd119e1fc0ed32fc11f01915859ae13df",
+      "rawRxSha256": "773e5ca77d01a0ad8a22f9c9cd7a395736860d488e487213e5bb1dffb16dd4a7",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 66
+        },
+        {
+          "channel": "B",
+          "binaryId": 76
+        },
+        {
+          "channel": "C",
+          "binaryId": 3
+        },
+        {
+          "channel": "D",
+          "binaryId": 86
+        }
+      ],
+      "folder": "capture-20261006T111843-8ecf6f316f",
+      "labels": [
+        {
+          "displayNumber": 69,
+          "name": "Sunrise Splendor Hi-Cut",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 70,
+          "name": "Super Fuzz",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 71,
+          "name": "Super OD",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 72,
+          "name": "Swedish Metal",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "7110d73d4bae83a90cc51418002f85bbb864c1b96bed900b3794f438e545d754",
+      "rawRxSha256": "8478ae2812ec0f0f80074ccc9b19c2101bcdcfffa85be56959d3b17cca0762d2",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 8
+        },
+        {
+          "channel": "B",
+          "binaryId": 6
+        },
+        {
+          "channel": "C",
+          "binaryId": 13
+        },
+        {
+          "channel": "D",
+          "binaryId": 44
+        }
+      ],
+      "folder": "capture-20261006T111939-458bbbe6e7",
+      "labels": [
+        {
+          "displayNumber": 73,
+          "name": "T808 Mod",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 74,
+          "name": "T808 OD",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 75,
+          "name": "Tape Distortion",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 76,
+          "name": "Timothy Down",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "dbfbbad6f63828334e8f9720454958a0fee4b6ad98ba853331484fbcb0ef0a16",
+      "rawRxSha256": "dfe37f5b07a4dc846d335e26a9edf9b799ef4362044c8f632466058734037049",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 34
+        },
+        {
+          "channel": "B",
+          "binaryId": 38
+        },
+        {
+          "channel": "C",
+          "binaryId": 39
+        },
+        {
+          "channel": "D",
+          "binaryId": 4
+        }
+      ],
+      "folder": "capture-20261006T112047-061d2615da",
+      "labels": [
+        {
+          "displayNumber": 77,
+          "name": "Timothy Mid",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 78,
+          "name": "Timothy Up",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 79,
+          "name": "Tone of Kings",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 80,
+          "name": "Treble Boost",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "54ada0761ae16c981cbf016af119814b98c3ed442f0fae16c223c11a0e37ab95",
+      "rawRxSha256": "77648845d8c42e43b0dd42f8c2fb9deed518c018048fc1379da3f2d77f0f7a5a",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 45
+        },
+        {
+          "channel": "B",
+          "binaryId": 52
+        },
+        {
+          "channel": "C",
+          "binaryId": 2
+        },
+        {
+          "channel": "D",
+          "binaryId": 27
+        }
+      ],
+      "folder": "capture-20261006T112141-44cf72a53a",
+      "labels": [
+        {
+          "displayNumber": 81,
+          "name": "TS9DX +",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 82,
+          "name": "TS9DX Hot",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 83,
+          "name": "Tube Drive 3-Knob",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 84,
+          "name": "Tube Drive 4-Knob",
+          "binaryId": null,
+          "channel": "D",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    },
+    {
+      "paired": true,
+      "matchedWords": 176,
+      "syxSha256": "9515045ce201c745fba804c8d3d4f191bd1ea69967ab9a4e187ec1e06c825e12",
+      "rawRxSha256": "1a77441166b5aa8c561040162a131f7a8e55f5d1ff1196e2bb786644be39a804",
+      "channels": [
+        {
+          "channel": "A",
+          "binaryId": 77
+        },
+        {
+          "channel": "B",
+          "binaryId": 57
+        },
+        {
+          "channel": "C",
+          "binaryId": 26
+        },
+        {
+          "channel": "D",
+          "binaryId": 27
+        }
+      ],
+      "folder": "capture-20261006T112247-72000d0f64",
+      "labels": [
+        {
+          "displayNumber": 85,
+          "name": "Tube Drive 5-Knob",
+          "binaryId": null,
+          "channel": "A",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 86,
+          "name": "Valve Screamer VS9",
+          "binaryId": null,
+          "channel": "B",
+          "source": "planned roster; user confirmed selection"
+        },
+        {
+          "displayNumber": 87,
+          "name": "Zen Master",
+          "binaryId": null,
+          "channel": "C",
+          "source": "planned roster; user confirmed selection"
+        }
+      ]
+    }
+  ],
+  "next": []
+}

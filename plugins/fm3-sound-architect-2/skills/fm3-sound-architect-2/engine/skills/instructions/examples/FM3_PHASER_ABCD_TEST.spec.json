@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-phaser-multi",
+  "phaserChannels": [
+    {
+      "channel": "A",
+      "type": "Barber Pole"
+    },
+    {
+      "channel": "B",
+      "type": "Modern Vibe"
+    },
+    {
+      "channel": "C",
+      "type": "Script 90"
+    },
+    {
+      "channel": "D",
+      "type": "Virtuoso Phaser"
+    }
+  ]
+}

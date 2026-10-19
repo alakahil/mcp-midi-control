@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-09",
+  "kind": "actual-user-hardware-evidence",
+  "sourceArchive": "FM3_PEQ_BASE_CHECK_20261009T114022_c66909bc.zip",
+  "sourceArchiveSha256": "8bbba62140cd265f26ee4e5e04559c2f8b0b98d95f87430e055fe1165e01610e",
+  "sourceLibraryFileId": "libfile_f1a2eeb7cad881918c39cd4455a1166f",
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+    "bodySha256": "2cc6732f2a8b4afb1131766613a60b9825a483f90fc9a274e5ecdfceccc53112",
+    "rawRxSha256": "7734f49341db58a132f2a9494c173a5b5f4cdfb5d9020ef3f4783396278f758f",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  },
+  "sessionManifestVerified": true,
+  "storedPairRecomputedExactly": true,
+  "baselineDonorAndPreviousUserExportIdentical": true,
+  "files": {
+    "baseline.syx": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+    "capture-20261009T114021-4e486c054d/capture.json": "1e4722f285a8aae77357e17c30ee18476549f640fea837ad133baf113d29b81c",
+    "capture-20261009T114021-4e486c054d/donor.syx": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+    "capture-20261009T114021-4e486c054d/pair.json": "4f2c1ac2919df9f89946e8f7de1019aabe72971b3cc09e9b654d33408dd6ab2d",
+    "session.json": "3ca0cfddf7f0a34fb71c98ece36809cb0ef99d861a18ba813b215882c72604dc"
+  },
+  "next": "Targeted Band 3 Frequency/Q/Gain and common Level collection. No baseline repeat; no PEQ writing support yet."
+}

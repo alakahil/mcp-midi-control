@@ -1,0 +1,19 @@
+{
+  "index": 50,
+  "step": {
+    "id": "051-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Classic — Level maximum",
+    "channel": "A",
+    "typeName": "Classic",
+    "parameter": "Level",
+    "mode": "numeric",
+    "point": "maximum",
+    "unit": "dB",
+    "allowUnchanged": true
+  },
+  "status": "skipped",
+  "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+  "automatic": true
+}

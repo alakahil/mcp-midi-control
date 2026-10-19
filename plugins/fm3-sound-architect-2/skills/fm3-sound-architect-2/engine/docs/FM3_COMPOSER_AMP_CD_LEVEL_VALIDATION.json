@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-09",
+  "passed": true,
+  "generator": "jb-composer-0.8.1",
+  "actualUserExport": "FM3_AMP_CD_LEVEL_CHECK_export(1).syx",
+  "libraryFileId": "libfile_688f418ba6c08191b382eb56544467b1",
+  "packagedFile": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx",
+  "exportSha256": "aac60417ad82db7be996bbc1dd6026a2ff9a5a246bdf4966c116ab33cd87c237",
+  "bodySha256": "2dd66a505053273fd72dd9400458e6a45f805672aa92ff418fa5ebf21b6b07e4",
+  "bodyBytes": 13146,
+  "changedBodyOffsetsAgainstV2": [
+    5234,
+    5235,
+    5522,
+    5523
+  ],
+  "rawHeaderChangesAgainstNamedV2": [
+    {
+      "offset": 4,
+      "before": 138,
+      "after": 54,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 53,
+      "after": 45,
+      "field": "CRC"
+    },
+    {
+      "offset": 74,
+      "before": 4,
+      "after": 3,
+      "field": "compressed length"
+    }
+  ],
+  "points": [
+    {
+      "channel": "C",
+      "modelId": 24,
+      "model": "USA MK IV Lead Bright",
+      "offset": 5234,
+      "modelOffset": 5244,
+      "beforeRaw": 47184,
+      "parameterId": 1,
+      "displayDb": -11,
+      "raw": 45218,
+      "file": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
+    },
+    {
+      "channel": "D",
+      "modelId": 11,
+      "model": "Plexi 50W High 1",
+      "offset": 5522,
+      "modelOffset": 5532,
+      "beforeRaw": 47080,
+      "parameterId": 1,
+      "displayDb": -11,
+      "raw": 45218,
+      "file": "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
+    }
+  ],
+  "checks": {
+    "frames": true,
+    "presetCrc": true,
+    "footer": true,
+    "encodedLengthsAndPadding": true,
+    "exactWholeDeviceBody": true,
+    "noBodyNormalization": true,
+    "onlyTwoRequestedWordsChanged": true,
+    "ampAAndBPreserved": true,
+    "allScenesAndRoutingPreserved": true,
+    "sendReturnAndSystemDataPreserved": true,
+    "oldV2SyxUnchanged": true,
+    "renamedGeneratedFileNotImportApproved": true,
+    "partialAndChangedCompositionsNotDeviceApproved": true
+  },
+  "individualSevenBaseCases": 14,
+  "combinedSevenBaseCases": 7,
+  "allFourChannelsCompose": true,
+  "rejectedInputs": 14,
+  "hardwareScope": "Actual C/D -11 dB points on model IDs 24/11; not other values, models or ranges",
+  "musicalPreset": "JB_EIGHT_SCENES_V2.syx remains unchanged; C/D test levels are temporary",
+  "audio": "No new listening approval",
+  "cpu": "No new reading; prior 45.7–46.7% belonged to V1",
+  "next": "No repeated export or GET. Restore musical V2 and assess clean scenes 1/5 after -3 dB adjustment."
+}

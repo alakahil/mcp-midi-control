@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-09",
+  "files": 932,
+  "uniqueHashes": 414,
+  "parsedUnique": 414,
+  "geqCandidates": [],
+  "unreadable": [],
+  "scope": "Decoded grid inspection for Gen3 candidate GEQ EIDs50..53; absence is only asserted for successfully parsed unique files."
+}

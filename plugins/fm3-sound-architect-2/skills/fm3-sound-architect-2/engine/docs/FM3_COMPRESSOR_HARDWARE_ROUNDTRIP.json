@@ -1,0 +1,241 @@
+{
+  "date": "2026-10-07",
+  "generatedSha256": "317a288e3eea5449f603108e75c1607ca1ff110c5c8aaf8aab2502d923e60709",
+  "hardwareExportSha256": "06a137c4002e61b1139fc47a90319dd7d8a644b2f1b39c0c25896bf049c1a2e6",
+  "fullFilesIdentical": false,
+  "bodyBytes": 14222,
+  "changedBodyOffsets": [],
+  "channels": [
+    {
+      "channel": "A",
+      "type": "Citrus Juicer",
+      "binaryId": 18,
+      "all37WordsPreserved": true
+    },
+    {
+      "channel": "B",
+      "type": "Dynami-Comp Soft",
+      "binaryId": 17,
+      "all37WordsPreserved": true
+    },
+    {
+      "channel": "C",
+      "type": "JFET Studio Compressor",
+      "binaryId": 8,
+      "all37WordsPreserved": true
+    },
+    {
+      "channel": "D",
+      "type": "Optical Compressor",
+      "binaryId": 4,
+      "all37WordsPreserved": true
+    }
+  ],
+  "presetNameChange": {
+    "before": "FM3_DELAY_ABCD_TEST_export",
+    "after": "FM3_COMPRESSOR_ABCD_TEST_export"
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 90,
+      "after": 154,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 13,
+      "after": 40,
+      "field": "CRC"
+    },
+    {
+      "offset": 12,
+      "before": 68,
+      "after": 67,
+      "field": "presetName"
+    },
+    {
+      "offset": 13,
+      "before": 69,
+      "after": 79,
+      "field": "presetName"
+    },
+    {
+      "offset": 14,
+      "before": 76,
+      "after": 77,
+      "field": "presetName"
+    },
+    {
+      "offset": 15,
+      "before": 65,
+      "after": 80,
+      "field": "presetName"
+    },
+    {
+      "offset": 16,
+      "before": 89,
+      "after": 82,
+      "field": "presetName"
+    },
+    {
+      "offset": 17,
+      "before": 95,
+      "after": 69,
+      "field": "presetName"
+    },
+    {
+      "offset": 18,
+      "before": 65,
+      "after": 83,
+      "field": "presetName"
+    },
+    {
+      "offset": 19,
+      "before": 66,
+      "after": 83,
+      "field": "presetName"
+    },
+    {
+      "offset": 20,
+      "before": 67,
+      "after": 79,
+      "field": "presetName"
+    },
+    {
+      "offset": 21,
+      "before": 68,
+      "after": 82,
+      "field": "presetName"
+    },
+    {
+      "offset": 23,
+      "before": 84,
+      "after": 65,
+      "field": "presetName"
+    },
+    {
+      "offset": 24,
+      "before": 69,
+      "after": 66,
+      "field": "presetName"
+    },
+    {
+      "offset": 25,
+      "before": 83,
+      "after": 67,
+      "field": "presetName"
+    },
+    {
+      "offset": 26,
+      "before": 84,
+      "after": 68,
+      "field": "presetName"
+    },
+    {
+      "offset": 28,
+      "before": 101,
+      "after": 84,
+      "field": "presetName"
+    },
+    {
+      "offset": 29,
+      "before": 120,
+      "after": 69,
+      "field": "presetName"
+    },
+    {
+      "offset": 30,
+      "before": 112,
+      "after": 83,
+      "field": "presetName"
+    },
+    {
+      "offset": 31,
+      "before": 111,
+      "after": 84,
+      "field": "presetName"
+    },
+    {
+      "offset": 32,
+      "before": 114,
+      "after": 95,
+      "field": "presetName"
+    },
+    {
+      "offset": 33,
+      "before": 116,
+      "after": 101,
+      "field": "presetName"
+    },
+    {
+      "offset": 34,
+      "before": 32,
+      "after": 120,
+      "field": "presetName"
+    },
+    {
+      "offset": 35,
+      "before": 32,
+      "after": 112,
+      "field": "presetName"
+    },
+    {
+      "offset": 36,
+      "before": 32,
+      "after": 111,
+      "field": "presetName"
+    },
+    {
+      "offset": 37,
+      "before": 32,
+      "after": 114,
+      "field": "presetName"
+    },
+    {
+      "offset": 38,
+      "before": 32,
+      "after": 116,
+      "field": "presetName"
+    }
+  ],
+  "sceneChannelsBefore": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "sceneChannelsAfter": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footerChecksum": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all148CompressorWordsPreserved": true,
+    "scenesAndBypassPreserved": true,
+    "dumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyNameAndCrc": true
+  },
+  "scope": "Hardware import/export verified for this ABCD specimen; 76 general type/channel combinations offline tested only. Audio and CPU not assessed.",
+  "encoding": {
+    "compressedBytesBefore": 4926,
+    "compressedBytesAfter": 4926,
+    "compressedRepresentationIdentical": false,
+    "paddingBeforeAllZero": true,
+    "paddingAfterAllZero": true,
+    "note": "Compressed encoding and its checksums may differ while decompressed data is byte-identical; no body normalization performed."
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "index": 19,
+  "step": {
+    "id": "020-types",
+    "stage": "types",
+    "kind": "type",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Shelving 2. Muuda ainult: Band 4 Type → Shelving 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Shelving 2",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 19,
+    "step": {
+      "id": "020-types",
+      "stage": "types",
+      "kind": "type",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali Band 4 Type Shelving 2. Muuda ainult: Band 4 Type → Shelving 2 . Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Type",
+          "candidatePid": 18,
+          "value": "Shelving 2",
+          "band": 4,
+          "channel": "A",
+          "endpoint": null,
+          "unit": ""
+        }
+      ]
+    },
+    "previousSha256": "b0950ffaf11bcb428588f2dd96ee4239e03fa7e0d95ea06ae78bb58ba3faa8dc",
+    "syxSha256": "fc3f21b33950c2fee5c983302529ab8fe4f9e893028378c4240aa5f65092cb04",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 18,
+        "offset": 8770,
+        "before": 1,
+        "after": 2
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Shelving 2",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "",
+        "raw": 2
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Type",
+        "candidatePid": 18,
+        "value": "Shelving 2",
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": ""
+      },
+      "displayValue": "Shelving 2"
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "fc3f21b33950c2fee5c983302529ab8fe4f9e893028378c4240aa5f65092cb04",
+    "bodySha256": "f445340075a731dca22e11e7faf1a727e8a6b3c5cd312bbc81d0a0cc62f29eed",
+    "rawRxSha256": "8c065a122b48e48ec670086c6a0120e5fe71701c387dbcbed7dc483e017e6d12",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

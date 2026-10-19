@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {inspect} from './fm3-prototype.mjs';
+import {importAmpLibrary} from './fm3-amp-library.mjs';
+import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
+const read=n=>fs.readFileSync(new URL('../references/'+n,import.meta.url));
+const base=read('Baaspreset.syx'),donor=read('FM3_AMP_CAPTURE_011.syx'),d=inspect(donor);
+const channels=d.decoded.blocks.find(b=>b.block==='Amp').channels;
+assert.deepEqual(Object.values(channels).map(c=>[c.type_id,c.type]),[[44,'Cornfed M50'],[45,'Carol-Ann OD-2'],[46,'Fryette D60 Less'],[47,'Fryette D60 More']]);
+const lib=importAmpLibrary(base,[{name:'capture011',bytes:donor}],13);
+assert.equal(lib.accepted.length,1);assert.deepEqual(lib.rejected,[]);
+const body=d.raw.body.slice();body[4656+3*288+12]=255;body[4656+3*288+13]=255;
+const invalid=Buffer.from(reencodeDumpFromRawPatch(donor,reencodeRawPatch(d.raw.rawPatch,body)));
+const rejected=importAmpLibrary(base,[{name:'unknown-final-channel',bytes:invalid}],13);
+assert.equal(rejected.accepted.length,0);assert.match(rejected.rejected[0].reason,/65535/);assert.deepEqual(rejected.templates,{});
+console.log('PASS: capture011 integrity and IDs/names; unknown model rejected atomically. No GET or hardware validation; bundled library unchanged.');

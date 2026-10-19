@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-12",
+  "passed": true,
+  "sourceZipSha256": "f5146841b0c22825dd2e8eea880fe7b4a42e5f97171af43130f5dfbf6b004e46",
+  "revalidatedHardwarePairs": 7,
+  "matchedWordsEach": 48,
+  "nextStep": 8,
+  "totalSteps": 86,
+  "failedAttempts": 2,
+  "failureBodyWordDiff": [
+    {
+      "offset": 7488,
+      "before": 1,
+      "after": 0
+    },
+    {
+      "offset": 7508,
+      "before": 0,
+      "after": 65534
+    }
+  ],
+  "failedAttemptsHadNoCapture": true,
+  "noNewDeviceIO": true,
+  "originalSessionBytesPreserved": true,
+  "pauseAndExportNoGet": true,
+  "failedAttemptResumeUnchanged": true,
+  "clearBypassError": true,
+  "otherScopeNegatives": 5,
+  "syntheticCorrectedFixtureOnly": true,
+  "hardwareStep8StillPending": true
+}

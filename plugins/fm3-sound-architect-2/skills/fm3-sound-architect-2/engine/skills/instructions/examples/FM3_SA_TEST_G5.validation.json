@@ -1,0 +1,28 @@
+{
+  "prototype": "0.1.0",
+  "codec": "forgefx-midi 0.4.3 @ 553d24b7409302908d5c7e46a71b45e07dffdc05",
+  "spec": {
+    "name": "FM3 SA TEST G5",
+    "gainB": 5
+  },
+  "baseSha256": "fecac6a61d3a33c547a12e69b5056fd8750f9ded789e44672744d2e32e29c2c4",
+  "outputSha256": "22cc6e0f6643c32386920d94851eced7201f14ea349af3f8cc711441686e0388",
+  "bytes": 24680,
+  "format": "0x0146",
+  "firmware": "unknown; format word is not firmware",
+  "ampChannel": "B",
+  "ampModel": "USA MK IV Rhythm 2",
+  "affectedScenes": [
+    2,
+    6
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "exactExpectedBody": true,
+    "unrelatedHeaderPreserved": true
+  },
+  "hardwareImport": "not tested",
+  "audio": "not tested"
+}

@@ -1,0 +1,113 @@
+{
+  "index": 3,
+  "step": {
+    "id": "004-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "3 Band Console — kõigi nähtavate ribade minimum",
+    "channel": "A",
+    "typeName": "3 Band Console",
+    "bandCount": 3,
+    "endpoint": "minimum"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "004-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "3 Band Console — kõigi nähtavate ribade minimum",
+      "channel": "A",
+      "typeName": "3 Band Console",
+      "bandCount": 3,
+      "endpoint": "minimum"
+    },
+    "previousSha256": "2e7ca7025b6242be7e2c55b8760b7753d5bf4e68bc82629e75be873fedaf350a",
+    "syxSha256": "1d105d1b3108e1b715b702741f02369f799430323ab49669543bc2a307909cfc",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 34132,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 35498,
+        "after": 0
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 36863,
+        "after": 0
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 GEQ FULL",
+      "after": "FM3 GEQ SEL_3",
+      "beforeHex": "464d33204745512046554c4c2020202020202020202020202020202020202000",
+      "afterHex": "464d33204745512053454c5f3320202020202020202020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "Low",
+      "Mid",
+      "High"
+    ],
+    "displayValues": [
+      -12.0,
+      -12.0,
+      -12.0
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "1d105d1b3108e1b715b702741f02369f799430323ab49669543bc2a307909cfc",
+    "bodySha256": "6f84fd59f70fcb99ae5458d93f49b859c69b486b233d3f3c63fcee7d5dad422c",
+    "rawRxSha256": "636179b14fbedd8a9e6633b8cb7aa4d5c7f44c8b2b144a29fc556fe7a60e9552",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

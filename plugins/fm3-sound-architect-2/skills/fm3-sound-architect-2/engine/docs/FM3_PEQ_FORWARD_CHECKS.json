@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-09",
+  "offlineOnly": true,
+  "sourceModifiedByForwardAgent": false,
+  "fixtureSha256": "3869051de07add62df3e528b3f53cd70e236ef9fe5c61bb1a342879f465d0f98",
+  "byteIdenticalFixture": true,
+  "reconstructedV3Bytes": 13146,
+  "all11ActualPairsRechecked": true,
+  "invalidRuntimeRequestsRejected": 24,
+  "validVariants": 4,
+  "unsupportedValueOrChannelLeakageFound": false,
+  "schemaValidation": "Structural inspection; no installed standards validator. Schema describes value/shape gates; duplicate-scene and scenes/addedBlockScenes conflict enforcement is runtime-only.",
+  "testScriptBehavior": "test-composer-peq.mjs deliberately regenerates its QA report, following the existing test workflow; optional argument writes schema cases additionally.",
+  "pending": "Import/export, active sound and current CPU of new generated combination"
+}

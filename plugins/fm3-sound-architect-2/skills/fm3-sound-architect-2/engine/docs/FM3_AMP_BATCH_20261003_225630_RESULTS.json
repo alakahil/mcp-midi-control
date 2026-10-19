@@ -1,0 +1,507 @@
+{
+  "date": "2026-10-03",
+  "version": "0.29.19",
+  "sessionCaptures": [
+    {
+      "id": "capture-20261002T120223-e59cd21f13e0",
+      "models": [
+        "Hipower Normal",
+        "1987X Treble",
+        "Brit 800 2204 High",
+        "Brit Super"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T120941-87d6d1205249",
+      "models": [
+        "Hipower Normal",
+        "Hipower Brilliant",
+        "USA Pre Clean",
+        "USA MK IIC+"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T122615-8506bc5648ea",
+      "models": [
+        "USA MK IIC+ Bright",
+        "Recto2 Orange Vintage",
+        "Recto2 Orange Modern",
+        "Recto2 Red Vintage"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T123506-3288f43cf20d",
+      "models": [
+        "Recto2 Red Modern",
+        "Euro Blue",
+        "Euro Red",
+        "Shiver Clean"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T171904-6a6ab0bcf027",
+      "models": [
+        "Shiver Lead",
+        "Euro Uber",
+        "Solo 99 Clean",
+        "Solo 100 Rhythm"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T172605-18bb3a17149c",
+      "models": [
+        "Solo 100 Lead",
+        "Friedman BE V1",
+        "Friedman HBE V1",
+        "PVH 6160 Block Lead"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T185529-e56f89fd027b",
+      "state": "failed",
+      "reason": "[Errno 2] No such file or directory: '/dev/cu.usbmodem11104'"
+    },
+    {
+      "id": "capture-20261003T185948-175bad205350",
+      "models": [
+        "Mr Z MZ-38",
+        "CA3+ Rhythm",
+        "CA3+ Lead",
+        "Wrecker Rocket"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T191514-45e34fab8347",
+      "models": [
+        "Cornfed M50",
+        "Carol-Ann OD-2",
+        "Fryette D60 Less",
+        "Fryette D60 More"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T191748-273a14f082e1",
+      "models": [
+        "Brit Brown",
+        "Citrus RV50",
+        "Jazz 120",
+        "Energyball"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T192716-763b7a0ed216",
+      "models": [
+        "ODS-100 Clean",
+        "ODS-100 HRM",
+        "FAS Rhythm",
+        "FAS Lead 1"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T192908-1c20b105a54f",
+      "models": [
+        "FAS Lead 2",
+        "FAS Modern",
+        "Das Metall",
+        "Brit Pre"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T193109-e76bcc49d1ea",
+      "models": [
+        "Buddah DuoMaster",
+        "Matchbox Chiefman 1",
+        "Matchbox Chiefman 2",
+        "Cameron CCV 1A"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T194018-ba4e73d65140",
+      "models": [
+        "Cameron CCV 2A",
+        "SV Bass 2",
+        "Tube Pre",
+        "FAS Brown"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195050-86cda4c4daea",
+      "models": [
+        "Big Hair",
+        "Solo 99 Lead",
+        "Supertweed",
+        "Texas Star Lead"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195235-94cdc6ce26a3",
+      "models": [
+        "FAS Wreck",
+        "Brit JVM OD1 Orange",
+        "Brit JVM OD2 Orange",
+        "FAS 6160"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195425-f47c5e05c220",
+      "models": [
+        "Legend 100",
+        "USA MK IV Lead Mid Bright",
+        "Princetone 5F2",
+        "Blankenship Leeds"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T195623-3e2a3be4cd53",
+      "models": [
+        "5153 100W Green",
+        "5153 100W Blue",
+        "5153 100W Red",
+        "Solo 88 Rhythm"
+      ],
+      "state": "paired-verified"
+    }
+  ],
+  "conflicts": [],
+  "rejected": [],
+  "newPairs": [
+    {
+      "capture": "capture-20261003T195050-86cda4c4daea",
+      "ids": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261003T195235-94cdc6ce26a3",
+      "ids": [
+        72,
+        73,
+        74,
+        75
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261003T195425-f47c5e05c220",
+      "ids": [
+        76,
+        78,
+        79,
+        80
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261003T195623-3e2a3be4cd53",
+      "ids": [
+        81,
+        82,
+        83,
+        84
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    }
+  ],
+  "newModels": [
+    {
+      "id": 68,
+      "name": "Big Hair",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 69,
+      "name": "Solo 99 Lead",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 70,
+      "name": "Supertweed",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 71,
+      "name": "Texas Star Lead",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 72,
+      "name": "FAS Wreck",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 73,
+      "name": "Brit JVM OD1 Orange",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 74,
+      "name": "Brit JVM OD2 Orange",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 75,
+      "name": "FAS 6160",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 76,
+      "name": "Legend 100",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 78,
+      "name": "USA MK IV Lead Mid Bright",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 79,
+      "name": "Princetone 5F2",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 80,
+      "name": "Blankenship Leeds",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 81,
+      "name": "5153 100W Green",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 82,
+      "name": "5153 100W Blue",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 83,
+      "name": "5153 100W Red",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 84,
+      "name": "Solo 88 Rhythm",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    }
+  ],
+  "coverage": {
+    "ready": 86,
+    "missing": 245,
+    "total": 331
+  },
+  "next": [
+    85,
+    86,
+    87,
+    88
+  ],
+  "hardware": "User device GET/SYX pairs confirmed; newly generated combinations not imported, listened to or CPU-tested"
+}

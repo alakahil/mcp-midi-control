@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-11",
+  "image": "enhancer-modern-no-bypass-mode.png",
+  "sha256": "59bc5f27a5a44e14cb7d57118d2734d109afd6af51cf6ef1f2951e5e858300a7",
+  "observedType": "Modern",
+  "presetNameDisplayed": "FM3 ENH_SEL",
+  "bypassModeMenuVisible": false,
+  "libraryMenuVisible": true,
+  "bypassButtonVisible": true,
+  "sceneIgnoreButtonVisible": true,
+  "scope": "Only supplied Modern screenshot; no new SYX or GET supplied",
+  "classicAndStereoizerMenusConfirmed": false,
+  "correction": "Do not assume codec PID5 labelled Bypass is a user-visible Bypass Mode dropdown. Keep unknown semantics pending."
+}

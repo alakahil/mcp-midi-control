@@ -1,0 +1,164 @@
+{
+  "index": 77,
+  "step": {
+    "id": "078-bands",
+    "kind": "bands",
+    "stage": "types",
+    "label": "7 Band Bass Pedal — Zero All / ribad nulli",
+    "channel": "A",
+    "typeName": "7 Band Bass Pedal",
+    "bandCount": 7,
+    "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "zeroAll": true,
+    "allowUnchanged": true
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "078-bands",
+      "kind": "bands",
+      "stage": "types",
+      "label": "7 Band Bass Pedal — Zero All / ribad nulli",
+      "channel": "A",
+      "typeName": "7 Band Bass Pedal",
+      "bandCount": 7,
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "zeroAll": true,
+      "allowUnchanged": true
+    },
+    "previousSha256": "e6315a9a1e00d2481482fe009c1a44e43438704c6f1627e84c1a7bfc3ed638d0",
+    "syxSha256": "37ce773f7ceca8c67e4da043b5eb8f3499e5a08cdd0975ddb9ebf407d6335193",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "offset": 8354,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 1,
+        "offset": 8356,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 2,
+        "offset": 8358,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 3,
+        "offset": 8360,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 4,
+        "offset": 8362,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 5,
+        "offset": 8364,
+        "before": 65534,
+        "after": 32767
+      },
+      {
+        "channel": "A",
+        "pid": 6,
+        "offset": 8366,
+        "before": 65534,
+        "after": 32767
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, band-to-PID mapping, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "bandLabels": [
+      "62",
+      "125",
+      "250",
+      "500",
+      "1K",
+      "2K",
+      "4K"
+    ],
+    "displayValues": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 50,
+    "matchedWords": 80,
+    "wordsPerChannel": 20,
+    "channels": 4,
+    "syxSha256": "37ce773f7ceca8c67e4da043b5eb8f3499e5a08cdd0975ddb9ebf407d6335193",
+    "bodySha256": "c9547535b2d1f3c957bd4689a5316f5df91584418dd68d7dde7031bae283fd70",
+    "rawRxSha256": "cfb0f033b4439264053cda5c86f05dd3d3b78dc0f61ac0d96ba0f636e9527853",
+    "frameLengths": [
+      12,
+      250,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

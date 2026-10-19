@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "name": "FM3 SA TEST BASSGUY",
+  "ampModelB": "59 Bassguy Bright",
+  "purpose": "Capture001 Amp A kanalimalli kirjutamine Amp B-sse; esimene genereeritud Bassguy kontrollkatse."
+}

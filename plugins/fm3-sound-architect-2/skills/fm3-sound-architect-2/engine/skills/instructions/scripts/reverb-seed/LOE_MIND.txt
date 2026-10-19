@@ -1,0 +1,18 @@
+FM3 REVERB — esimese neliku GET/SYX kontroll
+
+1. Paki FM3_REVERB_SEED.zip lahti Downloads-kausta.
+2. Jäta FM3-sse äsja eksporditud FM3_REVERB_SELECTION_001.syx seisund.
+   Reverb1 A Deep Chamber, B Large Chamber, C Medium Chamber, D Small Chamber.
+3. Sulge FM3-Edit ja Fractal-Bot.
+4. Terminalis:
+   cd ~/Downloads/FM3_REVERB_SEED
+   python3 FM3_REVERB_SEED.py /dev/cu.usbmodem211104
+   Kui port on muutunud, näitab skript leitud porte; käivita õige näidatud pordiga.
+5. Kirjuta GET ja vajuta Enter. Skript saadab ühe Reverb1 GET-päringu.
+6. Saada tekkinud FM3_REVERB_SEED_RESULT_....zip vestlusse.
+
+Võrreldakse 284 uint16 väärtust SYX-faili väärtustega. See on esimene
+Reverb GET päriskatse; transport on varasemast Delay/Drive töövoost.
+SET/SAVE/Store, kanali/tüübi vahetamine ja automaatne retry puuduvad.
+Ka vea korral säilivad toorvastus ja raport tulemuse ZIP-is.
+Vajalik macOS python3; pyserial ega Node pole selleks sammuks vajalikud.

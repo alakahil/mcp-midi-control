@@ -1,0 +1,4959 @@
+{
+  "schemaVersion": 1,
+  "targetFirmware": 13,
+  "source": "Bundled forgefx-midi 0.4.3 FM3 AMP_ROSTER at commit 553d24b7409302908d5c7e46a71b45e07dffdc05",
+  "completeness": "All 336 identified entries (IDs 0–335) have channel templates, including the five firmware13 additions. This is model-template coverage, not validation of every generated preset or future firmware.",
+  "models": [
+    {
+      "id": 0,
+      "name": "59 Bassguy Bright",
+      "manufacturer": "Fender",
+      "basedOn": "1959 narrow-panel Fender Tweed Bassman, 5F6-A",
+      "bundledTemplate": true,
+      "hardwareEvidence": "FM3 SA TEST BASSGUY example imported, user-confirmed; all 14222 decompressed body bytes preserved in returned export, 2026-10-01",
+      "factory10Candidate": {
+        "name": "59 Bassguy Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 0,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 1,
+      "name": "65 Bassguy Normal",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User exported source channel; generated model selection not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "65 Bassguy Normal",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 1,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 2,
+      "name": "Vibrato Verb",
+      "manufacturer": "Fender",
+      "basedOn": "Fender Vibroverb, old model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User exported source channel; generated model selection not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "Vibrato Verb",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 95,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 3,
+      "name": "Deluxe Verb Vibrato",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User exported source channel; generated model selection not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "Deluxe Verb Vibrato",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 3,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 4,
+      "name": "Double Verb Vibrato",
+      "manufacturer": "Fender",
+      "basedOn": "1966 blackface Fender Twin Reverb",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User source export capture002; generated selection checked offline, not separately on hardware",
+      "factory10Candidate": {
+        "name": "Double Verb Vibrato",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 4,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 5,
+      "name": "JR Blues",
+      "manufacturer": "Fender",
+      "basedOn": "Fender Blues Junior",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User source export capture002; generated selection checked offline, not separately on hardware",
+      "factory10Candidate": {
+        "name": "JR Blues",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 92,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 6,
+      "name": "Class-A 15W TB",
+      "manufacturer": "Vox",
+      "basedOn": "Vox AC15 Top Boost",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User source export capture002; generated selection checked offline, not separately on hardware",
+      "factory10Candidate": {
+        "name": "Class-A 15W TB",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 5,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 7,
+      "name": "Class-A 30W",
+      "manufacturer": "Vox",
+      "basedOn": "Vox AC30",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User source export capture002; generated selection checked offline, not separately on hardware",
+      "factory10Candidate": {
+        "name": "Class-A 30W",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 23,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 8,
+      "name": "Class-A 30W TB",
+      "manufacturer": "Vox",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User source export capture003; generated selection checked offline, not separately on hardware",
+      "factory10Candidate": {
+        "name": "Class-A 30W TB",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 6,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 9,
+      "name": "Brit JM45",
+      "manufacturer": "Marshall",
+      "basedOn": "Marshall JTM 45",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User source export capture003; generated selection checked offline, not separately on hardware",
+      "factory10Candidate": {
+        "name": "Brit JM45",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 49,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 10,
+      "name": "Plexi 50W Normal",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User source export capture003; generated selection checked offline, not separately on hardware",
+      "factory10Candidate": {
+        "name": "Plexi 50W Normal",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 5,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 11,
+      "name": "Plexi 50W High 1",
+      "manufacturer": "Marshall",
+      "basedOn": "1967 50W Marshall Plexi",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User source export capture003; generated selection checked offline, not separately on hardware",
+      "factory10Candidate": {
+        "name": "Plexi 50W High 1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 8,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 12,
+      "name": "1987X Normal",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "FM3_AMP_CAPTURE_004.syx user export; full-channel generation verified offline, generated combination not hardware-confirmed",
+      "factory10Candidate": null
+    },
+    {
+      "id": 13,
+      "name": "1987X Treble",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "FM3_AMP_CAPTURE_004.syx user export; full-channel generation verified offline, generated combination not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "1987X Treble",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 8,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 14,
+      "name": "Brit 800 2204 High",
+      "manufacturer": "Marshall",
+      "basedOn": "50W Marshall JCM 800 2204",
+      "bundledTemplate": true,
+      "hardwareEvidence": "FM3_AMP_CAPTURE_004_corrected.syx user export; exact channel generation checked offline; generated combination not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "Brit 800 2204 High",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 125,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 15,
+      "name": "Brit Super",
+      "manufacturer": "Marshall",
+      "basedOn": "Marshall AFD100 schematics",
+      "bundledTemplate": true,
+      "hardwareEvidence": "FM3_AMP_CAPTURE_004.syx user export; full-channel generation verified offline, generated combination not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "Brit Super",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 59,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 16,
+      "name": "Hipower Normal",
+      "manufacturer": "Hiwatt",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "capture005 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "Hipower Normal",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 11,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 17,
+      "name": "Hipower Brilliant",
+      "manufacturer": "Hiwatt",
+      "basedOn": "Hiwatt DR103",
+      "bundledTemplate": true,
+      "hardwareEvidence": "capture005 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "Hipower Brilliant",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 11,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 18,
+      "name": "USA MK IV Rhythm 1",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "USA MK IV Rhythm 1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 12,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 19,
+      "name": "USA Pre Clean",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA TriAxis preamp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "capture005 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "USA Pre Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 85,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 20,
+      "name": "USA MK IV Rhythm 2",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "USA MK IV Rhythm 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 12,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 21,
+      "name": "USA MK IIC+",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA/Boogie Mark IIC+",
+      "bundledTemplate": true,
+      "hardwareEvidence": "capture005 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed",
+      "factory10Candidate": null
+    },
+    {
+      "id": 22,
+      "name": "USA MK IIC+ Bright",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "USA MK IIC+ Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 13,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture006 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 23,
+      "name": "USA MK IV Lead",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "MODEL_CAB example only",
+      "factory10Candidate": null
+    },
+    {
+      "id": 24,
+      "name": "USA MK IV Lead Bright",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "USA MK IV Lead Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 12,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 25,
+      "name": "Recto2 Orange Vintage",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Recto2 Orange Vintage",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 15,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture006 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 26,
+      "name": "Recto2 Orange Modern",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA Dual Rectifier, 3 channels",
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Recto2 Orange Modern",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 15,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture006 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 27,
+      "name": "Recto2 Red Vintage",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Recto2 Red Vintage",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 15,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture006 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 28,
+      "name": "Recto2 Red Modern",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Recto2 Red Modern",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 15,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture007 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 29,
+      "name": "Euro Blue",
+      "manufacturer": "Bogner",
+      "basedOn": "Bogner Ecstasy 20th Anniversary",
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Euro Blue",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 16,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture007 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 30,
+      "name": "Euro Red",
+      "manufacturer": "Bogner",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Euro Red",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 16,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture007 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 31,
+      "name": "Shiver Clean",
+      "manufacturer": "Bogner",
+      "basedOn": "Bogner Shiva 20th Anniversary",
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Shiver Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 18,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture007 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 32,
+      "name": "Shiver Lead",
+      "manufacturer": "Bogner",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Shiver Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 18,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture008 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 33,
+      "name": "Euro Uber",
+      "manufacturer": "Bogner",
+      "basedOn": "Bogner Uberschall",
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Euro Uber",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 20,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture008 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 34,
+      "name": "Solo 99 Clean",
+      "manufacturer": "Soldano",
+      "basedOn": "Soldano/Caswell X99 preamp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Solo 99 Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 100,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture008 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 35,
+      "name": "Solo 100 Rhythm",
+      "manufacturer": "Soldano",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Solo 100 Rhythm",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 21,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture008 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 36,
+      "name": "Solo 100 Lead",
+      "manufacturer": "Soldano",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Solo 100 Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 21,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture009 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 37,
+      "name": "Friedman BE V1",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Friedman BE V1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 23,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture009 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 38,
+      "name": "Friedman HBE V1",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "Friedman HBE V1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 24,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture009 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 39,
+      "name": "PVH 6160 Block Lead",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "PVH 6160 Block Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 102,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      },
+      "evidence": "capture009 user SYX and GET match 576/576; exact channel generation checked offline, generated combination not hardware-confirmed"
+    },
+    {
+      "id": 40,
+      "name": "Mr Z MZ-38",
+      "manufacturer": "Dr. Z",
+      "basedOn": "Dr. Z Maz 38 SR",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Mr Z MZ-38",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 29,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 41,
+      "name": "CA3+ Rhythm",
+      "manufacturer": "Custom Audio Amplifiers",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "CA3+ Rhythm",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 33,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 42,
+      "name": "CA3+ Lead",
+      "manufacturer": "Custom Audio Amplifiers",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "CA3+ Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 33,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 43,
+      "name": "Wrecker Rocket",
+      "manufacturer": "Trainwreck",
+      "basedOn": "Trainwreck Rocket",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Wrecker Rocket",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 30,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 44,
+      "name": "Cornfed M50",
+      "manufacturer": "Cornford",
+      "basedOn": "Cornford MK50 II",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Cornfed M50",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 89,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 45,
+      "name": "Carol-Ann OD-2",
+      "manufacturer": "Carol-Ann",
+      "basedOn": "Carol-Ann OD-2",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Carol-Ann OD-2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 48,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 46,
+      "name": "Fryette D60 Less",
+      "manufacturer": "Fryette",
+      "basedOn": "Fryette Deliverance 60 Series II",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 47,
+      "name": "Fryette D60 More",
+      "manufacturer": "Fryette",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Fryette D60 More",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 56,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 48,
+      "name": "Brit Brown",
+      "manufacturer": "Marshall",
+      "basedOn": "custom model: Plexi \"Brown Sound\"",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit Brown",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 39,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 49,
+      "name": "Citrus RV50",
+      "manufacturer": "Orange",
+      "basedOn": "Orange Rockerverb 50 MK II",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Citrus RV50",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 47,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 50,
+      "name": "Jazz 120",
+      "manufacturer": "Roland",
+      "basedOn": "Roland Jazz Chorus 120",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Jazz 120",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 98,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 51,
+      "name": "Energyball",
+      "manufacturer": "Engl",
+      "basedOn": "Engl Powerball",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Energyball",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 27,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 52,
+      "name": "ODS-100 Clean",
+      "manufacturer": "Dumble",
+      "basedOn": "Dumble Overdrive Special",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "ODS-100 Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 38,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 53,
+      "name": "ODS-100 HRM",
+      "manufacturer": "Dumble",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "ODS-100 HRM",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 73,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 54,
+      "name": "FAS Rhythm",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS Rhythm",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 94,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 55,
+      "name": "FAS Lead 1",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS Lead 1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 34,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 56,
+      "name": "FAS Lead 2",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS Lead 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 34,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 57,
+      "name": "FAS Modern",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS Modern",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 36,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 58,
+      "name": "Das Metall",
+      "manufacturer": "Diezel",
+      "basedOn": "Diezel VH4 schematics",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Das Metall",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 37,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 59,
+      "name": "Brit Pre",
+      "manufacturer": "Marshall",
+      "basedOn": "Marshall JMP-1 preamp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit Pre",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 96,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 60,
+      "name": "Buddah DuoMaster",
+      "manufacturer": "Budda",
+      "basedOn": "Budda Twinmaster",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Buddah DuoMaster",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 40,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 61,
+      "name": "Matchbox Chiefman 1",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Matchbox Chiefman 1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 41,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 62,
+      "name": "Matchbox Chiefman 2",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Matchbox Chiefman 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 41,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 63,
+      "name": "Cameron CCV 1A",
+      "manufacturer": "Cameron",
+      "basedOn": "Cameron CCV-100",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 64,
+      "name": "Cameron CCV 2A",
+      "manufacturer": "Cameron",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Cameron CCV 2A",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 86,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 65,
+      "name": "SV Bass 2",
+      "manufacturer": "Ampeg",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 66,
+      "name": "Tube Pre",
+      "manufacturer": "FAS",
+      "basedOn": "generic tube preamp model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Tube Pre",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 96,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 67,
+      "name": "FAS Brown",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 68,
+      "name": "Big Hair",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Big Hair",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 59,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 69,
+      "name": "Solo 99 Lead",
+      "manufacturer": "Soldano",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Solo 99 Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 100,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 70,
+      "name": "Supertweed",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Supertweed",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 42,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 71,
+      "name": "Texas Star Lead",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Texas Star Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 75,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 72,
+      "name": "FAS Wreck",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS Wreck",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 94,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 73,
+      "name": "Brit JVM OD1 Orange",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit JVM OD1 Orange",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 43,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 74,
+      "name": "Brit JVM OD2 Orange",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit JVM OD2 Orange",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 101,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 75,
+      "name": "FAS 6160",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS 6160",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 102,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 76,
+      "name": "Legend 100",
+      "manufacturer": "Carvin",
+      "basedOn": "Steve Vai's Carvin Legacy VL100",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Legend 100",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 100,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 77,
+      "name": "USA MK IV Lead Mid",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "not confirmed for model-selection write",
+      "factory10Candidate": {
+        "name": "USA MK IV Lead Mid",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 12,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 78,
+      "name": "USA MK IV Lead Mid Bright",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA MK IV Lead Mid Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 77,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 79,
+      "name": "Princetone 5F2",
+      "manufacturer": "Fender",
+      "basedOn": "Fender Tweed Princeton, 5F2-A",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Princetone 5F2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 7,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 80,
+      "name": "Blankenship Leeds",
+      "manufacturer": "Blankenship",
+      "basedOn": "Dweezil Zappa's Blankenship Leeds 21",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Blankenship Leeds",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 45,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 81,
+      "name": "5153 100W Green",
+      "manufacturer": "EVH",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "5153 100W Green",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 27,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 82,
+      "name": "5153 100W Blue",
+      "manufacturer": "EVH",
+      "basedOn": "EVH 5150-III",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "5153 100W Blue",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 27,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 83,
+      "name": "5153 100W Red",
+      "manufacturer": "EVH",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "5153 100W Red",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 27,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 84,
+      "name": "Solo 88 Rhythm",
+      "manufacturer": "Soldano",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Solo 88 Rhythm",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 83,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 85,
+      "name": "Div/13 CJ",
+      "manufacturer": "Divided By 13",
+      "basedOn": "Divided By 13 CJ 11",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Div/13 CJ",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 44,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 86,
+      "name": "Herbie CH2-",
+      "manufacturer": "Diezel",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Herbie CH2-",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 54,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 87,
+      "name": "Herbie CH2+",
+      "manufacturer": "Diezel",
+      "basedOn": "Diezel Herbert",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Herbie CH2+",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 54,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 88,
+      "name": "Herbie CH3",
+      "manufacturer": "Diezel",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Herbie CH3",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 54,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 89,
+      "name": "Dirty Shirley 1",
+      "manufacturer": "Friedman",
+      "basedOn": "40W Friedman Dirty Shirley",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Dirty Shirley 1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 60,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 90,
+      "name": "Dizzy V4 Blue 2",
+      "manufacturer": "Diezel",
+      "basedOn": "Diezel VH4",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 91,
+      "name": "Dizzy V4 Blue 3",
+      "manufacturer": "Diezel",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 92,
+      "name": "Dizzy V4 Blue 4",
+      "manufacturer": "Diezel",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Dizzy V4 Blue 4",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 49,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 93,
+      "name": "Suhr Badger 18",
+      "manufacturer": "Suhr",
+      "basedOn": "Suhr Badger 18",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Suhr Badger 18",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 68,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 94,
+      "name": "Suhr Badger 30",
+      "manufacturer": "Suhr",
+      "basedOn": "Suhr Badger 30",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Suhr Badger 30",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 81,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 95,
+      "name": "Princetone AA964",
+      "manufacturer": "Fender",
+      "basedOn": "silverface Fender Princeton without reverb, AA964",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Princetone AA964",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 7,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 96,
+      "name": "Supremo Trem",
+      "manufacturer": "Supro",
+      "basedOn": "Supro 1964T",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Supremo Trem",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 46,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 97,
+      "name": "Atomica Low",
+      "manufacturer": "Atomica",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Atomica Low",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 58,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 98,
+      "name": "Atomica High",
+      "manufacturer": "Atomica",
+      "basedOn": "Cameron Atomica",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Atomica High",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 39,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 99,
+      "name": "Deluxe Tweed Jumped",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Deluxe Tweed Jumped",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 59,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 100,
+      "name": "Spawn Q-Rod OD2-1",
+      "manufacturer": "Splawn",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Spawn Q-Rod OD2-1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 65,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 101,
+      "name": "Spawn Q-Rod OD2-2",
+      "manufacturer": "Splawn",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Spawn Q-Rod OD2-2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 65,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 102,
+      "name": "Spawn Q-Rod OD2-3",
+      "manufacturer": "Splawn",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Spawn Q-Rod OD2-3",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 65,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 103,
+      "name": "Brit Silver",
+      "manufacturer": "Marshall",
+      "basedOn": "Marshall Silver Jubilee, previously: Lerxst Omega",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit Silver",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 53,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 104,
+      "name": "Spawn Nitrous 2",
+      "manufacturer": "Splawn",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Spawn Nitrous 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 52,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 105,
+      "name": "FAS Crunch",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 106,
+      "name": "Two Stone J35 PAB",
+      "manufacturer": "Two-Rock",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Two Stone J35 PAB",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 51,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 107,
+      "name": "Fox ODS",
+      "manufacturer": "Fuchs",
+      "basedOn": "Fuchs Overdrive Supreme 50",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Fox ODS",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 61,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 108,
+      "name": "Hot Kitty",
+      "manufacturer": "Bad Cat",
+      "basedOn": "Bad Cat Hot Cat 30",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Hot Kitty",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 50,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 109,
+      "name": "Band-Commander",
+      "manufacturer": "Fender",
+      "basedOn": "1968 silverface/blackface Fender Bandmaster head, AB763",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Band-Commander",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 72,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 110,
+      "name": "Super Verb Vibrato",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Super Verb Vibrato",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 22,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 111,
+      "name": "Vibra-King",
+      "manufacturer": "Fender",
+      "basedOn": "custom Fender Vibro-King",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Vibra-King",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 19,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 112,
+      "name": "Gibtone Scout",
+      "manufacturer": "Gibson",
+      "basedOn": "Gibson GA17RVT Scout",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 113,
+      "name": "PVH 6160+ Lead",
+      "manufacturer": "Peavey",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "PVH 6160+ Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 63,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 114,
+      "name": "Solo 100 Clean",
+      "manufacturer": "Soldano",
+      "basedOn": "Soldano SLO-100",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Solo 100 Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 21,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 115,
+      "name": "USA Pre LD2 Green",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA Pre LD2 Green",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 85,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 116,
+      "name": "USA Pre LD2 Yellow",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA Pre LD2 Yellow",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 85,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 117,
+      "name": "CA3+ Clean",
+      "manufacturer": "Custom Audio Amplifiers",
+      "basedOn": "Custom Audio Amplifiers 3+ SE preamp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "CA3+ Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 33,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 118,
+      "name": "Fox ODS Mid",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Fox ODS Mid",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 61,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 119,
+      "name": "Brit JVM OD1 Green",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit JVM OD1 Green",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 43,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 120,
+      "name": "Brit JVM OD2 Green",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit JVM OD2 Green",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 125,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 121,
+      "name": "Vibrato Lux",
+      "manufacturer": "Fender",
+      "basedOn": "1962/1963 brownface Fender Vibrolux, 6G11",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Vibrato Lux",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 2,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 122,
+      "name": "Brit 800 Mod",
+      "manufacturer": "Marshall",
+      "basedOn": "50W Marshall JCM 800 with modifications",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit 800 Mod",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 10,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 123,
+      "name": "Nuclear-Tone",
+      "manufacturer": "Swart",
+      "basedOn": "Swart Atomic Space Tone",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Nuclear-Tone",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 62,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 124,
+      "name": "Bludojai Clean",
+      "manufacturer": "Bludotone",
+      "basedOn": "Bludotone Ojai",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Bludojai Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 90,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 125,
+      "name": "Bludojai Lead PAB",
+      "manufacturer": "Bludotone",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Bludojai Lead PAB",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 90,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 126,
+      "name": "Plexi 100W High",
+      "manufacturer": "Marshall",
+      "basedOn": "1969 100W Marshall Plexi",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi 100W High",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 9,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 127,
+      "name": "Plexi 100W Normal",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi 100W Normal",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 2,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 128,
+      "name": "Ruby Rocket Bright",
+      "manufacturer": "Ruby",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Ruby Rocket Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 105,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 129,
+      "name": "AC-20 EF86 Bass",
+      "manufacturer": "Morgan",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "AC-20 EF86 Bass",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 17,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 130,
+      "name": "Princetone Reverb",
+      "manufacturer": "Fender",
+      "basedOn": "1966 blackface Fender Princeton with reverb, AA964",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Princetone Reverb",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 7,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 131,
+      "name": "Comet Concourse",
+      "manufacturer": "Komet",
+      "basedOn": "Komet Concorde",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Comet Concourse",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 84,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 132,
+      "name": "FAS Modern II",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 133,
+      "name": "Carol-Ann Triptik Modern",
+      "manufacturer": "Carol-Ann",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Carol-Ann Triptik Modern",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 93,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 134,
+      "name": "Carol-Ann Triptik Classic",
+      "manufacturer": "Carol-Ann",
+      "basedOn": "Carol-Ann Triptik",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Carol-Ann Triptik Classic",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 93,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 135,
+      "name": "Carol-Ann Triptik Clean",
+      "manufacturer": "Carol-Ann",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Carol-Ann Triptik Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 93,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 136,
+      "name": "Thordendal Vintage",
+      "manufacturer": "FAS",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Thordendal Vintage",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 100,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 137,
+      "name": "Thordendal Modern",
+      "manufacturer": "FAS",
+      "basedOn": "custom model of MESA Dual Rectifier",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 138,
+      "name": "ODS-100 HRM Mid",
+      "manufacturer": "Dumble",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "ODS-100 HRM Mid",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 73,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 139,
+      "name": "Euro Blue Modern",
+      "manufacturer": "Bogner",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Euro Blue Modern",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 16,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 140,
+      "name": "Euro Red Modern",
+      "manufacturer": "Bogner",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Euro Red Modern",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 16,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 141,
+      "name": "Plexi 50W Jumped",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi 50W Jumped",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 76,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 142,
+      "name": "AC-20 EF86 Treble",
+      "manufacturer": "Morgan",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "AC-20 EF86 Treble",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 17,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 143,
+      "name": "Comet 60",
+      "manufacturer": "Komet",
+      "basedOn": "Komet 60",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 144,
+      "name": "Hipower Jumped",
+      "manufacturer": "Hiwatt",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Hipower Jumped",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 96,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 145,
+      "name": "Plexi 100W Jumped",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi 100W Jumped",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 9,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 146,
+      "name": "Brit JM45 Jumped",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit JM45 Jumped",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 49,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 147,
+      "name": "1987X Jumped",
+      "manufacturer": "Marshall",
+      "basedOn": "50W Marshall 1987X reissue",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "1987X Jumped",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 110,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 148,
+      "name": "Recto1 Orange Normal",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Recto1 Orange Normal",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 14,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 149,
+      "name": "Recto1 Red",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Recto1 Red",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 14,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 150,
+      "name": "ODS-100 Ford PAB",
+      "manufacturer": "Dumble",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "ODS-100 Ford PAB",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 38,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 151,
+      "name": "Bogfish Strato",
+      "manufacturer": "Bogner",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Bogfish Strato",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 107,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 152,
+      "name": "Bogfish Brown",
+      "manufacturer": "Bogner",
+      "basedOn": "Bogner Fish preamp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Bogfish Brown",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 107,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 153,
+      "name": "5F1 Tweed",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "5F1 Tweed",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 25,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 154,
+      "name": "Wrecker Express",
+      "manufacturer": "Trainwreck",
+      "basedOn": "Trainwreck Express",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Wrecker Express",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 66,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 155,
+      "name": "Two Stone J35",
+      "manufacturer": "Two-Rock",
+      "basedOn": "Two-Rock Jet 35",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Two Stone J35",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 51,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 156,
+      "name": "ODS-100 Ford",
+      "manufacturer": "Dumble",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "ODS-100 Ford",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 38,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 157,
+      "name": "Mr Z MZ-8",
+      "manufacturer": "Dr. Z",
+      "basedOn": "Dr. Z Maz 8",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 158,
+      "name": "Car Ambler",
+      "manufacturer": "Carr",
+      "basedOn": "Carr Rambler",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Car Ambler",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 103,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 159,
+      "name": "USA Metro Blues",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA Subway Blues",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA Metro Blues",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 112,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 160,
+      "name": "Wrecker Liverpool",
+      "manufacturer": "Trainwreck",
+      "basedOn": "Trainwreck Liverpool",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Wrecker Liverpool",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 30,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 161,
+      "name": "Citrus Terrier",
+      "manufacturer": "Orange",
+      "basedOn": "Orange Tiny Terror",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Citrus Terrier",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 117,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 162,
+      "name": "Citrus A30 Clean",
+      "manufacturer": "Orange",
+      "basedOn": "Orange AD30HTC",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Citrus A30 Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 104,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 163,
+      "name": "Citrus A30 Dirty",
+      "manufacturer": "Orange",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Citrus A30 Dirty",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 104,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 164,
+      "name": "Div/13 FT37 Low",
+      "manufacturer": "Divided By 13",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Div/13 FT37 Low",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 107,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 165,
+      "name": "Div/13 FT37 High",
+      "manufacturer": "Divided By 13",
+      "basedOn": "Divided By 13 FTR 37",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Div/13 FT37 High",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 48,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 166,
+      "name": "Matchbox D-30",
+      "manufacturer": "Matchless",
+      "basedOn": "Matchless DC-30",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Matchbox D-30",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 78,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 167,
+      "name": "FAS Class-A",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS Class-A",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 98,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 168,
+      "name": "USA Bass 400 1",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA Bass 400 bass amp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA Bass 400 1",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 30,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 169,
+      "name": "USA Bass 400 2",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 170,
+      "name": "Citrus Bass 200",
+      "manufacturer": "Orange",
+      "basedOn": "Orange AD200B bass amp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 171,
+      "name": "FAS Bass",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 172,
+      "name": "Tremolo Lux",
+      "manufacturer": "Fender",
+      "basedOn": "blackface Fender Tremolux, AA763",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Tremolo Lux",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 26,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 173,
+      "name": "FAS Brootalz",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 174,
+      "name": "Recto1 Orange Modern",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA Dual Rectifier, 2 channels",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Recto1 Orange Modern",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 14,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 175,
+      "name": "Angle Severe 1",
+      "manufacturer": "Engl",
+      "basedOn": "Engl Savage 120",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Angle Severe 1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 31,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 176,
+      "name": "Angle Severe 2",
+      "manufacturer": "Engl",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Angle Severe 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 31,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 177,
+      "name": "USA Pre LD2 Red",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA Pre LD2 Red",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 85,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 178,
+      "name": "USA Pre LD1 Red",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA Pre LD1 Red",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 1,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 179,
+      "name": "Texas Star Clean",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA Lone Star Classic",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Texas Star Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 75,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 180,
+      "name": "AC-20 12AX7 Treble",
+      "manufacturer": "Morgan",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "AC-20 12AX7 Treble",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 17,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 181,
+      "name": "Vibrato Verb AA",
+      "manufacturer": "Fender",
+      "basedOn": "1964 blackface Fender Vibroverb, AA763",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Vibrato Verb AA",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 74,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 182,
+      "name": "Vibrato Verb AB",
+      "manufacturer": "Fender",
+      "basedOn": "Fender Vibroverb, AB763",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Vibrato Verb AB",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 74,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 183,
+      "name": "Carol-Ann Tucana Lead",
+      "manufacturer": "Carol-Ann",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Carol-Ann Tucana Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 35,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 184,
+      "name": "JR Blues Fat",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "JR Blues Fat",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 92,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 185,
+      "name": "Solo 88 Lead",
+      "manufacturer": "Soldano",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Solo 88 Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 83,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 186,
+      "name": "Brit AFS100 1",
+      "manufacturer": "Marshall",
+      "basedOn": "Marshall AFD100SCE",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit AFS100 1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 69,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 187,
+      "name": "Brit AFS100 2",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit AFS100 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 69,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 188,
+      "name": "Class-A 30W Hot",
+      "manufacturer": "Vox",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Class-A 30W Hot",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 6,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 189,
+      "name": "Dizzy V4 Silver 3",
+      "manufacturer": "Diezel",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Dizzy V4 Silver 3",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 70,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 190,
+      "name": "Dizzy V4 Silver 2",
+      "manufacturer": "Diezel",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Dizzy V4 Silver 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 70,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 191,
+      "name": "Dizzy V4 Silver 4",
+      "manufacturer": "Diezel",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Dizzy V4 Silver 4",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 70,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 192,
+      "name": "1959SLP Normal",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 193,
+      "name": "1959SLP Treble",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "1959SLP Treble",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 9,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 194,
+      "name": "1959SLP Jumped",
+      "manufacturer": "Marshall",
+      "basedOn": "100W Marshall Super Lead Plexi 1959 reissue",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "1959SLP Jumped",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 21,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 195,
+      "name": "FAS Modern III",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 196,
+      "name": "ODS-100 Ford PAB Mid",
+      "manufacturer": "Dumble",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "ODS-100 Ford PAB Mid",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 38,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 197,
+      "name": "Mr Z Highway 66",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Mr Z Highway 66",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 111,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 198,
+      "name": "6G4 Super",
+      "manufacturer": "Fender",
+      "basedOn": "1960 brownface Fender Super, 6G4",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 199,
+      "name": "6G12 Concert",
+      "manufacturer": "Fender",
+      "basedOn": "1960 brownface Fender Concert, 6G12",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "6G12 Concert",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 28,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 200,
+      "name": "65 Bassguy Bass",
+      "manufacturer": "Fender",
+      "basedOn": "1965 blackface Fender Bassman head, AB165",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "65 Bassguy Bass",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 1,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 201,
+      "name": "Vibra-King Fat",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Vibra-King Fat",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 19,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 202,
+      "name": "Spawn Q-Rod OD1-1",
+      "manufacturer": "Splawn",
+      "basedOn": "Splawn Quickrod",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Spawn Q-Rod OD1-1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 32,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 203,
+      "name": "Spawn Q-Rod OD1-2",
+      "manufacturer": "Splawn",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Spawn Q-Rod OD1-2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 32,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 204,
+      "name": "Spawn Q-Rod OD1-3",
+      "manufacturer": "Splawn",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Spawn Q-Rod OD1-3",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 32,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 205,
+      "name": "Carol-Ann Tucana Clean",
+      "manufacturer": "Carol-Ann",
+      "basedOn": "Carol-Ann Tucana 3",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Carol-Ann Tucana Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 35,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 206,
+      "name": "Brit JVM OD1 Red",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit JVM OD1 Red",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 43,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 207,
+      "name": "Brit JVM OD2 Red",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit JVM OD2 Red",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 49,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 208,
+      "name": "Cameron CCV 1B",
+      "manufacturer": "Cameron",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Cameron CCV 1B",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 86,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 209,
+      "name": "Cameron CCV 2B",
+      "manufacturer": "Cameron",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Cameron CCV 2B",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 109,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 210,
+      "name": "Cameron CCV 2C",
+      "manufacturer": "Cameron",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Cameron CCV 2C",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 86,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 211,
+      "name": "Cameron CCV 2D",
+      "manufacturer": "Cameron",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Cameron CCV 2D",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 86,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 212,
+      "name": "Friedman Small Box",
+      "manufacturer": "Friedman",
+      "basedOn": "Friedman Smallbox",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Friedman Small Box",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 122,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 213,
+      "name": "5153 50W Blue",
+      "manufacturer": "EVH",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "5153 50W Blue",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 27,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 214,
+      "name": "Div/13 CJ Boost",
+      "manufacturer": "Divided By 13",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Div/13 CJ Boost",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 44,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 215,
+      "name": "USA MK IIC+ Deep",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 216,
+      "name": "USA MK IIC+ Deep Bright",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA MK IIC+ Deep Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 13,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 217,
+      "name": "5F8 Tweed Bright",
+      "manufacturer": "Fender",
+      "basedOn": "Keith Urban's 1959 narrow-panel high-power Fender Tweed Twin, 5F8",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "5F8 Tweed Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 57,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 218,
+      "name": "Double Verb Silverface",
+      "manufacturer": "Fender",
+      "basedOn": "1971 silverface Fender Twin Reverb",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Double Verb Silverface",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 4,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 219,
+      "name": "Vibrato Verb Custom",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Vibrato Verb Custom",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 74,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 220,
+      "name": "JMPre-1 OD1",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "JMPre-1 OD1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 67,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 221,
+      "name": "JMPre-1 OD2",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 222,
+      "name": "JMPre-1 OD1 Bass Shift",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "JMPre-1 OD1 Bass Shift",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 67,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 223,
+      "name": "JMPre-1 OD2 Bass Shift",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "JMPre-1 OD2 Bass Shift",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 67,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 224,
+      "name": "Deluxe Verb Normal",
+      "manufacturer": "Fender",
+      "basedOn": "1965 blackface Fender Deluxe Reverb, AB763",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Deluxe Verb Normal",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 3,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 225,
+      "name": "Double Verb Normal",
+      "manufacturer": "Fender",
+      "basedOn": "1966 blackface Fender Twin Reverb",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Double Verb Normal",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 4,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 226,
+      "name": "Super Verb Normal",
+      "manufacturer": "Fender",
+      "basedOn": "1964 Fender Super Reverb, AB763",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Super Verb Normal",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 22,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 227,
+      "name": "Bludojai Lead",
+      "manufacturer": "Bludotone",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Bludojai Lead",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 90,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 228,
+      "name": "Plexi 50W 6550",
+      "manufacturer": "Marshall",
+      "basedOn": "1972 50W Marshall Plexi",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi 50W 6550",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 8,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 229,
+      "name": "FAS Hot Rod",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS Hot Rod",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 94,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 230,
+      "name": "PVH 6160+ Crunch",
+      "manufacturer": "Peavey",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "PVH 6160+ Crunch",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 63,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 231,
+      "name": "PVH 6160+ Clean",
+      "manufacturer": "Peavey",
+      "basedOn": "Peavey 6505+ / EVH 5150-II",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 232,
+      "name": "Solo 88 Clean",
+      "manufacturer": "Soldano",
+      "basedOn": "Soldano X88R preamp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Solo 88 Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 83,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 233,
+      "name": "Class-A 30W Bright",
+      "manufacturer": "Vox",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 234,
+      "name": "Plexi 50W High 2",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi 50W High 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 8,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 235,
+      "name": "Spawn Nitrous 1",
+      "manufacturer": "Splawn",
+      "basedOn": "Splawn Nitro",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Spawn Nitrous 1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 52,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 236,
+      "name": "Ruby Rocket",
+      "manufacturer": "Ruby",
+      "basedOn": "Paul Ruby Rocket",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Ruby Rocket",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 105,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 237,
+      "name": "AC-20 12AX7 Bass",
+      "manufacturer": "Morgan",
+      "basedOn": "Morgan AC20 Deluxe",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "AC-20 12AX7 Bass",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 17,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 238,
+      "name": "Plexi 100W 1970",
+      "manufacturer": "Marshall",
+      "basedOn": "1970 100W Marshall Plexi",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi 100W 1970",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 9,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 239,
+      "name": "JS410 Lead Orange",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "JS410 Lead Orange",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 88,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 240,
+      "name": "JS410 Lead Red",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "JS410 Lead Red",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 88,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 241,
+      "name": "JS410 Crunch Orange",
+      "manufacturer": "Marshall",
+      "basedOn": "Joe Satriani's Marshall JVM410HJS",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "JS410 Crunch Orange",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 88,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 242,
+      "name": "JS410 Crunch Red",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "JS410 Crunch Red",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 88,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 243,
+      "name": "Friedman BE V2",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Friedman BE V2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 23,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 244,
+      "name": "Friedman HBE V2",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Friedman HBE V2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 24,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 245,
+      "name": "Dweezil's Bassguy",
+      "manufacturer": "Fender",
+      "basedOn": "Dweezil Zappa's 1965 blackface Fender Bassman, AB165",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Dweezil's Bassguy",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 55,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 246,
+      "name": "Friedman BE V3",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Friedman BE V3",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 23,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 247,
+      "name": "Friedman HBE V3",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Friedman HBE V3",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 24,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 248,
+      "name": "USA MK IIC++",
+      "manufacturer": "Mesa",
+      "basedOn": "custom model of MESA/Boogie IIC+",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA MK IIC++",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 13,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 249,
+      "name": "Legend 100 II",
+      "manufacturer": "Carvin",
+      "basedOn": "Carvin Legacy VL300",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Legend 100 II",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 124,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 250,
+      "name": "Capt Hook 2B",
+      "manufacturer": "Hook",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Capt Hook 2B",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 19,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 251,
+      "name": "Capt Hook 3B",
+      "manufacturer": "Hook",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Capt Hook 3B",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 81,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 252,
+      "name": "Capt Hook 2A",
+      "manufacturer": "Hook",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Capt Hook 2A",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 87,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 253,
+      "name": "Capt Hook 3A",
+      "manufacturer": "Hook",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Capt Hook 3A",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 2,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 254,
+      "name": "Capt Hook 1A",
+      "manufacturer": "Hook",
+      "basedOn": "Hook Captain 34",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Capt Hook 1A",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 96,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 255,
+      "name": "Capt Hook 1B",
+      "manufacturer": "Hook",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Capt Hook 1B",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 19,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 256,
+      "name": "Dirty Shirley 2",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Dirty Shirley 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 60,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 257,
+      "name": "Brit 800 #34",
+      "manufacturer": "Marshall",
+      "basedOn": "50W Marshall JCM 800 with Santiago #34 modifications",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit 800 #34",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 10,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 258,
+      "name": "5F1 Tweed EC",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "5F1 Tweed EC",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 25,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 259,
+      "name": "Friedman BE V1 Fat",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Friedman BE V1 Fat",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 23,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 260,
+      "name": "Friedman HBE V1 Fat",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Friedman HBE V1 Fat",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 24,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 261,
+      "name": "Plexi 2204",
+      "manufacturer": "Marshall",
+      "basedOn": "1981 50W Marshall JMP 2204",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi 2204",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 125,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 262,
+      "name": "Friedman HBE C45",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 263,
+      "name": "Porta-Bass",
+      "manufacturer": "Ampeg",
+      "basedOn": "Ampeg Portaflex bass amp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Porta-Bass",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 56,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 264,
+      "name": "SV Bass 1",
+      "manufacturer": "Ampeg",
+      "basedOn": "Ampeg SVT bass amp",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "SV Bass 1",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 30,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 265,
+      "name": "FAS Skull Crusher",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 266,
+      "name": "USA JP IIC+ Red",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA JP IIC+ Red",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 82,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 267,
+      "name": "USA JP IIC+ Yellow",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA JP IIC+ Yellow",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 82,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 268,
+      "name": "USA JP IIC+ Green",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA/Boogie JP-2C",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA JP IIC+ Green",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 82,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 269,
+      "name": "Wrecker Express Bright",
+      "manufacturer": "Trainwreck",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Wrecker Express Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 66,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 270,
+      "name": "Wrecker Liverpool Bright",
+      "manufacturer": "Trainwreck",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Wrecker Liverpool Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 30,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 271,
+      "name": "Matchbox D-30 EF86",
+      "manufacturer": "Matchless",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 272,
+      "name": "FAS Express",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS Express",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 94,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 273,
+      "name": "Triple Crest 2",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA Triple Crown TC-100",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Triple Crest 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 101,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 274,
+      "name": "Triple Crest 3",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Triple Crest 3",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 101,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 275,
+      "name": "PVH 6160+ Crunch Bright",
+      "manufacturer": "Peavey",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "PVH 6160+ Crunch Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 63,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 276,
+      "name": "PVH 6160+ Clean Bright",
+      "manufacturer": "Peavey",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 277,
+      "name": "Plexi 50W 6CA7",
+      "manufacturer": "Marshall",
+      "basedOn": "50W Marshall Plexi",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi 50W 6CA7",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 39,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 278,
+      "name": "Solo 99 Lead Bright",
+      "manufacturer": "Soldano",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Solo 99 Lead Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 100,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 279,
+      "name": "Archean",
+      "manufacturer": "PRS",
+      "basedOn": "100W PRS Archon",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Archean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 64,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 280,
+      "name": "Archean Bright",
+      "manufacturer": "PRS",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Archean Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 64,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 281,
+      "name": "Archean Clean",
+      "manufacturer": "PRS",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Archean Clean",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 64,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 282,
+      "name": "59 Bassguy Jumped",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "59 Bassguy Jumped",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 0,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 283,
+      "name": "Deluxe Tweed Bright",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Deluxe Tweed Bright",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 59,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 284,
+      "name": "USA JP IIC+ Red Shred",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA JP IIC+ Red Shred",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 82,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 285,
+      "name": "USA JP IIC+ Yellow Shred",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA JP IIC+ Yellow Shred",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 83,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 286,
+      "name": "Friedman BE C45",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 287,
+      "name": "Friedman BE 2010",
+      "manufacturer": "Friedman",
+      "basedOn": "Friedman BE",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 288,
+      "name": "Friedman HBE 2010",
+      "manufacturer": "Friedman",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 289,
+      "name": "FAS Buttery",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 290,
+      "name": "59 Bassguy Normal",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "59 Bassguy Normal",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 0,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 291,
+      "name": "5F8 Tweed Normal",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "5F8 Tweed Normal",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 57,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 292,
+      "name": "5F8 Tweed Jumped",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "5F8 Tweed Jumped",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 57,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 293,
+      "name": "JMPre-1 Clean1",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "JMPre-1 Clean1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 67,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 294,
+      "name": "JMPre-1 Clean1 Bass Shift",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 295,
+      "name": "JMPre-1 Clean2",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 296,
+      "name": "JMPre-1 Clean2 Bass Shift",
+      "manufacturer": null,
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 297,
+      "name": "Diamante Fire",
+      "manufacturer": "Diamond",
+      "basedOn": "22W Diamond Del Fuego",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 298,
+      "name": "PVH 6160 Block Crunch",
+      "manufacturer": "Peavey",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "PVH 6160 Block Crunch",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 63,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 299,
+      "name": "Plexi Studio 20",
+      "manufacturer": "Marshall",
+      "basedOn": "Marshall SV20H",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Plexi Studio 20",
+        "file": "FM3-BANK-B-250604-113656.syx",
+        "index": 101,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 300,
+      "name": "Plexi 50W 6CA7 Jumped",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 301,
+      "name": "Herbie MK3",
+      "manufacturer": "Diezel",
+      "basedOn": "Diezel Herbert MKIII",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 302,
+      "name": "59 Bassguy RI Jumped",
+      "manufacturer": "Fender",
+      "basedOn": "Fender 59 Bassman LTD Vintage Reissue",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 303,
+      "name": "Revv Gen Purple 1",
+      "manufacturer": "Revv",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Revv Gen Purple 1",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 110,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 304,
+      "name": "Revv Gen Purple 2",
+      "manufacturer": "Revv",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Revv Gen Purple 2",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 110,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 305,
+      "name": "Revv Gen Purple 3",
+      "manufacturer": "Revv",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 306,
+      "name": "Revv Gen Red 1",
+      "manufacturer": "Revv",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 307,
+      "name": "Revv Gen Red 2",
+      "manufacturer": "Revv",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Revv Gen Red 2",
+        "file": "FM3-BANK-C-250604-113656.syx",
+        "index": 96,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 308,
+      "name": "Revv Gen Red 3",
+      "manufacturer": "Revv",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 309,
+      "name": "Revv Gen Green 1",
+      "manufacturer": "Revv",
+      "basedOn": "REVV GENERATOR 120 MKIII",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 310,
+      "name": "Revv Gen Green 2",
+      "manufacturer": "Revv",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 311,
+      "name": "Revv Gen Green 3",
+      "manufacturer": "Revv",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 312,
+      "name": "JS410 Lead Green",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 313,
+      "name": "5153 100W Stealth Blue",
+      "manufacturer": "EVH",
+      "basedOn": "EVH 5150III 100S 100W",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 314,
+      "name": "Brit 800 2203 High",
+      "manufacturer": "Marshall",
+      "basedOn": "100W Marshall JCM 800 2203 JMP",
+      "bundledTemplate": true,
+      "hardwareEvidence": "FM3_AMP_CAPTURE_004.syx user export; full-channel generation verified offline, generated combination not hardware-confirmed",
+      "factory10Candidate": {
+        "name": "Brit 800 2203 High",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 10,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 315,
+      "name": "5153 100W Stealth Green",
+      "manufacturer": "EVH",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 316,
+      "name": "5153 100W Stealth Red",
+      "manufacturer": "EVH",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 317,
+      "name": "USA MK V Green",
+      "manufacturer": "Mesa",
+      "basedOn": "MESA/Boogie Mark V",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA MK V Green",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 113,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 318,
+      "name": "Brit 800 2204 Low",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 319,
+      "name": "Brit 800 2203 Low",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 320,
+      "name": "USA MK V Red IIC+",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA MK V Red IIC+",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 113,
+        "channel": "D",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 321,
+      "name": "USA MK V Red IIC+ Bright",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 322,
+      "name": "USA MK V Red MKIV",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA MK V Red MKIV",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 113,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 323,
+      "name": "USA MK V Red MKIV Bright",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 324,
+      "name": "USA MK V Red XT",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "USA MK V Red XT",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 113,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 325,
+      "name": "USA MK V Red XT Bright",
+      "manufacturer": "Mesa",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 326,
+      "name": "Class-A 30W Brilliant",
+      "manufacturer": "Vox",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Class-A 30W Brilliant",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 6,
+        "channel": "A",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 327,
+      "name": "FAS Stealth Blue",
+      "manufacturer": "FAS",
+      "basedOn": "custom model",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "FAS Stealth Blue",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 103,
+        "channel": "C",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 328,
+      "name": "Brit 800 Studio 20",
+      "manufacturer": "Marshall",
+      "basedOn": "Marshall Studio Classic SC20H",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": {
+        "name": "Brit 800 Studio 20",
+        "file": "FM3-BANK-A-250604-113656.syx",
+        "index": 10,
+        "channel": "B",
+        "cols": 144,
+        "rows": 4
+      }
+    },
+    {
+      "id": 329,
+      "name": "Supro Black Magick",
+      "manufacturer": "Supro",
+      "basedOn": "Supro 1695T Black Magick",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 330,
+      "name": "Deluxe 6G3",
+      "manufacturer": "Fender",
+      "basedOn": "brownface Fender Deluxe, 6G3",
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair: 576/576 words; generated combinations not imported or audio-tested",
+      "factory10Candidate": null
+    },
+    {
+      "id": 333,
+      "name": "Brit JVM Crunch Green",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair 576/576 confirmed; generated combinations only offline tested",
+      "source": "FM3_AMP_CAPTURE_083.syx"
+    },
+    {
+      "id": 334,
+      "name": "Brit JVM Crunch Orange",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair 576/576 confirmed; generated combinations only offline tested",
+      "source": "FM3_AMP_CAPTURE_083.syx"
+    },
+    {
+      "id": 335,
+      "name": "Brit JVM Crunch Red",
+      "manufacturer": "Marshall",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair 576/576 confirmed; generated combinations only offline tested",
+      "source": "FM3_AMP_CAPTURE_083.syx"
+    },
+    {
+      "id": 332,
+      "name": "PVH 6160 Block Clean",
+      "manufacturer": "Peavey",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair 576/576 confirmed; generated combinations only offline tested",
+      "source": "FM3_AMP_CAPTURE_083.syx"
+    },
+    {
+      "id": 331,
+      "name": "Deluxe Tweed Normal",
+      "manufacturer": "Fender",
+      "basedOn": null,
+      "bundledTemplate": true,
+      "hardwareEvidence": "User GET/SYX pair 576/576 confirmed; generated combinations only offline tested",
+      "source": "FM3_AMP_CAPTURE_084.syx"
+    }
+  ]
+}

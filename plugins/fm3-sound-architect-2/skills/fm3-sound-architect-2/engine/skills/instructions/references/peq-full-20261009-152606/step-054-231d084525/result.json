@@ -1,0 +1,313 @@
+{
+  "index": 54,
+  "step": {
+    "id": "055-numeric",
+    "stage": "numeric",
+    "kind": "controls",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Gain → -6 dB; Band 2 Gain → -6 dB; Band 3 Gain → -6 dB; Band 4 Gain → -6 dB; Band 5 Gain → -6 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": -6,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": -6,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": -6,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": -6,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": -6,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      }
+    ]
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 54,
+    "step": {
+      "id": "055-numeric",
+      "stage": "numeric",
+      "kind": "controls",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Viie riba vahepunktid skaala analüüsiks. Muuda ainult: Band 1 Gain → -6 dB; Band 2 Gain → -6 dB; Band 3 Gain → -6 dB; Band 4 Gain → -6 dB; Band 5 Gain → -6 dB. Kõigi viie riba Type peab olema Peaking. Kui pole, peatu q-ga ja saada ZIP. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": [
+        {
+          "parameter": "Gain",
+          "candidatePid": 10,
+          "value": -6,
+          "band": 1,
+          "channel": "A",
+          "endpoint": null,
+          "unit": "dB"
+        },
+        {
+          "parameter": "Gain",
+          "candidatePid": 11,
+          "value": -6,
+          "band": 2,
+          "channel": "A",
+          "endpoint": null,
+          "unit": "dB"
+        },
+        {
+          "parameter": "Gain",
+          "candidatePid": 12,
+          "value": -6,
+          "band": 3,
+          "channel": "A",
+          "endpoint": null,
+          "unit": "dB"
+        },
+        {
+          "parameter": "Gain",
+          "candidatePid": 13,
+          "value": -6,
+          "band": 4,
+          "channel": "A",
+          "endpoint": null,
+          "unit": "dB"
+        },
+        {
+          "parameter": "Gain",
+          "candidatePid": 14,
+          "value": -6,
+          "band": 5,
+          "channel": "A",
+          "endpoint": null,
+          "unit": "dB"
+        }
+      ]
+    },
+    "previousSha256": "a1982acec4fe7525d132d60e95c2cbb0c8141e1b10870853329eae70fa0c6cc8",
+    "syxSha256": "42e4a55dc7c47e3f69d3be961947ff2205cc9615f8152a0d3e9dfd0c8e0c08e9",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 10,
+        "offset": 8754,
+        "before": 65534,
+        "after": 22937
+      },
+      {
+        "channel": "A",
+        "pid": 11,
+        "offset": 8756,
+        "before": 65534,
+        "after": 22937
+      },
+      {
+        "channel": "A",
+        "pid": 12,
+        "offset": 8758,
+        "before": 65534,
+        "after": 22937
+      },
+      {
+        "channel": "A",
+        "pid": 13,
+        "offset": 8760,
+        "before": 65534,
+        "after": 22937
+      },
+      {
+        "channel": "A",
+        "pid": 14,
+        "offset": 8762,
+        "before": 65534,
+        "after": 22937
+      }
+    ],
+    "requestedWords": [
+      {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": -6,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB",
+        "raw": 22937
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": -6,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB",
+        "raw": 22937
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": -6,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB",
+        "raw": 22937
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": -6,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB",
+        "raw": 22937
+      },
+      {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": -6,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB",
+        "raw": 22937
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 10,
+        "value": -6,
+        "band": 1,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      "displayValue": -6.0
+    },
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 11,
+        "value": -6,
+        "band": 2,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      "displayValue": -6.0
+    },
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 12,
+        "value": -6,
+        "band": 3,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      "displayValue": -6.0
+    },
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 13,
+        "value": -6,
+        "band": 4,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      "displayValue": -6.0
+    },
+    {
+      "control": {
+        "parameter": "Gain",
+        "candidatePid": 14,
+        "value": -6,
+        "band": 5,
+        "channel": "A",
+        "endpoint": null,
+        "unit": "dB"
+      },
+      "displayValue": -6.0
+    }
+  ],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "42e4a55dc7c47e3f69d3be961947ff2205cc9615f8152a0d3e9dfd0c8e0c08e9",
+    "bodySha256": "882dc26038664e4b15c4adfb6224ce90980b488331e3ae42ff10adcc964c3f85",
+    "rawRxSha256": "842870c31c6c3c04276738d3b7bd3c03a7cb382473bbf1f65bb69f291d5650fe",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

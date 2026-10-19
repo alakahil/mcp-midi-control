@@ -1,0 +1,74 @@
+[
+  {
+    "name": "3 Band Console",
+    "bands": 3
+  },
+  {
+    "name": "3 Band Passive",
+    "bands": 3
+  },
+  {
+    "name": "4 Band JMPre-1",
+    "bands": 4
+  },
+  {
+    "name": "4 Band Passive",
+    "bands": 4
+  },
+  {
+    "name": "5 Band Constant Q",
+    "bands": 5
+  },
+  {
+    "name": "5 Band Mark",
+    "bands": 5
+  },
+  {
+    "name": "5 Band Passive",
+    "bands": 5
+  },
+  {
+    "name": "5 Band Variable Q",
+    "bands": 5
+  },
+  {
+    "name": "7 Band Bass Pedal",
+    "bands": 7
+  },
+  {
+    "name": "7 Band Constant Q",
+    "bands": 7
+  },
+  {
+    "name": "7 Band Pedal",
+    "bands": 7
+  },
+  {
+    "name": "7 Band Variable Q",
+    "bands": 7
+  },
+  {
+    "name": "8 Band Constant Q",
+    "bands": 8
+  },
+  {
+    "name": "8 Band Variable Q",
+    "bands": 8
+  },
+  {
+    "name": "10 Band 2/3 Oct Const Q",
+    "bands": 10
+  },
+  {
+    "name": "10 Band 2/3 Oct Var Q",
+    "bands": 10
+  },
+  {
+    "name": "10 Band Constant Q",
+    "bands": 10
+  },
+  {
+    "name": "10 Band Variable Q",
+    "bands": 10
+  }
+]

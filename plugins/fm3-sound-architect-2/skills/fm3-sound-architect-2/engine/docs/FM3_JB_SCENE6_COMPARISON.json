@@ -1,0 +1,164 @@
+{
+  "files": [
+    {
+      "file": "JB_YDOM_RHYTHM.syx",
+      "sha256": "bffe9dd559b443ebe3822532e951a27cb0a827600cb929d52dfccd3228d611ca",
+      "bytes": 24680,
+      "preset": "JB YDOM RHYTHM",
+      "scene6": "Rhythm FX",
+      "phaser": {
+        "offset": 9204,
+        "scene_channels": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "D",
+          "A",
+          "A"
+        ],
+        "scene_bypass": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "file": "JB_SCENE6_TEST.syx",
+      "sha256": "f5c065b0d360e458652a6734cdb651bb392117e9d3aa6cc3b376356d14b1bae9",
+      "bytes": 24680,
+      "preset": "JB YDOM RHYTHM",
+      "scene6": "JB SOLO",
+      "phaser": {
+        "offset": 9204,
+        "scene_channels": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "D",
+          "A",
+          "A"
+        ],
+        "scene_bypass": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    }
+  ],
+  "bodyDiff": [
+    {
+      "offset": 0,
+      "before": 1,
+      "after": 5
+    },
+    {
+      "offset": 164,
+      "before": 82,
+      "after": 74
+    },
+    {
+      "offset": 165,
+      "before": 104,
+      "after": 66
+    },
+    {
+      "offset": 166,
+      "before": 121,
+      "after": 32
+    },
+    {
+      "offset": 167,
+      "before": 116,
+      "after": 83
+    },
+    {
+      "offset": 168,
+      "before": 104,
+      "after": 79
+    },
+    {
+      "offset": 169,
+      "before": 109,
+      "after": 76
+    },
+    {
+      "offset": 170,
+      "before": 32,
+      "after": 79
+    },
+    {
+      "offset": 171,
+      "before": 70,
+      "after": 32
+    },
+    {
+      "offset": 172,
+      "before": 88,
+      "after": 32
+    },
+    {
+      "offset": 9228,
+      "before": 0,
+      "after": 1
+    }
+  ],
+  "rawHeaderDiff": [
+    {
+      "offset": 4,
+      "before": 94,
+      "after": 74
+    },
+    {
+      "offset": 5,
+      "before": 36,
+      "after": 25
+    }
+  ],
+  "dumpHeaderDiff": [],
+  "checks": "both inspect passed: frames, seven-bit data, checksums, CRC, footer, decoder validation",
+  "bodyBytes": 14222,
+  "changedBodyBytes": 11,
+  "interpretation": {
+    "scene6Name": {
+      "range": [
+        164,
+        195
+      ],
+      "before": "Rhythm FX",
+      "after": "JB SOLO",
+      "changedBytes": 9
+    },
+    "phaserScene6Bypass": {
+      "wordOffset": 9228,
+      "before": 0,
+      "after": 1,
+      "channel": "D unchanged"
+    },
+    "unresolved": {
+      "offset": 0,
+      "before": 1,
+      "after": 5,
+      "hypothesis": "selected scene index (Scene 2 to Scene 6), not independently validated"
+    },
+    "otherBodyBytesIdentical": true,
+    "rawHeader": "only CRC bytes 4 and 5 changed",
+    "dumpHeaderIdentical": true,
+    "generator": "unchanged; no new writer enabled"
+  }
+}

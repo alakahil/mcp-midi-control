@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "effectId": 82,
+  "firmwareDeclared": 13,
+  "source": "User FM3-Edit screenshot 2026-10-07 12.38.33; display numbers are not device IDs",
+  "models": [
+    {
+      "displayNumber": 1,
+      "name": "80's Rack Flanger",
+      "binaryId": 24
+    },
+    {
+      "displayNumber": 2,
+      "name": "Analog Mono",
+      "binaryId": 2
+    },
+    {
+      "displayNumber": 3,
+      "name": "Analog Stereo",
+      "binaryId": 3
+    },
+    {
+      "displayNumber": 4,
+      "name": "BBF-2",
+      "binaryId": 9
+    },
+    {
+      "displayNumber": 5,
+      "name": "Binary Flange",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 6,
+      "name": "Cancel Flange",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 7,
+      "name": "Count of Flanging",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 8,
+      "name": "Cuda Flange",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 9,
+      "name": "D/AD 185",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 10,
+      "name": "Deluxe Mystery",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 11,
+      "name": "Digital Mono",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 12,
+      "name": "Digital Stereo",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 13,
+      "name": "Electric Mystery",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 14,
+      "name": "FAS Flanger",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 15,
+      "name": "Harmonoflange",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 16,
+      "name": "Hemisflange",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 17,
+      "name": "Lofty Flange",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 18,
+      "name": "Manual Thru-Zero Flanger",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 19,
+      "name": "Melodic Flange",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 20,
+      "name": "MXF-117",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 21,
+      "name": "Pop Flanger",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 22,
+      "name": "Scion Stereo Flange",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 23,
+      "name": "Spirit Flange",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 24,
+      "name": "Starship Flanger",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 25,
+      "name": "Step Flanger",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 26,
+      "name": "Stereo Jet",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 27,
+      "name": "Thru-Zero",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 28,
+      "name": "Trippy Flanger",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 29,
+      "name": "Tubular",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 30,
+      "name": "Vowel Flanger",
+      "binaryId": null
+    },
+    {
+      "displayNumber": 31,
+      "name": "Zero Flanger",
+      "binaryId": null
+    }
+  ]
+}

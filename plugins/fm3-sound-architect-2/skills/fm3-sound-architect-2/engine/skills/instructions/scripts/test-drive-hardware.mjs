@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {inspect} from './fm3-prototype.mjs';
+const read=n=>fs.readFileSync(new URL('../examples/'+n,import.meta.url));
+const generated=read('FM3_DRIVE_GENERATED_TEST.syx'),returned=read('FM3_DRIVE_GENERATED_TEST_export.syx');
+const a=inspect(generated),b=inspect(returned),sha=x=>createHash('sha256').update(x).digest('hex');
+assert.equal(a.validation.ok,true);assert.equal(b.validation.ok,true);
+assert.deepEqual(Buffer.from(a.raw.body),Buffer.from(b.raw.body));
+assert.deepEqual(a.parsed.headerPayload,b.parsed.headerPayload);
+for(let i=0;i<72;i++)if(i!==4&&i!==5)assert.equal(a.raw.rawPatch[i],b.raw.rawPatch[i]);
+const words=Array.from({length:44},(_,i)=>Buffer.from(b.raw.body).readUInt16LE(8636+2*i));
+assert.deepEqual(words.slice(0,5),[26,13107,45874,13107,16384]);
+const report={date:'2026-10-06',generatedSha256:sha(generated),hardwareExportSha256:sha(returned),fullFilesIdentical:generated.equals(returned),bodyBytes:b.raw.body.length,changedBodyOffsets:[],channelCWords:words,values:{type:'Zen Master',channel:'C',drive:2,tone:7,level:2,mix:25},checks:{bothIntegrityValid:true,entireBodyIdentical:true,all44ChannelWordsPreserved:true,scenesAndBypassPreserved:true,headersPreservedExceptCrc:true},scope:'Hardware roundtrip of this Zen Master C specimen; not validation of all 87 types, all channels or every control value. No listening assessment.'};
+fs.writeFileSync(new URL('../../../docs/FM3_DRIVE_HARDWARE_ROUNDTRIP.json',import.meta.url),JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify(report,null,2));

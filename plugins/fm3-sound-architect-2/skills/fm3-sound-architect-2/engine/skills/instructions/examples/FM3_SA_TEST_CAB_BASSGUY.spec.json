@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "name": "FM3 SA TEST CAB BASSGUY",
+  "purpose": "CAB B tervikkanali kirjutuse kontroll: mõlemad pesad 24 2x12 65 Bassguy. Muud plokid ja stseeniseosed säilivad baasist. Mitte valmis artistipreset.",
+  "cabModelB": "2x12 65 Bassguy"
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "FM3 NEWLOOK PITCH TEST",
+  "purpose": "Pooleli jäänud ühise koostaja Pitchi katse NewLook-alusel: Amp/Cab, Drive, Delay ja Reverb samas kirjelduses koos lisatava Pitchiga. Olemasolevad soundiseaded säilivad. Pitch B Virtual Capo, C Dual Detune; kõigis stseenides bypass.",
+  "gainB": 5,
+  "bassB": 4,
+  "midB": 6.5,
+  "trebleB": 5.2,
+  "presenceB": 3,
+  "levelB": -3,
+  "cabModelB": "4x12 Rumble EV12L",
+  "driveChannels": [
+    {
+      "channel": "B",
+      "type": "T808 OD",
+      "drive": 2,
+      "tone": 7,
+      "level": 2,
+      "mix": 25
+    }
+  ],
+  "delayTimeMs": 400,
+  "delayTempoA": "NONE",
+  "delayFeedback": 25,
+  "delayMixA": 15,
+  "reverbChannels": [
+    {
+      "channel": "D",
+      "type": "Room: Medium Room"
+    }
+  ],
+  "scene6Name": "JB SOLO",
+  "reverbScene6": "D",
+  "delayScene6Bypass": false,
+  "ampScene6": "C",
+  "pitchChannels": [
+    {
+      "channel": "B",
+      "type": "Virtual Capo"
+    },
+    {
+      "channel": "C",
+      "type": "Dual Detune"
+    }
+  ],
+  "addedBlockScenes": {
+    "pitch": [
+      {
+        "scene": 2,
+        "channel": "B",
+        "bypass": true
+      },
+      {
+        "scene": 6,
+        "channel": "C",
+        "bypass": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "index": 10,
+  "step": {
+    "id": "C-level-0",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Level",
+    "value": 0,
+    "unit": "dB",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Level väärtuseks 0 dB. Ekspordi terve preset."
+  },
+  "status": "failed",
+  "comparison": {
+    "index": 10,
+    "step": {
+      "id": "C-level-0",
+      "channel": "C",
+      "type": "Peaking",
+      "binaryId": 6,
+      "parameter": "Level",
+      "value": 0,
+      "unit": "dB",
+      "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Level väärtuseks 0 dB. Ekspordi terve preset."
+    },
+    "previousSha256": "df95c9dfe633d517abe932dc64ddf2fc7a8fdd4fffc38d1b193ede315279ee3c",
+    "syxSha256": "26d2e073130b7a3dbd17bfa5414a265432b108b612b66544c4e089249acb9818",
+    "changedWords": [
+      {
+        "pid": 4,
+        "offset": 7770,
+        "before": 48495,
+        "after": 52427
+      }
+    ],
+    "scene2ChannelChange": null,
+    "allOtherBodyBytesPreserved": true,
+    "allTypesAndBypassPreserved": true,
+    "mappingStatus": "isolated-word-pending-display-and-audit"
+  },
+  "error": "could not convert string to float: 'o.oo'"
+}

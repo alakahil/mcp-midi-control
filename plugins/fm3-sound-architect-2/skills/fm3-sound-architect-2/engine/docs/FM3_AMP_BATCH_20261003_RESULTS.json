@@ -1,0 +1,350 @@
+{
+  "date": "2026-10-03",
+  "version": "0.29.16",
+  "sessionCaptures": [
+    {
+      "id": "capture-20261002T120223-e59cd21f13e0",
+      "models": [
+        "Hipower Normal",
+        "1987X Treble",
+        "Brit 800 2204 High",
+        "Brit Super"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T120941-87d6d1205249",
+      "models": [
+        "Hipower Normal",
+        "Hipower Brilliant",
+        "USA Pre Clean",
+        "USA MK IIC+"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T122615-8506bc5648ea",
+      "models": [
+        "USA MK IIC+ Bright",
+        "Recto2 Orange Vintage",
+        "Recto2 Orange Modern",
+        "Recto2 Red Vintage"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T123506-3288f43cf20d",
+      "models": [
+        "Recto2 Red Modern",
+        "Euro Blue",
+        "Euro Red",
+        "Shiver Clean"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T171904-6a6ab0bcf027",
+      "models": [
+        "Shiver Lead",
+        "Euro Uber",
+        "Solo 99 Clean",
+        "Solo 100 Rhythm"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261002T172605-18bb3a17149c",
+      "models": [
+        "Solo 100 Lead",
+        "Friedman BE V1",
+        "Friedman HBE V1",
+        "PVH 6160 Block Lead"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T185529-e56f89fd027b",
+      "state": "failed",
+      "reason": "[Errno 2] No such file or directory: '/dev/cu.usbmodem11104'"
+    },
+    {
+      "id": "capture-20261003T185948-175bad205350",
+      "models": [
+        "Mr Z MZ-38",
+        "CA3+ Rhythm",
+        "CA3+ Lead",
+        "Wrecker Rocket"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T191514-45e34fab8347",
+      "models": [
+        "Cornfed M50",
+        "Carol-Ann OD-2",
+        "Fryette D60 Less",
+        "Fryette D60 More"
+      ],
+      "state": "paired-verified"
+    },
+    {
+      "id": "capture-20261003T191748-273a14f082e1",
+      "models": [
+        "Brit Brown",
+        "Citrus RV50",
+        "Jazz 120",
+        "Energyball"
+      ],
+      "state": "paired-verified"
+    }
+  ],
+  "conflicts": [],
+  "rejected": [],
+  "newPairs": [
+    {
+      "capture": "capture-20261003T185948-175bad205350",
+      "ids": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261003T191514-45e34fab8347",
+      "ids": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    },
+    {
+      "capture": "capture-20261003T191748-273a14f082e1",
+      "ids": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "checks": {
+        "frames": true,
+        "checksums": true,
+        "sevenBit": true,
+        "wordCounts": true
+      },
+      "matchedWords": 576,
+      "totalWords": 576
+    }
+  ],
+  "newModels": [
+    {
+      "id": 40,
+      "name": "Mr Z MZ-38",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 41,
+      "name": "CA3+ Rhythm",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 42,
+      "name": "CA3+ Lead",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 43,
+      "name": "Wrecker Rocket",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 44,
+      "name": "Cornfed M50",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 45,
+      "name": "Carol-Ann OD-2",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 46,
+      "name": "Fryette D60 Less",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 47,
+      "name": "Fryette D60 More",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 48,
+      "name": "Brit Brown",
+      "sourceChannel": "A",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 49,
+      "name": "Citrus RV50",
+      "sourceChannel": "B",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 50,
+      "name": "Jazz 120",
+      "sourceChannel": "C",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    },
+    {
+      "id": 51,
+      "name": "Energyball",
+      "sourceChannel": "D",
+      "exactChannel": true,
+      "otherBodyBytesPreserved": true,
+      "checks": {
+        "frames": true,
+        "crc": true,
+        "footer": true,
+        "exactExpectedBody": true,
+        "rawReadback": true,
+        "headerPreserved": true
+      }
+    }
+  ],
+  "coverage": {
+    "ready": 54,
+    "missing": 277,
+    "total": 331
+  },
+  "next": [
+    52,
+    53,
+    54,
+    55
+  ],
+  "hardware": "User device GET/SYX pairs confirmed; newly generated combinations not imported, listened to or CPU-tested"
+}

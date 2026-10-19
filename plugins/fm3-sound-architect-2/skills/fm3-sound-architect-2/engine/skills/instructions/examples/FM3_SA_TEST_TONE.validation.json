@@ -1,0 +1,117 @@
+{
+  "prototype": "tone-0.1.0",
+  "spec": {
+    "name": "FM3 SA TEST TONE",
+    "midB": 5,
+    "trebleB": 4,
+    "presenceB": 2,
+    "levelB": -18,
+    "delayMixA": 15,
+    "reverbMixA": 12
+  },
+  "defaults": {
+    "gainB": 5,
+    "delayScene2": true,
+    "reverbScene1": "A"
+  },
+  "requests": [
+    {
+      "eid": 58,
+      "pid": 9,
+      "offset": 4962,
+      "min": 0,
+      "max": 10,
+      "label": "Amp B Mid",
+      "unit": "/10",
+      "key": "midB",
+      "value": 5,
+      "raw": 32767
+    },
+    {
+      "eid": 58,
+      "pid": 10,
+      "offset": 4964,
+      "min": 0,
+      "max": 10,
+      "label": "Amp B Treble",
+      "unit": "/10",
+      "key": "trebleB",
+      "value": 4,
+      "raw": 26214
+    },
+    {
+      "eid": 58,
+      "pid": 26,
+      "offset": 4996,
+      "min": 0,
+      "max": 10,
+      "label": "Amp B Presence",
+      "unit": "/10",
+      "key": "presenceB",
+      "value": 2,
+      "raw": 13107
+    },
+    {
+      "eid": 58,
+      "pid": 1,
+      "offset": 4946,
+      "min": -80,
+      "max": 20,
+      "label": "Amp B Level",
+      "unit": "dB",
+      "key": "levelB",
+      "value": -18,
+      "raw": 40631
+    },
+    {
+      "eid": 70,
+      "pid": 0,
+      "offset": 7392,
+      "min": 0,
+      "max": 100,
+      "label": "Delay A Mix",
+      "unit": "%",
+      "key": "delayMixA",
+      "value": 15,
+      "raw": 9830
+    },
+    {
+      "eid": 66,
+      "pid": 13,
+      "offset": 9590,
+      "min": 0,
+      "max": 100,
+      "label": "Reverb A Mix",
+      "unit": "%",
+      "key": "reverbMixA",
+      "value": 12,
+      "raw": 7864
+    }
+  ],
+  "changedBodyOffsets": [
+    4946,
+    4947,
+    4962,
+    4963,
+    4964,
+    4965,
+    4996,
+    4997,
+    7392,
+    7393,
+    9590,
+    9591
+  ],
+  "sha256": "8caa32b17ad1564e56baa96c2a3a47f54591833af14a10aa523f638174c307e4",
+  "firmwareTarget": 13,
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "exactExpectedBody": true,
+    "rawParamReadback": true,
+    "headerPreserved": true
+  },
+  "hardware": "pending for EQ/level/mix",
+  "audio": "unconfirmed"
+}

@@ -1,0 +1,77 @@
+{
+  "index": 83,
+  "step": {
+    "id": "084-channels",
+    "stage": "channels",
+    "kind": "select-channel",
+    "channel": "A",
+    "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali ainult PEQ kanal A; ära muuda parameetreid. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+    "changes": []
+  },
+  "status": "passed",
+  "comparison": {
+    "index": 83,
+    "step": {
+      "id": "084-channels",
+      "stage": "channels",
+      "kind": "select-channel",
+      "channel": "A",
+      "instruction": "Hoia Scene 2 ja PEQ 1 bypass. Kanal A. Vali ainult PEQ kanal A; ära muuda parameetreid. Ekspordi terve preset; muid plokke, stseene ega routingut ära muuda.",
+      "changes": []
+    },
+    "previousSha256": "ba637b278cc75f1ca4dc156af7e489ef5460add19a379076ea8145775813f432",
+    "syxSha256": "4bb6609805652c1ff2b88c33b7f73adfc86fad09ce7542fcf789c3ff776519a4",
+    "changedWords": [],
+    "requestedWords": [],
+    "sceneChannelChange": {
+      "scene": 2,
+      "before": "D",
+      "after": "A"
+    },
+    "presetNameChange": null,
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only; audit display, isolated anchors, type coupling and actual pairs before enabling generator support"
+  },
+  "observations": [],
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 54,
+    "matchedWords": 132,
+    "wordsPerChannel": 33,
+    "channels": 4,
+    "syxSha256": "4bb6609805652c1ff2b88c33b7f73adfc86fad09ce7542fcf789c3ff776519a4",
+    "bodySha256": "872be78b7e02bb7449b77a82924c3d9b15303a49c3e09c6f8e9faec4ed767369",
+    "rawRxSha256": "0d5d95e9c9a03c9da29fdbecfbc0174a8504af4bbb07aa24b64ec43051ea0463",
+    "frameLengths": [
+      12,
+      406,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

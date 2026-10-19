@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 1,
+    "name": "2290 w/ Modulation",
+    "binaryId": 12,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 2,
+    "name": "Ambient Stereo",
+    "binaryId": 13,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 3,
+    "name": "Analog Mono",
+    "binaryId": 2,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 4,
+    "name": "Analog Stereo",
+    "binaryId": 3,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "index": 0,
+  "step": {
+    "id": "C-frequency-500",
+    "channel": "C",
+    "type": "Peaking",
+    "binaryId": 6,
+    "parameter": "Frequency",
+    "value": 500,
+    "unit": "Hz",
+    "instruction": "Hoia Scene2. Vali Filter1 kanal C (Peaking); Type ja bypass jäta muutmata. Muuda ainult Frequency väärtuseks 500 Hz. Ekspordi terve preset."
+  },
+  "status": "failed",
+  "error": "Preset header/name changed at 11"
+}

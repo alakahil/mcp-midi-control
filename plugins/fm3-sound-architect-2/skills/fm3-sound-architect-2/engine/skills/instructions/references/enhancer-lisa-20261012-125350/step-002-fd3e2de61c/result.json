@@ -1,0 +1,97 @@
+{
+  "index": 2,
+  "step": {
+    "id": "003-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Classic — Pan Left maximum",
+    "channel": "A",
+    "typeName": "Classic",
+    "allowUnchanged": true,
+    "parameter": "Pan L",
+    "mode": "numeric",
+    "point": "maximum",
+    "unit": "number"
+  },
+  "status": "passed",
+  "comparison": {
+    "step": {
+      "id": "003-control",
+      "kind": "control",
+      "stage": "types",
+      "label": "Classic — Pan Left maximum",
+      "channel": "A",
+      "typeName": "Classic",
+      "allowUnchanged": true,
+      "parameter": "Pan L",
+      "mode": "numeric",
+      "point": "maximum",
+      "unit": "number"
+    },
+    "previousSha256": "1db13011e2fc019ec859cd9928596930a60eb822339c45d9a131540caa8a19d7",
+    "syxSha256": "41ffec55529a891bb8a7f4aaf55ffc26557a5b9251d46cb0acf2e4102413af80",
+    "changedWords": [
+      {
+        "channel": "A",
+        "pid": 8,
+        "offset": 7522,
+        "before": 0,
+        "after": 65534
+      }
+    ],
+    "sceneChannelChange": null,
+    "presetNameChange": {
+      "before": "FM3 ENH ABCD TEST_6",
+      "after": "FM3 ENH ABCD TEST_L_2",
+      "beforeHex": "464d3320454e48204142434420544553545f3620202020202020202020202000",
+      "afterHex": "464d3320454e48204142434420544553545f4c5f322020202020202020202000"
+    },
+    "typeCoupledChanges": [],
+    "persistentDelta": true,
+    "allOtherBodyBytesPreserved": true,
+    "chunkPrefixesPreserved": true,
+    "mappingStatus": "Captured candidates only. Audit actual labels, candidate PID mappings, ranges, coupling and GET pairs before enabling writes"
+  },
+  "observations": {
+    "displayText": "100.0",
+    "displayValue": 100.0
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "effectId": 122,
+    "matchedWords": 48,
+    "wordsPerChannel": 12,
+    "channels": 4,
+    "syxSha256": "41ffec55529a891bb8a7f4aaf55ffc26557a5b9251d46cb0acf2e4102413af80",
+    "bodySha256": "b246a20bc110b621d85bb3b7d1d4bc96f9d1f765288acfca9126999de348ac9c",
+    "rawRxSha256": "9394b1732bee272e24f52f04152bca8ef36956a0723bf4b707b91735481dec27",
+    "frameLengths": [
+      12,
+      154,
+      8
+    ],
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "generatorSupport": false,
+    "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 1,
+    "expectedId": 0,
+    "name": "1x8 5F1 Tweed",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 2,
+    "expectedId": 1,
+    "name": "1x8 Princetone",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 3,
+    "expectedId": 2,
+    "name": "1x10 BF Princetone",
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 4,
+    "expectedId": 3,
+    "name": "1x10 Metro Blues",
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

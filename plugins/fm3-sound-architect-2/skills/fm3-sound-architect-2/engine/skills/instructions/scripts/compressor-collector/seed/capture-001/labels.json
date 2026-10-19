@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 1,
+    "name": "Analog Compressor",
+    "binaryId": 6,
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 2,
+    "name": "Analog Sustainer",
+    "binaryId": 14,
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 3,
+    "name": "Citrus Juicer",
+    "binaryId": 18,
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 4,
+    "name": "Classic VCA Compressor",
+    "binaryId": 13,
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

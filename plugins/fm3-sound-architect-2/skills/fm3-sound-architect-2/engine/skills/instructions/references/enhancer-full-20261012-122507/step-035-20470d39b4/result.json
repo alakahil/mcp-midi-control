@@ -1,0 +1,19 @@
+{
+  "index": 35,
+  "step": {
+    "id": "036-control",
+    "kind": "control",
+    "stage": "types",
+    "label": "Classic — Pan L maximum",
+    "channel": "A",
+    "typeName": "Classic",
+    "parameter": "Pan L",
+    "mode": "numeric",
+    "point": "maximum",
+    "unit": "number",
+    "allowUnchanged": true
+  },
+  "status": "skipped",
+  "reason": "Selle juhi vajalik piirväärtuse mõõtmine puudub",
+  "automatic": true
+}

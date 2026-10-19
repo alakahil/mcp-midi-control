@@ -1,0 +1,123 @@
+{
+  "index": 16,
+  "status": "passed",
+  "step": {
+    "id": "D-type",
+    "kind": "type",
+    "channel": "D",
+    "binaryId": 26,
+    "name": "Zen Master",
+    "instruction": "Vali Drive1 kanal D ja Type: Zen Master. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+  },
+  "comparison": {
+    "step": {
+      "id": "D-type",
+      "kind": "type",
+      "channel": "D",
+      "binaryId": 26,
+      "name": "Zen Master",
+      "instruction": "Vali Drive1 kanal D ja Type: Zen Master. Muuda ainult Type-valikut; automaatselt muutunud seaded jäta alles. Ekspordi terve preset."
+    },
+    "changes": [
+      {
+        "offset": 8426,
+        "before": 2,
+        "after": 3
+      },
+      {
+        "offset": 8724,
+        "before": 46,
+        "after": 26
+      },
+      {
+        "offset": 8730,
+        "before": 187,
+        "after": 255
+      },
+      {
+        "offset": 8731,
+        "before": 99,
+        "after": 127
+      },
+      {
+        "offset": 8736,
+        "before": 42,
+        "after": 254
+      },
+      {
+        "offset": 8737,
+        "before": 236,
+        "after": 255
+      },
+      {
+        "offset": 8746,
+        "before": 71,
+        "after": 255
+      },
+      {
+        "offset": 8747,
+        "before": 129,
+        "after": 127
+      },
+      {
+        "offset": 8788,
+        "before": 11,
+        "after": 7
+      },
+      {
+        "offset": 8790,
+        "before": 1,
+        "after": 2
+      },
+      {
+        "offset": 8792,
+        "before": 11,
+        "after": 7
+      },
+      {
+        "offset": 8794,
+        "before": 1,
+        "after": 3
+      },
+      {
+        "offset": 8796,
+        "before": 0,
+        "after": 255
+      },
+      {
+        "offset": 8797,
+        "before": 0,
+        "after": 127
+      }
+    ],
+    "presetNameChange": null,
+    "observation": null,
+    "integrity": true,
+    "onlyPlannedBodyChanges": true
+  },
+  "displayConfirmed": true,
+  "pair": {
+    "paired": true,
+    "matchedWords": 176,
+    "syxSha256": "7de1652d416b13338b2f70fe48b34f5d9e88e54d47dbdd83d2fa0666a75a868b",
+    "rawRxSha256": "b6e03f38b961c726c23c50b47bf78f3383b0e7c42736e73aae332934e8a95dd0",
+    "channels": [
+      {
+        "channel": "A",
+        "binaryId": 19
+      },
+      {
+        "channel": "B",
+        "binaryId": 6
+      },
+      {
+        "channel": "C",
+        "binaryId": 0
+      },
+      {
+        "channel": "D",
+        "binaryId": 26
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "paired": true,
+  "effectId": 54,
+  "matchedWords": 132,
+  "wordsPerChannel": 33,
+  "channels": 4,
+  "syxSha256": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+  "bodySha256": "2cc6732f2a8b4afb1131766613a60b9825a483f90fc9a274e5ecdfceccc53112",
+  "rawRxSha256": "7734f49341db58a132f2a9494c173a5b5f4cdfb5d9020ef3f4783396278f758f",
+  "frameLengths": [
+    12,
+    406,
+    8
+  ],
+  "sceneChannels": [
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A",
+    "A"
+  ],
+  "sceneBypass": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "generatorSupport": false,
+  "parameterSemantics": "Still require targeted control measurements; a baseline pair alone does not confirm names, types or scales"
+}

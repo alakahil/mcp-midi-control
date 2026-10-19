@@ -1,0 +1,331 @@
+{
+  "date": "2026-10-11",
+  "generator": "jb-composer-0.11.1",
+  "passed": true,
+  "generatedFile": "examples/FM3_GEQ_ABCD_TEST.syx",
+  "generatedSha256": "adf176e949c0645031775a5eeaaa68b1bcdabc36adb238a413848c832e0fff8b",
+  "exportFile": "examples/FM3_GEQ_ABCD_TEST_export.syx",
+  "exportSha256": "1663e891e6bc1a7cb89a1bc0540a48ce8d61527911267682bc3082bf06e70c3e",
+  "bodySha256": "9fe63e3567565cf6e99468919fe1aa2488785835c929ba8b8b806010c2b2d770",
+  "hardwareExportLibraryFileId": "libfile_fe5f236dedb88191b83fa1b870097216",
+  "fullFilesIdentical": false,
+  "bodyBytes": 13662,
+  "changedBodyOffsets": [],
+  "presetName": "FM3 GEQ ABCD TEST",
+  "selectedScene": 2,
+  "headerChanges": [
+    {
+      "offset": 4,
+      "field": "CRC",
+      "before": 92,
+      "after": 53
+    },
+    {
+      "offset": 5,
+      "field": "CRC",
+      "before": 54,
+      "after": 72
+    }
+  ],
+  "geq": {
+    "effectId": 50,
+    "recordOffset": 8308,
+    "recordBytes": 206,
+    "matchedParameterWords": 80,
+    "sceneChannels": [
+      "A",
+      "A",
+      "B",
+      "C",
+      "A",
+      "D",
+      "A",
+      "A"
+    ],
+    "activeScenes": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "channels": [
+      {
+        "channel": "A",
+        "values": {
+          "type": "10 Band Variable Q",
+          "bands": [
+            {
+              "band": 1,
+              "label": "31",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -1.500045777764214
+            },
+            {
+              "band": 2,
+              "label": "63",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -1.00015259254738
+            },
+            {
+              "band": 3,
+              "label": "125",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -0.499893185216834
+            },
+            {
+              "band": 4,
+              "label": "250",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 0
+            },
+            {
+              "band": 5,
+              "label": "500",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 0.499893185216834
+            },
+            {
+              "band": 6,
+              "label": "1k",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 1.00015259254738
+            },
+            {
+              "band": 7,
+              "label": "2k",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 1.500045777764214
+            },
+            {
+              "band": 8,
+              "label": "4k",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 0.499893185216834
+            },
+            {
+              "band": 9,
+              "label": "8k",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -1.00015259254738
+            },
+            {
+              "band": 10,
+              "label": "16k",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -1.500045777764214
+            }
+          ],
+          "masterQ": 1,
+          "levelDb": -0.999786370433668,
+          "balance": 0,
+          "bypassMode": "Thru",
+          "sceneIgnore": false
+        }
+      },
+      {
+        "channel": "B",
+        "values": {
+          "type": "5 Band Mark",
+          "bands": [
+            {
+              "band": 1,
+              "label": "80",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -1.00015259254738
+            },
+            {
+              "band": 2,
+              "label": "240",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 0.499893185216834
+            },
+            {
+              "band": 3,
+              "label": "750",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 1.500045777764214
+            },
+            {
+              "band": 4,
+              "label": "2200",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 0.499893185216834
+            },
+            {
+              "band": 5,
+              "label": "6600",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -1.00015259254738
+            }
+          ],
+          "masterQ": 1.3999825528918055,
+          "levelDb": -0.4992828150273141,
+          "balance": 0,
+          "bypassMode": "Thru",
+          "sceneIgnore": false
+        }
+      },
+      {
+        "channel": "C",
+        "values": {
+          "type": "7 Band Constant Q",
+          "bands": [
+            {
+              "band": 1,
+              "label": "100",
+              "labelStatus": "Confirmed from screenshot 2026-10-11",
+              "gainDb": -1.00015259254738
+            },
+            {
+              "band": 2,
+              "label": "200",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -0.499893185216834
+            },
+            {
+              "band": 3,
+              "label": "400",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 0
+            },
+            {
+              "band": 4,
+              "label": "800",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 1.00015259254738
+            },
+            {
+              "band": 5,
+              "label": "1600",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 0.499893185216834
+            },
+            {
+              "band": 6,
+              "label": "3200",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -0.499893185216834
+            },
+            {
+              "band": 7,
+              "label": "6400",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -1.00015259254738
+            }
+          ],
+          "masterQ": 0.8000253204032962,
+          "levelDb": -0.749534592730484,
+          "balance": 0,
+          "bypassMode": "Thru",
+          "sceneIgnore": false
+        }
+      },
+      {
+        "channel": "D",
+        "values": {
+          "type": "3 Band Console",
+          "bands": [
+            {
+              "band": 1,
+              "label": "Low",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -0.499893185216834
+            },
+            {
+              "band": 2,
+              "label": "Mid",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": 1.500045777764214
+            },
+            {
+              "band": 3,
+              "label": "High",
+              "labelStatus": "User-confirmed screen label",
+              "gainDb": -1.00015259254738
+            }
+          ],
+          "masterQ": 1.20003947444369,
+          "levelDb": -0.999786370433668,
+          "balance": 0,
+          "bypassMode": "Thru",
+          "sceneIgnore": false
+        }
+      }
+    ],
+    "valueLabels": "C screenshot values confirmed. Other channel values decoded from unchanged export; no claim of separate screen observation for every value."
+  },
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "entireBodyIdenticalWithoutNormalization": true,
+    "all80GeqWordsPreserved": true,
+    "allOriginal13456PeqBytesReconstructed": true,
+    "existingLevelsAndScenesPreserved": true,
+    "sendReturnAndTwoRowsPreserved": true,
+    "presetNameAndSelectedScenePreserved": true,
+    "chunkPrefixesAndDumpHeaderPreserved": true,
+    "rawHeaderChangesOnlyCrc": true,
+    "encodedLengthsAndZeroPadding": true,
+    "unchangedSpecRegeneratesIdenticalSyx": true,
+    "screenshotChannelCMatches": true,
+    "levelSingleDecimalDisplayExplained": true,
+    "firstBand100HzConfirmed": true,
+    "rawCollectionEvidencePreserved": true,
+    "renamedFileNotFalselySubmittedConfirmed": true,
+    "newCombinationNotFalselyConfirmed": true
+  },
+  "encoding": {
+    "compressedBytesBefore": 4680,
+    "compressedBytesAfter": 4680,
+    "compressedRepresentationIdentical": false
+  },
+  "cpu": {
+    "maximumObservedPercent": 50,
+    "source": "User report for this GEQ combined specimen; not a universal maximum"
+  },
+  "audio": "User reports GEQ worked; no artist-reference comparison claimed",
+  "displayEvidence": {
+    "file": "references/geq-feedback-20261011/scene4-geq-c.png",
+    "libraryFileId": "libfile_989a10f1ee2c81919942120b77ad786d",
+    "sha256": "4b6c213bdc0556084031b14b9246e0a6307c220ed3c389a0fe2a9d48d7637c8f",
+    "openedAndVisuallyRead": true,
+    "firmware": "13.00",
+    "scene": 4,
+    "presetName": "FM3 GEQ ABCD TEST",
+    "channel": "C",
+    "type": "7 Band Constant Q",
+    "bandLabels": [
+      "100",
+      "200",
+      "400",
+      "800",
+      "1600",
+      "3200",
+      "6400"
+    ],
+    "gainDb": [
+      -1,
+      -0.5,
+      0,
+      1,
+      0.5,
+      -0.5,
+      -1
+    ],
+    "masterQ": 0.8,
+    "balance": 0,
+    "levelDisplayDb": -0.7,
+    "levelRequestedDb": -0.75,
+    "levelDecodedDb": -0.749534592730484,
+    "levelExplanation": "The screenshot shows one decimal; the unchanged exported word decodes to -0.7495346 dB and displays as -0.7 dB. No parameter correction is required.",
+    "bypassMode": "Thru",
+    "cpuPercent": 49.4
+  },
+  "limits": [
+    "Screenshot validates channel C only, not every A/B/D intermediate screen value",
+    "Exact full-body import/export evidence applies to this composition only",
+    "Scene Ignore behavior combinations remain separately untested"
+  ],
+  "next": "This GEQ specimen is complete. Do not request repeated import/export, CPU, label or GET collection. Next agreed block: Enhancer."
+}

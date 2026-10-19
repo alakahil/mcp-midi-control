@@ -1,0 +1,30 @@
+[
+  {
+    "displayNumber": 17,
+    "expectedId": 16,
+    "name": "1x12 Tweed 20112",
+    "channel": "A",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 18,
+    "expectedId": 17,
+    "name": "1x12 Vibrato Lux",
+    "channel": "B",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 19,
+    "expectedId": 18,
+    "name": "1x15 Heart Key",
+    "channel": "C",
+    "source": "planned roster; user confirmed selection"
+  },
+  {
+    "displayNumber": 20,
+    "expectedId": 19,
+    "name": "1x15 Portabass",
+    "channel": "D",
+    "source": "planned roster; user confirmed selection"
+  }
+]

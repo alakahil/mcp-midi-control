@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "syntheticOnly": true,
+  "deviceConnectionMade": false,
+  "completeSequentialSteps": 18,
+  "mockGetCalls": 18,
+  "pairedWordsEach": 148,
+  "scopeNegativeCases": 15,
+  "coupledWordsRetainedForReview": true,
+  "nameChangesRecordedAs32ByteField": true,
+  "otherHeaderBytesStillRejected": true,
+  "renamedSecondPointAndResume": true,
+  "nameOnlyIsNotAMeasurement": true,
+  "wrongControlIdentityRejectedBeforeGet": true,
+  "quitResumeSkipCancelTested": true,
+  "failedPairRetainedAndNotAccepted": true,
+  "singleAndSplitReplyFraming": true,
+  "checksumAndRepeatedGetRejected": true,
+  "displayConfirmationAndRoundingHandled": true,
+  "zipAndTamperedEvidenceChecked": true,
+  "hardware": "Same Filter GET transport as completed type batch; control-measurement session pending."
+}

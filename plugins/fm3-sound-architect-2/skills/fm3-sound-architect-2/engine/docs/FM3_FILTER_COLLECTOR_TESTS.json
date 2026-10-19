@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-08",
+  "passed": true,
+  "syntheticOnly": true,
+  "deviceConnectionMade": false,
+  "words": 148,
+  "singleAndSplitReplyFraming": true,
+  "checksumAndMalformedReplyRejection": true,
+  "repeatGetBlocked": true,
+  "initialAndFirstGroupCapture": true,
+  "initialMissingTypes": 17,
+  "remainingAfterFirstGroup": 13,
+  "negativePreflights": 8,
+  "scene2BypassRequiredForGroups": true,
+  "resumeAndQuitZip": true,
+  "tamperedEvidenceRejected": true,
+  "hardware": "First real Filter GET/SYX pair pending",
+  "standaloneZipPreflightAndCliHelp": true
+}

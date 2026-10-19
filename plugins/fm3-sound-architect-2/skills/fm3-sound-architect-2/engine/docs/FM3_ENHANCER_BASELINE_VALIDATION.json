@@ -1,0 +1,216 @@
+{
+  "checker": "enhancer-insertion-preflight-0.1.0",
+  "status": "structure-only",
+  "baseSha256": "1663e891e6bc1a7cb89a1bc0540a48ce8d61527911267682bc3082bf06e70c3e",
+  "exportSha256": "755c477cd39b471b1c381f82dc735ad1285f2966d258a7381e8110a8f52a6d41",
+  "bodySha256": "33e4e6f65b9284e36ca07449b8aadab9506ee56254d1fc8247a83c6116ca2e99",
+  "baseBodyBytes": 13662,
+  "bodyBytes": 13804,
+  "presetName": {
+    "before": "FM3 GEQ ABCD TEST",
+    "after": "FM3 GEQ ABCD TEST",
+    "beforeRawHex": "464d332047455120414243442054455354000000000000000000000000000000",
+    "afterRawHex": "464d332047455120414243442054455354000000000000000000000000000000"
+  },
+  "selectedScene": 2,
+  "enhancer": {
+    "candidateEffectId": 122,
+    "row": 3,
+    "column": 11,
+    "offset": 7460,
+    "recordBytes": 142,
+    "wordsPerChannel": 12,
+    "channels": 4,
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "parameterWords": [
+      32767,
+      32767,
+      22903,
+      32767,
+      52427,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      32767,
+      0,
+      32767,
+      32767,
+      22903,
+      32767,
+      52427,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      32767,
+      0,
+      32767,
+      32767,
+      22903,
+      32767,
+      52427,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      32767,
+      0,
+      32767,
+      32767,
+      22903,
+      32767,
+      52427,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      32767,
+      0
+    ],
+    "parameterSemantics": "Unverified; do not infer from table labels or neutral appearance"
+  },
+  "records": [
+    {
+      "eid": 58,
+      "offset": 4610,
+      "wordsPerChannel": 144,
+      "channels": 4
+    },
+    {
+      "eid": 62,
+      "offset": 5808,
+      "wordsPerChannel": 106,
+      "channels": 4
+    },
+    {
+      "eid": 70,
+      "offset": 6702,
+      "wordsPerChannel": 89,
+      "channels": 4
+    },
+    {
+      "eid": 122,
+      "offset": 7460,
+      "wordsPerChannel": 12,
+      "channels": 4
+    },
+    {
+      "eid": 186,
+      "offset": 7602,
+      "wordsPerChannel": 6,
+      "channels": 1
+    },
+    {
+      "eid": 182,
+      "offset": 7660,
+      "wordsPerChannel": 2,
+      "channels": 1
+    },
+    {
+      "eid": 114,
+      "offset": 7710,
+      "wordsPerChannel": 37,
+      "channels": 4
+    },
+    {
+      "eid": 118,
+      "offset": 8052,
+      "wordsPerChannel": 44,
+      "channels": 4
+    },
+    {
+      "eid": 50,
+      "offset": 8450,
+      "wordsPerChannel": 20,
+      "channels": 4
+    },
+    {
+      "eid": 37,
+      "offset": 8656,
+      "wordsPerChannel": 10,
+      "channels": 4
+    },
+    {
+      "eid": 42,
+      "offset": 8782,
+      "wordsPerChannel": 26,
+      "channels": 4
+    },
+    {
+      "eid": 54,
+      "offset": 9036,
+      "wordsPerChannel": 33,
+      "channels": 4
+    },
+    {
+      "eid": 66,
+      "offset": 9346,
+      "wordsPerChannel": 71,
+      "channels": 4
+    }
+  ],
+  "headerChanges": [
+    {
+      "offset": 4,
+      "field": "CRC",
+      "before": 53,
+      "after": 150
+    },
+    {
+      "offset": 5,
+      "field": "CRC",
+      "before": 72,
+      "after": 187
+    },
+    {
+      "offset": 72,
+      "field": "encodedSize",
+      "before": 94,
+      "after": 236
+    },
+    {
+      "offset": 74,
+      "field": "encodedSize",
+      "before": 72,
+      "after": 120
+    }
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "chunkPrefixesPreserved": true,
+    "encodedSizesAndPadding": true,
+    "onlyDeclaredGridWordChanged": true,
+    "allOriginalRecordsAndSystemBytesPreserved": true,
+    "all13662BaseBytesReconstructed": true
+  },
+  "generatorSupport": false,
+  "parameterPairVerified": false,
+  "audio": "Not assessed by this check",
+  "next": "Inspect the actual Enhancer record, Type list and visible controls, then prepare one resumable read-only collection including the initial GET/SYX pair. No automatic device query."
+}

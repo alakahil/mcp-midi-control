@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "FM3 FILTER CONTROLS VERIFIED",
+  "purpose": "Taastab mõõtmiste viimase seadmeekspordi sisu; Filter on bypass-is. Pole uus kuulatud sound.",
+  "gainB": 5,
+  "bassB": 4,
+  "midB": 6.5,
+  "trebleB": 5.2,
+  "presenceB": 3,
+  "levelB": -3,
+  "cabModelB": "4x12 Rumble EV12L",
+  "driveChannels": [
+    {
+      "channel": "B",
+      "type": "T808 OD",
+      "drive": 2,
+      "tone": 7,
+      "level": 2,
+      "mix": 25
+    }
+  ],
+  "delayTimeMs": 400,
+  "delayTempoA": "NONE",
+  "delayFeedback": 25,
+  "delayMixA": 15,
+  "reverbChannels": [
+    {
+      "channel": "D",
+      "type": "Room: Medium Room"
+    }
+  ],
+  "scenes": [
+    {
+      "scene": 2,
+      "name": "Rhythm Fat",
+      "blocks": {
+        "amp": {
+          "channel": "B",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true
+        },
+        "reverb": {
+          "channel": "B",
+          "bypass": false
+        },
+        "filter": {
+          "channel": "B",
+          "bypass": true
+        }
+      }
+    },
+    {
+      "scene": 6,
+      "name": "JB SOLO",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false
+        },
+        "reverb": {
+          "channel": "D",
+          "bypass": false
+        },
+        "filter": {
+          "channel": "C",
+          "bypass": true
+        }
+      }
+    }
+  ],
+  "filterChannels": [
+    {
+      "channel": "A",
+      "type": "High-Pass",
+      "frequencyHz": 250
+    },
+    {
+      "channel": "B",
+      "type": "Low-Pass",
+      "frequencyHz": 8000
+    },
+    {
+      "channel": "C",
+      "type": "Peaking",
+      "frequencyHz": 2000,
+      "q": 2,
+      "gainDb": 0,
+      "levelDb": 3
+    },
+    {
+      "channel": "D",
+      "type": "Tilt EQ"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+FM3 SOUND ARCHITECT — PIIRATUD GENERAATOR
+Preset: FM3 SA TEST BASSGUY
+Eesmärk: Capture001 Amp A kanalimalli kirjutamine Amp B-sse; esimene genereeritud Bassguy kontrollkatse.
+Siht: FM3 Mk II Turbo, firmware 13. Alus: kasutaja Baaspreset.syx.
+Amp B Gain: 7.000 /10 [Amp-mallist]
+Amp B Bass: 5.000 /10 [Amp-mallist]
+Amp B Mid: 5.000 /10 [Amp-mallist]
+Amp B Treble: 5.000 /10 [Amp-mallist]
+Amp B Presence: 5.000 /10 [Amp-mallist]
+Amp B Level: -9.000 dB [Amp-mallist]
+Delay A Mix: 12.000 % [säilitatud alusfailist]
+Reverb A Mix: 20.000 % [säilitatud alusfailist]
+Delay A Time: 500.007 ms [säilitatud alusfailist]
+Delay A Feedback: 30.000 % [säilitatud alusfailist]
+Reverb A Time: 1.640 s [säilitatud alusfailist]
+Reverb A Pre-Delay: 30.000 ms [säilitatud alusfailist]
+Delay A Tempo: 1/4  [säilitatud alusfailist]
+Reverb A Pre-Delay Tempo: NONE  [säilitatud alusfailist]
+Scene 2 Delay: bypass  [säilitatud alusfailist]
+Scene 1 Reverb kanal: A  [säilitatud alusfailist]
+Määramata juhtseadised säilivad; Amp-mudeli selgesõnaline valik asendab kogu Amp B kanali malliga enne üksikparameetrite rakendamist.
+Amp B mudel 59 Bassguy Bright; muudatused mõjutavad Scene 2 ja 6. Delay A kasutavad kõik 8 stseeni.
+Reverb A kasutavad stseenid 1, 3, 4, 6, 7, 8. Muud kanalid säilivad.
+Scene 2 Cab kanal B: 4x12 RECTO SLANT; teine Cab: 4x12 RECTO SLANT. Dyna-Cab teegi olemasolu tuleb seadmel kontrollida.
+ARENDUSKATSE: uus mudeli/Cab-valik on failitasemel kontrollitud; selle väljundi riistvaraimport ja heli on kinnitamata.
+Amp-valik kopeerib terve salvestatud kanali, seejärel rakendatakse selgesõnalised juhtseadised. Cab-valik valib olemasoleva kanali koos selle mikrofoni-, miksimis- ja filtriseadetega.
+Routing, muud efektid, lülitid ja expression pärinevad baasist. Väliseid User IR-e ei kirjutata ega paigaldata.
+Kitarr ja ühendus: kasutaja senine kontrollseadistus, selle faili jaoks eraldi määramata.
+Failikontrollid läbitud. Kirjutusfunktsioonidel on firmware13 võrdluskatsed; uusi väärtusi/kombinatsioone ei nimetata automaatselt riistvaral kinnitatuks.
+Artistisoundi täpsus, heli ja CPU pole selle generaatoriga hinnatud.
+
+Impordi FM3-Editis oma tööd säilitades ning olemasolevat presetikohta üle kirjutamata.
+Kontrolli soovitud parameetreid õigel kanalil ja stseenis. Vajadusel ekspordi kontrolliks tagasi.
+Tööriist ei ühenda seadet ega saada MIDI/SET-käske.
+SHA-256: c26040df7946e9450dd0a4282be7b72d205c9c376f18e7baacfea9639206e8d2

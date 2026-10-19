@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "kind": "FM3_PEQ_FULL",
+  "collector": "0.1.0",
+  "firmwareDeclared": 13,
+  "baselineSha256": "c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be",
+  "planSha256": "c85c220b4f07b33c42939cf49c8d06d64b0ff1290d78e339167d186818dd4fb2"
+}

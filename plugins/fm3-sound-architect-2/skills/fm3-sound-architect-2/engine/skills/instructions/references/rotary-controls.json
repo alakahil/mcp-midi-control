@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "effect": "Rotary",
+  "effectId": 86,
+  "hasTypeSelector": false,
+  "channelWords": 21,
+  "channelCount": 4,
+  "layout": {
+    "bodyBytes": 14126,
+    "header": 9822,
+    "scenes": 9832,
+    "bypass": 9848,
+    "size": 9864,
+    "count": 9866,
+    "parameters": 9868,
+    "stride": 42
+  },
+  "scope": "Observed channel A discrete points only. No arbitrary interpolation, channel transfer, or generated hardware import validated.",
+  "evidence": "rotary-batch-20261007-151451",
+  "baselineScreen": {
+    "rateHz": 6.5,
+    "mixPercent": 50,
+    "levelDb": 0,
+    "hiDepthPercent": 25,
+    "lowDepthPercent": 25,
+    "tempo": "None"
+  },
+  "controls": [
+    {
+      "key": "rateHz",
+      "parameterId": 0,
+      "points": [
+        {
+          "display": 2,
+          "raw": 13107
+        },
+        {
+          "display": 5,
+          "raw": 32767
+        },
+        {
+          "display": 6.5,
+          "raw": 42597
+        }
+      ]
+    },
+    {
+      "key": "mixPercent",
+      "parameterId": 5,
+      "points": [
+        {
+          "display": 25,
+          "raw": 16384
+        },
+        {
+          "display": 50,
+          "raw": 32767
+        },
+        {
+          "display": 75,
+          "raw": 49151
+        }
+      ]
+    },
+    {
+      "key": "levelDb",
+      "parameterId": 6,
+      "points": [
+        {
+          "display": -6,
+          "raw": 48495
+        },
+        {
+          "display": 0,
+          "raw": 52427
+        }
+      ]
+    },
+    {
+      "key": "hiDepthPercent",
+      "parameterId": 2,
+      "points": [
+        {
+          "display": 25,
+          "raw": 16384
+        },
+        {
+          "display": 50,
+          "raw": 32767
+        }
+      ]
+    },
+    {
+      "key": "lowDepthPercent",
+      "parameterId": 1,
+      "points": [
+        {
+          "display": 25,
+          "raw": 16384
+        },
+        {
+          "display": 50,
+          "raw": 32767
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "capture": "capture-20261007T150836-888ea0f5ef",
+      "label": {
+        "step": 1,
+        "channel": "A",
+        "parameter": "Mix",
+        "value": "25 %"
+      },
+      "changes": [
+        {
+          "pid": 5,
+          "before": 32767,
+          "after": 16384
+        }
+      ],
+      "proof": {
+        "paired": true,
+        "matchedWords": 84,
+        "syxSha256": "eaf4710090dc5ad774450632c294a3d8178b43fa5c21a1e56edea975345cd63b",
+        "rawRxSha256": "29465dbbdd3b7e10902534e5c1767f8a9e30e84d44e9a6220b442b468537e1fe",
+        "channels": [
+          {
+            "channel": "A",
+            "rateRaw": 13107
+          },
+          {
+            "channel": "B",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "C",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "D",
+            "rateRaw": 42597
+          }
+        ]
+      }
+    },
+    {
+      "capture": "capture-20261007T150945-c3bb915fe4",
+      "label": {
+        "step": 2,
+        "channel": "A",
+        "parameter": "Mix",
+        "value": "75 %"
+      },
+      "changes": [
+        {
+          "pid": 5,
+          "before": 16384,
+          "after": 49151
+        }
+      ],
+      "proof": {
+        "paired": true,
+        "matchedWords": 84,
+        "syxSha256": "ef713f8343c4f2f2549c417a8e70371ba6b6c4b2e4352f47bfe3351c678a0ff1",
+        "rawRxSha256": "5d918f3dd07c7b533487344295dfcd8f2ef9b727ccd494b66299fc2c08a6e822",
+        "channels": [
+          {
+            "channel": "A",
+            "rateRaw": 13107
+          },
+          {
+            "channel": "B",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "C",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "D",
+            "rateRaw": 42597
+          }
+        ]
+      }
+    },
+    {
+      "capture": "capture-20261007T151043-10bff351c7",
+      "label": {
+        "step": 3,
+        "channel": "A",
+        "parameter": "Mix",
+        "value": "50 %"
+      },
+      "changes": [
+        {
+          "pid": 5,
+          "before": 49151,
+          "after": 32767
+        }
+      ],
+      "proof": {
+        "paired": true,
+        "matchedWords": 84,
+        "syxSha256": "bdb70b4861616aa39395ab02966dc8b591af5ef1ee948cacc26ef4d6c66aa1f9",
+        "rawRxSha256": "17c1ba07f8903262596f3e2762f010a0902917f0024a521d90d6939dd8ab89f9",
+        "channels": [
+          {
+            "channel": "A",
+            "rateRaw": 13107
+          },
+          {
+            "channel": "B",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "C",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "D",
+            "rateRaw": 42597
+          }
+        ]
+      }
+    },
+    {
+      "capture": "capture-20261007T151133-39ef0f4204",
+      "label": {
+        "step": 4,
+        "channel": "A",
+        "parameter": "Level",
+        "value": "-6.0 dB"
+      },
+      "changes": [
+        {
+          "pid": 6,
+          "before": 52427,
+          "after": 48495
+        }
+      ],
+      "proof": {
+        "paired": true,
+        "matchedWords": 84,
+        "syxSha256": "84b2e4085bd66ab886bf6072639c7e6339e4de63b445c414b21e8c3e2b58f5d9",
+        "rawRxSha256": "1730e3e49740a6168e263635d85d34d1272f53b3ee2f7b77284dedc882c71455",
+        "channels": [
+          {
+            "channel": "A",
+            "rateRaw": 13107
+          },
+          {
+            "channel": "B",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "C",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "D",
+            "rateRaw": 42597
+          }
+        ]
+      }
+    },
+    {
+      "capture": "capture-20261007T151225-ad8403cd54",
+      "label": {
+        "step": 5,
+        "channel": "A",
+        "parameter": "Level",
+        "value": "0.0 dB"
+      },
+      "changes": [
+        {
+          "pid": 6,
+          "before": 48495,
+          "after": 52427
+        }
+      ],
+      "proof": {
+        "paired": true,
+        "matchedWords": 84,
+        "syxSha256": "bdb70b4861616aa39395ab02966dc8b591af5ef1ee948cacc26ef4d6c66aa1f9",
+        "rawRxSha256": "17c1ba07f8903262596f3e2762f010a0902917f0024a521d90d6939dd8ab89f9",
+        "channels": [
+          {
+            "channel": "A",
+            "rateRaw": 13107
+          },
+          {
+            "channel": "B",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "C",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "D",
+            "rateRaw": 42597
+          }
+        ]
+      }
+    },
+    {
+      "capture": "capture-20261007T151315-92d360bdd6",
+      "label": {
+        "step": 6,
+        "channel": "A",
+        "parameter": "Hi Depth",
+        "value": "50 %"
+      },
+      "changes": [
+        {
+          "pid": 2,
+          "before": 16384,
+          "after": 32767
+        }
+      ],
+      "proof": {
+        "paired": true,
+        "matchedWords": 84,
+        "syxSha256": "bc4609a13b86f4271513ce2ece35bbd6dcf418dfddd3ce827a7584e38dedd333",
+        "rawRxSha256": "3124112892f8bd208c41aaedb9310e4d7ab136d6fb04fe24fb78adedfe53a11c",
+        "channels": [
+          {
+            "channel": "A",
+            "rateRaw": 13107
+          },
+          {
+            "channel": "B",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "C",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "D",
+            "rateRaw": 42597
+          }
+        ]
+      }
+    },
+    {
+      "capture": "capture-20261007T151351-b88d569492",
+      "label": {
+        "step": 7,
+        "channel": "A",
+        "parameter": "Low Depth",
+        "value": "50 %"
+      },
+      "changes": [
+        {
+          "pid": 1,
+          "before": 16384,
+          "after": 32767
+        }
+      ],
+      "proof": {
+        "paired": true,
+        "matchedWords": 84,
+        "syxSha256": "8e079d9e2f9694672b14688f6d635271eb86f17194a7ed88ace7c34b7bcb7ad0",
+        "rawRxSha256": "620142ef0cf82a370ee5177ef10c4115db4a6d58157fbc44716ea370d02d32e7",
+        "channels": [
+          {
+            "channel": "A",
+            "rateRaw": 13107
+          },
+          {
+            "channel": "B",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "C",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "D",
+            "rateRaw": 42597
+          }
+        ]
+      }
+    },
+    {
+      "capture": "capture-20261007T151447-f0de12ff3d",
+      "label": {
+        "step": 8,
+        "channel": "A",
+        "parameter": "Rate",
+        "value": "5.000 Hz"
+      },
+      "changes": [
+        {
+          "pid": 0,
+          "before": 13107,
+          "after": 32767
+        }
+      ],
+      "proof": {
+        "paired": true,
+        "matchedWords": 84,
+        "syxSha256": "41ca790391744bf635d4a191885712f16df91d1eaab745f8f6311f5b8c725bd7",
+        "rawRxSha256": "a652462376646acc2ed19fb962c2d20e5d1b94f7a84b814a4144080f8dceca35",
+        "channels": [
+          {
+            "channel": "A",
+            "rateRaw": 32767
+          },
+          {
+            "channel": "B",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "C",
+            "rateRaw": 42597
+          },
+          {
+            "channel": "D",
+            "rateRaw": 42597
+          }
+        ]
+      }
+    }
+  ],
+  "fileHashes": {
+    "baseline-get.json": "f85ae0cb00a71f7adb0cbd187e9d6ec0a2a8c3758084655a174bd3cff5174b89",
+    "baseline.syx": "07f557d31cfc76d0c1152fc7c82283b1044fc11aef1ab9d2655d32e279f7f061",
+    "capture-20261007T150836-888ea0f5ef/capture.json": "be937c9a4f9691b9e38c818ce5f61d1e0f95c709950621c867369fdcd210f255",
+    "capture-20261007T150836-888ea0f5ef/donor.syx": "eaf4710090dc5ad774450632c294a3d8178b43fa5c21a1e56edea975345cd63b",
+    "capture-20261007T150836-888ea0f5ef/labels.json": "078bc425b92fc00cbe733102cd278ef89b81ed824fadd10e46138fd46d55ac0d",
+    "capture-20261007T150836-888ea0f5ef/pair.json": "9a33041bc9395f2a3985391dbd2397e1e41c3c0f67e277d8f3feea7312cacabc",
+    "capture-20261007T150945-c3bb915fe4/capture.json": "f635cff40c54ba26f7b1be7bccc42193299128a7959e9833f21a578f2ad3877e",
+    "capture-20261007T150945-c3bb915fe4/donor.syx": "ef713f8343c4f2f2549c417a8e70371ba6b6c4b2e4352f47bfe3351c678a0ff1",
+    "capture-20261007T150945-c3bb915fe4/labels.json": "233a2bdbc32da1f27f62820bdaef02a64d23c50ab9f0de2958a862762b4a7bee",
+    "capture-20261007T150945-c3bb915fe4/pair.json": "98a79fbb6ea58c10fe01545eb9c705aad11e53bf4a4e454a7d926a916e46422f",
+    "capture-20261007T151043-10bff351c7/capture.json": "9a14d6566b772a4bfdeaa778a66057e63275be64449c1ec2d6d99ab7e1e95cb5",
+    "capture-20261007T151043-10bff351c7/donor.syx": "bdb70b4861616aa39395ab02966dc8b591af5ef1ee948cacc26ef4d6c66aa1f9",
+    "capture-20261007T151043-10bff351c7/labels.json": "d88bd37511ee82516e51018fd2fe2b435be823648fe20b5dcccc00d6b6a2716b",
+    "capture-20261007T151043-10bff351c7/pair.json": "24303ac0a2d6d9332babbc2a0559e53464213a1f7e1799bb31cd85c00dd10d67",
+    "capture-20261007T151133-39ef0f4204/capture.json": "ffba84e31ff4766e8a05177ff7f2ca7229ac99e44cf47495284252ed76755527",
+    "capture-20261007T151133-39ef0f4204/donor.syx": "84b2e4085bd66ab886bf6072639c7e6339e4de63b445c414b21e8c3e2b58f5d9",
+    "capture-20261007T151133-39ef0f4204/labels.json": "72bc05c87126d817fca3f0b1f80ca71fba8b4a71b2c6be88cdc4d1f4dc1945e0",
+    "capture-20261007T151133-39ef0f4204/pair.json": "6e863c2a8a80be23fcce94121f0b30388f4068577ba92c539dcb061e7f1115c6",
+    "capture-20261007T151225-ad8403cd54/capture.json": "938768c1f8d94b6b3bfe5501e9f9b45117d00db77febb55b880e29c14135ec78",
+    "capture-20261007T151225-ad8403cd54/donor.syx": "bdb70b4861616aa39395ab02966dc8b591af5ef1ee948cacc26ef4d6c66aa1f9",
+    "capture-20261007T151225-ad8403cd54/labels.json": "14b5dcc876c1169714366699f29fc89e53ce902375781e167b19c152174bb22f",
+    "capture-20261007T151225-ad8403cd54/pair.json": "24303ac0a2d6d9332babbc2a0559e53464213a1f7e1799bb31cd85c00dd10d67",
+    "capture-20261007T151315-92d360bdd6/capture.json": "9816e5a6827ce17383517ee4715b08a366d76e021fcfecbb5111af26a3be81e1",
+    "capture-20261007T151315-92d360bdd6/donor.syx": "bc4609a13b86f4271513ce2ece35bbd6dcf418dfddd3ce827a7584e38dedd333",
+    "capture-20261007T151315-92d360bdd6/labels.json": "d544821ab073087436d377b7fad94e3596f9a0c842ac0d3135f07bb37d270f19",
+    "capture-20261007T151315-92d360bdd6/pair.json": "15fd8a462c249418e8641927657899d4790c535bea69acb7dfd00a8d966a44a7",
+    "capture-20261007T151351-b88d569492/capture.json": "cd53e10350b4c1f1f5c2911f97b7d947a9cb3f6ffb0b8b978a078e886d513412",
+    "capture-20261007T151351-b88d569492/donor.syx": "8e079d9e2f9694672b14688f6d635271eb86f17194a7ed88ace7c34b7bcb7ad0",
+    "capture-20261007T151351-b88d569492/labels.json": "5595ce86be5016f19e5764b073e4a874b44542877efcaed8004a1cffdfd5fee3",
+    "capture-20261007T151351-b88d569492/pair.json": "ab43e3585bd4621344d55907d9c8cefc00d87d68c2c9c20c29c6064cf9dcf4a7",
+    "capture-20261007T151447-f0de12ff3d/capture.json": "ffcda66421c28c978943d566b435e4a11e2508d2429186e53696d4f45903dc7a",
+    "capture-20261007T151447-f0de12ff3d/donor.syx": "41ca790391744bf635d4a191885712f16df91d1eaab745f8f6311f5b8c725bd7",
+    "capture-20261007T151447-f0de12ff3d/labels.json": "84bc274c1bf4ecae342ec597da0aabf77bd1573c3adb9500b86cc59a20ae17bd",
+    "capture-20261007T151447-f0de12ff3d/pair.json": "0de61386518b57b407a09b51a1257463d356cdef223e439d6d16c958b1bcd4cb",
+    "session.json": "c78ec2e95d4805287d0002ac79320dcb51eaf86c27be7df88ee3e63ce429ad59",
+    "start.syx": "f016ad9596b6573079a0a158388202777e25e53757a0a9957a320a9b5c28b092",
+    "steps.json": "b3f42ef533addc80f113a08314221f48ce43dfd81e6aa1ae931ccb1683cc8dca"
+  }
+}

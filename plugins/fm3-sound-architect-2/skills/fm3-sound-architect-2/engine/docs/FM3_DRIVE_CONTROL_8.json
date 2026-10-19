@@ -1,0 +1,36 @@
+{
+  "baseSha256": "8db32aabad822e8228f8db00ae81f5de38c877c394524d51f46ef5d89ff9b256",
+  "editedSha256": "71de0ce085aaa94b222ba35fa6e5ca0b8ed51465886be19564b690471cb96913",
+  "integrity": "Both full presets pass inspect",
+  "bodyLength": 14222,
+  "differences": [
+    {
+      "offset": 8638,
+      "before": 51,
+      "after": 203
+    },
+    {
+      "offset": 8639,
+      "before": 51,
+      "after": 204
+    }
+  ],
+  "effectId": 118,
+  "channel": "C",
+  "type": "Zen Master",
+  "paramId": 1,
+  "offset": 8638,
+  "points": [
+    {
+      "display": 2,
+      "raw": 13107
+    },
+    {
+      "display": 8,
+      "raw": 52427
+    }
+  ],
+  "candidateEncoding": "round(display / 10 * 65534)",
+  "otherBodyBytesUnchanged": true,
+  "status": "Encoding matches both tested values; other types/channels and generated hardware import remain untested"
+}
