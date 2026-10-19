@@ -133,9 +133,14 @@ käsikirjutuseks suletuks; Tremolo Rate nõuab lõplikku Tempo NONE olekut.
 [Rotary ja Pitchi juhend](engine/docs/FM3_ROTARY_PITCH_APPLICABILITY.md)
 eristab Rotary Rate PID 0 tüübi valijast: Rotaryl Type puudub. Pitchi 16
 mudelit kontrollitakse lõpliku tüübi järgi; TYPE nõuab täiskanalimalli.
-Pitchi 27 diskreetse/enum-välja metaandmevastuolu ning dünaamilised Note 2–8
-on üksikkirjutuseks suletud. Ära tõlgenda neid vana pideva skaala ega nullist
-algavate enum-valikute järgi; säilita mallisõnad ja vaata juhendi piiranguid.
+[Pitchi presetisõnade kodeering](engine/docs/FM3_PITCH_WORD_CODECS.md) lahendab
+27 välja: 20 märgiga täisarvu, viis otse salvestatud täisarvu ja kaks enumit
+algus-ID-ga 1. Enumites eelista silte; arv tähendab salvestatud ID-d.
+CUSTOMSCALE1/2 kasutab nullist algavat globaalset indeksit 0…31; skaalade
+sisu ei valideerita. NUMREPEATS on salvestatud kood, mitte kinnitatud
+korduste kuvanäit; ära tõlgenda 31-t 31 kordusena ega oletatava INFINITE-na.
+Dünaamilised Note 2–8 jäävad suletuks. Staatus preset-word-crosschecked ei
+tähenda uut riistvaramõõtmist ega live MIDI SET tuge.
 [Tempo- ja modifikaatorijuhend](engine/docs/FM3_PARAMETER_DEPENDENCIES.md) kirjeldab
 21 tempo-seost ning olemasolevate modifikaatorite lugemist. Time/Rate kirjutus
 nõuab lõpliku kanali Tempo NONE olekut; aktiivse modifikaatori sihtmärgile

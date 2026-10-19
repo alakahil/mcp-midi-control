@@ -2,7 +2,8 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {policyState,policyApplicability,policyTemplateOnly} from './fm3-delay-reverb-applicability.mjs';
-export const rotaryPitchPolicyHash='9d6a3655d138deebf83bd7fc81f9df45ca1a4bf5c17f4396e4b0d835b3627a03';
+import {pitchWordCodecSummary} from './fm3-pitch-word-codecs.mjs';
+export const rotaryPitchPolicyHash='0e35b472aba506e0ae6e296eeec7dafbf0fd6ff06fca1a0954fe924776e119a2';
 const bytes=fs.readFileSync(new URL('../references/fm3-rotary-pitch-applicability.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==rotaryPitchPolicyHash)throw Error('Rotary/Pitch policy changed; review and regenerate');
 const policy=JSON.parse(bytes);
@@ -21,7 +22,7 @@ export function rotaryPitchApplicability(p,state){
   return {...result,metadataConflict:r.metadataConflict,blockedReason:r.blockedReason,
     ...(r.blockedReason?{allowed:false,reason:r.blockedReason}: {})};
 }
-export function rotaryPitchPolicySummary(){return {sha256:rotaryPitchPolicyHash,firmware:policy.firmware,
+export function rotaryPitchPolicySummary(){return {sha256:rotaryPitchPolicyHash,firmware:policy.firmware,presetWordCodecs:pitchWordCodecSummary(),
   families:Object.fromEntries(Object.entries(policy.families).map(([n,f])=>[n,{hasTypeSelector:f.hasTypeSelector,models:Object.keys(f.models).length,
     parameters:Object.keys(f.parameters).length,templateOnlyPids:f.templateOnlyPids,
     metadataConflicts:Object.entries(f.parameters).filter(([,p])=>p.metadataConflict).map(([pid,p])=>({pid:Number(pid),name:p.name,reason:p.blockedReason})),

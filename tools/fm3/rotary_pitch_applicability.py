@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 from six_field_resolution import EDITOR_SHA, CACHE_SHA, cache_records, layout_xml, mine_editor, require, sha
 from modulation_dynamics_applicability import REF, extract, compile_variants, template_models, WRITABLE_UI
 from type_applicability import active
+from pitch_word_codecs import load as load_codecs, apply_override
 
 OUT = REF / 'fm3-rotary-pitch-applicability.json'
 CONFIG = {'ROTARY': {'ui': 'Rotary', 'section': 18, 'selector': None},
@@ -51,6 +52,10 @@ def verify_dynamic(excluded):
 
 
 def block_reason(p, cache):
+    if p['family']=='PITCH' and p['param'] in {15,16,17,18,35,63,71,72,73,74,76,*range(77,93)}:
+        effective=apply_override(p, load_codecs())
+        require(effective['kind'] in ['integer','enum'] and cache['typecode']==16, 'Pitch codec class drift')
+        return None
     if p['kind'] == 'unused':
         return 'unused or fixed editor-only slot; no scalar authoring'
     if p['name'] in DYNAMIC:
@@ -111,8 +116,8 @@ def build(editor):
         families[family] = f
     return {'schemaVersion': 1, 'firmware': '13.0', 'editor': '1.07.17',
             'sources': {'editorSha256': EDITOR_SHA, 'cacheSha256': CACHE_SHA, 'layoutSha256': sha(xml), 'dictionarySha256': sha((REF/'fm3-param-dictionary.json').read_bytes())},
-            'policy': 'Pitch TYPE requires full templates; final-channel FW13 variants govern controls. Rotary has no model selector: PID 0 is Rate. Block dynamic/fixed slots and discrete/enum dictionary conflicts, including raw writes. Preserve template words; do not promote scales.',
-            'limits': 'Metadata-derived authoring gates, not native UI/DSP or hardware execution. Custom/global scales, integer/signed wire mapping, dynamic note meanings, arpeggiator active-step semantics and Learn/controller dynamics remain unverified. Existing tempo/modifier guards remain required.',
+            'policy': 'Pitch TYPE requires full templates; final-channel FW13 variants govern controls. Rotary has no model selector: PID 0 is Rate. Apply the pinned 27-field preset-word overlay; block dynamic/fixed slots including raw writes. Global scale indices do not include global scale contents.',
+            'limits': 'Metadata-derived authoring gates, not native UI/DSP or hardware execution. Global scale contents, dynamic note meanings, arpeggiator playback semantics and Learn/controller dynamics remain unverified. Signed/count/enum storage uses the separately cross-checked 27-field overlay; no live MIDI SET claim. Existing tempo/modifier guards remain required.',
             'families': families}
 
 

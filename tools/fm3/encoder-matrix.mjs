@@ -19,7 +19,7 @@ const reconciliation = JSON.parse(read(out + 'metadata-reconciliation.json'));
 const dictionary = loadDictionary().params;
 const key = p => `${p.family ?? 'UNNAMED'}:${p.param}`;
 const byKey = new Map(dictionary.map(p => [key(p), p]));
-const supported = p => ['linear', 'log', 'knob', 'enum'].includes(p.kind) && [...DEFAULT_STATUSES, ...OPT_IN_STATUSES].includes(p.status);
+const supported = p => ['linear', 'log', 'knob', 'enum','integer'].includes(p.kind) && [...DEFAULT_STATUSES, ...OPT_IN_STATUSES].includes(p.status);
 const bindings = p => composerBases.flatMap(base => Object.entries(layouts[base.layout])
   .filter(([slug, layout]) => FAMILY_BY_SLUG[slug] === p.family && layout.eid === p.block && p.param >= 0 && p.param < layout.words)
   .map(([slug, layout]) => ({base, slug, layout})));
@@ -35,24 +35,31 @@ function atPosition(p, n) {
   return ((1 - n) * p.min + n * p.max) * mult;
 }
 const closeWord = (actual, expected, message) => {
-  assert.ok(Number.isInteger(actual) && actual >= 0 && actual <= 65534, message + ': invalid uint16 word');
+  assert.ok(Number.isInteger(actual) && actual >= 0 && actual <= 65535, message + ': invalid uint16 word');
   assert.ok(Math.abs(actual - expected) <= 1, `${message}: expected ${expected}, got ${actual}`);
 };
 let numericChecks = 0, enumChecks = 0, rejectionChecks = 0, roundtripChecks = 0;
 const parameterResults = [];
 for (const p of eligible) {
+  const base=p.enumBase??0;
   const opts = options(p), before = [numericChecks, enumChecks, rejectionChecks, roundtripChecks];
   const reject = value => {assert.throws(() => encodeValue(p, value, opts), Error, key(p)); rejectionChecks++;};
   if (p.kind === 'enum') {
     assert.ok(p.enum.length > 0 && p.enum.length <= 65535, 'Invalid option count');
     p.enum.forEach((label, i) => {
-      assert.equal(encodeValue(p, i, opts), i, key(p) + ': numeric option');
-      assert.equal(decodeValue(p, i), label, key(p) + ': option decode');
+      assert.equal(encodeValue(p, i+base, opts), i+base, key(p) + ': numeric option');
+      assert.equal(decodeValue(p, i+base), label, key(p) + ': option decode');
       const first = p.enum.findIndex(x => x.trim().toLowerCase() === label.trim().toLowerCase());
-      assert.equal(encodeValue(p, ' ' + label.toUpperCase().trim() + ' ', opts), first, key(p) + ': label normalization');
+      assert.equal(encodeValue(p, ' ' + label.toUpperCase().trim() + ' ', opts), first+base, key(p) + ': label normalization');
       enumChecks += 3;
     });
-    [-1, p.enum.length, 0.5, '__FM3_UNKNOWN_OPTION__'].forEach(reject);
+    [base-1, base+p.enum.length, 0.5, '__FM3_UNKNOWN_OPTION__'].forEach(reject);
+  } else if(p.kind==='integer'){
+    for(let value=p.min;value<=p.max;value++){
+      const word=value<0?65536+value:value;
+      assert.equal(encodeValue(p,value,opts),word);assert.equal(decodeValue(p,word),value);numericChecks++;roundtripChecks++;
+    }
+    [p.min-1,p.max+1,p.min+0.5,NaN,Infinity,-Infinity,null,true,'1'].forEach(reject);
   } else {
     assert.ok(Number.isFinite(p.min) && Number.isFinite(p.max) && p.max > p.min, key(p) + ': invalid curve domain');
     if (p.kind === 'log') assert.ok(p.min > 0, key(p) + ': nonpositive log domain');
@@ -111,9 +118,11 @@ for (const [bi, base] of composerBases.entries()) {
     for (const {p, slug, layout} of entries) for (let ch = 0; ch < 4; ch++) {
       const offset = layout.header + 46 + 2 * (ch * layout.words + p.param);
       assert.ok(!allowed.has(offset), 'Aliased control address');
-      const raw = p.kind === 'enum' ? (phase === 0 ? 0 : phase === 2 ? p.enum.length - 1 : (p.param + ch) % p.enum.length)
+      const base=p.enumBase??0;
+      let raw = p.kind === 'enum' ? base+(phase === 0 ? 0 : phase === 2 ? p.enum.length - 1 : (p.param + ch) % p.enum.length)
         : phase === 0 ? 0 : phase === 2 ? 65534 : 1 + (offset * 31) % 65533;
-      const value = p.kind === 'enum' ? raw : atPosition(p, raw / 65534);
+      let value = p.kind === 'enum' ? raw : atPosition(p, raw / 65534);
+      if(p.kind==='integer'){value=phase===0?p.min:phase===2?p.max:p.min+(offset% (p.max-p.min+1));raw=value<0?65536+value:value;}
       candidates.push({p, slug, ch, layout, offset, raw, value});
     }
     const planned = new Map(candidates.filter(c => !templateOnlyParameter(c.p)).map(c => [c.offset, c.raw]));
@@ -169,7 +178,7 @@ for (const [bi, base] of composerBases.entries()) {
   }
 }
 
-const sourcePaths = [engine + 'references/fm3-rotary-pitch-applicability.json', engine + 'scripts/fm3-rotary-pitch-applicability.mjs',out + 'registry.json', out + 'metadata-reconciliation.json', 'tools/fm3/encoder-matrix.mjs',
+const sourcePaths = [engine+'references/fm3-pitch-word-codecs.json',engine+'references/fm3-pitch-factory-evidence.json',engine+'scripts/fm3-pitch-word-codecs.mjs',engine + 'references/fm3-rotary-pitch-applicability.json', engine + 'scripts/fm3-rotary-pitch-applicability.mjs',out + 'registry.json', out + 'metadata-reconciliation.json', 'tools/fm3/encoder-matrix.mjs',
   engine + 'references/fm3-param-dictionary.json', engine + 'scripts/fm3-table-encoder.mjs', engine + 'scripts/fm3-composer-bases.mjs',
   engine + 'references/fm3-type-applicability.json', engine + 'scripts/fm3-type-applicability.mjs',
   engine + 'references/fm3-parameter-dependencies.json', engine + 'scripts/fm3-parameter-dependencies.mjs',
@@ -181,7 +190,7 @@ const result = {schemaVersion: 1, scope: {
   softwareOnly: true, deviceIO: false, newHardwareEvidence: false, generatedPresetsDelivered: false,
   parameterEligibility: 'Accepted table policy, implemented scalar kind, and at least one bundled base layout. Other parameters remain outside this matrix.',
   curveOracle: 'Fixed normalized positions plus independent endpoint interpolation; one wire LSB tolerance for floating point/quantized historical displays.',
-  limits: 'Chorus/Drive type policy, Delay/Reverb and Flanger/Phaser/Compressor/Wah/Tremolo final model/selector predicates, 21 tempo pairs and read-only modifier targets enforced. Delay/Reverb/Flanger/Phaser/Compressor/Wah/Tremolo model/internal-selector writes require full templates. Rotary has no model selector; Pitch TYPE requires templates. Pitch dynamic/fixed slots and 27 discrete/enum dictionary conflicts are blocked by the authoring policy. These exclusions are included in typeExcludedWrites; mathematical scalar conformance does not resolve those metadata conflicts. Exclusions counted separately; scalar conformance is not unconditional write permission. No arbitrary preset, other-family visibility, automatic compressor timing/makeup, DSP/audio/CPU, effective tempo/controller evaluation or routing validation.'},
+  limits: 'Chorus/Drive type policy, Delay/Reverb and Flanger/Phaser/Compressor/Wah/Tremolo final model/selector predicates, 21 tempo pairs and read-only modifier targets enforced. Delay/Reverb/Flanger/Phaser/Compressor/Wah/Tremolo model/internal-selector writes require full templates. Rotary has no model selector; Pitch TYPE requires templates. Pitch dynamic/fixed slots remain blocked. Its 27 integer/nonzero-enum fields use the pinned preset-word overlay and are tested on discrete domains, never normalized curves. Global scale contents and actual arpeggiator playback remain unvalidated. Exclusions counted separately; scalar conformance is not unconditional write permission. No arbitrary preset, other-family visibility, automatic compressor timing/makeup, DSP/audio/CPU, effective tempo/controller evaluation or routing validation.'},
   sources: Object.fromEntries(sourcePaths.map(path => [path, sha(read(path))])),
   summary: {eligibleParameterKeys: eligible.length, numericPositionChecks: numericChecks, enumChecks, rejectionChecks, roundtripChecks,
     existingObservationsChecked: observationResults.length, existingObservationKeys: new Set(observationResults.map(x => x.parameter)).size,

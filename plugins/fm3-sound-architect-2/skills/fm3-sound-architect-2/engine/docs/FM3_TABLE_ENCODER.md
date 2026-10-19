@@ -1,4 +1,4 @@
-# Tabelipõhine kodeerija — 0.74.4, 2026-10-19
+# Tabelipõhine kodeerija — 0.74.10, 2026-10-19
 
 `scripts/fm3-table-encoder.mjs` kodeerib iga FM3 parameetri FM3-Editis kuvatavast
 väärtusest 16-bitiseks sõnaks. Toorväärtusi pole vaja eraldi mõõta. Allikas on
@@ -78,3 +78,14 @@ experimental/raw režiimis. DynaCab R1/R2 sisend jääb kuvatavale 0–10 skaala
 ## 0.74.4 tüübisobivus
 
 Choruse ja Drive’i selgesõnalised kirjutused kontrollitakse lõpliku kanali tüübi järgi enne muutmist. Nime/PID/raw teed järgivad sama reeglit. Täpne ulatus, varulehtede käsitlus ja allesjäänud sõltuvused: [tüübisobivuse juhend](FM3_TYPE_APPLICABILITY.md). Skalaari kodeerimisoskus ei tähenda universaalset kirjutusluba.
+
+## 0.74.10 Pitchi presetisõnad
+
+[27 välja eraldi teisendus](FM3_PITCH_WORD_CODECS.md) korrigeerib vana
+pideva skaala ja nullist algava enumi eeldused, muutmata algset sõnastikku.
+`preset-word-crosschecked` lubab täisarvu/signed-int16 ja 1-st algavate enumite
+kirjutamist ainult vastava mudeli ja sõltuvuste korral. See on failide ning
+metaandmete ristkontroll, mitte uus FM3 mõõtmine või live MIDI SET.
+NUMREPEATS on salvestatud kood; CUSTOMSCALE1/2 on nullist algav indeks.
+Dünaamilised noodid, eriväärtuste kuvasildid ja globaalsete skaalade sisu
+on eraldi piirangud. 65535 on lubatud ainult 20 kinnitatud märgiga välja −1-na.

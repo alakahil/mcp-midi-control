@@ -84,6 +84,8 @@ def join_parameters(catalog, dictionary, runtime):
         require(p['name'] not in row['names'], f'Duplicate catalog symbol: {p["name"]}')
         row['catalogRows'].append(i)
         row['names'].append(p['name'])
+    from pitch_word_codecs import load, apply_override
+    codecs = load()
     seen = set()
     for i, p in enumerate(dictionary):
         k = key(p['family'], p['param'])
@@ -95,17 +97,18 @@ def join_parameters(catalog, dictionary, runtime):
         if not row['names'] and p['name']:
             row['names'].append(p['name'])
         # Eligible is a policy gate, not a claim that every value/model was measured.
-        gate = ('default' if p['status'] in runtime['defaultStatuses'] else
-                'opt-in' if p['status'] in runtime['optInStatuses'] else
+        effective = apply_override(p, codecs)
+        gate = ('default' if effective['status'] in runtime['defaultStatuses'] else
+                'opt-in' if effective['status'] in runtime['optInStatuses'] else
                 'experimental-only' if p['status'] == 'unverified-taper' else 'blocked')
-        supported_kind = p['kind'] in ['linear', 'log', 'knob', 'enum']
+        supported_kind = effective['kind'] in ['linear', 'log', 'knob', 'enum', 'integer']
         bases = []
         for b in runtime['composerBases']:
             for slug, layout in runtime['layouts'][b['layout']].items():
                 if (runtime['familyBySlug'].get(slug) == p['family'] and layout['eid'] == p['block']
                         and p['param'] < layout['words']):
                     bases.append(b['id'])
-        row['tableEncoder'] = {'policy': gate, 'bases': sorted(set(bases)),
+        row['tableEncoder'] = {'effectiveKind': effective['kind'], 'effectiveStatus': effective['status'], 'policy': gate, 'bases': sorted(set(bases)),
                                'available': bool(bases) and supported_kind and gate in ['default', 'opt-in']}
     for row in rows.values():
         row['join'] = ('both' if row['catalogRows'] and 'dictionaryRow' in row else
@@ -356,6 +359,8 @@ def build():
     runtime, pairs = reg.audit_pairs()
     cat = reg.read(ROOT / 'packages/fractal-midi/catalog/fm3.json')['data']['FM3_PARAMS']
     dictionary = reg.read(REF / 'fm3-param-dictionary.json')
+    reg.read(REF / 'fm3-pitch-word-codecs.json')
+    reg.read(REF / 'fm3-pitch-factory-evidence.json')
     require(sha((REF / 'fm3-param-dictionary.json').read_bytes()) == runtime['dictionaryHash'], 'Encoder dictionary pin differs')
     cap = reg.read(ENGINE / 'docs/FM3_COMPOSER_CAPABILITIES.json')
     template_support = reg.model_templates(cap)

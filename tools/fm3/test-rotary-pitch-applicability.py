@@ -30,13 +30,13 @@ class RotaryPitchTests(unittest.TestCase):
         self.assertNotIn(3, types(31))    # Quad Chromatic has no feedback
         self.assertIn(12, types(31))
 
-    def test_discrete_and_enum_conflicts_are_not_scalar_permissions(self):
+    def test_discrete_and_enum_conflicts_use_scoped_overlay(self):
         f = self.r['families']['PITCH']['parameters']
         expected = {15,16,17,18,35,63,71,72,73,74,76,*range(77,93)}
-        self.assertEqual({int(pid) for pid,p in f.items() if p['metadataConflict']}, expected)
+        self.assertEqual({int(pid) for pid,p in f.items() if p['metadataConflict']}, set())
         for pid in expected:
-            self.assertFalse(f[str(pid)]['cases'])
-            self.assertTrue(f[str(pid)]['blockedReason'])
+            self.assertTrue(f[str(pid)]['cases'])
+            self.assertIsNone(f[str(pid)]['blockedReason'])
         self.assertEqual(f['35']['cache']['labels'], ['NOTES', 'CHORDS'])
         self.assertEqual(f['35']['cache']['numeric_fields'][:2], [1,2])
         self.assertEqual(f['76']['cache']['numeric_fields'][:2], [1,78])
@@ -56,7 +56,7 @@ class RotaryPitchTests(unittest.TestCase):
     def test_receipt_tampering_fails(self):
         verify(copy.deepcopy(self.r))
         for mutate in [lambda r:r['families']['ROTARY'].__setitem__('modelPid',0),
-                       lambda r:r['families']['PITCH']['parameters']['35'].__setitem__('blockedReason',None),
+                       lambda r:r['families']['PITCH']['parameters']['35'].__setitem__('blockedReason','stale'),
                        lambda r:r['families']['PITCH']['parameters']['63'].__setitem__('cases',[{'types':[4],'when':{},'label':'Notes'}]),
                        lambda r:r['families']['PITCH']['nativeDescriptors'][15].__setitem__('pid',16),
                        lambda r:r['families']['PITCH']['excludedDynamicControls'].pop()]:

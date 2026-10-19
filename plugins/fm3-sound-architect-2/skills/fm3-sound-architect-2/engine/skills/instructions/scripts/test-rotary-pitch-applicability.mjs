@@ -13,7 +13,7 @@ const before=Object.fromEntries(Object.entries(bases).map(([s,b])=>[s,Buffer.fro
 const records=Object.fromEntries(Object.entries(before).map(([s,b])=>[s,scanRecords(b).records.find(r=>r.family===s)]));
 const dict=loadDictionary().params,opts={allow:[...OPT_IN_STATUSES]},lib=JSON.parse(read('references/pitch-library.json'));
 const ctl=(block,channel,param,value)=>({block,channel,param,value});
-const valueFor=p=>p.kind==='enum'?0:p.kind==='knob'?(p.displayMultiplier||1)/2:(p.min+p.max)/2*(p.displayMultiplier||1);
+const valueFor=p=>p.kind==='enum'?(p.enumBase??0):p.kind==='integer'?Math.floor((p.min+p.max)/2):p.kind==='knob'?(p.displayMultiplier||1)/2:(p.min+p.max)/2*(p.displayMultiplier||1);
 const at=(slug,ch,pid)=>records[slug].start+2*('ABCD'.indexOf(ch)*records[slug].words+pid);
 const policy=(slug,p,body,ch='A')=>typeApplicability(p,readTypeState(p,pid=>body.readUInt16LE(at(slug,ch,pid))));
 function fixture(m){const body=Buffer.from(before.pitch);for(const ch of 'ABCD')m.words.forEach((v,pid)=>body.writeUInt16LE(v,at('pitch',ch,pid)));return body;}
@@ -49,11 +49,11 @@ for(const w of rotaryWrites)assert.equal(rotaryBody.readUInt16LE(w.offset),encod
 for(let i=0;i<rotaryBody.length;i++)if(!rotaryAllowed.has(i))assert.equal(rotaryBody[i],before.rotary[i]);
 assert.deepEqual(rotaryBody,Buffer.from(inspectStructure(writeTableControls(bases.rotary,{name:'ROTARY ALL CONTROLS',controls:rotaryControls},opts).syx).raw.body));
 assert.throws(()=>writeTableControls(bases.rotary,{name:'NO UNUSED',controls:[{block:'rotary',channel:'A',param:9,raw:0}]},{experimental:true}),/not applicable/);
-// Metadata conflicts remain blocked even when a model's XML shows that control.
+// Former metadata conflicts now use the separately tested word overlay; dynamic/fixed controls remain blocked.
 const conflicts=[15,16,17,18,35,63,71,72,73,74,76,...Array.from({length:16},(_,i)=>77+i)];
-assert.deepEqual(typePolicySummary().rotaryPitch.families.PITCH.metadataConflicts.map(p=>p.pid),conflicts);
+assert.deepEqual(typePolicySummary().rotaryPitch.families.PITCH.metadataConflicts.map(p=>p.pid),[]);
 let rawRefusals=0;
-for(const channel of 'ABCD')for(const param of [...conflicts,37,42,64,65,66,67,68,69,70,107]){
+for(const channel of 'ABCD')for(const param of [37,42,64,65,66,67,68,69,70,107]){
   for(const key of [param,findParam('pitch',param).name]){
     assert.throws(()=>writeTableControls(bases.pitch,{name:'NO METADATA BYPASS',controls:[{block:'pitch',channel,param:key,raw:0}]},{experimental:true}),/not applicable/);rawRefusals++;
   }
@@ -64,7 +64,7 @@ for(const channel of 'ABCD'){
   assert.throws(()=>applyTableControls(body,[ctl('pitch',channel,'LEVEL',0)],opts),/unknown or mismatched/);
   applyTableControls(body,[ctl('pitch',channel==='D'?'A':'D','LEVEL',0)],opts);
 }
-for(const [model,param] of [['Octave Divider','DETUNE1'],['Quad Chromatic','FEEDBACK1'],['Arpeggiator','NUMSTEPS'],['Virtual Capo','TRACKMODE']]){
+for(const [model,param] of [['Octave Divider','DETUNE1'],['Quad Chromatic','FEEDBACK1'],['Dual Detune','NUMSTEPS'],['Virtual Capo','NUMSTEPS']]){
   const body=fixture(lib.models.find(m=>m.name===model)),original=Buffer.from(body);let callbacks=0;
   const plan=[ctl('amp','A','MID',7),ctl('pitch','D',param,valueFor(findParam('pitch',param)))];
   for(const controls of [plan,[...plan].reverse()]){
@@ -94,11 +94,11 @@ spec.composer.pitchChannels=[{channel:'A',type:'Dual Detune Delay'}];spec.compos
 spec.layout={row2:['drive','phaser','amp','cab'],row3:['pitch','rotary','delay','reverb']};spec.allow=[...OPT_IN_STATUSES];
 spec.controls=[ctl('pitch','A','FEEDBACK3',25),ctl('pitch','A','DELAY1',400),ctl('pitch','A','DTEMPO1','NONE'),ctl('rotary','A','HFDEPTH',50)];
 const good=createPreset(newlook,spec);
-for(const name of ['PITCH_SHIFT1','PITCH_TRACKMODE','PITCH_TEMPO','PITCH_TIME1','PITCH_DETUNE3'])assert.ok(!good.report.parameters.some(p=>p.channel==='A'&&p.name===name));
+for(const name of ['PITCH_SHIFT1','PITCH_TEMPO','PITCH_TIME1','PITCH_DETUNE3'])assert.ok(!good.report.parameters.some(p=>p.channel==='A'&&p.name===name));
 assert.ok(good.txt.includes('Feedback 1->2 (PITCH_FEEDBACK3)'));assert.ok(good.txt.includes('Hi Depth (ROTARY_HFDEPTH)'));
 const finalBody=Buffer.from(inspectStructure(good.syx).raw.body),pitchRecord=scanRecords(finalBody).records.find(r=>r.family==='pitch');
 const template=lib.models.find(m=>m.name==='Dual Detune Delay');
 for(const pid of [...conflicts,64,107])assert.equal(finalBody.readUInt16LE(pitchRecord.start+2*pid),template.words[pid]);
 assert.deepEqual(readModifiers(finalBody),readModifiers(Buffer.from(inspectStructure(newlook).raw.body)));
-spec.controls=[ctl('pitch','A','TRACKMODE','OFF')];assert.throws(()=>createPreset(newlook,spec),/not applicable/);
-console.log(JSON.stringify({passed:true,pitchTemplates:templates,channels:'ABCD',acceptedPitchWrites:accepted,rejectedPitchWrites:rejected,templateOnlyChecks:templateOnly,rotaryWrites:rotaryWrites.length,metadataConflicts:conflicts.length,rawRefusals,deviceIO:false,newHardwareEvidence:false}));
+spec.controls=[ctl('pitch','A','TRACKMODE','OFF')];assert.throws(()=>createPreset(newlook,spec),/unknown option/);
+console.log(JSON.stringify({passed:true,pitchTemplates:templates,channels:'ABCD',acceptedPitchWrites:accepted,rejectedPitchWrites:rejected,templateOnlyChecks:templateOnly,rotaryWrites:rotaryWrites.length,resolvedWordCodecs:conflicts.length,rawRefusals,deviceIO:false,newHardwareEvidence:false}));

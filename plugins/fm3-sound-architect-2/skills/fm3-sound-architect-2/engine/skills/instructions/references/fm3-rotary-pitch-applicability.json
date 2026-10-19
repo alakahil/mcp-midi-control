@@ -8,8 +8,8 @@
     "layoutSha256": "0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2",
     "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730"
   },
-  "policy": "Pitch TYPE requires full templates; final-channel FW13 variants govern controls. Rotary has no model selector: PID 0 is Rate. Block dynamic/fixed slots and discrete/enum dictionary conflicts, including raw writes. Preserve template words; do not promote scales.",
-  "limits": "Metadata-derived authoring gates, not native UI/DSP or hardware execution. Custom/global scales, integer/signed wire mapping, dynamic note meanings, arpeggiator active-step semantics and Learn/controller dynamics remain unverified. Existing tempo/modifier guards remain required.",
+  "policy": "Pitch TYPE requires full templates; final-channel FW13 variants govern controls. Rotary has no model selector: PID 0 is Rate. Apply the pinned 27-field preset-word overlay; block dynamic/fixed slots including raw writes. Global scale indices do not include global scale contents.",
+  "limits": "Metadata-derived authoring gates, not native UI/DSP or hardware execution. Global scale contents, dynamic note meanings, arpeggiator playback semantics and Learn/controller dynamics remain unverified. Signed/count/enum storage uses the separately cross-checked 27-field overlay; no live MIDI SET claim. Existing tempo/modifier guards remain required.",
   "families": {
     "ROTARY": {
       "hasTypeSelector": false,
@@ -8410,9 +8410,52 @@
               "label": "Shift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                2
+              ],
+              "when": {},
+              "label": "Shift 1"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Shift 1"
+            },
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Shift 1"
+            },
+            {
+              "types": [
+                9
+              ],
+              "when": {},
+              "label": "Start"
+            },
+            {
+              "types": [
+                12
+              ],
+              "when": {},
+              "label": "Shift 1"
+            },
+            {
+              "types": [
+                14
+              ],
+              "when": {},
+              "label": "Shift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "16": {
           "name": "PITCH_SHIFT2",
@@ -8469,9 +8512,45 @@
               "label": "Shift 2"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                2
+              ],
+              "when": {},
+              "label": "Shift 2"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Shift 2"
+            },
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Shift 2"
+            },
+            {
+              "types": [
+                9
+              ],
+              "when": {},
+              "label": "Stop"
+            },
+            {
+              "types": [
+                12
+              ],
+              "when": {},
+              "label": "Shift 2"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "17": {
           "name": "PITCH_SHIFT3",
@@ -8507,9 +8586,24 @@
               "label": "Shift 3"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Shift 3"
+            },
+            {
+              "types": [
+                12
+              ],
+              "when": {},
+              "label": "Shift 3"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "18": {
           "name": "PITCH_SHIFT4",
@@ -8545,9 +8639,24 @@
               "label": "Shift 4"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Shift 4"
+            },
+            {
+              "types": [
+                12
+              ],
+              "when": {},
+              "label": "Shift 4"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "19": {
           "name": "PITCH_LEVEL1",
@@ -10666,9 +10775,52 @@
               "label": "Pitch Tracking"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 enum base/labels conflict with zero-based dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                2
+              ],
+              "when": {},
+              "label": "Pitch Tracking"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Pitch Tracking"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Pitch Tracking"
+            },
+            {
+              "types": [
+                9
+              ],
+              "when": {},
+              "label": "Pitch Tracking"
+            },
+            {
+              "types": [
+                12
+              ],
+              "when": {},
+              "label": "Pitch Tracking"
+            },
+            {
+              "types": [
+                14
+              ],
+              "when": {},
+              "label": "Pitch Tracking"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "36": {
           "name": "PITCH_TRACKING",
@@ -14499,9 +14651,38 @@
               "label": "# of Notes"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "# of Notes"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "# of Notes"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "# of Notes"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "# of Notes"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "64": {
           "name": "PITCH_NOTE2",
@@ -14691,9 +14872,17 @@
               "label": "Scale 1"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                11
+              ],
+              "when": {},
+              "label": "Scale 1"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "72": {
           "name": "PITCH_CUSTOMSCALE2",
@@ -14722,9 +14911,17 @@
               "label": "Scale 2"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                11
+              ],
+              "when": {},
+              "label": "Scale 2"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "73": {
           "name": "PITCH_NUMSTEPS",
@@ -14753,9 +14950,17 @@
               "label": "Steps"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Steps"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "74": {
           "name": "PITCH_NUMREPEATS",
@@ -14784,9 +14989,17 @@
               "label": "Repeats"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Repeats"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "75": {
           "name": "PITCH_ARPRUN",
@@ -14936,9 +15149,17 @@
               "label": "Tempo"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 enum base/labels conflict with zero-based dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Tempo"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "77": {
           "name": "PITCH_STEP1",
@@ -14967,9 +15188,17 @@
               "label": "Step 1\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 1\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "78": {
           "name": "PITCH_STEP2",
@@ -14998,9 +15227,17 @@
               "label": "Step 2\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 2\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "79": {
           "name": "PITCH_STEP3",
@@ -15029,9 +15266,17 @@
               "label": "Step 3\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 3\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "80": {
           "name": "PITCH_STEP4",
@@ -15060,9 +15305,17 @@
               "label": "Step 4\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 4\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "81": {
           "name": "PITCH_STEP5",
@@ -15091,9 +15344,17 @@
               "label": "Step 5\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 5\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "82": {
           "name": "PITCH_STEP6",
@@ -15122,9 +15383,17 @@
               "label": "Step 6\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 6\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "83": {
           "name": "PITCH_STEP7",
@@ -15153,9 +15422,17 @@
               "label": "Step 7\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 7\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "84": {
           "name": "PITCH_STEP8",
@@ -15184,9 +15461,17 @@
               "label": "Step 8\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 8\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "85": {
           "name": "PITCH_STEP9",
@@ -15215,9 +15500,17 @@
               "label": "Step 9\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 9\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "86": {
           "name": "PITCH_STEP10",
@@ -15246,9 +15539,17 @@
               "label": "Step 10\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 10\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "87": {
           "name": "PITCH_STEP11",
@@ -15277,9 +15578,17 @@
               "label": "Step 11\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 11\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "88": {
           "name": "PITCH_STEP12",
@@ -15308,9 +15617,17 @@
               "label": "Step 12\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 12\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "89": {
           "name": "PITCH_STEP13",
@@ -15339,9 +15656,17 @@
               "label": "Step 13\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 13\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "90": {
           "name": "PITCH_STEP14",
@@ -15370,9 +15695,17 @@
               "label": "Step 14\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 14\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "91": {
           "name": "PITCH_STEP15",
@@ -15401,9 +15734,17 @@
               "label": "Step 15\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 15\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "92": {
           "name": "PITCH_STEP16",
@@ -15432,9 +15773,17 @@
               "label": "Step 16\nShift"
             }
           ],
-          "cases": [],
-          "blockedReason": "FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved",
-          "metadataConflict": true
+          "cases": [
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Step 16\nShift"
+            }
+          ],
+          "blockedReason": null,
+          "metadataConflict": false
         },
         "93": {
           "name": "PITCH_AMPSHAPE",

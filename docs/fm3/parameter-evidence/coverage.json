@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scope": "Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.",
   "inventory": {
-    "filePaths": 2259,
-    "uniqueContents": 2055,
+    "filePaths": 2261,
+    "uniqueContents": 2057,
     "archivePaths": 990,
     "archiveContents": 164
   },
@@ -324,8 +324,8 @@
       "catalogKeys": 114,
       "dictionaryKeys": 114,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 44,
-      "tableOptInOnBundledBase": 60
+      "tableDefaultOnBundledBase": 71,
+      "tableOptInOnBundledBase": 33
     },
     {
       "family": "PLEX",

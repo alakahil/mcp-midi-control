@@ -1,4 +1,4 @@
-// FM3 table-based parameter encoder (0.74.9). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
+// FM3 table-based parameter encoder (0.74.10). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
 import fs from 'node:fs';
@@ -10,12 +10,14 @@ import {validateDependencyWrites,dependencyPolicySummary} from './fm3-parameter-
 import {validateTypeWrites,typePolicySummary} from './fm3-type-applicability.mjs';
 import {nativeParameterId} from './fm3-modulation-dynamics-applicability.mjs';
 
+import {effectivePitchParameter,validPitchStoredWord,pitchWordCodecSummary} from './fm3-pitch-word-codecs.mjs';
+
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(v,m)=>{if(!v)throw Error(m)};
 export const dictionaryHash='a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730';
 // Statuses writable without an explicit opt-in. 'measured' and
 // 'taper-class-verified' share the exact curve class of 280/280 hardware points.
-export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','enum-labels-crosschecked']);
+export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','enum-labels-crosschecked','preset-word-crosschecked']);
 export const OPT_IN_STATUSES=Object.freeze(['linear-by-structure','enum-labels']);
 export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT'});
 
@@ -25,6 +27,7 @@ export function loadDictionary(){
   const bytes=fs.readFileSync(new URL('../references/fm3-param-dictionary.json',import.meta.url));
   check(sha(bytes)===dictionaryHash,'Parameter dictionary changed; run test-table-encoder.mjs and review evidence before use');
   const d=JSON.parse(bytes);check(d.params.length===2892,'Unexpected dictionary size');
+  d.params=d.params.map(effectivePitchParameter);
   const byKey=new Map(),byName=new Map();
   for(const p of d.params){byKey.set(p.block+':'+p.param,p);if(p.name)byName.set(p.family+':'+p.name,p)}
   return cache={...d,byKey,byName};
@@ -65,8 +68,13 @@ export function encodeValue(p,value,opts={}){
   validateOptions(opts);
   gate(p,opts);
   if(p.kind==='enum'){
-    const i=typeof value==='number'?value:p.enum.findIndex(x=>x.trim().toLowerCase()===String(value).trim().toLowerCase());
-    check(Number.isInteger(i)&&i>=0&&i<p.enum.length,`${p.name}: unknown option ${value}`);return i;
+    const base=p.enumBase??0;
+    const i=typeof value==='number'?value-base:p.enum.findIndex(x=>x.trim().toLowerCase()===String(value).trim().toLowerCase());
+    check(Number.isInteger(i)&&i>=0&&i<p.enum.length,`${p.name}: unknown option ${value}`);return i+base;
+  }
+  if(p.kind==='integer'){
+    check(typeof value==='number'&&Number.isInteger(value)&&value>=p.min&&value<=p.max,`${p.name}: integer value required in ${p.min}…${p.max}`);
+    return value<0?value+65536:value;
   }
   check(['linear','log','knob'].includes(p.kind)||opts.experimental===true,`${p.name}: kind ${p.kind} has no encoder`);
   check(typeof value==='number'&&Number.isFinite(value),`${p.name}: numeric value required`);
@@ -79,7 +87,9 @@ export function encodeValue(p,value,opts={}){
   return Math.min(65534,Math.max(0,Math.round(n*65534)));
 }
 export function decodeValue(p,raw){
-  if(p.kind==='enum')return p.enum[raw];
+  if(!validPitchStoredWord(p,raw))return undefined;
+  if(p.kind==='integer')return p.signedWord&&raw>=32768?raw-65536:raw;
+  if(p.kind==='enum')return p.enum[raw-(p.enumBase??0)];
   const n=raw/65534,m=p.displayMultiplier||1;
   if(p.kind==='knob')return n*m;
   return (p.kind==='log'?p.min*Math.pow(p.max/p.min,n):p.min+n*(p.max-p.min))*m;
@@ -107,7 +117,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
     check(p.param<l.words,'Parameter outside block word range');
     const offset=l.start+ch*l.words*2+p.param*2;check(!seen.has(offset),'Duplicate control');seen.add(offset);
     // Direct raw words are allowed only for experimental batch tests.
-    const raw=c.raw!==undefined?(check(opts.experimental===true&&Number.isInteger(c.raw)&&c.raw>=0&&c.raw<=65534,'raw words require --experimental and 0…65534'),c.raw):encodeValue(p,c.value,opts);
+    const raw=c.raw!==undefined?(check(opts.experimental===true&&Number.isInteger(c.raw)&&c.raw>=0&&c.raw<=(p.signedWord?65535:65534)&&validPitchStoredWord(p,c.raw),'raw word outside allowed preset domain; experimental required'),c.raw):encodeValue(p,c.value,opts);
     writes.push({effectId:p.block,block:c.block,channel:c.channel,name:p.name,label:p.label,pid:p.param,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
   }
   validateTypeWrites(original,writes);
@@ -124,7 +134,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
   check(Buffer.from(before.parsed.headerPayload).equals(Buffer.from(after.parsed.headerPayload)),'Dump header changed');
   const raw=Buffer.from(after.raw.rawPatch);check(raw.readUInt16LE(72)===actual.length&&raw.readUInt16LE(74)===after.raw.compSize,'Invalid encoded size');
   check(raw.subarray(76+after.raw.compSize).every(v=>v===0),'Nonzero output padding');
-  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.9',dictionarySha256:dictionaryHash,typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
+  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.10',dictionarySha256:dictionaryHash,pitchWordCodecs:pitchWordCodecSummary(),typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 

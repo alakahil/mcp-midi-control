@@ -1,0 +1,1850 @@
+{
+  "schemaVersion": 1,
+  "firmware": "13.0",
+  "scope": "Preset storage only. FW13 cache bounds and labels, FM3 native symbol bindings, existing FW13 templates and older FM3 factory words. Structural/file cross-check, not a new hardware sweep or MIDI SET codec.",
+  "sources": {
+    "editorSha256": "c06f993530057214205a64330116a823e5b31507610d1792c1f3617725d6e927",
+    "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4",
+    "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
+    "factoryEvidenceSha256": "d7286b090cae82e66e053336b83c027ee66ed2818d526495d7511572da9ac1c6",
+    "pitchLibrarySha256": "4817534c8265e22be7ade32ae974278710f0f84357d008742eb09dd4130a4584"
+  },
+  "numericEnumInput": "Stored option ID, not zero-based list position. TRACKMODE: NOTES=1, CHORDS=2. TEMPO: first label=1, last=78; NONE is unavailable.",
+  "limits": "No dynamic note authoring, global scale contents, device import, audio/CPU or effective controller/tempo evaluation. Same descriptor class is transferred across the explicitly listed 20 signed fields; factory facts are not per-value measurements.",
+  "fields": [
+    {
+      "pid": 15,
+      "name": "PITCH_SHIFT1",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 216802,
+        "end_offset": 216834,
+        "param_id": 15,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 15,
+        "name": "PITCH_SHIFT1",
+        "descriptorOffset": 18669360,
+        "nameOffset": 8250152
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 15,
+        "name": "PITCH_SHIFT1",
+        "label": "Shift 1",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0100",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true
+      },
+      "observedStoredWords": [
+        0,
+        12,
+        65512,
+        65532,
+        65533,
+        65534,
+        65535
+      ]
+    },
+    {
+      "pid": 16,
+      "name": "PITCH_SHIFT2",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 216834,
+        "end_offset": 216866,
+        "param_id": 16,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 16,
+        "name": "PITCH_SHIFT2",
+        "descriptorOffset": 18669376,
+        "nameOffset": 8250168
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 16,
+        "name": "PITCH_SHIFT2",
+        "label": "Shift 2",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0100",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true
+      },
+      "observedStoredWords": [
+        0,
+        65524
+      ]
+    },
+    {
+      "pid": 17,
+      "name": "PITCH_SHIFT3",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 216866,
+        "end_offset": 216898,
+        "param_id": 17,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 17,
+        "name": "PITCH_SHIFT3",
+        "descriptorOffset": 18669392,
+        "nameOffset": 8250248
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 17,
+        "name": "PITCH_SHIFT3",
+        "label": "Shift 3",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0100",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true
+      },
+      "observedStoredWords": [
+        0,
+        12,
+        65529
+      ]
+    },
+    {
+      "pid": 18,
+      "name": "PITCH_SHIFT4",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 216898,
+        "end_offset": 216930,
+        "param_id": 18,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 18,
+        "name": "PITCH_SHIFT4",
+        "descriptorOffset": 18669408,
+        "nameOffset": 8250264
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 18,
+        "name": "PITCH_SHIFT4",
+        "label": "Shift 4",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0100",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true
+      },
+      "observedStoredWords": [
+        0,
+        14,
+        24
+      ]
+    },
+    {
+      "pid": 35,
+      "name": "PITCH_TRACKMODE",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 217442,
+        "end_offset": 217493,
+        "param_id": 35,
+        "typecode": 16,
+        "numeric_fields": [
+          1.0,
+          2.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "0000803f000000400000803f00000000",
+        "labels": [
+          "NOTES",
+          "CHORDS"
+        ],
+        "tail_flags_raw": 32768,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 35,
+        "name": "PITCH_TRACKMODE",
+        "descriptorOffset": 18669680,
+        "nameOffset": 8252464
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 35,
+        "name": "PITCH_TRACKMODE",
+        "label": "Pitch Tracking",
+        "kind": "enum",
+        "min": 1.0,
+        "max": 2.0,
+        "displayMultiplier": 1.0,
+        "step": 0.0,
+        "flags": "0x0180",
+        "enum": [
+          "OFF",
+          "NOTES"
+        ],
+        "status": "enum-labels"
+      },
+      "effective": {
+        "kind": "enum",
+        "status": "preset-word-crosschecked",
+        "min": 1,
+        "max": 2,
+        "displayMultiplier": 1,
+        "step": 0.0,
+        "enum": [
+          "NOTES",
+          "CHORDS"
+        ],
+        "enumBase": 1
+      },
+      "observedStoredWords": [
+        1,
+        2
+      ]
+    },
+    {
+      "pid": 63,
+      "name": "PITCH_CUSTOMNOTES",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 223778,
+        "end_offset": 223810,
+        "param_id": 63,
+        "typecode": 16,
+        "numeric_fields": [
+          4.0,
+          8.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "00008040000000410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 63,
+        "name": "PITCH_CUSTOMNOTES",
+        "descriptorOffset": 18670128,
+        "nameOffset": 8252928
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 63,
+        "name": "PITCH_CUSTOMNOTES",
+        "label": "# of Notes",
+        "kind": "linear",
+        "min": 4.0,
+        "max": 8.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 4,
+        "max": 8,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": false,
+        "storedDependency": "Custom note count only; context-dependent NOTE2..NOTE8 mappings remain unverified and preserved."
+      },
+      "observedStoredWords": [
+        7
+      ]
+    },
+    {
+      "pid": 71,
+      "name": "PITCH_CUSTOMSCALE1",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 224034,
+        "end_offset": 224066,
+        "param_id": 71,
+        "typecode": 16,
+        "numeric_fields": [
+          0.0,
+          31.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "000000000000f8410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 17,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 71,
+        "name": "PITCH_CUSTOMSCALE1",
+        "descriptorOffset": 18670256,
+        "nameOffset": 8253320
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 71,
+        "name": "PITCH_CUSTOMSCALE1",
+        "label": "Scale 1",
+        "kind": "linear",
+        "min": 0.0,
+        "max": 31.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0100",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 0,
+        "max": 31,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": false,
+        "storedDependency": "Zero-based global custom-scale index 0..31; global scale contents are not included or validated by this preset."
+      },
+      "observedStoredWords": [
+        0
+      ]
+    },
+    {
+      "pid": 72,
+      "name": "PITCH_CUSTOMSCALE2",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 224066,
+        "end_offset": 224098,
+        "param_id": 72,
+        "typecode": 16,
+        "numeric_fields": [
+          0.0,
+          31.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "000000000000f8410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 17,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 72,
+        "name": "PITCH_CUSTOMSCALE2",
+        "descriptorOffset": 18670272,
+        "nameOffset": 8253344
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 72,
+        "name": "PITCH_CUSTOMSCALE2",
+        "label": "Scale 2",
+        "kind": "linear",
+        "min": 0.0,
+        "max": 31.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0100",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 0,
+        "max": 31,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": false,
+        "storedDependency": "Zero-based global custom-scale index 0..31; global scale contents are not included or validated by this preset."
+      },
+      "observedStoredWords": [
+        0
+      ]
+    },
+    {
+      "pid": 73,
+      "name": "PITCH_NUMSTEPS",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 224098,
+        "end_offset": 224130,
+        "param_id": 73,
+        "typecode": 16,
+        "numeric_fields": [
+          2.0,
+          16.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "00000040000080410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 73,
+        "name": "PITCH_NUMSTEPS",
+        "descriptorOffset": 18670288,
+        "nameOffset": 8253432
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 73,
+        "name": "PITCH_NUMSTEPS",
+        "label": "Steps",
+        "kind": "linear",
+        "min": 2.0,
+        "max": 16.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 2,
+        "max": 16,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": false
+      },
+      "observedStoredWords": [
+        4,
+        7,
+        12
+      ]
+    },
+    {
+      "pid": 74,
+      "name": "PITCH_NUMREPEATS",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 224130,
+        "end_offset": 224162,
+        "param_id": 74,
+        "typecode": 16,
+        "numeric_fields": [
+          1.0,
+          31.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000803f0000f8410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 16,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 74,
+        "name": "PITCH_NUMREPEATS",
+        "descriptorOffset": 18670304,
+        "nameOffset": 8253448
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 74,
+        "name": "PITCH_NUMREPEATS",
+        "label": "Repeats",
+        "kind": "linear",
+        "min": 1.0,
+        "max": 31.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0100",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 1,
+        "max": 31,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": false,
+        "storedDependency": "Stored repeat code 1..31, not a verified displayed repeat count. The Blocks Guide includes INFINITE; its exact code/display mapping is not established here. Do not interpret code 31 as 31 repeats."
+      },
+      "observedStoredWords": [
+        31
+      ]
+    },
+    {
+      "pid": 76,
+      "name": "PITCH_TEMPO",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 224207,
+        "end_offset": 225112,
+        "param_id": 76,
+        "typecode": 16,
+        "numeric_fields": [
+          1.0,
+          78.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000803f00009c420000803f0000803f",
+        "labels": [
+          "1/64 TRIP",
+          "1/64",
+          "1/64 DOT",
+          "1/32 TRIP",
+          "1/32",
+          "1/32 DOT",
+          "1/16 TRIP",
+          "1/16",
+          "1/16 DOT",
+          "1/8 TRIP",
+          "1/8",
+          "1/8 DOT",
+          "1/4 TRIP",
+          "1/4",
+          "1/4 DOT",
+          "1/2 TRIP",
+          "1/2",
+          "1/2 DOT",
+          "1 TRIP",
+          "1",
+          "1 DOT",
+          "2",
+          "3",
+          "4",
+          "4/3",
+          "5/4",
+          "5/64",
+          "7/64",
+          "9/64",
+          "10/64 (5/32)",
+          "11/64",
+          "13/64",
+          "14/64 (7/32)",
+          "15/64",
+          "17/64",
+          "18/64 (9/32)",
+          "19/64",
+          "20/64 (5/16)",
+          "21/64",
+          "22/64 (11/32)",
+          "23/64",
+          "25/64",
+          "26/64 (13/32)",
+          "27/64",
+          "28/64 (7/16)",
+          "29/64",
+          "30/64 (15/32)",
+          "31/64",
+          "33/64",
+          "34/64 (17/32)",
+          "35/64",
+          "36/64 (9/16)",
+          "37/64",
+          "38/64 (19/32)",
+          "39/64",
+          "40/64 (5/8)",
+          "41/64",
+          "42/64 (21/32)",
+          "43/64",
+          "44/64 (11/16)",
+          "45/64",
+          "46/64 (23/32)",
+          "47/64",
+          "49/64",
+          "50/64 (25/32)",
+          "51/64",
+          "52/64 (13/16)",
+          "53/64",
+          "54/64 (27/32)",
+          "55/64",
+          "56/64 (7/8)",
+          "57/64",
+          "58/64 (29/32)",
+          "59/64",
+          "60/64 (15/16)",
+          "61/64",
+          "62/64 (31/32)",
+          "63/64"
+        ],
+        "tail_flags_raw": 32768,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 76,
+        "name": "PITCH_TEMPO",
+        "descriptorOffset": 18670336,
+        "nameOffset": 8253416
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 76,
+        "name": "PITCH_TEMPO",
+        "label": "Tempo",
+        "kind": "enum",
+        "min": 1.0,
+        "max": 78.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": [
+          "NONE ",
+          "1/64 TRIP",
+          "1/64",
+          "1/64 DOT",
+          "1/32 TRIP",
+          "1/32",
+          "1/32 DOT",
+          "1/16 TRIP",
+          "1/16",
+          "1/16 DOT",
+          "1/8 TRIP",
+          "1/8",
+          "1/8 DOT",
+          "1/4 TRIP",
+          "1/4",
+          "1/4 DOT",
+          "1/2 TRIP",
+          "1/2",
+          "1/2 DOT",
+          "1 TRIP",
+          "1",
+          "1 DOT",
+          "2",
+          "3",
+          "4",
+          "4/3",
+          "5/4",
+          "5/64",
+          "7/64",
+          "9/64",
+          "10/64 (5/32)",
+          "11/64",
+          "13/64",
+          "14/64 (7/32)",
+          "15/64",
+          "17/64",
+          "18/64 (9/32)",
+          "19/64",
+          "20/64 (5/16)",
+          "21/64",
+          "22/64 (11/32)",
+          "23/64",
+          "25/64",
+          "26/64 (13/32)",
+          "27/64",
+          "28/64 (7/16)",
+          "29/64",
+          "30/64 (15/32)",
+          "31/64",
+          "33/64",
+          "34/64 (17/32)",
+          "35/64",
+          "36/64 (9/16)",
+          "37/64",
+          "38/64 (19/32)",
+          "39/64",
+          "40/64 (5/8)",
+          "41/64",
+          "42/64 (21/32)",
+          "43/64",
+          "44/64 (11/16)",
+          "45/64",
+          "46/64 (23/32)",
+          "47/64",
+          "49/64",
+          "50/64 (25/32)",
+          "51/64",
+          "52/64 (13/16)",
+          "53/64",
+          "54/64 (27/32)",
+          "55/64",
+          "56/64 (7/8)",
+          "57/64",
+          "58/64 (29/32)",
+          "59/64",
+          "60/64 (15/16)",
+          "61/64",
+          "62/64 (31/32)"
+        ],
+        "status": "enum-labels"
+      },
+      "effective": {
+        "kind": "enum",
+        "status": "preset-word-crosschecked",
+        "min": 1,
+        "max": 78,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": [
+          "1/64 TRIP",
+          "1/64",
+          "1/64 DOT",
+          "1/32 TRIP",
+          "1/32",
+          "1/32 DOT",
+          "1/16 TRIP",
+          "1/16",
+          "1/16 DOT",
+          "1/8 TRIP",
+          "1/8",
+          "1/8 DOT",
+          "1/4 TRIP",
+          "1/4",
+          "1/4 DOT",
+          "1/2 TRIP",
+          "1/2",
+          "1/2 DOT",
+          "1 TRIP",
+          "1",
+          "1 DOT",
+          "2",
+          "3",
+          "4",
+          "4/3",
+          "5/4",
+          "5/64",
+          "7/64",
+          "9/64",
+          "10/64 (5/32)",
+          "11/64",
+          "13/64",
+          "14/64 (7/32)",
+          "15/64",
+          "17/64",
+          "18/64 (9/32)",
+          "19/64",
+          "20/64 (5/16)",
+          "21/64",
+          "22/64 (11/32)",
+          "23/64",
+          "25/64",
+          "26/64 (13/32)",
+          "27/64",
+          "28/64 (7/16)",
+          "29/64",
+          "30/64 (15/32)",
+          "31/64",
+          "33/64",
+          "34/64 (17/32)",
+          "35/64",
+          "36/64 (9/16)",
+          "37/64",
+          "38/64 (19/32)",
+          "39/64",
+          "40/64 (5/8)",
+          "41/64",
+          "42/64 (21/32)",
+          "43/64",
+          "44/64 (11/16)",
+          "45/64",
+          "46/64 (23/32)",
+          "47/64",
+          "49/64",
+          "50/64 (25/32)",
+          "51/64",
+          "52/64 (13/16)",
+          "53/64",
+          "54/64 (27/32)",
+          "55/64",
+          "56/64 (7/8)",
+          "57/64",
+          "58/64 (29/32)",
+          "59/64",
+          "60/64 (15/16)",
+          "61/64",
+          "62/64 (31/32)",
+          "63/64"
+        ],
+        "enumBase": 1
+      },
+      "observedStoredWords": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "pid": 77,
+      "name": "PITCH_STEP1",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225112,
+        "end_offset": 225144,
+        "param_id": 77,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 77,
+        "name": "PITCH_STEP1",
+        "descriptorOffset": 18670352,
+        "nameOffset": 8253224
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 77,
+        "name": "PITCH_STEP1",
+        "label": "Step 1 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        4,
+        24
+      ]
+    },
+    {
+      "pid": 78,
+      "name": "PITCH_STEP2",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225144,
+        "end_offset": 225176,
+        "param_id": 78,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 78,
+        "name": "PITCH_STEP2",
+        "descriptorOffset": 18670368,
+        "nameOffset": 8253240
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 78,
+        "name": "PITCH_STEP2",
+        "label": "Step 2 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        2,
+        5,
+        24
+      ]
+    },
+    {
+      "pid": 79,
+      "name": "PITCH_STEP3",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225176,
+        "end_offset": 225208,
+        "param_id": 79,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 79,
+        "name": "PITCH_STEP3",
+        "descriptorOffset": 18670384,
+        "nameOffset": 8253192
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 79,
+        "name": "PITCH_STEP3",
+        "label": "Step 3 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        2,
+        4,
+        24
+      ]
+    },
+    {
+      "pid": 80,
+      "name": "PITCH_STEP4",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225208,
+        "end_offset": 225240,
+        "param_id": 80,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 80,
+        "name": "PITCH_STEP4",
+        "descriptorOffset": 18670400,
+        "nameOffset": 8253208
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 80,
+        "name": "PITCH_STEP4",
+        "label": "Step 4 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        2,
+        4,
+        7,
+        24
+      ]
+    },
+    {
+      "pid": 81,
+      "name": "PITCH_STEP5",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225240,
+        "end_offset": 225272,
+        "param_id": 81,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 81,
+        "name": "PITCH_STEP5",
+        "descriptorOffset": 18670416,
+        "nameOffset": 8253288
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 81,
+        "name": "PITCH_STEP5",
+        "label": "Step 5 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        24,
+        65529
+      ]
+    },
+    {
+      "pid": 82,
+      "name": "PITCH_STEP6",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225272,
+        "end_offset": 225304,
+        "param_id": 82,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 82,
+        "name": "PITCH_STEP6",
+        "descriptorOffset": 18670432,
+        "nameOffset": 8253304
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 82,
+        "name": "PITCH_STEP6",
+        "label": "Step 6 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        24,
+        65533,
+        65534
+      ]
+    },
+    {
+      "pid": 83,
+      "name": "PITCH_STEP7",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225304,
+        "end_offset": 225336,
+        "param_id": 83,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 83,
+        "name": "PITCH_STEP7",
+        "descriptorOffset": 18670448,
+        "nameOffset": 8253256
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 83,
+        "name": "PITCH_STEP7",
+        "label": "Step 7 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        24,
+        65531,
+        65533
+      ]
+    },
+    {
+      "pid": 84,
+      "name": "PITCH_STEP8",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225336,
+        "end_offset": 225368,
+        "param_id": 84,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 84,
+        "name": "PITCH_STEP8",
+        "descriptorOffset": 18670464,
+        "nameOffset": 8253272
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 84,
+        "name": "PITCH_STEP8",
+        "label": "Step 8 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        24,
+        65534
+      ]
+    },
+    {
+      "pid": 85,
+      "name": "PITCH_STEP9",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225368,
+        "end_offset": 225400,
+        "param_id": 85,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 85,
+        "name": "PITCH_STEP9",
+        "descriptorOffset": 18670480,
+        "nameOffset": 8251504
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 85,
+        "name": "PITCH_STEP9",
+        "label": "Step 9 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        4,
+        24
+      ]
+    },
+    {
+      "pid": 86,
+      "name": "PITCH_STEP10",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225400,
+        "end_offset": 225432,
+        "param_id": 86,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 86,
+        "name": "PITCH_STEP10",
+        "descriptorOffset": 18670496,
+        "nameOffset": 8251520
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 86,
+        "name": "PITCH_STEP10",
+        "label": "Step 10 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        2,
+        24
+      ]
+    },
+    {
+      "pid": 87,
+      "name": "PITCH_STEP11",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225432,
+        "end_offset": 225464,
+        "param_id": 87,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 87,
+        "name": "PITCH_STEP11",
+        "descriptorOffset": 18670512,
+        "nameOffset": 8251472
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 87,
+        "name": "PITCH_STEP11",
+        "label": "Step 11 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        4,
+        7,
+        24
+      ]
+    },
+    {
+      "pid": 88,
+      "name": "PITCH_STEP12",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225464,
+        "end_offset": 225496,
+        "param_id": 88,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 88,
+        "name": "PITCH_STEP12",
+        "descriptorOffset": 18670528,
+        "nameOffset": 8251488
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 88,
+        "name": "PITCH_STEP12",
+        "label": "Step 12 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        4,
+        5,
+        24
+      ]
+    },
+    {
+      "pid": 89,
+      "name": "PITCH_STEP13",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225496,
+        "end_offset": 225528,
+        "param_id": 89,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 89,
+        "name": "PITCH_STEP13",
+        "descriptorOffset": 18670544,
+        "nameOffset": 8251568
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 89,
+        "name": "PITCH_STEP13",
+        "label": "Step 13 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        7,
+        24,
+        65533
+      ]
+    },
+    {
+      "pid": 90,
+      "name": "PITCH_STEP14",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225528,
+        "end_offset": 225560,
+        "param_id": 90,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 90,
+        "name": "PITCH_STEP14",
+        "descriptorOffset": 18670560,
+        "nameOffset": 8251584
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 90,
+        "name": "PITCH_STEP14",
+        "label": "Step 14 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        4,
+        24,
+        65531
+      ]
+    },
+    {
+      "pid": 91,
+      "name": "PITCH_STEP15",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225560,
+        "end_offset": 225592,
+        "param_id": 91,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 91,
+        "name": "PITCH_STEP15",
+        "descriptorOffset": 18670576,
+        "nameOffset": 8251536
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 91,
+        "name": "PITCH_STEP15",
+        "label": "Step 15 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        5,
+        24
+      ]
+    },
+    {
+      "pid": 92,
+      "name": "PITCH_STEP16",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 225592,
+        "end_offset": 225624,
+        "param_id": 92,
+        "typecode": 16,
+        "numeric_fields": [
+          -24.0,
+          24.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "0000c0c10000c0410000803f0000803f",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 92,
+        "name": "PITCH_STEP16",
+        "descriptorOffset": 18670592,
+        "nameOffset": 8251552
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 92,
+        "name": "PITCH_STEP16",
+        "label": "Step 16 Shift",
+        "kind": "linear",
+        "min": -24.0,
+        "max": 24.0,
+        "displayMultiplier": 1.0,
+        "step": 1.0,
+        "flags": "0x0180",
+        "enum": null,
+        "status": "linear-by-structure"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": -24,
+        "max": 24,
+        "displayMultiplier": 1,
+        "step": 1.0,
+        "enum": null,
+        "signedWord": true,
+        "storedDependency": "Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers."
+      },
+      "observedStoredWords": [
+        0,
+        3,
+        24,
+        65529
+      ]
+    }
+  ]
+}

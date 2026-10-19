@@ -17,7 +17,7 @@ export function typePolicySummary(){
     modulationDynamics:modulationPolicySummary(),
     rotaryPitch:rotaryPitchPolicySummary(),
     rule:'Explicit writes checked against final per-channel type; stored hidden words preserved',
-    limits:'Bounded XML-derived authoring policies, not executed native UI or DSP validation. Chorus/Drive coverage is in families; Delay/Reverb in algorithmApplicability; Flanger/Phaser/Compressor/Wah/Tremolo in modulationDynamics. Rotary/Pitch includes type-free Rotary, 16 Pitch models and blocked metadata conflicts. Tempo/modifier scope is reported separately; other-family visibility remains unverified.'};
+    limits:'Bounded XML-derived authoring policies, not executed native UI or DSP validation. Chorus/Drive coverage is in families; Delay/Reverb in algorithmApplicability; Flanger/Phaser/Compressor/Wah/Tremolo in modulationDynamics. Rotary/Pitch includes type-free Rotary, 16 Pitch models and a separately pinned 27-field preset-word overlay; dynamic/fixed Pitch slots remain blocked. Tempo/modifier scope is reported separately; other-family visibility remains unverified.'};
 }
 export function readTypeState(p,read){return rotaryPitchState(p,read)??algorithmState(p,read)??modulationState(p,read)??read(policy.families[p.family]?.typePid??0);}
 export function typeApplicability(p,type){
