@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {policyState,policyApplicability,policyTemplateOnly} from './fm3-delay-reverb-applicability.mjs';
-export const modulationPolicyHash='3cfe8a40d48d0901f8801b7f7a4b49129802e765cc8080ec5ce4ec2cea439aaf';
+export const modulationPolicyHash='d18781685ff638cab72e8ff1ac7016b9c071781e94e91605b76d7f1b032f94e2';
 const bytes=fs.readFileSync(new URL('../references/fm3-modulation-dynamics-applicability.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==modulationPolicyHash)throw Error('Modulation/dynamics policy changed; review and regenerate');
 const policy=JSON.parse(bytes);

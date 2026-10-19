@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FW13 Flanger/Phaser/Compressor authoring rules; no editor execution or MIDI."""
+"""FW13 Flanger/Phaser/Compressor/Wah/Tremolo rules; no editor execution or MIDI."""
 import argparse
 import copy
 import json
@@ -13,9 +13,11 @@ REF = ENGINE / 'skills/instructions/references'
 OUT = REF / 'fm3-modulation-dynamics-applicability.json'
 CONFIG = {'FLANGER': {'ui': 'Flanger', 'library': 'flanger', 'section': 17, 'modelPid': 0, 'selectorPid': 0, 'selector': 'FLANGER_TYPE'},
           'PHASER': {'ui': 'Phaser', 'library': 'phaser', 'section': 19, 'modelPid': 0, 'selectorPid': 17, 'selector': 'PHASER_MODE'},
-          'COMP': {'ui': 'Compressor', 'library': 'compressor', 'section': 7, 'modelPid': 12, 'selectorPid': 12, 'selector': 'COMP_TYPE'}}
+          'COMP': {'ui': 'Compressor', 'library': 'compressor', 'section': 7, 'modelPid': 12, 'selectorPid': 12, 'selector': 'COMP_TYPE'},
+          'WAH': {'ui': 'Wah', 'library': 'wah', 'section': 20, 'modelPid': 0, 'selectorPid': 0, 'selector': 'WAH_TYPE'},
+          'TREMOLO': {'ui': 'Tremolo', 'library': 'tremolo', 'section': 22, 'modelPid': 0, 'selectorPid': 0, 'selector': 'TREMOLO_TYPE'}}
 FLANGER_RENAMES = {5: 'FLANGER_MANUAL', 6: 'FLANGER_DRYDELAY', 19: 'FLANGER_LPFREQ', 21: 'FLANGER_HPFREQ'}
-WRITABLE_UI = {'knob', 'knobCompact', 'dropdown1', 'dropdown1p5', 'dropdown1LFO', 'dropdown1Tight', 'toggle', 'btnBypass', 'btnIgnoreScene'}
+WRITABLE_UI = {'knob', 'knobCompact', 'slider', 'dropdown1', 'dropdown1p5', 'dropdown1LFO', 'dropdown1Tight', 'toggle', 'btnBypass', 'btnIgnoreScene'}
 READ_ONLY_UI = {'meterGainVert'}
 
 

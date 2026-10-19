@@ -65,6 +65,35 @@ class ModulationDynamicsTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 verify(bad)
 
+    def test_wah_explicit_page_excludes_paragon_from_fallback(self):
+        f = json.loads(OUT.read_text())['families']['WAH']
+        allowed = lambda pid: sorted({t for c in f['parameters'][str(pid)]['cases'] for t in c['types']})
+        for pid in [4, 9, 13]:
+            self.assertEqual(allowed(pid), list(range(8)))
+        for pid in [5, 15, *range(16, 24)]:
+            self.assertEqual(allowed(pid), list(range(9)))
+        self.assertEqual(f['models']['8']['name'], 'Paragon')
+
+    def test_tremolo_special_pages_and_unused_slots(self):
+        f = json.loads(OUT.read_text())['families']['TREMOLO']
+        allowed = lambda pid: sorted({t for c in f['parameters'][str(pid)]['cases'] for t in c['types']})
+        for pid in [12, 13]:
+            self.assertEqual(allowed(pid), [1])
+        for pid in [16, 17]:
+            self.assertEqual(allowed(pid), [3])
+        for pid in [1, 4]:
+            self.assertEqual(allowed(pid), list(range(6)))
+        self.assertEqual(allowed(20), [0, 2, 4, 5])
+        for pid in [6, 10]:
+            self.assertEqual(allowed(pid), [])
+
+    def test_slider_and_explicit_page_complement(self):
+        xml = '<Root><EffectLayouts><Layout name="Wah"><EffectVariants><EffectVariant><Page pageNum="0" parameterName="WAH_TYPE" value="8"><EditorControl parameterName="WAH_CONTROL" type="knob"/></Page><Page pageNum="0"><EditorControl parameterName="WAH_BIAS" type="knob"/></Page><Page pageNum="1"><EditorControl parameterName="WAH_EQ1" type="slider"/></Page></EffectVariant></EffectVariants></Layout></EffectLayouts></Root>'
+        names = ['WAH_CONTROL', 'WAH_BIAS', 'WAH_EQ1']
+        cases = compile_variants(extract(xml, CONFIG['WAH']), names, 'WAH_TYPE', list(range(9)), {'WAH_TYPE': 0})
+        self.assertEqual(cases['WAH_BIAS'][0]['types'], list(range(8)))
+        self.assertEqual(cases['WAH_EQ1'][0]['types'], list(range(9)))
+
 
 if __name__ == '__main__':
     unittest.main()

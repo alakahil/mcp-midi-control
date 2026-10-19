@@ -80,9 +80,11 @@ python3 tools/fm3/modulation_dynamics_applicability.py
 ```
 
 Esimene käsk taastab registri kinnitatud binaarist; `--write` nõuab sama binaari.
-Tavapärane CI kontrollib salvestatud metaandmeid, malle ja cache'i, mitte uut
+[Wah’ ja Tremolo/Panneri jätkuetapp](FM3_WAH_TREMOLO_APPLICABILITY.md)
+laiendab sama registrit kahe perega; allpool esitatud 67 malli arvud
+kirjeldavad algset kolme pere regressiooni. Tavapärane CI kontrollib salvestatud metaandmeid, malle ja cache'i, mitte uut
 PE-väljavõtet. Registri SHA-256:
-`3cfe8a40d48d0901f8801b7f7a4b49129802e765cc8080ec5ce4ec2cea439aaf`.
+`d18781685ff638cab72e8ff1ac7016b9c071781e94e91605b76d7f1b032f94e2`.
 Käitusmoodul kontrollib räsi. Editorit ei käivitata, binaari ega tervet XML-i
 ei avaldata. Sõnastikku ega mõõtmistõendeid ei muudeta.
 

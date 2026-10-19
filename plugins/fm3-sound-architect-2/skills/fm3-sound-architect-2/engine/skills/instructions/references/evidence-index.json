@@ -2991,12 +2991,6 @@
         "references/peq-baseline-20261009-114022/session.json"
       ]
     },
-    "3cfe8a40d48d0901f8801b7f7a4b49129802e765cc8080ec5ce4ec2cea439aaf": {
-      "bytes": 218653,
-      "paths": [
-        "references/fm3-modulation-dynamics-applicability.json"
-      ]
-    },
     "3d2699d5e7ac5cdd1fe626cc6c09676c80d0a8c799ba5e3439694a4e0c99d86d": {
       "bytes": 24680,
       "paths": [
@@ -10024,6 +10018,12 @@
         "references/geq-full-20261010-194115/step-038-f680c5baa2/donor.syx"
       ]
     },
+    "d0ca6d2b274bdaf2265c9a6711ecc703ec1e900f0b0b38cc330a1bbb02ddcbe9": {
+      "bytes": 9588,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "d0cda8dde8850ef92745bbad1cf10e0db33a4d3854dc9b24b6b0bb4be2ea6ca5": {
       "bytes": 3390,
       "paths": [
@@ -10046,6 +10046,12 @@
       "bytes": 6969,
       "paths": [
         "references/chorus-batch-20261007-134057/capture-20261007T133821-22c7fe39ff/capture.json"
+      ]
+    },
+    "d18781685ff638cab72e8ff1ac7016b9c071781e94e91605b76d7f1b032f94e2": {
+      "bytes": 278517,
+      "paths": [
+        "references/fm3-modulation-dynamics-applicability.json"
       ]
     },
     "d189a2fc01f4d58b686308aefe136439df0805c6bea45d4bb3bc2643e16448a4": {
@@ -10876,12 +10882,6 @@
       "bytes": 2324,
       "paths": [
         "references/enhancer-full-20261012-122507/step-040-4f0cf5829e/result.json"
-      ]
-    },
-    "dff3fa476728eea6f2d65f443f4cbd0419c6b86e99ede4be9bb442152d46aa1e": {
-      "bytes": 9200,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "e00713b651d2780fe5bfa4a3f69a871ec95ad5b3a7c498918de9b8ff69f39938": {

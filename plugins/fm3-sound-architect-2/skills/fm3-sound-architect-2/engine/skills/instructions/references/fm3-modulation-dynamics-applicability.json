@@ -8359,6 +8359,2406 @@
           ]
         }
       }
+    },
+    "WAH": {
+      "modelPid": 0,
+      "selectorPid": 0,
+      "selector": "WAH_TYPE",
+      "templateOnlyPids": [
+        0
+      ],
+      "modelSource": {
+        "path": "wah-library.json",
+        "sha256": "7a3c2057784c5737318706b6e47363ce36558483470c4dda3f62eb44ca27cf07"
+      },
+      "models": {
+        "0": {
+          "name": "FAS Wah",
+          "selectorValue": 0,
+          "sourceCapture": "capture-001",
+          "syxSha256": "96280e726f4871a6bd5d63770acd595d4ba1cfcc36c8c9931e9686ae93cbb604"
+        },
+        "1": {
+          "name": "Clyde",
+          "selectorValue": 1,
+          "sourceCapture": "capture-001",
+          "syxSha256": "96280e726f4871a6bd5d63770acd595d4ba1cfcc36c8c9931e9686ae93cbb604"
+        },
+        "2": {
+          "name": "Cry Babe",
+          "selectorValue": 2,
+          "sourceCapture": "capture-001",
+          "syxSha256": "96280e726f4871a6bd5d63770acd595d4ba1cfcc36c8c9931e9686ae93cbb604"
+        },
+        "3": {
+          "name": "VX846",
+          "selectorValue": 3,
+          "sourceCapture": "capture-20261007T140114-a590705c88",
+          "syxSha256": "a6759a734e9f1f9717280175567e8fd82ff6816b9171feb9cab314aacd844e8f"
+        },
+        "4": {
+          "name": "Color-Tone",
+          "selectorValue": 4,
+          "sourceCapture": "capture-001",
+          "syxSha256": "96280e726f4871a6bd5d63770acd595d4ba1cfcc36c8c9931e9686ae93cbb604"
+        },
+        "5": {
+          "name": "Funk Wah",
+          "selectorValue": 5,
+          "sourceCapture": "capture-20261007T140016-c794e00bb5",
+          "syxSha256": "bbea475c96b5e6dd3dc325e9ca5d74a634e8c9a94c686cde2213d3b993426917"
+        },
+        "6": {
+          "name": "Mortal",
+          "selectorValue": 6,
+          "sourceCapture": "capture-20261007T140016-c794e00bb5",
+          "syxSha256": "bbea475c96b5e6dd3dc325e9ca5d74a634e8c9a94c686cde2213d3b993426917"
+        },
+        "7": {
+          "name": "VX845",
+          "selectorValue": 7,
+          "sourceCapture": "capture-20261007T140016-c794e00bb5",
+          "syxSha256": "bbea475c96b5e6dd3dc325e9ca5d74a634e8c9a94c686cde2213d3b993426917"
+        },
+        "8": {
+          "name": "Paragon",
+          "selectorValue": 8,
+          "sourceCapture": "capture-20261007T140016-c794e00bb5",
+          "syxSha256": "bbea475c96b5e6dd3dc325e9ca5d74a634e8c9a94c686cde2213d3b993426917"
+        }
+      },
+      "selectors": {
+        "0": {
+          "name": "WAH_TYPE",
+          "values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "cache": {
+            "offset": 210899,
+            "end_offset": 211028,
+            "param_id": 0,
+            "typecode": 16,
+            "numeric_fields": [
+              0.0,
+              8.0,
+              1.0,
+              0.0
+            ],
+            "numeric_fields_hex": "00000000000000410000803f00000000",
+            "labels": [
+              "FAS Wah",
+              "Clyde",
+              "Cry Babe",
+              "VX846",
+              "Color-Tone",
+              "Funk Wah",
+              "Mortal",
+              "VX845",
+              "Paragon"
+            ],
+            "tail_flags_raw": 32768,
+            "auxiliary_u32_raw": []
+          }
+        }
+      },
+      "xmlOnlySelectorValues": [],
+      "nativeDescriptors": [
+        {
+          "pid": 0,
+          "name": "WAH_TYPE",
+          "descriptorOffset": 18670960,
+          "nameOffset": 8254520
+        },
+        {
+          "pid": 1,
+          "name": "WAH_FSTART",
+          "descriptorOffset": 18670976,
+          "nameOffset": 8254592
+        },
+        {
+          "pid": 2,
+          "name": "WAH_FSTOP",
+          "descriptorOffset": 18670992,
+          "nameOffset": 8254608
+        },
+        {
+          "pid": 3,
+          "name": "WAH_Q",
+          "descriptorOffset": 18671008,
+          "nameOffset": 8254568
+        },
+        {
+          "pid": 4,
+          "name": "WAH_TRACK",
+          "descriptorOffset": 18671024,
+          "nameOffset": 8254576
+        },
+        {
+          "pid": 5,
+          "name": "WAH_CONTROL",
+          "descriptorOffset": 18671040,
+          "nameOffset": 8254872
+        },
+        {
+          "pid": 6,
+          "name": "WAH_LEVEL",
+          "descriptorOffset": 18671056,
+          "nameOffset": 8254888
+        },
+        {
+          "pid": 7,
+          "name": "WAH_PAN",
+          "descriptorOffset": 18671072,
+          "nameOffset": 8254848
+        },
+        {
+          "pid": 8,
+          "name": "WAH_BYPASSMODE",
+          "descriptorOffset": 18671088,
+          "nameOffset": 8254856
+        },
+        {
+          "pid": 9,
+          "name": "WAH_MIX",
+          "descriptorOffset": 18671104,
+          "nameOffset": 8254936
+        },
+        {
+          "pid": 10,
+          "name": "WAH_DRIVE",
+          "descriptorOffset": 18671120,
+          "nameOffset": 8254944
+        },
+        {
+          "pid": 11,
+          "name": "WAH_TAPER",
+          "descriptorOffset": 18671136,
+          "nameOffset": 8254904
+        },
+        {
+          "pid": 12,
+          "name": "WAH_BYPASS",
+          "descriptorOffset": 18671152,
+          "nameOffset": 8254920
+        },
+        {
+          "pid": 13,
+          "name": "WAH_BIAS",
+          "descriptorOffset": 18671168,
+          "nameOffset": 8254792
+        },
+        {
+          "pid": 14,
+          "name": "WAH_HPF",
+          "descriptorOffset": 18671184,
+          "nameOffset": 8254808
+        },
+        {
+          "pid": 15,
+          "name": "WAH_EQON",
+          "descriptorOffset": 18671200,
+          "nameOffset": 8254768
+        },
+        {
+          "pid": 16,
+          "name": "WAH_EQ1",
+          "descriptorOffset": 18671216,
+          "nameOffset": 8254784
+        },
+        {
+          "pid": 17,
+          "name": "WAH_EQ2",
+          "descriptorOffset": 18671232,
+          "nameOffset": 8254832
+        },
+        {
+          "pid": 18,
+          "name": "WAH_EQ3",
+          "descriptorOffset": 18671248,
+          "nameOffset": 8254840
+        },
+        {
+          "pid": 19,
+          "name": "WAH_EQ4",
+          "descriptorOffset": 18671264,
+          "nameOffset": 8254816
+        },
+        {
+          "pid": 20,
+          "name": "WAH_EQ5",
+          "descriptorOffset": 18671280,
+          "nameOffset": 8254824
+        },
+        {
+          "pid": 21,
+          "name": "WAH_EQ6",
+          "descriptorOffset": 18671296,
+          "nameOffset": 8255112
+        },
+        {
+          "pid": 22,
+          "name": "WAH_EQ7",
+          "descriptorOffset": 18671312,
+          "nameOffset": 8255120
+        },
+        {
+          "pid": 23,
+          "name": "WAH_EQ8",
+          "descriptorOffset": 18671328,
+          "nameOffset": 8255088
+        },
+        {
+          "pid": 24,
+          "name": "WAH_SCENEIGNORE",
+          "descriptorOffset": 18671344,
+          "nameOffset": 8255096
+        }
+      ],
+      "variants": [
+        {
+          "name": "Wah",
+          "types": null,
+          "firmware": {},
+          "pages": [
+            {
+              "page": 0,
+              "name": "Wah",
+              "firmware": {},
+              "types": [
+                8
+              ],
+              "controls": [
+                {
+                  "name": "WAH_CONTROL",
+                  "label": "Control",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_TAPER",
+                  "label": "Control\nTaper",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "WAH_FSTART",
+                  "label": "Frequency Min",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_FSTOP",
+                  "label": "Frequency Max",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_Q",
+                  "label": "Resonance\nQ",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_HPF",
+                  "label": "Low Cut Frequency",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_DRIVE",
+                  "label": "Drive",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_LEVEL",
+                  "label": "Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_PAN",
+                  "label": "Balance",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_BYPASSMODE",
+                  "label": "Bypass\nMode",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "WAH_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                },
+                {
+                  "name": "WAH_SCENEIGNORE",
+                  "label": "Scene\nIgnore",
+                  "conditions": [],
+                  "uiType": "btnIgnoreScene"
+                }
+              ]
+            },
+            {
+              "page": 0,
+              "name": "Wah",
+              "firmware": {},
+              "types": null,
+              "controls": [
+                {
+                  "name": "WAH_CONTROL",
+                  "label": "Control",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_TAPER",
+                  "label": "Control\nTaper",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "WAH_FSTART",
+                  "label": "Frequency Min",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_FSTOP",
+                  "label": "Frequency Max",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_Q",
+                  "label": "Resonance\nQ",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_BIAS",
+                  "label": "Inductor Bias",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_HPF",
+                  "label": "Low Cut Frequency",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_DRIVE",
+                  "label": "Drive",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_MIX",
+                  "label": "Fat",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_TRACK",
+                  "label": "Q\nTracking",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_LEVEL",
+                  "label": "Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_PAN",
+                  "label": "Balance",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_BYPASSMODE",
+                  "label": "Bypass\nMode",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "WAH_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                },
+                {
+                  "name": "WAH_SCENEIGNORE",
+                  "label": "Scene\nIgnore",
+                  "conditions": [],
+                  "uiType": "btnIgnoreScene"
+                }
+              ]
+            },
+            {
+              "page": 1,
+              "name": "Graphic EQ",
+              "firmware": {},
+              "types": null,
+              "controls": [
+                {
+                  "name": "WAH_EQON",
+                  "label": "Graphic EQ",
+                  "conditions": [],
+                  "uiType": "toggle"
+                },
+                {
+                  "name": "WAH_EQ1",
+                  "label": "160",
+                  "conditions": [],
+                  "uiType": "slider"
+                },
+                {
+                  "name": "WAH_EQ2",
+                  "label": "250",
+                  "conditions": [],
+                  "uiType": "slider"
+                },
+                {
+                  "name": "WAH_EQ3",
+                  "label": "400",
+                  "conditions": [],
+                  "uiType": "slider"
+                },
+                {
+                  "name": "WAH_EQ4",
+                  "label": "640",
+                  "conditions": [],
+                  "uiType": "slider"
+                },
+                {
+                  "name": "WAH_EQ5",
+                  "label": "1000",
+                  "conditions": [],
+                  "uiType": "slider"
+                },
+                {
+                  "name": "WAH_EQ6",
+                  "label": "1600",
+                  "conditions": [],
+                  "uiType": "slider"
+                },
+                {
+                  "name": "WAH_EQ7",
+                  "label": "2500",
+                  "conditions": [],
+                  "uiType": "slider"
+                },
+                {
+                  "name": "WAH_EQ8",
+                  "label": "4000",
+                  "conditions": [],
+                  "uiType": "slider"
+                },
+                {
+                  "name": "WAH_LEVEL",
+                  "label": "Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_PAN",
+                  "label": "Balance",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "WAH_BYPASSMODE",
+                  "label": "Bypass\nMode",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "WAH_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                },
+                {
+                  "name": "WAH_SCENEIGNORE",
+                  "label": "Scene\nIgnore",
+                  "conditions": [],
+                  "uiType": "btnIgnoreScene"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": {
+        "0": {
+          "name": "WAH_TYPE",
+          "nativeName": "WAH_TYPE",
+          "cases": []
+        },
+        "1": {
+          "name": "WAH_FSTART",
+          "nativeName": "WAH_FSTART",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Frequency Min"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Frequency Min"
+            }
+          ]
+        },
+        "2": {
+          "name": "WAH_FSTOP",
+          "nativeName": "WAH_FSTOP",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Frequency Max"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Frequency Max"
+            }
+          ]
+        },
+        "3": {
+          "name": "WAH_Q",
+          "nativeName": "WAH_Q",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Resonance\nQ"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Resonance\nQ"
+            }
+          ]
+        },
+        "4": {
+          "name": "WAH_TRACK",
+          "nativeName": "WAH_TRACK",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Q\nTracking"
+            }
+          ]
+        },
+        "5": {
+          "name": "WAH_CONTROL",
+          "nativeName": "WAH_CONTROL",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Control"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Control"
+            }
+          ]
+        },
+        "6": {
+          "name": "WAH_LEVEL",
+          "nativeName": "WAH_LEVEL",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Level"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Level"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "Level"
+            }
+          ]
+        },
+        "7": {
+          "name": "WAH_PAN",
+          "nativeName": "WAH_PAN",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Balance"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Balance"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "Balance"
+            }
+          ]
+        },
+        "8": {
+          "name": "WAH_BYPASSMODE",
+          "nativeName": "WAH_BYPASSMODE",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Bypass\nMode"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Bypass\nMode"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "Bypass\nMode"
+            }
+          ]
+        },
+        "9": {
+          "name": "WAH_MIX",
+          "nativeName": "WAH_MIX",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Fat"
+            }
+          ]
+        },
+        "10": {
+          "name": "WAH_DRIVE",
+          "nativeName": "WAH_DRIVE",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Drive"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Drive"
+            }
+          ]
+        },
+        "11": {
+          "name": "WAH_TAPER",
+          "nativeName": "WAH_TAPER",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Control\nTaper"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Control\nTaper"
+            }
+          ]
+        },
+        "12": {
+          "name": "WAH_BYPASS",
+          "nativeName": "WAH_BYPASS",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Bypass"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Bypass"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "Bypass"
+            }
+          ]
+        },
+        "13": {
+          "name": "WAH_BIAS",
+          "nativeName": "WAH_BIAS",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Inductor Bias"
+            }
+          ]
+        },
+        "14": {
+          "name": "WAH_HPF",
+          "nativeName": "WAH_HPF",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Low Cut Frequency"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Low Cut Frequency"
+            }
+          ]
+        },
+        "15": {
+          "name": "WAH_EQON",
+          "nativeName": "WAH_EQON",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "Graphic EQ"
+            }
+          ]
+        },
+        "16": {
+          "name": "WAH_EQ1",
+          "nativeName": "WAH_EQ1",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "160"
+            }
+          ]
+        },
+        "17": {
+          "name": "WAH_EQ2",
+          "nativeName": "WAH_EQ2",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "250"
+            }
+          ]
+        },
+        "18": {
+          "name": "WAH_EQ3",
+          "nativeName": "WAH_EQ3",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "400"
+            }
+          ]
+        },
+        "19": {
+          "name": "WAH_EQ4",
+          "nativeName": "WAH_EQ4",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "640"
+            }
+          ]
+        },
+        "20": {
+          "name": "WAH_EQ5",
+          "nativeName": "WAH_EQ5",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "1000"
+            }
+          ]
+        },
+        "21": {
+          "name": "WAH_EQ6",
+          "nativeName": "WAH_EQ6",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "1600"
+            }
+          ]
+        },
+        "22": {
+          "name": "WAH_EQ7",
+          "nativeName": "WAH_EQ7",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "2500"
+            }
+          ]
+        },
+        "23": {
+          "name": "WAH_EQ8",
+          "nativeName": "WAH_EQ8",
+          "cases": [
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "4000"
+            }
+          ]
+        },
+        "24": {
+          "name": "WAH_SCENEIGNORE",
+          "nativeName": "WAH_SCENEIGNORE",
+          "cases": [
+            {
+              "types": [
+                8
+              ],
+              "when": {},
+              "label": "Scene\nIgnore"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "when": {},
+              "label": "Scene\nIgnore"
+            },
+            {
+              "types": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "when": {},
+              "label": "Scene\nIgnore"
+            }
+          ]
+        }
+      }
+    },
+    "TREMOLO": {
+      "modelPid": 0,
+      "selectorPid": 0,
+      "selector": "TREMOLO_TYPE",
+      "templateOnlyPids": [
+        0
+      ],
+      "modelSource": {
+        "path": "tremolo-library.json",
+        "sha256": "f67ea2bededced0e34dc457cb35b214afa9abe205bc0eadd0192829b9f58ebf7"
+      },
+      "models": {
+        "0": {
+          "name": "VCA Trem",
+          "selectorValue": 0,
+          "sourceCapture": "capture-20261007T143641-d0af19e1e9",
+          "syxSha256": "329dbfb68d9c69f7035227e0df62143666e738d0685670149ba6c0ec6e1ac8db"
+        },
+        "1": {
+          "name": "Panner",
+          "selectorValue": 1,
+          "sourceCapture": "capture-20261007T143641-d0af19e1e9",
+          "syxSha256": "329dbfb68d9c69f7035227e0df62143666e738d0685670149ba6c0ec6e1ac8db"
+        },
+        "2": {
+          "name": "Bias Trem",
+          "selectorValue": 2,
+          "sourceCapture": "capture-001",
+          "syxSha256": "5531dd4219ef3545042ed93ae713a7b0370628b76dc51f1ca375c5b4334f8c62"
+        },
+        "3": {
+          "name": "Harmonic Trem",
+          "selectorValue": 3,
+          "sourceCapture": "capture-001",
+          "syxSha256": "5531dd4219ef3545042ed93ae713a7b0370628b76dc51f1ca375c5b4334f8c62"
+        },
+        "4": {
+          "name": "Optical Trem 1",
+          "selectorValue": 4,
+          "sourceCapture": "capture-001",
+          "syxSha256": "5531dd4219ef3545042ed93ae713a7b0370628b76dc51f1ca375c5b4334f8c62"
+        },
+        "5": {
+          "name": "Optical Trem 2",
+          "selectorValue": 5,
+          "sourceCapture": "capture-20261007T143641-d0af19e1e9",
+          "syxSha256": "329dbfb68d9c69f7035227e0df62143666e738d0685670149ba6c0ec6e1ac8db"
+        },
+        "6": {
+          "name": "Neon Trem",
+          "selectorValue": 6,
+          "sourceCapture": "capture-001",
+          "syxSha256": "5531dd4219ef3545042ed93ae713a7b0370628b76dc51f1ca375c5b4334f8c62"
+        }
+      },
+      "selectors": {
+        "0": {
+          "name": "TREMOLO_TYPE",
+          "values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "cache": {
+            "offset": 212560,
+            "end_offset": 212693,
+            "param_id": 0,
+            "typecode": 16,
+            "numeric_fields": [
+              0.0,
+              6.0,
+              1.0,
+              0.0
+            ],
+            "numeric_fields_hex": "000000000000c0400000803f00000000",
+            "labels": [
+              "VCA Trem",
+              "Panner",
+              "Bias Trem",
+              "Harmonic Trem",
+              "Optical Trem 1",
+              "Optical Trem 2",
+              "Neon Trem"
+            ],
+            "tail_flags_raw": 32768,
+            "auxiliary_u32_raw": []
+          }
+        }
+      },
+      "xmlOnlySelectorValues": [],
+      "nativeDescriptors": [
+        {
+          "pid": 0,
+          "name": "TREMOLO_TYPE",
+          "descriptorOffset": 18653136,
+          "nameOffset": 8252368
+        },
+        {
+          "pid": 1,
+          "name": "TREMOLO_LFOTYPE",
+          "descriptorOffset": 18653152,
+          "nameOffset": 8252384
+        },
+        {
+          "pid": 2,
+          "name": "TREMOLO_RATE",
+          "descriptorOffset": 18653168,
+          "nameOffset": 8252336
+        },
+        {
+          "pid": 3,
+          "name": "TREMOLO_DEPTH",
+          "descriptorOffset": 18653184,
+          "nameOffset": 8252352
+        },
+        {
+          "pid": 4,
+          "name": "TREMOLO_DUTY",
+          "descriptorOffset": 18653200,
+          "nameOffset": 8252160
+        },
+        {
+          "pid": 5,
+          "name": "TREMOLO_TEMPO",
+          "descriptorOffset": 18653216,
+          "nameOffset": 8252176
+        },
+        {
+          "pid": 6,
+          "name": "TREMOLO_MIX",
+          "descriptorOffset": 18653232,
+          "nameOffset": 8252128
+        },
+        {
+          "pid": 7,
+          "name": "TREMOLO_LEVEL",
+          "descriptorOffset": 18653248,
+          "nameOffset": 8252144
+        },
+        {
+          "pid": 8,
+          "name": "TREMOLO_PAN",
+          "descriptorOffset": 18653264,
+          "nameOffset": 8252232
+        },
+        {
+          "pid": 9,
+          "name": "TREMOLO_BYPASSMODE",
+          "descriptorOffset": 18653280,
+          "nameOffset": 8252248
+        },
+        {
+          "pid": 10,
+          "name": "TREMOLO_GLOBALMIX",
+          "descriptorOffset": 18653296,
+          "nameOffset": 8252192
+        },
+        {
+          "pid": 11,
+          "name": "TREMOLO_PHASE",
+          "descriptorOffset": 18653312,
+          "nameOffset": 8252216
+        },
+        {
+          "pid": 12,
+          "name": "TREMOLO_WIDTH",
+          "descriptorOffset": 18653328,
+          "nameOffset": 8254664
+        },
+        {
+          "pid": 13,
+          "name": "TREMOLO_CENTER",
+          "descriptorOffset": 18653344,
+          "nameOffset": 8254680
+        },
+        {
+          "pid": 14,
+          "name": "TREMOLO_BYPASS",
+          "descriptorOffset": 18653360,
+          "nameOffset": 8254624
+        },
+        {
+          "pid": 15,
+          "name": "TREMOLO_STARTPHASE",
+          "descriptorOffset": 18653376,
+          "nameOffset": 8254640
+        },
+        {
+          "pid": 16,
+          "name": "TREMOLO_ORDER",
+          "descriptorOffset": 18653392,
+          "nameOffset": 8254736
+        },
+        {
+          "pid": 17,
+          "name": "TREMOLO_XOVER",
+          "descriptorOffset": 18653408,
+          "nameOffset": 8254752
+        },
+        {
+          "pid": 18,
+          "name": "TREMOLO_THRESH",
+          "descriptorOffset": 18653424,
+          "nameOffset": 8254696
+        },
+        {
+          "pid": 19,
+          "name": "TREMOLO_SCENEIGNORE",
+          "descriptorOffset": 18653440,
+          "nameOffset": 8254712
+        },
+        {
+          "pid": 20,
+          "name": "TREMOLO_BETA",
+          "descriptorOffset": 18653456,
+          "nameOffset": 8254536
+        },
+        {
+          "pid": 21,
+          "name": "TREMOLO_DUCKING",
+          "descriptorOffset": 18653472,
+          "nameOffset": 8254552
+        }
+      ],
+      "variants": [
+        {
+          "name": "Tremolo",
+          "types": null,
+          "firmware": {},
+          "pages": [
+            {
+              "page": 0,
+              "name": "Panner",
+              "firmware": {
+                "version_gtet": "8,00"
+              },
+              "types": [
+                1
+              ],
+              "controls": [
+                {
+                  "name": "TREMOLO_RATE",
+                  "label": "Rate",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_TEMPO",
+                  "label": "Tempo",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "TREMOLO_LFOTYPE",
+                  "label": "LFO Type",
+                  "conditions": [],
+                  "uiType": "dropdown1LFO"
+                },
+                {
+                  "name": "TREMOLO_DUTY",
+                  "label": "LFO Duty Cycle",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_PHASE",
+                  "label": "LFO Phase",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_WIDTH",
+                  "label": "Width",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_DUCKING",
+                  "label": "Ducking",
+                  "conditions": [],
+                  "uiType": "knobCompact"
+                },
+                {
+                  "name": "TREMOLO_CENTER",
+                  "label": "Pan Center",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_THRESH",
+                  "label": "Trigger Threshold",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_LEVEL",
+                  "label": "Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_PAN",
+                  "label": "Balance",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_BYPASSMODE",
+                  "label": "Bypass\nMode",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "TREMOLO_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                },
+                {
+                  "name": "TREMOLO_SCENEIGNORE",
+                  "label": "Scene\nIgnore",
+                  "conditions": [],
+                  "uiType": "btnIgnoreScene"
+                }
+              ]
+            },
+            {
+              "page": 0,
+              "name": "Tremolo",
+              "firmware": {
+                "version_gtet": "8,00"
+              },
+              "types": [
+                3
+              ],
+              "controls": [
+                {
+                  "name": "TREMOLO_RATE",
+                  "label": "Rate",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_TEMPO",
+                  "label": "Tempo",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "TREMOLO_LFOTYPE",
+                  "label": "LFO Type",
+                  "conditions": [],
+                  "uiType": "dropdown1LFO"
+                },
+                {
+                  "name": "TREMOLO_DUTY",
+                  "label": "LFO Duty Cycle",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_PHASE",
+                  "label": "LFO Phase",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_ORDER",
+                  "label": "Crossover\nSlope",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "TREMOLO_XOVER",
+                  "label": "Crossover\nFrequency",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_DEPTH",
+                  "label": "Depth",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_DUCKING",
+                  "label": "Ducking",
+                  "conditions": [],
+                  "uiType": "knobCompact"
+                },
+                {
+                  "name": "TREMOLO_STARTPHASE",
+                  "label": "Start Phase",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_THRESH",
+                  "label": "Trigger Threshold",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_LEVEL",
+                  "label": "Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_PAN",
+                  "label": "Balance",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_BYPASSMODE",
+                  "label": "Bypass\nMode",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "TREMOLO_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                },
+                {
+                  "name": "TREMOLO_SCENEIGNORE",
+                  "label": "Scene\nIgnore",
+                  "conditions": [],
+                  "uiType": "btnIgnoreScene"
+                }
+              ]
+            },
+            {
+              "page": 0,
+              "name": "Tremolo",
+              "firmware": {
+                "version_gtet": "8,00"
+              },
+              "types": [
+                6
+              ],
+              "controls": [
+                {
+                  "name": "TREMOLO_RATE",
+                  "label": "Rate",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_TEMPO",
+                  "label": "Tempo",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "TREMOLO_PHASE",
+                  "label": "LFO Phase",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_DEPTH",
+                  "label": "Depth",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_DUCKING",
+                  "label": "Ducking",
+                  "conditions": [],
+                  "uiType": "knobCompact"
+                },
+                {
+                  "name": "TREMOLO_STARTPHASE",
+                  "label": "Start Phase",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_THRESH",
+                  "label": "Trigger Threshold",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_LEVEL",
+                  "label": "Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_PAN",
+                  "label": "Balance",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_BYPASSMODE",
+                  "label": "Bypass\nMode",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "TREMOLO_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                },
+                {
+                  "name": "TREMOLO_SCENEIGNORE",
+                  "label": "Scene\nIgnore",
+                  "conditions": [],
+                  "uiType": "btnIgnoreScene"
+                }
+              ]
+            },
+            {
+              "page": 0,
+              "name": "Tremolo",
+              "firmware": {
+                "version_gtet": "8,00"
+              },
+              "types": null,
+              "controls": [
+                {
+                  "name": "TREMOLO_RATE",
+                  "label": "Rate",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_TEMPO",
+                  "label": "Tempo",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "TREMOLO_LFOTYPE",
+                  "label": "LFO Type",
+                  "conditions": [],
+                  "uiType": "dropdown1LFO"
+                },
+                {
+                  "name": "TREMOLO_DUTY",
+                  "label": "LFO Duty Cycle",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_BETA",
+                  "label": "LFO Shape",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_DEPTH",
+                  "label": "Depth",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_DUCKING",
+                  "label": "Ducking",
+                  "conditions": [],
+                  "uiType": "knobCompact"
+                },
+                {
+                  "name": "TREMOLO_PHASE",
+                  "label": "LFO Phase",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_STARTPHASE",
+                  "label": "Start Phase",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_THRESH",
+                  "label": "Trigger Threshold",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_LEVEL",
+                  "label": "Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_PAN",
+                  "label": "Balance",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "TREMOLO_BYPASSMODE",
+                  "label": "Bypass\nMode",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "TREMOLO_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                },
+                {
+                  "name": "TREMOLO_SCENEIGNORE",
+                  "label": "Scene\nIgnore",
+                  "conditions": [],
+                  "uiType": "btnIgnoreScene"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": {
+        "0": {
+          "name": "TREMOLO_TYPE",
+          "nativeName": "TREMOLO_TYPE",
+          "cases": []
+        },
+        "1": {
+          "name": "TREMOLO_LFOTYPE",
+          "nativeName": "TREMOLO_LFOTYPE",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "LFO Type"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "LFO Type"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "LFO Type"
+            }
+          ]
+        },
+        "2": {
+          "name": "TREMOLO_RATE",
+          "nativeName": "TREMOLO_RATE",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Rate"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Rate"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Rate"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Rate"
+            }
+          ]
+        },
+        "3": {
+          "name": "TREMOLO_DEPTH",
+          "nativeName": "TREMOLO_DEPTH",
+          "cases": [
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Depth"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Depth"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Depth"
+            }
+          ]
+        },
+        "4": {
+          "name": "TREMOLO_DUTY",
+          "nativeName": "TREMOLO_DUTY",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "LFO Duty Cycle"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "LFO Duty Cycle"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "LFO Duty Cycle"
+            }
+          ]
+        },
+        "5": {
+          "name": "TREMOLO_TEMPO",
+          "nativeName": "TREMOLO_TEMPO",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Tempo"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Tempo"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Tempo"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Tempo"
+            }
+          ]
+        },
+        "6": {
+          "name": "TREMOLO_MIX",
+          "nativeName": "TREMOLO_MIX",
+          "cases": []
+        },
+        "7": {
+          "name": "TREMOLO_LEVEL",
+          "nativeName": "TREMOLO_LEVEL",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Level"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Level"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Level"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Level"
+            }
+          ]
+        },
+        "8": {
+          "name": "TREMOLO_PAN",
+          "nativeName": "TREMOLO_PAN",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Balance"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Balance"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Balance"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Balance"
+            }
+          ]
+        },
+        "9": {
+          "name": "TREMOLO_BYPASSMODE",
+          "nativeName": "TREMOLO_BYPASSMODE",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Bypass\nMode"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Bypass\nMode"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Bypass\nMode"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Bypass\nMode"
+            }
+          ]
+        },
+        "10": {
+          "name": "TREMOLO_GLOBALMIX",
+          "nativeName": "TREMOLO_GLOBALMIX",
+          "cases": []
+        },
+        "11": {
+          "name": "TREMOLO_PHASE",
+          "nativeName": "TREMOLO_PHASE",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "LFO Phase"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "LFO Phase"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "LFO Phase"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "LFO Phase"
+            }
+          ]
+        },
+        "12": {
+          "name": "TREMOLO_WIDTH",
+          "nativeName": "TREMOLO_WIDTH",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Width"
+            }
+          ]
+        },
+        "13": {
+          "name": "TREMOLO_CENTER",
+          "nativeName": "TREMOLO_CENTER",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Pan Center"
+            }
+          ]
+        },
+        "14": {
+          "name": "TREMOLO_BYPASS",
+          "nativeName": "TREMOLO_BYPASS",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Bypass"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Bypass"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Bypass"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Bypass"
+            }
+          ]
+        },
+        "15": {
+          "name": "TREMOLO_STARTPHASE",
+          "nativeName": "TREMOLO_STARTPHASE",
+          "cases": [
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Start Phase"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Start Phase"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Start Phase"
+            }
+          ]
+        },
+        "16": {
+          "name": "TREMOLO_ORDER",
+          "nativeName": "TREMOLO_ORDER",
+          "cases": [
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Crossover\nSlope"
+            }
+          ]
+        },
+        "17": {
+          "name": "TREMOLO_XOVER",
+          "nativeName": "TREMOLO_XOVER",
+          "cases": [
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Crossover\nFrequency"
+            }
+          ]
+        },
+        "18": {
+          "name": "TREMOLO_THRESH",
+          "nativeName": "TREMOLO_THRESH",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Trigger Threshold"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Trigger Threshold"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Trigger Threshold"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Trigger Threshold"
+            }
+          ]
+        },
+        "19": {
+          "name": "TREMOLO_SCENEIGNORE",
+          "nativeName": "TREMOLO_SCENEIGNORE",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Scene\nIgnore"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Scene\nIgnore"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Scene\nIgnore"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Scene\nIgnore"
+            }
+          ]
+        },
+        "20": {
+          "name": "TREMOLO_BETA",
+          "nativeName": "TREMOLO_BETA",
+          "cases": [
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "LFO Shape"
+            }
+          ]
+        },
+        "21": {
+          "name": "TREMOLO_DUCKING",
+          "nativeName": "TREMOLO_DUCKING",
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Ducking"
+            },
+            {
+              "types": [
+                3
+              ],
+              "when": {},
+              "label": "Ducking"
+            },
+            {
+              "types": [
+                6
+              ],
+              "when": {},
+              "label": "Ducking"
+            },
+            {
+              "types": [
+                0,
+                2,
+                4,
+                5
+              ],
+              "when": {},
+              "label": "Ducking"
+            }
+          ]
+        }
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-// FM3 table-based parameter encoder (0.74.7). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
+// FM3 table-based parameter encoder (0.74.8). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
 import fs from 'node:fs';
@@ -124,7 +124,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
   check(Buffer.from(before.parsed.headerPayload).equals(Buffer.from(after.parsed.headerPayload)),'Dump header changed');
   const raw=Buffer.from(after.raw.rawPatch);check(raw.readUInt16LE(72)===actual.length&&raw.readUInt16LE(74)===after.raw.compSize,'Invalid encoded size');
   check(raw.subarray(76+after.raw.compSize).every(v=>v===0),'Nonzero output padding');
-  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.7',dictionarySha256:dictionaryHash,typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
+  return {syx,writes,report:{encoder:'fm3-table-encoder 0.74.8',dictionarySha256:dictionaryHash,typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),base:base.id,baseSha256:base.sha256,outputSha256:sha(syx),bytes:syx.length,
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 

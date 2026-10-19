@@ -125,6 +125,11 @@ OLD_FLANGER_MANUAL jääb PID 6 ehk Dry Delay juurde. Kasuta uusi nimesid;
 vanade nimede aadresse ära tõlgenda ümber. Compressori Type on PID 12;
 Companderi Ratio/Time/Transients kasutab eraldi välju. Automaatne
 kompressoriajastus ja -võimendus ei ole selle nähtavuskontrolliga valideeritud.
+[Wah’ ja Tremolo/Panneri juhend](engine/docs/FM3_WAH_TREMOLO_APPLICABILITY.md)
+lisab 16 mudeli erisused ja nõuab nende TYPE-vahetuseks täiskanalimalli.
+Paragonil puuduvad Bias/Fat/Q Tracking; Panner, Harmonic Trem ja Neon Trem
+kasutavad eri juhikuid. Wah’ Control jääb aktiivse pedaalimodifikaatori korral
+käsikirjutuseks suletuks; Tremolo Rate nõuab lõplikku Tempo NONE olekut.
 [Tempo- ja modifikaatorijuhend](engine/docs/FM3_PARAMETER_DEPENDENCIES.md) kirjeldab
 21 tempo-seost ning olemasolevate modifikaatorite lugemist. Time/Rate kirjutus
 nõuab lõpliku kanali Tempo NONE olekut; aktiivse modifikaatori sihtmärgile

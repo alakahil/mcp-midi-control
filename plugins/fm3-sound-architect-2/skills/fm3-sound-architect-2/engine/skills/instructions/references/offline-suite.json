@@ -50,6 +50,15 @@
       "required": true
     },
     {
+      "id": "test-wah-tremolo-applicability",
+      "command": [
+        "node",
+        "scripts/test-wah-tremolo-applicability.mjs"
+      ],
+      "scope": "16 captured Wah/Tremolo templates A-D; Paragon/Panner/Harmonic/Neon visibility, scalar/raw protection, atomic rejection, tempo/modifier preservation and final guide; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-layout",
       "command": [
         "node",
