@@ -130,6 +130,12 @@ lisab 16 mudeli erisused ja nõuab nende TYPE-vahetuseks täiskanalimalli.
 Paragonil puuduvad Bias/Fat/Q Tracking; Panner, Harmonic Trem ja Neon Trem
 kasutavad eri juhikuid. Wah’ Control jääb aktiivse pedaalimodifikaatori korral
 käsikirjutuseks suletuks; Tremolo Rate nõuab lõplikku Tempo NONE olekut.
+[Rotary ja Pitchi juhend](engine/docs/FM3_ROTARY_PITCH_APPLICABILITY.md)
+eristab Rotary Rate PID 0 tüübi valijast: Rotaryl Type puudub. Pitchi 16
+mudelit kontrollitakse lõpliku tüübi järgi; TYPE nõuab täiskanalimalli.
+Pitchi 27 diskreetse/enum-välja metaandmevastuolu ning dünaamilised Note 2–8
+on üksikkirjutuseks suletud. Ära tõlgenda neid vana pideva skaala ega nullist
+algavate enum-valikute järgi; säilita mallisõnad ja vaata juhendi piiranguid.
 [Tempo- ja modifikaatorijuhend](engine/docs/FM3_PARAMETER_DEPENDENCIES.md) kirjeldab
 21 tempo-seost ning olemasolevate modifikaatorite lugemist. Time/Rate kirjutus
 nõuab lõpliku kanali Tempo NONE olekut; aktiivse modifikaatori sihtmärgile

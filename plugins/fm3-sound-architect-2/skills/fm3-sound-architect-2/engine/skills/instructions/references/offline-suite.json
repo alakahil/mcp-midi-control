@@ -59,6 +59,15 @@
       "required": true
     },
     {
+      "id": "test-rotary-pitch-applicability",
+      "command": [
+        "node",
+        "scripts/test-rotary-pitch-applicability.mjs"
+      ],
+      "scope": "16 captured Pitch models A-D and type-free Rotary; visibility, 27 metadata conflict refusals, dynamic/fixed slots, model/tempo/modifier gates, atomic writes and final guide; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-layout",
       "command": [
         "node",

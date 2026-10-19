@@ -25,7 +25,7 @@ def native_name(p):
     return FLANGER_RENAMES.get(p['param'], p['name'].removeprefix('OLD_')) if p['family'] == 'FLANGER' else p['name']
 
 
-def extract(xml, config):
+def extract(xml, config, writable_ui=WRITABLE_UI):
     root = ET.fromstring(xml)  # comments are not controls
     layouts = [n for n in root.find('EffectLayouts') if n.get('name') == config['ui'] and active(n)]
     require(len(layouts) == 1, 'Missing/ambiguous layout')
@@ -58,7 +58,7 @@ def extract(xml, config):
                     if n.tag == 'EditorControl':
                         for key in ('parameterName', 'secondaryParameterName'):
                             if n.get(key):
-                                require(n.get('type') in WRITABLE_UI | READ_ONLY_UI, 'Unknown parameter control kind')
+                                require(n.get('type') in writable_ui | READ_ONLY_UI, 'Unknown parameter control kind')
                                 controls.append({'name': n.get(key), 'label': n.get('name', ''), 'conditions': conditions, 'uiType': n.get('type')})
                     for child in n:
                         walk(child, conditions)
@@ -72,7 +72,7 @@ def extract(xml, config):
     return variants
 
 
-def compile_variants(variants, names, selector, domain, bindings):
+def compile_variants(variants, names, selector, domain, bindings, writable_ui=WRITABLE_UI):
     require(bool(variants), 'Missing variants')
     domain = set(domain)
     for v in variants:
@@ -87,10 +87,10 @@ def compile_variants(variants, names, selector, domain, bindings):
             require(p['types'] is None or set(p['types']) <= domain, 'Page outside selector domain')
             for c in p['controls']:
                 require(c['name'] in names, 'XML symbol missing from native descriptors')
-                require(c['uiType'] in WRITABLE_UI | READ_ONLY_UI, 'Unknown parameter control kind')
+                require(c['uiType'] in writable_ui | READ_ONLY_UI, 'Unknown parameter control kind')
                 for cond in c['conditions']:
                     require(cond['name'] == selector and set(cond['values']) <= domain, 'Unknown control selector domain')
-            p['controls'] = [c for c in p['controls'] if c['uiType'] in WRITABLE_UI]
+            p['controls'] = [c for c in p['controls'] if c['uiType'] in writable_ui]
         compiled = compile_pages(pages, names, selector, {selector: sorted(domain)}, bindings)
         for name, rules in compiled.items():
             for r in rules:

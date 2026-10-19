@@ -23,7 +23,9 @@ nõuab mudelivahetuseks täielikku kanalimalli ning arvestab Spring Tank Type'i.
 lisab 67 mudeli nähtavuse, Phaseri Mode'i ning kinnitatud Flangeri nimealiased.
 [Wah’ ja Tremolo/Panneri kontroll](FM3_WAH_TREMOLO_APPLICABILITY.md) lisab
 16 mudeli erisused koos säilivate tempo-/pedaalipiirangutega.
-Uusi seadmemõõtmisi ei lisatud.
+[Rotary/Pitchi etapp](FM3_ROTARY_PITCH_APPLICABILITY.md) lisab Rotary juhikud ja
+16 Pitchi mudeli nähtavuse, kuid sulgeb 27 vastuolulise kodeeringuga Pitchi
+välja ning dünaamilised noodivalikud. Uusi seadmemõõtmisi ei lisatud.
 Välised metaandmete ja kodeerimismaatriksi kontrollid asuvad repo
 `tools/fm3/` ning `docs/fm3/parameter-evidence/` kaustades.
 
@@ -84,7 +86,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 33 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 34 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.

@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2054,
-  "filePaths": 2258,
+  "uniqueContents": 2055,
+  "filePaths": 2259,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1453,6 +1453,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-112-0cbb2d591b/donor.syx"
+      ]
+    },
+    "1dfaa78af37720a2689d35f23f28026a0ff96c4822b3e11a6104b1fe0e6e5d5d": {
+      "bytes": 9986,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "1e17b59368f87d1bdef9caa45ff196179c8c1753da1d3d9c4b49784efa4048b6": {
@@ -7522,6 +7528,12 @@
         "references/geq-full-20261010-194115/step-152-d61d768f0f/capture.json"
       ]
     },
+    "9d6a3655d138deebf83bd7fc81f9df45ca1a4bf5c17f4396e4b0d835b3627a03": {
+      "bytes": 472021,
+      "paths": [
+        "references/fm3-rotary-pitch-applicability.json"
+      ]
+    },
     "9d74d7e0f7747e54b405fcbc03678ee07aba55c9f26665c4fc660243fed77e13": {
       "bytes": 24680,
       "paths": [
@@ -10016,12 +10028,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-038-f680c5baa2/donor.syx"
-      ]
-    },
-    "d0ca6d2b274bdaf2265c9a6711ecc703ec1e900f0b0b38cc330a1bbb02ddcbe9": {
-      "bytes": 9588,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "d0cda8dde8850ef92745bbad1cf10e0db33a4d3854dc9b24b6b0bb4be2ea6ca5": {

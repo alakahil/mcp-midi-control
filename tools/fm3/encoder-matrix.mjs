@@ -169,7 +169,7 @@ for (const [bi, base] of composerBases.entries()) {
   }
 }
 
-const sourcePaths = [out + 'registry.json', out + 'metadata-reconciliation.json', 'tools/fm3/encoder-matrix.mjs',
+const sourcePaths = [engine + 'references/fm3-rotary-pitch-applicability.json', engine + 'scripts/fm3-rotary-pitch-applicability.mjs',out + 'registry.json', out + 'metadata-reconciliation.json', 'tools/fm3/encoder-matrix.mjs',
   engine + 'references/fm3-param-dictionary.json', engine + 'scripts/fm3-table-encoder.mjs', engine + 'scripts/fm3-composer-bases.mjs',
   engine + 'references/fm3-type-applicability.json', engine + 'scripts/fm3-type-applicability.mjs',
   engine + 'references/fm3-parameter-dependencies.json', engine + 'scripts/fm3-parameter-dependencies.mjs',
@@ -181,7 +181,7 @@ const result = {schemaVersion: 1, scope: {
   softwareOnly: true, deviceIO: false, newHardwareEvidence: false, generatedPresetsDelivered: false,
   parameterEligibility: 'Accepted table policy, implemented scalar kind, and at least one bundled base layout. Other parameters remain outside this matrix.',
   curveOracle: 'Fixed normalized positions plus independent endpoint interpolation; one wire LSB tolerance for floating point/quantized historical displays.',
-  limits: 'Chorus/Drive type policy, Delay/Reverb and Flanger/Phaser/Compressor/Wah/Tremolo final model/selector predicates, 21 tempo pairs and read-only modifier targets enforced. Delay/Reverb/Flanger/Phaser/Compressor/Wah/Tremolo model/internal-selector writes require full templates. Exclusions counted separately; scalar conformance is not unconditional write permission. No arbitrary preset, other-family visibility, automatic compressor timing/makeup, DSP/audio/CPU, effective tempo/controller evaluation or routing validation.'},
+  limits: 'Chorus/Drive type policy, Delay/Reverb and Flanger/Phaser/Compressor/Wah/Tremolo final model/selector predicates, 21 tempo pairs and read-only modifier targets enforced. Delay/Reverb/Flanger/Phaser/Compressor/Wah/Tremolo model/internal-selector writes require full templates. Rotary has no model selector; Pitch TYPE requires templates. Pitch dynamic/fixed slots and 27 discrete/enum dictionary conflicts are blocked by the authoring policy. These exclusions are included in typeExcludedWrites; mathematical scalar conformance does not resolve those metadata conflicts. Exclusions counted separately; scalar conformance is not unconditional write permission. No arbitrary preset, other-family visibility, automatic compressor timing/makeup, DSP/audio/CPU, effective tempo/controller evaluation or routing validation.'},
   sources: Object.fromEntries(sourcePaths.map(path => [path, sha(read(path))])),
   summary: {eligibleParameterKeys: eligible.length, numericPositionChecks: numericChecks, enumChecks, rejectionChecks, roundtripChecks,
     existingObservationsChecked: observationResults.length, existingObservationKeys: new Set(observationResults.map(x => x.parameter)).size,
