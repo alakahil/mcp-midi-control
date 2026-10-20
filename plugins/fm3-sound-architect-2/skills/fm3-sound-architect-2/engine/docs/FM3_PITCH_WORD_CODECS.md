@@ -1,6 +1,6 @@
 # Pitchi 34 välja presetisõnade kodeering
 
-0.3.4-dev kasutab täpselt 34 Pitchi välja
+0.3.4 kasutab täpselt 34 Pitchi välja
 jaoks eraldi kontrollitud teisendust. Vana 2892 kirje sõnastik jääb muutmata;
 ülekirjutus kontrollib iga algkirje täpset vastavust. Staatus
 `preset-word-crosschecked` tähendab FM3 failide ja metaandmete ristkontrolli,
@@ -83,7 +83,7 @@ heli ja CPU ei ole selle muudatusega kontrollitud. FM9/III GET/SET uurimust
 kasutati hüpoteesina; seda ei loeta FM3 riistvaratõendiks. Kasutaja füüsilisi
 toiminguid selles etapis: 0. Paigaldatud plugin on 0.3.3.
 
-## Järgnev arendusetapp: 0.3.4-dev, 2026-10-20
+## Järgnev arendusetapp: 0.3.4, 2026-10-20
 
 FW13 ametliku püsivara kitsas staatiline analüüs täiendab ülal kirjeldatud
 salvestussõnade tuge kolme kuvasildiga: PID 74 kood 31 = INFINITE; PID 71/72

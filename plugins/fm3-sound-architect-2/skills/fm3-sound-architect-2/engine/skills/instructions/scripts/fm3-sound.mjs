@@ -14,7 +14,7 @@ import {pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.4-dev',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.4',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
     outputs:['.syx','.txt','.spec.json','.validation.json'],
     globalScaleObservations:{input:'fm3-preset.mjs --global-scales OBSERVATIONS.json',decoder:'global-scale-collector/FM3_DECODE_SCALES.py',requires:'Python 3.9+ for optional observation input and verification',scope:'capture-time display/value crosscheck; report only',changesPresetBytes:false,deviceIO:false,liveGetEncodingVerified:false},
@@ -43,7 +43,7 @@ export function composeSound(base,spec){
   const finalBody=Buffer.from(inspectStructure(second.syx).raw.body);
   validateLegacyDependencies(finalBody,Object.fromEntries(scanRecords(finalBody).records.map(r=>[r.family,r])),spec.composer);
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
-  const report={generator:'fm3-sound-0.3.4-dev',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.4',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:'not tested',...state,
     stages:{composer:{scope:'intermediate; not final settings',...first.report},layout:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};

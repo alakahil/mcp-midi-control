@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.4-dev`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.4`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -344,6 +344,11 @@ Käivita `FM3_DECODE_SCALES.py --zip /ABS/results.zip --out /ABS/observations.js
 eelmainitud `global-scale-collector` kaustast. See vajab Python 3.9+ ja töötab
 seadmeühenduseta. Algset ZIP-i ei muudeta. Vigast või poolikut kogumist ei aktsepteerita.
 
+Tekstipõhise skaala vaatluse jaoks lisa dekodeerimiskäsule selgesõnaliselt
+`--display-only`. Skeem 2 säilitab arvuvälja diagnostika ja märgib TXT-is
+lahknevused. Vaikimisi skeem 1 nõuab teksti/arvu kooskõla. Ära käsitle
+tekstipõhist tulemust arvukodeeringu kinnitusena ega vaheta režiimi vaikselt.
+
 Lisa ühise generaatori käsu lõppu `--global-scales /ABS/observations.json`.
 Generaator nõuab lõpp-preseti kõigi salvestatud Custom Shifteri kanalite
 kasutatavate skaalade andmeid. TXT näitab nootide nihkeid, kogumise aega ja
@@ -353,6 +358,6 @@ lõpliku SYX-iga. Selle valikulise funktsiooni genereerimine ja kontroll vajavad
 
 Erista `observationsIncluded:true` ja `contentsIncluded:false`: andmed on
 aruandes, globaalse skaala sisu pole SYX-is ega kandu selle impordiga üle.
-Seadme tekstiga kattuv arvuväli on kogumise aja vaatlus, mitte seadme praeguse
+Mõlema režiimi tulemus on kogumise aja vaatlus, mitte seadme praeguse
 oleku või kogu väärtusvahemiku riistvarakinnitus. Seadme identiteeti/püsivara
 see päring ei tuvasta. Ära nõua juba piisava kogumise kordamist.

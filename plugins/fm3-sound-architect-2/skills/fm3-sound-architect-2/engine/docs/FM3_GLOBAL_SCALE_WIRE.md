@@ -93,13 +93,12 @@ kõiki firmware-versioone. Uue mõõtmisarhiivi avaldamine pole selle plaani osa
 
 ## 0.3.4 väljalaske valmisolek
 
-Praegune 0.3.4-dev kandidaat säilitab globaalse sisu suhtes senised piirid:
-ainult kogumise hetke kooskõlalised näidud aruandes, globaalset sisu SYX-i ei
-kirjutata. Väljalaske kviitungis ei tohi seda kirjeldada täieliku globaalse
-skaala kodeeringu või seadmeimpordi kinnitusena.
+0.3.4 pakub selgelt piiratud vaatlustuge: vaikimisi nõuab dekooder arvu ja
+kuvateksti kooskõla; eraldi `--display-only` režiim säilitab kuvateksti,
+toorbaidid ning arvupuhvri lahknevuse. Generaator lisab need andmed ainult
+aruandesse. Globaalset sisu SYX-i ei kirjutata ja arvukodeeringut ei loeta
+kinnitatuks. Täpne töövoog on [skaalade juhendis](FM3_PITCH_CUSTOM_SCALES.md).
 
-Lõpliku 0.3.4 avaldamise eel tuleb lahendada ülalnimetatud lünk või otsustada
-selgelt piiratud vaatlustoe ulatus. Seejärel tuleb fikseerida versioon,
-läbida sama puhta commit'i täielik CI, ehitada deterministlik pakett,
-uuendada privaatne plugin ja kontrollida automaatselt pakutavat käivitajat.
-Staatilise pakkijakatse lisamine iseenesest uut pluginaväljalaset ei avalda.
+Väljalase peab läbima sama puhta commit'i täieliku CI, deterministliku paketi
+kontrolli, privaatse plugina tagasivõrdluse ja käivitaja laadimiskontrolli.
+Need kontrollid ei kinnita FM3 seadmeimporti, heli ega CPU kasutust.

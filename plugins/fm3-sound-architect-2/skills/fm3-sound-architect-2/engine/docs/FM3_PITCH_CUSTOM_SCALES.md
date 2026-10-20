@@ -1,4 +1,4 @@
-# Pitchi kohandatud skaalad — 0.3.4-dev
+# Pitchi kohandatud skaalad — 0.3.4
 
 ## Kasutamine
 
@@ -222,13 +222,49 @@ skaalasid, kaasa arvatud stseenides parajasti mitteaktiivsed kanalid.
 Dekooder kontrollib arhiivi liikmeid, CRC-sid, suurusepiire, JSON-väljade
 kordumatust, algset koguja auditit, lõpetatust ja unikaalseid aadresse.
 Jätkamise identsed korduslugemised on lubatud ainult `resume-recheck` kujul.
-Poolik seanss, puuduva noodiga skaala ja vastuoluline vastus põhjustavad vea.
+Poolik seanss, puuduva noodiga skaala ja vastuolulised kordusvastused põhjustavad
+vea mõlemas allpool kirjeldatud režiimis.
 
 Vastuse 32-baidine tekstiväli peab sisaldama täisarvu ja ühikut `semi`.
-Väärtus peab jääma −24…+24 vahele ning kattuma viiest 7-bitisest osast
-rekonstrueeritud float32 arvuga. NaN/Infinity, teine ühik, tundmatud lipud,
-vigane padding või arvuvälja/teksti erinevus lükatakse tagasi. See kontroll
-kinnitab kooskõla konkreetses säilitatud vastuses, mitte riistvara üldist vahemikku.
+Väärtus peab jääma −24…+24 vahele. Vaikimisi peab see kattuma viiest 7-bitisest
+osast rekonstrueeritud float32 arvuga. See range režiim väljastab skeemi 1 ja
+staatuse `display-value-crosschecked`; NaN/Infinity või arvuvälja/teksti
+erinevus põhjustab vea. See kinnitab kooskõla konkreetses säilitatud vastuses,
+mitte riistvara üldist vahemikku.
+
+Kui on vaja kuvateksti vaatlust koos eraldi arvuvälja diagnostikaga, vali
+**selgesõnaliselt** tekstipõhine režiim:
+
+```sh
+python3 "$FM3_ENGINE/scripts/global-scale-collector/FM3_DECODE_SCALES.py" \
+  --zip /ABS/results.zip --display-only --out /ABS/display-observations.json
+```
+
+Anna saadud fail generaatorile sama `--global-scales` argumendiga. Uut
+seadmelugemist ei ole vaja. Ära nimeta tekstipõhist tulemust arvukodeeringu
+kinnituseks ega peida sellega range režiimi keeldumist.
+
+| Omadus | Range režiim (vaikimisi) | `--display-only` |
+|---|---|---|
+| Skeem / staatus | 1 / `display-value-crosschecked` | 2 / `display-text-observed` |
+| Nihke allikas | Tekst, mille arvuväli peab kinnitama | Ainult kuvatekst, `valueSource:displayText` |
+| Arvu ja teksti lahknevus | Keeldumine | Säilitatakse JSON-is ja märgitakse TXT-is `LAHKNEVUS` |
+| NaN/Infinity diagnostiline tõlgendus | Keeldumine | `numericFloat32:null`, täpne klass ja algbitid |
+| Vigane tekst, ühik, vahemik, kaader, lipud või padding | Keeldumine | Keeldumine |
+
+Skeemis 2 säilivad `valueBitsHex`, `numericBytesHex`, `numericFloat32`,
+`numericFloat32Class` ja `numericMatchesDisplay` iga noodi juures. Kogu
+arhiivi lahknevuste arv on `assessment.numericMismatchCount`; see hõlmab ka
+NaN/Infinity tõlgendusi, mille arv on eraldi `numericNonfiniteCount`.
+`numericFloat32` on üksnes diagnostiline tõlgendus, mitte kinnitatud skaala
+väärtus. Märgiga nulli eristus säilib algbittides. Näiteks sünteetilises
+vastuses võib tekst olla `-24 semi`, arvubitid `00000000` ja
+`numericMatchesDisplay:false`. Selline vastus ei tõenda tervet väärtusvahemikku.
+
+`--validate` taastab skeemi, näidud, diagnostika ja usalduslipud säilitatud
+kaadritest. Režiimi vahetamine valideerimise argumendiga pole lubatud;
+`--display-only` töötab ainult algarhiivi `--zip` sisendiga. Ühtegi kontrolli
+ei muudeta automaatselt leebemaks pärast range dekoodri viga.
 
 | Aruande väli | Tähendus |
 |---|---|
@@ -242,7 +278,9 @@ kinnitab kooskõla konkreetses säilitatud vastuses, mitte riistvara üldist vah
 `--verify` valideerib säilitatud vaatluskaadrid uuesti, võrdleb kogu sõltuvusosa
 tegeliku SYX-iga ning kontrollib TXT-i vaatluslõiku. Algset ZIP-i ega selle
 failiteed pole selle kontrolli jaoks vaja; vaja on Python 3.9+ ja nelja
-väljundfaili. ZIP-i räsi on päritoluviide, mitte digitaalallkiri või seadme
+väljundfaili. Skeemi 2 korral kontrollitakse uuesti ka lahknevuste diagnostikat
+ja TXT-i vastavaid ridu. Mõlemas režiimis jääb SYX baittäpselt samaks kui
+ilma vaatlusandmeteta genereerimisel. ZIP-i räsi on päritoluviide, mitte digitaalallkiri või seadme
 identiteedi tõend. Pordi nime ega muud pordimetaandmestikku aruandesse ei kopeerita.
 Ilma valikulise `--global-scales` argumendita säilib senine töövoog.
 
@@ -255,7 +293,8 @@ vastuse baidid 12–16 kokku 32-bitise sõnana, vähim 7-bitine osa ees.
 FW13 globaalne getter teisendab väärtuse ujukomaks aadressil `0x80f9c9`;
 vorminduse ühiku viit `0x80861c08` osutab tekstile `semi` lahtipakitud faili
 nihkel `0x3576c8`. Binaaride räsid ja aadressistuse alus on eespool.
-See ei tõenda üksinda tervet saatmisteed seadmes. Pakitud väärtuse näited:
+See FLOAT-käsk kuulub kuvateksti vormindusse ega tõenda üksinda arvuvälja
+täitmist või tervet saatmisteed seadmes. Sünteetilise float32 pakkimise näited:
 −24 = `00 00 00 0e 0c`, −1 = `00 00 00 7c 0b`,
 +1 = `00 00 00 7c 03`, +24 = `00 00 00 0e 04`.
 Uued testsisendid on sünteetilised; kasutaja toorandmeid ei pakita lähtekoodi.

@@ -36,11 +36,18 @@ export function bindGlobalScaleObservations(syx,observations){
 }
 export function renderGlobalScaleObservations(deps){
   if(!deps.observationsIncluded)return '';
+  const displayOnly=deps.assessment.status==='display-text-observed';
   const lines=[marker,`Kogutud: ${deps.source.startedAt} kuni ${deps.source.endedAt}.`,
     `Algarhiivi SHA-256: ${deps.source.archiveSha256}`,
-    'Allpool on kogumise ajal saadud kuva ja arvuvälja ristkontroll. Püsivara ja seadme identiteet pole päringuga kinnitatud.',
+    displayOnly
+      ? 'Skaalanihe pärineb kogumise kuvatekstist. Arvuvälja float32 tõlgendus on diagnostiline ega kinnita nihet. Püsivara ja seadme identiteet pole päringuga kinnitatud.'
+      : 'Allpool on kogumise ajal saadud kuva ja arvuvälja ristkontroll. Püsivara ja seadme identiteet pole päringuga kinnitatud.',
     'Skaala sisu ei sisaldu SYX-is, ei kandu selle impordiga üle ega kinnita seadme praegust olekut.'];
-  for(const scale of deps.observedScales)lines.push(`SCALE ${scale.scale}: `+scale.notes.map(n=>`${n.note}=${n.shiftSemitones}`).join(', ')+' pooltooni.');
+  for(const scale of deps.observedScales){
+    lines.push(`SCALE ${scale.scale}: `+scale.notes.map(n=>`${n.note}=${n.shiftSemitones}`).join(', ')+' pooltooni.');
+    if(displayOnly)for(const n of scale.notes.filter(n=>!n.numericMatchesDisplay))
+      lines.push(`LAHKNEVUS SCALE ${scale.scale} ${n.note}: kuva=${n.displayText}; arvuvälja float32=${n.numericFloat32Class==='finite'?n.numericFloat32:n.numericFloat32Class}; bitid=0x${n.valueBitsHex}.`);
+  }
   if(!deps.observedScales.length)lines.push('Lõpp-presetis pole salvestatud Custom Shifteri skaalasõltuvusi.');
   lines.push('Nullist erinevate väärtuste üldist riistvarakinnitust ega globaalsete skaalade kirjutustuge sellest ei järeldu.');
   return lines.join('\n')+'\n';

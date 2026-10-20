@@ -92,7 +92,7 @@ Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifaili
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
 
-0.3.4-dev lisab Pitchi kuvasildid, kohalikud kohandatud noodid, globaalsete
+0.3.4 lisab Pitchi kuvasildid, kohalikud kohandatud noodid, globaalsete
 skaalade koguja ja eraldi vaatlusandmete dekoodri. Valikuline
 `fm3-preset.mjs --global-scales OBSERVATIONS.json` lisab kogumise hetke
 skaalanäidud aruandesse ning nõuab Python 3.9+ ka `--verify` jaoks.

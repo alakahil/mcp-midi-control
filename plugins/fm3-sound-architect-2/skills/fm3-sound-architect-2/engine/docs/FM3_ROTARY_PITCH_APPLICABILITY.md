@@ -1,6 +1,6 @@
 # Rotary ja Pitch — FW13 sobivus ning kodeeringupiirangud
 
-0.3.4-dev kontrollib Rotary aktiivseid juhikuid ning kõigi 16 kogutud
+0.3.4 kontrollib Rotary aktiivseid juhikuid ning kõigi 16 kogutud
 Pitchi mudeli lõplikku kanali tüüpi. Pitchi TYPE PID 0 muutmiseks on vaja
 terviklikku kanalimalli. Rotaryl **tüübivalijat ei ole**: PID 0 on Rate.
 Mudelit ei tuletata Rotary Rate’i salvestatud väärtusest.

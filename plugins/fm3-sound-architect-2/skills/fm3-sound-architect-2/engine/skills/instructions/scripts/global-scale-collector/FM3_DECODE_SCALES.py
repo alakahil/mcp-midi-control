@@ -3,8 +3,10 @@
 
 Display/value agreement is an observation, not device authentication, a new
 hardware range test, or permission to write global settings into a preset.
+Explicit --display-only preserves numeric disagreements as diagnostics.
 """
 import argparse
+import copy
 import datetime
 import hashlib
 import io
@@ -34,6 +36,13 @@ ASSESSMENT = {
     'limits': 'Capture-time observations only. Hashes are integrity references, not device authentication. '
               'Static/synthetic codec checks do not prove a hardware range. Global contents are not in preset SYX.',
 }
+DISPLAY_ASSESSMENT = {
+    **ASSESSMENT,
+    'status': 'display-text-observed', 'valueSource': 'displayText',
+    'numericInterpretation': 'float32 diagnostic only; not used as the semitone shift',
+    'limits': ASSESSMENT['limits'] + ' Display text is not numeric-encoding validation; '
+              'numeric disagreements and non-finite interpretations are retained.',
+}
 
 
 def strict_json(raw):
@@ -56,7 +65,8 @@ def timestamp(value):
     return t
 
 
-def decode_frame(frame, pid):
+def observe_frame(frame, pid):
+    """Read both fields without treating the numeric word as a scale value."""
     require(type(pid) is int and 902 <= pid <= 1285, 'Invalid observation PID')
     require(len(frame) == 60, 'Observation must contain exactly one 60-byte frame')
     require(collector.matching_frame(frame, pid) == frame, 'Noncanonical observation frame')
@@ -73,13 +83,27 @@ def decode_frame(frame, pid):
     require(-24 <= shift <= 24, 'Displayed shift outside -24..24 semitones')
     bits = sum(frame[12+i] << (7*i) for i in range(5))
     number = struct.unpack('<f', struct.pack('<I', bits))[0]
-    require(math.isfinite(number) and number == shift, 'Numeric value and display text disagree')
     return {'pid': pid, 'note': collector.NOTES[(pid-902) % 12],
             'shiftSemitones': shift, 'displayText': text, 'valueBitsHex': f'{bits:08x}',
-            'frameHex': frame.hex(), 'frameSha256': sha(frame)}
+            'frameHex': frame.hex(), 'frameSha256': sha(frame),
+            'valueSource': 'displayText', 'numericBytesHex': frame[12:17].hex(),
+            'numericFloat32': number if math.isfinite(number) else None,
+            'numericFloat32Class': ('finite' if math.isfinite(number) else
+                                    'nan' if math.isnan(number) else
+                                    'positive-infinity' if number > 0 else 'negative-infinity'),
+            'numericMatchesDisplay': math.isfinite(number) and number == shift}
 
 
-def document(source, frames):
+def decode_frame(frame, pid):
+    """Keep the original strict schema and display/numeric agreement gate."""
+    row = observe_frame(frame, pid)
+    require(row['numericMatchesDisplay'], 'Numeric value and display text disagree')
+    return {key: row[key] for key in ('pid', 'note', 'shiftSemitones', 'displayText',
+                                     'valueBitsHex', 'frameHex', 'frameSha256')}
+
+
+def document(source, frames, *, display_only=False):
+    require(type(display_only) is bool, 'Invalid display-only mode')
     require(isinstance(source, dict), 'Missing observation provenance')
     expected = {'archiveSha256', 'sessionSha256', 'summarySha256', 'collectorSha256',
                 'nativeMappingEvidenceSha256', 'firmwareMapping', 'startedAt', 'endedAt',
@@ -95,17 +119,23 @@ def document(source, frames):
     require(len({pid for pid, _ in frames}) == len(frames), 'Duplicate observation PID')
     groups = {}
     for pid, frame in sorted(frames):
-        note = decode_frame(frame, pid)
+        note = observe_frame(frame, pid) if display_only else decode_frame(frame, pid)
         groups.setdefault(1 + (pid-902)//12, []).append(note)
     for scale, notes in groups.items():
         require([n['pid'] for n in notes] == list(range(902+12*(scale-1), 914+12*(scale-1))), 'Missing notes in captured scale')
-    return {'schemaVersion': 1, 'kind': 'fm3-global-scale-observations', 'source': source,
-            'assessment': ASSESSMENT.copy(),
+    assessment = DISPLAY_ASSESSMENT.copy() if display_only else ASSESSMENT.copy()
+    if display_only:
+        rows = [n for notes in groups.values() for n in notes]
+        assessment['numericMismatchCount'] = sum(not n['numericMatchesDisplay'] for n in rows)
+        assessment['numericNonfiniteCount'] = sum(n['numericFloat32Class'] != 'finite' for n in rows)
+    return {'schemaVersion': 2 if display_only else 1, 'kind': 'fm3-global-scale-observations', 'source': source,
+            'assessment': assessment,
             'scales': [{'scale': scale, 'notes': notes} for scale, notes in groups.items()]}
 
 
 def validate_document(obj):
     require(isinstance(obj, dict) and obj.get('kind') == 'fm3-global-scale-observations', 'Not a global-scale observation document')
+    require(type(obj.get('schemaVersion')) is int and obj['schemaVersion'] in (1, 2), 'Unknown observation schema')
     frames = []
     require(isinstance(obj.get('scales'), list), 'Missing observation scales')
     for scale in obj['scales']:
@@ -113,13 +143,27 @@ def validate_document(obj):
         for row in scale['notes']:
             require(isinstance(row, dict) and isinstance(row.get('frameHex'), str), 'Missing observation frame')
             frames.append((row.get('pid'), bytes.fromhex(row['frameHex'])))
-    rebuilt = document(obj.get('source'), frames)
+    rebuilt = document(obj.get('source'), frames, display_only=obj['schemaVersion'] == 2)
     # Every decoded field and confidence flag is regenerated from retained frames.
-    require(json.dumps(obj, sort_keys=True) == json.dumps(rebuilt, sort_keys=True), 'Observation document differs from retained evidence')
+    compared = copy.deepcopy(obj)
+    if obj['schemaVersion'] == 2:
+        # JS may serialize an integral float as integer JSON, including very large
+        # finite float32 values. Compare this diagnostic as a float; exact bits
+        # and every other field (especially boolean confidence flags) stay strict.
+        for scale in compared['scales']:
+            for row in scale['notes']:
+                value = row.get('numericFloat32')
+                if type(value) in (int, float):
+                    row['numericFloat32'] = float(value) or 0.0
+        for scale in rebuilt['scales']:
+            for row in scale['notes']:
+                if row['numericFloat32'] == 0:
+                    row['numericFloat32'] = 0.0  # signed zero remains in valueBitsHex
+    require(json.dumps(compared, sort_keys=True) == json.dumps(rebuilt, sort_keys=True), 'Observation document differs from retained evidence')
     return rebuilt
 
 
-def decode_archive(path):
+def decode_archive(path, *, display_only=False):
     path = Path(path)
     require(path.is_file() and path.stat().st_size <= MAX_ZIP, 'Capture ZIP missing or too large')
     raw = path.read_bytes()
@@ -163,7 +207,7 @@ def decode_archive(path):
                   'startedAt': session['createdAt'], 'endedAt': summary['endedAt'],
                   'firmwareIdentityVerified': session['firmwareIdentityVerified'],
                   'deviceSerialVerified': session['deviceSerialVerified'], 'atomicSnapshot': False}
-        return document(source, list(completed.items()))
+        return document(source, list(completed.items()), display_only=display_only)
 
 
 def main():
@@ -172,9 +216,12 @@ def main():
     action.add_argument('--zip', type=Path, help='Existing collector results.zip')
     action.add_argument('--validate', help='Observation JSON path, or - for stdin')
     parser.add_argument('--out', type=Path, help='New JSON file; existing files are never overwritten')
+    parser.add_argument('--display-only', action='store_true',
+                        help='With --zip: explicitly use display text and retain numeric diagnostics (schema 2)')
     args = parser.parse_args()
+    require(not args.display_only or args.zip is not None, '--display-only requires --zip; validation uses the retained schema')
     if args.zip:
-        result = decode_archive(args.zip)
+        result = decode_archive(args.zip, display_only=args.display_only)
     else:
         if args.validate == '-':
             raw = sys.stdin.buffer.read(MAX_JSON+1)

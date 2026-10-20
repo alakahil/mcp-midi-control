@@ -346,7 +346,7 @@
         "python3",
         "scripts/global-scale-collector/test_global_scale_decode.py"
       ],
-      "scope": "Synthetic ZIP integrity, all 49 shift bit patterns, display/value conflicts, incomplete and resumed sessions; no new hardware range validation",
+      "scope": "Synthetic ZIP integrity in strict/schema-1 and explicit display-only/schema-2 modes, all 49 shifts, retained numeric conflicts/nonfinite diagnostics, tamper rejection and resumed sessions; no new hardware range validation",
       "required": true
     },
     {
@@ -355,7 +355,7 @@
         "node",
         "scripts/test-global-scale-observations.mjs"
       ],
-      "scope": "Synthetic evidence attached to final sound and legacy reports; unchanged SYX, required-scale coverage, CLI and retained-evidence verification",
+      "scope": "Synthetic strict and display-only evidence in sound/legacy reports; unchanged SYX, visible numeric conflicts, required-scale coverage, CLI and retained-evidence/TXT tamper rejection",
       "required": true
     },
     {
