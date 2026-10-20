@@ -7195,6 +7195,19 @@
               }
             ]
           }
+        },
+        "modifiers": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "external1Wah"
+          ],
+          "properties": {
+            "external1Wah": {
+              "type": "boolean",
+              "description": "Toggle only the retained External 1 to Wah Control binding (ALL); preserve other modifier words."
+            }
+          }
         }
       },
       "allOf": [

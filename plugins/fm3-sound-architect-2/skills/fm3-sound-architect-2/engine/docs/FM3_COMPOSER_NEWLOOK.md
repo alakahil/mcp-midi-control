@@ -105,8 +105,9 @@ bypass'i ega nimeta pelka tüübivalikut efektide aktiveerimiseks.
 
 Kogu ploki A–D lähtekanalid on nimetatud kinnitatud doonorist; küsitud kanalid
 asendatakse kogutud mallidega. Puuduvatel kanalitel ei väideta tehasevaikeväärtusi.
-Modifierite/expression'i seoseid ei kopeerita ega aktiveerita. Wah' lisamine
-üksi ei taasta eemaldatud expression-seost. Raport näitab doonorit, uut kohta,
+Wah' lisamine üksi ei taasta eemaldatud expression-seost. Alates 0.3.5 saab
+olemasoleva seose selgesõnaliselt sisse lülitada `modifiers.external1Wah:true`
+abil; vt [piiratud kirjutus](FM3_WAH_MODIFIER.md). Muud seosed säilivad. Raport näitab doonorit, uut kohta,
 vahetatud shunti, stseeniseadeid ja komponendi kanalimõju.
 
 Täielik [stseenijuhend](FM3_COMPOSER_SCENES.md). Valmis

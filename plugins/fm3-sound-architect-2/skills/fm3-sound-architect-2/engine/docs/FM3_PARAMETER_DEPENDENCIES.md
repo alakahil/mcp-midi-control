@@ -1,4 +1,4 @@
-# Tempo ja modifikaatorite sõltuvused — 0.3.3 kandidaat
+# Tempo ja modifikaatorite sõltuvused
 
 Selgesõnaline Time/Rate kirjutus nõuab sama kanali lõplikku **Tempo NONE** olekut.
 Aktiivse või ebaselge modifikaatori sihtparameetrile käsiväärtuse kirjutamine
@@ -48,7 +48,9 @@ NONE koos allesjäänud sihtmärgiga ei tähenda aktiivset seost.
 
 Teisese allika operaatorite semantika pole kinnitatud: selline siht jääb
 ebaselgeks ja kirjutus keelatakse. Tundmatu allikas või kanal ei ava kirjutusluba.
-Kirjeldus säilib validation.json failis; ühtki modifikaatorisõna ei kirjutata.
+Lugeja kirjeldus säilib validation.json failis. Alates 0.3.5 on eraldi
+[piiratud kirjutaja](FM3_WAH_MODIFIER.md), mis vahetab selgesõnaliselt ainult
+tõendatud External 1 → Wah kirje allikasõna. Ülejäänud kirjed jäävad puutumata.
 See lugeja ei tugine vanema dekoodri 12 kirje heuristikale.
 
 ## Kirjutus ja lõppjuhend
@@ -89,4 +91,4 @@ Kehtiva maatriksi lisapiirangud on [Delay/Reverbi juhendis](FM3_DELAY_REVERB_APP
 
 Muude perede tüübisobivus, ülejäänud tempo-seosed, kontrollerite loomine ja
 dünaamika, GLOBAL, suvaline routing, uue faili import, heli ja CPU jäävad eraldi
-tööks. Paigaldatud plugin jääb 0.3.2 peale; 0.3.3 on jätkuvalt PR-i kandidaat.
+tööks. Avaldatud versiooni ja täpset commit’i kontrolli väljalaskekviitungist.

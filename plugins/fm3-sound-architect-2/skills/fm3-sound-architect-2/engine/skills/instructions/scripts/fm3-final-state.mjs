@@ -9,6 +9,7 @@ import {typeApplicability,typePolicySummary,readTypeState} from './fm3-type-appl
 import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 import {globalScaleDependencies,pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 import {renderGlobalScaleObservations} from './fm3-global-scale-observations.mjs';
+import {renderWahModifierText} from './fm3-wah-modifier.mjs';
 const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks);
 export function finalSoundState(syx,writes,opts={}){
   const after=inspectStructure(syx),body=Buffer.from(after.raw.body),{records}=scanRecords(body),dictionary=loadDictionary();
@@ -66,6 +67,7 @@ export function renderFinalSoundText(state,spec){
     'Seade: FM3 Mk II Turbo, firmware 13.',`Kitarr: ${context.guitar??'selle kirjelduse jaoks määramata'}`,
     `Helipead: ${context.pickups??'selle kirjelduse jaoks määramata'}`,`Ühendus: ${context.output??'selle kirjelduse jaoks määramata'}`,
     `Valitud Scene: ${state.selectedScene}`,...state.signalRows.map((r,i)=>`Rida ${i+2}: ${r}`),'','STSEENID JA LÕPLIKUD MUDELID'];
+  lines.push(...renderWahModifierText(state.modifierEdit));
   for(const s of state.scenes){lines.push(`Scene ${s.scene}: ${s.name}`);for(const [family,b] of Object.entries(s.blocks)){
     lines.push(`  ${family} ${b.channel}: ${b.type??b.cabs?.map(c=>c.name).join(' + ')??b.mode??'alusest'}; ${b.bypass?'bypass':'sees'}${b.levelDb===undefined?'':'; Level '+fmt(b.levelDb)+' dB'}`);
     if(['peq','geq','enhancer'].includes(family))lines.push('    '+JSON.stringify(b));

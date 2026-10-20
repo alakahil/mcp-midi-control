@@ -9,14 +9,16 @@ import {finalSoundState,renderFinalSoundText} from './fm3-final-state.mjs';
 import {writePresetOutputs,sha256} from './fm3-output.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {validateLegacyDependencies,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
+import {wahModifierCapabilities} from './fm3-wah-modifier.mjs';
 import {typePolicySummary} from './fm3-type-applicability.mjs';
 import {pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.4',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.5',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
     outputs:['.syx','.txt','.spec.json','.validation.json'],
+    modifiers:{...wahModifierCapabilities(),field:'composer.modifiers.external1Wah'},
     globalScaleObservations:{input:'fm3-preset.mjs --global-scales OBSERVATIONS.json',decoder:'global-scale-collector/FM3_DECODE_SCALES.py',requires:'Python 3.9+ for optional observation input and verification',scope:'capture-time display/value crosscheck; report only',changesPresetBytes:false,deviceIO:false,liveGetEncodingVerified:false},
     layout:{rows:[2,3],maxBlocksPerRow:10,blocks:Object.values(SLUG_BY_EID),policy:'Exactly the composed blocks; no removal, duplicates or arbitrary 4-row graph'},
     table:{defaultStatuses:DEFAULT_STATUSES,optInStatuses:OPT_IN_STATUSES,families:FAMILY_BY_SLUG,dictionaryEntries:d.params.length,
@@ -43,11 +45,11 @@ export function composeSound(base,spec){
   const finalBody=Buffer.from(inspectStructure(second.syx).raw.body);
   validateLegacyDependencies(finalBody,Object.fromEntries(scanRecords(finalBody).records.map(r=>[r.family,r])),spec.composer);
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
-  const report={generator:'fm3-sound-0.3.4',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.5',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
-    hardware:'not tested for this final output',audio:'not tested',cpu:'not tested',...state,
+    hardware:'not tested for this final output',audio:'not tested',cpu:'not tested',...state,modifierEdit:first.report.modifierEdit??null,
     stages:{composer:{scope:'intermediate; not final settings',...first.report},layout:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};
-  return {syx:second.syx,txt:renderFinalSoundText(state,spec),report,composerReport:first.report,layoutReport:report.stages.layout};
+  return {syx:second.syx,txt:renderFinalSoundText({...state,modifierEdit:first.report.modifierEdit??null},spec),report,composerReport:first.report,layoutReport:report.stages.layout};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try{const [b,s,stem,...extra]=process.argv.slice(2);

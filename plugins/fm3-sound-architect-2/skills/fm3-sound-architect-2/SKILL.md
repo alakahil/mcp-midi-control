@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.4`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.5`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -361,3 +361,17 @@ aruandes, globaalse skaala sisu pole SYX-is ega kandu selle impordiga üle.
 Mõlema režiimi tulemus on kogumise aja vaatlus, mitte seadme praeguse
 oleku või kogu väärtusvahemiku riistvarakinnitus. Seadme identiteeti/püsivara
 see päring ei tuvasta. Ära nõua juba piisava kogumise kordamist.
+
+
+## External 1 → Wah piiratud kirjutustugi (0.3.5)
+
+Kasuta `jb-composer` kirjelduses `"modifiers":{"external1Wah":true}` või
+`false`; soundi ümbrises pane see `composer` sisse. Välja puudumine säilitab
+algse seose. Loe [piiratud modifikaatorikirjutuse juhendit](engine/docs/FM3_WAH_MODIFIER.md).
+Kirjutatakse ainult olemasoleva esimese kirje allikas NONE ↔ External 1.
+Siht Wah 1 Control, ALL ja ülejäänud 24 sõna peavad vastama tõendatud kirjele.
+NewLookil puudub Wah: sisselülitamiseks küsi ka `wahChannels` täiskanalimall.
+Seos ei muuda stseenide bypass'i ega seadista globaalset pedaali/MIDI vastendust.
+Aktiivse seose puhul lükatakse tabeli Wah Control kirjutus tagasi kõigil A–D
+kanalitel. Ära lülita seost välja ilma selgesõnalise soovita. Kõvera, muude
+allikate, uute kirjete ja globaalsete skaalade kirjutamine jääb toetamata.

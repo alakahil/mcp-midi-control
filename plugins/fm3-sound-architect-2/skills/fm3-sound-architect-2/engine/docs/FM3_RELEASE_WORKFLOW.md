@@ -87,7 +87,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 40 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 41 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
@@ -155,3 +155,13 @@ andmed jäid samaks, kuid ranged failiräsid erinesid. 0.3.2 lähtefail kasutab
 sama kinnitatud vormingut. Pakendaja kontrollib seda enne arhiivi loomist.
 Ühtegi kontrollsummade erandit ei lisata. 0.3.1 jääb ajalooliseks väljalaskeks;
 parandus saab uue commit’i ja versiooni.
+
+
+## 0.3.5 piiratud modifikaatorikirjutus
+
+[External 1 → Wah](FM3_WAH_MODIFIER.md) lisab ühe allikasõna 0 ↔ 14
+kirjutuse olemasolevas tõendatud kirjes. Kõik 24 ülejäänud sõna peavad
+vastama seitsmes aluses säilinud kujule. `test-wah-modifier` kuulub kohustuslikku
+41-testilisse komplekti. Uusi seadmemõõtmisi ega privaatseid toorandmeid ei lisata.
+Väljalase vajab endiselt täpse puhta commit’i testi, paketi tagasivõrdlust,
+käivitaja sidumise uuendust ja värske konteksti laadimiskontrolli.
