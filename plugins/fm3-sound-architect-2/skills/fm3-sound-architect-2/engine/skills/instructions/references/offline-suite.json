@@ -339,6 +339,24 @@
       ],
       "scope": "Synthetic failure cases and POSIX pseudo-terminal; raw capture only, no FM3 hardware/scale-value confirmation",
       "required": true
+    },
+    {
+      "id": "test-global-scale-decode",
+      "command": [
+        "python3",
+        "scripts/global-scale-collector/test_global_scale_decode.py"
+      ],
+      "scope": "Synthetic ZIP integrity, all 49 shift bit patterns, display/value conflicts, incomplete and resumed sessions; no new hardware range validation",
+      "required": true
+    },
+    {
+      "id": "test-global-scale-observations",
+      "command": [
+        "node",
+        "scripts/test-global-scale-observations.mjs"
+      ],
+      "scope": "Synthetic evidence attached to final sound and legacy reports; unchanged SYX, required-scale coverage, CLI and retained-evidence verification",
+      "required": true
     }
   ]
 }

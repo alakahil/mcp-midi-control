@@ -165,12 +165,11 @@ Koguja ei laadi andmeid võrku. Pordi metaandmed ja FM3 toorvastused jäävad
 kohalikku tulemuskausta; neid ei avaldata automaatselt GitHubis.
 
 **`captureComplete` ei kinnita skaalade väärtusi.** `contentsVerified` ja
-`liveGetEncodingVerified` jäävad alati false. Puudub automaatne ujukoma- või
-signed-int tõlgendus: ka usutav null võib olla kirjeldusvälja vaikimisi väärtus.
+`liveGetEncodingVerified` jäävad kogujas alati false. Koguja ise ei tee
+ujukoma- ega signed-int tõlgendust: ka usutav null võib olla kirjeldusvälja vaikimisi väärtus.
 Samuti ei tuvastata selle päringuga seadme seerianumbrit ega püsivara versiooni.
-Järgmine samm on tegelike vastuste võrdlus FW13 globaalse getter'i ning
-redaktori vastuseparseriga. Kui vastuse kuju või sisu ei tõenda nihkeid,
-kasutame uut lugemistesti, mitte käsitsi keeramise seeriat.
+Olemasolevate vastuste teksti ja arvuvälja ristkontrolliks kasuta allpool
+kirjeldatud eraldi offline-dekoodrit. Üldine live-vahemiku kinnitus jääb eraldi.
 
 ### Transpordi tõendid ja piirid
 
@@ -197,3 +196,66 @@ Tarkvaratestid kasutavad sünteetilisi vastuseid ja päris POSIX pseudo-terminal
 Need katavad pordi saatmisraja, tükeldatud liikluse, vale mudeli/aadressi,
 kontrollsumma, dubletid, ajalõpu, osalise saatmise, katkestuse/jätkamise ja
 muutunud andmete tõrjumise. Need pole FM3 seadmemõõtmised.
+
+## Kogutud skaalade dekodeerimine ja preseti aruanne
+
+`FM3_DECODE_SCALES.py` töötleb olemasolevat koguja ZIP-i ilma seadet avamata.
+Vaja on Python 3.9+. Koguja fail säilib muutmata ja dekooder nõuab selle
+fikseeritud SHA-256 versiooni; vana seansi jätkamine töötab endiselt.
+
+```sh
+python3 "$FM3_ENGINE/scripts/global-scale-collector/FM3_DECODE_SCALES.py" \
+  --zip /ABS/results.zip --out /ABS/observations.json
+node "$FM3_ENGINE/scripts/fm3-preset.mjs" \
+  "$FM3_ENGINE/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx" \
+  /ABS/preset.spec.json /ABS/PRESET --global-scales /ABS/observations.json
+node "$FM3_ENGINE/scripts/fm3-preset.mjs" --verify /ABS/PRESET
+```
+
+`FM3_ENGINE` on selle paketi `engine/skills/instructions` absoluutne tee.
+Väljundite teed peavad olema uued ja väljaspool pluginat. Kui preseti soovitud
+skaalade seanss on juba piisav, ära korda seadet lugemist. Dekodeerida saab
+ka ainult osa skaalasid sisaldava täielikult lõppenud seansi. Preseti lisandina
+nõutakse kõiki selle salvestatud Custom Shifteri A–D kanalite kasutatavaid
+skaalasid, kaasa arvatud stseenides parajasti mitteaktiivsed kanalid.
+
+Dekooder kontrollib arhiivi liikmeid, CRC-sid, suurusepiire, JSON-väljade
+kordumatust, algset koguja auditit, lõpetatust ja unikaalseid aadresse.
+Jätkamise identsed korduslugemised on lubatud ainult `resume-recheck` kujul.
+Poolik seanss, puuduva noodiga skaala ja vastuoluline vastus põhjustavad vea.
+
+Vastuse 32-baidine tekstiväli peab sisaldama täisarvu ja ühikut `semi`.
+Väärtus peab jääma −24…+24 vahele ning kattuma viiest 7-bitisest osast
+rekonstrueeritud float32 arvuga. NaN/Infinity, teine ühik, tundmatud lipud,
+vigane padding või arvuvälja/teksti erinevus lükatakse tagasi. See kontroll
+kinnitab kooskõla konkreetses säilitatud vastuses, mitte riistvara üldist vahemikku.
+
+| Aruande väli | Tähendus |
+|---|---|
+| `globalScaleObservations` | Kaadrid, neist taastatud näidud, lähtearhiivi räsi ja kogumise aeg |
+| `globalScaleDependencies.uses` | Tegelikust lõpp-SYX-ist loetud kanalite skaalavalikud |
+| `observedScales` | Nende valikute jaoks olemasolevad vaatlusandmed |
+| `observationsIncluded:true` | Vaatlused on TXT/JSON-aruandes |
+| `contentsIncluded:false` | Globaalne skaala ei kuulu presetifaili |
+| `contentsVerified:false`, `liveGetEncodingVerified:false` | Üldist seadme- ega väärtusvahemiku kinnitust ei anta |
+
+`--verify` valideerib säilitatud vaatluskaadrid uuesti, võrdleb kogu sõltuvusosa
+tegeliku SYX-iga ning kontrollib TXT-i vaatluslõiku. Algset ZIP-i ega selle
+failiteed pole selle kontrolli jaoks vaja; vaja on Python 3.9+ ja nelja
+väljundfaili. ZIP-i räsi on päritoluviide, mitte digitaalallkiri või seadme
+identiteedi tõend. Pordi nime ega muud pordimetaandmestikku aruandesse ei kopeerita.
+Ilma valikulise `--global-scales` argumendita säilib senine töövoog.
+
+### Staatilise kodeeringukontrolli alus
+
+FM3-Edit 1.07.17 parseri `0x14033c824…0x14033c85d` arvutusfragment paneb
+vastuse baidid 12–16 kokku 32-bitise sõnana, vähim 7-bitine osa ees.
+57-baidise fragmendi SHA-256 on
+`b6f6b8606e17071c13de90d8cfc28af557f79abb5962092da101b3d3c8ca5d5b`.
+FW13 globaalne getter teisendab väärtuse ujukomaks aadressil `0x80f9c9`;
+vorminduse ühiku viit `0x80861c08` osutab tekstile `semi` lahtipakitud faili
+nihkel `0x3576c8`. Binaaride räsid ja aadressistuse alus on eespool.
+See ei tõenda üksinda tervet saatmisteed seadmes. Pakitud väärtuse näited:
+−24 = `00 00 00 0e 0c`, −1 = `00 00 00 7c 0b`,
++1 = `00 00 00 7c 03`, +24 = `00 00 00 0e 04`.
+Uued testsisendid on sünteetilised; kasutaja toorandmeid ei pakita lähtekoodi.

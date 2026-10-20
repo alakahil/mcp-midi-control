@@ -87,10 +87,17 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 35 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 39 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
+
+0.3.4-dev lisab Pitchi kuvasildid, kohalikud kohandatud noodid, globaalsete
+skaalade koguja ja eraldi vaatlusandmete dekoodri. Valikuline
+`fm3-preset.mjs --global-scales OBSERVATIONS.json` lisab kogumise hetke
+skaalanäidud aruandesse ning nõuab Python 3.9+ ka `--verify` jaoks.
+SYX ei sisalda globaalset sisu. Sünteetilised testid ja kuva/arvu kooskõla
+ei muuda globaalset väärtusvahemikku riistvaras kinnitatuks.
 
 Builder nõuab puhast checkout'i ja sama commit'i täieliku suite'i edukat raportit.
 Kõik lähtefailid loetakse Git objektidest. Paketi sees genereeritakse ainult

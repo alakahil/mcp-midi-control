@@ -331,7 +331,28 @@ Kasuta kasutaja kinnitatud lugemisseansi jaoks
 `engine/skills/instructions/scripts/global-scale-collector/FM3_GLOBAL_SCALES.py`.
 Loe [Pitchi skaalade juhendi koguja osa](engine/docs/FM3_PITCH_CUSTOM_SCALES.md#jätkatav-toorvastuste-koguja).
 Koguja piirab saatmise fn=01 / sub=1A / effect=1 / PID=902…1285 päringutega.
-`captureComplete` kinnitab ainult toorvastuste kogumist. Ära tõlgenda neid
-automaatselt pooltoonideks ega muuda `contentsVerified` või
-`liveGetEncodingVerified` tõeseks. `sub=01` on kirjelduspäring; vana
+`captureComplete` kinnitab ainult toorvastuste kogumist. Kasuta olemasoleva
+ZIP-i tõlgendamiseks allpool nimetatud dekoodrit; ära muuda `contentsVerified`
+või `liveGetEncodingVerified` tõeseks. `sub=01` on kirjelduspäring; vana
 `buildGetParameter` kasutab kirjutavat `sub=09` käsku ja on keelatud.
+
+## Globaalsete skaalade vaatlusandmete lisamine presetile
+
+Kui kasutaja on andnud koguja `results.zip` faili, järgi
+[skaalade dekodeerimise juhendit](engine/docs/FM3_PITCH_CUSTOM_SCALES.md#kogutud-skaalade-dekodeerimine-ja-preseti-aruanne).
+Käivita `FM3_DECODE_SCALES.py --zip /ABS/results.zip --out /ABS/observations.json`
+eelmainitud `global-scale-collector` kaustast. See vajab Python 3.9+ ja töötab
+seadmeühenduseta. Algset ZIP-i ei muudeta. Vigast või poolikut kogumist ei aktsepteerita.
+
+Lisa ühise generaatori käsu lõppu `--global-scales /ABS/observations.json`.
+Generaator nõuab lõpp-preseti kõigi salvestatud Custom Shifteri kanalite
+kasutatavate skaalade andmeid. TXT näitab nootide nihkeid, kogumise aega ja
+algarhiivi räsi; validation.json säilitab ka dekodeerimise aluseks olevad kaadrid.
+Käivita tavapärane `--verify`, mis kontrollib ka vaatlusandmeid ja nende seost
+lõpliku SYX-iga. Selle valikulise funktsiooni genereerimine ja kontroll vajavad Python 3.9+.
+
+Erista `observationsIncluded:true` ja `contentsIncluded:false`: andmed on
+aruandes, globaalse skaala sisu pole SYX-is ega kandu selle impordiga üle.
+Seadme tekstiga kattuv arvuväli on kogumise aja vaatlus, mitte seadme praeguse
+oleku või kogu väärtusvahemiku riistvarakinnitus. Seadme identiteeti/püsivara
+see päring ei tuvasta. Ära nõua juba piisava kogumise kordamist.

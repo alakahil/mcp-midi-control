@@ -17,6 +17,7 @@ export function getSoundCapabilities(base){
   return {profile:'fm3-sound',revision:'0.3.4-dev',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
     outputs:['.syx','.txt','.spec.json','.validation.json'],
+    globalScaleObservations:{input:'fm3-preset.mjs --global-scales OBSERVATIONS.json',decoder:'global-scale-collector/FM3_DECODE_SCALES.py',requires:'Python 3.9+ for optional observation input and verification',scope:'capture-time display/value crosscheck; report only',changesPresetBytes:false,deviceIO:false,liveGetEncodingVerified:false},
     layout:{rows:[2,3],maxBlocksPerRow:10,blocks:Object.values(SLUG_BY_EID),policy:'Exactly the composed blocks; no removal, duplicates or arbitrary 4-row graph'},
     table:{defaultStatuses:DEFAULT_STATUSES,optInStatuses:OPT_IN_STATUSES,families:FAMILY_BY_SLUG,dictionaryEntries:d.params.length,
       blockedParameters:d.params.filter(p=>p.status==='blocked-hidden-editor').map(p=>({family:p.family,pid:p.param,name:p.name,reason:'Hidden in FM3-Edit 1.07.17; no write support'})),

@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {verifyGlobalScaleReport} from './fm3-global-scale-observations.mjs';
 export const sha256=b=>createHash('sha256').update(b).digest('hex');
 export function writePresetOutputs(stem,result,spec){
   const dir=path.dirname(path.resolve(stem));fs.mkdirSync(dir,{recursive:true});
@@ -28,5 +29,6 @@ export function verifyPresetOutputs(stem){
     if(!entry||sha256(bytes)!==entry.sha256||bytes.length!==entry.bytes)throw Error('Artifact mismatch: '+ext);
   }
   if(sha256(fs.readFileSync(stem+'.syx'))!==report.outputSha256)throw Error('Final SYX hash mismatch');
+  verifyGlobalScaleReport(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'));
   return report;
 }

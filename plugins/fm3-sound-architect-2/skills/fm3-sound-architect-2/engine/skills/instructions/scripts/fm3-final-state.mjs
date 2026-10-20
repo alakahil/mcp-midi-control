@@ -8,6 +8,7 @@ import {sha256} from './fm3-output.mjs';
 import {typeApplicability,typePolicySummary,readTypeState} from './fm3-type-applicability.mjs';
 import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 import {globalScaleDependencies,pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
+import {renderGlobalScaleObservations} from './fm3-global-scale-observations.mjs';
 const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks);
 export function finalSoundState(syx,writes,opts={}){
   const after=inspectStructure(syx),body=Buffer.from(after.raw.body),{records}=scanRecords(body),dictionary=loadDictionary();
@@ -77,7 +78,8 @@ export function renderFinalSoundText(state,spec){
   lines.push('','MUUD PÕHISEADED LÕPPFAILIST','Ümardatud salvestatud väärtused; detailne loend ja toorsõnad on validation.json failis.');
   for(const p of state.parameters.filter(p=>(mainNames.has(p.name)||explicitChannels.has(p.block+':'+p.channel))&&!written.has(p.block+':'+p.channel+':'+p.name)))lines.push(`${p.block} ${p.channel} ${p.label??p.name}: ${fmt(p.value)} ${p.unit} [${p.status}]${dependencyNote(p)}${p.storedDependency?'; '+p.storedDependency:''}`);
   for(const m of state.modifiers.filter(m=>m.active))lines.push(`Modifikaator: ${m.targetName}; allikas ${m.uncertain?'ebaselge':m.sourceName}; kanal ${m.channelScope}. Salvestatud väärtus ei tõenda kontrolleri hetkeväärtust.`);
-  if(state.globalScaleDependencies.uses.length)lines.push(`Globaalsed kohandatud skaalad: ${state.globalScaleDependencies.readPlan.scales.join(', ')}. Sisu puudub presetifailist ja on kontrollimata. Salvestatud kanalite sõltuvuste lugemisplaan sisaldab ${state.globalScaleDependencies.readPlan.requestCount} päringut; päringuid pole käivitatud.`);
+  if(state.globalScaleDependencies.observationsIncluded)lines.push('',renderGlobalScaleObservations(state.globalScaleDependencies).trimEnd());
+  else if(state.globalScaleDependencies.uses.length)lines.push(`Globaalsed kohandatud skaalad: ${state.globalScaleDependencies.readPlan.scales.join(', ')}. Sisu puudub presetifailist ja on kontrollimata. Salvestatud kanalite sõltuvuste lugemisplaan sisaldab ${state.globalScaleDependencies.readPlan.requestCount} päringut; päringuid pole käivitatud.`);
   lines.push('','SÕLTUVUSED JA KONTROLLITASE','Kanalimuudatus mõjutab kõiki seda kanalit kasutavaid stseene. Määramata väärtused pärinevad alusest või kopeeritud täiskanalimallist.',
     'Cab-mallid kasutavad olemasolevat Dyna-Cab teeki. Väliseid User IR-faile ei paigaldata; muutmata IR/pedaali/globaalseadistuse sõltuvused säilivad alusfailist.',
     'Offline-kontroll läbitud: lõppfaili kaadrid, CRC, sisu, marsruutimine ja deklareeritud muudatused. Selle lõppfaili import, heli ja CPU pole uue kontrolliga kinnitatud.',
