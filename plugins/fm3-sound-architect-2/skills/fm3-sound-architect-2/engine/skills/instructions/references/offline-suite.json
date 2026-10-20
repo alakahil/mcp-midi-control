@@ -330,6 +330,15 @@
       ],
       "scope": "Compressed original evidence integrity",
       "required": true
+    },
+    {
+      "id": "test-global-scale-collector",
+      "command": [
+        "python3",
+        "scripts/global-scale-collector/test_global_scales.py"
+      ],
+      "scope": "Synthetic failure cases and POSIX pseudo-terminal; raw capture only, no FM3 hardware/scale-value confirmation",
+      "required": true
     }
   ]
 }

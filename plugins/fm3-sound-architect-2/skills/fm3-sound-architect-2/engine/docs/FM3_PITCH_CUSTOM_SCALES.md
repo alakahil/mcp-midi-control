@@ -109,3 +109,91 @@ Allikad:
 - [Fractal Blocks Guide](https://www.fractalaudio.com/downloads/manuals/fas-guides/Fractal-Audio-Blocks-Guide.pdf), Pitch: Custom Scale ning Custom Shifter.
 - [Analog Devices SHARC+ Core Programming Reference](https://www.analog.com/media/en/dsp-documentation/processor-manuals/sc58x-2158x-prm.pdf), VISA Type 3 ning short-word/normal-word valikud.
 - [Selache, commit 2b26d3b](https://github.com/js216/selache/tree/2b26d3b75c53063575bc5c820fa0d38879335187): uurimise ristkontroll; dekooderit ei kopeerita runtime'i. Osalise disassembleri väljundit kontrolliti protsessori juhendi ja täpsete opcode'ide vastu.
+
+## Jätkatav toorvastuste koguja
+
+`global-scale-collector/FM3_GLOBAL_SCALES.py` kogub ainult vajalike skaalade
+parameetriinfo toorvastused. Python 3.9+ standardteek; macOS/Linux USB-serial.
+Node, mido ja pyserial pole vajalikud. Kõik seadmesse saadetavad sõnumid on
+23-baidised `fn=01 / sub=1A / effect=1 / PID=902…1285` päringud, väärtuse,
+modifier'i ja tail'i väljad nullis. Port tuleb valida teadlikult; üldine
+`usbmodem` nimi üksi ei tõenda, et tegemist on FM3-ga.
+
+Sulge FM3-Edit ja muud sama porti kasutavad rakendused. Ühenda FM3 USB kaudu.
+Skaalasid, parameetreid, kanaleid ega presetti ei pea muutma; eksporti pole vaja.
+Käivita kataloogis `engine/skills/instructions/scripts/global-scale-collector`:
+
+```sh
+python3 FM3_GLOBAL_SCALES.py --list-ports
+python3 FM3_GLOBAL_SCALES.py --dry-run --scales 1,32
+python3 FM3_GLOBAL_SCALES.py --capture --scales 1,32 --port /dev/cu.usbmodemFM3 --out fm3-scales
+```
+
+Asenda näidisport oma FM3 pordiga. Asenda näidisskaalad preseti
+`globalScaleDependencies.readPlan.scales` loendiga. Soovi korral kasuta
+`--plan read-plan.json`: see peab olema `fm3-pitch-custom-scales.mjs` otsene
+JSON-väljund. Kontrollitakse tõendiräsi ning kõiki aadresse; failist ei võeta
+saadetavaid käske. `--all` kogub kõik 384 aadressi ainult teadliku valiku korral.
+Vaikimisi puudub automaatne kõigi skaalade lugemine.
+
+Esimene vastus läbib samad ranged kontrollid nagu iga järgmine: FM3 mudel,
+alamkäsk, effect/PID, üks vastus, 60-baidine kuju, 32-baidise tail'i pikkus,
+7-bitised andmed, kanooniline padding ja XOR-kontrollsumma. Sobimatu kuju,
+aegumine, topeltvastus või poolik saatmine peatab seansi kohe. Puudub
+automaatne korduskatse või üleminek mõnele teisele käsule. Tundmatu kuju võib
+olla teise püsivara normaalne vastus; toorandmed tuleb enne parseri laiendamist
+üle vaadata. Kolmekümne kahe baidi sisu jääb selles etapis tõlgendamata.
+
+Katkestuse järel korda sama capture-käsku lisaga `--resume`. Koguja kontrollib
+manifesti, oma lähtekoodi räsi ja varasemaid toorfaile ning loeb kõik varem
+õnnestunud aadressid uuesti. Alles nende baittäpse vastavuse järel jätkub
+puuduvate aadresside kogumine. Muutunud vastus peatab seansi; alusta siis uues
+`--out` kaustas. See lisab automaatseid lugemisi, kuid hoiab ära erinevate
+hetkede andmete vaikse kokkuliitmise. Järjestikune lugemine ei ole atomaarne
+seadme hetktõmmis; seansi ajal ära muuda seadistusi.
+
+```sh
+python3 FM3_GLOBAL_SCALES.py --audit fm3-scales
+```
+
+Tagasta automaatselt loodud `fm3-scales/results.zip`. Arhiiv tekib ka
+katkestatud seansi korral ning sisaldab kõiki selleks hetkeks salvestatud katseid. `session.json` talletab plaani, pordi,
+platvormi ja skriptiräsi; iga `attempt-*.json` sisaldab täpset TX-i, toor-RX-i,
+RX-räsi, saabumisaegu ja võimalikku viga. Salvestatakse ka enne päringut
+saabunud liiklus. `summary.json` eristab kogumise lõppu sisulisest kinnitusest.
+Koguja ei laadi andmeid võrku. Pordi metaandmed ja FM3 toorvastused jäävad
+kohalikku tulemuskausta; neid ei avaldata automaatselt GitHubis.
+
+**`captureComplete` ei kinnita skaalade väärtusi.** `contentsVerified` ja
+`liveGetEncodingVerified` jäävad alati false. Puudub automaatne ujukoma- või
+signed-int tõlgendus: ka usutav null võib olla kirjeldusvälja vaikimisi väärtus.
+Samuti ei tuvastata selle päringuga seadme seerianumbrit ega püsivara versiooni.
+Järgmine samm on tegelike vastuste võrdlus FW13 globaalse getter'i ning
+redaktori vastuseparseriga. Kui vastuse kuju või sisu ei tõenda nihkeid,
+kasutame uut lugemistesti, mitte käsitsi keeramise seeriat.
+
+### Transpordi tõendid ja piirid
+
+- [ForgeFX gen3.ts, commit c22862a5](https://github.com/sKuhLight/ForgeFX/blob/c22862a5b2f2078f3cb92a2735e51f94c39a0062/server/src/drivers/gen3.ts):
+  `readRange` kasutab `fn=01/sub=1A`, aadressivälju ja nullandmeid.
+  `readParams` hoiatab, et vana `buildGetParameter` saadab SET-typed `09 00`
+  ja kirjutab nulli. Sealt ei kanta üle FC skaalade ega väärtuste tõlgendust.
+- Repos `gen3-sub01-block-definition-response.md` tõendab, et `sub=01`
+  vastus võib olla ploki kirjeldus ning selle value32 välja ei tohi pidada
+  parameetri väärtuseks. Seetõttu koguja ei kasuta `readParams`-i `01 00` rada.
+- `gen3-editor-sync-read-surface.md` dokumenteerib `sub=1A` 60-baidise vastuse
+  ja aadressi kajastamise FM9 salvestustes. See on FM3 vastuse **esialgne
+  vastuvõetav profiil**, mitte uue FM3 riistvaratesti tulemus.
+- FM3-Edit 1.07.17 (ülaltoodud SHA-256), emitter `0x1401e6ab0…0x1401e6b53`:
+  mudelibaitide 0x10/0x11/0x12 korral action=0x1A; effect ja PID liiguvad
+  sõnumi +4/+8 väljadele; tailCount=0; serializer `0x14033c9a0`.
+  Teine päringurada `0x1402123f0` kasutab sama action'it. Need leiti PE
+  exception-function piiride, emitteri call-viidete ja x86-64 dekodeerimisega.
+  Toores disassembly ja redaktoribinaar ei kuulu pluginasse.
+- Native PID=902…1285 aadressistuse tõend on eelnevas jaotises. Üldise
+  lugemisemitteri olemasolu ei tõenda nende PID-de live vastuste tähendust.
+
+Tarkvaratestid kasutavad sünteetilisi vastuseid ja päris POSIX pseudo-terminali.
+Need katavad pordi saatmisraja, tükeldatud liikluse, vale mudeli/aadressi,
+kontrollsumma, dubletid, ajalõpu, osalise saatmise, katkestuse/jätkamise ja
+muutunud andmete tõrjumise. Need pole FM3 seadmemõõtmised.

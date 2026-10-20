@@ -324,3 +324,14 @@ Vali globaalskaala selgesõnalise sildiga, nt `CUSTOMSCALE1: "SCALE 32"`.
 Arvuline sisend säilitab vana salvestuskoodi tähenduse: skaala indeks 0–31.
 Kuvasildid on FW13 püsivara põhjal ristkontrollitud, mitte uus seadmemõõtmine.
 Globaalsete skaalade sisu ei sisaldu presetis; ära luba selle ülekandmist.
+
+## Globaalsete skaalade toorvastuste kogumine
+
+Kasuta kasutaja kinnitatud lugemisseansi jaoks
+`engine/skills/instructions/scripts/global-scale-collector/FM3_GLOBAL_SCALES.py`.
+Loe [Pitchi skaalade juhendi koguja osa](engine/docs/FM3_PITCH_CUSTOM_SCALES.md#jätkatav-toorvastuste-koguja).
+Koguja piirab saatmise fn=01 / sub=1A / effect=1 / PID=902…1285 päringutega.
+`captureComplete` kinnitab ainult toorvastuste kogumist. Ära tõlgenda neid
+automaatselt pooltoonideks ega muuda `contentsVerified` või
+`liveGetEncodingVerified` tõeseks. `sub=01` on kirjelduspäring; vana
+`buildGetParameter` kasutab kirjutavat `sub=09` käsku ja on keelatud.
