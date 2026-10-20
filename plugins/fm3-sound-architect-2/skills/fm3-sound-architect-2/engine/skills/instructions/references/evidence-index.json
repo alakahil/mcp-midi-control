@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2059,
-  "filePaths": 2263,
+  "uniqueContents": 2060,
+  "filePaths": 2264,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -7004,6 +7004,12 @@
         "references/cab-input-fix/FM3_CAB_SELECTION_011.syx"
       ]
     },
+    "926520e79dd5f7b86fff5af457f6248863243bd2b3ce3f10363cbaaa6943a5f1": {
+      "bytes": 12032,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "92656311ef336a04c42a49bfe5c2496ded00c6a2f7241323a0f1c289fc3b5663": {
       "bytes": 2298,
       "paths": [
@@ -9208,12 +9214,6 @@
         "references/reverb-batch-20261006-181951/session.json"
       ]
     },
-    "bf44871e6e614eddcf52b80b15e2250d2c8f08d6a0fdb00cf313518cf6520c8b": {
-      "bytes": 11703,
-      "paths": [
-        "references/offline-suite.json"
-      ]
-    },
     "bf7da9ce3acf0c9f960bfad1bb579cbdb4d31e075b96fc4627f2529e1027cfa6": {
       "bytes": 3114,
       "paths": [
@@ -10580,6 +10580,12 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-full-20261012-122507/step-002-ebb2d1a1d2/donor.syx"
+      ]
+    },
+    "db16f06ac450db11e99d8ad90ec2e7bc323467c3f29829365640dd690da7a91f": {
+      "bytes": 3018,
+      "paths": [
+        "references/fm3-global-scale-wire.json"
       ]
     },
     "db279b4274853e07db4c0dec32915fef59b17cf55f5c34d5342a8b1083797921": {

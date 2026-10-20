@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "firmware": "13.0",
+  "source": {
+    "url": "https://www.fractalaudio.com/downloads/firmware-presets/fm3/13p0/fm3_dsp_rel_13p0.zip",
+    "syxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "unpackedSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3"
+  },
+  "assessment": {
+    "status": "bounded-firmware-serializer-crosscheck",
+    "numericPacking": "five little-endian septets from an unchanged uint32 word",
+    "numericFrameOffset": 12,
+    "numericFrameBytes": 5,
+    "cacheToResponseCopyTraced": true,
+    "numericSerializerTraced": true,
+    "scaleToNumericCacheProducerTraced": false,
+    "endToEndStaticVerified": false,
+    "nonzeroHardwareVerified": false,
+    "deviceIO": false,
+    "newHardwareRangeValidation": false,
+    "limits": "The cached word is copied without conversion. Its producer and freshness for global scale PIDs 902..1285 are not proved. Float32 inputs in the replay are synthetic assumptions. The signed-short-to-FLOAT display path does not prove the numeric cache uses that value."
+  },
+  "spans": {
+    "pack32": {
+      "address": 3292862030,
+      "unpackedOffset": 326546,
+      "bytes": 76,
+      "sha256": "11ddfd4895cca40e15dd3b8d970774bbf3587b15fa2b1c94f190262517cff4ca",
+      "hex": "80b485b000af786039607b681b68fb600023bb600ee03b68dab2fb68591cf96002f07f02d2b21a703b68db093b60bb680133bb60bb68042beddd7b68fa681a6000bf1437bd465df8047b7047"
+    },
+    "pack16": {
+      "address": 3292861952,
+      "unpackedOffset": 326468,
+      "bytes": 78,
+      "sha256": "6acd3526c90c2d4f9f1815af5b919da4e9d32f215e0ed2507b8267d65b7e0075",
+      "hex": "80b485b000af78600b467b807b681b68fb607b88dab2fb68591cf96002f07f02d2b21a707b88db097b807b88dab2fb68591cf96002f07f02d2b21a707b68fa681a6000bf1437bd465df8047b7047"
+    },
+    "serializerFields": {
+      "address": 3292875548,
+      "unpackedOffset": 339896,
+      "bytes": 108,
+      "sha256": "948989212a677625c3b101560faed645c1dbed7ff4ffbfd3f4621dec704db862",
+      "hex": "3b681b689ab207f10c0311461846fcf769fd3b685b689ab207f10c0311461846fcf760fd3b689b689ab207f10c0311461846fcf757fd3b68db681a4607f10c0311461846fcf775fd3b681b699ab207f10c0311461846fcf745fd3b685b699ab207f10c0311461846fcf73cfd"
+    },
+    "numericCacheRead": {
+      "address": 3292645510,
+      "unpackedOffset": 111754,
+      "bytes": 38,
+      "sha256": "1147c05b8e578fb47e09facdce601dee6937dc1a8375e0d33e17528046304423",
+      "hex": "47f6c023ccf285133a6a442101fb02f2134410331a68bb699b0013441a687b6803f224431a60"
+    },
+    "replyHandoff": {
+      "address": 3292875372,
+      "unpackedOffset": 339720,
+      "bytes": 20,
+      "sha256": "2dd0b2770184793bca5985852a318ba3484c2a3f673555ecae90197bbdeaa133",
+      "hex": "786ac6f75bff7b6a03f583631946786800f024f8"
+    },
+    "getDispatch": {
+      "address": 3292644996,
+      "unpackedOffset": 111240,
+      "bytes": 4,
+      "sha256": "10783fcdaaa45274e8583419d0d3a9998a59f8a60fa0c239427f70feb262d608",
+      "hex": "4dc841c4"
+    }
+  }
+}

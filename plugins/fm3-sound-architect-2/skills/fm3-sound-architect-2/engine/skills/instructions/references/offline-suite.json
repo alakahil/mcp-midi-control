@@ -357,6 +357,15 @@
       ],
       "scope": "Synthetic evidence attached to final sound and legacy reports; unchanged SYX, required-scale coverage, CLI and retained-evidence verification",
       "required": true
+    },
+    {
+      "id": "test-global-scale-wire",
+      "command": [
+        "python3",
+        "scripts/test-global-scale-wire.py"
+      ],
+      "scope": "Pinned ARM numeric serializer replay with synthetic uint32 and 49 assumed float32 inputs; producer gap remains explicit, no hardware confirmation",
+      "required": true
     }
   ]
 }

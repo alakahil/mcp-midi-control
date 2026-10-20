@@ -259,3 +259,10 @@ See ei tõenda üksinda tervet saatmisteed seadmes. Pakitud väärtuse näited:
 −24 = `00 00 00 0e 0c`, −1 = `00 00 00 7c 0b`,
 +1 = `00 00 00 7c 03`, +24 = `00 00 00 0e 04`.
 Uued testsisendid on sünteetilised; kasutaja toorandmeid ei pakita lähtekoodi.
+
+## Arvuvälja saatmistee
+
+[Püsivara ARM-pakkija kontroll](FM3_GLOBAL_SCALE_WIRE.md) kinnitab arvusõna
+viieks 7-bitiseks baidiks pakkimist. Skaalast arvupuhvri täitmiseni jääv
+lünk ja kahe väärtusega eristav seadmekatse on samas dokumendis.
+Staatiline test ei suurenda vaatlusandmete riistvaralist kinnitust.
