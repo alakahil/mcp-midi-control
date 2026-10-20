@@ -5,18 +5,21 @@ import json
 from pathlib import Path
 from six_field_resolution import ENGINE, EDITOR_SHA, CACHE_SHA, cache_records, mine_editor, require, sha
 from pitch_display import load as load_display, OUT as DISPLAY_OUT
+from pitch_custom_scales import load as load_custom, OUT as CUSTOM_OUT
 
 REF = ENGINE / 'skills/instructions/references'
 OUT = REF / 'fm3-pitch-word-codecs.json'
 SIGNED = [15,16,17,18,*range(77,93)]
 COUNTS = [63,71,72,73,74]
-PIDS = sorted(SIGNED + COUNTS + [35,76])
+DYNAMIC = list(range(64,71))
+PIDS = sorted(SIGNED + COUNTS + DYNAMIC + [35,76])
 FACTORY_SHA = 'd7286b090cae82e66e053336b83c027ee66ed2818d526495d7511572da9ac1c6'
 STATUS = 'preset-word-crosschecked'
 
 
 def build(editor=None):
     display = load_display()
+    custom = load_custom()
     dictionary = json.loads((REF/'fm3-param-dictionary.json').read_text())['params']
     params = {p['param']:p for p in dictionary if p['family']=='PITCH' and p['param'] in PIDS}
     require(sorted(params)==PIDS, 'Pitch codec binding drift')
@@ -34,7 +37,12 @@ def build(editor=None):
     for pid in PIDS:
         p,c = params[pid],records[23,pid]
         lo,hi,m,step = c['numeric_fields']
-        require(c['typecode']==16 and m==1 and lo==int(lo) and hi==int(hi), 'Unexpected integer metadata')
+        if pid in DYNAMIC:
+            require(c['typecode']==240 and pid in custom['rules']['notes']['pids'], 'Unexpected dynamic metadata')
+            # Inactive slots are preserved, including an old octave sentinel.
+            # The final active scale has the stricter context-dependent bounds.
+            lo,hi,m,step=pid-63,12,1,1
+        else:require(c['typecode']==16 and m==1 and lo==int(lo) and hi==int(hi), 'Unexpected integer metadata')
         require(next(r['name'] for r in native if r['pid']==pid)==p['name'] and p['block']==110, 'Wrong native name/effect')
         if pid in SIGNED:require((lo,hi,step,c['labels'])==(-24,24,1,[]),'Signed range drift')
         if pid in COUNTS:require(step==1 and not c['labels'],'Count descriptor drift')
@@ -45,19 +53,22 @@ def build(editor=None):
         else:effective['signedWord']=pid in SIGNED
         if str(pid) in display['fields']:effective['displayCodec']=display['fields'][str(pid)]
         if pid in [71,72]:effective['storedDependency']='Zero-based global custom-scale index 0..31, displayed as SCALE 1..32; global scale contents are not included or validated by this preset.'
-        if pid==63:effective['storedDependency']='Custom note count only; context-dependent NOTE2..NOTE8 mappings remain unverified and preserved.'
+        if pid==63:effective['storedDependency']='NOTE2..NOTE8 use the complete final custom scale; active offsets must increase strictly below the octave.'
+        if pid in DYNAMIC:
+            effective['contextCodec']='pitch-custom-note'
+            effective['storedDependency']='Integer semitone offset from tonic. Requires SCALE=CUSTOM, an active note slot and a valid complete final scale; inactive slots are preserved.'
         if pid==74:effective['storedDependency']='Stored repeat codes 1..30 are finite counts; code 31 displays INFINITE. Cross-checked in FW13 firmware, without a new hardware measurement.'
         if 77<=pid<=92:effective['storedDependency']='Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers.'
-        values = sorted({s['channels'][ch]['words'][str(pid)] for s in factory['specimens'] for ch in 'ABCD'} | {x['words'][pid] for x in lib['models']})
+        values = sorted({s['channels'][ch]['words'][str(pid)] for s in factory['specimens'] for ch in 'ABCD' if str(pid) in s['channels'][ch]['words']} | {x['words'][pid] for x in lib['models']})
         for word in values:
             v=word-65536 if pid in SIGNED and word>=32768 else word
             require(lo<=v<=hi, 'Existing preset word outside FW13 domain')
         fields.append({'pid':pid,'name':p['name'],'effectId':110,'family':'PITCH','cache':c,
                        'native':next(r for r in native if r['pid']==pid),'original':p,'effective':effective,'observedStoredWords':values})
     return {'schemaVersion':1,'firmware':'13.0','scope':'Preset storage only. FW13 cache bounds and labels, FM3 native symbol bindings, existing FW13 templates and older FM3 factory words. Structural/file cross-check, not a new hardware sweep or MIDI SET codec.',
-            'sources':{'editorSha256':EDITOR_SHA,'cacheSha256':CACHE_SHA,'dictionarySha256':sha((REF/'fm3-param-dictionary.json').read_bytes()),'factoryEvidenceSha256':FACTORY_SHA,'pitchLibrarySha256':sha(lib_path.read_bytes()),'displayEvidenceSha256':sha(DISPLAY_OUT.read_bytes())},
+            'sources':{'editorSha256':EDITOR_SHA,'cacheSha256':CACHE_SHA,'dictionarySha256':sha((REF/'fm3-param-dictionary.json').read_bytes()),'factoryEvidenceSha256':FACTORY_SHA,'pitchLibrarySha256':sha(lib_path.read_bytes()),'displayEvidenceSha256':sha(DISPLAY_OUT.read_bytes()),'customScaleEvidenceSha256':sha(CUSTOM_OUT.read_bytes())},
             'numericEnumInput':'Stored option ID, not zero-based list position. TRACKMODE: NOTES=1, CHORDS=2. TEMPO: first label=1, last=78; NONE is unavailable.',
-            'limits':'No dynamic note authoring, global scale contents, device import, audio/CPU or effective controller/tempo evaluation. Same descriptor class is transferred across the explicitly listed 20 signed fields; factory facts are not per-value measurements.',
+            'limits':'Seven local custom notes require final-state context validation. No global scale contents, tonic authoring, device import, audio/CPU or effective controller/tempo evaluation. Same descriptor class is transferred across the explicitly listed 20 signed fields; factory facts are not per-value measurements.',
             'fields':fields}
 
 

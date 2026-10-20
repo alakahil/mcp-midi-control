@@ -29,9 +29,9 @@ for(const p of [tracking,tempo]){
  for(const v of [0,p.max+1,1.5,'OFF','NONE',null,true])reject(p,v);
  assert.equal(decodeValue(p,0),undefined);
 }
-// Other tempo lists retain NONE=0; the overlay changes exactly 27 definitions.
+// Other tempo lists retain NONE=0; the overlay changes exactly 34 definitions.
 assert.equal(encodeValue(findParam('pitch','DTEMPO1'),'NONE',{allow:['enum-labels']}),0);
-assert.equal(loadDictionary().params.filter(p=>p.encodingEvidence).length,27);
+assert.equal(loadDictionary().params.filter(p=>p.encodingEvidence).length,34);
 const factory=JSON.parse(read('references/fm3-pitch-factory-evidence.json'));
 let factoryWords=0;
 for(const s of factory.specimens)for(const ch of Object.values(s.channels))for(const [pid,raw] of Object.entries(ch.words)){

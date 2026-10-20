@@ -37,10 +37,12 @@ class RotaryPitchTests(unittest.TestCase):
         for pid in expected:
             self.assertTrue(f[str(pid)]['cases'])
             self.assertIsNone(f[str(pid)]['blockedReason'])
+        for pid in range(64,71):
+            self.assertEqual(sorted({t for c in f[str(pid)]['cases'] for t in c['types']}),[4,5,10,13])
         self.assertEqual(f['35']['cache']['labels'], ['NOTES', 'CHORDS'])
         self.assertEqual(f['35']['cache']['numeric_fields'][:2], [1,2])
         self.assertEqual(f['76']['cache']['numeric_fields'][:2], [1,78])
-        for pid in [*range(64,71),107]:
+        for pid in [107]:
             self.assertFalse(f[str(pid)]['cases'])
             self.assertTrue(f[str(pid)]['blockedReason'])
 
@@ -49,6 +51,7 @@ class RotaryPitchTests(unittest.TestCase):
         xml = '<Root><EffectLayouts><Layout name="Pitch"><EffectVariants>'+controls+'</EffectVariants></Layout></EffectLayouts></Root>'
         clean, removed = prepare_xml(xml)
         self.assertEqual(len(removed),28)
+        self.assertIn(b'PITCH_NOTE2',clean)
         self.assertNotIn(b'dynamicParamInfo',clean)
         for bad in [xml.replace('PITCH_NOTE2','PITCH_UNKNOWN',1),xml.replace('dynamicParamInfo="true"','dynamicParamInfo="false"',1),xml.replace('type="dropdownMini"','dynamicParamId="2" type="dropdownMini"',1),xml.replace('value="13"','value="12"')]:
             with self.assertRaises(ValueError):prepare_xml(bad)
@@ -59,7 +62,7 @@ class RotaryPitchTests(unittest.TestCase):
                        lambda r:r['families']['PITCH']['parameters']['35'].__setitem__('blockedReason','stale'),
                        lambda r:r['families']['PITCH']['parameters']['63'].__setitem__('cases',[{'types':[4],'when':{},'label':'Notes'}]),
                        lambda r:r['families']['PITCH']['nativeDescriptors'][15].__setitem__('pid',16),
-                       lambda r:r['families']['PITCH']['excludedDynamicControls'].pop()]:
+                       lambda r:r['families']['PITCH']['resolvedDynamicControls'].pop()]:
             bad=copy.deepcopy(self.r);mutate(bad)
             with self.assertRaises(ValueError):verify(bad)
 

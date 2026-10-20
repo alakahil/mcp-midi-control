@@ -64,7 +64,7 @@
         "node",
         "scripts/test-rotary-pitch-applicability.mjs"
       ],
-      "scope": "16 captured Pitch models A-D and type-free Rotary; visibility, 27 resolved preset-word fields, dynamic/fixed slots, model/tempo/modifier gates, atomic writes and final guide; no new hardware evidence",
+      "scope": "16 captured Pitch models A-D and type-free Rotary; visibility, 34 resolved preset-word fields, custom-note context/fixed slots, model/tempo/modifier gates, atomic writes and final guide; no new hardware evidence",
       "required": true
     },
     {
@@ -73,7 +73,16 @@
         "node",
         "scripts/test-pitch-word-codecs.mjs"
       ],
-      "scope": "27 exact Pitch overlays, independent signed-int16 anchors and 1175 domain values, nonzero enum IDs, 432 factory words, raw guard, atomic failure and final SYX/TXT; no device I/O",
+      "scope": "34 overlay bindings; 27 original Pitch word fields, independent signed-int16 anchors and 1175 domain values, nonzero enum IDs, 432 factory words, raw guard, atomic failure and final SYX/TXT; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-pitch-custom-scales",
+      "command": [
+        "node",
+        "scripts/test-pitch-custom-scales.mjs"
+      ],
+      "scope": "1749 local scales, context/ordering/raw/atomic gates, complete A-D SYX/TXT and 384 global GET-plan addresses; no device I/O",
       "required": true
     },
     {

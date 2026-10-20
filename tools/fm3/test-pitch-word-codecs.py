@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Boundary regressions for the 27-field, preset-only Pitch overlay."""
+"""Boundary regressions for the 34-field, preset-only Pitch overlay."""
 import copy
 import json
 import unittest

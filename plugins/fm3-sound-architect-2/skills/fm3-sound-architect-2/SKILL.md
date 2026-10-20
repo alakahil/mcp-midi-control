@@ -134,13 +134,26 @@ käsikirjutuseks suletuks; Tremolo Rate nõuab lõplikku Tempo NONE olekut.
 eristab Rotary Rate PID 0 tüübi valijast: Rotaryl Type puudub. Pitchi 16
 mudelit kontrollitakse lõpliku tüübi järgi; TYPE nõuab täiskanalimalli.
 [Pitchi presetisõnade kodeering](engine/docs/FM3_PITCH_WORD_CODECS.md) lahendab
-27 välja: 20 märgiga täisarvu, viis otse salvestatud täisarvu ja kaks enumit
-algus-ID-ga 1. Enumites eelista silte; arv tähendab salvestatud ID-d.
-CUSTOMSCALE1/2 kasutab nullist algavat globaalset indeksit 0…31; skaalade
-sisu ei valideerita. NUMREPEATS on salvestatud kood, mitte kinnitatud
-korduste kuvanäit; ära tõlgenda 31-t 31 kordusena ega oletatava INFINITE-na.
-Dünaamilised Note 2–8 jäävad suletuks. Staatus preset-word-crosschecked ei
-tähenda uut riistvaramõõtmist ega live MIDI SET tuge.
+34 välja: 20 märgiga täisarvu, viis otse salvestatud täisarvu, seitse
+kontekstist sõltuvat noodinihet ja kaks enumit algus-ID-ga 1.
+Enumites eelista silte; arv tähendab salvestatud ID-d.
+CUSTOMSCALE1/2 jaoks eelista silte SCALE 1…SCALE 32; arvuline sisend on endiselt
+nullist algav indeks 0…31. NUMREPEATS kood 31 kuvab INFINITE; eelista seda silti.
+Staatus preset-word-crosschecked ei tähenda uut riistvaramõõtmist ega live MIDI SET tuge.
+
+Kohaliku kohandatud skaala jaoks loe
+[Pitchi kohandatud skaalad](engine/docs/FM3_PITCH_CUSTOM_SCALES.md).
+Vali täiskanalimalliga Dual Diatonic, Quad Diatonic, Arpeggiator või
+Quad Diatonic Delay ning määra SCALE väärtuseks CUSTOM.
+Määra CUSTOMNOTES vahemikus 4…8 ja NOTE2…NOTE8 aktiivsetele astmetele
+täisarvulised pooltooninihked toonikast. Esimene aste on alati 0; ülejäänud
+aktiivsed nihked peavad rangelt kasvama ja jääma alla 12. Esita terve soovitud
+skaala ühes controls-loendis; generaator kontrollib lõppolekut järjekorrast
+sõltumatult. Ära kirjuta peidetud astmeid ega TONIC kuvaseadet.
+Globaalsete skaalade sisu ei ole presetis. Kasuta validation.json sõltuvusloendit
+ja readPlan-i; eraldi lugemisplaani jaoks käivita
+node engine/skills/instructions/scripts/fm3-pitch-custom-scales.mjs --scales 1,32
+või --all. See väljastab ainult plaani, ei loo seadmeühendust ega loe sisu.
 [Tempo- ja modifikaatorijuhend](engine/docs/FM3_PARAMETER_DEPENDENCIES.md) kirjeldab
 21 tempo-seost ning olemasolevate modifikaatorite lugemist. Time/Rate kirjutus
 nõuab lõpliku kanali Tempo NONE olekut; aktiivse modifikaatori sihtmärgile

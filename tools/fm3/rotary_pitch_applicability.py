@@ -17,7 +17,7 @@ DYNAMIC = {f'PITCH_NOTE{i}' for i in range(2, 9)}
 
 
 def prepare_xml(xml):
-    """Keep exact records of known unsupported dynamic notes; reject any other dynamic shape."""
+    """Resolve only the seven firmware-proven dynamic notes; reject any other shape."""
     root = ET.fromstring(xml)
     layouts = [n for n in root.find('EffectLayouts') if n.get('name') == 'Pitch' and active(n)]
     require(len(layouts) == 1, 'Missing/ambiguous Pitch layout')
@@ -34,7 +34,7 @@ def prepare_xml(xml):
                 require(child.tag == 'EditorControl' and child.get('parameterName') in DYNAMIC and child.get('dynamicParamInfo') == 'true'
                         and child.get('type') == 'dropdownMini' and not any(k in child.attrib for k in ['dynamicParamId', 'parameterOffset', 'secondaryParameterName', 'controllingParamName']), 'Unknown dynamic Pitch control')
                 excluded.append({'variant': variant, 'attributes': dict(child.attrib)})
-                n.remove(child)
+                del child.attrib['dynamicParamInfo']
             else:
                 walk(child, variant)
     walk(layouts[0])
@@ -60,7 +60,8 @@ def block_reason(p, cache):
         return 'unused or fixed editor-only slot; no scalar authoring'
     if p['name'] in DYNAMIC:
         require(p['kind'] == 'class-f' and cache['typecode'] == 240, 'Dynamic descriptor drift')
-        return 'dynamic note selector; context-dependent wire mapping unverified'
+        require(apply_override(p,load_codecs())['contextCodec']=='pitch-custom-note', 'Missing custom-note codec')
+        return None
     if cache['typecode'] == 16:
         if p['kind'] != 'enum':
             return 'FW13 discrete field conflicts with normalized scalar dictionary; wire mapping unresolved'
@@ -110,14 +111,14 @@ def build(editor):
             source, models = template_models(config, cache)
             f.update({'modelPid': 0, 'selectorPid': 0, 'selector': 'PITCH_TYPE', 'templateOnlyPids': [0],
                       'models': models, 'modelSource': source, 'selectors': {'0': {'name': 'PITCH_TYPE', 'values': list(range(16)), 'cache': cache[23, 0]}},
-                      'excludedDynamicControls': excluded})
+                      'resolvedDynamicControls': excluded})
         else:
             f.update({'modelPid': None, 'selectorPid': None, 'selector': None, 'templateOnlyPids': [], 'models': {}, 'selectors': {}, 'modelSource': rotary_source()})
         families[family] = f
     return {'schemaVersion': 1, 'firmware': '13.0', 'editor': '1.07.17',
             'sources': {'editorSha256': EDITOR_SHA, 'cacheSha256': CACHE_SHA, 'layoutSha256': sha(xml), 'dictionarySha256': sha((REF/'fm3-param-dictionary.json').read_bytes())},
-            'policy': 'Pitch TYPE requires full templates; final-channel FW13 variants govern controls. Rotary has no model selector: PID 0 is Rate. Apply the pinned 27-field preset-word overlay; block dynamic/fixed slots including raw writes. Global scale indices do not include global scale contents.',
-            'limits': 'Metadata-derived authoring gates, not native UI/DSP or hardware execution. Global scale contents, dynamic note meanings, arpeggiator playback semantics and Learn/controller dynamics remain unverified. Signed/count/enum storage uses the separately cross-checked 27-field overlay; no live MIDI SET claim. Existing tempo/modifier guards remain required.',
+            'policy': 'Pitch TYPE requires full templates; final-channel FW13 variants govern controls. Rotary has no model selector: PID 0 is Rate. Apply the pinned 34-field preset-word overlay; seven custom notes also require complete final-scale validation. Fixed slots, including Tonic, remain blocked. Global scale indices do not include global scale contents.',
+            'limits': 'Metadata and firmware-derived authoring gates, not native UI/DSP or hardware execution. Global scale contents, arpeggiator playback semantics and Learn/controller dynamics remain unverified. No live MIDI SET claim. Existing tempo/modifier guards remain required.',
             'families': families}
 
 
@@ -140,7 +141,7 @@ def verify(result):
             require((f['modelPid'], f['selectorPid'], f['selector'], f['templateOnlyPids']) == (0, 0, 'PITCH_TYPE', [0]), 'Pitch selector drift')
             require(f['selectors'] == {'0': {'name': 'PITCH_TYPE', 'values': list(range(16)), 'cache': cache[23, 0]}}, 'Pitch domain drift')
             require(all(m['selectorValue'] == int(i) for i, m in models.items()), 'Pitch model/type mismatch')
-            verify_dynamic(f['excludedDynamicControls'])
+            verify_dynamic(f['resolvedDynamicControls'])
         else:
             require(f['modelPid'] is None and f['selectorPid'] is None and f['selector'] is None and not f['templateOnlyPids'] and not f['models'] and not f['selectors'], 'Rotary must not have a model selector')
             require(f['modelSource'] == rotary_source(), 'Rotary source drift')

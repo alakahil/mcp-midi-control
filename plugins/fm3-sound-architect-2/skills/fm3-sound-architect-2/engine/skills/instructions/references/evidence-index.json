@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2058,
-  "filePaths": 2262,
+  "uniqueContents": 2059,
+  "filePaths": 2263,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -718,12 +718,6 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-full-20261012-122507/step-073-3063299f49/donor.syx"
-      ]
-    },
-    "0e35b472aba506e0ae6e296eeec7dafbf0fd6ff06fca1a0954fe924776e119a2": {
-      "bytes": 477081,
-      "paths": [
-        "references/fm3-rotary-pitch-applicability.json"
       ]
     },
     "0ec08c717d6570e0cbbb645b531a2bfc7d764144ff5c8561300f0d7772bda109": {
@@ -1788,6 +1782,12 @@
         "references/drive-batch-20261006-112254/capture-001/labels.json"
       ]
     },
+    "268c426357a8db5ff61de1456168ae6b0dfe49541920ca8766dfafc549bd6f61": {
+      "bytes": 490454,
+      "paths": [
+        "references/fm3-rotary-pitch-applicability.json"
+      ]
+    },
     "26c1c9acfc4f7d59297525035ab5611c663ab9c27f4f5987618f6d24752e8df4": {
       "bytes": 3382,
       "paths": [
@@ -1940,6 +1940,12 @@
       "bytes": 454,
       "paths": [
         "references/reverb-batch-20261006-181951/capture-20261006T181409-b0910aac4b/pair.json"
+      ]
+    },
+    "28b70252f81e8423b48a5d5b95d412b7275c1b0ab51ce629712b03c765b2801e": {
+      "bytes": 10694,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "28d11e923efe606ea18887485677472243a26fab4599369e52e46e99fb31a6d7": {
@@ -2995,6 +3001,12 @@
       "bytes": 171,
       "paths": [
         "references/peq-baseline-20261009-114022/session.json"
+      ]
+    },
+    "3d184e65494dbb74ee225a8eaf03a115ffa71e746902a2e88a86b0f1d5eb1aa7": {
+      "bytes": 6444,
+      "paths": [
+        "references/fm3-pitch-custom-scales.json"
       ]
     },
     "3d2699d5e7ac5cdd1fe626cc6c09676c80d0a8c799ba5e3439694a4e0c99d86d": {
@@ -4557,12 +4569,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-098-5b54e6d564/donor.syx"
-      ]
-    },
-    "5fa108a9206939f5e5e70f995f9ecf8acd788976a2b78cd8aa25a5752306de43": {
-      "bytes": 10346,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "5fa626dfc69c3aaf26cd1eedc125afeefd67858b3fc874bf9b7f121765c49d9c": {
@@ -8474,6 +8480,12 @@
         "references/enhancer-full-20261012-122507/step-029-0215cbf97e/donor.syx"
       ]
     },
+    "af903171673507d65824589ac33080ad2846826b40802021c0f3d3e3c9b691cb": {
+      "bytes": 56517,
+      "paths": [
+        "references/fm3-pitch-word-codecs.json"
+      ]
+    },
     "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c": {
       "bytes": 24680,
       "paths": [
@@ -10273,12 +10285,6 @@
       "bytes": 13153,
       "paths": [
         "references/fm3-pitch-factory-evidence.json"
-      ]
-    },
-    "d73962fbe0ac0ed822e20ba9557277f48097e2fd64a2c369d649a20ef16e483d": {
-      "bytes": 45815,
-      "paths": [
-        "references/fm3-pitch-word-codecs.json"
       ]
     },
     "d749eb4c636c0f9cbaeee45aa909a11955785cb6f344aa85fd21bc322b79a7e9": {

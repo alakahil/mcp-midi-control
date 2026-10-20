@@ -8,10 +8,11 @@
     "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "factoryEvidenceSha256": "d7286b090cae82e66e053336b83c027ee66ed2818d526495d7511572da9ac1c6",
     "pitchLibrarySha256": "4817534c8265e22be7ade32ae974278710f0f84357d008742eb09dd4130a4584",
-    "displayEvidenceSha256": "7da9d37ef7c243ecd12aba4ab0d5e0907f3f287333f047ff27443f7427528d26"
+    "displayEvidenceSha256": "7da9d37ef7c243ecd12aba4ab0d5e0907f3f287333f047ff27443f7427528d26",
+    "customScaleEvidenceSha256": "3d184e65494dbb74ee225a8eaf03a115ffa71e746902a2e88a86b0f1d5eb1aa7"
   },
   "numericEnumInput": "Stored option ID, not zero-based list position. TRACKMODE: NOTES=1, CHORDS=2. TEMPO: first label=1, last=78; NONE is unavailable.",
-  "limits": "No dynamic note authoring, global scale contents, device import, audio/CPU or effective controller/tempo evaluation. Same descriptor class is transferred across the explicitly listed 20 signed fields; factory facts are not per-value measurements.",
+  "limits": "Seven local custom notes require final-state context validation. No global scale contents, tonic authoring, device import, audio/CPU or effective controller/tempo evaluation. Same descriptor class is transferred across the explicitly listed 20 signed fields; factory facts are not per-value measurements.",
   "fields": [
     {
       "pid": 15,
@@ -365,7 +366,413 @@
         "step": 1.0,
         "enum": null,
         "signedWord": false,
-        "storedDependency": "Custom note count only; context-dependent NOTE2..NOTE8 mappings remain unverified and preserved."
+        "storedDependency": "NOTE2..NOTE8 use the complete final custom scale; active offsets must increase strictly below the octave."
+      },
+      "observedStoredWords": [
+        7
+      ]
+    },
+    {
+      "pid": 64,
+      "name": "PITCH_NOTE2",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 223810,
+        "end_offset": 223842,
+        "param_id": 64,
+        "typecode": 240,
+        "numeric_fields": [
+          1.0,
+          6.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "0000803f0000c0400000803f00000000",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 64,
+        "name": "PITCH_NOTE2",
+        "descriptorOffset": 18670144,
+        "nameOffset": 8252952
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 64,
+        "name": "PITCH_NOTE2",
+        "label": "Note 2",
+        "kind": "class-f",
+        "min": 1.0,
+        "max": 6.0,
+        "displayMultiplier": 1.0,
+        "step": 0.0,
+        "flags": "0x0f80",
+        "enum": null,
+        "status": "unverified-taper"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 1,
+        "max": 12,
+        "displayMultiplier": 1,
+        "step": 1,
+        "enum": null,
+        "signedWord": false,
+        "contextCodec": "pitch-custom-note",
+        "storedDependency": "Integer semitone offset from tonic. Requires SCALE=CUSTOM, an active note slot and a valid complete final scale; inactive slots are preserved."
+      },
+      "observedStoredWords": [
+        1
+      ]
+    },
+    {
+      "pid": 65,
+      "name": "PITCH_NOTE3",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 223842,
+        "end_offset": 223874,
+        "param_id": 65,
+        "typecode": 240,
+        "numeric_fields": [
+          2.0,
+          7.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "000000400000e0400000803f00000000",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 65,
+        "name": "PITCH_NOTE3",
+        "descriptorOffset": 18670160,
+        "nameOffset": 8253032
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 65,
+        "name": "PITCH_NOTE3",
+        "label": "Note 3",
+        "kind": "class-f",
+        "min": 2.0,
+        "max": 7.0,
+        "displayMultiplier": 1.0,
+        "step": 0.0,
+        "flags": "0x0f80",
+        "enum": null,
+        "status": "unverified-taper"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 2,
+        "max": 12,
+        "displayMultiplier": 1,
+        "step": 1,
+        "enum": null,
+        "signedWord": false,
+        "contextCodec": "pitch-custom-note",
+        "storedDependency": "Integer semitone offset from tonic. Requires SCALE=CUSTOM, an active note slot and a valid complete final scale; inactive slots are preserved."
+      },
+      "observedStoredWords": [
+        2
+      ]
+    },
+    {
+      "pid": 66,
+      "name": "PITCH_NOTE4",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 223874,
+        "end_offset": 223906,
+        "param_id": 66,
+        "typecode": 240,
+        "numeric_fields": [
+          3.0,
+          8.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "00004040000000410000803f00000000",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 66,
+        "name": "PITCH_NOTE4",
+        "descriptorOffset": 18670176,
+        "nameOffset": 8253048
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 66,
+        "name": "PITCH_NOTE4",
+        "label": "Note 4",
+        "kind": "class-f",
+        "min": 3.0,
+        "max": 8.0,
+        "displayMultiplier": 1.0,
+        "step": 0.0,
+        "flags": "0x0f80",
+        "enum": null,
+        "status": "unverified-taper"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 3,
+        "max": 12,
+        "displayMultiplier": 1,
+        "step": 1,
+        "enum": null,
+        "signedWord": false,
+        "contextCodec": "pitch-custom-note",
+        "storedDependency": "Integer semitone offset from tonic. Requires SCALE=CUSTOM, an active note slot and a valid complete final scale; inactive slots are preserved."
+      },
+      "observedStoredWords": [
+        3
+      ]
+    },
+    {
+      "pid": 67,
+      "name": "PITCH_NOTE5",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 223906,
+        "end_offset": 223938,
+        "param_id": 67,
+        "typecode": 240,
+        "numeric_fields": [
+          4.0,
+          9.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "00008040000010410000803f00000000",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 67,
+        "name": "PITCH_NOTE5",
+        "descriptorOffset": 18670192,
+        "nameOffset": 8253000
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 67,
+        "name": "PITCH_NOTE5",
+        "label": "Note 5",
+        "kind": "class-f",
+        "min": 4.0,
+        "max": 9.0,
+        "displayMultiplier": 1.0,
+        "step": 0.0,
+        "flags": "0x0f80",
+        "enum": null,
+        "status": "unverified-taper"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 4,
+        "max": 12,
+        "displayMultiplier": 1,
+        "step": 1,
+        "enum": null,
+        "signedWord": false,
+        "contextCodec": "pitch-custom-note",
+        "storedDependency": "Integer semitone offset from tonic. Requires SCALE=CUSTOM, an active note slot and a valid complete final scale; inactive slots are preserved."
+      },
+      "observedStoredWords": [
+        4
+      ]
+    },
+    {
+      "pid": 68,
+      "name": "PITCH_NOTE6",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 223938,
+        "end_offset": 223970,
+        "param_id": 68,
+        "typecode": 240,
+        "numeric_fields": [
+          5.0,
+          10.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "0000a040000020410000803f00000000",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 68,
+        "name": "PITCH_NOTE6",
+        "descriptorOffset": 18670208,
+        "nameOffset": 8253016
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 68,
+        "name": "PITCH_NOTE6",
+        "label": "Note 6",
+        "kind": "class-f",
+        "min": 5.0,
+        "max": 10.0,
+        "displayMultiplier": 1.0,
+        "step": 0.0,
+        "flags": "0x0f80",
+        "enum": null,
+        "status": "unverified-taper"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 5,
+        "max": 12,
+        "displayMultiplier": 1,
+        "step": 1,
+        "enum": null,
+        "signedWord": false,
+        "contextCodec": "pitch-custom-note",
+        "storedDependency": "Integer semitone offset from tonic. Requires SCALE=CUSTOM, an active note slot and a valid complete final scale; inactive slots are preserved."
+      },
+      "observedStoredWords": [
+        5
+      ]
+    },
+    {
+      "pid": 69,
+      "name": "PITCH_NOTE7",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 223970,
+        "end_offset": 224002,
+        "param_id": 69,
+        "typecode": 240,
+        "numeric_fields": [
+          6.0,
+          11.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "0000c040000030410000803f00000000",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 69,
+        "name": "PITCH_NOTE7",
+        "descriptorOffset": 18670224,
+        "nameOffset": 8253368
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 69,
+        "name": "PITCH_NOTE7",
+        "label": "Note 7",
+        "kind": "class-f",
+        "min": 6.0,
+        "max": 11.0,
+        "displayMultiplier": 1.0,
+        "step": 0.0,
+        "flags": "0x0f80",
+        "enum": null,
+        "status": "unverified-taper"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 6,
+        "max": 12,
+        "displayMultiplier": 1,
+        "step": 1,
+        "enum": null,
+        "signedWord": false,
+        "contextCodec": "pitch-custom-note",
+        "storedDependency": "Integer semitone offset from tonic. Requires SCALE=CUSTOM, an active note slot and a valid complete final scale; inactive slots are preserved."
+      },
+      "observedStoredWords": [
+        6
+      ]
+    },
+    {
+      "pid": 70,
+      "name": "PITCH_NOTE8",
+      "effectId": 110,
+      "family": "PITCH",
+      "cache": {
+        "offset": 224002,
+        "end_offset": 224034,
+        "param_id": 70,
+        "typecode": 240,
+        "numeric_fields": [
+          7.0,
+          12.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "0000e040000040410000803f00000000",
+        "labels": [],
+        "tail_flags_raw": 0,
+        "auxiliary_u32_raw": []
+      },
+      "native": {
+        "pid": 70,
+        "name": "PITCH_NOTE8",
+        "descriptorOffset": 18670240,
+        "nameOffset": 8253384
+      },
+      "original": {
+        "block": 110,
+        "family": "PITCH",
+        "param": 70,
+        "name": "PITCH_NOTE8",
+        "label": "Note 8",
+        "kind": "class-f",
+        "min": 7.0,
+        "max": 12.0,
+        "displayMultiplier": 1.0,
+        "step": 0.0,
+        "flags": "0x0f80",
+        "enum": null,
+        "status": "unverified-taper"
+      },
+      "effective": {
+        "kind": "integer",
+        "status": "preset-word-crosschecked",
+        "min": 7,
+        "max": 12,
+        "displayMultiplier": 1,
+        "step": 1,
+        "enum": null,
+        "signedWord": false,
+        "contextCodec": "pitch-custom-note",
+        "storedDependency": "Integer semitone offset from tonic. Requires SCALE=CUSTOM, an active note slot and a valid complete final scale; inactive slots are preserved."
       },
       "observedStoredWords": [
         7

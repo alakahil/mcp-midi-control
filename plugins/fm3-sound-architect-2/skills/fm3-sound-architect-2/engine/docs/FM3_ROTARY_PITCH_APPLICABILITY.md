@@ -1,6 +1,6 @@
 # Rotary ja Pitch — FW13 sobivus ning kodeeringupiirangud
 
-0.3.3 kandidaat kontrollib Rotary aktiivseid juhikuid ning kõigi 16 kogutud
+0.3.4-dev kontrollib Rotary aktiivseid juhikuid ning kõigi 16 kogutud
 Pitchi mudeli lõplikku kanali tüüpi. Pitchi TYPE PID 0 muutmiseks on vaja
 terviklikku kanalimalli. Rotaryl **tüübivalijat ei ole**: PID 0 on Rate.
 Mudelit ei tuletata Rotary Rate’i salvestatud väärtusest.
@@ -18,7 +18,7 @@ Mudelit ei tuletata Rotary Rate’i salvestatud väärtusest.
 | Crystal Echoes | Splice Time/Tempo, Diffusion, Direction ja kaks häält |
 | Quad Chromatic / Quad Chromatic Delay | Tagasiside on Delay-variandil, mitte tavalisel Quad Chromaticul |
 | Dual Detune Delay | FEEDBACK3/4 on häälte risttagasiside 1→2 / 2→1, mitte lisahääled |
-| Arpeggiator / Custom Shifter | Mudelite nähtavus on teada; diskreetsed väljad kasutavad eraldi kodeeringut, dünaamilised noodid on suletud |
+| Arpeggiator / Custom Shifter | Mudelite nähtavus on teada; diskreetsed väljad kasutavad eraldi kodeeringut, kohalikud noodid vajavad eraldi lõppoleku kontrolli |
 
 Lõppjuhend kasutab mudelile vastavaid silte. Peidetud ja keelatud sõnad
 säilivad toorandmetes; neile ei kuvata vana vale skaala põhjal väärtust.
@@ -48,13 +48,14 @@ lõpliku mudeli nähtavuse ja seniste sõltuvuskontrollide alusel. Vana
 normaliseeritud teisendust ei kasutata; raw sisend ei väldi domeenikontrolli.
 
 Lisaks on Note 2–8 PID 64–70 FW13 XML-is `dynamicParamInfo=true`; need 28
-juhikuesinemist neljas variandis on registris eraldi talletatud ja kirjutamiseks
-suletud. Tonic PID 107 on fikseeritud 0…0 redaktoriväli, mitte skalaari juht.
+juhikuesinemist neljas variandis on registris eraldi talletatud.
+[FW13 kontekstireeglid](FM3_PITCH_CUSTOM_SCALES.md) võimaldavad nüüd nende
+kirjutamist aktiivse kohaliku CUSTOM skaala rangete piiridega. Tonic PID 107 on fikseeritud 0…0 redaktoriväli, mitte skalaari juht.
 Formant/GlobalMix ja teised kasutamata või aktiivses XML-is puuduvad juhikud
 on samuti suletud. Muud tundmatud dünaamilised atribuudid peatavad kompilaatori.
 
-Järgmine töö puudutab dünaamilisi noote, globaalseid skaalasid, korduste
-eriväärtuste kuvasilte ning Learn-, LFO- ja kontrolleridünaamikat. Salvestatud
+Järgmine töö puudutab globaalsete skaalade live GET kinnitamist ning
+Learn-, LFO- ja kontrolleridünaamikat. Salvestatud
 kodeeringu tõend ei kinnita arpedžiaatori kuuldavat tulemust.
 
 ## Tempo, mallid ja allikad
@@ -68,7 +69,7 @@ Uus register seob **135 natiivset nimi/PID-deskriptorit** (21 Rotary + 114 Pitch
 FM3-Edit 1.07.17 aktiivse FW13 XML-i, olemasoleva FW13 cache’i ja 16 Pitchi malli.
 Rotary varasem mõõteregister kinnitab tüübi puudumist; A-kanali vanad
 mõõtepunktid ei muutu uueks A–D riistvaratõendiks. Registri SHA-256:
-`0e35b472aba506e0ae6e296eeec7dafbf0fd6ff06fca1a0954fe924776e119a2`.
+`268c426357a8db5ff61de1456168ae6b0dfe49541920ca8766dfafc549bd6f61`.
 Sõnastikku ega mõõtmisi ei muudeta. Binaari ei käivitata ega avaldata.
 
 ```sh
@@ -78,14 +79,14 @@ python3 tools/fm3/rotary_pitch_applicability.py
 node plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-rotary-pitch-applicability.mjs
 ```
 
-Kontroll: **16 Pitchi malli A–D, 2152 lubatud kirjutust, 4440 sobimatu
+Varasema 27 välja etapi kontroll: **16 Pitchi malli A–D, 2152 lubatud kirjutust, 4440 sobimatu
 kirjutuse tõrjumist ja 64 täismalli nõuet**. Rotaryl läbis
-**80 kirjutust** (20 juhikut × 4 kanalit). Lisaks **80 dünaamilise/fikseeritud välja raw tõrjumist**,
+**80 kirjutust** (20 juhikut × 4 kanalit). Lisaks **80 kontekstita noodivälja/fikseeritud välja raw tõrjumist**,
 sõltumatud mudelierisused, tundmatud tüübid, tempo/modifikaatorid, atomaarne
 veakäsitlus, kõrvalmuutused ning lõppjuhendi ja täismalli sõnade säilimine.
 Muudetud testkehad on tarkvaralised katseandmed, mitte uued mõõtmised.
 
 Kokku on nähtavusreeglid seotud 11 efektiperega; tüüpi omavates peredes on
 319 kogutud malli. See ei ole kogu FM3 parameetrite ega DSP valideerimine.
-Paigaldatud plugin jääb 0.3.2 peale. Kasutaja füüsilisi toiminguid: **0**.
+Paigaldatud plugin on 0.3.3. Kasutaja füüsilisi toiminguid: **0**.
 Uut FM3 importi, heli ega CPU-d ei testitud.
