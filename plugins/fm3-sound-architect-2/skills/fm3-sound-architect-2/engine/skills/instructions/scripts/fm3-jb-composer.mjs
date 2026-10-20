@@ -19,6 +19,7 @@ import {matchEnhancerDeviceBody} from './fm3-enhancer-hardware.mjs';
 import {matchGeqDeviceBody} from './fm3-geq-hardware.mjs';
 import {decodeEnhancerChannel,enhancerFullCapabilities} from './fm3-enhancer-full.mjs';
 import {decodeGeqChannel,geqFullCapabilities} from './fm3-geq-full.mjs';
+import {validateLegacyDependencies} from './fm3-parameter-dependencies.mjs';
 export {layout,composerBases};
 const check=(v,m)=>{if(!v)throw Error(m)},own=(o,k)=>Object.hasOwn(o,k);
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -113,6 +114,7 @@ export function generateJBComposer(base,spec,ampLibrary){
   const sceneEdits=applyComposerScenes(body,blocks,spec,insertions,allow);
   if(sceneEdits.length)components.scenePlan=spec.scenes;
   checkComposerStructure(body,target);
+  validateLegacyDependencies(body,blocks,spec);
   const renamed=authorGen3PresetFromIR(base,{name:spec.name,blocks:[]},17);
   check(renamed.skipped.length===0,'Preset name authoring skipped fields');
   const named=inspectStructure(Buffer.from(renamed.syx));check(Buffer.from(named.raw.body).equals(sourceOriginal),'Name authoring changed body');

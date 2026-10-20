@@ -14,6 +14,69 @@
       "required": true
     },
     {
+      "id": "test-type-applicability",
+      "command": [
+        "node",
+        "scripts/test-type-applicability.mjs"
+      ],
+      "scope": "FW13 Chorus/Drive explicit write applicability, all 114 captured templates on A-D, final type, order independence, atomic failure and final guide",
+      "required": true
+    },
+    {
+      "id": "test-parameter-dependencies",
+      "command": [
+        "node",
+        "scripts/test-parameter-dependencies.mjs"
+      ],
+      "scope": "21 tempo pairs A-D, atomic final-state gates, existing seven-base modifier evidence, synthetic channel/32-record/unknown-source cases; no new hardware evidence",
+      "required": true
+    },
+    {
+      "id": "test-delay-reverb-applicability",
+      "command": [
+        "node",
+        "scripts/test-delay-reverb-applicability.mjs"
+      ],
+      "scope": "106 captured Delay/Reverb templates on A-D; model/algorithm bindings, page/control predicates, final Spring Tank Type, scalar/raw selector refusal, atomic failures and final guide; no new hardware evidence",
+      "required": true
+    },
+    {
+      "id": "test-modulation-dynamics-applicability",
+      "command": [
+        "node",
+        "scripts/test-modulation-dynamics-applicability.mjs"
+      ],
+      "scope": "67 captured Flanger/Phaser/Compressor templates on A-D; native/legacy alias bindings, model/Mode checks, variant visibility, read-only slots, atomic rejection and final guide; no new hardware evidence",
+      "required": true
+    },
+    {
+      "id": "test-wah-tremolo-applicability",
+      "command": [
+        "node",
+        "scripts/test-wah-tremolo-applicability.mjs"
+      ],
+      "scope": "16 captured Wah/Tremolo templates A-D; Paragon/Panner/Harmonic/Neon visibility, scalar/raw protection, atomic rejection, tempo/modifier preservation and final guide; no new hardware evidence",
+      "required": true
+    },
+    {
+      "id": "test-rotary-pitch-applicability",
+      "command": [
+        "node",
+        "scripts/test-rotary-pitch-applicability.mjs"
+      ],
+      "scope": "16 captured Pitch models A-D and type-free Rotary; visibility, 27 resolved preset-word fields, dynamic/fixed slots, model/tempo/modifier gates, atomic writes and final guide; no new hardware evidence",
+      "required": true
+    },
+    {
+      "id": "test-pitch-word-codecs",
+      "command": [
+        "node",
+        "scripts/test-pitch-word-codecs.mjs"
+      ],
+      "scope": "27 exact Pitch overlays, independent signed-int16 anchors and 1175 domain values, nonzero enum IDs, 432 factory words, raw guard, atomic failure and final SYX/TXT; no device I/O",
+      "required": true
+    },
+    {
       "id": "test-layout",
       "command": [
         "node",

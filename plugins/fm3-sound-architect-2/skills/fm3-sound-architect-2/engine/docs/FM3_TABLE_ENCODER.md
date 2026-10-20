@@ -1,8 +1,8 @@
-# Tabelipõhine kodeerija — 0.74.1, 2026-10-13
+# Tabelipõhine kodeerija — 0.74.10, 2026-10-19
 
 `scripts/fm3-table-encoder.mjs` kodeerib iga FM3 parameetri FM3-Editis kuvatavast
 väärtusest 16-bitiseks sõnaks. Toorväärtusi pole vaja eraldi mõõta. Allikas on
-`references/fm3-param-dictionary.json` (SHA-256 `c9bab52b…a18550f7c`): FracTool 3.87
+`references/fm3-param-dictionary.json` (SHA-256 `a54e0ba2…a664d730`): FracTool 3.87
 sisseehitatud FM3 tabel (model 0x11, vorming 0x0146; 2892 parameetrit, 488 valikuloendit)
 koos forgefx-midi FM3 nimedega. Analüüsiaruanne:
 `../claude-analysis-20261013/FM3_PARAMEETRITE_ANALUUS_20261013.md`.
@@ -58,3 +58,34 @@ Kasutaja impordis faili ühe korra ja luges FM3-Editist näidud: `references/tap
   Reverbi kaks näitu loeti Scene 2 kanalilt B; need vastavad aluse toorväärtustele 48495/52427 ja on samuti kehtivad punktid.
 - Ei kuvatud: Delay Q (Digital Mono), Reverb Drive (Medium Room), Compressor Threshold 1/2 (Econo-Dyno-Comp). Need kuuluvad samadesse klassidesse.
 - Klassid 0x05 (17 parameetrit) ja 0x06 (29 parameetrit) on nüüd staatusega taper-class-verified ja vaikimisi kirjutatavad.
+
+
+## 0.74.2 sisendikontroll
+
+Logaritmilise juhiku kuvatav väärtus peab olema positiivne ka siis, kui
+ujuvkomatolerants lubaks väga väikest nulli või negatiivset sisendit. Regressioon
+kontrollib Amp Master Vol Cap nulli ja väikest negatiivset väärtust nii üksiku
+kodeerimise kui ka tervikliku kirjutuse kaudu; korrektne alampiir jääb lubatuks.
+
+## 0.74.3 metaandmete lahendus
+
+FM3-Edit 1.07.17 enda binaari ja FW13 vahemälu järgi lisati nimed
+CHORUS_DELAYRANGE, CHORUS_BASS ja CHORUS_TREBLE. FUZZ_OVERSAMPLE
+on tuvastatud, kuid redaktoris peidetud ning kirjutamisel blokeeritud ka
+experimental/raw režiimis. DynaCab R1/R2 sisend jääb kuvatavale 0–10 skaalale;
+0–100 protsendiesitus ei ole otsene sisend. [Tõendid ja piirid](FM3_METADATA_RESOLUTION.md).
+
+## 0.74.4 tüübisobivus
+
+Choruse ja Drive’i selgesõnalised kirjutused kontrollitakse lõpliku kanali tüübi järgi enne muutmist. Nime/PID/raw teed järgivad sama reeglit. Täpne ulatus, varulehtede käsitlus ja allesjäänud sõltuvused: [tüübisobivuse juhend](FM3_TYPE_APPLICABILITY.md). Skalaari kodeerimisoskus ei tähenda universaalset kirjutusluba.
+
+## 0.74.10 Pitchi presetisõnad
+
+[27 välja eraldi teisendus](FM3_PITCH_WORD_CODECS.md) korrigeerib vana
+pideva skaala ja nullist algava enumi eeldused, muutmata algset sõnastikku.
+`preset-word-crosschecked` lubab täisarvu/signed-int16 ja 1-st algavate enumite
+kirjutamist ainult vastava mudeli ja sõltuvuste korral. See on failide ning
+metaandmete ristkontroll, mitte uus FM3 mõõtmine või live MIDI SET.
+NUMREPEATS on salvestatud kood; CUSTOMSCALE1/2 on nullist algav indeks.
+Dünaamilised noodid, eriväärtuste kuvasildid ja globaalsete skaalade sisu
+on eraldi piirangud. 65535 on lubatud ainult 20 kinnitatud märgiga välja −1-na.

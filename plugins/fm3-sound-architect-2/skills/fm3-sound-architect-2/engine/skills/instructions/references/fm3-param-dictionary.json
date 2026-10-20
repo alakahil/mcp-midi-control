@@ -2,7 +2,8 @@
  "source": {
   "fractool": "FracTool 3.87 embedded table model 0x11 format 0x0146 (sha256 ca98b1bf…a29c340)",
   "names": "forgefx-midi 0.4.3 FM3_PARAMS (mined from FM3-Edit)",
-  "fm3edit": "FM3-Edit 1.07.17"
+  "fm3edit": "FM3-Edit 1.07.17",
+  "nameResolution20261019": "Four missing symbols bound directly to FM3-Edit 1.07.17 PE64 descriptors; FW13 cache and active/commented XML checked. See docs/FM3_METADATA_RESOLUTION.md."
  },
  "encoding": "wire = round(n*65534); n=(v/mult-min)/(max-min) linear, n=ln((v/mult)/min)/ln(max/min) log; knob (flags class 0x5): display = n*mult, internal min/max is DSP range",
  "measuredPointsMatched": "280/280",
@@ -11294,8 +11295,8 @@
    "block": 118,
    "family": "FUZZ",
    "param": 43,
-   "name": null,
-   "label": null,
+   "name": "FUZZ_OVERSAMPLE",
+   "label": "Oversampling",
    "kind": "enum",
    "min": 0.0,
    "max": 1.0,
@@ -11306,7 +11307,7 @@
     "NORMAL",
     "HIGH"
    ],
-   "status": "enum-labels-crosschecked"
+   "status": "blocked-hidden-editor"
   },
   {
    "block": 118,
@@ -18649,8 +18650,8 @@
    "block": 78,
    "family": "CHORUS",
    "param": 31,
-   "name": null,
-   "label": null,
+   "name": "CHORUS_TREBLE",
+   "label": "High / EQ",
    "kind": "linear",
    "min": 0.0,
    "max": 1.0,
@@ -18664,8 +18665,8 @@
    "block": 78,
    "family": "CHORUS",
    "param": 30,
-   "name": null,
-   "label": null,
+   "name": "CHORUS_BASS",
+   "label": "Low",
    "kind": "linear",
    "min": 0.0,
    "max": 1.0,
@@ -18679,8 +18680,8 @@
    "block": 78,
    "family": "CHORUS",
    "param": 29,
-   "name": null,
-   "label": null,
+   "name": "CHORUS_DELAYRANGE",
+   "label": "Delay Range",
    "kind": "linear",
    "min": 0.0010000000474974513,
    "max": 0.03999999910593033,

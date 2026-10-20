@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Plugina versioon on `0.3.2`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.3`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -109,6 +109,46 @@ uued plokid algavad bypass'is ning aktiveeritakse `scenes` kaudu.
 Ajaparameetri muutmisel kasuta nõutud selgesõnalist Tempo NONE väärtust.
 Genereerimine ei salvesta midagi FM3 presetikohta ega paigalda User IR-i.
 
+Choruse ja Drive’i tabelijuhid kontrollitakse lõpliku kanali tüübi järgi;
+sobimatu väärtus põhjustab vea ka PID või experimental/raw kaudu.
+[Tüübisobivuse juhend](engine/docs/FM3_TYPE_APPLICABILITY.md) kirjeldab
+FW13 reegleid ja piire. Eelista mudelivahetuseks täiskanalimalle.
+[Delay/Reverbi juhend](engine/docs/FM3_DELAY_REVERB_APPLICABILITY.md) eristab
+mudelit ja sisemist algoritmi: nende valijate muutmine nõuab täiskanalimalli.
+Üksik nime-, PID- või raw-kirjutus ei ole lubatud. Muud juhid kontrollitakse
+kanali lõpliku mudeli/algoritmi paari järgi; vedrukaja Scattering nõuab lõplikku
+Tank Type SERIES-PARALLEL olekut, sõltumata päringu järjekorrast.
+[Flangeri, Phaseri ja Compressori juhend](engine/docs/FM3_MODULATION_DYNAMICS_APPLICABILITY.md)
+katab veel 67 mudelit. Nende mudelivahetus ja Phaseri Mode nõuavad täiskanalimalli.
+Flangeri praegune MANUAL on PID 5; DRYDELAY on PID 6. Vana täpne nimi
+OLD_FLANGER_MANUAL jääb PID 6 ehk Dry Delay juurde. Kasuta uusi nimesid;
+vanade nimede aadresse ära tõlgenda ümber. Compressori Type on PID 12;
+Companderi Ratio/Time/Transients kasutab eraldi välju. Automaatne
+kompressoriajastus ja -võimendus ei ole selle nähtavuskontrolliga valideeritud.
+[Wah’ ja Tremolo/Panneri juhend](engine/docs/FM3_WAH_TREMOLO_APPLICABILITY.md)
+lisab 16 mudeli erisused ja nõuab nende TYPE-vahetuseks täiskanalimalli.
+Paragonil puuduvad Bias/Fat/Q Tracking; Panner, Harmonic Trem ja Neon Trem
+kasutavad eri juhikuid. Wah’ Control jääb aktiivse pedaalimodifikaatori korral
+käsikirjutuseks suletuks; Tremolo Rate nõuab lõplikku Tempo NONE olekut.
+[Rotary ja Pitchi juhend](engine/docs/FM3_ROTARY_PITCH_APPLICABILITY.md)
+eristab Rotary Rate PID 0 tüübi valijast: Rotaryl Type puudub. Pitchi 16
+mudelit kontrollitakse lõpliku tüübi järgi; TYPE nõuab täiskanalimalli.
+[Pitchi presetisõnade kodeering](engine/docs/FM3_PITCH_WORD_CODECS.md) lahendab
+27 välja: 20 märgiga täisarvu, viis otse salvestatud täisarvu ja kaks enumit
+algus-ID-ga 1. Enumites eelista silte; arv tähendab salvestatud ID-d.
+CUSTOMSCALE1/2 kasutab nullist algavat globaalset indeksit 0…31; skaalade
+sisu ei valideerita. NUMREPEATS on salvestatud kood, mitte kinnitatud
+korduste kuvanäit; ära tõlgenda 31-t 31 kordusena ega oletatava INFINITE-na.
+Dünaamilised Note 2–8 jäävad suletuks. Staatus preset-word-crosschecked ei
+tähenda uut riistvaramõõtmist ega live MIDI SET tuge.
+[Tempo- ja modifikaatorijuhend](engine/docs/FM3_PARAMETER_DEPENDENCIES.md) kirjeldab
+21 tempo-seost ning olemasolevate modifikaatorite lugemist. Time/Rate kirjutus
+nõuab lõpliku kanali Tempo NONE olekut; aktiivse modifikaatori sihtmärgile
+käsiväärtust ei kirjutata. Ära lülita modifikaatorit vaikimisi välja. TXT eristab
+salvestatud väärtust tempo või kontrolleri juhitud väärtusest. Muude perede
+tüübisobivus ja katmata sõltuvused jäävad piiranguks; skalaari olemasolu ei anna
+universaalset kirjutusluba.
+
 ## Toetatud põhivõimalused
 
 Kasuta järgnevat ülevaatena; täpsed sisendipiirid tulevad koodist ja skeemist.
@@ -177,7 +217,7 @@ Loe arhiive ajutises analüüsikaustas; ära lisa välispakettide sõltuvusi,
 FM3-Editi rakendust ega Ghidra projekte plugina paketti. [REA arendusjuhendi](engine/docs/FM3_REA_DEVELOPMENT.md)
 varasemad keskkonnatakistused on ajaloolised. Ära muuda kaitse- ega protsessikontrolle.
 
-## Ühendatud 0.3.2 — tabelikodeerija, paigutus ja soundid
+## Ühendatud generaator — tabelikodeerija, paigutus ja soundid
 
 Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõik teed on MOOTORIS
 (`engine/skills/instructions/`) või `engine/docs/`. Detailid: `engine/docs/FM3_TABLE_ENCODER.md`,
@@ -254,3 +294,12 @@ laadimise kontrolli; heli, FM3 import ja CPU on eraldi tõendid.
 0.3.2 säilitab 0.3.1 generaatori käitumise ning kirjutab ühilduvusmanifesti
 platvormi kinnitatud ASCII-paokoodidega JSON-vormingus. Nii jäävad avaldatud
 failide räsid commit’ist ehitatud paketi manifestiga täpselt vastavusse.
+
+
+0.3.3 parandab logaritmilise juhiku null- ja negatiivsete sisendite kontrolli.
+DynaCab R1/R2 sisend on **0–10**, mitte protsent. Choruse Delay Range,
+Low ning High/EQ on nüüd nimeliselt leitavad; järgi nende FW13 tüübipiire.
+Drive Oversampling on redaktoris peidetud ja kirjutamisel blokeeritud.
+Vaata [kuue välja lahendust](engine/docs/FM3_METADATA_RESOLUTION.md).
+Kontrolli avaldatud versiooni eraldi väljalaskekviitungist; lähtekoodis olev
+versiooninumber üksi ei kinnita avaldamist.

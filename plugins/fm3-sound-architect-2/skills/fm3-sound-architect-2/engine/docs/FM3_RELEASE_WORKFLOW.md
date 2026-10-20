@@ -1,4 +1,4 @@
-# FM3 0.3.2: väljalase, tõendid ja laadimine
+# FM3 0.3.3 kandidaat: väljalase, tõendid ja laadimine
 
 ## Sisukord
 - Ulatus
@@ -9,6 +9,26 @@
 - 0.3.2 avaldamisvormingu parandus
 
 ## Ulatus
+
+0.3.3 kandidaat lisab logaritmiliste juhikute mittepositiivse sisendi tõrjumise.
+Kandidaat ei ole uus avaldatud pluginaväljalase: avaldamine, täpne commit ja
+käivitajajuhendi uuendus tuleb kinnitada väljalaskekviitungis. Kuue välja
+metaandmed on [lahendatud FM3 enda allikatega](FM3_METADATA_RESOLUTION.md):
+DynaCab kuvatav skaala on 0–10; kolm Choruse sümbolit on lisatud; peidetud
+Drive Oversampling on blokeeritud. Lisatud on Chorus/Drive tüübisobivus ning
+[21 tempo-seose ja olemasolevate modifikaatorisihtide kontroll](FM3_PARAMETER_DEPENDENCIES.md).
+Delay/Reverbi [mudeli, algoritmi ja tingimuslike juhikute kontroll](FM3_DELAY_REVERB_APPLICABILITY.md)
+nõuab mudelivahetuseks täielikku kanalimalli ning arvestab Spring Tank Type'i.
+[Flangeri, Phaseri ja Compressori kontroll](FM3_MODULATION_DYNAMICS_APPLICABILITY.md)
+lisab 67 mudeli nähtavuse, Phaseri Mode'i ning kinnitatud Flangeri nimealiased.
+[Wah’ ja Tremolo/Panneri kontroll](FM3_WAH_TREMOLO_APPLICABILITY.md) lisab
+16 mudeli erisused koos säilivate tempo-/pedaalipiirangutega.
+[Rotary/Pitchi etapp](FM3_ROTARY_PITCH_APPLICABILITY.md) lisab Rotary juhikud ja
+16 Pitchi mudeli nähtavuse. [Pitchi kodeeringuetapp](FM3_PITCH_WORD_CODECS.md)
+lahendab 27 presetisõna teisendust; dünaamilised noodivalikud jäävad suletuks.
+Kuvamise eriväärtused ja globaalsed skaalad on eraldi piirangud. Uusi seadmemõõtmisi ei lisatud.
+Välised metaandmete ja kodeerimismaatriksi kontrollid asuvad repo
+`tools/fm3/` ning `docs/fm3/parameter-evidence/` kaustades.
 
 0.3.2 sisaldab 0.3.1 ühendatud arendust. 0.3.1 ühendas GitHubi 0.3.0 tabeli/paigutuse ja avaldatud privaatse 0.2.2
 Amp Leveli tõendid. See ei tähenda kõigi FM3 plokkide, globaalsete seadete,
@@ -67,7 +87,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 28 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 35 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.

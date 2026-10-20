@@ -1,9 +1,9 @@
 name: FM3 plugin offline
 on:
   push:
-    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', '.github/workflows/fm3-plugin-offline.yml']
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml']
   pull_request:
-    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', '.github/workflows/fm3-plugin-offline.yml']
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -16,6 +16,26 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify parameter evidence and coverage freshness
+        run: |
+          python3 tools/fm3/test-parameter-evidence.py
+          python3 tools/fm3/test-six-field-resolution.py
+          python3 tools/fm3/six_field_resolution.py
+          python3 tools/fm3/test-type-applicability.py
+          python3 tools/fm3/type_applicability.py
+          python3 tools/fm3/test-parameter-dependencies.py
+          python3 tools/fm3/parameter_dependencies.py
+          python3 tools/fm3/test-delay-reverb-applicability.py
+          python3 tools/fm3/delay_reverb_applicability.py
+          python3 tools/fm3/test-modulation-dynamics-applicability.py
+          python3 tools/fm3/modulation_dynamics_applicability.py
+          python3 tools/fm3/test-pitch-word-codecs.py
+          python3 tools/fm3/pitch_word_codecs.py
+          python3 tools/fm3/test-rotary-pitch-applicability.py
+          python3 tools/fm3/rotary_pitch_applicability.py
+          python3 tools/fm3/parameter-evidence.py
+          python3 tools/fm3/metadata_reconciliation.py
+          node tools/fm3/encoder-matrix.mjs
       - name: Run the required offline suite
         run: python3 tools/fm3/test-offline.py --output "$RUNNER_TEMP/fm3-tests"
       - name: Build the tested commit
