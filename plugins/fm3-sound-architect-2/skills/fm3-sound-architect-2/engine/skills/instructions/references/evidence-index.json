@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2057,
-  "filePaths": 2261,
+  "uniqueContents": 2060,
+  "filePaths": 2264,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -720,12 +720,6 @@
         "references/enhancer-full-20261012-122507/step-073-3063299f49/donor.syx"
       ]
     },
-    "0e35b472aba506e0ae6e296eeec7dafbf0fd6ff06fca1a0954fe924776e119a2": {
-      "bytes": 477081,
-      "paths": [
-        "references/fm3-rotary-pitch-applicability.json"
-      ]
-    },
     "0ec08c717d6570e0cbbb645b531a2bfc7d764144ff5c8561300f0d7772bda109": {
       "bytes": 24680,
       "paths": [
@@ -1167,12 +1161,6 @@
       "bytes": 5026,
       "paths": [
         "references/geq-full-20261010-194115/step-077-bdbd3c7b1c/capture.json"
-      ]
-    },
-    "187d64b322f8ca1b3e277f24e63770b19cc3169f15d643929d86a67e38e51a74": {
-      "bytes": 45213,
-      "paths": [
-        "references/fm3-pitch-word-codecs.json"
       ]
     },
     "18802bc550b35a0123b7e439581ba39741719a170e0ff0e5ef590fc5114f2b82": {
@@ -1792,6 +1780,12 @@
       "paths": [
         "references/drive-batch-20261006-110109/capture-001/labels.json",
         "references/drive-batch-20261006-112254/capture-001/labels.json"
+      ]
+    },
+    "268c426357a8db5ff61de1456168ae6b0dfe49541920ca8766dfafc549bd6f61": {
+      "bytes": 490454,
+      "paths": [
+        "references/fm3-rotary-pitch-applicability.json"
       ]
     },
     "26c1c9acfc4f7d59297525035ab5611c663ab9c27f4f5987618f6d24752e8df4": {
@@ -3001,6 +2995,12 @@
       "bytes": 171,
       "paths": [
         "references/peq-baseline-20261009-114022/session.json"
+      ]
+    },
+    "3d184e65494dbb74ee225a8eaf03a115ffa71e746902a2e88a86b0f1d5eb1aa7": {
+      "bytes": 6444,
+      "paths": [
+        "references/fm3-pitch-custom-scales.json"
       ]
     },
     "3d2699d5e7ac5cdd1fe626cc6c09676c80d0a8c799ba5e3439694a4e0c99d86d": {
@@ -4493,6 +4493,12 @@
         "references/geq-full-20261010-194115/step-124-26487f6488/result.json"
       ]
     },
+    "5debbca1fc12a34dabf7317da0c99df9782f79669d3f2e54bffe19d9165f7c54": {
+      "bytes": 12151,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "5e105be45cbeca034cea97910d2b3bcc58363ed5093f39349f8983648fd3f1eb": {
       "bytes": 394,
       "paths": [
@@ -4563,12 +4569,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-098-5b54e6d564/donor.syx"
-      ]
-    },
-    "5fa108a9206939f5e5e70f995f9ecf8acd788976a2b78cd8aa25a5752306de43": {
-      "bytes": 10346,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "5fa626dfc69c3aaf26cd1eedc125afeefd67858b3fc874bf9b7f121765c49d9c": {
@@ -6016,6 +6016,12 @@
       "paths": [
         "references/cab-batch-20261005-135019/capture-20261005T133541-cc529ee779/donor.syx",
         "references/cab-batch-20261005-135600/capture-20261005T133541-cc529ee779/donor.syx"
+      ]
+    },
+    "7da9d37ef7c243ecd12aba4ab0d5e0907f3f287333f047ff27443f7427528d26": {
+      "bytes": 3560,
+      "paths": [
+        "references/fm3-pitch-display-evidence.json"
       ]
     },
     "7de1652d416b13338b2f70fe48b34f5d9e88e54d47dbdd83d2fa0666a75a868b": {
@@ -8474,6 +8480,12 @@
         "references/enhancer-full-20261012-122507/step-029-0215cbf97e/donor.syx"
       ]
     },
+    "af903171673507d65824589ac33080ad2846826b40802021c0f3d3e3c9b691cb": {
+      "bytes": 56517,
+      "paths": [
+        "references/fm3-pitch-word-codecs.json"
+      ]
+    },
     "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c": {
       "bytes": 24680,
       "paths": [
@@ -10568,6 +10580,12 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-full-20261012-122507/step-002-ebb2d1a1d2/donor.syx"
+      ]
+    },
+    "db16f06ac450db11e99d8ad90ec2e7bc323467c3f29829365640dd690da7a91f": {
+      "bytes": 3018,
+      "paths": [
+        "references/fm3-global-scale-wire.json"
       ]
     },
     "db279b4274853e07db4c0dec32915fef59b17cf55f5c34d5342a8b1083797921": {

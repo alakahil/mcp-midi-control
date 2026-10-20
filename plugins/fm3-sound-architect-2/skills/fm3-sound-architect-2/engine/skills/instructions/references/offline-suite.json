@@ -64,7 +64,7 @@
         "node",
         "scripts/test-rotary-pitch-applicability.mjs"
       ],
-      "scope": "16 captured Pitch models A-D and type-free Rotary; visibility, 27 resolved preset-word fields, dynamic/fixed slots, model/tempo/modifier gates, atomic writes and final guide; no new hardware evidence",
+      "scope": "16 captured Pitch models A-D and type-free Rotary; visibility, 34 resolved preset-word fields, custom-note context/fixed slots, model/tempo/modifier gates, atomic writes and final guide; no new hardware evidence",
       "required": true
     },
     {
@@ -73,7 +73,16 @@
         "node",
         "scripts/test-pitch-word-codecs.mjs"
       ],
-      "scope": "27 exact Pitch overlays, independent signed-int16 anchors and 1175 domain values, nonzero enum IDs, 432 factory words, raw guard, atomic failure and final SYX/TXT; no device I/O",
+      "scope": "34 overlay bindings; 27 original Pitch word fields, independent signed-int16 anchors and 1175 domain values, nonzero enum IDs, 432 factory words, raw guard, atomic failure and final SYX/TXT; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-pitch-custom-scales",
+      "command": [
+        "node",
+        "scripts/test-pitch-custom-scales.mjs"
+      ],
+      "scope": "1749 local scales, context/ordering/raw/atomic gates, complete A-D SYX/TXT and 384 global GET-plan addresses; no device I/O",
       "required": true
     },
     {
@@ -320,6 +329,42 @@
         "verify"
       ],
       "scope": "Compressed original evidence integrity",
+      "required": true
+    },
+    {
+      "id": "test-global-scale-collector",
+      "command": [
+        "python3",
+        "scripts/global-scale-collector/test_global_scales.py"
+      ],
+      "scope": "Synthetic failure cases and POSIX pseudo-terminal; raw capture only, no FM3 hardware/scale-value confirmation",
+      "required": true
+    },
+    {
+      "id": "test-global-scale-decode",
+      "command": [
+        "python3",
+        "scripts/global-scale-collector/test_global_scale_decode.py"
+      ],
+      "scope": "Synthetic ZIP integrity in strict/schema-1 and explicit display-only/schema-2 modes, all 49 shifts, retained numeric conflicts/nonfinite diagnostics, tamper rejection and resumed sessions; no new hardware range validation",
+      "required": true
+    },
+    {
+      "id": "test-global-scale-observations",
+      "command": [
+        "node",
+        "scripts/test-global-scale-observations.mjs"
+      ],
+      "scope": "Synthetic strict and display-only evidence in sound/legacy reports; unchanged SYX, visible numeric conflicts, required-scale coverage, CLI and retained-evidence/TXT tamper rejection",
+      "required": true
+    },
+    {
+      "id": "test-global-scale-wire",
+      "command": [
+        "python3",
+        "scripts/test-global-scale-wire.py"
+      ],
+      "scope": "Pinned ARM numeric serializer replay with synthetic uint32 and 49 assumed float32 inputs; producer gap remains explicit, no hardware confirmation",
       "required": true
     }
   ]

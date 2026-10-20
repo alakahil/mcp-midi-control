@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {algorithmApplicability,algorithmState,algorithmPolicySummary,templateOnlyParameter as delayReverbTemplateOnly} from './fm3-delay-reverb-applicability.mjs';
 import {modulationApplicability,modulationState,modulationPolicySummary,modulationTemplateOnly} from './fm3-modulation-dynamics-applicability.mjs';
 import {rotaryPitchState,rotaryPitchApplicability,rotaryPitchTemplateOnly,rotaryPitchPolicySummary} from './fm3-rotary-pitch-applicability.mjs';
+import {validatePitchCustomWrites} from './fm3-pitch-custom-scales.mjs';
 export const templateOnlyParameter=p=>delayReverbTemplateOnly(p)||modulationTemplateOnly(p)||rotaryPitchTemplateOnly(p);
 export const typePolicyHash='9fdc92ed23349838699db18dbcce223602ae6a22984cef5e5728e35150a49f99';
 const bytes=fs.readFileSync(new URL('../references/fm3-type-applicability.json',import.meta.url));
@@ -17,7 +18,7 @@ export function typePolicySummary(){
     modulationDynamics:modulationPolicySummary(),
     rotaryPitch:rotaryPitchPolicySummary(),
     rule:'Explicit writes checked against final per-channel type; stored hidden words preserved',
-    limits:'Bounded XML-derived authoring policies, not executed native UI or DSP validation. Chorus/Drive coverage is in families; Delay/Reverb in algorithmApplicability; Flanger/Phaser/Compressor/Wah/Tremolo in modulationDynamics. Rotary/Pitch includes type-free Rotary, 16 Pitch models and a separately pinned 27-field preset-word overlay; dynamic/fixed Pitch slots remain blocked. Tempo/modifier scope is reported separately; other-family visibility remains unverified.'};
+    limits:'Bounded XML-derived authoring policies, not executed native UI or DSP validation. Chorus/Drive coverage is in families; Delay/Reverb in algorithmApplicability; Flanger/Phaser/Compressor/Wah/Tremolo in modulationDynamics. Rotary/Pitch includes type-free Rotary, 16 Pitch models and a separately pinned 34-field preset-word overlay; seven local custom-note fields require final-scale validation; fixed Pitch slots remain blocked. Tempo/modifier scope is reported separately; other-family visibility remains unverified.'};
 }
 export function readTypeState(p,read){return rotaryPitchState(p,read)??algorithmState(p,read)??modulationState(p,read)??read(policy.families[p.family]?.typePid??0);}
 export function typeApplicability(p,type){
@@ -48,4 +49,5 @@ export function validateTypeWrites(body,writes){
     w.typeApplicability=a;
     w.label=a.label;
   }
+  validatePitchCustomWrites(body,writes);
 }

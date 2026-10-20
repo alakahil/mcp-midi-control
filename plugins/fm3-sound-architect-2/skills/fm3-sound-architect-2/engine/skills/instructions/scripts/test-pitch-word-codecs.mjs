@@ -17,7 +17,7 @@ for(const pid of signed){const p=findParam('pitch',pid);
  for(const raw of [25,32767,32768,65511,-1,65536,1.5,NaN])assert.equal(decodeValue(p,raw),undefined);
 }
 for(const [pid,lo,hi] of [[63,4,8],[71,0,31],[72,0,31],[73,2,16],[74,1,31]]){const p=findParam('pitch',pid);
- for(let v=lo;v<=hi;v++){assert.equal(encodeValue(p,v),v);assert.equal(decodeValue(p,v),v);domainChecks++;}
+ for(let v=lo;v<=hi;v++){assert.equal(encodeValue(p,v),v);assert.equal(decodeValue(p,v),[71,72].includes(pid)?'SCALE '+(v+1):pid===74&&v===31?'INFINITE':v);domainChecks++;}
  for(const v of [lo-1,hi+1,lo+0.5,'4',true,null,NaN,Infinity])reject(p,v);
  assert.equal(decodeValue(p,65535),undefined);
 }
@@ -29,9 +29,9 @@ for(const p of [tracking,tempo]){
  for(const v of [0,p.max+1,1.5,'OFF','NONE',null,true])reject(p,v);
  assert.equal(decodeValue(p,0),undefined);
 }
-// Other tempo lists retain NONE=0; the overlay changes exactly 27 definitions.
+// Other tempo lists retain NONE=0; the overlay changes exactly 34 definitions.
 assert.equal(encodeValue(findParam('pitch','DTEMPO1'),'NONE',{allow:['enum-labels']}),0);
-assert.equal(loadDictionary().params.filter(p=>p.encodingEvidence).length,27);
+assert.equal(loadDictionary().params.filter(p=>p.encodingEvidence).length,34);
 const factory=JSON.parse(read('references/fm3-pitch-factory-evidence.json'));
 let factoryWords=0;
 for(const s of factory.specimens)for(const ch of Object.values(s.channels))for(const [pid,raw] of Object.entries(ch.words)){
@@ -62,6 +62,31 @@ const control=(channel,param,value)=>({block:'pitch',channel,param,value});
 spec.controls=[control('A','SHIFT1',-1),control('A','TRACKMODE','CHORDS'),control('B','SHIFT1',-24),control('B','SHIFT2',-12),control('B','SHIFT3',12),control('B','SHIFT4',24),control('C','NUMSTEPS',16),control('C','NUMREPEATS',31),control('C','TEMPO','1/16'),control('D','CUSTOMSCALE1',31),control('D','CUSTOMSCALE2',30),...Array.from({length:16},(_,i)=>control('C','STEP'+(i+1),[-24,-12,-3,-2,-1,0,1,12,24][i%9]))];
 const result=createPreset(read('examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx'),spec),final=Buffer.from(inspectStructure(result.syx).raw.body),r=scanRecords(final).records.find(r=>r.family==='pitch');
 for(const c of spec.controls){const p=findParam('pitch',c.param),raw=final.readUInt16LE(r.start+2*('ABCD'.indexOf(c.channel)*r.words+p.param));assert.equal(raw,encodeValue(p,c.value));const displayed=result.report.controls.find(w=>w.channel===c.channel&&w.pid===p.param);assert.equal(displayed.display,decodeValue(p,raw));}
-assert.equal(final.readUInt16LE(r.start+30),65535);assert.ok(result.txt.includes('-1 nihet'));assert.ok(result.txt.includes('global scale contents'));assert.ok(result.txt.includes('1/16'));assert.ok(result.txt.includes('skaalaastet'));assert.ok(result.txt.includes('not a verified displayed repeat count'));
+assert.equal(final.readUInt16LE(r.start+30),65535);assert.ok(result.txt.includes('-1 nihet'));assert.ok(result.txt.includes('global scale contents'));assert.ok(result.txt.includes('1/16'));assert.ok(result.txt.includes('skaalaastet'));assert.ok(result.txt.includes('code 31 displays INFINITE'));
 assert.ok(!result.report.parameters.some(p=>/^PITCH_NOTE[2-8]$/.test(p.name)));
+// The full 95-value display domain preserves old numeric stored-code input.
+let displayChecks=0;
+for(const pid of [71,72])for(let raw=0;raw<=31;raw++){
+ const p=findParam('pitch',pid),label='SCALE '+(raw+1);
+ assert.equal(encodeValue(p,label),raw);assert.equal(decodeValue(p,raw),label);
+ assert.equal(encodeValue(p,raw),raw);displayChecks++;
+}
+for(let raw=1;raw<=31;raw++){
+ const p=findParam('pitch',74),label=raw===31?'INFINITE':raw;
+ assert.equal(encodeValue(p,label),raw);assert.equal(decodeValue(p,raw),label);displayChecks++;
+}
+for(const pid of [71,72])for(const label of ['SCALE 0','SCALE 33','SCALE 01','32','INFINITE'])reject(findParam('pitch',pid),label);
+for(const label of ['SCALE 1','31','INFINITY'])reject(findParam('pitch',74),label);
+const labelSpec=structuredClone(spec);
+for(const c of labelSpec.controls){
+ if(c.param==='NUMREPEATS')c.value='INFINITE';
+ if(c.param==='CUSTOMSCALE1')c.value='SCALE 32';
+ if(c.param==='CUSTOMSCALE2')c.value='SCALE 31';
+}
+const labelled=createPreset(read('examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx'),labelSpec);
+assert.deepEqual(labelled.syx,result.syx);
+assert.match(labelled.txt,/Repeats.*INFINITE.*raw 31/);
+assert.match(labelled.txt,/Scale 1.*SCALE 32.*raw 31/);
+assert.equal(displayChecks,95);
+console.log(JSON.stringify({pitchDisplayChecks:displayChecks,labelAndNumericPresetIdentical:true,hardwareTested:false}));
 console.log(JSON.stringify({passed:true,fields:pids.length,domainChecks,rejections,factoryWords,rawSignedChecks,finalPresetControls:spec.controls.length,deviceIO:false,newHardwareMeasurements:false}));

@@ -1,6 +1,6 @@
-# Pitchi 27 välja presetisõnade kodeering
+# Pitchi 34 välja presetisõnade kodeering
 
-Tabelikodeerija 0.74.10 kasutab 0.3.3 kandidaadis täpselt 27 Pitchi välja
+0.3.4 kasutab täpselt 34 Pitchi välja
 jaoks eraldi kontrollitud teisendust. Vana 2892 kirje sõnastik jääb muutmata;
 ülekirjutus kontrollib iga algkirje täpset vastavust. Staatus
 `preset-word-crosschecked` tähendab FM3 failide ja metaandmete ristkontrolli,
@@ -10,10 +10,11 @@ mitte uut riistvaramõõtmist ega live MIDI SET tuge.
 |---|---|---|
 | SHIFT1–4 | 15–18 | Täisarv −24…24 → märgiga 16-bitine sõna; ühik sõltub Pitchi mudelist |
 | TRACKMODE | 35 | `NOTES` → 1, `CHORDS` → 2; OFF ja 0 on keelatud |
-| CUSTOMNOTES | 63 | Täisarv 4…8 salvestatakse otse; ei kirjuta dünaamilisi noote |
+| CUSTOMNOTES | 63 | Täisarv 4…8; lõplik aktiivne skaala peab olema kehtiv |
+| NOTE2–NOTE8 | 64–70 | Täisarvuline pooltooninihe; kogu lõpliku skaala kontekstikontroll |
 | CUSTOMSCALE1/2 | 71–72 | Nullist algav salvestatud globaalne skaalaindeks 0…31 |
 | NUMSTEPS | 73 | Täisarv 2…16 salvestatakse otse |
-| NUMREPEATS | 74 | Salvestatud korduskood 1…31, mitte kinnitatud ekraanil kuvatav korduste arv |
+| NUMREPEATS | 74 | 1…30 kordust; INFINITE → salvestatud kood 31 |
 | TEMPO | 76 | FW13 78 silti, ID 1…78: `1/64 TRIP` → 1, `1/16` → 8, `63/64` → 78 |
 | STEP1–16 | 77–92 | Täisarv −24…24 → märgiga 16-bitine sõna; arpedžiaatori skaalaastmed |
 
@@ -64,21 +65,31 @@ node plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/in
 ```
 
 CI kasutab talletatud fakte, FW13 cache’i ja malle, ilma võrgu või seadmeta.
-Regressioon kontrollib 1175 domeeniväärtust, 254 vigast sisendit, sõltumatut
+Regressioon kontrollib 1175 domeeniväärtust, 267 vigast sisendit, sõltumatut
 signed-int16 oraaklit, 432 tehasesõna, raw piiranguid ja lõplikku SYX/TXT rada.
 
 ## Kuvamise ja heli piirid
 
 [Fractali Blocks Guide](https://www.fractalaudio.com/downloads/manuals/fas-guides/Fractal-Audio-Blocks-Guide.pdf)
 kirjeldab arpedžiaatori samme skaalaastmetena ning korduste INFINITE valikut.
-Korduskoodi ja erilise kuvasildi täpne seos ei ole siin tõendatud: koodi 31
-ei esitata 31 kordusena ega pakuta tõendamata INFINITE nime teisendust.
-Kohandatud skaala sisend on selgelt **salvestatud indeks**, mitte tõendatud
-redaktorinäit. Globaalsete skaalade sisu ei kuulu sellesse presetivalideerimisse.
+[Kuvasildi tõend](https://github.com/alakahil/mcp-midi-control/blob/6c10c7970e6033723f800a9aaf8dc80492807bcd/docs/fm3/parameter-evidence/pitch-display-fw13.md) seob koodi 31 väärtusega INFINITE
+ja globaalsed indeksid 0…31 siltidega SCALE 1…32.
+[NOTE2–NOTE8 kontekstireeglid](FM3_PITCH_CUSTOM_SCALES.md) lubavad seitset
+kohalikku noodinihet neljas mudelis. Globaalsete skaalade sisu puudub presetist.
 
-NOTE2–NOTE8 dünaamilised valikud on endiselt kirjutamiseks suletud.
 Arpedžiaatori kuuldav tulemus sõltub ka helistikust, skaalast, sammude arvust,
 suunast, tempost ja kontrolleritest. Learn/LFO dünaamika, seadmeimport,
 heli ja CPU ei ole selle muudatusega kontrollitud. FM9/III GET/SET uurimust
 kasutati hüpoteesina; seda ei loeta FM3 riistvaratõendiks. Kasutaja füüsilisi
-toiminguid selles etapis: 0. Paigaldatud plugin jääb 0.3.2 peale.
+toiminguid selles etapis: 0. Paigaldatud plugin on 0.3.3.
+
+## Järgnev arendusetapp: 0.3.4, 2026-10-20
+
+FW13 ametliku püsivara kitsas staatiline analüüs täiendab ülal kirjeldatud
+salvestussõnade tuge kolme kuvasildiga: PID 74 kood 31 = INFINITE; PID 71/72
+indeksid 0–31 = SCALE 1–32. Kood 1–30 jääb lõplikuks korduste arvuks.
+Vanad arvulised sisendid säilivad; soovita kasutajale selgeid silte.
+Tõend on `fm3-pitch-display-evidence.json`; korratav kontroll on
+`tools/fm3/pitch_display.py`. Täielikku püsivara paketis ei levitata.
+See ei ole uus seadmemõõtmine. Globaalsete skaalade sisu jääb kontrollimata; NOTE2–NOTE8 kirjutamine
+kasutab järgneva kohandatud skaalade etapi kontekstikontrolli. Privaatplugin on endiselt 0.3.3.

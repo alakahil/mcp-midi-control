@@ -49,13 +49,13 @@ for(const w of rotaryWrites)assert.equal(rotaryBody.readUInt16LE(w.offset),encod
 for(let i=0;i<rotaryBody.length;i++)if(!rotaryAllowed.has(i))assert.equal(rotaryBody[i],before.rotary[i]);
 assert.deepEqual(rotaryBody,Buffer.from(inspectStructure(writeTableControls(bases.rotary,{name:'ROTARY ALL CONTROLS',controls:rotaryControls},opts).syx).raw.body));
 assert.throws(()=>writeTableControls(bases.rotary,{name:'NO UNUSED',controls:[{block:'rotary',channel:'A',param:9,raw:0}]},{experimental:true}),/not applicable/);
-// Former metadata conflicts now use the separately tested word overlay; dynamic/fixed controls remain blocked.
+// Former metadata conflicts now use the separately tested word overlay; custom notes need their final scale context; fixed controls remain blocked.
 const conflicts=[15,16,17,18,35,63,71,72,73,74,76,...Array.from({length:16},(_,i)=>77+i)];
 assert.deepEqual(typePolicySummary().rotaryPitch.families.PITCH.metadataConflicts.map(p=>p.pid),[]);
 let rawRefusals=0;
 for(const channel of 'ABCD')for(const param of [37,42,64,65,66,67,68,69,70,107]){
   for(const key of [param,findParam('pitch',param).name]){
-    assert.throws(()=>writeTableControls(bases.pitch,{name:'NO METADATA BYPASS',controls:[{block:'pitch',channel,param:key,raw:0}]},{experimental:true}),/not applicable/);rawRefusals++;
+    assert.throws(()=>writeTableControls(bases.pitch,{name:'NO METADATA BYPASS',controls:[{block:'pitch',channel,param:key,raw:0}]},{experimental:true}),/not applicable|outside allowed preset domain/);rawRefusals++;
   }
 }
 for(const channel of 'ABCD'){

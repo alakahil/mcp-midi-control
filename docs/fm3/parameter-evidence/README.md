@@ -2,6 +2,10 @@
 
 [Generated coverage report (Estonian)](coverage.md) · [Machine summary](coverage.json) · [Registry](registry.json) · [Work queue](work-queue.json)
 
+[FW13 global-scale numeric-cache research](global-scale-cache-fw13.md) records
+the bounded constructor/range-gate findings and a firmware-dependent check.
+It does not promote hardware confidence or change the shipped plugin runtime.
+
 Run from the repository root with Python 3.10+ and Node 22+; no npm installation or device connection is needed:
 
 ```sh

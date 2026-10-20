@@ -8,8 +8,8 @@
     "layoutSha256": "0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2",
     "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730"
   },
-  "policy": "Pitch TYPE requires full templates; final-channel FW13 variants govern controls. Rotary has no model selector: PID 0 is Rate. Apply the pinned 27-field preset-word overlay; block dynamic/fixed slots including raw writes. Global scale indices do not include global scale contents.",
-  "limits": "Metadata-derived authoring gates, not native UI/DSP or hardware execution. Global scale contents, dynamic note meanings, arpeggiator playback semantics and Learn/controller dynamics remain unverified. Signed/count/enum storage uses the separately cross-checked 27-field overlay; no live MIDI SET claim. Existing tempo/modifier guards remain required.",
+  "policy": "Pitch TYPE requires full templates; final-channel FW13 variants govern controls. Rotary has no model selector: PID 0 is Rate. Apply the pinned 34-field preset-word overlay; seven custom notes also require complete final-scale validation. Fixed slots, including Tonic, remain blocked. Global scale indices do not include global scale contents.",
+  "limits": "Metadata and firmware-derived authoring gates, not native UI/DSP or hardware execution. Global scale contents, arpeggiator playback semantics and Learn/controller dynamics remain unverified. No live MIDI SET claim. Existing tempo/modifier guards remain required.",
   "families": {
     "ROTARY": {
       "hasTypeSelector": false,
@@ -3524,6 +3524,48 @@
                   "uiType": "dropdownMini"
                 },
                 {
+                  "name": "PITCH_NOTE2",
+                  "label": "Note 2",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE3",
+                  "label": "Note 3",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE4",
+                  "label": "Note 4",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE5",
+                  "label": "Note 5",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE6",
+                  "label": "Note 6",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE7",
+                  "label": "Note 7",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE8",
+                  "label": "Note 8",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
                   "name": "PITCH_GAIN",
                   "label": "Input Gain",
                   "conditions": [],
@@ -3913,6 +3955,48 @@
                 {
                   "name": "PITCH_TONIC",
                   "label": "Tonic",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE2",
+                  "label": "Note 2",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE3",
+                  "label": "Note 3",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE4",
+                  "label": "Note 4",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE5",
+                  "label": "Note 5",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE6",
+                  "label": "Note 6",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE7",
+                  "label": "Note 7",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE8",
+                  "label": "Note 8",
                   "conditions": [],
                   "uiType": "dropdownMini"
                 },
@@ -5010,6 +5094,48 @@
                 {
                   "name": "PITCH_TONIC",
                   "label": "Tonic",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE2",
+                  "label": "Note 2",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE3",
+                  "label": "Note 3",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE4",
+                  "label": "Note 4",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE5",
+                  "label": "Note 5",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE6",
+                  "label": "Note 6",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE7",
+                  "label": "Note 7",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE8",
+                  "label": "Note 8",
                   "conditions": [],
                   "uiType": "dropdownMini"
                 },
@@ -6265,6 +6391,48 @@
                 {
                   "name": "PITCH_TONIC",
                   "label": "Tonic",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE2",
+                  "label": "Note 2",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE3",
+                  "label": "Note 3",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE4",
+                  "label": "Note 4",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE5",
+                  "label": "Note 5",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE6",
+                  "label": "Note 6",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE7",
+                  "label": "Note 7",
+                  "conditions": [],
+                  "uiType": "dropdownMini"
+                },
+                {
+                  "name": "PITCH_NOTE8",
+                  "label": "Note 8",
                   "conditions": [],
                   "uiType": "dropdownMini"
                 },
@@ -14702,9 +14870,67 @@
             "tail_flags_raw": 0,
             "auxiliary_u32_raw": []
           },
-          "xmlCases": [],
-          "cases": [],
-          "blockedReason": "dynamic note selector; context-dependent wire mapping unverified",
+          "xmlCases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 2"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 2"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 2"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 2"
+            }
+          ],
+          "cases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 2"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 2"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 2"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 2"
+            }
+          ],
+          "blockedReason": null,
           "metadataConflict": false
         },
         "65": {
@@ -14725,9 +14951,67 @@
             "tail_flags_raw": 0,
             "auxiliary_u32_raw": []
           },
-          "xmlCases": [],
-          "cases": [],
-          "blockedReason": "dynamic note selector; context-dependent wire mapping unverified",
+          "xmlCases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 3"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 3"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 3"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 3"
+            }
+          ],
+          "cases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 3"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 3"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 3"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 3"
+            }
+          ],
+          "blockedReason": null,
           "metadataConflict": false
         },
         "66": {
@@ -14748,9 +15032,67 @@
             "tail_flags_raw": 0,
             "auxiliary_u32_raw": []
           },
-          "xmlCases": [],
-          "cases": [],
-          "blockedReason": "dynamic note selector; context-dependent wire mapping unverified",
+          "xmlCases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 4"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 4"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 4"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 4"
+            }
+          ],
+          "cases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 4"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 4"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 4"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 4"
+            }
+          ],
+          "blockedReason": null,
           "metadataConflict": false
         },
         "67": {
@@ -14771,9 +15113,67 @@
             "tail_flags_raw": 0,
             "auxiliary_u32_raw": []
           },
-          "xmlCases": [],
-          "cases": [],
-          "blockedReason": "dynamic note selector; context-dependent wire mapping unverified",
+          "xmlCases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 5"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 5"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 5"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 5"
+            }
+          ],
+          "cases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 5"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 5"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 5"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 5"
+            }
+          ],
+          "blockedReason": null,
           "metadataConflict": false
         },
         "68": {
@@ -14794,9 +15194,67 @@
             "tail_flags_raw": 0,
             "auxiliary_u32_raw": []
           },
-          "xmlCases": [],
-          "cases": [],
-          "blockedReason": "dynamic note selector; context-dependent wire mapping unverified",
+          "xmlCases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 6"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 6"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 6"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 6"
+            }
+          ],
+          "cases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 6"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 6"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 6"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 6"
+            }
+          ],
+          "blockedReason": null,
           "metadataConflict": false
         },
         "69": {
@@ -14817,9 +15275,67 @@
             "tail_flags_raw": 0,
             "auxiliary_u32_raw": []
           },
-          "xmlCases": [],
-          "cases": [],
-          "blockedReason": "dynamic note selector; context-dependent wire mapping unverified",
+          "xmlCases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 7"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 7"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 7"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 7"
+            }
+          ],
+          "cases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 7"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 7"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 7"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 7"
+            }
+          ],
+          "blockedReason": null,
           "metadataConflict": false
         },
         "70": {
@@ -14840,9 +15356,67 @@
             "tail_flags_raw": 0,
             "auxiliary_u32_raw": []
           },
-          "xmlCases": [],
-          "cases": [],
-          "blockedReason": "dynamic note selector; context-dependent wire mapping unverified",
+          "xmlCases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 8"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 8"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 8"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 8"
+            }
+          ],
+          "cases": [
+            {
+              "types": [
+                4
+              ],
+              "when": {},
+              "label": "Note 8"
+            },
+            {
+              "types": [
+                5
+              ],
+              "when": {},
+              "label": "Note 8"
+            },
+            {
+              "types": [
+                10
+              ],
+              "when": {},
+              "label": "Note 8"
+            },
+            {
+              "types": [
+                13
+              ],
+              "when": {},
+              "label": "Note 8"
+            }
+          ],
+          "blockedReason": null,
           "metadataConflict": false
         },
         "71": {
@@ -18354,7 +18928,7 @@
           }
         }
       },
-      "excludedDynamicControls": [
+      "resolvedDynamicControls": [
         {
           "variant": "4",
           "attributes": {

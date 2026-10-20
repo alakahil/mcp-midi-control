@@ -1,7 +1,7 @@
 // FM3 preset storage overlay, deliberately independent of live MIDI SET encoding.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-export const pitchWordCodecHash='187d64b322f8ca1b3e277f24e63770b19cc3169f15d643929d86a67e38e51a74';
+export const pitchWordCodecHash='af903171673507d65824589ac33080ad2846826b40802021c0f3d3e3c9b691cb';
 const bytes=fs.readFileSync(new URL('../references/fm3-pitch-word-codecs.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==pitchWordCodecHash)throw Error('Pitch word codecs changed; review and regenerate');
 const receipt=JSON.parse(bytes),byPid=new Map(receipt.fields.map(f=>[f.pid,f]));
@@ -16,4 +16,4 @@ export function validPitchStoredWord(p,raw){
  const v=p.signedWord&&raw>=32768?raw-65536:raw;
  return v>=p.min&&v<=p.max;
 }
-export const pitchWordCodecSummary=()=>({sha256:pitchWordCodecHash,fields:27,signedFields:20,countFields:5,nonzeroEnums:2,scope:receipt.scope,numericEnumInput:receipt.numericEnumInput,limits:receipt.limits});
+export const pitchWordCodecSummary=()=>({sha256:pitchWordCodecHash,fields:34,dynamicNoteFields:7,signedFields:20,countFields:5,nonzeroEnums:2,scope:receipt.scope,numericEnumInput:receipt.numericEnumInput,limits:receipt.limits});

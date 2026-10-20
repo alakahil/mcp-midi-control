@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "firmware": "13.0",
+  "status": "bounded-cache-topology-crosscheck",
+  "source": {
+    "url": "https://www.fractalaudio.com/downloads/firmware-presets/fm3/13p0/fm3_dsp_rel_13p0.zip",
+    "syxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "unpackedSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3"
+  },
+  "spans": {
+    "constructorObject": {
+      "architecture": "sharc",
+      "address": 8450524,
+      "unpackedOffset": 4073656,
+      "bytesInspected": 4,
+      "sha256": "c14613cf230023c0e38ed2f6b7f98f51c429c841b49f3c4b7b11e45ea32d4a89"
+    },
+    "constructorBase": {
+      "architecture": "sharc",
+      "address": 8450596,
+      "unpackedOffset": 4073800,
+      "bytesInspected": 18,
+      "sha256": "3f8f88ff9f89c51490530df6c482e6298abe7eb4d1e1615f9d787eb82af118c0"
+    },
+    "parameterCount": {
+      "architecture": "sharc",
+      "address": 8450623,
+      "unpackedOffset": 4073854,
+      "bytesInspected": 8,
+      "sha256": "3c3a0b2f7a30a95e382f4407ab035896eaaf42890a3cd81398e54a21d295acb6"
+    },
+    "numericPointer": {
+      "architecture": "sharc",
+      "address": 8450627,
+      "unpackedOffset": 4073862,
+      "bytesInspected": 10,
+      "sha256": "e014c8a92f2cfb0144c2e0472972d26a4cbe762e0f25cc8d57a4a6149db74d2d"
+    },
+    "displayPointer": {
+      "architecture": "sharc",
+      "address": 8450632,
+      "unpackedOffset": 4073872,
+      "bytesInspected": 10,
+      "sha256": "172c7340f5e9fafe3a9fd04c7c3be3fa490ad7db9dfb7d338b2b7d21c1b93434"
+    },
+    "callbackPointer": {
+      "architecture": "sharc",
+      "address": 8450646,
+      "unpackedOffset": 4073900,
+      "bytesInspected": 10,
+      "sha256": "55879673d7b1a198289217deb95043870f40177da4414f5d26d011b89fc85d90"
+    },
+    "sharedNumericPointer": {
+      "architecture": "arm",
+      "address": 3292550438,
+      "unpackedOffset": 17022,
+      "bytesInspected": 28,
+      "sha256": "ca8705b2549d74854cdf90cf91f99d3f7c0f7cda6581dbd56ac391dfc1daf33e"
+    },
+    "sharedDisplayPointer": {
+      "architecture": "arm",
+      "address": 3292550466,
+      "unpackedOffset": 17050,
+      "bytesInspected": 28,
+      "sha256": "cba7380e893824960f29a10c2a0d0f2187cc2827960d6ed38f16d19b7a4e4f9e"
+    },
+    "globalGenericGate": {
+      "architecture": "sharc",
+      "address": 8452034,
+      "unpackedOffset": 4076676,
+      "bytesInspected": 28,
+      "sha256": "3ad0f2553d83e369b838e46118f1279c131408f83f7a061d9d21e4d6bc86c510"
+    },
+    "genericCall": {
+      "architecture": "sharc",
+      "address": 8454999,
+      "unpackedOffset": 4082606,
+      "bytesInspected": 12,
+      "sha256": "be086711f822557870bac89631e4fbdd81f73a183cc3bbf5bb3f6aafb9b83eb7"
+    },
+    "genericPidArgument": {
+      "architecture": "sharc",
+      "address": 8537372,
+      "unpackedOffset": 4247352,
+      "bytesInspected": 2,
+      "sha256": "6e46228fbb8c67c085b68078d06d36c3a6062e9d08fba8f600b281654c6cd772"
+    },
+    "genericObjectArgument": {
+      "architecture": "sharc",
+      "address": 8537378,
+      "unpackedOffset": 4247364,
+      "bytesInspected": 4,
+      "sha256": "88fa0fd5e45a48579a5362474bb2a2aa6645f3b8fc901ae5e3cfa133f9e78d90"
+    },
+    "genericNumericStore": {
+      "architecture": "sharc",
+      "address": 8537823,
+      "unpackedOffset": 4248254,
+      "bytesInspected": 22,
+      "sha256": "825574730686efc768bbbf5831b493d6d85bb7f1610dc9cc949b9811e6434461"
+    },
+    "globalDisplayPointer": {
+      "architecture": "sharc",
+      "address": 8452060,
+      "unpackedOffset": 4076728,
+      "bytesInspected": 6,
+      "sha256": "d013dbe3b86c14fb0d6f55d4f807f58ab368ce40c4dd5ffc9c83ef9813eebced"
+    },
+    "globalDisplayOutput": {
+      "architecture": "sharc",
+      "address": 8452559,
+      "unpackedOffset": 4077726,
+      "bytesInspected": 16,
+      "sha256": "c319e533f590790b1a76e599f60e25d8c4156fe3e05e847d16193658ced81680"
+    },
+    "globalCounter": {
+      "architecture": "sharc",
+      "address": 8452055,
+      "unpackedOffset": 4076718,
+      "bytesInspected": 6,
+      "sha256": "19ca0d5d3b740e7c8b969a9f9e9f1052745d5f36af98bd8668160f08cbd48292"
+    }
+  },
+  "layout": {
+    "objectNumericOffset": 344,
+    "objectDisplayOffset": 352,
+    "numericBase": 3254814032,
+    "numericStride": 4,
+    "displayBase": 3254873552,
+    "displayStride": 32,
+    "parameterCount": 14880,
+    "globalCallbackParcel": 8451921,
+    "sharedEntry": 1,
+    "sharedNumericPointer": 3246750484,
+    "sharedDisplayPointer": 3246750488
+  },
+  "assessment": {
+    "constructorPointersChecked": true,
+    "bootZeroFillDirectiveChecked": true,
+    "armPointerPublicationReplayed": true,
+    "genericGateRange": [
+      134,
+      1653
+    ],
+    "scalePidsBypassingThisGenericCall": 384,
+    "genericNumericWriterLocated": true,
+    "displayFormatterCallChecked": true,
+    "scaleToNumericCacheProducerTraced": false,
+    "endToEndStaticVerified": false,
+    "nonzeroHardwareVerified": false,
+    "newHardwareRangeValidation": false,
+    "allRuntimeCacheWritersExcluded": false,
+    "deviceIO": false
+  },
+  "limits": "Selected code fragments and boot directives only. I3 is treated as the constructor object base. The ARM sharing fragment is replayed with synthetic object/frame memory. The bypass claim applies to the identified range gate, not all possible paths or callers. Zero-filled initialization is not proof of a permanently zero runtime cache. No numeric/text fallback, confidence promotion, device import, audio or CPU validation.",
+  "additionalFirmwareBytesRetained": 0
+}

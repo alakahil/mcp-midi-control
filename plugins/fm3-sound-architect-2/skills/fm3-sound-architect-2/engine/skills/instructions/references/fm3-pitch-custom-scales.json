@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "firmware": "13.0",
+  "status": "firmware-context-crosschecked",
+  "source": {
+    "url": "https://www.fractalaudio.com/downloads/firmware-presets/fm3/13p0/fm3_dsp_rel_13p0.zip",
+    "syxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "unpackedSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+    "editorSha256": "c06f993530057214205a64330116a823e5b31507610d1792c1f3617725d6e927",
+    "pitchLibrarySha256": "4817534c8265e22be7ade32ae974278710f0f84357d008742eb09dd4130a4584"
+  },
+  "scope": "Static FM3 FW13 opcode, descriptor and native-binding cross-check; 112 existing captured words corroborate default storage. No new hardware measurement or firmware execution.",
+  "limits": "No global-scale authoring, MIDI SET/LOAD, new device import, audio/CPU, or learned/controller state. Tonic remains editor context. GET plans do not prove live responses.",
+  "nativeGlobalBindings": [
+    {
+      "pid": 96,
+      "name": "GLOBAL_CUSTOM_SCALE",
+      "descriptorOffset": 18658928,
+      "nameOffset": 8262696
+    },
+    {
+      "pid": 902,
+      "name": "GLOBAL_CUSTOM_SHIFT_BEGIN",
+      "descriptorOffset": 18658944,
+      "nameOffset": 8262720
+    }
+  ],
+  "observedDefaultWords": 112,
+  "spans": {
+    "noteDispatch": {
+      "unpackedOffset": 4164170,
+      "bytes": 56,
+      "hex": "bf0402f8a0183f6c8228f014820fc1fffe5f8080b21c0100041881006298f29fc09f8100b7a23e07ff041efa7f7200078828871500000200"
+    },
+    "noteBounds": {
+      "unpackedOffset": 4158966,
+      "bytes": 174,
+      "hex": "bf6c82bfc01f7e710281801cbf6c02e9f0a23f70bf11089dee01089def02089d7003bf6c828bf097089d7305089df405089df204089df506089d76071b1600003401ff703f92850f0c0001a0000092043f6000a05121fe413c02bf0417f804003e608054f1123b160000ac14fe488606251a8b0f3f00fe5f0085fb1bbf0400210010be4d0207d09dfe5f80860911fe5f0087bb127e7100841214bf6c0cf0a0aa041882008537f29fc09f8100d198"
+    },
+    "laterBounds": {
+      "unpackedOffset": 4159334,
+      "bytes": 62,
+      "hex": "7e550201d014bf0400f85222be5b800027127e7206862519fe5f8284109ffe5f8087da1dfe5f028770977e710c84f0af041882008537f29fc09f81005199"
+    },
+    "integerWriter": {
+      "unpackedOffset": 4240444,
+      "bytes": 70,
+      "hex": "7e49bd40c2c3000700002d00820f5300c2c32007000005008c0100d186014112810f5300c1c30007000410008601f2227e493cc1be703f0a810f5600c1c30100010060493f81"
+    },
+    "customSource": {
+      "unpackedOffset": 4156084,
+      "bytes": 42,
+      "hex": "880f110028c32007000009001a160000ac143e0700000c00810f3400970121013e703f8a2c169280001e"
+    },
+    "tonic": {
+      "unpackedOffset": 4164846,
+      "bytes": 106,
+      "hex": "3f6c8228a018820f0b00fe5f0c8110dcfe5fbf96040f9280f021041882006634f29fc09f81000aa487150000020024109280f021bf0400f888283f6c0229f014140f9280701cf29f3e49bf057f723f06041881006298f29fc09f810025a43e07ff04b0f87f720207b018"
+    },
+    "globalAddress": {
+      "unpackedOffset": 4077586,
+      "bytes": 106,
+      "hex": "820f8603f2c3020700005200820f0505f2c3240700004c00820f7afc880f0c008001f2140100041883008632f29fc09f8000a2f98c0f1800bf0417f80c02830fd817fe5f00865318be70008611118001821280012118be708c09b0a4c49fe8fffe5f0282601401000418"
+    },
+    "globalRead": {
+      "unpackedOffset": 4077710,
+      "bytes": 40,
+      "hex": "7e473d41bf040cf820a2fe5f0081cc2c080f8680081c4ec2010004188200bd5ef29fc09f8000daf9"
+    },
+    "pidTable": {
+      "unpackedOffset": 1202216,
+      "bytes": 456,
+      "hex": "daa08100d69c8100d69c8100d69c8100eca08100eca08100eca08100eca08100f3a08100f3a08100f3a08100d69c8100d69c8100d69c8100d69c8100f8a08100f8a08100f8a08100f8a08100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100fda08100fda08100fda08100fda0810076a1810076a1810076a1810076a18100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c81007ba181007ba18100fda18100fda18100fda18100fda1810016a2810016a2810031a2810036a2810042a2810063a28100d69c8100d69c8100d69c8100d69c810089a28100a5a28100a5a28100a5a28100a5a28100a5a28100a5a28100a5a28100c1a28100e1a2810001a3810008a38100d69c81002ca38100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c810031a3810036a381003ba3810040a38100d69c8100d69c8100d69c8100d69c8100d69c810045a38100d69c810066a38100e0a38100d69c8100f7a38100d69c81002fa481002fa48100d69c8100d69c81003fa48100"
+    },
+    "noteDescriptors": {
+      "unpackedOffset": 3800048,
+      "bytes": 288,
+      "hex": "7c1300001000000000008040000000410000e0400000803f0000803f000000000000000000000000f000000000000000000000000000803f0000803f00000000000000000000000000000000f00000000000000000000000000000400000803f00000000000000000000000000000000f00000000000000000000000000040400000803f00000000000000000000000000000000f00000000000000000000000000080400000803f00000000000000000000000000000000f000000000000000000000000000a0400000803f00000000000000000000000000000000f000000000000000000000000000c0400000803f00000000000000000000000000000000f000000000000000000000000000e0400000803f000000000000000000000000"
+    }
+  },
+  "rules": {
+    "notes": {
+      "pids": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "types": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "countPid": 63,
+      "countMin": 4,
+      "countMax": 8,
+      "scalePid": 9,
+      "customScaleCode": 17,
+      "encoding": "unsigned integer semitone offset from tonic, stored directly in uint16",
+      "tonicOffset": 0,
+      "min": "previous active offset + 1",
+      "max": "12 - count + degreeIndex",
+      "inactive": "Preserve stored slots; reject explicit writes to Note numbers greater than count.",
+      "policy": "Validate the complete final scale; reject rather than reproduce firmware clamping of later notes."
+    },
+    "global": {
+      "effectId": 1,
+      "firstPid": 902,
+      "lastPid": 1285,
+      "scales": 32,
+      "notesPerScale": 12,
+      "pidFormula": "902 + 12 * (scaleNumber - 1) + noteIndex",
+      "noteOrder": [
+        "A",
+        "A#/Bb",
+        "B",
+        "C",
+        "C#/Db",
+        "D",
+        "D#/Eb",
+        "E",
+        "F",
+        "F#/Gb",
+        "G",
+        "G#/Ab"
+      ],
+      "shiftMin": -24,
+      "shiftMax": 24,
+      "storageStrideBytes": 24,
+      "scope": "Firmware address mapping and editor binding only; live GET response encoding is not newly measured. Global contents are not in preset SYX."
+    }
+  }
+}

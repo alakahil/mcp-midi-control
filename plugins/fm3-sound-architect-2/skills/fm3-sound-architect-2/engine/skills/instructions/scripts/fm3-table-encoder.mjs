@@ -73,6 +73,11 @@ export function encodeValue(p,value,opts={}){
     check(Number.isInteger(i)&&i>=0&&i<p.enum.length,`${p.name}: unknown option ${value}`);return i+base;
   }
   if(p.kind==='integer'){
+    if(typeof value==='string'&&p.displayCodec){
+      const label=value.trim().toUpperCase(),codec=p.displayCodec;
+      if(codec.kind==='repeat-label'&&label==='INFINITE')value=codec.infiniteCode;
+      else if(codec.kind==='global-scale-label'&&/^SCALE ([1-9]|[12][0-9]|3[0-2])$/.test(label))value=Number(label.slice(6))-codec.displayOffset;
+    }
     check(typeof value==='number'&&Number.isInteger(value)&&value>=p.min&&value<=p.max,`${p.name}: integer value required in ${p.min}…${p.max}`);
     return value<0?value+65536:value;
   }
@@ -88,6 +93,8 @@ export function encodeValue(p,value,opts={}){
 }
 export function decodeValue(p,raw){
   if(!validPitchStoredWord(p,raw))return undefined;
+  if(p.displayCodec?.kind==='global-scale-label')return 'SCALE '+(raw+p.displayCodec.displayOffset);
+  if(p.displayCodec?.kind==='repeat-label'&&raw===p.displayCodec.infiniteCode)return p.displayCodec.infiniteLabel;
   if(p.kind==='integer')return p.signedWord&&raw>=32768?raw-65536:raw;
   if(p.kind==='enum')return p.enum[raw-(p.enumBase??0)];
   const n=raw/65534,m=p.displayMultiplier||1;

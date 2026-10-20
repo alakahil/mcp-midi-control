@@ -7,6 +7,8 @@ import {loadDictionary,decodeValue,DEFAULT_STATUSES,OPT_IN_STATUSES,findParam} f
 import {sha256} from './fm3-output.mjs';
 import {typeApplicability,typePolicySummary,readTypeState} from './fm3-type-applicability.mjs';
 import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
+import {globalScaleDependencies,pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
+import {renderGlobalScaleObservations} from './fm3-global-scale-observations.mjs';
 const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks);
 export function finalSoundState(syx,writes,opts={}){
   const after=inspectStructure(syx),body=Buffer.from(after.raw.body),{records}=scanRecords(body),dictionary=loadDictionary();
@@ -36,15 +38,16 @@ export function finalSoundState(syx,writes,opts={}){
       }
     }
   }
-  return {name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalRows:describeRows(body),scenes,controls:effective,channels,parameters,dependencies:dependencyPolicySummary(),modifiers,typeApplicability:typePolicySummary(),outputSha256:sha256(syx)};
+  return {name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalRows:describeRows(body),scenes,controls:effective,channels,parameters,dependencies:dependencyPolicySummary(),modifiers,typeApplicability:typePolicySummary(),pitchCustomScales:pitchCustomScaleSummary(),globalScaleDependencies:globalScaleDependencies(channels),outputSha256:sha256(syx)};
 }
 function unitFor(p){
   // Only explicit, already used units; unknown units stay labelled as editor values.
   if(p.kind==='enum')return '';
+  if(p.family==='PITCH'&&p.param>=64&&p.param<=70)return 'pooltooni toonikast';
   if(p.family==='PITCH'&&p.param>=77&&p.param<=92)return 'skaalaastet';
   if(p.family==='PITCH'&&p.signedWord)return 'nihet (ühik sõltub Pitchi mudelist)';
-  if(p.family==='PITCH'&&[71,72].includes(p.param))return 'globaalne skaalaindeks (0–31)';
-  if(p.family==='PITCH'&&p.param===74)return 'salvestatud korduskood';
+  if(p.family==='PITCH'&&[71,72].includes(p.param))return '(globaalne skaala)';
+  if(p.family==='PITCH'&&p.param===74)return '(kordused)';
   if(p.kind==='integer')return 'täisarv';
   if(p.family==='DISTORT'&&['DISTORT_DRIVE','DISTORT_BASS','DISTORT_MID','DISTORT_TREBLE','DISTORT_PRESENCE'].includes(p.name))return '/10';
   if(p.name==='DISTORT_LEVEL'||/^OUTPUT_SCENE[1-8]$/.test(p.name))return 'dB';
@@ -75,10 +78,12 @@ export function renderFinalSoundText(state,spec){
   lines.push('','MUUD PÕHISEADED LÕPPFAILIST','Ümardatud salvestatud väärtused; detailne loend ja toorsõnad on validation.json failis.');
   for(const p of state.parameters.filter(p=>(mainNames.has(p.name)||explicitChannels.has(p.block+':'+p.channel))&&!written.has(p.block+':'+p.channel+':'+p.name)))lines.push(`${p.block} ${p.channel} ${p.label??p.name}: ${fmt(p.value)} ${p.unit} [${p.status}]${dependencyNote(p)}${p.storedDependency?'; '+p.storedDependency:''}`);
   for(const m of state.modifiers.filter(m=>m.active))lines.push(`Modifikaator: ${m.targetName}; allikas ${m.uncertain?'ebaselge':m.sourceName}; kanal ${m.channelScope}. Salvestatud väärtus ei tõenda kontrolleri hetkeväärtust.`);
+  if(state.globalScaleDependencies.observationsIncluded)lines.push('',renderGlobalScaleObservations(state.globalScaleDependencies).trimEnd());
+  else if(state.globalScaleDependencies.uses.length)lines.push(`Globaalsed kohandatud skaalad: ${state.globalScaleDependencies.readPlan.scales.join(', ')}. Sisu puudub presetifailist ja on kontrollimata. Salvestatud kanalite sõltuvuste lugemisplaan sisaldab ${state.globalScaleDependencies.readPlan.requestCount} päringut; päringuid pole käivitatud.`);
   lines.push('','SÕLTUVUSED JA KONTROLLITASE','Kanalimuudatus mõjutab kõiki seda kanalit kasutavaid stseene. Määramata väärtused pärinevad alusest või kopeeritud täiskanalimallist.',
     'Cab-mallid kasutavad olemasolevat Dyna-Cab teeki. Väliseid User IR-faile ei paigaldata; muutmata IR/pedaali/globaalseadistuse sõltuvused säilivad alusfailist.',
     'Offline-kontroll läbitud: lõppfaili kaadrid, CRC, sisu, marsruutimine ja deklareeritud muudatused. Selle lõppfaili import, heli ja CPU pole uue kontrolliga kinnitatud.',
-    'Choruse, Drive’i, Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri parameetriloend ning tabelikirjutused järgivad piiratud FW13 tüübi- ja algoritmireegleid. Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri mudelivahetus ning Phaseri Mode nõuavad täiskanalimalli. Rotaryl puudub tüübi valija; PID 0 on Rate. Pitchi 16 mudelit kontrollitakse eraldi ja TYPE nõuab täiskanalimalli; 27 täisarvu/enum-välja kasutavad eraldi kontrollitud presetisõna kodeeringut. Dünaamilised noodivalikud jäävad suletuks. Globaalse skaala valik ei lisa presetile skaala sisu ning salvestatud arpedžiaatorisamm ei kinnita selle kõlamist. 21 tempo-seost ja olemasolevad modifikaatorisihtmärgid on eraldi kontrollitud; muud sõltuvused, sh Compressori automaatne ajastus/võimendus ja muude plokkide tüübinähtavus, jäävad katmata. Tempo või modifikaatori juhitud parameetri salvestatud väärtus ei tõenda hetkel kõlavat väärtust. Peidetud salvestatud sõnad säilivad toorandmetena.',
+    'Choruse, Drive’i, Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri parameetriloend ning tabelikirjutused järgivad piiratud FW13 tüübi- ja algoritmireegleid. Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri mudelivahetus ning Phaseri Mode nõuavad täiskanalimalli. Rotaryl puudub tüübi valija; PID 0 on Rate. Pitchi 16 mudelit kontrollitakse eraldi ja TYPE nõuab täiskanalimalli; 34 täisarvu/enum-välja kasutavad eraldi kontrollitud presetisõna kodeeringut. Seitse kohandatud noodivälja nõuavad kogu lõpliku skaala kontrolli; toonika kuvaseade jääb suletuks. Globaalse skaala valik ei lisa presetile skaala sisu ning salvestatud arpedžiaatorisamm ei kinnita selle kõlamist. 21 tempo-seost ja olemasolevad modifikaatorisihtmärgid on eraldi kontrollitud; muud sõltuvused, sh Compressori automaatne ajastus/võimendus ja muude plokkide tüübinähtavus, jäävad katmata. Tempo või modifikaatori juhitud parameetri salvestatud väärtus ei tõenda hetkel kõlavat väärtust. Peidetud salvestatud sõnad säilivad toorandmetena.',
     '','KASUTAMINE','1. Säilita pooleliolev töö ning impordi fail FM3-Editi tööpuhvrisse.',
     `2. Kontrolli veateateid, valitud Scene ${state.selectedScene}, kanaleid ja soovitud helitasemeid.`,
     '3. Uut eksporti küsi ainult konkreetse seni kinnitamata katse jaoks; varasemaid piisavaid tõendeid kasuta uuesti.',
