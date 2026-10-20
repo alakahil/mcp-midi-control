@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "firmware": "13.0",
+  "status": "firmware-display-crosschecked",
+  "source": {
+    "url": "https://www.fractalaudio.com/downloads/firmware-presets/fm3/13p0/fm3_dsp_rel_13p0.zip",
+    "syxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "unpackedSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+    "bootBlocks": 6405
+  },
+  "scope": "Offline static firmware analysis, cross-checked against FW13 cache and established FM3 Pitch PID bindings. No new device measurements or execution of the firmware.",
+  "limits": "Does not validate global custom-scale contents, dynamic notes, generated preset import, audio or CPU. Firmware update/transport is not implemented.",
+  "references": {
+    "processor": "https://www.analog.com/media/en/dsp-documentation/processor-manuals/sc58x-2158x-prm.pdf",
+    "decoderCrossCheck": "https://github.com/js216/selache/tree/2b26d3b75c53063575bc5c820fa0d38879335187"
+  },
+  "spans": {
+    "dispatch": {
+      "unpackedOffset": 4161750,
+      "bytes": 66,
+      "hex": "820f72008001b2b07e72bf847e723f837e72bf867e723f877e72bf812207ff04ddfe7e72bf827e723f84bf703f91140f2e00ac6b010001000100be483f0e3f083f28"
+    },
+    "scale1": {
+      "unpackedOffset": 4164226,
+      "bytes": 64,
+      "hex": "02a60000e404bf0402f820927e720c8620a2fe5f02817014080f2e00546b04188200bd5ef29fc09f8100d6a28715000002003e07ff04fcf97e723f847f723f07"
+    },
+    "scale2": {
+      "unpackedOffset": 4164290,
+      "bytes": 64,
+      "hex": "02a60000e504bf0402f820927e720c8620a2fe5f02817014080f2e00546b04188200bd5ef29fc09f8100f6a28715000002003e07ff04dcf97e723f847f723f07"
+    },
+    "repeats": {
+      "unpackedOffset": 4164368,
+      "bytes": 70,
+      "hex": "02a60000f704810f1e0021c32407ff04c8f9080f2e00986b47c2bf040cf820a2fe5f0081cc2c080f2e00546b04188200bd5ef29fc09f810024a33e07ff04b1f9871500000200"
+    },
+    "table": {
+      "unpackedOffset": 1202216,
+      "bytes": 456,
+      "hex": "daa08100d69c8100d69c8100d69c8100eca08100eca08100eca08100eca08100f3a08100f3a08100f3a08100d69c8100d69c8100d69c8100d69c8100f8a08100f8a08100f8a08100f8a08100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100fda08100fda08100fda08100fda0810076a1810076a1810076a1810076a18100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c81007ba181007ba18100fda18100fda18100fda18100fda1810016a2810016a2810031a2810036a2810042a2810063a28100d69c8100d69c8100d69c8100d69c810089a28100a5a28100a5a28100a5a28100a5a28100a5a28100a5a28100a5a28100c1a28100e1a2810001a3810008a38100d69c81002ca38100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c8100d69c810031a3810036a381003ba3810040a38100d69c8100d69c8100d69c8100d69c8100d69c810045a38100d69c810066a38100e0a38100d69c8100f7a38100d69c81002fa481002fa48100d69c8100d69c81003fa48100"
+    },
+    "infinite": {
+      "unpackedOffset": 1202196,
+      "bytes": 9,
+      "hex": "494e46494e49544500"
+    }
+  },
+  "fields": {
+    "71": {
+      "kind": "global-scale-label",
+      "storedMin": 0,
+      "storedMax": 31,
+      "displayOffset": 1
+    },
+    "72": {
+      "kind": "global-scale-label",
+      "storedMin": 0,
+      "storedMax": 31,
+      "displayOffset": 1
+    },
+    "74": {
+      "kind": "repeat-label",
+      "storedMin": 1,
+      "storedMax": 31,
+      "infiniteCode": 31,
+      "infiniteLabel": "INFINITE"
+    }
+  },
+  "numericInput": "Existing numbers retain stored-code semantics. Use SCALE 1..SCALE 32 or INFINITE for unambiguous labels."
+}

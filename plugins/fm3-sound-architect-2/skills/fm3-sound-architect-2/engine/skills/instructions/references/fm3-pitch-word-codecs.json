@@ -7,7 +7,8 @@
     "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4",
     "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "factoryEvidenceSha256": "d7286b090cae82e66e053336b83c027ee66ed2818d526495d7511572da9ac1c6",
-    "pitchLibrarySha256": "4817534c8265e22be7ade32ae974278710f0f84357d008742eb09dd4130a4584"
+    "pitchLibrarySha256": "4817534c8265e22be7ade32ae974278710f0f84357d008742eb09dd4130a4584",
+    "displayEvidenceSha256": "7da9d37ef7c243ecd12aba4ab0d5e0907f3f287333f047ff27443f7427528d26"
   },
   "numericEnumInput": "Stored option ID, not zero-based list position. TRACKMODE: NOTES=1, CHORDS=2. TEMPO: first label=1, last=78; NONE is unavailable.",
   "limits": "No dynamic note authoring, global scale contents, device import, audio/CPU or effective controller/tempo evaluation. Same descriptor class is transferred across the explicitly listed 20 signed fields; factory facts are not per-value measurements.",
@@ -421,7 +422,13 @@
         "step": 1.0,
         "enum": null,
         "signedWord": false,
-        "storedDependency": "Zero-based global custom-scale index 0..31; global scale contents are not included or validated by this preset."
+        "displayCodec": {
+          "kind": "global-scale-label",
+          "storedMin": 0,
+          "storedMax": 31,
+          "displayOffset": 1
+        },
+        "storedDependency": "Zero-based global custom-scale index 0..31, displayed as SCALE 1..32; global scale contents are not included or validated by this preset."
       },
       "observedStoredWords": [
         0
@@ -478,7 +485,13 @@
         "step": 1.0,
         "enum": null,
         "signedWord": false,
-        "storedDependency": "Zero-based global custom-scale index 0..31; global scale contents are not included or validated by this preset."
+        "displayCodec": {
+          "kind": "global-scale-label",
+          "storedMin": 0,
+          "storedMax": 31,
+          "displayOffset": 1
+        },
+        "storedDependency": "Zero-based global custom-scale index 0..31, displayed as SCALE 1..32; global scale contents are not included or validated by this preset."
       },
       "observedStoredWords": [
         0
@@ -593,7 +606,14 @@
         "step": 1.0,
         "enum": null,
         "signedWord": false,
-        "storedDependency": "Stored repeat code 1..31, not a verified displayed repeat count. The Blocks Guide includes INFINITE; its exact code/display mapping is not established here. Do not interpret code 31 as 31 repeats."
+        "displayCodec": {
+          "kind": "repeat-label",
+          "storedMin": 1,
+          "storedMax": 31,
+          "infiniteCode": 31,
+          "infiniteLabel": "INFINITE"
+        },
+        "storedDependency": "Stored repeat codes 1..30 are finite counts; code 31 displays INFINITE. Cross-checked in FW13 firmware, without a new hardware measurement."
       },
       "observedStoredWords": [
         31

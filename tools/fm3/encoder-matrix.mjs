@@ -57,7 +57,7 @@ for (const p of eligible) {
   } else if(p.kind==='integer'){
     for(let value=p.min;value<=p.max;value++){
       const word=value<0?65536+value:value;
-      assert.equal(encodeValue(p,value,opts),word);assert.equal(decodeValue(p,word),value);numericChecks++;roundtripChecks++;
+      assert.equal(encodeValue(p,value,opts),word);assert.equal(encodeValue(p,decodeValue(p,word),opts),word);numericChecks++;roundtripChecks++;
     }
     [p.min-1,p.max+1,p.min+0.5,NaN,Infinity,-Infinity,null,true,'1'].forEach(reject);
   } else {

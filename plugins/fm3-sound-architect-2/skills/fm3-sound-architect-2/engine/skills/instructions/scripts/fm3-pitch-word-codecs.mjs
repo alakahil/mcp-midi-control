@@ -1,7 +1,7 @@
 // FM3 preset storage overlay, deliberately independent of live MIDI SET encoding.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-export const pitchWordCodecHash='187d64b322f8ca1b3e277f24e63770b19cc3169f15d643929d86a67e38e51a74';
+export const pitchWordCodecHash='d73962fbe0ac0ed822e20ba9557277f48097e2fd64a2c369d649a20ef16e483d';
 const bytes=fs.readFileSync(new URL('../references/fm3-pitch-word-codecs.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==pitchWordCodecHash)throw Error('Pitch word codecs changed; review and regenerate');
 const receipt=JSON.parse(bytes),byPid=new Map(receipt.fields.map(f=>[f.pid,f]));

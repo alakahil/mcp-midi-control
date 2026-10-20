@@ -30,6 +30,8 @@ jobs:
           python3 tools/fm3/test-modulation-dynamics-applicability.py
           python3 tools/fm3/modulation_dynamics_applicability.py
           python3 tools/fm3/test-pitch-word-codecs.py
+          python3 tools/fm3/test-pitch-display.py
+          python3 tools/fm3/pitch_display.py
           python3 tools/fm3/pitch_word_codecs.py
           python3 tools/fm3/test-rotary-pitch-applicability.py
           python3 tools/fm3/rotary_pitch_applicability.py

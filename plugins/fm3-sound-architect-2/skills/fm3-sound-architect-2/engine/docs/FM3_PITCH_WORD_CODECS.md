@@ -82,3 +82,14 @@ suunast, tempost ja kontrolleritest. Learn/LFO dünaamika, seadmeimport,
 heli ja CPU ei ole selle muudatusega kontrollitud. FM9/III GET/SET uurimust
 kasutati hüpoteesina; seda ei loeta FM3 riistvaratõendiks. Kasutaja füüsilisi
 toiminguid selles etapis: 0. Paigaldatud plugin jääb 0.3.2 peale.
+
+## Järgnev arendusetapp: 0.3.4-dev, 2026-10-20
+
+FW13 ametliku püsivara kitsas staatiline analüüs täiendab ülal kirjeldatud
+salvestussõnade tuge kolme kuvasildiga: PID 74 kood 31 = INFINITE; PID 71/72
+indeksid 0–31 = SCALE 1–32. Kood 1–30 jääb lõplikuks korduste arvuks.
+Vanad arvulised sisendid säilivad; soovita kasutajale selgeid silte.
+Tõend on `fm3-pitch-display-evidence.json`; korratav kontroll on
+`tools/fm3/pitch_display.py`. Täielikku püsivara paketis ei levitata.
+See ei ole uus seadmemõõtmine. Globaalsete skaalade sisu ja NOTE2–NOTE8
+kirjutamine jäävad varasema piirangu alla. Privaatplugin on endiselt 0.3.3.

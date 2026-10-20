@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 from six_field_resolution import ENGINE, EDITOR_SHA, CACHE_SHA, cache_records, mine_editor, require, sha
+from pitch_display import load as load_display, OUT as DISPLAY_OUT
 
 REF = ENGINE / 'skills/instructions/references'
 OUT = REF / 'fm3-pitch-word-codecs.json'
@@ -15,6 +16,7 @@ STATUS = 'preset-word-crosschecked'
 
 
 def build(editor=None):
+    display = load_display()
     dictionary = json.loads((REF/'fm3-param-dictionary.json').read_text())['params']
     params = {p['param']:p for p in dictionary if p['family']=='PITCH' and p['param'] in PIDS}
     require(sorted(params)==PIDS, 'Pitch codec binding drift')
@@ -41,9 +43,10 @@ def build(editor=None):
             require(lo==1 and len(c['labels'])==hi, 'Nonzero enum range drift')
             effective['enumBase']=1
         else:effective['signedWord']=pid in SIGNED
-        if pid in [71,72]:effective['storedDependency']='Zero-based global custom-scale index 0..31; global scale contents are not included or validated by this preset.'
+        if str(pid) in display['fields']:effective['displayCodec']=display['fields'][str(pid)]
+        if pid in [71,72]:effective['storedDependency']='Zero-based global custom-scale index 0..31, displayed as SCALE 1..32; global scale contents are not included or validated by this preset.'
         if pid==63:effective['storedDependency']='Custom note count only; context-dependent NOTE2..NOTE8 mappings remain unverified and preserved.'
-        if pid==74:effective['storedDependency']='Stored repeat code 1..31, not a verified displayed repeat count. The Blocks Guide includes INFINITE; its exact code/display mapping is not established here. Do not interpret code 31 as 31 repeats.'
+        if pid==74:effective['storedDependency']='Stored repeat codes 1..30 are finite counts; code 31 displays INFINITE. Cross-checked in FW13 firmware, without a new hardware measurement.'
         if 77<=pid<=92:effective['storedDependency']='Stored arpeggiator scale-degree shift; playback also depends on Key, Scale, Num Steps, direction, tempo and controllers.'
         values = sorted({s['channels'][ch]['words'][str(pid)] for s in factory['specimens'] for ch in 'ABCD'} | {x['words'][pid] for x in lib['models']})
         for word in values:
@@ -52,7 +55,7 @@ def build(editor=None):
         fields.append({'pid':pid,'name':p['name'],'effectId':110,'family':'PITCH','cache':c,
                        'native':next(r for r in native if r['pid']==pid),'original':p,'effective':effective,'observedStoredWords':values})
     return {'schemaVersion':1,'firmware':'13.0','scope':'Preset storage only. FW13 cache bounds and labels, FM3 native symbol bindings, existing FW13 templates and older FM3 factory words. Structural/file cross-check, not a new hardware sweep or MIDI SET codec.',
-            'sources':{'editorSha256':EDITOR_SHA,'cacheSha256':CACHE_SHA,'dictionarySha256':sha((REF/'fm3-param-dictionary.json').read_bytes()),'factoryEvidenceSha256':FACTORY_SHA,'pitchLibrarySha256':sha(lib_path.read_bytes())},
+            'sources':{'editorSha256':EDITOR_SHA,'cacheSha256':CACHE_SHA,'dictionarySha256':sha((REF/'fm3-param-dictionary.json').read_bytes()),'factoryEvidenceSha256':FACTORY_SHA,'pitchLibrarySha256':sha(lib_path.read_bytes()),'displayEvidenceSha256':sha(DISPLAY_OUT.read_bytes())},
             'numericEnumInput':'Stored option ID, not zero-based list position. TRACKMODE: NOTES=1, CHORDS=2. TEMPO: first label=1, last=78; NONE is unavailable.',
             'limits':'No dynamic note authoring, global scale contents, device import, audio/CPU or effective controller/tempo evaluation. Same descriptor class is transferred across the explicitly listed 20 signed fields; factory facts are not per-value measurements.',
             'fields':fields}

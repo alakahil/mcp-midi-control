@@ -43,8 +43,8 @@ function unitFor(p){
   if(p.kind==='enum')return '';
   if(p.family==='PITCH'&&p.param>=77&&p.param<=92)return 'skaalaastet';
   if(p.family==='PITCH'&&p.signedWord)return 'nihet (ühik sõltub Pitchi mudelist)';
-  if(p.family==='PITCH'&&[71,72].includes(p.param))return 'globaalne skaalaindeks (0–31)';
-  if(p.family==='PITCH'&&p.param===74)return 'salvestatud korduskood';
+  if(p.family==='PITCH'&&[71,72].includes(p.param))return '(globaalne skaala)';
+  if(p.family==='PITCH'&&p.param===74)return '(kordused)';
   if(p.kind==='integer')return 'täisarv';
   if(p.family==='DISTORT'&&['DISTORT_DRIVE','DISTORT_BASS','DISTORT_MID','DISTORT_TREBLE','DISTORT_PRESENCE'].includes(p.name))return '/10';
   if(p.name==='DISTORT_LEVEL'||/^OUTPUT_SCENE[1-8]$/.test(p.name))return 'dB';

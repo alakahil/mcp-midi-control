@@ -44,7 +44,7 @@ class PitchWordTests(unittest.TestCase):
 
     def test_display_and_global_dependencies_are_not_promoted(self):
         fields = {f['pid']: f['effective'] for f in self.receipt['fields']}
-        self.assertIn('not a verified displayed repeat count', fields[74]['storedDependency'])
+        self.assertIn('code 31 displays INFINITE', fields[74]['storedDependency'])
         self.assertIn('global scale contents are not included', fields[71]['storedDependency'])
         self.assertIn('scale-degree', fields[77]['storedDependency'])
         self.assertIn('NOTE2..NOTE8', fields[63]['storedDependency'])

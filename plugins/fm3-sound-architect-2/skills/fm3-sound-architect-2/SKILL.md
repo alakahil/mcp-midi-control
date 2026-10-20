@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.3`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.4-dev`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -303,3 +303,11 @@ Drive Oversampling on redaktoris peidetud ja kirjutamisel blokeeritud.
 Vaata [kuue välja lahendust](engine/docs/FM3_METADATA_RESOLUTION.md).
 Kontrolli avaldatud versiooni eraldi väljalaskekviitungist; lähtekoodis olev
 versiooninumber üksi ei kinnita avaldamist.
+
+## Pitchi kuvasildid
+
+Kasuta lõputute arpeggiatori korduste jaoks `NUMREPEATS: "INFINITE"`.
+Vali globaalskaala selgesõnalise sildiga, nt `CUSTOMSCALE1: "SCALE 32"`.
+Arvuline sisend säilitab vana salvestuskoodi tähenduse: skaala indeks 0–31.
+Kuvasildid on FW13 püsivara põhjal ristkontrollitud, mitte uus seadmemõõtmine.
+Globaalsete skaalade sisu ei sisaldu presetis; ära luba selle ülekandmist.
