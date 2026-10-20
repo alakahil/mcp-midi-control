@@ -188,3 +188,14 @@ Failiaudit võrdleb sihtparameetrit 11 efektipere olemasolevate FW13 reeglitega
 A–D kanalites. Tundmatud mudelid/valijad jäävad teadmata; audit ei kinnita
 modifikaatorituge ega ava kirjutusi. `test-modifier-types` on 44. kohustuslik
 test. Täpse commit'i, avaldatud paketi ja värske konteksti kontroll jääb nõutuks.
+
+
+## 0.3.9 ainult modifikaatorit muutva päringu skeem
+
+0.3.8 värske konteksti kasutuskatse leidis, et `modifiers` oli skeemi omadustes,
+kuid puudus koostaja vähemalt ühe muudatuse nõudest. Runtime toetas sama
+päringut juba 0.3.5-st. Skeemi nõuete loend sisaldab nüüd ka `modifiers`;
+olemasolev Wah-test kontrollib kõigi 13 minimaalse päringu vastuvõttu ning
+tühja muudatuspäringu jätkuvat tõrjumist. Kirjutuse binaarulatus ei muutu.
+Kohustuslik suite sisaldab endiselt 44 testi; väljalase vajab uut täpset commit'i
+ja kõiki varasemaid avaldamis- ning laadimiskontrolle.

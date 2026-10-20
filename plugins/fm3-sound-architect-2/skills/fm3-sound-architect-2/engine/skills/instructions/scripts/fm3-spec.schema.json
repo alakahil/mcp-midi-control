@@ -7417,6 +7417,11 @@
               "required": [
                 "enhancerChannels"
               ]
+            },
+            {
+              "required": [
+                "modifiers"
+              ]
             }
           ]
         },

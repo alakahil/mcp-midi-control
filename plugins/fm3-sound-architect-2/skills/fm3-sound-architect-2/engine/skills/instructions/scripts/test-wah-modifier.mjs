@@ -20,7 +20,16 @@ assert.deepEqual(policy.descriptors.MOD.bindings.filter(([i])=>[0,8,9,17,20,23].
   [[0,'MOD_CTRLID'],[8,'MOD_EFFECTID'],[9,'MOD_PARAM'],[17,'MOD_CHANNEL'],[20,'MOD_CTRLID2'],[23,'MOD_OPERATION']]);
 const dictionary=JSON.parse(read('references/fm3-param-dictionary.json'));
 assert.equal(dictionary.params.find(p=>p.block===94&&p.param===5).name,'WAH_CONTROL');
-let toggles=0,negative=0;
+const schema=JSON.parse(read('scripts/fm3-spec.schema.json'));
+const composerSchema=schema.oneOf.find(b=>b.properties?.baseProfile?.const==='jb-composer');
+// Evaluate the published schema's required-change alternatives for the actual
+// minimal requests used below. This guards schema/runtime agreement.
+const hasRequiredChange=spec=>composerSchema.allOf[0].anyOf.some(rule=>{
+  assert.deepEqual(Object.keys(rule),['required']);
+  return rule.required.every(key=>Object.hasOwn(spec,key));
+});
+assert.equal(hasRequiredChange({schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:'NO CHANGES'}),false);
+let toggles=0,negative=0,schemaAdmissionCases=0;
 const samples=composerBases.map(b=>({...b,bytes:read(b.file),blocks:layouts[b.layout]}));
 for(const b of samples){
   assert.equal(sha(b.bytes),b.sha256);const original=body(b.bytes),words=Array.from({length:25},(_,i)=>original.readUInt16LE(1584+2*i));
@@ -42,6 +51,7 @@ for(const b of samples){
   // Public composer path retains all remaining bytes; name is held unchanged.
   for(const enabled of [false,...(b.id==='jb-newlook'?[]:[true])]){
     const spec={schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:inspectStructure(b.bytes).decoded.preset_name,modifiers:{external1Wah:enabled}};
+    assert.equal(hasRequiredChange(spec),true,'Schema must admit the modifier-only request');schemaAdmissionCases++;
     const result=createPreset(b.bytes,spec),expected=Buffer.from(original);expected.writeUInt16LE(enabled?14:0,1584);
     assert.deepEqual(body(result.syx),expected);assert.deepEqual(body(b.bytes),original);
     assert.equal(result.report.modifierEdit.after,enabled?14:0);
@@ -91,4 +101,4 @@ assert.throws(()=>createPreset(newlook.bytes,{...sound,modifiers:{external1Wah:f
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-wah-modifier-'));
 try{const stem=path.join(tmp,'test');writePresetOutputs(stem,on,sound);assert.equal(verifyPresetOutputs(stem).modifierEdit.after,14);assert.equal(fs.readdirSync(tmp).length,4)}finally{fs.rmSync(tmp,{recursive:true,force:true})}
 assert.equal(getPresetCapabilities().modifiers.field,'composer.modifiers.external1Wah');
-console.log(JSON.stringify({passed:true,bases:7,toggles,negative,channelCases:4,recordLayoutCases:32,deviceIO:false,newHardwareMeasurements:false}));
+console.log(JSON.stringify({passed:true,bases:7,toggles,negative,schemaAdmissionCases,channelCases:4,recordLayoutCases:32,deviceIO:false,newHardwareMeasurements:false}));

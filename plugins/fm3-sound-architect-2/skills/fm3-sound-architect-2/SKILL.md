@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.8`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.9`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -375,6 +375,9 @@ Seos ei muuda stseenide bypass'i ega seadista globaalset pedaali/MIDI vastendust
 Aktiivse seose puhul lükatakse tabeli Wah Control kirjutus tagasi kõigil A–D
 kanalitel. Ära lülita seost välja ilma selgesõnalise soovita. Kõvera, muude
 allikate, uute kirjete ja globaalsete skaalade kirjutamine jääb toetamata.
+
+0.3.9 ühtlustab JSON-skeemi generaatoriga: ainult `modifiers.external1Wah`
+muutev koostajapäring on lubatud ka skeemi järgi. Muid seadeid pole vaja lisada.
 
 ## Modifikaatorite failiaudit (0.3.8)
 
