@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.5`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.6`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -375,3 +375,18 @@ Seos ei muuda stseenide bypass'i ega seadista globaalset pedaali/MIDI vastendust
 Aktiivse seose puhul lükatakse tabeli Wah Control kirjutus tagasi kõigil A–D
 kanalitel. Ära lülita seost välja ilma selgesõnalise soovita. Kõvera, muude
 allikate, uute kirjete ja globaalsete skaalade kirjutamine jääb toetamata.
+
+## Modifikaatorite failiaudit (0.3.6)
+
+Olemasoleva preseti seoste uurimiseks kasuta
+`node "$FM3_ENGINE/scripts/fm3-preset.mjs" --inspect-modifiers "/ABS/PRESET.syx"`.
+Lisa `--format txt` loetava eestikeelse aruande saamiseks; vaikimisi väljastatakse
+JSON. Käsk loeb faili ja kirjutab ainult standardväljundisse. See ei genereeri
+uut SYX-i ega ühendu seadmega. Loe [auditi juhendit](engine/docs/FM3_MODIFIER_AUDIT.md).
+
+Audit aktsepteerib toetatud struktuuriga faili ka väljaspool kinnitatud
+koostajaaluseid. See ei anna sellele failile kirjutusluba. Erista 32
+serialiseeritud kirjet seadme kasutatavast mahust, aktiivset allikaviidet
+stseeni bypass'ist ja kõlavast väärtusest ning FW13 metaandmeid faili tegelikust
+püsivarast. Tundmatud allikad/kanalid ja toorsõnad jäävad nähtavaks; teiseste
+allikate või kõverate DSP-mõju ei arvutata. Kirjutustugi jääb täpselt 0.3.5 piiridesse.

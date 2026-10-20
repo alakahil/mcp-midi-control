@@ -375,6 +375,15 @@
       ],
       "scope": "Seven pinned bases and FW13 modifier metadata; source-only toggle, full-body preservation, final dependency gates, malformed/competing binding rejection and four-output verification; no new hardware evidence",
       "required": true
+    },
+    {
+      "id": "test-modifier-audit",
+      "command": [
+        "node",
+        "scripts/test-modifier-audit.mjs"
+      ],
+      "scope": "Seven pinned bases, all 61 primary/secondary source labels, active/inactive bindings, overlapping/uncertain targets, all 32 malformed headers, corrupt input, read-only CLI and unchanged writer allowlist; no device I/O",
+      "required": true
     }
   ]
 }

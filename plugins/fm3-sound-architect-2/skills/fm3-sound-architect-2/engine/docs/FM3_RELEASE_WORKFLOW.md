@@ -87,7 +87,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 41 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 42 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
@@ -165,3 +165,11 @@ vastama seitsmes aluses säilinud kujule. `test-wah-modifier` kuulub kohustuslik
 41-testilisse komplekti. Uusi seadmemõõtmisi ega privaatseid toorandmeid ei lisata.
 Väljalase vajab endiselt täpse puhta commit’i testi, paketi tagasivõrdlust,
 käivitaja sidumise uuendust ja värske konteksti laadimiskontrolli.
+
+## 0.3.6 modifikaatorite failiaudit
+
+[Failiaudit](FM3_MODIFIER_AUDIT.md) lisab ühisesse käivituspunkti
+`--inspect-modifiers` JSON/TXT lugemisrežiimi. See kasutab olemasolevat
+32-kirjelist lugejat, märgib tundmatud koodid ning kattuvad sihtmärgid ja
+ei ava uusi kirjutusi. `test-modifier-audit` kuulub 42 kohustusliku testi hulka.
+Väljalaske täpse commit'i, paketi ja tegeliku laadimise kontroll jääb samaks.
