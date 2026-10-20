@@ -384,6 +384,15 @@
       ],
       "scope": "Seven pinned bases, all 61 primary/secondary source labels, active/inactive bindings, overlapping/uncertain targets, all 32 malformed headers, corrupt input, read-only CLI and unchanged writer allowlist; no device I/O",
       "required": true
+    },
+    {
+      "id": "test-modifier-context",
+      "command": [
+        "node",
+        "scripts/test-modifier-context.mjs"
+      ],
+      "scope": "Existing seven bases and four effect fixtures; literal scene offsets, ALL/A-D matching, absent/duplicate targets, unknown codes and partial scans remain unknown; no new write permission or device I/O",
+      "required": true
     }
   ]
 }

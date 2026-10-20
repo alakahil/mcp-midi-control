@@ -17,7 +17,7 @@ for(const b of samples){
   assert.equal(a.summary.serializedRecords,32);assert.equal(a.summary.active,b.id==='jb-newlook'?0:1);
   assert.equal(a.modifiers[0].targetName,'WAH_CONTROL');
   assert.equal(a.modifiers[0].channelScope,'ALL');assert.equal(a.modifiers[0].words.length,25);
-  assert.equal(a.summary.overlappingTargets,0);assert.equal(a.summary.recordsWithIssues,0);
+  assert.equal(a.summary.overlappingTargets,0);assert.equal(a.summary.recordsWithIssues,b.id==='jb-newlook'?1:0);
   assert.equal(a.deviceIO,false);assert.equal(a.presetWritten,false);
   assert.equal(a.externalControllers.length,b.id==='jb-newlook'?0:1);
   assert.ok(renderModifierAuditText(a).includes('faili tegelikku püsivara ei tuvastata'));
