@@ -5,6 +5,7 @@ import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {readModifiers,dependencyPolicyHash} from './fm3-parameter-dependencies.mjs';
 import {loadDictionary} from './fm3-table-encoder.mjs';
 import {scanRecords,readGrid,SLUG_BY_EID} from './fm3-layout.mjs';
+import {auditModifierTargetType,modifierTypeAuditPolicy} from './fm3-modifier-type-audit.mjs';
 const policyBytes=fs.readFileSync(new URL('../references/fm3-parameter-dependencies.json',import.meta.url));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 if(sha(policyBytes)!==dependencyPolicyHash)throw Error('Modifier audit metadata changed');
@@ -67,6 +68,7 @@ export function modifierAuditCapabilities(){return {
   requiresPinnedComposerBase:false,grantsWritePermission:false,
   targetContext:'Supported sequential effect records, pinned system tail, grid cells and stored A-D scene channel/bypass words',
   unresolvedContext:'reported as unknown; never inferred absent',evaluatesSignalPath:false,
+  targetTypePolicy:modifierTypeAuditPolicy(),
   evaluatesControllerValue:false,deviceIO:false
 };}
 export function auditModifiers(syx){
@@ -84,10 +86,14 @@ export function auditModifiers(syx){
     if((m.active||m.effectId!==0)&&!p)issues.push('target-parameter-not-in-dictionary');
     const target=targetContext(body,m,context,inspected.decoded.scene_names??[]);
     if(target)issues.push(...target.issues);
+    const record=target?.recordPresence==='present'?context.records.find(r=>r.header===target.recordHeader):null;
+    const applicability=auditModifierTargetType(body,m,p,record);
+    if(applicability?.scopedExcludedChannels.length)issues.push('target-type-excluded');
+    if(applicability?.scopedUnknownChannels.length)issues.push('target-type-unknown');
     return {...m,sourceName:sourceName(m.source),secondarySourceName:sourceName(m.secondarySource),
       state:m.active?'active':m.effectId===0?'inactive-unbound':'inactive-binding',
       targetName:p?.name??null,targetLabel:p?.label??null,targetFamily:p?.family??null,
-      targetContext:target,issues,words:Array.from({length:25},(_,i)=>body.readUInt16LE(m.offset+2*i))};
+      targetContext:target,targetApplicability:applicability,issues,words:Array.from({length:25},(_,i)=>body.readUInt16LE(m.offset+2*i))};
   });
   const active=modifiers.filter(m=>m.active),overlappingTargets=[];
   for(let a=0;a<active.length;a++)for(let b=a+1;b<active.length;b++){
@@ -107,11 +113,12 @@ export function auditModifiers(syx){
       inactiveBindings:modifiers.filter(m=>m.state==='inactive-binding').length,
       inactiveUnbound:modifiers.filter(m=>m.state==='inactive-unbound').length,
       recordsWithIssues:modifiers.filter(m=>m.issues.length).length,overlappingTargets:overlappingTargets.length},
-    contextScan:context.report,modifiers,overlappingTargets,externalControllers,
+    contextScan:context.report,typePolicy:modifierTypeAuditPolicy(),modifiers,overlappingTargets,externalControllers,
     limits:['Serialized record count is not a usable modifier capacity claim.',
-      'Target names use the FW13 dictionary; parameter type visibility is not validated.',
+      'Target applicability uses bounded FW13 authoring policies, not native UI execution, modifier support or DSP validation.',
       'Block absence requires the complete supported record scan and pinned system tail; otherwise presence is unknown.',
       'Grid cells and stored scene channel/bypass words do not establish a connected or audible signal path.',
+      'Local custom-note context is checked, but complete scale contents and global scale values are not validated.',
       'Curve, range, damping and operation words are retained as raw integers, not decoded or evaluated.',
       'Active means a nonzero stored source. Scene summaries do not evaluate modifiers, bypass mode or current controller value.',
       'Audit success grants no writing permission for an unknown preset or modifier configuration.',
@@ -133,7 +140,21 @@ const issueText={
   'duplicate-target-grid-cell':'sihtplokk esineb ruudustikus korduvalt',
   'target-scene-layout-unsupported':'selle ploki stseenikirjete tõlgendamine pole toetatud',
   'unknown-target-scene-channel':'sihtploki stseenis on tundmatu kanalikood',
-  'unknown-target-scene-bypass':'sihtploki stseenis on tundmatu bypass-kood'
+  'unknown-target-scene-bypass':'sihtploki stseenis on tundmatu bypass-kood',
+  'target-type-excluded':'sihtparameeter on vähemalt ühe seose kanali FW13 tüübireegliga välistatud',
+  'target-type-unknown':'sihtparameetri tüübisobivus on vähemalt ühes seose kanalis teadmata'
+};
+const typeText={available:'sobib',excluded:'välistatud',unknown:'teadmata'};
+const typeReasonText={
+  'target-parameter-unknown':'sihtparameeter puudub sõnastikust',
+  'family-not-covered':'selle efektipere tüübireeglit ei hinnata',
+  'target-record-unresolved':'sihtploki üheselt loetav parameetrikirje puudub',
+  'channel-layout-unsupported':'kanalite struktuur pole toetatud',
+  'target-word-out-of-bounds':'sihtsõna jääb kirjest välja',
+  'selector-word-out-of-bounds':'valijasõna jääb kirjest välja',
+  'unknown-or-mismatched-type':'tundmatu või vastuoluline mudel/tüüp',
+  'unknown-selector':'tundmatu valijakood',
+  'unknown-custom-note-context':'tundmatu kohaliku skaala valik või astmete arv'
 };
 const presenceText={present:'olemas',absent:'puudub',ambiguous:'mitu kirjet',unknown:'teadmata'};
 export function renderModifierAuditText(audit){
@@ -155,6 +176,17 @@ export function renderModifierAuditText(audit){
       for(const s of c.scenes)lines.push(`  Stseen ${s.scene} (${JSON.stringify(s.name)}): kanal ${s.channel??'tundmatu'} [${s.channelRaw}], ${s.bypass===null?'tundmatu bypass':s.bypass?'bypass':'sees'} [${s.bypassRaw}]; seose kanal ${s.modifierChannelMatches===null?'teadmata':s.modifierChannelMatches?'sobib':'ei sobi'}.`);
       if(c.scenes.length)lines.push(`  Kindlalt sobiva kanaliga ja salvestatud bypass-välja järgi sees: ${c.channelMatchedNotBypassedScenes.join(', ')||'ühtegi kinnitatud stseeni pole'}. See ei kinnita seose toimimist ega kuuldavust.`);
     }
+    const a=m.targetApplicability;
+    if(a){
+      lines.push('  FW13 tüübireegel (ei kinnita modifikaatori tuge):');
+      if(a.reason)lines.push('    Teadmata: '+typeReasonText[a.reason]+'.');
+      for(const ch of a.channels){
+        lines.push(`    ${ch.channel}: ${typeText[ch.status]}; ${ch.typeName??'tüüp teadmata'}; seose ulatus ${ch.inModifierScope===null?'teadmata':ch.inModifierScope?'jah':'ei'}; valijasõnad ${JSON.stringify(ch.selectorWords)}.`);
+        if(typeReasonText[ch.reason])lines.push('      '+typeReasonText[ch.reason]+'.');
+        if(ch.templateOnly)lines.push('      Selle valija kirjutamine nõuab eraldi täiskanalimalli; audit kirjutusluba ei anna.');
+        if(ch.blockedReason)lines.push('      Metaandmete piirang: '+ch.blockedReason+'.');
+      }
+    }
     for(const issue of m.issues)lines.push('  Märkus: '+issueText[issue]+'.');
   }
   if(!audit.modifiers.some(m=>m.state!=='inactive-unbound'||m.issues.length))lines.push('Salvestatud seoseid ei leitud.');
@@ -165,9 +197,10 @@ export function renderModifierAuditText(audit){
   for(const c of audit.externalControllers)lines.push(`${c.name}: pedaali/MIDI vastendus on globaalne ega ole selles auditis kontrollitud.`);
   if(!audit.externalControllers.length)lines.push('Aktiivset External-kontrolleri viidet ei leitud.');
   lines.push('','PIIRID',
-    'Sihtnimed pärinevad FW13 sõnastikust; parameetri tüübinähtavust ei kinnitata.',
+    'Tüübisobivus põhineb 11 efektipere FW13 koostamisreeglitel; see ei tõenda modifikaatori tuge, natiivse kasutajaliidese käitumist ega DSP mõju.',
     'Ploki puudumine kinnitatakse ainult toetatud kirjeloendi ja süsteemisaba korral; muul juhul on olemasolu teadmata.',
     'Ruudustiku asukoht ei kinnita ühendatud signaaliteed. Stseenide kanal/bypass on failis salvestatud olek.',
+    'Kohaliku kohandatud noodi kontekst ei kinnita terve skaala korrektset sisu; globaalseid skaalaväärtusi ei kontrollita.',
     'Kõik 25 sõna säilivad JSON-is toorväärtustena. Kõvera, vahemiku, summutuse ja operaatori mõju ei arvutata.',
     'Aktiivne allikas ja stseenide kokkuvõte ei kinnita pedaali hetkeasendit, modifikaatori mõju, bypass-režiimi ega kuuldavust.',
     'Edukas audit ei anna tundmatu preseti või seose kirjutusluba.',

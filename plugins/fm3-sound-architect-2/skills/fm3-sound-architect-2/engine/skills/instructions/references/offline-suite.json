@@ -393,6 +393,15 @@
       ],
       "scope": "Existing seven bases and four effect fixtures; literal scene offsets, ALL/A-D matching, absent/duplicate targets, unknown codes and partial scans remain unknown; no new write permission or device I/O",
       "required": true
+    },
+    {
+      "id": "test-modifier-types",
+      "command": [
+        "node",
+        "scripts/test-modifier-types.mjs"
+      ],
+      "scope": "Existing FW13 policies for 11 families; 20 semantic A-D cases, model/selector uncertainty, custom-note context, scoped exclusions, absent/duplicate targets and seven pinned bases; no new write permission or device I/O",
+      "required": true
     }
   ]
 }

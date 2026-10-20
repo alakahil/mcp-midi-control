@@ -87,7 +87,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 43 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 44 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
@@ -180,3 +180,11 @@ Failiaudit lisab sihtploki parameetrikirje, ruudustikulahtri ja salvestatud
 stseenide kanal/bypass-konteksti. Tundmatu kirjeloend või süsteemisaba ei anna
 puudumise väidet. `test-modifier-context` on 43. kohustuslik test; kirjutustugi
 ei laiene. Uusi seadmemõõtmisi ega privaatseid toorandmeid ei lisata.
+
+
+## 0.3.8 modifikaatori sihtparameetri tüübisobivus
+
+Failiaudit võrdleb sihtparameetrit 11 efektipere olemasolevate FW13 reeglitega
+A–D kanalites. Tundmatud mudelid/valijad jäävad teadmata; audit ei kinnita
+modifikaatorituge ega ava kirjutusi. `test-modifier-types` on 44. kohustuslik
+test. Täpse commit'i, avaldatud paketi ja värske konteksti kontroll jääb nõutuks.

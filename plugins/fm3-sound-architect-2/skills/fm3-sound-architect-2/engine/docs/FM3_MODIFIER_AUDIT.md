@@ -1,7 +1,8 @@
 # Modifikaatorite failiaudit
 
 0.3.6 lisas olemasoleva FM3 presetifaili modifikaatorite loetava inventuuri;
-0.3.7 lisab sihtploki kirje, ruudustiku ja salvestatud stseenide konteksti.
+0.3.7 lisas sihtploki kirje, ruudustiku ja salvestatud stseenide konteksti;
+0.3.8 lisab sihtparameetri FW13 tüübisobivuse lugemise A–D kanalites.
 See aitab enne uue kirjutustoe kavandamist kindlaks teha, millised seosed on
 failis tegelikult salvestatud. Uusi kirjutusvõimalusi ega seadmeühendust ei lisata.
 
@@ -89,7 +90,8 @@ tulevad olemasolevast parameetrisõnastikust. Faili tegelikku püsivaraversiooni
 ei tuvastata: `metadataFirmware:13` ja `firmwareDetected:null` on eri väljad.
 32 serialiseeritud kirjet ei tõenda seadme kasutatavate modifikaatorite mahtu.
 
-Audit ei kinnita parameetri nähtavust selle plokitüübi puhul.
+Audit võrdleb parameetrit allpool kirjeldatud FW13 koostamisreeglitega.
+See ei käivita FM3-Editi ega kinnita tegelikku modifikaatorituge.
 Kõvera, min/max vahemiku, summutuse, teisese allika ja operaatori arvulist mõju
 ei tuletata. Need sõnad säilivad JSON-is. Aktiivne tähendab salvestatud
 mittenullist allikat; see ei tähenda, et plokk on stseenis sees või pedaal
@@ -106,3 +108,48 @@ eraldi kontrollitasemeks; globaalsete skaalade arvukodeeringut ei muudeta.
 eraldi määratud baidiasukohtadega ning kontrollib A–D/ALL kattumist, puuduvat
 sihti, korduvaid plokke/lahte, tundmatuid koode ja pooliku lugemise ohutut tulemust.
 PEQ/GEQ/Enhanceri/Filteri näited kasutavad samuti juba olemasolevaid faile.
+
+## Sihtparameetri tüübisobivus (0.3.8)
+
+JSON-i `typePolicy` loetleb viis SHA-256-ga kinnitatud reeglifaili ning kaetud
+11 efektiperet: Chorus, Drive (FUZZ), Delay, Reverb, Flanger, Phaser,
+Compressor (COMP), Wah, Tremolo, Rotary ja Pitch. Muude perede tüübisobivus
+jääb teadmata. Need on olemasolevad FW13 koostamisreeglid, mitte uued mõõtmised.
+
+Iga seotud kirje `targetApplicability` kirjeldab nelja salvestatud kanalit.
+
+| JSON-i kanali staatus | TXT | Tähendus |
+|---|---|---|
+| `available` | sobib | Parameeter läbib selle kanali olemasoleva FW13 tüübireegli. |
+| `excluded` | välistatud | Teadaolev tüübireegel välistab parameetri või selle välja kirjutamise. |
+| `unknown` | teadmata | Mudeli/valija või kohaliku noodi kontekst pole tuntud. |
+
+`selectorWords` säilitab loetud valijasõnad; mudelinime ei teisendata oletuslikuks
+algoritmiks. Delay mudel ja sisemine Type ning Reverb Type/Base Type on eraldi.
+Rotaryl puudub Type: PID 0 on Rate ja seda ei loeta tüübi valijana.
+Vigane lisavalija annab konservatiivselt teadmata tulemuse ka siis, kui
+konkreetne leht seda valijat ei kasuta. Puuduv, korduv või mitteloetav sihtkirje
+ning katmata efektipere annavad `status:"unresolved"`, põhjuse ja tühja kanaliloendi.
+Sidumata kirjel on `targetApplicability:null`.
+
+Kõik A–D kanalid kuvatakse ka ühe kanali seose korral. `inModifierScope` märgib
+ALL/A–D ulatuse; tundmatu modifikaatorikanali korral on väärtus `null`.
+`scopedExcludedChannels` ja `scopedUnknownChannels` koondavad ainult kindlalt
+seose ulatusse kuuluvaid kanaleid. Tüübimärkused ei muuda stseenide varasemat
+kanali/bypass-kokkuvõtet: need on eraldi kontrollid.
+
+Näiteks BB Pre välistab Drive Tone'i, Paragon välistab Wah Biasi ning
+vedrukaja Scattering sõltub salvestatud Tank Type'ist. Pitchi NOTE2…NOTE8
+kontrollib tüüpi, SCALE=CUSTOM ja aktiivse astme konteksti; terve skaala
+järjestust või noodiväärtusi siin ei valideerita. Globaalsed skaalad jäävad eraldi.
+`templateOnly` märgib olemasolevat täiskanalimalli nõuet; see pole
+modifikaatoriga seostamise luba. `blockedReason` säilitab metaandmete piirangu.
+
+**Sobiv tüübireegel ei tõenda, et parameeter toetab modifikaatorit.**
+Kõigi tulemuste juures on `modifierSupportVerified:false`; audit ei lisa
+kirjutusluba ega hinda allika väärtust, kõverat, tempot, DSP-d või kuuldavust.
+
+`test-modifier-types.mjs` kasutab olemasolevaid kanalimallide sõnu ja eraldi
+määratud fixture'i baidiasukohti. Test katab 20 sisulist A–D juhtumit kõigis
+11 peres, teadmata olekud, ulatuse eristamise ning seitsme aluse säilimise.
+Sünteetilised seosed on tarkvaratestid, mitte uued seadmetõendid.
