@@ -41,6 +41,7 @@ jobs:
           node --test tools/fm3/test-modifier-damping.mjs
           node --test tools/fm3/test-modifier-min.mjs
           node --test tools/fm3/test-modifier-batch.mjs
+          python3 tools/fm3/modifier_quantization_audit.py
           python3 tools/fm3/parameter-evidence.py
           python3 tools/fm3/metadata_reconciliation.py
           node tools/fm3/encoder-matrix.mjs

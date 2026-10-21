@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "source": {
+    "application": "FM3-Edit 1.07.17",
+    "architecture": "arm64",
+    "arm64Sha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+    "provenance": "Original user-supplied FM3-Edit.app.zip; same ARM64 subject as the prior REA/Ghidra audit. Original executable is not redistributed."
+  },
+  "method": "New local static Capstone 5.0.6 disassembly and Mach-O LC_FUNCTION_STARTS/RTTI/vtable reads; combined with earlier user-supplied REA/Ghidra serializer evidence. No new REA/Ghidra command or application execution.",
+  "spans": {
+    "eventJumpTable": {
+      "address": "0x100536a00",
+      "fileOffset": 5466624,
+      "bytes": 9,
+      "sha256": "3c79f379164b5b8da70df6690fff4973fa7fd6a1d625533c59d845c02c33f39d",
+      "hex": "003500040a10162230"
+    },
+    "vtableIdentity": {
+      "address": "0x100dab4b8",
+      "fileOffset": 14333112,
+      "bytes": 16,
+      "sha256": "8c6a9d41ab071d7c96cf21a0ccb49286d2c6d1e4dbe2d2d7749f47577d062c2a",
+      "hex": "0000000000000000f8b7da0001000000"
+    },
+    "vtableDispatch": {
+      "address": "0x100dab678",
+      "fileOffset": 14333560,
+      "bytes": 8,
+      "sha256": "e6ddd67aae9e0eabec748bef93ccec52717f3b28572de85602d5785b64e52c77",
+      "hex": "d496170001000000"
+    },
+    "rttiNamePointer": {
+      "address": "0x100dab800",
+      "fileOffset": 14333952,
+      "bytes": 8,
+      "sha256": "d99584510db4729f55844499d6806b2de8e71d46e92737599fb037cd4512ac2f",
+      "hex": "8e25540001000000"
+    },
+    "rttiName": {
+      "address": "0x10054258e",
+      "fileOffset": 5514638,
+      "bytes": 17,
+      "sha256": "7e007a6d6c36be04e3d093d5279ea0dbfca301be3cf41bbb0d57af5ccd5e14f0",
+      "hex": "31344d6f6469666965724469616c6f6700"
+    },
+    "event10Call": {
+      "address": "0x100179ae4",
+      "fileOffset": 1546980,
+      "bytes": 12,
+      "sha256": "0abc591534a39ad8cd5f00b2eb57c61aa9d748a3a4d1705a186f0d593e1f148c",
+      "hex": "e00313aae10314aa2f050094"
+    },
+    "numericEntry": {
+      "address": "0x10017afa8",
+      "fileOffset": 1552296,
+      "bytes": 180,
+      "sha256": "2e857116f274ddb6cc5930cc1fa57b1786eacd42db36d2354e329cdf8c9b50cc",
+      "hex": "810500b4ff4301d1e923016df65702a9f44f03a9fd7b04a9fd030191f30300aa14f04979f40b007935144279f50f007928018052e80b00b9280040f9082940f9e00301aa00013fd60840201ee00f00bd603242f9080040f9080d40f9e10314aae20315aa00013fd6c00000b4001040bd0820201e600000540019201ee00f00bd680240f908d940f9e1130091e00313aa02008052030080d200013fd6fd7b44a9f44f43a9f65742a9e923416dff430191c0035fd6"
+    },
+    "forwardNonzeroPid": {
+      "address": "0x1001796d4",
+      "fileOffset": 1545940,
+      "bytes": 64,
+      "sha256": "fc5d56822cb2e02ef460465852de72c57c840d61c830ffc0a40c6ee9cb325506",
+      "hex": "ff4301d1f65702a9f44f03a9fd7b04a9fd030191f40301aaf30300aa280440790801003460820591e10314aafd7b44a9f44f43a9f65742a9ff43019135d6fc17"
+    },
+    "directDispatchChoice": {
+      "address": "0x1000af038",
+      "fileOffset": 716856,
+      "bytes": 4,
+      "sha256": "b02f82e3fbdb7dd1d90e30a88ceb7bd0098d5aad2ac56c2f6a98b4a9b5ef925d",
+      "hex": "230600b4"
+    },
+    "directDispatchMode": {
+      "address": "0x1000af0fc",
+      "fileOffset": 717052,
+      "bytes": 4,
+      "sha256": "70b041b26a01de6039f86e25760a8b3f786a9070f47b8883a2ea67fae53547dc",
+      "hex": "560f0036"
+    },
+    "copyFloatToSerializer": {
+      "address": "0x1000af2e4",
+      "fileOffset": 717540,
+      "bytes": 52,
+      "sha256": "577654b9570692a2e4288f85025ec7033e326de7f1523afa5485f06aca3c6589",
+      "hex": "a802407960e20091a9064079aa0640b9a00a40bd6b2240f96a210029690900b9600d00bd622240f95f1400b9e123009158210694"
+    },
+    "rotaryGetter": {
+      "address": "0x10025e9d0",
+      "fileOffset": 2484688,
+      "bytes": 28,
+      "sha256": "ce5c758b2840782dfbdecee05a29f6ab67ed7aa64c1960e1d63db701041a5242",
+      "hex": "004841f9800000b4080040f901c540f920001fd600e4002fc0035fd6"
+    },
+    "rotaryGetterVtable": {
+      "address": "0x100dbba90",
+      "fileOffset": 14400144,
+      "bytes": 8,
+      "sha256": "e1aa78c4d8fc398efc04f4ae1ff9f5378e90007e0ecf3dc4076bad14fcc6bf03",
+      "hex": "d0e9250001000000"
+    },
+    "rotaryVtableIdentity": {
+      "address": "0x100dbba30",
+      "fileOffset": 14400048,
+      "bytes": 16,
+      "sha256": "dab3f4f3115914b80ef2c75061a2e59222d8d797e137e61929781f28ffd78bcb",
+      "hex": "f8fefffffffffffff000dc0001000000"
+    }
+  },
+  "findings": [
+    "ModifierDialog is independently identified by RTTI and its primary vtable.",
+    "Event 10 dispatches to 0x10017afa8 via the byte jump table at 0x100536a00.",
+    "The numeric handler reads the float from the control virtual getter +0x50, selects operation 9, looks up the definition, and divides by its multiplier at +0x10 if present and nonzero.",
+    "Virtual dispatch +0x1b0 resolves to 0x1001796d4. For a nonzero modifier PID it forwards to 0x1000aefe4 with the object adjusted by +0x160.",
+    "Numeric entry supplies x2=0 and x3=0, selecting direct dispatch; 0x1000af2f4/304 preserve the float word at serializer+0xc. Existing REA evidence at 0x100237874 carries its 32 bits in five 7-bit groups.",
+    "The rotary-control getter itself delegates again via virtual slot +0x188; no complete text-parser proof is claimed."
+  ],
+  "unresolved": [
+    "Concrete getter implementation and runtime metadata for each live MOD control, especially target-dependent Min/Max.",
+    "Whether the exact hardware capture interaction traversed this numeric event path; no interaction or wire trace was captured.",
+    "Device-side operation-9 normalization, any target inverse/tolerance algorithm, and final preset uint16 rounding.",
+    "Thus the lack of a float-to-uint16 conversion in this bounded host path does not prove that all conversion occurs in firmware."
+  ],
+  "productionChange": false,
+  "newPhysicalExports": 0
+}
