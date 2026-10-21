@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2060,
-  "filePaths": 2264,
+  "uniqueContents": 2062,
+  "filePaths": 2266,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1585,6 +1585,12 @@
       "bytes": 2701,
       "paths": [
         "references/enhancer-ui-20261011/observations.json"
+      ]
+    },
+    "210dbf6931a3029804c065edd2bf47397352f9c189bb3d82f15f1202b93f8223": {
+      "bytes": 13981,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "211ef621621c8546c50be76af9fef0370761b8e476f51670871febe17c556833": {
@@ -3368,12 +3374,6 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-full-20261012-122507/step-017-8847d341d0/donor.syx"
-      ]
-    },
-    "45cf86ff904a6f0e9bd11d406c2d6c5feadab642a48192efa799a08fc6a428a2": {
-      "bytes": 13695,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "461ab43cbbe006b753fb93c34184936516923193685f7a3e48e027c36046615b": {
@@ -5864,6 +5864,12 @@
       "bytes": 4969,
       "paths": [
         "references/geq-full-20261010-194115/step-089-b2646eae62/capture.json"
+      ]
+    },
+    "7b6026539df41c36bf828dc35bf78510c0a3f30d77afe830eda5a2a7b71ea913": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_MOD_AUTOENGAGE_OFF_export.syx"
       ]
     },
     "7b84b82a2ec7f2aabe04979c28a4add3ca9a00dd1531df5bf5ba40365fea8530": {
@@ -11412,6 +11418,12 @@
       "bytes": 7269,
       "paths": [
         "references/peq-full-20261009-152606/step-009-01712b61a4/capture.json"
+      ]
+    },
+    "ea0710479ef62debcb613f757e32f55b15860f8947b363cff7059bece5cad2c1": {
+      "bytes": 2494,
+      "paths": [
+        "references/wah-auto-engage-evidence.json"
       ]
     },
     "ea282d8d390778001a05a883b7615aac3e63651454245389c0ff8ab425a8758e": {

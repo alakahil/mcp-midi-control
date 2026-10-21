@@ -9,17 +9,17 @@ import {finalSoundState,renderFinalSoundText} from './fm3-final-state.mjs';
 import {writePresetOutputs,sha256} from './fm3-output.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {validateLegacyDependencies,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
-import {wahModifierCapabilities} from './fm3-wah-modifier.mjs';
+import {wahModifierCapabilities,verifyWahModifierReadback} from './fm3-wah-modifier.mjs';
 import {modifierAuditCapabilities} from './fm3-modifier-audit.mjs';
 import {typePolicySummary} from './fm3-type-applicability.mjs';
 import {pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.9',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.10',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
     outputs:['.syx','.txt','.spec.json','.validation.json'],
-    modifiers:{...wahModifierCapabilities(),field:'composer.modifiers.external1Wah'},
+    modifiers:{...wahModifierCapabilities(),field:'composer.modifiers.external1Wah',autoEngage:{...wahModifierCapabilities().autoEngage,field:'composer.modifiers.wahAutoEngage'}},
     modifierAudit:modifierAuditCapabilities(),
     globalScaleObservations:{input:'fm3-preset.mjs --global-scales OBSERVATIONS.json',decoder:'global-scale-collector/FM3_DECODE_SCALES.py',requires:'Python 3.9+ for optional observation input and verification',scope:'capture-time display/value crosscheck; report only',changesPresetBytes:false,deviceIO:false,liveGetEncodingVerified:false},
     layout:{rows:[2,3],maxBlocksPerRow:10,blocks:Object.values(SLUG_BY_EID),policy:'Exactly the composed blocks; no removal, duplicates or arbitrary 4-row graph'},
@@ -46,8 +46,9 @@ export function composeSound(base,spec){
   const second=arrangeSound(first.syx,spec,{allow:spec.allow??[]});
   const finalBody=Buffer.from(inspectStructure(second.syx).raw.body);
   validateLegacyDependencies(finalBody,Object.fromEntries(scanRecords(finalBody).records.map(r=>[r.family,r])),spec.composer);
+  verifyWahModifierReadback(finalBody,first.report.modifierEdit);
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
-  const report={generator:'fm3-sound-0.3.9',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.10',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:'not tested',...state,modifierEdit:first.report.modifierEdit??null,
     stages:{composer:{scope:'intermediate; not final settings',...first.report},layout:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};

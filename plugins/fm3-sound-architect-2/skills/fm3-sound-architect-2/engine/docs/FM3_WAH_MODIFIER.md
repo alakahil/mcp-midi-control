@@ -1,7 +1,8 @@
 # External 1 → Wah: piiratud presetifaili kirjutus
 
-0.3.5 lisab ainult olemasoleva tõendatud modifikaatoriseose sisse- ja
-väljalülitamise. See on offline-failitöötlus; seadmele päringuid ei saadeta.
+0.3.5 lisas olemasoleva tõendatud modifikaatoriseose sisse- ja
+väljalülitamise. 0.3.10 lisab allpool kirjeldatud kahevalikulise
+Auto Engage kirjutuse. Avaldamist ja hostilaadimist kinnitab eraldi väljalaskekviitung. See on offline-failitöötlus; seadmele päringuid ei saadeta.
 
 ## Sisend
 
@@ -33,7 +34,7 @@ ei laienda kinnitatud aluste loendit; mõlemad variandid koosta samast alusest.
 
 Auditi seitse alust ja nende SHA-256 on `fm3-composer-bases.mjs` failis.
 Kuues aluses on esimese modifikaatorikirje allikas 14; NewLookis 0.
-Kõik ülejäänud 24 sõna kattuvad täpselt. Varasem seadmeekspordipaar
+Kõik ülejäänud 24 sõna kattuvad nendes seitsmes aluses täpselt. Varasem seadmeekspordipaar
 `JB_RHYTHM_LEVEL_MINUS3_export.syx` → `JB_RHYTHM_LEVEL_MINUS3_NewLook.syx`
 ning `FM3_NEWLOOK_SOURCE_AUDIT.json` kinnitavad eemaldatud Wah-seose
 allikasõna 14→0. Presetid erinevad ka plokkide ja ruudustiku poolest;
@@ -55,7 +56,7 @@ summutuse arvulist tähendust ei ole selle töö jaoks vaja oletada.
 
 ## Kirjutuse piirid
 
-- Muutub ainult allikasõna 0↔14; selle paari puhul erineb üks sisubait, 1584.
+- Allikapäring muudab ainult allikasõna 0↔14; selle paari puhul erineb üks sisubait, 1584.
   SYX-i tihendus, CRC ja kaadrite kontrollsummad arvutatakse uuesti.
 - Siht, kanal, teisene allikas, operaator ja kõik kõverasõnad peavad vastama
   tõendatud kirjele. Erinev konfiguratsioon tõrjutakse, seda ei normaliseerita.
@@ -82,3 +83,59 @@ NewLooki lisamise integratsiooni ja nelja väljundfaili. Need on olemasolevate
 tõendite korduskontrollid ning sünteetilised tarkvaratestid.
 Uut FM3 importi, pedaali toimimise katset, heli ega CPU-d pole kinnitatud.
 Globaalsete skaalade arvukodeering ja kirjutamine jäävad eraldi uurimisteemaks.
+
+
+## Auto Engage kahevalikuline kirjutus
+
+Minimaalne päring alusele `JB_RHYTHM_LEVEL_MINUS3_export.syx`:
+
+```json
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "JB RHYTHM LEVEL -3",
+  "modifiers": {"wahAutoEngage": "OFF"}
+}
+```
+
+Teine lubatud silt on `MED SPD`. Arvulisi koode ega muid silte sisendina ei
+aktsepteerita. Välja puudumine säilitab olemasoleva Auto Engage'i väärtuse.
+`external1Wah` on eraldi valikuline väli: ainult Auto Engage'i päring säilitab
+allika. Kui mõlemad on määratud, peab lõppallikas olema External 1.
+`external1Wah:false` koos Auto Engage'i päringuga tõrjutakse enne kirjutamist.
+NewLook nõuab Wah-ploki lisamist ja `external1Wah:true`; uus plokikooslus on
+sünteetiliselt kontrollitud, mitte selle mõõtmispaari uus seadmekinnitus.
+
+| Tõenditase | Kinnitatud ulatus |
+|---|---|
+| Baidiasukoht | Esimese kirje sõna 10, dekodeeritud keha nihe 1604, uint16 little-endian |
+| Arvukodeering | Täpselt MED SPD=2 ja OFF=0; muid enumiväärtusi ei avata |
+| Kuva | Algne MED SPD kasutaja kinnitusest; OFF, External 1, All ja Wahwah 1 Control ekraanipildilt; FW13.00 |
+| Failivõrdlus | 14 222 sisubaidist muutus ainult 1604: 2→0; muud 14 221 baiti säilisid |
+| Päised/kontrollsummad | Dump-päis ja preseti nimi säilisid; raw-päises muutus ainult CRC; kaadrid, CRC ja footer kehtivad |
+| Tegelik käitumine | Pedaali liikumine, automaatne bypass, heli ja CPU pole selle katsega valideeritud |
+
+Tõendipaar ja räsidega kuvatõendi kirjeldus on
+`skills/instructions/references/wah-auto-engage-evidence.json` failis.
+Eksporditud OFF-fail on `skills/instructions/examples/FM3_MOD_AUTOENGAGE_OFF_export.syx`.
+Algne ekraanipilt säilib kasutaja manuses; seda ei pakita pluginasse.
+
+Kirjutaja lubab kirjes vaid allika 0/14 ja Auto Engage'i 0/2 varieerumist;
+ülejäänud 23 sõna peavad vastama säilitatud konfiguratsioonile. Sihtplokk,
+konkureerivad kirjed, kõik kirjepäised ja lõppallikas kontrollitakse enne
+ühegi baidi muutmist. Allikapäring säilitab ka juba OFF-is oleva kirje.
+Auto Engage OFF **ei vabasta** Wah Control'i käsikirjutuslukku: allikas on
+endiselt External 1. Stseenikanalid ja bypass säilivad.
+
+`test-wah-auto-engage.mjs` võrdleb päris ekspordipaari, taastab OFF-i kogu keha,
+kontrollib mõlemat silti kuuel Wah'ga kinnitatud alusel, idempotentsust,
+tagasisuunalist sünteetilist taastet, kõrvalmuudatuste puudumist, vigase sisendi
+atomaarset tõrjumist, A–D kirjutuskaitset, NewLooki kooslust ja nelja väljundfaili.
+Kogu keha vastavus varasemale seadmeekspordile ei tähenda, et uus genereeritud
+SYX oleks eraldi uuesti imporditud. Sama sisu korduseksporti pole vaja.
+
+Pildilt saab lisaks kirja panna muutmata min/max 0.00/10.00, Attack 10.1 ms,
+Release 0.0 ms, Damping Exponential, Start/Mid/End 0/50/100%, Slope 50%,
+Scale 1.000, Offset 0% ja Off Value 5%. Need on üksikud kuvanäidud ning
+**ei kinnita nende väljade vaheväärtuste kodeeringut ega uut kirjutustuge**.

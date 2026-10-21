@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "device": "FM3 Mk II Turbo (user context)",
+  "firmwareDisplay": "13.00",
+  "target": {
+    "record": 0,
+    "effectId": 94,
+    "paramId": 5,
+    "source": 14,
+    "channel": 0,
+    "word": 10,
+    "bodyOffset": 1604,
+    "encoding": "uint16 little-endian",
+    "codes": {
+      "OFF": 0,
+      "MED SPD": 2
+    }
+  },
+  "pair": [
+    {
+      "file": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+      "sha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+      "bodySha256": "e0b8972b2f2cb1dc9711509f77f5fb487a547d4de145fef9f6364166c78ea627",
+      "bodyBytes": 14222,
+      "code": 2
+    },
+    {
+      "file": "examples/FM3_MOD_AUTOENGAGE_OFF_export.syx",
+      "sha256": "7b6026539df41c36bf828dc35bf78510c0a3f30d77afe830eda5a2a7b71ea913",
+      "bodySha256": "a719c1c52a96fe2144e4d661c73f33594c3dc3f618a52cbcd3679b23e083efac",
+      "bodyBytes": 14222,
+      "code": 0
+    }
+  ],
+  "userConfirmation": "Enne muutmist oli Auto Engage MED SPD; muutsin ainult selle OFF-iks",
+  "screenshot": {
+    "file": "Screenshot 2026-10-21 at 12.02.07.png",
+    "sha256": "eceac14d92a9b575cac4eaae71a682417e38cf082907b57bec8c653d7503fe44",
+    "retention": "Original supplied attachment; screenshot is not redistributed in the plugin.",
+    "observed": {
+      "target": "Wahwah 1 - Control",
+      "source": "External 1",
+      "channel": "All",
+      "autoEngage": "Off",
+      "pcReset": "Off",
+      "min": 0,
+      "max": 10,
+      "attackMs": 10.1,
+      "releaseMs": 0,
+      "damping": "Exponential",
+      "startPercent": 0,
+      "midPercent": 50,
+      "endPercent": 100,
+      "slopePercent": 50,
+      "scale": 1,
+      "offsetPercent": 0,
+      "offValuePercent": 5,
+      "updateRate": "Slow"
+    }
+  },
+  "comparison": {
+    "bodyChangedBytes": [
+      {
+        "offset": 1604,
+        "before": 2,
+        "after": 0
+      }
+    ],
+    "unchangedOtherBodyBytes": 14221,
+    "rawHeaderChangedOffsets": [
+      4,
+      5
+    ],
+    "rawHeaderMeaning": "Preset CRC only",
+    "dumpHeaderIdentical": true,
+    "framesCrcFooterValid": true
+  },
+  "limits": {
+    "beforeDisplay": "User confirmation; no before screenshot",
+    "otherFields": "Unchanged display observations only; no changed-field encoding evidence",
+    "deviceBehavior": "not tested",
+    "audio": "not tested",
+    "cpuValidation": "not performed",
+    "generatorOutputReimport": "not performed",
+    "globalScaleEncoding": "out of scope"
+  }
+}
