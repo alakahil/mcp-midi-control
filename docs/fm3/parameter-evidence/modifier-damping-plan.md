@@ -1,10 +1,12 @@
 # 21.10.2026 katsetulemus: Damping’u paar kinnitatud
 
 Kasutaja järelkatse eksport ja Linear-kuvatõend kinnitavad ainult keha baidi
-1632 muutuse 0 → 1. Kohalik 0.3.11 kandidaat lisab selle seose kahevalikulise
-kirjutaja; avaldatud plugin jääb 0.3.10 peale. Tõendikirje on plugina
+1632 muutuse 0 → 1. **0.3.11 on avaldatud** commit'ist
+`f0a99bc190fcbe3a63284335c68fad66e9f9a36c`; selle seose kahevalikuline
+kirjutaja on kasutusel. Tõendikirje on plugina
 `engine/skills/instructions/references/wah-damping-evidence.json`.
 Allolev plaan ja `modifier-damping-plan.json` säilivad katseeelse ajaloona.
+Järgmine töö: [Min-väärtuse üksikmuudatuse katse](modifier-min-plan.md).
 
 ---
 
