@@ -16,7 +16,7 @@ import {pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.10-dev',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.10',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
     outputs:['.syx','.txt','.spec.json','.validation.json'],
     modifiers:{...wahModifierCapabilities(),field:'composer.modifiers.external1Wah',autoEngage:{...wahModifierCapabilities().autoEngage,field:'composer.modifiers.wahAutoEngage'}},
@@ -48,7 +48,7 @@ export function composeSound(base,spec){
   validateLegacyDependencies(finalBody,Object.fromEntries(scanRecords(finalBody).records.map(r=>[r.family,r])),spec.composer);
   verifyWahModifierReadback(finalBody,first.report.modifierEdit);
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
-  const report={generator:'fm3-sound-0.3.10-dev',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.10',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:'not tested',...state,modifierEdit:first.report.modifierEdit??null,
     stages:{composer:{scope:'intermediate; not final settings',...first.report},layout:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};

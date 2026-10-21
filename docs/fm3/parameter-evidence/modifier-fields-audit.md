@@ -8,8 +8,8 @@ ainult CRC; mõlema faili kaadrite/CRC/footer'i kontroll läbis.
 
 See kinnitab paari **MED SPD=2 / OFF=0** asukoha ja kuvatähenduse olemasoleval
 External 1 → Wah Control ALL seosel FW13.00-s. Lisatud on piiratud offline-
-kirjutaja, skeem, tagasilugemine ja regressioonitestid 0.3.10-dev kandidaati.
-Avaldatud plugin jääb 0.3.9 peale. Pedaali/DSP käitumine, heli ja CPU pole kinnitatud.
+kirjutaja, skeem, tagasilugemine ja regressioonitestid 0.3.10 lähtekoodi.
+Väljalaske avaldamist ja laadimist kinnitab eraldi commit’ipõhine kviitung. Pedaali/DSP käitumine, heli ja CPU pole kinnitatud.
 
 Täpne tõend: plugina `engine/skills/instructions/references/wah-auto-engage-evidence.json`.
 Juhend: `engine/docs/FM3_WAH_MODIFIER.md`. Allolev korpuseaudit ja selle JSON

@@ -201,11 +201,16 @@ Kohustuslik suite sisaldab endiselt 44 testi; väljalase vajab uut täpset commi
 ja kõiki varasemaid avaldamis- ning laadimiskontrolle.
 
 
-## 0.3.10-dev Auto Engage kandidaat
+## 0.3.10 Auto Engage
 
 Lisatud on kasutaja FW13 muutmispaari põhjal ainult `wahAutoEngage: OFF | MED SPD`.
 45-testiline offline-suite hõlmab päris ekspordi kogu keha taastamist, ebasobiva
-sisendi tõrjumist ja lõppfaili tagasilugemist. Kandidaat ei ole avaldatud väljalase.
+sisendi tõrjumist ja lõppfaili tagasilugemist. Versiooninumber ei kinnita avaldamist; järgi sama commit’i kontrollikviitungit.
 Uue kasutajaekspordi avalikku lähtereposse viimiseks kontrolli selle konkreetse
 lisatõendi avaldamisluba. Avaldamise korral jäävad täpse commit'i, CI,
 serveripaketi ja värske hostikonteksti kontrollid kohustuslikuks.
+
+21.10.2026 andis kasutaja selgesõnalise loa kandidaadi `d04b51a` lähtekoodi,
+testide, juhendite, uue SYX-faili ja kuvatõendi tekstikirjelduse avaldamiseks
+repos `alakahil/mcp-midi-control`. Selle sisu avaldamisluba on olemas;
+sama tõendi jaoks uut kinnitust ei küsita.

@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.10-dev`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.10`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -370,7 +370,7 @@ Kasuta `jb-composer` kirjelduses `"modifiers":{"external1Wah":true}` või
 algse seose. Loe [piiratud modifikaatorikirjutuse juhendit](engine/docs/FM3_WAH_MODIFIER.md).
 Kirjutatakse olemasoleva esimese kirje allikas NONE ↔ External 1.
 Siht Wah 1 Control, ALL ja muud sõnad peavad vastama tõendatud kirjele;
-Auto Engage sõnal on kandidaadis kaks allpool kirjeldatud lubatud väärtust.
+Auto Engage sõnal on kaks allpool kirjeldatud lubatud väärtust.
 NewLookil puudub Wah: sisselülitamiseks küsi ka `wahChannels` täiskanalimall.
 Seos ei muuda stseenide bypass'i ega seadista globaalset pedaali/MIDI vastendust.
 Aktiivse seose puhul lükatakse tabeli Wah Control kirjutus tagasi kõigil A–D
@@ -411,7 +411,7 @@ parameetri modifikaatorituge, DSP mõju ega kirjutusluba. Rotary PID 0 on Rate,
 mitte Type. Pitchi kohaliku noodi kontekst ei valideeri terve skaala sisu.
 
 
-## Auto Engage kahevalikuline tugi (0.3.10-dev kandidaat)
+## Auto Engage kahevalikuline tugi (0.3.10)
 
 Kasuta `"modifiers":{"wahAutoEngage":"OFF"}` või `"MED SPD"`; soundi
 ümbrises pane see `composer` sisse. Välja puudumine säilitab väärtuse.
@@ -423,4 +423,5 @@ Sõna 10 / keha nihe 1604: OFF=0, MED SPD=2. Ainult see paar on kasutaja
 21.10.2026 FW13 ekspordi, OFF-ekraanipildi ja algväärtuse kinnitusega tõendatud.
 Ära kasuta muid enumikoode, min/max-i, kõverat ega damping'u kirjutusi.
 Täpselt sama kogu sisu tuvastamisel ära küsi uut korduseksporti.
-Seadme käitumine ja heli jäävad eraldi; kandidaat pole avaldatud 0.3.9 plugin.
+Seadme käitumine ja heli jäävad eraldi. Väljalaske avaldamine ja hostilaadimine
+kinnitatakse eraldi commit’ipõhise kviitungiga.

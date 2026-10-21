@@ -1,8 +1,8 @@
 # External 1 → Wah: piiratud presetifaili kirjutus
 
 0.3.5 lisas olemasoleva tõendatud modifikaatoriseose sisse- ja
-väljalülitamise. 0.3.10-dev kandidaat lisab allpool kirjeldatud kahevalikulise
-Auto Engage kirjutuse. Avaldatud plugin jääb kuni eraldi avaldamiseni 0.3.9 peale. See on offline-failitöötlus; seadmele päringuid ei saadeta.
+väljalülitamise. 0.3.10 lisab allpool kirjeldatud kahevalikulise
+Auto Engage kirjutuse. Avaldamist ja hostilaadimist kinnitab eraldi väljalaskekviitung. See on offline-failitöötlus; seadmele päringuid ei saadeta.
 
 ## Sisend
 
