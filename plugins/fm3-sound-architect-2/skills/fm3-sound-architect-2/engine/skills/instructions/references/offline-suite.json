@@ -411,6 +411,15 @@
       ],
       "scope": "FW13 changed-field export pair, exact body reconstruction, input rejection and final readback; no device I/O",
       "required": true
+    },
+    {
+      "id": "test-wah-damping",
+      "command": [
+        "node",
+        "scripts/test-wah-damping.mjs"
+      ],
+      "scope": "FW13 Damping Exponential/Linear changed-field export pair; whole-body reconstruction, retained words, input rejection and final readback; no device I/O or timing/audio confirmation",
+      "required": true
     }
   ]
 }

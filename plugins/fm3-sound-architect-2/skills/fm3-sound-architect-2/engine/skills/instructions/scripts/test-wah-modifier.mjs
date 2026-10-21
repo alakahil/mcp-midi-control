@@ -68,8 +68,8 @@ const reject=(mutate,request={external1Wah:true},pattern=/Wah modifier|Unsupport
   assert.deepEqual(copy,before);assert.equal(calls,0);negative++;
 };
 for(const request of [null,[],{},true,{external1Wah:1},{external1Wah:'true'},{external1Wah:true,channel:'A'},{external2Wah:true}])reject(()=>{},request);
-// Every retained word is out of scope, including curve/secondary source/channel.
-for(let pid=1;pid<25;pid++)reject(x=>x.writeUInt16LE((x.readUInt16LE(1584+2*pid)+1)%65536,1584+2*pid));
+// Retained words are fixed except the explicitly supported enum codes.
+for(let pid=1;pid<25;pid++)reject(x=>x.writeUInt16LE(pid===24?2:(x.readUInt16LE(1584+2*pid)+1)%65536,1584+2*pid));
 for(const source of [1,15,65535])reject(x=>x.writeUInt16LE(source,1584));
 for(let slot=0;slot<32;slot++)reject(x=>x.writeUInt16LE(24,1538+slot*96+42));
 for(const active of [0,14])reject(x=>{x.writeUInt16LE(active,1680);x.writeUInt16LE(94,1696);x.writeUInt16LE(5,1698)});

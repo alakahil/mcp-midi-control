@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2062,
-  "filePaths": 2266,
+  "uniqueContents": 2064,
+  "filePaths": 2268,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1557,6 +1557,12 @@
         "references/enhancer-full-20261012-122507/step-066-acd6c5762f/result.json"
       ]
     },
+    "1fd36ff9a645f895063678474119c33e26929aff4551d1f769cd8f4f32f901ca": {
+      "bytes": 14331,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "2035c0da1c8d04cc39d8d4b7e7308d7efcbce9d642047cc636f0c4bf154c5b2e": {
       "bytes": 24680,
       "paths": [
@@ -1585,12 +1591,6 @@
       "bytes": 2701,
       "paths": [
         "references/enhancer-ui-20261011/observations.json"
-      ]
-    },
-    "210dbf6931a3029804c065edd2bf47397352f9c189bb3d82f15f1202b93f8223": {
-      "bytes": 13981,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "211ef621621c8546c50be76af9fef0370761b8e476f51670871febe17c556833": {
@@ -5134,6 +5134,12 @@
       "bytes": 7269,
       "paths": [
         "references/peq-full-20261009-152606/step-028-6a4a23a86d/capture.json"
+      ]
+    },
+    "6cd29a5890625b140331726aacddc883cba7bc0f564c8c4e35c24b5d8195a1e6": {
+      "bytes": 2961,
+      "paths": [
+        "references/wah-damping-evidence.json"
       ]
     },
     "6d1729eb9fa1c8c1ad7d99adba1e00d04bc53c8f53ea941a464778f7b50f8b08": {
@@ -11810,6 +11816,12 @@
       "bytes": 3434,
       "paths": [
         "references/enhancer-full-20261012-122507/step-028-050eadc488/capture.json"
+      ]
+    },
+    "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_MOD_DAMPING_LINEAR_export.syx"
       ]
     },
     "f3492c8be9e05328fc029333714745ddd758b9185b18354f95ec23416ae0e87e": {
