@@ -216,14 +216,17 @@ repos `alakahil/mcp-midi-control`. Selle sisu avaldamisluba on olemas;
 sama tõendi jaoks uut kinnitust ei küsita.
 
 
-## 0.3.11 Damping’u režiim — kohalik kandidaat
+## 0.3.11 Damping’u režiim
 
 `wahDamping: EXPONENTIAL | LINEAR` põhineb kasutaja eraldatud FW13 ekspordil
 ja Linear-kuvatõendil. 46. offline-test kontrollib päris paari, kogu keha
 taastamist, vigase sisendi muutuseta tõrjumist ning tagasilugemist.
 Damping’u ajakäitumise, heli või CPU kinnitust ei lisandu.
-Uue 13.48.11 kuvatõendi tekstikirjelduse ja LINEAR-SYX-i avalikku reposse
-viimiseks on vaja selle uue tõendi avaldamisluba; varasem `d04b51a` luba
-kattis eelmist Auto Engage’i tõendit. Enne loa küsimist valmistatakse kohalik
-kandidaat ja testid täielikult ette. Uue väljalaske korral kehtivad täpse commit’i,
-CI, serveripaketi tagasivõrdluse ning värske hostikonteksti nõuded.
+
+21.10.2026 andis kasutaja selgesõnalise loa kandidaadi `b03fe5d` lähtekoodi,
+testide ja juhendite avaldamiseks repos `alakahil/mcp-midi-control` koos uue
+LINEAR-SYX-i ning 13.48.11 kuvatõendi tekstikirjeldusega. Selle sisu
+avaldamisluba on olemas; sama tõendi jaoks uut kinnitust ei küsita.
+Originaalset kuvatõendi pildifaili avalikku reposse ei lisata.
+Uue väljalaske korral kehtivad täpse commit’i, CI, serveripaketi
+tagasivõrdluse ning värske hostikonteksti nõuded.
