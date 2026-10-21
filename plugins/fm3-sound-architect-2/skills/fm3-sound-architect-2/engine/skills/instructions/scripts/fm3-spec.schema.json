@@ -7199,15 +7199,21 @@
         "modifiers": {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "external1Wah"
-          ],
           "properties": {
             "external1Wah": {
               "type": "boolean",
               "description": "Toggle only the retained External 1 to Wah Control binding (ALL); preserve other modifier words."
+            },
+            "wahAutoEngage": {
+              "type": "string",
+              "enum": [
+                "OFF",
+                "MED SPD"
+              ],
+              "description": "Only the FW13 export/display-crosschecked pair on the retained Wah Control ALL binding; requires final External 1 source."
             }
-          }
+          },
+          "minProperties": 1
         }
       },
       "allOf": [

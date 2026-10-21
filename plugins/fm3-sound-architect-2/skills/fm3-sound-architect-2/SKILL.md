@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.9`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.10-dev`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -368,8 +368,9 @@ see päring ei tuvasta. Ära nõua juba piisava kogumise kordamist.
 Kasuta `jb-composer` kirjelduses `"modifiers":{"external1Wah":true}` või
 `false`; soundi ümbrises pane see `composer` sisse. Välja puudumine säilitab
 algse seose. Loe [piiratud modifikaatorikirjutuse juhendit](engine/docs/FM3_WAH_MODIFIER.md).
-Kirjutatakse ainult olemasoleva esimese kirje allikas NONE ↔ External 1.
-Siht Wah 1 Control, ALL ja ülejäänud 24 sõna peavad vastama tõendatud kirjele.
+Kirjutatakse olemasoleva esimese kirje allikas NONE ↔ External 1.
+Siht Wah 1 Control, ALL ja muud sõnad peavad vastama tõendatud kirjele;
+Auto Engage sõnal on kandidaadis kaks allpool kirjeldatud lubatud väärtust.
 NewLookil puudub Wah: sisselülitamiseks küsi ka `wahChannels` täiskanalimall.
 Seos ei muuda stseenide bypass'i ega seadista globaalset pedaali/MIDI vastendust.
 Aktiivse seose puhul lükatakse tabeli Wah Control kirjutus tagasi kõigil A–D
@@ -392,7 +393,7 @@ koostajaaluseid. See ei anna sellele failile kirjutusluba. Erista 32
 serialiseeritud kirjet seadme kasutatavast mahust, aktiivset allikaviidet
 stseeni bypass'ist ja kõlavast väärtusest ning FW13 metaandmeid faili tegelikust
 püsivarast. Tundmatud allikad/kanalid ja toorsõnad jäävad nähtavaks; teiseste
-allikate või kõverate DSP-mõju ei arvutata. Kirjutustugi jääb täpselt 0.3.5 piiridesse.
+allikate või kõverate DSP-mõju ei arvutata. Kirjutustugi järgib piiratud Wah-juhendit; audit ise midagi ei kirjuta.
 
 Vaata ka `contextScan` ja `targetContext`: parameetrikirje, ruudustikulahter
 ning toetatud ploki kaheksa salvestatud stseeni kanal/bypass on eri faktid.
@@ -408,3 +409,18 @@ puuduva või korduva sihtkirje puhul ära järelda sobivust. Kõik kanalid kuvat
 `inModifierScope` eristab seose ALL/A–D ulatust. Tüübireegli läbimine ei kinnita
 parameetri modifikaatorituge, DSP mõju ega kirjutusluba. Rotary PID 0 on Rate,
 mitte Type. Pitchi kohaliku noodi kontekst ei valideeri terve skaala sisu.
+
+
+## Auto Engage kahevalikuline tugi (0.3.10-dev kandidaat)
+
+Kasuta `"modifiers":{"wahAutoEngage":"OFF"}` või `"MED SPD"`; soundi
+ümbrises pane see `composer` sisse. Välja puudumine säilitab väärtuse.
+Kirjutaja nõuab lõppseoses External 1 → Wah 1 Control ALL ning täpset
+säilitatud konfiguratsiooni. NewLookil lisa Wah-mall ja selgesõnaline
+`external1Wah:true`. OFF ei eemalda modifikaatoriseost ega muuda stseeni bypass'i.
+Loe [piiratud Wah-juhendi Auto Engage osa](engine/docs/FM3_WAH_MODIFIER.md#auto-engage-kahevalikuline-kirjutus).
+Sõna 10 / keha nihe 1604: OFF=0, MED SPD=2. Ainult see paar on kasutaja
+21.10.2026 FW13 ekspordi, OFF-ekraanipildi ja algväärtuse kinnitusega tõendatud.
+Ära kasuta muid enumikoode, min/max-i, kõverat ega damping'u kirjutusi.
+Täpselt sama kogu sisu tuvastamisel ära küsi uut korduseksporti.
+Seadme käitumine ja heli jäävad eraldi; kandidaat pole avaldatud 0.3.9 plugin.

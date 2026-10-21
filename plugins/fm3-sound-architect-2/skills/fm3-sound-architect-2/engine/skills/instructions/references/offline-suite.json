@@ -402,6 +402,15 @@
       ],
       "scope": "Existing FW13 policies for 11 families; 20 semantic A-D cases, model/selector uncertainty, custom-note context, scoped exclusions, absent/duplicate targets and seven pinned bases; no new write permission or device I/O",
       "required": true
+    },
+    {
+      "id": "test-wah-auto-engage",
+      "command": [
+        "node",
+        "scripts/test-wah-auto-engage.mjs"
+      ],
+      "scope": "FW13 changed-field export pair, exact body reconstruction, input rejection and final readback; no device I/O",
+      "required": true
     }
   ]
 }

@@ -87,7 +87,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 44 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 45 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
@@ -199,3 +199,13 @@ olemasolev Wah-test kontrollib kõigi 13 minimaalse päringu vastuvõttu ning
 tühja muudatuspäringu jätkuvat tõrjumist. Kirjutuse binaarulatus ei muutu.
 Kohustuslik suite sisaldab endiselt 44 testi; väljalase vajab uut täpset commit'i
 ja kõiki varasemaid avaldamis- ning laadimiskontrolle.
+
+
+## 0.3.10-dev Auto Engage kandidaat
+
+Lisatud on kasutaja FW13 muutmispaari põhjal ainult `wahAutoEngage: OFF | MED SPD`.
+45-testiline offline-suite hõlmab päris ekspordi kogu keha taastamist, ebasobiva
+sisendi tõrjumist ja lõppfaili tagasilugemist. Kandidaat ei ole avaldatud väljalase.
+Uue kasutajaekspordi avalikku lähtereposse viimiseks kontrolli selle konkreetse
+lisatõendi avaldamisluba. Avaldamise korral jäävad täpse commit'i, CI,
+serveripaketi ja värske hostikonteksti kontrollid kohustuslikuks.

@@ -1,3 +1,25 @@
+# 21.10.2026 järelkatse: Auto Engage paar kinnitatud
+
+Kasutaja esitas ühe muudetud terve SYX-i ja OFF-ekraanipildi ning kinnitas
+algväärtuse MED SPD. Võrdlus leidis täpselt ühe sisubaidi muutuse:
+**kirje 0, sõna 10, keha nihe 1604: 2 → 0**. Ülejäänud 14 221 baiti,
+stseenikanalid, bypass, preseti nimi ja dump-päis säilisid. Raw-päises muutus
+ainult CRC; mõlema faili kaadrite/CRC/footer'i kontroll läbis.
+
+See kinnitab paari **MED SPD=2 / OFF=0** asukoha ja kuvatähenduse olemasoleval
+External 1 → Wah Control ALL seosel FW13.00-s. Lisatud on piiratud offline-
+kirjutaja, skeem, tagasilugemine ja regressioonitestid 0.3.10-dev kandidaati.
+Avaldatud plugin jääb 0.3.9 peale. Pedaali/DSP käitumine, heli ja CPU pole kinnitatud.
+
+Täpne tõend: plugina `engine/skills/instructions/references/wah-auto-engage-evidence.json`.
+Juhend: `engine/docs/FM3_WAH_MODIFIER.md`. Allolev korpuseaudit ja selle JSON
+on fikseeritud 0.3.9 lähtecommit'i **ajalooline lähteolukord**; selle 689 faili
+ning null MOD-vaatluse tulemust ei kirjutata uue mõõtmisega tagantjärele ümber.
+Muude väljade muutmispaari lüngad jäävad alles. Uut kasutajakatset selle paari
+jaoks pole vaja.
+
+---
+
 # Modifikaatoriväljade tõendiaudit — 21.10.2026
 
 **Otsus: uut kirjutustuge ei avata.** Olemasolevad failid kinnitavad
