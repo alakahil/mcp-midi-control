@@ -1,8 +1,10 @@
 # Modifikaatoriväljade tõendiaudit — 21.10.2026
 
 **Otsus: uut kirjutustuge ei avata.** Olemasolevad failid kinnitavad
-13 uuritud välja asukohad ja muutmata toorsõnad, kuid neis pole nende väljade
-eristavaid muudatusi koos sõltumatu FM3-Editi kuvanäiduga. Enumitabel või teistes
+13 uuritud sõna struktuurse paigutuse ja muutmata sisu. Nende nimeline
+sidumine tuleb MOD-deskriptorist ning järjestikuse kirje kaardistusest;
+üksikvälja muutusega kinnitatud asukohatõend puudub. Failides pole nende
+väljade eristavaid muudatusi koos sõltumatu FM3-Editi kuvanäiduga. Enumitabel või teistes
 plokkides kinnitatud arvuklass üksi ei tõenda selle modifikaatorivälja
 presetikodeeringut. Piirang on konkreetne tõendilünk, mitte väide, et pakutud
 valemid kindlasti ei tööta.
