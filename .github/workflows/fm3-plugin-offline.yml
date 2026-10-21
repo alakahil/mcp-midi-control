@@ -38,6 +38,7 @@ jobs:
           python3 tools/fm3/pitch_word_codecs.py
           python3 tools/fm3/test-rotary-pitch-applicability.py
           python3 tools/fm3/rotary_pitch_applicability.py
+          node --test tools/fm3/test-modifier-damping.mjs
           python3 tools/fm3/parameter-evidence.py
           python3 tools/fm3/metadata_reconciliation.py
           node tools/fm3/encoder-matrix.mjs

@@ -1,0 +1,30 @@
+FM3 — Damping Exponential → Linear ühe muudatuse katse
+21.10.2026; avaldatud lähtepunkt 0.3.10 / dbd13c7
+
+1. Ava eelmise OFF-katse Wahwah 1 Control modifikaatoriaken.
+   Algseis: External 1; All; Auto Engage Off; Damping Exponential;
+   FW13.00; preseti nimi JB RHYTHM LEVEL -3.
+2. Kui see seis on alles ja midagi muud pole muudetud, kasuta seda otse.
+   Muidu säilita oma töö ning kasuta kaasasolevat muutmata algfaili
+   FM3_MOD_AUTOENGAGE_OFF_export.syx. Kui kindel algseis puudub, teata sellest.
+3. Muuda AINULT Damping: Exponential → Linear.
+   Ära muuda Auto Engage'i, teisi väärtusi, preseti nime ega stseeni.
+   Pedaali pole vaja liigutada. Kui Linear puudub, saada valikute pilt.
+4. Tee pilt: Wahwah 1 Control, External 1, All, Damping Linear,
+   Auto Engage Off; võimalusel näita samal pildil FW13.00.
+5. Ekspordi TERVE PRESET arvutisse nimega
+   FM3_MOD_DAMPING_LINEAR_export.syx.
+   Muuda ainult arvutifaili nime, mitte preseti sisemist nime.
+   Preseti salvestamist seadme mälupessa ega helikatset pole vaja.
+6. Saada SYX ja pilt koos kinnitusega:
+   „Algseis oli Damping Exponential; muutsin ainult Damping'u Linear'iks.”
+
+Uut algseisu eksporti pole vaja. Kaasasolev algfail on eelmise katse
+kasutajaekspordi muutmata koopia, SHA-256:
+7b6026539df41c36bf828dc35bf78510c0a3f30d77afe830eda5a2a7b71ea913
+
+Linear=1 on veel hüpotees. Pakett ei sisalda genereeritud Linear-presetti.
+Saabunud faili kontrollime offline: terviklikkus, ainult Damping'u
+muutus, kogu ülejäänud sisu säilimine ja eraldi kuvatõendi vastavus.
+See katse ei kinnita Damping'u ajalist käitumist, heli ega CPU-koormust.
+Agent ei suhtle seadmega ega saada GET/SET/LOAD/SAVE-käske.

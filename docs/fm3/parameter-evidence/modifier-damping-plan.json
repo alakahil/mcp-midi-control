@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "dbd13c7a223a8f6e4615089bb9730059d1f3128f",
+  "publishedVersion": "0.3.10",
+  "historicalAuditCommit": "194833788d15db09d5ab9a774940ae84fcdebaad",
+  "historicalAudit": "modifier-fields-audit.json",
+  "corpusDelta": {
+    "changedEvidencePaths": [
+      "A\tplugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_AUTOENGAGE_OFF_export.syx"
+    ],
+    "addedSha256": "7b6026539df41c36bf828dc35bf78510c0a3f30d77afe830eda5a2a7b71ea913",
+    "uniqueSyx": 700,
+    "supportedUnique": 690,
+    "excludedUnique": 10,
+    "modifierProfiles": 3,
+    "method": "Reuse historical hashed corpus; git diff of all SYX/ZIP/amp-history containers finds exactly one added specimen; inspect and merge its profile.",
+    "changedWahWords": [
+      {
+        "word": 10,
+        "before": 2,
+        "after": 0
+      }
+    ],
+    "newDampingChangedFieldPairs": 0
+  },
+  "damping": {
+    "record": 0,
+    "word": 24,
+    "bodyOffset": 1632,
+    "storage": "uint16-le",
+    "metadataName": "MOD_DAMPING",
+    "metadataFirmware": 13,
+    "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4",
+    "cacheByteRange": [
+      60630,
+      60687
+    ],
+    "labels": [
+      "EXPONENTIAL",
+      "LINEAR"
+    ],
+    "baselineRaw": 0,
+    "baselineDisplay": "Exponential",
+    "baselineDisplayEvidence": "Approved screenshot text in wah-auto-engage-evidence.json; screenshot 2026-10-21 12.02.07, FW13.00.",
+    "requestedDisplay": "Linear",
+    "expectedRawHypothesis": 1,
+    "hypothesisConfirmed": false,
+    "independentChangedFieldPairs": 0
+  },
+  "baseline": {
+    "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_AUTOENGAGE_OFF_export.syx",
+    "sha256": "7b6026539df41c36bf828dc35bf78510c0a3f30d77afe830eda5a2a7b71ea913",
+    "bytes": 24680,
+    "source": 14,
+    "effectId": 94,
+    "pid": 5,
+    "channel": 0,
+    "autoEngage": 0,
+    "presetName": "JB RHYTHM LEVEL -3"
+  },
+  "capture": {
+    "fileName": "FM3_MOD_DAMPING_LINEAR_export.syx",
+    "onlyChange": "Damping Exponential → Linear",
+    "requiredEvidence": [
+      "Whole preset SYX export",
+      "Screenshot showing Wah 1 Control, External 1, All, Damping Linear, Auto Engage Off and FW13.00",
+      "User confirmation that only Damping changed"
+    ],
+    "newBeforeExportRequired": false,
+    "audioTestRequired": false
+  },
+  "scope": {
+    "readOnly": true,
+    "deviceIO": false,
+    "newWriter": false,
+    "newRelease": false,
+    "globalScaleEncodingIncluded": false,
+    "deviceBehaviorVerified": false,
+    "audioVerified": false
+  },
+  "decision": "Await one changed-field export and display evidence. Byte agreement alone does not authorize a writer."
+}
