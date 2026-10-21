@@ -87,7 +87,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 46 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 48 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
@@ -230,3 +230,36 @@ avaldamisluba on olemas; sama tõendi jaoks uut kinnitust ei küsita.
 Originaalset kuvatõendi pildifaili avalikku reposse ei lisata.
 Uue väljalaske korral kehtivad täpse commit’i, CI, serveripaketi
 tagasivõrdluse ning värske hostikonteksti nõuded.
+
+
+## 0.3.12 Min-i kaks mõõdetud punkti — kandidaat
+
+`wahMin: 0 | 2.5` kasutab täpselt mõõdetud koode 0 ja 16375, ainult säilitatud
+External 1 → Wah 1 Control ALL seosel ning Max-koodiga 65534. Algne
+16383/16384 hüpotees ei täitunud; täisvahemiku valemit ei järeldata.
+47. kohustuslik offline-test kontrollib päris ekspordipaari, kogu keha taastet,
+piiratud väärtusi, kõrvalmuudatuste puudumist ja lõppfaili vastavust.
+
+Uus `FM3_MOD_MIN_2p50_export.syx` ja 15.05.00 kuvatõendi tekstikirjeldus
+on uus kasutajatõend. Varasemad d04b51a/b03fe5d sisupõhised avaldamisload
+ei kata neid automaatselt. Enne avalikku lähtereposse viimist on vaja selle
+konkreetse uue sisu luba; algset pildifaili reposse ega pluginasse ei pakita.
+Kohalik kandidaat ei muuda serveris avaldatud 0.3.11 pluginat ega käivitajat.
+Pärast avaldamisluba kehtivad täpse commit’i puhas täistest, CI, deterministlik
+pakend, serveri tagasivõrdlus ja värske hostikonteksti kasutuskatse.
+
+
+## 0.3.13 mõõdetud modifikaatoripunktid — kandidaat
+
+Lisab kümne välja piiratud `wahControls` kirjutuse koos 48. kohustusliku
+offline-testiga. Kolm kogutud profiili taastatakse baittäpselt; täisvahemiku,
+väljade sõltumatuse ja uute kombinatsioonide seadmekinnitust ei järeldata.
+A/B on koondkatsed ning viimane Max on ühe välja katse. Min 0.3.12 säilib.
+
+Uued A/B/Max SYX-id, Min-i varasem uus SYX ja nende kuvatõendi tekstikirjeldused
+ei kuulu d04b51a/b03fe5d varasemate sisupõhiste avaldamislubade alla. Selle
+konkreetse kandidaadi avalikuks lähtereposse viimiseks on vaja nende sisu
+luba. Originaalpilte ei avaldata. Enne loa küsimist valmista ette puhas
+commit, täielik testitulemus, deterministlik pakend ja kohalik kasutuskatse.
+Pärast luba kehtivad endiselt GitHub CI, serveripaketi tagasivõrdlus ja
+värske hosti laadimiskontroll; praegust kandidaati ei nimetata avaldatuks.

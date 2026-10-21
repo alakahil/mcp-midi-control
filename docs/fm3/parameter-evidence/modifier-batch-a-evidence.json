@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "status": "joint-capture-reviewed-with-user-text-discrepancy",
+  "capture": {
+    "file": "docs/fm3/parameter-evidence/captures/FM3_MOD_BATCH_A_export.syx",
+    "sha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+    "libraryFileId": "libfile_8b02bff6d2488191ae6f7f4c2a362ec0",
+    "bodySha256": "06c3ba9920c8e3d26186cb0e4cec42f11011b7a9cd00e4366b84578809ef0ea8"
+  },
+  "baseline": {
+    "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_MIN_2p50_export.syx",
+    "sha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+    "bodySha256": "cd352d25d04a9bb281b3a19b8753d4dcb47a05e57a14cca41afeee9796c6c763"
+  },
+  "comparison": "modifier-batch-a-comparison.json",
+  "screenshot": {
+    "originalName": "Screenshot 2026-10-21 at 15.47.56.png",
+    "sha256": "91bac3fe7d6cafc24476d72912f5b025f8804867d9e181a41d9fa84dc57eeef8",
+    "libraryFileId": "libfile_491c24a4baf081919eab05e8c06fd0fd",
+    "method": "Direct visual review of original attached image; no OCR or edited derivative. Original screenshot is not included in the source repository."
+  },
+  "userStatement": "Muutsin ainult tabeli välju. Attack kuvas 9.99 ms ja release 249.9 ms",
+  "target": {
+    "record": 0,
+    "source": 14,
+    "effectId": 94,
+    "pid": 5,
+    "channel": 0
+  },
+  "screenshotContext": {
+    "firmware": "13.00",
+    "presetNumber": 423,
+    "presetName": "JB RHYTHM LEVEL -3",
+    "selectedScene": 2,
+    "sceneName": "S02 Rhythm Fat",
+    "modifier": "Wahwah 1 - Control",
+    "source": "External 1",
+    "channel": "All",
+    "min": 2.5,
+    "autoEngage": "Off",
+    "damping": "Linear",
+    "pcReset": "Off",
+    "updateRate": "Slow",
+    "wahChannel": "A",
+    "wahType": "Clyde",
+    "wahBypass": true
+  },
+  "fields": [
+    {
+      "name": "MOD_MAX",
+      "label": "Max",
+      "word": 2,
+      "offset": 1588,
+      "beforeRaw": 65534,
+      "afterRaw": 49159,
+      "requestedDisplay": 7.5,
+      "actualDisplay": 7.5,
+      "actualDisplayText": "7.50",
+      "unit": "Wah Control 0..10",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    },
+    {
+      "name": "MOD_STARTPT",
+      "label": "Start",
+      "word": 3,
+      "offset": 1590,
+      "beforeRaw": 0,
+      "afterRaw": 6553,
+      "requestedDisplay": 10,
+      "actualDisplay": 10,
+      "actualDisplayText": "10.0 %",
+      "unit": "%",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    },
+    {
+      "name": "MOD_MIDPT",
+      "label": "Mid",
+      "word": 4,
+      "offset": 1592,
+      "beforeRaw": 32767,
+      "afterRaw": 26214,
+      "requestedDisplay": 40,
+      "actualDisplay": 40,
+      "actualDisplayText": "40.0 %",
+      "unit": "%",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    },
+    {
+      "name": "MOD_ENDPT",
+      "label": "End",
+      "word": 5,
+      "offset": 1594,
+      "beforeRaw": 65534,
+      "afterRaw": 58981,
+      "requestedDisplay": 90,
+      "actualDisplay": 90,
+      "actualDisplayText": "90.0 %",
+      "unit": "%",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    },
+    {
+      "name": "MOD_SLOPE",
+      "label": "Slope",
+      "word": 6,
+      "offset": 1596,
+      "beforeRaw": 32767,
+      "afterRaw": 39320,
+      "requestedDisplay": 60,
+      "actualDisplay": 60,
+      "actualDisplayText": "60.0 %",
+      "unit": "%",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    },
+    {
+      "name": "MOD_ATTACK",
+      "label": "Attack",
+      "word": 7,
+      "offset": 1598,
+      "beforeRaw": 66,
+      "afterRaw": 655,
+      "requestedDisplay": 100,
+      "actualDisplay": 99.9,
+      "actualDisplayText": "99.9 ms",
+      "unit": "ms",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    },
+    {
+      "name": "MOD_RELEASE",
+      "label": "Release",
+      "word": 15,
+      "offset": 1614,
+      "beforeRaw": 0,
+      "afterRaw": 1638,
+      "requestedDisplay": 250,
+      "actualDisplay": 249.9,
+      "actualDisplayText": "249.9 ms",
+      "unit": "ms",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    },
+    {
+      "name": "MOD_SCALE",
+      "label": "Scale",
+      "word": 13,
+      "offset": 1610,
+      "beforeRaw": 32767,
+      "afterRaw": 38537,
+      "requestedDisplay": 1.5,
+      "actualDisplay": 1.5,
+      "actualDisplayText": "1.500",
+      "unit": "unitless",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    },
+    {
+      "name": "MOD_OFFSET",
+      "label": "Offset",
+      "word": 14,
+      "offset": 1612,
+      "beforeRaw": 32767,
+      "afterRaw": 29490,
+      "requestedDisplay": -10,
+      "actualDisplay": -10,
+      "actualDisplayText": "-10.0 %",
+      "unit": "%",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    },
+    {
+      "name": "MOD_OFFVAL",
+      "label": "Off Value",
+      "word": 12,
+      "offset": 1608,
+      "beforeRaw": 0,
+      "afterRaw": 10922,
+      "requestedDisplay": 20,
+      "actualDisplay": 20,
+      "actualDisplayText": "20.0 %",
+      "unit": "%",
+      "displaySource": "screenshot",
+      "fullRangeEncodingVerified": false
+    }
+  ],
+  "discrepancies": [
+    {
+      "field": "MOD_ATTACK",
+      "userReportedDisplay": 9.99,
+      "screenshotDisplay": 99.9,
+      "unit": "ms",
+      "raw": 655,
+      "resolution": "Use the clearly visible screenshot value for this observation. Preserve the conflicting user text; a typo is possible but has not been confirmed by the user. No extra export requested solely for this discrepancy.",
+      "userCorrectionConfirmed": false
+    }
+  ],
+  "integrity": {
+    "fileComparisonPassed": true,
+    "bodyBytes": 14222,
+    "changedBodyBytes": 20,
+    "unchangedBodyBytes": 14202,
+    "changedWords": 10,
+    "unrelatedBodyChanges": 0,
+    "minRawPreserved": 16375,
+    "otherModifierWordsPreserved": true,
+    "otherRecordsAndEffectSceneDataPreserved": true,
+    "structuralChecks": {
+      "before": {
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true,
+        "modifierRecordLayout": true
+      },
+      "after": {
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true,
+        "modifierRecordLayout": true
+      }
+    },
+    "paddingAllZero": true,
+    "compressedBytes": {
+      "before": 4928,
+      "after": 4946
+    },
+    "rawTransportHeaderChanges": [
+      {
+        "offset": 4,
+        "before": 181,
+        "after": 119
+      },
+      {
+        "offset": 5,
+        "before": 81,
+        "after": 104
+      },
+      {
+        "offset": 74,
+        "before": 64,
+        "after": 82
+      }
+    ]
+  },
+  "evidence": {
+    "newDeviceCaptures": 1,
+    "jointFieldObservations": 10,
+    "displayValuesVerifiedFromScreenshot": true,
+    "allUserTextConsistentWithScreenshot": false,
+    "singleFieldIsolation": false,
+    "fieldIndependenceVerified": false,
+    "fullRangeCodecsVerified": false,
+    "deviceBehaviorVerified": false,
+    "audioVerified": false,
+    "authoringEnabled": false,
+    "deviceIOByAgent": false
+  },
+  "interpretation": "Native names and fixed layout support attribution of ten simultaneous word changes. This is one joint capture, not ten isolated experiments. Keep measured raw codes, including Max 49159; do not replace them with idealized formula outputs. Display rounding and an additional batch do not by themselves prove a full-range codec.",
+  "nextPlan": "modifier-batch-b-plan.json"
+}

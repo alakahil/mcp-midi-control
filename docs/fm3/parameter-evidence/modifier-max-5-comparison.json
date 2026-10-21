@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "mode": "read-only-modifier-batch",
+  "baselineSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+  "candidateSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+  "fileComparisonPassed": true,
+  "reviewRequired": true,
+  "writeAuthorized": false,
+  "presetWritten": false,
+  "deviceIO": false,
+  "evidence": {
+    "displayValuesVerified": false,
+    "singleFieldIsolation": false,
+    "fieldIndependenceVerified": false,
+    "fullRangeCodecsVerified": false,
+    "deviceBehaviorVerified": false,
+    "audioVerified": false
+  },
+  "note": "Requested display values are a plan, not observations. Changed words require actual screenshot/value review; never infer ten isolated experiments or a full-range codec.",
+  "body": {
+    "beforeSha256": "b72c3242f8de4f16646c703832112cf955c373128b376013cbffda2e38f889db",
+    "afterSha256": "80c4abc7c49f3995539016b19f5d085545e0aba059de5ee79bce4823f2adfdc6",
+    "beforeBytes": 14222,
+    "afterBytes": 14222
+  },
+  "target": {
+    "record": 0,
+    "source": 14,
+    "effectId": 94,
+    "pid": 5,
+    "channel": 0
+  },
+  "structuralChecks": {
+    "before": {
+      "frameChecksums": true,
+      "presetCrc": true,
+      "footer": true,
+      "modifierRecordLayout": true
+    },
+    "after": {
+      "frameChecksums": true,
+      "presetCrc": true,
+      "footer": true,
+      "modifierRecordLayout": true
+    }
+  },
+  "fields": [
+    {
+      "word": 2,
+      "name": "MOD_MAX",
+      "label": "Max",
+      "offset": 1588,
+      "widthBytes": 2,
+      "baselineDisplay": 7.5,
+      "requestedDisplay": 5,
+      "unit": "Wah Control 0..10",
+      "cacheTypecode": 0,
+      "cacheNumericFields": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 49159,
+      "afterRaw": 32784,
+      "changed": true,
+      "actualDisplay": null
+    }
+  ],
+  "changedFields": [
+    "MOD_MAX"
+  ],
+  "missingRequestedChanges": [],
+  "bodyChanges": [
+    {
+      "offset": 1588,
+      "before": 7,
+      "after": 16
+    },
+    {
+      "offset": 1589,
+      "before": 192,
+      "after": 128
+    }
+  ],
+  "unrelatedBodyChanges": [],
+  "rawHeaderChanges": [],
+  "rawTransportHeaderChanges": [
+    {
+      "offset": 4,
+      "before": 143,
+      "after": 124
+    },
+    {
+      "offset": 5,
+      "before": 2,
+      "after": 181
+    },
+    {
+      "offset": 74,
+      "before": 81,
+      "after": 79
+    }
+  ],
+  "compressedBytes": {
+    "before": 4945,
+    "after": 4943
+  },
+  "dumpHeaderChanges": [],
+  "targetContextPreserved": true,
+  "paddingAllZero": true,
+  "status": "batch-awaiting-display-review"
+}

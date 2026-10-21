@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "mode": "research-only-batch-capture",
+  "baseline": {
+    "file": "docs/fm3/parameter-evidence/captures/FM3_MOD_BATCH_A_export.syx",
+    "sha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+    "bodySha256": "06c3ba9920c8e3d26186cb0e4cec42f11011b7a9cd00e4366b84578809ef0ea8"
+  },
+  "target": {
+    "record": 0,
+    "source": 14,
+    "effectId": 94,
+    "pid": 5,
+    "channel": 0
+  },
+  "preserve": {
+    "min": 2.5,
+    "autoEngage": "OFF",
+    "damping": "LINEAR",
+    "pcReset": "OFF",
+    "updateRate": "SLOW",
+    "presetName": "JB RHYTHM LEVEL -3",
+    "selectedScene": 2,
+    "wahBypass": true
+  },
+  "fields": [
+    {
+      "word": 2,
+      "name": "MOD_MAX",
+      "label": "Max",
+      "offset": 1588,
+      "widthBytes": 2,
+      "baselineDisplay": 7.5,
+      "requestedDisplay": 5,
+      "unit": "Wah Control 0..10",
+      "cacheTypecode": 0,
+      "cacheNumericFields": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "encodingVerified": false
+    },
+    {
+      "word": 3,
+      "name": "MOD_STARTPT",
+      "label": "Start",
+      "offset": 1590,
+      "widthBytes": 2,
+      "baselineDisplay": 10,
+      "requestedDisplay": 20,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0.0,
+        1.0,
+        100.0,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false
+    },
+    {
+      "word": 4,
+      "name": "MOD_MIDPT",
+      "label": "Mid",
+      "offset": 1592,
+      "widthBytes": 2,
+      "baselineDisplay": 40,
+      "requestedDisplay": 55,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0.0,
+        1.0,
+        100.0,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false
+    },
+    {
+      "word": 5,
+      "name": "MOD_ENDPT",
+      "label": "End",
+      "offset": 1594,
+      "widthBytes": 2,
+      "baselineDisplay": 90,
+      "requestedDisplay": 80,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0.0,
+        1.0,
+        100.0,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false
+    },
+    {
+      "word": 6,
+      "name": "MOD_SLOPE",
+      "label": "Slope",
+      "offset": 1596,
+      "widthBytes": 2,
+      "baselineDisplay": 60,
+      "requestedDisplay": 35,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0.0,
+        1.0,
+        100.0,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false
+    },
+    {
+      "word": 7,
+      "name": "MOD_ATTACK",
+      "label": "Attack",
+      "offset": 1598,
+      "widthBytes": 2,
+      "baselineDisplay": 99.9,
+      "requestedDisplay": 500,
+      "unit": "ms",
+      "cacheTypecode": 1073,
+      "cacheNumericFields": [
+        0.0,
+        10.0,
+        1000.0,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false
+    },
+    {
+      "word": 15,
+      "name": "MOD_RELEASE",
+      "label": "Release",
+      "offset": 1614,
+      "widthBytes": 2,
+      "baselineDisplay": 249.9,
+      "requestedDisplay": 1000,
+      "unit": "ms",
+      "cacheTypecode": 1073,
+      "cacheNumericFields": [
+        0.0,
+        10.0,
+        1000.0,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false
+    },
+    {
+      "word": 13,
+      "name": "MOD_SCALE",
+      "label": "Scale",
+      "offset": 1610,
+      "widthBytes": 2,
+      "baselineDisplay": 1.5,
+      "requestedDisplay": 0.75,
+      "unit": "unitless",
+      "cacheTypecode": 67,
+      "cacheNumericFields": [
+        0.10000000149011612,
+        10.0,
+        1.0,
+        0.0
+      ],
+      "encodingVerified": false
+    },
+    {
+      "word": 14,
+      "name": "MOD_OFFSET",
+      "label": "Offset",
+      "offset": 1612,
+      "widthBytes": 2,
+      "baselineDisplay": -10,
+      "requestedDisplay": 15,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        -1.0,
+        1.0,
+        100.0,
+        0.0020000000949949026
+      ],
+      "encodingVerified": false
+    },
+    {
+      "word": 12,
+      "name": "MOD_OFFVAL",
+      "label": "Off Value",
+      "offset": 1608,
+      "widthBytes": 2,
+      "baselineDisplay": 20,
+      "requestedDisplay": 80,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0.05000000074505806,
+        0.949999988079071,
+        100.0,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false
+    }
+  ],
+  "nativeEvidence": {
+    "editor": "FM3-Edit 1.07.17 Windows PE64",
+    "editorSha256": "c06f993530057214205a64330116a823e5b31507610d1792c1f3617725d6e927",
+    "nativeBindingReplayedFromBinary": true,
+    "nativeDescriptor": {
+      "pid": 0,
+      "name": "MOD_CTRLID",
+      "descriptorOffset": 18665760,
+      "nameOffset": 8232688,
+      "tableOffset": 18665760,
+      "tableRows": 25,
+      "bindings": [
+        [
+          0,
+          "MOD_CTRLID"
+        ],
+        [
+          1,
+          "MOD_MIN"
+        ],
+        [
+          2,
+          "MOD_MAX"
+        ],
+        [
+          3,
+          "MOD_STARTPT"
+        ],
+        [
+          4,
+          "MOD_MIDPT"
+        ],
+        [
+          5,
+          "MOD_ENDPT"
+        ],
+        [
+          6,
+          "MOD_SLOPE"
+        ],
+        [
+          7,
+          "MOD_ATTACK"
+        ],
+        [
+          8,
+          "MOD_EFFECTID"
+        ],
+        [
+          9,
+          "MOD_PARAM"
+        ],
+        [
+          10,
+          "MOD_AUTOENGAGE"
+        ],
+        [
+          11,
+          "MOD_PCRESET"
+        ],
+        [
+          12,
+          "MOD_OFFVAL"
+        ],
+        [
+          13,
+          "MOD_SCALE"
+        ],
+        [
+          14,
+          "MOD_OFFSET"
+        ],
+        [
+          15,
+          "MOD_RELEASE"
+        ],
+        [
+          16,
+          "MOD_RATE"
+        ],
+        [
+          17,
+          "MOD_CHANNEL"
+        ],
+        [
+          18,
+          "MOD_XMARK"
+        ],
+        [
+          19,
+          "MOD_YMARK"
+        ],
+        [
+          20,
+          "MOD_CTRLID2"
+        ],
+        [
+          21,
+          "MOD_SCALE1"
+        ],
+        [
+          22,
+          "MOD_SCALE2"
+        ],
+        [
+          23,
+          "MOD_OPERATION"
+        ],
+        [
+          24,
+          "MOD_DAMPING"
+        ]
+      ]
+    },
+    "method": "Read PE sections and unique symbol pointer references, then all 25 contiguous descriptors; exact equality to pinned policy. No binary execution or REA/Ghidra invocation.",
+    "parser": "tools/fm3/six_field_resolution.py",
+    "parserSha256": "8b8b767e75d43dc9c1c40ab1145cff22bb8703a5b3e0fd2088c4332450073768",
+    "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4",
+    "policySha256": "0a209c8709b043500cf222252a1ee98abaff389a39c014d936e350e32cbedab6"
+  },
+  "evidencePolicy": {
+    "newDeviceMeasurements": false,
+    "singleFieldIsolation": false,
+    "fieldIndependenceVerified": false,
+    "fullRangeCodecVerified": false,
+    "authoringEnabled": false,
+    "requestedDisplayIsObserved": false,
+    "deviceIO": false,
+    "review": "Second joint capture adds distinct points only. Preserve actual displayed values and all source discrepancies. Do not promote codec, field independence, hardware behavior or authoring from the plan or byte comparison."
+  },
+  "scope": "Continue from reviewed batch A. Change only the same ten fields to new distinguishable values. One export plus screenshot; no new baseline export. Scale below one and positive Offset explore opposite sides of neutral; different times and points constrain hypotheses. Full-range encoders still require independent conversion evidence or targeted follow-up.",
+  "batch": "B"
+}

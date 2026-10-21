@@ -7212,6 +7212,112 @@
               ],
               "description": "Only the FW13 export/display-crosschecked pair on the retained Wah Control ALL binding; requires final External 1 source."
             },
+            "wahMin": {
+              "type": "number",
+              "enum": [0, 2.5],
+              "description": "Exact FW13 observed display-point lookup (0.00=0, 2.50=16375); no interpolation. Requires final External 1 to Wah1 Control ALL and a supported measured Max code."
+            },
+            "wahControls": {
+              "type": "object",
+              "additionalProperties": false,
+              "minProperties": 1,
+              "description": "Exact FW13 observed points/recorded rounded aliases only; requires final External 1 -> Wah1 Control ALL. No interpolation; new combinations are software-checked, not independently measured.",
+              "properties": {
+                "max": {
+                  "type": "number",
+                  "enum": [
+                    10,
+                    7.5,
+                    5
+                  ],
+                  "description": "Max (Wah Control 0..10); use the recorded raw code and display."
+                },
+                "startPercent": {
+                  "type": "number",
+                  "enum": [
+                    0,
+                    10,
+                    20
+                  ],
+                  "description": "Start (%); use the recorded raw code and display."
+                },
+                "midPercent": {
+                  "type": "number",
+                  "enum": [
+                    50,
+                    40,
+                    55
+                  ],
+                  "description": "Mid (%); use the recorded raw code and display."
+                },
+                "endPercent": {
+                  "type": "number",
+                  "enum": [
+                    100,
+                    90,
+                    80
+                  ],
+                  "description": "End (%); use the recorded raw code and display."
+                },
+                "slopePercent": {
+                  "type": "number",
+                  "enum": [
+                    50,
+                    60,
+                    35
+                  ],
+                  "description": "Slope (%); use the recorded raw code and display."
+                },
+                "attackMs": {
+                  "type": "number",
+                  "enum": [
+                    10.1,
+                    99.9,
+                    500,
+                    100
+                  ],
+                  "description": "Attack (ms); use the recorded raw code and display."
+                },
+                "releaseMs": {
+                  "type": "number",
+                  "enum": [
+                    0,
+                    249.9,
+                    999.9,
+                    250,
+                    1000
+                  ],
+                  "description": "Release (ms); use the recorded raw code and display."
+                },
+                "scale": {
+                  "type": "number",
+                  "enum": [
+                    1,
+                    1.5,
+                    0.75
+                  ],
+                  "description": "Scale (unitless); use the recorded raw code and display."
+                },
+                "offsetPercent": {
+                  "type": "number",
+                  "enum": [
+                    0,
+                    -10,
+                    15
+                  ],
+                  "description": "Offset (%); use the recorded raw code and display."
+                },
+                "offValuePercent": {
+                  "type": "number",
+                  "enum": [
+                    5,
+                    20,
+                    80
+                  ],
+                  "description": "Off Value (%); use the recorded raw code and display."
+                }
+              }
+            },
             "wahDamping": {
               "type": "string",
               "enum": ["EXPONENTIAL", "LINEAR"],

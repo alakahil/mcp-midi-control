@@ -1,3 +1,51 @@
+> **Uusim seis, 21.10.2026:** Max 7.50 → 5.00 on kontrollitud; ainult sõna 2
+> muutus 49159 → 32784. Kogumisring lõpetatud: 20 uut punkti kolme ekspordiga.
+> [0.3.13 kandidaat](modifier-measured-points-result.md) lisab kümne välja
+> piiratud punktikirjutuse; A/B/Max kogu sisu taastatakse baittäpselt.
+> Järgneb täistest, pakend ja avaldamisluba; uusi korduseksporte ei küsita.
+>
+> **Varasem tulemus, 21.10.2026:** koondkatse B üheksa uut punkti on üle vaadatud.
+> Release 999.9 ms klapib; Max jäi 7.50. Kõrvalmuudatusi pole. A+B annavad
+> 19 uut väljapunkti kahe koondfailiga. Järgmine füüsiline samm on
+> [ainult Max 7.50 → 5.00](modifier-batch-b-result.md); B üheksat välja ei korrata.
+> Täisvahemiku, sõltumatuse ega kirjutustoe laiendust sellest ei järeldatud.
+>
+> **Varasem tulemus, 21.10.2026:** koondkatse A läbis. Kümne välja 20 baiti
+> muutusid, ülejäänud 14 202 säilisid. Pildil Attack 99.9 ms; kasutaja tekstis
+> 9.99 ms säilib vastuoluna. Release 249.9 ms. Järgmine samm on
+> [koondkatse B ühe ekspordiga](modifier-batch-a-result.md), mitte A kordus.
+> Täisvahemiku ega uue kirjutustoe kinnitust sellest ei järeldatud.
+>
+> **Ajalooline plaan allpool, 21.10.2026:** kasutaja soovib vähem füüsilisi ekspordikordi.
+> Eraldi Max-katse asendab [10 välja ühe ekspordiga koondkatse](modifier-batch-plan.md).
+> Min-i kinnitatud tõend ja 0.3.12 kandidaat säilivad; uusi kirjutusõigusi ei lisatud.
+
+# Uuem seis: Min-paar kinnitatud, 0.3.12 kohalik kandidaat
+
+21.10.2026 uus kasutajatõend kinnitab Min 0.00 → 2.50; ainult sõna 1 muutus
+0 → 16375. Muud 14 220 sisubaiti säilisid. Esialgne 16383/16384 hüpotees
+lükkus selle ekspordi puhul ümber. Kuvatõend ja kasutaja algseisu kinnitus
+on salvestatud `wah-min-evidence.json` kirjes.
+
+0.3.12 lähtekood lisab ainult `wahMin: 0 | 2.5` mõõdetud punkti kirjutuse
+External 1 → Wah 1 Control ALL seosele. Täisvahemik ja Max jäävad lahendamata.
+Sihttest läbis 12 taastet, 48 sünteetilist kombinatsiooni, 69 tõrjumist ja
+4 A–D lukukontrolli. Täieliku 47-testilise suite'i ning pakendi tulemus
+seotakse eraldi kohaliku puhta commit'i kviitungiga; seda ei eeldata ette.
+
+PR #12 tipu `14387684d0d0e10b6c02e6301f8922879e27b136` kõik neli CI-käivitust
+on edukad. Need kontrollid kuuluvad eelmisele uurimissammule, mitte uuele
+0.3.12 kandidaadile. Avaldatud plugin on endiselt 0.3.11 / `f0a99bc`.
+Uue SYX-i ja kuvatõendi teksti avalikuks lähtereposse lisamiseks on vaja
+selle uue sisu avaldamisluba. Algset ekraanipilti ei avaldata.
+
+Järgmine üksikmuudatus: sellest samast Min 2.50 seisust **Max 10.00 → 7.50**.
+Täpne juhis on `modifier-min-plan.md` alguses. Min-katset ei korrata.
+Allpool olev korpuse audit kirjeldab selgesõnaliselt avaldatud 0.3.11 alust;
+selle loendureid ei tõlgendata uue kandidaadi või uute sõltumatute mõõtmistena.
+
+---
+
 # FM3 Sound Architect 2: seis ja järgmine töö, 21.10.2026
 
 Kontrollitud avaldatud lähtepunkt on **0.3.11**, commit

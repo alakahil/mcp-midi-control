@@ -1,3 +1,28 @@
+> **Uuem kogumiskord, 21.10.2026:** kasutaja soovib vähem füüsilisi ekspordikordi.
+> Eraldi Max-katse asendab [10 välja ühe ekspordiga koondkatse](modifier-batch-plan.md).
+> Min-i kinnitatud tõend ja 0.3.12 kandidaat säilivad; uusi kirjutusõigusi ei lisatud.
+
+# 21.10.2026 järelkatse tulemus — kohalik 0.3.12 kandidaat
+
+Min 0.00 → 2.50 päris ekspordipaar, kuvatõend ja kasutaja algseisu kinnitus on olemas.
+Muutus ainult MOD_MIN sõna 1: **0 → 16375**, keha baidid 1586–1587.
+Esialgne 16383/16384 hüpotees ei täitunud. Allolev algne plaan ja võrdleja
+säilitavad selle hüpoteesi ajalooliselt; võrdleja väljumiskood 2 on selle
+päris faili korral ootuspärane ning ei tähenda vigast faili.
+Täpse mõõdetud punkti kirjutaja on versiooni 0.3.12 kohalikus kandidaadis;
+avaldatud plugin jääb 0.3.11 peale kuni eraldi väljalaskeni.
+Tõendi ja piirid leiad plugina `references/wah-min-evidence.json` failist.
+
+Järgmine üksikmuudatuse katse: jätka sellest Min 2.50 / Max 10.00 / OFF /
+LINEAR seisust; muuda ainult **Max 10.00 → 7.50**, säilita nimi, stseen, bypass
+ning muud väljad. Saada `FM3_MOD_MAX_7p50_export.syx`, modifikaatori ekraanipilt
+ja kinnitus algseisu ning ainsa muudatuse kohta. Algseisu korduseksporti pole vaja.
+See on uus Max-i punkt, mitte Min-i täisvahemiku ega üldise kodeeringu tõend.
+
+---
+
+Allpool säilib algne Min-katse plaan.
+
 # Wah Min: järgmine üksikmuudatuse katse, 21.10.2026
 
 Lähtepunkt on avaldatud **0.3.11** / `f0a99bc190fcbe3a63284335c68fad66e9f9a36c`.
