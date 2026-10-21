@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.10`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.11`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -370,7 +370,7 @@ Kasuta `jb-composer` kirjelduses `"modifiers":{"external1Wah":true}` või
 algse seose. Loe [piiratud modifikaatorikirjutuse juhendit](engine/docs/FM3_WAH_MODIFIER.md).
 Kirjutatakse olemasoleva esimese kirje allikas NONE ↔ External 1.
 Siht Wah 1 Control, ALL ja muud sõnad peavad vastama tõendatud kirjele;
-Auto Engage sõnal on kaks allpool kirjeldatud lubatud väärtust.
+Auto Engage ja Damping’u režiimi sõnadel on kummalgi kaks allpool kirjeldatud lubatud väärtust.
 NewLookil puudub Wah: sisselülitamiseks küsi ka `wahChannels` täiskanalimall.
 Seos ei muuda stseenide bypass'i ega seadista globaalset pedaali/MIDI vastendust.
 Aktiivse seose puhul lükatakse tabeli Wah Control kirjutus tagasi kõigil A–D
@@ -421,7 +421,25 @@ säilitatud konfiguratsiooni. NewLookil lisa Wah-mall ja selgesõnaline
 Loe [piiratud Wah-juhendi Auto Engage osa](engine/docs/FM3_WAH_MODIFIER.md#auto-engage-kahevalikuline-kirjutus).
 Sõna 10 / keha nihe 1604: OFF=0, MED SPD=2. Ainult see paar on kasutaja
 21.10.2026 FW13 ekspordi, OFF-ekraanipildi ja algväärtuse kinnitusega tõendatud.
-Ära kasuta muid enumikoode, min/max-i, kõverat ega damping'u kirjutusi.
+Ära kasuta muid Auto Engage enumikoode, min/max-i, kõverat ega Attack/Release aegade kirjutusi.
 Täpselt sama kogu sisu tuvastamisel ära küsi uut korduseksporti.
 Seadme käitumine ja heli jäävad eraldi. Väljalaske avaldamine ja hostilaadimine
 kinnitatakse eraldi commit’ipõhise kviitungiga.
+
+
+## Damping’u režiimi kahevalikuline tugi (0.3.11)
+
+Kasuta `"modifiers":{"wahDamping":"LINEAR"}` või `"EXPONENTIAL"`; soundi
+ümbrises pane see `composer` sisse. Väärtused on täpselt suurtähtedes.
+Välja puudumine säilitab režiimi; ainult Damping’u päring säilitab Auto Engage’i.
+Nõutav lõppseos on External 1 → Wah 1 Control ALL. NewLookil lisa Wah-mall
+ja `external1Wah:true`. Damping koos `external1Wah:false` ei ole lubatud.
+Sõna 24 / keha nihe 1632: EXPONENTIAL=0, LINEAR=1, kinnitatud 21.10.2026
+kasutaja ühe muudatuse ekspordi, kuvatõendi ning algseisu kinnitusega.
+Loe [Damping’u piiratud kirjutuse juhendit](engine/docs/FM3_WAH_MODIFIER.md#dampingu-režiimi-kahevalikuline-kirjutus).
+Attack/Release ajad, min/max, kõver ja stseenide bypass jäävad muutmata.
+Auto Engage OFF + LINEAR täpne kogu keha kattub kasutaja järelkatse ekspordiga;
+sama sisu uut korduseksporti ei nõuta. MED SPD + LINEAR ja muud kooslused on
+eraldi sünteetiliselt kontrollitud kombinatsioonid, mitte selle katse seadmekinnitus.
+Damping’u tegelik ajakäitumine, uue faili import, heli ja CPU jäävad eraldi.
+Lähtekoodi versioon ei kinnita avaldamist ega hostilaadimist.

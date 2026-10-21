@@ -1,3 +1,15 @@
+# 21.10.2026 teine järelkatse: Damping’u paar kinnitatud
+
+Damping Exponential → Linear kasutaja muutmispaar kinnitab sõna 24 / keha
+nihke 1632: 0 → 1. Muud 14 221 sisubaiti säilisid. FW13.00 kuvatõend kinnitab
+Linear’i; algse Exponential’i kinnitavad eelmine pilt ja kasutaja teade.
+Kohalik 0.3.11 kandidaat lisab ainult selle seose EXPONENTIAL/LINEAR kirjutuse.
+Täpne tõend on `wah-damping-evidence.json`, piirid `FM3_WAH_MODIFIER.md` failis.
+Seadme ajakäitumine, heli ning min/max-, kõvera- ja Attack/Release-kodeeringud
+jäävad kinnitamata. Avaldatud plugin on endiselt 0.3.10.
+
+---
+
 # 21.10.2026 järelkatse: Auto Engage paar kinnitatud
 
 Kasutaja esitas ühe muudetud terve SYX-i ja OFF-ekraanipildi ning kinnitas

@@ -1,8 +1,15 @@
 # External 1 → Wah: piiratud presetifaili kirjutus
 
+## Sisukord
+- Sisend
+- Olemasolevate tõendite audit
+- Kirjutuse piirid
+- Auto Engage kahevalikuline kirjutus
+- Damping’u režiimi kahevalikuline kirjutus
+
 0.3.5 lisas olemasoleva tõendatud modifikaatoriseose sisse- ja
 väljalülitamise. 0.3.10 lisab allpool kirjeldatud kahevalikulise
-Auto Engage kirjutuse. Avaldamist ja hostilaadimist kinnitab eraldi väljalaskekviitung. See on offline-failitöötlus; seadmele päringuid ei saadeta.
+Auto Engage kirjutuse; 0.3.11 lisab Damping’u režiimi EXPONENTIAL/LINEAR. Avaldamist ja hostilaadimist kinnitab eraldi väljalaskekviitung. See on offline-failitöötlus; seadmele päringuid ei saadeta.
 
 ## Sisend
 
@@ -121,8 +128,8 @@ Tõendipaar ja räsidega kuvatõendi kirjeldus on
 Eksporditud OFF-fail on `skills/instructions/examples/FM3_MOD_AUTOENGAGE_OFF_export.syx`.
 Algne ekraanipilt säilib kasutaja manuses; seda ei pakita pluginasse.
 
-Kirjutaja lubab kirjes vaid allika 0/14 ja Auto Engage'i 0/2 varieerumist;
-ülejäänud 23 sõna peavad vastama säilitatud konfiguratsioonile. Sihtplokk,
+0.3.11 kirjutaja lubab kirjes allika 0/14, Auto Engage’i 0/2 ja Damping’u režiimi 0/1;
+ülejäänud 22 sõna peavad vastama säilitatud konfiguratsioonile. Sihtplokk,
 konkureerivad kirjed, kõik kirjepäised ja lõppallikas kontrollitakse enne
 ühegi baidi muutmist. Allikapäring säilitab ka juba OFF-is oleva kirje.
 Auto Engage OFF **ei vabasta** Wah Control'i käsikirjutuslukku: allikas on
@@ -139,3 +146,49 @@ Pildilt saab lisaks kirja panna muutmata min/max 0.00/10.00, Attack 10.1 ms,
 Release 0.0 ms, Damping Exponential, Start/Mid/End 0/50/100%, Slope 50%,
 Scale 1.000, Offset 0% ja Off Value 5%. Need on üksikud kuvanäidud ning
 **ei kinnita nende väljade vaheväärtuste kodeeringut ega uut kirjutustuge**.
+
+
+## Damping’u režiimi kahevalikuline kirjutus
+
+0.3.11 lähtekood lisab `"modifiers":{"wahDamping":"EXPONENTIAL"}` või
+`"LINEAR"`. Ainult režiimi valik ei muuda Attack/Release aegu ega Auto Engage’i.
+Nõutav on sama kinnitatud External 1 → Wah 1 Control ALL seos. Arvulised
+sisendid, valed sildid, tundmatud väljad ja toorkoodid tõrjutakse enne muutmist.
+NewLook vajab Wah-malli ning selgesõnalist `external1Wah:true`.
+
+| Tõenditase | Kinnitatud ulatus |
+| --- | --- |
+| Baidiasukoht | Kirje 0, sõna 24, keha nihe 1632, uint16 little-endian |
+| Arvukodeering | EXPONENTIAL=0, LINEAR=1 |
+| Kuva | Eelmise OFF-katse pildil Exponential; järelkatse pildil Linear, External 1, All, Auto Engage Off ja FW13.00 |
+| Failivõrdlus | 14 222 sisubaidist ainult 1632: 0→1; ülejäänud 14 221 baiti säilisid |
+| Päised | CRC ja tihendatud pikkus 4923→4924 muutusid; muud päisebaidid, nimi ja dump-päis säilisid; nulltäide kehtib |
+| Seadmekäitumine | Režiimi ajakäitumine, pedaali mõju, heli ja CPU ei ole kinnitatud |
+
+Tõend: `references/wah-damping-evidence.json` ja kasutaja ekspordi muutmata
+koopia `examples/FM3_MOD_DAMPING_LINEAR_export.syx`. Algset ekraanipilti
+ei pakita pluginasse; tekstikirjeldus ja räsi on tõendikirjes.
+
+Varasemast kinnitatud `JB_RHYTHM_LEVEL_MINUS3_export.syx` alusest saab täpse
+vaadeldud keha taastada päringuga:
+
+```json
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "JB RHYTHM LEVEL -3",
+  "modifiers": {"wahAutoEngage": "OFF", "wahDamping": "LINEAR"}
+}
+```
+
+Uut LINEAR-eksporti ei lisata üldiseks koostajaaluseks. Kogu keha kattuvus
+ei tähenda uue kodeeritud SYX-faili eraldi seadmeimporti. Sama sisu
+korduseksporti pole vaja. MED SPD + LINEAR on toetatud väljade uus kombinatsioon;
+see ei saa OFF + LINEAR mõõtmispaari kogu-keha seadmekinnitust.
+
+`test-wah-damping.mjs` kontrollib päris paari, kogu keha taastamist, mõlemat
+silti kuuel alusel, säilivaid sõnu, allika/Auto Engage’i koostoimet, idempotentsust,
+vigaste sisendite muutuseta tõrjumist, lõppfaili tagasilugemist ja A–D käsijuhtimise
+lukku. TXT näitab lõppfaili Damping’u silti, koodi ja muutmise/säilitamise olekut.
+Kirjutamata väljad ning tõendamata ajaline ja heliline käitumine on eraldi märgitud.

@@ -87,7 +87,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 45 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 46 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
@@ -214,3 +214,16 @@ serveripaketi ja värske hostikonteksti kontrollid kohustuslikuks.
 testide, juhendite, uue SYX-faili ja kuvatõendi tekstikirjelduse avaldamiseks
 repos `alakahil/mcp-midi-control`. Selle sisu avaldamisluba on olemas;
 sama tõendi jaoks uut kinnitust ei küsita.
+
+
+## 0.3.11 Damping’u režiim — kohalik kandidaat
+
+`wahDamping: EXPONENTIAL | LINEAR` põhineb kasutaja eraldatud FW13 ekspordil
+ja Linear-kuvatõendil. 46. offline-test kontrollib päris paari, kogu keha
+taastamist, vigase sisendi muutuseta tõrjumist ning tagasilugemist.
+Damping’u ajakäitumise, heli või CPU kinnitust ei lisandu.
+Uue 13.48.11 kuvatõendi tekstikirjelduse ja LINEAR-SYX-i avalikku reposse
+viimiseks on vaja selle uue tõendi avaldamisluba; varasem `d04b51a` luba
+kattis eelmist Auto Engage’i tõendit. Enne loa küsimist valmistatakse kohalik
+kandidaat ja testid täielikult ette. Uue väljalaske korral kehtivad täpse commit’i,
+CI, serveripaketi tagasivõrdluse ning värske hostikonteksti nõuded.

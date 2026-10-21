@@ -7211,6 +7211,11 @@
                 "MED SPD"
               ],
               "description": "Only the FW13 export/display-crosschecked pair on the retained Wah Control ALL binding; requires final External 1 source."
+            },
+            "wahDamping": {
+              "type": "string",
+              "enum": ["EXPONENTIAL", "LINEAR"],
+              "description": "Only the FW13 export/display-crosschecked Damping mode pair on the retained Wah Control ALL binding; requires final External 1 source. Attack/Release times are preserved; timing behavior is unverified."
             }
           },
           "minProperties": 1

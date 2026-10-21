@@ -64,7 +64,7 @@ for(const value of [null,undefined,false,true,0,2,1,'0','off','MED_SPD','SLOW SP
 for(const request of [{},{wahAutoEngage:'OFF',extra:1},{wahAutoEngage:'OFF',external1Wah:false},{wahAutoEngage:'OFF',external1Wah:1}])reject(request);
 for(const code of [1,3,4,5,6,65535])reject({wahAutoEngage:'OFF'},b=>b.writeUInt16LE(code,1604));
 for(const source of [0,1,15,65535])reject({wahAutoEngage:'OFF'},b=>b.writeUInt16LE(source,1584));
-for(let word=1;word<25;word++)if(word!==10)reject({wahAutoEngage:'OFF'},b=>b.writeUInt16LE((b.readUInt16LE(1584+2*word)+1)%65536,1584+2*word));
+for(let word=1;word<25;word++)if(word!==10)reject({wahAutoEngage:'OFF'},b=>b.writeUInt16LE(word===24?2:(b.readUInt16LE(1584+2*word)+1)%65536,1584+2*word));
 reject({wahAutoEngage:'OFF'},()=>{},{});
 reject({wahAutoEngage:'OFF'},b=>{b.writeUInt16LE(14,1680);b.writeUInt16LE(94,1696);b.writeUInt16LE(5,1698);});
 // Source-only operations preserve the measured OFF state. Auto Engage OFF keeps source 14.
