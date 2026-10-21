@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.11`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.13`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -374,8 +374,9 @@ Auto Engage ja Damping’u režiimi sõnadel on kummalgi kaks allpool kirjeldatu
 NewLookil puudub Wah: sisselülitamiseks küsi ka `wahChannels` täiskanalimall.
 Seos ei muuda stseenide bypass'i ega seadista globaalset pedaali/MIDI vastendust.
 Aktiivse seose puhul lükatakse tabeli Wah Control kirjutus tagasi kõigil A–D
-kanalitel. Ära lülita seost välja ilma selgesõnalise soovita. Kõvera, muude
+kanalitel. Ära lülita seost välja ilma selgesõnalise soovita. Kõvera vabade väärtuste, muude
 allikate, uute kirjete ja globaalsete skaalade kirjutamine jääb toetamata.
+0.3.13 piiratud mõõtepunktid on kirjeldatud allpool.
 
 0.3.9 ühtlustab JSON-skeemi generaatoriga: ainult `modifiers.external1Wah`
 muutev koostajapäring on lubatud ka skeemi järgi. Muid seadeid pole vaja lisada.
@@ -421,7 +422,8 @@ säilitatud konfiguratsiooni. NewLookil lisa Wah-mall ja selgesõnaline
 Loe [piiratud Wah-juhendi Auto Engage osa](engine/docs/FM3_WAH_MODIFIER.md#auto-engage-kahevalikuline-kirjutus).
 Sõna 10 / keha nihe 1604: OFF=0, MED SPD=2. Ainult see paar on kasutaja
 21.10.2026 FW13 ekspordi, OFF-ekraanipildi ja algväärtuse kinnitusega tõendatud.
-Ära kasuta muid Auto Engage enumikoode, min/max-i, kõverat ega Attack/Release aegade kirjutusi.
+Ära kasuta muid Auto Engage enumikoode. Min-i kaks mõõdetud punkti ning
+0.3.13 Maxi, kõvera ja Attack/Release piiratud punktid on kirjeldatud allpool.
 Täpselt sama kogu sisu tuvastamisel ära küsi uut korduseksporti.
 Seadme käitumine ja heli jäävad eraldi. Väljalaske avaldamine ja hostilaadimine
 kinnitatakse eraldi commit’ipõhise kviitungiga.
@@ -437,9 +439,54 @@ ja `external1Wah:true`. Damping koos `external1Wah:false` ei ole lubatud.
 Sõna 24 / keha nihe 1632: EXPONENTIAL=0, LINEAR=1, kinnitatud 21.10.2026
 kasutaja ühe muudatuse ekspordi, kuvatõendi ning algseisu kinnitusega.
 Loe [Damping’u piiratud kirjutuse juhendit](engine/docs/FM3_WAH_MODIFIER.md#dampingu-režiimi-kahevalikuline-kirjutus).
-Attack/Release ajad, min/max, kõver ja stseenide bypass jäävad muutmata.
+Ainult Damping’u päringus jäävad Attack/Release ajad, Min/Max, kõver ja stseenide bypass muutmata.
 Auto Engage OFF + LINEAR täpne kogu keha kattub kasutaja järelkatse ekspordiga;
 sama sisu uut korduseksporti ei nõuta. MED SPD + LINEAR ja muud kooslused on
 eraldi sünteetiliselt kontrollitud kombinatsioonid, mitte selle katse seadmekinnitus.
 Damping’u tegelik ajakäitumine, uue faili import, heli ja CPU jäävad eraldi.
 Lähtekoodi versioon ei kinnita avaldamist ega hostilaadimist.
+
+
+## Min-i kaks mõõdetud punkti (0.3.12)
+
+Kasuta `"modifiers":{"wahMin":0}` või `{"wahMin":2.5}`; soundi ümbrises
+pane see `composer` sisse. Välja puudumine säilitab Min-i. Ära aktsepteeri
+muid arve ega stringsisendeid. Kogu skaala valem ja interpolatsioon on kinnitamata.
+Kirjutaja kasutab täpselt ekspordist mõõdetud sõnu 0 ja 16375 (nihe 1586),
+mitte esialgse lineaarhüpoteesi 16383/16384. Nõutav on lõppseos External 1 →
+Wah 1 Control ALL; 0.3.12 tõendis oli Max-kood 65534, 0.3.13 lubab ka
+allpool toodud mõõdetud Maxi koode. NewLook vajab Wah-malli ja
+`external1Wah:true`. Max-i ega muid modifikaatorisihtmärke selle paari põhjal ei avata.
+Loe [Min-i kirjutusjuhendit](engine/docs/FM3_WAH_MODIFIER.md#min-i-kaks-mõõdetud-punkti)
+ja tõendit `engine/skills/instructions/references/wah-min-evidence.json`.
+21.10.2026 kasutaja ekspordipaar, ekraanipilt ja kinnitus tõendavad Min 0.00 → 2.50.
+Täpselt sama kogu keha taastamisel ära küsi uut korduseksporti; uus fail ei ole
+sellega eraldi seadmesse imporditud. Pedaal, DSP, heli ja CPU jäävad eraldi kontrollideks.
+
+
+## Modifikaatori kümne välja mõõdetud punktid (0.3.13 kandidaat)
+
+`modifiers.wahControls` lisab Max, Start/Mid/End/Slope, Attack/Release,
+Scale/Offset ja Off Value täpsed mõõtepunktid. Soundi ümbrises kasuta
+`composer.modifiers.wahControls`. Vaata capabilities'i `modifiers.controls`
+ja [mõõtepunktide juhendit](engine/docs/FM3_WAH_MODIFIER.md#kümne-välja-mõõdetud-punktid-0313-kandidaat).
+Ära interpoleeri ega paku suvalist vaheväärtust toetatuna. `wahMin` jääb eraldi.
+
+Näiteks `{"wahMin":2.5,"wahControls":{"max":5,"attackMs":500,"releaseMs":1000}}`
+kirjutab täpsed mõõdetud koodid; Release'i lõppnäit on 999.9 ms. Täielik B+Max
+profiil on juhendis. Välja puudumine säilitab selle väärtuse. Nõutav on lõplik
+External 1 → Wah 1 Control ALL seos ja olemasolev Wah 1. NewLookil lisa Wah-mall
+ning `external1Wah:true`. Ära muuda bypass'i või lülita seost välja vaikimisi.
+
+A ja B on kaks koondkatset; Max 7.50 → 5.00 on eraldi ühe välja katse.
+Koos saadi 20 uut proovipunkti kolme ekspordiga. A Attack on pildil 99.9 ms,
+kuigi kasutaja tekstis oli 9.99 ms; vastuolu säilib tõendis. B Max jäi 7.50
+ja parandati alles eraldi ekspordis. Ära nimeta koondkatseid sõltumatuteks
+üksikmõõtmisteks ega väida täisvahemiku, sõltumatuse, pedaali või heli kinnitust.
+Uued punktide kombinatsioonid on kontrollitud arvutis.
+
+Generaator tuvastab kolme kogutud faili täpse kogu keha vaste; sellise vaste
+korral ei küsita sama sisu korduseksporti. Tootmisväljalase, avaldamisluba,
+CI ja hostilaadimine jäävad eraldi väravateks; kohalik kandidaat ei ole
+automaatselt avaldatud plugin. Järgmine töö on kodeeringu tõendite uurimine
+ning hiljem üks vajalik pedaali/heli koondkontroll, mitte A/B/Max kogumise kordus.

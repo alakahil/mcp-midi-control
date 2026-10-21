@@ -1,3 +1,8 @@
+> **Uuem kohalik kandidaat 0.3.13:** kümne välja täpsed mõõtepunktid on
+> kirjeldatud dokumendi lõpus. Need asendavad varasemate versioonide
+> Max-i/kõvera/ajaväljade täieliku kirjutuskeelu ainult loetletud punktides.
+> Avaldamist kinnitab eraldi väljalaskekviitung.
+
 # External 1 → Wah: piiratud presetifaili kirjutus
 
 ## Sisukord
@@ -6,10 +11,11 @@
 - Kirjutuse piirid
 - Auto Engage kahevalikuline kirjutus
 - Damping’u režiimi kahevalikuline kirjutus
+- Min-i kaks mõõdetud punkti
 
 0.3.5 lisas olemasoleva tõendatud modifikaatoriseose sisse- ja
 väljalülitamise. 0.3.10 lisab allpool kirjeldatud kahevalikulise
-Auto Engage kirjutuse; 0.3.11 lisab Damping’u režiimi EXPONENTIAL/LINEAR. Avaldamist ja hostilaadimist kinnitab eraldi väljalaskekviitung. See on offline-failitöötlus; seadmele päringuid ei saadeta.
+Auto Engage kirjutuse; 0.3.11 lisab Damping’u režiimi EXPONENTIAL/LINEAR; 0.3.12 lisab Min-i mõõdetud punktid 0.00 ja 2.50. Avaldamist ja hostilaadimist kinnitab eraldi väljalaskekviitung. See on offline-failitöötlus; seadmele päringuid ei saadeta.
 
 ## Sisend
 
@@ -128,8 +134,8 @@ Tõendipaar ja räsidega kuvatõendi kirjeldus on
 Eksporditud OFF-fail on `skills/instructions/examples/FM3_MOD_AUTOENGAGE_OFF_export.syx`.
 Algne ekraanipilt säilib kasutaja manuses; seda ei pakita pluginasse.
 
-0.3.11 kirjutaja lubab kirjes allika 0/14, Auto Engage’i 0/2 ja Damping’u režiimi 0/1;
-ülejäänud 22 sõna peavad vastama säilitatud konfiguratsioonile. Sihtplokk,
+0.3.12 kirjutaja lubab kirjes allika 0/14, Auto Engage’i 0/2, Damping’u režiimi 0/1 ja Min-i 0/16375;
+ülejäänud 21 sõna peavad vastama säilitatud konfiguratsioonile. Sihtplokk,
 konkureerivad kirjed, kõik kirjepäised ja lõppallikas kontrollitakse enne
 ühegi baidi muutmist. Allikapäring säilitab ka juba OFF-is oleva kirje.
 Auto Engage OFF **ei vabasta** Wah Control'i käsikirjutuslukku: allikas on
@@ -192,3 +198,100 @@ silti kuuel alusel, säilivaid sõnu, allika/Auto Engage’i koostoimet, idempot
 vigaste sisendite muutuseta tõrjumist, lõppfaili tagasilugemist ja A–D käsijuhtimise
 lukku. TXT näitab lõppfaili Damping’u silti, koodi ja muutmise/säilitamise olekut.
 Kirjutamata väljad ning tõendamata ajaline ja heliline käitumine on eraldi märgitud.
+
+
+## Min-i kaks mõõdetud punkti
+
+`modifiers.wahMin` lubab ainult arve `0` ja `2.5`. Välja puudumine säilitab Min-i.
+Tõendatud siht on sama External 1 → Wah 1 Control ALL, Max-koodiga 65534.
+NewLook vajab Wah-ploki lisamist ja `external1Wah:true`; `false` koos Min-i
+kirjutusega on keelatud. Kirjutaja kontrollib kõiki tingimusi enne muutmist.
+
+| Tõend | Tulemus |
+| --- | --- |
+| Asukoht | Kirje 0, MOD_MIN sõna 1, keha nihe 1586, uint16 little-endian |
+| Mõõdetud paar | Min 0.00 = 0; Min 2.50 = **16375** (0x3ff7) |
+| Erinevus | 1586: 0→247 ja 1587: 0→63; muud 14 220 sisubaiti muutmata |
+| Päised | Ainult CRC ja tihendatud pikkus 4924→4928; dump-päis, nimi ning stseenikontekst säilisid |
+| Kuvatõend | FW13.00, Wahwah 1 Control, External 1, All, Min 2.50, Max 10.00, OFF ja Linear |
+| Piir | Täpne vaadeldud punkt; kogu skaala kodeeringut, Max-i või teist sihti ei üldistata |
+
+Algne hüpotees 16383/16384 ei vastanud ekspordile. Kuvaväärtuse ümardamine
+võib anda samale kuvale mitu toorkoodi; seda võimalikku seletust ei käsitleta
+kodeeringu tõendina. Kirjutaja taastab täpselt kasutaja mõõdetud koodi 16375.
+Muid Min-väärtusi, toorkoode, stringsisendeid ja tundmatuid säilitatud sõnu tõrjutakse.
+
+Tõend on `references/wah-min-evidence.json`; ekspordi muutmata koopia on
+`examples/FM3_MOD_MIN_2p50_export.syx`. Originaalnimi sisaldas kaht punkti enne
+laiendit; faili sisu ei muudetud. Ekraanipilti paketti ei lisata.
+
+Täpset kogu keha saab taastada kinnitatud `JB_RHYTHM_LEVEL_MINUS3_export.syx`
+alusest nimega `JB RHYTHM LEVEL -3` ja päringuga:
+
+```json
+{"wahAutoEngage":"OFF", "wahDamping":"LINEAR", "wahMin":2.5}
+```
+
+Pane see objekt koostaja `modifiers` väljale. Uut eksporti ei lisata üldiseks
+koostajaaluseks. Täpne kehavaste ei kinnita genereeritud faili uut seadmeimporti,
+pedaali/DSP mõju, heli ega CPU-d. Sama sisu korduseksporti pole vaja.
+Muud toetatud väljade kombinatsioonid on sünteetilised tarkvarakontrollid.
+
+`test-wah-min.mjs` kontrollib päris paari, täpset kogu keha taastet, mõlemat
+punkti kuuel alusel, tagasipööret, idempotentsust, säilimist, atomaarset tõrjumist,
+NewLooki kooslust, A–D käsijuhtimise lukku ja nelja lõppfaili vastavust.
+
+
+## Kümne välja mõõdetud punktid (0.3.13 kandidaat)
+
+Põhineb FW13 koondkatsetel A/B ja eraldatud Max 7.50 → 5.00 muutusel.
+`references/wah-measured-controls.json` säilitab nimed/PID-d, kõik mõõdetud
+toorkoodid, lähtefailide ja piltide räsid, tegelikud näidud ning vastuolud.
+Pilte ei pakita. Kõik kolm täisbody't taastatakse olemasolevast kinnitatud
+koostajaalusest, uut üldist alusfaili lubamata.
+
+| `wahControls` väli | Lubatud kuvanäidud / sisendid | Ühik |
+| --- | --- | --- |
+| `max` | 5.00, 7.50, 10.00 | Wah Control 0–10 |
+| `startPercent` | 0, 10, 20 | % |
+| `midPercent` | 40, 50, 55 | % |
+| `endPercent` | 80, 90, 100 | % |
+| `slopePercent` | 35, 50, 60 | % |
+| `attackMs` | 10.1, 99.9, 500; sisestus 100 annab 99.9 | ms |
+| `releaseMs` | 0, 249.9, 999.9; sisestused 250 ja 1000 annavad 249.9 ja 999.9 | ms |
+| `scale` | 0.750, 1.000, 1.500 | kordaja |
+| `offsetPercent` | −10, 0, +15 | % |
+| `offValuePercent` | 5, 20, 80 | % |
+
+Puuduv väli säilib. Tundmatu, tühi või mittetäielikult korrektne päring
+tõrjutakse enne sisubaidi muutmist. Min jääb `wahMin: 0 | 2.5` juurde.
+Kõik lubatud Max-id on neist Min-idest suuremad; pööratud vahemikku ei lisata.
+Retained olekus lubatakse ainult tõendatud koodid; muud sihid, allikad,
+kanalipiirangud, sekundaarsed kontrollerid ja uued kirjed ei avane.
+
+Näide viimase tervikliku mõõdetud seisundi taastamiseks:
+
+```json
+{"modifiers":{"wahAutoEngage":"OFF","wahDamping":"LINEAR","wahMin":2.5,"wahControls":{"max":5,"startPercent":20,"midPercent":55,"endPercent":80,"slopePercent":35,"attackMs":500,"releaseMs":1000,"scale":0.75,"offsetPercent":15,"offValuePercent":80}}}
+```
+
+See on koostajakirjelduse katkend. Kasuta tavapärast kinnitatud alusfaili ja
+ühist `fm3-preset.mjs` käsku. Soundi ümbrises läheb katkend `composer` sisse.
+NewLook nõuab lisaks Wah täiskanalimalli ja `external1Wah:true`.
+
+Max 5.00 tegelik kood on **32784**, mitte ideaalse lineaarvalemi 32767.
+A Attacki kood 655 kuulub pildi 99.9 ms näidule; tekstiline 9.99 ms jääb
+vastuoluna alles ning ei ole selle koodi lubatud sisend. B Release 999.9 ms
+on kood 6553. TXT ja raport näitavad lõppsisust kontrollitud tegelikku näitu.
+
+Koondkatsete kaudu saadud punktide ja natiivsete väljanimeviidete alusel
+avatakse täpne punktikirjutus. See ei kinnita täisvahemiku kodeeringut ega
+väljade füüsilist sõltumatust. Suvaline lubatud punktide uus kombinatsioon
+on uus, ainult arvutis kontrollitud kooslus. Kogu keha vaste mõnele kolmest
+kasutajaekspordist märgitakse eraldi; genereeritud faili uut importi, heli,
+pedaali, DSP-d või CPU-d see ei tõenda.
+
+`test-wah-measured-controls.mjs` kontrollib kolme täpset kogu keha taastet,
+198 eraldi tarkvaralist punktikirjutust, 136 vigase sisendi tõrjumist,
+ümardatud sisendialiaste tegelikke väljundnäite ja nelja A–D lukku. Need
+arvud ei ole täiendavate seadmekatsete arvud. 48. kohustuslik offline-test.

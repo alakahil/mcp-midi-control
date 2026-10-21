@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "device": "FM3 Mk II Turbo (user context)",
+  "firmwareDisplay": "13.00",
+  "target": {
+    "record": 0,
+    "effectId": 94,
+    "paramId": 5,
+    "source": 14,
+    "channel": 0,
+    "word": 1,
+    "bodyOffset": 1586,
+    "encoding": "Exact measured display-point lookup of uint16 little-endian; no interpolation or full-range formula",
+    "codes": {
+      "0.00": 0,
+      "2.50": 16375
+    }
+  },
+  "pair": [
+    {
+      "file": "examples/FM3_MOD_DAMPING_LINEAR_export.syx",
+      "sha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "bodySha256": "36e5e13b233db49784ce8ca17e78335871a66fc4c84c928ad23a3bc4f9af69d8",
+      "bodyBytes": 14222,
+      "code": 0,
+      "display": 0.0
+    },
+    {
+      "file": "examples/FM3_MOD_MIN_2p50_export.syx",
+      "originalFilename": "FM3_MOD_MIN_2p50_export..syx",
+      "sha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "bodySha256": "cd352d25d04a9bb281b3a19b8753d4dcb47a05e57a14cca41afeee9796c6c763",
+      "bodyBytes": 14222,
+      "code": 16375,
+      "display": 2.5
+    }
+  ],
+  "userConfirmation": "Algseisus oli Min 0.00; muutsin ainult Min väärtuseks 2.50",
+  "screenshot": {
+    "file": "Screenshot 2026-10-21 at 15.05.00.png",
+    "sha256": "de03db572c49973af27310c1a21e700a87b099ee4775257db23ed0ce01d34d5b",
+    "retention": "Original supplied attachment; screenshot is not redistributed in the plugin.",
+    "observed": {
+      "target": "Wahwah 1 - Control",
+      "source": "External 1",
+      "channel": "All",
+      "autoEngage": "Off",
+      "pcReset": "Off",
+      "min": 2.5,
+      "max": 10,
+      "attackMs": 10.1,
+      "releaseMs": 0,
+      "damping": "Linear",
+      "startPercent": 0,
+      "midPercent": 50,
+      "endPercent": 100,
+      "slopePercent": 50,
+      "scale": 1,
+      "offsetPercent": 0,
+      "updateRate": "Slow",
+      "preset": "JB RHYTHM LEVEL -3",
+      "selectedScene": 2,
+      "firmware": "13.00",
+      "offValueDisplay": 5
+    }
+  },
+  "comparison": {
+    "bodyChangedBytes": [
+      {
+        "offset": 1586,
+        "before": 0,
+        "after": 247
+      },
+      {
+        "offset": 1587,
+        "before": 0,
+        "after": 63
+      }
+    ],
+    "unchangedOtherBodyBytes": 14220,
+    "rawHeaderChangedOffsets": [
+      4,
+      5,
+      74
+    ],
+    "rawHeaderMeaning": "Preset CRC at 4..5 and compressed size at 74..75 (4924 → 4928); no other header changes",
+    "dumpHeaderIdentical": true,
+    "framesCrcFooterValid": true,
+    "remainingPaddingAllZero": true,
+    "targetAndSceneContextIdentical": true
+  },
+  "limits": {
+    "beforeDisplay": "Prior LINEAR screenshot records Min 0.00; user explicitly confirms Min-only 0.00 → 2.50 change.",
+    "retainedContext": "Max 10.00 (word 2 = 65534), Auto Engage OFF=0 and Damping LINEAR=1 on both sides; other combinations are synthetic, not additional device evidence.",
+    "unexpectedCode": "Research hypothesis 16383/16384 did not match: actual captured word is 16375 (0x3ff7). Preserve actual evidence. A rounded display is compatible with multiple numeric encodings; this pair proves no full-range formula.",
+    "otherFields": "All other body bytes retained. No Max, curve, Attack/Release or other target encoding is established.",
+    "deviceBehavior": "not tested",
+    "audio": "not tested",
+    "cpuValidation": "not performed",
+    "generatorOutputReimport": "not performed",
+    "globalScaleEncoding": "out of scope"
+  }
+}

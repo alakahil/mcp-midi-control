@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "mode": "bounded-observed-points",
+  "target": {
+    "record": 0,
+    "source": 14,
+    "effectId": 94,
+    "pid": 5,
+    "channel": 0
+  },
+  "fields": [
+    {
+      "key": "max",
+      "name": "MOD_MAX",
+      "label": "Max",
+      "word": 2,
+      "offset": 1588,
+      "unit": "Wah Control 0..10",
+      "decimals": 2,
+      "points": [
+        {
+          "input": 10,
+          "display": 10,
+          "raw": 65534
+        },
+        {
+          "input": 7.5,
+          "display": 7.5,
+          "raw": 49159
+        },
+        {
+          "input": 5,
+          "display": 5,
+          "raw": 32784
+        }
+      ]
+    },
+    {
+      "key": "startPercent",
+      "name": "MOD_STARTPT",
+      "label": "Start",
+      "word": 3,
+      "offset": 1590,
+      "unit": "%",
+      "decimals": 1,
+      "points": [
+        {
+          "input": 0,
+          "display": 0,
+          "raw": 0
+        },
+        {
+          "input": 10,
+          "display": 10,
+          "raw": 6553
+        },
+        {
+          "input": 20,
+          "display": 20,
+          "raw": 13107
+        }
+      ]
+    },
+    {
+      "key": "midPercent",
+      "name": "MOD_MIDPT",
+      "label": "Mid",
+      "word": 4,
+      "offset": 1592,
+      "unit": "%",
+      "decimals": 1,
+      "points": [
+        {
+          "input": 50,
+          "display": 50,
+          "raw": 32767
+        },
+        {
+          "input": 40,
+          "display": 40,
+          "raw": 26214
+        },
+        {
+          "input": 55,
+          "display": 55,
+          "raw": 36044
+        }
+      ]
+    },
+    {
+      "key": "endPercent",
+      "name": "MOD_ENDPT",
+      "label": "End",
+      "word": 5,
+      "offset": 1594,
+      "unit": "%",
+      "decimals": 1,
+      "points": [
+        {
+          "input": 100,
+          "display": 100,
+          "raw": 65534
+        },
+        {
+          "input": 90,
+          "display": 90,
+          "raw": 58981
+        },
+        {
+          "input": 80,
+          "display": 80,
+          "raw": 52427
+        }
+      ]
+    },
+    {
+      "key": "slopePercent",
+      "name": "MOD_SLOPE",
+      "label": "Slope",
+      "word": 6,
+      "offset": 1596,
+      "unit": "%",
+      "decimals": 1,
+      "points": [
+        {
+          "input": 50,
+          "display": 50,
+          "raw": 32767
+        },
+        {
+          "input": 60,
+          "display": 60,
+          "raw": 39320
+        },
+        {
+          "input": 35,
+          "display": 35,
+          "raw": 22937
+        }
+      ]
+    },
+    {
+      "key": "attackMs",
+      "name": "MOD_ATTACK",
+      "label": "Attack",
+      "word": 7,
+      "offset": 1598,
+      "unit": "ms",
+      "decimals": 1,
+      "points": [
+        {
+          "input": 10.1,
+          "display": 10.1,
+          "raw": 66
+        },
+        {
+          "input": 99.9,
+          "display": 99.9,
+          "raw": 655
+        },
+        {
+          "input": 500,
+          "display": 500,
+          "raw": 3277
+        },
+        {
+          "input": 100,
+          "display": 99.9,
+          "raw": 655
+        }
+      ]
+    },
+    {
+      "key": "releaseMs",
+      "name": "MOD_RELEASE",
+      "label": "Release",
+      "word": 15,
+      "offset": 1614,
+      "unit": "ms",
+      "decimals": 1,
+      "points": [
+        {
+          "input": 0,
+          "display": 0,
+          "raw": 0
+        },
+        {
+          "input": 249.9,
+          "display": 249.9,
+          "raw": 1638
+        },
+        {
+          "input": 999.9,
+          "display": 999.9,
+          "raw": 6553
+        },
+        {
+          "input": 250,
+          "display": 249.9,
+          "raw": 1638
+        },
+        {
+          "input": 1000,
+          "display": 999.9,
+          "raw": 6553
+        }
+      ]
+    },
+    {
+      "key": "scale",
+      "name": "MOD_SCALE",
+      "label": "Scale",
+      "word": 13,
+      "offset": 1610,
+      "unit": "unitless",
+      "decimals": 3,
+      "points": [
+        {
+          "input": 1,
+          "display": 1,
+          "raw": 32767
+        },
+        {
+          "input": 1.5,
+          "display": 1.5,
+          "raw": 38537
+        },
+        {
+          "input": 0.75,
+          "display": 0.75,
+          "raw": 28673
+        }
+      ]
+    },
+    {
+      "key": "offsetPercent",
+      "name": "MOD_OFFSET",
+      "label": "Offset",
+      "word": 14,
+      "offset": 1612,
+      "unit": "%",
+      "decimals": 1,
+      "points": [
+        {
+          "input": 0,
+          "display": 0,
+          "raw": 32767
+        },
+        {
+          "input": -10,
+          "display": -10,
+          "raw": 29490
+        },
+        {
+          "input": 15,
+          "display": 15,
+          "raw": 37682
+        }
+      ]
+    },
+    {
+      "key": "offValuePercent",
+      "name": "MOD_OFFVAL",
+      "label": "Off Value",
+      "word": 12,
+      "offset": 1608,
+      "unit": "%",
+      "decimals": 1,
+      "points": [
+        {
+          "input": 5,
+          "display": 5,
+          "raw": 0
+        },
+        {
+          "input": 20,
+          "display": 20,
+          "raw": 10922
+        },
+        {
+          "input": 80,
+          "display": 80,
+          "raw": 54612
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "id": "A",
+      "file": "examples/FM3_MOD_BATCH_A_export.syx",
+      "sha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "bodySha256": "06c3ba9920c8e3d26186cb0e4cec42f11011b7a9cd00e4366b84578809ef0ea8",
+      "screenshot": {
+        "originalName": "Screenshot 2026-10-21 at 15.47.56.png",
+        "sha256": "91bac3fe7d6cafc24476d72912f5b025f8804867d9e181a41d9fa84dc57eeef8",
+        "libraryFileId": "libfile_491c24a4baf081919eab05e8c06fd0fd",
+        "method": "Direct visual review of original attached image; no OCR or edited derivative. Original screenshot is not included in the source repository."
+      },
+      "userStatement": "Muutsin ainult tabeli välju. Attack kuvas 9.99 ms ja release 249.9 ms",
+      "discrepancies": [
+        {
+          "field": "MOD_ATTACK",
+          "userReportedDisplay": 9.99,
+          "screenshotDisplay": 99.9,
+          "unit": "ms",
+          "raw": 655,
+          "resolution": "Use the clearly visible screenshot value for this observation. Preserve the conflicting user text; a typo is possible but has not been confirmed by the user. No extra export requested solely for this discrepancy.",
+          "userCorrectionConfirmed": false
+        }
+      ],
+      "values": {
+        "max": 7.5,
+        "startPercent": 10,
+        "midPercent": 40,
+        "endPercent": 90,
+        "slopePercent": 60,
+        "attackMs": 99.9,
+        "releaseMs": 249.9,
+        "scale": 1.5,
+        "offsetPercent": -10,
+        "offValuePercent": 20
+      },
+      "rawWords": {
+        "max": 49159,
+        "startPercent": 6553,
+        "midPercent": 26214,
+        "endPercent": 58981,
+        "slopePercent": 39320,
+        "attackMs": 655,
+        "releaseMs": 1638,
+        "scale": 38537,
+        "offsetPercent": 29490,
+        "offValuePercent": 10922
+      }
+    },
+    {
+      "id": "B",
+      "file": "examples/FM3_MOD_BATCH_B_export.syx",
+      "sha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "bodySha256": "b72c3242f8de4f16646c703832112cf955c373128b376013cbffda2e38f889db",
+      "screenshot": {
+        "originalName": "Screenshot 2026-10-21 at 16.03.09.png",
+        "sha256": "11766c0081ee2e6086757bc1c3cbd47faee77ebec68193dd1b63df91e4a34d44",
+        "libraryFileId": "libfile_4fd44f04a294819189d938beb48e03dc",
+        "method": "Direct visual review of original attached image; no OCR or edited derivative. Original screenshot is not included in the source repository."
+      },
+      "userStatement": "release kuvas 999.9ms",
+      "discrepancies": [
+        {
+          "field": "MOD_MAX",
+          "requestedDisplay": 5,
+          "screenshotDisplay": 7.5,
+          "beforeRaw": 49159,
+          "afterRaw": 49159,
+          "resolution": "Max did not change in the exported body and the screenshot still displays 7.50. Preserve the other nine new observations; do not mark Max 5.00 as captured. Targeted completion changes only Max from this actual B baseline."
+        }
+      ],
+      "values": {
+        "max": 7.5,
+        "startPercent": 20,
+        "midPercent": 55,
+        "endPercent": 80,
+        "slopePercent": 35,
+        "attackMs": 500,
+        "releaseMs": 999.9,
+        "scale": 0.75,
+        "offsetPercent": 15,
+        "offValuePercent": 80
+      },
+      "rawWords": {
+        "max": 49159,
+        "startPercent": 13107,
+        "midPercent": 36044,
+        "endPercent": 52427,
+        "slopePercent": 22937,
+        "attackMs": 3277,
+        "releaseMs": 6553,
+        "scale": 28673,
+        "offsetPercent": 37682,
+        "offValuePercent": 54612
+      }
+    },
+    {
+      "id": "MAX5",
+      "file": "examples/FM3_MOD_MAX_5p00_export.syx",
+      "sha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "bodySha256": "80c4abc7c49f3995539016b19f5d085545e0aba059de5ee79bce4823f2adfdc6",
+      "screenshot": {
+        "originalName": "Screenshot 2026-10-21 at 16.13.43.png",
+        "sha256": "f4e11e731e36cfef2c373875d59caeaa8827d89be3e8dca77f9a2854ef8c295c",
+        "libraryFileId": "libfile_d00ea587cfe0819190ebb64a00021968",
+        "method": "Direct visual review of original image; original image not redistributed in repository/plugin."
+      },
+      "userStatement": "Muutsin ainult Maxi 7.50 → 5.00",
+      "discrepancies": [],
+      "values": {
+        "max": 5,
+        "startPercent": 20,
+        "midPercent": 55,
+        "endPercent": 80,
+        "slopePercent": 35,
+        "attackMs": 500,
+        "releaseMs": 999.9,
+        "scale": 0.75,
+        "offsetPercent": 15,
+        "offValuePercent": 80
+      },
+      "rawWords": {
+        "max": 32784,
+        "startPercent": 13107,
+        "midPercent": 36044,
+        "endPercent": 52427,
+        "slopePercent": 22937,
+        "attackMs": 3277,
+        "releaseMs": 6553,
+        "scale": 28673,
+        "offsetPercent": 37682,
+        "offValuePercent": 54612
+      }
+    }
+  ],
+  "baselineEvidence": "wah-min-evidence.json",
+  "nativeBindings": {
+    "editor": "FM3-Edit 1.07.17 Windows PE64",
+    "editorSha256": "c06f993530057214205a64330116a823e5b31507610d1792c1f3617725d6e927",
+    "nativeBindingReplayedFromBinary": true,
+    "nativeDescriptor": {
+      "pid": 0,
+      "name": "MOD_CTRLID",
+      "descriptorOffset": 18665760,
+      "nameOffset": 8232688,
+      "tableOffset": 18665760,
+      "tableRows": 25,
+      "bindings": [
+        [
+          0,
+          "MOD_CTRLID"
+        ],
+        [
+          1,
+          "MOD_MIN"
+        ],
+        [
+          2,
+          "MOD_MAX"
+        ],
+        [
+          3,
+          "MOD_STARTPT"
+        ],
+        [
+          4,
+          "MOD_MIDPT"
+        ],
+        [
+          5,
+          "MOD_ENDPT"
+        ],
+        [
+          6,
+          "MOD_SLOPE"
+        ],
+        [
+          7,
+          "MOD_ATTACK"
+        ],
+        [
+          8,
+          "MOD_EFFECTID"
+        ],
+        [
+          9,
+          "MOD_PARAM"
+        ],
+        [
+          10,
+          "MOD_AUTOENGAGE"
+        ],
+        [
+          11,
+          "MOD_PCRESET"
+        ],
+        [
+          12,
+          "MOD_OFFVAL"
+        ],
+        [
+          13,
+          "MOD_SCALE"
+        ],
+        [
+          14,
+          "MOD_OFFSET"
+        ],
+        [
+          15,
+          "MOD_RELEASE"
+        ],
+        [
+          16,
+          "MOD_RATE"
+        ],
+        [
+          17,
+          "MOD_CHANNEL"
+        ],
+        [
+          18,
+          "MOD_XMARK"
+        ],
+        [
+          19,
+          "MOD_YMARK"
+        ],
+        [
+          20,
+          "MOD_CTRLID2"
+        ],
+        [
+          21,
+          "MOD_SCALE1"
+        ],
+        [
+          22,
+          "MOD_SCALE2"
+        ],
+        [
+          23,
+          "MOD_OPERATION"
+        ],
+        [
+          24,
+          "MOD_DAMPING"
+        ]
+      ]
+    },
+    "method": "Read PE sections and unique symbol pointer references, then all 25 contiguous descriptors; exact equality to pinned policy. No binary execution or REA/Ghidra invocation.",
+    "parser": "tools/fm3/six_field_resolution.py",
+    "parserSha256": "8b8b767e75d43dc9c1c40ab1145cff22bb8703a5b3e0fd2088c4332450073768",
+    "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4",
+    "policySha256": "0a209c8709b043500cf222252a1ee98abaff389a39c014d936e350e32cbedab6"
+  },
+  "maxIsolatedPair": {
+    "before": "B",
+    "after": "MAX5",
+    "word": 2,
+    "beforeRaw": 49159,
+    "afterRaw": 32784,
+    "otherBodyBytesRetained": 14220,
+    "userConfirmation": "Muutsin ainult Maxi 7.50 → 5.00"
+  },
+  "limits": {
+    "fullRangeCodec": false,
+    "fieldIndependenceVerified": false,
+    "jointCaptureCount": 2,
+    "isolatedMaxCaptureCount": 1,
+    "newFieldPoints": 20,
+    "deviceBehavior": "not tested",
+    "audio": "not tested",
+    "generatorOutputReimport": "not performed",
+    "rule": "Only these numeric input points/recorded aliases are writable; exact captured raw codes. New combinations are software-checked only. Native word bindings plus joint captures support point attribution, not independent physical trials or full-range scale."
+  }
+}

@@ -420,6 +420,24 @@
       ],
       "scope": "FW13 Damping Exponential/Linear changed-field export pair; whole-body reconstruction, retained words, input rejection and final readback; no device I/O or timing/audio confirmation",
       "required": true
+    },
+    {
+      "id": "test-wah-min",
+      "command": [
+        "node",
+        "scripts/test-wah-min.mjs"
+      ],
+      "scope": "FW13 Min 0.00/2.50 changed-field pair; exact observed word 16375, whole-body reconstruction, only two allowed points, atomic rejection, preservation and final SYX/TXT; no full-range codec or device I/O",
+      "required": true
+    },
+    {
+      "id": "test-wah-measured-controls",
+      "command": [
+        "node",
+        "scripts/test-wah-measured-controls.mjs"
+      ],
+      "scope": "Three real captures reconstructed exactly; bounded point/alias writes, no collateral changes, atomic rejection, new combinations remain software-only; no full-range codec/device I/O",
+      "required": true
     }
   ]
 }

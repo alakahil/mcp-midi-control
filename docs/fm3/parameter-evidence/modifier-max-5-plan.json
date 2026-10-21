@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "mode": "research-only-targeted-completion",
+  "baseline": {
+    "file": "docs/fm3/parameter-evidence/captures/FM3_MOD_BATCH_B_export.syx",
+    "sha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+    "bodySha256": "b72c3242f8de4f16646c703832112cf955c373128b376013cbffda2e38f889db"
+  },
+  "target": {
+    "record": 0,
+    "source": 14,
+    "effectId": 94,
+    "pid": 5,
+    "channel": 0
+  },
+  "preserve": {
+    "min": 2.5,
+    "autoEngage": "OFF",
+    "damping": "LINEAR",
+    "pcReset": "OFF",
+    "updateRate": "SLOW",
+    "presetName": "JB RHYTHM LEVEL -3",
+    "selectedScene": 2,
+    "wahBypass": true
+  },
+  "fields": [
+    {
+      "word": 2,
+      "name": "MOD_MAX",
+      "label": "Max",
+      "offset": 1588,
+      "widthBytes": 2,
+      "baselineDisplay": 7.5,
+      "requestedDisplay": 5,
+      "unit": "Wah Control 0..10",
+      "cacheTypecode": 0,
+      "cacheNumericFields": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "encodingVerified": false
+    }
+  ],
+  "preserveOtherBatchFields": [
+    {
+      "name": "MOD_STARTPT",
+      "raw": 13107,
+      "display": 20
+    },
+    {
+      "name": "MOD_MIDPT",
+      "raw": 36044,
+      "display": 55
+    },
+    {
+      "name": "MOD_ENDPT",
+      "raw": 52427,
+      "display": 80
+    },
+    {
+      "name": "MOD_SLOPE",
+      "raw": 22937,
+      "display": 35
+    },
+    {
+      "name": "MOD_ATTACK",
+      "raw": 3277,
+      "display": 500
+    },
+    {
+      "name": "MOD_RELEASE",
+      "raw": 6553,
+      "display": 999.9
+    },
+    {
+      "name": "MOD_SCALE",
+      "raw": 28673,
+      "display": 0.75
+    },
+    {
+      "name": "MOD_OFFSET",
+      "raw": 37682,
+      "display": 15
+    },
+    {
+      "name": "MOD_OFFVAL",
+      "raw": 54612,
+      "display": 80
+    }
+  ],
+  "nativeEvidenceRef": "modifier-batch-plan.json#/nativeEvidence",
+  "evidencePolicy": {
+    "newDeviceMeasurements": false,
+    "singleFieldIsolation": false,
+    "fullRangeCodecVerified": false,
+    "authoringEnabled": false,
+    "requestedDisplayIsObserved": false,
+    "deviceIO": false
+  },
+  "scope": "Complete only the missing Max 7.50 to 5.00 point, starting from actual reviewed batch B. Keep all other bytes and settings. One screenshot and one export named FM3_MOD_MAX_5p00_export.syx. No repeat of the nine B fields or new baseline export. A planned single-field change is not evidence until captured and reviewed."
+}

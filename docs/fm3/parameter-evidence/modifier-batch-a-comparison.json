@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "mode": "read-only-modifier-batch",
+  "baselineSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+  "candidateSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+  "fileComparisonPassed": true,
+  "reviewRequired": true,
+  "writeAuthorized": false,
+  "presetWritten": false,
+  "deviceIO": false,
+  "evidence": {
+    "displayValuesVerified": false,
+    "singleFieldIsolation": false,
+    "fieldIndependenceVerified": false,
+    "fullRangeCodecsVerified": false,
+    "deviceBehaviorVerified": false,
+    "audioVerified": false
+  },
+  "note": "Requested display values are a plan, not observations. Changed words require actual screenshot/value review; never infer ten isolated experiments or a full-range codec.",
+  "body": {
+    "beforeSha256": "cd352d25d04a9bb281b3a19b8753d4dcb47a05e57a14cca41afeee9796c6c763",
+    "afterSha256": "06c3ba9920c8e3d26186cb0e4cec42f11011b7a9cd00e4366b84578809ef0ea8",
+    "beforeBytes": 14222,
+    "afterBytes": 14222
+  },
+  "target": {
+    "record": 0,
+    "source": 14,
+    "effectId": 94,
+    "pid": 5,
+    "channel": 0
+  },
+  "structuralChecks": {
+    "before": {
+      "frameChecksums": true,
+      "presetCrc": true,
+      "footer": true,
+      "modifierRecordLayout": true
+    },
+    "after": {
+      "frameChecksums": true,
+      "presetCrc": true,
+      "footer": true,
+      "modifierRecordLayout": true
+    }
+  },
+  "fields": [
+    {
+      "word": 2,
+      "name": "MOD_MAX",
+      "label": "Max",
+      "offset": 1588,
+      "widthBytes": 2,
+      "baselineDisplay": 10,
+      "requestedDisplay": 7.5,
+      "unit": "Wah Control 0..10",
+      "cacheTypecode": 0,
+      "cacheNumericFields": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 65534,
+      "afterRaw": 49159,
+      "changed": true,
+      "actualDisplay": null
+    },
+    {
+      "word": 3,
+      "name": "MOD_STARTPT",
+      "label": "Start",
+      "offset": 1590,
+      "widthBytes": 2,
+      "baselineDisplay": 0,
+      "requestedDisplay": 10,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0,
+        1,
+        100,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 0,
+      "afterRaw": 6553,
+      "changed": true,
+      "actualDisplay": null
+    },
+    {
+      "word": 4,
+      "name": "MOD_MIDPT",
+      "label": "Mid",
+      "offset": 1592,
+      "widthBytes": 2,
+      "baselineDisplay": 50,
+      "requestedDisplay": 40,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0,
+        1,
+        100,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 32767,
+      "afterRaw": 26214,
+      "changed": true,
+      "actualDisplay": null
+    },
+    {
+      "word": 5,
+      "name": "MOD_ENDPT",
+      "label": "End",
+      "offset": 1594,
+      "widthBytes": 2,
+      "baselineDisplay": 100,
+      "requestedDisplay": 90,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0,
+        1,
+        100,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 65534,
+      "afterRaw": 58981,
+      "changed": true,
+      "actualDisplay": null
+    },
+    {
+      "word": 6,
+      "name": "MOD_SLOPE",
+      "label": "Slope",
+      "offset": 1596,
+      "widthBytes": 2,
+      "baselineDisplay": 50,
+      "requestedDisplay": 60,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0,
+        1,
+        100,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 32767,
+      "afterRaw": 39320,
+      "changed": true,
+      "actualDisplay": null
+    },
+    {
+      "word": 7,
+      "name": "MOD_ATTACK",
+      "label": "Attack",
+      "offset": 1598,
+      "widthBytes": 2,
+      "baselineDisplay": 10.1,
+      "requestedDisplay": 100,
+      "unit": "ms",
+      "cacheTypecode": 1073,
+      "cacheNumericFields": [
+        0,
+        10,
+        1000,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 66,
+      "afterRaw": 655,
+      "changed": true,
+      "actualDisplay": null
+    },
+    {
+      "word": 15,
+      "name": "MOD_RELEASE",
+      "label": "Release",
+      "offset": 1614,
+      "widthBytes": 2,
+      "baselineDisplay": 0,
+      "requestedDisplay": 250,
+      "unit": "ms",
+      "cacheTypecode": 1073,
+      "cacheNumericFields": [
+        0,
+        10,
+        1000,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 0,
+      "afterRaw": 1638,
+      "changed": true,
+      "actualDisplay": null
+    },
+    {
+      "word": 13,
+      "name": "MOD_SCALE",
+      "label": "Scale",
+      "offset": 1610,
+      "widthBytes": 2,
+      "baselineDisplay": 1,
+      "requestedDisplay": 1.5,
+      "unit": "unitless",
+      "cacheTypecode": 67,
+      "cacheNumericFields": [
+        0.10000000149011612,
+        10,
+        1,
+        0
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 32767,
+      "afterRaw": 38537,
+      "changed": true,
+      "actualDisplay": null
+    },
+    {
+      "word": 14,
+      "name": "MOD_OFFSET",
+      "label": "Offset",
+      "offset": 1612,
+      "widthBytes": 2,
+      "baselineDisplay": 0,
+      "requestedDisplay": -10,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        -1,
+        1,
+        100,
+        0.0020000000949949026
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 32767,
+      "afterRaw": 29490,
+      "changed": true,
+      "actualDisplay": null
+    },
+    {
+      "word": 12,
+      "name": "MOD_OFFVAL",
+      "label": "Off Value",
+      "offset": 1608,
+      "widthBytes": 2,
+      "baselineDisplay": 5,
+      "requestedDisplay": 20,
+      "unit": "%",
+      "cacheTypecode": 1329,
+      "cacheNumericFields": [
+        0.05000000074505806,
+        0.949999988079071,
+        100,
+        0.0010000000474974513
+      ],
+      "encodingVerified": false,
+      "beforeRaw": 0,
+      "afterRaw": 10922,
+      "changed": true,
+      "actualDisplay": null
+    }
+  ],
+  "changedFields": [
+    "MOD_MAX",
+    "MOD_STARTPT",
+    "MOD_MIDPT",
+    "MOD_ENDPT",
+    "MOD_SLOPE",
+    "MOD_ATTACK",
+    "MOD_RELEASE",
+    "MOD_SCALE",
+    "MOD_OFFSET",
+    "MOD_OFFVAL"
+  ],
+  "missingRequestedChanges": [],
+  "bodyChanges": [
+    {
+      "offset": 1588,
+      "before": 254,
+      "after": 7
+    },
+    {
+      "offset": 1589,
+      "before": 255,
+      "after": 192
+    },
+    {
+      "offset": 1590,
+      "before": 0,
+      "after": 153
+    },
+    {
+      "offset": 1591,
+      "before": 0,
+      "after": 25
+    },
+    {
+      "offset": 1592,
+      "before": 255,
+      "after": 102
+    },
+    {
+      "offset": 1593,
+      "before": 127,
+      "after": 102
+    },
+    {
+      "offset": 1594,
+      "before": 254,
+      "after": 101
+    },
+    {
+      "offset": 1595,
+      "before": 255,
+      "after": 230
+    },
+    {
+      "offset": 1596,
+      "before": 255,
+      "after": 152
+    },
+    {
+      "offset": 1597,
+      "before": 127,
+      "after": 153
+    },
+    {
+      "offset": 1598,
+      "before": 66,
+      "after": 143
+    },
+    {
+      "offset": 1599,
+      "before": 0,
+      "after": 2
+    },
+    {
+      "offset": 1608,
+      "before": 0,
+      "after": 170
+    },
+    {
+      "offset": 1609,
+      "before": 0,
+      "after": 42
+    },
+    {
+      "offset": 1610,
+      "before": 255,
+      "after": 137
+    },
+    {
+      "offset": 1611,
+      "before": 127,
+      "after": 150
+    },
+    {
+      "offset": 1612,
+      "before": 255,
+      "after": 50
+    },
+    {
+      "offset": 1613,
+      "before": 127,
+      "after": 115
+    },
+    {
+      "offset": 1614,
+      "before": 0,
+      "after": 102
+    },
+    {
+      "offset": 1615,
+      "before": 0,
+      "after": 6
+    }
+  ],
+  "unrelatedBodyChanges": [],
+  "rawHeaderChanges": [],
+  "rawTransportHeaderChanges": [
+    {
+      "offset": 4,
+      "before": 181,
+      "after": 119
+    },
+    {
+      "offset": 5,
+      "before": 81,
+      "after": 104
+    },
+    {
+      "offset": 74,
+      "before": 64,
+      "after": 82
+    }
+  ],
+  "compressedBytes": {
+    "before": 4928,
+    "after": 4946
+  },
+  "dumpHeaderChanges": [],
+  "targetContextPreserved": true,
+  "paddingAllZero": true,
+  "status": "batch-awaiting-display-review"
+}

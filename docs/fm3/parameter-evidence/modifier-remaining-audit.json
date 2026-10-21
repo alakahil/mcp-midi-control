@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "f0a99bc190fcbe3a63284335c68fad66e9f9a36c",
+  "publishedVersion": "0.3.11",
+  "historicalAudit": {
+    "path": "docs/fm3/parameter-evidence/modifier-fields-audit.json",
+    "sha256": "961885bf2fe2476a3d32da3e808a5b738646223f74cf98256e4d0079b1a211da",
+    "sourceCommit": "194833788d15db09d5ab9a774940ae84fcdebaad"
+  },
+  "method": "All original SYX/ZIP/amp-history Git objects unchanged; hash and decode the two additions; merge unique profiles.",
+  "addedSources": [
+    {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_AUTOENGAGE_OFF_export.syx",
+      "sha256": "7b6026539df41c36bf828dc35bf78510c0a3f30d77afe830eda5a2a7b71ea913",
+      "bytes": 24680
+    },
+    {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_DAMPING_LINEAR_export.syx",
+      "sha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "bytes": 24680
+    }
+  ],
+  "summary": {
+    "inputFiles": 795,
+    "syxLocations": 1462,
+    "uniqueSyx": 701,
+    "inspectedUnique": 691,
+    "excludedUnique": 10,
+    "modifierProfiles": 4,
+    "auditedFields": 13,
+    "boundedEnumFields": 2,
+    "remainingFieldsWithoutChangedFieldPair": 11
+  },
+  "fields": [
+    {
+      "pid": 1,
+      "name": "MOD_MIN",
+      "bodyOffset": 1586,
+      "observedWahWords": [
+        0
+      ],
+      "retainedDisplayObservation": 0,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 2,
+      "name": "MOD_MAX",
+      "bodyOffset": 1588,
+      "observedWahWords": [
+        65534
+      ],
+      "retainedDisplayObservation": 10,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 3,
+      "name": "MOD_STARTPT",
+      "bodyOffset": 1590,
+      "observedWahWords": [
+        0
+      ],
+      "retainedDisplayObservation": 0,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 4,
+      "name": "MOD_MIDPT",
+      "bodyOffset": 1592,
+      "observedWahWords": [
+        32767
+      ],
+      "retainedDisplayObservation": 50,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 5,
+      "name": "MOD_ENDPT",
+      "bodyOffset": 1594,
+      "observedWahWords": [
+        65534
+      ],
+      "retainedDisplayObservation": 100,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 6,
+      "name": "MOD_SLOPE",
+      "bodyOffset": 1596,
+      "observedWahWords": [
+        32767
+      ],
+      "retainedDisplayObservation": 50,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 7,
+      "name": "MOD_ATTACK",
+      "bodyOffset": 1598,
+      "observedWahWords": [
+        66
+      ],
+      "retainedDisplayObservation": 10.1,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 10,
+      "name": "MOD_AUTOENGAGE",
+      "bodyOffset": 1604,
+      "observedWahWords": [
+        0,
+        2
+      ],
+      "retainedDisplayObservation": "Off",
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 1,
+      "writeScope": "existing bounded Wah enum pair",
+      "locationChangedFieldConfirmed": true,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 12,
+      "name": "MOD_OFFVAL",
+      "bodyOffset": 1608,
+      "observedWahWords": [
+        0
+      ],
+      "retainedDisplayObservation": 5,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 13,
+      "name": "MOD_SCALE",
+      "bodyOffset": 1610,
+      "observedWahWords": [
+        32767
+      ],
+      "retainedDisplayObservation": 1,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 14,
+      "name": "MOD_OFFSET",
+      "bodyOffset": 1612,
+      "observedWahWords": [
+        32767
+      ],
+      "retainedDisplayObservation": 0,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 15,
+      "name": "MOD_RELEASE",
+      "bodyOffset": 1614,
+      "observedWahWords": [
+        0
+      ],
+      "retainedDisplayObservation": 0,
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 0,
+      "writeScope": "blocked; unchanged observation only",
+      "locationChangedFieldConfirmed": false,
+      "deviceBehaviorVerified": false
+    },
+    {
+      "pid": 24,
+      "name": "MOD_DAMPING",
+      "bodyOffset": 1632,
+      "observedWahWords": [
+        0,
+        1
+      ],
+      "retainedDisplayObservation": "Linear",
+      "displayEvidence": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/wah-damping-evidence.json",
+      "independentChangedFieldPairs": 1,
+      "writeScope": "existing bounded Wah enum pair",
+      "locationChangedFieldConfirmed": true,
+      "deviceBehaviorVerified": false
+    }
+  ],
+  "nextExperiment": {
+    "field": "MOD_MIN",
+    "record": 0,
+    "word": 1,
+    "bodyOffset": 1586,
+    "target": "External 1 -> Wah 1 Control ALL",
+    "beforeDisplay": 0,
+    "requestedDisplay": 2.5,
+    "displayUnit": "Wah Control scale 0..10; not a universal percentage",
+    "candidateRawHypotheses": [
+      16383,
+      16384
+    ],
+    "hypothesisBasis": "Unverified normalized linear uint16 class; truncation/rounding unresolved",
+    "baseline": {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_DAMPING_LINEAR_export.syx",
+      "sha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "bytes": 24680
+    },
+    "required": [
+      "one changed-field whole-preset export",
+      "screenshot",
+      "only-Min-change confirmation"
+    ],
+    "newBeforeExportRequired": false,
+    "wouldProve": "Only the observed point and field location, not a full-range formula"
+  },
+  "scope": {
+    "deviceIO": false,
+    "newWriter": false,
+    "newPluginRelease": false,
+    "newHardwareMeasurements": false,
+    "globalScaleEncodingIncluded": false,
+    "audioVerified": false
+  }
+}

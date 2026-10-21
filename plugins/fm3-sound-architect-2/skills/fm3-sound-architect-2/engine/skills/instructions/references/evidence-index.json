@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2064,
-  "filePaths": 2268,
+  "uniqueContents": 2070,
+  "filePaths": 2274,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -818,6 +818,12 @@
         "references/enhancer-full-20261012-122507/step-039-e6902f3774/donor.syx"
       ]
     },
+    "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_MOD_MIN_2p50_export.syx"
+      ]
+    },
     "12089f17a457bad72d36503ad65ab9f2808026ca6376ef02d42d4da6295e78e7": {
       "bytes": 475,
       "paths": [
@@ -1555,12 +1561,6 @@
       "bytes": 2322,
       "paths": [
         "references/enhancer-full-20261012-122507/step-066-acd6c5762f/result.json"
-      ]
-    },
-    "1fd36ff9a645f895063678474119c33e26929aff4551d1f769cd8f4f32f901ca": {
-      "bytes": 14331,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "2035c0da1c8d04cc39d8d4b7e7308d7efcbce9d642047cc636f0c4bf154c5b2e": {
@@ -5233,6 +5233,12 @@
         "references/drive-controls-20261006-123230/step-02-15c3334599/result.json"
       ]
     },
+    "6e4b94d9b4f9f945a237a0cd3438dfb5d19895a46cd649d278a04f5e348e954d": {
+      "bytes": 3509,
+      "paths": [
+        "references/wah-min-evidence.json"
+      ]
+    },
     "6e863c2a8a80be23fcce94121f0b30388f4068577ba92c539dcb061e7f1115c6": {
       "bytes": 463,
       "paths": [
@@ -5445,6 +5451,12 @@
       "bytes": 456,
       "paths": [
         "references/flanger-batch-20261007-125456/capture-20261007T125113-921410b1d1/pair.json"
+      ]
+    },
+    "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_MOD_BATCH_A_export.syx"
       ]
     },
     "7381070c22f61633fd4725332e41f3945991491ec0e67268279b422468e03e87": {
@@ -9633,6 +9645,12 @@
         "examples/JB_SOLO_FX_GENERATED.validation.json"
       ]
     },
+    "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_MOD_BATCH_B_export.syx"
+      ]
+    },
     "c6f195468155da446949b19754ec2f17090b682aa85a59319497f0a11f1e9a5d": {
       "bytes": 24680,
       "paths": [
@@ -10076,6 +10094,12 @@
       "bytes": 456,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T110501-0e96926020/pair.json"
+      ]
+    },
+    "d15fa509fb98ba658242bc28653b0be9fbd79db32d69e81cf40d626795bae568": {
+      "bytes": 15065,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "d17bf4216abd18fd552585adec4cb41235d804770e8170e295687405d972d374": {
@@ -11912,11 +11936,23 @@
         "references/drive-batch-20261006-112254/capture-20261006T112047-061d2615da/capture.json"
       ]
     },
+    "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_MOD_MAX_5p00_export.syx"
+      ]
+    },
     "f50978977b54ad03111f3c8ec63a3e6e700558e7976a6c07e6de3b62c99a3d93": {
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-041-ce2da7e74f/donor.syx",
         "references/geq-full-20261010-194115/step-045-f5c246d220/donor.syx"
+      ]
+    },
+    "f5112b4340c09eabee0fc366fc6a9f1394c2bcb969b2b0fe8f88760ee2225406": {
+      "bytes": 13400,
+      "paths": [
+        "references/wah-measured-controls.json"
       ]
     },
     "f5146841b0c22825dd2e8eea880fe7b4a42e5f97171af43130f5dfbf6b004e46": {
