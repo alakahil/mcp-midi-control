@@ -1,4 +1,12 @@
-> **Uusim seis, 21.10.2026:** Max 7.50 → 5.00 on kontrollitud; ainult sõna 2
+> **Uusim seis, 21.10.2026:** 0.3.13 on samas privaatses pluginas avaldatud;
+> 48/48 väljalasketesti, serveripaketi kontroll ja värske konteksti kasutuskatse
+> läbisid. PR #12 on ühendatud (`b86a79e`).
+> [Vaheväärtuste uurimisring](modifier-quantization-result.md) valmis olemasolevate
+> failidega: 18/18 tavapunkti sobivad ümardamise hüpoteesiga, Min/Max 0/3.
+> Leiti ModifierDialog-i arvulise sisestuse float32 käsurada; täisvahemiku
+> uint16 teisendus jääb lahendamata. Uusi füüsilisi eksportimisi: 0.
+>
+> **Varasem seis, 21.10.2026:** Max 7.50 → 5.00 on kontrollitud; ainult sõna 2
 > muutus 49159 → 32784. Kogumisring lõpetatud: 20 uut punkti kolme ekspordiga.
 > [0.3.13 kandidaat](modifier-measured-points-result.md) lisab kümne välja
 > piiratud punktikirjutuse; A/B/Max kogu sisu taastatakse baittäpselt.

@@ -1,0 +1,996 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "mode": "offline-research-not-encoder",
+  "productionVersion": "0.3.13",
+  "newPhysicalExports": 0,
+  "deviceIO": false,
+  "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4",
+  "native": {
+    "sourceSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+    "evidenceFile": "docs/fm3/parameter-evidence/modifier-native-entry.json",
+    "evidenceSha256": "5ae2c70054db7bd2a432082cbc88be6057fb6b438d72a96194f6e1ecbae2d09d",
+    "assemblySha256": "ca6ec78e4366632480ddfe06cad46875c10178cd709a7777e06045a56fc2c8f9",
+    "boundedBytes": 426,
+    "mode": "static-byte-and-branch-check; no executable or firmware execution",
+    "numericOperation": 9,
+    "valueTransport": "float32 bits",
+    "getterAndRuntimeMetadataResolved": false,
+    "presetUint16ConversionResolved": false
+  },
+  "captureFiles": [
+    {
+      "file": "docs/fm3/parameter-evidence/captures/FM3_MOD_BATCH_A_export.syx",
+      "sha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb"
+    },
+    {
+      "file": "docs/fm3/parameter-evidence/captures/FM3_MOD_BATCH_B_export.syx",
+      "sha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63"
+    },
+    {
+      "file": "docs/fm3/parameter-evidence/captures/FM3_MOD_MAX_5p00_export.syx",
+      "sha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_MIN_2p50_export.syx",
+      "sha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13"
+    }
+  ],
+  "inputEvidenceLimit": "Requested targets come from the reviewed capture plans and user statements; no keystroke or wire trace was recorded. Screenshot displays are separate observations. Baseline display aliases are not treated as typed inputs.",
+  "roundingHypothesis": "Nearest is floor(scaled+0.5) for nonnegative raw values. This does not establish tie behavior or a particular device float/log implementation.",
+  "attackDiscrepancy": {
+    "userTextDisplayMs": 9.99,
+    "screenshotDisplayMs": 99.9,
+    "requestedTargetMs": 100,
+    "raw": 655,
+    "hypothesisRawIfInputWere9p99": 65,
+    "resolved": false
+  },
+  "points": [
+    {
+      "batch": "A",
+      "field": "MOD_MAX",
+      "pid": 2,
+      "requestedTarget": 7.5,
+      "observedDisplay": 7.5,
+      "raw": 49159,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "target-dependent 0..10 hypothesis",
+      "metadata": {
+        "typecode": 0,
+        "cachedFields": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "hypothesisBounds": [
+          0,
+          10,
+          1,
+          0
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 49151,
+        "nearestFloat32Stages": 49151,
+        "floorFloat64": 49150
+      },
+      "matches": {
+        "nearestFloat64": false,
+        "nearestFloat32Stages": false,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 8,
+      "modelDisplay": 7.501297036653,
+      "displayBinHypothesis": {
+        "step": 0.01,
+        "count": 66,
+        "firstRaw": 49118,
+        "lastRaw": 49183,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "A",
+      "field": "MOD_STARTPT",
+      "pid": 3,
+      "requestedTarget": 10,
+      "observedDisplay": 10,
+      "raw": 6553,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 6553,
+        "nearestFloat32Stages": 6553,
+        "floorFloat64": 6553
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 9.99938962981,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 66,
+        "firstRaw": 6521,
+        "lastRaw": 6586,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "A",
+      "field": "MOD_MIDPT",
+      "pid": 4,
+      "requestedTarget": 40,
+      "observedDisplay": 40,
+      "raw": 26214,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 26214,
+        "nearestFloat32Stages": 26214,
+        "floorFloat64": 26213
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 40.00061037019,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 66,
+        "firstRaw": 26181,
+        "lastRaw": 26246,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "A",
+      "field": "MOD_ENDPT",
+      "pid": 5,
+      "requestedTarget": 90,
+      "observedDisplay": 90,
+      "raw": 58981,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 58981,
+        "nearestFloat32Stages": 58981,
+        "floorFloat64": 58980
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 90.00061037019,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 66,
+        "firstRaw": 58948,
+        "lastRaw": 59013,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "A",
+      "field": "MOD_SLOPE",
+      "pid": 6,
+      "requestedTarget": 60,
+      "observedDisplay": 60,
+      "raw": 39320,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 39320,
+        "nearestFloat32Stages": 39320,
+        "floorFloat64": 39320
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 59.99938962981,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 66,
+        "firstRaw": 39288,
+        "lastRaw": 39353,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "A",
+      "field": "MOD_ATTACK",
+      "pid": 7,
+      "requestedTarget": 100,
+      "observedDisplay": 99.9,
+      "raw": 655,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1073,
+        "cachedFields": [
+          0.0,
+          10.0,
+          1000.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          10.0,
+          1000.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 655,
+        "nearestFloat32Stages": 655,
+        "floorFloat64": 655
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 99.948118533891,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 1,
+        "firstRaw": 655,
+        "lastRaw": 655,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "A",
+      "field": "MOD_RELEASE",
+      "pid": 15,
+      "requestedTarget": 250,
+      "observedDisplay": 249.9,
+      "raw": 1638,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1073,
+        "cachedFields": [
+          0.0,
+          10.0,
+          1000.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          10.0,
+          1000.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 1638,
+        "nearestFloat32Stages": 1638,
+        "floorFloat64": 1638
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 249.946592608417,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 1,
+        "firstRaw": 1638,
+        "lastRaw": 1638,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "A",
+      "field": "MOD_SCALE",
+      "pid": 13,
+      "requestedTarget": 1.5,
+      "observedDisplay": 1.5,
+      "raw": 38537,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "log",
+      "metadata": {
+        "typecode": 67,
+        "cachedFields": [
+          0.10000000149011612,
+          10.0,
+          1.0,
+          0.0
+        ],
+        "hypothesisBounds": [
+          0.10000000149011612,
+          10.0,
+          1.0,
+          0.0
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 38537,
+        "nearestFloat32Stages": 38537,
+        "floorFloat64": 38536
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 1.500001876447,
+      "displayBinHypothesis": {
+        "step": 0.001,
+        "count": 9,
+        "firstRaw": 38533,
+        "lastRaw": 38541,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "A",
+      "field": "MOD_OFFSET",
+      "pid": 14,
+      "requestedTarget": -10,
+      "observedDisplay": -10,
+      "raw": 29490,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ],
+        "hypothesisBounds": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 29490,
+        "nearestFloat32Stages": 29490,
+        "floorFloat64": 29490
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": -10.000915555284,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 33,
+        "firstRaw": 29474,
+        "lastRaw": 29506,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "A",
+      "field": "MOD_OFFVAL",
+      "pid": 12,
+      "requestedTarget": 20,
+      "observedDisplay": 20,
+      "raw": 10922,
+      "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.05000000074505806,
+          0.949999988079071,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.05000000074505806,
+          0.949999988079071,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 10922,
+        "nearestFloat32Stages": 10922,
+        "floorFloat64": 10922
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 19.99954208577,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 73,
+        "firstRaw": 10886,
+        "lastRaw": 10958,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "B",
+      "field": "MOD_STARTPT",
+      "pid": 3,
+      "requestedTarget": 20,
+      "observedDisplay": 20,
+      "raw": 13107,
+      "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 13107,
+        "nearestFloat32Stages": 13107,
+        "floorFloat64": 13106
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 20.000305185095,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 65,
+        "firstRaw": 13075,
+        "lastRaw": 13139,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "B",
+      "field": "MOD_MIDPT",
+      "pid": 4,
+      "requestedTarget": 55,
+      "observedDisplay": 55,
+      "raw": 36044,
+      "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 36044,
+        "nearestFloat32Stages": 36044,
+        "floorFloat64": 36043
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 55.000457777642,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 66,
+        "firstRaw": 36011,
+        "lastRaw": 36076,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "B",
+      "field": "MOD_ENDPT",
+      "pid": 5,
+      "requestedTarget": 80,
+      "observedDisplay": 80,
+      "raw": 52427,
+      "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 52427,
+        "nearestFloat32Stages": 52427,
+        "floorFloat64": 52427
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 79.999694814905,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 65,
+        "firstRaw": 52395,
+        "lastRaw": 52459,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "B",
+      "field": "MOD_SLOPE",
+      "pid": 6,
+      "requestedTarget": 35,
+      "observedDisplay": 35,
+      "raw": 22937,
+      "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 22937,
+        "nearestFloat32Stages": 22937,
+        "floorFloat64": 22936
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 35.000152592547,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 65,
+        "firstRaw": 22905,
+        "lastRaw": 22969,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "B",
+      "field": "MOD_ATTACK",
+      "pid": 7,
+      "requestedTarget": 500,
+      "observedDisplay": 500,
+      "raw": 3277,
+      "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1073,
+        "cachedFields": [
+          0.0,
+          10.0,
+          1000.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          10.0,
+          1000.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 3277,
+        "nearestFloat32Stages": 3277,
+        "floorFloat64": 3276
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 500.045777764214,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 1,
+        "firstRaw": 3277,
+        "lastRaw": 3277,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "B",
+      "field": "MOD_RELEASE",
+      "pid": 15,
+      "requestedTarget": 1000,
+      "observedDisplay": 999.9,
+      "raw": 6553,
+      "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1073,
+        "cachedFields": [
+          0.0,
+          10.0,
+          1000.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.0,
+          10.0,
+          1000.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 6553,
+        "nearestFloat32Stages": 6553,
+        "floorFloat64": 6553
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 999.938962981048,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 1,
+        "firstRaw": 6553,
+        "lastRaw": 6553,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "B",
+      "field": "MOD_SCALE",
+      "pid": 13,
+      "requestedTarget": 0.75,
+      "observedDisplay": 0.75,
+      "raw": 28673,
+      "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "model": "log",
+      "metadata": {
+        "typecode": 67,
+        "cachedFields": [
+          0.10000000149011612,
+          10.0,
+          1.0,
+          0.0
+        ],
+        "hypothesisBounds": [
+          0.10000000149011612,
+          10.0,
+          1.0,
+          0.0
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 28673,
+        "nearestFloat32Stages": 28673,
+        "floorFloat64": 28673
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 0.749993027437,
+      "displayBinHypothesis": {
+        "step": 0.001,
+        "count": 19,
+        "firstRaw": 28664,
+        "lastRaw": 28682,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "B",
+      "field": "MOD_OFFSET",
+      "pid": 14,
+      "requestedTarget": 15,
+      "observedDisplay": 15,
+      "raw": 37682,
+      "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ],
+        "hypothesisBounds": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 37682,
+        "nearestFloat32Stages": 37682,
+        "floorFloat64": 37682
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": true
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 14.999847407453,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 33,
+        "firstRaw": 37666,
+        "lastRaw": 37698,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "B",
+      "field": "MOD_OFFVAL",
+      "pid": 12,
+      "requestedTarget": 80,
+      "observedDisplay": 80,
+      "raw": 54612,
+      "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "model": "linear",
+      "metadata": {
+        "typecode": 1329,
+        "cachedFields": [
+          0.05000000074505806,
+          0.949999988079071,
+          100.0,
+          0.0010000000474974513
+        ],
+        "hypothesisBounds": [
+          0.05000000074505806,
+          0.949999988079071,
+          100.0,
+          0.0010000000474974513
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 54612,
+        "nearestFloat32Stages": 54612,
+        "floorFloat64": 54611
+      },
+      "matches": {
+        "nearestFloat64": true,
+        "nearestFloat32Stages": true,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 0,
+      "modelDisplay": 80.000456796643,
+      "displayBinHypothesis": {
+        "step": 0.1,
+        "count": 73,
+        "firstRaw": 54576,
+        "lastRaw": 54648,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "Max",
+      "field": "MOD_MAX",
+      "pid": 2,
+      "requestedTarget": 5,
+      "observedDisplay": 5,
+      "raw": 32784,
+      "captureSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "model": "target-dependent 0..10 hypothesis",
+      "metadata": {
+        "typecode": 0,
+        "cachedFields": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "hypothesisBounds": [
+          0,
+          10,
+          1,
+          0
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 32767,
+        "nearestFloat32Stages": 32767,
+        "floorFloat64": 32767
+      },
+      "matches": {
+        "nearestFloat64": false,
+        "nearestFloat32Stages": false,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": 17,
+      "modelDisplay": 5.002594073305,
+      "displayBinHypothesis": {
+        "step": 0.01,
+        "count": 65,
+        "firstRaw": 32735,
+        "lastRaw": 32799,
+        "includesMeasuredRaw": true
+      }
+    },
+    {
+      "batch": "Min",
+      "field": "MOD_MIN",
+      "pid": 1,
+      "requestedTarget": 2.5,
+      "observedDisplay": 2.5,
+      "raw": 16375,
+      "captureSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "model": "target-dependent 0..10 hypothesis",
+      "metadata": {
+        "typecode": 0,
+        "cachedFields": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "hypothesisBounds": [
+          0,
+          10,
+          1,
+          0
+        ]
+      },
+      "predictions": {
+        "nearestFloat64": 16384,
+        "nearestFloat32Stages": 16384,
+        "floorFloat64": 16383
+      },
+      "matches": {
+        "nearestFloat64": false,
+        "nearestFloat32Stages": false,
+        "floorFloat64": false
+      },
+      "nearestFloat64RawError": -9,
+      "modelDisplay": 2.498702963347,
+      "displayBinHypothesis": {
+        "step": 0.01,
+        "count": 66,
+        "firstRaw": 16351,
+        "lastRaw": 16416,
+        "includesMeasuredRaw": true
+      }
+    }
+  ],
+  "excludedNewPoints": [
+    {
+      "batch": "B",
+      "field": "MOD_MAX",
+      "reason": "Requested change not observed; no new input point",
+      "requested": 5,
+      "display": 7.5
+    }
+  ],
+  "summary": {
+    "changedPoints": 21,
+    "ordinaryPoints": 18,
+    "ordinaryNearestMatches": 18,
+    "ordinaryFloat32NearestMatches": 18,
+    "ordinaryFloorMatches": 10,
+    "minMaxPoints": 3,
+    "minMaxNearestMatches": 0,
+    "allDisplayBinsIncludeMeasuredRaw": true
+  },
+  "conclusion": "Nearest rounding fits these 18 ordinary requested-target points but is not established over their full ranges. Direct linear Min/Max encoding is contradicted by all three changed points. Float32 stages do not rescue those Min/Max counterexamples. A matching display bin is insufficient to prove an encoder.",
+  "fullRangeWriterAuthorizedByEvidence": false
+}
