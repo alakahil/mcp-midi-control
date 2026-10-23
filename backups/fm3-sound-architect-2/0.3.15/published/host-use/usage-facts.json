@@ -1,0 +1,267 @@
+{
+  "recordedAt": "2026-10-23T10:13:00.673472+00:00",
+  "task": "DAILY VOLUME offline preset with NewLook Amp/Cab preservation",
+  "invokedSkill": "fm3-sound-architect-2",
+  "launcher": {
+    "hostSessionExposed": true,
+    "path": "/root/.codex/skills/remote-skills/skill-6accfd6fb6f48191a5211c5b063bee5d/SKILL.md",
+    "sha256": "1aba0bc1d6af33dece3eb5b5e231c3a184e1c50043dfe762b11e665ed354395b",
+    "readEntirely": true,
+    "pin": {
+      "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+      "releaseId": "pluginrel_6adb3151f998819193808162d75516b5",
+      "version": "0.3.15",
+      "sourceRepository": "https://github.com/alakahil/mcp-midi-control",
+      "sourceCommit": "15840e463b0d8f90ab3c46b8c0d4e6865b88a004",
+      "manifestSha256": "f5c16eed79b107dd3544f81e6bf9d029e51fa0aa9ff744f1e5909fa98805a7ab"
+    }
+  },
+  "publishedArchive": {
+    "path": "/workspace/scratch/7bb7161c8153/research/0315-published/published.tar.gz",
+    "bytes": 22682590,
+    "sha256": "4d722fadeca65c3ecdc9a58da37aec4f7baf4ab366bfb326f6878c44a599de2c",
+    "validatedBeforeExtraction": true
+  },
+  "actualRuntime": {
+    "path": "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime",
+    "skill": "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime/skills/fm3-sound-architect-2/SKILL.md",
+    "skillSha256": "ff91e1fc709412d010baf953e1a8a6c63b07b9930aea4e19353e2251faca4916",
+    "skillReadEntirely": true,
+    "manifestSha256": "f5c16eed79b107dd3544f81e6bf9d029e51fa0aa9ff744f1e5909fa98805a7ab",
+    "version": "0.3.15",
+    "sourceCommit": "15840e463b0d8f90ab3c46b8c0d4e6865b88a004",
+    "filesVerified": 3141,
+    "engineExecuted": true,
+    "hostAutoMountVerified": false,
+    "scope": "The host exposed the saved launcher; it verified and executed the published package at the recorded absolute path. This is not a claim that the host automatically mounted the full plugin engine."
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "python": "Python 3.12.14"
+  },
+  "request": {
+    "name": "DAILY VOLUME",
+    "base": "jb-newlook",
+    "context": {
+      "guitar": "Fender Stratocaster",
+      "pickups": "single coil",
+      "output": "OUT1 stereo FOH"
+    },
+    "volumePan": {
+      "type": "VOLUME",
+      "row": 3,
+      "column": 8,
+      "before": [
+        "delay",
+        "reverb"
+      ],
+      "gainA": 6,
+      "gainB": 8,
+      "gainUnit": "/10",
+      "scenes": [
+        {
+          "scene": 1,
+          "channel": "A",
+          "bypassRaw": 0
+        },
+        {
+          "scene": 2,
+          "channel": "B",
+          "bypassRaw": 0
+        },
+        {
+          "scene": 3,
+          "channel": "A",
+          "bypassRaw": 1
+        },
+        {
+          "scene": 4,
+          "channel": "A",
+          "bypassRaw": 1
+        },
+        {
+          "scene": 5,
+          "channel": "A",
+          "bypassRaw": 1
+        },
+        {
+          "scene": 6,
+          "channel": "A",
+          "bypassRaw": 1
+        },
+        {
+          "scene": 7,
+          "channel": "A",
+          "bypassRaw": 1
+        },
+        {
+          "scene": 8,
+          "channel": "A",
+          "bypassRaw": 1
+        }
+      ]
+    },
+    "input1A": {
+      "thresholdDb": -65,
+      "levelDb": -3
+    },
+    "preserveAmpCab": true,
+    "addPedalBinding": false
+  },
+  "results": {
+    "presetName": "DAILY VOLUME",
+    "selectedScene": 2,
+    "selectedSceneInheritedFromBase": true,
+    "ampCabEntireRecordsByteIdentical": true,
+    "existingScenesAndNamesPreserved": true,
+    "inputChangesOnlyRequestedWords": [
+      {
+        "channel": "A",
+        "pid": 0,
+        "before": 26214,
+        "after": 22937
+      },
+      {
+        "channel": "A",
+        "pid": 5,
+        "before": 32767,
+        "after": 30309
+      }
+    ],
+    "modifierBytesPreserved": true,
+    "activeModifierBindings": 0,
+    "controls": [
+      {
+        "block": "volpan",
+        "channel": "A",
+        "name": "VOLUME_GAIN",
+        "requested": 6,
+        "decoded": 5.999938962981048,
+        "raw": 39320,
+        "unit": "/10"
+      },
+      {
+        "block": "volpan",
+        "channel": "B",
+        "name": "VOLUME_GAIN",
+        "requested": 8,
+        "decoded": 7.999969481490524,
+        "raw": 52427,
+        "unit": "/10"
+      },
+      {
+        "block": "in1",
+        "channel": "A",
+        "name": "INPUT_THRESH",
+        "requested": -65,
+        "decoded": -64.99984740745262,
+        "raw": 22937,
+        "unit": "dB"
+      },
+      {
+        "block": "in1",
+        "channel": "A",
+        "name": "INPUT_LEVEL",
+        "requested": -3,
+        "decoded": -3.000579851680044,
+        "raw": 30309,
+        "unit": "dB"
+      }
+    ],
+    "fourFileVerificationPassed": true,
+    "runtimeSelfCheckPassed": true
+  },
+  "artifacts": [
+    {
+      "path": "/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.syx",
+      "bytes": 24680,
+      "sha256": "64f91445cfd80ebc761480c56809b73df641459698b5e33180838726f19fdf51"
+    },
+    {
+      "path": "/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.txt",
+      "bytes": 11097,
+      "sha256": "68aef725cc8ddb3782a0af6e7d45c51e2a6eedb1bdab08dd0217098500acb7fb"
+    },
+    {
+      "path": "/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.spec.json",
+      "bytes": 1995,
+      "sha256": "a828f0d0ceaee4a68638385f87e25de7726f19f653146778ce286b54efc0dfcd"
+    },
+    {
+      "path": "/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.validation.json",
+      "bytes": 853596,
+      "sha256": "4d7e8005d8197d61e2c11985a0b7d0b3b9d8b6b28afe1a25e8e79308fcac2578"
+    }
+  ],
+  "evidenceFiles": [
+    "/workspace/scratch/7bb7161c8153/research/host-0315-use/capabilities.json",
+    "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime-verification.json",
+    "/workspace/scratch/7bb7161c8153/research/host-0315-use/self-check.json",
+    "/workspace/scratch/7bb7161c8153/research/host-0315-use/generation.json",
+    "/workspace/scratch/7bb7161c8153/research/host-0315-use/verification.json",
+    "/workspace/scratch/7bb7161c8153/research/host-0315-use/preservation-audit.json",
+    "/workspace/scratch/7bb7161c8153/research/host-0315-use/modifiers-audit.json",
+    "/workspace/scratch/7bb7161c8153/research/host-0315-use/audit-daily-volume.mjs"
+  ],
+  "commands": [
+    [
+      "python3",
+      "/root/.codex/skills/remote-skills/skill-6accfd6fb6f48191a5211c5b063bee5d/scripts/prepare-runtime.py",
+      "--archive",
+      "/workspace/scratch/7bb7161c8153/research/0315-published/published.tar.gz",
+      "--destination",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime"
+    ],
+    [
+      "node",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-self-check.mjs",
+      "15840e463b0d8f90ab3c46b8c0d4e6865b88a004"
+    ],
+    [
+      "node",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset.mjs",
+      "--capabilities",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx"
+    ],
+    [
+      "node",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset.mjs",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.request.json",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME"
+    ],
+    [
+      "node",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset.mjs",
+      "--verify",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME"
+    ],
+    [
+      "node",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/audit-daily-volume.mjs"
+    ],
+    [
+      "python3",
+      "/root/.codex/skills/remote-skills/skill-6accfd6fb6f48191a5211c5b063bee5d/scripts/prepare-runtime.py",
+      "--directory",
+      "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime"
+    ]
+  ],
+  "sideEffects": {
+    "deviceIO": false,
+    "deviceConnected": false,
+    "pluginModified": false,
+    "launcherSkillModified": false,
+    "publishedRuntimeFilesModified": false,
+    "filesWrittenOutsideRequestedDestination": false
+  },
+  "limits": {
+    "hardwareImportTested": false,
+    "storeReloadTested": false,
+    "audioTested": false,
+    "cpuMeasured": false,
+    "newPhysicalScaleMeasurements": 0,
+    "fullRangeEncodingProven": false,
+    "valueEncoding": "FW13 native/cache/XML and curve-class based; decoded quantized values are preserved in the report"
+  }
+}

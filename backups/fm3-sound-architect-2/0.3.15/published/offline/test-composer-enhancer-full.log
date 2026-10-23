@@ -1,0 +1,61 @@
+Unchanged: JB_EIGHT_SCENES_V3
+Unchanged: FM3_PEQ_ABCD_TEST
+Unchanged: FM3_GEQ_ABCD_TEST
+{
+  "date": "2026-10-12",
+  "generator": "jb-composer-0.12.1",
+  "passed": true,
+  "registrySha256": "95d2146076e33175209d5270d93e7568ac5cc6695d1bf3b108b2adfabe4d2a21",
+  "passedSteps": 87,
+  "fullSessionPairs": 74,
+  "supplementPairs": 13,
+  "resolvedSkippedSteps": 12,
+  "excludedAttempts": 2,
+  "pairedWordsPerStep": 48,
+  "matchedWordsTotal": 4176,
+  "typeCount": 3,
+  "numericAnchors": 68,
+  "enumAnchors": 10,
+  "channelCopies": [
+    79,
+    81,
+    83
+  ],
+  "independentChannelWidth": [
+    80,
+    82,
+    84
+  ],
+  "sceneSelections": [
+    79,
+    81,
+    83,
+    85
+  ],
+  "opaquePids": [
+    5
+  ],
+  "bypass": "Scene header control; no Bypass Mode menu observed",
+  "panLeft": "-100..100, unitless. Measured points -100,+100,0,+40,+80; three distinct interior values are valid regardless of collector point labels.",
+  "hardware": "Measured GET/SYX states confirmed; newly generated composition awaits import/export, listening and CPU",
+  "encoderReplays": 78,
+  "templateSnapshots": 5,
+  "copyReplays": 3,
+  "selectorReplays": 1,
+  "comparisonScope": "78 shared-control encoder replays, 5 captured full-template snapshots, 3 copies and 1 selector replay each equal all 13804 original body bytes. These are not 87 public-API composition replays.",
+  "exactChannelTemplates": 12,
+  "priorSyxByteIdentical": [
+    "V3",
+    "PEQ A-D",
+    "GEQ A-D"
+  ],
+  "newPresetOriginalGeqBytesReconstructed": 13662,
+  "invalidRequestsRejected": 27,
+  "opaqueWordsPreserved": true,
+  "defaultBypass": true,
+  "unconfiguredChannelRejected": true,
+  "unsupportedBaseRejected": true,
+  "tamperedEvidenceRejected": true,
+  "newCombinationSha256": "a545aa8bb7f659b10dc2a7beb4a902e1377bbeef995381d2dc6ece55ef14965b",
+  "newCombinationHardware": "Exact specimen confirmed 2026-10-12; Enhancer works; user observed maximum CPU52.7%. Test itself performs no hardware I/O."
+}

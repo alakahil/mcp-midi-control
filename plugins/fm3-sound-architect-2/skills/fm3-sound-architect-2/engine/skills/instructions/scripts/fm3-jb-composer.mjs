@@ -207,6 +207,7 @@ export function describeComposerScenes(after,blocks){
     if(family==='cab'){const mode=actual.readUInt16LE(start+62);extra.mode=mode===1?'DYNA-CAB':'inherited';if(mode===1)extra.cabs=[85,86].map(pid=>{const id=actual.readUInt16LE(start+pid*2);return {id,name:cabLib.templates.find(t=>t.expectedId===id)?.name??'ID '+id}})}
     if(family==='amp')extra.levelDb=-80+actual.readUInt16LE(start+2)/65534*100;
     if(family==='rotary')extra.type='Rotary';
+    if(family==='volpan')extra.type=typeId===0?'VOLUME':typeId===1?'AUTO-SWELL':'unknown';
     if(family==='peq'){extra.type='Parametric EQ';Object.assign(extra,decodePeqChannel(Array.from({length:33},(_,j)=>actual.readUInt16LE(start+2*j))));}
     if(family==='enhancer')Object.assign(extra,decodeEnhancerChannel(Array.from({length:12},(_,j)=>actual.readUInt16LE(start+2*j))));
     if(family==='geq')Object.assign(extra,decodeGeqChannel(Array.from({length:20},(_,j)=>actual.readUInt16LE(start+2*j))));

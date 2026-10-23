@@ -66,7 +66,9 @@ Test: `scripts/test-scan-records.mjs` (offline-suite).
 
 ## Lisamine generaatoris (`scripts/fm3-insert-blocks.mjs`, väli `insert`)
 
-- Lisatavad: plex, multiband, synth, looper, gate, formant, volume, tentap, megatap, ringmod, resonator.
+- Lisatavad: plex, multiband, synth, looper, gate, formant, tentap, megatap, ringmod, resonator.
+  Volume/Pan 1 lisatakse Codexi 0.3.15 sisestajaga (`volumePan: true`, `fm3-volume.mjs`, oma poliitika);
+  `insert` suunab sinna. Seadmekatse A kasutas veel nime `volume` (sama doonorkirje, eid 102).
 - Kirje kopeeritakse doonorist, pannakse viimase kirje järele (nagu seade doonoris tegi) ja plokk võtab
   ridade 2/3 esimese vaba järjestikuse shundi; veeru otsustab seejärel `layout`.
 - Kontrollid: olemasolevad kirjed ja saba baithaaval samad, eelosas muutuvad ainult valitud ruudustiku sõnad,

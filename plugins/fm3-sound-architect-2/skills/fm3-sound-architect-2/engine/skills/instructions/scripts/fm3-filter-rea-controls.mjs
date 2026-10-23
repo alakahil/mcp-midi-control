@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Supplemental measured Filter controls; file-only validation, no device access.
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
@@ -20,7 +21,7 @@ export function validateFilterReaPoint(point){
  const rb=read('result.json'),cb=read('capture.json');
  for(const [bytes,expected] of [[current,point.syxSha256],[previous,point.previousSha256],[rb,point.resultSha256],[cb,point.captureSha256]])
   assert.equal(sha(bytes),expected,'Filter REA source hash mismatch');
- const result=JSON.parse(rb),comparison=compare(previous,current,point.stepIndex),proof=pair(dir.pathname);
+ const result=JSON.parse(rb),comparison=compare(previous,current,point.stepIndex),proof=pair(fileURLToPath(dir));
  assert.ok(result.status==='passed'&&result.displayConfirmed===true&&result.getAuthorized===true);
  assert.deepEqual(comparison,result.comparison);assert.deepEqual(proof,result.pair);
  assert.equal(proof.rawRxSha256,point.rawRxSha256);assert.equal(proof.matchedWords,148);

@@ -465,6 +465,41 @@
       ],
       "scope": "Bounded exact Min/Max API; six hardware values per field, 995 model-consensus values per field, full-body/readback/atomic failures, preserved legacy meanings, sound path and four-file CLI with tamper rejection; no new device I/O",
       "required": true
+    },
+    {
+      "id": "test-input-gate",
+      "command": [
+        "node",
+        "scripts/test-input-gate.mjs"
+      ],
+      "scope": "Bounded Input 1 numeric A-D writes; seven bases, independent raw decoder, atomic rejections, FW13 mode visibility, modifier conflict, four-file consistency; no new hardware evidence",
+      "required": true
+    },
+    {
+      "id": "test-volume-pan",
+      "command": [
+        "node",
+        "scripts/test-volume-pan.mjs"
+      ],
+      "scope": "One captured FW13 body reconstruction; bounded VOLUME insertion and A-D controls, preservation, scenes, independent raw decoder and four-file tamper rejection; no new physical scales/audio/STORE proof",
+      "required": true
+    },
+    {
+      "id": "test-input-volume-output",
+      "required": true,
+      "command": [
+        "node",
+        "scripts/test-input-volume-output.mjs"
+      ]
+    },
+    {
+      "id": "test-runtime-paths",
+      "command": [
+        "node",
+        "scripts/test-runtime-paths.mjs"
+      ],
+      "scope": "Relocated package under spaces, percent, hash and Unicode; known preset byte replay, Input/Volume four-file generation and verification; no hardware I/O",
+      "required": true
     }
   ]
 }

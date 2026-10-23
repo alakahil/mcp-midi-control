@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "pairedExports": 5,
+  "measuredPoints": 20,
+  "reproducedBodies": 5,
+  "isolatedCases": 140,
+  "combinedCases": 7,
+  "legacyAliasCases": 7,
+  "rejectedInputs": 54,
+  "musicalV2ByteIdentical": true
+}

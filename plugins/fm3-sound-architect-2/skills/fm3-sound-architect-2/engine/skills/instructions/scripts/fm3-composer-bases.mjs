@@ -4,14 +4,14 @@ import {createHash} from 'node:crypto';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const block=(eid,header,words,typePid)=>Object.freeze({eid,header,start:header+46,words,...(typePid===undefined?{}:{typePid})});
 export const layout=Object.freeze({
-  amp:block(58,4610,144,6),cab:block(62,5808,106),
+  in1:block(37,8812,10),amp:block(58,4610,144,6),cab:block(62,5808,106),
   drive:block(118,8414,44,0),delay:block(70,7346,89,6),
   reverb:block(66,9518,71,0),phaser:block(90,9192,35,0),
   compressor:block(46,7004,37,12),chorus:block(78,6702,32,0),
   flanger:block(82,8104,33,0),wah:block(94,10132,25,0)
 });
 function alternate(kind){
-  const out={...layout};delete out.flanger;
+  const out={...layout,in1:block(37,8502,10)};delete out.flanger;
   out.drive=block(118,8104,44,0);
   out.phaser=block(90,kind==='pitch'?9840:8882,35,0);
   out.reverb=block(66,kind==='pitch'?10166:9208,71,0);
@@ -19,7 +19,7 @@ function alternate(kind){
   out[kind]=kind==='tremolo'?block(106,9822,22,0):kind==='rotary'?block(86,9822,21):block(110,8882,114,0);
   return Object.freeze(out);
 }
-export const layouts=Object.freeze({standard:layout,tremolo:alternate('tremolo'),rotary:alternate('rotary'),pitch:alternate('pitch'),newlook:Object.freeze({amp:block(58,4610,144,6),cab:block(62,5808,106),drive:block(118,7568,44,0),delay:block(70,6702,89,6),reverb:block(66,8346,71,0)})});
+export const layouts=Object.freeze({standard:layout,tremolo:alternate('tremolo'),rotary:alternate('rotary'),pitch:alternate('pitch'),newlook:Object.freeze({in1:block(37,7966,10),amp:block(58,4610,144,6),cab:block(62,5808,106),drive:block(118,7568,44,0),delay:block(70,6702,89,6),reverb:block(66,8346,71,0)})});
 // A block donor only; the active collection preset is not a new user base.
 export const filterDonor=Object.freeze({file:'references/filter-batch-20261008-132133/baseline.syx',sha256:'9a254a1af26b64025cb9a281fb53845e7e7f95a6713ea2ec5d2b7e670edbfd80',bodyBytes:13146,blocks:Object.freeze({filter:block(114,7568,37,0)})});
 export const peqDonor=Object.freeze({file:'examples/FM3_PEQ_BASELINE.syx',sha256:'c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be',bodyBytes:13456,blocks:Object.freeze({peq:block(54,8688,33)})});

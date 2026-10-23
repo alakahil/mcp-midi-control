@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-09",
+  "passed": true,
+  "bodyBytes": 13146,
+  "exactV2DeviceBody": true,
+  "onlyAWordChanged": true,
+  "scenesAffected": [
+    1,
+    5
+  ],
+  "otherSixScenesUnchanged": true,
+  "sevenBaseIsolationCases": 7,
+  "sevenLegacyBAliasCases": 7,
+  "rejectedInputs": 16,
+  "oldV1SyxByteIdentical": true,
+  "renamedFileNotFalselyImportApproved": true,
+  "changedBodyNotDeviceApproved": true,
+  "A": {
+    "model": "Double Verb Vibrato",
+    "levelDb": -12,
+    "raw": 44563
+  },
+  "CD": "Measured model-specific -11 dB points verified by test-composer-amp-cd-levels.mjs",
+  "scope": "A exact measured point and existing B compatibility tested here; C/D device evidence and isolation have a separate test."
+}

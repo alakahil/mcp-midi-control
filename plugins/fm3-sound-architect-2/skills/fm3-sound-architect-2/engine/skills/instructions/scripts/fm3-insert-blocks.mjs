@@ -1,5 +1,5 @@
 // Audit point 6: insert blocks that no composer base carries (Plex, Multiband, Synth, Looper,
-// Gate, Formant, Volume/Pan, Ten-Tap, Megatap, Ring Mod, Resonator). Offline only; no device I/O.
+// Gate, Formant, Ten-Tap, Megatap, Ring Mod, Resonator). Volume/Pan 1 uses fm3-volume.mjs (volumePan). Offline only; no device I/O.
 //
 // Donor: the user's own FW13 export of an <EMPTY> preset after adding one fresh block of each
 // family (2026-10-23, references/fm3-default-blocks-20261023.syx), paired with the export of the
@@ -20,10 +20,12 @@ const RECORDS_START=4610;
 const gridAt=(row,col)=>GRID.start+col*16+row*4;
 export const INSERT_DONOR=Object.freeze({file:'references/fm3-default-blocks-20261023.syx',sha256:'dc382d6ded7dafc6889abc19edb5763a1b8e483bec841879108ded68423e49af',
   empty:'references/fm3-empty-preset-20261023.syx',emptySha256:'220866f7866d9f515a98b36b2430de6e5a69ae378e58426bc86f3bc417ea7e14'});
-export const INSERTABLE=Object.freeze({plex:178,multiband:154,synth:130,looper:166,gate:146,formant:98,volume:102,tentap:158,megatap:138,ringmod:150,resonator:162});
+export const INSERTABLE=Object.freeze({plex:178,multiband:154,synth:130,looper:166,gate:146,formant:98,tentap:158,megatap:138,ringmod:150,resonator:162});
 // Type/mode selector per family (dictionary), for the final text report only.
-export const INSERT_TYPE_PID=Object.freeze({plex:0,synth:0,gate:14,volume:9,tentap:0,megatap:28,ringmod:10,resonator:0});
+export const INSERT_TYPE_PID=Object.freeze({plex:0,synth:0,gate:14,tentap:0,megatap:28,ringmod:10,resonator:0});
 export const GATED=Object.freeze({
+  volume:'Volume/Pan 1 has its own inserter and policy: use volumePan:true (fm3-volume.mjs)',
+  volpan:'Volume/Pan 1 has its own inserter and policy: use volumePan:true (fm3-volume.mjs)',
   mixer:'Mixer combines parallel rows; parallel routing is audit point 5 (the two-row layout is serial)',
   multiplexer:'Multiplexer selects between parallel rows; parallel routing is audit point 5',
   scenemidi:'Scene MIDI (MIDI Block, eid 190, 257×1) has no decoded parameter semantics yet'});

@@ -1,0 +1,36 @@
+DAILY VOLUME — kasutuse kontroll
+
+Kasutati hosti pakutud salvestatud fm3-sound-architect-2 käivitajat:
+/root/.codex/skills/remote-skills/skill-6accfd6fb6f48191a5211c5b063bee5d/SKILL.md
+
+Avaldatud pakett kontrolliti enne lahtipakkimist käivitaja prepare-runtime.py abil.
+Tegelik käivitatud generaator: 0.3.15
+Commit: 15840e463b0d8f90ab3c46b8c0d4e6865b88a004
+Kontrollitud failide arv: 3141
+Käivituskoht: /workspace/scratch/7bb7161c8153/research/host-0315-use/runtime
+Host avastas salvestatud käivitaja; täieliku plugina mootori automaatset hosti monteerimist see ei kinnita.
+
+Lõplik nelik:
+/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.syx
+/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.txt
+/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.spec.json
+/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.validation.json
+
+Kõik neli faili läbisid fm3-preset.mjs --verify kontrolli.
+Amp ja Cab tervikkirjed on NewLook-alusega baitidentsed.
+Kõik varasemad stseeninimed ja olemasolevate plokkide stseeniseaded säilisid.
+Volume/Pan asub real 3 veerus 8 enne Delay'd (9) ja Reverb'i (10).
+Stseen 1: Volume A aktiivne, Gain 6/10; stseen 2: B aktiivne, Gain 8/10.
+Stseenid 3–8: Volume A bypass. Valitud stseen 2 säilis alusest.
+Input 1 A: Threshold −65 dB ja Level −3 dB. Ülejäänud Input-kirje säilis.
+Kõik modifikaatorikirjete baidid säilisid; aktiivseid sidumisi on 0.
+
+Binaarkodeeringu kvantimine:
+Volume A 6 → 5.9999/10; Volume B 8 → 8/10.
+Input Threshold −65 → −64.9998 dB; Input Level −3 → −3.0006 dB.
+Need on dekodeeritud salvestusväärtused, mitte uued füüsikalised mõõtmised.
+
+Seadet ei ühendatud, SysEx-i ei saadetud. FM3 import, STORE/reload, heli ja CPU jäid kontrollimata.
+Pluginat, salvestatud oskust, avaldatud paketi faile ega muid projektifaile ei muudetud.
+Masinloetavad faktid, käsud ja räsid: usage-facts.json.
+Lisakontroll: preservation-audit.json; korduv audit: node audit-daily-volume.mjs.

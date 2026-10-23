@@ -1,0 +1,64 @@
+Exact device-body replays: 40/184
+Exact device-body replays: 80/184
+Exact device-body replays: 120/184
+Exact device-body replays: 160/184
+{
+  "date": "2026-10-10",
+  "generator": "jb-composer-0.11.1",
+  "passed": true,
+  "passedSteps": 184,
+  "excludedAttempts": 8,
+  "pairedWordsPerStep": 80,
+  "matchedWordsTotal": 14720,
+  "typeCount": 18,
+  "numericAnchors": 557,
+  "enumAnchors": 4,
+  "typeCoupledChanges": 0,
+  "channelCopies": [
+    177,
+    179,
+    181
+  ],
+  "independentChannelGain": [
+    178,
+    180,
+    182
+  ],
+  "sceneSelections": [
+    177,
+    179,
+    181,
+    183
+  ],
+  "collectorResume": "184/184 verified using unchanged original resume()",
+  "pendingLabels": [],
+  "hardware": "Exact combined preset import/export confirmed; user reports GEQ worked and maximum observed CPU50%. Other combinations remain separate.",
+  "resolvedLabels": [
+    {
+      "type": "7 Band Constant Q",
+      "band": 1,
+      "label": "100",
+      "frequencyHz": 100,
+      "status": "Confirmed from screenshot 2026-10-11",
+      "originalCapturedLabel": "python3 100",
+      "rawCollectionEvidenceUnchanged": true
+    }
+  ],
+  "exactBodyReplays": 184,
+  "comparisonScope": "All 13662 original body bytes compared for every accepted device export; neither body normalized.",
+  "priorSyxByteIdentical": [
+    "V3",
+    "PEQ Band3",
+    "PEQ A-D"
+  ],
+  "newPresetOriginalPeqBytesReconstructed": 13456,
+  "invalidRequestsRejected": 24,
+  "all18TypeTemplatesExact": true,
+  "reservedWordsPreserved": true,
+  "defaultBypass": true,
+  "unconfiguredChannelRejected": true,
+  "unsupportedBaseRejected": true,
+  "tamperedEvidenceRejected": true,
+  "newCombinationSha256": "adf176e949c0645031775a5eeaaa68b1bcdabc36adb238a413848c832e0fff8b",
+  "newCombinationHardware": "Exact specimen confirmed 2026-10-11; CPU50% observed maximum; user reports GEQ worked"
+}

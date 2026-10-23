@@ -1,0 +1,175 @@
+{
+  "passed": true,
+  "scope": "Independent comparison of decoded base and generated output using the verified 0.3.15 decoder",
+  "base": {
+    "path": "/workspace/scratch/7bb7161c8153/research/host-0315-use/runtime/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
+    "sha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c"
+  },
+  "output": {
+    "path": "/workspace/scratch/7bb7161c8153/research/host-0315-use/DAILY_VOLUME.syx",
+    "sha256": "64f91445cfd80ebc761480c56809b73df641459698b5e33180838726f19fdf51"
+  },
+  "name": "DAILY VOLUME",
+  "selectedScene": 2,
+  "ampCabEntireRecordsByteIdentical": true,
+  "preservedRecords": [
+    {
+      "block": "amp",
+      "effectId": 58,
+      "bytes": 1198,
+      "sha256": "9263c85c086e640309bf1c32719fbd231a091637791e0f85b2eda740f07fc8ce"
+    },
+    {
+      "block": "cab",
+      "effectId": 62,
+      "bytes": 894,
+      "sha256": "bcb97ab0ece2ccd360b308831b669b9403293a76a92d681d94cc744f16b1b041"
+    },
+    {
+      "block": "delay",
+      "effectId": 70,
+      "bytes": 758,
+      "sha256": "e5e521da843024ef11c3108982a00b9c10dd18ba57c41b5c1a29b1ee558d03f5"
+    },
+    {
+      "block": "return",
+      "effectId": 186,
+      "bytes": 58,
+      "sha256": "2d13b40a858935c92dcd49a74eb969cd4860eae8cd686ffaf2f98cb9e807313b"
+    },
+    {
+      "block": "send",
+      "effectId": 182,
+      "bytes": 50,
+      "sha256": "9d9df5346d37756300683f7473d10abf541ec058fe099845077b6799f0c57608"
+    },
+    {
+      "block": "drive",
+      "effectId": 118,
+      "bytes": 398,
+      "sha256": "24c2a536fb2b619c81be2f005b4a988adc97339f86f0db6e10b3091aeeb2e3b3"
+    },
+    {
+      "block": "out1",
+      "effectId": 42,
+      "bytes": 254,
+      "sha256": "9a3022e3215838f6bd48f4561252a2dae2d79117d5265b4898b635e51c341fec"
+    },
+    {
+      "block": "reverb",
+      "effectId": 66,
+      "bytes": 614,
+      "sha256": "555ef2d12332f2ec5d025ed90487bb054fa952c00d25c245190865885f950956"
+    }
+  ],
+  "existingScenesAndNamesPreserved": true,
+  "volumeScenes": [
+    {
+      "scene": 1,
+      "channel": "A",
+      "bypassRaw": 0
+    },
+    {
+      "scene": 2,
+      "channel": "B",
+      "bypassRaw": 0
+    },
+    {
+      "scene": 3,
+      "channel": "A",
+      "bypassRaw": 1
+    },
+    {
+      "scene": 4,
+      "channel": "A",
+      "bypassRaw": 1
+    },
+    {
+      "scene": 5,
+      "channel": "A",
+      "bypassRaw": 1
+    },
+    {
+      "scene": 6,
+      "channel": "A",
+      "bypassRaw": 1
+    },
+    {
+      "scene": 7,
+      "channel": "A",
+      "bypassRaw": 1
+    },
+    {
+      "scene": 8,
+      "channel": "A",
+      "bypassRaw": 1
+    }
+  ],
+  "signalRows": [
+    "In 1(1) → drive(4) → amp(6) → cab(8) → Send(12)",
+    "Return(1) → volpan(8) → delay(9) → reverb(10) → Out 1(12)"
+  ],
+  "controls": [
+    {
+      "block": "volpan",
+      "channel": "A",
+      "name": "VOLUME_GAIN",
+      "requested": 6,
+      "decoded": 5.999938962981048,
+      "raw": 39320,
+      "unit": "/10"
+    },
+    {
+      "block": "volpan",
+      "channel": "B",
+      "name": "VOLUME_GAIN",
+      "requested": 8,
+      "decoded": 7.999969481490524,
+      "raw": 52427,
+      "unit": "/10"
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "name": "INPUT_THRESH",
+      "requested": -65,
+      "decoded": -64.99984740745262,
+      "raw": 22937,
+      "unit": "dB"
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "name": "INPUT_LEVEL",
+      "requested": -3,
+      "decoded": -3.000579851680044,
+      "raw": 30309,
+      "unit": "dB"
+    }
+  ],
+  "inputChangesOnlyRequestedWords": [
+    {
+      "channel": "A",
+      "pid": 0,
+      "before": 26214,
+      "after": 22937
+    },
+    {
+      "channel": "A",
+      "pid": 5,
+      "before": 32767,
+      "after": 30309
+    }
+  ],
+  "modifierBytes": {
+    "preserved": true,
+    "bytes": 3072,
+    "sha256": "eabd1317c3a12ab04e3cb6fd6684acd718924e20908049bb7ba5b56f90665d36",
+    "activeBindings": 0
+  },
+  "systemTailPreserved": true,
+  "deviceIO": false,
+  "hardwareImportTested": false,
+  "audioTested": false,
+  "cpuMeasured": false
+}

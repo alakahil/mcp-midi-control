@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-12",
+  "passed": true,
+  "generator": "jb-composer-0.13.0-dev",
+  "newMeasuredPoints": 23,
+  "newPairedExports": 15,
+  "wholeBodyIsolatedPointsAndAliases": 25,
+  "additionalDisplayAliases": 2,
+  "exactCompleteDeviceBodyReplays": 15,
+  "bodyBytes": 13146,
+  "allOriginal12804BytesPreserved": true,
+  "invalidRequestsRejected": 16,
+  "tamperedSourceRejected": true,
+  "inputBuffersAndSpecsPreserved": true,
+  "unseenActiveBodyNotHardwareApproved": true,
+  "combinedMeasuredPoints": 40,
+  "combinedPairedExports": 32,
+  "exampleSha256": "bbaf2fc20367910eea1d7551947d1fd9a74da273ee8908e60974e34537a0c569",
+  "exampleBodySha256": "bca50f9838381511317688c180939f4c1ea7ca4ba065fe5d8fb4cf5e864e619d",
+  "hardwareIO": false,
+  "limitations": [
+    "Measured type/channel/points only; no interpolation",
+    "Filter remained bypassed; no active-effect audio or CPU confirmation",
+    "Local development candidate; publication remains blocked by archive entry limit"
+  ]
+}

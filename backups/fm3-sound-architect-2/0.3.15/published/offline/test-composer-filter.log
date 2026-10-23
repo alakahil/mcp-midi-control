@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-08",
+  "generator": "jb-composer-0.6.0",
+  "passed": true,
+  "allTypeChannelCombinations": 72,
+  "exactDeviceBodyReplays": 6,
+  "deviceReplayNormalization": "None",
+  "allNineAddedTogetherWholeBodyCompared": true,
+  "invalidRequestsRejected": 19,
+  "inputsPreserved": true,
+  "newFilterDefaultsToBypass": true,
+  "sceneAssignmentsAndReportVerified": true,
+  "exampleFilterRemovalRestoresAll12804OriginalBytes": true,
+  "exampleSyxSha256": "63d7a9a4381bbe7bcc40179f0e79be0c7e5a6c4ebe66f475380bd1e24f0264cf",
+  "exampleBodyBytes": 13146,
+  "hardware": "Six captured type-source bodies reproduce exactly; mixed ABCD specimen separately device-confirmed; arbitrary combined insertions remain unconfirmed",
+  "audio": "New Filter sounds and CPU not assessed",
+  "numericControls": "Only separately measured channel/type/points enabled; unmeasured combinations rejected",
+  "schema": "Field/enum structure checked; full schema validator not used"
+}

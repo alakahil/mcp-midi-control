@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scope": "Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.",
   "inventory": {
-    "filePaths": 2275,
-    "uniqueContents": 2071,
+    "filePaths": 2277,
+    "uniqueContents": 2073,
     "archivePaths": 990,
     "archiveContents": 164
   },
@@ -212,7 +212,7 @@
       "catalogKeys": 10,
       "dictionaryKeys": 10,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 0,
+      "tableDefaultOnBundledBase": 5,
       "tableOptInOnBundledBase": 0
     },
     {

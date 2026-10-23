@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "files": 789,
+  "unique": 632,
+  "accepted": 622,
+  "unsupported": [
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-42.syx",
+      "sha256": "c91be2fba05d044efa7eb76deb0e7f057d1e0d19543dd61542839a50019407e7",
+      "error": "Unsupported preset format; expected 0x0146"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-45.syx",
+      "sha256": "c895537b34cfb97c6e56074346bfdbdfaf1789bfe06a2ed979c7433607859635",
+      "error": "Unsupported preset format; expected 0x0146"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-5.syx",
+      "sha256": "d9fda0e4581de4f700f0a7a1f27ebae2e60ed7235f7f4a8ea69451adf7896007",
+      "error": "Unsupported preset format; expected 0x0146"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-55.syx",
+      "sha256": "a74ea948a4a57f0c3b315152ace59fa17a017e287b5a193bffa77a00ba874198",
+      "error": "Unsupported preset format; expected 0x0146"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-62.syx",
+      "sha256": "376fe9691ad09e864ba8c8db73bdf95cb3a6fd93f3cf9161c5190e1b50275b0d",
+      "error": "Unsupported preset format; expected 0x0146"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-63.syx",
+      "sha256": "2b4d149a1ca645feefe7facf945d8f944584086c1dfc4a1723e4c78a091d9e35",
+      "error": "Unsupported preset format; expected 0x0146"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-67.syx",
+      "sha256": "9c3d3825cccb0e708727a04a6b53928c2023156e25ec3218fcf01740aaf63c4d",
+      "error": "Unsupported preset format; expected 0x0146"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-79.syx",
+      "sha256": "c4b9b38aea16c31d63af95eb6889f90d24cb090bd1eb8bc49367c21d0cb6614b",
+      "error": "Unsupported preset format; expected 0x0146"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-82.syx",
+      "sha256": "04e1562f8d63e98ec3e213837f1028ae74132708bbec1b540a1d20bf591003c9",
+      "error": "Unsupported preset format; expected 0x0146"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-96.syx",
+      "sha256": "bdb19870a9fdcf6b400d0d0dcc8cce176ec39cf8473391e8a552d0406d58b599",
+      "error": "Unsupported preset format; expected 0x0146"
+    }
+  ],
+  "inputRecords": [
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_AMP_CAB_AD_TEST.syx",
+      "syxSha256": "e9132d54e04e9806af8506af7eb234ec9be6ec7fad01d6fcb6920446409e6493",
+      "recordSha256": "abe74c8f848ced1879db4573ea7dcf11c2aaf2926e6814283a7bd21a8a8f65b3",
+      "record": {
+        "eid": 37,
+        "family": "in1",
+        "header": 7966,
+        "start": 8012,
+        "words": 10,
+        "channels": 4,
+        "size": 126
+      },
+      "words": [
+        26214,
+        15163,
+        32767,
+        28421,
+        0,
+        32767,
+        0,
+        1,
+        0,
+        1,
+        13107,
+        15163,
+        0,
+        21845,
+        0,
+        32767,
+        0,
+        1,
+        0,
+        1,
+        13107,
+        15163,
+        0,
+        21845,
+        0,
+        32767,
+        0,
+        1,
+        0,
+        1,
+        13107,
+        15163,
+        0,
+        21845,
+        0,
+        32767,
+        0,
+        1,
+        0,
+        1
+      ]
+    }
+  ],
+  "volumeInAccepted": [],
+  "oldVolume": [
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-55.syx",
+      "syxSha256": "a74ea948a4a57f0c3b315152ace59fa17a017e287b5a193bffa77a00ba874198",
+      "effectId": 102,
+      "header": 10486,
+      "words": 15,
+      "channels": 4,
+      "recordSha256": "1622e049c54b6c761c53e2be2eb07d1acb3b4c56d046715d1937d5902f05afbe",
+      "trustedCurrentFW13Donor": false
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-96.syx",
+      "syxSha256": "bdb19870a9fdcf6b400d0d0dcc8cce176ec39cf8473391e8a552d0406d58b599",
+      "effectId": 102,
+      "header": 8108,
+      "words": 14,
+      "channels": 4,
+      "recordSha256": "c30b3d05d525112518049cf87c5f831acad376cbb2bebdf5af4ba37873f28ee7",
+      "trustedCurrentFW13Donor": false
+    }
+  ],
+  "limits": "Scanner targets the supported composer record layout. Ten unsupported upstream presets are not treated as Volume-free. Old Volume records are not current FW13 import evidence. No device I/O."
+}

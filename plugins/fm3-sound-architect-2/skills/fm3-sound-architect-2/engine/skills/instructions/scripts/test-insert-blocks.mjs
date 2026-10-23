@@ -13,7 +13,7 @@ const refuse=(f,re,why)=>{let m='';try{f()}catch(e){m=e.message}check(re.test(m)
 const d=insertDonor();check(d.records.length===14&&d.records.find(r=>r.eid===190)?.channels===1,'Donor records');
 // 2. every insertable block at once: structure, reconstruction, default scenes
 const all=Object.keys(INSERTABLE),r=insertBlocks(NL,all),a=body(NL),b=body(r.syx);
-check(r.inserted.length===11&&b.length===a.length+r.inserted.reduce((n,x)=>n+x.recordBytes,0),'All 11 inserted');
+check(r.inserted.length===all.length&&all.length===10&&b.length===a.length+r.inserted.reduce((n,x)=>n+x.recordBytes,0),'All 10 inserted');
 const sb=scanRecords(b),sa=scanRecords(a);
 check(sb.records.slice(sa.records.length).map(x=>x.family).join()===all.join(),'Appended in request order');
 for(const x of sb.records.slice(sa.records.length))for(let s=0;s<8;s++)check(b.readUInt16LE(x.header+10+2*s)===0&&b.readUInt16LE(x.header+26+2*s)===1,'Default scenes A/bypass: '+x.family);

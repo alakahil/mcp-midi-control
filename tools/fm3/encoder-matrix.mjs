@@ -23,7 +23,7 @@ const supported = p => ['linear', 'log', 'knob', 'enum','integer'].includes(p.ki
 const bindings = p => composerBases.flatMap(base => Object.entries(layouts[base.layout])
   .filter(([slug, layout]) => FAMILY_BY_SLUG[slug] === p.family && layout.eid === p.block && p.param >= 0 && p.param < layout.words)
   .map(([slug, layout]) => ({base, slug, layout})));
-const eligible = dictionary.filter(p => supported(p) && bindings(p).length).sort((a, b) => key(a) < key(b) ? -1 : 1);
+const eligible = dictionary.filter(p => supported(p) && bindings(p).length && (p.family!=='INPUT'||[0,1,2,3,5].includes(p.param))).sort((a, b) => key(a) < key(b) ? -1 : 1);
 assert.deepEqual(eligible.map(key), registry.parameters.filter(p => p.tableEncoder?.available).map(p => p.id).sort(), 'Registry/encoder eligibility drift');
 const options = p => DEFAULT_STATUSES.includes(p.status) ? {} : {allow: [p.status]};
 
@@ -121,6 +121,8 @@ for (const [bi, base] of composerBases.entries()) {
       const base=p.enumBase??0;
       let raw = p.kind === 'enum' ? base+(phase === 0 ? 0 : phase === 2 ? p.enum.length - 1 : (p.param + ch) % p.enum.length)
         : phase === 0 ? 0 : phase === 2 ? 65534 : 1 + (offset * 31) % 65533;
+      // The scalar codec can represent the OFF endpoint; the bounded Input writer cannot author it.
+      if(p.family==='INPUT'&&p.param===0&&raw===0)raw=1;
       let value = p.kind === 'enum' ? raw : atPosition(p, raw / 65534);
       if(p.kind==='integer'){value=phase===0?p.min:phase===2?p.max:p.min+(offset% (p.max-p.min+1));raw=value<0?65536+value:value;}
       candidates.push({p, slug, ch, layout, offset, raw, value});

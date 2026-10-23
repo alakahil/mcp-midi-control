@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Firmware 13 paired templates, with separately identified scale-derived values.
 import fs from 'node:fs';
 import {geqDisplayEvidence} from './fm3-geq-hardware.mjs';
@@ -13,7 +14,7 @@ export function loadGeqFull(){
  for(const [file,hash] of Object.entries(library.files))check(geqSha(read(root+file))===hash,'GEQ source changed: '+file);
  const displayEvidence=geqDisplayEvidence();
  if(cached)return cached;
- const audit=auditGeqEvidence(new URL('../'+root,import.meta.url).pathname);
+ const audit=auditGeqEvidence(fileURLToPath(new URL('../'+root,import.meta.url)));
  check(JSON.stringify(audit)===JSON.stringify(library),'GEQ derived registry differs from evidence');
  const label=displayEvidence.labelResolution;
  const band=library.models.find(m=>m.name===label.type).bands[label.band-1];

@@ -1,0 +1,94 @@
+{
+  "passed": true,
+  "generator": "fm3-sound-0.3.15",
+  "outputSha256": "7560d5510041676201e154553f1aba7d0c7239e55db22431a3f8a1c9c82c44fe",
+  "standardVerify": true,
+  "checks": {
+    "twoRows": true,
+    "chainContinuous": true,
+    "recordsUnchanged": "only declared control/scene bytes",
+    "systemTailPreserved": true,
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "bodyReadback": true,
+    "finalControlReadback": true,
+    "finalStateDecoded": true
+  },
+  "requirements": {
+    "name": true,
+    "firmware13": true,
+    "ampCabEntireRecordsPreserved": true,
+    "allOtherOriginalEffectRecordsPreserved": [
+      "amp",
+      "cab",
+      "delay",
+      "return",
+      "send",
+      "drive",
+      "out1",
+      "reverb"
+    ],
+    "input1All20RequestedControls": true,
+    "input1UnrequestedBytesPreserved": true,
+    "volumeAll8RequestedControls": true,
+    "volumeStereoAndThruBypass": true,
+    "volumeBeforeDelayAndReverb": true,
+    "all8VolumeScenesExplicit": true,
+    "activeModifierCount": 0,
+    "systemTailPreserved": true
+  },
+  "quantization": "Kõigi arvuliste sihtide dekodeeritud kõrvalekalle alla 0.001 vastava ühiku; täpsed väärtused validation.json failis.",
+  "limits": {
+    "finalOutputHardwareImportTested": false,
+    "storeReloadProven": false,
+    "audioTested": false,
+    "cpuTested": false,
+    "fullRangeEncodingProven": false,
+    "newPhysicalScaleMeasurements": 0,
+    "deviceUsed": false,
+    "published": false
+  },
+  "volumeScenes": [
+    {
+      "scene": 1,
+      "channel": "A",
+      "bypassRaw": 0
+    },
+    {
+      "scene": 2,
+      "channel": "B",
+      "bypassRaw": 0
+    },
+    {
+      "scene": 3,
+      "channel": "C",
+      "bypassRaw": 0
+    },
+    {
+      "scene": 4,
+      "channel": "D",
+      "bypassRaw": 0
+    },
+    {
+      "scene": 5,
+      "channel": "A",
+      "bypassRaw": 1
+    },
+    {
+      "scene": 6,
+      "channel": "A",
+      "bypassRaw": 1
+    },
+    {
+      "scene": 7,
+      "channel": "A",
+      "bypassRaw": 1
+    },
+    {
+      "scene": 8,
+      "channel": "A",
+      "bypassRaw": 1
+    }
+  ]
+}

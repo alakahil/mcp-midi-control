@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2083,
-  "filePaths": 2287,
+  "uniqueContents": 2085,
+  "filePaths": 2289,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1383,6 +1383,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-138-3880458408/donor.syx"
+      ]
+    },
+    "1cea47bec0082ea52ec8d61737188b914bc9fc3b31da5aa5580b0a584e48d889": {
+      "bytes": 17382,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "1d0e4bac8fb5bf371cef62f31acf5b43e83e41a0b737a5bdb70a68d7ebca1c04": {
@@ -5563,6 +5569,12 @@
         "references/FM3_AMP_CAPTURE_003.syx"
       ]
     },
+    "74724bdc22ebb7bbf6f5b89c491ae2daacc13974e814fba3343a77dd9362663e": {
+      "bytes": 1746,
+      "paths": [
+        "references/fm3-volume-donor.json"
+      ]
+    },
     "748ecaf75262546ef04c8876137552aa872ee4e2374a16fc5880728485541be5": {
       "bytes": 659,
       "paths": [
@@ -8332,6 +8344,12 @@
       "bytes": 3296,
       "paths": [
         "references/peq-full-20261009-152606/step-003-ee68893cff/result.json"
+      ]
+    },
+    "ab9103c43d7b3766361fad5df5ac453cd29a6411649312a1963200dec1f6de70": {
+      "bytes": 26744,
+      "paths": [
+        "references/fm3-input-volume-evidence.json"
       ]
     },
     "ab956ed194c377bbfb9d8ec8d1c9ade993ae293d6189952b0c6659d174ab6374": {
@@ -12192,12 +12210,6 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-full-20261012-122507/step-022-b3ad3da7ef/donor.syx"
-      ]
-    },
-    "f7d8f7110f66016e1f61be73a63815968d7e430f608b71523659725bab9772d5": {
-      "bytes": 16172,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "f7ed7688ef5e62d9ff0919dc226423118a6ab91b0a25569575f471fb2d4cd122": {

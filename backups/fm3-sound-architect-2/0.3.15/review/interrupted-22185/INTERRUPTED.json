@@ -1,0 +1,5 @@
+{
+  "completed": false,
+  "sourceCommit": "22185bb0fc1bed7cd3cdb4dcf94d76edf894dab9",
+  "reason": "Stopped with SIGINT before editing source after forward-test found Volume scene guidance conflict. Logs retained; not accepted as final suite."
+}

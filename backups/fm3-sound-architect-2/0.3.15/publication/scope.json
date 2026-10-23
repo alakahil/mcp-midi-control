@@ -1,0 +1,25 @@
+{
+  "version": "0.3.15",
+  "sourceCommit": "981806a528934d2196a3f29f98fb38328693f705",
+  "sourceGitTree": "65f372a926189e38f8f1fcb110c6eb5a3934c661",
+  "priorVersion": "0.3.14",
+  "priorSourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+  "priorReleaseId": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+  "newHardwareExports": 0,
+  "newReaAnalysis": false,
+  "hardwareEvidence": "Previously returned FW13 export: preserved 20 Input words; captured Volume default record. No new physical scale measurements.",
+  "wahMinMaxExact": {
+    "target": "FW13 Ext1 -> Wah1 Control",
+    "measuredPerField": 6,
+    "fourModelAgreementPerField": 995,
+    "fullRangeEncodingProven": false,
+    "mouseHistoricalSeparate": true
+  },
+  "outOfScope": [
+    "Auto-Swell type switching",
+    "new modifier target links",
+    "general 4x12 routing",
+    "audio/CPU validation",
+    "STORE/reload"
+  ]
+}

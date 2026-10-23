@@ -32,7 +32,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-14       # Apple Silicon (darwin-arm64) — the blind-user .mcpb target
+          # macos-14 provisioning stalled before any steps on 2026-10-23.
+          # Keep the Apple Silicon coverage on the supported macos-15 image.
+          - os: macos-15       # Apple Silicon (darwin-arm64) — the blind-user .mcpb target
             label: macos-arm64
           - os: ubuntu-latest  # linux-x64
             label: linux-x64
@@ -44,6 +46,10 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'npm'
+
+      - name: Verify Apple Silicon runner architecture
+        if: runner.os == 'macOS'
+        run: node -e "const a=require('node:assert/strict'); a.equal(process.platform,'darwin'); a.equal(process.arch,'arm64'); console.log('Verified darwin/arm64 on '+require('node:os').release());"
 
       # Linux needs the ALSA sequencer kernel module for RtMidi virtual
       # ports (openVirtualPort). It is not loaded by default on headless

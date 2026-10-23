@@ -1,0 +1,27 @@
+{
+  "sourceCommit": "981806a528934d2196a3f29f98fb38328693f705",
+  "previousRelease": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+  "manifests": {
+    "plugin.json": "all fields preserved except version",
+    ".codex-plugin/plugin.json": "all fields preserved except version"
+  },
+  "packagedAgentMetadataPreserved": true,
+  "oldSourceFiles": 3129,
+  "newSourceFiles": 3141,
+  "deletedFiles": [],
+  "addedFiles": [
+    "skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-input-volume-evidence.json",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-volume-donor.json",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-input-gate-output.mjs",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-input-gate.mjs",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-output.mjs",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-policy.mjs",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-text.mjs",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume.mjs",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-input-gate.mjs",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-input-volume-output.mjs",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-runtime-paths.mjs",
+    "skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-volume-pan.mjs"
+  ],
+  "passed": true
+}
