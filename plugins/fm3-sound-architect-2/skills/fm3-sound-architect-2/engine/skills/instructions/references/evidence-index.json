@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2091,
-  "filePaths": 2295,
+  "uniqueContents": 2094,
+  "filePaths": 2298,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -800,6 +800,12 @@
         "references/enhancer-full-20261012-122507/step-080-a942162a76/capture.json"
       ]
     },
+    "0ffba8869caa8a2d1b04cd7a4b88ca5ef5d4e2db2ecfb1fd51c4d4de8957963b": {
+      "bytes": 122290,
+      "paths": [
+        "references/fm3-read-probe-20261023-results.json"
+      ]
+    },
     "10e21a2bc1989fb336f67a3c62d270949bd380aff2151869f98fc6b0ac37eb30": {
       "bytes": 455,
       "paths": [
@@ -1055,12 +1061,6 @@
       "bytes": 463,
       "paths": [
         "references/rotary-batch-20261007-151451/capture-20261007T151315-92d360bdd6/pair.json"
-      ]
-    },
-    "15fdb249eb6194bcf8f73ac06b7b96d60a6853ff10aa17c88e2f1948ad9a8090": {
-      "bytes": 19320,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "16119388236ac3a4f5c2f7ef0e76da76f2d9696dd83bd3cbd351c586bef53415": {
@@ -2709,6 +2709,12 @@
       "bytes": 455,
       "paths": [
         "references/reverb-batch-20261006-181951/capture-20261006T162637-97eeb369f4/pair.json"
+      ]
+    },
+    "364663355bec251e445c8694ac3f14a79f989ad6fea9982f4f7e63819ba7c4be": {
+      "bytes": 19418,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "364b74463ee112dde82886c87d0e89e97d26354f0b9a1c098b22e53777686eac": {
@@ -5421,6 +5427,12 @@
       "bytes": 24680,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T111939-458bbbe6e7/donor.syx"
+      ]
+    },
+    "71171b6d2620579a7fc1097b8381bfeb4c7cf2b94eecd25a8a2f59dd4a43eddb": {
+      "bytes": 8907,
+      "paths": [
+        "references/fm3-read-value-check-20261023.json"
       ]
     },
     "713420812f973fc2d3fc948e1fab0b3f79515c5d442e06ec5b4dcd8628a67009": {
@@ -8942,6 +8954,12 @@
       "bytes": 14287,
       "paths": [
         "references/reverb-batch-20261006-181951/capture-20261006T181224-b10804deb3/capture.json"
+      ]
+    },
+    "b75a54f5482cad3c9703e8644f8145ee5fd52f74fc12131412d2e125948fe4dc": {
+      "bytes": 78212,
+      "paths": [
+        "references/fm3-value-check-20261023-results.json"
       ]
     },
     "b764e0bfde6568b4bba00aa633f9857935360e9e9ad961b86975d307ea7227ab": {

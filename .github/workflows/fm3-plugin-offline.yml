@@ -52,6 +52,8 @@ jobs:
           python3 tools/fm3/metadata_reconciliation.py
           node tools/fm3/encoder-matrix.mjs
           node tools/fm3/grid-check-ingest.mjs
+          node tools/fm3/read-value-ingest.mjs
+          node tools/fm3/test-read-requests.mjs
           node tools/fm3/cpu-sweep-ingest.mjs plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cpu-sweep-20261023-results.jsonl
       - name: Replay the pinned 0.3.11 remaining-modifier audit
         run: |
