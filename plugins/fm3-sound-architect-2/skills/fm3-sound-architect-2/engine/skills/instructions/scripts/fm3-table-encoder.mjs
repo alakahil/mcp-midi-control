@@ -25,14 +25,15 @@ export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FU
 // Class 0x01 non-enum words are stored integers, not normalised 0…65534 values (Claude, 2026-10-23):
 // all 57 class-0x01 parameters that occur in 574 distinct bodies (bundled exports + nine device FW13
 // exports of factory presets) hold in-range signed integers (Pitch Shift -12 = 65524, Reverb Springs
-// 3/4/6, Fuzz Bit Reduce 20/21); FM3-Edit shows Ten-Tap Number of Taps raw 6 as 6. Display multiplier 2
-// (Plex Number of Delays, Chorus Voices) has no display evidence yet, so those two stay blocked.
+// 3/4/6, Fuzz Bit Reduce 20/21); FM3-Edit shows Ten-Tap Number of Taps raw 6 as 6. With a display
+// multiplier the display is raw × multiplier: Plex Number of Delays raw 2 shows 4 (2026-10-23), which
+// also covers Chorus Voices (multiplier 2). Multiplier 0 (GLOBAL_CUSTOM_SCALE) stays blocked.
 // Status is unchanged: writing still needs allow 'linear-by-structure'.
-export const INTEGER_CLASS_EVIDENCE='class-0x01 stored integer: 57/57 observed parameters in-range signed integers (574 bodies); Ten-Tap Number of Taps raw 6 displayed 6';
+export const INTEGER_CLASS_EVIDENCE='class-0x01 stored integer: 57/57 observed parameters in-range signed integers (574 bodies); Ten-Tap Number of Taps raw 6 displayed 6; Plex Number of Delays raw 2 displayed 4 (multiplier 2)';
 function effectiveIntegerParameter(p){
   if(((parseInt(p.flags,16)>>8)&0xf)!==1||p.kind!=='linear')return p;
-  if(p.displayMultiplier!==1)return {...p,kind:'integer',signedWord:p.min<0,status:'unverified-taper',integerEvidence:'display multiplier '+p.displayMultiplier+' unconfirmed'};
-  return {...p,kind:'integer',signedWord:p.min<0,integerEvidence:INTEGER_CLASS_EVIDENCE};
+  if(!(p.displayMultiplier>=1))return {...p,kind:'integer',signedWord:p.min<0,status:'unverified-taper',integerEvidence:'display multiplier '+p.displayMultiplier+' unsupported'};
+  return {...p,kind:'integer',signedWord:p.min<0,integerScale:p.displayMultiplier,integerEvidence:INTEGER_CLASS_EVIDENCE};
 }
 let cache=null;
 export function loadDictionary(){
@@ -91,7 +92,9 @@ export function encodeValue(p,value,opts={}){
       if(codec.kind==='repeat-label'&&label==='INFINITE')value=codec.infiniteCode;
       else if(codec.kind==='global-scale-label'&&/^SCALE ([1-9]|[12][0-9]|3[0-2])$/.test(label))value=Number(label.slice(6))-codec.displayOffset;
     }
-    check(typeof value==='number'&&Number.isInteger(value)&&value>=p.min&&value<=p.max,`${p.name}: integer value required in ${p.min}…${p.max}`);
+    const k=p.integerScale??1;
+    if(k!==1){check(typeof value==='number'&&Number.isInteger(value/k),`${p.name}: value must be a multiple of ${k}`);value/=k;}
+    check(typeof value==='number'&&Number.isInteger(value)&&value>=p.min&&value<=p.max,`${p.name}: integer value required in ${p.min*k}…${p.max*k}`);
     return value<0?value+65536:value;
   }
   check(['linear','log','knob'].includes(p.kind)||opts.experimental===true,`${p.name}: kind ${p.kind} has no encoder`);
@@ -108,7 +111,7 @@ export function decodeValue(p,raw){
   if(!validPitchStoredWord(p,raw))return undefined;
   if(p.displayCodec?.kind==='global-scale-label')return 'SCALE '+(raw+p.displayCodec.displayOffset);
   if(p.displayCodec?.kind==='repeat-label'&&raw===p.displayCodec.infiniteCode)return p.displayCodec.infiniteLabel;
-  if(p.kind==='integer')return p.signedWord&&raw>=32768?raw-65536:raw;
+  if(p.kind==='integer')return (p.signedWord&&raw>=32768?raw-65536:raw)*(p.integerScale??1);
   if(p.kind==='enum')return p.enum[raw-(p.enumBase??0)];
   const n=raw/65534,m=p.displayMultiplier||1;
   if(p.kind==='knob')return n*m;

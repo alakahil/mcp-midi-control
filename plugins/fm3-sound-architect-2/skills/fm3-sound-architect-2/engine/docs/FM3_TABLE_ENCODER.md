@@ -96,4 +96,5 @@ Klassi 0x01 mitte-valikuloendi sõnad (578 kirjet) ei ole normaliseeritud 0…65
 täisarvud (negatiivne kahe täiendina). Tõend: kõik 57 klassi 0x01 parameetrit, mis esinevad 574 erinevas kehas,
 on vahemikku jäävad täisarvud (Pitch Shift −12 = 65524, Reverb Springs 3/4/6); FM3-Edit näitab Ten-Tap Number
 of Taps toorväärtust 6 kui 6. `loadDictionary` annab neile `kind: integer`; staatus ei muutu (vajab endiselt
-`allow: linear-by-structure`). Kordajaga 2 (Plex Number of Delays, Chorus Voices) on lukus kuni näidu kinnituseni.
+`allow: linear-by-structure`). Kordaja korral näit = toorväärtus × kordaja (Plex Number of Delays: toorväärtus 2 = 4);
+kirjutatav väärtus peab olema kordaja kordne. Kordaja 0 (GLOBAL_CUSTOM_SCALE) on lukus.

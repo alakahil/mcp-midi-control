@@ -90,5 +90,6 @@ Test: `scripts/test-scan-records.mjs` (offline-suite).
 - CPU: A 82,5 %, B „CPU LIMIT EXCEEDED". Koormuse hindamine on auditi punkt 7.
 - Klass 0x01 (578 kirjet) on salvestatud täisarvud, mitte normaliseeritud väärtused: FM3-Edit näitab Ten-Tap
   Number of Taps toorväärtust 6 kui 6 ning kõik 57 korpuses esinevat klassi 0x01 parameetrit on vahemikku jäävad
-  märgiga täisarvud. Kodeerija kohtleb neid nüüd täisarvudena (endiselt `allow: linear-by-structure`);
-  kordajaga 2 (Plex Number of Delays, Chorus Voices) jäävad lukku, kuni näit on kinnitatud.
+  märgiga täisarvud. Kodeerija kohtleb neid nüüd täisarvudena (endiselt `allow: linear-by-structure`).
+  Kordaja korral näit = toorväärtus × kordaja: Plex Number of Delays toorväärtus 2 = näit 4 (kasutaja kinnitus).
+- Plex Shift 1 ei ole Plex Delay tüübil nähtav (sama tüübipõhise nähtavuse küsimus kui Ten-Tap Feedback).

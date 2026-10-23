@@ -17,7 +17,7 @@ const records=Object.fromEntries(Object.entries(before).map(([s,b])=>[s,scanReco
 const families={wah:'WAH',tremolo:'TREMOLO'},dict=loadDictionary().params,opts={allow:[...OPT_IN_STATUSES]};
 const libs=Object.fromEntries(Object.keys(families).map(s=>[s,JSON.parse(read('references/'+s+'-library.json'))]));
 const ctl=(block,channel,param,value)=>({block,channel,param,value});
-const valueFor=p=>p.kind==='enum'?0:p.kind==='knob'?(p.displayMultiplier||1)/2:p.kind==='integer'?Math.round((p.min+p.max)/2):(p.min+p.max)/2*(p.displayMultiplier||1);
+const valueFor=p=>p.kind==='enum'?0:p.kind==='knob'?(p.displayMultiplier||1)/2:p.kind==='integer'?Math.round((p.min+p.max)/2)*(p.integerScale??1):(p.min+p.max)/2*(p.displayMultiplier||1);
 function fixture(slug,m){const body=Buffer.from(before[slug]),r=records[slug];for(let ch=0;ch<4;ch++)m.words.forEach((v,pid)=>body.writeUInt16LE(v,r.start+2*(ch*r.words+pid)));return body;}
 const policy=(slug,p,body,ch=0)=>typeApplicability(p,readTypeState(p,pid=>body.readUInt16LE(records[slug].start+2*(ch*records[slug].words+pid))));
 // NewLook already contains an inactive Wah assignment; do not clear a modifier to make tests pass.
