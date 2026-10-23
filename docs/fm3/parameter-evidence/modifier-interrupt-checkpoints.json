@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "nativeBinaryFilesIncluded": false,
+  "manuals": [
+    {
+      "url": "https://www.analog.com/media/en/dsp-documentation/processor-manuals/SC58x-2158x-prm.pdf",
+      "revision": "1.5 June 2023",
+      "sha256": "a3edf83beb75b44a77f8366cf54c0353083ab49a1c69d8179d2b727ba7ba1470",
+      "references": [
+        "4-73 to 4-75: interrupt status stack, MODE1STK and RTI",
+        "15-24 Fig15-7: immediate-count F1 loop",
+        "30-11: IIVT bit2 and EIVT bit3"
+      ]
+    },
+    {
+      "url": "https://www.analog.com/media/en/dsp-documentation/processor-manuals/SC58x-2158x-hrm.pdf",
+      "sha256": "d6e5de8eaad4151fb0765cb86e643e385862d693824e6236f56fc4828a6a3aa7",
+      "references": [
+        "53-38 Table53-21: loader BFLAG_AUX is bit5; BCODE bits0-3 are boot-mode-specific, not instruction width"
+      ]
+    },
+    {
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADSP-SC582_583_584_587_589_ADSP-21583_584_587.pdf",
+      "revision": "C",
+      "references": [
+        "Tables4-6: SHARC+ ISA/VISA/byte address aliases; Table5 L2 VISA BA0000..BBFFFF"
+      ]
+    }
+  ],
+  "vectorBaseSource": "https://ez.analog.com/dsp/sharc-processors/adsp-sc5xxadsp-215xx/a/documents/DO9759/where-is-the-default-ivt-of-sharc-core-located-can-it-be-changed",
+  "bootVectorBlock": {
+    "target": "0x28240000",
+    "bytes": 768,
+    "flags": "0xaca10002",
+    "serialization": "128 packed little-endian 48-bit ISA words; not VISA high-parcel-first"
+  },
+  "reviewScope": "Hash-bound linear partition and operand review. Selected MODE1 is read at 830ae3, carried in USTAT1 to 830c43, with no intervening USTAT1 write on reviewed branches. The suffix after 830c43 has no further status-stack or MODE1/MODE1STK write before its compact return. No whole-program CFG or runtime execution proof.",
+  "compactReturnDependency": "modifier-return-result.md: strongly-corroborated-static-hypothesis; not independently certified",
+  "spans": [
+    {
+      "name": "loadedIvt",
+      "source": "bootBytes",
+      "address": "0x28240000",
+      "size": 768,
+      "sha256": "59d62d4e77384a6dfdb4754d50b8d28a7c04abdd2bc73698b4641a8aa399fb82"
+    },
+    {
+      "name": "resetStub",
+      "source": "visa",
+      "address": "0xbb8000",
+      "size": 10,
+      "sha256": "9d789f503924f06fea004d597ee691ee2bb76ec93a26d98ad06228734b87675f"
+    },
+    {
+      "name": "resetDetour",
+      "source": "visa",
+      "address": "0x1c0000",
+      "size": 84,
+      "sha256": "e7e4ce9e19dcc1a03f0dfe1d15a484df87147655d04be6f40783f9dddf484702"
+    },
+    {
+      "name": "startupToSetup",
+      "source": "visa",
+      "address": "0xbb8005",
+      "size": 250,
+      "sha256": "701ea3c5a7dd7dd4fe2d44f84ef6c83305ff8dcc07c21ca2db131965c6ccdc05"
+    },
+    {
+      "name": "setupBanksAndVectorBit",
+      "source": "visa",
+      "address": "0x834390",
+      "size": 214,
+      "sha256": "37fcfe95965b00da433d5e03c75b6ca2a8581b6fa3e701f757d8f060fdab8bd5"
+    },
+    {
+      "name": "schedulerRegistration",
+      "source": "visa",
+      "address": "0x830e36",
+      "size": 52,
+      "sha256": "d6260d27f29c0d77b10389d92bb4a349bd0747d1b78a75280debec7de7c8f15f"
+    },
+    {
+      "name": "registrationHelper",
+      "source": "visa",
+      "address": "0x8337e2",
+      "size": 290,
+      "sha256": "1c31c201098c6170370c984a9f52e64ebae12c055676f229210a988c7d6a09c6"
+    },
+    {
+      "name": "dispatcher",
+      "source": "visa",
+      "address": "0x1cbb7f",
+      "size": 292,
+      "sha256": "5ec44e1ab9c0ff725d31e7ed2e62ba8ed6756d974d22161f8c192d2277743d11"
+    },
+    {
+      "name": "schedulerCallback",
+      "source": "visa",
+      "address": "0x830778",
+      "size": 136,
+      "sha256": "2496e35781d643dd2ea88068cac5464a68f5cdfd78b55b0311fcaa7ac1a07518"
+    },
+    {
+      "name": "contextRestore",
+      "source": "visa",
+      "address": "0x830a1b",
+      "size": 1252,
+      "sha256": "b3c23d22246251c2e798bc63e24f2ff6a8ee6548324a4cc6b4e11966a2d9c627"
+    },
+    {
+      "name": "callbackCapacity",
+      "source": "bootBytes",
+      "address": "0x282e4b20",
+      "size": 4,
+      "sha256": "f7807db623cb4c40490078b6a32874abfad8af75a3f570e480bb6f073f822149"
+    }
+  ]
+}

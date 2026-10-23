@@ -1,0 +1,3514 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "method": "Python exact-input mode-consensus plans; existing codec reencoding in memory; full body and envelope verification",
+  "target": {
+    "record": 0,
+    "source": 14,
+    "effectId": 94,
+    "pid": 5,
+    "channel": 0,
+    "channelScope": "ALL",
+    "minBodyOffset": 1586,
+    "maxBodyOffset": 1588,
+    "storage": "uint16-le"
+  },
+  "fixtureCount": 5,
+  "caseCount": 35,
+  "compressionControls": [
+    {
+      "fixture": "FM3_MOD_DAMPING_LINEAR_export.syx",
+      "inputSha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "noEditRepackedSha256": "74025ebf6c7a34660b79fbda5dafe30b9bdc5d685c35a05765e2a486d46c0abb",
+      "noEditRepackedSyxChangedBytes": 2442,
+      "decompressedBodyUnchanged": true
+    },
+    {
+      "fixture": "FM3_MOD_MIN_2p50_export.syx",
+      "inputSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "noEditRepackedSha256": "78ae474674ed1c7f33e3e182953c06d0c9df87811d0fdd75c03f9cdc3f500cf5",
+      "noEditRepackedSyxChangedBytes": 4619,
+      "decompressedBodyUnchanged": true
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_A_export.syx",
+      "inputSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "noEditRepackedSha256": "241a8c4384b32fcc60bfff4d455360570196fbda7b7635e351cd3dd2503402b0",
+      "noEditRepackedSyxChangedBytes": 5076,
+      "decompressedBodyUnchanged": true
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_B_export.syx",
+      "inputSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "noEditRepackedSha256": "e40e35511a73375faf82a3c391cebb1ff33f189fb99f65ffcec178eb1c6ff507",
+      "noEditRepackedSyxChangedBytes": 4856,
+      "decompressedBodyUnchanged": true
+    },
+    {
+      "fixture": "FM3_MOD_MAX_5p00_export.syx",
+      "inputSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "noEditRepackedSha256": "3fbd3c25f95ce470a00024b353c1b651a549dc4bdb15590bd3511b4f5e428c66",
+      "noEditRepackedSyxChangedBytes": 5035,
+      "decompressedBodyUnchanged": true
+    }
+  ],
+  "cases": [
+    {
+      "fixture": "FM3_MOD_DAMPING_LINEAR_export.syx",
+      "inputSha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "candidateSha256": "919708825ed70d3532d9dada2b7fab5e6a5983264bc19df05ce938283f3a4036",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1587,
+          "before": 0,
+          "after": 64
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 31,
+          "after": 196
+        },
+        {
+          "offset": 5,
+          "before": 6,
+          "after": 244
+        },
+        {
+          "offset": 74,
+          "before": 60,
+          "after": 61
+        }
+      ],
+      "syxChangedByteCount": 5334,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_DAMPING_LINEAR_export.syx",
+      "inputSha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "candidateSha256": "62dd8b4b3ee4a9800de40e1f78bbeaf2b798d125407d875a711ba0955490b77b",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 254,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 255,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 31,
+          "after": 238
+        },
+        {
+          "offset": 5,
+          "before": 6,
+          "after": 33
+        }
+      ],
+      "syxChangedByteCount": 5097,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_DAMPING_LINEAR_export.syx",
+      "inputSha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "candidateSha256": "0b7cd69ac98967acecda05faa236dafeb89ae17159b91e6ef1df6ed21d7fa133",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "5.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "5.00",
+            "normalizedBits": "0x3f000000",
+            "raw": 32767,
+            "modes": {
+              "32-nearest": 32767,
+              "40-nearest": 32767,
+              "32-zero": 32767,
+              "40-zero": 32767
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 32767
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 254,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 255,
+          "after": 127
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 31,
+          "after": 208
+        },
+        {
+          "offset": 5,
+          "before": 6,
+          "after": 29
+        },
+        {
+          "offset": 74,
+          "before": 60,
+          "after": 59
+        }
+      ],
+      "syxChangedByteCount": 5187,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_DAMPING_LINEAR_export.syx",
+      "inputSha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "candidateSha256": "73ee78af33ff4722e60d80e555d26c000dcfd6a0100712800d4ed74c8b29117e",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1587,
+          "before": 0,
+          "after": 64
+        },
+        {
+          "offset": 1588,
+          "before": 254,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 255,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 31,
+          "after": 34
+        },
+        {
+          "offset": 5,
+          "before": 6,
+          "after": 14
+        },
+        {
+          "offset": 74,
+          "before": 60,
+          "after": 61
+        }
+      ],
+      "syxChangedByteCount": 5310,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_DAMPING_LINEAR_export.syx",
+      "inputSha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "candidateSha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "bodyChanges": [],
+      "rawHeaderChanges": [],
+      "syxChangedByteCount": 0,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_DAMPING_LINEAR_export.syx",
+      "inputSha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "candidateSha256": "799ea53ab377cb434ebef7d8be3178fea23cb28928ce2ac4498ee1c6feed2b23",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "6.46",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "6.46",
+            "normalizedBits": "0x3f256042",
+            "raw": 42335,
+            "modes": {
+              "32-nearest": 42335,
+              "40-nearest": 42335,
+              "32-zero": 42335,
+              "40-zero": 42335
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 42335,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 0,
+          "after": 95
+        },
+        {
+          "offset": 1587,
+          "before": 0,
+          "after": 165
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 31,
+          "after": 148
+        },
+        {
+          "offset": 5,
+          "before": 6,
+          "after": 24
+        },
+        {
+          "offset": 74,
+          "before": 60,
+          "after": 62
+        }
+      ],
+      "syxChangedByteCount": 5952,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_DAMPING_LINEAR_export.syx",
+      "inputSha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+      "candidateSha256": "ae9a026737ce9c3d4e97c10ae413b0e637375a88de667f2fbf49965fc7fe2842",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "6.48"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "6.48",
+            "normalizedBits": "0x3f25e354",
+            "raw": 42466,
+            "modes": {
+              "32-nearest": 42466,
+              "40-nearest": 42466,
+              "32-zero": 42466,
+              "40-zero": 42466
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 42466
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 254,
+          "after": 226
+        },
+        {
+          "offset": 1589,
+          "before": 255,
+          "after": 165
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 31,
+          "after": 144
+        },
+        {
+          "offset": 5,
+          "before": 6,
+          "after": 217
+        },
+        {
+          "offset": 74,
+          "before": 60,
+          "after": 61
+        }
+      ],
+      "syxChangedByteCount": 5477,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MIN_2p50_export.syx",
+      "inputSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "candidateSha256": "919708825ed70d3532d9dada2b7fab5e6a5983264bc19df05ce938283f3a4036",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 64
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 181,
+          "after": 196
+        },
+        {
+          "offset": 5,
+          "before": 81,
+          "after": 244
+        },
+        {
+          "offset": 74,
+          "before": 64,
+          "after": 61
+        }
+      ],
+      "syxChangedByteCount": 6099,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MIN_2p50_export.syx",
+      "inputSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "candidateSha256": "6b67709dc5d8d6c24576b9e09e152a8b7630b955642a5eba53c9f2aff173c182",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 16375,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 254,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 255,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 181,
+          "after": 175
+        },
+        {
+          "offset": 5,
+          "before": 81,
+          "after": 205
+        }
+      ],
+      "syxChangedByteCount": 5356,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MIN_2p50_export.syx",
+      "inputSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "candidateSha256": "695ea7667a810fdee6d03e674f89caba9b054508bc0e8a7c30d87182b33e1c65",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "5.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "5.00",
+            "normalizedBits": "0x3f000000",
+            "raw": 32767,
+            "modes": {
+              "32-nearest": 32767,
+              "40-nearest": 32767,
+              "32-zero": 32767,
+              "40-zero": 32767
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 16375,
+        "max": 32767
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 254,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 255,
+          "after": 127
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 181,
+          "after": 235
+        },
+        {
+          "offset": 5,
+          "before": 81,
+          "after": 133
+        }
+      ],
+      "syxChangedByteCount": 4851,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MIN_2p50_export.syx",
+      "inputSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "candidateSha256": "73ee78af33ff4722e60d80e555d26c000dcfd6a0100712800d4ed74c8b29117e",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 64
+        },
+        {
+          "offset": 1588,
+          "before": 254,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 255,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 181,
+          "after": 34
+        },
+        {
+          "offset": 5,
+          "before": 81,
+          "after": 14
+        },
+        {
+          "offset": 74,
+          "before": 64,
+          "after": 61
+        }
+      ],
+      "syxChangedByteCount": 6053,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MIN_2p50_export.syx",
+      "inputSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "candidateSha256": "74025ebf6c7a34660b79fbda5dafe30b9bdc5d685c35a05765e2a486d46c0abb",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 0
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 181,
+          "after": 228
+        },
+        {
+          "offset": 5,
+          "before": 81,
+          "after": 205
+        },
+        {
+          "offset": 74,
+          "before": 64,
+          "after": 60
+        }
+      ],
+      "syxChangedByteCount": 5956,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MIN_2p50_export.syx",
+      "inputSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "candidateSha256": "799ea53ab377cb434ebef7d8be3178fea23cb28928ce2ac4498ee1c6feed2b23",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "6.46",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "6.46",
+            "normalizedBits": "0x3f256042",
+            "raw": 42335,
+            "modes": {
+              "32-nearest": 42335,
+              "40-nearest": 42335,
+              "32-zero": 42335,
+              "40-zero": 42335
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 42335,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 95
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 165
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 181,
+          "after": 148
+        },
+        {
+          "offset": 5,
+          "before": 81,
+          "after": 24
+        },
+        {
+          "offset": 74,
+          "before": 64,
+          "after": 62
+        }
+      ],
+      "syxChangedByteCount": 5940,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MIN_2p50_export.syx",
+      "inputSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "candidateSha256": "ae9a026737ce9c3d4e97c10ae413b0e637375a88de667f2fbf49965fc7fe2842",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "6.48"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "6.48",
+            "normalizedBits": "0x3f25e354",
+            "raw": 42466,
+            "modes": {
+              "32-nearest": 42466,
+              "40-nearest": 42466,
+              "32-zero": 42466,
+              "40-zero": 42466
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 65534
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 42466
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 0
+        },
+        {
+          "offset": 1588,
+          "before": 254,
+          "after": 226
+        },
+        {
+          "offset": 1589,
+          "before": 255,
+          "after": 165
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 181,
+          "after": 144
+        },
+        {
+          "offset": 5,
+          "before": 81,
+          "after": 217
+        },
+        {
+          "offset": 74,
+          "before": 64,
+          "after": 61
+        }
+      ],
+      "syxChangedByteCount": 5970,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_A_export.syx",
+      "inputSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "candidateSha256": "b780f7abf600f1a9d991a07ebd306603d05c121f7a576a1e415288e5419cd178",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 49159
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 64
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 119,
+          "after": 26
+        },
+        {
+          "offset": 5,
+          "before": 104,
+          "after": 191
+        },
+        {
+          "offset": 74,
+          "before": 82,
+          "after": 79
+        }
+      ],
+      "syxChangedByteCount": 5993,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_A_export.syx",
+      "inputSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "candidateSha256": "bcd4ceabf0c1c43fbf063736b8c9e7a8e052823cb22a7519441d35f7483ade69",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 16375,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 119,
+          "after": 250
+        },
+        {
+          "offset": 5,
+          "before": 104,
+          "after": 209
+        },
+        {
+          "offset": 74,
+          "before": 82,
+          "after": 79
+        }
+      ],
+      "syxChangedByteCount": 6059,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_A_export.syx",
+      "inputSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "candidateSha256": "b065b8bea75df2fae91e8a427653d95f25544681a0d2c77cd8a16c20ef84ff41",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "5.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "5.00",
+            "normalizedBits": "0x3f000000",
+            "raw": 32767,
+            "modes": {
+              "32-nearest": 32767,
+              "40-nearest": 32767,
+              "32-zero": 32767,
+              "40-zero": 32767
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 16375,
+        "max": 32767
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 127
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 119,
+          "after": 212
+        },
+        {
+          "offset": 5,
+          "before": 104,
+          "after": 63
+        },
+        {
+          "offset": 74,
+          "before": 82,
+          "after": 78
+        }
+      ],
+      "syxChangedByteCount": 6158,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_A_export.syx",
+      "inputSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "candidateSha256": "992e0cddb7b328fe5cbe5973267c8c2554fb9a6dc2ffcebe7a6e66446896884f",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 64
+        },
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 119,
+          "after": 160
+        },
+        {
+          "offset": 5,
+          "before": 104,
+          "after": 145
+        },
+        {
+          "offset": 74,
+          "before": 82,
+          "after": 76
+        }
+      ],
+      "syxChangedByteCount": 6087,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_A_export.syx",
+      "inputSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "candidateSha256": "a9364302c8d9f66ea50d981f9811ce1c1c86a5773c5c438b2ddd4c10dcbd7105",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 0
+        },
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 254
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 255
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 119,
+          "after": 227
+        },
+        {
+          "offset": 5,
+          "before": 104,
+          "after": 55
+        },
+        {
+          "offset": 74,
+          "before": 82,
+          "after": 74
+        }
+      ],
+      "syxChangedByteCount": 6038,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_A_export.syx",
+      "inputSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "candidateSha256": "cdca1a0403359fcdcbcb24868a1f4e47ad8ff3c1fd898224612c69f9f47a6030",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "6.46",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "6.46",
+            "normalizedBits": "0x3f256042",
+            "raw": 42335,
+            "modes": {
+              "32-nearest": 42335,
+              "40-nearest": 42335,
+              "32-zero": 42335,
+              "40-zero": 42335
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 42335,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 95
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 165
+        },
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 254
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 255
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 119,
+          "after": 66
+        },
+        {
+          "offset": 5,
+          "before": 104,
+          "after": 32
+        },
+        {
+          "offset": 74,
+          "before": 82,
+          "after": 77
+        }
+      ],
+      "syxChangedByteCount": 6196,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_A_export.syx",
+      "inputSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "candidateSha256": "821acb2059c4487ac86b0f4b13d1a78c03a2047d2ad6fef074365027a0854426",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "6.48"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "6.48",
+            "normalizedBits": "0x3f25e354",
+            "raw": 42466,
+            "modes": {
+              "32-nearest": 42466,
+              "40-nearest": 42466,
+              "32-zero": 42466,
+              "40-zero": 42466
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 42466
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 0
+        },
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 226
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 165
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 119,
+          "after": 130
+        },
+        {
+          "offset": 5,
+          "before": 104,
+          "after": 62
+        },
+        {
+          "offset": 74,
+          "before": 82,
+          "after": 76
+        }
+      ],
+      "syxChangedByteCount": 6051,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_B_export.syx",
+      "inputSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "candidateSha256": "3851d5136075d78050c879eb129fbf0f0573ac1390be770e97d6b85e111d20b2",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 49159
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 64
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 143,
+          "after": 189
+        },
+        {
+          "offset": 5,
+          "before": 2,
+          "after": 81
+        },
+        {
+          "offset": 74,
+          "before": 81,
+          "after": 78
+        }
+      ],
+      "syxChangedByteCount": 5867,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_B_export.syx",
+      "inputSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "candidateSha256": "bb89d9c51ae827eee1abc961444ea0de6d4f759bcc05d4138de50a47624633c3",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 16375,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 143,
+          "after": 4
+        },
+        {
+          "offset": 5,
+          "before": 2,
+          "after": 207
+        },
+        {
+          "offset": 74,
+          "before": 81,
+          "after": 78
+        }
+      ],
+      "syxChangedByteCount": 6054,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_B_export.syx",
+      "inputSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "candidateSha256": "47b193f150d9e085edcf69a7cee526ee8f30b453f5ce63a6ffe81823ee8af0ec",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "5.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "5.00",
+            "normalizedBits": "0x3f000000",
+            "raw": 32767,
+            "modes": {
+              "32-nearest": 32767,
+              "40-nearest": 32767,
+              "32-zero": 32767,
+              "40-zero": 32767
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 16375,
+        "max": 32767
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 127
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 143,
+          "after": 173
+        },
+        {
+          "offset": 5,
+          "before": 2,
+          "after": 129
+        },
+        {
+          "offset": 74,
+          "before": 81,
+          "after": 77
+        }
+      ],
+      "syxChangedByteCount": 5948,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_B_export.syx",
+      "inputSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "candidateSha256": "bc676f5b137297eb4551d7ac9c51ab609798d9043f9f250d7e74b93131e38191",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 64
+        },
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 143,
+          "after": 99
+        },
+        {
+          "offset": 5,
+          "before": 2,
+          "after": 153
+        },
+        {
+          "offset": 74,
+          "before": 81,
+          "after": 75
+        }
+      ],
+      "syxChangedByteCount": 6037,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_B_export.syx",
+      "inputSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "candidateSha256": "a10eef06132fd2db959f78e4069b69091780e24167feb5a124768f2419fb4a16",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 0
+        },
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 254
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 255
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 143,
+          "after": 88
+        },
+        {
+          "offset": 5,
+          "before": 2,
+          "after": 188
+        },
+        {
+          "offset": 74,
+          "before": 81,
+          "after": 73
+        }
+      ],
+      "syxChangedByteCount": 5647,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_B_export.syx",
+      "inputSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "candidateSha256": "0e6f811f057e91a61ab6436940054b0865922aef9693be4e29e80bd2d56fbaab",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "6.46",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "6.46",
+            "normalizedBits": "0x3f256042",
+            "raw": 42335,
+            "modes": {
+              "32-nearest": 42335,
+              "40-nearest": 42335,
+              "32-zero": 42335,
+              "40-zero": 42335
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 42335,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 95
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 165
+        },
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 254
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 255
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 143,
+          "after": 84
+        },
+        {
+          "offset": 5,
+          "before": 2,
+          "after": 131
+        },
+        {
+          "offset": 74,
+          "before": 81,
+          "after": 76
+        }
+      ],
+      "syxChangedByteCount": 6185,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_BATCH_B_export.syx",
+      "inputSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "candidateSha256": "13c9fa9588566820361940cfe6b041c75ace37e3be4669a8bb288eb282252e60",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "6.48"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "6.48",
+            "normalizedBits": "0x3f25e354",
+            "raw": 42466,
+            "modes": {
+              "32-nearest": 42466,
+              "40-nearest": 42466,
+              "32-zero": 42466,
+              "40-zero": 42466
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 49159
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 42466
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 0
+        },
+        {
+          "offset": 1588,
+          "before": 7,
+          "after": 226
+        },
+        {
+          "offset": 1589,
+          "before": 192,
+          "after": 165
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 143,
+          "after": 144
+        },
+        {
+          "offset": 5,
+          "before": 2,
+          "after": 60
+        },
+        {
+          "offset": 74,
+          "before": 81,
+          "after": 75
+        }
+      ],
+      "syxChangedByteCount": 6172,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MAX_5p00_export.syx",
+      "inputSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "candidateSha256": "a71776fe5ac0a2f4b3638140b951dc87564286d24cbd10f932b4c38f51411d35",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 32784
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 32784
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 64
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 124,
+          "after": 50
+        },
+        {
+          "offset": 5,
+          "before": 181,
+          "after": 90
+        },
+        {
+          "offset": 74,
+          "before": 79,
+          "after": 76
+        }
+      ],
+      "syxChangedByteCount": 5999,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MAX_5p00_export.syx",
+      "inputSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "candidateSha256": "bb89d9c51ae827eee1abc961444ea0de6d4f759bcc05d4138de50a47624633c3",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 32784
+      },
+      "afterRaw": {
+        "min": 16375,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 16,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 128,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 124,
+          "after": 4
+        },
+        {
+          "offset": 5,
+          "before": 181,
+          "after": 207
+        },
+        {
+          "offset": 74,
+          "before": 79,
+          "after": 78
+        }
+      ],
+      "syxChangedByteCount": 5254,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MAX_5p00_export.syx",
+      "inputSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "candidateSha256": "47b193f150d9e085edcf69a7cee526ee8f30b453f5ce63a6ffe81823ee8af0ec",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "max": "5.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "5.00",
+            "normalizedBits": "0x3f000000",
+            "raw": 32767,
+            "modes": {
+              "32-nearest": 32767,
+              "40-nearest": 32767,
+              "32-zero": 32767,
+              "40-zero": 32767
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 32784
+      },
+      "afterRaw": {
+        "min": 16375,
+        "max": 32767
+      },
+      "bodyChanges": [
+        {
+          "offset": 1588,
+          "before": 16,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 128,
+          "after": 127
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 124,
+          "after": 173
+        },
+        {
+          "offset": 5,
+          "before": 181,
+          "after": 129
+        },
+        {
+          "offset": 74,
+          "before": 79,
+          "after": 77
+        }
+      ],
+      "syxChangedByteCount": 5742,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MAX_5p00_export.syx",
+      "inputSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "candidateSha256": "bc676f5b137297eb4551d7ac9c51ab609798d9043f9f250d7e74b93131e38191",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "2.50",
+        "max": "7.50"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "2.50",
+            "normalizedBits": "0x3e800000",
+            "raw": 16384,
+            "modes": {
+              "32-nearest": 16384,
+              "40-nearest": 16384,
+              "32-zero": 16384,
+              "40-zero": 16384
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "7.50",
+            "normalizedBits": "0x3f400000",
+            "raw": 49151,
+            "modes": {
+              "32-nearest": 49151,
+              "40-nearest": 49151,
+              "32-zero": 49151,
+              "40-zero": 49151
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 32784
+      },
+      "afterRaw": {
+        "min": 16384,
+        "max": 49151
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 64
+        },
+        {
+          "offset": 1588,
+          "before": 16,
+          "after": 255
+        },
+        {
+          "offset": 1589,
+          "before": 128,
+          "after": 191
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 124,
+          "after": 99
+        },
+        {
+          "offset": 5,
+          "before": 181,
+          "after": 153
+        },
+        {
+          "offset": 74,
+          "before": 79,
+          "after": 75
+        }
+      ],
+      "syxChangedByteCount": 5942,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MAX_5p00_export.syx",
+      "inputSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "candidateSha256": "a10eef06132fd2db959f78e4069b69091780e24167feb5a124768f2419fb4a16",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 32784
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 0
+        },
+        {
+          "offset": 1588,
+          "before": 16,
+          "after": 254
+        },
+        {
+          "offset": 1589,
+          "before": 128,
+          "after": 255
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 124,
+          "after": 88
+        },
+        {
+          "offset": 5,
+          "before": 181,
+          "after": 188
+        },
+        {
+          "offset": 74,
+          "before": 79,
+          "after": 73
+        }
+      ],
+      "syxChangedByteCount": 6099,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MAX_5p00_export.syx",
+      "inputSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "candidateSha256": "0e6f811f057e91a61ab6436940054b0865922aef9693be4e29e80bd2d56fbaab",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "6.46",
+        "max": "10.00"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "6.46",
+            "normalizedBits": "0x3f256042",
+            "raw": 42335,
+            "modes": {
+              "32-nearest": 42335,
+              "40-nearest": 42335,
+              "32-zero": 42335,
+              "40-zero": 42335
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "10.00",
+            "normalizedBits": "0x3f800000",
+            "raw": 65534,
+            "modes": {
+              "32-nearest": 65534,
+              "40-nearest": 65534,
+              "32-zero": 65534,
+              "40-zero": 65534
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 32784
+      },
+      "afterRaw": {
+        "min": 42335,
+        "max": 65534
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 95
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 165
+        },
+        {
+          "offset": 1588,
+          "before": 16,
+          "after": 254
+        },
+        {
+          "offset": 1589,
+          "before": 128,
+          "after": 255
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 124,
+          "after": 84
+        },
+        {
+          "offset": 5,
+          "before": 181,
+          "after": 131
+        },
+        {
+          "offset": 74,
+          "before": 79,
+          "after": 76
+        }
+      ],
+      "syxChangedByteCount": 5863,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    },
+    {
+      "fixture": "FM3_MOD_MAX_5p00_export.syx",
+      "inputSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "candidateSha256": "13c9fa9588566820361940cfe6b041c75ace37e3be4669a8bb288eb282252e60",
+      "candidateKind": "synthetic-in-memory-only; not device evidence",
+      "request": {
+        "policy": "exact-wah-cent-v1",
+        "min": "0.00",
+        "max": "6.48"
+      },
+      "plan": {
+        "policy": "exact-wah-cent-v1",
+        "changes": [
+          {
+            "field": "min",
+            "pid": 1,
+            "bodyOffset": 1586,
+            "exactDecimal": "0.00",
+            "normalizedBits": "0x00000000",
+            "raw": 0,
+            "modes": {
+              "32-nearest": 0,
+              "40-nearest": 0,
+              "32-zero": 0,
+              "40-zero": 0
+            }
+          },
+          {
+            "field": "max",
+            "pid": 2,
+            "bodyOffset": 1588,
+            "exactDecimal": "6.48",
+            "normalizedBits": "0x3f25e354",
+            "raw": 42466,
+            "modes": {
+              "32-nearest": 42466,
+              "40-nearest": 42466,
+              "32-zero": 42466,
+              "40-zero": 42466
+            }
+          }
+        ],
+        "interpretation": "Proposed exact request, not an observed display-to-word lookup",
+        "runtimeModeAtStoreProven": false,
+        "fullRangeEncodingProven": false
+      },
+      "beforeRaw": {
+        "min": 16375,
+        "max": 32784
+      },
+      "afterRaw": {
+        "min": 0,
+        "max": 42466
+      },
+      "bodyChanges": [
+        {
+          "offset": 1586,
+          "before": 247,
+          "after": 0
+        },
+        {
+          "offset": 1587,
+          "before": 63,
+          "after": 0
+        },
+        {
+          "offset": 1588,
+          "before": 16,
+          "after": 226
+        },
+        {
+          "offset": 1589,
+          "before": 128,
+          "after": 165
+        }
+      ],
+      "rawHeaderChanges": [
+        {
+          "offset": 4,
+          "before": 124,
+          "after": 144
+        },
+        {
+          "offset": 5,
+          "before": 181,
+          "after": 60
+        },
+        {
+          "offset": 74,
+          "before": 79,
+          "after": 75
+        }
+      ],
+      "syxChangedByteCount": 6167,
+      "checks": {
+        "exactRequestedBody": true,
+        "unrequestedWordsPreserved": true,
+        "targetAndScenesPreserved": true,
+        "unchangedInput": true,
+        "rawHeaderPreservedExceptCrcAndCompressionLength": true,
+        "paddingZero": true,
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true
+      },
+      "deviceIO": false,
+      "presetFileWritten": false,
+      "deviceImportTested": false,
+      "runtimeModeAtStoreProven": false,
+      "fullRangeEncodingProven": false,
+      "generatorWriteSupportAdded": false
+    }
+  ],
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "presetFilesWritten": 0,
+  "fullRangeEncodingProven": false,
+  "runtimeModeAtStoreProven": false,
+  "generatorWriteSupportAdded": false,
+  "limits": [
+    "Only five pinned captures and explicit exact-wah-cent-v1 requests.",
+    "A request is not inferred from a historical display label; unrequested raw words are retained.",
+    "6.47 rejected by mode consensus; packet input and live MODE1 have not been measured.",
+    "A checksum-valid roundtrip does not prove device import, DSP, pedal, audio, CPU, or UI display.",
+    "Recompression changes serialized bytes beyond the two raw fields; full decompressed body is checked."
+  ]
+}

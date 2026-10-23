@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2070,
-  "filePaths": 2274,
+  "uniqueContents": 2071,
+  "filePaths": 2275,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -3400,6 +3400,12 @@
         "references/filter-batch-20261008-132133/capture-20261008T132131-9226fea59b/capture.json"
       ]
     },
+    "468ab4c092ccf5fae9b4dda38cacb5d3a64f35fc78b850218e70588ff0a8c54b": {
+      "bytes": 61603,
+      "paths": [
+        "references/wah-minmax-exact.json"
+      ]
+    },
     "47100f661c57f5be1d9f703670d390991225ca240cf6d706fde0c5e090c0208b": {
       "bytes": 5025,
       "paths": [
@@ -6639,6 +6645,12 @@
       "bytes": 17618,
       "paths": [
         "references/delay-batch-20261006-134023/capture-20261006T133830-b175fdafea/capture.json"
+      ]
+    },
+    "89892cb6d947fe0fbab8ff87b51d45f1f26b144529652e886a42d799270ba7c0": {
+      "bytes": 15473,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "89d5c92716bd3e6959ed451b3da9ea2cb592925a397e7fb4b66cf6aec58d233b": {
@@ -10094,12 +10106,6 @@
       "bytes": 456,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T110501-0e96926020/pair.json"
-      ]
-    },
-    "d15fa509fb98ba658242bc28653b0be9fbd79db32d69e81cf40d626795bae568": {
-      "bytes": 15065,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "d17bf4216abd18fd552585adec4cb41235d804770e8170e295687405d972d374": {

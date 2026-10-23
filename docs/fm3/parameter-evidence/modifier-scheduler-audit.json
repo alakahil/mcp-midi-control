@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "sources": {
+    "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3"
+  },
+  "method": "bounded static operands and frame coordinates; no scheduler/CPU execution",
+  "checkpointCount": 12,
+  "task": {
+    "name": "coreTask",
+    "entry": "0x82ded0",
+    "controlBlock": "0x809cc940",
+    "creator": "0x83254e",
+    "stackBuilder": "0x830d26",
+    "initialModeExpression": "(creator MODE1 & 0xff1f1b00) | 0x01010000",
+    "initialPrecision": "32-nearest",
+    "initialScalarMode": true,
+    "initialModeFrameByteOffset": 344
+  },
+  "context": {
+    "registerCode": "0x7d",
+    "sharcPlusName": "MODE1STK",
+    "legacyDecoderLabel": "LRPTL",
+    "save": "0x83081d -> 0x83083e",
+    "restore": "0x830ae3 -> 0x830c43",
+    "originalWordStoredSeparatelyFromSafeSchedulerMode": true,
+    "wholeInterruptReturnPathProven": false
+  },
+  "packetCalls": [
+    {
+      "call": "0x82e082",
+      "phase": "early gate loop"
+    },
+    {
+      "call": "0x82e075",
+      "phase": "normal work loop"
+    }
+  ],
+  "immediatePrePollHelper": {
+    "function": "0x82c78a",
+    "modePreserving": true,
+    "callees": [
+      "0x1c8aa2",
+      "0x82c6e4"
+    ]
+  },
+  "openCallScope": {
+    "initializers": [
+      "0x82c228",
+      "0x82fe42",
+      "0x80f1ba",
+      "0x8289bc",
+      "0x825e21",
+      "0x8304ab",
+      "0x1c8b15"
+    ],
+    "loopCallees": [
+      "0x82b193",
+      "0x811a83",
+      "0x80ea77",
+      "0x82c97d"
+    ],
+    "indirectCall": "0x82e05a via object+0x14c, op86/PID0x3fad",
+    "otherPacketOperationsAndPostStoreReturn": true,
+    "meaning": "These are explicit unresolved transitive call scopes, not observed mode leaks."
+  },
+  "proposedCentGrid": {
+    "policy": "Proposed exact decimal 0.00..10.00 by 0.01, divided by 10 then rounded to nearest-even float32; not a recovered editor rule.",
+    "points": 1001,
+    "modeIndependent": 1000,
+    "ambiguous": [
+      {
+        "display": "6.47",
+        "normalizedBits": "0x3f25a1cb",
+        "results": {
+          "32-nearest": 42401,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        }
+      }
+    ],
+    "rationalNormalizationChecked": true,
+    "rowsSha256": "26101bca81f26cf912a86297da6777e8701bd76b396547832802f0caa7c18895",
+    "generatorPolicyEnabled": false
+  },
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "nextStep": "Prepare an offline in-memory preset byte-diff candidate for explicit mode-consensus inputs; keep 6.47 blocked. Resolve caller scope or use a known-float batch before supporting that ambiguous point; display-only dragging cannot distinguish it."
+}

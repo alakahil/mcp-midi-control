@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "method": "Independent ADI binary comparison, official-manual consistency check, bounded native operands; no CPU execution or new REA decompilation.",
+  "checkpointCount": 8,
+  "manual": {
+    "type11cFigureConflictsWithType2c": true,
+    "proposedTypoCorrection": "0xc080 -> 0x0a80",
+    "proposedCorrectionOfficiallyConfirmed": false,
+    "collisionExamples": [
+      {
+        "opcode": "0xc080",
+        "shortAdd": {
+          "destination": 8,
+          "left": 8,
+          "right": 0
+        }
+      },
+      {
+        "opcode": "0xc0be",
+        "shortAdd": {
+          "destination": 11,
+          "left": 11,
+          "right": 14
+        }
+      },
+      {
+        "opcode": "0xc0fe",
+        "shortAdd": {
+          "destination": 15,
+          "left": 15,
+          "right": 14
+        }
+      }
+    ]
+  },
+  "returnSites": [
+    {
+      "source": "fm3",
+      "at": "0x1cb17a",
+      "opcode": "0xafe",
+      "hypothesis": {
+        "kind": "RTS",
+        "delayed": true,
+        "condition": 31,
+        "loopReturn": false
+      },
+      "delaySlots": [
+        "0x1cb17b",
+        "0x1cb17e"
+      ]
+    },
+    {
+      "source": "fm3",
+      "at": "0x8307bb",
+      "opcode": "0xabe",
+      "hypothesis": {
+        "kind": "RTS",
+        "delayed": false,
+        "condition": 31,
+        "loopReturn": false
+      },
+      "delaySlots": []
+    },
+    {
+      "source": "fm3",
+      "at": "0x830c8c",
+      "opcode": "0xabe",
+      "hypothesis": {
+        "kind": "RTS",
+        "delayed": false,
+        "condition": 31,
+        "loopReturn": false
+      },
+      "delaySlots": []
+    },
+    {
+      "source": "fm3",
+      "at": "0x1cbbe0",
+      "opcode": "0xafe",
+      "hypothesis": {
+        "kind": "RTS",
+        "delayed": true,
+        "condition": 31,
+        "loopReturn": false
+      },
+      "delaySlots": [
+        "0x1cbbe1",
+        "0x1cbbe3"
+      ]
+    },
+    {
+      "source": "fm3",
+      "at": "0x1cbc0c",
+      "opcode": "0xbfe",
+      "hypothesis": {
+        "kind": "RTI",
+        "delayed": true,
+        "condition": 31,
+        "loopReturn": false
+      },
+      "delaySlots": [
+        "0x1cbc0d",
+        "0x1cbc0f"
+      ]
+    },
+    {
+      "source": "adiLed",
+      "at": "0x1c03b9",
+      "opcode": "0xafe",
+      "hypothesis": {
+        "kind": "RTS",
+        "delayed": true,
+        "condition": 31,
+        "loopReturn": false
+      },
+      "delaySlots": [
+        "0x1c03ba",
+        "0x1c03bc"
+      ]
+    },
+    {
+      "source": "adiLed",
+      "at": "0x1c05af",
+      "opcode": "0xabe",
+      "hypothesis": {
+        "kind": "RTS",
+        "delayed": false,
+        "condition": 31,
+        "loopReturn": false
+      },
+      "delaySlots": []
+    },
+    {
+      "source": "adiLed",
+      "at": "0x1c044d",
+      "opcode": "0xbfe",
+      "hypothesis": {
+        "kind": "RTI",
+        "delayed": true,
+        "condition": 31,
+        "loopReturn": false
+      },
+      "delaySlots": [
+        "0x1c044e",
+        "0x1c0450"
+      ]
+    }
+  ],
+  "exactInterruptEpilogueMatch": {
+    "bytes": 86,
+    "sha256": "21a58ed7405d17ba3327e6a24266b5a06419be33d80b60e09a4eb051ad367d64"
+  },
+  "exactDivisionPrefixMatch": {
+    "bytes": 80,
+    "sha256": "861907df6f52cc4bfe83ce9a8345646cd2af592ca5ae1e82abc7ee3a0f7781ab"
+  },
+  "wholeDivisionHelpersIdentical": false,
+  "adiDivisionRestore": {
+    "returnAt": "0x1c0239",
+    "encodingBits": 48,
+    "restoreAt": "0x1c023c",
+    "sourceRegister": "R8",
+    "provesFm3CompactOpcode": false
+  },
+  "dispatcher": {
+    "entry": "0x1cbb7f",
+    "continuation": "0x1cbbe6",
+    "callbackTable": "0x2e4b28",
+    "mapTable": "0x2e4920",
+    "callbackTransfer": "0x1cbbe0",
+    "finalReturn": "0x1cbc0c",
+    "finalReturnCandidateLocated": true,
+    "activeVectorAndAllRuntimeRegistrationsProven": false
+  },
+  "compactReturnInterpretation": "strongly-corroborated-static-hypothesis",
+  "independentAssemblerOrExecutionWitnessObtained": false,
+  "divisionNativeReturnSemanticsProven": false,
+  "wholeInterruptReturnPathProven": false,
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "nextStep": "Trace the existing interrupt vector to 0x1cbb7f and the known callback/MODE1STK path. Seek an independent SHARC+ assembler listing or corrected opcode table for final compact-opcode confirmation; no preset export required."
+}

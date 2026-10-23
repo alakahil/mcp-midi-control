@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "method": "Hash-bound manual inventory, native control/MODE1 readers, all-branch symbolic model and symbol-bound ADI DXE comparison; no live execution.",
+  "checkpointCount": 17,
+  "uniqueInstructionBoundaries": 632,
+  "newlyClosedInitializer": {
+    "entry": "0x8304ab",
+    "sid": 52,
+    "proof": {
+      "states": 67,
+      "returnSites": [
+        "0x83056e"
+      ],
+      "synchronousCallees": [
+        "0x830378",
+        "0x8369da",
+        "0x836a93"
+      ],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "scope": "Synchronous MODE1 effects under reviewed SID provenance, valid scalar ABI/memory/return behavior, no asynchronous interrupt or exception. Callback registration does not execute the callback."
+  },
+  "mathLeaf": {
+    "entry": "0x1cb77a",
+    "save": "0x1cb77f",
+    "temporaryMask": "0x800000",
+    "restore": "0x1cb7e0",
+    "return48": "0x1cb7e8",
+    "proof": {
+      "states": 43,
+      "returnSites": [
+        "0x1cb7e8"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "usesCompactReturn": false
+  },
+  "functionProofs": {
+    "0x1cb77a": {
+      "states": 43,
+      "returnSites": [
+        "0x1cb7e8"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x830378": {
+      "states": 116,
+      "returnSites": [
+        "0x8304a7"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x8304ab": {
+      "states": 67,
+      "returnSites": [
+        "0x83056e"
+      ],
+      "synchronousCallees": [
+        "0x830378",
+        "0x8369da",
+        "0x836a93"
+      ],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x8336e4": {
+      "states": 17,
+      "returnSites": [
+        "0x833713"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x8337e2": {
+      "states": 66,
+      "returnSites": [
+        "0x833834"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x833876": {
+      "states": 67,
+      "returnSites": [
+        "0x833834"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x8369da": {
+      "states": 66,
+      "returnSites": [
+        "0x836a8f"
+      ],
+      "synchronousCallees": [
+        "0x836ac8",
+        "0x83763a",
+        "0x837668",
+        "0x837690",
+        "0xbb816c",
+        "0xbb81bc",
+        "0xbb81dd"
+      ],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x836a93": {
+      "states": 18,
+      "returnSites": [
+        "0x836ac4"
+      ],
+      "synchronousCallees": [
+        "0x836ac8",
+        "0x83761c"
+      ],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x836ac8": {
+      "states": 7,
+      "returnSites": [
+        "0x836ad5"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x83761c": {
+      "states": 11,
+      "returnSites": [
+        "0x837636"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x83763a": {
+      "states": 20,
+      "returnSites": [
+        "0x837664"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x837668": {
+      "states": 14,
+      "returnSites": [
+        "0x83768c"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0x837690": {
+      "states": 14,
+      "returnSites": [
+        "0x8376b2"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0xbb816c": {
+      "states": 31,
+      "returnSites": [
+        "0xbb81b8"
+      ],
+      "synchronousCallees": [
+        "0x8337e2",
+        "0xbb8221"
+      ],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0xbb81bc": {
+      "states": 12,
+      "returnSites": [
+        "0xbb81d9"
+      ],
+      "synchronousCallees": [
+        "0x8336e4"
+      ],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0xbb81dd": {
+      "states": 26,
+      "returnSites": [
+        "0xbb821d"
+      ],
+      "synchronousCallees": [
+        "0x833876",
+        "0xbb8221"
+      ],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "0xbb8221": {
+      "states": 8,
+      "returnSites": [
+        "0xbb822f"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    }
+  },
+  "independentDxe": {
+    "sha256": "6375e296042ad0371f546157a01c63262dd7d5907fdda505d59ec829519bf9df",
+    "target": "ADSP-SC594",
+    "symbols": [
+      {
+        "name": "__dispatcher_SEC",
+        "address": 1836701,
+        "size": 110,
+        "section": 19,
+        "kind": 2
+      },
+      {
+        "name": "__dispatcher_SEC_rtn",
+        "address": 1836843,
+        "size": 0,
+        "section": 19,
+        "kind": 2
+      },
+      {
+        "name": "__dispatcher_rtn",
+        "address": 1836846,
+        "size": 0,
+        "section": 19,
+        "kind": 2
+      },
+      {
+        "name": "___lib_setup_c",
+        "address": 1837190,
+        "size": 142,
+        "section": 19,
+        "kind": 2
+      },
+      {
+        "name": "___lib_fdiv",
+        "address": 1835684,
+        "size": 78,
+        "section": 19,
+        "kind": 2
+      }
+    ],
+    "exactRestorationTailMatch": {
+      "bytes": 80,
+      "sha256": "991bff3d1e92a87dad4bea1c1f66c98f1a93d989de9fe03304429d293a5cd387"
+    },
+    "parcels": [
+      {
+        "address": "0x1c0705",
+        "parcel": "0xafe",
+        "interpretation": "RTS(DB) candidate"
+      },
+      {
+        "address": "0x1c0751",
+        "parcel": "0xbfe",
+        "interpretation": "RTI(DB) candidate"
+      },
+      {
+        "address": "0x1c0913",
+        "parcel": "0xabe",
+        "interpretation": "RTS candidate"
+      }
+    ],
+    "scope": "Symbols bind roles and boundaries; source-to-opcode assembler listing is still absent. SC594 evidence is not a runtime test on FM3."
+  },
+  "compactReturnEncodingIndependentlyProven": false,
+  "remainingInitializers": [
+    "0x82c228",
+    "0x82fe42",
+    "0x80f1ba",
+    "0x8289bc",
+    "0x1c8b15"
+  ],
+  "remainingLoopScopes": [
+    "0x82b193 beyond known callback",
+    "0x811a83",
+    "0x80ea77 beyond reviewed op10 slice"
+  ],
+  "remainingOtherScopes": [
+    "object+0x14c op86/PID0x3fad",
+    "prior packet operations and post-store returns",
+    "active vector, interrupt/exception invariants and compact return encoding"
+  ],
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false
+}

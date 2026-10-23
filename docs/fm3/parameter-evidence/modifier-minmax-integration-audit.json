@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "scope": "Local generator integration, no publication or hardware I/O",
+  "productionPluginVersion": "0.3.13",
+  "githubMainVerified": "5238ebc5c4cd19c0ea412cd964e5e770c09930e7",
+  "baseCommit": "de7e573d2e49e04a2f7eba3f7eebd5ef8fbf08c5",
+  "offlineSuite": {
+    "schemaVersion": 1,
+    "scope": "Explicit offline suite; no new hardware/audio confirmation",
+    "sourceCommit": "de7e573d2e49e04a2f7eba3f7eebd5ef8fbf08c5",
+    "sourceDirty": true,
+    "pluginTreeSha256": "729343192913cee6c3e59288452ea7ce744c31e26113e6f773dab8d5b546cc8f",
+    "sourceUnchangedByTests": true,
+    "results": [
+      {
+        "id": "test-table-encoder",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.666,
+        "logSha256": "c0a34cbeab9f990dcbf598163fe6f73701561fb02fb97de22e38caaf96628e7f"
+      },
+      {
+        "id": "test-type-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.924,
+        "logSha256": "dc902de0dad0080ff5b4eb5caa122613aa6af8fdfbdacdd9043ea2b55421101d"
+      },
+      {
+        "id": "test-parameter-dependencies",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.821,
+        "logSha256": "10836f4ee2d2163eed57ad28ebc24cc54222fa7b62c7a2ec199314aa57a378d3"
+      },
+      {
+        "id": "test-delay-reverb-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 3.93,
+        "logSha256": "e9b1ee39f26eaf594cbec5cbe28e6950f313f1f212b954786f6dc68058dbc7bf"
+      },
+      {
+        "id": "test-modulation-dynamics-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.732,
+        "logSha256": "f5aacd9e51b14586c2e57c6111edf5ed6c300d907c4cd3214f95940784319c4d"
+      },
+      {
+        "id": "test-wah-tremolo-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.63,
+        "logSha256": "a233e483f179c2c8292630bba2c5d6057f183074eb2fedf60ec375de0b979787"
+      },
+      {
+        "id": "test-rotary-pitch-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 3.075,
+        "logSha256": "765c95063621e4c16b381ffd5d4e5188fab20c1ea31a6cca431222056db081a0"
+      },
+      {
+        "id": "test-pitch-word-codecs",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.324,
+        "logSha256": "d3384d4bd47fc12e10daf1940f47b2d75213e6e68e3cceb5efe875c2e8301bce"
+      },
+      {
+        "id": "test-pitch-custom-scales",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.872,
+        "logSha256": "d0549d8557aaa3ee9f53d0aa7cd477b4f48bb67f938de03aeda647057e7e134c"
+      },
+      {
+        "id": "test-layout",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.669,
+        "logSha256": "800ce26ac824e809159deaabaa50691dd08df9d35a45536b8ede836456ea9a5b"
+      },
+      {
+        "id": "test-generate",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.02,
+        "logSha256": "afcab745bd4e8fbb7b8eae0b5d8c87da0b9f63b01041a489d3817beebfdbb102"
+      },
+      {
+        "id": "test-jb-composer",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.788,
+        "logSha256": "b18c1e82b9f48cbae9eb0072f7d665e8df4370864ad4f7474a2468a1ee08f972"
+      },
+      {
+        "id": "test-jb-composer-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.47,
+        "logSha256": "b97b15a682fdcfeb1256be66e4cd11350a16edc13d696093b7212da4c7cafd60"
+      },
+      {
+        "id": "test-composer-integration",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 12.109,
+        "logSha256": "7d8599693b9dd2085070d83f33f023b6a2fa393c1c9e72637fced97b2096e8e7"
+      },
+      {
+        "id": "test-composer-scenes",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.434,
+        "logSha256": "9ec2228a83011a1f1f413c07e565d267307d0184a9b93b203991e33bb6ee0e47"
+      },
+      {
+        "id": "test-composer-amp-cab",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 21.049,
+        "logSha256": "d95bae0ada2dc052d9c2db3b51197792161865161c6338ec5ad5f0f275968bf6"
+      },
+      {
+        "id": "test-composer-amp-cab-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.483,
+        "logSha256": "a79d07e8ac52bb900a7aee5e52d14ff6b73eb620c6034e622c5c77e3cc2f0796"
+      },
+      {
+        "id": "test-composer-amp-levels",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 3.579,
+        "logSha256": "231290848505ef39beba354d8ba90ac964da28428b97712b52a5e7bd41d7db81"
+      },
+      {
+        "id": "test-composer-amp-cd-levels",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 5.084,
+        "logSha256": "05cd824ac2aff63620f71b4687febcd7ecdc5808f778028522bb1a7cc03479b2"
+      },
+      {
+        "id": "test-composer-filter",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 9.044,
+        "logSha256": "0005850bda0b52d757ab57902d38e10e125eaeb7e615d27320487463b3d04765"
+      },
+      {
+        "id": "test-composer-filter-controls",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 10.404,
+        "logSha256": "83b488601b36665dd3501905eb7f4fb2c332cfdbf85caa5943167f86d4635e73"
+      },
+      {
+        "id": "test-composer-filter-rea",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 13.179,
+        "logSha256": "540190bc9d7b32a35d01cf9cd7dc4dd913c4318256b36430789ebf25737a7fd1"
+      },
+      {
+        "id": "test-composer-peq-full",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 19.274,
+        "logSha256": "22fb552bd1705d001f987e62bbb677b4a1157275f119f76df490c57d85b202c9"
+      },
+      {
+        "id": "test-composer-peq-full-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.945,
+        "logSha256": "24862b07c2e9f36dea17d610da1720e29e8bc674fdb30e643209078d0bd917dd"
+      },
+      {
+        "id": "test-composer-geq-full",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 57.307,
+        "logSha256": "5fcf58d2564d8c19d9117ced54df8427da89aec6558ad4a9c5174b527538db36"
+      },
+      {
+        "id": "test-composer-geq-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.891,
+        "logSha256": "4d5cda6a03d806f99678abd94ed3293d58fa23d2e63f16e36ed200db1d2b26a4"
+      },
+      {
+        "id": "test-composer-enhancer-full",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 7.348,
+        "logSha256": "6a80927f8c880d7a9e2743eea3978d1765055c60d77005f4c040f4208d812fea"
+      },
+      {
+        "id": "test-composer-enhancer-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 7.237,
+        "logSha256": "3924bc16d64f8bc2e0fa445606ba015b2a0798886e98b689efc1e8e81d1a3ac6"
+      },
+      {
+        "id": "test-composer-newlook",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.938,
+        "logSha256": "bb90eba06fef59e6a803bca3bd54fa5b069a66c3c6d79d0ff7b738e1acd589ff"
+      },
+      {
+        "id": "test-composer-newlook-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.52,
+        "logSha256": "68c69203d403458328c64ca072ca21cc7c019b224e125e4567799d4306366a88"
+      },
+      {
+        "id": "test-composer-newlook-filter-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.571,
+        "logSha256": "a2b2e31ab2d372d076d6b6c72f0c7adca45419e13f806eeb9f68abd1850f7f04"
+      },
+      {
+        "id": "test-composer-newlook-pitch-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.57,
+        "logSha256": "ee399447b67c1eee96fea065e16c7ea6a3b4222f28cbcfc9108790c1d2695b08"
+      },
+      {
+        "id": "test-composer-amp-level-measurements",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 7.642,
+        "logSha256": "84373309d50e1a5fb9dd0533bf513a1c4589a1185606ecf8c41acd3b13239e15"
+      },
+      {
+        "id": "test-sound-release",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 7.842,
+        "logSha256": "ac28a62d913106ae521b48bf60d29a330f98bf538787554618e46d17f0814922"
+      },
+      {
+        "id": "test-upstream-fm3",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.269,
+        "logSha256": "77c9903811054b2013233cb51e7a801dcc548fe9f5597372c02e18745461379f"
+      },
+      {
+        "id": "amp-history-integrity",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.115,
+        "logSha256": "7b2aafdb833fef16a1d5f7a3cda214c422bdd51d6eeebe701c61dd87cd4cb03a"
+      },
+      {
+        "id": "test-global-scale-collector",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.366,
+        "logSha256": "e5461dfac63c4389f9bf80b5b6ff0cf8a9b81b4bc84704d7882ba6b83829daf4"
+      },
+      {
+        "id": "test-global-scale-decode",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 4.378,
+        "logSha256": "0ccf8df858235e800a5de6692440db50f9ff17640848a26b7306f26f187a6329"
+      },
+      {
+        "id": "test-global-scale-observations",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 15.372,
+        "logSha256": "99a3935e766850ec7b920cdd15db91d3347cf4632e6bb42669a4f6471f1c81b7"
+      },
+      {
+        "id": "test-global-scale-wire",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.215,
+        "logSha256": "2a6f3ffb7a9826b94e1b6f8ee5ac782247c7188cb6ef2feea78eeb9c187f4c13"
+      },
+      {
+        "id": "test-wah-modifier",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 7.244,
+        "logSha256": "8a1c2a35d9a0928219eb532e9c500cd6b1e770099f74dc53d0f641a305306baf"
+      },
+      {
+        "id": "test-modifier-audit",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 17.329,
+        "logSha256": "0a8810dbb39fd07982cd7cc337c28648bc6270248afc4df9854d92f22a54fe97"
+      },
+      {
+        "id": "test-modifier-context",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.516,
+        "logSha256": "1502213cac2919ad222062c3b51dcda15901453be3e7b5a99ff71e1cd2a0eb6e"
+      },
+      {
+        "id": "test-modifier-types",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.516,
+        "logSha256": "f044d9b5b516463f33d7d1419ccc11956baf64116f5e2d011e2e4be2f3191318"
+      },
+      {
+        "id": "test-wah-auto-engage",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.938,
+        "logSha256": "806091ee3196ea50f15ce42f6d2a4f52dabb80bde38f001298c458eabd31eca1"
+      },
+      {
+        "id": "test-wah-damping",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.938,
+        "logSha256": "47e514f030eed0b7bfc316bc46a01586975647ae787eb2f7bead3cfb04dfccb7"
+      },
+      {
+        "id": "test-wah-min",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 7.09,
+        "logSha256": "ff1b18ab39902f8e1b8c4a4140578364fa2c523fc5815d3c3ee1d45c1612d177"
+      },
+      {
+        "id": "test-wah-measured-controls",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.438,
+        "logSha256": "b980c9c5a32501b8107f97150c8e0e81b3614fb4d6c26f12dc561f6431cd23af"
+      },
+      {
+        "id": "test-wah-minmax-exact",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 10.159,
+        "logSha256": "bfce8bfdbcb2620f3ab06ed843e572d4f398d4dbbcf282478dd1175fcfff9a62"
+      }
+    ],
+    "passed": true
+  },
+  "exactIntegrationChecks": {
+    "passed": true,
+    "publicCases": 6,
+    "retentionCases": 8,
+    "negative": 36,
+    "tableInputs": 2002,
+    "hardwareExactInputs": 12,
+    "modelConsensusInputs": 1990,
+    "cliFourFileRoundtrip": true,
+    "deviceIO": false,
+    "fullRangeEncodingProven": false
+  },
+  "tableReplay": {
+    "passed": true,
+    "pointsPerField": 1001,
+    "hardwarePointsPerField": 6,
+    "modelConsensusPointsPerField": 995,
+    "sha256": "468ab4c092ccf5fae9b4dda38cacb5d3a64f35fc78b850218e70588ff0a8c54b",
+    "source": "tools/fm3/build-wah-exact-table.py",
+    "independentRawCaptureReplay": true
+  },
+  "standaloneJsonSchemaValidatorExecuted": false,
+  "schemaChecks": "Packaged test checks property shape and pattern; runtime checks and atomic conflict tests passed. No jsonschema/AJV installed.",
+  "fullRangeEncodingProven": false,
+  "deviceImportTested": false,
+  "newPhysicalExports": 0,
+  "newReaAnalysis": false,
+  "published": false
+}

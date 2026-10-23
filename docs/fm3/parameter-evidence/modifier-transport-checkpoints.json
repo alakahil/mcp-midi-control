@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "scope": "Reviewed coordinates/digests only; bounded field flow, not complete runtime mode proof.",
+  "spans": [
+    {
+      "source": "editor",
+      "name": "modifierPacketSubmission",
+      "address": "0x10017aef8",
+      "size": 32,
+      "sha256": "988aae3443914e39e64f032ad1b71ed86b8a7b1b7cd8681e968c7e3dc5a695f7"
+    },
+    {
+      "source": "editor",
+      "name": "immediateSerializerPath",
+      "address": "0x1000af2e4",
+      "size": 64,
+      "sha256": "f2d34c9795f4d68310456221f3284bf894096397b50ad844490218ef6997032e"
+    },
+    {
+      "source": "editor",
+      "name": "deferredValueCopy",
+      "address": "0x1000af158",
+      "size": 16,
+      "sha256": "7bdabb3b1f69f45db762dd37db53b59358458ce2348e301a6ecb8eb86bfd1725"
+    },
+    {
+      "source": "editor",
+      "name": "parameterSerializer",
+      "address": "0x100237874",
+      "size": 688,
+      "sha256": "0df1eb4a8e96b5cd8a8247c74e507a294f3841a93510c3443fc87ef336007801"
+    },
+    {
+      "source": "editor",
+      "name": "envelopeHeaderAndCopy",
+      "address": "0x100239c94",
+      "size": 100,
+      "sha256": "4aa18da8bac1a5b446a9a82140fb7d46f6898b64f1ca639ce4a41f574b47ac91"
+    },
+    {
+      "source": "editor",
+      "name": "envelopeChecksumTail",
+      "address": "0x100239f64",
+      "size": 44,
+      "sha256": "6e82d7dd4cd9fdb0683f34242cc56af8febe92b553d9ba665788e93111f33bc1"
+    },
+    {
+      "source": "arm",
+      "name": "wordUnpacker",
+      "address": "0xc44515aa",
+      "size": 86,
+      "sha256": "af06a06d587e92659d289a6e7de9c25800e3885675e3ee8f8055a211ca72a438"
+    },
+    {
+      "source": "arm",
+      "name": "packetParser",
+      "address": "0xc4454990",
+      "size": 226,
+      "sha256": "9f7bf8adda87d317d3aa01061a4f2ff1d2661eaba9025162dce6ca9a16502ab2"
+    },
+    {
+      "source": "arm",
+      "name": "fallbackBranch",
+      "address": "0xc441b97c",
+      "size": 32,
+      "sha256": "f4b5b64d703d61f47d59752c408ee14e4cffe7ac6eb0700b6e741c30ba3d68a6"
+    },
+    {
+      "source": "arm",
+      "name": "op82FallbackSlot",
+      "address": "0xc441badc",
+      "size": 4,
+      "sha256": "5d2f5a9aa586fdb94014d90f66e33df2055d0092806fee02620f96de7a0c61f9"
+    },
+    {
+      "source": "arm",
+      "name": "mailboxCopyHandshake",
+      "address": "0xc441bf38",
+      "size": 100,
+      "sha256": "6afad6f5382c29c0312bc12c6fad8092fb9656c697c0566599b37bb1651fb132"
+    },
+    {
+      "source": "arm",
+      "name": "memcpyWordsAndTail",
+      "address": "0xc4462990",
+      "size": 212,
+      "sha256": "c94f6b91ba92c5a197d37831913f9a8ec31146258b9242c4b7b77e2ed31d3978"
+    },
+    {
+      "source": "visa",
+      "name": "mailboxConsumer",
+      "address": "0x82e072",
+      "size": 52,
+      "sha256": "8137fff5ea580be98457b067fe1e896d78009ab32ff87ab2d0881b231e805f7b"
+    },
+    {
+      "source": "visa",
+      "name": "sharcPacketEntry",
+      "address": "0x82959a",
+      "size": 284,
+      "sha256": "ae5c66c91239fe89ea3758bbebbc88d685b4eb85132a00082895dfd093537c73"
+    },
+    {
+      "source": "boot",
+      "name": "op82DispatchSlot",
+      "address": "0x282e7aa0",
+      "size": 4,
+      "sha256": "b48f5f5021876eae739474c0dc65729bbd8b2113813b82d26112ffc8f1fa1ad1"
+    },
+    {
+      "source": "visa",
+      "name": "sharcCallbackAndArguments",
+      "address": "0x8296e8",
+      "size": 50,
+      "sha256": "d982524f1108cf8b72d997e5beedf9f4ff017c59c23c67933f56b76952e961f7"
+    },
+    {
+      "source": "visa",
+      "name": "modInputFromStack",
+      "address": "0x813f86",
+      "size": 124,
+      "sha256": "0d60f34d7523eba61b427c5028a6891c6d52f139166b00052a611bc0104fc6b8"
+    },
+    {
+      "source": "visa",
+      "name": "op82StorePath",
+      "address": "0x823b7c",
+      "size": 116,
+      "sha256": "29a77e8e9aec18537d89506b525690a491eb5f92430b3e9e7ded6f5d203f02b9"
+    },
+    {
+      "source": "visa",
+      "name": "startupModeAndMask",
+      "address": "0x8343e9",
+      "size": 18,
+      "sha256": "c590fdbadc54b80e0b2792392287e2562391cd7d2a5ceb143360bae6cd13dce9"
+    },
+    {
+      "source": "visa",
+      "name": "temporaryModeRestoreExample",
+      "address": "0x833286",
+      "size": 110,
+      "sha256": "8ca6aa83ee70d02cd4c78b721fdc37aa21b48bc69d8334468427400cae095ee9"
+    },
+    {
+      "source": "visa",
+      "name": "unresolvedMathCalls",
+      "address": "0x823b3d",
+      "size": 70,
+      "sha256": "a04f93109640d41d84cd64104f1cbadc2794cb1afe68cc2a7fffe0c7d195a88f"
+    },
+    {
+      "source": "arm",
+      "name": "sysexFunction1Dispatch",
+      "address": "0xc44526b8",
+      "size": 24,
+      "sha256": "c8503ce7b24275e5f9a9bb748e59eec624b905fc08161e7c3b0e9fa601ca764b"
+    }
+  ]
+}

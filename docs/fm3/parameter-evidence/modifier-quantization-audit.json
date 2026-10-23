@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "mode": "offline-research-not-encoder",
   "productionVersion": "0.3.13",
   "newPhysicalExports": 0,
@@ -36,7 +36,12 @@
       "sha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13"
     }
   ],
-  "inputEvidenceLimit": "Requested targets come from the reviewed capture plans and user statements; no keystroke or wire trace was recorded. Screenshot displays are separate observations. Baseline display aliases are not treated as typed inputs.",
+  "inputMethodEvidence": {
+    "file": "docs/fm3/parameter-evidence/modifier-input-method-evidence.json",
+    "sha256": "cdebf3737f5da3840697a2dd7b4f78abdc9eeefab6e200f5fdd21613b6074d55",
+    "statement": "Jätkame. Eelmise analüüsile lisan, et Wahi Min/Max valisin hiirega lohistades ja teised väärtised valisin klahvistikult sisestades"
+  },
+  "inputEvidenceLimit": "User confirms mouse dragging for Min/Max and typed entry for the other changed numeric points. Exact coordinates, keystrokes and wire floats were not recorded. Requested targets and screenshot displays remain separate observations; the Attack discrepancy is not resolved by knowing the input method.",
   "roundingHypothesis": "Nearest is floor(scaled+0.5) for nonnegative raw values. This does not establish tie behavior or a particular device float/log implementation.",
   "attackDiscrepancy": {
     "userTextDisplayMs": 9.99,
@@ -55,6 +60,8 @@
       "observedDisplay": 7.5,
       "raw": 49159,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "mouse-drag",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "target-dependent 0..10 hypothesis",
       "metadata": {
         "typecode": 0,
@@ -99,6 +106,8 @@
       "observedDisplay": 10,
       "raw": 6553,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -143,6 +152,8 @@
       "observedDisplay": 40,
       "raw": 26214,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -187,6 +198,8 @@
       "observedDisplay": 90,
       "raw": 58981,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -231,6 +244,8 @@
       "observedDisplay": 60,
       "raw": 39320,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -275,6 +290,8 @@
       "observedDisplay": 99.9,
       "raw": 655,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1073,
@@ -319,6 +336,8 @@
       "observedDisplay": 249.9,
       "raw": 1638,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1073,
@@ -363,6 +382,8 @@
       "observedDisplay": 1.5,
       "raw": 38537,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "log",
       "metadata": {
         "typecode": 67,
@@ -407,6 +428,8 @@
       "observedDisplay": -10,
       "raw": 29490,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -451,6 +474,8 @@
       "observedDisplay": 20,
       "raw": 10922,
       "captureSha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -495,6 +520,8 @@
       "observedDisplay": 20,
       "raw": 13107,
       "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -539,6 +566,8 @@
       "observedDisplay": 55,
       "raw": 36044,
       "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -583,6 +612,8 @@
       "observedDisplay": 80,
       "raw": 52427,
       "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -627,6 +658,8 @@
       "observedDisplay": 35,
       "raw": 22937,
       "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -671,6 +704,8 @@
       "observedDisplay": 500,
       "raw": 3277,
       "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1073,
@@ -715,6 +750,8 @@
       "observedDisplay": 999.9,
       "raw": 6553,
       "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1073,
@@ -759,6 +796,8 @@
       "observedDisplay": 0.75,
       "raw": 28673,
       "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "log",
       "metadata": {
         "typecode": 67,
@@ -803,6 +842,8 @@
       "observedDisplay": 15,
       "raw": 37682,
       "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -847,6 +888,8 @@
       "observedDisplay": 80,
       "raw": 54612,
       "captureSha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+      "inputMethod": "typed-text",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "linear",
       "metadata": {
         "typecode": 1329,
@@ -891,6 +934,8 @@
       "observedDisplay": 5,
       "raw": 32784,
       "captureSha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+      "inputMethod": "mouse-drag",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "target-dependent 0..10 hypothesis",
       "metadata": {
         "typecode": 0,
@@ -935,6 +980,8 @@
       "observedDisplay": 2.5,
       "raw": 16375,
       "captureSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+      "inputMethod": "mouse-drag",
+      "inputMethodStatus": "user-confirmed-2026-10-22; exact event/float not recorded",
       "model": "target-dependent 0..10 hypothesis",
       "metadata": {
         "typecode": 0,
@@ -991,6 +1038,6 @@
     "minMaxNearestMatches": 0,
     "allDisplayBinsIncludeMeasuredRaw": true
   },
-  "conclusion": "Nearest rounding fits these 18 ordinary requested-target points but is not established over their full ranges. Direct linear Min/Max encoding is contradicted by all three changed points. Float32 stages do not rescue those Min/Max counterexamples. A matching display bin is insufficient to prove an encoder.",
+  "conclusion": "Nearest rounding fits these 18 ordinary requested-target points but is not established over their full ranges. Min/Max were dragged, so their displayed targets are not exact typed inputs: the retained 0/3 direct-display comparison does not refute linear encoding of the actual normalized drag input. See modifier-drag-audit.json for the conditional forward model. A matching display bin alone does not prove an encoder.",
   "fullRangeWriterAuthorizedByEvidence": false
 }

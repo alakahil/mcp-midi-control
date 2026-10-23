@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "kind": "local Git metadata recovery, no remote mutation",
+  "previousRecordedCommit": "36d4392f45d6bf78f5e7fe4f0a0dc2302452dd4a",
+  "previousRecordedCommitObjectRecovered": false,
+  "recoveredAncestor": "c415b95ed9a388e030c796175863b8bff21ad07e",
+  "recoveredFrom": "FM3_Modifier_Step2.bundle",
+  "recoveredBundleSha256": "85e4068227f5a8b693c30f776fcad75769b307528efadd2a2c0eced8250b7e76",
+  "verifiedRemoteMain": "5238ebc5c4cd19c0ea412cd964e5e770c09930e7",
+  "sourceFilesRetained": true,
+  "pluginTreeBeforeReview": "729343192913cee6c3e59288452ea7ce744c31e26113e6f773dab8d5b546cc8f",
+  "matchesPreviousSuccessful49ScriptAudit": true,
+  "recoveryMethod": "Import the existing bundle over verified origin/main, attach surviving working files without checkout, preserve later source changes in a new review commit. Historical intermediate commit IDs remain report references, not reconstructed Git objects."
+}

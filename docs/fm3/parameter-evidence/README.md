@@ -1,5 +1,40 @@
 # FM3 parameter evidence registry
 
+Current modifier research (2026-10-22): [MODE1 stack-slot provenance and five unresolved buffer-alias premises](modifier-frame-result.md),
+[frame audit](modifier-frame-audit.json), [4 native checkpoints](modifier-frame-checkpoints.json),
+[MMASK push semantics, direct MODE1 memory load and expanded context-write inventory](modifier-context-result.md),
+[context audit](modifier-context-audit.json), [7 native checkpoints](modifier-context-checkpoints.json),
+[MODE1 writer candidates, rejected operand hits and three additional leaf contracts](modifier-writers-result.md),
+[writer audit](modifier-writers-audit.json), [3 new native checkpoints](modifier-writers-checkpoints.json),
+[82c228 table-init scope, four new MODE1 helpers and a 44-call constructor catalog](modifier-table-result.md),
+[table-init audit](modifier-table-audit.json), [6 native checkpoints](modifier-table-checkpoints.json),
+[guarded buffer MODE1 contracts, nonreturn boundaries and one remaining 82fe42 dependency](modifier-buffer-result.md),
+[buffer audit](modifier-buffer-audit.json), [7 native checkpoints](modifier-buffer-checkpoints.json),
+[closed SID52 initializer, MODE1 math leaf and symbol-bound independent ADI DXE](modifier-init-result.md),
+[initializer audit](modifier-init-audit.json), [native inventory and independent source](modifier-init-checkpoints.json),
+[loaded SECI vector, matching registration/dispatch layout and conditional selected-task MODE1 return](modifier-interrupt-result.md),
+[interrupt audit](modifier-interrupt-audit.json), [11 native checkpoints](modifier-interrupt-checkpoints.json),
+[compact-return manual conflict, independent ADI binary comparison and located RTI candidate](modifier-return-result.md),
+[return audit](modifier-return-audit.json), [sources and native checkpoints](modifier-return-checkpoints.json),
+[PID0x3a16 op10 route and inherited return-opcode uncertainty](modifier-op10-result.md),
+[specialized route audit](modifier-op10-audit.json), [route checkpoints](modifier-op10-checkpoints.json),
+[two closed MODE1 caller scopes and a known timer callback](modifier-caller-result.md),
+[caller audit](modifier-caller-audit.json), [source/flow checkpoints](modifier-caller-checkpoints.json),
+[bounded in-memory Min/Max SYX candidate](modifier-minmax-syxdiff-result.md),
+[35-case byte-diff audit](modifier-minmax-syxdiff-audit.json),
+[coreTask context and the 6.47 boundary](modifier-scheduler-result.md),
+[scheduler/cent-grid audit](modifier-scheduler-audit.json),
+[L1 math helpers, MODE1 preservation and guarded offline candidate](modifier-mode-result.md),
+[MODE1 audit](modifier-mode-audit.json), [source checkpoints](modifier-mode-checkpoints.json),
+[op82 transport and arithmetic precision](modifier-transport-result.md),
+[transport/precision audit](modifier-transport-audit.json),
+[input methods and 3/3 conditional drag model](modifier-drag-result.md),
+[drag audit](modifier-drag-audit.json), [new Mac REA/Ghidra batch findings](modifier-rea-batch-result.md),
+[audit](modifier-rea-batch-audit.json), and [source/checkpoint hashes](modifier-rea-batch-checkpoints.json).
+Production remains 0.3.13. This research identifies drag and step input paths;
+it does not establish complete Min/Max encoding or enable generator writes.
+Version references in older sections below describe their historical work.
+
 [Generated coverage report (Estonian)](coverage.md) · [Machine summary](coverage.json) · [Registry](registry.json) · [Work queue](work-queue.json)
 
 [FW13 global-scale numeric-cache research](global-scale-cache-fw13.md) records

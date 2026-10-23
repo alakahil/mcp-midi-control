@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "sources": {
+    "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3"
+  },
+  "method": "Hash-bound manual path review, independent operands, symbolic MODE1 graph; not CPU emulation",
+  "checkpointCount": 20,
+  "instructionPartitionCount": 169,
+  "powRestore": {
+    "visitedStates": 157,
+    "returns": [
+      "0x833db9"
+    ],
+    "preservesEveryIncomingMode1Word": true,
+    "scope": "Reviewed graph including both branch alternatives; scalar ABI and ordinary memory/return behavior; asynchronous faults/interrupt effects excluded."
+  },
+  "clearLoop": {
+    "at": "0x1c0b20",
+    "counter": "R12",
+    "start": "0x1c0b23",
+    "end": "0x1c0b26",
+    "modeF1": true,
+    "displacementBits": 23,
+    "legacySigned24TargetRejected": true
+  },
+  "closedCallerScopes": [
+    {
+      "entry": "0x825e21",
+      "callees": [
+        "0x833c86",
+        "0x833522"
+      ],
+      "result": "MODE1 preserved on reviewed returning scalar-ABI paths"
+    },
+    {
+      "entry": "0x82c97d",
+      "callees": [
+        "0x1c0b10"
+      ],
+      "result": "No MODE1 writes/calls beyond the reviewed leaf"
+    }
+  ],
+  "timer": {
+    "table": "0x809cb110",
+    "entries": 4,
+    "strideBytes": 28,
+    "callbackByteOffset": 24,
+    "registration": "0x80f729 -> 0x82b116",
+    "registeredCallback": "0x80f710",
+    "indirectCall": "0x82b1ed",
+    "callbackCancelsVia": "0x82b0dc",
+    "knownCallbackRouteModePreserving": true,
+    "allRuntimeRegistrationsProven": false,
+    "initialTableZero": true,
+    "limit": "One identified registration route; zero boot contents do not prove all runtime pointers or exclude alternate writers/registrations."
+  },
+  "interrupt": {
+    "restoreTail": "0x830c43 MODE1STK -> 0x830c8c compact return",
+    "schedulerHandler": "0x830778 -> CALL 0x830a1b -> 0x8307bb compact return",
+    "observedReturnParcel": "0x0abe",
+    "legacyDecoderLabel": "RTS",
+    "compactReturnEncodingIndependentlyReconciled": false,
+    "registeredAt": "0x830e43 -> 0x830e4b/0x8337e2",
+    "timerHandler": "0x830cb4 registered at 0x830e13 -> 0x830e1a/0x8337e2",
+    "finalRtiWrapperLocated": false,
+    "wholeInterruptReturnPathProven": false
+  },
+  "selectedSimdWrites": [
+    {
+      "at": "0x82c2b7",
+      "operation": "set",
+      "mask": "0x200000"
+    },
+    {
+      "at": "0x82c2eb",
+      "operation": "clear",
+      "mask": "0x200000"
+    },
+    {
+      "at": "0x82c30c",
+      "operation": "set",
+      "mask": "0x200000"
+    },
+    {
+      "at": "0x82c315",
+      "operation": "clear",
+      "mask": "0x200000"
+    }
+  ],
+  "unresolved": {
+    "initializers": [
+      "0x82c228",
+      "0x82fe42",
+      "0x80f1ba",
+      "0x8289bc",
+      "0x8304ab",
+      "0x1c8b15"
+    ],
+    "loopCallees": [
+      "0x82b193 except identified callback route",
+      "0x811a83",
+      "0x80ea77"
+    ],
+    "effectCallback": "0x82e05a object+0x14c, op86/PID0x3fad",
+    "priorPacketOperationsAndPostStoreReturn": true,
+    "interruptWrapper": true
+  },
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "nextStep": "Specialize 0x80ea77 -> 0x80f751 to known op10/PID0x3a16 and resolve the scheduler interrupt dispatch/return wrapper; retain 6.47 exclusion."
+}

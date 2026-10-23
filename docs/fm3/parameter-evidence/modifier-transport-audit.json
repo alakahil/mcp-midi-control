@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "mode": "bounded-static-transport-and-exact-dyadic-model",
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "checkpointCount": 22,
+  "dragAuditSha256": "8f174954ac6698d58ac03032ab878124c40ed023e53b1dfe4901d78103137742",
+  "sources": {
+    "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+    "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3"
+  },
+  "transport": {
+    "editorSerializer": "0x100237874",
+    "firmwareWordDecoder": "0xc44515aa",
+    "armPacketHandler": "0xc4454990",
+    "sharedMailbox": "0x20084000",
+    "sharcPacketHandler": "0x82959a",
+    "valueByteOffset": 12,
+    "callbackByteOffset": 332,
+    "modifierCallback": "0x813f86",
+    "boundedBitPreservingPathLinked": true,
+    "wholeProgramExecutionProven": false,
+    "historicalPacketsCaptured": false,
+    "basisChecks": 34
+  },
+  "startup": {
+    "clearMask": "0xa078",
+    "setMask": "0x1011800",
+    "mmask": "0xe0b003",
+    "mode": "32-nearest",
+    "runtimeModeAtStoreProven": false,
+    "reason": "Boot and bounded paths checked; external math callees and all runtime mode writes are not closed."
+  },
+  "dragCases": [
+    {
+      "pid": 1,
+      "display": 2.5,
+      "measuredWord": 16375,
+      "hypotheticalInputBits": "0x3e7fdec5",
+      "hypotheticalPayload": "45 3d 7f 73 03",
+      "results": {
+        "32-nearest": 16375,
+        "40-nearest": 16375,
+        "32-zero": 16375,
+        "40-zero": 16375
+      },
+      "allModesMatch": true,
+      "everyMonotonicPartitionMatchesAllModes": true
+    },
+    {
+      "pid": 2,
+      "display": 7.5,
+      "measuredWord": 49159,
+      "hypotheticalInputBits": "0x3f40084e",
+      "hypotheticalPayload": "4e 10 00 7a 03",
+      "results": {
+        "32-nearest": 49159,
+        "40-nearest": 49159,
+        "32-zero": 49159,
+        "40-zero": 49159
+      },
+      "allModesMatch": true,
+      "everyMonotonicPartitionMatchesAllModes": true
+    },
+    {
+      "pid": 2,
+      "display": 5.0,
+      "measuredWord": 32784,
+      "hypotheticalInputBits": "0x3f0010cf",
+      "hypotheticalPayload": "4f 21 00 78 03",
+      "results": {
+        "32-nearest": 32784,
+        "40-nearest": 32784,
+        "32-zero": 32784,
+        "40-zero": 32784
+      },
+      "allModesMatch": true,
+      "everyMonotonicPartitionMatchesAllModes": true
+    }
+  ],
+  "boundaryAudit": {
+    "thresholds": 65534,
+    "inputs": 196602,
+    "scope": "Nearest float32 to each mathematical half-word boundary and its two neighbors; not every float32 input.",
+    "differencesFrom32Nearest": {
+      "40-nearest": 32640,
+      "32-zero": 32768,
+      "40-zero": 32768
+    },
+    "examples": [
+      {
+        "lowerWord": 0,
+        "inputBits": "0x37000100",
+        "results": {
+          "32-nearest": 1,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        }
+      },
+      {
+        "lowerWord": 1,
+        "inputBits": "0x37c00180",
+        "results": {
+          "32-nearest": 2,
+          "40-nearest": 1,
+          "32-zero": 1,
+          "40-zero": 1
+        }
+      },
+      {
+        "lowerWord": 2,
+        "inputBits": "0x38200140",
+        "results": {
+          "32-nearest": 3,
+          "40-nearest": 2,
+          "32-zero": 2,
+          "40-zero": 2
+        }
+      }
+    ],
+    "wordCenterRoundtrip": {
+      "codes": 65535,
+      "passedByMode": {
+        "32-nearest": true,
+        "40-nearest": true,
+        "32-zero": true,
+        "40-zero": true
+      }
+    }
+  },
+  "generatorWriteSupportAdded": false,
+  "fullRangeEncodingProven": false,
+  "limits": [
+    "Payload examples are calculated from conditional drag candidates, not measured MIDI packets.",
+    "Editor immediate-send path is linked; pending-request coalescing copies bits, but its scheduler is not fully traced.",
+    "Shared-mailbox path is traced for an unhandled ARM request and valid SHARC object/PID.",
+    "Static field-flow plus selected operand checks is not a full firmware emulator.",
+    "Model scope is finite nonnegative float32 [0,1]; subnormal inputs flush to zero.",
+    "Other Min/Max descriptor types, op9 RECIPS and canonical displayed-value policy remain separate."
+  ],
+  "nextStep": "Resolve MODE1 preservation across external math calls 0x1cb91c and 0x1cb13a and the dispatcher entry; then prepare a narrow canonical op82 codec candidate, retaining measured raw drag words."
+}

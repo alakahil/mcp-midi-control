@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "method": "Hash-bound native partitions, guarded call graph, shared-register MODE1 tokens and checked 48-bit return delay slots. No CPU execution.",
+  "reviewedSpans": 6,
+  "instructionBoundaries": 886,
+  "mathLeafCertificates": [
+    {
+      "entry": "0x1cb5b4",
+      "save": "0x1cb5c0",
+      "restore": "0x1cb610",
+      "returnAt": "0x1cb60d",
+      "nativeReturn": {
+        "kind": "RTS",
+        "delayed": true,
+        "condition": 31,
+        "compute": 1245192
+      },
+      "delayInstructions": [
+        "0x1cb610",
+        "0x1cb613"
+      ],
+      "proof": {
+        "states": 34,
+        "returnSites": [
+          "0x1cb60d"
+        ],
+        "synchronousCallees": [],
+        "allReturningPathsPreserveIncomingMode1": true,
+        "terminationProven": false
+      },
+      "usesCompactReturn": false
+    },
+    {
+      "entry": "0x834632",
+      "save": "0x83463a",
+      "restore": "0x83468c",
+      "returnAt": "0x834689",
+      "nativeReturn": {
+        "kind": "RTS",
+        "delayed": true,
+        "condition": 31,
+        "compute": 528584
+      },
+      "delayInstructions": [
+        "0x83468c",
+        "0x83468f"
+      ],
+      "proof": {
+        "states": 33,
+        "returnSites": [
+          "0x834689"
+        ],
+        "synchronousCallees": [],
+        "allReturningPathsPreserveIncomingMode1": true,
+        "terminationProven": false
+      },
+      "usesCompactReturn": false
+    }
+  ],
+  "tableInitializer": {
+    "entry": "0x82f89e",
+    "proof": {
+      "states": 131,
+      "entryZeroMask": "0x200000",
+      "returnSites": [
+        "0x82fa22"
+      ],
+      "synchronousCallees": [
+        "0x1cb5b4"
+      ],
+      "nonreturnOnlyNodes": 0,
+      "conditionalMode1Identity": true,
+      "assumedCallees": [],
+      "terminationProven": false
+    },
+    "scope": "Scalar entry; seven SIMD loops and seven calls of 0x1cb5b4."
+  },
+  "stridedTransferHelper": {
+    "entry": "0x82ddb2",
+    "proof": {
+      "states": 23,
+      "entryZeroMask": "0x200000",
+      "returnSites": [
+        "0x82ddfb"
+      ],
+      "synchronousCallees": [],
+      "nonreturnOnlyNodes": 0,
+      "conditionalMode1Identity": true,
+      "assumedCallees": [],
+      "terminationProven": false
+    },
+    "scope": "MODE1 only; no numerical/memory-copy correctness or termination claim."
+  },
+  "largeFillExtension": {
+    "entry": "0x1cbe86",
+    "caller": "0x82c240",
+    "count": 13302720,
+    "bufferBase": "0x8157fb20",
+    "acceptedCountRange": [
+      4,
+      2147483647
+    ],
+    "proof": {
+      "states": 49,
+      "entryZeroMask": "0x200000",
+      "returnSites": [
+        "0x1cbf07"
+      ],
+      "synchronousCallees": [],
+      "nonreturnOnlyNodes": 0,
+      "conditionalMode1Identity": true,
+      "assumedCallees": [],
+      "terminationProven": false
+    },
+    "scope": "The signed small-count branch is excluded by the checked caller count. All other unknown branch arms remain. Valid memory is a premise; allocation capacity is not proved."
+  },
+  "initializer82c228": {
+    "closed": false,
+    "directDistinctCallees": 12,
+    "knownDirectCallees": [
+      "0x1cb5b4",
+      "0x1cbe86",
+      "0x82ddb2",
+      "0x82f89e"
+    ],
+    "unresolvedDirectCallees": [
+      "0x81107e",
+      "0x81b2be",
+      "0x82be50",
+      "0x82c9c2",
+      "0x82cc33",
+      "0x82ddff",
+      "0x82e288",
+      "0x82f428"
+    ],
+    "conditionalDiagnostic": {
+      "states": 149,
+      "entryZeroMask": "0x200000",
+      "returnSites": [
+        "0x82c3dd"
+      ],
+      "synchronousCallees": [
+        "0x1cb5b4",
+        "0x1cbe86",
+        "0x81107e",
+        "0x81b2be",
+        "0x82be50",
+        "0x82c9c2",
+        "0x82cc33",
+        "0x82ddb2",
+        "0x82ddff",
+        "0x82e288",
+        "0x82f428",
+        "0x82f89e"
+      ],
+      "nonreturnOnlyNodes": 16,
+      "conditionalMode1Identity": true,
+      "assumedCallees": [
+        "0x81107e",
+        "0x81b2be",
+        "0x82be50",
+        "0x82c9c2",
+        "0x82cc33",
+        "0x82ddff",
+        "0x82e288",
+        "0x82f428"
+      ],
+      "terminationProven": false
+    },
+    "normalCallSites": [
+      {
+        "at": "0x82c240",
+        "target": "0x1cbe86"
+      },
+      {
+        "at": "0x82c299",
+        "target": "0x82f428"
+      },
+      {
+        "at": "0x82c2a0",
+        "target": "0x82ddff"
+      },
+      {
+        "at": "0x82c2ab",
+        "target": "0x82e288"
+      },
+      {
+        "at": "0x82c2d3",
+        "target": "0x1cb5b4"
+      },
+      {
+        "at": "0x82c322",
+        "target": "0x82c9c2"
+      },
+      {
+        "at": "0x82c338",
+        "target": "0x82cc33"
+      },
+      {
+        "at": "0x82c34d",
+        "target": "0x82ddb2"
+      },
+      {
+        "at": "0x82c364",
+        "target": "0x82cc33"
+      },
+      {
+        "at": "0x82c379",
+        "target": "0x82ddb2"
+      },
+      {
+        "at": "0x82c395",
+        "target": "0x82cc33"
+      },
+      {
+        "at": "0x82c3aa",
+        "target": "0x82ddb2"
+      },
+      {
+        "at": "0x82c3b4",
+        "target": "0x82f89e"
+      },
+      {
+        "at": "0x82c3bb",
+        "target": "0x81b2be"
+      },
+      {
+        "at": "0x82c3c2",
+        "target": "0x81107e"
+      },
+      {
+        "at": "0x82c3c9",
+        "target": "0x82be50"
+      }
+    ],
+    "fatalCallSites": [
+      "0x82c3e4",
+      "0x82c3ee",
+      "0x82c3f8",
+      "0x82c402",
+      "0x82c40c",
+      "0x82c416",
+      "0x82c420",
+      "0x82c42a"
+    ],
+    "neighbour0x82c431Excluded": true,
+    "eightFatalGatesKeptBothArms": true
+  },
+  "constructorCatalog": {
+    "entry": "0x82be50",
+    "directCallSites": [
+      {
+        "at": "0x82be7b",
+        "target": "0x8039f1"
+      },
+      {
+        "at": "0x82be8c",
+        "target": "0x82262a"
+      },
+      {
+        "at": "0x82be96",
+        "target": "0x813dcd"
+      },
+      {
+        "at": "0x82beb2",
+        "target": "0x1c8b15"
+      },
+      {
+        "at": "0x82bec6",
+        "target": "0x804f2c"
+      },
+      {
+        "at": "0x82bed7",
+        "target": "0x80026d"
+      },
+      {
+        "at": "0x82bee1",
+        "target": "0x801946"
+      },
+      {
+        "at": "0x82befa",
+        "target": "0x802368"
+      },
+      {
+        "at": "0x82bf13",
+        "target": "0x804b84"
+      },
+      {
+        "at": "0x82bf2c",
+        "target": "0x805328"
+      },
+      {
+        "at": "0x82bf44",
+        "target": "0x8058c2"
+      },
+      {
+        "at": "0x82bf5b",
+        "target": "0x805ab0"
+      },
+      {
+        "at": "0x82bf75",
+        "target": "0x805b70"
+      },
+      {
+        "at": "0x82bf8e",
+        "target": "0x8064e2"
+      },
+      {
+        "at": "0x82bfa7",
+        "target": "0x806c4a"
+      },
+      {
+        "at": "0x82bfc0",
+        "target": "0x806f9a"
+      },
+      {
+        "at": "0x82bfd9",
+        "target": "0x80e54a"
+      },
+      {
+        "at": "0x82bff2",
+        "target": "0x81067e"
+      },
+      {
+        "at": "0x82c009",
+        "target": "0x81582c"
+      },
+      {
+        "at": "0x82c013",
+        "target": "0x810948"
+      },
+      {
+        "at": "0x82c02a",
+        "target": "0x8122d4"
+      },
+      {
+        "at": "0x82c034",
+        "target": "0x81396e"
+      },
+      {
+        "at": "0x82c04c",
+        "target": "0x815344"
+      },
+      {
+        "at": "0x82c065",
+        "target": "0x814a14"
+      },
+      {
+        "at": "0x82c06f",
+        "target": "0x816658"
+      },
+      {
+        "at": "0x82c086",
+        "target": "0x8168a6"
+      },
+      {
+        "at": "0x82c09e",
+        "target": "0x818454"
+      },
+      {
+        "at": "0x82c0a8",
+        "target": "0x81729a"
+      },
+      {
+        "at": "0x82c0ba",
+        "target": "0x81b558"
+      },
+      {
+        "at": "0x82c0cb",
+        "target": "0x81d246"
+      },
+      {
+        "at": "0x82c0d5",
+        "target": "0x81cc90"
+      },
+      {
+        "at": "0x82c0ee",
+        "target": "0x81f1fa"
+      },
+      {
+        "at": "0x82c0f8",
+        "target": "0x81f6aa"
+      },
+      {
+        "at": "0x82c10a",
+        "target": "0x81ff56"
+      },
+      {
+        "at": "0x82c11b",
+        "target": "0x820a1b"
+      },
+      {
+        "at": "0x82c125",
+        "target": "0x8216e6"
+      },
+      {
+        "at": "0x82c13d",
+        "target": "0x822800"
+      },
+      {
+        "at": "0x82c154",
+        "target": "0x822c28"
+      },
+      {
+        "at": "0x82c168",
+        "target": "0x8134b8"
+      },
+      {
+        "at": "0x82c172",
+        "target": "0x8117bf"
+      },
+      {
+        "at": "0x82c191",
+        "target": "0x816efb"
+      },
+      {
+        "at": "0x82c19e",
+        "target": "0x1cbe86"
+      },
+      {
+        "at": "0x82c1b1",
+        "target": "0x8238e6"
+      },
+      {
+        "at": "0x82c1c3",
+        "target": "0x823969"
+      }
+    ],
+    "distinctCallees": 44,
+    "localMode1WritesObserved": 0,
+    "calleeEffectsCertified": false,
+    "scope": "Direct targets within the reviewed function only; NOT a transitive inventory or a MODE1 preservation proof."
+  },
+  "correctedDiagnosticLabel": {
+    "mask": "0x800000",
+    "correctName": "BDCST1",
+    "priorIncorrectLabel": "Temporary TRUNCATE",
+    "truncateMask": "0x8000",
+    "evidence": "Core PRM rev1.5 Table29-19, page29-55",
+    "numericMasksOrProofResultsChanged": false
+  },
+  "prerequisites": {
+    "bufferAuditReplayed": true,
+    "bufferAuditSha256": "b2263762c70c4fcf39fb46ffe8d51de1c4399c0b93b63c61c39a72469ea0d1d8"
+  },
+  "scope": "Reviewed ABI, valid memory and saved-register integrity, ordinary control continuations, no asynchronous exceptions/nonlocal transfers. Mathematical leaves support shared MODE1/I12 transfers in SISD and SIMD; table callers require scalar entry.",
+  "remainingInitializers": [
+    "0x82c228",
+    "0x82fe42",
+    "0x80f1ba",
+    "0x8289bc",
+    "0x1c8b15"
+  ],
+  "compactReturnEncodingIndependentlyProven": false,
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false
+}

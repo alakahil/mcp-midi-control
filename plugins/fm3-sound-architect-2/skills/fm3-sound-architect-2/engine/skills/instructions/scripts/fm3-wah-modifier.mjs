@@ -1,6 +1,7 @@
 // Only the existing, export-crosschecked External 1 -> Wah Control binding.
 // No device I/O, new records, arbitrary curves or controller configuration.
 // Bounded point authoring uses retained native bindings and reviewed FW13 captures.
+import {planWahExact,exactWahCapability,renderWahExact} from './fm3-wah-minmax-exact.mjs';
 import {readModifiers,dependencyPolicyHash} from './fm3-parameter-dependencies.mjs';
 import {createHash} from 'node:crypto';
 import {wahMeasuredFields,measuredControlsCapability,planMeasuredControls,renderMeasuredControls} from './fm3-wah-measured-controls.mjs';
@@ -48,17 +49,20 @@ export function wahModifierCapabilities(){return {field:'modifiers.external1Wah'
     evidence:'FW13 user changed-field export, screenshot and baseline confirmation, 2026-10-21',requires:'Final External 1 -> Wah1 Control ALL binding; supported measured Max code',
     evidenceFile:'references/wah-min-evidence.json',deviceBehavior:'not tested',audio:'not tested'},
   controls:measuredControlsCapability(),
-  preserves:'All bytes except explicitly requested source / Auto Engage / Damping / measured Min and wahControls words; other composer requests remain separate',
+  exactMinMax:exactWahCapability(),
+  preserves:'All bytes except explicitly requested source / Auto Engage / Damping / measured Min / wahControls / explicit exact Min/Max words; other composer requests remain separate',
   requires:'Retained configuration uses only supported source, Auto Engage, Damping, Min and measured control codes; present Wah1 when enabled; no competing target',
   deviceIO:false,newDeviceExportEvidence:true,globalControllerSetup:false,arbitraryModifierWrites:false};}
 export function applyWahModifier(body,request,blocks,allow=()=>{}){
-  check(request&&typeof request==='object'&&!Array.isArray(request)&&Object.keys(request).length>0&&Object.keys(request).every(k=>['external1Wah','wahAutoEngage','wahDamping','wahMin','wahControls'].includes(k)),'expected external1Wah, wahAutoEngage, wahDamping, wahMin and/or wahControls');
+  check(request&&typeof request==='object'&&!Array.isArray(request)&&Object.keys(request).length>0&&Object.keys(request).every(k=>['external1Wah','wahAutoEngage','wahDamping','wahMin','wahControls','wahMinMaxExact'].includes(k)),'expected external1Wah, wahAutoEngage, wahDamping, wahMin, wahControls and/or wahMinMaxExact');
   const sourceRequested=Object.hasOwn(request,'external1Wah'),autoRequested=Object.hasOwn(request,'wahAutoEngage'),dampingRequested=Object.hasOwn(request,'wahDamping'),minRequested=Object.hasOwn(request,'wahMin'),controlsRequested=Object.hasOwn(request,'wahControls');
   if(controlsRequested)check(request.wahControls!==undefined,'wahControls must be an object');
   if(sourceRequested)check(typeof request.external1Wah==='boolean','external1Wah must be boolean');
   if(autoRequested)check(typeof request.wahAutoEngage==='string'&&Object.hasOwn(wahAutoEngageCodes,request.wahAutoEngage),'wahAutoEngage must be OFF or MED SPD');
   if(dampingRequested)check(typeof request.wahDamping==='string'&&Object.hasOwn(wahDampingCodes,request.wahDamping),'wahDamping must be EXPONENTIAL or LINEAR');
   if(minRequested)check(typeof request.wahMin==='number'&&Object.hasOwn(wahMinCodes,request.wahMin),'wahMin must be the measured display value 0 or 2.5');
+  const exact=Object.hasOwn(request,'wahMinMaxExact')?planWahExact(request.wahMinMaxExact):null;
+  check(!exact?.changes.some(c=>c.field==='min'&&minRequested||c.field==='max'&&Object.hasOwn(request.wahControls??{},'max')),'same Min/Max field requested through two policies');
   const modifiers=readModifiers(body),m=modifiers[0];
   check(m.offset===1584&&[0,14].includes(m.source),'unsupported existing source or record');
   const controls=planMeasuredControls(body,controlsRequested?request.wahControls:undefined);
@@ -69,10 +73,13 @@ export function applyWahModifier(body,request,blocks,allow=()=>{}){
   check(!dampingRequested||enabled,'Damping requires final External 1 binding');
   check(!minRequested||enabled,'Min requires final External 1 binding');
   check(!controlsRequested||enabled,'wahControls requires final External 1 binding');
+  check(!exact||enabled,'exact Min/Max requires final External 1 binding');
   check(!enabled||(block?.eid===94&&block.words>5&&body.readUInt16LE(block.header)===94&&body.readUInt16LE(block.header+42)===block.words&&body.readUInt16LE(block.header+44)===4&&block.start>=4610&&block.start+block.words*8<=body.length),'enabling requires an existing Wah1 block');
   const source=enabled?14:0,before=m.source,autoBefore=body.readUInt16LE(m.offset+20),autoAfter=autoRequested?wahAutoEngageCodes[request.wahAutoEngage]:autoBefore;
   const dampingBefore=body.readUInt16LE(m.offset+48),dampingAfter=dampingRequested?wahDampingCodes[request.wahDamping]:dampingBefore;
-  const minBefore=body.readUInt16LE(m.offset+2),minAfter=minRequested?wahMinCodes[request.wahMin]:minBefore;
+  const exactMin=exact?.changes.find(c=>c.field==='min'),exactMax=exact?.changes.find(c=>c.field==='max');
+  const minBefore=body.readUInt16LE(m.offset+2),minAfter=exactMin?.raw??(minRequested?wahMinCodes[request.wahMin]:minBefore);
+  if(exactMax)Object.assign(controls.max,{requested:exactMax.exactDecimal,after:exactMax.raw,display:null,exactDecimal:exactMax.exactDecimal,changed:controls.max.before!==exactMax.raw,evidenceBasis:exactMax.evidenceBasis});
   // Validation is complete before mutating body or notifying the caller.
   if(source!==before){body.writeUInt16LE(source,m.offset);allow(m.offset,2);}
   if(autoAfter!==autoBefore){body.writeUInt16LE(autoAfter,m.offset+20);allow(m.offset+20,2);}
@@ -91,10 +98,10 @@ export function applyWahModifier(body,request,blocks,allow=()=>{}){
     damping:{requested:dampingRequested?request.wahDamping:null,before:dampingBefore,after:body.readUInt16LE(m.offset+48),
       label:dampingLabel(dampingAfter),changed:dampingBefore!==dampingAfter,offset:m.offset+48,bytes:2,
       evidence:'FW13 user export/display pair: EXPONENTIAL=0, LINEAR=1; timing behavior untested'},
-    min:{requested:minRequested?request.wahMin:null,before:minBefore,after:body.readUInt16LE(m.offset+2),
-      display:minDisplay(minAfter),changed:minBefore!==minAfter,offset:m.offset+2,bytes:2,
-      evidence:'FW13 observed display points: 0.00=0, 2.50=16375; no full-range codec, interpolation or DSP confirmation'},
-    controls,
+    min:{requested:exactMin?.exactDecimal??(minRequested?request.wahMin:null),before:minBefore,after:body.readUInt16LE(m.offset+2),
+      display:exactMin?null:minDisplay(minAfter),...(exactMin?{exactDecimal:exactMin.exactDecimal,evidenceBasis:exactMin.evidenceBasis}:{}),changed:minBefore!==minAfter,offset:m.offset+2,bytes:2,
+      evidence:exactMin?'Exact-input contract; see exactMinMax evidence':'FW13 observed display points: 0.00=0, 2.50=16375; no full-range codec, interpolation or DSP confirmation'},
+    controls,...(exact?{exactMinMax:exact}:{}),
     sourceName:final.sourceName,targetName:'WAH_CONTROL',channelScope:final.channelScope,
     evidence:'existing-export-and-FW13-metadata-crosschecked',deviceIO:false,newHardwareMeasurements:false};
 }
@@ -114,10 +121,11 @@ export function renderWahModifierText(edit){
     edit.changed?'Muudeti olemasoleva modifikaatori allikat.':edit.requested===null?'Allikas säilis muutmata.':'Soovitud allikas oli juba valitud; allikasõna säilis muutmata.',
     `Auto Engage: ${edit.autoEngage.label}; ${edit.autoEngage.changed?'muudetud':'säilitatud'}; salvestatud kood ${edit.autoEngage.after}.`,
     `Damping: ${edit.damping.label}; ${edit.damping.changed?'muudetud':'säilitatud'}; salvestatud kood ${edit.damping.after}.`,
-    `Min: ${edit.min.display.toFixed(2)}; ${edit.min.changed?'muudetud':'säilitatud'}; salvestatud kood ${edit.min.after}; täpne mõõdetud kuvapunkt, kogu skaala valem kinnitamata.`,
+    ...(edit.min.display===null?[]:[`Min: ${edit.min.display.toFixed(2)}; ${edit.min.changed?'muudetud':'säilitatud'}; salvestatud kood ${edit.min.after}; täpne mõõdetud kuvapunkt, kogu skaala valem kinnitamata.`]),
+    ...renderWahExact(edit.exactMinMax),
     ...renderMeasuredControls(edit.controls),
     edit.controls?.attackMs.changed||edit.controls?.releaseMs.changed?'Attack/Release ajad: muudeti ainult selgesõnaliselt määratud ajaväärtusi.':'Attack/Release ajad säilisid muutmata.',
-    'Muudetakse ainult selgesõnaliselt valitud mõõtepunkte. Täisvahemiku valem ja väljade sõltumatus pole kinnitatud; uued kombinatsioonid on kontrollitud ainult arvutis. Auto Engage OFF ei lülita External 1 → Wah Control seost välja.',
+    edit.exactMinMax?'Min/Max täpse päringu tõenditase on toodud iga välja juures; ajaloolised kuvapunktid säilitavad oma tähenduse.': 'Muudetakse ainult selgesõnaliselt valitud mõõtepunkte. Täisvahemiku valem ja väljade sõltumatus pole kinnitatud; uued kombinatsioonid on kontrollitud ainult arvutis. Auto Engage OFF ei lülita External 1 → Wah Control seost välja.',
     'Wah-ploki stseenikanal ja bypass on eraldi seaded. Seose sisselülitamine ei aktiveeri bypass-is Wah-plokki.',
     'External 1 peab seadme globaalsetes seadetes olema seotud soovitud pedaali või MIDI-kontrolleriga. Generaator seda ei seadista ega kontrolli pedaali asendit.',
     'Seose väljalülitamine säilitab Wah Control’i salvestatud väärtuse. Aktiivne seos blokeerib selle käsitsi kirjutamise.',

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "mode": "bounded-static-research",
+  "productionVersion": "0.3.13",
+  "newPhysicalExports": 0,
+  "deviceIO": false,
+  "checkpointCount": 19,
+  "sources": {
+    "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+    "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3"
+  },
+  "modCallback": "0x813f86",
+  "callbackField": "object+0x14c",
+  "targetDescriptorField": "object+0x1fc",
+  "targetLookup": "sharedRegistry[targetEffect].descriptors + targetPID * 36",
+  "wahControl": {
+    "family": 20,
+    "pid": 5,
+    "type": 50,
+    "low": 0,
+    "high": 1,
+    "multiplier": 10,
+    "step": 0.0010000000474974513
+  },
+  "minHelper": "0x814220 -> 0x823ae7",
+  "maxHelper": "0x81427c -> 0x823ae7",
+  "uint16Store": "0x823bb4",
+  "op9DelaySlots": [
+    "R2=M6 (1)",
+    "R0=DM(M6,I6) (input float)"
+  ],
+  "editorEventTargets": {
+    "2": "0x100179a24",
+    "3": "0x100179af8",
+    "4": "0x100179a24",
+    "5": "0x100179a34",
+    "6": "0x100179a4c",
+    "7": "0x100179a64",
+    "8": "0x100179a7c",
+    "9": "0x100179aac",
+    "10": "0x100179ae4"
+  },
+  "inputPaths": {
+    "op9": "text getter / nonzero metadata multiplier",
+    "op82": "(current angle - lower angle) / (upper angle - lower angle)"
+  },
+  "minMaxComparison": [
+    {
+      "field": "MOD_MAX",
+      "display": 7.5,
+      "raw": 49159,
+      "physicalInputModel": 49151,
+      "rawImpliedNormalized": 0.750129703665273,
+      "rawImpliedDisplay": 7.50129703665273,
+      "idealDisplayBinCodes": [
+        49118,
+        49183
+      ],
+      "idealDisplayBinCount": 66
+    },
+    {
+      "field": "MOD_MAX",
+      "display": 5,
+      "raw": 32784,
+      "physicalInputModel": 32767,
+      "rawImpliedNormalized": 0.500259407330546,
+      "rawImpliedDisplay": 5.00259407330546,
+      "idealDisplayBinCodes": [
+        32735,
+        32799
+      ],
+      "idealDisplayBinCount": 65
+    },
+    {
+      "field": "MOD_MIN",
+      "display": 2.5,
+      "raw": 16375,
+      "physicalInputModel": 16384,
+      "rawImpliedNormalized": 0.24987029633472702,
+      "rawImpliedDisplay": 2.49870296334727,
+      "idealDisplayBinCodes": [
+        16351,
+        16416
+      ],
+      "idealDisplayBinCount": 66
+    }
+  ],
+  "exactRequestedInputMatches": 0,
+  "generatorWriteSupport": false,
+  "fullRangeEncodingProven": false,
+  "historicalOperationAndInputKnown": false,
+  "armToSharcTransportFullyTraced": false,
+  "editorDynamicMultiplierProducerResolved": false,
+  "reaNewDecompilation": false,
+  "limits": [
+    "Selected static code and operand checks; not full firmware execution.",
+    "Diagnostic model uses float32 division, not general SHARC RECIPS/40-bit emulation.",
+    "Display bins assume ideal decimal rounding; not a replay of the native formatter.",
+    "Raw-implied inputs are inverse compatibility calculations, not independent measured inputs.",
+    "Jump-table boot aliases checked at explicit coordinates; not a generic address-space emulator."
+  ]
+}

@@ -295,3 +295,69 @@ pedaali, DSP-d või CPU-d see ei tõenda.
 198 eraldi tarkvaralist punktikirjutust, 136 vigase sisendi tõrjumist,
 ümardatud sisendialiaste tegelikke väljundnäite ja nelja A–D lukku. Need
 arvud ei ole täiendavate seadmekatsete arvud. 48. kohustuslik offline-test.
+
+
+## Täpse Min/Max-sisendi arenduskandidaat (22.10.2026)
+
+Liides lisandub **0.3.14** lähtekoodi. Avaldamise kinnituse annab eraldi
+väljalaskekviitung; kontrollimport ja heli jäävad eraldi tõenditeks. Vana `wahMin:2.5` kirjutab endiselt ajaloolise hiirekoodi
+16375; vana `wahControls.max:5` kirjutab endiselt 32784.
+
+Uue täpse sisendi jaoks kasuta koostaja `modifiers` objekti:
+
+```json
+{
+  "wahMinMaxExact": {
+    "policy": "exact-wah-cent-fw13-hw1",
+    "min": "2.50",
+    "max": "6.47"
+  }
+}
+```
+
+Soundi kirjelduses asub sama objekt `composer.modifiers` all. Võib määrata
+ainult Min-i või ainult Max-i; teine raw-sõna säilib. Väärtus peab olema
+**string kahe kümnendkohaga**, vahemik `0.00`…`10.00`, samm `0.01`.
+Sama välja määramine vana ja uue lepingu kaudu korraga põhjustab vea.
+Eri välju võib teadlikult määrata eri lepingutega. Päring ei tõlgenda
+vana kuvanäitu ümber ega püüa taastada hiire/klaviatuuri sisendit.
+
+Nõutav on lõplik External 1 → Wah1 Control ALL seos (record 0, effect 94,
+PID 5, Source 14, channel 0) ning olemasolev Wah1. NewLook vajab Wah-malli ja
+`external1Wah:true`. Kinnitatud alusfailide, säilitatud konfiguratsiooni ja
+konkureerivate sihtide kontrollid kehtivad edasi. Vaikimisi bypass ei muutu.
+Aktiivse modifikaatori Control-välja käsikirjutus jääb blokeerituks A–D kanalitel.
+Muid Min/Max-sihttüüpe ega üldist modifikaatorikirjutust ei lisata.
+
+| Täpne sisestussiht | Min/Max sõna | Tõend |
+|---|---:|---|
+| 0.00 | 0 | täpne sisend mõõdetud |
+| 2.50 | 16384 | täpne sisend mõõdetud |
+| 5.00 | 32767 | täpne sisend mõõdetud |
+| 6.47 | 42401 | täpne sisend mõõdetud |
+| 7.50 | 49151 | täpne sisend mõõdetud |
+| 10.00 | 65534 | täpne sisend mõõdetud |
+| ülejäänud 995 sendisammu | piiratud tabelis | nelja mudeli kokkulangevus; mõõtmata |
+
+Tabel `references/wah-minmax-exact.json` luuakse repo käsuga
+`python3 tools/fm3/build-wah-exact-table.py --write`. Vaikimisi kontrollib sama
+käsk tabelit. Enne koostamist taasesitatakse algne TX/RX ja SYX audit; iga
+sisendi kohta kasutatakse eraldi täpset Python-kandidaati. Mootor loeb
+räsiga kinnitatud tabelit, vajades ainult Node.js-i. See ei ava suvaliste
+float32-bittide või kõigi mode-sõltuvate väärtuste kirjutamist.
+
+`capabilities.modifiers.exactMinMax` näitab lepingut, sihti ja tõendi jaotust.
+`validation.json.modifierEdit.exactMinMax` salvestab iga välja täpse
+kümnendstringi, float32-bitid, raw-sõna, tõenditaseme ja mõõtesammud.
+Täpse välja `display` on `null`: katse ei sisaldanud uut ekraanivaatlust.
+TXT eristab sisestussihti mõõdetud kuvaväärtusest. `fullRangeEncodingProven`
+ja `runtimeModeAtStoreProven` jäävad vääraks. Genereeritud faili import,
+pedaal, heli, CPU ning STORE/reload on eraldi kinnitamata.
+
+Ühine `fm3-preset.mjs` loob `.syx`, `.txt`, `.spec.json` ja `.validation.json`.
+`--verify` võrdleb lisaks komplekti räsidele täpset päringut tabeli, raporti,
+TXT tõenditeksti ning lõpliku SYX-i tegelike Min/Max-sõnadega. Kontroll hõlmab
+ka tervet sihtseost, sekundaarset allikat, operatsiooni, konkureerivaid seoseid
+ning sihtploki olemasolu ja stseenikonteksti.
+Vale 6.47 raw 42400 tõrjutakse ka uuesti arvutatud kehtivate kontrollsummadega.
+Uut füüsilist eksporti selle tarkvaralise ühendamise jaoks ei nõuta.

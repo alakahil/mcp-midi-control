@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "method": "hash-pinned static paths plus symbolic MODE1 slice; not CPU emulation",
+  "sources": {
+    "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3"
+  },
+  "checkpointCount": 20,
+  "l1Mapping": [
+    {
+      "visa": "0x1cb91c",
+      "sharc1Byte": "0x28397238"
+    },
+    {
+      "visa": "0x1cb13a",
+      "sharc1Byte": "0x28396274"
+    },
+    {
+      "visa": "0x1c8aa2",
+      "sharc1Byte": "0x28391544"
+    }
+  ],
+  "restorationCases": [
+    {
+      "function": "0x1cb91c",
+      "returnAt": "0x1cb92d",
+      "restoreAt": "0x1cb924",
+      "proof": {
+        "keepMask": "0xffffffff",
+        "forceMask": "0x0",
+        "knownMask": "0x0",
+        "knownValue": "0x0",
+        "equalsIncomingForEveryMatchingWord": true
+      }
+    },
+    {
+      "function": "0x1cb13a",
+      "initialNeBranch": false,
+      "incomingRnd32": false,
+      "returnAt": "0x1cb181",
+      "restoreInDelaySlot": null,
+      "proof": {
+        "keepMask": "0xfffeffff",
+        "forceMask": "0x0",
+        "knownMask": "0x10000",
+        "knownValue": "0x0",
+        "equalsIncomingForEveryMatchingWord": true
+      }
+    },
+    {
+      "function": "0x1cb13a",
+      "initialNeBranch": false,
+      "incomingRnd32": true,
+      "returnAt": "0x1cb17a",
+      "restoreInDelaySlot": "0x1cb17b",
+      "proof": {
+        "keepMask": "0xfffeffff",
+        "forceMask": "0x10000",
+        "knownMask": "0x10000",
+        "knownValue": "0x10000",
+        "equalsIncomingForEveryMatchingWord": true
+      }
+    },
+    {
+      "function": "0x1cb13a",
+      "initialNeBranch": true,
+      "incomingRnd32": false,
+      "returnAt": "0x1cb181",
+      "restoreInDelaySlot": null,
+      "proof": {
+        "keepMask": "0xfffeffff",
+        "forceMask": "0x0",
+        "knownMask": "0x10000",
+        "knownValue": "0x0",
+        "equalsIncomingForEveryMatchingWord": true
+      }
+    },
+    {
+      "function": "0x1cb13a",
+      "initialNeBranch": true,
+      "incomingRnd32": true,
+      "returnAt": "0x1cb17a",
+      "restoreInDelaySlot": "0x1cb17b",
+      "proof": {
+        "keepMask": "0xfffeffff",
+        "forceMask": "0x10000",
+        "knownMask": "0x10000",
+        "knownValue": "0x10000",
+        "equalsIncomingForEveryMatchingWord": true
+      }
+    }
+  ],
+  "helperPreservation": {
+    "truncation": true,
+    "division": null,
+    "timestamp": true,
+    "divisionRestorationAlgebra": true,
+    "divisionNativeReturnSemanticsProven": false,
+    "scope": "Reviewed scalar ABI paths; division preservation is conditional on unresolved compact-return opcode/delay semantics. External interrupts/exceptions excluded."
+  },
+  "btf": {
+    "setAt": "0x1cb13a",
+    "consumedAt": "0x1cb16b",
+    "interveningBtfOverwriteFound": false,
+    "basis": "Type18a and ASTATX.BTF; reviewed arithmetic updates other flags, not BTF."
+  },
+  "selectedPath": {
+    "entry": "0x82959a",
+    "store": "0x823bb4",
+    "operation": 82,
+    "modifierPids": [
+      1,
+      2
+    ],
+    "targetFamily": "WAH",
+    "targetPid": 5,
+    "targetType": 3,
+    "genericType": 0,
+    "genericType0Target": "0x824638",
+    "modePreservedFromEntryToStore": null,
+    "conditionalRestorationModelPreservesMode": true,
+    "nativeReturnSemanticsIndependentlyProven": false,
+    "conditions": [
+      "Valid MOD object and target descriptor, standard scalar ABI.",
+      "Selected successful op82 path, no external interrupt/exception effects.",
+      "The 0x0afe parcel at 0x1cb17a is treated as delayed RTS by the legacy decoder; reconcile with the SHARC+ Type11c figure before claiming native closure.",
+      "Reviewed callees and tables; not a general firmware interpreter."
+    ]
+  },
+  "runtimeModeAtEntryProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "nextStep": "Trace caller/scheduler MODE1 invariant before 0x82959a; retain consensus-only offline candidate until scope and exact-display input policy are resolved."
+}

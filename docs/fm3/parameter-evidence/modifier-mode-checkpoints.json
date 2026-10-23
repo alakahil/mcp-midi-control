@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "addressMapSource": {
+    "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADSP-SC582_583_584_587_589_ADSP-21583_584_587.pdf",
+    "revision": "C",
+    "page": 11,
+    "tables": [
+      4,
+      6
+    ]
+  },
+  "nativeBytesIncluded": false,
+  "spans": [
+    {
+      "name": "division_helper",
+      "source": "visa",
+      "address": "0x1cb13a",
+      "size": 158,
+      "sha256": "0d2f177a2642ee894ee1a06da9fbe3f3dbdeeedd4419a56b8bf9365f68f2c88a"
+    },
+    {
+      "name": "truncation_helper",
+      "source": "visa",
+      "address": "0x1cb91c",
+      "size": 46,
+      "sha256": "27718f4c6d0714a39bfd4f73fbf604a785fdace11a175e4fb0e2db2efa3872c5"
+    },
+    {
+      "name": "timestamp_helper",
+      "source": "visa",
+      "address": "0x1c8aa2",
+      "size": 40,
+      "sha256": "f8041f7f889cf46dcdc6933ee2c9eafe21c7055e10d78cfdf0d1237eedbd2191"
+    },
+    {
+      "name": "object_lookup",
+      "source": "visa",
+      "address": "0x8232dc",
+      "size": 166,
+      "sha256": "1f6ee7675a36f2e78330abbfd8f234146eb2800da7490f82c82665ac3bbd7e86"
+    },
+    {
+      "name": "pid_validation",
+      "source": "visa",
+      "address": "0x823892",
+      "size": 154,
+      "sha256": "56f5ab98927b84f10edeec5ae0ec0f0cd05e98efbb53c2744c4acbfd043870be"
+    },
+    {
+      "name": "dispatcher_entry",
+      "source": "visa",
+      "address": "0x82959a",
+      "size": 286,
+      "sha256": "ad94f3e02ae17b7f2ca3a40bc6fec72cb7e0b5137e5c7ff9b7b113513b6abb7b"
+    },
+    {
+      "name": "dispatcher_callback",
+      "source": "visa",
+      "address": "0x82968c",
+      "size": 234,
+      "sha256": "d22a47a0785c23c17254878247572e2b2573e89ba865a1552209e1d6036c7b23"
+    },
+    {
+      "name": "mod_entry",
+      "source": "visa",
+      "address": "0x813f86",
+      "size": 188,
+      "sha256": "e5f6902649712575ad8c1f0534757d4c13c9d62da5d7a1f984b5316160b1521e"
+    },
+    {
+      "name": "generic_prefix",
+      "source": "visa",
+      "address": "0x8244fb",
+      "size": 442,
+      "sha256": "2e7b7b3084e1c3068a04a447fe58e6e7709baf24b98830adf17648243302033d"
+    },
+    {
+      "name": "generic_type0_dispatch",
+      "source": "visa",
+      "address": "0x82460d",
+      "size": 24,
+      "sha256": "dc1caff889b9a94753578d6268be133756fc95577d7cfb4772f4e39433da62dc"
+    },
+    {
+      "name": "generic_epilogue",
+      "source": "visa",
+      "address": "0x824638",
+      "size": 86,
+      "sha256": "d79ca194368883c387c7baaf2968f9ef38a08df4965abecd99df0edace6644c1"
+    },
+    {
+      "name": "mod_min_branch",
+      "source": "visa",
+      "address": "0x8141e6",
+      "size": 130,
+      "sha256": "1e4be66c8beb0ea14027e04037d23dcd4f53ca947a3f39eae40fad60600e855c"
+    },
+    {
+      "name": "mod_max_branch",
+      "source": "visa",
+      "address": "0x814256",
+      "size": 90,
+      "sha256": "02e64f48d9213d6abfadd09f7078d7682293be1ef5f95737459670076e8ca49f"
+    },
+    {
+      "name": "mod_writer_pre_store",
+      "source": "visa",
+      "address": "0x823ae7",
+      "size": 414,
+      "sha256": "24dd9442054b29da4529ebe77dccd933e8493ec8405ee2cc81b084597dcdbc1a"
+    },
+    {
+      "name": "generic_type0_table",
+      "source": "byte",
+      "address": "0x282e76c0",
+      "size": 4,
+      "sha256": "8042dc6187967016d5ea93db004f933d321b3dd36aef91f4a0b50e2b770142b3"
+    },
+    {
+      "name": "mod_minmax_descriptors",
+      "source": "byte",
+      "address": "0x8090c2b4",
+      "size": 72,
+      "sha256": "1922b8c4bd8a4a901af5566eeff2d56d4636f61fad1e8780054597664874e10c"
+    },
+    {
+      "name": "wah_control_descriptor",
+      "source": "byte",
+      "address": "0x809aa5e4",
+      "size": 36,
+      "sha256": "a22fa14b884d8db4f5c1952ec1bdf4934802867de38136275e1f000e66a182db"
+    },
+    {
+      "name": "mod_pid_table",
+      "source": "byte",
+      "address": "0x282e6220",
+      "size": 8,
+      "sha256": "8747cabeaca976ceb9296fd4ac3f29b0d5ce807f3d1597cf677433032e4769a4"
+    },
+    {
+      "name": "min_type3_table",
+      "source": "byte",
+      "address": "0x282e61f0",
+      "size": 4,
+      "sha256": "9bf2fb95d1a0bb45a8a5ae287cd0767b30a099e235a1f82709711d13f23a997a"
+    },
+    {
+      "name": "max_type3_table",
+      "source": "byte",
+      "address": "0x282e61b8",
+      "size": 4,
+      "sha256": "a7ee3befc889302c734d2a052d028e2f9260a2b1f56e285189af4c0514c98749"
+    }
+  ]
+}

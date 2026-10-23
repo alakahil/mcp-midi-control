@@ -42,6 +42,8 @@ jobs:
           node --test tools/fm3/test-modifier-min.mjs
           node --test tools/fm3/test-modifier-batch.mjs
           python3 tools/fm3/modifier_quantization_audit.py
+          python3 tools/fm3/test-modifier-value-path.py
+          python3 tools/fm3/test-modifier-sharc.py
           python3 tools/fm3/parameter-evidence.py
           python3 tools/fm3/metadata_reconciliation.py
           node tools/fm3/encoder-matrix.mjs
@@ -49,6 +51,11 @@ jobs:
         run: |
           git fetch --no-tags origin f0a99bc190fcbe3a63284335c68fad66e9f9a36c 194833788d15db09d5ab9a774940ae84fcdebaad
           python3 tools/fm3/modifier_remaining_audit.py
+      - name: Verify bounded hardware Min/Max evidence and failure cases
+        run: |
+          python3 tools/fm3/test-modifier-hw-replay.py
+          python3 tools/fm3/test-modifier-minmax-hw-candidate.py
+          node --test tools/fm3/test-modifier-hw-candidate-syxdiff.mjs
       - name: Run the required offline suite
         run: python3 tools/fm3/test-offline.py --output "$RUNNER_TEMP/fm3-tests"
       - name: Build the tested commit

@@ -99,6 +99,8 @@ def native_check(editor=None):
 
 def build(editor=None):
     _, cache = cache_records()
+    input_method_path = DOC / 'modifier-input-method-evidence.json'
+    input_method = json.loads(input_method_path.read_text())
     captures, points, excluded = [], [], []
     for batch, filename in [('A','modifier-batch-a-evidence.json'),
                             ('B','modifier-batch-b-evidence.json'),
@@ -138,6 +140,8 @@ def build(editor=None):
     for p in points:
         require(records[p['captureSha256']]['words'][p['pid']] == p['raw'], 'Measured raw mismatch')
         c = cache[3,p['pid']]
+        p['inputMethod'] = 'mouse-drag' if p['pid'] in (1,2) else 'typed-text'
+        p['inputMethodStatus'] = 'user-confirmed-2026-10-22; exact event/float not recorded'
         bounds = c['numeric_fields']
         kind = 'log' if p['pid'] == 13 else 'linear'
         if p['pid'] in (1,2):
@@ -162,11 +166,14 @@ def build(editor=None):
                                     'includesMeasuredRaw': p['raw'] in compatible}
     ordinary = [p for p in points if p['pid'] not in (1,2)]
     special = [p for p in points if p['pid'] in (1,2)]
-    return {'schemaVersion': 1, 'date': '2026-10-21', 'mode': 'offline-research-not-encoder',
+    return {'schemaVersion': 1, 'date': '2026-10-22', 'mode': 'offline-research-not-encoder',
             'productionVersion': '0.3.13', 'newPhysicalExports': 0, 'deviceIO': False,
             'cacheSha256': CACHE_SHA, 'native': native_check(editor),
             'captureFiles': [{'file':c['file'],'sha256':c['sha256']} for c in captures],
-            'inputEvidenceLimit': 'Requested targets come from the reviewed capture plans and user statements; no keystroke or wire trace was recorded. Screenshot displays are separate observations. Baseline display aliases are not treated as typed inputs.',
+            'inputMethodEvidence': {'file': str(input_method_path.relative_to(ROOT)),
+                                    'sha256': sha(input_method_path.read_bytes()),
+                                    'statement': input_method['userStatement']},
+            'inputEvidenceLimit': 'User confirms mouse dragging for Min/Max and typed entry for the other changed numeric points. Exact coordinates, keystrokes and wire floats were not recorded. Requested targets and screenshot displays remain separate observations; the Attack discrepancy is not resolved by knowing the input method.',
             'roundingHypothesis': 'Nearest is floor(scaled+0.5) for nonnegative raw values. This does not establish tie behavior or a particular device float/log implementation.',
             'attackDiscrepancy': {'userTextDisplayMs': 9.99, 'screenshotDisplayMs': 99.9,
                                  'requestedTargetMs': 100, 'raw': 655,
@@ -180,7 +187,7 @@ def build(editor=None):
                         'minMaxPoints': len(special),
                         'minMaxNearestMatches': sum(p['matches']['nearestFloat64'] for p in special),
                         'allDisplayBinsIncludeMeasuredRaw': all(p['displayBinHypothesis']['includesMeasuredRaw'] for p in points)},
-            'conclusion': 'Nearest rounding fits these 18 ordinary requested-target points but is not established over their full ranges. Direct linear Min/Max encoding is contradicted by all three changed points. Float32 stages do not rescue those Min/Max counterexamples. A matching display bin is insufficient to prove an encoder.',
+            'conclusion': 'Nearest rounding fits these 18 ordinary requested-target points but is not established over their full ranges. Min/Max were dragged, so their displayed targets are not exact typed inputs: the retained 0/3 direct-display comparison does not refute linear encoding of the actual normalized drag input. See modifier-drag-audit.json for the conditional forward model. A matching display bin alone does not prove an encoder.',
             'fullRangeWriterAuthorizedByEvidence': False}
 
 

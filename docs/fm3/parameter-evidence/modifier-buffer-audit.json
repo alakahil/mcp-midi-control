@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "reviewedSpans": 7,
+  "instructionBoundaries": 267,
+  "method": "Native operand readers, hash-bound manual partitions, nonreturn CFGs and guarded symbolic MODE1 identities; no firmware execution.",
+  "nonreturnCertificates": {
+    "0x833668": {
+      "nodes": 7,
+      "normalReturnReachable": false,
+      "opaqueCalls": [
+        "0x83428a"
+      ],
+      "scope": "Ordinary call continuations only; opaque callees may fail to return. No bound on their MODE1 effects, asynchronous handlers or nonlocal transfers."
+    },
+    "0x8336c8": {
+      "nodes": 6,
+      "normalReturnReachable": false,
+      "opaqueCalls": [
+        "0x835149",
+        "0x83521e"
+      ],
+      "scope": "Ordinary call continuations only; opaque callees may fail to return. No bound on their MODE1 effects, asynchronous handlers or nonlocal transfers."
+    }
+  },
+  "falseFallthroughsExcluded": [
+    "0x82c903 -> 0x82c90a",
+    "0x82e1c6 -> 0x82e1ce",
+    "0x8336dc -> 0x8336e4"
+  ],
+  "closedBufferContracts": {
+    "0x1cbe86_R12_0x4c00": {
+      "states": 49,
+      "entryZeroMask": "0x200000",
+      "returnSites": [
+        "0x1cbf07"
+      ],
+      "synchronousCallees": [],
+      "nonreturnOnlyNodes": 0,
+      "conditionalMode1Identity": true,
+      "assumedCallees": [],
+      "terminationProven": false
+    },
+    "0x82e179_R4_0x4c00": {
+      "states": 22,
+      "entryZeroMask": "0x200000",
+      "returnSites": [
+        "0x82e1ae"
+      ],
+      "synchronousCallees": [
+        "0x1cbe86"
+      ],
+      "nonreturnOnlyNodes": 7,
+      "conditionalMode1Identity": true,
+      "assumedCallees": [],
+      "terminationProven": false
+    },
+    "0x82c8a2": {
+      "states": 33,
+      "entryZeroMask": "0x200000",
+      "returnSites": [
+        "0x82c8f7"
+      ],
+      "synchronousCallees": [],
+      "nonreturnOnlyNodes": 2,
+      "conditionalMode1Identity": true,
+      "assumedCallees": [],
+      "terminationProven": false
+    }
+  },
+  "layout": {
+    "bufferCount": 4,
+    "bytesPerBuffer": 19456,
+    "normalWordsPerBuffer": 4864,
+    "recordBase": "0x3167f0",
+    "recordStrideAddressUnits": 16,
+    "alignmentBytes": 8,
+    "alignmentExpression": "((offset + 7) & 0xfffffff8) + 0x83a316e0, modulo 2^32",
+    "memoryCapacityAndNoWrapProven": false
+  },
+  "mathLeafModeOnly": {
+    "proof": {
+      "states": 43,
+      "returnSites": [
+        "0x1cb7e8"
+      ],
+      "synchronousCallees": [],
+      "allReturningPathsPreserveIncomingMode1": true,
+      "terminationProven": false
+    },
+    "simdSharedRegisterExtension": true,
+    "basis": "Core PRM rev1.5 section 4-59/60 and 14-35: unconditional MODE1/I12 shared-register moves have no implicit PEy destination. Reviewed I12 token is not overwritten before restoration. No SIMD numerical output proof."
+  },
+  "initializer82fe42": {
+    "closed": false,
+    "remainingSynchronousDependency": "0x1cb13a",
+    "conditionalDiagnostic": {
+      "states": 97,
+      "entryZeroMask": "0x200000",
+      "returnSites": [
+        "0x82ff39"
+      ],
+      "synchronousCallees": [
+        "0x1cb13a",
+        "0x1cb77a",
+        "0x82c8a2",
+        "0x82e179"
+      ],
+      "nonreturnOnlyNodes": 0,
+      "conditionalMode1Identity": true,
+      "assumedCallees": [
+        "0x1cb13a"
+      ],
+      "terminationProven": false
+    }
+  },
+  "remainingInitializers": [
+    "0x82c228",
+    "0x82fe42",
+    "0x80f1ba",
+    "0x8289bc",
+    "0x1c8b15"
+  ],
+  "scope": "Normal finite returns; scalar entry for buffer/allocator/root, known allocation size, reviewed ABI/memory integrity and no asynchronous exceptions or nonlocal transfers. Fatal-only calls have unbounded effects. Full arbitrary-input memset correctness and termination are not claimed.",
+  "compactReturnEncodingIndependentlyProven": false,
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false
+}

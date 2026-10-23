@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "method": "Native frame/control operands plus hash-bound manual negative inventory and a conditional symbolic saved-slot proof; not CPU execution.",
+  "manual": {
+    "sha256": "a3edf83beb75b44a77f8366cf54c0353083ab49a1c69d8179d2b727ba7ba1470",
+    "sections": [
+      "14-20/21 Type3c",
+      "16-12 Type15b",
+      "16-13/14 Type16a",
+      "17-15 CJUMP",
+      "29-54/55 MODE1"
+    ]
+  },
+  "reviewedPartitions": [
+    {
+      "file": "modifier-frame-checkpoints.json",
+      "sha256": "4022241d220c1831ddf3556940446af2e98aaa67d9e953af73f75d07cea26600",
+      "instructions": 130
+    }
+  ],
+  "reviewedInstructionBoundaries": 130,
+  "functionEntry": "0x837b00",
+  "functionEndExclusive": "0x837c26",
+  "functionInstructions": 121,
+  "controlNodes": 115,
+  "nativeCallFrameWitnesses": [
+    {
+      "at": "0x1c95ec",
+      "target": "0x837b00",
+      "delayInstructions": 2,
+      "savedFrameOffsetBytes": 0,
+      "savedReturnOffsetBytes": -4,
+      "calleeI7MinusI6Bytes": -8,
+      "storedReturnWord": "0x1c95f2",
+      "continuationWithM14One": "0x1c95f3",
+      "runtimeAbiValidityProven": false
+    },
+    {
+      "at": "0x1c960d",
+      "target": "0x837b00",
+      "delayInstructions": 2,
+      "savedFrameOffsetBytes": 0,
+      "savedReturnOffsetBytes": -4,
+      "calleeI7MinusI6Bytes": -8,
+      "storedReturnWord": "0x1c9613",
+      "continuationWithM14One": "0x1c9614",
+      "runtimeAbiValidityProven": false
+    },
+    {
+      "at": "0x1c962e",
+      "target": "0x837b00",
+      "delayInstructions": 2,
+      "savedFrameOffsetBytes": 0,
+      "savedReturnOffsetBytes": -4,
+      "calleeI7MinusI6Bytes": -8,
+      "storedReturnWord": "0x1c9634",
+      "continuationWithM14One": "0x1c9635",
+      "runtimeAbiValidityProven": false
+    }
+  ],
+  "stackGeometry": {
+    "pushes": [
+      {
+        "register": "0x5",
+        "offsetBytes": -8
+      },
+      {
+        "register": "0x6",
+        "offsetBytes": -12
+      },
+      {
+        "register": "0x9",
+        "offsetBytes": -16
+      },
+      {
+        "register": "0xa",
+        "offsetBytes": -20
+      },
+      {
+        "register": "0xb",
+        "offsetBytes": -24
+      },
+      {
+        "register": "0xd",
+        "offsetBytes": -28
+      },
+      {
+        "register": "0xe",
+        "offsetBytes": -32
+      },
+      {
+        "register": "0x49",
+        "offsetBytes": -36
+      },
+      {
+        "register": "0x19",
+        "offsetBytes": -40
+      },
+      {
+        "register": "0x28",
+        "offsetBytes": -44
+      },
+      {
+        "register": "0x8",
+        "offsetBytes": -48
+      }
+    ],
+    "modeSaveOffsetBytes": -52,
+    "afterModeSaveOffsetBytes": -56,
+    "restoreOffsetBytes": -52,
+    "sameAddress": true
+  },
+  "geometryPremises": [
+    "M7=-1 remains valid; startup assignment alone is not a runtime invariant.",
+    "The three CJUMPs execute both reviewed delay instructions with SISD entry and aligned 32-bit NW stack accesses in byte space.",
+    "I6/I7 stack addressing is linear (no circular wrap); stack memory is valid; no asynchronous interference."
+  ],
+  "sameAddressUnderAbiPremises": true,
+  "saveDominatesRestoreInReviewedGraph": true,
+  "modeSet": {
+    "at": "0x837b5c",
+    "mask": "0x80600000",
+    "fields": [
+      "SELPE",
+      "BDCST9",
+      "PEYEN"
+    ],
+    "roundingBitsChanged": false,
+    "dagBankBitsChanged": false
+  },
+  "possibleSlotWriters": [
+    {
+      "at": "0x837b7a",
+      "index": 4,
+      "modifier": 7,
+      "postmodify": true,
+      "register": "0x4",
+      "condition": 17,
+      "computeLegalityIndependentlyProven": false,
+      "actualAddressesKnown": false,
+      "allActivePeWritesMustBeExcluded": true
+    },
+    {
+      "at": "0x837b80",
+      "index": 4,
+      "modifier": 2,
+      "postmodify": true,
+      "register": "0x54",
+      "condition": 27,
+      "computeLegalityIndependentlyProven": true,
+      "actualAddressesKnown": false,
+      "allActivePeWritesMustBeExcluded": true
+    },
+    {
+      "at": "0x837b82",
+      "index": 4,
+      "modifier": 6,
+      "postmodify": true,
+      "register": "0x54",
+      "condition": 11,
+      "computeLegalityIndependentlyProven": true,
+      "actualAddressesKnown": false,
+      "allActivePeWritesMustBeExcluded": true
+    },
+    {
+      "at": "0x837ba4",
+      "index": 5,
+      "modifier": 4,
+      "postmodify": false,
+      "register": "0xd",
+      "condition": 29,
+      "computeLegalityIndependentlyProven": false,
+      "actualAddressesKnown": false,
+      "allActivePeWritesMustBeExcluded": true
+    },
+    {
+      "at": "0x837ba7",
+      "index": 5,
+      "modifier": 2,
+      "postmodify": true,
+      "register": "0xc",
+      "condition": 31,
+      "computeLegalityIndependentlyProven": false,
+      "actualAddressesKnown": false,
+      "allActivePeWritesMustBeExcluded": true
+    }
+  ],
+  "conditionalProof": {
+    "states": 136,
+    "returnSites": [
+      "0x837bd8"
+    ],
+    "liveSlotStoreSites": [
+      "0x837b7a",
+      "0x837b80",
+      "0x837b82",
+      "0x837ba4",
+      "0x837ba7"
+    ],
+    "allFiniteNormalReturnsPreserveModeUnderPremises": true,
+    "entryZeroMask": "0x200000",
+    "terminationProven": false,
+    "aliasPremisesDischarged": false
+  },
+  "rejectedMissingAliasPremises": [
+    "0x837b7a",
+    "0x837b80",
+    "0x837b82",
+    "0x837ba4",
+    "0x837ba7"
+  ],
+  "preservationPremises": [
+    "Every possible write at the five listed sites, in every loop iteration and active PE, avoids the saved word and its physical aliases.",
+    "Caller-provided buffers are ordinary valid memory, not system-register/MMR aliases, and cannot corrupt the control frame.",
+    "The hash-bound manual inventory covers all MODE1 and stack-pointer effects on this function path. Type3a compute legality is not independently decoded.",
+    "Normal calls/returns and valid native loop execution; no asynchronous or nonlocal transfer."
+  ],
+  "unknowns": [
+    "Actual I4/I5 buffer addresses, circular spans and non-overlap with the saved slot have not been established.",
+    "Caller ABI validity and reachability from the Min/Max store task are not proved.",
+    "Runtime MMASK stability, compact RTI encoding and the remaining coreTask paths stay open."
+  ],
+  "sameUnmodifiedSavedWordProven": false,
+  "fullFunctionModePreservationProven": false,
+  "priorContextAuditReplayed": true,
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "nextStep": "Trace the three wrapper callers and the I4/I5 buffer origins to discharge the explicit memory-alias premises. No preset export is needed for this code question."
+}
