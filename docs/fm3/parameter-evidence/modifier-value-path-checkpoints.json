@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "scope": "Coordinates and hashes only; no additional native bytes or complete CFG proof.",
+  "spans": [
+    {
+      "name": "rotaryGetter",
+      "source": "editor",
+      "address": "0x10025e9d0",
+      "size": 28,
+      "sha256": "ce5c758b2840782dfbdecee05a29f6ab67ed7aa64c1960e1d63db701041a5242"
+    },
+    {
+      "name": "readoutAllocation",
+      "source": "editor",
+      "address": "0x10025d5c8",
+      "size": 80,
+      "sha256": "5d5b76f425578c951a2b9f58dadc3d7e1020bcc3d889ca0fc3f462ac255b2ee4"
+    },
+    {
+      "name": "readoutVtableConstructor",
+      "source": "editor",
+      "address": "0x10023e178",
+      "size": 12,
+      "sha256": "f6b88f2cc37f5e19e902bd0a1039501fc81de4597ea4095a2d8782e21438fd5b"
+    },
+    {
+      "name": "readoutGetterBinding",
+      "source": "editor",
+      "address": "0x100db8650",
+      "size": 16,
+      "sha256": "e11310c16aa5b93b11ffffb865a286da8c5a256bb26e887c56aedbbe13a022c3"
+    },
+    {
+      "name": "readoutTextGetter",
+      "source": "editor",
+      "address": "0x10023c494",
+      "size": 88,
+      "sha256": "46747a5efb96aa835f4d82b8d685fdd6345632806937c5b5151b61ec6af36585"
+    },
+    {
+      "name": "readoutNumericGetter",
+      "source": "editor",
+      "address": "0x10023c220",
+      "size": 528,
+      "sha256": "b44b35ff16dd264432547777beaa996e3f14b2537066f55c6d499f8d7e855720"
+    },
+    {
+      "name": "parserStrtodCall",
+      "source": "editor",
+      "address": "0x10002f1fc",
+      "size": 16,
+      "sha256": "278445951091af0234e04800a78981d8e199d25dfcae10a92ce569c94a4a76e2"
+    },
+    {
+      "name": "parserImportStub",
+      "source": "editor",
+      "address": "0x100510a84",
+      "size": 12,
+      "sha256": "63b8452a5c13d581ccedd6a7b97035dc82489615c5d4bb9be4f9cadaa8d633c7"
+    },
+    {
+      "name": "providerDialogBinding",
+      "source": "editor",
+      "address": "0x1002b6efc",
+      "size": 40,
+      "sha256": "f0f229e96d9fc1574d194626dff0a8af10a6ad88ed75a61d952f24df932ccab0"
+    },
+    {
+      "name": "providerConstructor",
+      "source": "editor",
+      "address": "0x1002a0cd0",
+      "size": 40,
+      "sha256": "cec3aa8b059166ff39c9b984ddf40f8236ae08e76cee05190f591f119641d1ca"
+    },
+    {
+      "name": "providerVtableBinding",
+      "source": "editor",
+      "address": "0x100dcb4d0",
+      "size": 8,
+      "sha256": "cf1435f3c5de7f872f15f2eadf9e65a57b7fa3ba7d51574be7feee7ba2270b88"
+    },
+    {
+      "name": "providerLookup",
+      "source": "editor",
+      "address": "0x10029ba78",
+      "size": 136,
+      "sha256": "6a1f72feaa9a35dcd5fca074f837d61f3d812d55735266edf3aac8b1d48bef76"
+    },
+    {
+      "name": "genericMetadataLookup",
+      "source": "editor",
+      "address": "0x10007c544",
+      "size": 228,
+      "sha256": "40ec364afcb38e6e3d3f195dfb5016b529e23282bf369e93f080a82494044114"
+    },
+    {
+      "name": "effectFamilyMap",
+      "source": "editor",
+      "address": "0x100539358",
+      "size": 288,
+      "sha256": "a1e0a8b36f8c28af13cfe34508497e6f40c2d2f7ce756b01fa29c5d3c7bbe7fc"
+    },
+    {
+      "name": "replyNormalizedPosition",
+      "source": "editor",
+      "address": "0x10017a128",
+      "size": 136,
+      "sha256": "bccc4a2a3f7b297cf9992a0db87827be5affea539d098c64a9001ccc892052b1"
+    },
+    {
+      "name": "angularBoundsSetter",
+      "source": "editor",
+      "address": "0x10025d890",
+      "size": 80,
+      "sha256": "401f71f054dd24683284c5aeb2c26eac997ecdbd444d3d5f6c1252e11688cb2b"
+    },
+    {
+      "name": "genericReadSwitch",
+      "source": "firmware",
+      "address": "0xc441c590",
+      "size": 152,
+      "sha256": "ad51d7ff5b52a39c955c84075be6aefb0107a709ae23c4d4c1bad8fe6f8ab371"
+    },
+    {
+      "name": "genericReadDefault",
+      "source": "firmware",
+      "address": "0xc441cad6",
+      "size": 16,
+      "sha256": "377028a2cd0b030ef7b907115d42259943adfe7dd7a193fc151b3c0599da3e15"
+    },
+    {
+      "name": "op9ReadGateSlot",
+      "source": "firmware",
+      "address": "0xc441c640",
+      "size": 4,
+      "sha256": "1164bf651b8b1c129c43d0a59f5c3a4bf1f883ac9e6c7482e4168d54aa5a6e8a"
+    },
+    {
+      "name": "op9MainSwitchSlot",
+      "source": "firmware",
+      "address": "0xc441c084",
+      "size": 4,
+      "sha256": "d9aac60d8e32cdc91d54b72028395e86c22f6951f4f9454f4706d174aee06409"
+    },
+    {
+      "name": "mainDispatcher",
+      "source": "firmware",
+      "address": "0xc441bfa4",
+      "size": 188,
+      "sha256": "1afc104f0a3c36f524c767b2cc0b78002f6aa1c73f49b069d3fd2460eb1b5d01"
+    },
+    {
+      "name": "mainOp9Case",
+      "source": "firmware",
+      "address": "0xc441c0ea",
+      "size": 36,
+      "sha256": "4d5b12f223ab52a29f3c9f3a8bafc6a12147d6cf9c6c5150afeb35dd389da138"
+    },
+    {
+      "name": "callbackDispatch",
+      "source": "firmware",
+      "address": "0xc441c180",
+      "size": 96,
+      "sha256": "ef81430a12929817a5738677b8fa31c194000e5e1969d30b2a3392015eb7b251"
+    }
+  ]
+}

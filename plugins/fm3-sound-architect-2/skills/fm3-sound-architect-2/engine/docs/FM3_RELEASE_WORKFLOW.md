@@ -10,9 +10,13 @@
 
 ## Ulatus
 
-0.3.3 kandidaat lisab logaritmiliste juhikute mittepositiivse sisendi tõrjumise.
-Kandidaat ei ole uus avaldatud pluginaväljalase: avaldamine, täpne commit ja
-käivitajajuhendi uuendus tuleb kinnitada väljalaskekviitungis. Kuue välja
+Praegune lähtekood valmistab ette 0.3.14 kandidaati: täpse Wah Min/Max-sisendi
+piiratud leping, tõenditasemete eristus ja lõppfaili sihtseose kontroll.
+Avaldamine, täpne commit ja käivitajajuhendi uuendus tuleb kinnitada
+väljalaskekviitungis. Versiooninumber üksi ei kinnita avaldamist.
+
+Järgnev kirjeldab varasemates etappides lisatud tuge. 0.3.3 lisas
+logaritmiliste juhikute mittepositiivse sisendi tõrjumise. Kuue välja
 metaandmed on [lahendatud FM3 enda allikatega](FM3_METADATA_RESOLUTION.md):
 DynaCab kuvatav skaala on 0–10; kolm Choruse sümbolit on lisatud; peidetud
 Drive Oversampling on blokeeritud. Lisatud on Chorus/Drive tüübisobivus ning
@@ -87,7 +91,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 48 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 49 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
@@ -263,3 +267,21 @@ luba. Originaalpilte ei avaldata. Enne loa küsimist valmista ette puhas
 commit, täielik testitulemus, deterministlik pakend ja kohalik kasutuskatse.
 Pärast luba kehtivad endiselt GitHub CI, serveripaketi tagasivõrdlus ja
 värske hosti laadimiskontroll; praegust kandidaati ei nimetata avaldatuks.
+
+
+## 0.3.14 täpse Wah Min/Max-sisendi kandidaat
+
+Täpne päring `wahMinMaxExact` kasutab eraldi lepingut
+`exact-wah-cent-fw13-hw1`; ajalooliste hiirepunktide tähendus säilib.
+Mõõdetud ja nelja mudeli kokkulangevusest tuletatud sisendid on aruandes
+selgelt eristatud. Ükski avaldamise samm ei muuda `fullRangeEncodingProven`
+väärtust tõeseks. Lõppfaili kontroll kontrollib lisaks sõnadele tervet
+modifikaatoriseost ja sihtploki konteksti.
+
+Tabeli päritolu ja originaalse riistvaralogi taasesitus on osa repo
+`test-offline.py` käivitusest; pakendatud generaator vajab ainult Node.js-i.
+Nõua puhta commit'i 49/49 offline-raportit, deterministlikku arhiivi,
+lahtipakitud paketi enesekontrolli ja ühe täpse Min/Max-näite nelja faili.
+Avalikku reposse lisanduva 22.10.2026 mõõte-ZIP-i avaldamisluba, tegelik
+GitHub CI ning pärast avaldamist paketi tagasivõrdlus ja hostilaadimine
+on eraldi kinnitatavad sammud. Väljalaskeülevaatus ise ei avalda pluginat.

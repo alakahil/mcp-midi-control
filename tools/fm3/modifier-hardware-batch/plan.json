@@ -1,0 +1,748 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.0",
+  "firmware": "13.00",
+  "productionPlugin": "0.3.13",
+  "scope": "research-only hardware experiment; no generator promotion",
+  "target": {
+    "record": 0,
+    "wireEffectId": 3,
+    "targetEffectId": 94,
+    "targetPid": 5,
+    "targetLabel": "Wah 1 Control",
+    "blockChannel": "A",
+    "modifierChannel": 0,
+    "modifierChannelScope": "ALL",
+    "source": 14
+  },
+  "baselineSha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+  "baselineBodySha256": "cd352d25d04a9bb281b3a19b8753d4dcb47a05e57a14cca41afeee9796c6c763",
+  "steps": [
+    {
+      "id": "01",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x00000000",
+      "inputFloat32": 0.0,
+      "nominalDisplay": "0.00",
+      "purpose": "lower endpoint",
+      "modelPredictions": {
+        "32-nearest": 0,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0
+      ]
+    },
+    {
+      "id": "02",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x3e800000",
+      "inputFloat32": 0.25,
+      "nominalDisplay": "2.50",
+      "purpose": "exact quarter vs historical mouse value",
+      "modelPredictions": {
+        "32-nearest": 16384,
+        "40-nearest": 16384,
+        "32-zero": 16384,
+        "40-zero": 16384
+      },
+      "allowedModelWords": [
+        16384
+      ]
+    },
+    {
+      "id": "03",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x3f000000",
+      "inputFloat32": 0.5,
+      "nominalDisplay": "5.00",
+      "purpose": "exact midpoint vs historical mouse value",
+      "modelPredictions": {
+        "32-nearest": 32767,
+        "40-nearest": 32767,
+        "32-zero": 32767,
+        "40-zero": 32767
+      },
+      "allowedModelWords": [
+        32767
+      ]
+    },
+    {
+      "id": "04",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x3f400000",
+      "inputFloat32": 0.75,
+      "nominalDisplay": "7.50",
+      "purpose": "exact three quarters vs historical mouse value",
+      "modelPredictions": {
+        "32-nearest": 49151,
+        "40-nearest": 49151,
+        "32-zero": 49151,
+        "40-zero": 49151
+      },
+      "allowedModelWords": [
+        49151
+      ]
+    },
+    {
+      "id": "05",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x3f25a1ca",
+      "inputFloat32": 0.6469999551773071,
+      "nominalDisplay": "near 6.47: lower float neighbor",
+      "purpose": "precision discriminant neighbor",
+      "modelPredictions": {
+        "32-nearest": 42400,
+        "40-nearest": 42400,
+        "32-zero": 42400,
+        "40-zero": 42400
+      },
+      "allowedModelWords": [
+        42400
+      ]
+    },
+    {
+      "id": "06",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x00000000",
+      "inputFloat32": 0,
+      "nominalDisplay": "0.00",
+      "purpose": "guard reset so the following boundary observation cannot be a no-op",
+      "modelPredictions": {
+        "32-nearest": 0,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0
+      ]
+    },
+    {
+      "id": "07",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x3f25a1cb",
+      "inputFloat32": 0.6470000147819519,
+      "nominalDisplay": "near 6.47: canonical float",
+      "purpose": "32-nearest vs other three models",
+      "modelPredictions": {
+        "32-nearest": 42401,
+        "40-nearest": 42400,
+        "32-zero": 42400,
+        "40-zero": 42400
+      },
+      "allowedModelWords": [
+        42400,
+        42401
+      ]
+    },
+    {
+      "id": "08",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x00000000",
+      "inputFloat32": 0,
+      "nominalDisplay": "0.00",
+      "purpose": "guard reset so the following boundary observation cannot be a no-op",
+      "modelPredictions": {
+        "32-nearest": 0,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0
+      ]
+    },
+    {
+      "id": "09",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x3f25a1cc",
+      "inputFloat32": 0.6470000743865967,
+      "nominalDisplay": "near 6.47: upper float neighbor",
+      "purpose": "precision discriminant neighbor",
+      "modelPredictions": {
+        "32-nearest": 42401,
+        "40-nearest": 42401,
+        "32-zero": 42401,
+        "40-zero": 42401
+      },
+      "allowedModelWords": [
+        42401
+      ]
+    },
+    {
+      "id": "10",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x37000100",
+      "inputFloat32": 7.629627361893654e-06,
+      "nominalDisplay": "near 0.00: tiny half-word boundary",
+      "purpose": "independent precision discriminant",
+      "modelPredictions": {
+        "32-nearest": 1,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "11",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x3f800000",
+      "inputFloat32": 1.0,
+      "nominalDisplay": "10.00",
+      "purpose": "upper endpoint",
+      "modelPredictions": {
+        "32-nearest": 65534,
+        "40-nearest": 65534,
+        "32-zero": 65534,
+        "40-zero": 65534
+      },
+      "allowedModelWords": [
+        65534
+      ]
+    },
+    {
+      "id": "12",
+      "pid": 1,
+      "operation": 9,
+      "inputBits": "0x3f000000",
+      "inputFloat32": 0.5,
+      "nominalDisplay": "5.00",
+      "purpose": "compare op9 with op82 for Wah target range 0..1",
+      "modelPredictions": {
+        "32-nearest": 32767,
+        "40-nearest": 32767,
+        "32-zero": 32767,
+        "40-zero": 32767
+      },
+      "allowedModelWords": [
+        32767
+      ]
+    },
+    {
+      "id": "13",
+      "pid": 1,
+      "operation": 9,
+      "inputBits": "0x3f25a1cb",
+      "inputFloat32": 0.6470000147819519,
+      "nominalDisplay": "near 6.47",
+      "purpose": "compare op9 with op82 for Wah target range 0..1",
+      "modelPredictions": {
+        "32-nearest": 42401,
+        "40-nearest": 42400,
+        "32-zero": 42400,
+        "40-zero": 42400
+      },
+      "allowedModelWords": [
+        42400,
+        42401
+      ]
+    },
+    {
+      "id": "14",
+      "pid": 1,
+      "operation": 9,
+      "inputBits": "0x3e800000",
+      "inputFloat32": 0.25,
+      "nominalDisplay": "2.50",
+      "purpose": "compare op9 with op82 for Wah target range 0..1",
+      "modelPredictions": {
+        "32-nearest": 16384,
+        "40-nearest": 16384,
+        "32-zero": 16384,
+        "40-zero": 16384
+      },
+      "allowedModelWords": [
+        16384
+      ]
+    },
+    {
+      "id": "15",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x00000000",
+      "inputFloat32": 0.0,
+      "nominalDisplay": "0.00",
+      "purpose": "keep Min below Max throughout Max sweep",
+      "modelPredictions": {
+        "32-nearest": 0,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0
+      ]
+    },
+    {
+      "id": "16",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x00000000",
+      "inputFloat32": 0.0,
+      "nominalDisplay": "0.00",
+      "purpose": "lower endpoint",
+      "modelPredictions": {
+        "32-nearest": 0,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0
+      ]
+    },
+    {
+      "id": "17",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x3e800000",
+      "inputFloat32": 0.25,
+      "nominalDisplay": "2.50",
+      "purpose": "exact quarter vs historical mouse value",
+      "modelPredictions": {
+        "32-nearest": 16384,
+        "40-nearest": 16384,
+        "32-zero": 16384,
+        "40-zero": 16384
+      },
+      "allowedModelWords": [
+        16384
+      ]
+    },
+    {
+      "id": "18",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x3f000000",
+      "inputFloat32": 0.5,
+      "nominalDisplay": "5.00",
+      "purpose": "exact midpoint vs historical mouse value",
+      "modelPredictions": {
+        "32-nearest": 32767,
+        "40-nearest": 32767,
+        "32-zero": 32767,
+        "40-zero": 32767
+      },
+      "allowedModelWords": [
+        32767
+      ]
+    },
+    {
+      "id": "19",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x3f400000",
+      "inputFloat32": 0.75,
+      "nominalDisplay": "7.50",
+      "purpose": "exact three quarters vs historical mouse value",
+      "modelPredictions": {
+        "32-nearest": 49151,
+        "40-nearest": 49151,
+        "32-zero": 49151,
+        "40-zero": 49151
+      },
+      "allowedModelWords": [
+        49151
+      ]
+    },
+    {
+      "id": "20",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x3f25a1ca",
+      "inputFloat32": 0.6469999551773071,
+      "nominalDisplay": "near 6.47: lower float neighbor",
+      "purpose": "precision discriminant neighbor",
+      "modelPredictions": {
+        "32-nearest": 42400,
+        "40-nearest": 42400,
+        "32-zero": 42400,
+        "40-zero": 42400
+      },
+      "allowedModelWords": [
+        42400
+      ]
+    },
+    {
+      "id": "21",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x00000000",
+      "inputFloat32": 0,
+      "nominalDisplay": "0.00",
+      "purpose": "guard reset so the following boundary observation cannot be a no-op",
+      "modelPredictions": {
+        "32-nearest": 0,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0
+      ]
+    },
+    {
+      "id": "22",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x3f25a1cb",
+      "inputFloat32": 0.6470000147819519,
+      "nominalDisplay": "near 6.47: canonical float",
+      "purpose": "32-nearest vs other three models",
+      "modelPredictions": {
+        "32-nearest": 42401,
+        "40-nearest": 42400,
+        "32-zero": 42400,
+        "40-zero": 42400
+      },
+      "allowedModelWords": [
+        42400,
+        42401
+      ]
+    },
+    {
+      "id": "23",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x00000000",
+      "inputFloat32": 0,
+      "nominalDisplay": "0.00",
+      "purpose": "guard reset so the following boundary observation cannot be a no-op",
+      "modelPredictions": {
+        "32-nearest": 0,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0
+      ]
+    },
+    {
+      "id": "24",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x3f25a1cc",
+      "inputFloat32": 0.6470000743865967,
+      "nominalDisplay": "near 6.47: upper float neighbor",
+      "purpose": "precision discriminant neighbor",
+      "modelPredictions": {
+        "32-nearest": 42401,
+        "40-nearest": 42401,
+        "32-zero": 42401,
+        "40-zero": 42401
+      },
+      "allowedModelWords": [
+        42401
+      ]
+    },
+    {
+      "id": "25",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x37000100",
+      "inputFloat32": 7.629627361893654e-06,
+      "nominalDisplay": "near 0.00: tiny half-word boundary",
+      "purpose": "independent precision discriminant",
+      "modelPredictions": {
+        "32-nearest": 1,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "26",
+      "pid": 2,
+      "operation": 82,
+      "inputBits": "0x3f800000",
+      "inputFloat32": 1.0,
+      "nominalDisplay": "10.00",
+      "purpose": "upper endpoint",
+      "modelPredictions": {
+        "32-nearest": 65534,
+        "40-nearest": 65534,
+        "32-zero": 65534,
+        "40-zero": 65534
+      },
+      "allowedModelWords": [
+        65534
+      ]
+    },
+    {
+      "id": "27",
+      "pid": 2,
+      "operation": 9,
+      "inputBits": "0x3f000000",
+      "inputFloat32": 0.5,
+      "nominalDisplay": "5.00",
+      "purpose": "compare op9 with op82 for Wah target range 0..1",
+      "modelPredictions": {
+        "32-nearest": 32767,
+        "40-nearest": 32767,
+        "32-zero": 32767,
+        "40-zero": 32767
+      },
+      "allowedModelWords": [
+        32767
+      ]
+    },
+    {
+      "id": "28",
+      "pid": 2,
+      "operation": 9,
+      "inputBits": "0x3f25a1cb",
+      "inputFloat32": 0.6470000147819519,
+      "nominalDisplay": "near 6.47",
+      "purpose": "compare op9 with op82 for Wah target range 0..1",
+      "modelPredictions": {
+        "32-nearest": 42401,
+        "40-nearest": 42400,
+        "32-zero": 42400,
+        "40-zero": 42400
+      },
+      "allowedModelWords": [
+        42400,
+        42401
+      ]
+    },
+    {
+      "id": "29",
+      "pid": 2,
+      "operation": 9,
+      "inputBits": "0x3f400000",
+      "inputFloat32": 0.75,
+      "nominalDisplay": "7.50",
+      "purpose": "compare op9 with op82 for Wah target range 0..1",
+      "modelPredictions": {
+        "32-nearest": 49151,
+        "40-nearest": 49151,
+        "32-zero": 49151,
+        "40-zero": 49151
+      },
+      "allowedModelWords": [
+        49151
+      ]
+    },
+    {
+      "id": "30",
+      "pid": 1,
+      "operation": 82,
+      "inputBits": "0x3e800000",
+      "inputFloat32": 0.25,
+      "nominalDisplay": "2.50",
+      "purpose": "final exact Min",
+      "modelPredictions": {
+        "32-nearest": 16384,
+        "40-nearest": 16384,
+        "32-zero": 16384,
+        "40-zero": 16384
+      },
+      "allowedModelWords": [
+        16384
+      ]
+    },
+    {
+      "id": "31",
+      "pid": 3,
+      "operation": 82,
+      "inputBits": "0x3f25a1ca",
+      "inputFloat32": 0.6469999551773071,
+      "nominalDisplay": "near 64.70%",
+      "purpose": "ordinary field normalized boundary comparison",
+      "modelPredictions": {
+        "32-nearest": 42400,
+        "40-nearest": 42400,
+        "32-zero": 42400,
+        "40-zero": 42400
+      },
+      "allowedModelWords": [
+        42400
+      ]
+    },
+    {
+      "id": "32",
+      "pid": 3,
+      "operation": 82,
+      "inputBits": "0x00000000",
+      "inputFloat32": 0,
+      "nominalDisplay": "0.00",
+      "purpose": "guard reset so the following boundary observation cannot be a no-op",
+      "modelPredictions": {
+        "32-nearest": 0,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0
+      ]
+    },
+    {
+      "id": "33",
+      "pid": 3,
+      "operation": 82,
+      "inputBits": "0x3f25a1cb",
+      "inputFloat32": 0.6470000147819519,
+      "nominalDisplay": "near 64.70%",
+      "purpose": "ordinary field normalized boundary comparison",
+      "modelPredictions": {
+        "32-nearest": 42401,
+        "40-nearest": 42400,
+        "32-zero": 42400,
+        "40-zero": 42400
+      },
+      "allowedModelWords": [
+        42400,
+        42401
+      ]
+    },
+    {
+      "id": "34",
+      "pid": 3,
+      "operation": 82,
+      "inputBits": "0x00000000",
+      "inputFloat32": 0,
+      "nominalDisplay": "0.00",
+      "purpose": "guard reset so the following boundary observation cannot be a no-op",
+      "modelPredictions": {
+        "32-nearest": 0,
+        "40-nearest": 0,
+        "32-zero": 0,
+        "40-zero": 0
+      },
+      "allowedModelWords": [
+        0
+      ]
+    },
+    {
+      "id": "35",
+      "pid": 3,
+      "operation": 82,
+      "inputBits": "0x3f25a1cc",
+      "inputFloat32": 0.6470000743865967,
+      "nominalDisplay": "near 64.70%",
+      "purpose": "ordinary field normalized boundary comparison",
+      "modelPredictions": {
+        "32-nearest": 42401,
+        "40-nearest": 42401,
+        "32-zero": 42401,
+        "40-zero": 42401
+      },
+      "allowedModelWords": [
+        42401
+      ]
+    },
+    {
+      "id": "36",
+      "pid": 3,
+      "operation": 9,
+      "inputBits": "0x3d84816f",
+      "inputFloat32": 0.06469999998807907,
+      "nominalDisplay": "6.47%",
+      "purpose": "new direct op9 float input; actual raw recorded without presuming a codec"
+    },
+    {
+      "id": "37",
+      "pid": 4,
+      "operation": 9,
+      "inputBits": "0x3eaaa64c",
+      "inputFloat32": 0.33329999446868896,
+      "nominalDisplay": "33.33%",
+      "purpose": "new direct op9 float input; actual raw recorded without presuming a codec"
+    },
+    {
+      "id": "38",
+      "pid": 5,
+      "operation": 9,
+      "inputBits": "0x3f60624e",
+      "inputFloat32": 0.8765000104904175,
+      "nominalDisplay": "87.65%",
+      "purpose": "new direct op9 float input; actual raw recorded without presuming a codec"
+    },
+    {
+      "id": "39",
+      "pid": 6,
+      "operation": 9,
+      "inputBits": "0x3f060419",
+      "inputFloat32": 0.5235000252723694,
+      "nominalDisplay": "52.35%",
+      "purpose": "new direct op9 float input; actual raw recorded without presuming a codec"
+    },
+    {
+      "id": "40",
+      "pid": 7,
+      "operation": 9,
+      "inputBits": "0x3dfcb924",
+      "inputFloat32": 0.1234000027179718,
+      "nominalDisplay": "123.4 ms",
+      "purpose": "new direct op9 float input; actual raw recorded without presuming a codec"
+    },
+    {
+      "id": "41",
+      "pid": 15,
+      "operation": 9,
+      "inputBits": "0x3f2dcc64",
+      "inputFloat32": 0.6789000034332275,
+      "nominalDisplay": "678.9 ms",
+      "purpose": "new direct op9 float input; actual raw recorded without presuming a codec"
+    },
+    {
+      "id": "42",
+      "pid": 13,
+      "operation": 9,
+      "inputBits": "0x3f9d70a4",
+      "inputFloat32": 1.2300000190734863,
+      "nominalDisplay": "1.23",
+      "purpose": "new direct op9 float input; actual raw recorded without presuming a codec"
+    },
+    {
+      "id": "43",
+      "pid": 14,
+      "operation": 9,
+      "inputBits": "0xbdfbe76d",
+      "inputFloat32": -0.12300000339746475,
+      "nominalDisplay": "-12.3%",
+      "purpose": "new direct op9 float input; actual raw recorded without presuming a codec"
+    },
+    {
+      "id": "44",
+      "pid": 12,
+      "operation": 9,
+      "inputBits": "0x3ebe76c9",
+      "inputFloat32": 0.3720000088214874,
+      "nominalDisplay": "37.2%",
+      "purpose": "new direct op9 float input; actual raw recorded without presuming a codec"
+    }
+  ],
+  "limits": [
+    "Exact transmitted inputs are fixed; nominal displays are planned, not observed.",
+    "The four mode models are compared, not assumed to be the only possible firmware behavior.",
+    "Only Wah Control target type is exercised; other dynamic Min/Max types remain open.",
+    "No STORE or power-cycle persistence test; final export checks edit-buffer serialization.",
+    "New ordinary op9 points are observations, not full-range proof.",
+    "Direct op9 inputs do not exercise editor keyboard parsing or its multiplier division rounding."
+  ]
+}

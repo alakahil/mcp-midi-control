@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "mode": "new-Mac-REA-plus-bounded-static-review",
+  "productionVersion": "0.3.13",
+  "newPhysicalExports": 0,
+  "deviceIO": false,
+  "inputZipSha256": "a27b799b40799a3d1074d4aad7af609040eff00fa95864bbfb352e271b6ea2d0",
+  "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "profileDigest": "20565088524a2d0359b9b96f46ac48e679d774c7b0092c56abc06de8fdbec11c",
+  "startedAt": "2026-10-22T07:44:54.243Z",
+  "finishedAt": "2026-10-22T07:47:03.252Z",
+  "queryCounts": {
+    "analyze_function": 34,
+    "binary_session": 1,
+    "close_binary": 1,
+    "export_evidence_bundle": 1,
+    "open_binary": 1,
+    "resolve_containing_procedure": 28,
+    "trace_native_values": 5,
+    "xrefs": 8
+  },
+  "queryStatuses": {
+    "limited": 2,
+    "ok": 77
+  },
+  "evidenceRecordCounts": {
+    "analyze_function": 45,
+    "resolve_containing_procedure": 28,
+    "trace_native_values": 5,
+    "xrefs": 8
+  },
+  "internalFunctionGraphsTruncated": [
+    "0x1001faca4"
+  ],
+  "traces": [
+    {
+      "id": "trace-position-handler",
+      "procedure": "0x10017ad44",
+      "evidenceId": "ev_0ff43880dd670ed7365149dab24338d13eda31b7f0063552d2adb52e56e17d79",
+      "nodes": 235,
+      "functions": 2,
+      "unknowns": 11,
+      "truncated": false,
+      "nextOffset": null
+    },
+    {
+      "id": "trace-text-handler",
+      "procedure": "0x10017afa8",
+      "evidenceId": "ev_56d6d5edf3ae478d33f71b5445514043a536c58ec5cd802aeab91d600c4d7a9b",
+      "nodes": 56,
+      "functions": 1,
+      "unknowns": 3,
+      "truncated": false,
+      "nextOffset": null
+    },
+    {
+      "id": "trace-modifier-refresh",
+      "procedure": "0x10017a050",
+      "evidenceId": "ev_2b573588cc9e447ce103f1ad0f23d469046cec107b903c4835bd2ac3c64f6d71",
+      "nodes": 1559,
+      "functions": 8,
+      "unknowns": 54,
+      "truncated": true,
+      "nextOffset": null
+    },
+    {
+      "id": "trace-rotary-input",
+      "procedure": "0x10025db54",
+      "evidenceId": "ev_9f7c06d49d4837b95688a40dcd695f67fb772ae248eb75af2d18e463ac74ba34",
+      "nodes": 2470,
+      "functions": 8,
+      "unknowns": 85,
+      "truncated": true,
+      "nextOffset": null
+    },
+    {
+      "id": "trace-readout-event",
+      "procedure": "0x10025dfc4",
+      "evidenceId": "ev_606b7486be5333df76504fd792730af2a5773043a0d46fad2f4e175d33709cf4",
+      "nodes": 61,
+      "functions": 3,
+      "unknowns": 3,
+      "truncated": false,
+      "nextOffset": null
+    }
+  ],
+  "checkpointCount": 15,
+  "sourceFilesVerified": 91,
+  "semanticCorrections": {
+    "0x10025c44c": "mouse-down / drag start; plan name rotary-init was a hint",
+    "0x10025c5fc": "mouse drag / angle producer; plan name rotary-init-extension was a hint",
+    "0x10025c870": "wheel-like delta handler -> events 5/6/7/8",
+    "0x10025d05c": "keyboard handler -> events 5/6/7/8",
+    "0x10017ab3c": "control teardown, not a dynamic multiplier producer",
+    "0x10004272c": "accessibility description, not event producer"
+  },
+  "drag": {
+    "producer": "0x10025c5fc",
+    "start": "0x10025c44c",
+    "angleOffset": "0x3c0",
+    "previousAngleOffset": "0x3c4",
+    "limits": [
+      "0x3cc",
+      "0x3d0"
+    ],
+    "linearFormula": "f32(oldAngle + f32(f32(sensitivity * f32(oldX-oldY-newX+newY)) / -180))",
+    "sensitivity": [
+      1.5,
+      0.10000000149011612
+    ],
+    "circularFormula": "atan2f(centeredX, -centeredY), unwrap, clamp",
+    "emittedEvent": 4,
+    "modifierOperation": 82
+  },
+  "editorEvents": {
+    "2": 82,
+    "4": 82,
+    "5": 10,
+    "6": 12,
+    "7": 11,
+    "8": 13,
+    "9": 15,
+    "10": 9
+  },
+  "firmwareStepBranches": {
+    "10": {
+      "address": "0x823bfe",
+      "candidate": "F12 + F8"
+    },
+    "11": {
+      "address": "0x823c03",
+      "candidate": "F12 - F8"
+    },
+    "12": {
+      "address": "0x823c08",
+      "candidate": "F12 + 10 * F8"
+    },
+    "13": {
+      "address": "0x823c12",
+      "candidate": "F12 - 10 * F8"
+    }
+  },
+  "minMaxComparisons": [
+    {
+      "field": "MOD_MAX",
+      "display": 7.5,
+      "measuredRaw": 49159,
+      "exactTextModelRaw": 49151,
+      "assumedStartingRaw": 65534,
+      "assumedEventCount": -25,
+      "hypotheticalStep655Raw": 49159,
+      "fitsStep655": true
+    },
+    {
+      "field": "MOD_MAX",
+      "display": 5,
+      "measuredRaw": 32784,
+      "exactTextModelRaw": 32767,
+      "assumedStartingRaw": 65534,
+      "assumedEventCount": -50,
+      "hypotheticalStep655Raw": 32784,
+      "fitsStep655": true
+    },
+    {
+      "field": "MOD_MIN",
+      "display": 2.5,
+      "measuredRaw": 16375,
+      "exactTextModelRaw": 16384,
+      "assumedStartingRaw": 0,
+      "assumedEventCount": 25,
+      "hypotheticalStep655Raw": 16375,
+      "fitsStep655": true
+    }
+  ],
+  "generatorWriteSupport": false,
+  "fullRangeEncodingProven": false,
+  "historicalInputMethodKnown": true,
+  "historicalOperationAndInputKnown": false,
+  "inputMethodEvidence": "modifier-input-method-evidence.json",
+  "constantWordStepProven": false,
+  "step655Status": "Historical arithmetic fit; wheel/arrow explanation retired after user confirmed dragging.",
+  "dynamicEditorMultiplierProducerResolved": false,
+  "nextStep": "Follow modifier-drag-audit.json: verify op82 transport and arithmetic mode. Wheel/arrow F12/F8 is no longer the priority for these captures.",
+  "limitations": [
+    "Successful REA requests do not mean all indirect calls or native value flows were resolved.",
+    "Two whole traces and one internal function graph are truncated; unknowns remain in all five traces.",
+    "Native instructions were reviewed, but no original executable or firmware was executed here.",
+    "Firmware step branches add to a computed physical base, not a proven constant uint16 increment.",
+    "Step 655 is only a historical arithmetic fit; user confirmed mouse dragging, not wheel/arrow entry.",
+    "SHARC RECIPS/40-bit mode, full transport and runtime editor metadata producer remain unproven.",
+    "Existing 18/18 ordinary-point compatibility and unresolved Attack discrepancy are unchanged."
+  ]
+}

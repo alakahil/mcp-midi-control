@@ -40,6 +40,13 @@ class DecoderControls(unittest.TestCase):
         self.assertEqual(0x1d4 + cache.dm7(parcels(0x9b08,(28<<7)|97))[3],0x158)
         with self.assertRaises(ValueError): cache.dm7(parcels(0x9b88,(28<<7)|97))
 
+    def test_dm7_reserved_bits_are_rejected(self):
+        # PRM Figure16-4: bits15:14 are fixed, not part of Ureg or data7.
+        for p,q in ((0x9c08,0x3973),(0x9b08,(28<<7)|97)):
+            for reserved in (0x4000,0x8000,0xc000):
+                with self.subTest(p=hex(p),reserved=hex(reserved)):
+                    with self.assertRaises(ValueError):cache.dm7(parcels(p,q|reserved))
+
     def test_immediate_sign_and_parcel_order(self):
         self.assertEqual(cache.immediate(parcels(0x0f82,0xffe8)),(2,-24))
         self.assertEqual(cache.immediate(parcels(0x0f1c,0xc200,0x8550)),(28,0xc2008550))

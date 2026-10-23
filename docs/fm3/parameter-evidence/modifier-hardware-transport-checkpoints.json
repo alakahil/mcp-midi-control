@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "spans": [
+    {
+      "name": "fn31-dispatch",
+      "address": "0xc4452744",
+      "size": 4,
+      "sha256": "ff66889f58bc4782d143e76ed7eb0b4fba9eeb016fb4376f208001a9be3e4fb0"
+    },
+    {
+      "name": "fn31-call",
+      "address": "0xc445296c",
+      "size": 16,
+      "sha256": "858c20539b2b1ba38754ccd3e80b3e2af9cbd9c860e46280036d5a39b2936e0e"
+    },
+    {
+      "name": "get-effect-and-request-vector",
+      "address": "0xc4456676",
+      "size": 76,
+      "sha256": "0be6199dcc8909c4b0526e4d4a23dc6ce315493fc502f7ea5462312379c3ca3a"
+    },
+    {
+      "name": "bulk-vector-request-op148",
+      "address": "0xc443bbc6",
+      "size": 84,
+      "sha256": "634ef500899124da0b947bd710fead8b9d64ab396ecd27169d9519d05921cd48"
+    },
+    {
+      "name": "raw-uint16-wire-packing",
+      "address": "0xc4456904",
+      "size": 106,
+      "sha256": "a450fbc17d8a4148a364cadba9f34e81a69161e8f66edb4566040203b7db498f"
+    },
+    {
+      "name": "arm-op148-fallback",
+      "address": "0xc441bbe4",
+      "size": 4,
+      "sha256": "5d2f5a9aa586fdb94014d90f66e33df2055d0092806fee02620f96de7a0c61f9"
+    },
+    {
+      "name": "sharc-op148-dispatch",
+      "address": "0x282e7ba8",
+      "size": 4,
+      "sha256": "5cf63b84d1ebee23dcefaa36eaecd8c4a2ddffa138cc68061bc242d235356ada"
+    }
+  ],
+  "limits": [
+    "Raw serializer reads uint16; the complete mailbox/vector producer is not emulated.",
+    "MOD0 hardware availability is checked by exact 25-word preflight before any SET.",
+    "No firmware bytes redistributed."
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "nativeBinaryFilesIncluded": false,
+  "sources": {
+    "adiLed": {
+      "url": "https://raw.githubusercontent.com/analogdevicesinc/runtime-sharc-loader/bbb85bb59b203f4219a831814a721f7646f27498/SharcLoader/LED_SC589_EZKIT_Core1.ldr",
+      "size": 15896,
+      "sha256": "0bdf468be0ada3bc49d27b8d70b68d86b66e6047a47199ea3d17ca1fd4b2c151"
+    },
+    "adiAudio": {
+      "url": "https://raw.githubusercontent.com/analogdevicesinc/runtime-sharc-loader/bbb85bb59b203f4219a831814a721f7646f27498/SharcLoader/Audio_passthrough_I2S_Core1_SC589.ldr",
+      "size": 62376,
+      "sha256": "8d19b226a4b0dc1cb9bc1961fa0317b5b02d1dc124b4c71689b8b9d0e3315a67"
+    }
+  },
+  "manuals": [
+    {
+      "url": "https://www.analog.com/media/en/dsp-documentation/processor-manuals/SC58x-2158x-prm.pdf",
+      "revision": "1.5 June 2023",
+      "sha256": "a3edf83beb75b44a77f8366cf54c0353083ab49a1c69d8179d2b727ba7ba1470",
+      "references": [
+        "Fig14-5 p14-12",
+        "Fig15-6 p15-22 (PDF page377)",
+        "Fig18-2 and short-compute table p18-3",
+        "Table18-21 p18-15"
+      ],
+      "transcription": "Figure15-6 fixed bits imply base c080; Fig14-5/Fig18-2 and opcode0000 define those parcels as integer addition.",
+      "figureVisuallyInspected": true
+    },
+    {
+      "url": "https://www.analog.com/media/en/dsp-documentation/processor-manuals/adsp-2136x_2137x_214xx_pgr_rev2.4.pdf",
+      "revision": "2.4 April 2013",
+      "reference": "Type11c p10-18 (PDF page460)",
+      "scope": "Legacy SHARC; not alone proof of SHARC+ binary compatibility"
+    }
+  ],
+  "compatibilityCaveat": "https://ez.analog.com/dsp/sharc-processors/adsp-sc5xxadsp-215xx/a/documents/c/adsp-sc58x-faq/DO9658/can-the-existing-sharc-assembly-codes-be-re-used-as-it-is-with-sharc-core",
+  "spans": [
+    {
+      "name": "fm3Division",
+      "source": "fm3",
+      "address": "0x1cb13a",
+      "size": 158,
+      "sha256": "0d2f177a2642ee894ee1a06da9fbe3f3dbdeeedd4419a56b8bf9365f68f2c88a"
+    },
+    {
+      "name": "fm3Dispatcher",
+      "source": "fm3",
+      "address": "0x1cbb7f",
+      "size": 292,
+      "sha256": "5ec44e1ab9c0ff725d31e7ed2e62ba8ed6756d974d22161f8c192d2277743d11"
+    },
+    {
+      "name": "schedulerReturn",
+      "source": "fm3",
+      "address": "0x8307bb",
+      "size": 2,
+      "sha256": "5a2f0ab536062d56ab31d8498a843c2cd4598ffe6145430578df7545c67f9f43"
+    },
+    {
+      "name": "contextReturn",
+      "source": "fm3",
+      "address": "0x830c8c",
+      "size": 2,
+      "sha256": "5a2f0ab536062d56ab31d8498a843c2cd4598ffe6145430578df7545c67f9f43"
+    },
+    {
+      "name": "adiInterruptEpilogue",
+      "source": "adiLed",
+      "address": "0x1c0427",
+      "size": 86,
+      "sha256": "21a58ed7405d17ba3327e6a24266b5a06419be33d80b60e09a4eb051ad367d64"
+    },
+    {
+      "name": "adiDelayedTransfer",
+      "source": "adiLed",
+      "address": "0x1c03b9",
+      "size": 12,
+      "sha256": "336586b7f6b3c5e9933f94b1aaa4804169ebe18a9009646f580723189acd0f10"
+    },
+    {
+      "name": "adiImmediateReturn",
+      "source": "adiLed",
+      "address": "0x1c05a8",
+      "size": 16,
+      "sha256": "42a40b166a920e9cfb3e60c2c0c87188d77de78a83cde494b82f03cc01d3e244"
+    },
+    {
+      "name": "adiDivision",
+      "source": "adiAudio",
+      "address": "0x1c01fc",
+      "size": 158,
+      "sha256": "6fd384afbfb4becba94a651741de96f7cf37f272c55034fbf74de94bfd3bab7b"
+    }
+  ],
+  "returnSites": [
+    {
+      "source": "fm3",
+      "address": "0x1cb17a",
+      "kind": "RTS",
+      "delayed": true,
+      "delaySizes": [
+        6,
+        2
+      ]
+    },
+    {
+      "source": "fm3",
+      "address": "0x8307bb",
+      "kind": "RTS",
+      "delayed": false,
+      "delaySizes": []
+    },
+    {
+      "source": "fm3",
+      "address": "0x830c8c",
+      "kind": "RTS",
+      "delayed": false,
+      "delaySizes": []
+    },
+    {
+      "source": "fm3",
+      "address": "0x1cbbe0",
+      "kind": "RTS",
+      "delayed": true,
+      "delaySizes": [
+        4,
+        6
+      ]
+    },
+    {
+      "source": "fm3",
+      "address": "0x1cbc0c",
+      "kind": "RTI",
+      "delayed": true,
+      "delaySizes": [
+        4,
+        4
+      ]
+    },
+    {
+      "source": "adiLed",
+      "address": "0x1c03b9",
+      "kind": "RTS",
+      "delayed": true,
+      "delaySizes": [
+        4,
+        6
+      ]
+    },
+    {
+      "source": "adiLed",
+      "address": "0x1c05af",
+      "kind": "RTS",
+      "delayed": false,
+      "delaySizes": []
+    },
+    {
+      "source": "adiLed",
+      "address": "0x1c044d",
+      "kind": "RTI",
+      "delayed": true,
+      "delaySizes": [
+        4,
+        4
+      ]
+    }
+  ]
+}

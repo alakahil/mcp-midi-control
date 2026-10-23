@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "spans": [
+    {
+      "name": "editorEventTable",
+      "source": "editor",
+      "address": "0x100536a00",
+      "size": 9,
+      "sha256": "3c79f379164b5b8da70df6690fff4973fa7fd6a1d625533c59d845c02c33f39d"
+    },
+    {
+      "name": "editorNormalizedInput",
+      "source": "editor",
+      "address": "0x10017ad44",
+      "size": 512,
+      "sha256": "ab4c36f9a8a31de5693fb013e631d98df658129514eede6a96b3fec294d367ff"
+    },
+    {
+      "name": "editorNormalizedDispatch",
+      "source": "editor",
+      "address": "0x10017aef8",
+      "size": 32,
+      "sha256": "988aae3443914e39e64f032ad1b71ed86b8a7b1b7cd8681e968c7e3dc5a695f7"
+    },
+    {
+      "name": "modConstructor",
+      "source": "visa",
+      "address": "0x813dfa",
+      "size": 272,
+      "sha256": "697318d126aec3e65e7606d09408b9936969d6efe5b43ad695ec028b3e08acb5"
+    },
+    {
+      "name": "modCallbackEntry",
+      "source": "visa",
+      "address": "0x813f86",
+      "size": 188,
+      "sha256": "e5f6902649712575ad8c1f0534757d4c13c9d62da5d7a1f984b5316160b1521e"
+    },
+    {
+      "name": "modMinMaxBranches",
+      "source": "visa",
+      "address": "0x8141e6",
+      "size": 408,
+      "sha256": "1078eaddfcceed3a4f45b9fa50037e54115a20419aeda3196448f0642352578c"
+    },
+    {
+      "name": "targetDescriptorSelection",
+      "source": "visa",
+      "address": "0x8142c3",
+      "size": 118,
+      "sha256": "345497fa5162736527918a66121c0b364d511a3023346f6d2589ea2035982a81"
+    },
+    {
+      "name": "linearWriter",
+      "source": "visa",
+      "address": "0x823ae7",
+      "size": 618,
+      "sha256": "b3b71c46c6f057c90c5299d8035bbd50901c2127077792eaf8ad6488150fb430"
+    },
+    {
+      "name": "modifierRegisterInit",
+      "source": "visa",
+      "address": "0x8343a6",
+      "size": 20,
+      "sha256": "5adae1113591f342545938d07c900840a944deea6aa455e63216fa3e29ff0efe"
+    },
+    {
+      "name": "wahConstructorHead",
+      "source": "visa",
+      "address": "0x822c6c",
+      "size": 166,
+      "sha256": "73bda97442819004b09595892e9f737303deb95cbd311bb542c94c8e594ccdeb"
+    },
+    {
+      "name": "wahConstructorTail",
+      "source": "visa",
+      "address": "0x822cc1",
+      "size": 36,
+      "sha256": "695afbbb127b5206739c6c550182b7728f610c958bbd60cd69a0b0700c9677ad"
+    },
+    {
+      "name": "modName",
+      "source": "boot",
+      "address": "0x8090cd38",
+      "size": 4,
+      "sha256": "ef730264d60660c8df966fee05ccd1f504d99551765996a4aec45c97d3050903"
+    },
+    {
+      "name": "modDescriptors",
+      "source": "boot",
+      "address": "0x8090c290",
+      "size": 900,
+      "sha256": "549542e7fa59d25c1ff3dab6fb6ae2a31431ad4efef4a40d0a6fe798d236e05b"
+    },
+    {
+      "name": "wahDescriptors",
+      "source": "boot",
+      "address": "0x809aa530",
+      "size": 900,
+      "sha256": "86eb1eac1e144aff17793efb1d34bccadd99d28c53e5b63d31976d4d024f7ec3"
+    },
+    {
+      "name": "wahEffectIds",
+      "source": "boot",
+      "address": "0x809aa290",
+      "size": 16,
+      "sha256": "db4b6c37a963c825dfaca0d2241d696962edfdbe61c9362aa0f417593b6d2ffd"
+    },
+    {
+      "name": "modPidSwitch",
+      "source": "boot",
+      "address": "0x282e6220",
+      "size": 36,
+      "sha256": "d3ad350573f651f467a75694af9400982cdde730785b4ac9c021bd6db8dfbde4"
+    },
+    {
+      "name": "modMinTypeSwitch",
+      "source": "boot",
+      "address": "0x282e61e8",
+      "size": 56,
+      "sha256": "32a0b9a8127f7e57df92c3b81e2fbcea93ec52584e7c53abf6604d3a76b0667d"
+    },
+    {
+      "name": "modMaxTypeSwitch",
+      "source": "boot",
+      "address": "0x282e61b0",
+      "size": 56,
+      "sha256": "935d5f204602940a96f249c63452426bb38e46c405cb73a87ce09d2afc114284"
+    },
+    {
+      "name": "linearOperationSwitch",
+      "source": "boot",
+      "address": "0x282e75f8",
+      "size": 20,
+      "sha256": "aea42d50f5c23b4f1e3d7b0d581e76f65787b39288c7af0f4ae4a6bf049a0406"
+    }
+  ]
+}

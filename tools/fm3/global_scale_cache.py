@@ -78,7 +78,8 @@ def immediate(data):
 def dm7(data):
     require(len(data) == 4, 'Expected Type 15b size')
     p, q = struct.unpack('<HH', data)
-    require(p & 0xf0ff == 0x9008, 'Expected normal DM Type 15b')
+    # Figure16-4: both bits15:14 are fixed zero, outside Ureg/data7.
+    require(p & 0xf0ff == 0x9008 and not q & 0xc000, 'Expected normal DM Type 15b')
     return bool(p & 0x100), (p >> 9) & 7, (q >> 7) & 127, signed(q & 127, 7)*4
 
 

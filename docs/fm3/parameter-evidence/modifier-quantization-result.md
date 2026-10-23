@@ -1,4 +1,9 @@
+> **22.10.2026 täpsustus:** kasutaja kinnitas Min/Max-i hiirega lohistamise ja teiste arvude tekstisisestuse. [Uus lohistamismudel](modifier-drag-result.md) ennustab kolm Min/Max sõna tingimuslikult 3/3. Allpool olev 0/3 võrdlus kasutab kuvanäitu täpse sisendina ega lükka ümber tegeliku normaliseeritud sisendi lineaarset kodeeringut.
+
 # Modifikaatori vaheväärtuste uurimine — 21.10.2026
+
+22.10 jätkuanalüüs: [getter, metadata-pakkuja ja FW13 dispatch](modifier-value-path-result.md).
+Allolev 21.10 tulemus ja selle avaldamise ajalugu on säilitatud muutmata.
 
 **Uurimisring on tehtud olemasolevate failidega: 0 uut füüsilist eksporti.**
 Avaldatud plugin on endiselt **0.3.13**. Tootmiskoodi ega toetatud väärtuste

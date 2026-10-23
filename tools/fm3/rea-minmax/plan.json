@@ -1,0 +1,265 @@
+{
+  "plan_version": 1,
+  "research_base_commit": "c415b95ed9a388e030c796175863b8bff21ad07e",
+  "required_rea_version": "6.4.0",
+  "required_target_sha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "purpose": "Resolve rotary input/event origin and dynamic Min/Max definition without new hardware exports.",
+  "functions": [
+    {
+      "id": "rotary-angle-writer",
+      "address": "0x10025e094",
+      "why": "Observed STR S0 at rotary root +0x3c0; first short provider probe.",
+      "lc_function_starts_size": 8,
+      "body_sha256": "dbcf08a3874a1108e36c59372695a92005a65a87694e41ea8fe5488dffed92df"
+    },
+    {
+      "id": "modifier-event-dispatch",
+      "address": "0x100179918",
+      "why": "Connect event numbers 2/4/10 to value handlers.",
+      "lc_function_starts_size": 508,
+      "body_sha256": "a742b8f0425240c301122af96b3395fb0c3982cf2a3d10f462dfac0d2d3ffb7d"
+    },
+    {
+      "id": "modifier-position-handler",
+      "address": "0x10017ad44",
+      "why": "Known op82 anchor; obtain virtual-call and value-flow evidence.",
+      "lc_function_starts_size": 612,
+      "body_sha256": "b34bfceba43ad55199dfe6c2db26648bac4ea3c64e94afda41156157268defae"
+    },
+    {
+      "id": "modifier-text-handler",
+      "address": "0x10017afa8",
+      "why": "Known op9 anchor; trace dynamic definition multiplier.",
+      "lc_function_starts_size": 180,
+      "body_sha256": "2e857116f274ddb6cc5930cc1fa57b1786eacd42db36d2354e329cdf8c9b50cc"
+    },
+    {
+      "id": "modifier-refresh-candidate",
+      "address": "0x10017a050",
+      "why": "Follow readback updates; calls 0x10017a214 and control updates.",
+      "lc_function_starts_size": 452,
+      "body_sha256": "1ac8e413c47e6459385576e10a47a2b59d6bb70852c5f620fd470be8d926a896"
+    },
+    {
+      "id": "modifier-fetch-candidate",
+      "address": "0x10017a214",
+      "why": "Follow parameter fetch/formatting requests; semantic role not fully proven.",
+      "lc_function_starts_size": 1792,
+      "body_sha256": "08ad3f27e584aa3fda6b706701d9acdf44e8070fba545079ff6579d0176c2d8a"
+    },
+    {
+      "id": "modifier-definition-candidate",
+      "address": "0x10017ab3c",
+      "why": "Metadata virtual-call candidate; semantic role unresolved.",
+      "lc_function_starts_size": 520,
+      "body_sha256": "638026662afb791be22c746c600deb027ee5082f773ce8fbf4f2b0cf4103690a"
+    },
+    {
+      "id": "modifier-control-candidate",
+      "address": "0x100179ee8",
+      "why": "Neighbouring control update candidate; semantic role unresolved.",
+      "lc_function_starts_size": 360,
+      "body_sha256": "3da2cc1cf3595949b0552f811e6c9687578d452e799b39e8c1368f2d706a9240"
+    },
+    {
+      "id": "definition-lookup",
+      "address": "0x10007c544",
+      "why": "Known runtime definition provider; caller-specific mutation remains unknown.",
+      "lc_function_starts_size": 228,
+      "body_sha256": "40ec364afcb38e6e3d3f195dfb5016b529e23282bf369e93f080a82494044114"
+    },
+    {
+      "id": "rotary-init",
+      "address": "0x10025c44c",
+      "why": "Object/control initialization and fields.",
+      "lc_function_starts_size": 432,
+      "body_sha256": "b13bf6ea19bed5de7999d5e1cb459fddeb97fa9d9f750eb983ac3b45a70891dd"
+    },
+    {
+      "id": "rotary-init-extension",
+      "address": "0x10025c5fc",
+      "why": "Control initialization candidate.",
+      "lc_function_starts_size": 620,
+      "body_sha256": "f46caddc8152f4192dd61e1212b97c4ecab9d89f7b69f8f28f69239b5ab4f134"
+    },
+    {
+      "id": "rotary-event-candidate",
+      "address": "0x10025c870",
+      "why": "Vtable method with event-like data; exact role unproven.",
+      "lc_function_starts_size": 288,
+      "body_sha256": "fcac0e3cf764bd51e9a9bdf5b96d2c64d5d6c1b9f6194bdeee27b33f14489f83"
+    },
+    {
+      "id": "rotary-config-candidate",
+      "address": "0x10025c990",
+      "why": "Vtable configuration candidate; exact role unproven.",
+      "lc_function_starts_size": 412,
+      "body_sha256": "79ec6cef3b6946cfd28c62d88ef863e696ecf397b8eb335f6e5b96bf861f8b13"
+    },
+    {
+      "id": "rotary-control-candidate",
+      "address": "0x10025d05c",
+      "why": "Vtable method; exact role unproven.",
+      "lc_function_starts_size": 376,
+      "body_sha256": "8df2c453186d43b8df20c5a58a1befb9f80d8e7f5da55af1058e141faa57c2bb"
+    },
+    {
+      "id": "rotary-readout-setup",
+      "address": "0x10025d548",
+      "why": "Contains known readout construction at 0x10025d610.",
+      "lc_function_starts_size": 840,
+      "body_sha256": "169181ee5a46a52ff087ca3ea9236c362957d8d2513892d0ca965bc1c0f1adc9"
+    },
+    {
+      "id": "rotary-normalized-set",
+      "address": "0x10025d97c",
+      "why": "Scale 0..127 to angle and virtual slot +0x230.",
+      "lc_function_starts_size": 140,
+      "body_sha256": "729a688040434d2be3b18342cbf43b4a41be4ac715b055e802fa911d5a71bdbf"
+    },
+    {
+      "id": "rotary-normalized-get",
+      "address": "0x10025da08",
+      "why": "Angle normalization and integer conversion branches.",
+      "lc_function_starts_size": 144,
+      "body_sha256": "c0264d675eebc71b6d992bff2aa470fffb9809f523e1ee36856c42ebc2e839fb"
+    },
+    {
+      "id": "rotary-input-candidate",
+      "address": "0x10025db54",
+      "why": "0..127 value and input flags; event origin unresolved.",
+      "lc_function_starts_size": 192,
+      "body_sha256": "c66367d86826f7b4e7ff448fb6ad337f4a1b28b64178660fbb98da8a32771f6a"
+    },
+    {
+      "id": "rotary-text-notification",
+      "address": "0x10025dc58",
+      "why": "Readout text notification and control event helper.",
+      "lc_function_starts_size": 328,
+      "body_sha256": "532f64800b5edf9ee815d42aa2ef9dc6f9c4eac42c8f4d1d0863214c6bf35df9"
+    },
+    {
+      "id": "rotary-numeric-bounds",
+      "address": "0x10025de30",
+      "why": "Copies root numeric limits into readout fields.",
+      "lc_function_starts_size": 52,
+      "body_sha256": "9db5f7579c2ea655602a52c57b91bfec1cd9423cb99bc4184175663c084a422d"
+    },
+    {
+      "id": "rotary-readout-event",
+      "address": "0x10025dfc4",
+      "why": "Readout event 1/10 relay through virtual +0xc0.",
+      "lc_function_starts_size": 156,
+      "body_sha256": "f8b21f0d6f56c0e7ee056dd4deb405c0ce983df00a67c581f5f8dd5c693d015c"
+    },
+    {
+      "id": "control-text-update",
+      "address": "0x10025f0b8",
+      "why": "Helper called from modifier refresh and rotary path.",
+      "lc_function_starts_size": 536,
+      "body_sha256": "5979bb479245e635cb0bd3a72fd65b5f8a721ed79e099e69e4bebdc7bd8574c2"
+    },
+    {
+      "id": "control-event-helper",
+      "address": "0x10004272c",
+      "why": "Called by rotary readout text notification; role to resolve.",
+      "lc_function_starts_size": 672,
+      "body_sha256": "ac4d98735d58ac60e1e9615d22d39f7885bdea993f7e3ac10b4f95e7b2282855"
+    }
+  ],
+  "xrefs": [
+    {
+      "id": "xref-angle-writer",
+      "address": "0x10025e094"
+    },
+    {
+      "id": "xref-rotary-vtable",
+      "address": "0x100dbb768"
+    },
+    {
+      "id": "xref-rotary-vtable-copy",
+      "address": "0x100db3a48"
+    },
+    {
+      "id": "xref-normalized-set",
+      "address": "0x10025d97c"
+    },
+    {
+      "id": "xref-numeric-bounds",
+      "address": "0x10025de30"
+    },
+    {
+      "id": "xref-modifier-refresh",
+      "address": "0x10017a050"
+    },
+    {
+      "id": "xref-modifier-definition",
+      "address": "0x10017ab3c"
+    },
+    {
+      "id": "xref-definition-lookup",
+      "address": "0x10007c544"
+    }
+  ],
+  "traces": [
+    {
+      "id": "trace-position-handler",
+      "address": "0x10017ad44"
+    },
+    {
+      "id": "trace-text-handler",
+      "address": "0x10017afa8"
+    },
+    {
+      "id": "trace-modifier-refresh",
+      "address": "0x10017a050"
+    },
+    {
+      "id": "trace-rotary-input",
+      "address": "0x10025db54"
+    },
+    {
+      "id": "trace-readout-event",
+      "address": "0x10025dfc4"
+    }
+  ],
+  "max_reference_sites": 32,
+  "max_extra_functions": 16,
+  "trace_budget": {
+    "max_depth": 2,
+    "max_functions": 8,
+    "max_call_sites": 96,
+    "max_nodes": 4000,
+    "max_edges": 8000,
+    "offset": 0,
+    "limit": 4000
+  },
+  "existing_measurements": [
+    {
+      "field": "Min",
+      "display": "2.50",
+      "raw": 16375
+    },
+    {
+      "field": "Max",
+      "display": "7.50",
+      "raw": 49159
+    },
+    {
+      "field": "Max",
+      "display": "5.00",
+      "raw": 32784
+    }
+  ],
+  "excluded_already_proven_work": [
+    "SysEx serializer 0x100237874",
+    "strtod_l getter reconstruction",
+    "FW13 MOD uint16 store re-discovery"
+  ],
+  "limitations": [
+    "Labels ending candidate are investigation hints, not proven source names.",
+    "Static events do not identify historical user actions.",
+    "SHARC firmware not imported into Ghidra by this batch.",
+    "No claim of exact encoding or generator write support."
+  ]
+}

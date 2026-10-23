@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "mode": "offline-static-research",
+  "baseCommit": "5238ebc5c4cd19c0ea412cd964e5e770c09930e7",
+  "productionVersion": "0.3.13",
+  "newPhysicalExports": 0,
+  "deviceIO": false,
+  "sources": {
+    "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+    "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3"
+  },
+  "checkpointCount": 23,
+  "bootBlockCount": 6405,
+  "getter": {
+    "class": "AxeFxReadout",
+    "function": "0x10023c220",
+    "parserImport": "_strtod_l",
+    "returnConversion": "float64 to float32",
+    "historicalTypedInputOrWireTraceAvailable": false
+  },
+  "metadata": {
+    "provider": "FM3EffectManager",
+    "lookup": "0x10029ba78 -> 0x10007c544",
+    "modFamily": 3,
+    "effectIds": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "minMaxCachedFields": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "runtimeBoundsAndMultiplierResolved": false,
+    "rotary3cc3d0": "angular endpoints in radians, not numeric Min/Max bounds"
+  },
+  "firmware": {
+    "operation": 9,
+    "genericReadGateTargetThumb": "0xc441cad7",
+    "mainDispatchTargetThumb": "0xc441c0eb",
+    "callbackCall": "0xc441c1d0",
+    "callbackSlot": "object+0x14c",
+    "valueArgument": "s0 float32",
+    "modSpecificCallbackBindingResolved": false,
+    "uint16StoreResolved": false
+  },
+  "corpusSummary": {
+    "changedPoints": 21,
+    "ordinaryPoints": 18,
+    "ordinaryNearestMatches": 18,
+    "ordinaryFloat32NearestMatches": 18,
+    "ordinaryFloorMatches": 10,
+    "minMaxPoints": 3,
+    "minMaxNearestMatches": 0,
+    "allDisplayBinsIncludeMeasuredRaw": true
+  },
+  "minMaxComparison": [
+    {
+      "field": "MOD_MAX",
+      "input": 7.5,
+      "raw": 49159,
+      "float32HexLE": "0000f040",
+      "linearNearestHypothesis": 49151,
+      "rawError": 8
+    },
+    {
+      "field": "MOD_MAX",
+      "input": 5,
+      "raw": 32784,
+      "float32HexLE": "0000a040",
+      "linearNearestHypothesis": 32767,
+      "rawError": 17
+    },
+    {
+      "field": "MOD_MIN",
+      "input": 2.5,
+      "raw": 16375,
+      "float32HexLE": "00002040",
+      "linearNearestHypothesis": 16384,
+      "rawError": -9
+    }
+  ],
+  "rea": {
+    "cliVersion": "6.4.0",
+    "newFunctionAttempt": "provider_unavailable",
+    "newDecompilationSucceeded": false,
+    "oldResultsReused": true,
+    "diagnostics": "modifier-rea-availability-20261022.json"
+  },
+  "generatorWriteSupport": false,
+  "nextStep": "Resolve MOD callback ownership and op9 normalization/store; trace target-dependent reply/metadata bounds. No new device export requested."
+}

@@ -14,6 +14,9 @@ def run(output):
     output.mkdir(parents=True,exist_ok=True)
     before=tree_hash(PLUGIN);results=[]
     subprocess.run(['python3',str(ROOT/'tools/fm3/evidence-index.py')],check=True)
+    # Keep the packaged Node-only lookup tied to the independently replayed
+    # hardware capture and Python arithmetic model, not just its pinned hash.
+    subprocess.run(['python3',str(ROOT/'tools/fm3/build-wah-exact-table.py')],check=True)
     with tempfile.TemporaryDirectory(prefix='fm3-offline-') as temp:
         package=Path(temp)/'plugin';shutil.copytree(PLUGIN,package)
         engine=package/'skills/fm3-sound-architect-2/engine/skills/instructions'

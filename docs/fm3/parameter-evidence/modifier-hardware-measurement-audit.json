@@ -1,0 +1,1381 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionPlugin": "0.3.13",
+  "capture": {
+    "file": "docs/fm3/parameter-evidence/captures/FM3_MOD_HW_RESULTS_20261022T144240Z_583c0f.zip",
+    "sha256": "f99bdfdcdb695b80e6059a772f6095e9f2a2a385628a1a7bd1804c53049ea44e",
+    "fileSha256": {
+      "plan.json": "6ffbd745f9792665a2eab52997da5e80c46b9e9a1cd9145a610a8a47695f5cb2",
+      "report.json": "71f377ee205ca796a0b1f7ede3c418fccbfcb2f01276e0f75348720e2636087d",
+      "wire.jsonl": "c1731067c2b1fe6d1b9fbdec8aad81a4b4d9f5abbf002c10654296840dfed072",
+      "FM3_MOD_HW_FINAL_export.syx": "c938c04bc7b522d914641eea96ee170b134d65e7c50b0036a5fd002b8e7f0c21"
+    },
+    "firmwareDeclared": "13.00",
+    "firmwareDetected": null,
+    "startUtc": "2026-10-22T14:42:40Z",
+    "startEuropeTallinn": "2026-10-22T17:42:40+03:00"
+  },
+  "verification": {
+    "journalChronology": true,
+    "exactPlanAndTxBits": true,
+    "allGetChecksums": true,
+    "allReportsRecomputedFromWire": true,
+    "all44StepsChangedExactlyOneField": true,
+    "preflightModWords": 25,
+    "preflightWahWords": 100,
+    "allFinalWahWordsPreserved": true
+  },
+  "wire": {
+    "transactions": 136,
+    "setCalls": 44,
+    "getCalls": 92,
+    "txBytes": 1932,
+    "rxBytes": 12750,
+    "rxFrames": 320,
+    "durationSeconds": 65.590739,
+    "observations": [
+      {
+        "id": "01",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x00000000",
+        "inputFloat32": 0.0,
+        "nominalDisplay": "0.00",
+        "observedRaw": 0,
+        "previousRaw": 16375,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x00000000",
+        "modelPredictions": {
+          "32-nearest": 0,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "02",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x3e800000",
+        "inputFloat32": 0.25,
+        "nominalDisplay": "2.50",
+        "observedRaw": 16384,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3e800100",
+        "modelPredictions": {
+          "32-nearest": 16384,
+          "40-nearest": 16384,
+          "32-zero": 16384,
+          "40-zero": 16384
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "03",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x3f000000",
+        "inputFloat32": 0.5,
+        "nominalDisplay": "5.00",
+        "observedRaw": 32767,
+        "previousRaw": 16384,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f000000",
+        "modelPredictions": {
+          "32-nearest": 32767,
+          "40-nearest": 32767,
+          "32-zero": 32767,
+          "40-zero": 32767
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "04",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x3f400000",
+        "inputFloat32": 0.75,
+        "nominalDisplay": "7.50",
+        "observedRaw": 49151,
+        "previousRaw": 32767,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f400080",
+        "modelPredictions": {
+          "32-nearest": 49151,
+          "40-nearest": 49151,
+          "32-zero": 49151,
+          "40-zero": 49151
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "05",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x3f25a1ca",
+        "inputFloat32": 0.6469999551773071,
+        "nominalDisplay": "near 6.47: lower float neighbor",
+        "observedRaw": 42400,
+        "previousRaw": 49151,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a14b",
+        "modelPredictions": {
+          "32-nearest": 42400,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "06",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x00000000",
+        "inputFloat32": 0.0,
+        "nominalDisplay": "0.00",
+        "observedRaw": 0,
+        "previousRaw": 42400,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x00000000",
+        "modelPredictions": {
+          "32-nearest": 0,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "07",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x3f25a1cb",
+        "inputFloat32": 0.6470000147819519,
+        "nominalDisplay": "near 6.47: canonical float",
+        "observedRaw": 42401,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "08",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x00000000",
+        "inputFloat32": 0.0,
+        "nominalDisplay": "0.00",
+        "observedRaw": 0,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x00000000",
+        "modelPredictions": {
+          "32-nearest": 0,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "09",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x3f25a1cc",
+        "inputFloat32": 0.6470000743865967,
+        "nominalDisplay": "near 6.47: upper float neighbor",
+        "observedRaw": 42401,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42401,
+          "32-zero": 42401,
+          "40-zero": 42401
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "10",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x37000100",
+        "inputFloat32": 7.629627361893654e-06,
+        "nominalDisplay": "near 0.00: tiny half-word boundary",
+        "observedRaw": 1,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x37800100",
+        "modelPredictions": {
+          "32-nearest": 1,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "11",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x3f800000",
+        "inputFloat32": 1.0,
+        "nominalDisplay": "10.00",
+        "observedRaw": 65534,
+        "previousRaw": 1,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f800000",
+        "modelPredictions": {
+          "32-nearest": 65534,
+          "40-nearest": 65534,
+          "32-zero": 65534,
+          "40-zero": 65534
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "12",
+        "pid": 1,
+        "operation": 9,
+        "inputBits": "0x3f000000",
+        "inputFloat32": 0.5,
+        "nominalDisplay": "5.00",
+        "observedRaw": 32767,
+        "previousRaw": 65534,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f000000",
+        "modelPredictions": {
+          "32-nearest": 32767,
+          "40-nearest": 32767,
+          "32-zero": 32767,
+          "40-zero": 32767
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "Wah 0..1 op9 comparison; not general RECIPS proof"
+      },
+      {
+        "id": "13",
+        "pid": 1,
+        "operation": 9,
+        "inputBits": "0x3f25a1cb",
+        "inputFloat32": 0.6470000147819519,
+        "nominalDisplay": "near 6.47",
+        "observedRaw": 42401,
+        "previousRaw": 32767,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "Wah 0..1 op9 comparison; not general RECIPS proof"
+      },
+      {
+        "id": "14",
+        "pid": 1,
+        "operation": 9,
+        "inputBits": "0x3e800000",
+        "inputFloat32": 0.25,
+        "nominalDisplay": "2.50",
+        "observedRaw": 16384,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3e800100",
+        "modelPredictions": {
+          "32-nearest": 16384,
+          "40-nearest": 16384,
+          "32-zero": 16384,
+          "40-zero": 16384
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "Wah 0..1 op9 comparison; not general RECIPS proof"
+      },
+      {
+        "id": "15",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x00000000",
+        "inputFloat32": 0.0,
+        "nominalDisplay": "0.00",
+        "observedRaw": 0,
+        "previousRaw": 16384,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x00000000",
+        "modelPredictions": {
+          "32-nearest": 0,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "16",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x00000000",
+        "inputFloat32": 0.0,
+        "nominalDisplay": "0.00",
+        "observedRaw": 0,
+        "previousRaw": 65534,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x00000000",
+        "modelPredictions": {
+          "32-nearest": 0,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "17",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x3e800000",
+        "inputFloat32": 0.25,
+        "nominalDisplay": "2.50",
+        "observedRaw": 16384,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3e800100",
+        "modelPredictions": {
+          "32-nearest": 16384,
+          "40-nearest": 16384,
+          "32-zero": 16384,
+          "40-zero": 16384
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "18",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x3f000000",
+        "inputFloat32": 0.5,
+        "nominalDisplay": "5.00",
+        "observedRaw": 32767,
+        "previousRaw": 16384,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f000000",
+        "modelPredictions": {
+          "32-nearest": 32767,
+          "40-nearest": 32767,
+          "32-zero": 32767,
+          "40-zero": 32767
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "19",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x3f400000",
+        "inputFloat32": 0.75,
+        "nominalDisplay": "7.50",
+        "observedRaw": 49151,
+        "previousRaw": 32767,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f400080",
+        "modelPredictions": {
+          "32-nearest": 49151,
+          "40-nearest": 49151,
+          "32-zero": 49151,
+          "40-zero": 49151
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "20",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x3f25a1ca",
+        "inputFloat32": 0.6469999551773071,
+        "nominalDisplay": "near 6.47: lower float neighbor",
+        "observedRaw": 42400,
+        "previousRaw": 49151,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a14b",
+        "modelPredictions": {
+          "32-nearest": 42400,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "21",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x00000000",
+        "inputFloat32": 0.0,
+        "nominalDisplay": "0.00",
+        "observedRaw": 0,
+        "previousRaw": 42400,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x00000000",
+        "modelPredictions": {
+          "32-nearest": 0,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "22",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x3f25a1cb",
+        "inputFloat32": 0.6470000147819519,
+        "nominalDisplay": "near 6.47: canonical float",
+        "observedRaw": 42401,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "23",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x00000000",
+        "inputFloat32": 0.0,
+        "nominalDisplay": "0.00",
+        "observedRaw": 0,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x00000000",
+        "modelPredictions": {
+          "32-nearest": 0,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "24",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x3f25a1cc",
+        "inputFloat32": 0.6470000743865967,
+        "nominalDisplay": "near 6.47: upper float neighbor",
+        "observedRaw": 42401,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42401,
+          "32-zero": 42401,
+          "40-zero": 42401
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "25",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x37000100",
+        "inputFloat32": 7.629627361893654e-06,
+        "nominalDisplay": "near 0.00: tiny half-word boundary",
+        "observedRaw": 1,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x37800100",
+        "modelPredictions": {
+          "32-nearest": 1,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "26",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x3f800000",
+        "inputFloat32": 1.0,
+        "nominalDisplay": "10.00",
+        "observedRaw": 65534,
+        "previousRaw": 1,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f800000",
+        "modelPredictions": {
+          "32-nearest": 65534,
+          "40-nearest": 65534,
+          "32-zero": 65534,
+          "40-zero": 65534
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "27",
+        "pid": 2,
+        "operation": 9,
+        "inputBits": "0x3f000000",
+        "inputFloat32": 0.5,
+        "nominalDisplay": "5.00",
+        "observedRaw": 32767,
+        "previousRaw": 65534,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f000000",
+        "modelPredictions": {
+          "32-nearest": 32767,
+          "40-nearest": 32767,
+          "32-zero": 32767,
+          "40-zero": 32767
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "Wah 0..1 op9 comparison; not general RECIPS proof"
+      },
+      {
+        "id": "28",
+        "pid": 2,
+        "operation": 9,
+        "inputBits": "0x3f25a1cb",
+        "inputFloat32": 0.6470000147819519,
+        "nominalDisplay": "near 6.47",
+        "observedRaw": 42401,
+        "previousRaw": 32767,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "Wah 0..1 op9 comparison; not general RECIPS proof"
+      },
+      {
+        "id": "29",
+        "pid": 2,
+        "operation": 9,
+        "inputBits": "0x3f400000",
+        "inputFloat32": 0.75,
+        "nominalDisplay": "7.50",
+        "observedRaw": 49151,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f400080",
+        "modelPredictions": {
+          "32-nearest": 49151,
+          "40-nearest": 49151,
+          "32-zero": 49151,
+          "40-zero": 49151
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "Wah 0..1 op9 comparison; not general RECIPS proof"
+      },
+      {
+        "id": "30",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x3e800000",
+        "inputFloat32": 0.25,
+        "nominalDisplay": "2.50",
+        "observedRaw": 16384,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3e800100",
+        "modelPredictions": {
+          "32-nearest": 16384,
+          "40-nearest": 16384,
+          "32-zero": 16384,
+          "40-zero": 16384
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "31",
+        "pid": 3,
+        "operation": 82,
+        "inputBits": "0x3f25a1ca",
+        "inputFloat32": 0.6469999551773071,
+        "nominalDisplay": "near 64.70%",
+        "observedRaw": 42400,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a14b",
+        "modelPredictions": {
+          "32-nearest": 42400,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "32",
+        "pid": 3,
+        "operation": 82,
+        "inputBits": "0x00000000",
+        "inputFloat32": 0.0,
+        "nominalDisplay": "0.00",
+        "observedRaw": 0,
+        "previousRaw": 42400,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x00000000",
+        "modelPredictions": {
+          "32-nearest": 0,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "33",
+        "pid": 3,
+        "operation": 82,
+        "inputBits": "0x3f25a1cb",
+        "inputFloat32": 0.6470000147819519,
+        "nominalDisplay": "near 64.70%",
+        "observedRaw": 42401,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "34",
+        "pid": 3,
+        "operation": 82,
+        "inputBits": "0x00000000",
+        "inputFloat32": 0.0,
+        "nominalDisplay": "0.00",
+        "observedRaw": 0,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x00000000",
+        "modelPredictions": {
+          "32-nearest": 0,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "35",
+        "pid": 3,
+        "operation": 82,
+        "inputBits": "0x3f25a1cc",
+        "inputFloat32": 0.6470000743865967,
+        "nominalDisplay": "near 64.70%",
+        "observedRaw": 42401,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42401,
+          "32-zero": 42401,
+          "40-zero": 42401
+        },
+        "matchingModels": [
+          "32-nearest",
+          "40-nearest",
+          "32-zero",
+          "40-zero"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "36",
+        "pid": 3,
+        "operation": 9,
+        "inputBits": "0x3d84816f",
+        "inputFloat32": 0.06469999998807907,
+        "nominalDisplay": "6.47%",
+        "observedRaw": 4240,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3d848109"
+      },
+      {
+        "id": "37",
+        "pid": 4,
+        "operation": 9,
+        "inputBits": "0x3eaaa64c",
+        "inputFloat32": 0.33329999446868896,
+        "nominalDisplay": "33.33%",
+        "observedRaw": 21842,
+        "previousRaw": 32767,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3eaaa555"
+      },
+      {
+        "id": "38",
+        "pid": 5,
+        "operation": 9,
+        "inputBits": "0x3f60624e",
+        "inputFloat32": 0.8765000104904175,
+        "nominalDisplay": "87.65%",
+        "observedRaw": 57441,
+        "previousRaw": 65534,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f6062c1"
+      },
+      {
+        "id": "39",
+        "pid": 6,
+        "operation": 9,
+        "inputBits": "0x3f060419",
+        "inputFloat32": 0.5235000252723694,
+        "nominalDisplay": "52.35%",
+        "observedRaw": 34307,
+        "previousRaw": 32767,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f06040c"
+      },
+      {
+        "id": "40",
+        "pid": 7,
+        "operation": 9,
+        "inputBits": "0x3dfcb924",
+        "inputFloat32": 0.1234000027179718,
+        "nominalDisplay": "123.4 ms",
+        "observedRaw": 809,
+        "previousRaw": 66,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3c4a4194"
+      },
+      {
+        "id": "41",
+        "pid": 15,
+        "operation": 9,
+        "inputBits": "0x3f2dcc64",
+        "inputFloat32": 0.6789000034332275,
+        "nominalDisplay": "678.9 ms",
+        "observedRaw": 4449,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3d8b0917"
+      },
+      {
+        "id": "42",
+        "pid": 13,
+        "operation": 9,
+        "inputBits": "0x3f9d70a4",
+        "inputFloat32": 1.2300000190734863,
+        "nominalDisplay": "1.23",
+        "observedRaw": 35713,
+        "previousRaw": 32767,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f0b8217"
+      },
+      {
+        "id": "43",
+        "pid": 14,
+        "operation": 9,
+        "inputBits": "0xbdfbe76d",
+        "inputFloat32": -0.12300000339746475,
+        "nominalDisplay": "-12.3%",
+        "observedRaw": 28737,
+        "previousRaw": 32767,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3ee083c1"
+      },
+      {
+        "id": "44",
+        "pid": 12,
+        "operation": 9,
+        "inputBits": "0x3ebe76c9",
+        "inputFloat32": 0.3720000088214874,
+        "nominalDisplay": "37.2%",
+        "observedRaw": 23447,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3eb72f6f"
+      }
+    ]
+  },
+  "uniqueInputPoints": 37,
+  "op82": {
+    "observations": 29,
+    "modeScores": {
+      "32-nearest": 29,
+      "40-nearest": 24,
+      "32-zero": 24,
+      "40-zero": 24
+    },
+    "discriminants": [
+      {
+        "id": "07",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x3f25a1cb",
+        "inputFloat32": 0.6470000147819519,
+        "nominalDisplay": "near 6.47: canonical float",
+        "observedRaw": 42401,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "10",
+        "pid": 1,
+        "operation": 82,
+        "inputBits": "0x37000100",
+        "inputFloat32": 7.629627361893654e-06,
+        "nominalDisplay": "near 0.00: tiny half-word boundary",
+        "observedRaw": 1,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x37800100",
+        "modelPredictions": {
+          "32-nearest": 1,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "22",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x3f25a1cb",
+        "inputFloat32": 0.6470000147819519,
+        "nominalDisplay": "near 6.47: canonical float",
+        "observedRaw": 42401,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "25",
+        "pid": 2,
+        "operation": 82,
+        "inputBits": "0x37000100",
+        "inputFloat32": 7.629627361893654e-06,
+        "nominalDisplay": "near 0.00: tiny half-word boundary",
+        "observedRaw": 1,
+        "previousRaw": 42401,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x37800100",
+        "modelPredictions": {
+          "32-nearest": 1,
+          "40-nearest": 0,
+          "32-zero": 0,
+          "40-zero": 0
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      },
+      {
+        "id": "33",
+        "pid": 3,
+        "operation": 82,
+        "inputBits": "0x3f25a1cb",
+        "inputFloat32": 0.6470000147819519,
+        "nominalDisplay": "near 64.70%",
+        "observedRaw": 42401,
+        "previousRaw": 0,
+        "twoRawReadsAgree": true,
+        "onlyRequestedFieldChanged": true,
+        "echoBits": "0x3f25a24b",
+        "modelPredictions": {
+          "32-nearest": 42401,
+          "40-nearest": 42400,
+          "32-zero": 42400,
+          "40-zero": 42400
+        },
+        "matchingModels": [
+          "32-nearest"
+        ],
+        "modelScope": "op82 exact model"
+      }
+    ]
+  },
+  "ordinaryOp9": [
+    {
+      "pid": 3,
+      "inputBits": "0x3d84816f",
+      "nominalDisplay": "6.47%",
+      "observedRaw": 4240,
+      "hypotheses": {
+        "float64Nearest": 4240,
+        "stagedFloat32Nearest": 4240
+      },
+      "matches": {
+        "float64Nearest": true,
+        "stagedFloat32Nearest": true
+      },
+      "actualDisplayObserved": false
+    },
+    {
+      "pid": 4,
+      "inputBits": "0x3eaaa64c",
+      "nominalDisplay": "33.33%",
+      "observedRaw": 21842,
+      "hypotheses": {
+        "float64Nearest": 21842,
+        "stagedFloat32Nearest": 21842
+      },
+      "matches": {
+        "float64Nearest": true,
+        "stagedFloat32Nearest": true
+      },
+      "actualDisplayObserved": false
+    },
+    {
+      "pid": 5,
+      "inputBits": "0x3f60624e",
+      "nominalDisplay": "87.65%",
+      "observedRaw": 57441,
+      "hypotheses": {
+        "float64Nearest": 57441,
+        "stagedFloat32Nearest": 57441
+      },
+      "matches": {
+        "float64Nearest": true,
+        "stagedFloat32Nearest": true
+      },
+      "actualDisplayObserved": false
+    },
+    {
+      "pid": 6,
+      "inputBits": "0x3f060419",
+      "nominalDisplay": "52.35%",
+      "observedRaw": 34307,
+      "hypotheses": {
+        "float64Nearest": 34307,
+        "stagedFloat32Nearest": 34307
+      },
+      "matches": {
+        "float64Nearest": true,
+        "stagedFloat32Nearest": true
+      },
+      "actualDisplayObserved": false
+    },
+    {
+      "pid": 7,
+      "inputBits": "0x3dfcb924",
+      "nominalDisplay": "123.4 ms",
+      "observedRaw": 809,
+      "hypotheses": {
+        "float64Nearest": 809,
+        "stagedFloat32Nearest": 809
+      },
+      "matches": {
+        "float64Nearest": true,
+        "stagedFloat32Nearest": true
+      },
+      "actualDisplayObserved": false
+    },
+    {
+      "pid": 15,
+      "inputBits": "0x3f2dcc64",
+      "nominalDisplay": "678.9 ms",
+      "observedRaw": 4449,
+      "hypotheses": {
+        "float64Nearest": 4449,
+        "stagedFloat32Nearest": 4449
+      },
+      "matches": {
+        "float64Nearest": true,
+        "stagedFloat32Nearest": true
+      },
+      "actualDisplayObserved": false
+    },
+    {
+      "pid": 13,
+      "inputBits": "0x3f9d70a4",
+      "nominalDisplay": "1.23",
+      "observedRaw": 35713,
+      "hypotheses": {
+        "float64Nearest": 35713,
+        "stagedFloat32Nearest": 35713
+      },
+      "matches": {
+        "float64Nearest": true,
+        "stagedFloat32Nearest": true
+      },
+      "actualDisplayObserved": false
+    },
+    {
+      "pid": 14,
+      "inputBits": "0xbdfbe76d",
+      "nominalDisplay": "-12.3%",
+      "observedRaw": 28737,
+      "hypotheses": {
+        "float64Nearest": 28737,
+        "stagedFloat32Nearest": 28737
+      },
+      "matches": {
+        "float64Nearest": true,
+        "stagedFloat32Nearest": true
+      },
+      "actualDisplayObserved": false
+    },
+    {
+      "pid": 12,
+      "inputBits": "0x3ebe76c9",
+      "nominalDisplay": "37.2%",
+      "observedRaw": 23447,
+      "hypotheses": {
+        "float64Nearest": 23447,
+        "stagedFloat32Nearest": 23447
+      },
+      "matches": {
+        "float64Nearest": true,
+        "stagedFloat32Nearest": true
+      },
+      "actualDisplayObserved": false
+    }
+  ],
+  "finalExport": {
+    "status": "full-body-and-raw-get-match",
+    "sha256": "c938c04bc7b522d914641eea96ee170b134d65e7c50b0036a5fd002b8e7f0c21",
+    "bodySha256": "30459edf365307445f8e250abd774508e6846775e0f15c9b7474dab754e4d9ed",
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "allUnrequestedBodyBytesPreserved": true,
+    "finalModWords": [
+      14,
+      16384,
+      49151,
+      4240,
+      21842,
+      57441,
+      34307,
+      809,
+      94,
+      5,
+      0,
+      0,
+      23447,
+      35713,
+      28737,
+      4449,
+      0,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      1
+    ],
+    "rawHeaderChangedOffsets": [
+      4,
+      5,
+      74
+    ],
+    "dumpHeaderEqual": true,
+    "baselineDumpHeader": [
+      127,
+      0,
+      0,
+      64,
+      0
+    ],
+    "exportDumpHeader": [
+      127,
+      0,
+      0,
+      64,
+      0
+    ],
+    "permanentStoreTested": false,
+    "fullRangeEncodingProven": false
+  },
+  "newPhysicalExports": 1,
+  "newReaDecompilation": false,
+  "runtimeModeGloballyProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "limits": [
+    "Model discrimination applies to observed inputs in this device session, not every execution context.",
+    "Nine direct op9 inputs do not exercise editor keyboard parsing/multiplier division.",
+    "No new display screenshots; nominalDisplay is a plan, not an observed display.",
+    "Only Wah1 Control dynamic Min/Max target type; not other target families.",
+    "Final export confirms serialization, not STORE/reload/power-cycle persistence.",
+    "No generated candidate was imported in this session."
+  ]
+}

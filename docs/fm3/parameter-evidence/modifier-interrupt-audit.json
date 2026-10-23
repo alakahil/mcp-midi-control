@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "method": "Native operand checks, reviewed tail and conditional status-stack model; no live CPU or complete scheduler emulation.",
+  "checkpointCount": 11,
+  "vector": {
+    "loadedTableSource": "0x28240000",
+    "privateIsaBase": "0x90000",
+    "entry": "0x9003c",
+    "target": "0x1cbb7f",
+    "delayed": true,
+    "directLoadedVectorLinkProven": true,
+    "liveVectorSelectionInvariantProven": false
+  },
+  "startup": {
+    "resetTarget": "0xbb8000",
+    "setupCall": "0xbb807f",
+    "setup": "0x834390",
+    "loop": {
+      "count": 2,
+      "target": 8602598,
+      "modeF1": true
+    },
+    "bit2SetAt": "0x8343f5",
+    "mmrAddress": "0x30024",
+    "sysctlAddressBinding": "inferred from startup pattern and documented default CCES IVT setup; exact vendor register-address definition not obtained"
+  },
+  "registration": {
+    "sids": [
+      50,
+      51
+    ],
+    "handler": "0x830778",
+    "mapBase": "0x2e4920",
+    "mapStrideBytes": 2,
+    "callbackBase": "0x2e4b28",
+    "callbackStrideBytes": 8,
+    "argumentOffsetBytes": 4,
+    "capacity": 277,
+    "checkedAddressPairs": 552,
+    "layoutRowsSha256": "c54d5e71e9c17d813e921349562c4ee865a9402172e2bc2c55b66987d2704d30",
+    "successfulRegistrationAndDispatchLayoutAgree": true,
+    "registrationSuccessOrAllRuntimeWritesProven": false
+  },
+  "conditionalReturn": {
+    "restoreCall": "0x8307ae",
+    "restore": "0x830a1b",
+    "frameRead": "0x830ae3",
+    "mode1stkWrite": "0x830c43",
+    "helperReturn": "0x830c8c",
+    "callerContinuation": "0x8307b1",
+    "handlerReturn": "0x8307bb",
+    "dispatcherContinuation": "0x1cbbe6",
+    "finalRtiCandidate": "0x1cbc0c",
+    "statusModel": {
+      "restoresSelectedTaskMode": true,
+      "preservesOuterStatus": true,
+      "provesIncomingInterruptedModePreserved": false,
+      "events": [
+        {
+          "action": "push",
+          "stack": [
+            "outer-status",
+            "scheduler-mode"
+          ],
+          "mode": "scheduler-mode"
+        },
+        {
+          "action": "selected",
+          "stack": [
+            "outer-status",
+            "selected-task-mode"
+          ],
+          "mode": "scheduler-mode"
+        },
+        {
+          "action": "rts",
+          "stack": [
+            "outer-status",
+            "selected-task-mode"
+          ],
+          "mode": "scheduler-mode"
+        },
+        {
+          "action": "rts",
+          "stack": [
+            "outer-status",
+            "selected-task-mode"
+          ],
+          "mode": "scheduler-mode"
+        },
+        {
+          "action": "rti",
+          "stack": [
+            "outer-status"
+          ],
+          "mode": "selected-task-mode"
+        }
+      ]
+    },
+    "premises": [
+      "Legacy compact RTS/RTI interpretation is correct.",
+      "Valid selected task frame, PC stack and ABI modifiers; reviewed memory has no external clobber.",
+      "Successful matching registration; correct active vector; no interfering nested interrupt or exception.",
+      "Hash-bound review establishes no intervening status-stack mutation in the selected return suffix."
+    ]
+  },
+  "compactReturnEncodingIndependentlyProven": false,
+  "wholeInterruptReturnPathProven": false,
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "nextStep": "Retain this conditional interrupt bridge. Resolve the compact-opcode witness and remaining coreTask callee invariants before promoting live MODE1; no preset export is needed for these questions."
+}

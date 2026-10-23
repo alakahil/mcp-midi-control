@@ -438,6 +438,15 @@
       ],
       "scope": "Three real captures reconstructed exactly; bounded point/alias writes, no collateral changes, atomic rejection, new combinations remain software-only; no full-range codec/device I/O",
       "required": true
+    },
+    {
+      "id": "test-wah-minmax-exact",
+      "command": [
+        "node",
+        "scripts/test-wah-minmax-exact.mjs"
+      ],
+      "scope": "Bounded exact Min/Max API; six hardware values per field, 995 model-consensus values per field, full-body/readback/atomic failures, preserved legacy meanings, sound path and four-file CLI with tamper rejection; no new device I/O",
+      "required": true
     }
   ]
 }

@@ -3,6 +3,7 @@
 // A process/machine crash can leave an incomplete bundle: consumers must verify
 // all hashes in validation.artifacts before accepting it.
 import fs from 'node:fs';
+import {verifyWahExactOutput} from './fm3-wah-minmax-exact.mjs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {verifyGlobalScaleReport} from './fm3-global-scale-observations.mjs';
@@ -30,5 +31,6 @@ export function verifyPresetOutputs(stem){
   }
   if(sha256(fs.readFileSync(stem+'.syx'))!==report.outputSha256)throw Error('Final SYX hash mismatch');
   verifyGlobalScaleReport(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'));
+  verifyWahExactOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   return report;
 }

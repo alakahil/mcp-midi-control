@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.13`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.14`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -304,11 +304,6 @@ puuduvaid engine-faile või erinevat versiooni, märgi laadimine kinnitamata.
 Väikese kasutusülesande offline-genereerimine ja failide kontroll lõpetavad
 laadimise kontrolli; heli, FM3 import ja CPU on eraldi tõendid.
 
-0.3.2 säilitab 0.3.1 generaatori käitumise ning kirjutab ühilduvusmanifesti
-platvormi kinnitatud ASCII-paokoodidega JSON-vormingus. Nii jäävad avaldatud
-failide räsid commit’ist ehitatud paketi manifestiga täpselt vastavusse.
-
-
 0.3.3 parandab logaritmilise juhiku null- ja negatiivsete sisendite kontrolli.
 DynaCab R1/R2 sisend on **0–10**, mitte protsent. Choruse Delay Range,
 Low ning High/EQ on nüüd nimeliselt leitavad; järgi nende FW13 tüübipiire.
@@ -362,7 +357,6 @@ Mõlema režiimi tulemus on kogumise aja vaatlus, mitte seadme praeguse
 oleku või kogu väärtusvahemiku riistvarakinnitus. Seadme identiteeti/püsivara
 see päring ei tuvasta. Ära nõua juba piisava kogumise kordamist.
 
-
 ## External 1 → Wah piiratud kirjutustugi (0.3.5)
 
 Kasuta `jb-composer` kirjelduses `"modifiers":{"external1Wah":true}` või
@@ -403,14 +397,12 @@ Tundmatu kirjeloendi või süsteemisaba korral on ploki olemasolu teadmata;
 toimimist ega kuuldavust. Eksporditud Bonamassa aluses on External 1 aktiivne,
 kuid Wah kõigis stseenides bypass'is; NewLookis on sihtseos väljas ja plokk puudub.
 
-
 Vaata `targetApplicability`: 11 kaetud efektipere A–D kanalite FW13 tüübireegel
 annab sobiva, välistatud või teadmata tulemuse. Tundmatu mudeli/valija ega
 puuduva või korduva sihtkirje puhul ära järelda sobivust. Kõik kanalid kuvatakse;
 `inModifierScope` eristab seose ALL/A–D ulatust. Tüübireegli läbimine ei kinnita
 parameetri modifikaatorituge, DSP mõju ega kirjutusluba. Rotary PID 0 on Rate,
 mitte Type. Pitchi kohaliku noodi kontekst ei valideeri terve skaala sisu.
-
 
 ## Auto Engage kahevalikuline tugi (0.3.10)
 
@@ -427,7 +419,6 @@ Sõna 10 / keha nihe 1604: OFF=0, MED SPD=2. Ainult see paar on kasutaja
 Täpselt sama kogu sisu tuvastamisel ära küsi uut korduseksporti.
 Seadme käitumine ja heli jäävad eraldi. Väljalaske avaldamine ja hostilaadimine
 kinnitatakse eraldi commit’ipõhise kviitungiga.
-
 
 ## Damping’u režiimi kahevalikuline tugi (0.3.11)
 
@@ -446,7 +437,6 @@ eraldi sünteetiliselt kontrollitud kombinatsioonid, mitte selle katse seadmekin
 Damping’u tegelik ajakäitumine, uue faili import, heli ja CPU jäävad eraldi.
 Lähtekoodi versioon ei kinnita avaldamist ega hostilaadimist.
 
-
 ## Min-i kaks mõõdetud punkti (0.3.12)
 
 Kasuta `"modifiers":{"wahMin":0}` või `{"wahMin":2.5}`; soundi ümbrises
@@ -462,7 +452,6 @@ ja tõendit `engine/skills/instructions/references/wah-min-evidence.json`.
 21.10.2026 kasutaja ekspordipaar, ekraanipilt ja kinnitus tõendavad Min 0.00 → 2.50.
 Täpselt sama kogu keha taastamisel ära küsi uut korduseksporti; uus fail ei ole
 sellega eraldi seadmesse imporditud. Pedaal, DSP, heli ja CPU jäävad eraldi kontrollideks.
-
 
 ## Modifikaatori kümne välja mõõdetud punktid (0.3.13 kandidaat)
 
@@ -488,5 +477,23 @@ Uued punktide kombinatsioonid on kontrollitud arvutis.
 Generaator tuvastab kolme kogutud faili täpse kogu keha vaste; sellise vaste
 korral ei küsita sama sisu korduseksporti. Tootmisväljalase, avaldamisluba,
 CI ja hostilaadimine jäävad eraldi väravateks; kohalik kandidaat ei ole
-automaatselt avaldatud plugin. Järgmine töö on kodeeringu tõendite uurimine
-ning hiljem üks vajalik pedaali/heli koondkontroll, mitte A/B/Max kogumise kordus.
+automaatselt avaldatud plugin. Kodeeringu uus piiratud liides on järgmises osas;
+kogu väärtusvahemiku, pedaali ja heli kinnitus on endiselt eraldi.
+
+## Täpne Wah Min/Max (0.3.14)
+
+Kasuta täpse väärtuse jaoks `modifiers.wahMinMaxExact` või soundi ümbrises
+`composer.modifiers.wahMinMaxExact`, näiteks
+`{"policy":"exact-wah-cent-fw13-hw1","min":"2.50","max":"6.47"}`.
+Nõua kahe kümnendkohaga stringi `0.00`…`10.00`; piisab ühest väljast.
+Määramata raw-sõna säilib. Nõua lõplikku External 1 → Wah1 Control ALL seost;
+NewLookil lisa Wah-mall ja `external1Wah:true`. Säilita stseenide bypass,
+kui kasutaja pole selle muutmist palunud. Ära määra sama välja kahe lepinguga.
+Vana `wahMin:2.5` jääb hiiremõõtepunktiks 16375; täpne `"min":"2.50"` annab
+16384. Vana `wahControls.max:5` annab 32784; täpne `"max":"5.00"` 32767.
+Vaata [täpse sisendi juhendit](engine/docs/FM3_WAH_MODIFIER.md#täpse-minmax-sisendi-arenduskandidaat-22102026)
+ja capabilities'i `exactMinMax` välja. Erista iga väärtuse tõenditaset:
+kuus väärtust välja kohta on riistvaral mõõdetud, 995 põhinevad nelja mudeli
+kokkulangevusel. Ära nimeta neid kõiki mõõdetuks ega kogu vahemikku tõendatuks.
+Kasuta ühise generaatori nelja faili ja `--verify` kontrolli; uut eksporti
+küsi vaid konkreetse lahtise küsimuse jaoks. Seadmeimport, heli ja CPU on eraldi.

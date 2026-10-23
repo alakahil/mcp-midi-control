@@ -30,5 +30,5 @@ export function matchWahMeasuredDeviceBody(body){
   submittedFileConfirmed:false,audio:'not tested',cpu:'not validated',modifierBehavior:'not tested'};
 }
 export function renderMeasuredControls(controls){
- return Object.values(controls??{}).map(c=>`${c.label}: ${c.display.toFixed(c.decimals)}${c.unit==='%'?'%':c.unit==='ms'?' ms':''}; ${c.changed?'muudetud':'säilitatud'}; salvestatud kood ${c.after}${c.requested!==null&&c.requested!==c.display?`; sisestussiht ${c.requested}, mõõdetud kuvanäit ${c.display}`:''}.`);
+ return Object.values(controls??{}).filter(c=>!c.exactDecimal).map(c=>`${c.label}: ${c.display.toFixed(c.decimals)}${c.unit==='%'?'%':c.unit==='ms'?' ms':''}; ${c.changed?'muudetud':'säilitatud'}; salvestatud kood ${c.after}${c.requested!==null&&c.requested!==c.display?`; sisestussiht ${c.requested}, mõõdetud kuvanäit ${c.display}`:''}.`);
 }

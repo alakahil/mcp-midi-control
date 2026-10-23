@@ -1,0 +1,30 @@
+{
+  "tested_at": "2026-10-22T07:36:28.955Z",
+  "host": "Linux",
+  "rea_version": {
+    "name": "rea",
+    "version": "6.4.0"
+  },
+  "planned_requests_validated": 41,
+  "mcp_handshake": true,
+  "binary_session": true,
+  "native_decompilation_performed": false,
+  "macos_end_to_end_tested": false,
+  "script_version": "1.0.0",
+  "synthetic_tests": {
+    "passed": 5,
+    "total": 5,
+    "exit_code": 0,
+    "output": "✔ universal Mach-O: select arm64 bytes and reject invalid bounds (1.771679ms)\n✔ text-only errors and bounded evidence never become unqualified success (0.216125ms)\n✔ one session, query deduplication, bounded reference followup, retained partial flags (5.178523ms)\n✔ provider failure is retained, stops analysis, exports diagnostics and closes (1.307029ms)\n✔ provider-opened identity mismatch prevents all function queries (1.058444ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 100.633792\n"
+  },
+  "production_plugin": "0.3.13",
+  "generator_write_support": false,
+  "new_hardware_exports": 0,
+  "files": {
+    "FM3_REA_MINMAX.command": "2e98e3a716fab4e5755d375b4c667e28f1e02fc76c98e611f173e4dc5cc37d61",
+    "README.txt": "71b3e9055c5c632c5ff5203ee05f02967384957b7ee08809c4d160c38e6ef6ad",
+    "fm3-rea-minmax.mjs": "804de0c57d557956e5eadddd69160057c9bca6e468b94b79e1acdffc55a7a086",
+    "plan.json": "d9c75890a0e65d61b585b35ce2de79f532ab3062b4f9e917f14720f42f16e04c",
+    "test-minmax-batch.mjs": "1ca3581cfd6784e8c4e003b4ad081478b1d17fcdf0c7a4b4862859d86f53266f"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "nativeBytesIncluded": false,
+  "manual": {
+    "url": "https://www.analog.com/media/en/dsp-documentation/processor-manuals/SC58x-2158x-prm.pdf",
+    "revision": "1.5, June 2023",
+    "sha256": "a3edf83beb75b44a77f8366cf54c0353083ab49a1c69d8179d2b727ba7ba1470",
+    "sections": [
+      "4-9",
+      "4-75",
+      "27-12",
+      "27-16"
+    ]
+  },
+  "spans": [
+    {
+      "name": "core_task_creation",
+      "source": "visa",
+      "address": "0x82e128",
+      "size": 112,
+      "sha256": "4965be3d684c722630fbc8549f3db9caecee3ac487580ba9fd956209e3c2e059"
+    },
+    {
+      "name": "task_create_publication",
+      "source": "visa",
+      "address": "0x83254e",
+      "size": 404,
+      "sha256": "82cf2d922bc7c158c539fc298d2b4f7440ff5efdcaaabb531c22c73adfdf51f2"
+    },
+    {
+      "name": "task_stack_builder",
+      "source": "visa",
+      "address": "0x830d26",
+      "size": 278,
+      "sha256": "6aa5dd8dd453beff68def429bf57e5e92bdcc66431a4c62ea247f123e6420a78"
+    },
+    {
+      "name": "core_task_body",
+      "source": "visa",
+      "address": "0x82ded0",
+      "size": 888,
+      "sha256": "269eadbc435fd6b3186f8b7fce91693f8c7ca7652a21d9c80fea3689f2564c66"
+    },
+    {
+      "name": "context_switch",
+      "source": "visa",
+      "address": "0x830778",
+      "size": 136,
+      "sha256": "2496e35781d643dd2ea88068cac5464a68f5cdfd78b55b0311fcaa7ac1a07518"
+    },
+    {
+      "name": "context_save",
+      "source": "visa",
+      "address": "0x8307bc",
+      "size": 1214,
+      "sha256": "d4e17c68c910156215f2b793e2848d6d004f5599faa7b16824de1272432126bb"
+    },
+    {
+      "name": "context_restore",
+      "source": "visa",
+      "address": "0x830a1b",
+      "size": 1252,
+      "sha256": "b3c23d22246251c2e798bc63e24f2ff6a8ee6548324a4cc6b4e11966a2d9c627"
+    },
+    {
+      "name": "initial_task_restore",
+      "source": "visa",
+      "address": "0x830c8d",
+      "size": 78,
+      "sha256": "44983d8c870de72a224f231092d35a7f9e9df70f574b1f48e697215ee439d80c"
+    },
+    {
+      "name": "pre_poll_helper",
+      "source": "visa",
+      "address": "0x82c78a",
+      "size": 214,
+      "sha256": "595ed2f2c1dd75400f9eefff0ef48b3c6a6ebedaff302d926b2b036afa1f0c6a"
+    },
+    {
+      "name": "pre_poll_helper_leaf",
+      "source": "visa",
+      "address": "0x82c6e4",
+      "size": 42,
+      "sha256": "7b58fb18d1549ec4e2170a163c2d26273b62fb42387a979f773336e0b017e73a"
+    },
+    {
+      "name": "timestamp_leaf",
+      "source": "visa",
+      "address": "0x1c8aa2",
+      "size": 40,
+      "sha256": "f8041f7f889cf46dcdc6933ee2c9eafe21c7055e10d78cfdf0d1237eedbd2191"
+    },
+    {
+      "name": "task_name",
+      "source": "byte",
+      "address": "0x809ce680",
+      "size": 9,
+      "sha256": "1418a28184a6283928376a42cf232dfb17e2c2fb63d32c962a943157d14769e5"
+    }
+  ]
+}

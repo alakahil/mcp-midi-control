@@ -1,0 +1,2048 @@
+{
+  "schemaVersion": 1,
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "method": "Hash-bound reviewed instruction partition and PID/operation liveness; no native bytes and no CPU emulation",
+  "spans": [
+    {
+      "name": "callerArgument",
+      "source": "visa",
+      "address": "0x80eada",
+      "size": 32,
+      "sha256": "1481136e399a17043fbb49bac7ed6a1aac37f2f88909feb2606bfc592b090e06"
+    },
+    {
+      "name": "callback",
+      "source": "visa",
+      "address": "0x80f751",
+      "size": 6188,
+      "sha256": "0c6673baf938e37fa301818e2efe7501656622349f208f02618a3c77dd1e98e1"
+    },
+    {
+      "name": "generic",
+      "source": "visa",
+      "address": "0x8244fb",
+      "size": 3252,
+      "sha256": "88aec2c2a30c75d4ff912ff7f2739acf94b38fc6673eca6547e19e848cf30522"
+    },
+    {
+      "name": "integerHandler",
+      "source": "visa",
+      "address": "0x823785",
+      "size": 268,
+      "sha256": "7c0ffb88f2c654a7121a628ea2bf24d09a65c89af804161010de6257564edffe"
+    },
+    {
+      "name": "formatter",
+      "source": "visa",
+      "address": "0x825ebd",
+      "size": 646,
+      "sha256": "4f68af9932cff5f83ad07ce3d3bdab3ee88955aefdf2feeed2c0c6b44224340a"
+    },
+    {
+      "name": "logHelper",
+      "source": "visa",
+      "address": "0x1cbc4a",
+      "size": 250,
+      "sha256": "1f4a1c8c183de4d8a1634960abe8ac2dccb8377953921f531cd34a659c2568ae"
+    },
+    {
+      "name": "stringLength",
+      "source": "visa",
+      "address": "0x833650",
+      "size": 48,
+      "sha256": "edca3a11d07542e7ad33e9588e8533a3f3b5e60da78a1b10e1f8def02fa321bb"
+    },
+    {
+      "name": "descriptor",
+      "source": "data",
+      "address": "0x808590d0",
+      "size": 36,
+      "sha256": "706908c76c2cbf8a050e33402eb24ba620aa45871032ef1b999868e2388d024c"
+    },
+    {
+      "name": "typeTable",
+      "source": "data",
+      "address": "0x282e76c0",
+      "size": 60,
+      "sha256": "3716a315ea48ad2a06dafb4013f68ba5f00f0eaf2b20536f314251fd7269c96c"
+    },
+    {
+      "name": "postTypeTable",
+      "source": "data",
+      "address": "0x282e7684",
+      "size": 60,
+      "sha256": "7493fec595523596fe640bd3969e8f9df879d015459467af34b8fee436bced76"
+    },
+    {
+      "name": "operationTable",
+      "source": "data",
+      "address": "0x282e75b8",
+      "size": 24,
+      "sha256": "f698da4b276d4441e668d4690116178b1ceeee8347b0c607108e4befbb8f03da"
+    }
+  ],
+  "callbackInstructions": [
+    [
+      "0x80f751",
+      6
+    ],
+    [
+      "0x80f754",
+      6
+    ],
+    [
+      "0x80f757",
+      4
+    ],
+    [
+      "0x80f759",
+      4
+    ],
+    [
+      "0x80f75b",
+      4
+    ],
+    [
+      "0x80f75d",
+      4
+    ],
+    [
+      "0x80f75f",
+      4
+    ],
+    [
+      "0x80f761",
+      4
+    ],
+    [
+      "0x80f763",
+      4
+    ],
+    [
+      "0x80f765",
+      4
+    ],
+    [
+      "0x80f767",
+      6
+    ],
+    [
+      "0x80f76a",
+      6
+    ],
+    [
+      "0x80f76d",
+      4
+    ],
+    [
+      "0x80f76f",
+      6
+    ],
+    [
+      "0x80f772",
+      4
+    ],
+    [
+      "0x80f774",
+      4
+    ],
+    [
+      "0x80f776",
+      4
+    ],
+    [
+      "0x80f778",
+      4
+    ],
+    [
+      "0x80f77a",
+      4
+    ],
+    [
+      "0x80f77c",
+      4
+    ],
+    [
+      "0x80f77e",
+      4
+    ],
+    [
+      "0x80f780",
+      6
+    ],
+    [
+      "0x80f783",
+      6
+    ],
+    [
+      "0x80f786",
+      2
+    ],
+    [
+      "0x80f787",
+      4
+    ],
+    [
+      "0x80f789",
+      2
+    ],
+    [
+      "0x80f78a",
+      2
+    ],
+    [
+      "0x80f78b",
+      4
+    ],
+    [
+      "0x80f78d",
+      6
+    ],
+    [
+      "0x80f790",
+      4
+    ],
+    [
+      "0x80f792",
+      4
+    ],
+    [
+      "0x80f794",
+      4
+    ],
+    [
+      "0x80f796",
+      2
+    ],
+    [
+      "0x80f797",
+      4
+    ],
+    [
+      "0x80f799",
+      6
+    ],
+    [
+      "0x80f79c",
+      6
+    ],
+    [
+      "0x80f79f",
+      6
+    ],
+    [
+      "0x80f7a2",
+      6
+    ],
+    [
+      "0x80f7a5",
+      4
+    ],
+    [
+      "0x80f7a7",
+      2
+    ],
+    [
+      "0x80f7a8",
+      6
+    ],
+    [
+      "0x80f7ab",
+      4
+    ],
+    [
+      "0x80f7ad",
+      4
+    ],
+    [
+      "0x80f7af",
+      6
+    ],
+    [
+      "0x80f7b2",
+      4
+    ],
+    [
+      "0x80f7b4",
+      4
+    ],
+    [
+      "0x80f7b6",
+      2
+    ],
+    [
+      "0x80f7b7",
+      2
+    ],
+    [
+      "0x80f7b8",
+      2
+    ],
+    [
+      "0x80f7b9",
+      2
+    ],
+    [
+      "0x80f7ba",
+      4
+    ],
+    [
+      "0x80f7bc",
+      6
+    ],
+    [
+      "0x80f7bf",
+      4
+    ],
+    [
+      "0x80f7c1",
+      2
+    ],
+    [
+      "0x80f7c2",
+      4
+    ],
+    [
+      "0x80f7c4",
+      2
+    ],
+    [
+      "0x80f7c5",
+      6
+    ],
+    [
+      "0x80f7c8",
+      4
+    ],
+    [
+      "0x80f7ca",
+      4
+    ],
+    [
+      "0x80f7cc",
+      2
+    ],
+    [
+      "0x80f7cd",
+      6
+    ],
+    [
+      "0x80f7da",
+      4
+    ],
+    [
+      "0x80f7dc",
+      6
+    ],
+    [
+      "0x80f7df",
+      6
+    ],
+    [
+      "0x80f7e2",
+      4
+    ],
+    [
+      "0x80f7e4",
+      4
+    ],
+    [
+      "0x80f7e6",
+      4
+    ],
+    [
+      "0x80f7e8",
+      6
+    ],
+    [
+      "0x80f7eb",
+      6
+    ],
+    [
+      "0x80f7ee",
+      6
+    ],
+    [
+      "0x80f7f1",
+      2
+    ],
+    [
+      "0x80f7f2",
+      6
+    ],
+    [
+      "0x80f7f5",
+      4
+    ],
+    [
+      "0x80f7f7",
+      4
+    ],
+    [
+      "0x80f7f9",
+      6
+    ],
+    [
+      "0x80f835",
+      4
+    ],
+    [
+      "0x80f837",
+      2
+    ],
+    [
+      "0x80f838",
+      6
+    ],
+    [
+      "0x80f84f",
+      4
+    ],
+    [
+      "0x80f851",
+      2
+    ],
+    [
+      "0x80f852",
+      6
+    ],
+    [
+      "0x80f855",
+      4
+    ],
+    [
+      "0x80f857",
+      2
+    ],
+    [
+      "0x80f858",
+      6
+    ],
+    [
+      "0x80f88b",
+      4
+    ],
+    [
+      "0x80f88d",
+      2
+    ],
+    [
+      "0x80f88e",
+      6
+    ],
+    [
+      "0x80f891",
+      4
+    ],
+    [
+      "0x80f893",
+      2
+    ],
+    [
+      "0x80f894",
+      6
+    ],
+    [
+      "0x80f8c7",
+      4
+    ],
+    [
+      "0x80f8c9",
+      2
+    ],
+    [
+      "0x80f8ca",
+      6
+    ],
+    [
+      "0x80f8cd",
+      4
+    ],
+    [
+      "0x80f8cf",
+      2
+    ],
+    [
+      "0x80f8d0",
+      6
+    ],
+    [
+      "0x80f904",
+      4
+    ],
+    [
+      "0x80f906",
+      2
+    ],
+    [
+      "0x80f907",
+      6
+    ],
+    [
+      "0x80f90a",
+      4
+    ],
+    [
+      "0x80f90c",
+      2
+    ],
+    [
+      "0x80f90d",
+      6
+    ],
+    [
+      "0x80f910",
+      4
+    ],
+    [
+      "0x80f912",
+      2
+    ],
+    [
+      "0x80f913",
+      6
+    ],
+    [
+      "0x80f916",
+      4
+    ],
+    [
+      "0x80f918",
+      2
+    ],
+    [
+      "0x80f919",
+      6
+    ],
+    [
+      "0x80f94c",
+      4
+    ],
+    [
+      "0x80f94e",
+      2
+    ],
+    [
+      "0x80f94f",
+      6
+    ],
+    [
+      "0x80f952",
+      4
+    ],
+    [
+      "0x80f954",
+      2
+    ],
+    [
+      "0x80f955",
+      6
+    ],
+    [
+      "0x80f989",
+      4
+    ],
+    [
+      "0x80f98b",
+      2
+    ],
+    [
+      "0x80f98c",
+      6
+    ],
+    [
+      "0x80f98f",
+      4
+    ],
+    [
+      "0x80f991",
+      2
+    ],
+    [
+      "0x80f992",
+      6
+    ],
+    [
+      "0x80f9de",
+      4
+    ],
+    [
+      "0x80f9e0",
+      2
+    ],
+    [
+      "0x80f9e1",
+      6
+    ],
+    [
+      "0x80f9e4",
+      4
+    ],
+    [
+      "0x80f9e6",
+      2
+    ],
+    [
+      "0x80f9e7",
+      6
+    ],
+    [
+      "0x80f9ea",
+      4
+    ],
+    [
+      "0x80f9ec",
+      2
+    ],
+    [
+      "0x80f9ed",
+      6
+    ],
+    [
+      "0x80f9f0",
+      4
+    ],
+    [
+      "0x80f9f2",
+      2
+    ],
+    [
+      "0x80f9f3",
+      6
+    ],
+    [
+      "0x80fa4a",
+      4
+    ],
+    [
+      "0x80fa4c",
+      2
+    ],
+    [
+      "0x80fa4d",
+      6
+    ],
+    [
+      "0x80fa50",
+      4
+    ],
+    [
+      "0x80fa52",
+      2
+    ],
+    [
+      "0x80fa53",
+      6
+    ],
+    [
+      "0x80faab",
+      4
+    ],
+    [
+      "0x80faad",
+      2
+    ],
+    [
+      "0x80faae",
+      6
+    ],
+    [
+      "0x80fac6",
+      4
+    ],
+    [
+      "0x80fac8",
+      2
+    ],
+    [
+      "0x80fac9",
+      6
+    ],
+    [
+      "0x80fae1",
+      4
+    ],
+    [
+      "0x80fae3",
+      2
+    ],
+    [
+      "0x80fae4",
+      6
+    ],
+    [
+      "0x80fae7",
+      4
+    ],
+    [
+      "0x80fae9",
+      2
+    ],
+    [
+      "0x80faea",
+      6
+    ],
+    [
+      "0x80fbcb",
+      4
+    ],
+    [
+      "0x80fbcd",
+      6
+    ],
+    [
+      "0x80fbd0",
+      6
+    ],
+    [
+      "0x80fbd3",
+      4
+    ],
+    [
+      "0x80fbd5",
+      2
+    ],
+    [
+      "0x80fbd6",
+      6
+    ],
+    [
+      "0x80fbd9",
+      4
+    ],
+    [
+      "0x80fbdb",
+      2
+    ],
+    [
+      "0x80fbdc",
+      6
+    ],
+    [
+      "0x80fbdf",
+      4
+    ],
+    [
+      "0x80fbe1",
+      2
+    ],
+    [
+      "0x80fbe2",
+      6
+    ],
+    [
+      "0x80fbf6",
+      4
+    ],
+    [
+      "0x80fbf8",
+      2
+    ],
+    [
+      "0x80fbf9",
+      6
+    ],
+    [
+      "0x80fbfc",
+      4
+    ],
+    [
+      "0x80fbfe",
+      2
+    ],
+    [
+      "0x80fbff",
+      6
+    ],
+    [
+      "0x80fc14",
+      4
+    ],
+    [
+      "0x80fc16",
+      2
+    ],
+    [
+      "0x80fc17",
+      6
+    ],
+    [
+      "0x80fc1a",
+      4
+    ],
+    [
+      "0x80fc1c",
+      2
+    ],
+    [
+      "0x80fc1d",
+      6
+    ],
+    [
+      "0x80fc34",
+      4
+    ],
+    [
+      "0x80fc36",
+      2
+    ],
+    [
+      "0x80fc37",
+      6
+    ],
+    [
+      "0x80fc3a",
+      4
+    ],
+    [
+      "0x80fc3c",
+      2
+    ],
+    [
+      "0x80fc3d",
+      6
+    ],
+    [
+      "0x80fc52",
+      4
+    ],
+    [
+      "0x80fc54",
+      2
+    ],
+    [
+      "0x80fc55",
+      6
+    ],
+    [
+      "0x80fc58",
+      4
+    ],
+    [
+      "0x80fc5a",
+      2
+    ],
+    [
+      "0x80fc5b",
+      6
+    ],
+    [
+      "0x80fc72",
+      4
+    ],
+    [
+      "0x80fc74",
+      2
+    ],
+    [
+      "0x80fc75",
+      6
+    ],
+    [
+      "0x80fc78",
+      4
+    ],
+    [
+      "0x80fc7a",
+      2
+    ],
+    [
+      "0x80fc7b",
+      6
+    ],
+    [
+      "0x80fc90",
+      4
+    ],
+    [
+      "0x80fc92",
+      2
+    ],
+    [
+      "0x80fc93",
+      6
+    ],
+    [
+      "0x80fc96",
+      4
+    ],
+    [
+      "0x80fc98",
+      2
+    ],
+    [
+      "0x80fc99",
+      6
+    ],
+    [
+      "0x80fcb0",
+      4
+    ],
+    [
+      "0x80fcb2",
+      2
+    ],
+    [
+      "0x80fcb3",
+      6
+    ],
+    [
+      "0x80fcb6",
+      4
+    ],
+    [
+      "0x80fcb8",
+      2
+    ],
+    [
+      "0x80fcb9",
+      6
+    ],
+    [
+      "0x80fcce",
+      4
+    ],
+    [
+      "0x80fcd0",
+      2
+    ],
+    [
+      "0x80fcd1",
+      6
+    ],
+    [
+      "0x80fcd4",
+      4
+    ],
+    [
+      "0x80fcd6",
+      2
+    ],
+    [
+      "0x80fcd7",
+      6
+    ],
+    [
+      "0x80fcee",
+      4
+    ],
+    [
+      "0x80fcf0",
+      2
+    ],
+    [
+      "0x80fcf1",
+      6
+    ],
+    [
+      "0x80fcf4",
+      4
+    ],
+    [
+      "0x80fcf6",
+      2
+    ],
+    [
+      "0x80fcf7",
+      6
+    ],
+    [
+      "0x80fd0c",
+      4
+    ],
+    [
+      "0x80fd0e",
+      2
+    ],
+    [
+      "0x80fd0f",
+      6
+    ],
+    [
+      "0x80fd12",
+      4
+    ],
+    [
+      "0x80fd14",
+      2
+    ],
+    [
+      "0x80fd15",
+      6
+    ],
+    [
+      "0x80fd2c",
+      4
+    ],
+    [
+      "0x80fd2e",
+      2
+    ],
+    [
+      "0x80fd2f",
+      6
+    ],
+    [
+      "0x80fd32",
+      4
+    ],
+    [
+      "0x80fd34",
+      2
+    ],
+    [
+      "0x80fd35",
+      6
+    ],
+    [
+      "0x80fd4b",
+      4
+    ],
+    [
+      "0x80fd4d",
+      2
+    ],
+    [
+      "0x80fd4e",
+      6
+    ],
+    [
+      "0x80fd51",
+      4
+    ],
+    [
+      "0x80fd53",
+      2
+    ],
+    [
+      "0x80fd54",
+      6
+    ],
+    [
+      "0x80fd6d",
+      4
+    ],
+    [
+      "0x80fd6f",
+      2
+    ],
+    [
+      "0x80fd70",
+      6
+    ],
+    [
+      "0x80fd73",
+      4
+    ],
+    [
+      "0x80fd75",
+      2
+    ],
+    [
+      "0x80fd76",
+      6
+    ],
+    [
+      "0x80fd8c",
+      4
+    ],
+    [
+      "0x80fd8e",
+      2
+    ],
+    [
+      "0x80fd8f",
+      6
+    ],
+    [
+      "0x80fd92",
+      4
+    ],
+    [
+      "0x80fd94",
+      2
+    ],
+    [
+      "0x80fd95",
+      6
+    ],
+    [
+      "0x80fdae",
+      4
+    ],
+    [
+      "0x80fdb0",
+      2
+    ],
+    [
+      "0x80fdb1",
+      6
+    ],
+    [
+      "0x80fdb4",
+      4
+    ],
+    [
+      "0x80fdb6",
+      2
+    ],
+    [
+      "0x80fdb7",
+      6
+    ],
+    [
+      "0x80fdcd",
+      4
+    ],
+    [
+      "0x80fdcf",
+      2
+    ],
+    [
+      "0x80fdd0",
+      6
+    ],
+    [
+      "0x80fdd3",
+      4
+    ],
+    [
+      "0x80fdd5",
+      2
+    ],
+    [
+      "0x80fdd6",
+      6
+    ],
+    [
+      "0x80fdef",
+      4
+    ],
+    [
+      "0x80fdf1",
+      2
+    ],
+    [
+      "0x80fdf2",
+      6
+    ],
+    [
+      "0x80fdf5",
+      4
+    ],
+    [
+      "0x80fdf7",
+      2
+    ],
+    [
+      "0x80fdf8",
+      6
+    ],
+    [
+      "0x80fe0e",
+      4
+    ],
+    [
+      "0x80fe10",
+      2
+    ],
+    [
+      "0x80fe11",
+      6
+    ],
+    [
+      "0x80fe14",
+      4
+    ],
+    [
+      "0x80fe16",
+      2
+    ],
+    [
+      "0x80fe17",
+      6
+    ],
+    [
+      "0x80fe30",
+      4
+    ],
+    [
+      "0x80fe32",
+      2
+    ],
+    [
+      "0x80fe33",
+      6
+    ],
+    [
+      "0x80fe36",
+      4
+    ],
+    [
+      "0x80fe38",
+      2
+    ],
+    [
+      "0x80fe39",
+      6
+    ],
+    [
+      "0x80fe4f",
+      4
+    ],
+    [
+      "0x80fe51",
+      2
+    ],
+    [
+      "0x80fe52",
+      6
+    ],
+    [
+      "0x80fe55",
+      4
+    ],
+    [
+      "0x80fe57",
+      2
+    ],
+    [
+      "0x80fe58",
+      6
+    ],
+    [
+      "0x80fe86",
+      4
+    ],
+    [
+      "0x80fe88",
+      2
+    ],
+    [
+      "0x80fe89",
+      6
+    ],
+    [
+      "0x80fe8c",
+      4
+    ],
+    [
+      "0x80fe8e",
+      2
+    ],
+    [
+      "0x80fe8f",
+      6
+    ],
+    [
+      "0x80febb",
+      4
+    ],
+    [
+      "0x80febd",
+      2
+    ],
+    [
+      "0x80febe",
+      6
+    ],
+    [
+      "0x80fec1",
+      4
+    ],
+    [
+      "0x80fec3",
+      2
+    ],
+    [
+      "0x80fec4",
+      6
+    ],
+    [
+      "0x80fee6",
+      4
+    ],
+    [
+      "0x80fee8",
+      2
+    ],
+    [
+      "0x80fee9",
+      6
+    ],
+    [
+      "0x80feec",
+      4
+    ],
+    [
+      "0x80feee",
+      2
+    ],
+    [
+      "0x80feef",
+      6
+    ],
+    [
+      "0x80ff44",
+      4
+    ],
+    [
+      "0x80ff46",
+      2
+    ],
+    [
+      "0x80ff47",
+      6
+    ],
+    [
+      "0x80ff4a",
+      4
+    ],
+    [
+      "0x80ff4c",
+      2
+    ],
+    [
+      "0x80ff4d",
+      6
+    ],
+    [
+      "0x80ff6a",
+      4
+    ],
+    [
+      "0x80ff6c",
+      2
+    ],
+    [
+      "0x80ff6d",
+      6
+    ],
+    [
+      "0x80ff70",
+      4
+    ],
+    [
+      "0x80ff72",
+      2
+    ],
+    [
+      "0x80ff73",
+      6
+    ],
+    [
+      "0x80ff92",
+      4
+    ],
+    [
+      "0x80ff94",
+      6
+    ],
+    [
+      "0x80ff97",
+      6
+    ],
+    [
+      "0x80ff9a",
+      2
+    ],
+    [
+      "0x80ff9b",
+      6
+    ],
+    [
+      "0x80ff9e",
+      4
+    ],
+    [
+      "0x80ffa0",
+      4
+    ],
+    [
+      "0x80ffa2",
+      4
+    ],
+    [
+      "0x80ffa4",
+      4
+    ],
+    [
+      "0x80ffa6",
+      4
+    ],
+    [
+      "0x80ffa8",
+      4
+    ],
+    [
+      "0x80ffaa",
+      4
+    ],
+    [
+      "0x80ffac",
+      4
+    ],
+    [
+      "0x80ffae",
+      4
+    ],
+    [
+      "0x80ffb0",
+      4
+    ],
+    [
+      "0x80ffb2",
+      4
+    ],
+    [
+      "0x80ffb4",
+      4
+    ],
+    [
+      "0x80ffb6",
+      4
+    ],
+    [
+      "0x80ffb8",
+      4
+    ],
+    [
+      "0x80ffba",
+      4
+    ],
+    [
+      "0x80ffbc",
+      4
+    ],
+    [
+      "0x80ffbe",
+      2
+    ],
+    [
+      "0x80ffbf",
+      4
+    ],
+    [
+      "0x80ffc1",
+      2
+    ],
+    [
+      "0x80ffc2",
+      2
+    ],
+    [
+      "0x8101fd",
+      2
+    ],
+    [
+      "0x8101fe",
+      6
+    ],
+    [
+      "0x810260",
+      6
+    ],
+    [
+      "0x810263",
+      6
+    ],
+    [
+      "0x810266",
+      4
+    ],
+    [
+      "0x810268",
+      6
+    ],
+    [
+      "0x81026b",
+      6
+    ],
+    [
+      "0x81026e",
+      6
+    ],
+    [
+      "0x810271",
+      4
+    ],
+    [
+      "0x810273",
+      4
+    ],
+    [
+      "0x810275",
+      6
+    ],
+    [
+      "0x810278",
+      2
+    ],
+    [
+      "0x810279",
+      6
+    ],
+    [
+      "0x81027c",
+      6
+    ],
+    [
+      "0x81027f",
+      6
+    ],
+    [
+      "0x810355",
+      2
+    ],
+    [
+      "0x810356",
+      2
+    ],
+    [
+      "0x810357",
+      6
+    ],
+    [
+      "0x81035a",
+      6
+    ],
+    [
+      "0x81035d",
+      2
+    ],
+    [
+      "0x81035e",
+      6
+    ],
+    [
+      "0x810361",
+      6
+    ],
+    [
+      "0x810364",
+      6
+    ]
+  ],
+  "gates": [
+    {
+      "at": "0x80f7a8",
+      "load": "0x80f7a5",
+      "compare": "0x80f7a7",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f7c5",
+      "load": "0x80f7c2",
+      "compare": "0x80f7c4",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f7cd",
+      "load": "0x80f7ca",
+      "compare": "0x80f7cc",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f7e8",
+      "load": "0x80f7e4",
+      "compare": "0x80f7e6",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f7f2",
+      "load": "0x80f7e4",
+      "compare": "0x80f7f1",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f7f9",
+      "load": "0x80f7f5",
+      "compare": "0x80f7f7",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f838",
+      "load": "0x80f835",
+      "compare": "0x80f837",
+      "lhs": "operation"
+    },
+    {
+      "at": "0x80f852",
+      "load": "0x80f84f",
+      "compare": "0x80f851",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f858",
+      "load": "0x80f855",
+      "compare": "0x80f857",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f88e",
+      "load": "0x80f88b",
+      "compare": "0x80f88d",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f894",
+      "load": "0x80f891",
+      "compare": "0x80f893",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f8ca",
+      "load": "0x80f8c7",
+      "compare": "0x80f8c9",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f8d0",
+      "load": "0x80f8cd",
+      "compare": "0x80f8cf",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f907",
+      "load": "0x80f904",
+      "compare": "0x80f906",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f90d",
+      "load": "0x80f90a",
+      "compare": "0x80f90c",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f913",
+      "load": "0x80f910",
+      "compare": "0x80f912",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f919",
+      "load": "0x80f916",
+      "compare": "0x80f918",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f94f",
+      "load": "0x80f94c",
+      "compare": "0x80f94e",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f955",
+      "load": "0x80f952",
+      "compare": "0x80f954",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f98c",
+      "load": "0x80f989",
+      "compare": "0x80f98b",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f992",
+      "load": "0x80f98f",
+      "compare": "0x80f991",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f9e1",
+      "load": "0x80f9de",
+      "compare": "0x80f9e0",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f9e7",
+      "load": "0x80f9e4",
+      "compare": "0x80f9e6",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f9ed",
+      "load": "0x80f9ea",
+      "compare": "0x80f9ec",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80f9f3",
+      "load": "0x80f9f0",
+      "compare": "0x80f9f2",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fa4d",
+      "load": "0x80fa4a",
+      "compare": "0x80fa4c",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fa53",
+      "load": "0x80fa50",
+      "compare": "0x80fa52",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80faae",
+      "load": "0x80faab",
+      "compare": "0x80faad",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fac9",
+      "load": "0x80fac6",
+      "compare": "0x80fac8",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fae4",
+      "load": "0x80fae1",
+      "compare": "0x80fae3",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80faea",
+      "load": "0x80fae7",
+      "compare": "0x80fae9",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fbd6",
+      "load": "0x80fbd3",
+      "compare": "0x80fbd5",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fbdc",
+      "load": "0x80fbd9",
+      "compare": "0x80fbdb",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fbe2",
+      "load": "0x80fbdf",
+      "compare": "0x80fbe1",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fbf9",
+      "load": "0x80fbf6",
+      "compare": "0x80fbf8",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fbff",
+      "load": "0x80fbfc",
+      "compare": "0x80fbfe",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc17",
+      "load": "0x80fc14",
+      "compare": "0x80fc16",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc1d",
+      "load": "0x80fc1a",
+      "compare": "0x80fc1c",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc37",
+      "load": "0x80fc34",
+      "compare": "0x80fc36",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc3d",
+      "load": "0x80fc3a",
+      "compare": "0x80fc3c",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc55",
+      "load": "0x80fc52",
+      "compare": "0x80fc54",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc5b",
+      "load": "0x80fc58",
+      "compare": "0x80fc5a",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc75",
+      "load": "0x80fc72",
+      "compare": "0x80fc74",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc7b",
+      "load": "0x80fc78",
+      "compare": "0x80fc7a",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc93",
+      "load": "0x80fc90",
+      "compare": "0x80fc92",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fc99",
+      "load": "0x80fc96",
+      "compare": "0x80fc98",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fcb3",
+      "load": "0x80fcb0",
+      "compare": "0x80fcb2",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fcb9",
+      "load": "0x80fcb6",
+      "compare": "0x80fcb8",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fcd1",
+      "load": "0x80fcce",
+      "compare": "0x80fcd0",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fcd7",
+      "load": "0x80fcd4",
+      "compare": "0x80fcd6",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fcf1",
+      "load": "0x80fcee",
+      "compare": "0x80fcf0",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fcf7",
+      "load": "0x80fcf4",
+      "compare": "0x80fcf6",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd0f",
+      "load": "0x80fd0c",
+      "compare": "0x80fd0e",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd15",
+      "load": "0x80fd12",
+      "compare": "0x80fd14",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd2f",
+      "load": "0x80fd2c",
+      "compare": "0x80fd2e",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd35",
+      "load": "0x80fd32",
+      "compare": "0x80fd34",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd4e",
+      "load": "0x80fd4b",
+      "compare": "0x80fd4d",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd54",
+      "load": "0x80fd51",
+      "compare": "0x80fd53",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd70",
+      "load": "0x80fd6d",
+      "compare": "0x80fd6f",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd76",
+      "load": "0x80fd73",
+      "compare": "0x80fd75",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd8f",
+      "load": "0x80fd8c",
+      "compare": "0x80fd8e",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fd95",
+      "load": "0x80fd92",
+      "compare": "0x80fd94",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fdb1",
+      "load": "0x80fdae",
+      "compare": "0x80fdb0",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fdb7",
+      "load": "0x80fdb4",
+      "compare": "0x80fdb6",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fdd0",
+      "load": "0x80fdcd",
+      "compare": "0x80fdcf",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fdd6",
+      "load": "0x80fdd3",
+      "compare": "0x80fdd5",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fdf2",
+      "load": "0x80fdef",
+      "compare": "0x80fdf1",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fdf8",
+      "load": "0x80fdf5",
+      "compare": "0x80fdf7",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fe11",
+      "load": "0x80fe0e",
+      "compare": "0x80fe10",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fe17",
+      "load": "0x80fe14",
+      "compare": "0x80fe16",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fe33",
+      "load": "0x80fe30",
+      "compare": "0x80fe32",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fe39",
+      "load": "0x80fe36",
+      "compare": "0x80fe38",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fe52",
+      "load": "0x80fe4f",
+      "compare": "0x80fe51",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fe58",
+      "load": "0x80fe55",
+      "compare": "0x80fe57",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fe89",
+      "load": "0x80fe86",
+      "compare": "0x80fe88",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fe8f",
+      "load": "0x80fe8c",
+      "compare": "0x80fe8e",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80febe",
+      "load": "0x80febb",
+      "compare": "0x80febd",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fec4",
+      "load": "0x80fec1",
+      "compare": "0x80fec3",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80fee9",
+      "load": "0x80fee6",
+      "compare": "0x80fee8",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80feef",
+      "load": "0x80feec",
+      "compare": "0x80feee",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80ff47",
+      "load": "0x80ff44",
+      "compare": "0x80ff46",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80ff4d",
+      "load": "0x80ff4a",
+      "compare": "0x80ff4c",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80ff6d",
+      "load": "0x80ff6a",
+      "compare": "0x80ff6c",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x80ff73",
+      "load": "0x80ff70",
+      "compare": "0x80ff72",
+      "lhs": "pid"
+    },
+    {
+      "at": "0x8101fe",
+      "load": "0x80f7f5",
+      "compare": "0x8101fd",
+      "lhs": "pid"
+    }
+  ],
+  "reviewedLiveRegisters": {
+    "PID": "R15 from 0x80f78a until epilogue",
+    "operation": "R9 from parallel transfer 0x80f780 until epilogue; op15 rewrite excluded",
+    "nonadjacentLiteralReuse": [
+      "0x80f7e4 -> 0x80f7f1",
+      "0x80f7f5 -> 0x8101fd"
+    ],
+    "calleeContract": "Standard scalar ABI; reviewed returning callees preserve R9/R15. Not a proof of memory safety, interrupts or termination."
+  }
+}

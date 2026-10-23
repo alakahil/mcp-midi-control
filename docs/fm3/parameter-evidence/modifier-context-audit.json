@@ -1,0 +1,2548 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "method": "Additional raw-prefix inventory, native operand checkpoints and symbolic MODE1/status-stack expressions; not firmware execution.",
+  "manual": {
+    "sha256": "a3edf83beb75b44a77f8366cf54c0353083ab49a1c69d8179d2b727ba7ba1470",
+    "sections": [
+      "4-29/30 interrupt mask mode",
+      "29-49/50 MMASK",
+      "16-4/10/12 memory encodings",
+      "17-9/11 Type20a"
+    ]
+  },
+  "reviewedPartitions": [
+    {
+      "file": "modifier-init-checkpoints.json",
+      "sha256": "5cc4d191c666b8570caaf1156c0115fbc9c93064b15abc7915dea8359da4a6fa",
+      "instructions": 632
+    },
+    {
+      "file": "modifier-buffer-checkpoints.json",
+      "sha256": "0f4445f1d363ea9c28c9fcafb5d2f0a7e83bc8409198fde310c63e8c719d6d12",
+      "instructions": 267
+    },
+    {
+      "file": "modifier-table-checkpoints.json",
+      "sha256": "243bbb34386d875e284f599d7b3260785fc9e973451968132d82bb297e6bb0c4",
+      "instructions": 886
+    },
+    {
+      "file": "modifier-writers-checkpoints.json",
+      "sha256": "7ae12576611222e97639f23901873655856ba35d0ab0c336aa4e8db6a3bebdc2",
+      "instructions": 98
+    },
+    {
+      "file": "modifier-context-checkpoints.json",
+      "sha256": "a6f94031a915e2ee79e3eff6faf68da46ccaea322d4c42f6dfe782976865c8a1",
+      "instructions": 110
+    }
+  ],
+  "reviewedInstructionBoundaries": 1993,
+  "regions": [
+    {
+      "visaStart": "0x120000",
+      "visaEndExclusive": "0x138000",
+      "byteBase": "0x28240000",
+      "segments": [
+        {
+          "byteStart": "0x28240000",
+          "byteEndExclusive": "0x28240300",
+          "status": "excluded-format",
+          "bootRows": 1
+        },
+        {
+          "byteStart": "0x28240300",
+          "byteEndExclusive": "0x282403f0",
+          "status": "unmapped",
+          "bootRows": 0
+        },
+        {
+          "byteStart": "0x282403f0",
+          "byteEndExclusive": "0x2826f000",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "7dabf675585c28439dc8c756ddd731a8220e5ce46b92021d5161c3158ca86215"
+        },
+        {
+          "byteStart": "0x2826f000",
+          "byteEndExclusive": "0x28270000",
+          "status": "unmapped",
+          "bootRows": 0
+        }
+      ]
+    },
+    {
+      "visaStart": "0x160000",
+      "visaEndExclusive": "0x178000",
+      "byteBase": "0x282c0000",
+      "segments": [
+        {
+          "byteStart": "0x282c0000",
+          "byteEndExclusive": "0x282e4328",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "c8b0f473236ae519787479c83ed2f5fc6da292f3d1c436e9e9870906af3d86a6"
+        },
+        {
+          "byteStart": "0x282e4328",
+          "byteEndExclusive": "0x282e432c",
+          "status": "unmapped",
+          "bootRows": 0
+        },
+        {
+          "byteStart": "0x282e432c",
+          "byteEndExclusive": "0x282e4434",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "25a3435f6d475573bb732d729f0615a91a329bfcfd08bac9822514484383e199"
+        },
+        {
+          "byteStart": "0x282e4434",
+          "byteEndExclusive": "0x282e4438",
+          "status": "unmapped",
+          "bootRows": 0
+        },
+        {
+          "byteStart": "0x282e4438",
+          "byteEndExclusive": "0x282e8000",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "46a6436b2a0335bfe1cbc8aaa38bcfaaaab202a71e14fc927d6ea2651e5fa8cc"
+        },
+        {
+          "byteStart": "0x282e8000",
+          "byteEndExclusive": "0x282f0000",
+          "status": "unmapped",
+          "bootRows": 0
+        }
+      ]
+    },
+    {
+      "visaStart": "0x180000",
+      "visaEndExclusive": "0x190000",
+      "byteBase": "0x28300000",
+      "segments": [
+        {
+          "byteStart": "0x28300000",
+          "byteEndExclusive": "0x28318000",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "244a0c0cc3b476d87a6957c263c2fb5e6dfe5108705c3b81ae4a7cca0f83c5c7"
+        },
+        {
+          "byteStart": "0x28318000",
+          "byteEndExclusive": "0x28320000",
+          "status": "unmapped",
+          "bootRows": 0
+        }
+      ]
+    },
+    {
+      "visaStart": "0x1c0000",
+      "visaEndExclusive": "0x1d0000",
+      "byteBase": "0x28380000",
+      "segments": [
+        {
+          "byteStart": "0x28380000",
+          "byteEndExclusive": "0x28397ff8",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "41de1ca2adc19509574b888c099e5d50c52c27e1c4c0adec45a9098afa41b67b"
+        },
+        {
+          "byteStart": "0x28397ff8",
+          "byteEndExclusive": "0x283a0000",
+          "status": "unmapped",
+          "bootRows": 0
+        }
+      ]
+    },
+    {
+      "visaStart": "0x800000",
+      "visaEndExclusive": "0x83804a",
+      "byteBase": "0x80a00000",
+      "segments": [
+        {
+          "byteStart": "0x80a00000",
+          "byteEndExclusive": "0x80a70094",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "533f5df1405116c8a7be3cf2a67b441785acf1d7ca8dee8eadbcbe1015fb5269"
+        }
+      ]
+    },
+    {
+      "visaStart": "0xba0000",
+      "visaEndExclusive": "0xbc0000",
+      "byteBase": "0x20080000",
+      "segments": [
+        {
+          "byteStart": "0x20080000",
+          "byteEndExclusive": "0x20084000",
+          "status": "unmapped",
+          "bootRows": 0
+        },
+        {
+          "byteStart": "0x20084000",
+          "byteEndExclusive": "0x200858dc",
+          "status": "ambiguous",
+          "bootRows": 3
+        },
+        {
+          "byteStart": "0x200858dc",
+          "byteEndExclusive": "0x20088000",
+          "status": "unmapped",
+          "bootRows": 0
+        },
+        {
+          "byteStart": "0x20088000",
+          "byteEndExclusive": "0x2008af48",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "3715b8cfe30f3f3dec46022b14c90e4a819719989827929e567bb2363a44cbcc"
+        },
+        {
+          "byteStart": "0x2008af48",
+          "byteEndExclusive": "0x200a0000",
+          "status": "unmapped",
+          "bootRows": 0
+        },
+        {
+          "byteStart": "0x200a0000",
+          "byteEndExclusive": "0x200a08f0",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "90833aac86a9785ce437074c72e3229e853a57528a37ff820756f37ff0dd8f3d"
+        },
+        {
+          "byteStart": "0x200a08f0",
+          "byteEndExclusive": "0x200b0000",
+          "status": "unmapped",
+          "bootRows": 0
+        },
+        {
+          "byteStart": "0x200b0000",
+          "byteEndExclusive": "0x200bdffc",
+          "status": "scan",
+          "bootRows": 1,
+          "sha256": "16b1e533286e7ad7b4b4c817fbf254d03621efd56a0498491b094628111821ff"
+        },
+        {
+          "byteStart": "0x200bdffc",
+          "byteEndExclusive": "0x200c0000",
+          "status": "unmapped",
+          "bootRows": 0
+        }
+      ]
+    }
+  ],
+  "candidateCount": 154,
+  "candidatesByFamily": {
+    "MMASK-Type17": 4,
+    "MMASK-Type18a": 7,
+    "Type14a": 69,
+    "Type15a": 63,
+    "Type15b": 1,
+    "Type20a": 4,
+    "Type3a-prefix": 3,
+    "compact-RTI-hypothesis": 3
+  },
+  "candidatesByBoundary": {
+    "reviewed-boundary": 5,
+    "unreviewed": 149
+  },
+  "candidates": [
+    {
+      "address": "0x173024",
+      "family": "compact-RTI-hypothesis",
+      "size": 2,
+      "delayed": true,
+      "nativeSemanticsProven": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1735e6",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MMASK",
+      "index": 0,
+      "displacementEncoded": "0x81a0f3",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1735e8",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MMASK",
+      "index": 0,
+      "displacementEncoded": "0x81a0f3",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1735ea",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MMASK",
+      "index": 0,
+      "displacementEncoded": "0x819cd6",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x17360c",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1STK",
+      "index": 0,
+      "displacementEncoded": "0x81a0fd",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x17360e",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1STK",
+      "index": 0,
+      "displacementEncoded": "0x81a0fd",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x173610",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1STK",
+      "index": 0,
+      "displacementEncoded": "0x81a0fd",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x173612",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1STK",
+      "index": 0,
+      "displacementEncoded": "0x81a176",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1739f8",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x821b88",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x188a31",
+      "family": "Type3a-prefix",
+      "size": 6,
+      "register": "MODE1",
+      "condition": 24,
+      "computeOrWidthLegalityProven": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c0cce",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x1102310c",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c0e4e",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x72430500",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c1273",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MMASK",
+      "memoryAddress": "0x15870000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c219e",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xac04ffff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c3984",
+      "family": "Type3a-prefix",
+      "size": 6,
+      "register": "MODE1",
+      "condition": 7,
+      "computeOrWidthLegalityProven": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c492a",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0xf810488",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c4975",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xf0f0026",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c5356",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x49428780",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c6c1d",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x23e7800",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c78c9",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MMASK",
+      "memoryAddress": "0x9c0810f4",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1c83f8",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0xcb800102",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1cb509",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7040400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1cb52c",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7040400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1cb9dd",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1STK",
+      "memoryAddress": "0x4b3e0a3f",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1cb9e3",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x688217bf",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1cbaca",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x7220000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1cbade",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x7220000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1cbb05",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x4dfe0e3f",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x1cbc0c",
+      "family": "compact-RTI-hypothesis",
+      "size": 2,
+      "delayed": true,
+      "nativeSemanticsProven": false,
+      "boundary": {
+        "status": "reviewed-boundary",
+        "ownerSize": 2
+      }
+    },
+    {
+      "address": "0x1cbe1c",
+      "family": "compact-RTI-hypothesis",
+      "size": 2,
+      "delayed": true,
+      "nativeSemanticsProven": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80075f",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x717e0402",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x800d19",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x5ffe810a",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x800fdd",
+      "family": "MMASK-Type17",
+      "size": 4,
+      "register": "MMASK",
+      "value": "0x707e",
+      "writesRegister": true,
+      "relevantWrite": true,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8011b3",
+      "family": "MMASK-Type17",
+      "size": 4,
+      "register": "MMASK",
+      "value": "0xffff9c08",
+      "writesRegister": true,
+      "relevantWrite": true,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x802772",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xf013c23",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x803a78",
+      "family": "MMASK-Type18a",
+      "size": 6,
+      "register": "MMASK",
+      "operation": "set",
+      "mask": "0x97081485",
+      "writesRegister": true,
+      "relevantWrite": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x803c61",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x804a9e",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x13e0008",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x804ce5",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x9d080577",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x805097",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x9d080577",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80548e",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8059c5",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x806d67",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8086e4",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x9c0802cb",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8086f6",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x9c0806d4",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x808700",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x163a0000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8092f7",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x1881cbc",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80a2db",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xac04ffff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80a398",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0xac0bffff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80aefd",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1STK",
+      "index": 7,
+      "displacementEncoded": "0x15870000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80b123",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1STK",
+      "memoryAddress": "0x9c0802dd",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80bf0f",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x1881c6c",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80bf21",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x18810a0",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80bf39",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x18810c0",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80bf58",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x1881c8c",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80bf83",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x6c3f2c08",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80bfad",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x1881141",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80c06d",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0xac0bffff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80c09d",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x9c08065c",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80c0b4",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xac0affff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80c0be",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0xac08ffff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80c0d6",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x9c08024b",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80e39e",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x7220400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80e3b8",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7200400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80e4da",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0xf810038",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80e658",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80f7f8",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x7220000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80fb09",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x703f123f",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80fb28",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x703f123f",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80fb62",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xaa140000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80fbb4",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x23e0000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x80fbcf",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7020000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8100a3",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xaa140000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8100cd",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xf098086",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8100e7",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x877e0080",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8100fe",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x877e0080",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x810115",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x23e0000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x810204",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x70200ff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8102dd",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x70200ff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81039b",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xf810038",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8103c2",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xf810038",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8104b0",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x703f123f",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8104c3",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x703f123f",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x810792",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x810ab8",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8119c3",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8127e3",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x9b720f02",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x812f6a",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7200400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81333a",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0xaa010000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x813846",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x70bf0200",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8138ac",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x70bf0200",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x813918",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x70bf0200",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x813ad0",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x814ab0",
+      "family": "MMASK-Type17",
+      "size": 6,
+      "register": "MMASK",
+      "value": "0x47be8f02",
+      "writesRegister": true,
+      "relevantWrite": true,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x814b71",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x816790",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81698d",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MMASK",
+      "memoryAddress": "0x9c081174",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x816b4b",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x9d0805f9",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x816f98",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x9c081173",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81743d",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x818273",
+      "family": "MMASK-Type18a",
+      "size": 6,
+      "register": "MMASK",
+      "operation": "toggle",
+      "mask": "0x68bfea02",
+      "writesRegister": true,
+      "relevantWrite": true,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x818569",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xf810a68",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8188fd",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x818bba",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x19301c1",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81b2fd",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1STK",
+      "index": 9,
+      "displacementEncoded": "0x15870000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81b3e8",
+      "family": "MMASK-Type18a",
+      "size": 6,
+      "register": "MMASK",
+      "operation": "clear",
+      "mask": "0x0",
+      "writesRegister": true,
+      "relevantWrite": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81ba7d",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1STK",
+      "index": 13,
+      "displacementEncoded": "0x73e00ff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81cab4",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7220000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81cdfa",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81d5b5",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0xf80017c",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81dccf",
+      "family": "MMASK-Type18a",
+      "size": 6,
+      "register": "MMASK",
+      "operation": "clear",
+      "mask": "0x0",
+      "writesRegister": true,
+      "relevantWrite": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81f3ae",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x81f8cd",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x820163",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x82063a",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x13e0008",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x820b53",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7000400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x821232",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x23e0000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x821272",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x15870000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x82129a",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x23e0000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8219d3",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x727e84bf",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x821aa7",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x72204ff",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8224b9",
+      "family": "Type20a",
+      "size": 6,
+      "operation": "pop-status",
+      "pushPc": false,
+      "popPc": false,
+      "pushLoop": false,
+      "popLoop": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8227ba",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xf006666",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x823b73",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x73e0400",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x823e15",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x72608102",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8245d4",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1STK",
+      "index": 8,
+      "displacementEncoded": "0x7020000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8245fd",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1STK",
+      "index": 8,
+      "displacementEncoded": "0x7220000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x82461c",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0xf810014",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x824b7a",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x703f123f",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x824b8a",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x703f123f",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8263d1",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xf810002",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x826b62",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0xf810002",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8274f0",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1",
+      "memoryAddress": "0x703f1202",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x82a6f3",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MMASK",
+      "index": 3,
+      "displacementEncoded": "0x10042008",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x82c4b3",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x7220000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x82cf29",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 7,
+      "displacementEncoded": "0xcfc40193",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x82d285",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MMASK",
+      "index": 0,
+      "displacementEncoded": "0x1930107",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x82f666",
+      "family": "MMASK-Type18a",
+      "size": 6,
+      "register": "MMASK",
+      "operation": "set",
+      "mask": "0xab020000",
+      "writesRegister": true,
+      "relevantWrite": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x830343",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x496080bf",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x83082e",
+      "family": "Type20a",
+      "size": 6,
+      "operation": "pop-status",
+      "pushPc": false,
+      "popPc": false,
+      "pushLoop": false,
+      "popLoop": false,
+      "boundary": {
+        "status": "reviewed-boundary",
+        "ownerSize": 6
+      }
+    },
+    {
+      "address": "0x830c40",
+      "family": "Type20a",
+      "size": 6,
+      "operation": "push-status",
+      "pushPc": false,
+      "popPc": false,
+      "pushLoop": false,
+      "popLoop": false,
+      "boundary": {
+        "status": "reviewed-boundary",
+        "ownerSize": 6
+      }
+    },
+    {
+      "address": "0x8315ba",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x7020000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x832ce6",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x7220000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x832d29",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "memoryAddress": "0x1801212",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x8343ef",
+      "family": "MMASK-Type17",
+      "size": 6,
+      "register": "MMASK",
+      "value": "0xe0b003",
+      "writesRegister": true,
+      "relevantWrite": true,
+      "boundary": {
+        "status": "reviewed-boundary",
+        "ownerSize": 6
+      }
+    },
+    {
+      "address": "0x835107",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 8,
+      "displacementEncoded": "0x7220000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0x837bad",
+      "family": "Type15b",
+      "size": 4,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 6,
+      "displacementWords": -13,
+      "boundary": {
+        "status": "reviewed-boundary",
+        "ownerSize": 4
+      }
+    },
+    {
+      "address": "0xbb805e",
+      "family": "Type20a",
+      "size": 6,
+      "operation": "pop-status",
+      "pushPc": false,
+      "popPc": false,
+      "pushLoop": false,
+      "popLoop": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0xbb85f6",
+      "family": "Type14a",
+      "size": 6,
+      "store": false,
+      "pm": true,
+      "longWord": false,
+      "register": "MODE1STK",
+      "memoryAddress": "0xf14002e",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0xbba748",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": true,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0xf014040",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0xbba760",
+      "family": "MMASK-Type18a",
+      "size": 6,
+      "register": "MMASK",
+      "operation": "set",
+      "mask": "0x19302c2",
+      "writesRegister": true,
+      "relevantWrite": true,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0xbbb2c7",
+      "family": "MMASK-Type18a",
+      "size": 6,
+      "register": "MMASK",
+      "operation": "toggle",
+      "mask": "0x107be",
+      "writesRegister": true,
+      "relevantWrite": true,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0xbbc8cd",
+      "family": "Type3a-prefix",
+      "size": 6,
+      "register": "MODE1",
+      "condition": 7,
+      "computeOrWidthLegalityProven": false,
+      "boundary": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "address": "0xbbd1a0",
+      "family": "Type15a",
+      "size": 6,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": "MODE1",
+      "index": 0,
+      "displacementEncoded": "0x7220000",
+      "boundary": {
+        "status": "unreviewed"
+      }
+    }
+  ],
+  "configuredMask": {
+    "at": "0x8343ef",
+    "value": "0xe0b003",
+    "roundingTruthTable": [
+      {
+        "incomingBits": "0x0",
+        "incomingLabel": "40-nearest",
+        "pushedSavedBits": "0x0",
+        "liveAfterPush": "0x0",
+        "afterPop": "0x0"
+      },
+      {
+        "incomingBits": "0x8000",
+        "incomingLabel": "40-truncate",
+        "pushedSavedBits": "0x8000",
+        "liveAfterPush": "0x0",
+        "afterPop": "0x8000"
+      },
+      {
+        "incomingBits": "0x10000",
+        "incomingLabel": "32-nearest",
+        "pushedSavedBits": "0x10000",
+        "liveAfterPush": "0x10000",
+        "afterPop": "0x10000"
+      },
+      {
+        "incomingBits": "0x18000",
+        "incomingLabel": "32-truncate",
+        "pushedSavedBits": "0x18000",
+        "liveAfterPush": "0x10000",
+        "afterPop": "0x18000"
+      }
+    ],
+    "clearsTruncateOnPush": true,
+    "preservesRnd32OnPush": true,
+    "setsRnd32OnPush": false,
+    "ongoingRuntimeMaskInvariantProven": false,
+    "premise": "This configured MMASK remains in force at the modeled PUSH/interrupt. Later writes and active-core execution are not proved."
+  },
+  "directMemoryRead": {
+    "at": "0x837bad",
+    "operand": {
+      "family": "Type15b",
+      "size": 4,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": 114,
+      "index": 6,
+      "displacementWords": -13
+    },
+    "byteOffsetForNormalByteAddress": -52,
+    "saveSite": "0x837b5a",
+    "saveOperand": {
+      "store": true,
+      "index": 7,
+      "modifier": 7,
+      "postmodify": true,
+      "register": 114,
+      "width": 4,
+      "signExtend": false
+    },
+    "sameSavedWordProven": false,
+    "fullFunctionModePreservationProven": false,
+    "limit": "Matching the saved word to I6-52 needs stack-frame/address and alias analysis; a plausible save/read pair is not a preservation certificate."
+  },
+  "selectedFrame": {
+    "at": "0x830ae3",
+    "operand": {
+      "family": "Type15b",
+      "size": 4,
+      "store": false,
+      "pm": false,
+      "longWord": false,
+      "register": 112,
+      "index": 7,
+      "displacementWords": 37
+    },
+    "byteOffsetForNormalByteAddress": 148,
+    "destination": "USTAT1",
+    "thenMode1stkAt": "0x830c43"
+  },
+  "ordinaryPushPopModel": {
+    "events": [
+      {
+        "action": "push",
+        "live": {
+          "symbol": "incoming",
+          "keepMask": "0xff1f4ffc"
+        },
+        "stack": [
+          {
+            "symbol": "outer",
+            "keepMask": "0xffffffff"
+          },
+          {
+            "symbol": "incoming",
+            "keepMask": "0xffffffff"
+          }
+        ]
+      },
+      {
+        "action": "pop",
+        "live": {
+          "symbol": "incoming",
+          "keepMask": "0xffffffff"
+        },
+        "stack": [
+          {
+            "symbol": "outer",
+            "keepMask": "0xffffffff"
+          }
+        ]
+      }
+    ],
+    "final": {
+      "symbol": "incoming",
+      "keepMask": "0xffffffff"
+    },
+    "restoresIncoming": true,
+    "restoresSelected": false,
+    "preservesOuterStatus": true,
+    "nativePathProven": false
+  },
+  "selectedTaskReturnModel": {
+    "events": [
+      {
+        "action": "push",
+        "live": {
+          "symbol": "incoming",
+          "keepMask": "0xff1f4ffc"
+        },
+        "stack": [
+          {
+            "symbol": "outer",
+            "keepMask": "0xffffffff"
+          },
+          {
+            "symbol": "incoming",
+            "keepMask": "0xffffffff"
+          }
+        ]
+      },
+      {
+        "action": "selected",
+        "live": {
+          "symbol": "incoming",
+          "keepMask": "0xff1f4ffc"
+        },
+        "stack": [
+          {
+            "symbol": "outer",
+            "keepMask": "0xffffffff"
+          },
+          {
+            "symbol": "selected-task",
+            "keepMask": "0xffffffff"
+          }
+        ]
+      },
+      {
+        "action": "rts",
+        "live": {
+          "symbol": "incoming",
+          "keepMask": "0xff1f4ffc"
+        },
+        "stack": [
+          {
+            "symbol": "outer",
+            "keepMask": "0xffffffff"
+          },
+          {
+            "symbol": "selected-task",
+            "keepMask": "0xffffffff"
+          }
+        ]
+      },
+      {
+        "action": "rts",
+        "live": {
+          "symbol": "incoming",
+          "keepMask": "0xff1f4ffc"
+        },
+        "stack": [
+          {
+            "symbol": "outer",
+            "keepMask": "0xffffffff"
+          },
+          {
+            "symbol": "selected-task",
+            "keepMask": "0xffffffff"
+          }
+        ]
+      },
+      {
+        "action": "rti-assumed",
+        "live": {
+          "symbol": "selected-task",
+          "keepMask": "0xffffffff"
+        },
+        "stack": [
+          {
+            "symbol": "outer",
+            "keepMask": "0xffffffff"
+          }
+        ]
+      }
+    ],
+    "final": {
+      "symbol": "selected-task",
+      "keepMask": "0xffffffff"
+    },
+    "restoresIncoming": false,
+    "restoresSelected": true,
+    "preservesOuterStatus": true,
+    "nativePathProven": false
+  },
+  "priorInterruptAuditReplayed": true,
+  "priorInterruptAuditSha256": "ce35d18728961e3f14d1f2723fce1e17f80ae2c63241bc197e5241962d13a1af",
+  "scopeGaps": [
+    "Raw matches, including boundary matches, do not prove reachability or a global writer invariant.",
+    "Type3 prefixes retain unresolved compute/width legality; the manual Type3a figure repeats Type1a fields and is not used to certify a full decoder.",
+    "Register-pair implicit writes, other memory families and memory-mapped aliases of system registers are not exhaustively covered.",
+    "Only unconditional no-LR/no-ELSE Type11a RTI prefixes and two explicit compact RTI hypotheses are searched; conditional return coverage remains open.",
+    "Type20a scanner excludes cache activity and contradictory PC/loop operations; it is not a full system-instruction decoder.",
+    "Packed ISA vectors, multiply loaded regions and unmapped gaps remain excluded as in the prior writer search.",
+    "Compact RTI semantics, live MMASK stability, selected frame validity, interrupt nesting and complete coreTask paths remain unproved."
+  ],
+  "completeWriterInventory": false,
+  "compactReturnEncodingIndependentlyProven": false,
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "nextStep": "Resolve the direct memory restore provenance at 0x837bad and bound remaining MMASK candidates; retain explicit compact-return and task-frame premises. No preset export is needed."
+}

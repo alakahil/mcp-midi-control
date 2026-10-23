@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "source": "User clarification in the active development conversation",
+  "userStatement": "Jätkame. Eelmise analüüsile lisan, et Wahi Min/Max valisin hiirega lohistades ja teised väärtised valisin klahvistikult sisestades",
+  "scope": "Previously captured changed numeric modifier points; not unchanged baselines or menu choices",
+  "minMax": {
+    "pids": [1, 2],
+    "method": "mouse-drag",
+    "status": "user-confirmed",
+    "points": [{"pid": 1, "display": 2.5}, {"pid": 2, "display": 7.5}, {"pid": 2, "display": 5.0}]
+  },
+  "otherChangedNumericPoints": {
+    "method": "typed-text",
+    "status": "user-confirmed",
+    "exactKeystrokesRecorded": false
+  },
+  "unknown": [
+    "Exact mouse coordinates, event segmentation and modifier keys",
+    "Runtime linear/circular drag preference",
+    "Exact transmitted float32 bits and device event trace",
+    "Exact typed lexical strings; the historical Attack discrepancy remains unresolved"
+  ],
+  "step655Interpretation": "Arithmetic coincidence retained as history; firmware wheel/arrow stepping is not supported as the explanation of these mouse-drag captures",
+  "newPhysicalExports": 0
+}

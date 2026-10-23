@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "spans": [
+    {
+      "name": "factory-300-and-drag-preference",
+      "address": "0x1000b48ac",
+      "size": 80,
+      "sha256": "5869d3aedfe7d1e5cbec4f9f9bab0013230b4c454266e422bfe0de93e024c37a"
+    },
+    {
+      "name": "range-setter",
+      "address": "0x10025d890",
+      "size": 80,
+      "sha256": "401f71f054dd24683284c5aeb2c26eac997ecdbd444d3d5f6c1252e11688cb2b"
+    },
+    {
+      "name": "range-vtable-slot",
+      "address": "0x100db3bd0",
+      "size": 8,
+      "sha256": "1e21df2c0001c258f5765ceadaa81bfb664ca732d0b4f8d173055591640b89e7"
+    },
+    {
+      "name": "MinMax-disable-text",
+      "address": "0x10017ba18",
+      "size": 80,
+      "sha256": "e97ab77b633acd2f2c126677e09644127aa67f2263830d38e41fa6560f242bc8"
+    },
+    {
+      "name": "mouse-text-edit-gate",
+      "address": "0x10025c5a0",
+      "size": 64,
+      "sha256": "75a8226a14f1f902b046cb1330e502ab639d044cd2fff0fc554808da936638f3"
+    },
+    {
+      "name": "factory-bind-PID",
+      "address": "0x1000b47ec",
+      "size": 16,
+      "sha256": "f35457a7543ffbf738b49b12460d4fa4d02df50c874066733a4920a70a0c67f0"
+    },
+    {
+      "name": "dialog-factory-call",
+      "address": "0x10017b798",
+      "size": 32,
+      "sha256": "ed9c86663e72d54f3eb3991e474929af43ea54bbc98060099be427e928733da9"
+    },
+    {
+      "name": "FM3-factory-vtable",
+      "address": "0x100dc0d88",
+      "size": 40,
+      "sha256": "d7c18953bf8b2083deddfcb93f155cb5a894f640df01872950bc6a399866db77"
+    },
+    {
+      "name": "factory-wrapper",
+      "address": "0x100292918",
+      "size": 108,
+      "sha256": "0aed8576a615d11f18535730777cf8bf8ad12489d9e95b5d3517cc8a3786b13a"
+    },
+    {
+      "name": "linear-drag-arithmetic",
+      "address": "0x10025c6ec",
+      "size": 56,
+      "sha256": "308ae8914321fdbfbe93c1976dd275892477bb9ce012d0adb26452734503ff76"
+    },
+    {
+      "name": "drag-clamp-and-event",
+      "address": "0x10025c7d4",
+      "size": 100,
+      "sha256": "d4da6331ad097cddc5952381a46387f17c69a318737a344282b134215026c85f"
+    },
+    {
+      "name": "normalize-angle",
+      "address": "0x10017ae0c",
+      "size": 56,
+      "sha256": "229691095b34980c2710402283af9b8d801e4ef2ac2b8582102ac6cb1af8b8bd"
+    }
+  ]
+}

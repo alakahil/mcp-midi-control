@@ -1,0 +1,1324 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "sources": {
+    "firmwareSyxSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+    "firmwareLdrSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3"
+  },
+  "method": "Hash-bound reviewed instruction partition and PID/operation liveness; no native bytes and no CPU emulation",
+  "checkpointCount": 11,
+  "routes": [
+    {
+      "operation": 10,
+      "pid": "0x3a16",
+      "instructionCount": 360,
+      "checkedConstantGates": 85,
+      "conservativeBranches": [
+        "0x80f78d",
+        "0x80f79c",
+        "0x80f7a2",
+        "0x80fbd0",
+        "0x80ff94",
+        "0x810268"
+      ],
+      "calls": [
+        {
+          "at": "0x80ff97",
+          "target": "0x80f729"
+        },
+        {
+          "at": "0x810275",
+          "target": "0x80f751"
+        },
+        {
+          "at": "0x81035a",
+          "target": "0x8244fb"
+        }
+      ],
+      "returns": [
+        "0x80ffbf"
+      ],
+      "decisions": [
+        {
+          "at": "0x80f7a8",
+          "source": "pid",
+          "bound": 14880,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f7c5",
+          "source": "pid",
+          "bound": 134,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f7cd",
+          "source": "pid",
+          "bound": 1653,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f7e8",
+          "source": "pid",
+          "bound": 8679,
+          "unsigned": true,
+          "taken": false
+        },
+        {
+          "at": "0x80f7f2",
+          "source": "pid",
+          "bound": 8679,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f7f9",
+          "source": "pid",
+          "bound": 14870,
+          "unsigned": true,
+          "taken": true
+        },
+        {
+          "at": "0x80f838",
+          "source": "operation",
+          "bound": 15,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f852",
+          "source": "pid",
+          "bound": 134,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f858",
+          "source": "pid",
+          "bound": 389,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f88e",
+          "source": "pid",
+          "bound": 390,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f894",
+          "source": "pid",
+          "bound": 645,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f8ca",
+          "source": "pid",
+          "bound": 646,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f8d0",
+          "source": "pid",
+          "bound": 773,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f907",
+          "source": "pid",
+          "bound": 774,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f90d",
+          "source": "pid",
+          "bound": 901,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f913",
+          "source": "pid",
+          "bound": 1302,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f919",
+          "source": "pid",
+          "bound": 1317,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f94f",
+          "source": "pid",
+          "bound": 1286,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f955",
+          "source": "pid",
+          "bound": 1301,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f98c",
+          "source": "pid",
+          "bound": 902,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f992",
+          "source": "pid",
+          "bound": 1285,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f9e1",
+          "source": "pid",
+          "bound": 1318,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f9e7",
+          "source": "pid",
+          "bound": 1333,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f9ed",
+          "source": "pid",
+          "bound": 1334,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f9f3",
+          "source": "pid",
+          "bound": 1365,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fa4d",
+          "source": "pid",
+          "bound": 1366,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fa53",
+          "source": "pid",
+          "bound": 1653,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80faae",
+          "source": "pid",
+          "bound": 78,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fac9",
+          "source": "pid",
+          "bound": 79,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fae4",
+          "source": "pid",
+          "bound": 6986,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80faea",
+          "source": "pid",
+          "bound": 7009,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fbd6",
+          "source": "pid",
+          "bound": 7105,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fbdc",
+          "source": "pid",
+          "bound": 8325,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fbe2",
+          "source": "pid",
+          "bound": 8340,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fbf9",
+          "source": "pid",
+          "bound": 8341,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fbff",
+          "source": "pid",
+          "bound": 8356,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc17",
+          "source": "pid",
+          "bound": 8357,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc1d",
+          "source": "pid",
+          "bound": 8372,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc37",
+          "source": "pid",
+          "bound": 8373,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc3d",
+          "source": "pid",
+          "bound": 8388,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc55",
+          "source": "pid",
+          "bound": 8389,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc5b",
+          "source": "pid",
+          "bound": 8404,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc75",
+          "source": "pid",
+          "bound": 8405,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc7b",
+          "source": "pid",
+          "bound": 8420,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc93",
+          "source": "pid",
+          "bound": 8421,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc99",
+          "source": "pid",
+          "bound": 8436,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fcb3",
+          "source": "pid",
+          "bound": 8437,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fcb9",
+          "source": "pid",
+          "bound": 8452,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fcd1",
+          "source": "pid",
+          "bound": 8453,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fcd7",
+          "source": "pid",
+          "bound": 8468,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fcf1",
+          "source": "pid",
+          "bound": 8469,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fcf7",
+          "source": "pid",
+          "bound": 8484,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd0f",
+          "source": "pid",
+          "bound": 8485,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd15",
+          "source": "pid",
+          "bound": 8500,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd2f",
+          "source": "pid",
+          "bound": 8501,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd35",
+          "source": "pid",
+          "bound": 8516,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd4e",
+          "source": "pid",
+          "bound": 8517,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd54",
+          "source": "pid",
+          "bound": 8532,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd70",
+          "source": "pid",
+          "bound": 8533,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd76",
+          "source": "pid",
+          "bound": 8548,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd8f",
+          "source": "pid",
+          "bound": 8549,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd95",
+          "source": "pid",
+          "bound": 8564,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fdb1",
+          "source": "pid",
+          "bound": 8565,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fdb7",
+          "source": "pid",
+          "bound": 8580,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fdd0",
+          "source": "pid",
+          "bound": 8581,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fdd6",
+          "source": "pid",
+          "bound": 8596,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fdf2",
+          "source": "pid",
+          "bound": 8597,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fdf8",
+          "source": "pid",
+          "bound": 8612,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fe11",
+          "source": "pid",
+          "bound": 8613,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fe17",
+          "source": "pid",
+          "bound": 8628,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fe33",
+          "source": "pid",
+          "bound": 8629,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fe39",
+          "source": "pid",
+          "bound": 8644,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fe52",
+          "source": "pid",
+          "bound": 8649,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fe58",
+          "source": "pid",
+          "bound": 8663,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fe89",
+          "source": "pid",
+          "bound": 8664,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fe8f",
+          "source": "pid",
+          "bound": 8678,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80febe",
+          "source": "pid",
+          "bound": 8690,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fec4",
+          "source": "pid",
+          "bound": 9329,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fee9",
+          "source": "pid",
+          "bound": 14708,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80feef",
+          "source": "pid",
+          "bound": 14836,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80ff47",
+          "source": "pid",
+          "bound": 13939,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80ff4d",
+          "source": "pid",
+          "bound": 14707,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80ff6d",
+          "source": "pid",
+          "bound": 13170,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80ff73",
+          "source": "pid",
+          "bound": 13938,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x8101fe",
+          "source": "pid",
+          "bound": 14870,
+          "unsigned": false,
+          "taken": true
+        }
+      ]
+    },
+    {
+      "operation": 9,
+      "pid": "0x3a16",
+      "instructionCount": 360,
+      "checkedConstantGates": 85,
+      "conservativeBranches": [
+        "0x80f78d",
+        "0x80f79c",
+        "0x80f7a2",
+        "0x80fbd0",
+        "0x80ff94",
+        "0x810268"
+      ],
+      "calls": [
+        {
+          "at": "0x80ff97",
+          "target": "0x80f729"
+        },
+        {
+          "at": "0x810275",
+          "target": "0x80f751"
+        },
+        {
+          "at": "0x81035a",
+          "target": "0x8244fb"
+        }
+      ],
+      "returns": [
+        "0x80ffbf"
+      ],
+      "decisions": [
+        {
+          "at": "0x80f7a8",
+          "source": "pid",
+          "bound": 14880,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f7c5",
+          "source": "pid",
+          "bound": 134,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f7cd",
+          "source": "pid",
+          "bound": 1653,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f7e8",
+          "source": "pid",
+          "bound": 8679,
+          "unsigned": true,
+          "taken": false
+        },
+        {
+          "at": "0x80f7f2",
+          "source": "pid",
+          "bound": 8679,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f7f9",
+          "source": "pid",
+          "bound": 14870,
+          "unsigned": true,
+          "taken": true
+        },
+        {
+          "at": "0x80f838",
+          "source": "operation",
+          "bound": 15,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f852",
+          "source": "pid",
+          "bound": 134,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f858",
+          "source": "pid",
+          "bound": 389,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f88e",
+          "source": "pid",
+          "bound": 390,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f894",
+          "source": "pid",
+          "bound": 645,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f8ca",
+          "source": "pid",
+          "bound": 646,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f8d0",
+          "source": "pid",
+          "bound": 773,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f907",
+          "source": "pid",
+          "bound": 774,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f90d",
+          "source": "pid",
+          "bound": 901,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f913",
+          "source": "pid",
+          "bound": 1302,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f919",
+          "source": "pid",
+          "bound": 1317,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f94f",
+          "source": "pid",
+          "bound": 1286,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f955",
+          "source": "pid",
+          "bound": 1301,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f98c",
+          "source": "pid",
+          "bound": 902,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f992",
+          "source": "pid",
+          "bound": 1285,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80f9e1",
+          "source": "pid",
+          "bound": 1318,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f9e7",
+          "source": "pid",
+          "bound": 1333,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f9ed",
+          "source": "pid",
+          "bound": 1334,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80f9f3",
+          "source": "pid",
+          "bound": 1365,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fa4d",
+          "source": "pid",
+          "bound": 1366,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fa53",
+          "source": "pid",
+          "bound": 1653,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80faae",
+          "source": "pid",
+          "bound": 78,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fac9",
+          "source": "pid",
+          "bound": 79,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fae4",
+          "source": "pid",
+          "bound": 6986,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80faea",
+          "source": "pid",
+          "bound": 7009,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fbd6",
+          "source": "pid",
+          "bound": 7105,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fbdc",
+          "source": "pid",
+          "bound": 8325,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fbe2",
+          "source": "pid",
+          "bound": 8340,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fbf9",
+          "source": "pid",
+          "bound": 8341,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fbff",
+          "source": "pid",
+          "bound": 8356,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc17",
+          "source": "pid",
+          "bound": 8357,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc1d",
+          "source": "pid",
+          "bound": 8372,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc37",
+          "source": "pid",
+          "bound": 8373,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc3d",
+          "source": "pid",
+          "bound": 8388,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc55",
+          "source": "pid",
+          "bound": 8389,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc5b",
+          "source": "pid",
+          "bound": 8404,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc75",
+          "source": "pid",
+          "bound": 8405,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc7b",
+          "source": "pid",
+          "bound": 8420,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fc93",
+          "source": "pid",
+          "bound": 8421,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fc99",
+          "source": "pid",
+          "bound": 8436,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fcb3",
+          "source": "pid",
+          "bound": 8437,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fcb9",
+          "source": "pid",
+          "bound": 8452,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fcd1",
+          "source": "pid",
+          "bound": 8453,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fcd7",
+          "source": "pid",
+          "bound": 8468,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fcf1",
+          "source": "pid",
+          "bound": 8469,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fcf7",
+          "source": "pid",
+          "bound": 8484,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd0f",
+          "source": "pid",
+          "bound": 8485,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd15",
+          "source": "pid",
+          "bound": 8500,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd2f",
+          "source": "pid",
+          "bound": 8501,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd35",
+          "source": "pid",
+          "bound": 8516,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd4e",
+          "source": "pid",
+          "bound": 8517,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd54",
+          "source": "pid",
+          "bound": 8532,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd70",
+          "source": "pid",
+          "bound": 8533,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd76",
+          "source": "pid",
+          "bound": 8548,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fd8f",
+          "source": "pid",
+          "bound": 8549,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fd95",
+          "source": "pid",
+          "bound": 8564,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fdb1",
+          "source": "pid",
+          "bound": 8565,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fdb7",
+          "source": "pid",
+          "bound": 8580,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fdd0",
+          "source": "pid",
+          "bound": 8581,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fdd6",
+          "source": "pid",
+          "bound": 8596,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fdf2",
+          "source": "pid",
+          "bound": 8597,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fdf8",
+          "source": "pid",
+          "bound": 8612,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fe11",
+          "source": "pid",
+          "bound": 8613,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fe17",
+          "source": "pid",
+          "bound": 8628,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fe33",
+          "source": "pid",
+          "bound": 8629,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fe39",
+          "source": "pid",
+          "bound": 8644,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fe52",
+          "source": "pid",
+          "bound": 8649,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fe58",
+          "source": "pid",
+          "bound": 8663,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fe89",
+          "source": "pid",
+          "bound": 8664,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fe8f",
+          "source": "pid",
+          "bound": 8678,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80febe",
+          "source": "pid",
+          "bound": 8690,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80fec4",
+          "source": "pid",
+          "bound": 9329,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80fee9",
+          "source": "pid",
+          "bound": 14708,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80feef",
+          "source": "pid",
+          "bound": 14836,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80ff47",
+          "source": "pid",
+          "bound": 13939,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80ff4d",
+          "source": "pid",
+          "bound": 14707,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x80ff6d",
+          "source": "pid",
+          "bound": 13170,
+          "unsigned": false,
+          "taken": false
+        },
+        {
+          "at": "0x80ff73",
+          "source": "pid",
+          "bound": 13938,
+          "unsigned": false,
+          "taken": true
+        },
+        {
+          "at": "0x8101fe",
+          "source": "pid",
+          "bound": 14870,
+          "unsigned": false,
+          "taken": true
+        }
+      ]
+    }
+  ],
+  "descriptor": {
+    "address": "0x808590d0",
+    "objectByteOffset": "0x557c",
+    "type": 1,
+    "flags": "0x10",
+    "minimumFloat": 0,
+    "maximumFloat": 65520,
+    "displayScaleFloat": 1,
+    "precision": 0
+  },
+  "integerRoute": {
+    "handler": "0x823785",
+    "op10Target": "0x8237f1",
+    "op10": "R1 + 1, then reviewed MIN/MAX clamp",
+    "op9Target": "0x8237aa",
+    "op9": "TRUNC F0, then the same clamp",
+    "nativeModeWritesInReviewedIntegerPaths": [],
+    "furtherCallsInReviewedIntegerPaths": []
+  },
+  "resetRoute": {
+    "guard": "unsigned object[0x557c] >= 0xfff0",
+    "recursiveOperation": 9,
+    "recursivePid": "0x3a16",
+    "floatInputBits": "0x3f800000",
+    "terminationAndAllRuntimeMemoryValuesProven": false
+  },
+  "nativeModeWritesInReviewedCallbackInstructions": [],
+  "formatter": {
+    "entry": "0x825ebd",
+    "noDirectModeWritesInReviewedBody": true,
+    "callees": [
+      "0x1cbc4a",
+      "0x833c86",
+      "0x1cb13a",
+      "0x833650"
+    ],
+    "optionalLabelCopyExcludedByNullDescriptorAndLeftzSv": true,
+    "priorPowRestoreCertificate": "modifier-caller-audit.json",
+    "priorDivisionAlgebra": "modifier-mode-audit.json",
+    "compactDivisionReturnOpcodeIndependentlyReconciled": false
+  },
+  "selectedCallbackTransitiveClosureProven": false,
+  "whole80ea77Proven": false,
+  "unresolved": [
+    "Inherited division return 0x1cb17a/0x0afe: reconcile compact opcode and delay semantics.",
+    "Outer caller 0x80ea77 also calls 0x833a5c, 0x824d84, 0x82b744, 0x1cb1d6.",
+    "Scalar ABI, valid memory, no asynchronous interference; no general recursion-termination proof.",
+    "Other coreTask callers and interrupt dispatch/return remain open."
+  ],
+  "runtimeModeAtStoreProven": false,
+  "fullRangeEncodingProven": false,
+  "generatorWriteSupportAdded": false,
+  "newPhysicalExports": 0,
+  "newReaDecompilation": false,
+  "nextStep": "Reconcile SHARC+ compact-return encoding, including the existing division certificate; keep 6.47 blocked."
+}

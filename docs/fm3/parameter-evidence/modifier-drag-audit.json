@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "productionVersion": "0.3.13",
+  "mode": "conditional-forward-research-not-generator",
+  "newPhysicalExports": 0,
+  "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "checkpointCount": 12,
+  "inputMethodEvidenceSha256": "cdebf3737f5da3840697a2dd7b4f78abdc9eeefab6e200f5fdd21613b6074d55",
+  "inputMethodKnown": true,
+  "exactHistoricalMouseEventsKnown": false,
+  "factorySweepDegrees": 300,
+  "angularLimits": [
+    -2.6179940700531006,
+    2.6179940700531006
+  ],
+  "rangeSetter": "0x10025d890",
+  "factoryCall": "0x1000b48c4",
+  "minMaxTextEditingDisabled": {
+    "pids": [
+      1,
+      2
+    ],
+    "branch": "0x10017ba20..0x10017ba40",
+    "rotaryFlag": "root+0x3b0",
+    "readoutFlag": "readout+0x38a"
+  },
+  "conditions": [
+    "Linear mouse mode 0 and coarse sensitivity 1.5.",
+    "Existing baseline raw is reconstructed through float32 normalized readback.",
+    "Ideal two-decimal display bin; native formatter not fully replayed.",
+    "Float32 arithmetic model for operation 82; not SHARC 40-bit execution.",
+    "Monotonic integer event partitions with no feedback during an active drag."
+  ],
+  "points": [
+    {
+      "pid": 1,
+      "display": 2.5,
+      "startRaw": 0,
+      "measuredRaw": 16375,
+      "candidate": {
+        "displacement": 157,
+        "angle": -1.309660792350769,
+        "normalized": 0.24987323582172394,
+        "normalizedBits": "0x3e7fdec5",
+        "predictedWord": 16375,
+        "impliedDisplay": 2.49870296334727
+      },
+      "match": true,
+      "monotonicPartitionBounds": {
+        "minAngle": -1.3096619844436646,
+        "maxAngle": -1.3096519708633423,
+        "minWord": 16375,
+        "maxWord": 16375
+      },
+      "everyMonotonicPartitionMatches": true
+    },
+    {
+      "pid": 2,
+      "display": 7.5,
+      "startRaw": 65534,
+      "measuredRaw": 49159,
+      "candidate": {
+        "displacement": -157,
+        "angle": 1.309660792350769,
+        "normalized": 0.7501267194747925,
+        "normalizedBits": "0x3f40084e",
+        "predictedWord": 49159,
+        "impliedDisplay": 7.50129703665273
+      },
+      "match": true,
+      "monotonicPartitionBounds": {
+        "minAngle": 1.3096519708633423,
+        "maxAngle": 1.3096619844436646,
+        "minWord": 49159,
+        "maxWord": 49159
+      },
+      "everyMonotonicPartitionMatches": true
+    },
+    {
+      "pid": 2,
+      "display": 5.0,
+      "startRaw": 49159,
+      "measuredRaw": 32784,
+      "candidate": {
+        "displacement": -157,
+        "angle": 0.0013428926467895508,
+        "normalized": 0.5002564787864685,
+        "normalizedBits": "0x3f0010cf",
+        "predictedWord": 32784,
+        "impliedDisplay": 5.00259407330546
+      },
+      "match": true,
+      "monotonicPartitionBounds": {
+        "minAngle": 0.0013419128954410553,
+        "maxAngle": 0.0013438593596220016,
+        "minWord": 32784,
+        "maxWord": 32784
+      },
+      "everyMonotonicPartitionMatches": true
+    }
+  ],
+  "matches": 3,
+  "normalizedWordCenterRoundtrip": {
+    "codes": 65535,
+    "passed": true,
+    "scope": "software model only"
+  },
+  "retiredHypothesis": "Constant raw step 655 via wheel/arrow operations is not supported by the reported mouse input.",
+  "exactDisplayModelComparison": "0/3 remains a counterfactual typed-input comparison, not a contradiction of normalized linear encoding.",
+  "generatorWriteSupportAdded": false,
+  "fullRangeEncodingProven": false,
+  "nextStep": "Audit operation-82 float transport and SHARC arithmetic mode; distinguish a canonical requested-value codec from preserved measured drag words."
+}
