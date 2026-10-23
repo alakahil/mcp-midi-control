@@ -22,13 +22,25 @@ export const OPT_IN_STATUSES=Object.freeze(['linear-by-structure','enum-labels']
 export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT',
   plex:'PLEX',multiband:'MULTICOMP',synth:'SYNTH',looper:'LOOPER',gate:'GATE',formant:'FORMANT',volume:'VOLUME',tentap:'TENTAP',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR'});
 
+// Class 0x01 non-enum words are stored integers, not normalised 0…65534 values (Claude, 2026-10-23):
+// all 57 class-0x01 parameters that occur in 574 distinct bodies (bundled exports + nine device FW13
+// exports of factory presets) hold in-range signed integers (Pitch Shift -12 = 65524, Reverb Springs
+// 3/4/6, Fuzz Bit Reduce 20/21); FM3-Edit shows Ten-Tap Number of Taps raw 6 as 6. Display multiplier 2
+// (Plex Number of Delays, Chorus Voices) has no display evidence yet, so those two stay blocked.
+// Status is unchanged: writing still needs allow 'linear-by-structure'.
+export const INTEGER_CLASS_EVIDENCE='class-0x01 stored integer: 57/57 observed parameters in-range signed integers (574 bodies); Ten-Tap Number of Taps raw 6 displayed 6';
+function effectiveIntegerParameter(p){
+  if(((parseInt(p.flags,16)>>8)&0xf)!==1||p.kind!=='linear')return p;
+  if(p.displayMultiplier!==1)return {...p,kind:'integer',signedWord:p.min<0,status:'unverified-taper',integerEvidence:'display multiplier '+p.displayMultiplier+' unconfirmed'};
+  return {...p,kind:'integer',signedWord:p.min<0,integerEvidence:INTEGER_CLASS_EVIDENCE};
+}
 let cache=null;
 export function loadDictionary(){
   if(cache)return cache;
   const bytes=fs.readFileSync(new URL('../references/fm3-param-dictionary.json',import.meta.url));
   check(sha(bytes)===dictionaryHash,'Parameter dictionary changed; run test-table-encoder.mjs and review evidence before use');
   const d=JSON.parse(bytes);check(d.params.length===2892,'Unexpected dictionary size');
-  d.params=d.params.map(effectivePitchParameter);
+  d.params=d.params.map(effectivePitchParameter).map(effectiveIntegerParameter);
   const byKey=new Map(),byName=new Map();
   for(const p of d.params){byKey.set(p.block+':'+p.param,p);if(p.name)byName.set(p.family+':'+p.name,p)}
   return cache={...d,byKey,byName};

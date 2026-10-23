@@ -255,7 +255,9 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   (FM3-Edit'i paigutuse lukud, `references/fm3-insert-tempo-locks.json`). Mixer ja Multiplexer ootavad
   paralleelharusid (punkt 5); Scene MIDI väljad on dekodeerimata — need lükatakse tagasi. Mix-juhid
   vajavad `allow: ["linear-by-structure"]`, valikuloendid `enum-labels`. Seadmel kinnitatud on kirjete
-  kuju; genereeritud lisamise import/eksport (`examples/FM3_P6_INSERT_{A,B}.*`) ootab katset.
+  kuju ja genereeritud lisamise import/eksport (`examples/FM3_P6_INSERT_{A,B}*`; seade normaliseerib kirjete
+  järjekorra, sisu sama). Kuus CPU-raskemat plokki korraga ületasid CPU piiri: hoia lisatud plokkide arv mõõdukas.
+  Klassi 0x01 juhid (nt Shift, Number of Taps) on täisarvud.
   Detailid: `engine/docs/FM3_POINT6_BLOCKS.md`.
 - **Satriani "Soap On A Rope"** `examples/SATRIANI_SOAP_ON_A_ROPE{,_V2,_V3}.*`: V1/V2 kuulatud, V3 (tämber
   eraldatud originaali kitarriraja järgi) ootab kuulamist. Kõik kolm on SA2 koostajaga baitidentsed.

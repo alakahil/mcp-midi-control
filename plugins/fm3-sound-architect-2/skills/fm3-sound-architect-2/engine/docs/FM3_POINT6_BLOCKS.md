@@ -77,4 +77,18 @@ Test: `scripts/test-scan-records.mjs` (offline-suite).
   sihti kirjutatakse ainult siis, kui lõplik Tempo on NONE.
 - Keeldutakse: Mixer ja Multiplexer (paralleelharud, punkt 5), Scene MIDI (dekodeerimata), sama pere kaks korda.
 - Seadmekatse: `examples/FM3_P6_INSERT_A.*` (Gate, Multiband, Plex, Looper, Volume) ja `_B.*` (Synth, Ten-Tap,
-  Megatap, Ring Mod, Resonator, Formant). Import/eksport ja CPU on katsetamata.
+  Megatap, Ring Mod, Resonator, Formant).
+
+### Seadmekatse tulemus 2026-10-23
+
+- Import ja paigutus: mõlemad korras (kasutaja kinnitus FM3-Editis).
+- Eksport (`examples/FM3_P6_INSERT_{A,B}_export.syx`): eelosa (ruudustik, stseenid) ja süsteemi saba on
+  baithaaval samad ning iga kirje on baithaaval sama. **Seade normaliseerib kirjete järjekorra**; sisu ei muutu.
+- Näidud: Synth Frequency 800.01 Hz (oodatud 800.0084), Resonator Frequency 1 499.99 Hz (oodatud 499.9947).
+- Ten-Tap Feedback ei ole tüübil „Ten-Tap Delay" nähtav (sõna salvestub, aga editor seda ei kuva).
+  Lisatud perede tüübipõhine nähtavus on valideerimata, nagu aruanne ütleb.
+- CPU: A 82,5 %, B „CPU LIMIT EXCEEDED". Koormuse hindamine on auditi punkt 7.
+- Klass 0x01 (578 kirjet) on salvestatud täisarvud, mitte normaliseeritud väärtused: FM3-Edit näitab Ten-Tap
+  Number of Taps toorväärtust 6 kui 6 ning kõik 57 korpuses esinevat klassi 0x01 parameetrit on vahemikku jäävad
+  märgiga täisarvud. Kodeerija kohtleb neid nüüd täisarvudena (endiselt `allow: linear-by-structure`);
+  kordajaga 2 (Plex Number of Delays, Chorus Voices) jäävad lukku, kuni näit on kinnitatud.

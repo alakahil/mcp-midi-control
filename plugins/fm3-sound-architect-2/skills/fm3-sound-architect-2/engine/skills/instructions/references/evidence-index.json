@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2081,
-  "filePaths": 2285,
+  "uniqueContents": 2083,
+  "filePaths": 2287,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1209,6 +1209,12 @@
       "bytes": 4969,
       "paths": [
         "references/geq-full-20261010-194115/step-134-9815cbde8a/capture.json"
+      ]
+    },
+    "18edadfb3bafe1be03f5196a06a127b0039e816aa52b1b862fc787aa58184c00": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_P6_INSERT_A_export.syx"
       ]
     },
     "1917baed523fe06f4769b47428e3e5b81c1d41320c90f4c9ae83810918bd4532": {
@@ -9433,6 +9439,12 @@
       "bytes": 636,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T110839-7a1e03cf57/labels.json"
+      ]
+    },
+    "c2917196337a855671e980a452ee4449f3018c221a7302333749d8c450610a25": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_P6_INSERT_B_export.syx"
       ]
     },
     "c2a481a645d4d1668b5a98b042a023da4e2031dfb2daf9320a8cabb9e46b4000": {

@@ -40,3 +40,13 @@ refuse(()=>composeSound(NL,{...spec,blockScenes:{ringmod:[{scene:2,channel:'C'}]
 refuse(()=>composeSound(NL,{...spec,insert:['mixer']}),/audit point 5/,'mixer gated');
 check(insertTempoLocks.length===10,'Tempo locks');
 console.log(JSON.stringify({inserted:all.length,reconstructed:true,refusals:9,pipeline:s.report.signalRows}));
+// 5. hardware roundtrip 2026-10-23: the device's exports of FM3_P6_INSERT_A/B hold the same prefix
+// (grid, scenes), the same system tail and byte-identical records; only the record order is
+// normalised by the device. CPU: A 82.5 %, B "CPU LIMIT EXCEEDED" (reported by the user).
+for(const t of ['A','B']){
+  const g=body(rd(`examples/FM3_P6_INSERT_${t}.syx`)),e=body(rd(`examples/FM3_P6_INSERT_${t}_export.syx`)),G=scanRecords(g),E=scanRecords(e);
+  check(g.length===e.length&&g.subarray(0,4610).equals(e.subarray(0,4610))&&g.subarray(G.tail).equals(e.subarray(E.tail)),'Roundtrip prefix/tail '+t);
+  const bytes=(b,s)=>s.records.map(r=>b.subarray(r.header,r.header+r.size).toString('hex')).sort().join();
+  check(G.records.length===E.records.length&&bytes(g,G)===bytes(e,E),'Roundtrip records '+t);
+}
+console.log(JSON.stringify({hardwareRoundtrip:['A','B'],recordOrder:'device-normalised'}));

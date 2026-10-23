@@ -89,3 +89,11 @@ metaandmete ristkontroll, mitte uus FM3 mõõtmine või live MIDI SET.
 NUMREPEATS on salvestatud kood; CUSTOMSCALE1/2 on nullist algav indeks.
 Dünaamilised noodid, eriväärtuste kuvasildid ja globaalsete skaalade sisu
 on eraldi piirangud. 65535 on lubatud ainult 20 kinnitatud märgiga välja −1-na.
+
+## Klass 0x01 = salvestatud täisarv (2026-10-23)
+
+Klassi 0x01 mitte-valikuloendi sõnad (578 kirjet) ei ole normaliseeritud 0…65534 väärtused, vaid märgiga
+täisarvud (negatiivne kahe täiendina). Tõend: kõik 57 klassi 0x01 parameetrit, mis esinevad 574 erinevas kehas,
+on vahemikku jäävad täisarvud (Pitch Shift −12 = 65524, Reverb Springs 3/4/6); FM3-Edit näitab Ten-Tap Number
+of Taps toorväärtust 6 kui 6. `loadDictionary` annab neile `kind: integer`; staatus ei muutu (vajab endiselt
+`allow: linear-by-structure`). Kordajaga 2 (Plex Number of Delays, Chorus Voices) on lukus kuni näidu kinnituseni.
