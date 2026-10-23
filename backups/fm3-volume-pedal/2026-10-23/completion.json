@@ -1,0 +1,122 @@
+{
+  "sourceCommit": "c8280183ec80cefbd18dc1d2aa1a5f673893dc23",
+  "sourceTree": "eb2d9a866c7d4149e721c78059998396d863fbd2",
+  "sha256": "410cc6e6bbef3295912c0ce24eb1f8e86e505baa053849fb5571c4f29936bdbd",
+  "bytes": 22522,
+  "files": 9,
+  "deterministicRebuild": true,
+  "manifestAllFilesVerified": true,
+  "standaloneTests": 10,
+  "evidenceLinksPinned": true,
+  "productionPluginTreeUnchanged": true,
+  "fullMacREAExecuted": false,
+  "researchEvidence": [
+    {
+      "path": "docs/fm3/parameter-evidence/volume-pedal-0316-corpus.json",
+      "bytes": 200993,
+      "sha256": "3763a895dbd221caea575fd15b9366a61536a49cad101440a16188ebb8f8cfa1"
+    },
+    {
+      "path": "docs/fm3/parameter-evidence/volume-pedal-legacy.json",
+      "bytes": 218772,
+      "sha256": "cf4b993166a597bdd43aa660732a8b8a16f3f4cd90fc3ec641a00a1234798f5e"
+    },
+    {
+      "path": "docs/fm3/parameter-evidence/volume-pedal-native-checkpoints.json",
+      "bytes": 3193,
+      "sha256": "b8910c2dfbde1e32a02a48d9585e0fb964db60fdd7dc7b820f10ff7306d2d463"
+    },
+    {
+      "path": "docs/fm3/parameter-evidence/volume-pedal-static-audit.json",
+      "bytes": 3535,
+      "sha256": "ae844a6257a5bf2bdb1df26b256c7283527bfca06bfa27236528895fdcf345e0"
+    },
+    {
+      "path": "tools/fm3/rea-volume-pedal/plan.json",
+      "bytes": 5818,
+      "sha256": "2dcbbd0d65378aa47acf844cb66ab13600cb40d359542962857ed5781313fac6"
+    },
+    {
+      "path": "tools/fm3/rea-volume-pedal/validation.json",
+      "bytes": 1077,
+      "sha256": "7b394b02ae375d30d7c6939f03aed68dedfb5c3ddee033647ff2d335df89b226"
+    }
+  ],
+  "failedRunId": 39995461418,
+  "failure": "Evidence registry source inventory stale after adding four research scripts; dependent source manifests regenerated. All non-source top-level JSON fields unchanged.",
+  "ci": {
+    "sourceCommit": "c8280183ec80cefbd18dc1d2aa1a5f673893dc23",
+    "testedPRMergeCommit": "d1904e0520d561051f77ffff7abd99b8f8dfce22",
+    "testedTree": "eb2d9a866c7d4149e721c78059998396d863fbd2",
+    "merge": {
+      "sha": "3cd1fc8df45438001313f1632b4901ae1d56c657",
+      "merged": true,
+      "message": "Pull Request successfully merged"
+    },
+    "requiredOfflinePassed": 59,
+    "newResearchChecksPassed": 15,
+    "runs": [
+      {
+        "id": 39996233377,
+        "name": "FM3 plugin offline",
+        "event": "pull_request",
+        "head_sha": "c8280183ec80cefbd18dc1d2aa1a5f673893dc23",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39996233377"
+      },
+      {
+        "id": 39996233386,
+        "name": "native-matrix",
+        "event": "pull_request",
+        "head_sha": "c8280183ec80cefbd18dc1d2aa1a5f673893dc23",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39996233386"
+      },
+      {
+        "id": 39996233371,
+        "name": "preflight",
+        "event": "pull_request",
+        "head_sha": "c8280183ec80cefbd18dc1d2aa1a5f673893dc23",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39996233371"
+      },
+      {
+        "id": 39996224529,
+        "name": "FM3 plugin offline",
+        "event": "push",
+        "head_sha": "c8280183ec80cefbd18dc1d2aa1a5f673893dc23",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39996224529"
+      }
+    ]
+  },
+  "report": {
+    "name": "FM3_0.3.1_TOOTULEMUS_2026-10-19-2-2.md",
+    "bytes": 749313,
+    "sha256": "0cb04734eef9d3014394ea2debb5206c6ce3705189c3a00c7ce7e5e5499c8c44",
+    "libraryVersion": 44
+  },
+  "publishedPlugin": {
+    "id": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+    "version": "0.3.16",
+    "releaseId": "pluginrel_6adb8d341ba48191996d947712c344cf",
+    "engineCommit": "a11d8e44d0df339411d7e45ad6bea126b0bf89d5",
+    "unchanged": true
+  },
+  "backupPublication": {
+    "repository": "alakahil/mcp-midi-control",
+    "repositoryPrivate": false,
+    "branch": "main",
+    "directory": "backups/fm3-volume-pedal/2026-10-23",
+    "baseMainCommit": "3cd1fc8df45438001313f1632b4901ae1d56c657",
+    "authorization": {
+      "date": "2026-10-23",
+      "userInstruction": "luban lisada tööaruande ja analüüsipaketi ka avalikku GitHubi taastamisvarukoopiasse",
+      "scope": "Complete saved work report version 44, Mac analysis ZIP and recovery evidence files"
+    },
+    "previousBlockedAttempt": "Automatic approval review requested explicit public-sharing permission; no tree, commit or branch ref was published in that attempt. The current user instruction supplies that permission.",
+    "reportSnapshotPreserved": true,
+    "archiveSnapshotPreserved": true,
+    "reachabilityCheck": "Publication is verified by this directory being reachable from main; its enclosing Git commit provides the publication identity."
+  }
+}

@@ -1,0 +1,764 @@
+﻿2026-10-23T17:34:54.1167996Z Current runner version: '2.338.0'
+2026-10-23T17:34:54.1189786Z ##[group]Runner Image Provisioner
+2026-10-23T17:34:54.1190440Z Hosted Compute Agent
+2026-10-23T17:34:54.1190792Z Version: 20261012.601
+2026-10-23T17:34:54.1191200Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-23T17:34:54.1191640Z Build Date: 2026-10-12T17:48:21Z
+2026-10-23T17:34:54.1192273Z Worker ID: {08f8da32-0ce0-4383-af23-a0728c135052}
+2026-10-23T17:34:54.1192741Z Region: centralus
+2026-10-23T17:34:54.1193077Z Cloud: Azure
+2026-10-23T17:34:54.1193454Z ##[endgroup]
+2026-10-23T17:34:54.1194565Z ##[group]Operating System
+2026-10-23T17:34:54.1194930Z Ubuntu
+2026-10-23T17:34:54.1195291Z 24.04.5
+2026-10-23T17:34:54.1195619Z LTS
+2026-10-23T17:34:54.1195923Z ##[endgroup]
+2026-10-23T17:34:54.1196327Z ##[group]Runner Image
+2026-10-23T17:34:54.1196678Z Image: ubuntu-24.04
+2026-10-23T17:34:54.1197041Z Version: 20261012.334.1
+2026-10-23T17:34:54.1197844Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-23T17:34:54.1198778Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-23T17:34:54.1199336Z ##[endgroup]
+2026-10-23T17:34:54.1200040Z ##[group]GITHUB_TOKEN Permissions
+2026-10-23T17:34:54.1201296Z Contents: read
+2026-10-23T17:34:54.1201759Z Metadata: read
+2026-10-23T17:34:54.1202363Z ##[endgroup]
+2026-10-23T17:34:54.1203833Z Secret source: Actions
+2026-10-23T17:34:54.1204438Z Cache mode: write
+2026-10-23T17:34:54.1204864Z Prepare workflow directory
+2026-10-23T17:34:54.1442737Z Prepare all required actions
+2026-10-23T17:34:54.1476381Z Getting action download info
+2026-10-23T17:34:54.4115262Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-23T17:34:54.8642735Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-23T17:34:55.1633808Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-23T17:34:55.5890196Z Complete job name: offline
+2026-10-23T17:34:55.6680782Z ##[group]Run actions/checkout@v4
+2026-10-23T17:34:55.6681524Z with:
+2026-10-23T17:34:55.6682008Z   repository: alakahil/mcp-midi-control
+2026-10-23T17:34:55.6687563Z   token: ***
+2026-10-23T17:34:55.6688011Z   ssh-strict: true
+2026-10-23T17:34:55.6688503Z   ssh-user: git
+2026-10-23T17:34:55.6688976Z   persist-credentials: true
+2026-10-23T17:34:55.6689492Z   clean: true
+2026-10-23T17:34:55.6689962Z   sparse-checkout-cone-mode: true
+2026-10-23T17:34:55.6690530Z   fetch-depth: 1
+2026-10-23T17:34:55.6690973Z   fetch-tags: false
+2026-10-23T17:34:55.6691440Z   show-progress: true
+2026-10-23T17:34:55.6691907Z   lfs: false
+2026-10-23T17:34:55.6692508Z   submodules: false
+2026-10-23T17:34:55.6693008Z   set-safe-directory: true
+2026-10-23T17:34:55.6693557Z   allow-unsafe-pr-checkout: false
+2026-10-23T17:34:55.6694237Z ##[endgroup]
+2026-10-23T17:34:55.8454595Z Syncing repository: alakahil/mcp-midi-control
+2026-10-23T17:34:55.8457411Z ##[group]Getting Git version info
+2026-10-23T17:34:55.8459050Z Working directory is '/home/runner/work/mcp-midi-control/mcp-midi-control'
+2026-10-23T17:34:55.8461214Z [command]/usr/bin/git version
+2026-10-23T17:34:55.8504003Z git version 2.55.0
+2026-10-23T17:34:55.8523097Z ##[endgroup]
+2026-10-23T17:34:55.8536724Z Temporarily overriding HOME='/home/runner/work/_temp/a307246e-34b8-405d-a0e1-65b02d92602b' before making global git config changes
+2026-10-23T17:34:55.8538438Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T17:34:55.8543157Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mcp-midi-control/mcp-midi-control
+2026-10-23T17:34:55.8982990Z Deleting the contents of '/home/runner/work/mcp-midi-control/mcp-midi-control'
+2026-10-23T17:34:55.8987246Z ##[group]Initializing the repository
+2026-10-23T17:34:55.8990865Z [command]/usr/bin/git init /home/runner/work/mcp-midi-control/mcp-midi-control
+2026-10-23T17:34:55.9884325Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-23T17:34:55.9886201Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-23T17:34:55.9888110Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-23T17:34:55.9889580Z hint: call:
+2026-10-23T17:34:55.9890320Z hint:
+2026-10-23T17:34:55.9891246Z hint: 	git config --global init.defaultBranch <name>
+2026-10-23T17:34:55.9892572Z hint:
+2026-10-23T17:34:55.9893652Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-23T17:34:55.9896379Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-23T17:34:55.9897843Z hint:
+2026-10-23T17:34:55.9898531Z hint: 	git branch -m <name>
+2026-10-23T17:34:55.9899343Z hint:
+2026-10-23T17:34:55.9900419Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-23T17:34:55.9902683Z Initialized empty Git repository in /home/runner/work/mcp-midi-control/mcp-midi-control/.git/
+2026-10-23T17:34:55.9906212Z [command]/usr/bin/git remote add origin https://github.com/alakahil/mcp-midi-control
+2026-10-23T17:34:56.0190082Z ##[endgroup]
+2026-10-23T17:34:56.0191444Z ##[group]Disabling automatic garbage collection
+2026-10-23T17:34:56.0192814Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-23T17:34:56.0797972Z ##[endgroup]
+2026-10-23T17:34:56.0798624Z ##[group]Setting up auth
+2026-10-23T17:34:56.0799228Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T17:34:56.0826067Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T17:34:56.1120123Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T17:34:56.1151418Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T17:34:56.1341246Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T17:34:56.1373908Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T17:34:56.1586790Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-23T17:34:56.2174838Z ##[endgroup]
+2026-10-23T17:34:56.2176396Z ##[group]Fetching the repository
+2026-10-23T17:34:56.2183682Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d1904e0520d561051f77ffff7abd99b8f8dfce22:refs/remotes/pull/24/merge
+2026-10-23T17:34:58.3562404Z From https://github.com/alakahil/mcp-midi-control
+2026-10-23T17:34:58.3563508Z  * [new ref]         d1904e0520d561051f77ffff7abd99b8f8dfce22 -> pull/24/merge
+2026-10-23T17:34:58.3565833Z ##[endgroup]
+2026-10-23T17:34:58.3566194Z ##[group]Determining the checkout info
+2026-10-23T17:34:58.3636258Z ##[endgroup]
+2026-10-23T17:34:58.3637109Z [command]/usr/bin/git sparse-checkout disable
+2026-10-23T17:34:58.3668809Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-23T17:34:58.3669522Z ##[group]Checking out the ref
+2026-10-23T17:34:58.3673165Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/24/merge
+2026-10-23T17:34:58.8804213Z Note: switching to 'refs/remotes/pull/24/merge'.
+2026-10-23T17:34:58.8804838Z 
+2026-10-23T17:34:58.8805396Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-23T17:34:58.8805927Z changes and commit them, and you can discard any commits you make in this
+2026-10-23T17:34:58.8806472Z state without impacting any branches by switching back to a branch.
+2026-10-23T17:34:58.8806783Z 
+2026-10-23T17:34:58.8807021Z If you want to create a new branch to retain commits you create, you may
+2026-10-23T17:34:58.8807986Z do so (now or later) by using -c with the switch command. Example:
+2026-10-23T17:34:58.8808251Z 
+2026-10-23T17:34:58.8808386Z   git switch -c <new-branch-name>
+2026-10-23T17:34:58.8808564Z 
+2026-10-23T17:34:58.8808692Z Or undo this operation with:
+2026-10-23T17:34:58.8808860Z 
+2026-10-23T17:34:58.8808958Z   git switch -
+2026-10-23T17:34:58.8809135Z 
+2026-10-23T17:34:58.8809344Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-23T17:34:58.8809677Z 
+2026-10-23T17:34:58.8810002Z HEAD is now at d1904e0 Merge c8280183ec80cefbd18dc1d2aa1a5f673893dc23 into b57e01cfdfd43a77db5c1162d6ea51ad28692bb3
+2026-10-23T17:34:58.8832482Z ##[endgroup]
+2026-10-23T17:34:58.8875194Z [command]/usr/bin/git log -1 --format=%H
+2026-10-23T17:34:58.8901824Z d1904e0520d561051f77ffff7abd99b8f8dfce22
+2026-10-23T17:34:58.9123234Z ##[group]Run actions/setup-node@v4
+2026-10-23T17:34:58.9123460Z with:
+2026-10-23T17:34:58.9123636Z   node-version: 22
+2026-10-23T17:34:58.9123806Z   always-auth: false
+2026-10-23T17:34:58.9123973Z   check-latest: false
+2026-10-23T17:34:58.9125617Z   token: ***
+2026-10-23T17:34:58.9125771Z ##[endgroup]
+2026-10-23T17:34:59.0149853Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-23T17:34:59.0153559Z (node:2094) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-23T17:34:59.0154299Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-23T17:34:59.0156004Z ##[group]Environment details
+2026-10-23T17:34:59.3147305Z node: v22.23.3
+2026-10-23T17:34:59.3147578Z npm: 10.9.9
+2026-10-23T17:34:59.3147741Z yarn: 1.22.22
+2026-10-23T17:34:59.3148354Z ##[endgroup]
+2026-10-23T17:34:59.3282653Z ##[group]Run python3 tools/fm3/test-parameter-evidence.py
+2026-10-23T17:34:59.3283006Z [36;1mpython3 tools/fm3/test-parameter-evidence.py[0m
+2026-10-23T17:34:59.3283254Z [36;1mpython3 tools/fm3/test-six-field-resolution.py[0m
+2026-10-23T17:34:59.3283458Z [36;1mpython3 tools/fm3/six_field_resolution.py[0m
+2026-10-23T17:34:59.3283670Z [36;1mpython3 tools/fm3/test-type-applicability.py[0m
+2026-10-23T17:34:59.3283861Z [36;1mpython3 tools/fm3/type_applicability.py[0m
+2026-10-23T17:34:59.3284071Z [36;1mpython3 tools/fm3/test-parameter-dependencies.py[0m
+2026-10-23T17:34:59.3284276Z [36;1mpython3 tools/fm3/parameter_dependencies.py[0m
+2026-10-23T17:34:59.3284489Z [36;1mpython3 tools/fm3/test-delay-reverb-applicability.py[0m
+2026-10-23T17:34:59.3284709Z [36;1mpython3 tools/fm3/delay_reverb_applicability.py[0m
+2026-10-23T17:34:59.3284944Z [36;1mpython3 tools/fm3/test-modulation-dynamics-applicability.py[0m
+2026-10-23T17:34:59.3285219Z [36;1mpython3 tools/fm3/modulation_dynamics_applicability.py[0m
+2026-10-23T17:34:59.3285436Z [36;1mpython3 tools/fm3/test-pitch-word-codecs.py[0m
+2026-10-23T17:34:59.3285624Z [36;1mpython3 tools/fm3/test-pitch-display.py[0m
+2026-10-23T17:34:59.3285804Z [36;1mpython3 tools/fm3/pitch_display.py[0m
+2026-10-23T17:34:59.3285994Z [36;1mpython3 tools/fm3/test-pitch-custom-scales.py[0m
+2026-10-23T17:34:59.3286185Z [36;1mpython3 tools/fm3/pitch_custom_scales.py[0m
+2026-10-23T17:34:59.3286363Z [36;1mpython3 tools/fm3/global_scale_wire.py[0m
+2026-10-23T17:34:59.3286540Z [36;1mpython3 tools/fm3/pitch_word_codecs.py[0m
+2026-10-23T17:34:59.3286744Z [36;1mpython3 tools/fm3/test-rotary-pitch-applicability.py[0m
+2026-10-23T17:34:59.3286969Z [36;1mpython3 tools/fm3/rotary_pitch_applicability.py[0m
+2026-10-23T17:34:59.3287177Z [36;1mnode --test tools/fm3/test-modifier-damping.mjs[0m
+2026-10-23T17:34:59.3287374Z [36;1mnode --test tools/fm3/test-modifier-min.mjs[0m
+2026-10-23T17:34:59.3287566Z [36;1mnode --test tools/fm3/test-modifier-batch.mjs[0m
+2026-10-23T17:34:59.3287767Z [36;1mpython3 tools/fm3/modifier_quantization_audit.py[0m
+2026-10-23T17:34:59.3287972Z [36;1mpython3 tools/fm3/test-modifier-value-path.py[0m
+2026-10-23T17:34:59.3288161Z [36;1mpython3 tools/fm3/test-modifier-sharc.py[0m
+2026-10-23T17:34:59.3288354Z [36;1mpython3 tools/fm3/input_volume_evidence.py[0m
+2026-10-23T17:34:59.3288706Z [36;1mnode tools/fm3/volume-device-evidence.mjs[0m
+2026-10-23T17:34:59.3288984Z [36;1mnode tools/fm3/input-volume-audit.mjs[0m
+2026-10-23T17:34:59.3289211Z [36;1mnode tools/fm3/test-input-volume-comparison.mjs[0m
+2026-10-23T17:34:59.3289409Z [36;1mpython3 tools/fm3/parameter-evidence.py[0m
+2026-10-23T17:34:59.3289599Z [36;1mpython3 tools/fm3/metadata_reconciliation.py[0m
+2026-10-23T17:34:59.3289778Z [36;1mnode tools/fm3/encoder-matrix.mjs[0m
+2026-10-23T17:34:59.3289948Z [36;1mnode tools/fm3/grid-check-ingest.mjs[0m
+2026-10-23T17:34:59.3290383Z [36;1mnode tools/fm3/cpu-sweep-ingest.mjs plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cpu-sweep-20261023-results.jsonl[0m
+2026-10-23T17:34:59.3505588Z shell: /usr/bin/bash -e {0}
+2026-10-23T17:34:59.3505814Z ##[endgroup]
+2026-10-23T17:35:00.0312354Z ..............
+2026-10-23T17:35:00.0312919Z ----------------------------------------------------------------------
+2026-10-23T17:35:00.0313344Z Ran 14 tests in 0.581s
+2026-10-23T17:35:00.0313476Z 
+2026-10-23T17:35:00.0313556Z OK
+2026-10-23T17:35:00.1758193Z ......
+2026-10-23T17:35:00.1758812Z ----------------------------------------------------------------------
+2026-10-23T17:35:00.1759320Z Ran 6 tests in 0.097s
+2026-10-23T17:35:00.1759515Z 
+2026-10-23T17:35:00.1759919Z OK
+2026-10-23T17:35:00.2410741Z {"fieldsResolved": 6, "namedActiveChorusFields": 3, "blockedHiddenDriveFields": 1, "cabDisplayRange": [0, 10], "cacheRecordsReplayed": 2509, "editorReplayed": false, "newHardwareMeasurements": false}
+2026-10-23T17:35:00.3888211Z ....
+2026-10-23T17:35:00.3889072Z ----------------------------------------------------------------------
+2026-10-23T17:35:00.3889309Z Ran 4 tests in 0.103s
+2026-10-23T17:35:00.3889406Z 
+2026-10-23T17:35:00.3889470Z OK
+2026-10-23T17:35:00.4557396Z {"families": {"CHORUS": {"types": 27, "parameters": 32, "restricted": 16}, "FUZZ": {"types": 87, "parameters": 44, "restricted": 16}}, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:35:00.6275471Z ....
+2026-10-23T17:35:00.6275907Z ----------------------------------------------------------------------
+2026-10-23T17:35:00.6276261Z Ran 4 tests in 0.127s
+2026-10-23T17:35:00.6276385Z 
+2026-10-23T17:35:00.6276465Z OK
+2026-10-23T17:35:00.6919334Z {"tempoPairs": 21, "serializedModifierRecords": 32, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:35:00.9177046Z .....
+2026-10-23T17:35:00.9177449Z ----------------------------------------------------------------------
+2026-10-23T17:35:00.9177778Z Ran 5 tests in 0.179s
+2026-10-23T17:35:00.9177918Z 
+2026-10-23T17:35:00.9178003Z OK
+2026-10-23T17:35:00.9911375Z {"families": {"DELAY": {"models": 27, "parameters": 89, "selectorValues": [0, 1, 2, 3, 4, 5, 6, 7], "xmlOnlySelectorValues": []}, "REVERB": {"models": 79, "parameters": 71, "selectorValues": [0, 1, 2, 3, 4, 5, 6, 7, 8], "xmlOnlySelectorValues": [9, 10]}}, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:35:01.2201565Z ........
+2026-10-23T17:35:01.2201963Z ----------------------------------------------------------------------
+2026-10-23T17:35:01.2207536Z Ran 8 tests in 0.181s
+2026-10-23T17:35:01.2207683Z 
+2026-10-23T17:35:01.2207767Z OK
+2026-10-23T17:35:01.2960070Z {"families": {"FLANGER": {"models": 31, "parameters": 33, "selectorPid": 0}, "PHASER": {"models": 17, "parameters": 35, "selectorPid": 17}, "COMP": {"models": 19, "parameters": 37, "selectorPid": 12}, "WAH": {"models": 9, "parameters": 25, "selectorPid": 0}, "TREMOLO": {"models": 7, "parameters": 22, "selectorPid": 0}}, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:35:01.6325757Z ......
+2026-10-23T17:35:01.6326245Z ----------------------------------------------------------------------
+2026-10-23T17:35:01.6326591Z Ran 6 tests in 0.182s
+2026-10-23T17:35:01.6326718Z 
+2026-10-23T17:35:01.6326803Z OK
+2026-10-23T17:35:01.7182752Z ..
+2026-10-23T17:35:01.7183104Z ----------------------------------------------------------------------
+2026-10-23T17:35:01.7183646Z Ran 2 tests in 0.031s
+2026-10-23T17:35:01.7183742Z 
+2026-10-23T17:35:01.7183793Z OK
+2026-10-23T17:35:01.7723026Z {"fields": ["71", "72", "74"], "firmwareReplayed": false, "deviceIO": false}
+2026-10-23T17:35:01.9107862Z ...
+2026-10-23T17:35:01.9108290Z ----------------------------------------------------------------------
+2026-10-23T17:35:01.9108626Z Ran 3 tests in 0.094s
+2026-10-23T17:35:01.9108765Z 
+2026-10-23T17:35:01.9108842Z OK
+2026-10-23T17:35:01.9669321Z {"noteFields": 7, "globalAddresses": 384, "firmwareReplayed": false, "deviceIO": false}
+2026-10-23T17:35:02.0040922Z {"firmwareReplayed": false, "boundedFirmwareBytes": 324, "numericSerializerTraced": true, "endToEndStaticVerified": false, "nonzeroHardwareVerified": false, "deviceIO": false}
+2026-10-23T17:35:02.1024265Z {"fields": 34, "signed": 20, "counts": 5, "nonzeroEnums": 2, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:35:11.3498531Z .....
+2026-10-23T17:35:11.3498837Z ----------------------------------------------------------------------
+2026-10-23T17:35:11.3499095Z Ran 5 tests in 9.197s
+2026-10-23T17:35:11.3499182Z 
+2026-10-23T17:35:11.3499237Z OK
+2026-10-23T17:35:13.4287808Z {"families": {"ROTARY": {"models": 0, "parameters": 21, "metadataConflicts": 0}, "PITCH": {"models": 16, "parameters": 114, "metadataConflicts": 0}}, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:35:13.4688427Z TAP version 13
+2026-10-23T17:35:14.4292012Z # Subtest: isolated synthetic 0→1 identifies bytes without claiming label/device evidence
+2026-10-23T17:35:14.4295283Z ok 1 - isolated synthetic 0→1 identifies bytes without claiming label/device evidence
+2026-10-23T17:35:14.4312917Z   ---
+2026-10-23T17:35:14.4323319Z   duration_ms: 40.150931
+2026-10-23T17:35:14.4323721Z   type: 'test'
+2026-10-23T17:35:14.4324066Z   ...
+2026-10-23T17:35:14.4324550Z # Subtest: unchanged export is not a changed-field pair
+2026-10-23T17:35:14.4325051Z ok 2 - unchanged export is not a changed-field pair
+2026-10-23T17:35:14.4325882Z   ---
+2026-10-23T17:35:14.4326191Z   duration_ms: 17.975281
+2026-10-23T17:35:14.4326508Z   type: 'test'
+2026-10-23T17:35:14.4326793Z   ...
+2026-10-23T17:35:14.4327297Z # Subtest: unanticipated uint16 codes retained as observations, not relabelled Linear
+2026-10-23T17:35:14.4328199Z ok 3 - unanticipated uint16 codes retained as observations, not relabelled Linear
+2026-10-23T17:35:14.4328589Z   ---
+2026-10-23T17:35:14.4328859Z   duration_ms: 55.10102
+2026-10-23T17:35:14.4329068Z   type: 'test'
+2026-10-23T17:35:14.4329243Z   ...
+2026-10-23T17:35:14.4329565Z # Subtest: all 24 other words and distant body changes are rejected
+2026-10-23T17:35:14.4330003Z ok 4 - all 24 other words and distant body changes are rejected
+2026-10-23T17:35:14.4330315Z   ---
+2026-10-23T17:35:14.4330500Z   duration_ms: 372.721966
+2026-10-23T17:35:14.4330707Z   type: 'test'
+2026-10-23T17:35:14.4330877Z   ...
+2026-10-23T17:35:14.4331194Z # Subtest: the real MED SPD export is an unrelated Auto Engage change
+2026-10-23T17:35:14.4331637Z ok 5 - the real MED SPD export is an unrelated Auto Engage change
+2026-10-23T17:35:14.4331937Z   ---
+2026-10-23T17:35:14.4332235Z   duration_ms: 11.121306
+2026-10-23T17:35:14.4332436Z   type: 'test'
+2026-10-23T17:35:14.4332608Z   ...
+2026-10-23T17:35:14.4332974Z # Subtest: renamed preset is rejected even with isolated damping body change
+2026-10-23T17:35:14.4333494Z ok 6 - renamed preset is rejected even with isolated damping body change
+2026-10-23T17:35:14.4333821Z   ---
+2026-10-23T17:35:14.4333995Z   duration_ms: 13.414574
+2026-10-23T17:35:14.4334200Z   type: 'test'
+2026-10-23T17:35:14.4334376Z   ...
+2026-10-23T17:35:14.4334702Z # Subtest: wrong baseline, truncated and corrupt captures are rejected
+2026-10-23T17:35:14.4335176Z ok 7 - wrong baseline, truncated and corrupt captures are rejected
+2026-10-23T17:35:14.4335474Z   ---
+2026-10-23T17:35:14.4335644Z   duration_ms: 5.523211
+2026-10-23T17:35:14.4335840Z   type: 'test'
+2026-10-23T17:35:14.4336009Z   ...
+2026-10-23T17:35:14.4336316Z # Subtest: CLI reads input, emits JSON and creates no files
+2026-10-23T17:35:14.4337009Z ok 8 - CLI reads input, emits JSON and creates no files
+2026-10-23T17:35:14.4337280Z   ---
+2026-10-23T17:35:14.4337453Z   duration_ms: 292.242518
+2026-10-23T17:35:14.4337665Z   type: 'test'
+2026-10-23T17:35:14.4337838Z   ...
+2026-10-23T17:35:14.4597154Z 1..8
+2026-10-23T17:35:14.4597445Z # tests 8
+2026-10-23T17:35:14.4597631Z # suites 0
+2026-10-23T17:35:14.4597816Z # pass 8
+2026-10-23T17:35:14.4597991Z # fail 0
+2026-10-23T17:35:14.4598165Z # cancelled 0
+2026-10-23T17:35:14.4598368Z # skipped 0
+2026-10-23T17:35:14.4598548Z # todo 0
+2026-10-23T17:35:14.4598762Z # duration_ms 999.47757
+2026-10-23T17:35:14.4938148Z TAP version 13
+2026-10-23T17:35:15.5157445Z # Subtest: two synthetic rounding hypotheses remain unverified observations
+2026-10-23T17:35:15.5159839Z ok 1 - two synthetic rounding hypotheses remain unverified observations
+2026-10-23T17:35:15.5163234Z   ---
+2026-10-23T17:35:15.5192592Z   duration_ms: 63.328028
+2026-10-23T17:35:15.5192837Z   type: 'test'
+2026-10-23T17:35:15.5193031Z   ...
+2026-10-23T17:35:15.5193335Z # Subtest: unchanged baseline does not prove a Min change
+2026-10-23T17:35:15.5193725Z ok 2 - unchanged baseline does not prove a Min change
+2026-10-23T17:35:15.5193988Z   ---
+2026-10-23T17:35:15.5194163Z   duration_ms: 17.25182
+2026-10-23T17:35:15.5194357Z   type: 'test'
+2026-10-23T17:35:15.5194525Z   ...
+2026-10-23T17:35:15.5194909Z # Subtest: unexpected uint16 codes retained, never converted into a measured display
+2026-10-23T17:35:15.5195450Z ok 3 - unexpected uint16 codes retained, never converted into a measured display
+2026-10-23T17:35:15.5195672Z   ---
+2026-10-23T17:35:15.5195782Z   duration_ms: 73.979354
+2026-10-23T17:35:15.5195909Z   type: 'test'
+2026-10-23T17:35:15.5196337Z   ...
+2026-10-23T17:35:15.5196547Z # Subtest: all other modifier words, scene and distant body changes are rejected
+2026-10-23T17:35:15.5196846Z ok 4 - all other modifier words, scene and distant body changes are rejected
+2026-10-23T17:35:15.5197037Z   ---
+2026-10-23T17:35:15.5197146Z   duration_ms: 383.90692
+2026-10-23T17:35:15.5197267Z   type: 'test'
+2026-10-23T17:35:15.5197375Z   ...
+2026-10-23T17:35:15.5197581Z # Subtest: earlier real captures are collateral changes, not new Min evidence
+2026-10-23T17:35:15.5197880Z ok 5 - earlier real captures are collateral changes, not new Min evidence
+2026-10-23T17:35:15.5198077Z   ---
+2026-10-23T17:35:15.5198186Z   duration_ms: 22.825358
+2026-10-23T17:35:15.5198311Z   type: 'test'
+2026-10-23T17:35:15.5198430Z   ...
+2026-10-23T17:35:15.5198597Z # Subtest: renamed preset with a Min change is rejected
+2026-10-23T17:35:15.5198823Z ok 6 - renamed preset with a Min change is rejected
+2026-10-23T17:35:15.5198981Z   ---
+2026-10-23T17:35:15.5199092Z   duration_ms: 13.680628
+2026-10-23T17:35:15.5199215Z   type: 'test'
+2026-10-23T17:35:15.5199320Z   ...
+2026-10-23T17:35:15.5199505Z # Subtest: wrong baseline, truncation and corruption fail closed
+2026-10-23T17:35:15.5199755Z ok 7 - wrong baseline, truncation and corruption fail closed
+2026-10-23T17:35:15.5199931Z   ---
+2026-10-23T17:35:15.5200041Z   duration_ms: 5.160729
+2026-10-23T17:35:15.5212365Z   type: 'test'
+2026-10-23T17:35:15.5212562Z   ...
+2026-10-23T17:35:15.5212928Z # Subtest: CLI emits a report without modifying inputs or creating files
+2026-10-23T17:35:15.5213415Z ok 8 - CLI emits a report without modifying inputs or creating files
+2026-10-23T17:35:15.5213749Z   ---
+2026-10-23T17:35:15.5213939Z   duration_ms: 291.361036
+2026-10-23T17:35:15.5214153Z   type: 'test'
+2026-10-23T17:35:15.5214338Z   ...
+2026-10-23T17:35:15.5391974Z 1..8
+2026-10-23T17:35:15.5392391Z # tests 8
+2026-10-23T17:35:15.5392621Z # suites 0
+2026-10-23T17:35:15.5392840Z # pass 8
+2026-10-23T17:35:15.5393041Z # fail 0
+2026-10-23T17:35:15.5393980Z # cancelled 0
+2026-10-23T17:35:15.5394185Z # skipped 0
+2026-10-23T17:35:15.5394385Z # todo 0
+2026-10-23T17:35:15.5394624Z # duration_ms 1053.310282
+2026-10-23T17:35:15.5729538Z TAP version 13
+2026-10-23T17:35:16.7133745Z # Subtest: ten distinct synthetic changes are one unreviewed batch, never ten experiments
+2026-10-23T17:35:16.7134962Z ok 1 - ten distinct synthetic changes are one unreviewed batch, never ten experiments
+2026-10-23T17:35:16.7135338Z   ---
+2026-10-23T17:35:16.7135528Z   duration_ms: 37.090686
+2026-10-23T17:35:16.7135734Z   type: 'test'
+2026-10-23T17:35:16.7135913Z   ...
+2026-10-23T17:35:16.7136264Z # Subtest: each selected word is reported separately, including actual missing changes
+2026-10-23T17:35:16.7143387Z ok 2 - each selected word is reported separately, including actual missing changes
+2026-10-23T17:35:16.7144180Z   ---
+2026-10-23T17:35:16.7144662Z   duration_ms: 156.892767
+2026-10-23T17:35:16.7144869Z   type: 'test'
+2026-10-23T17:35:16.7145001Z   ...
+2026-10-23T17:35:16.7145254Z # Subtest: raw extremes remain observations, not accepted codecs
+2026-10-23T17:35:16.7145561Z ok 3 - raw extremes remain observations, not accepted codecs
+2026-10-23T17:35:16.7145756Z   ---
+2026-10-23T17:35:16.7145875Z   duration_ms: 60.720422
+2026-10-23T17:35:16.7146004Z   type: 'test'
+2026-10-23T17:35:16.7146122Z   ...
+2026-10-23T17:35:16.7147077Z # Subtest: unselected words, other records, scene and effect data fail closed
+2026-10-23T17:35:16.7147881Z ok 4 - unselected words, other records, scene and effect data fail closed
+2026-10-23T17:35:16.7148202Z   ---
+2026-10-23T17:35:16.7148380Z   duration_ms: 251.542164
+2026-10-23T17:35:16.7148597Z   type: 'test'
+2026-10-23T17:35:16.7148774Z   ...
+2026-10-23T17:35:16.7149021Z # Subtest: renamed preset is a collateral change
+2026-10-23T17:35:16.7149346Z ok 5 - renamed preset is a collateral change
+2026-10-23T17:35:16.7149591Z   ---
+2026-10-23T17:35:16.7149760Z   duration_ms: 13.635804
+2026-10-23T17:35:16.7149954Z   type: 'test'
+2026-10-23T17:35:16.7150498Z   ...
+2026-10-23T17:35:16.7150836Z # Subtest: baseline is not another observation and wrong baseline is rejected
+2026-10-23T17:35:16.7151317Z ok 6 - baseline is not another observation and wrong baseline is rejected
+2026-10-23T17:35:16.7151625Z   ---
+2026-10-23T17:35:16.7151792Z   duration_ms: 11.938143
+2026-10-23T17:35:16.7152000Z   type: 'test'
+2026-10-23T17:35:16.7152277Z   ...
+2026-10-23T17:35:16.7152532Z # Subtest: corrupted and truncated dumps fail closed
+2026-10-23T17:35:16.7152873Z ok 7 - corrupted and truncated dumps fail closed
+2026-10-23T17:35:16.7153122Z   ---
+2026-10-23T17:35:16.7153289Z   duration_ms: 5.310626
+2026-10-23T17:35:16.7153486Z   type: 'test'
+2026-10-23T17:35:16.7153653Z   ...
+2026-10-23T17:35:16.7153886Z # Subtest: CLI only reads input and emits JSON
+2026-10-23T17:35:16.7154194Z ok 8 - CLI only reads input and emits JSON
+2026-10-23T17:35:16.7183156Z   ---
+2026-10-23T17:35:16.7212735Z   duration_ms: 174.250888
+2026-10-23T17:35:16.7214621Z   type: 'test'
+2026-10-23T17:35:16.7215173Z   ...
+2026-10-23T17:35:16.7215555Z # Subtest: actual batch A replays the retained comparison without promoting screenshot or codec claims
+2026-10-23T17:35:16.7216009Z ok 9 - actual batch A replays the retained comparison without promoting screenshot or codec claims
+2026-10-23T17:35:16.7216256Z   ---
+2026-10-23T17:35:16.7216390Z   duration_ms: 13.449094
+2026-10-23T17:35:16.7216526Z   type: 'test'
+2026-10-23T17:35:16.7216641Z   ...
+2026-10-23T17:35:16.7216885Z # Subtest: batch B is pinned to actual A and preserves the actual screenshot baseline values
+2026-10-23T17:35:16.7217233Z ok 10 - batch B is pinned to actual A and preserves the actual screenshot baseline values
+2026-10-23T17:35:16.7217498Z   ---
+2026-10-23T17:35:16.7217661Z   duration_ms: 35.37348
+2026-10-23T17:35:16.7217880Z   type: 'test'
+2026-10-23T17:35:16.7218055Z   ...
+2026-10-23T17:35:16.7218486Z # Subtest: CLI accepts an explicit B plan without writing or promoting synthetic B to device evidence
+2026-10-23T17:35:16.7219136Z ok 11 - CLI accepts an explicit B plan without writing or promoting synthetic B to device evidence
+2026-10-23T17:35:16.7219516Z   ---
+2026-10-23T17:35:16.7219693Z   duration_ms: 174.913484
+2026-10-23T17:35:16.7219897Z   type: 'test'
+2026-10-23T17:35:16.7220781Z   ...
+2026-10-23T17:35:16.7221157Z # Subtest: actual B has nine new points and unchanged Max, never a captured Max 5.00
+2026-10-23T17:35:16.7222291Z ok 12 - actual B has nine new points and unchanged Max, never a captured Max 5.00
+2026-10-23T17:35:16.7222497Z   ---
+2026-10-23T17:35:16.7222612Z   duration_ms: 12.499593
+2026-10-23T17:35:16.7222739Z   type: 'test'
+2026-10-23T17:35:16.7222949Z   ...
+2026-10-23T17:35:16.7223249Z # Subtest: targeted Max completion pins B and rejects another baseline or any collateral B-field edit
+2026-10-23T17:35:16.7223939Z ok 13 - targeted Max completion pins B and rejects another baseline or any collateral B-field edit
+2026-10-23T17:35:16.7224359Z   ---
+2026-10-23T17:35:16.7224533Z   duration_ms: 30.606127
+2026-10-23T17:35:16.7224743Z   type: 'test'
+2026-10-23T17:35:16.7224873Z   ...
+2026-10-23T17:35:16.7225074Z # Subtest: actual Max completion changes only the measured word to 32784
+2026-10-23T17:35:16.7225352Z ok 14 - actual Max completion changes only the measured word to 32784
+2026-10-23T17:35:16.7225533Z   ---
+2026-10-23T17:35:16.7225648Z   duration_ms: 13.515063
+2026-10-23T17:35:16.7225773Z   type: 'test'
+2026-10-23T17:35:16.7225881Z   ...
+2026-10-23T17:35:16.7384763Z 1..14
+2026-10-23T17:35:16.7384958Z # tests 14
+2026-10-23T17:35:16.7385083Z # suites 0
+2026-10-23T17:35:16.7385213Z # pass 14
+2026-10-23T17:35:16.7392771Z # fail 0
+2026-10-23T17:35:16.7392941Z # cancelled 0
+2026-10-23T17:35:16.7393124Z # skipped 0
+2026-10-23T17:35:16.7393286Z # todo 0
+2026-10-23T17:35:16.7393484Z # duration_ms 1173.247923
+2026-10-23T17:35:17.0479383Z {"changedPoints": 21, "ordinaryPoints": 18, "ordinaryNearestMatches": 18, "ordinaryFloat32NearestMatches": 18, "ordinaryFloorMatches": 10, "minMaxPoints": 3, "minMaxNearestMatches": 0, "allDisplayBinsIncludeMeasuredRaw": true, "nativeOriginalRechecked": false, "newPhysicalExports": 0, "deviceIO": false}
+2026-10-23T17:35:17.0965814Z .....
+2026-10-23T17:35:17.0966150Z ----------------------------------------------------------------------
+2026-10-23T17:35:17.0966381Z Ran 5 tests in 0.000s
+2026-10-23T17:35:17.0966511Z 
+2026-10-23T17:35:17.0966573Z OK
+2026-10-23T17:35:17.1487249Z .....
+2026-10-23T17:35:17.1487579Z ----------------------------------------------------------------------
+2026-10-23T17:35:17.1487792Z Ran 5 tests in 0.000s
+2026-10-23T17:35:17.1487885Z 
+2026-10-23T17:35:17.1487935Z OK
+2026-10-23T17:35:17.2008966Z {"verified": true, "families": {"INPUT": 10, "VOLUME": 15}, "editorReplayed": false, "newREAAnalysis": false, "deviceIO": false}
+2026-10-23T17:35:18.3486101Z {"passed":true,"capturedBodyReconstructed":true,"originalCaptureRechecked":false,"rawInputWordsPreserved":20,"newPhysicalScaleMeasurements":0,"fullSyxBytesEqual":false,"compressionBytesDiffer":true}
+2026-10-23T17:35:19.9931115Z {"verified":true,"files":795,"unique":638,"accepted":626,"unsupported":12,"inputVariants":1,"currentVolume":2,"oldVolume":2}
+2026-10-23T17:35:21.1694312Z {"passed":true,"syntheticOnly":true,"validInsertion":1,"rejections":7,"newHardwareMeasurements":0}
+2026-10-23T17:35:23.5215451Z {"catalogRows": 2021, "catalogKeys": 1999, "dictionaryRows": 2892, "observations": {"paired-point": 869, "screen-reading-no-export": 15, "syx-export-no-get": 30}, "pairedCapturesReplayed": 354, "parametersWithPairedPoint": 72}
+2026-10-23T17:35:23.6560898Z {"gaps": 1555, "categories": {"family-absent-from-table": 193, "global-address-gap": 88, "global-slot-without-name": 942, "high-id-editor-control": 42, "midi-row-action": 8, "midi-slot-without-scalar-definition": 252, "named-dictionary-gap": 4, "unnamed-active-descriptor": 4, "unnamed-family": 7, "unnamed-unused-slot": 15}, "aliasKeys": 22, "aliasExtraRows": 22, "catalogRangeDifferenceRows": 36, "catalogRangeDifferenceKeys": 36, "fm3ReferenceRanges": 40, "fm3ReferenceRangeConflicts": 0, "resolvedScaleRepresentations": 2, "resolvedSymbols": 4, "unnamedWritableKeys": [], "duplicateEnumLabelGroups": 5, "userPhysicalActions": 0}
+2026-10-23T17:35:27.1586382Z {"eligibleParameterKeys":700,"numericPositionChecks":3560,"enumChecks":11034,"rejectionChecks":5157,"roundtripChecks":4442,"existingObservationsChecked":899,"existingObservationKeys":85,"slopeLabelAdapters":12,"bundledBases":7,"syxWriteRuns":21,"controlWrites":37885,"typeExcludedWrites":5860,"typeRejectionChecks":21,"typeApplicability":{"sha256":"9fdc92ed23349838699db18dbcce223602ae6a22984cef5e5728e35150a49f99","firmware":"13.0","source":"FM3-Edit 1.07.17","families":{"CHORUS":{"types":27,"parameters":32,"restrictedParameters":16},"FUZZ":{"types":87,"parameters":44,"restrictedParameters":16}},"algorithmApplicability":{"sha256":"5f062f0cca465c8576b8857260af693a03563bb6b8672257e4bda533b4605b21","firmware":"13.0","families":{"DELAY":{"models":27,"parameters":89,"selector":"DELAY_TYPE","selectorPid":7,"selectorValues":[0,1,2,3,4,5,6,7],"xmlOnlySelectorValues":[],"templateOnlyPids":[6,7]},"REVERB":{"models":79,"parameters":71,"selector":"REVERB_BASETYPE","selectorPid":45,"selectorValues":[0,1,2,3,4,5,6,7,8],"xmlOnlySelectorValues":[9,10],"templateOnlyPids":[0,45]}},"rule":"Read final channel model and internal selector separately. Require their captured-template binding. Model/internal selector changes use full templates, never scalar writes. Explicit page alternatives override empty or unqualified fallbacks within the same pageNum. Control predicates intersect page visibility.","limits":"Bounded XML-derived authoring policy; native UI and DSP not executed. Internal enum without labels is read as a raw selector, never as a continuous scalar. Reverb XML IDs 9/10 are outside the FW13 cache and are not supported. Template defaults do not prove every value. Other families and additional dependencies remain separate."},"modulationDynamics":{"sha256":"d18781685ff638cab72e8ff1ac7016b9c071781e94e91605b76d7f1b032f94e2","firmware":"13.0","families":{"FLANGER":{"models":31,"parameters":33,"selector":"FLANGER_TYPE","selectorPid":0,"selectorValues":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"templateOnlyPids":[0],"nativeAliases":[{"pid":1,"legacy":"OLD_FLANGER_RATE","native":"FLANGER_RATE"},{"pid":2,"legacy":"OLD_FLANGER_TEMPO","native":"FLANGER_TEMPO"},{"pid":3,"legacy":"OLD_FLANGER_DEPTH","native":"FLANGER_DEPTH"},{"pid":4,"legacy":"OLD_FLANGER_FEEDBACK","native":"FLANGER_FEEDBACK"},{"pid":5,"legacy":"OLD_FLANGER_DELAYTIME","native":"FLANGER_MANUAL"},{"pid":6,"legacy":"OLD_FLANGER_MANUAL","native":"FLANGER_DRYDELAY"},{"pid":7,"legacy":"OLD_FLANGER_LFOPHASE","native":"FLANGER_LFOPHASE"},{"pid":8,"legacy":"OLD_FLANGER_LFOTYPE","native":"FLANGER_LFOTYPE"},{"pid":9,"legacy":"OLD_FLANGER_LFOFILTER","native":"FLANGER_LFOFILTER"},{"pid":10,"legacy":"OLD_FLANGER_AUTO","native":"FLANGER_AUTO"},{"pid":11,"legacy":"OLD_FLANGER_MIX","native":"FLANGER_MIX"},{"pid":12,"legacy":"OLD_FLANGER_LEVEL","native":"FLANGER_LEVEL"},{"pid":13,"legacy":"OLD_FLANGER_PAN","native":"FLANGER_PAN"},{"pid":14,"legacy":"OLD_FLANGER_BYPASSMODE","native":"FLANGER_BYPASSMODE"},{"pid":16,"legacy":"OLD_FLANGER_BYPASS","native":"FLANGER_BYPASS"},{"pid":17,"legacy":"OLD_FLANGER_PHASEREV","native":"FLANGER_PHASEREV"},{"pid":18,"legacy":"OLD_FLANGER_THRUZERO","native":"FLANGER_THRUZERO"},{"pid":19,"legacy":"OLD_FLANGER_HICUT","native":"FLANGER_LPFREQ"},{"pid":20,"legacy":"OLD_FLANGER_DRIVE","native":"FLANGER_DRIVE"},{"pid":21,"legacy":"OLD_FLANGER_LOWCUT","native":"FLANGER_HPFREQ"},{"pid":22,"legacy":"OLD_FLANGER_SPREAD","native":"FLANGER_SPREAD"},{"pid":23,"legacy":"OLD_FLANGER_LFORESET","native":"FLANGER_LFORESET"}]},"PHASER":{"models":17,"parameters":35,"selector":"PHASER_MODE","selectorPid":17,"selectorValues":[0,1,2],"templateOnlyPids":[0,17],"nativeAliases":[]},"COMP":{"models":19,"parameters":37,"selector":"COMP_TYPE","selectorPid":12,"selectorValues":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],"templateOnlyPids":[12],"nativeAliases":[]},"WAH":{"models":9,"parameters":25,"selector":"WAH_TYPE","selectorPid":0,"selectorValues":[0,1,2,3,4,5,6,7,8],"templateOnlyPids":[0],"nativeAliases":[]},"TREMOLO":{"models":7,"parameters":22,"selector":"TREMOLO_TYPE","selectorPid":0,"selectorValues":[0,1,2,3,4,5,6],"templateOnlyPids":[0],"nativeAliases":[]}},"rule":"Use final channel state and complete captured model/selector bindings. Model and Phaser Mode changes require full templates. Compile firmware-active variants, pages and control predicates. Native Flanger names resolve to verified PIDs; preserve exact legacy names and scalar definitions.","limits":"Bounded XML-derived authoring policy; no native UI or DSP execution. No new device measurements or scale promotion. Automatic compressor timing/makeup, envelope/LFO dynamics and other dependencies are not evaluated. Meters and unused words are not write controls."},"rotaryPitch":{"sha256":"268c426357a8db5ff61de1456168ae6b0dfe49541920ca8766dfafc549bd6f61","firmware":"13.0","presetWordCodecs":{"sha256":"af903171673507d65824589ac33080ad2846826b40802021c0f3d3e3c9b691cb","fields":34,"dynamicNoteFields":7,"signedFields":20,"countFields":5,"nonzeroEnums":2,"scope":"Preset storage only. FW13 cache bounds and labels, FM3 native symbol bindings, existing FW13 templates and older FM3 factory words. Structural/file cross-check, not a new hardware sweep or MIDI SET codec.","numericEnumInput":"Stored option ID, not zero-based list position. TRACKMODE: NOTES=1, CHORDS=2. TEMPO: first label=1, last=78; NONE is unavailable.","limits":"Seven local custom notes require final-state context validation. No global scale contents, tonic authoring, device import, audio/CPU or effective controller/tempo evaluation. Same descriptor class is transferred across the explicitly listed 20 signed fields; factory facts are not per-value measurements."},"families":{"ROTARY":{"hasTypeSelector":false,"models":0,"parameters":21,"templateOnlyPids":[],"metadataConflicts":[],"blockedDynamicOrFixed":[{"pid":9,"name":"ROTARY_GLOBALMIX","reason":"unused or fixed editor-only slot; no scalar authoring"}]},"PITCH":{"hasTypeSelector":true,"models":16,"parameters":114,"templateOnlyPids":[0],"metadataConflicts":[],"blockedDynamicOrFixed":[{"pid":37,"name":"PITCH_FORMCORRECT","reason":"unused or fixed editor-only slot; no scalar authoring"},{"pid":42,"name":"PITCH_GLOBALMIX","reason":"unused or fixed editor-only slot; no scalar authoring"},{"pid":107,"name":"PITCH_TONIC","reason":"unused or fixed editor-only slot; no scalar authoring"}]}},"rule":"Pitch TYPE requires full templates; final-channel FW13 variants govern controls. Rotary has no model selector: PID 0 is Rate. Apply the pinned 34-field preset-word overlay; seven custom notes also require complete final-scale validation. Fixed slots, including Tonic, remain blocked. Global scale indices do not include global scale contents.","limits":"Metadata and firmware-derived authoring gates, not native UI/DSP or hardware execution. Global scale contents, arpeggiator playback semantics and Learn/controller dynamics remain unverified. No live MIDI SET claim. Existing tempo/modifier guards remain required."},"inputGate":{"supported":true,"block":"in1","effectId":37,"channels":["A","B","C","D"],"parameters":[{"pid":0,"name":"INPUT_THRESH","unit":"dB","kind":"linear","displayRange":[-100,0]},{"pid":1,"name":"INPUT_RATIO","unit":":1","kind":"log","displayRange":[1,20]},{"pid":2,"name":"INPUT_RELEASE","unit":"ms","kind":"log","displayRange":[9.999999776482582,1000]},{"pid":3,"name":"INPUT_ATTACK","unit":"ms","kind":"log","displayRange":[0.09999999747378752,100.00000149011612]},{"pid":5,"name":"INPUT_LEVEL","unit":"dB","kind":"linear","displayRange":[-40,40]}],"evidenceSha256":"ab9103c43d7b3766361fad5df5ac453cd29a6411649312a1963200dec1f6de70","encoding":"existing table curve classes; metadata/model generalization, no new physical scale measurements","newHardwareMeasurements":0,"newPhysicalScaleMeasurements":0,"fullRangeEncodingProven":false,"hardwareStorageRoundtrip":{"targetWords":20,"channels":["A","B","C","D"],"captureSha256":"e6537e4a8f86b7bb9d125e341567b7c5b354afac65fc4f325a8580d0d8a06356","scope":"one imported combination; entire Input record preserved"},"preserved":["Gate Type","Mode","Input bypass","meter/reserved words","scene assignments","global Noisegate Offset","global AC Line Frequency","modifiers"],"limits":["Input 1 only; separate Gate block excluded","Ratio and Attack require final ADVANCED; Release is visible in both FW13 modes","Threshold OFF (-100 endpoint) not authored","No new Input controller binding; Volume/Pan has a separate bounded writer"]},"volumePan":{"supported":true,"block":"volpan","effectId":102,"channels":["A","B","C","D"],"insertField":"volumePan:true","type":"VOLUME","parameters":[{"pid":0,"name":"VOLUME_GAIN","kind":"linear","unit":"/10","displayRange":[0,10],"labels":[]},{"pid":1,"name":"VOLUME_BAL","kind":"linear","unit":"%","displayRange":[-100,100],"labels":[]},{"pid":2,"name":"VOLUME_TAPER","kind":"enum","unit":"","displayRange":[0,6],"labels":["LINEAR","LOG 30A","LOG 20A","LOG 15A","LOG 10A","LOG 5A","S-TAPER"]},{"pid":4,"name":"VOLUME_PANL","kind":"linear","unit":"%","displayRange":[-99.90000128746033,99.90000128746033],"labels":[]},{"pid":5,"name":"VOLUME_PANR","kind":"linear","unit":"%","displayRange":[-99.90000128746033,99.90000128746033],"labels":[]},{"pid":6,"name":"VOLUME_LEVEL","kind":"linear","unit":"dB","displayRange":[-80,20],"labels":[]},{"pid":7,"name":"VOLUME_BYPASSMODE","kind":"enum","unit":"","displayRange":[0,1],"labels":["THRU","MUTE"]},{"pid":8,"name":"VOLUME_INPUTSELECT","kind":"enum","unit":"","displayRange":[0,2],"labels":["STEREO","LEFT ONLY","RIGHT ONLY"]}],"enumOptIn":"allow:[\"enum-labels\"]","metadataSha256":"ab9103c43d7b3766361fad5df5ac453cd29a6411649312a1963200dec1f6de70","hardwareEvidence":"one default FW13 record; 20 Input words preserved in the returned export","newPhysicalScaleMeasurements":0,"fullRangeEncodingProven":false,"preserved":["TYPE","channel BYPASS word","Auto-Swell inactive words","meter word","all existing records and system tail"],"limits":["VOLUME type only; TYPE/Auto-Swell authoring excluded","Use blockScenes.volpan for scene channel/bypass","New physical scales and authored combinations are model-based; no new live SET/STORE/audio/CPU proof","No new modifier binding or Min/Max transfer"]},"rule":"Explicit writes checked against final per-channel type; stored hidden words preserved","limits":"Bounded XML-derived authoring policies, not executed native UI or DSP validation. Chorus/Drive coverage is in families; Delay/Reverb in algorithmApplicability; Flanger/Phaser/Compressor/Wah/Tremolo in modulationDynamics. Rotary/Pitch includes type-free Rotary, 16 Pitch models and a separately pinned 34-field preset-word overlay; seven local custom-note fields require final-scale validation; fixed Pitch slots remain blocked. Tempo/modifier scope is reported separately; other-family visibility remains unverified."},"dependencies":{"sha256":"0a209c8709b043500cf222252a1ee98abaff389a39c014d936e350e32cbedab6","firmware":"13.0","tempoPairs":21,"families":["CHORUS","DELAY","FILTER","FLANGER","PHASER","PITCH","ROTARY","TREMOLO","REVERB"],"modifierMode":"read-only; reject explicit writes to active or uncertain targets","serializedModifierRecords":32,"limits":"21 bounded tempo pairs in nine families, not all FM3 dependencies. Other-family type visibility, effective BPM-derived values and controller dynamics remain unverified."},"tempoExcludedWrites":415,"modifierExcludedWrites":72,"dependencyRejectionChecks":32,"templateExcludedWrites":684,"templateRejectionChecks":21,"openScaleConflicts":[],"unnamedWritableKeys":[],"softwareChecks":"passed","hardwareValidationAdded":false,"userPhysicalActions":0}
+2026-10-23T17:35:28.9275315Z {"tests":7,"allMatch":true,"cpu":["G01:53/53.4","G02:60/61.3","G03:63/63.9","G04:60/61.3","G05:62/60.9","G06:41.5/44.3","G07:67/71.3"]}
+2026-10-23T17:35:47.3353052Z {"families":16,"types":342,"base":44.2}
+2026-10-23T17:35:47.3448457Z ##[group]Run git fetch --no-tags origin f0a99bc190fcbe3a63284335c68fad66e9f9a36c 194833788d15db09d5ab9a774940ae84fcdebaad
+2026-10-23T17:35:47.3448969Z [36;1mgit fetch --no-tags origin f0a99bc190fcbe3a63284335c68fad66e9f9a36c 194833788d15db09d5ab9a774940ae84fcdebaad[0m
+2026-10-23T17:35:47.3449293Z [36;1mpython3 tools/fm3/modifier_remaining_audit.py[0m
+2026-10-23T17:35:47.3504302Z shell: /usr/bin/bash -e {0}
+2026-10-23T17:35:47.3504469Z ##[endgroup]
+2026-10-23T17:35:49.4268577Z From https://github.com/alakahil/mcp-midi-control
+2026-10-23T17:35:49.4268967Z  * branch            f0a99bc190fcbe3a63284335c68fad66e9f9a36c -> FETCH_HEAD
+2026-10-23T17:35:49.4269276Z  * branch            194833788d15db09d5ab9a774940ae84fcdebaad -> FETCH_HEAD
+2026-10-23T17:35:49.5797386Z {"passed": true, "summary": {"inputFiles": 795, "syxLocations": 1462, "uniqueSyx": 701, "inspectedUnique": 691, "excludedUnique": 10, "modifierProfiles": 4, "auditedFields": 13, "boundedEnumFields": 2, "remainingFieldsWithoutChangedFieldPair": 11}, "deviceIO": false}
+2026-10-23T17:35:49.5888614Z ##[group]Run python3 tools/fm3/test-modifier-hw-replay.py
+2026-10-23T17:35:49.5888904Z [36;1mpython3 tools/fm3/test-modifier-hw-replay.py[0m
+2026-10-23T17:35:49.5889138Z [36;1mpython3 tools/fm3/test-modifier-minmax-hw-candidate.py[0m
+2026-10-23T17:35:49.5889404Z [36;1mnode --test tools/fm3/test-modifier-hw-candidate-syxdiff.mjs[0m
+2026-10-23T17:35:49.5944377Z shell: /usr/bin/bash -e {0}
+2026-10-23T17:35:49.5944559Z ##[endgroup]
+2026-10-23T17:35:49.9551299Z .......
+2026-10-23T17:35:49.9551761Z ----------------------------------------------------------------------
+2026-10-23T17:35:49.9552360Z Ran 7 tests in 0.308s
+2026-10-23T17:35:49.9552490Z 
+2026-10-23T17:35:49.9552567Z OK
+2026-10-23T17:35:50.2502522Z .....
+2026-10-23T17:35:50.2502983Z ----------------------------------------------------------------------
+2026-10-23T17:35:50.2503369Z Ran 5 tests in 0.241s
+2026-10-23T17:35:50.2503500Z 
+2026-10-23T17:35:50.2503575Z OK
+2026-10-23T17:35:50.2950293Z TAP version 13
+2026-10-23T17:35:56.8946148Z # Subtest: both fields use measured word while complete source/context is retained
+2026-10-23T17:35:56.8949248Z ok 1 - both fields use measured word while complete source/context is retained
+2026-10-23T17:35:56.8949604Z   ---
+2026-10-23T17:35:56.8949806Z   duration_ms: 579.311717
+2026-10-23T17:35:56.8950023Z   type: 'test'
+2026-10-23T17:35:56.8950180Z   ...
+2026-10-23T17:35:56.8983098Z # Subtest: correct checksums cannot conceal wrong 6.47 word or collateral body change
+2026-10-23T17:35:56.8992915Z ok 2 - correct checksums cannot conceal wrong 6.47 word or collateral body change
+2026-10-23T17:35:56.8993660Z   ---
+2026-10-23T17:35:56.8994027Z   duration_ms: 549.09166
+2026-10-23T17:35:56.8994431Z   type: 'test'
+2026-10-23T17:35:56.8994768Z   ...
+2026-10-23T17:35:56.8995300Z # Subtest: new candidate receipt replays across all five historical captures
+2026-10-23T17:35:56.8995983Z ok 3 - new candidate receipt replays across all five historical captures
+2026-10-23T17:35:56.8996474Z   ---
+2026-10-23T17:35:56.8996829Z   duration_ms: 5333.403879
+2026-10-23T17:35:56.8997192Z   type: 'test'
+2026-10-23T17:35:56.8997521Z   ...
+2026-10-23T17:35:56.9176368Z 1..3
+2026-10-23T17:35:56.9176641Z # tests 3
+2026-10-23T17:35:56.9176839Z # suites 0
+2026-10-23T17:35:56.9177031Z # pass 3
+2026-10-23T17:35:56.9177209Z # fail 0
+2026-10-23T17:35:56.9177389Z # cancelled 0
+2026-10-23T17:35:56.9177590Z # skipped 0
+2026-10-23T17:35:56.9177765Z # todo 0
+2026-10-23T17:35:56.9178020Z # duration_ms 6630.566912
+2026-10-23T17:35:56.9264087Z ##[group]Run python3 tools/fm3/test-offline.py --output "$RUNNER_TEMP/fm3-tests"
+2026-10-23T17:35:56.9264642Z [36;1mpython3 tools/fm3/test-offline.py --output "$RUNNER_TEMP/fm3-tests"[0m
+2026-10-23T17:35:56.9326252Z shell: /usr/bin/bash -e {0}
+2026-10-23T17:35:56.9326416Z ##[endgroup]
+2026-10-23T17:35:57.4162735Z {"uniqueContents": 2090, "filePaths": 2294}
+2026-10-23T17:35:57.6994395Z {"pointsPerField": 1001, "sha256": "468ab4c092ccf5fae9b4dda38cacb5d3a64f35fc78b850218e70588ff0a8c54b"}
+2026-10-23T17:35:58.5681853Z test-table-encoder: passed
+2026-10-23T17:36:00.6376750Z test-type-applicability: passed
+2026-10-23T17:36:02.2098628Z test-parameter-dependencies: passed
+2026-10-23T17:36:04.7316050Z test-delay-reverb-applicability: passed
+2026-10-23T17:36:06.8007862Z test-modulation-dynamics-applicability: passed
+2026-10-23T17:36:08.9712861Z test-wah-tremolo-applicability: passed
+2026-10-23T17:36:11.0907259Z test-rotary-pitch-applicability: passed
+2026-10-23T17:36:13.0107534Z test-pitch-word-codecs: passed
+2026-10-23T17:36:14.6286715Z test-pitch-custom-scales: passed
+2026-10-23T17:36:15.9462958Z test-layout: passed
+2026-10-23T17:36:16.1116678Z test-scan-records: passed
+2026-10-23T17:36:17.5812812Z test-insert-blocks: passed
+2026-10-23T17:36:19.0991838Z test-grid: passed
+2026-10-23T17:36:21.6713019Z test-grid-check-collector: passed
+2026-10-23T17:36:21.8359005Z test-cpu: passed
+2026-10-23T17:36:23.6045512Z test-generate: passed
+2026-10-23T17:36:29.4345603Z test-jb-composer: passed
+2026-10-23T17:36:30.5513736Z test-jb-composer-hardware: passed
+2026-10-23T17:36:40.2893274Z test-composer-integration: passed
+2026-10-23T17:36:45.4670123Z test-composer-scenes: passed
+2026-10-23T17:37:02.1767996Z test-composer-amp-cab: passed
+2026-10-23T17:37:03.3451431Z test-composer-amp-cab-hardware: passed
+2026-10-23T17:37:06.1680760Z test-composer-amp-levels: passed
+2026-10-23T17:37:10.0426843Z test-composer-amp-cd-levels: passed
+2026-10-23T17:37:17.0742757Z test-composer-filter: passed
+2026-10-23T17:37:25.6592697Z test-composer-filter-controls: passed
+2026-10-23T17:37:36.2487528Z test-composer-filter-rea: passed
+2026-10-23T17:37:52.5551934Z test-composer-peq-full: passed
+2026-10-23T17:37:57.5825198Z test-composer-peq-full-hardware: passed
+2026-10-23T17:38:42.6057128Z test-composer-geq-full: passed
+2026-10-23T17:38:47.8326972Z test-composer-geq-hardware: passed
+2026-10-23T17:38:53.7109581Z test-composer-enhancer-full: passed
+2026-10-23T17:38:59.0391761Z test-composer-enhancer-hardware: passed
+2026-10-23T17:39:04.3153408Z test-composer-newlook: passed
+2026-10-23T17:39:05.3818549Z test-composer-newlook-hardware: passed
+2026-10-23T17:39:06.4987930Z test-composer-newlook-filter-hardware: passed
+2026-10-23T17:39:07.6656464Z test-composer-newlook-pitch-hardware: passed
+2026-10-23T17:39:13.1930672Z test-composer-amp-level-measurements: passed
+2026-10-23T17:39:19.4224984Z test-sound-release: passed
+2026-10-23T17:39:19.6371178Z test-upstream-fm3: passed
+2026-10-23T17:39:19.7013277Z amp-history-integrity: passed
+2026-10-23T17:39:20.0161088Z test-global-scale-collector: passed
+2026-10-23T17:39:21.9836429Z test-global-scale-decode: passed
+2026-10-23T17:39:33.7311108Z test-global-scale-observations: passed
+2026-10-23T17:39:33.8955645Z test-global-scale-wire: passed
+2026-10-23T17:39:39.1719518Z test-wah-modifier: passed
+2026-10-23T17:39:52.4699784Z test-modifier-audit: passed
+2026-10-23T17:39:52.8350632Z test-modifier-context: passed
+2026-10-23T17:39:53.2515887Z test-modifier-types: passed
+2026-10-23T17:39:58.2779039Z test-wah-auto-engage: passed
+2026-10-23T17:40:03.3541330Z test-wah-damping: passed
+2026-10-23T17:40:08.4806867Z test-wah-min: passed
+2026-10-23T17:40:13.3074885Z test-wah-measured-controls: passed
+2026-10-23T17:40:21.0435818Z test-wah-minmax-exact: passed
+2026-10-23T17:40:22.3610144Z test-input-gate: passed
+2026-10-23T17:40:23.8286872Z test-volume-pan: passed
+2026-10-23T17:40:25.2462045Z test-input-volume-output: passed
+2026-10-23T17:40:34.6870851Z test-runtime-paths: passed
+2026-10-23T17:40:36.0545710Z test-grid-output: passed
+2026-10-23T17:40:37.4839235Z ##[group]Run node --test tools/fm3/test-volume-pedal-legacy.mjs
+2026-10-23T17:40:37.4839542Z [36;1mnode --test tools/fm3/test-volume-pedal-legacy.mjs[0m
+2026-10-23T17:40:37.4839814Z [36;1mnode --test tools/fm3/rea-volume-pedal/test-volume-pedal-batch.mjs[0m
+2026-10-23T17:40:37.4840113Z [36;1mbash -n tools/fm3/rea-volume-pedal/FM3_REA_VOLUME_PEDAL.command[0m
+2026-10-23T17:40:37.4893800Z shell: /usr/bin/bash -e {0}
+2026-10-23T17:40:37.4893976Z ##[endgroup]
+2026-10-23T17:40:37.5267504Z TAP version 13
+2026-10-23T17:40:37.6509235Z # Subtest: ten original old-format files replay all headers and the sole Volume Balance record
+2026-10-23T17:40:37.6511796Z ok 1 - ten original old-format files replay all headers and the sole Volume Balance record
+2026-10-23T17:40:37.6512676Z   ---
+2026-10-23T17:40:37.6512925Z   duration_ms: 23.564094
+2026-10-23T17:40:37.6513166Z   type: 'test'
+2026-10-23T17:40:37.6513369Z   ...
+2026-10-23T17:40:37.6514523Z # Subtest: production structure guard still rejects the legacy file
+2026-10-23T17:40:37.6515173Z ok 2 - production structure guard still rejects the legacy file
+2026-10-23T17:40:37.6515583Z   ---
+2026-10-23T17:40:37.6515814Z   duration_ms: 2.353141
+2026-10-23T17:40:37.6516122Z   type: 'test'
+2026-10-23T17:40:37.6516347Z   ...
+2026-10-23T17:40:37.6520658Z # Subtest: corrupt framing, checksum and truncated input are rejected
+2026-10-23T17:40:37.6521701Z ok 3 - corrupt framing, checksum and truncated input are rejected
+2026-10-23T17:40:37.6524479Z   ---
+2026-10-23T17:40:37.6524731Z   duration_ms: 0.26539
+2026-10-23T17:40:37.6525061Z   type: 'test'
+2026-10-23T17:40:37.6525279Z   ...
+2026-10-23T17:40:37.6525690Z # Subtest: valid transport cannot conceal a bad raw CRC or modifier layout
+2026-10-23T17:40:37.6526199Z ok 4 - valid transport cannot conceal a bad raw CRC or modifier layout
+2026-10-23T17:40:37.6526512Z   ---
+2026-10-23T17:40:37.6526697Z   duration_ms: 10.155193
+2026-10-23T17:40:37.6526968Z   type: 'test'
+2026-10-23T17:40:37.6527150Z   ...
+2026-10-23T17:40:37.6527482Z # Subtest: unknown format and changed evidence identity fail closed
+2026-10-23T17:40:37.6527896Z ok 5 - unknown format and changed evidence identity fail closed
+2026-10-23T17:40:37.6528163Z   ---
+2026-10-23T17:40:37.6528322Z   duration_ms: 4.261033
+2026-10-23T17:40:37.6528518Z   type: 'test'
+2026-10-23T17:40:37.6528694Z   ...
+2026-10-23T17:40:37.6606547Z 1..5
+2026-10-23T17:40:37.6606803Z # tests 5
+2026-10-23T17:40:37.6607010Z # suites 0
+2026-10-23T17:40:37.6607202Z # pass 5
+2026-10-23T17:40:37.6607385Z # fail 0
+2026-10-23T17:40:37.6607588Z # cancelled 0
+2026-10-23T17:40:37.6607789Z # skipped 0
+2026-10-23T17:40:37.6607968Z # todo 0
+2026-10-23T17:40:37.6608179Z # duration_ms 141.915778
+2026-10-23T17:40:37.6954905Z TAP version 13
+2026-10-23T17:40:37.7506467Z # Subtest: universal Mach-O: select arm64 bytes and reject invalid bounds
+2026-10-23T17:40:37.7509713Z ok 1 - universal Mach-O: select arm64 bytes and reject invalid bounds
+2026-10-23T17:40:37.7510257Z   ---
+2026-10-23T17:40:37.7510470Z   duration_ms: 1.509291
+2026-10-23T17:40:37.7510678Z   type: 'test'
+2026-10-23T17:40:37.7510914Z   ...
+2026-10-23T17:40:37.7511299Z # Subtest: text-only errors and bounded evidence never become unqualified success
+2026-10-23T17:40:37.7512238Z ok 2 - text-only errors and bounded evidence never become unqualified success
+2026-10-23T17:40:37.7512639Z   ---
+2026-10-23T17:40:37.7512826Z   duration_ms: 0.187562
+2026-10-23T17:40:37.7513075Z   type: 'test'
+2026-10-23T17:40:37.7513251Z   ...
+2026-10-23T17:40:37.7514188Z # Subtest: one session, query deduplication, bounded reference followup, retained partial flags
+2026-10-23T17:40:37.7515840Z ok 3 - one session, query deduplication, bounded reference followup, retained partial flags
+2026-10-23T17:40:37.7516325Z   ---
+2026-10-23T17:40:37.7516511Z   duration_ms: 6.638646
+2026-10-23T17:40:37.7516761Z   type: 'test'
+2026-10-23T17:40:37.7516941Z   ...
+2026-10-23T17:40:37.7520372Z # Subtest: provider failure is retained, stops analysis, exports diagnostics and closes
+2026-10-23T17:40:37.7521491Z ok 4 - provider failure is retained, stops analysis, exports diagnostics and closes
+2026-10-23T17:40:37.7521958Z   ---
+2026-10-23T17:40:37.7522322Z   duration_ms: 2.156896
+2026-10-23T17:40:37.7522513Z   type: 'test'
+2026-10-23T17:40:37.7522685Z   ...
+2026-10-23T17:40:37.7523101Z # Subtest: provider-opened identity mismatch prevents all function queries
+2026-10-23T17:40:37.7523650Z ok 5 - provider-opened identity mismatch prevents all function queries
+2026-10-23T17:40:37.7524016Z   ---
+2026-10-23T17:40:37.7524197Z   duration_ms: 1.256311
+2026-10-23T17:40:37.7524424Z   type: 'test'
+2026-10-23T17:40:37.7524608Z   ...
+2026-10-23T17:40:37.7525107Z # Subtest: Ghidra scope checks require the native decompiler and full JDK but ignore unrelated registration failures
+2026-10-23T17:40:37.7525935Z ok 6 - Ghidra scope checks require the native decompiler and full JDK but ignore unrelated registration failures
+2026-10-23T17:40:37.7526688Z   ---
+2026-10-23T17:40:37.7526873Z   duration_ms: 0.281273
+2026-10-23T17:40:37.7527099Z   type: 'test'
+2026-10-23T17:40:37.7527438Z   ...
+2026-10-23T17:40:37.7528020Z # Subtest: incorrect target bytes never pass function checkpoint validation
+2026-10-23T17:40:37.7528793Z ok 7 - incorrect target bytes never pass function checkpoint validation
+2026-10-23T17:40:37.7533476Z   ---
+2026-10-23T17:40:37.7533892Z   duration_ms: 0.545161
+2026-10-23T17:40:37.7534307Z   type: 'test'
+2026-10-23T17:40:37.7534688Z   ...
+2026-10-23T17:40:37.7535288Z # Subtest: previously analyzed functions are reused instead of re-requested as xref discoveries
+2026-10-23T17:40:37.7536105Z ok 8 - previously analyzed functions are reused instead of re-requested as xref discoveries
+2026-10-23T17:40:37.7536610Z   ---
+2026-10-23T17:40:37.7592786Z   duration_ms: 3.416221
+2026-10-23T17:40:37.7593135Z   type: 'test'
+2026-10-23T17:40:37.7593328Z   ...
+2026-10-23T17:40:37.7593768Z # Subtest: three sequential later failures stop all remaining analysis and retain each response
+2026-10-23T17:40:37.7594450Z ok 9 - three sequential later failures stop all remaining analysis and retain each response
+2026-10-23T17:40:37.7594820Z   ---
+2026-10-23T17:40:37.7595019Z   duration_ms: 2.898913
+2026-10-23T17:40:37.7595175Z   type: 'test'
+2026-10-23T17:40:37.7595295Z   ...
+2026-10-23T17:40:37.7595500Z # Subtest: an evidence export error does not prevent closing the target
+2026-10-23T17:40:37.7595787Z ok 10 - an evidence export error does not prevent closing the target
+2026-10-23T17:40:37.7595971Z   ---
+2026-10-23T17:40:37.7596085Z   duration_ms: 4.108734
+2026-10-23T17:40:37.7596218Z   type: 'test'
+2026-10-23T17:40:37.7596337Z   ...
+2026-10-23T17:40:37.7613748Z 1..10
+2026-10-23T17:40:37.7613939Z # tests 10
+2026-10-23T17:40:37.7614064Z # suites 0
+2026-10-23T17:40:37.7614178Z # pass 10
+2026-10-23T17:40:37.7614383Z # fail 0
+2026-10-23T17:40:37.7614584Z # cancelled 0
+2026-10-23T17:40:37.7614783Z # skipped 0
+2026-10-23T17:40:37.7614932Z # todo 0
+2026-10-23T17:40:37.7615068Z # duration_ms 73.439872
+2026-10-23T17:40:37.7720072Z ##[group]Run python3 tools/fm3/build-release.py --commit HEAD --tests "$RUNNER_TEMP/fm3-tests/summary.json" --output "$RUNNER_TEMP/fm3-release"
+2026-10-23T17:40:37.7720621Z [36;1mpython3 tools/fm3/build-release.py --commit HEAD --tests "$RUNNER_TEMP/fm3-tests/summary.json" --output "$RUNNER_TEMP/fm3-release"[0m
+2026-10-23T17:40:37.7775929Z shell: /usr/bin/bash -e {0}
+2026-10-23T17:40:37.7776084Z ##[endgroup]
+2026-10-23T17:40:45.4360847Z {"archive": "/home/runner/work/_temp/fm3-release/fm3-sound-architect-2-0.3.16.tar.gz", "receipt": "/home/runner/work/_temp/fm3-release/release-receipt.json", "sourceCommit": "d1904e0520d561051f77ffff7abd99b8f8dfce22", "sha256": "45d351b14beaa3c877df6bb0c774ff17bf819b47c9dbfea23628b38ffb176b4e"}
+2026-10-23T17:40:45.4507590Z ##[group]Run FM3_PACKAGE_VERSION="$(node -p "require('./plugins/fm3-sound-architect-2/plugin.json').version")"
+2026-10-23T17:40:45.4508280Z [36;1mFM3_PACKAGE_VERSION="$(node -p "require('./plugins/fm3-sound-architect-2/plugin.json').version")"[0m
+2026-10-23T17:40:45.4509002Z [36;1mtar -xzf "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2-$FM3_PACKAGE_VERSION.tar.gz" -C "$RUNNER_TEMP/fm3-release"[0m
+2026-10-23T17:40:45.4509875Z [36;1mnode "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-self-check.mjs" "$GITHUB_SHA"[0m
+2026-10-23T17:40:45.4567541Z shell: /usr/bin/bash -e {0}
+2026-10-23T17:40:45.4567710Z ##[endgroup]
+2026-10-23T17:40:50.5876724Z {"passed":true,"scope":"Files and runtime at the invoked path; host discovery must separately identify this path","path":"/home/runner/work/_temp/fm3-release/fm3-sound-architect-2","version":"0.3.16","sourceCommit":"d1904e0520d561051f77ffff7abd99b8f8dfce22","filesVerified":3180,"knownPresetSha256":"9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f","deviceIO":false}
+2026-10-23T17:40:50.6233117Z ##[group]Run actions/upload-artifact@v4
+2026-10-23T17:40:50.6233285Z with:
+2026-10-23T17:40:50.6233594Z   name: fm3-offline-d1904e0520d561051f77ffff7abd99b8f8dfce22
+2026-10-23T17:40:50.6233843Z   path: /home/runner/work/_temp/fm3-tests
+/home/runner/work/_temp/fm3-release
+
+2026-10-23T17:40:50.6234058Z   if-no-files-found: warn
+2026-10-23T17:40:50.6234191Z   compression-level: 6
+2026-10-23T17:40:50.6234312Z   overwrite: false
+2026-10-23T17:40:50.6234435Z   include-hidden-files: false
+2026-10-23T17:40:50.6234578Z ##[endgroup]
+2026-10-23T17:40:50.7379707Z (node:6865) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-23T17:40:50.7380167Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-23T17:40:51.0850729Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-23T17:40:51.0852590Z The least common ancestor is /home/runner/work/_temp. This will be the root directory of the artifact
+2026-10-23T17:40:51.0853731Z With the provided path, there will be 3242 files uploaded
+2026-10-23T17:40:51.0857675Z Artifact name is valid!
+2026-10-23T17:40:51.0858163Z Root directory input is valid!
+2026-10-23T17:40:51.4352971Z Beginning upload of artifact content to blob storage
+2026-10-23T17:40:52.0586664Z (node:6865) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-23T17:40:52.5776932Z Uploaded bytes 8388608
+2026-10-23T17:40:52.8313321Z Uploaded bytes 16777216
+2026-10-23T17:40:53.4941666Z Uploaded bytes 25165824
+2026-10-23T17:40:53.8658005Z Uploaded bytes 33554432
+2026-10-23T17:40:54.0504991Z Uploaded bytes 41943040
+2026-10-23T17:40:54.2222999Z Uploaded bytes 47263755
+2026-10-23T17:40:54.2835279Z Finished uploading artifact content to blob storage!
+2026-10-23T17:40:54.2836867Z SHA256 digest of uploaded artifact zip is be2d5d7502a925d1ea66a101b959848fd13fdb3dd493bda0e2ad5571f777ffcf
+2026-10-23T17:40:54.2838374Z Finalizing artifact upload
+2026-10-23T17:40:54.7267674Z Artifact fm3-offline-d1904e0520d561051f77ffff7abd99b8f8dfce22.zip successfully finalized. Artifact ID 12520770900
+2026-10-23T17:40:54.7268602Z Artifact fm3-offline-d1904e0520d561051f77ffff7abd99b8f8dfce22 has been successfully uploaded! Final size is 47263755 bytes. Artifact ID is 12520770900
+2026-10-23T17:40:54.7275080Z Artifact download URL: https://github.com/alakahil/mcp-midi-control/actions/runs/39996233377/artifacts/12520770900
+2026-10-23T17:40:54.7637105Z Post job cleanup.
+2026-10-23T17:40:54.8576194Z (node:6878) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-23T17:40:54.8589286Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-23T17:40:54.8758145Z Post job cleanup.
+2026-10-23T17:40:54.9504986Z [command]/usr/bin/git version
+2026-10-23T17:40:54.9553736Z git version 2.55.0
+2026-10-23T17:40:54.9611776Z Temporarily overriding HOME='/home/runner/work/_temp/18acfd19-d303-4d6f-96da-0286abdce1c0' before making global git config changes
+2026-10-23T17:40:54.9624103Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T17:40:54.9625186Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mcp-midi-control/mcp-midi-control
+2026-10-23T17:40:54.9683136Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T17:40:54.9747194Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T17:40:55.0102879Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T17:40:55.0149970Z http.https://github.com/.extraheader
+2026-10-23T17:40:55.0164618Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-23T17:40:55.0233652Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T17:40:55.0469138Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T17:40:55.0502657Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T17:40:55.0844305Z Cleaning up orphan processes
+2026-10-23T17:40:55.1112929Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

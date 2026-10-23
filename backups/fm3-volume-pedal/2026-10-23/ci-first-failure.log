@@ -1,0 +1,504 @@
+﻿2026-10-23T17:29:21.2495887Z Current runner version: '2.338.0'
+2026-10-23T17:29:21.2522974Z ##[group]Runner Image Provisioner
+2026-10-23T17:29:21.2523881Z Hosted Compute Agent
+2026-10-23T17:29:21.2524701Z Version: 20261012.601
+2026-10-23T17:29:21.2525382Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-23T17:29:21.2526725Z Build Date: 2026-10-12T17:48:21Z
+2026-10-23T17:29:21.2527524Z Worker ID: {ce65e957-5de7-452c-b053-63dbb577072e}
+2026-10-23T17:29:21.2528301Z Region: eastus
+2026-10-23T17:29:21.2528993Z Cloud: Azure
+2026-10-23T17:29:21.2529574Z ##[endgroup]
+2026-10-23T17:29:21.2531629Z ##[group]Operating System
+2026-10-23T17:29:21.2532357Z Ubuntu
+2026-10-23T17:29:21.2532918Z 24.04.5
+2026-10-23T17:29:21.2533595Z LTS
+2026-10-23T17:29:21.2534149Z ##[endgroup]
+2026-10-23T17:29:21.2534767Z ##[group]Runner Image
+2026-10-23T17:29:21.2535421Z Image: ubuntu-24.04
+2026-10-23T17:29:21.2536047Z Version: 20261012.334.1
+2026-10-23T17:29:21.2537690Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-23T17:29:21.2539442Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-23T17:29:21.2540524Z ##[endgroup]
+2026-10-23T17:29:21.2541794Z ##[group]GITHUB_TOKEN Permissions
+2026-10-23T17:29:21.2544024Z Contents: read
+2026-10-23T17:29:21.2544663Z Metadata: read
+2026-10-23T17:29:21.2545935Z ##[endgroup]
+2026-10-23T17:29:21.2548585Z Secret source: Actions
+2026-10-23T17:29:21.2549734Z Cache mode: write
+2026-10-23T17:29:21.2550726Z Prepare workflow directory
+2026-10-23T17:29:21.2898561Z Prepare all required actions
+2026-10-23T17:29:21.2949860Z Getting action download info
+2026-10-23T17:29:21.5668205Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-23T17:29:21.6759797Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-23T17:29:21.7825989Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-23T17:29:21.9957295Z Complete job name: offline
+2026-10-23T17:29:22.0970681Z ##[group]Run actions/checkout@v4
+2026-10-23T17:29:22.0971743Z with:
+2026-10-23T17:29:22.0972247Z   repository: alakahil/mcp-midi-control
+2026-10-23T17:29:22.0977752Z   token: ***
+2026-10-23T17:29:22.0978259Z   ssh-strict: true
+2026-10-23T17:29:22.0978733Z   ssh-user: git
+2026-10-23T17:29:22.0979217Z   persist-credentials: true
+2026-10-23T17:29:22.0979746Z   clean: true
+2026-10-23T17:29:22.0980229Z   sparse-checkout-cone-mode: true
+2026-10-23T17:29:22.0980792Z   fetch-depth: 1
+2026-10-23T17:29:22.0981254Z   fetch-tags: false
+2026-10-23T17:29:22.0981731Z   show-progress: true
+2026-10-23T17:29:22.0982209Z   lfs: false
+2026-10-23T17:29:22.0982653Z   submodules: false
+2026-10-23T17:29:22.0983132Z   set-safe-directory: true
+2026-10-23T17:29:22.0983671Z   allow-unsafe-pr-checkout: false
+2026-10-23T17:29:22.0984554Z ##[endgroup]
+2026-10-23T17:29:22.2068517Z Syncing repository: alakahil/mcp-midi-control
+2026-10-23T17:29:22.2071796Z ##[group]Getting Git version info
+2026-10-23T17:29:22.2073160Z Working directory is '/home/runner/work/mcp-midi-control/mcp-midi-control'
+2026-10-23T17:29:22.2075026Z [command]/usr/bin/git version
+2026-10-23T17:29:22.2134309Z git version 2.55.0
+2026-10-23T17:29:22.2164388Z ##[endgroup]
+2026-10-23T17:29:22.2184743Z Temporarily overriding HOME='/home/runner/work/_temp/47311bd1-8848-4532-ba11-cfe3726771c7' before making global git config changes
+2026-10-23T17:29:22.2187631Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T17:29:22.2193058Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mcp-midi-control/mcp-midi-control
+2026-10-23T17:29:22.2273813Z Deleting the contents of '/home/runner/work/mcp-midi-control/mcp-midi-control'
+2026-10-23T17:29:22.2282615Z ##[group]Initializing the repository
+2026-10-23T17:29:22.2286854Z [command]/usr/bin/git init /home/runner/work/mcp-midi-control/mcp-midi-control
+2026-10-23T17:29:22.2423083Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-23T17:29:22.2427904Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-23T17:29:22.2430022Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-23T17:29:22.2431562Z hint: call:
+2026-10-23T17:29:22.2432449Z hint:
+2026-10-23T17:29:22.2433513Z hint: 	git config --global init.defaultBranch <name>
+2026-10-23T17:29:22.2434722Z hint:
+2026-10-23T17:29:22.2435820Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-23T17:29:22.2437795Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-23T17:29:22.2439303Z hint:
+2026-10-23T17:29:22.2440088Z hint: 	git branch -m <name>
+2026-10-23T17:29:22.2440997Z hint:
+2026-10-23T17:29:22.2442192Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-23T17:29:22.2444291Z Initialized empty Git repository in /home/runner/work/mcp-midi-control/mcp-midi-control/.git/
+2026-10-23T17:29:22.2447862Z [command]/usr/bin/git remote add origin https://github.com/alakahil/mcp-midi-control
+2026-10-23T17:29:22.2506233Z ##[endgroup]
+2026-10-23T17:29:22.2508534Z ##[group]Disabling automatic garbage collection
+2026-10-23T17:29:22.2512344Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-23T17:29:22.2569820Z ##[endgroup]
+2026-10-23T17:29:22.2571264Z ##[group]Setting up auth
+2026-10-23T17:29:22.2572601Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T17:29:22.2633742Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T17:29:22.3024849Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T17:29:22.3072313Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T17:29:22.3371957Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T17:29:22.3427775Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T17:29:22.3688738Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-23T17:29:22.3747860Z ##[endgroup]
+2026-10-23T17:29:22.3748904Z ##[group]Fetching the repository
+2026-10-23T17:29:22.3759077Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0415c1bc9b23fef64848e49dc87180674c847720:refs/remotes/pull/24/merge
+2026-10-23T17:29:24.1647570Z From https://github.com/alakahil/mcp-midi-control
+2026-10-23T17:29:24.1648880Z  * [new ref]         0415c1bc9b23fef64848e49dc87180674c847720 -> pull/24/merge
+2026-10-23T17:29:24.1653313Z ##[endgroup]
+2026-10-23T17:29:24.1654321Z ##[group]Determining the checkout info
+2026-10-23T17:29:24.1656362Z ##[endgroup]
+2026-10-23T17:29:24.1743470Z [command]/usr/bin/git sparse-checkout disable
+2026-10-23T17:29:24.1763364Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-23T17:29:24.1765574Z ##[group]Checking out the ref
+2026-10-23T17:29:24.1768560Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/24/merge
+2026-10-23T17:29:24.8471833Z Note: switching to 'refs/remotes/pull/24/merge'.
+2026-10-23T17:29:24.8473195Z 
+2026-10-23T17:29:24.8474140Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-23T17:29:24.8476812Z changes and commit them, and you can discard any commits you make in this
+2026-10-23T17:29:24.8479183Z state without impacting any branches by switching back to a branch.
+2026-10-23T17:29:24.8480545Z 
+2026-10-23T17:29:24.8481510Z If you want to create a new branch to retain commits you create, you may
+2026-10-23T17:29:24.8484042Z do so (now or later) by using -c with the switch command. Example:
+2026-10-23T17:29:24.8485385Z 
+2026-10-23T17:29:24.8485979Z   git switch -c <new-branch-name>
+2026-10-23T17:29:24.8487117Z 
+2026-10-23T17:29:24.8487724Z Or undo this operation with:
+2026-10-23T17:29:24.8488640Z 
+2026-10-23T17:29:24.8489151Z   git switch -
+2026-10-23T17:29:24.8489887Z 
+2026-10-23T17:29:24.8491071Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-23T17:29:24.8492757Z 
+2026-10-23T17:29:24.8494669Z HEAD is now at 0415c1b Merge d2e1627941605802f07a6c9933f46616c9a809bc into b57e01cfdfd43a77db5c1162d6ea51ad28692bb3
+2026-10-23T17:29:24.8510080Z ##[endgroup]
+2026-10-23T17:29:24.8562736Z [command]/usr/bin/git log -1 --format=%H
+2026-10-23T17:29:24.8594599Z 0415c1bc9b23fef64848e49dc87180674c847720
+2026-10-23T17:29:24.9013837Z ##[group]Run actions/setup-node@v4
+2026-10-23T17:29:24.9015192Z with:
+2026-10-23T17:29:24.9016102Z   node-version: 22
+2026-10-23T17:29:24.9017350Z   always-auth: false
+2026-10-23T17:29:24.9018363Z   check-latest: false
+2026-10-23T17:29:24.9029376Z   token: ***
+2026-10-23T17:29:24.9030328Z ##[endgroup]
+2026-10-23T17:29:25.0546802Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-23T17:29:25.0553308Z (node:2327) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-23T17:29:25.0557120Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-23T17:29:25.0559978Z ##[group]Environment details
+2026-10-23T17:29:25.4373728Z node: v22.23.3
+2026-10-23T17:29:25.4374545Z npm: 10.9.9
+2026-10-23T17:29:25.4375078Z yarn: 1.22.22
+2026-10-23T17:29:25.4376376Z ##[endgroup]
+2026-10-23T17:29:25.4539678Z ##[group]Run python3 tools/fm3/test-parameter-evidence.py
+2026-10-23T17:29:25.4540376Z [36;1mpython3 tools/fm3/test-parameter-evidence.py[0m
+2026-10-23T17:29:25.4540884Z [36;1mpython3 tools/fm3/test-six-field-resolution.py[0m
+2026-10-23T17:29:25.4541352Z [36;1mpython3 tools/fm3/six_field_resolution.py[0m
+2026-10-23T17:29:25.4541836Z [36;1mpython3 tools/fm3/test-type-applicability.py[0m
+2026-10-23T17:29:25.4542284Z [36;1mpython3 tools/fm3/type_applicability.py[0m
+2026-10-23T17:29:25.4542750Z [36;1mpython3 tools/fm3/test-parameter-dependencies.py[0m
+2026-10-23T17:29:25.4543230Z [36;1mpython3 tools/fm3/parameter_dependencies.py[0m
+2026-10-23T17:29:25.4543744Z [36;1mpython3 tools/fm3/test-delay-reverb-applicability.py[0m
+2026-10-23T17:29:25.4544264Z [36;1mpython3 tools/fm3/delay_reverb_applicability.py[0m
+2026-10-23T17:29:25.4544831Z [36;1mpython3 tools/fm3/test-modulation-dynamics-applicability.py[0m
+2026-10-23T17:29:25.4545488Z [36;1mpython3 tools/fm3/modulation_dynamics_applicability.py[0m
+2026-10-23T17:29:25.4545989Z [36;1mpython3 tools/fm3/test-pitch-word-codecs.py[0m
+2026-10-23T17:29:25.4546429Z [36;1mpython3 tools/fm3/test-pitch-display.py[0m
+2026-10-23T17:29:25.4547048Z [36;1mpython3 tools/fm3/pitch_display.py[0m
+2026-10-23T17:29:25.4547497Z [36;1mpython3 tools/fm3/test-pitch-custom-scales.py[0m
+2026-10-23T17:29:25.4547945Z [36;1mpython3 tools/fm3/pitch_custom_scales.py[0m
+2026-10-23T17:29:25.4548366Z [36;1mpython3 tools/fm3/global_scale_wire.py[0m
+2026-10-23T17:29:25.4548777Z [36;1mpython3 tools/fm3/pitch_word_codecs.py[0m
+2026-10-23T17:29:25.4549249Z [36;1mpython3 tools/fm3/test-rotary-pitch-applicability.py[0m
+2026-10-23T17:29:25.4549757Z [36;1mpython3 tools/fm3/rotary_pitch_applicability.py[0m
+2026-10-23T17:29:25.4550205Z [36;1mnode --test tools/fm3/test-modifier-damping.mjs[0m
+2026-10-23T17:29:25.4550627Z [36;1mnode --test tools/fm3/test-modifier-min.mjs[0m
+2026-10-23T17:29:25.4551046Z [36;1mnode --test tools/fm3/test-modifier-batch.mjs[0m
+2026-10-23T17:29:25.4551477Z [36;1mpython3 tools/fm3/modifier_quantization_audit.py[0m
+2026-10-23T17:29:25.4551929Z [36;1mpython3 tools/fm3/test-modifier-value-path.py[0m
+2026-10-23T17:29:25.4552347Z [36;1mpython3 tools/fm3/test-modifier-sharc.py[0m
+2026-10-23T17:29:25.4552742Z [36;1mpython3 tools/fm3/input_volume_evidence.py[0m
+2026-10-23T17:29:25.4553440Z [36;1mnode tools/fm3/volume-device-evidence.mjs[0m
+2026-10-23T17:29:25.4553928Z [36;1mnode tools/fm3/input-volume-audit.mjs[0m
+2026-10-23T17:29:25.4554351Z [36;1mnode tools/fm3/test-input-volume-comparison.mjs[0m
+2026-10-23T17:29:25.4554776Z [36;1mpython3 tools/fm3/parameter-evidence.py[0m
+2026-10-23T17:29:25.4555184Z [36;1mpython3 tools/fm3/metadata_reconciliation.py[0m
+2026-10-23T17:29:25.4555575Z [36;1mnode tools/fm3/encoder-matrix.mjs[0m
+2026-10-23T17:29:25.4555961Z [36;1mnode tools/fm3/grid-check-ingest.mjs[0m
+2026-10-23T17:29:25.4557301Z [36;1mnode tools/fm3/cpu-sweep-ingest.mjs plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cpu-sweep-20261023-results.jsonl[0m
+2026-10-23T17:29:25.4820061Z shell: /usr/bin/bash -e {0}
+2026-10-23T17:29:25.4820640Z ##[endgroup]
+2026-10-23T17:29:26.5794507Z ..............
+2026-10-23T17:29:26.5795499Z ----------------------------------------------------------------------
+2026-10-23T17:29:26.5796162Z Ran 14 tests in 0.974s
+2026-10-23T17:29:26.5796400Z 
+2026-10-23T17:29:26.5796955Z OK
+2026-10-23T17:29:26.8073910Z ......
+2026-10-23T17:29:26.8074869Z ----------------------------------------------------------------------
+2026-10-23T17:29:26.8075639Z Ran 6 tests in 0.163s
+2026-10-23T17:29:26.8075898Z 
+2026-10-23T17:29:26.8076059Z OK
+2026-10-23T17:29:26.9037419Z {"fieldsResolved": 6, "namedActiveChorusFields": 3, "blockedHiddenDriveFields": 1, "cabDisplayRange": [0, 10], "cacheRecordsReplayed": 2509, "editorReplayed": false, "newHardwareMeasurements": false}
+2026-10-23T17:29:27.1488469Z ....
+2026-10-23T17:29:27.1490442Z ----------------------------------------------------------------------
+2026-10-23T17:29:27.1491678Z Ran 4 tests in 0.181s
+2026-10-23T17:29:27.1492040Z 
+2026-10-23T17:29:27.1492272Z OK
+2026-10-23T17:29:27.2514058Z {"families": {"CHORUS": {"types": 27, "parameters": 32, "restricted": 16}, "FUZZ": {"types": 87, "parameters": 44, "restricted": 16}}, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:29:27.5292591Z ....
+2026-10-23T17:29:27.5293715Z ----------------------------------------------------------------------
+2026-10-23T17:29:27.5294630Z Ran 4 tests in 0.215s
+2026-10-23T17:29:27.5294898Z 
+2026-10-23T17:29:27.5295114Z OK
+2026-10-23T17:29:27.6271112Z {"tempoPairs": 21, "serializedModifierRecords": 32, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:29:27.9907747Z .....
+2026-10-23T17:29:27.9909311Z ----------------------------------------------------------------------
+2026-10-23T17:29:27.9917437Z Ran 5 tests in 0.297s
+2026-10-23T17:29:27.9917688Z 
+2026-10-23T17:29:27.9917822Z OK
+2026-10-23T17:29:28.0985061Z {"families": {"DELAY": {"models": 27, "parameters": 89, "selectorValues": [0, 1, 2, 3, 4, 5, 6, 7], "xmlOnlySelectorValues": []}, "REVERB": {"models": 79, "parameters": 71, "selectorValues": [0, 1, 2, 3, 4, 5, 6, 7, 8], "xmlOnlySelectorValues": [9, 10]}}, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:29:28.4695622Z ........
+2026-10-23T17:29:28.4696932Z ----------------------------------------------------------------------
+2026-10-23T17:29:28.4698040Z Ran 8 tests in 0.296s
+2026-10-23T17:29:28.4698464Z 
+2026-10-23T17:29:28.4698733Z OK
+2026-10-23T17:29:28.5813467Z {"families": {"FLANGER": {"models": 31, "parameters": 33, "selectorPid": 0}, "PHASER": {"models": 17, "parameters": 35, "selectorPid": 17}, "COMP": {"models": 19, "parameters": 37, "selectorPid": 12}, "WAH": {"models": 9, "parameters": 25, "selectorPid": 0}, "TREMOLO": {"models": 7, "parameters": 22, "selectorPid": 0}}, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:29:29.0562000Z ......
+2026-10-23T17:29:29.0562931Z ----------------------------------------------------------------------
+2026-10-23T17:29:29.0563736Z Ran 6 tests in 0.317s
+2026-10-23T17:29:29.0564094Z 
+2026-10-23T17:29:29.0564360Z OK
+2026-10-23T17:29:29.1822040Z ..
+2026-10-23T17:29:29.1822906Z ----------------------------------------------------------------------
+2026-10-23T17:29:29.1824278Z Ran 2 tests in 0.057s
+2026-10-23T17:29:29.1824608Z 
+2026-10-23T17:29:29.1824805Z OK
+2026-10-23T17:29:29.2794687Z {"fields": ["71", "72", "74"], "firmwareReplayed": false, "deviceIO": false}
+2026-10-23T17:29:29.5123217Z ...
+2026-10-23T17:29:29.5123874Z ----------------------------------------------------------------------
+2026-10-23T17:29:29.5124495Z Ran 3 tests in 0.168s
+2026-10-23T17:29:29.5124716Z 
+2026-10-23T17:29:29.5124846Z OK
+2026-10-23T17:29:29.5955665Z {"noteFields": 7, "globalAddresses": 384, "firmwareReplayed": false, "deviceIO": false}
+2026-10-23T17:29:29.6444353Z {"firmwareReplayed": false, "boundedFirmwareBytes": 324, "numericSerializerTraced": true, "endToEndStaticVerified": false, "nonzeroHardwareVerified": false, "deviceIO": false}
+2026-10-23T17:29:29.7973149Z {"fields": 34, "signed": 20, "counts": 5, "nonzeroEnums": 2, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:29:43.9480687Z .....
+2026-10-23T17:29:43.9481956Z ----------------------------------------------------------------------
+2026-10-23T17:29:43.9482666Z Ran 5 tests in 14.086s
+2026-10-23T17:29:43.9482929Z 
+2026-10-23T17:29:43.9483073Z OK
+2026-10-23T17:29:47.4628934Z {"families": {"ROTARY": {"models": 0, "parameters": 21, "metadataConflicts": 0}, "PITCH": {"models": 16, "parameters": 114, "metadataConflicts": 0}}, "editorReplayed": false, "deviceIO": false}
+2026-10-23T17:29:47.5139998Z TAP version 13
+2026-10-23T17:29:48.9212421Z # Subtest: isolated synthetic 0→1 identifies bytes without claiming label/device evidence
+2026-10-23T17:29:48.9216975Z ok 1 - isolated synthetic 0→1 identifies bytes without claiming label/device evidence
+2026-10-23T17:29:48.9218256Z   ---
+2026-10-23T17:29:48.9219375Z   duration_ms: 57.027682
+2026-10-23T17:29:48.9220150Z   type: 'test'
+2026-10-23T17:29:48.9220765Z   ...
+2026-10-23T17:29:48.9221460Z # Subtest: unchanged export is not a changed-field pair
+2026-10-23T17:29:48.9225130Z ok 2 - unchanged export is not a changed-field pair
+2026-10-23T17:29:48.9226811Z   ---
+2026-10-23T17:29:48.9227242Z   duration_ms: 25.514788
+2026-10-23T17:29:48.9227656Z   type: 'test'
+2026-10-23T17:29:48.9228019Z   ...
+2026-10-23T17:29:48.9228840Z # Subtest: unanticipated uint16 codes retained as observations, not relabelled Linear
+2026-10-23T17:29:48.9231555Z ok 3 - unanticipated uint16 codes retained as observations, not relabelled Linear
+2026-10-23T17:29:48.9232731Z   ---
+2026-10-23T17:29:48.9232961Z   duration_ms: 70.693935
+2026-10-23T17:29:48.9233263Z   type: 'test'
+2026-10-23T17:29:48.9233477Z   ...
+2026-10-23T17:29:48.9234630Z # Subtest: all 24 other words and distant body changes are rejected
+2026-10-23T17:29:48.9236053Z ok 4 - all 24 other words and distant body changes are rejected
+2026-10-23T17:29:48.9236851Z   ---
+2026-10-23T17:29:48.9258145Z   duration_ms: 558.195703
+2026-10-23T17:29:48.9258490Z   type: 'test'
+2026-10-23T17:29:48.9258719Z   ...
+2026-10-23T17:29:48.9292182Z # Subtest: the real MED SPD export is an unrelated Auto Engage change
+2026-10-23T17:29:48.9307773Z ok 5 - the real MED SPD export is an unrelated Auto Engage change
+2026-10-23T17:29:48.9308776Z   ---
+2026-10-23T17:29:48.9309282Z   duration_ms: 16.85034
+2026-10-23T17:29:48.9309853Z   type: 'test'
+2026-10-23T17:29:48.9310459Z   ...
+2026-10-23T17:29:48.9311286Z # Subtest: renamed preset is rejected even with isolated damping body change
+2026-10-23T17:29:48.9312428Z ok 6 - renamed preset is rejected even with isolated damping body change
+2026-10-23T17:29:48.9313227Z   ---
+2026-10-23T17:29:48.9313740Z   duration_ms: 19.762921
+2026-10-23T17:29:48.9314286Z   type: 'test'
+2026-10-23T17:29:48.9314764Z   ...
+2026-10-23T17:29:48.9315545Z # Subtest: wrong baseline, truncated and corrupt captures are rejected
+2026-10-23T17:29:48.9316846Z ok 7 - wrong baseline, truncated and corrupt captures are rejected
+2026-10-23T17:29:48.9317648Z   ---
+2026-10-23T17:29:48.9318129Z   duration_ms: 7.507841
+2026-10-23T17:29:48.9318659Z   type: 'test'
+2026-10-23T17:29:48.9319130Z   ...
+2026-10-23T17:29:48.9319826Z # Subtest: CLI reads input, emits JSON and creates no files
+2026-10-23T17:29:48.9321245Z ok 8 - CLI reads input, emits JSON and creates no files
+2026-10-23T17:29:48.9321915Z   ---
+2026-10-23T17:29:48.9322396Z   duration_ms: 438.740716
+2026-10-23T17:29:48.9322935Z   type: 'test'
+2026-10-23T17:29:48.9323409Z   ...
+2026-10-23T17:29:48.9540608Z 1..8
+2026-10-23T17:29:48.9540901Z # tests 8
+2026-10-23T17:29:48.9547937Z # suites 0
+2026-10-23T17:29:48.9548369Z # pass 8
+2026-10-23T17:29:48.9548746Z # fail 0
+2026-10-23T17:29:48.9549130Z # cancelled 0
+2026-10-23T17:29:48.9549544Z # skipped 0
+2026-10-23T17:29:48.9549923Z # todo 0
+2026-10-23T17:29:48.9550360Z # duration_ms 1453.023095
+2026-10-23T17:29:49.0022454Z TAP version 13
+2026-10-23T17:29:50.5439812Z # Subtest: two synthetic rounding hypotheses remain unverified observations
+2026-10-23T17:29:50.5447370Z ok 1 - two synthetic rounding hypotheses remain unverified observations
+2026-10-23T17:29:50.5448194Z   ---
+2026-10-23T17:29:50.5448595Z   duration_ms: 89.724434
+2026-10-23T17:29:50.5449026Z   type: 'test'
+2026-10-23T17:29:50.5449394Z   ...
+2026-10-23T17:29:50.5455082Z # Subtest: unchanged baseline does not prove a Min change
+2026-10-23T17:29:50.5457538Z ok 2 - unchanged baseline does not prove a Min change
+2026-10-23T17:29:50.5458403Z   ---
+2026-10-23T17:29:50.5458653Z   duration_ms: 23.809752
+2026-10-23T17:29:50.5458918Z   type: 'test'
+2026-10-23T17:29:50.5459137Z   ...
+2026-10-23T17:29:50.5461216Z # Subtest: unexpected uint16 codes retained, never converted into a measured display
+2026-10-23T17:29:50.5464752Z ok 3 - unexpected uint16 codes retained, never converted into a measured display
+2026-10-23T17:29:50.5465738Z   ---
+2026-10-23T17:29:50.5465968Z   duration_ms: 120.005318
+2026-10-23T17:29:50.5466227Z   type: 'test'
+2026-10-23T17:29:50.5467109Z   ...
+2026-10-23T17:29:50.5468563Z # Subtest: all other modifier words, scene and distant body changes are rejected
+2026-10-23T17:29:50.5470146Z ok 4 - all other modifier words, scene and distant body changes are rejected
+2026-10-23T17:29:50.5470668Z   ---
+2026-10-23T17:29:50.5470893Z   duration_ms: 593.501699
+2026-10-23T17:29:50.5471133Z   type: 'test'
+2026-10-23T17:29:50.5471329Z   ...
+2026-10-23T17:29:50.5497375Z # Subtest: earlier real captures are collateral changes, not new Min evidence
+2026-10-23T17:29:50.5498431Z ok 5 - earlier real captures are collateral changes, not new Min evidence
+2026-10-23T17:29:50.5527035Z   ---
+2026-10-23T17:29:50.5547145Z   duration_ms: 35.093639
+2026-10-23T17:29:50.5555397Z   type: 'test'
+2026-10-23T17:29:50.5555791Z   ...
+2026-10-23T17:29:50.5556308Z # Subtest: renamed preset with a Min change is rejected
+2026-10-23T17:29:50.5557316Z ok 6 - renamed preset with a Min change is rejected
+2026-10-23T17:29:50.5557827Z   ---
+2026-10-23T17:29:50.5558183Z   duration_ms: 22.012785
+2026-10-23T17:29:50.5558565Z   type: 'test'
+2026-10-23T17:29:50.5558866Z   ...
+2026-10-23T17:29:50.5559498Z # Subtest: wrong baseline, truncation and corruption fail closed
+2026-10-23T17:29:50.5560293Z ok 7 - wrong baseline, truncation and corruption fail closed
+2026-10-23T17:29:50.5560800Z   ---
+2026-10-23T17:29:50.5561112Z   duration_ms: 7.132421
+2026-10-23T17:29:50.5561383Z   type: 'test'
+2026-10-23T17:29:50.5561587Z   ...
+2026-10-23T17:29:50.5561982Z # Subtest: CLI emits a report without modifying inputs or creating files
+2026-10-23T17:29:50.5562725Z ok 8 - CLI emits a report without modifying inputs or creating files
+2026-10-23T17:29:50.5563278Z   ---
+2026-10-23T17:29:50.5563642Z   duration_ms: 432.122476
+2026-10-23T17:29:50.5564045Z   type: 'test'
+2026-10-23T17:29:50.5564422Z   ...
+2026-10-23T17:29:50.5756235Z 1..8
+2026-10-23T17:29:50.5756903Z # tests 8
+2026-10-23T17:29:50.5757281Z # suites 0
+2026-10-23T17:29:50.5757647Z # pass 8
+2026-10-23T17:29:50.5757997Z # fail 0
+2026-10-23T17:29:50.5758383Z # cancelled 0
+2026-10-23T17:29:50.5758790Z # skipped 0
+2026-10-23T17:29:50.5759225Z # todo 0
+2026-10-23T17:29:50.5759961Z # duration_ms 1586.080462
+2026-10-23T17:29:50.6232310Z TAP version 13
+2026-10-23T17:29:52.3027686Z # Subtest: ten distinct synthetic changes are one unreviewed batch, never ten experiments
+2026-10-23T17:29:52.3035678Z ok 1 - ten distinct synthetic changes are one unreviewed batch, never ten experiments
+2026-10-23T17:29:52.3036932Z   ---
+2026-10-23T17:29:52.3037417Z   duration_ms: 56.374125
+2026-10-23T17:29:52.3037956Z   type: 'test'
+2026-10-23T17:29:52.3038538Z   ...
+2026-10-23T17:29:52.3039430Z # Subtest: each selected word is reported separately, including actual missing changes
+2026-10-23T17:29:52.3055705Z ok 2 - each selected word is reported separately, including actual missing changes
+2026-10-23T17:29:52.3056824Z   ---
+2026-10-23T17:29:52.3057223Z   duration_ms: 231.634595
+2026-10-23T17:29:52.3057667Z   type: 'test'
+2026-10-23T17:29:52.3058021Z   ...
+2026-10-23T17:29:52.3058724Z # Subtest: raw extremes remain observations, not accepted codecs
+2026-10-23T17:29:52.3059708Z ok 3 - raw extremes remain observations, not accepted codecs
+2026-10-23T17:29:52.3060338Z   ---
+2026-10-23T17:29:52.3060696Z   duration_ms: 87.401807
+2026-10-23T17:29:52.3061130Z   type: 'test'
+2026-10-23T17:29:52.3061510Z   ...
+2026-10-23T17:29:52.3062278Z # Subtest: unselected words, other records, scene and effect data fail closed
+2026-10-23T17:29:52.3063426Z ok 4 - unselected words, other records, scene and effect data fail closed
+2026-10-23T17:29:52.3064166Z   ---
+2026-10-23T17:29:52.3064520Z   duration_ms: 383.772964
+2026-10-23T17:29:52.3064930Z   type: 'test'
+2026-10-23T17:29:52.3065288Z   ...
+2026-10-23T17:29:52.3065839Z # Subtest: renamed preset is a collateral change
+2026-10-23T17:29:52.3077877Z ok 5 - renamed preset is a collateral change
+2026-10-23T17:29:52.3078639Z   ---
+2026-10-23T17:29:52.3079294Z   duration_ms: 20.384844
+2026-10-23T17:29:52.3079876Z   type: 'test'
+2026-10-23T17:29:52.3080764Z   ...
+2026-10-23T17:29:52.3081883Z # Subtest: baseline is not another observation and wrong baseline is rejected
+2026-10-23T17:29:52.3083688Z ok 6 - baseline is not another observation and wrong baseline is rejected
+2026-10-23T17:29:52.3084348Z   ---
+2026-10-23T17:29:52.3084682Z   duration_ms: 17.18878
+2026-10-23T17:29:52.3086703Z   type: 'test'
+2026-10-23T17:29:52.3087069Z   ...
+2026-10-23T17:29:52.3087581Z # Subtest: corrupted and truncated dumps fail closed
+2026-10-23T17:29:52.3088207Z ok 7 - corrupted and truncated dumps fail closed
+2026-10-23T17:29:52.3096873Z   ---
+2026-10-23T17:29:52.3097290Z   duration_ms: 7.825889
+2026-10-23T17:29:52.3097660Z   type: 'test'
+2026-10-23T17:29:52.3097960Z   ...
+2026-10-23T17:29:52.3098415Z # Subtest: CLI only reads input and emits JSON
+2026-10-23T17:29:52.3099057Z ok 8 - CLI only reads input and emits JSON
+2026-10-23T17:29:52.3099496Z   ---
+2026-10-23T17:29:52.3099810Z   duration_ms: 252.461231
+2026-10-23T17:29:52.3100181Z   type: 'test'
+2026-10-23T17:29:52.3100501Z   ...
+2026-10-23T17:29:52.3101416Z # Subtest: actual batch A replays the retained comparison without promoting screenshot or codec claims
+2026-10-23T17:29:52.3102782Z ok 9 - actual batch A replays the retained comparison without promoting screenshot or codec claims
+2026-10-23T17:29:52.3103571Z   ---
+2026-10-23T17:29:52.3103879Z   duration_ms: 18.84807
+2026-10-23T17:29:52.3104227Z   type: 'test'
+2026-10-23T17:29:52.3104529Z   ...
+2026-10-23T17:29:52.3105271Z # Subtest: batch B is pinned to actual A and preserves the actual screenshot baseline values
+2026-10-23T17:29:52.3106401Z ok 10 - batch B is pinned to actual A and preserves the actual screenshot baseline values
+2026-10-23T17:29:52.3107356Z   ---
+2026-10-23T17:29:52.3107651Z   duration_ms: 51.84656
+2026-10-23T17:29:52.3108008Z   type: 'test'
+2026-10-23T17:29:52.3108300Z   ...
+2026-10-23T17:29:52.3109142Z # Subtest: CLI accepts an explicit B plan without writing or promoting synthetic B to device evidence
+2026-10-23T17:29:52.3110447Z ok 11 - CLI accepts an explicit B plan without writing or promoting synthetic B to device evidence
+2026-10-23T17:29:52.3111192Z   ---
+2026-10-23T17:29:52.3111505Z   duration_ms: 250.859377
+2026-10-23T17:29:52.3111858Z   type: 'test'
+2026-10-23T17:29:52.3112199Z   ...
+2026-10-23T17:29:52.3137768Z # Subtest: actual B has nine new points and unchanged Max, never a captured Max 5.00
+2026-10-23T17:29:52.3139396Z ok 12 - actual B has nine new points and unchanged Max, never a captured Max 5.00
+2026-10-23T17:29:52.3140163Z   ---
+2026-10-23T17:29:52.3140519Z   duration_ms: 18.91216
+2026-10-23T17:29:52.3141003Z   type: 'test'
+2026-10-23T17:29:52.3141394Z   ...
+2026-10-23T17:29:52.3142285Z # Subtest: targeted Max completion pins B and rejects another baseline or any collateral B-field edit
+2026-10-23T17:29:52.3143635Z ok 13 - targeted Max completion pins B and rejects another baseline or any collateral B-field edit
+2026-10-23T17:29:52.3144499Z   ---
+2026-10-23T17:29:52.3144852Z   duration_ms: 46.320412
+2026-10-23T17:29:52.3145301Z   type: 'test'
+2026-10-23T17:29:52.3145679Z   ...
+2026-10-23T17:29:52.3146398Z # Subtest: actual Max completion changes only the measured word to 32784
+2026-10-23T17:29:52.3189491Z ok 14 - actual Max completion changes only the measured word to 32784
+2026-10-23T17:29:52.3190173Z   ---
+2026-10-23T17:29:52.3190546Z   duration_ms: 17.500599
+2026-10-23T17:29:52.3190947Z   type: 'test'
+2026-10-23T17:29:52.3191274Z   ...
+2026-10-23T17:29:52.3397069Z 1..14
+2026-10-23T17:29:52.3397550Z # tests 14
+2026-10-23T17:29:52.3417724Z # suites 0
+2026-10-23T17:29:52.3418127Z # pass 14
+2026-10-23T17:29:52.3420258Z # fail 0
+2026-10-23T17:29:52.3420637Z # cancelled 0
+2026-10-23T17:29:52.3421026Z # skipped 0
+2026-10-23T17:29:52.3421382Z # todo 0
+2026-10-23T17:29:52.3421770Z # duration_ms 1728.952607
+2026-10-23T17:29:52.8808994Z {"changedPoints": 21, "ordinaryPoints": 18, "ordinaryNearestMatches": 18, "ordinaryFloat32NearestMatches": 18, "ordinaryFloorMatches": 10, "minMaxPoints": 3, "minMaxNearestMatches": 0, "allDisplayBinsIncludeMeasuredRaw": true, "nativeOriginalRechecked": false, "newPhysicalExports": 0, "deviceIO": false}
+2026-10-23T17:29:52.9467708Z .....
+2026-10-23T17:29:52.9468556Z ----------------------------------------------------------------------
+2026-10-23T17:29:52.9469341Z Ran 5 tests in 0.001s
+2026-10-23T17:29:52.9469682Z 
+2026-10-23T17:29:52.9469853Z OK
+2026-10-23T17:29:53.0163736Z .....
+2026-10-23T17:29:53.0164608Z ----------------------------------------------------------------------
+2026-10-23T17:29:53.0165254Z Ran 5 tests in 0.000s
+2026-10-23T17:29:53.0165446Z 
+2026-10-23T17:29:53.0165561Z OK
+2026-10-23T17:29:53.0973802Z {"verified": true, "families": {"INPUT": 10, "VOLUME": 15}, "editorReplayed": false, "newREAAnalysis": false, "deviceIO": false}
+2026-10-23T17:29:54.8884880Z {"passed":true,"capturedBodyReconstructed":true,"originalCaptureRechecked":false,"rawInputWordsPreserved":20,"newPhysicalScaleMeasurements":0,"fullSyxBytesEqual":false,"compressionBytesDiffer":true}
+2026-10-23T17:29:57.4259328Z {"verified":true,"files":795,"unique":638,"accepted":626,"unsupported":12,"inputVariants":1,"currentVolume":2,"oldVolume":2}
+2026-10-23T17:29:59.3054733Z {"passed":true,"syntheticOnly":true,"validInsertion":1,"rejections":7,"newHardwareMeasurements":0}
+2026-10-23T17:30:03.0869745Z Traceback (most recent call last):
+2026-10-23T17:30:03.0870883Z   File "/home/runner/work/mcp-midi-control/mcp-midi-control/tools/fm3/parameter-evidence.py", line 525, in <module>
+2026-10-23T17:30:03.0871853Z     main()
+2026-10-23T17:30:03.0872784Z   File "/home/runner/work/mcp-midi-control/mcp-midi-control/tools/fm3/parameter-evidence.py", line 519, in main
+2026-10-23T17:30:03.0873993Z     require((OUT / name).is_file() and (OUT / name).read_text() == content,
+2026-10-23T17:30:03.0875230Z   File "/home/runner/work/mcp-midi-control/mcp-midi-control/tools/fm3/parameter-evidence.py", line 27, in require
+2026-10-23T17:30:03.0876188Z     raise ValueError(message)
+2026-10-23T17:30:03.0877489Z ValueError: registry.json is stale; review inputs and run tools/fm3/parameter-evidence.py --write
+2026-10-23T17:30:03.1307150Z ##[error]Process completed with exit code 1.
+2026-10-23T17:30:03.1466020Z ##[group]Run actions/upload-artifact@v4
+2026-10-23T17:30:03.1466332Z with:
+2026-10-23T17:30:03.1466823Z   name: fm3-offline-0415c1bc9b23fef64848e49dc87180674c847720
+2026-10-23T17:30:03.1467485Z   path: /home/runner/work/_temp/fm3-tests
+/home/runner/work/_temp/fm3-release
+
+2026-10-23T17:30:03.1467895Z   if-no-files-found: warn
+2026-10-23T17:30:03.1468127Z   compression-level: 6
+2026-10-23T17:30:03.1468344Z   overwrite: false
+2026-10-23T17:30:03.1468558Z   include-hidden-files: false
+2026-10-23T17:30:03.1468794Z ##[endgroup]
+2026-10-23T17:30:03.3137393Z (node:2513) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-23T17:30:03.3138254Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-23T17:30:03.3179530Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-23T17:30:03.3198311Z The least common ancestor is /home/runner/work/_temp. This will be the root directory of the artifact
+2026-10-23T17:30:03.3238388Z ##[warning]No files were found with the provided path: /home/runner/work/_temp/fm3-tests
+/home/runner/work/_temp/fm3-release. No artifacts will be uploaded.
+2026-10-23T17:30:03.3431143Z Post job cleanup.
+2026-10-23T17:30:03.4376297Z [command]/usr/bin/git version
+2026-10-23T17:30:03.4424728Z git version 2.55.0
+2026-10-23T17:30:03.4472361Z Temporarily overriding HOME='/home/runner/work/_temp/f874cf9e-d557-4010-8db9-e4eb3726858b' before making global git config changes
+2026-10-23T17:30:03.4473751Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-23T17:30:03.4479572Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mcp-midi-control/mcp-midi-control
+2026-10-23T17:30:03.4525021Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-23T17:30:03.4565239Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-23T17:30:03.4848768Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-23T17:30:03.4878895Z http.https://github.com/.extraheader
+2026-10-23T17:30:03.4892159Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-23T17:30:03.4945129Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-23T17:30:03.5226448Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-23T17:30:03.5281000Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-23T17:30:03.5713120Z Cleaning up orphan processes
+2026-10-23T17:30:03.6110912Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
