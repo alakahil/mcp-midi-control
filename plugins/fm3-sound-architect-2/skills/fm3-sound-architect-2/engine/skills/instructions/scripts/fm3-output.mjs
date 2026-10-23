@@ -1,3 +1,4 @@
+import {verifyInputGateOutput} from './fm3-input-gate-output.mjs';
 // Stage all four files; never overwrite existing output. The validation file is
 // published last and is the completion marker. Caught failures remove our links.
 // A process/machine crash can leave an incomplete bundle: consumers must verify
@@ -32,5 +33,6 @@ export function verifyPresetOutputs(stem){
   if(sha256(fs.readFileSync(stem+'.syx'))!==report.outputSha256)throw Error('Final SYX hash mismatch');
   verifyGlobalScaleReport(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'));
   verifyWahExactOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
+  verifyInputGateOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   return report;
 }

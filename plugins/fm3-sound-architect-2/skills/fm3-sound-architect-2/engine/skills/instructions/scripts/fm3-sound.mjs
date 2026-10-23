@@ -1,5 +1,6 @@
 // Offline sound pipeline: templates -> layout -> scenes -> controls -> final readback.
 import fs from 'node:fs';
+import {inputGateSummary} from './fm3-input-gate.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {generatePreset,getComposerCapabilities} from './fm3-generate.mjs';
@@ -16,7 +17,7 @@ import {pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.14',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.14',developmentCandidate:'input-gate-20261023-unpublished',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
     outputs:['.syx','.txt','.spec.json','.validation.json'],
     modifiers:{...wahModifierCapabilities(),field:'composer.modifiers.external1Wah',autoEngage:{...wahModifierCapabilities().autoEngage,field:'composer.modifiers.wahAutoEngage'},damping:{...wahModifierCapabilities().damping,field:'composer.modifiers.wahDamping'},min:{...wahModifierCapabilities().min,field:'composer.modifiers.wahMin'},controls:{...wahModifierCapabilities().controls,field:'composer.modifiers.wahControls'},exactMinMax:{...wahModifierCapabilities().exactMinMax,field:'composer.modifiers.wahMinMaxExact'}},
@@ -30,6 +31,7 @@ export function getSoundCapabilities(base){
       cabPosition:{parameters:['CABINET_DYNACAB_R1','CABINET_DYNACAB_R2'],displayRange:[0,10],unit:'unitless'},
       typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),
       policy:'Entry counts are not validated device coverage. Chorus/Drive, Delay/Reverb and Flanger/Phaser/Compressor/Wah/Tremolo explicit writes follow final-channel type/algorithm policy. Delay/Reverb/Flanger/Phaser/Compressor/Wah/Tremolo model selectors and Phaser Mode require full channel templates. Pitch TYPE also requires full templates. Rotary has no type selector: PID 0 is Rate. Pitch uses a pinned 34-field integer/nonzero-enum preset-word overlay. Seven local custom notes require final-scale validation; fixed/unused slots remain blocked; global scale contents and arpeggiator playback are not validated. Verified native Flanger aliases preserve exact legacy addresses. 21 tempo pairs and read-only modifier target checks are enforced; other dependencies, including automatic compressor timing/makeup, remain outside this scope. Use full templates for model/type changes.'},
+    inputGate:inputGateSummary(),volumePan:{supported:false,reason:'FW13 donor and structural import evidence pending; metadata alone does not enable insertion'},
     outputSceneLevels:{supported:true,block:'out1',parameters:'OUTPUT_SCENE1..8',rangeDb:[-20,20],channels:['A','B','C','D']},
     limitations:['No device connection','New output hardware/audio/CPU unconfirmed','Experimental raw/taper writes excluded from this entry point','Global settings, arbitrary routing and all FM3 families are not implemented']};
 }

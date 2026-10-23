@@ -30,6 +30,19 @@ Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
 
+## Avaldamata Input-gate'i arenduskandidaat (23.10.2026)
+
+Selle tööharu muudatus pole veel uus privaatne väljalase. Avaldatud 0.3.14
+jääb eraldi; `capabilities.developmentCandidate` märgib siinset kandidaati.
+`in1` A–D arvparameetrid THRESH, RATIO, RELEASE, ATTACK ja LEVEL on piiratud
+kirjutustoega. Ratio/Attack vajavad olemasolevat ADVANCED-režiimi; tüüp, režiim,
+Input bypass, impedants ja meter säilivad. Threshold OFF-äärpunkti ei kirjutata.
+Aktiivse modifikaatori konflikt tõrjutakse. See on Input 1, mitte Gate-plokk.
+Skaala tugineb FW13 cache'i, editori native/XML-i ja varasema kõveraklassi
+üldistusele; uusi Input-gate'i seadmemõõtmisi pole. Volume/Pan kirjutustugi pole
+avatud: esmalt on vaja praegust FW13 plokimalli. Globaalsed Noisegate Offset ja
+AC Line Frequency ei sisaldu preseti tõendis. Wah Min/Max-i tõendusulatus ei laiene.
+
 ## Kasutaja kinnitatud seadistus
 
 - Seade: FM3 Mk II Turbo, firmware 13.0. Uue firmware korral kontrolli sobivust.

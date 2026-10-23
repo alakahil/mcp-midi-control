@@ -110,6 +110,12 @@ def join_parameters(catalog, dictionary, runtime):
                     bases.append(b['id'])
         row['tableEncoder'] = {'effectiveKind': effective['kind'], 'effectiveStatus': effective['status'], 'policy': gate, 'bases': sorted(set(bases)),
                                'available': bool(bases) and supported_kind and gate in ['default', 'opt-in']}
+        if p['family'] == 'INPUT':
+            row['tableEncoder']['available'] &= p['param'] in [0,1,2,3,5]
+            row['tableEncoder']['inputGateScope'] = 'Input 1 numeric only; valid retained TYPE/MODE; Ratio/Attack ADVANCED; Threshold OFF excluded; active modifiers rejected; no new hardware measurements'
+            if p['param'] not in [0,1,2,3,5]:
+                row['tableEncoder']['policy'] = 'blocked-input-scope'
+
     for row in rows.values():
         row['join'] = ('both' if row['catalogRows'] and 'dictionaryRow' in row else
                        'catalog-only' if row['catalogRows'] else 'dictionary-only')

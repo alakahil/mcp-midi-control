@@ -3,6 +3,7 @@
 // Rows 1 and 4 stay empty. Block records carry no grid position, so placing a block
 // is a grid-only edit; every record byte and the system tail are preserved.
 import {createHash} from 'node:crypto';
+import {validateInputGateWrites} from './fm3-input-gate.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
 import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG,assertFields,channelIndex,validateControl,validateOptions} from './fm3-table-encoder.mjs';
@@ -102,6 +103,7 @@ export function applyTableControls(body,controls,opts={},allow=()=>{}){
     const raw=encodeValue(p,c.value,opts);
     writes.push({effectId:p.block,block:c.block,channel:c.channel,pid:p.param,name:p.name,label:p.label,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
   }
+  validateInputGateWrites(body,writes);
   validateTypeWrites(body,writes);
   validateDependencyWrites(body,writes);
   for(const {raw,offset} of writes){body.writeUInt16LE(raw,offset);allow(offset,2)}

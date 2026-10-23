@@ -185,7 +185,8 @@
               "peq",
               "geq",
               "enhancer",
-              "out1"
+              "out1",
+              "in1"
             ]
           },
           "channel": {
