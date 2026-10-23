@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "sourceCommit": "a11d8e44d0df339411d7e45ad6bea126b0bf89d5",
+  "filesCompared": 3181,
+  "exactInventoryAndEveryFileHash": true,
+  "version": "0.3.16",
+  "sourceArchiveSha256": "3cbdd1b0f71fd9ce522635f827fffa226c9f126493bcf3aaf18bd4fa1a6e75f5",
+  "manifestSha256": "df51cdf1775b58cc3818480bcc921457fdd579cb66cdbb50795edd340c984dcd",
+  "extractedDirectory": "research/0316-published/verified package % # \u00fc",
+  "publishedArchiveSha256": "ac38c5c0d486e4424337010af441f38c53185e6d7d7fb82ec44c73fc23ac13b1"
+}

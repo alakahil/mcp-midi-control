@@ -1,0 +1,13 @@
+{
+  "plugin_id": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+  "name": "fm3-sound-architect-2",
+  "description": "FM3 Mk II Turbo SYX/TXT generaator, 336 Amp- ja 45 Cab-malli, efektid, stseenid ning kontrollitud mõõteandmed.",
+  "version": "0.3.16",
+  "current_release_id": "pluginrel_6adb8d341ba48191996d947712c344cf",
+  "scope": "USER",
+  "discoverability": "PRIVATE",
+  "plugin_url": "https://chatgpt.com/plugins/plugins_6accfd716e148191b0adb61e4e36f0e4",
+  "release_id": "pluginrel_6adb8d341ba48191996d947712c344cf",
+  "latest_release_id": "pluginrel_6adb8d341ba48191996d947712c344cf",
+  "status": "updated"
+}
