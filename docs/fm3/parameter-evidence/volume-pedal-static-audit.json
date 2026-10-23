@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "b57e01cfdfd43a77db5c1162d6ea51ad28692bb3",
+  "method": "New local Capstone 5.0.6 disassembly and LC_FUNCTION_STARTS; prior REA evidence reuse, no new REA invocation",
+  "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "editorVersion": "1.07.17",
+  "architecture": "arm64",
+  "previousREAInputZipSha256": "a27b799b40799a3d1074d4aad7af609040eff00fa95864bbfb352e271b6ea2d0",
+  "previousREAFilesVerified": 91,
+  "previousREAFunctionsAvailable": 45,
+  "newREAAnalysis": false,
+  "newPhysicalExports": 0,
+  "deviceIO": false,
+  "nativeSpansVerified": 8,
+  "newPlannedFunctionsVerified": 8,
+  "fixedFunctionsRepeatingPrevious": 0,
+  "planSha256": "2dcbbd0d65378aa47acf844cb66ab13600cb40d359542962857ed5781313fac6",
+  "findings": [
+    {
+      "name": "target-setup-fields",
+      "address": "0x10017b248",
+      "bytes": 32,
+      "sha256": "ce17b9e746a28e31e98a962bfa1dbb094a3dd6e79bcb55d9734e4be3e7246364",
+      "observation": "Model selector and target effect/PID stored; current modifier ID and pending request reset."
+    },
+    {
+      "name": "source-pid-zero-special-case",
+      "address": "0x1001796f0",
+      "bytes": 40,
+      "sha256": "779948d04a2832abc710bc3c92643393394ab98f46d72f64a99544e3a55b26c9",
+      "observation": "PID0 special case; nonzero modifier PID uses the ordinary forwarder."
+    },
+    {
+      "name": "create-serializer-argument",
+      "address": "0x1001797c0",
+      "bytes": 76,
+      "sha256": "2c45d26af854ba3a838d393d62b875c549fae0de5f4dcc05d8eca213c59c1ffd",
+      "observation": "Loads target fields +0x4f4/+0x4f6 and supplies internal request code 0x3a to serializer."
+    },
+    {
+      "name": "remove-serializer-argument",
+      "address": "0x10017973c",
+      "bytes": 76,
+      "sha256": "7d434cf25311057e25b84e712eb7acf945a2624648640e0154c86331b2ea39c9",
+      "observation": "Loads existing modifier ID and supplies internal request code 0x3b to serializer."
+    },
+    {
+      "name": "retain-pending-source",
+      "address": "0x10017982c",
+      "bytes": 16,
+      "sha256": "1976f75360b7dbdbecf634e0cc5f5f2e152720cb273ad2b903f33aa8895c8a07",
+      "observation": "Copies the original source-change packet to +0x4e8/+0x4f0."
+    },
+    {
+      "name": "assigned-modifier-id",
+      "address": "0x100179608",
+      "bytes": 20,
+      "sha256": "15da188fcb47ec055e8a853dcb96529039a1d1afc6c94a1466843ff117231fbc",
+      "observation": "Compares and stores incoming W3 as current modifier ID at +0x4f8."
+    },
+    {
+      "name": "send-pending-after-id",
+      "address": "0x100179684",
+      "bytes": 52,
+      "sha256": "00632519f5882a666918d366eeb467f2aba7a7ae5b7743559fd4d9803c49b2a1",
+      "observation": "Nonzero ID and pending PID allow forwarding the saved request; pending PID is cleared to 0xffff."
+    },
+    {
+      "name": "channel-definition-context",
+      "address": "0x10017b290",
+      "bytes": 56,
+      "sha256": "663ce13dd6e7a577a8b83806bdaa5d65236aa0b08503411d08372f50dfb438c1",
+      "observation": "Obtains target block information and sets MOD definition PID17 upper bound from the returned metadata."
+    }
+  ],
+  "generatorWriteSupportAdded": false,
+  "fullRangeEncodingProven": false,
+  "limits": [
+    "Internal serializer operation identifiers are not newly hardware-verified wire commands.",
+    "Allocation/default initialization in SHARC firmware is not analyzed here.",
+    "The caller supplying effect102/PID0 and full FW13 serialized defaults remain to be resolved."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "packageVersion": "1.1.0",
+  "offlineTests": {
+    "legacyReader": 5,
+    "collector": 10,
+    "passed": 15
+  },
+  "inputSchemas": {
+    "provider": "REA 6.4.0",
+    "source": "Verified 2026-10-22 Mac result tool-schemas.json",
+    "validatedRequests": 19
+  },
+  "originalInputs": {
+    "previousREAFilesVerified": 91,
+    "nativeSpansVerified": 8,
+    "plannedFunctionBodiesVerified": 8
+  },
+  "packaging": {
+    "zipExtracted": true,
+    "allSourceBytesEqual": true,
+    "spacesPercentHashUnicodePath": true,
+    "standaloneCollectorTestsPassed": 10,
+    "nonMacRefusalAndLogsVerified": true,
+    "missingCompanionDiagnosticVerified": true
+  },
+  "newMacREAExecuted": false,
+  "deviceIO": false,
+  "newHardwareExports": 0,
+  "productionPluginChanged": false,
+  "limits": [
+    "Mac preflight and real REA function execution still require the user Mac run.",
+    "Linux refusal does not test or diagnose the user Mac installation.",
+    "15 research checks are separate from the unchanged 59 production release checks."
+  ]
+}

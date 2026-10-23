@@ -1,5 +1,11 @@
 # Volume/Pan pedaalijuhtimine — olemasoleva tõendi piir, 23.10.2026
 
+> **Hilisem jätk 23.10.2026:** [korpuse ja loomistee uus tulemus](volume-pedal-static-result.md).
+> 0.3.16 korpuse kõik 638 unikaalset faili on nüüd loetud; 10 vana vormingu
+> eraldi lugeja leidis ühe effect 102 / PID 1 seose, kuid mitte Ext1 → Gain’i.
+> 91 varasemat REA faili ja originaalbinaar kontrolliti; valmis on eraldi
+> `tools/fm3/rea-volume-pedal/` Maci koondpakett. Allpool säilib 0.3.15 lähteolukord.
+
 0.3.15 on avaldatud privaatse release'ina `pluginrel_6adb3151f998819193808162d75516b5`, mootori lähtecommit `15840e463b0d8f90ab3c46b8c0d4e6865b88a004`. Staatiline Volume/Pan ja Input gate on olemas; uus pedaalisidumine ei kuulu sellesse väljalaskesse.
 
 ## Uus ainult faile lugev inventuur

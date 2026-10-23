@@ -1,0 +1,177 @@
+{
+  "plan_version": 2,
+  "research_base_commit": "b57e01cfdfd43a77db5c1162d6ea51ad28692bb3",
+  "required_rea_version": "6.4.0",
+  "required_target_sha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "required_application_version": "1.07.17",
+  "required_architecture": "arm64",
+  "purpose": "Resolve Ext1 -> Volume/Pan 1 Gain creation/assignment and target metadata; no old Wah Min/Max experiment.",
+  "functions": [
+    {
+      "id": "source-create-remove",
+      "address": "0x1001796d4",
+      "why": "Source PID 0 distinguishes existing modifier update, create request 0x3a and remove request 0x3b.",
+      "lc_function_starts_size": 416,
+      "body_sha256": "4cde5fb91417a25f626203404c33671bceb3cc4ce94c491592247af3e45aa3dc"
+    },
+    {
+      "id": "assigned-id-and-pending-source",
+      "address": "0x1001795f8",
+      "why": "Assigned modifier ID is written to +0x4f8; deferred source update is forwarded after assignment.",
+      "lc_function_starts_size": 220,
+      "body_sha256": "d93c6d510bf0b581ae5f053531362c5c23ea3ce1155ea3fd83889dcb91841b2f"
+    },
+    {
+      "id": "target-dialog-setup",
+      "address": "0x10017b200",
+      "why": "W2/W3 initialize target effect/PID at +0x4f4/+0x4f6 and reset current modifier ID; inspect target-dependent controls.",
+      "lc_function_starts_size": 2588,
+      "body_sha256": "77987eee799cdd14ff4bb1efef9ee5a31e7ee12f756f5621840e8fc13c3c9ff8"
+    },
+    {
+      "id": "target-open-caller-1",
+      "address": "0x100129578",
+      "why": "One of three direct callers of target-dialog setup; determine effect/PID and UI entry provenance.",
+      "lc_function_starts_size": 900,
+      "body_sha256": "6041344a541375a45faf8898b144ea15fb683dafe5602ef5b43173b130810718"
+    },
+    {
+      "id": "target-open-caller-2",
+      "address": "0x1001c1e8c",
+      "why": "Second direct caller of target-dialog setup; distinguish control/menu paths.",
+      "lc_function_starts_size": 1116,
+      "body_sha256": "c3f233a2d6df544f6c463ccf75e325dc5e0ef75b567c993468384b961915ba6c"
+    },
+    {
+      "id": "target-open-caller-3",
+      "address": "0x1001ca93c",
+      "why": "Third direct caller of target-dialog setup; distinguish control/menu paths.",
+      "lc_function_starts_size": 1048,
+      "body_sha256": "df816c52f1159d05b256fdbf56f3db15d7a82109dce8c4fc85047c5904594a60"
+    },
+    {
+      "id": "block-channel-metadata",
+      "address": "0x1000ca538",
+      "why": "Setup obtains block information and updates MOD channel definition PID17 from the returned structure.",
+      "lc_function_starts_size": 312,
+      "body_sha256": "65166331c72d35ce95f670d8280b7a92b5c4ee2f4638e0964e5a132d11e0f58d"
+    },
+    {
+      "id": "outbound-request-queue",
+      "address": "0x1000b0744",
+      "why": "Creation request is queued; resolve response/assignment path without performing any device I/O.",
+      "lc_function_starts_size": 212,
+      "body_sha256": "dda59bcd4264001e0bb01f8664b3d97643531414230b4fc028e18558be1871d0"
+    }
+  ],
+  "xrefs": [
+    {
+      "id": "xref-source-create-remove",
+      "address": "0x1001796d4"
+    },
+    {
+      "id": "xref-assigned-id-and-pending-source",
+      "address": "0x1001795f8"
+    },
+    {
+      "id": "xref-target-dialog-setup",
+      "address": "0x10017b200"
+    }
+  ],
+  "traces": [
+    {
+      "id": "trace-source-create-remove",
+      "address": "0x1001796d4"
+    },
+    {
+      "id": "trace-assigned-id-and-pending-source",
+      "address": "0x1001795f8"
+    },
+    {
+      "id": "trace-target-dialog-setup",
+      "address": "0x10017b200"
+    }
+  ],
+  "max_reference_sites": 18,
+  "max_extra_functions": 8,
+  "trace_budget": {
+    "max_depth": 2,
+    "max_functions": 6,
+    "max_call_sites": 64,
+    "max_nodes": 3000,
+    "max_edges": 6000,
+    "offset": 0,
+    "limit": 3000
+  },
+  "reuse_previous_functions": [
+    "0x10004272c",
+    "0x100043080",
+    "0x100045f60",
+    "0x10007c544",
+    "0x100179130",
+    "0x1001792ec",
+    "0x10017943c",
+    "0x100179440",
+    "0x100179874",
+    "0x100179918",
+    "0x100179b34",
+    "0x100179d10",
+    "0x100179de8",
+    "0x100179ee8",
+    "0x10017a050",
+    "0x10017a214",
+    "0x10017ab3c",
+    "0x10017ad44",
+    "0x10017afa8",
+    "0x1001faca4",
+    "0x10025c44c",
+    "0x10025c5fc",
+    "0x10025c870",
+    "0x10025c990",
+    "0x10025d05c",
+    "0x10025d548",
+    "0x10025d97c",
+    "0x10025da08",
+    "0x10025db54",
+    "0x10025dc58",
+    "0x10025de30",
+    "0x10025dfc4",
+    "0x10025e094",
+    "0x10025f0b8",
+    "0x10029ba78",
+    "0x1002be810",
+    "0x10036e98c",
+    "0x1003ace28",
+    "0x1003af3cc",
+    "0x1003b02d8",
+    "0x1003f8350",
+    "0x100510358",
+    "0x1005103e8",
+    "0x100510958",
+    "0x100510970"
+  ],
+  "previous_evidence": {
+    "zip_name": "FM3_REA_MINMAX_20261022T074454Z_0tjO5r.zip",
+    "zip_sha256": "a27b799b40799a3d1074d4aad7af609040eff00fa95864bbfb352e271b6ea2d0",
+    "verified_files": 91,
+    "prior_analyzed_functions": 45
+  },
+  "excluded_already_proven_work": [
+    "Wah Min/Max 1001-value model and six hardware points per field",
+    "Mouse-drag/event/strtod paths",
+    "Generic SysEx serializer re-discovery",
+    "SHARC firmware analysis",
+    "MIDI/SET/STORE/device connection"
+  ],
+  "questions": [
+    "Which target/control caller supplies effect 102 and PID 0?",
+    "Does source selection first request modifier allocation and then update its source?",
+    "Which channel/default/target metadata originates in editor versus device replies?",
+    "Which exact runtime/serialized facts still require a single FW13 donor export?"
+  ],
+  "limitations": [
+    "Static arm64 editor analysis cannot certify SHARC execution or full serialized FW13 defaults.",
+    "Addresses and candidate labels do not replace dynamic readbacks.",
+    "No Volume Min/Max codec or writer is enabled by this plan."
+  ]
+}
