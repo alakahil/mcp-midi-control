@@ -454,11 +454,15 @@ async function readActiveScene(
 /**
  * Convert a live sub=0x2E grid reply into the same `Gen3GridCellView[]` shape as
  * the stored-dump grid (`whole_preset.grid`), labeling blocks with the SAME
- * `effectName` convention. The cable bitmask is carried raw in `route_flag`;
- * `from_rows` (edge direction) is intentionally NOT emitted — its decode is
- * community-beta and unvalidated, and a wrong edge is worse than none.
+ * `effectName` convention. The cable bitmask is carried raw in `route_flag`
+ * (bit k = input from row k of the previous column). `from_rows` (edge
+ * direction) is emitted for the FM3 only, where it is hardware-confirmed
+ * (2026-10-23: 7 generated grids with splits/merges read back cell-exact);
+ * III/FM9 share the frame layout but stay raw until a capture confirms it.
  */
+const FM3_MODEL_BYTE = 0x11;
 export function liveGridView(frame: number[], modelByte: number): Gen3GridCellView[] {
+  const edges = modelByte === FM3_MODEL_BYTE;
   return parseGen3GridLayout(frame, modelByte).map((c) =>
     c.isShunt
       ? {
@@ -466,6 +470,7 @@ export function liveGridView(frame: number[], modelByte: number): Gen3GridCellVi
           row: c.row,
           col: c.col,
           route_flag: c.cableInputMask,
+          ...(edges ? { from_rows: c.fromRows } : {}),
           name: `Shunt ${c.shuntIndex ?? 0}`,
           is_shunt: true,
         }
@@ -474,6 +479,7 @@ export function liveGridView(frame: number[], modelByte: number): Gen3GridCellVi
           row: c.row,
           col: c.col,
           route_flag: c.cableInputMask,
+          ...(edges ? { from_rows: c.fromRows } : {}),
           name: effectName(c.effectId ?? -1) ?? `eid_${c.effectId}`,
         },
   );
@@ -996,8 +1002,8 @@ export function makeReader(opts: {
           ? 'gen-3 get_preset: `live_grid` holds the positioned routing (row/col + block per cell) ' +
               'from the live fn=0x01 sub=0x2E read; `slots` carries the per-block param VALUES (a flat ' +
               'inventory; its `slot` numbers are sequential, not grid positions; match a slot to its ' +
-              'cell via block_type/effect name in live_grid). Cable directions are surfaced raw in ' +
-              'live_grid[].route_flag (edge decode is community-beta, not asserted). Per-channel params ' +
+              'cell via block_type/effect name in live_grid). Cable directions: route_flag bit k = input ' +
+              'from row k of the previous column; FM3 cells also carry from_rows (hardware-confirmed). Per-channel params ' +
               'are the channel-A copy (use get_param with a channel arg); enum params read as ordinal ' +
               'labels, uncalibrated continuous as raw wire. When describing this to the user, narrate ' +
               'live_grid as a linear signal path (Input → block → block → Output), not a row/column ' +
@@ -1015,8 +1021,8 @@ export function makeReader(opts: {
           `gen-3 live_meters: cpu_percent (${liveMeters.cpu_percent}%) is the active preset's steady ` +
             'DSP cost (the headroom answer); output_left/right are momentary peaks at read time. ' +
             'Decoded from the same sub=0x2E frame as live_grid (no extra round-trip). Evidence: the ' +
-            'output meters are FM9-behaviorally-confirmed (they vary across reads); cpu_percent is ' +
-            'FM3(ForgeFX)-sourced and FM9-consistent. Community beta. The device input meter is not ' +
+            'output meters are FM9-behaviorally-confirmed (they vary across reads); FM3 cpu_percent is ' +
+            'calibrated on hardware (fw 13, ±0.5 %); III/FM9 cpu_percent is FM3(ForgeFX)-sourced. The device input meter is not ' +
             'surfaced (its offset is not portable across the gen-3 family).',
         );
       }

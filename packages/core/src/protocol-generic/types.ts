@@ -1498,9 +1498,9 @@ export interface PresetSnapshot {
    * being edited, which the fn=0x1F poll inventory (`slots`) cannot.
    *
    * Block POSITIONS + IDENTITIES are cross-validated against our FM9 capture
-   * (every effect id resolves; Input→…→Output coherent). The cable bitmask is
-   * surfaced raw; edge-direction decode is community-beta and NOT asserted as
-   * `from_rows` here. Present only when the live grid read succeeded; absent on
+   * (every effect id resolves; Input→…→Output coherent). The cable bitmask
+   * (bit k = input from row k of the previous column) is surfaced raw; FM3
+   * cells also carry `from_rows` (hardware-confirmed 2026-10-23). Present only when the live grid read succeeded; absent on
    * II/AM4/Hydra, on stored-by-location gen-3 reads (use `whole_preset.grid`),
    * and when the grid read returned nothing (then `slots` is the poll inventory).
    */

@@ -1140,13 +1140,23 @@ frames arrive as both 590 (→ 361) and 606 bytes (→ 377), and the tail anchor
 decodes all of them without per-length cases. Cells are addressed by:
 
 ```
-cell_start_bit = 46 + col·(rows·32) + row·32
+cell_start_bit = 45 + col·(rows·32) + row·32      (corrected 2026-10-23)
    III/FM9: 6 rows × 14 cols (col stride 192)
    FM3:     4 rows × 12 cols (col stride 128)
-bits  0-7  = (effectId | shuntIndex) << 1
-bits  8-15 = block type   (0x08 = shunt, 0x00 = real block)
-bits 16-23 = incoming-cable bitmask
+bits  0-15 = u16 id, low byte first   (effect ID, or 1024 + n for shunt n)
+bits 16-31 = u16 input mask, low byte first (bit k = input from row k of the previous column)
 ```
+
+This is the preset-body grid cell word (body bytes 260.., `{u16 id, u16 mask}`)
+serialized MSB-first. The original community layout (`(id << 1)` at bit 46, a
+"type" byte 0x08, cable at bit 62) reads the same bits one position later: it
+agrees for ids < 128 and doubles the mask, but misreads every id > 127 (Send
+182 → 54, Return 186 → 58, Plex 178 → 50, Multiplexer 191 → 63, Synth 130 → 2).
+**FM3 hardware-confirmed 2026-10-23:** 7 generated presets (splits, merges, all
+4 rows, ids up to 1037) loaded to the edit buffer read back identical in all 48
+cells (mcp-midi-control `references/fm3-grid-check-20261023.json`; goldens G04/G05
+in `test/gen3/axe-fx-iii/gridlayout.test.ts`). III/FM9 share the frame layout
+(community-beta until a capture with an id > 127 confirms it there).
 
 Bits are read **MSB-first within each 7-bit byte** (`(data[bit/7] >> (6 - bit%7)) & 1`);
 an 8-bit reader yields garbage (the tell-tale `0xE8/0xD8` "block type").
@@ -1169,7 +1179,7 @@ block-targeted replies in
 `samples/captured/fm3-community-2026-06-12/fm3-probe-output.json` (job3),
 oracled by the same session's `fn=0x13` status dump: all three, including the
 606-byte length variant, decode to exactly Input1(37)@r1c0 → Amp1(58)@r1c1 →
-Output1(42)@r1c2 (cables 0x04). Goldens: the two embedded FM3 frames in
+Output1(42)@r1c2 (input masks 0x02 = row 1 under the corrected cell word). Goldens: the two embedded FM3 frames in
 `test/gen3/axe-fx-iii/gridlayout.test.ts` + the capture cross-validation in
 `scripts/verify-gen3-grid-layout.ts`.
 
