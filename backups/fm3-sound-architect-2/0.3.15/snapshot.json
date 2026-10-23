@@ -11,6 +11,22 @@
       "bytes": 3718,
       "sha256": "265d136f45c25229dc150a51f38242cbe3d66404e5686d9fffac04b190d600e0"
     },
+    "backup-ci/backup-matrix-check.log": {
+      "bytes": 11714,
+      "sha256": "94cd6aca4e3e3807a02ebfe0fb8d829c2bacd9d278ef8b633e6ab8a4016d902e"
+    },
+    "backup-ci/backup-matrix-refresh.log": {
+      "bytes": 11714,
+      "sha256": "94cd6aca4e3e3807a02ebfe0fb8d829c2bacd9d278ef8b633e6ab8a4016d902e"
+    },
+    "backup-ci/diagnosis.json": {
+      "bytes": 854,
+      "sha256": "f981dad669e1fc94a11eefe80b0bfe43eae2f3f0860a839407503a166d823218"
+    },
+    "backup-ci/first-push-failure.log.gz": {
+      "bytes": 8373,
+      "sha256": "88320d6ecf03df4aaf065f890f91ef341a46e96cf78f2e0123adb2d6926b6bc8"
+    },
     "forward-final/FM3_DAILY_CONTROL.spec.json": {
       "bytes": 4655,
       "sha256": "ddbe8ad892e67ee69c30b0a161335bd048d0375e8917620529e7282913fd4605"

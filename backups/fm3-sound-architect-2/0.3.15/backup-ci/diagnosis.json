@@ -1,0 +1,14 @@
+{
+  "failedCommit": "3aa6d05b3d0eafce84546a907181bab421d42cb2",
+  "runId": 39937924237,
+  "jobId": 120361933740,
+  "failure": "registry.json is stale",
+  "cause": "New tools/fm3/volume-pedal-audit.mjs is included by the existing registry input glob; generated source hash inventory was not refreshed",
+  "fix": "Regenerate docs-only registry.json, metadata-reconciliation.json and encoder-matrix.json; all check modes pass",
+  "publishedEngineChanged": false,
+  "releaseSourceCommit": "15840e463b0d8f90ab3c46b8c0d4e6865b88a004",
+  "blindRerun": false,
+  "semanticDifference": "Only /sources entries changed: new tool input and its dependent hashes; no parameter facts, observations, coverage or codec policy changed",
+  "originalLogSha256": "f4dfb3d198e22e48f424af80b44c2db558c332a057d388ed6eba642749876b1d",
+  "storedLog": "first-push-failure.log.gz"
+}
