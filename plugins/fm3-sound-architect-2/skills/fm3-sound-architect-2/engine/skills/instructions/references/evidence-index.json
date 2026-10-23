@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2088,
-  "filePaths": 2292,
+  "uniqueContents": 2089,
+  "filePaths": 2293,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -3418,6 +3418,12 @@
         "references/geq-full-20261010-194115/step-129-e6b0801235/donor.syx"
       ]
     },
+    "462fd442b23db6e243419d43233ffc92a2c6475d58675e7f164f0843095aa6fb": {
+      "bytes": 1832,
+      "paths": [
+        "references/fm3-factory-grid-evidence.json"
+      ]
+    },
     "463aaf84ce2bafc4f531f03b6d1af6c441ec98028bc5a1767d90111062f32edf": {
       "bytes": 24680,
       "paths": [
@@ -3931,6 +3937,12 @@
       "bytes": 5172,
       "paths": [
         "references/tremolo-batch-20261007-143642/capture-001/capture.json"
+      ]
+    },
+    "50d5336901e6a07244fa28c1d2ae0f847c4080ee81b317ad2d7216ffb19946bf": {
+      "bytes": 18109,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "50e9f8ba0f4839712f57a2fe3f64cec30165a9f2d7ff5605a8d1ae3f611402a5": {
@@ -5371,12 +5383,6 @@
       "bytes": 21494,
       "paths": [
         "references/pitch-batch-20261007-153634/capture-20261007T153251-32882a2cb4/capture.json"
-      ]
-    },
-    "70452a45e40f8e8dc802a3d38827d3d41219713ad7622ebda9095ea085923bac": {
-      "bytes": 17673,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "704a0bf414f8dc39f03ec557fd9d02d09efbde7655f60228ccc76ebdc0611ef4": {

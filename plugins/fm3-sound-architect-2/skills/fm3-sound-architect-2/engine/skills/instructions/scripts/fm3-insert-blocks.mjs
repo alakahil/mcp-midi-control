@@ -26,8 +26,8 @@ export const INSERT_TYPE_PID=Object.freeze({plex:0,synth:0,gate:14,tentap:0,mega
 export const GATED=Object.freeze({
   volume:'Volume/Pan 1 has its own inserter and policy: use volumePan:true (fm3-volume.mjs)',
   volpan:'Volume/Pan 1 has its own inserter and policy: use volumePan:true (fm3-volume.mjs)',
-  mixer:'Mixer combines parallel rows; parallel routing is audit point 5 (the two-row layout is serial)',
-  multiplexer:'Multiplexer selects between parallel rows; parallel routing is audit point 5',
+  mixer:'Mixer combines parallel rows; the two-row layout is serial, use grid mode (spec.grid, audit point 5)',
+  multiplexer:'Multiplexer selects between parallel rows; use grid mode (spec.grid, audit point 5)',
   scenemidi:'Scene MIDI (MIDI Block, eid 190, 257×1) has no decoded parameter semantics yet'});
 
 let donorCache=null;

@@ -19,7 +19,7 @@ const extra=[delay2,rec(166,24,1),rec(191,7,4),rec(129,21,4),rec(150,13,2),rec(4
 const s=scanRecords(splice(...extra));
 check(s.records.length===base.records.length+extra.length,'All inserted records scanned');
 const add=s.records.slice(-extra.length).map(r=>`${r.family}:${r.block}:${r.instance}:${r.words}x${r.channels}`).join(' ');
-check(add==='delay2:70:2:89x4 looper:166:1:24x1 eid191:191:1:7x4 eid129:126:4:21x4 ringmod:150:1:13x2 out2:42:2:26x4','Instance mapping: '+add);
+check(add==='delay2:70:2:89x4 looper:166:1:24x1 multiplexer:191:1:7x4 mixer4:126:4:21x4 ringmod:150:1:13x2 out2:42:2:26x4','Instance mapping: '+add);
 check(s.tail===base.tail+extra.reduce((n,r)=>n+r.length,0),'Tail after inserted records');
 // 2. wrong dimensions stop the scan (treated as tail, never misparsed)
 for(const [r,why] of [[rec(166,24,4),'Looper with 4 channels'],[rec(150,13,4),'Ring Mod with 4 channels'],[rec(71,88,4),'instance with wrong word count'],[rec(209,10,4),'unknown effect ID']])

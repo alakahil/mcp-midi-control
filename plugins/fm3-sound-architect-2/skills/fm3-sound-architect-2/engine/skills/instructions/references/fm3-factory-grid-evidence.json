@@ -1,0 +1,65 @@
+{
+ "schemaVersion": 1,
+ "source": {
+  "url": "https://www.fractalaudio.com/downloads/firmware-presets/fm3/10p0/FM3_Factory_Presets_10p0.zip",
+  "banks": {
+   "FM3-BANK-A-250604-113656.syx": "0be1134f91aafa5c3e3d93699b96a4e27334e8b185e15fddb68d1b31e5f93159",
+   "FM3-BANK-B-250604-113656.syx": "20e947ac4488488e9f877facb62d86b5091f797f9da9abec082df381041d8e02",
+   "FM3-BANK-C-250604-113656.syx": "3289d4274e696000c39031c31fe105131234668221e046b78a0a03a013e98cb2"
+  }
+ },
+ "scope": "Structure only: grid cell counts, input-mask statistics and effect IDs of block instances. No parameter values or preset layouts are stored.",
+ "findings": [
+  "Mask bit k (0..3) = input from row k of the previous column; no set bit points to an empty cell; column 1 never has inputs.",
+  "Every factory grid passes the general-grid planner (fm3-grid.mjs planCells) and every input mask is reproduced exactly from cell names plus explicit links.",
+  "Cells without input beyond column 1 are only In 1/In 2 (37/38), Feedback Return (186) and Synth (130).",
+  "Bit 4 (value 16) appears on a few merge cells; its meaning is unknown and the generator never writes it."
+ ],
+ "grid": {
+  "presets": 384,
+  "cells": 4801,
+  "shunts": 652,
+  "splits": 144,
+  "merges": 140,
+  "rowsUsed": {
+   "1": 275,
+   "2": 81,
+   "3": 26,
+   "4": 2
+  },
+  "bit4Cells": 8,
+  "maskBitsToEmptyCell": 0,
+  "column1Inputs": 0,
+  "noInputBeyondColumn1": {
+   "37": 2,
+   "38": 1,
+   "130": 4,
+   "186": 9
+  },
+  "plannerAccepted": 384,
+  "masksReproduced": 4801,
+  "explicitLinks": 276,
+  "instanceEffectIds": {
+   "38": 3,
+   "43": 7,
+   "47": 58,
+   "51": 4,
+   "55": 10,
+   "71": 53,
+   "79": 10,
+   "83": 3,
+   "91": 3,
+   "95": 3,
+   "99": 1,
+   "103": 15,
+   "107": 1,
+   "115": 19,
+   "116": 7,
+   "117": 1,
+   "119": 44,
+   "123": 1,
+   "129": 1,
+   "163": 1
+  }
+ }
+}
