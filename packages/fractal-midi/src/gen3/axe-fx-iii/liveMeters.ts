@@ -35,6 +35,14 @@
  *     the project shipping bar; ships community-beta, awaiting a device
  *     front-panel cross-check to flip "untested" → "confirmed".
  *
+ * FM3 CPU DECODE IS PIECEWISE (FM3 fw 13, 2026-10-23): calibrated against 12
+ * hand readings of FM3-Edit's CPU display on the user's FM3 Mk II Turbo,
+ * every point within ±0.5 %: raw < 64 → 32 + raw/2, raw ≥ 64 → raw (percent).
+ * ForgeFX's linear formula agrees below 64 % and reads low above it (e.g. raw
+ * 82 is 82 %, not 73 %). Evidence: mcp-midi-control
+ * `references/fm3-cpu-calibration-20261023.json`. Applied to the FM3 model
+ * byte only; III/FM9 keep the linear formula until calibrated.
+ *
  * INPUT METER DELIBERATELY OMITTED. ForgeFX reads an input meter at `f[588]`,
  * but that offset is FM3-frame-length-specific: the FM3's sub=0x2E frame is
  * ~590 bytes, so f[588] sits at its tail. On the FM9 the frame is 755 bytes and
@@ -58,6 +66,14 @@ const OFFSET_CPU = 37;
 /** CPU% = CPU_BASE + raw7 * CPU_SLOPE (raw7 in 0..127 → 32.0 .. 95.5 %). */
 const CPU_BASE = 32;
 const CPU_SLOPE = 0.5;
+/** FM3 (fw 13 calibration): from this raw value up, the byte IS the percent. */
+const FM3_MODEL_ID = 0x11;
+const FM3_CPU_DIRECT_FROM = 64;
+
+function cpuPercent(modelByte: number, raw: number): number {
+  if (modelByte === FM3_MODEL_ID && raw >= FM3_CPU_DIRECT_FROM) return raw;
+  return CPU_BASE + raw * CPU_SLOPE;
+}
 
 /** A 7-bit MIDI meter byte's full-scale value. */
 const METER_FULL_SCALE = 127;
@@ -121,7 +137,7 @@ export function parseGen3LiveMeters(frame: readonly number[]): Gen3LiveMeters {
     return Math.round(v * f) / f;
   };
   return {
-    cpu_percent: round(CPU_BASE + frame[OFFSET_CPU] * CPU_SLOPE, 1),
+    cpu_percent: round(cpuPercent(frame[4], frame[OFFSET_CPU]), 1),
     output_left: round(frame[OFFSET_OUTPUT_LEFT] / METER_FULL_SCALE, 3),
     output_right: round(frame[OFFSET_OUTPUT_RIGHT] / METER_FULL_SCALE, 3),
   };
