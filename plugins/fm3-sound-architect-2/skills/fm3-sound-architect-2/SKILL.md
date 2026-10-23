@@ -293,6 +293,11 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   järjekorra, sisu sama). Kuus CPU-raskemat plokki korraga ületasid CPU piiri: hoia lisatud plokkide arv mõõdukas.
   Klassi 0x01 juhid (nt Shift, Number of Taps) on täisarvud.
   Detailid: `engine/docs/FM3_POINT6_BLOCKS.md`.
+- **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
+  (342 seadmes mõõdetud tüüpi + reverbi kvaliteet, ±1 %; ohutu piir 80 %, hoiatus alates 72 %). Mõõtmata tüüp kasutab
+  pere maksimumi ja nimetatakse. Amp/Delay tuuma ei näe. Ütle kasutajale hinnang; vali raskete tüüpide (Plate/Spring
+  reverb, Pitch Quad, High/Ultra-High kvaliteet) puhul kergem alternatiiv, kui stseen läheneb piirile.
+  Detailid: `engine/docs/FM3_CPU.md`.
 - **Satriani "Soap On A Rope"** `examples/SATRIANI_SOAP_ON_A_ROPE{,_V2,_V3}.*`: V1/V2 kuulatud, V3 (tämber
   eraldatud originaali kitarriraja järgi) ootab kuulamist. Kõik kolm on SA2 koostajaga baitidentsed.
 - **Helivõrdlus** `scripts/fm3-audio-compare.py REF FM3`: kolmandikoktaavi tämber ja stereolaius

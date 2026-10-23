@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-23",
+ "method": "FM3-Edit CPU readout, Scene 1, blocks replaced one by one with a shunt (subtractive); user-read, 0.1 % resolution. Bypassed blocks cost the same CPU (Fractal wiki), so presence counts, not engagement.",
+ "sessions": {
+  "A": {"preset": "examples/FM3_P6_INSERT_A.syx", "readings": [
+   ["A0", "start", 82.5], ["A1", "plex", 72.0], ["A2", "multiband", 61.0], ["A3", "looper", 57.7],
+   ["A4", "gate", 54.0], ["A5", "volpan", 52.8], ["A6", "compressor", 44.6], ["A7", "reverb", 31.4],
+   ["A8", "delay", 30.2], ["A9", "drive", 22.3], ["A10", "cab", 19.4], ["A11", "amp", 18.3]]},
+  "B": {"preset": "examples/FM3_P6_INSERT_B.syx", "readings": [
+   ["B0", "start", null, "CPU LIMIT EXCEEDED"], ["B1", "synth", 78.3], ["B2", "formant", 76.4], ["B3", "ringmod", 73.8],
+   ["B4", "resonator", 66.2], ["B5", "tentap", 62.0], ["B6", "megatap", 52.9]]}
+ },
+ "consistency": "B6 (compressor, drive, amp, cab, delay, reverb remain) = 52.9 vs A5 with the same blocks = 52.8.",
+ "costs": {
+  "baseline": {"cpu": 18.3, "scope": "In 1, Out 1, Send, Return and shunts of the two-row layout"},
+  "amp": {"cpu": 1.1, "type": "NewLook channel A amp", "note": "Amp runs on its own core; this meter barely moves"},
+  "cab": {"cpu": 2.9, "type": "DYNA-CAB"},
+  "drive": {"cpu": 7.9, "type": "Full OD"},
+  "delay": {"cpu": 1.2, "type": "Deluxe Mind Guy (MONO)", "note": "Delay shares the amp core (Fractal wiki); this meter barely moves"},
+  "reverb": {"cpu": 13.2, "type": "Room: Large Room", "quality": "ECONOMY"},
+  "compressor": {"cpu": 8.2, "type": "Optical Compressor"},
+  "volpan": {"cpu": 1.2, "type": "VOLUME (default)"},
+  "gate": {"cpu": 3.7, "type": "Classic Expander (default)"},
+  "looper": {"cpu": 3.3, "type": "default"},
+  "multiband": {"cpu": 11.0, "type": "default"},
+  "plex": {"cpu": 10.5, "type": "Plex Delay (default)"},
+  "megatap": {"cpu": 9.1, "type": "Reverb Pre-Swell (default)"},
+  "tentap": {"cpu": 4.2, "type": "Ten-Tap Delay (default)"},
+  "resonator": {"cpu": 7.6, "type": "MANUAL (default)"},
+  "ringmod": {"cpu": 2.6, "type": "CLASSIC (default)"},
+  "formant": {"cpu": 1.9, "type": "default"},
+  "synth": {"cpu": null, "type": "TRIANGLE (default)", "note": "B0 exceeded the limit; cost not measurable from this session"}
+ },
+ "crossCheck": {"preset": "examples/SATRIANI_SOAP_ON_A_ROPE.syx", "scene": 4, "measured": 61, "familyModel": 44.6,
+  "note": "Same families as session A minus compressor, but other types (Plate: Medium Plate, Digital Stereo, DS1 Distortion Mod, amp channel D): type-dependent cost differs by about +16 %. Family-level costs are therefore exact only for the measured types."},
+ "limit": {"safe": 80, "source": "Fractal wiki: up to 80 % is safe; beyond that audio mutes with a warning"}
+}
