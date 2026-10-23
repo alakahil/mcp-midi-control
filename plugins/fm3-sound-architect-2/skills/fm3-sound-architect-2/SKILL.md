@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.15`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.16`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -41,7 +41,7 @@ Kasutaja ühe tagastatud FW13 ekspordiga kinnitati kõigi 20 valitud Input-sihts
 ning kogu ülejäänud Input-kirje säilimine. See ei tõenda eraldi füüsikalisi skaalasid.
 
 Volume/Pan 1 praegune FW13 15-sõnaline A–D kirje on nüüd olemas. Sound-spec'i
-`volumePan:true` lisab selle NewLook-alusele; `layout` peab sisaldama `volpan`-i.
+`volumePan:true` lisab selle NewLook-alusele; valitud `layout` või `grid` peab sisaldama `volpan`-i.
 `controls` kasutab `block:"volpan"`: GAIN, BAL, PANL, PANR ja LEVEL; eraldi
 `allow:["enum-labels"]` korral ka TAPER, BYPASSMODE ja INPUTSELECT. Stseenide
 kanal/bypass: `blockScenes.volpan`. Praegu toetatakse ainult VOLUME-tüüpi;
@@ -306,10 +306,15 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   taastuvad (`references/fm3-factory-grid-evidence.json`). **Seadmel kinnitatud** 2026-10-23: 7 testruudustikku
   (hargnemised, liitmised, 4 rida, Mixer, Multiplexer, Synth, eksemplarid, eemaldamine) lugesid tagasi 48/48
   lahtrit (`references/fm3-grid-check-20261023.json`). Ära küsi seda uuesti; heli on veel kuulamata.
+  Teiste eksemplaride nimed (`drive2`, `volpan2` jne), kanalid ja bypass kajastuvad lõppfailidest loetud TXT-s ja aruandes.
+  `--verify` kontrollib ruudustikku, eksemplare ja CPU aruannet ka uuendatud failiräside korral.
+  Koguja peatub vale või ebastabiilse tagasilugemise järel ning säilitab saadetud kaadrid, vastuse ja vea.
+  Ebaõnnestunud seanssi ei jätkata automaatselt.
   Detailid: `engine/docs/FM3_GRID.md`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
-  (342 seadmes mõõdetud tüüpi + reverbi kvaliteet, ±1 %; ohutu piir 80 %, hoiatus alates 72 %). Mõõtmata tüüp kasutab
-  pere maksimumi ja nimetatakse. Amp/Delay tuuma ei näe. Ütle kasutajale hinnang; vali raskete tüüpide (Plate/Spring
+  (342 seadmes mõõdetud tüüpi + reverbi kvaliteet; piir 80 %, hoiatus üle 72 %).
+  Mõõdetud üksikkulud ei taga kombineeritud preseti veapiiri: G06 hinnang 44,3 %, mõõdetud 41,5 %.
+  Mõõtmata tüüp kasutab olemasolevat pere maksimumi või mõõdetud võrdlustüüpi; teadmata pered jäävad summast välja ja nimetatakse. Amp/Delay tuuma ei näe. Ütle kasutajale hinnang; vali raskete tüüpide (Plate/Spring
   reverb, Pitch Quad, High/Ultra-High kvaliteet) puhul kergem alternatiiv, kui stseen läheneb piirile.
   Detailid: `engine/docs/FM3_CPU.md`.
 - **Satriani "Soap On A Rope"** `examples/SATRIANI_SOAP_ON_A_ROPE{,_V2,_V3}.*`: V1/V2 kuulatud, V3 (tämber

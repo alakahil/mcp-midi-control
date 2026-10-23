@@ -69,29 +69,35 @@ def read_grid_frame(port, timeout=2.0):
     return None
 
 def stable_grid(port, first_wait=1.5, max_wait=8.0):
-    """Two consecutive identical grid decodes; returns (frame, grid, reads)."""
+    """Two consecutive identical grid decodes; returns (frame, grid, reads, stable)."""
     time.sleep(first_wait); last = None; reads = 0; end = time.monotonic() + max_wait
     while time.monotonic() < end:
         f = read_grid_frame(port); reads += 1
         if f is not None:
             g = decode_grid(f)
-            if last is not None and g == last[1]: return f, g, reads
+            if last is not None and g == last[1]: return f, g, reads, True
             last = (f, g)
         time.sleep(0.3)
-    return (last[0], last[1], reads) if last else (None, None, reads)
+    return (last[0], last[1], reads, False) if last else (None, None, reads, False)
 
 def compare(expected, got):
     return [{'row': e[0] + 1, 'col': e[1] + 1, 'expected': e[2:], 'device': g[2:]} for e, g in zip(expected, got) if e != g]
 
 def run(pack, session, port_path):
-    manifest = json.loads((pack / 'manifest.json').read_text())
+    manifest_bytes = (pack / 'manifest.json').read_bytes()
+    pack_hash = hashlib.sha256(manifest_bytes).hexdigest()
+    manifest = json.loads(manifest_bytes)
     S.check(manifest.get('kind') == 'fm3-grid-check', 'Not a grid-check pack')
     items = manifest['items']
     session.mkdir(parents=True, exist_ok=True); log = session / 'results.jsonl'
     done = set()
     if log.exists():
         for line in log.read_text().splitlines():
-            if line.strip(): done.add(json.loads(line)['id'])
+            if line.strip():
+                previous = json.loads(line)
+                S.check(previous.get('status') == 'passed' and previous.get('packSha256') == pack_hash,
+                        'Varasem katse ebaõnnestus või pakk ei klapi; kontrolli results.jsonl enne uut kirjutust.')
+                done.add(previous['id'])
     frames = {}
     for it in items:
         data = (pack / it['file']).read_bytes()
@@ -99,33 +105,54 @@ def run(pack, session, port_path):
         frames[it['id']] = S.dump_frames(data)
         S.check(len(it['expectedGrid']) == 48, 'expectedGrid must have 48 cells')
     print('Pakk kontrollitud: %d presetti, juba tehtud %d.' % (len(items), len(done)))
-    port = S.Port(port_path); confirmed = bool(done); ok_all = True
+    port = S.Port(port_path); confirmed = bool(done)
     try:
         for n, it in enumerate(items, 1):
             if it['id'] in done: continue
-            S.send_preset(port, frames[it['id']])
-            frame, grid, reads = stable_grid(port)
-            S.check(frame is not None, 'FM3 ei vastanud ruudustiku päringule; midagi ei salvestatud.')
-            rec = {'id': it['id'], 'time': time.strftime('%Y-%m-%dT%H:%M:%S'), 'gridReads': reads, 'frameHex': bytes(frame).hex(), 'frameBytes': len(frame)}
-            if not confirmed:
-                ans = input('\nFM3 ekraanil peaks nüüd olema nimi "%s". Kas on? (j/e): ' % manifest['confirmName']).strip().lower()
-                S.check(ans.startswith('j'), 'Seade ei laadinud presetti redaktsioonipuhvrisse; midagi ei salvestatud.')
-                rec['userConfirmedName'] = True; confirmed = True
-            diff = compare(it['expectedGrid'], grid)
-            rec.update({'gridMatches': not diff, 'mismatches': diff, 'deviceGrid': grid, 'tsDecode': decode_grid_ts(frame)})
-            raw, cpu_reads = S.settle(port, first_wait=0.2)
-            rec.update({'cpuRaw': raw, 'cpuPercent': None if raw is None else S.cpu_from_raw(raw), 'cpuReads': cpu_reads,
-                        'cpuEstimate': it.get('cpuEstimate'), 'cpuDecode': 'piecewise-20261023'})
-            if it.get('ask'):
-                rec['userAnswer'] = input('\n%s: %s ' % (it['id'], it['ask'])).strip()
-            ok_all = ok_all and not diff
-            with log.open('a') as f: f.write(json.dumps(rec, ensure_ascii=False) + '\n')
-            print('[%d/%d] %s  ruudustik %s  CPU %s %% (hinnang %s %%)' % (n, len(items), it['id'],
-                  'KLAPIB' if not diff else 'ERINEB (%d lahtrit)' % len(diff), rec['cpuPercent'], it.get('cpuEstimate')))
+            rec = {'id': it['id'], 'time': time.strftime('%Y-%m-%dT%H:%M:%S'),
+                   'packSha256': pack_hash, 'presetSha256': it['sha256'], 'status': 'failed',
+                   'sentFramesHex': [], 'requestHex': S.cpu_request().hex()}
+            try:
+                # Record every attempted send before issuing it; keep diagnostics on every failure.
+                for data in frames[it['id']]:
+                    rec['sentFramesHex'].append(bytes(data).hex())
+                    port.write(data); time.sleep(0.03)
+                port.drain(0.2)
+                frame, grid, reads, stable = stable_grid(port)
+                rec.update({'gridReads': reads, 'gridStable': stable,
+                            'frameHex': None if frame is None else bytes(frame).hex(),
+                            'frameBytes': 0 if frame is None else len(frame)})
+                S.check(frame is not None, 'FM3 ei vastanud ruudustiku päringule; kirjutused peatatud.')
+                rec.update({'deviceGrid': grid, 'tsDecode': decode_grid_ts(frame)})
+                S.check(stable, 'Ruudustiku tagasilugemine ei stabiliseerunud; kirjutused peatatud.')
+                if not confirmed:
+                    ans = input('\nFM3 ekraanil peaks nüüd olema nimi "%s". Kas on? (j/e): ' % manifest['confirmName']).strip().lower()
+                    rec['userConfirmedName'] = ans.startswith('j')
+                    S.check(rec['userConfirmedName'], 'Seade ei laadinud presetti redaktsioonipuhvrisse; midagi ei salvestatud.')
+                    confirmed = True
+                diff = compare(it['expectedGrid'], grid)
+                rec.update({'gridMatches': not diff, 'mismatches': diff})
+                S.check(not diff, 'Ruudustik erineb (%d lahtrit); kirjutused peatatud.' % len(diff))
+                raw, cpu_reads = S.settle(port, first_wait=0.2)
+                rec.update({'cpuRaw': raw, 'cpuPercent': None if raw is None else S.cpu_from_raw(raw),
+                            'cpuReads': cpu_reads, 'cpuEstimate': it.get('cpuEstimate'), 'cpuDecode': 'piecewise-20261023'})
+                S.check(raw is not None and len(cpu_reads) >= 3 and cpu_reads[-3:] == [raw] * 3,
+                        'CPU tagasilugemine puudub või ei stabiliseerunud; kirjutused peatatud.')
+                if it.get('ask'):
+                    rec['userAnswer'] = input('\n%s: %s ' % (it['id'], it['ask'])).strip()
+                    S.check(rec['userAnswer'].lower().startswith('j'), 'Kasutaja kontroll ei kinnitanud tulemust; kirjutused peatatud.')
+                rec['status'] = 'passed'
+                print('[%d/%d] %s  ruudustik KLAPIB  CPU %s %% (hinnang %s %%)' %
+                      (n, len(items), it['id'], rec['cpuPercent'], it.get('cpuEstimate')))
+            except BaseException as exc:
+                rec['error'] = str(exc)
+                raise
+            finally:
+                with log.open('a') as f: f.write(json.dumps(rec, ensure_ascii=False) + '\n')
     finally:
         port.close()
     print('\nValmis. Tulemused: %s' % log)
-    print('Kõik ruudustikud klapivad.' if ok_all else 'Mõni ruudustik erineb; saada results.jsonl vestlusse.')
+    print('Kõik ruudustikud klapivad.')
     print('Vali FM3-l mõni preset (redaktsioonipuhver tühistub). Midagi ei salvestatud.')
 
 # FM3 community capture 2026-06-12 (fractal-midi gridlayout.test.ts, FM3_FRAME_DRIVE_590), 590 bytes.

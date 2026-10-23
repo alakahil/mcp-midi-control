@@ -8,7 +8,7 @@ import {scanRecords,describeRows,SLUG_BY_EID} from './fm3-layout.mjs';
 import {describeGrid,describeLinks,gridWarnings,isTwoRowSerial} from './fm3-grid.mjs';
 import {layouts,filterDonor,peqDonor,geqDonor,enhancerDonor} from './fm3-composer-bases.mjs';
 import {describeComposerScenes} from './fm3-jb-composer.mjs';
-import {loadDictionary,decodeValue,DEFAULT_STATUSES,OPT_IN_STATUSES,findParam} from './fm3-table-encoder.mjs';
+import {loadDictionary,decodeValue,DEFAULT_STATUSES,OPT_IN_STATUSES,findParam,baseSlug} from './fm3-table-encoder.mjs';
 import {sha256} from './fm3-output.mjs';
 import {typeApplicability,typePolicySummary,readTypeState} from './fm3-type-applicability.mjs';
 import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
@@ -19,10 +19,10 @@ import {INSERT_TYPE_PID} from './fm3-insert-blocks.mjs';
 const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks,{volpan:{typePid:9}});
 export function finalSoundState(syx,writes,opts={}){
   const after=inspectStructure(syx),body=Buffer.from(after.raw.body),{records}=scanRecords(body),dictionary=loadDictionary();
-  const blocks=Object.fromEntries(records.filter(r=>SLUG_BY_EID[r.eid]).map(r=>[r.family,{...r,typePid:definitions[r.family]?.typePid??INSERT_TYPE_PID[r.family]}]));
+  const blocks=Object.fromEntries(records.filter(r=>SLUG_BY_EID[r.block]).map(r=>[r.family,{...r,typePid:definitions[baseSlug(r.family)]?.typePid??INSERT_TYPE_PID[baseSlug(r.family)]}]));
   const scenes=describeComposerScenes(after,blocks);
   // Inserted point-6 families: name the type from the dictionary enum (no composer library exists).
-  for(const s of scenes)for(const [family,b] of Object.entries(s.blocks))if(Object.hasOwn(INSERT_TYPE_PID,family)&&b.typeId!==undefined)b.type=findParam(family,INSERT_TYPE_PID[family]).enum?.[b.typeId]?.trim()??b.type;
+  for(const s of scenes)for(const [family,b] of Object.entries(s.blocks))if(Object.hasOwn(INSERT_TYPE_PID,baseSlug(family))&&b.typeId!==undefined)b.type=findParam(family,INSERT_TYPE_PID[baseSlug(family)]).enum?.[b.typeId]?.trim()??b.type;
   const channels=records.map(r=>({block:r.family,effectId:r.eid,wordsPerChannel:r.words,channels:Array.from({length:r.channels},(_,i)=>({channel:'ABCD'[i],words:Array.from({length:r.words},(_,pid)=>body.readUInt16LE(r.start+(i*r.words+pid)*2))}))}));
   const modifiers=readModifiers(body).map(m=>({...m,targetName:dictionary.params.find(p=>p.block===m.effectId&&p.param===m.pid)?.name??'unknown target'}));
   const effective=writes.map(w=>{
@@ -33,18 +33,18 @@ export function finalSoundState(syx,writes,opts={}){
   // Human-readable retained/changed settings, preserving opaque values in channels[].words.
   const statuses=new Set([...DEFAULT_STATUSES,...(opts.allow??[])]);
   const parameters=[];
-  for(const r of records.filter(r=>SLUG_BY_EID[r.eid]||r.family==='out1'||r.family==='in1')){
+  for(const r of records.filter(r=>SLUG_BY_EID[r.block]||r.family==='out1'||r.family==='in1')){
     const activeChannels=new Set(scenes.map(s=>s.blocks[r.family]?.channel).filter(Boolean));
     if(r.family==='out1')activeChannels.add('A');
     if(r.family==='in1')for(let n=0;n<8;n++){const ch=body.readUInt16LE(r.header+10+n*2);if(ch<4)activeChannels.add('ABCD'[ch]);}
     for(const w of writes.filter(w=>(w.instanceBlock??w.block)===r.family))activeChannels.add(w.channel);
     for(const channel of [...activeChannels].sort()){
       const i='ABCD'.indexOf(channel);
-      for(const p of dictionary.params.filter(p=>p.block===r.eid&&p.param<r.words&&statuses.has(p.status))){
+      for(const p of dictionary.params.filter(p=>p.block===r.block&&p.param<r.words&&statuses.has(p.status))){
         const raw=body.readUInt16LE(r.start+(i*r.words+p.param)*2),value=decodeValue(p,raw);
         const applicability=typeApplicability(p,readTypeState(p,pid=>body.readUInt16LE(r.start+(i*r.words+pid)*2)));
         if(applicability.covered&&!applicability.allowed)continue;
-        if(value!==undefined&&!(typeof value==='number'&&!Number.isFinite(value)))parameters.push({block:r.family,channel,name:p.name,label:applicability.label??p.label,raw,value,unit:unitFor(p),status:p.status,storedDependency:p.storedDependency,encodingEvidence:p.encodingEvidence,dependencies:dependencyState(body,{effectId:r.eid,pid:p.param,channel,offset:r.start+(i*r.words+p.param)*2},{modifiers}),scope:applicability.covered?'stored value; bounded type/algorithm policy passed; dependencies reported separately':'stored value; type-specific visibility not validated',typeApplicability:applicability});
+        if(value!==undefined&&!(typeof value==='number'&&!Number.isFinite(value)))parameters.push({block:r.family,channel,name:p.name,label:applicability.label??p.label,raw,value,unit:unitFor(p),status:p.status,storedDependency:p.storedDependency,encodingEvidence:p.encodingEvidence,dependencies:dependencyState(body,{effectId:r.block,instanceEid:r.eid,pid:p.param,channel,offset:r.start+(i*r.words+p.param)*2},{modifiers}),scope:applicability.covered?'stored value; bounded type/algorithm policy passed; dependencies reported separately':'stored value; type-specific visibility not validated',typeApplicability:applicability});
       }
     }
   }
@@ -96,8 +96,8 @@ export function renderFinalSoundText(state,spec){
     if(['peq','geq','enhancer'].includes(family))lines.push('    '+JSON.stringify(b));
   }}
   lines.push('','TABELIGA MÄÄRATUD PARAMEETRID — LÕPPFAILIST');
-  for(const w of state.controls)lines.push(`${w.block} ${w.channel} ${w.label??w.name} (${w.name}): ${fmt(w.display)} ${w.unit}; küsitud ${fmt(w.value)}; raw ${w.raw}; ${w.status}${dependencyNote(w)}${w.storedDependency?'; '+w.storedDependency:''}.`);
-  const written=new Set(state.controls.map(p=>p.block+':'+p.channel+':'+p.name));
+  for(const w of state.controls)lines.push(`${w.instanceBlock??w.block} ${w.channel} ${w.label??w.name} (${w.name}): ${fmt(w.display)} ${w.unit}; küsitud ${fmt(w.value)}; raw ${w.raw}; ${w.status}${dependencyNote(w)}${w.storedDependency?'; '+w.storedDependency:''}.`);
+  const written=new Set(state.controls.map(p=>(p.instanceBlock??p.block)+':'+p.channel+':'+p.name));
   const explicitChannels=new Set(Object.entries(spec.composer).filter(([k,v])=>k.endsWith('Channels')&&Array.isArray(v)).flatMap(([k,v])=>v.filter(c=>Object.keys(c).some(x=>!['channel','type','model'].includes(x))).map(c=>k.slice(0,-8)+':'+c.channel)));
   const mainNames=new Set(['DISTORT_DRIVE','DISTORT_BASS','DISTORT_MID','DISTORT_TREBLE','DISTORT_PRESENCE','DISTORT_LEVEL','FUZZ_DRIVE','FUZZ_TONE','FUZZ_LEVEL','FUZZ_MIX','DELAY_TIME','DELAY_TEMPO','DELAY_FEED','DELAY_MIX','REVERB_TIME','REVERB_MIX']);
   lines.push('','MUUD PÕHISEADED LÕPPFAILIST','Ümardatud salvestatud väärtused; detailne loend ja toorsõnad on validation.json failis.');

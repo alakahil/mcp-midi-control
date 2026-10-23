@@ -527,6 +527,15 @@
       ],
       "scope": "Relocated package under spaces, percent, hash and Unicode; known preset byte replay, Input/Volume four-file generation and verification; no hardware I/O",
       "required": true
+    },
+    {
+      "id": "test-grid-output",
+      "command": [
+        "node",
+        "scripts/test-grid-output.mjs"
+      ],
+      "scope": "Final SYX/TXT/spec/report agreement for grid, Drive 2 and Volume 2; unchanged bytes; seven valid-CRC rehashed tamper cases; no hardware I/O",
+      "required": true
     }
   ]
 }

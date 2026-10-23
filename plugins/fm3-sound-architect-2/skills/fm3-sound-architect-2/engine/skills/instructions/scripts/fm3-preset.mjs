@@ -7,6 +7,7 @@ import {generatePreset} from './fm3-generate.mjs';
 import {composeSound,getSoundCapabilities} from './fm3-sound.mjs';
 import {writePresetOutputs,verifyPresetOutputs} from './fm3-output.mjs';
 import {validateGlobalScaleObservations,loadGlobalScaleObservations,bindGlobalScaleObservations,renderGlobalScaleObservations} from './fm3-global-scale-observations.mjs';
+import {renderCpuText} from './fm3-cpu.mjs';
 import {renderFinalSoundText} from './fm3-final-state.mjs';
 import {auditModifiers,renderModifierAuditText} from './fm3-modifier-audit.mjs';
 export {getSoundCapabilities as getPresetCapabilities,writePresetOutputs,verifyPresetOutputs,auditModifiers,renderModifierAuditText};
@@ -17,7 +18,7 @@ export function createPreset(base,spec,options={}){
   if(observations){
     result.report.globalScaleObservations=observations;
     result.report.globalScaleDependencies=bindGlobalScaleObservations(result.syx,observations);
-    result.txt=sound?renderFinalSoundText(result.report,spec):result.txt+'\n'+renderGlobalScaleObservations(result.report.globalScaleDependencies);
+    result.txt=sound?renderFinalSoundText(result.report,spec)+renderCpuText(result.report.cpu)+'\n':result.txt+'\n'+renderGlobalScaleObservations(result.report.globalScaleDependencies);
   }
   return result;
 }

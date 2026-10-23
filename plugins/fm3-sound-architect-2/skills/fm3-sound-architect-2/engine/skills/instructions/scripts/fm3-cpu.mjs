@@ -57,23 +57,25 @@ export function estimateCpu(syx){
     let total=cpuMeasurements.costs.baseline.cpu;const notes=[],unknown=[],parts={};
     for(const r of blocks){const b=blockCost(body,r,s);notes.push(...b.notes);if(b.cost===null){unknown.push(r.family);continue;}total+=b.cost;parts[r.family]=b.cost;}
     const exact=!notes.length&&!unknown.length,pct=Math.round(total*10)/10;
-    return {scene:s+1,percent:pct,exact,parts,notes,unknown,
+    return {scene:s+1,percent:pct,measuredTypeCoverage:exact,exact,parts,notes,unknown,
       warning:pct>limit?'over the safe limit':pct>limit-8?'within 8 % of the safe limit':null};
   });
   const worst=scenes.reduce((a,b)=>b.percent>a.percent?b:a);
-  return {model:'fm3-cpu 0.2.0',measurementsSha256:cpuMeasurementsHash,typesSha256:cpuTypesHash,limitPercent:limit,maxPercent:worst.percent,worstScene:worst.scene,
-    exactAllScenes:scenes.every(s=>s.exact),scenes,
-    scope:'Effects-core meter (FM3-Edit CPU). Exact (±1 %) when every block uses a measured type; otherwise unmeasured types use the family maximum and are named. Amp/Delay core not visible. Bypass does not reduce CPU.'};
+  return {model:'fm3-cpu 0.2.1',measurementsSha256:cpuMeasurementsHash,typesSha256:cpuTypesHash,limitPercent:limit,maxPercent:worst.percent,worstScene:worst.scene,
+    measuredTypeCoverageAllScenes:scenes.every(s=>s.measuredTypeCoverage),
+    exactAllScenes:scenes.every(s=>s.exact),exactFieldsMeaning:'Legacy aliases for measured-type coverage, not prediction accuracy',scenes,
+    scope:'Effects-core meter (FM3-Edit CPU). Measured component costs do not establish a bound on combined-preset error (G06: estimate 44.3 %, measured 41.5 %). Unmeasured types use an available family maximum or a single measured reference; unknown families are omitted and named. Amp/Delay core not visible. Bypass does not reduce CPU.'};
 }
 export function renderCpuText(e){
   const lines=['','CPU HINNANG (FM3 Mk II Turbo, püsivara 13; mõõdetud 2026-10-23)',
     `Suurim: ${e.maxPercent} % (Scene ${e.worstScene}); ohutu piir ${e.limitPercent} %.`,
     'Stseenid: '+e.scenes.map(s=>`S${s.scene} ${s.percent} %`).join(', ')];
-  if(e.exactAllScenes)lines.push('Kõik plokid ja tüübid on mõõdetud: hinnang on täpne (±1 %).');
+  if(e.measuredTypeCoverageAllScenes)lines.push('Kõigi plokkide valitud tüüpidel on mõõteandmed; nende summa ei taga presetipõhist veapiiri.');
   else{const n=[...new Set(e.scenes.flatMap(s=>s.notes))],u=[...new Set(e.scenes.flatMap(s=>s.unknown))];
-    lines.push('Osa tüüpe on mõõtmata; nende jaoks on kasutatud pere suurimat kulu (hinnang pigem ülespoole).');
+    lines.push('Osa tüüpe on mõõtmata; kasutatakse olemasolevat pere maksimumi või üht mõõdetud võrdlustüüpi. See ei taga ülempiiri.');
     if(n.length)lines.push('Märkused: '+n.join('; '));if(u.length)lines.push('Mõõtmata plokid (pole arvestatud): '+u.join(', '));}
   const w=e.scenes.filter(s=>s.warning);if(w.length)lines.push('HOIATUS: '+w.map(s=>`Scene ${s.scene} ${s.percent} % (${s.warning})`).join('; '));
+  lines.push('Koondmudeli kontrollnäide G06: hinnang 44,3 %, mõõdetud 41,5 % (erinevus 2,8 protsendipunkti).');
   lines.push('Amp ja Delay töötavad eraldi tuumal; selle koormust see hinnang ei näe.');
   return lines.join('\n');
 }

@@ -21,6 +21,7 @@ import {decodeEnhancerChannel,enhancerFullCapabilities} from './fm3-enhancer-ful
 import {decodeGeqChannel,geqFullCapabilities} from './fm3-geq-full.mjs';
 import {validateLegacyDependencies} from './fm3-parameter-dependencies.mjs';
 import {applyWahModifier,wahModifierCapabilities,renderWahModifierText,verifyWahModifierReadback,matchWahAutoEngageDeviceBody,matchWahDampingDeviceBody,matchWahMinDeviceBody,matchWahMeasuredDeviceBody} from './fm3-wah-modifier.mjs';
+import {baseSlug} from './fm3-table-encoder.mjs';
 export {layout,composerBases};
 const check=(v,m)=>{if(!v)throw Error(m)},own=(o,k)=>Object.hasOwn(o,k);
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -199,7 +200,8 @@ function renderText(after,r){
 export function describeComposerScenes(after,blocks){
   const actual=Buffer.from(after.raw.body),lib=composerLibraries();
   const cabLib=JSON.parse(read('lookup/cab-library.json'));
-  return Array.from({length:8},(_,i)=>({scene:i+1,name:after.decoded.scene_names[i],blocks:Object.fromEntries(Object.entries(blocks).map(([family,l])=>{
+  return Array.from({length:8},(_,i)=>({scene:i+1,name:after.decoded.scene_names[i],blocks:Object.fromEntries(Object.entries(blocks).map(([instanceFamily,l])=>{
+    const family=baseSlug(instanceFamily);
     const channel=actual.readUInt16LE(l.header+10+2*i),start=l.start+channel*l.words*2,bypass=actual.readUInt16LE(l.header+26+2*i)===1;
     const typeId=l.typePid===undefined?null:actual.readUInt16LE(start+l.typePid*2);
     const type=family==='amp'?catalog.models.find(m=>m.id===typeId)?.name:lib[family]?.models.find(m=>m.binaryId===typeId)?.name;
@@ -211,6 +213,6 @@ export function describeComposerScenes(after,blocks){
     if(family==='peq'){extra.type='Parametric EQ';Object.assign(extra,decodePeqChannel(Array.from({length:33},(_,j)=>actual.readUInt16LE(start+2*j))));}
     if(family==='enhancer')Object.assign(extra,decodeEnhancerChannel(Array.from({length:12},(_,j)=>actual.readUInt16LE(start+2*j))));
     if(family==='geq')Object.assign(extra,decodeGeqChannel(Array.from({length:20},(_,j)=>actual.readUInt16LE(start+2*j))));
-    return [family,{channel:'ABCD'[channel],bypass,...(typeId!==null?{typeId,type:type??'ID '+typeId}:{}),...extra}];
+    return [instanceFamily,{channel:'ABCD'[channel],bypass,...(typeId!==null?{typeId,type:type??'ID '+typeId}:{}),...extra}];
   }))}));
 }
