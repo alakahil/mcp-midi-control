@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 import subprocess
 import zipfile
@@ -21,7 +22,12 @@ def build(commit, output):
     if output.exists():
         raise ValueError('Output exists')
     files = {name:git('show',commit+':'+PREFIX+name) for name in FILES}
-    files['TULEMUS.md'] = git('show',commit+':docs/fm3/parameter-evidence/volume-pedal-static-result.md')
+    report = git('show',commit+':docs/fm3/parameter-evidence/volume-pedal-static-result.md').decode()
+    # The handoff is standalone: evidence links resolve to the immutable repo snapshot.
+    report = re.sub(r'\]\((volume-pedal-[^/()]+\.json)\)',
+                    lambda m: '](https://github.com/alakahil/mcp-midi-control/blob/'+commit+
+                    '/docs/fm3/parameter-evidence/'+m[1]+')', report)
+    files['TULEMUS.md'] = report.encode()
     source = dict(schemaVersion=1,repository='https://github.com/alakahil/mcp-midi-control',
                   sourceCommit=commit,sourceTree=git('rev-parse',commit+'^{tree}').decode().strip(),
                   publishedPluginVersion='0.3.16',publishedEngineCommit='a11d8e44d0df339411d7e45ad6bea126b0bf89d5',
