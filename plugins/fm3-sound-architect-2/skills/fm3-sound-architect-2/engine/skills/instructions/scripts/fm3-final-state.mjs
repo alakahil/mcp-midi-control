@@ -1,4 +1,7 @@
 // Final report is decoded AFTER all layout/control/scene stages.
+import {volumeChannelText} from './fm3-volume-text.mjs';
+import {describeVolumePan} from './fm3-volume.mjs';
+import {volumeUnits} from './fm3-volume-policy.mjs';
 import {describeInputGate,inputUnits} from './fm3-input-gate.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {scanRecords,describeRows,SLUG_BY_EID} from './fm3-layout.mjs';
@@ -11,7 +14,7 @@ import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-param
 import {globalScaleDependencies,pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 import {renderGlobalScaleObservations} from './fm3-global-scale-observations.mjs';
 import {renderWahModifierText} from './fm3-wah-modifier.mjs';
-const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks);
+const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks,{volpan:{typePid:9}});
 export function finalSoundState(syx,writes,opts={}){
   const after=inspectStructure(syx),body=Buffer.from(after.raw.body),{records}=scanRecords(body),dictionary=loadDictionary();
   const blocks=Object.fromEntries(records.filter(r=>SLUG_BY_EID[r.eid]).map(r=>[r.family,{...r,typePid:definitions[r.family]?.typePid}]));
@@ -42,11 +45,12 @@ export function finalSoundState(syx,writes,opts={}){
     }
   }
   const inputGate=describeInputGate(body,records.find(r=>r.eid===37));
-  return {inputGate,name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalRows:describeRows(body),scenes,controls:effective,channels,parameters,dependencies:dependencyPolicySummary(),modifiers,typeApplicability:typePolicySummary(),pitchCustomScales:pitchCustomScaleSummary(),globalScaleDependencies:globalScaleDependencies(channels),outputSha256:sha256(syx)};
+  return {inputGate,volumePan:describeVolumePan(body,records.find(r=>r.eid===102)),name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalRows:describeRows(body),scenes,controls:effective,channels,parameters,dependencies:dependencyPolicySummary(),modifiers,typeApplicability:typePolicySummary(),pitchCustomScales:pitchCustomScaleSummary(),globalScaleDependencies:globalScaleDependencies(channels),outputSha256:sha256(syx)};
 }
 function unitFor(p){
   // Only explicit, already used units; unknown units stay labelled as editor values.
   if(inputUnits[p.name])return inputUnits[p.name];
+  if(volumeUnits[p.name])return volumeUnits[p.name];
   if(p.kind==='enum')return '';
   if(p.family==='PITCH'&&p.param>=64&&p.param<=70)return 'pooltooni toonikast';
   if(p.family==='PITCH'&&p.param>=77&&p.param<=92)return 'skaalaastet';
@@ -74,10 +78,15 @@ export function renderFinalSoundText(state,spec){
   lines.push(...renderWahModifierText(state.modifierEdit));
   if(state.controls.some(w=>w.block==='in1'))lines.push('','SISENDI GATE — INPUT 1',
     'Presetis salvestatud A–D väärtused; Gate Type, Mode ja bypass säilivad. See ei ole eraldi Gate-plokk.',
-    'Kodeering kasutab olemasolevaid tabelikõveraid ja FW13 metaandmeid; uusi gate’i riistvaramõõtmisi pole tehtud.',
+    'Kodeering kasutab olemasolevaid tabelikõveraid ja FW13 metaandmeid; 20 Input-sihtsõna säilimine seadmeekspordis on kinnitatud, skaalasid eraldi ei mõõdetud.',
     'Globaalne Noisegate Offset ja AC Line Frequency ei sisaldu selles SYX-is ega muutu.',
     ...state.inputGate.states.map(s=>`  Kanal ${s.channel}: Type raw ${s.typeRaw}; Mode raw ${s.modeRaw}.`),
     ...state.inputGate.scenes.map(s=>`  Input 1 Scene ${s.scene}: kanal ${s.channel}; bypass raw ${s.bypassRaw}.`));
+  if(state.volumePan)lines.push('','VOLUME/PAN 1 — LÕPPFAILIST',
+    'FW13 seadmeekspordist saadud VOLUME-plokimall; uued skaalaväärtused ja stseenivalikud on kontrollitud tarkvaraliselt.',
+    'Auto-Swell, TYPE ja modifikaatori sidumine pole selle kirjutustoe osa. Taper ei ole salvestussõna kodeerimiskõver.',
+    ...state.volumePan.states.map(volumeChannelText),
+    ...state.volumePan.scenes.map(s=>`  Volume/Pan 1 Scene ${s.scene}: kanal ${s.channel}; bypass raw ${s.bypassRaw}.`));
   for(const s of state.scenes){lines.push(`Scene ${s.scene}: ${s.name}`);for(const [family,b] of Object.entries(s.blocks)){
     lines.push(`  ${family} ${b.channel}: ${b.type??b.cabs?.map(c=>c.name).join(' + ')??b.mode??'alusest'}; ${b.bypass?'bypass':'sees'}${b.levelDb===undefined?'':'; Level '+fmt(b.levelDb)+' dB'}`);
     if(['peq','geq','enhancer'].includes(family))lines.push('    '+JSON.stringify(b));

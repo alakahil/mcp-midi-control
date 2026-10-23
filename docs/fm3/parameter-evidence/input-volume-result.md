@@ -1,3 +1,51 @@
+# Uusim tulemus — kasutaja eksport kontrollitud, Volume/Pan kandidaat lisatud
+
+23.10.2026 tagastatud `FM3_INPUT_VOL_CHECK_export.syx` SHA-256 on
+`e6537e4a8f86b7bb9d125e341567b7c5b354afac65fc4f325a8580d0d8a06356`.
+Võrdlus läbis kõik kontrollid: 20 Input A–D sihtsõna ja kogu ülejäänud Input-kirje
+säilisid, kõik varasemad plokikirjed, ülejäänud prefiks ja süsteemisaba on identsed.
+Ainus grid-muudatus on rea 3 veeru 2 shunt 1031 → Volume/Pan 1 (102).
+Lisatud kirje on 166 baiti: 46-baidine päis + A–D × 15 uint16 sõna, header 8960.
+Kõik neli kanalit on VOLUME (TYPE raw 0); kõik kaheksa stseeni kasutavad kanalit A,
+bypass raw 0. Kirje SHA-256 on `fdf6204515c4d9e2c42b26be4ed26603becc571a1ec040f48a75d6e08b640ecc`.
+
+Kogu lahtipakitud body taastub allpool oleva algspec'i ja salvestatud 166-baidise
+kirje abil täpselt. Tihendusbaidid ja nendest sõltuvad kontrollsummad erinevad
+seadme ning generaatori väljundis; kogu SYX-baidijada võrdsust ei väideta.
+Algne üleslaaditud fail säilib eraldi; repo sisaldab taastatavat doonorkirjet,
+body räsi ja algfaili räsi, mitte uusi oletuslikke mõõtepunkte.
+`tools/fm3/volume-device-evidence.mjs --capture /path/to/original.syx` kontrollib
+ka algset faili. CI ilma argumendita taasesitab täpset body-tõendit.
+
+Kandidaat lisab `volumePan:true` kaudu ühe Volume/Pan 1 ploki NewLooki olemasolevasse
+kahe rea koostajasse. `layout` peab sisaldama `volpan`-i. Arvparameetrid:
+GAIN (0), BAL (1), PANL (4), PANR (5), LEVEL (6); `allow:["enum-labels"]`
+korral ka TAPER (2), BYPASSMODE (7), INPUTSELECT (8). Stseenikanal ja bypass
+käivad `blockScenes.volpan` kaudu. TYPE (9), kanali BYPASS (3), AUTO-SWELL-i
+väljad 10–13 ja meter 14 ei ole kirjutatavad. VOLUME-tüüp säilib kõigil kanalitel.
+Aktiivse modifikaatori konflikt blokeerib staatilise väärtuse muutmise.
+
+Täiendav test kontrollib üht toetatud NewLooki sisestust ja kuue sobimatu vana
+ruudustiku tõrjumist, kogu seadme body taastamist, 148 A–D parameetrikirjutust,
+18 vigast sisendit, kõiki kaheksat stseeni, tundmatut/Auto-Swell tüüpi, sõltumatut
+raw-dekoodrit ning SYX/TXT/spec/validation kooskõla ja võltsimise tõrjumist.
+Uued parameetriväärtused ja stseenivalikud on tarkvaratestid, mitte riistvarapunktid.
+Algne Input-test jääb alles; offline-komplektis on nüüd 51 kontrolli.
+
+Uute füüsikaliste skaalamõõtmiste arv on endiselt 0. Uus seadmetõend on **20
+Input-sihtsõna säilimine ühes kombinatsioonis ja üks Volume vaikeplokimall**.
+Auto-Swell-i mall, uued modifikaatoriseosed, heli/CPU ja STORE/reload pole selle
+ekspordiga tõendatud. Uut REA analüüsi ega uut seadmeeksporti selleks muudatuseks
+vaja ei olnud. Avaldatud privaatne plugin jääb 0.3.14; muudatus kuulub PR #16
+avaldamata kandidaati. Wah Min/Max-i tõendusulatus ei laiene.
+
+Edasine seadmetöö tuleb siduda uue konkreetse teadmislüngaga. Selle koondkatse
+kordamist ega uut ekspordiringi praegu ei küsita.
+
+---
+
+## Eelnev analüüs enne kasutaja ekspordi saabumist
+
 # Input gate / Volume-Pan — 23.10.2026 arenduskandidaat
 
 Avaldatud privaatne plugin on endiselt **0.3.14** (`plugins_6accfd716e148191b0adb61e4e36f0e4`, release `pluginrel_6adaf28e90708191bf43faf7c8bb2115`). Avaldatud mootori lähtecommit on `43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b`; selle töö lähte-main on `af771e434cbda559e3649ab7dcc41926091d92eb`. Viimane sisaldab taastamise varukoopiat ega tähenda uut mootoriväljalaset. Siinne Input-tugi on **avaldamata kandidaat**. Volume kirjutustugi jääb suletuks.

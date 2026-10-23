@@ -456,6 +456,15 @@
       ],
       "scope": "Bounded Input 1 numeric A-D writes; seven bases, independent raw decoder, atomic rejections, FW13 mode visibility, modifier conflict, four-file consistency; no new hardware evidence",
       "required": true
+    },
+    {
+      "id": "test-volume-pan",
+      "command": [
+        "node",
+        "scripts/test-volume-pan.mjs"
+      ],
+      "scope": "One captured FW13 body reconstruction; bounded VOLUME insertion and A-D controls, preservation, scenes, independent raw decoder and four-file tamper rejection; no new physical scales/audio/STORE proof",
+      "required": true
     }
   ]
 }

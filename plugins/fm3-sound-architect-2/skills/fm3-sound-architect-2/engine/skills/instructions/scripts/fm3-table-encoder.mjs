@@ -2,6 +2,7 @@
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
 import fs from 'node:fs';
+import {validateVolumeWrites} from './fm3-volume-policy.mjs';
 import {validateInputGateWrites} from './fm3-input-gate.mjs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
@@ -20,7 +21,7 @@ export const dictionaryHash='a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed1307
 // 'taper-class-verified' share the exact curve class of 280/280 hardware points.
 export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','enum-labels-crosschecked','preset-word-crosschecked']);
 export const OPT_IN_STATUSES=Object.freeze(['linear-by-structure','enum-labels']);
-export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT',in1:'INPUT'});
+export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT',volpan:'VOLUME',in1:'INPUT'});
 
 let cache=null;
 export function loadDictionary(){
@@ -129,6 +130,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
     writes.push({effectId:p.block,block:c.block,channel:c.channel,name:p.name,label:p.label,pid:p.param,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
   }
   validateInputGateWrites(original,writes);
+  validateVolumeWrites(original,writes);
   validateTypeWrites(original,writes);
   validateDependencyWrites(original,writes);
   for(const {raw,offset} of writes){body.writeUInt16LE(raw,offset);allowed.add(offset);allowed.add(offset+1)}

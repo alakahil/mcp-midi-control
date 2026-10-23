@@ -10,7 +10,8 @@ export const inputUnits=Object.freeze({INPUT_THRESH:'dB',INPUT_RATIO:':1',INPUT_
 export function inputGateSummary(){return {supported:true,block:'in1',effectId:37,channels:['A','B','C','D'],
   parameters:[...numericPids].map(pid=>({pid,name:input.parameters[pid].name,unit:inputUnits[input.parameters[pid].name],kind:input.parameters[pid].kind,displayRange:input.parameters[pid].numericFields.slice(0,2).map(v=>v*input.parameters[pid].numericFields[2])})),
   evidenceSha256:inputVolumeEvidenceHash,encoding:'existing table curve classes; metadata/model generalization, no new gate measurements',
-  newHardwareMeasurements:0,fullRangeEncodingProven:false,
+  newHardwareMeasurements:0,newPhysicalScaleMeasurements:0,fullRangeEncodingProven:false,
+  hardwareStorageRoundtrip:{targetWords:20,channels:['A','B','C','D'],captureSha256:'e6537e4a8f86b7bb9d125e341567b7c5b354afac65fc4f325a8580d0d8a06356',scope:'one imported combination; entire Input record preserved'},
   preserved:['Gate Type','Mode','Input bypass','meter/reserved words','scene assignments','global Noisegate Offset','global AC Line Frequency','modifiers'],
   limits:['Input 1 only; separate Gate block excluded','Ratio and Attack require final ADVANCED; Release is visible in both FW13 modes','Threshold OFF (-100 endpoint) not authored','No Volume/Pan insertion or controller binding']};}
 export function inputGateState(p,read){

@@ -30,18 +30,30 @@ Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
 
-## Avaldamata Input-gate'i arenduskandidaat (23.10.2026)
+## Avaldamata Input / Volume-Pan kandidaat (23.10.2026)
 
-Selle tööharu muudatus pole veel uus privaatne väljalase. Avaldatud 0.3.14
-jääb eraldi; `capabilities.developmentCandidate` märgib siinset kandidaati.
-`in1` A–D arvparameetrid THRESH, RATIO, RELEASE, ATTACK ja LEVEL on piiratud
-kirjutustoega. Ratio/Attack vajavad olemasolevat ADVANCED-režiimi; tüüp, režiim,
-Input bypass, impedants ja meter säilivad. Threshold OFF-äärpunkti ei kirjutata.
-Aktiivse modifikaatori konflikt tõrjutakse. See on Input 1, mitte Gate-plokk.
-Skaala tugineb FW13 cache'i, editori native/XML-i ja varasema kõveraklassi
-üldistusele; uusi Input-gate'i seadmemõõtmisi pole. Volume/Pan kirjutustugi pole
-avatud: esmalt on vaja praegust FW13 plokimalli. Globaalsed Noisegate Offset ja
-AC Line Frequency ei sisaldu preseti tõendis. Wah Min/Max-i tõendusulatus ei laiene.
+Selle tööharu muudatus pole uus privaatne väljalase. Avaldatud plugin jääb 0.3.14;
+`capabilities.developmentCandidate` eristab kandidaati. Input 1 viie arvparameetri
+A–D kirjutustugi säilib: THRESH, RATIO, RELEASE, ATTACK, LEVEL. Ratio/Attack
+vajavad ADVANCED-režiimi. Type, Mode, Input bypass, impedants ja meter säilivad;
+Threshold OFF-äärpunkti ei kirjutata. See on Input 1, mitte eraldi Gate-plokk.
+Kasutaja ühe tagastatud FW13 ekspordiga kinnitati kõigi 20 valitud Input-sihtsõna
+ning kogu ülejäänud Input-kirje säilimine. See ei tõenda eraldi füüsikalisi skaalasid.
+
+Volume/Pan 1 praegune FW13 15-sõnaline A–D kirje on nüüd olemas. Sound-spec'i
+`volumePan:true` lisab selle NewLook-alusele; `layout` peab sisaldama `volpan`-i.
+`controls` kasutab `block:"volpan"`: GAIN, BAL, PANL, PANR ja LEVEL; eraldi
+`allow:["enum-labels"]` korral ka TAPER, BYPASSMODE ja INPUTSELECT. Stseenide
+kanal/bypass: `blockScenes.volpan`. Praegu toetatakse ainult VOLUME-tüüpi;
+TYPE, Auto-Swell, kanali BYPASS-sõna ja meter jäävad säilitatavaks. Uut
+modifikaatori/pedaali sidumist ei lisata. Aktiivse modifikaatori konflikt tõrjutakse.
+
+Ühe ekspordi plokimall ja Input-sõnade säilimine on seadmetõend. Uued
+Volume-väärtused, asukohad ja stseenikombinatsioonid on tarkvaraliselt kontrollitud
+ning skaalad tuginevad FW13 native/cache/XML-i ja kõveraklassi üldistusele.
+STORE/reload, heli/CPU ja täisvahemik pole sellega tõendatud. Globaalne Noisegate
+Offset / AC Line Frequency ei kuulu preseti sisusse. Wah Min/Max-i tõendusulatus
+ja `fullRangeEncodingProven=false` säilivad. Selle ekspordi kordamist pole vaja.
 
 ## Kasutaja kinnitatud seadistus
 

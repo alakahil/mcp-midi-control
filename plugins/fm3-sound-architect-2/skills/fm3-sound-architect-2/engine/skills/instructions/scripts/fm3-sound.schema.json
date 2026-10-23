@@ -33,7 +33,8 @@
               "filter",
               "peq",
               "geq",
-              "enhancer"
+              "enhancer",
+              "volpan"
             ]
           }
         },
@@ -59,7 +60,8 @@
               "filter",
               "peq",
               "geq",
-              "enhancer"
+              "enhancer",
+              "volpan"
             ]
           }
         },
@@ -151,6 +153,11 @@
               "type": "integer",
               "minimum": 2,
               "maximum": 11
+            },
+            "volpan": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
             }
           }
         }
@@ -186,7 +193,8 @@
               "geq",
               "enhancer",
               "out1",
-              "in1"
+              "in1",
+              "volpan"
             ]
           },
           "channel": {
@@ -907,6 +915,46 @@
               }
             ]
           }
+        },
+        "volpan": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
         }
       }
     },
@@ -953,6 +1001,10 @@
           "pattern": "^[^\\u0000-\\u001f]*$"
         }
       }
+    },
+    "volumePan": {
+      "const": true,
+      "description": "Insert captured FW13 Volume/Pan 1 VOLUME record; include volpan in the existing two-row layout."
     }
   },
   "required": [

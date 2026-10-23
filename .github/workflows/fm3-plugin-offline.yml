@@ -45,6 +45,7 @@ jobs:
           python3 tools/fm3/test-modifier-value-path.py
           python3 tools/fm3/test-modifier-sharc.py
           python3 tools/fm3/input_volume_evidence.py
+          node tools/fm3/volume-device-evidence.mjs
           node tools/fm3/input-volume-audit.mjs
           node tools/fm3/test-input-volume-comparison.mjs
           python3 tools/fm3/parameter-evidence.py

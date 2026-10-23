@@ -1,3 +1,4 @@
+import {verifyVolumeOutput} from './fm3-volume-output.mjs';
 import {verifyInputGateOutput} from './fm3-input-gate-output.mjs';
 // Stage all four files; never overwrite existing output. The validation file is
 // published last and is the completion marker. Caught failures remove our links.
@@ -34,5 +35,6 @@ export function verifyPresetOutputs(stem){
   verifyGlobalScaleReport(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'));
   verifyWahExactOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   verifyInputGateOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
+  verifyVolumeOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   return report;
 }
