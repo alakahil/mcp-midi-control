@@ -12,7 +12,7 @@ Hiljem lisatud varukoopia commit ei muuda mootori versiooni ega avaldatud lähte
 - `published/launcher/`: viie failiga salvestatud käivitaja; release, commit ja manifesti SHA-256 on seotud. Käivitaja Git-commit `131d094a18378968e41607d22761600b71d353db` on push'itud. Kataloog võis selles sessioonis veel kuvada 0.3.14; tegelikult salvestatud käivitaja ja kasutatud pakett on eraldi kontrollitud.
 - `published/host-use/`: värske konteksti tegelik avaldatud paketi kasutus ja nelja väljundfaili kontroll. Suured JSON-väljundid on kadudeta gzip-arhiivis.
 - `reports/`: uusim täielik tööaruanne (versioon 41); varasem versioon 40 on Git-ajaloos.
-- [Volume pedaali järgmine uurimisküsimus](../../../../docs/fm3/parameter-evidence/volume-pedal-next-step.md) ja korduvkasutatav ainult lugemise inventuur; uusi seadmekirjutusi ega REA analüüsi ei tehtud.
+- [Volume pedaali järgmine uurimisküsimus](../../../docs/fm3/parameter-evidence/volume-pedal-next-step.md) ja korduvkasutatav ainult lugemise inventuur; uusi seadmekirjutusi ega REA analüüsi ei tehtud.
 
 `offline/` ja `publication/` juurkaustas on **superseded source 981806a** kandidaadi tõend. Need säilivad diagnostikaks; avaldatud väljalaske taastamiseks kasuta ainult `published/` andmeid. `review/`, `forward-initial/` ja `forward-final/` säilitavad arenduse vead ning kasutuskatsed. Algset kasutaja täielikku SYX-eksporti pole siia kopeeritud.
 

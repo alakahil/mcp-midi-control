@@ -8,8 +8,8 @@
   "workReportVersion": 41,
   "files": {
     "README.md": {
-      "bytes": 3718,
-      "sha256": "265d136f45c25229dc150a51f38242cbe3d66404e5686d9fffac04b190d600e0"
+      "bytes": 3715,
+      "sha256": "f1583906852ed42aa09d0cbddb9725297c464f0890026edaf6d43df452b3e338"
     },
     "backup-ci/backup-matrix-check.log": {
       "bytes": 11714,
