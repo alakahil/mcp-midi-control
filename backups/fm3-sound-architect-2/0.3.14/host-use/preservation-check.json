@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "name": "FM3 WAH EXACT",
+  "originalBodyBytes": 12804,
+  "outputBodyBytes": 13050,
+  "existingRecords": [
+    {
+      "effectId": 58,
+      "family": "amp",
+      "bytes": 1198,
+      "identical": true
+    },
+    {
+      "effectId": 62,
+      "family": "cab",
+      "bytes": 894,
+      "identical": true
+    },
+    {
+      "effectId": 70,
+      "family": "delay",
+      "bytes": 758,
+      "identical": true
+    },
+    {
+      "effectId": 186,
+      "family": "return",
+      "bytes": 58,
+      "identical": true
+    },
+    {
+      "effectId": 182,
+      "family": "send",
+      "bytes": 50,
+      "identical": true
+    },
+    {
+      "effectId": 118,
+      "family": "drive",
+      "bytes": 398,
+      "identical": true
+    },
+    {
+      "effectId": 37,
+      "family": "in1",
+      "bytes": 126,
+      "identical": true
+    },
+    {
+      "effectId": 42,
+      "family": "out1",
+      "bytes": 254,
+      "identical": true
+    },
+    {
+      "effectId": 66,
+      "family": "reverb",
+      "bytes": 614,
+      "identical": true
+    }
+  ],
+  "existingSceneNamesChannelsBypassPreserved": true,
+  "selectedScene": 2,
+  "wahAllEightScenes": {
+    "channel": "A",
+    "type": "FAS Wah",
+    "bypass": true
+  },
+  "gridDiff": [
+    {
+      "before": {
+        "row": 1,
+        "col": 2,
+        "id": 1025,
+        "mask": 2
+      },
+      "after": {
+        "row": 1,
+        "col": 2,
+        "id": 94,
+        "mask": 2
+      }
+    }
+  ],
+  "prefixDiff": [
+    {
+      "offset": 296,
+      "before": 1,
+      "after": 94
+    },
+    {
+      "offset": 297,
+      "before": 4,
+      "after": 0
+    },
+    {
+      "offset": 1584,
+      "before": 0,
+      "after": 14
+    },
+    {
+      "offset": 1587,
+      "before": 0,
+      "after": 64
+    },
+    {
+      "offset": 1588,
+      "before": 254,
+      "after": 161
+    },
+    {
+      "offset": 1589,
+      "before": 255,
+      "after": 165
+    }
+  ],
+  "systemTailPreserved": true,
+  "exactWords": {
+    "source": 14,
+    "min": 16384,
+    "max": 42401,
+    "effectId": 94,
+    "pid": 5,
+    "channel": 0
+  }
+}

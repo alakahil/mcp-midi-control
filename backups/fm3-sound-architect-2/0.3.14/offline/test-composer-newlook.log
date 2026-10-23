@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-08",
+  "generator": "jb-composer-0.3.0",
+  "passed": true,
+  "independentWholeBodyInsertionCases": 10,
+  "allEightAddedTogether": true,
+  "newLookNoopBodyIdentical": true,
+  "sourceHistoricalReconstruction": true,
+  "invalidRequestsRejected": 13,
+  "donorSceneActivationNotInherited": true,
+  "inputsUnchanged": true,
+  "existingInputOutputSendReturnAndSystemDataPreserved": true,
+  "hardware": "Generated insertion awaiting user import/export. Supplied NewLook is a user device export.",
+  "audio": "New inserted effects not assessed"
+}

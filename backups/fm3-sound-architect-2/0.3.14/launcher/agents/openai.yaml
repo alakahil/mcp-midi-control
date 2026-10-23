@@ -1,0 +1,14 @@
+interface:
+  display_name: FM3 Sound Architect 2
+  short_description: FM3 0.3.14 kontrollitud SYX/TXT generaator
+  default_prompt: Kasuta $fm3-sound-architect-2, et kontrollida 0.3.14 mootorit ja
+    kujundada minu soovitud FM3 kitarrisoundi.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: false
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas

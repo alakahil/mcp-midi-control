@@ -1,0 +1,120 @@
+{
+  "status": "passed",
+  "task": "offline FW13 FM3 WAH EXACT",
+  "workDirectory": "/workspace/scratch/f678d3fbe33c/research/host-forward-0314",
+  "hostSkill": {
+    "name": "fm3-sound-architect-2",
+    "source": "skill://flora-user-skills/root/.codex/skills/remote-skills/skill-6accfd6fb6f48191a5211c5b063bee5d/SKILL.md",
+    "path": "/root/.codex/skills/remote-skills/skill-6accfd6fb6f48191a5211c5b063bee5d/SKILL.md",
+    "sha256": "ac65706a578020dd1e8d34a1f57336973fb058127cad5ab6091cc3cadd7c8757",
+    "descriptionVersion": "0.3.14",
+    "contentVersion": "0.3.14",
+    "observedRole": "Host-discovered saved launcher; forwards to pinned published package"
+  },
+  "release": {
+    "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+    "releaseId": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+    "version": "0.3.14",
+    "identityCheckedBeforeDownload": true,
+    "manifestSha256": "007b538bd979986e96d99b631e2d4d6f49d82e7ff5ff537054680ffd077122b8",
+    "filesVerified": 3129
+  },
+  "engine": {
+    "skillPath": "/workspace/scratch/f678d3fbe33c/research/host-forward-0314/published-package/skills/fm3-sound-architect-2/SKILL.md",
+    "skillDescriptionVersion": null,
+    "skillContentVersion": "0.3.14",
+    "capabilitiesRevision": "0.3.14",
+    "selfCheckVersion": "0.3.14",
+    "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+    "internalComposerIdentifier": "jb-composer-0.13.0-dev",
+    "packageSelfCheckPassed": true,
+    "knownPresetSha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+    "packageUnchangedAfterUse": true
+  },
+  "preset": {
+    "name": "FM3 WAH EXACT",
+    "firmware": 13,
+    "base": "jb-newlook",
+    "baseSha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
+    "wah": {
+      "block": "Wah 1",
+      "channel": "A",
+      "type": "FAS Wah",
+      "allEightScenesBypass": true
+    },
+    "binding": "External 1 -> Wah 1 Control ALL",
+    "policy": "exact-wah-cent-fw13-hw1",
+    "min": {
+      "requested": "2.50",
+      "raw": 16384,
+      "evidence": "hardware-exact-input",
+      "display": null
+    },
+    "max": {
+      "requested": "6.47",
+      "raw": 42401,
+      "evidence": "hardware-exact-input",
+      "display": null
+    },
+    "selectedScene": 2
+  },
+  "checks": {
+    "fourFileVerifyPassed": true,
+    "structuralChecks": {
+      "frameChecksums": true,
+      "presetCrc": true,
+      "footer": true,
+      "exactBodyReadback": true,
+      "onlyDeclaredRegionsChanged": true,
+      "routingPreserved": false,
+      "onlyDeclaredSlotInsertions": true,
+      "existingBlockRecordsPreservedDuringInsertion": true,
+      "selectedScenePreserved": true,
+      "unrelatedHeadersPreserved": true,
+      "encodedSizesAndPadding": true,
+      "componentEvidence": true
+    },
+    "existingBlockRecordsByteIdentical": 9,
+    "existingSceneNamesChannelsBypassPreserved": true,
+    "otherModifierValuesPreserved": true,
+    "systemTailPreserved": true,
+    "preservationEvidence": "preservation-check.json",
+    "exactInputCaptureSha256": "f99bdfdcdb695b80e6059a772f6095e9f2a2a385628a1a7bd1804c53049ea44e"
+  },
+  "artifacts": [
+    {
+      "file": "FM3_WAH_EXACT.syx",
+      "bytes": 24680,
+      "sha256": "dd63e3362cf4b593b58c885982dc99fa17550ee87bae42de9e86169e4357032a"
+    },
+    {
+      "file": "FM3_WAH_EXACT.txt",
+      "bytes": 6991,
+      "sha256": "8f93d8a2986ee1dc2c4413a064f4937365cd2f8121012b1fe8c091f284644a12"
+    },
+    {
+      "file": "FM3_WAH_EXACT.spec.json",
+      "bytes": 346,
+      "sha256": "1505f909165478979532325fe662508de1211a0fe3d9cece383e1de9c837b4f4"
+    },
+    {
+      "file": "FM3_WAH_EXACT.validation.json",
+      "bytes": 24065,
+      "sha256": "e08e58489534d417028cd03116cb6122d0a8d9c7ab53100becd028ad625bdc1f"
+    }
+  ],
+  "boundaries": {
+    "deviceIO": false,
+    "pluginOrSkillSourcesModified": false,
+    "publishedAnything": false,
+    "readPriorWorkReportsOrOtherAttempts": false
+  },
+  "limitations": [
+    "Host discovery confirmed the saved launcher; runtime was fetched through its pinned-release workflow, not automatically mounted as a full engine.",
+    "New output import/export, pedal behavior, audio, CPU and STORE/reload were not tested.",
+    "Exact requested input values are supported by existing hardware evidence; display is null because this run contains no new screen observation.",
+    "Full-range encoding and runtime mode at STORE are not proven.",
+    "External 1 global pedal/MIDI mapping is not read or changed.",
+    "TXT contains standard future manual import instructions; none were executed."
+  ]
+}

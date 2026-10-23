@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-08",
+  "generator": "jb-composer-0.2.0",
+  "passed": true,
+  "previousGeneratedFileByteIdentical": true,
+  "previousHardwareExportFullBodyIdentical": true,
+  "newSpecMatchesIndependentExpectedBody": true,
+  "preservedRhythmAmpAndCab": true,
+  "componentCombinations": 31,
+  "isolatedControls": 16,
+  "templateThenControlCases": 3,
+  "headerAmbiguityCabCase": 1,
+  "invalidRequestsAndBases": 37,
+  "inputObjectsPreserved": true,
+  "newSpecOutputSha256": "19953730a62fb5a5c59f7069d99320030457e9ea4f200d5800e70eb457b2d6a3",
+  "newSpecChangedBodyBytes": 59,
+  "hardware": "New composition pending; previous reference reproduction is exact",
+  "audio": "Not assessed"
+}

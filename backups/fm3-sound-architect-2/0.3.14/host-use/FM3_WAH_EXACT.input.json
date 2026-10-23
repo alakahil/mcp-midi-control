@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "FM3 WAH EXACT",
+  "wahChannels": [{"channel": "A", "type": "FAS Wah"}],
+  "modifiers": {
+    "external1Wah": true,
+    "wahMinMaxExact": {
+      "policy": "exact-wah-cent-fw13-hw1",
+      "min": "2.50",
+      "max": "6.47"
+    }
+  }
+}

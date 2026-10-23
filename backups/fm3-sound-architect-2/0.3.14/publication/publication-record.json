@@ -1,0 +1,54 @@
+{
+  "plugin_id": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+  "name": "fm3-sound-architect-2",
+  "description": "FM3 Mk II Turbo SYX/TXT generaator, 336 Amp- ja 45 Cab-malli, efektid, stseenid ning kontrollitud mõõteandmed.",
+  "version": "0.3.14",
+  "current_release_id": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+  "scope": "USER",
+  "discoverability": "PRIVATE",
+  "plugin_url": "https://chatgpt.com/plugins/plugins_6accfd716e148191b0adb61e4e36f0e4",
+  "release_id": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+  "latest_release_id": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+  "status": "updated",
+  "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+  "mainMergeCommit": "537035ef401b79dbd179ecc7b85bbb52da06b50e",
+  "pullRequest": 14,
+  "ci": [
+    {
+      "id": 39906088720,
+      "name": "FM3 plugin offline",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088720",
+      "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+    },
+    {
+      "id": 39906088706,
+      "name": "native-matrix",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088706",
+      "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+    },
+    {
+      "id": 39906088722,
+      "name": "preflight",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088722",
+      "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+    },
+    {
+      "id": 39906055413,
+      "name": "FM3 plugin offline",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906055413",
+      "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+    }
+  ]
+}
