@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-09",
+  "generator": "jb-composer-0.10.1",
+  "passed": true,
+  "passedSteps": 84,
+  "excludedAttempts": 4,
+  "pairedWordsPerStep": 132,
+  "numericAnchors": 82,
+  "enumAnchors": 46,
+  "allScaleTargetsExact": true,
+  "typeCoupledChanges": 0,
+  "channelCopies": [
+    77,
+    79,
+    81
+  ],
+  "independentChannelGain": [
+    78,
+    80,
+    82
+  ],
+  "sceneSelections": [
+    77,
+    79,
+    81,
+    83
+  ],
+  "actualDeviceComparisons": 84,
+  "exactBodyReplays": 9,
+  "inactiveSlopeComparisons": 75,
+  "comparisonScope": "All body bytes compared. Inactive slope words after switching away from Blocking are explicitly checked against the pinned baseline rather than last device setting; neither original body is normalized or edited.",
+  "legacySyxByteIdentical": true,
+  "existingV3ByteIdentical": true,
+  "newPresetOriginalV3BytesReconstructed": 13146,
+  "reservedWordsPreserved": true,
+  "defaultBypass": true,
+  "unconfiguredChannelRejected": true,
+  "tamperedEvidenceRejected": true,
+  "invalidRequestsRejected": 32,
+  "newPresetSha256": "a94e6fe3cc4b0f76434b56b93809c15f973810ee1635cdc91f87153e604395da",
+  "hardware": "Exact combined A-D preset import/export and CPU 47–48% confirmed. Other screen values and new listening verdict not explicitly supplied."
+}
