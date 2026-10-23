@@ -11,7 +11,7 @@ const base=read('examples/JB_RHYTHM_LEVEL_MINUS3.syx'),before=Buffer.from(inspec
 const records=scanRecords(before).records,dict=loadDictionary().params,opts={allow:[...OPT_IN_STATUSES]};
 const libs=Object.fromEntries(['delay','reverb'].map(s=>[s,JSON.parse(read('references/'+s+'-library.json'))]));
 const ctl=(block,channel,param,value)=>({block,channel,param,value});
-const valueFor=p=>p.kind==='enum'?0:p.kind==='knob'?(p.displayMultiplier||1)/2:(p.min+p.max)/2*(p.displayMultiplier||1);
+const valueFor=p=>p.kind==='enum'?0:p.kind==='knob'?(p.displayMultiplier||1)/2:p.kind==='integer'?Math.round((p.min+p.max)/2):(p.min+p.max)/2*(p.displayMultiplier||1);
 const record=slug=>records.find(r=>r.family===slug);
 function fixture(slug,name){const body=Buffer.from(before),r=record(slug),m=libs[slug].models.find(m=>m.name===name);assert.ok(m);for(let ch=0;ch<4;ch++)m.words.forEach((v,pid)=>body.writeUInt16LE(v,r.start+2*(ch*r.words+pid)));return body;}
 const policy=(p,body,ch=0)=>typeApplicability(p,readTypeState(p,pid=>body.readUInt16LE(record(p.family.toLowerCase()).start+2*(ch*record(p.family.toLowerCase()).words+pid))));

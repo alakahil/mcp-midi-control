@@ -58,7 +58,7 @@ for(const [slug,family] of [['chorus','CHORUS'],['drive','FUZZ']]){
     for(let ch=0;ch<4;ch++)m.words.forEach((v,pid)=>sample.writeUInt16LE(v,r.start+2*(ch*r.words+pid)));
     const controls=[];
     for(const p of params){
-      const value=p.kind==='enum'?(p.param===0?m.binaryId:0):p.kind==='knob'?(p.displayMultiplier||1)/2:(p.min+p.max)/2*(p.displayMultiplier||1);
+      const value=p.kind==='enum'?(p.param===0?m.binaryId:0):p.kind==='knob'?(p.displayMultiplier||1)/2:p.kind==='integer'?Math.round((p.min+p.max)/2):(p.min+p.max)/2*(p.displayMultiplier||1);
       const a=typeApplicability(p,m.binaryId);
       for(const ch of 'ABCD'){
         const ctl=c(slug,ch,p.param,value);

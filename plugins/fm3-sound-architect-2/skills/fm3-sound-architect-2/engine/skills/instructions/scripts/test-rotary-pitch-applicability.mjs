@@ -13,7 +13,7 @@ const before=Object.fromEntries(Object.entries(bases).map(([s,b])=>[s,Buffer.fro
 const records=Object.fromEntries(Object.entries(before).map(([s,b])=>[s,scanRecords(b).records.find(r=>r.family===s)]));
 const dict=loadDictionary().params,opts={allow:[...OPT_IN_STATUSES]},lib=JSON.parse(read('references/pitch-library.json'));
 const ctl=(block,channel,param,value)=>({block,channel,param,value});
-const valueFor=p=>p.kind==='enum'?(p.enumBase??0):p.kind==='integer'?Math.floor((p.min+p.max)/2):p.kind==='knob'?(p.displayMultiplier||1)/2:(p.min+p.max)/2*(p.displayMultiplier||1);
+const valueFor=p=>p.kind==='enum'?(p.enumBase??0):p.kind==='integer'?Math.floor((p.min+p.max)/2):p.kind==='knob'?(p.displayMultiplier||1)/2:p.kind==='integer'?Math.round((p.min+p.max)/2):(p.min+p.max)/2*(p.displayMultiplier||1);
 const at=(slug,ch,pid)=>records[slug].start+2*('ABCD'.indexOf(ch)*records[slug].words+pid);
 const policy=(slug,p,body,ch='A')=>typeApplicability(p,readTypeState(p,pid=>body.readUInt16LE(at(slug,ch,pid))));
 function fixture(m){const body=Buffer.from(before.pitch);for(const ch of 'ABCD')m.words.forEach((v,pid)=>body.writeUInt16LE(v,at('pitch',ch,pid)));return body;}
