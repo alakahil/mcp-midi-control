@@ -19,18 +19,39 @@ const gridAt=(row,col)=>GRID.start+col*16+row*4; // zero-based row/col
 export const SLUG_BY_EID=Object.freeze({58:'amp',62:'cab',118:'drive',70:'delay',66:'reverb',90:'phaser',46:'compressor',78:'chorus',82:'flanger',94:'wah',106:'tremolo',86:'rotary',110:'pitch',114:'filter',54:'peq',50:'geq',122:'enhancer'});
 const EID_BY_SLUG=Object.fromEntries(Object.entries(SLUG_BY_EID).map(([e,s])=>[s,+e]));
 
+// Channel count per record when it is not 4. Send/Return: every export. Looper 166 (24×1):
+// five FW10 factory presets and the device's own FW13 export of factory 249 (2026-10-23).
+// Megatap 138, Ring Mod 150, Resonator 162 (×2): FW10 factory presets only, FW13 export pending;
+// a mismatch only stops the scan (tail), it can never misparse a record.
+export const CHANNELS=Object.freeze({[IO.send]:1,[IO.ret]:1,166:1,138:2,150:2,162:2});
+// Second and later block instances (Filter 2 = 115, Drive 2 = 119, Comp 2 = 47, Delay 2 = 71,
+// Volume 2 = 103; also In 2 = 38, Out 2 = 43 in FW10 factory banks) use the instance's own effect
+// ID, eid = base + instance-1, with the base block's word count. Device FW13 exports of factory
+// 155/163/249/370 (2026-10-23).
+// An ID that the dictionary lists on its own (Multiplexer 191) is never an instance.
+let wordsByBlock=null;
+function blockWords(){
+  if(wordsByBlock)return wordsByBlock;
+  const m=new Map();for(const p of loadDictionary().params)m.set(p.block,Math.max(m.get(p.block)??0,p.param+1));
+  return wordsByBlock=m;
+}
+export function blockOf(eid){
+  const w=blockWords();if(w.has(eid))return {block:eid,instance:1};
+  for(let k=1;k<=3;k++){const b=eid-k;if(w.has(b)&&(b===IO.in1||b===IO.out1||(b>=46&&(b-46)%4===0)))return {block:b,instance:k+1};}
+  return null;
+}
 // Sequential effect records from 4610; stops at the first non-record (system tail).
 export function scanRecords(body){
-  const d=loadDictionary(),words=new Map();
-  for(const p of d.params)words.set(p.block,Math.max(words.get(p.block)??0,p.param+1));
+  const words=blockWords();
   const out=[];let at=RECORDS_START;
   for(;;){
     if(at+46>body.length)break;
     const eid=body.readUInt16LE(at),w=body.readUInt16LE(at+42),ch=body.readUInt16LE(at+44);
-    const io=eid===IO.send||eid===IO.ret;
-    if(!(io?ch===1:(ch===4&&words.get(eid)===w)))break;
+    const io=eid===IO.send||eid===IO.ret,b=io?{block:eid,instance:1}:blockOf(eid);
+    if(!b||ch!==(CHANNELS[b.block]??4)||(!io&&words.get(b.block)!==w))break;
     const size=46+2*w*ch;check(at+size<=body.length,'Record out of bounds');
-    out.push({eid,family:SLUG_BY_EID[eid]??(eid===IO.in1?'in1':eid===IO.out1?'out1':eid===IO.send?'send':eid===IO.ret?'return':'eid'+eid),header:at,start:at+46,words:w,channels:ch,size});
+    const slug=SLUG_BY_EID[b.block],family=slug?(b.instance===1?slug:slug+b.instance):b.block===IO.in1?'in'+b.instance:b.block===IO.out1?'out'+b.instance:eid===IO.send?'send':eid===IO.ret?'return':'eid'+eid;
+    out.push({eid,block:b.block,instance:b.instance,family,header:at,start:at+46,words:w,channels:ch,size});
     at+=size;
   }
   check(out.some(r=>r.eid===58)&&out.some(r=>r.eid===62),'Amp/Cab records not found');
