@@ -75,6 +75,11 @@ haru täpselt seal, kuhu link selle kodeeris (Ampi järel, enne Cabi). Testi kü
 „pärast Cabi“; generaator kirjeldab nüüd allikaid ploki nimega. Kviitung:
 `references/fm3-grid-check-20261023.json` (kontroll: `node tools/fm3/grid-check-ingest.mjs`).
 
+Kollektorit ennast kontrollib offline-testikomplekt simuleeritud FM3-ga (`scripts/test-grid-check-collector.mjs`,
+`fake_fm3.py`): saadetakse ainult redaktsioonipuhvri dumpe ja lugemispäringuid, vale lahter leitakse,
+katkestuse järel jätkatakse ilma uuesti saatmata ning muudetud või salvestuskoha päisega fail lükatakse
+tagasi enne esimest kirjutust. CI kontrollib ka CPU tüübikulude ülearvutust (`tools/fm3/cpu-sweep-ingest.mjs`).
+
 CPU: G01 53 / hinnang 53,4; G02 60 / 61,3; G03 63 / 63,9; G04 60 / 61,3; G05 62 / 60,9; G06 41,5 / 44,3;
 G07 67 / 71,3 %. Mixer ja Multiplexer ei lisa selle täpsusega mõõdetavat koormust.
 

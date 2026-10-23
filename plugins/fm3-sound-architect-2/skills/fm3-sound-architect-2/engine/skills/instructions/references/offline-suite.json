@@ -122,6 +122,15 @@
       "required": true
     },
     {
+      "id": "test-grid-check-collector",
+      "command": [
+        "node",
+        "scripts/test-grid-check-collector.mjs"
+      ],
+      "scope": "FM3_GRID_CHECK.py against a simulated FM3 (fake_fm3.py): only edit-buffer dumps and read requests sent, name confirmed once, mismatching cell detected, resume without resending, tampered and stored-location files refused before any write; FM3_GRID_CHECK.py and FM3_CPU_SWEEP.py self-tests; no device",
+      "required": true
+    },
+    {
       "id": "test-cpu",
       "command": [
         "node",
