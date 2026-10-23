@@ -1,0 +1,37 @@
+FM3 CPU MÕÕTMINE (automaatne) – auditi punkt 7
+==============================================
+
+Mida skript teeb
+- Saadab FM3 redaktsioonipuhvrisse järjest 356 mõõtepresetti (igas üks tüüp muudetud)
+  ja loeb pärast igat seadmest CPU näidu.
+- Seadmesse läheb ainult kahte sorti andmeid: preseti laadimine redaktsioonipuhvrisse
+  (päis 7F 00, nagu FM3-Editi ekspordil) ja CPU lugemise päring.
+- Midagi ei salvestata. Ühtki presetiasukohta ei muudeta.
+
+Enne alustamist
+1. Sulge FM3-Edit (Cmd+Q) ja Fractal-Bot. FM3 jääb USB-ga ühendatuks ja sisse.
+2. Vali FM3-l mõni preset, mida sa parasjagu ei muuda (heli võib mõõtmise ajal muutuda,
+   keera kõlarid vaiksemaks).
+
+Käivitamine
+3. Ava Terminal (Cmd+tühik, kirjuta Terminal, Enter).
+4. Kopeeri ja kleebi üks rida korraga, vajuta Enter:
+
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_CPU_SWEEP
+
+   python3 FM3_CPU_SWEEP.py --pack . --session ~/Downloads/FM3_REA_DEVELOPMENT/FM3_CPU_SESSION
+
+5. Esimese preseti järel küsib skript: kas FM3 ekraanil on nimi "CPU CAL NEWLOOK"?
+   Vaata FM3 ekraani. Kui on, kirjuta j ja Enter. Kui ei ole, kirjuta e ja Enter
+   (skript peatub, midagi pole salvestatud).
+6. Skript võrdleb kahte esimest näitu sinu käsitsi mõõtmisega (52.8 % ja 82.5 %).
+   Kui need ei klapi, peatub skript ise.
+7. Edasi töötab skript ise umbes 20 minutit ja näitab iga rea järel CPU-d.
+
+Kui midagi katkeb
+- Käivita sama käsk uuesti: skript jätkab sealt, kus pooleli jäi.
+
+Lõpus
+8. Vali FM3-l esipaneelilt mõni preset (redaktsioonipuhver tühistub). ÄRA salvesta.
+9. Kirjuta vestlusesse "valmis". Tulemused on kaustas
+   ~/Downloads/FM3_REA_DEVELOPMENT/FM3_CPU_SESSION/results.jsonl
