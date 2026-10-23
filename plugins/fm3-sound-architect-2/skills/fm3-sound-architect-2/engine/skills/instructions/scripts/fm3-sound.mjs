@@ -17,6 +17,7 @@ import {modifierAuditCapabilities} from './fm3-modifier-audit.mjs';
 import {typePolicySummary} from './fm3-type-applicability.mjs';
 import {pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 import {insertBlocks,insertCapabilities} from './fm3-insert-blocks.mjs';
+import {estimateCpu,renderCpuText} from './fm3-cpu.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
@@ -57,11 +58,12 @@ export function composeSound(base,spec){
   validateLegacyDependencies(finalBody,Object.fromEntries(scanRecords(finalBody).records.map(r=>[r.family,r])),spec.composer);
   verifyWahModifierReadback(finalBody,first.report.modifierEdit);
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
+  const cpuEstimate=estimateCpu(second.syx);
   const report={generator:'fm3-sound-0.3.15',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
-    hardware:'not tested for this final output',audio:'not tested',cpu:'not tested',...state,modifierEdit:first.report.modifierEdit??null,
+    hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit:first.report.modifierEdit??null,
     stages:{volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),layout:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};
-  return {syx:second.syx,txt:renderFinalSoundText({...state,modifierEdit:first.report.modifierEdit??null},spec),report,composerReport:first.report,layoutReport:report.stages.layout};
+  return {syx:second.syx,txt:renderFinalSoundText({...state,modifierEdit:first.report.modifierEdit??null},spec)+renderCpuText(cpuEstimate)+'\n',report,composerReport:first.report,layoutReport:report.stages.layout};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try{const [b,s,stem,...extra]=process.argv.slice(2);

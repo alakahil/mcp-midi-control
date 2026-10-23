@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2085,
-  "filePaths": 2289,
+  "uniqueContents": 2086,
+  "filePaths": 2290,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1383,12 +1383,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-138-3880458408/donor.syx"
-      ]
-    },
-    "1cea47bec0082ea52ec8d61737188b914bc9fc3b31da5aa5580b0a584e48d889": {
-      "bytes": 17382,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "1d0e4bac8fb5bf371cef62f31acf5b43e83e41a0b737a5bdb70a68d7ebca1c04": {
@@ -5637,6 +5631,12 @@
       "bytes": 2314,
       "paths": [
         "references/enhancer-full-20261012-122507/step-013-6fe53655fb/result.json"
+      ]
+    },
+    "7596f6c2e139ecd526753809e3b18a7f8009d712826e40b90cd0279e18208def": {
+      "bytes": 17663,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "759d25bd9ad90d83b3795c3dff04915d45b8519ddffd16aa9bf594bb90e6902d": {
@@ -10778,6 +10778,12 @@
       "bytes": 456,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T110933-d09071efa2/pair.json"
+      ]
+    },
+    "dbe43ad7c772634dcf24b7924f6bea6f141407cff49b738ebacc1b1951e741c3": {
+      "bytes": 2826,
+      "paths": [
+        "references/fm3-cpu-measurements-20261023.json"
       ]
     },
     "dbfbbad6f63828334e8f9720454958a0fee4b6ad98ba853331484fbcb0ef0a16": {

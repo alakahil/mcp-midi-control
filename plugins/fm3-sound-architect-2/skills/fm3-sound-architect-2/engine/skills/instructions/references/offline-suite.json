@@ -113,6 +113,15 @@
       "required": true
     },
     {
+      "id": "test-cpu",
+      "command": [
+        "node",
+        "scripts/test-cpu.mjs"
+      ],
+      "scope": "point-7 CPU floor: subtractive costs reproduce session A, unmeasured Synth and other types flagged (Satriani V1); no device I/O",
+      "required": true
+    },
+    {
       "id": "test-generate",
       "command": [
         "node",
