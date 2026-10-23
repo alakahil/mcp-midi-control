@@ -1,0 +1,87 @@
+{
+  "purpose": "Auditi punkt 6 seadmekatse A: Gate, Multiband, Plex, Looper ja Volume/Pan lisatakse kasutaja enda vaikeplokkidest; kõik lisatud plokid on kõigis stseenides bypassis. Iga plokil üks kanal A juht kontrollnäiduks.",
+  "composer": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-composer",
+    "name": "FM3 P6 INSERT A",
+    "compressorChannels": [
+      {
+        "channel": "A",
+        "type": "Optical Compressor"
+      }
+    ]
+  },
+  "insert": [
+    "gate",
+    "multiband",
+    "plex",
+    "looper",
+    "volume"
+  ],
+  "layout": {
+    "row2": [
+      "gate",
+      "compressor",
+      "drive",
+      "amp",
+      "cab",
+      "multiband"
+    ],
+    "row3": [
+      "delay",
+      "plex",
+      "reverb",
+      "looper",
+      "volume"
+    ]
+  },
+  "allow": [
+    "linear-by-structure",
+    "enum-labels"
+  ],
+  "controls": [
+    {
+      "block": "gate",
+      "channel": "A",
+      "param": "GATE_THRESH",
+      "value": -50
+    },
+    {
+      "block": "multiband",
+      "channel": "A",
+      "param": "MULTICOMP_RATIO1",
+      "value": 4
+    },
+    {
+      "block": "plex",
+      "channel": "A",
+      "param": "PLEX_TEMPO1",
+      "value": "NONE"
+    },
+    {
+      "block": "plex",
+      "channel": "A",
+      "param": "PLEX_TIME1",
+      "value": 350
+    },
+    {
+      "block": "plex",
+      "channel": "A",
+      "param": "PLEX_MIX",
+      "value": 25
+    },
+    {
+      "block": "looper",
+      "channel": "A",
+      "param": "LOOPER_PLAYLEVEL",
+      "value": -6
+    },
+    {
+      "block": "volume",
+      "channel": "A",
+      "param": "VOLUME_GAIN",
+      "value": 8
+    }
+  ]
+}

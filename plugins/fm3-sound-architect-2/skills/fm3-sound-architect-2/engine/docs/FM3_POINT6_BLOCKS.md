@@ -50,9 +50,31 @@ ja ülejäänud kirjed jäid läbipaistmatuks sabaks. Nüüd tunneb `blockOf()` 
 annab kanalite arvu ploki kaupa. Vale mõõtmetega kirje peatab skaneerimise endiselt ega loe valesti.
 Test: `scripts/test-scan-records.mjs` (offline-suite).
 
-## Järgmine
+## Vaikeplokid ja Scene MIDI (kasutaja eksport, 2026-10-23)
 
-1. Scene MIDI: tühi preset enne ja pärast ploki lisamist (eksportide paar).
-2. Doonorid generaatorile: kasutaja enda värsked vaikeplokid (mitte tehaseväärtused), lisamise eelkontroll
-   nagu Enhanceril (`fm3-enhancer-insertion-check.mjs`), seejärel koondkatse seadmes.
-Mixer ja Multiplexer on paralleelharude plokid ja nende paigutamine ootab auditi punkti 5 (vaba ruudustik).
+`references/fm3-empty-preset-20261023.syx` (`<EMPTY>` preset) ja `references/fm3-default-blocks-20261023.syx`
+(sama preset pärast 14 ploki lisamist FM3-Editis, parameetreid muutmata):
+- Erinevad ainult 14 ruudustiku sõna ja lõppu lisatud 14 kirjet; süsteemi saba on sama. Kirjete eemaldamine
+  taastab tühja preseti baithaaval.
+- Igas kirjes on kanalid A–D omavahel identsed, seega on need seadme vaikeväärtused. Need dekodeeruvad
+  sõnastiku järgi usutavateks näitudeks (Plex Time 1–8 = 300…1000 ms, Mix 10 %, Gate Threshold −40 dB,
+  Synth Freq 500 Hz, Megatap Time 2000 ms, Looper Max Time 120 s).
+- **Stseeniväljad ei ole vaikimisi:** värskelt lisatud ploki stseenid 2–8 pärinevad viimasest presetist,
+  milles see plokk oli (nt Gate = tehasepreset 038). Seade lähtestab ainult aktiivse stseeni. Lisaja kirjutab
+  seetõttu alati kõik 8 stseeni (kanal A, bypass).
+- Scene MIDI (menüüs „MIDI Block") on eid 190, 257×1, kõik sõnad 0. Väljade tähendus on dekodeerimata.
+
+## Lisamine generaatoris (`scripts/fm3-insert-blocks.mjs`, väli `insert`)
+
+- Lisatavad: plex, multiband, synth, looper, gate, formant, volume, tentap, megatap, ringmod, resonator.
+- Kirje kopeeritakse doonorist, pannakse viimase kirje järele (nagu seade doonoris tegi) ja plokk võtab
+  ridade 2/3 esimese vaba järjestikuse shundi; veeru otsustab seejärel `layout`.
+- Kontrollid: olemasolevad kirjed ja saba baithaaval samad, eelosas muutuvad ainult valitud ruudustiku sõnad,
+  maskid samad, lisatud kirjete eemaldamine taastab aluse, kaadrid/CRC/footer/tagasilugemine.
+- Tempo lukud: `tools/fm3/insert_tempo_locks.py` loeb FM3-Edit 1.07.17 paigutuse XML-i (macOS binaari mõlemas
+  viilus identne ja võrdne juba kinnitatud SHA `0fc5f3…`-ga). Plex TIME1–8 ↔ TEMPO1–8, LFO Rate ↔ LFO Tempo,
+  Ten-Tap Time ↔ Rhythm Tempo; sildid on võrreldud FW13 editori cache'iga (sektsioonid 15 ja 38). Lukustatud
+  sihti kirjutatakse ainult siis, kui lõplik Tempo on NONE.
+- Keeldutakse: Mixer ja Multiplexer (paralleelharud, punkt 5), Scene MIDI (dekodeerimata), sama pere kaks korda.
+- Seadmekatse: `examples/FM3_P6_INSERT_A.*` (Gate, Multiband, Plex, Looper, Volume) ja `_B.*` (Synth, Ten-Tap,
+  Megatap, Ring Mod, Resonator, Formant). Import/eksport ja CPU on katsetamata.

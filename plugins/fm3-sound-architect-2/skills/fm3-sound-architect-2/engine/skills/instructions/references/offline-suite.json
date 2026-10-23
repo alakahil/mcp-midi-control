@@ -104,6 +104,15 @@
       "required": true
     },
     {
+      "id": "test-insert-blocks",
+      "command": [
+        "node",
+        "scripts/test-insert-blocks.mjs"
+      ],
+      "scope": "point-6 insertion: donor pair reconstruction, all 11 families on NewLook, reversible insertion, gated/duplicate refusals, layout+scenes+controls, Plex tempo lock, 1/2-channel limits; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-generate",
       "command": [
         "node",

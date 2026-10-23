@@ -1,0 +1,82 @@
+{
+  "purpose": "Auditi punkt 6 seadmekatse B: Synth, Ten-Tap, Megatap, Ring Mod, Resonator ja Formant lisatakse kasutaja enda vaikeplokkidest; kõik lisatud plokid on kõigis stseenides bypassis. Iga plokil üks kanal A juht kontrollnäiduks.",
+  "composer": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-composer",
+    "name": "FM3 P6 INSERT B",
+    "compressorChannels": [
+      {
+        "channel": "A",
+        "type": "Optical Compressor"
+      }
+    ]
+  },
+  "insert": [
+    "synth",
+    "tentap",
+    "megatap",
+    "ringmod",
+    "resonator",
+    "formant"
+  ],
+  "layout": {
+    "row2": [
+      "compressor",
+      "drive",
+      "amp",
+      "cab",
+      "synth",
+      "formant"
+    ],
+    "row3": [
+      "ringmod",
+      "resonator",
+      "delay",
+      "tentap",
+      "megatap",
+      "reverb"
+    ]
+  },
+  "allow": [
+    "linear-by-structure"
+  ],
+  "controls": [
+    {
+      "block": "synth",
+      "channel": "A",
+      "param": "SYNTH_FREQ1",
+      "value": 800
+    },
+    {
+      "block": "tentap",
+      "channel": "A",
+      "param": "TENTAP_FEEDBACK",
+      "value": 30
+    },
+    {
+      "block": "megatap",
+      "channel": "A",
+      "param": "MEGATAP_TIME",
+      "value": 1000
+    },
+    {
+      "block": "ringmod",
+      "channel": "A",
+      "param": "RINGMOD_COARSE",
+      "value": 300
+    },
+    {
+      "block": "resonator",
+      "channel": "A",
+      "param": "RESONATOR_FREQ1",
+      "value": 500
+    },
+    {
+      "block": "formant",
+      "channel": "A",
+      "param": "FORMANT_MIX",
+      "value": 50
+    }
+  ]
+}

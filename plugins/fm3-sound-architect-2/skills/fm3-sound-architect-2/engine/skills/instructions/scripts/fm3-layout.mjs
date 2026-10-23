@@ -8,6 +8,7 @@ import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
 import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG,assertFields,channelIndex,validateControl,validateOptions} from './fm3-table-encoder.mjs';
 import {validateDependencyWrites} from './fm3-parameter-dependencies.mjs';
 import {validateTypeWrites} from './fm3-type-applicability.mjs';
+import {validateInsertedTempo} from './fm3-insert-tempo.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(v,m)=>{if(!v)throw Error(m)};
@@ -16,15 +17,18 @@ export const IO=Object.freeze({in1:37,out1:42,send:182,ret:186});
 export const SHUNT_MIN=1024;
 const RECORDS_START=4610;
 const gridAt=(row,col)=>GRID.start+col*16+row*4; // zero-based row/col
-export const SLUG_BY_EID=Object.freeze({58:'amp',62:'cab',118:'drive',70:'delay',66:'reverb',90:'phaser',46:'compressor',78:'chorus',82:'flanger',94:'wah',106:'tremolo',86:'rotary',110:'pitch',114:'filter',54:'peq',50:'geq',122:'enhancer'});
+export const SLUG_BY_EID=Object.freeze({58:'amp',62:'cab',118:'drive',70:'delay',66:'reverb',90:'phaser',46:'compressor',78:'chorus',82:'flanger',94:'wah',106:'tremolo',86:'rotary',110:'pitch',114:'filter',54:'peq',50:'geq',122:'enhancer',
+  // audit point 6, placed by fm3-insert-blocks.mjs
+  178:'plex',154:'multiband',130:'synth',166:'looper',146:'gate',98:'formant',102:'volume',158:'tentap',138:'megatap',150:'ringmod',162:'resonator'});
 const EID_BY_SLUG=Object.fromEntries(Object.entries(SLUG_BY_EID).map(([e,s])=>[s,+e]));
 
 // Channel count per record when it is not 4. Send/Return: every export. Looper 166 (24×1):
 // five FW10 factory presets and the device's own FW13 export of factory 249 (2026-10-23).
 // Megatap 138 (35×2), Ring Mod 150 (13×2), Resonator 162 (40×2, also Resonator 2 = 163): FW10 factory
 // presets and the device's FW13 exports of factory 147/202/259 (2026-10-23).
+// Scene MIDI (MIDI Block) 190 is 257×1: the user's FW13 export of fresh blocks (2026-10-23).
 // A mismatch only stops the scan (tail); it can never misparse a record.
-export const CHANNELS=Object.freeze({[IO.send]:1,[IO.ret]:1,166:1,138:2,150:2,162:2});
+export const CHANNELS=Object.freeze({[IO.send]:1,[IO.ret]:1,166:1,138:2,150:2,162:2,190:1});
 // Second and later block instances (Filter 2 = 115, Drive 2 = 119, Comp 2 = 47, Delay 2 = 71,
 // Volume 2 = 103; also In 2 = 38, Out 2 = 43 in FW10 factory banks) use the instance's own effect
 // ID, eid = base + instance-1, with the base block's word count. Device FW13 exports of factory
@@ -42,7 +46,7 @@ export function blockOf(eid){
   return null;
 }
 // Sequential effect records from 4610; stops at the first non-record (system tail).
-export function scanRecords(body){
+export function scanRecords(body,{requireAmpCab=true}={}){
   const words=blockWords();
   const out=[];let at=RECORDS_START;
   for(;;){
@@ -55,7 +59,7 @@ export function scanRecords(body){
     out.push({eid,block:b.block,instance:b.instance,family,header:at,start:at+46,words:w,channels:ch,size});
     at+=size;
   }
-  check(out.some(r=>r.eid===58)&&out.some(r=>r.eid===62),'Amp/Cab records not found');
+  if(requireAmpCab)check(out.some(r=>r.eid===58)&&out.some(r=>r.eid===62),'Amp/Cab records not found');
   return {records:out,tail:at};
 }
 export function readGrid(body){
@@ -126,6 +130,7 @@ export function applyTableControls(body,controls,opts={},allow=()=>{}){
   }
   validateTypeWrites(body,writes);
   validateDependencyWrites(body,writes);
+  validateInsertedTempo(body,writes);
   for(const {raw,offset} of writes){body.writeUInt16LE(raw,offset);allow(offset,2)}
   return writes;
 }
@@ -134,13 +139,13 @@ export function applyBlockScenes(body,blockScenes,allow=()=>{}){
   assertFields(blockScenes,Object.keys(SLUG_BY_EID).map(k=>SLUG_BY_EID[k]),'blockScenes');
   const {records}=scanRecords(body),edits=[];
   for(const [family,list] of Object.entries(blockScenes)){
-    const r=records.find(x=>x.family===family);check(r&&r.channels===4,`Block ${family} is not placed`);
+    const r=records.find(x=>x.family===family);check(r,`Block ${family} is not placed`);
     check(Array.isArray(list)&&list.length<=8,'Up to 8 scene entries');const seen=new Set();
     for(const s of list){
       assertFields(s,['scene','channel','bypass'],'block scene');
       check(Object.hasOwn(s,'channel')||Object.hasOwn(s,'bypass'),'Empty block scene');
       check(Number.isInteger(s.scene)&&s.scene>=1&&s.scene<=8&&!seen.has(s.scene),'Invalid scene');seen.add(s.scene);
-      if(s.channel!==undefined){channelIndex(s.channel);const o=r.header+10+2*(s.scene-1);body.writeUInt16LE('ABCD'.indexOf(s.channel),o);allow(o,2)}
+      if(s.channel!==undefined){check(channelIndex(s.channel)<r.channels,`${family} has only channels ${'ABCD'.slice(0,r.channels).split('').join('/')}`);const o=r.header+10+2*(s.scene-1);body.writeUInt16LE('ABCD'.indexOf(s.channel),o);allow(o,2)}
       if(s.bypass!==undefined){check(typeof s.bypass==='boolean','bypass must be boolean');const o=r.header+26+2*(s.scene-1);body.writeUInt16LE(s.bypass?1:0,o);allow(o,2)}
       edits.push({family,...s});
     }

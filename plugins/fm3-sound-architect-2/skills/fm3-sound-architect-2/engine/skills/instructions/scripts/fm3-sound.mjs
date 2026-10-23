@@ -13,11 +13,13 @@ import {wahModifierCapabilities,verifyWahModifierReadback} from './fm3-wah-modif
 import {modifierAuditCapabilities} from './fm3-modifier-audit.mjs';
 import {typePolicySummary} from './fm3-type-applicability.mjs';
 import {pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
+import {insertBlocks,insertCapabilities} from './fm3-insert-blocks.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
   return {profile:'fm3-sound',revision:'0.3.14',firmware:13,base:'jb-newlook',composer,
-    fields:['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
+    fields:['composer','insert','layout','blockScenes','controls','allow','purpose','selectedScene','context'],
+    insert:insertCapabilities(),
     outputs:['.syx','.txt','.spec.json','.validation.json'],
     modifiers:{...wahModifierCapabilities(),field:'composer.modifiers.external1Wah',autoEngage:{...wahModifierCapabilities().autoEngage,field:'composer.modifiers.wahAutoEngage'},damping:{...wahModifierCapabilities().damping,field:'composer.modifiers.wahDamping'},min:{...wahModifierCapabilities().min,field:'composer.modifiers.wahMin'},controls:{...wahModifierCapabilities().controls,field:'composer.modifiers.wahControls'},exactMinMax:{...wahModifierCapabilities().exactMinMax,field:'composer.modifiers.wahMinMaxExact'}},
     modifierAudit:modifierAuditCapabilities(),
@@ -34,7 +36,7 @@ export function getSoundCapabilities(base){
     limitations:['No device connection','New output hardware/audio/CPU unconfirmed','Experimental raw/taper writes excluded from this entry point','Global settings, arbitrary routing and all FM3 families are not implemented']};
 }
 export function composeSound(base,spec){
-  assertFields(spec,['composer','layout','blockScenes','controls','allow','purpose','selectedScene','context'],'sound');
+  assertFields(spec,['composer','insert','layout','blockScenes','controls','allow','purpose','selectedScene','context'],'sound');
   check(spec.composer&&spec.layout,'spec.composer and spec.layout are required');
   validateOptions({allow:spec.allow});
   if(Object.hasOwn(spec,'controls'))check(Array.isArray(spec.controls),'controls must be an array');
@@ -43,7 +45,8 @@ export function composeSound(base,spec){
   if(spec.context!==undefined){assertFields(spec.context,['guitar','pickups','output'],'context');for(const v of Object.values(spec.context))check(typeof v==='string'&&v.length>0&&v.length<=300&&!/[\x00-\x1f]/.test(v),'Invalid context value');}
   const first=generatePreset(base,spec.composer);
   check(first.report.baseId==='jb-newlook','Sound composer requires the jb-newlook base');
-  const second=arrangeSound(first.syx,spec,{allow:spec.allow??[]});
+  const inserted=spec.insert===undefined?null:insertBlocks(first.syx,spec.insert);
+  const second=arrangeSound(inserted?.syx??first.syx,spec,{allow:spec.allow??[]});
   const finalBody=Buffer.from(inspectStructure(second.syx).raw.body);
   validateLegacyDependencies(finalBody,Object.fromEntries(scanRecords(finalBody).records.map(r=>[r.family,r])),spec.composer);
   verifyWahModifierReadback(finalBody,first.report.modifierEdit);
@@ -51,7 +54,7 @@ export function composeSound(base,spec){
   const report={generator:'fm3-sound-0.3.14',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:'not tested',...state,modifierEdit:first.report.modifierEdit??null,
-    stages:{composer:{scope:'intermediate; not final settings',...first.report},layout:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};
+    stages:{composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),layout:{...second.report,rows:second.rows,writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};
   return {syx:second.syx,txt:renderFinalSoundText({...state,modifierEdit:first.report.modifierEdit??null},spec),report,composerReport:first.report,layoutReport:report.stages.layout};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){

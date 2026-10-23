@@ -19,7 +19,8 @@ export const dictionaryHash='a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed1307
 // 'taper-class-verified' share the exact curve class of 280/280 hardware points.
 export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','enum-labels-crosschecked','preset-word-crosschecked']);
 export const OPT_IN_STATUSES=Object.freeze(['linear-by-structure','enum-labels']);
-export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT'});
+export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT',
+  plex:'PLEX',multiband:'MULTICOMP',synth:'SYNTH',looper:'LOOPER',gate:'GATE',formant:'FORMANT',volume:'VOLUME',tentap:'TENTAP',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR'});
 
 let cache=null;
 export function loadDictionary(){

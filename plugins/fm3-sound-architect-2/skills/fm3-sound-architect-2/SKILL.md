@@ -75,7 +75,7 @@ Tee väljundid töökausta väljaspool skill'i/plugina lähtefaile.
    vajalikud mallid/juhid ning `scenes`. Paigutuse või tabelijuhtide jaoks kasuta
    [soundi skeemi](engine/skills/instructions/scripts/fm3-sound.schema.json):
    eelmine kirjeldus läheb väljale `composer`; lisa `layout` ning vajadusel
-   `controls`, `blockScenes`, `selectedScene`, `purpose`, `context`. Alusta toimivast
+   `insert`, `controls`, `blockScenes`, `selectedScene`, `purpose`, `context`. Alusta toimivast
    `examples/SATRIANI_SOAP_ON_A_ROPE_V3.spec.json` näitest, kui siht seda eeldab.
    `context` väljad on `guitar`, `pickups`, `output`; ära mõtle kasutajainfot välja.
    Loe soovitud efektipere juhendit allpool.
@@ -247,6 +247,16 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   (`examples/FM3_LAYOUT_MOVE_TEST_export.syx` keha identne).
 - **Soundi koostaja** `scripts/fm3-sound.mjs` (jb-newlook): `composer` → `layout` → `blockScenes` →
   `controls` → `selectedScene`. Output Scene Level 1–8 (−20…+20 dB) on seadmel kinnitatud.
+- **Plokkide lisamine (auditi punkt 6)** `scripts/fm3-insert-blocks.mjs`, väli `insert`: plex, multiband, synth,
+  looper, gate, formant, volume, tentap, megatap, ringmod, resonator. Doonor on kasutaja enda FW13 eksport
+  värsketest vaikeplokkidest (`references/fm3-default-blocks-20261023.syx`). Lisatud plokk on kõigis
+  8 stseenis kanalil A ja bypassis; sisse lülita `blockScenes` abil. Looperil on 1 kanal, Megatap/Ring Mod/
+  Resonatoril 2 (A/B). Plexi TIME1–8 ja LFO Rate kirjutamine nõuab samas spetsis vastava TEMPO = NONE
+  (FM3-Edit'i paigutuse lukud, `references/fm3-insert-tempo-locks.json`). Mixer ja Multiplexer ootavad
+  paralleelharusid (punkt 5); Scene MIDI väljad on dekodeerimata — need lükatakse tagasi. Mix-juhid
+  vajavad `allow: ["linear-by-structure"]`, valikuloendid `enum-labels`. Seadmel kinnitatud on kirjete
+  kuju; genereeritud lisamise import/eksport (`examples/FM3_P6_INSERT_{A,B}.*`) ootab katset.
+  Detailid: `engine/docs/FM3_POINT6_BLOCKS.md`.
 - **Satriani "Soap On A Rope"** `examples/SATRIANI_SOAP_ON_A_ROPE{,_V2,_V3}.*`: V1/V2 kuulatud, V3 (tämber
   eraldatud originaali kitarriraja järgi) ootab kuulamist. Kõik kolm on SA2 koostajaga baitidentsed.
 - **Helivõrdlus** `scripts/fm3-audio-compare.py REF FM3`: kolmandikoktaavi tämber ja stereolaius
