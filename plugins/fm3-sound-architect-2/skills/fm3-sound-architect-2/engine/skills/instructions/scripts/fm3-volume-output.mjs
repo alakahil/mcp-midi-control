@@ -10,7 +10,7 @@ import {describeVolumePan,volumeCaptureHash,volumeRecordHash} from './fm3-volume
 import {validateVolumeWrites,volumeUnits} from './fm3-volume-policy.mjs';
 import {validateDependencyWrites} from './fm3-parameter-dependencies.mjs';
 export function verifyVolumeOutput(report,syx,txt,spec){
- const requested=(spec?.controls??[]).filter(c=>c.block==='volpan'),reported=(report.controls??[]).filter(c=>c.block==='volpan');
+ const requested=(spec?.controls??[]).filter(c=>c.block==='volpan'),reported=(report.controls??[]).filter(c=>(c.instanceBlock??c.block)==='volpan');
  if(!spec?.volumePan&&!report.volumePan&&!requested.length&&!reported.length)return;
  assert.equal(spec.volumePan,true,'Volume requires explicit insertion request');
  const body=Buffer.from(inspectStructure(syx).raw.body),records=scanRecords(body).records,matches=records.filter(r=>r.eid===102);assert.equal(matches.length,1,'Volume record must be unique');const r=matches[0];
@@ -18,8 +18,10 @@ export function verifyVolumeOutput(report,syx,txt,spec){
  assert.equal(report.stages?.volumePan?.recordSha256,volumeRecordHash);assert.equal(report.stages.volumePan.captureSha256,volumeCaptureHash);
  const cells=readGrid(body).filter(g=>g.id===102);assert.equal(cells.length,1,'Volume grid must be unique');
  let expectedCell=null;
- for(const [row,key] of [[1,'row2'],[2,'row3']]){const items=spec.layout[key],i=items.indexOf('volpan');if(i>=0){assert.equal(expectedCell,null,'Volume duplicated in layout');expectedCell={row,col:spec.layout.columns?spec.layout.columns.volpan-1:spreadColumns(items.length)[i]};}}
- assert.ok(expectedCell);assert.equal(cells[0].row,expectedCell.row);assert.equal(cells[0].col,expectedCell.col);assert.equal(cells[0].mask,1<<expectedCell.row);
+ if(spec.grid){
+  for(let row=0;row<4;row++)for(let col=0;col<12;col++)if(spec.grid.rows[row][col]==='volpan'){assert.equal(expectedCell,null);expectedCell={row,col};}
+ }else for(const [row,key] of [[1,'row2'],[2,'row3']]){const items=spec.layout[key],i=items.indexOf('volpan');if(i>=0){assert.equal(expectedCell,null,'Volume duplicated in layout');expectedCell={row,col:spec.layout.columns?spec.layout.columns.volpan-1:spreadColumns(items.length)[i]};}}
+ assert.ok(expectedCell);assert.equal(cells[0].row,expectedCell.row);assert.equal(cells[0].col,expectedCell.col);if(!spec.grid)assert.equal(cells[0].mask,1<<expectedCell.row);
  const planned=new Map(),seen=new Set();assert.equal(requested.length,reported.length,'Volume controls count');
  for(const c of requested){
   const p=findParam('volpan',c.param),ch='ABCD'.indexOf(c.channel);assert.ok(ch>=0&&c.channel.length===1);const key=ch+':'+p.param;assert.ok(!seen.has(key));seen.add(key);

@@ -26,7 +26,7 @@ export function readModifiers(body){
 const applies=(m,eid,pid,ch)=>m.active&&(m.effectId===eid||m.effectId===0)&&m.pid===pid&&(m.channel===0||m.channel>4||m.channel==='ABCD'.indexOf(ch)+1);
 export function dependencyState(body,w,{planned=new Map(),modifiers=readModifiers(body)}={}){
   const r=tempoLocks.find(r=>r.effectId===w.effectId&&r.targetPid===w.pid);
-  const mods=modifiers.filter(m=>applies(m,w.effectId,w.pid,w.channel));
+  const mods=modifiers.filter(m=>applies(m,w.instanceEid??w.effectId,w.pid,w.channel));
   let tempo;
   if(r){const at=w.offset+2*(r.tempoPid-w.pid),raw=planned.get(at)??body.readUInt16LE(at);
     tempo={name:r.tempo,pid:r.tempoPid,raw,label:r.labels[raw]??'unknown',manual:raw===r.noneRaw,known:raw<r.labels.length};}
@@ -42,7 +42,7 @@ export function validateDependencyWrites(body,writes){
     if(d.blocked)throw Error(`${w.block} ${w.channel} ${w.name}: ${d.blocked}; ${d.tempo&&!d.tempo.manual?'final Tempo must be NONE':'explicit static write conflicts with active or uncertain modifier'}`);
     for(const r of tempoLocks.filter(r=>r.effectId===w.effectId&&r.tempoPid===w.pid)){
       if(!Number.isInteger(w.raw)||w.raw<0||w.raw>=r.labels.length)throw Error(w.name+': unknown Tempo enum');
-      if(w.raw!==r.noneRaw&&modifiers.some(m=>applies(m,w.effectId,r.targetPid,w.channel)))throw Error(w.name+': tempo conflicts with modifier-controlled target');
+      if(w.raw!==r.noneRaw&&modifiers.some(m=>applies(m,w.instanceEid??w.effectId,r.targetPid,w.channel)))throw Error(w.name+': tempo conflicts with modifier-controlled target');
     }
     w.dependencies=d;
   }

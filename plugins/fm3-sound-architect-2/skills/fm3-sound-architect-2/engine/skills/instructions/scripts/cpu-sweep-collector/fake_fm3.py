@@ -17,7 +17,7 @@ import FM3_CPU_SWEEP as S
 
 ap = argparse.ArgumentParser()
 ap.add_argument('pack', type=Path); ap.add_argument('session', type=Path)
-ap.add_argument('--corrupt'); ap.add_argument('--answer', default='j'); ap.add_argument('--cpu-raw', type=int, default=60)
+ap.add_argument('--no-reply'); ap.add_argument('--unstable'); ap.add_argument('--corrupt'); ap.add_argument('--answer', default='j'); ap.add_argument('--cpu-raw', type=int, default=60)
 a = ap.parse_args()
 manifest = json.loads((a.pack / 'manifest.json').read_text())
 # Raw frames only: the collector itself validates (and must refuse) bad files.
@@ -37,8 +37,9 @@ class FakePort:
             return
         if d == S.cpu_request():
             log['requests'] += 1
+            if self.cur['id'] == a.no_reply: return
             cells = self.cur['expectedGrid']
-            if self.cur['id'] == a.corrupt:
+            if self.cur['id'] == a.corrupt or (self.cur['id'] == a.unstable and log['requests'] % 2):
                 cells = [list(c) for c in cells]; c = next(x for x in cells if x[2] and x[2] < 1024 and x[3]); c[3] ^= 1
             f = bytearray(G.encode_grid(G.GOLDEN, cells)); f[37] = a.cpu_raw; f[-2] = S.checksum(list(f[:-2]))
             self.framer.frames.append(list(f)); return
@@ -48,6 +49,12 @@ class FakePort:
 
 S.Port = FakePort
 G.time.sleep = lambda s: None
+# Deterministic clock: timeout paths run without wall-clock delays.
+clock = [0.0]
+def monotonic():
+    clock[0] += 0.05
+    return clock[0]
+G.time.monotonic = monotonic
 builtins.input = lambda prompt: a.answer
 try:
     G.run(a.pack, a.session, '/dev/null')

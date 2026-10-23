@@ -1,6 +1,6 @@
 # Auditi punkt 7: CPU hinnang (Claude, 2026-10-23)
 
-`scripts/fm3-cpu.mjs` arvutab iga stseeni CPU alampiiri. Andmed on failis
+`scripts/fm3-cpu.mjs` arvutab iga stseeni CPU hinnangu. Andmed on failis
 `references/fm3-cpu-measurements-20261023.json`. Soundi koostaja lisab hinnangu `.txt` ja
 `.validation.json` faili (`report.cpu`).
 
@@ -36,8 +36,7 @@ Kontrollrida B6 = 52,9 % ja A5 = 52,8 % sama plokikomplektiga.
 - Amp ja Delay töötavad eraldi tuumal (Fractali wiki). FM3-Editi näit seda tuuma praktiliselt ei näita ja
   hinnang ei näe seda.
 - Kulu sõltub tüübist. Satriani V1 Scene 4 juures mõõdeti 61 %, perekulude summa annab aga 44,6 %. Erinevad tüübid:
-  Plate: Medium Plate, Digital Stereo, DS1 Distortion Mod ja Ampi kanal D. Kui mõni plokk kasutab mõõtmata tüüpi,
-  esitatakse hinnang alampiirina ja vastav tüüp nimetatakse.
+  Plate: Medium Plate, Digital Stereo, DS1 Distortion Mod ja Ampi kanal D. See kirjeldab varasemat ainult üksikutele tüüpidele tuginevat mudelit; allolev tüübipõhine mudel asendab selle.
 - Ohutu piir on 80 %. Üle selle vaigistab seade heli ja kuvab hoiatuse.
 
 ## Automaatne mõõtmine (2026-10-23)
@@ -60,10 +59,14 @@ ja loeb CPU `fn=0x01 sub=0x2E` vastusest. Midagi ei salvestata.
 - Kontroll: Satriani V1 Scene 4 hinnang 60,1 %, mõõdetud 61 %. P6 A hinnang 83,1 %, mõõdetud 82,5 %.
   P6 B hinnang 86,3 %, seadmes „CPU LIMIT EXCEEDED".
 
-`fm3-cpu.mjs` 0.2.0 arvutab iga stseeni CPU aktiivse kanali tüübi järgi. Mõõtmata tüübi korral kasutab see
-pere suurimat kulu ja nimetab selle. Hoiatus antakse alates 72 %-st; üle 80 % on ohutu piir ületatud.
+`fm3-cpu.mjs` 0.2.1 arvutab iga stseeni CPU aktiivse kanali tüübi järgi. Mõõtmata tüübi korral kasutab see
+olemasolevat pere maksimumi või mõõdetud võrdlustüüpi ja nimetab selle; teadmata pere jäetakse summast välja. Hoiatus antakse üle 72 %-st; üle 80 % on ohutu piir ületatud.
 
 ## Järgmine
 
 - Mõõtmata on veel point-6 perede teised tüübid (Plex, Megatap jt), Cab LEGACY ja Amp (Ampi tuum).
 - Sama mõõtjaga saab tulevikus mõõta iga uue perekonna või püsivara (käivita builder, siis FM3_CPU_SWEEP.py).
+
+## 0.3.16 täpsustus
+
+Mõõdetud tüübi olemasolu ei tõenda kogu preseti ±1 protsendipunkti täpsust. G06 mõõdetud 41,5% ja hinnang 44,3% erinevad 2,8 protsendipunkti; G07 erinevus on 4,3 protsendipunkti. Mõõturi kalibreerimise ±0,5 protsendipunkti ei ole koondmudeli veapiir. `measuredTypeCoverageAllScenes` tähistab mõõdetud komponentide katvust. Ühilduvuse jaoks alles jäetud `exactAllScenes`/`scenes[].exact` on sama katvuse ajaloolised nimed, mitte täpsusgarantii. Uut seadmemõõtmist ei tehtud.

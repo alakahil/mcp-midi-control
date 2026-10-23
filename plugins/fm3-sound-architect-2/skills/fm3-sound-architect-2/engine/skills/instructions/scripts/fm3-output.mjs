@@ -1,3 +1,4 @@
+import {verifyGridOutput} from './fm3-grid-output.mjs';
 import {verifyVolumeOutput} from './fm3-volume-output.mjs';
 import {verifyInputGateOutput} from './fm3-input-gate-output.mjs';
 // Stage all four files; never overwrite existing output. The validation file is
@@ -36,5 +37,6 @@ export function verifyPresetOutputs(stem){
   verifyWahExactOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   verifyInputGateOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   verifyVolumeOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
+  verifyGridOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   return report;
 }

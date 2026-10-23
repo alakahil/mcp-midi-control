@@ -56,10 +56,17 @@ try{
   // 3. one wrong cell is detected and reported
   const c=run(pack,path.join(tmp,'s2'),'--corrupt','T2');
   const t2=c.results.find(r=>r.id==='T2');
-  check(t2&&!t2.gridMatches&&t2.mismatches.length===1&&c.results.filter(r=>r.gridMatches).length===2&&c.out.includes('Mõni ruudustik erineb'),'Mismatch detected');
-  // 4. the user does not see the name: stop after the first dump, nothing logged
+  check(t2&&!t2.gridMatches&&t2.mismatches.length===1&&c.results.length===2&&c.fake.dumpsReceived===2&&c.fake.exit.includes('kirjutused peatatud'),'Mismatch detected');
+  const resumedFailure=run(pack,path.join(tmp,'s2'));
+  check(resumedFailure.fake.dumpsReceived===0&&resumedFailure.fake.exit.includes('Varasem katse ebaõnnestus'),'Failed session cannot resume blindly');
+  for(const mode of ['--no-reply','--unstable']){
+    const bad=run(pack,path.join(tmp,mode.slice(2)),mode,'T2');
+    check(bad.fake.dumpsReceived===2&&bad.results.length===2&&bad.results[1].status==='failed'&&bad.results[1].sentFramesHex.length>0,'Readback failure stops and retains sends: '+mode);
+    check(bad.fake.exit.includes(mode==='--no-reply'?'ei vastanud':'ei stabiliseerunud'),'Readback diagnostic: '+mode);
+  }
+  // 4. the user does not see the name: stop after the first dump and retain diagnostics
   const d=run(pack,path.join(tmp,'s3'),'--answer','e');
-  check(d.fake.exit.includes('redaktsioonipuhvrisse')&&d.fake.dumpsReceived===1&&d.results.length===0,'Name refusal stops');
+  check(d.fake.exit.includes('redaktsioonipuhvrisse')&&d.fake.dumpsReceived===1&&d.results.length===1&&d.results[0].status==='failed'&&d.results[0].sentFramesHex.length>0,'Name refusal stops');
   // 5. a file that differs from its manifest hash is refused before any device write
   const tampered=path.join(tmp,'tampered');makePack(tampered);
   const f=fs.readFileSync(path.join(tampered,'T3.syx'));f[100]^=1;fs.writeFileSync(path.join(tampered,'T3.syx'),f);
@@ -74,5 +81,5 @@ try{
   // 7. the shipped collectors' own self-tests
   for(const s of ['FM3_GRID_CHECK.py','FM3_CPU_SWEEP.py'])
     check(JSON.parse(execFileSync('python3',['-B',path.join(here,'cpu-sweep-collector',s),'--self-test'],{encoding:'utf8'}).trim().split('\n').pop()).selfTest.startsWith('passed'),s+' self-test');
-  console.log(JSON.stringify({scenarios:7,deviceIO:false,collector:'FM3_GRID_CHECK.py'}));
+  console.log(JSON.stringify({scenarios:10,deviceIO:false,collector:'FM3_GRID_CHECK.py'}));
 }finally{fs.rmSync(tmp,{recursive:true,force:true});}

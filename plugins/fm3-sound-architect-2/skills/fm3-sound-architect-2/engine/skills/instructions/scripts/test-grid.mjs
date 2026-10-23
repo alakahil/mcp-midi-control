@@ -111,6 +111,8 @@ check(w.some(x=>x.instanceBlock==='drive2'&&x.instanceEid===119&&x.block==='driv
 check(s.txt.includes('Ruudustik (4 × 12')&&s.txt.includes('mixer<2+3')&&s.txt.includes('← cab (rida 2, veerg 5)')&&!s.txt.includes('HOIATUS')&&s.report.signalLayout==='grid','Grid text');
 check(s.report.stages.records.duplicated[0].block==='drive2'&&s.report.stages.layout.expectedGrid.length===readGrid(sb).filter(g=>g.id).length,'Report stages');
 check(s.report.cpu&&Array.isArray(s.report.cpu.scenes??s.report.cpu),'CPU estimate present');
+check(s.report.scenes[0].blocks.drive2?.bypass===false&&s.report.parameters.some(p=>p.block==='drive2'&&p.name==='FUZZ_DRIVE'),'Drive 2 final scenes and parameters');
+check(s.txt.includes('drive2 A Drive (FUZZ_DRIVE):')&&!s.txt.includes('drive A Drive (FUZZ_DRIVE):'),'TXT identifies the written instance');
 no(()=>composeSound(NL,{...spec,layout:{row2:[],row3:[]}}),/exactly one of spec.layout/,'layout and grid together');
 no(()=>composeSound(NL,{composer:spec.composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},remove:['delay']}),/need grid mode/,'remove in layout mode');
 no(()=>composeSound(NL,{composer:spec.composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},insert:['mixer']}),/grid mode/,'mixer in layout mode');
