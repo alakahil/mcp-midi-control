@@ -9,11 +9,11 @@ const numericPids=new Set([0,1,2,3,5]);
 export const inputUnits=Object.freeze({INPUT_THRESH:'dB',INPUT_RATIO:':1',INPUT_RELEASE:'ms',INPUT_ATTACK:'ms',INPUT_LEVEL:'dB'});
 export function inputGateSummary(){return {supported:true,block:'in1',effectId:37,channels:['A','B','C','D'],
   parameters:[...numericPids].map(pid=>({pid,name:input.parameters[pid].name,unit:inputUnits[input.parameters[pid].name],kind:input.parameters[pid].kind,displayRange:input.parameters[pid].numericFields.slice(0,2).map(v=>v*input.parameters[pid].numericFields[2])})),
-  evidenceSha256:inputVolumeEvidenceHash,encoding:'existing table curve classes; metadata/model generalization, no new gate measurements',
+  evidenceSha256:inputVolumeEvidenceHash,encoding:'existing table curve classes; metadata/model generalization, no new physical scale measurements',
   newHardwareMeasurements:0,newPhysicalScaleMeasurements:0,fullRangeEncodingProven:false,
   hardwareStorageRoundtrip:{targetWords:20,channels:['A','B','C','D'],captureSha256:'e6537e4a8f86b7bb9d125e341567b7c5b354afac65fc4f325a8580d0d8a06356',scope:'one imported combination; entire Input record preserved'},
   preserved:['Gate Type','Mode','Input bypass','meter/reserved words','scene assignments','global Noisegate Offset','global AC Line Frequency','modifiers'],
-  limits:['Input 1 only; separate Gate block excluded','Ratio and Attack require final ADVANCED; Release is visible in both FW13 modes','Threshold OFF (-100 endpoint) not authored','No Volume/Pan insertion or controller binding']};}
+  limits:['Input 1 only; separate Gate block excluded','Ratio and Attack require final ADVANCED; Release is visible in both FW13 modes','Threshold OFF (-100 endpoint) not authored','No new Input controller binding; Volume/Pan has a separate bounded writer']};}
 export function inputGateState(p,read){
   return p.family==='INPUT'?{mode:read(9),type:read(7)}:null;
 }
@@ -38,7 +38,7 @@ export function validateInputGateWrites(body,writes){
     if(!a.allowed)throw Error('Input gate: '+a.reason);
     if(w.pid===0&&(!(w.value>-100)||w.raw===0))throw Error('Input gate: Threshold OFF endpoint is not supported');
     w.typeApplicability=a;
-    w.encodingEvidence='taper-class-verified; no new Input gate hardware measurement';
+    w.encodingEvidence='taper-class-verified; storage roundtrip confirmed; no new physical Input scale measurement';
   }
 }
 export function describeInputGate(body,record){

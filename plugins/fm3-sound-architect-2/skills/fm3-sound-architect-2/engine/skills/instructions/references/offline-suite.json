@@ -465,6 +465,14 @@
       ],
       "scope": "One captured FW13 body reconstruction; bounded VOLUME insertion and A-D controls, preservation, scenes, independent raw decoder and four-file tamper rejection; no new physical scales/audio/STORE proof",
       "required": true
+    },
+    {
+      "id": "test-input-volume-output",
+      "required": true,
+      "command": [
+        "node",
+        "scripts/test-input-volume-output.mjs"
+      ]
     }
   ]
 }

@@ -1020,12 +1020,6 @@
         "references/TestE_Delay_Bypass.syx"
       ]
     },
-    "15b15a7b75106f7e81cf7599c2c190d918363ceabd3e6f0e442f7728d9538291": {
-      "bytes": 16190,
-      "paths": [
-        "references/offline-suite.json"
-      ]
-    },
     "15b7379736423f48f9b490c3fe18d916aef0c291ccbcffc8f4b8c194f1654362": {
       "bytes": 24680,
       "paths": [
@@ -6651,6 +6645,12 @@
       "bytes": 2320,
       "paths": [
         "references/enhancer-full-20261012-122507/step-014-161c7e2616/result.json"
+      ]
+    },
+    "89722e04a8ed0f221fddc6101723fca1cffaa84a9bb57b04d2ed3340bf437a4d": {
+      "bytes": 16357,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "89885998c219534cd3eab95e4aaa320b15669aaa811076b62f7b9d0993e02233": {

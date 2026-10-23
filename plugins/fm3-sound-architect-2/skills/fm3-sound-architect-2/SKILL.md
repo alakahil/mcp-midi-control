@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.14`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.15`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -30,10 +30,10 @@ Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
 
-## Avaldamata Input / Volume-Pan kandidaat (23.10.2026)
+## Input gate ja Volume/Pan (0.3.15)
 
-Selle tööharu muudatus pole uus privaatne väljalase. Avaldatud plugin jääb 0.3.14;
-`capabilities.developmentCandidate` eristab kandidaati. Input 1 viie arvparameetri
+Selles versioonis on piiratud Input 1 ja Volume/Pan 1 kirjutustugi.
+Tegelik avaldamine ja laaditud commit kinnitatakse väljalaskekviitungist. Input 1 viie arvparameetri
 A–D kirjutustugi säilib: THRESH, RATIO, RELEASE, ATTACK, LEVEL. Ratio/Attack
 vajavad ADVANCED-režiimi. Type, Mode, Input bypass, impedants ja meter säilivad;
 Threshold OFF-äärpunkti ei kirjutata. See on Input 1, mitte eraldi Gate-plokk.

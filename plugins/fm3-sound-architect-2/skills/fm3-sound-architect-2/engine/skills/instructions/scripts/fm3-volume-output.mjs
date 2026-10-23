@@ -8,6 +8,7 @@ import {scanRecords,readGrid,spreadColumns} from './fm3-layout.mjs';
 import {findParam,encodeValue,decodeValue} from './fm3-table-encoder.mjs';
 import {describeVolumePan,volumeCaptureHash,volumeRecordHash} from './fm3-volume.mjs';
 import {validateVolumeWrites,volumeUnits} from './fm3-volume-policy.mjs';
+import {validateDependencyWrites} from './fm3-parameter-dependencies.mjs';
 export function verifyVolumeOutput(report,syx,txt,spec){
  const requested=(spec?.controls??[]).filter(c=>c.block==='volpan'),reported=(report.controls??[]).filter(c=>c.block==='volpan');
  if(!spec?.volumePan&&!report.volumePan&&!requested.length&&!reported.length)return;
@@ -24,7 +25,7 @@ export function verifyVolumeOutput(report,syx,txt,spec){
   const p=findParam('volpan',c.param),ch='ABCD'.indexOf(c.channel);assert.ok(ch>=0&&c.channel.length===1);const key=ch+':'+p.param;assert.ok(!seen.has(key));seen.add(key);
   const offset=r.start+ch*30+p.param*2,raw=body.readUInt16LE(offset),display=decodeValue(p,raw),expected=encodeValue(p,c.value,{allow:spec.allow??[]});assert.equal(raw,expected,'Volume SYX differs from spec');planned.set(key,raw);
   const matches=reported.filter(w=>w.channel===c.channel&&w.pid===p.param);assert.equal(matches.length,1);const w=matches[0];
-  assert.equal(w.offset,offset);assert.equal(w.effectId,102);assert.equal(w.raw,raw);assert.equal(w.value,c.value);assert.equal(w.name,p.name);assert.equal(w.display,display);assert.equal(w.unit,volumeUnits[p.name]??'');validateVolumeWrites(body,[{...w}]);
+  assert.equal(w.offset,offset);assert.equal(w.effectId,102);assert.equal(w.raw,raw);assert.equal(w.value,c.value);assert.equal(w.name,p.name);assert.equal(w.display,display);assert.equal(w.unit,volumeUnits[p.name]??'');validateVolumeWrites(body,[{...w}]);validateDependencyWrites(body,[{...w}]);
   const fmt=v=>typeof v==='number'?String(Number(v.toFixed(4))):String(v);
   assert.ok(txt.includes(`volpan ${c.channel} ${w.label??w.name} (${p.name}): ${fmt(display)} ${w.unit}; küsitud ${fmt(c.value)}; raw ${raw};`),'Volume TXT differs');
  }
@@ -33,6 +34,9 @@ export function verifyVolumeOutput(report,syx,txt,spec){
  for(let ch=0;ch<4;ch++)for(let pid=0;pid<15;pid++)assert.equal(body.readUInt16LE(r.start+ch*30+pid*2),planned.get(ch+':'+pid)??donorWords.readUInt16LE(ch*30+pid*2),'Undeclared Volume word changed');
  for(const s of state.states){assert.equal(s.typeRaw,0,'Volume TYPE is not captured VOLUME');assert.ok(txt.includes(volumeChannelText(s)),'Volume retained TXT values differ');}
  const scenePlan=spec.blockScenes?.volpan??[];
+ const expectedHeader=Buffer.from(captured.recordHex,'hex').subarray(0,46);
+ for(const edit of scenePlan){if(edit.channel!==undefined)expectedHeader.writeUInt16LE('ABCD'.indexOf(edit.channel),10+2*(edit.scene-1));if(edit.bypass!==undefined)expectedHeader.writeUInt16LE(edit.bypass?1:0,26+2*(edit.scene-1));}
+ assert.deepEqual(body.subarray(r.header,r.start),expectedHeader,'Undeclared Volume header changed');
  for(const scene of state.scenes){const edit=scenePlan.find(x=>x.scene===scene.scene);assert.equal(scene.channel,edit?.channel??'A','Volume scene channel differs');assert.equal(scene.bypassRaw,edit?.bypass?1:0,'Volume scene bypass differs');assert.ok(txt.includes(`Volume/Pan 1 Scene ${scene.scene}: kanal ${scene.channel}; bypass raw ${scene.bypassRaw}.`));}
  assert.ok(txt.includes('VOLUME/PAN 1 — LÕPPFAILIST'));
 }
