@@ -41,7 +41,7 @@ Kasutaja ühe tagastatud FW13 ekspordiga kinnitati kõigi 20 valitud Input-sihts
 ning kogu ülejäänud Input-kirje säilimine. See ei tõenda eraldi füüsikalisi skaalasid.
 
 Volume/Pan 1 praegune FW13 15-sõnaline A–D kirje on nüüd olemas. Sound-spec'i
-`volumePan:true` lisab selle NewLook-alusele; `layout` peab sisaldama `volpan`-i.
+`volumePan:true` lisab selle NewLook-alusele; valitud `layout` või `grid` peab sisaldama `volpan`-i.
 `controls` kasutab `block:"volpan"`: GAIN, BAL, PANL, PANR ja LEVEL; eraldi
 `allow:["enum-labels"]` korral ka TAPER, BYPASSMODE ja INPUTSELECT. Stseenide
 kanal/bypass: `blockScenes.volpan`. Praegu toetatakse ainult VOLUME-tüüpi;
