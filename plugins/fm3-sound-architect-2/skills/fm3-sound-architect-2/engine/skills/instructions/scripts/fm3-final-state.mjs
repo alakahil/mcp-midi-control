@@ -14,11 +14,14 @@ import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-param
 import {globalScaleDependencies,pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 import {renderGlobalScaleObservations} from './fm3-global-scale-observations.mjs';
 import {renderWahModifierText} from './fm3-wah-modifier.mjs';
+import {INSERT_TYPE_PID} from './fm3-insert-blocks.mjs';
 const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks,{volpan:{typePid:9}});
 export function finalSoundState(syx,writes,opts={}){
   const after=inspectStructure(syx),body=Buffer.from(after.raw.body),{records}=scanRecords(body),dictionary=loadDictionary();
-  const blocks=Object.fromEntries(records.filter(r=>SLUG_BY_EID[r.eid]).map(r=>[r.family,{...r,typePid:definitions[r.family]?.typePid}]));
+  const blocks=Object.fromEntries(records.filter(r=>SLUG_BY_EID[r.eid]).map(r=>[r.family,{...r,typePid:definitions[r.family]?.typePid??INSERT_TYPE_PID[r.family]}]));
   const scenes=describeComposerScenes(after,blocks);
+  // Inserted point-6 families: name the type from the dictionary enum (no composer library exists).
+  for(const s of scenes)for(const [family,b] of Object.entries(s.blocks))if(Object.hasOwn(INSERT_TYPE_PID,family)&&b.typeId!==undefined)b.type=findParam(family,INSERT_TYPE_PID[family]).enum?.[b.typeId]?.trim()??b.type;
   const channels=records.map(r=>({block:r.family,effectId:r.eid,wordsPerChannel:r.words,channels:Array.from({length:r.channels},(_,i)=>({channel:'ABCD'[i],words:Array.from({length:r.words},(_,pid)=>body.readUInt16LE(r.start+(i*r.words+pid)*2))}))}));
   const modifiers=readModifiers(body).map(m=>({...m,targetName:dictionary.params.find(p=>p.block===m.effectId&&p.param===m.pid)?.name??'unknown target'}));
   const effective=writes.map(w=>{

@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2073,
-  "filePaths": 2277,
+  "uniqueContents": 2085,
+  "filePaths": 2289,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -297,6 +297,12 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-040-f6e7ed780e/donor.syx"
+      ]
+    },
+    "059e30a1102e5f6c16bbbcf5a6edd2140119e8a004573b8bcee32bf2ae615b0d": {
+      "bytes": 15541,
+      "paths": [
+        "references/fm3-insert-tempo-locks.json"
       ]
     },
     "05b38718822a15934323b267e5526bfd0d312aeeb7549b00396a9e117e901c42": {
@@ -1205,6 +1211,12 @@
         "references/geq-full-20261010-194115/step-134-9815cbde8a/capture.json"
       ]
     },
+    "18edadfb3bafe1be03f5196a06a127b0039e816aa52b1b862fc787aa58184c00": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_P6_INSERT_A_export.syx"
+      ]
+    },
     "1917baed523fe06f4769b47428e3e5b81c1d41320c90f4c9ae83810918bd4532": {
       "bytes": 24680,
       "paths": [
@@ -1371,6 +1383,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-138-3880458408/donor.syx"
+      ]
+    },
+    "1cea47bec0082ea52ec8d61737188b914bc9fc3b31da5aa5580b0a584e48d889": {
+      "bytes": 17382,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "1d0e4bac8fb5bf371cef62f31acf5b43e83e41a0b737a5bdb70a68d7ebca1c04": {
@@ -1593,6 +1611,12 @@
         "references/enhancer-ui-20261011/observations.json"
       ]
     },
+    "20c5ce35c4452c9ff2767f93f7f245409adf43e61a6d7e5d33c33f5e9ef3eeb7": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_P6_INSERT_A.syx"
+      ]
+    },
     "211ef621621c8546c50be76af9fef0370761b8e476f51670871febe17c556833": {
       "bytes": 24680,
       "paths": [
@@ -1621,6 +1645,12 @@
       "bytes": 5025,
       "paths": [
         "references/geq-full-20261010-194115/step-148-6b8f074483/capture.json"
+      ]
+    },
+    "220866f7866d9f515a98b36b2430de6e5a69ae378e58426bc86f3bc417ea7e14": {
+      "bytes": 24680,
+      "paths": [
+        "references/fm3-empty-preset-20261023.syx"
       ]
     },
     "221070c4e1fa19a8dc571a1046724196edd66c3db401894992fc15b0163ab37d": {
@@ -2815,6 +2845,12 @@
         "references/peq-full-20261009-152606/step-014-dad3bb686a/capture.json"
       ]
     },
+    "393a4a4bed434babf7741e1dee34158e1a0d603e0cd993cea8b6f80b5dd7126c": {
+      "bytes": 1041882,
+      "paths": [
+        "examples/FM3_P6_INSERT_A.validation.json"
+      ]
+    },
     "3940a039341a310dfe253c5143c206fe6643a481f6e9908142c198a7973fafb2": {
       "bytes": 2214,
       "paths": [
@@ -3364,12 +3400,6 @@
         "references/geq-full-20261010-194115/step-157-f6b8077502/result.json"
       ]
     },
-    "4591e2dfe25f9bb1b27b42576d6e6dabcb02aa63ff505c1a930030e5032e4f3f": {
-      "bytes": 16683,
-      "paths": [
-        "references/offline-suite.json"
-      ]
-    },
     "45bfa0eba176d3bcf9d36e1af2d9c75770f19ebda1fa914374b5d08fd7164109": {
       "bytes": 24680,
       "paths": [
@@ -3695,6 +3725,12 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-039-382b696907/donor.syx"
+      ]
+    },
+    "4c9de53db191d1eca2857d622e445c9825e98e115e862cfc7cc4c421c752e359": {
+      "bytes": 974287,
+      "paths": [
+        "examples/FM3_P6_INSERT_B.validation.json"
       ]
     },
     "4cc268bdbc68b10159fb7d0fe7c4a3f17ac0336ac02e0d1fdfe4e740fba484c9": {
@@ -4623,6 +4659,12 @@
       "bytes": 24680,
       "paths": [
         "references/S2_AmpGain_6.syx"
+      ]
+    },
+    "606d0a771d6fff60e98d2aca6c5b6afd85d7244997bbf31418f5325e1e2eb9b8": {
+      "bytes": 1635,
+      "paths": [
+        "examples/FM3_P6_INSERT_A.spec.json"
       ]
     },
     "6094b04993302f1ccdb8cefda319268c9db986abf0b63c0af1519ca63eb737b2": {
@@ -8860,6 +8902,12 @@
         "references/amp-level-20261013/session/attempt-05-4503cfdd34a8/comparison.json"
       ]
     },
+    "b7015dee8068fc5d9f96b2c152aafefa4622643c599c994cd7a397bcf7ba860d": {
+      "bytes": 1579,
+      "paths": [
+        "examples/FM3_P6_INSERT_B.spec.json"
+      ]
+    },
     "b71442f879084ef252618881bf4b29d3ba91c575c838494a35c297e46ee8dcae": {
       "bytes": 24680,
       "paths": [
@@ -9409,6 +9457,12 @@
       "bytes": 636,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T110839-7a1e03cf57/labels.json"
+      ]
+    },
+    "c2917196337a855671e980a452ee4449f3018c221a7302333749d8c450610a25": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_P6_INSERT_B_export.syx"
       ]
     },
     "c2a481a645d4d1668b5a98b042a023da4e2031dfb2daf9320a8cabb9e46b4000": {
@@ -10636,6 +10690,12 @@
         "references/enhancer-full-20261012-122507/step-002-ebb2d1a1d2/donor.syx"
       ]
     },
+    "dadff7c85c7ae11758e0be63ce11aa9153a9059198ea8882877c561890170436": {
+      "bytes": 24680,
+      "paths": [
+        "examples/FM3_P6_INSERT_B.syx"
+      ]
+    },
     "db16f06ac450db11e99d8ad90ec2e7bc323467c3f29829365640dd690da7a91f": {
       "bytes": 3018,
       "paths": [
@@ -10742,6 +10802,12 @@
       "bytes": 3659,
       "paths": [
         "references/geq-full-20261010-194115/step-138-3880458408/result.json"
+      ]
+    },
+    "dc382d6ded7dafc6889abc19edb5763a1b8e483bec841879108ded68423e49af": {
+      "bytes": 24680,
+      "paths": [
+        "references/fm3-default-blocks-20261023.syx"
       ]
     },
     "dc838c8ec6f95433567f11d397b5ee8af66a53fb377a070d2d9537a74232718d": {
@@ -11918,6 +11984,12 @@
       "bytes": 2174,
       "paths": [
         "references/geq-full-20261010-194115/step-166-63e9d5f6bf/result.json"
+      ]
+    },
+    "f4968b9557380ce26d3b9f27f0a004134f9aeb603fe5350eb6abb11efb0ea9f3": {
+      "bytes": 20863,
+      "paths": [
+        "references/fm3-factory-structure-evidence.json"
       ]
     },
     "f4bbbcecb473da67294d1a13cc65ac4d97a82016ace17d7aa0d6a8ed6b8ab489": {

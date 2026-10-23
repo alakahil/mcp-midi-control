@@ -55,11 +55,13 @@ for (const p of eligible) {
     });
     [base-1, base+p.enum.length, 0.5, '__FM3_UNKNOWN_OPTION__'].forEach(reject);
   } else if(p.kind==='integer'){
+    // Stored integer; display = stored × integerScale (class 0x01 display multiplier, e.g. Plex Number of Delays).
+    const k=p.integerScale??1;
     for(let value=p.min;value<=p.max;value++){
       const word=value<0?65536+value:value;
-      assert.equal(encodeValue(p,value,opts),word);assert.equal(encodeValue(p,decodeValue(p,word),opts),word);numericChecks++;roundtripChecks++;
+      assert.equal(encodeValue(p,value*k,opts),word);assert.equal(encodeValue(p,decodeValue(p,word),opts),word);numericChecks++;roundtripChecks++;
     }
-    [p.min-1,p.max+1,p.min+0.5,NaN,Infinity,-Infinity,null,true,'1'].forEach(reject);
+    [(p.min-1)*k,(p.max+1)*k,p.min*k+0.5,...(k>1?[p.min*k+1]:[]),NaN,Infinity,-Infinity,null,true,'1'].forEach(reject);
   } else {
     assert.ok(Number.isFinite(p.min) && Number.isFinite(p.max) && p.max > p.min, key(p) + ': invalid curve domain');
     if (p.kind === 'log') assert.ok(p.min > 0, key(p) + ': nonpositive log domain');
@@ -124,7 +126,7 @@ for (const [bi, base] of composerBases.entries()) {
       // The scalar codec can represent the OFF endpoint; the bounded Input writer cannot author it.
       if(p.family==='INPUT'&&p.param===0&&raw===0)raw=1;
       let value = p.kind === 'enum' ? raw : atPosition(p, raw / 65534);
-      if(p.kind==='integer'){value=phase===0?p.min:phase===2?p.max:p.min+(offset% (p.max-p.min+1));raw=value<0?65536+value:value;}
+      if(p.kind==='integer'){value=phase===0?p.min:phase===2?p.max:p.min+(offset% (p.max-p.min+1));raw=value<0?65536+value:value;value*=p.integerScale??1;}
       candidates.push({p, slug, ch, layout, offset, raw, value});
     }
     const planned = new Map(candidates.filter(c => !templateOnlyParameter(c.p)).map(c => [c.offset, c.raw]));

@@ -13,7 +13,7 @@ const families={flanger:'FLANGER',phaser:'PHASER',compressor:'COMP'};
 const libs=Object.fromEntries(Object.keys(families).map(s=>[s,JSON.parse(read('references/'+s+'-library.json'))]));
 const record=slug=>records.find(r=>r.family===slug);
 const ctl=(block,channel,param,value)=>({block,channel,param,value});
-const valueFor=p=>p.kind==='enum'?0:p.kind==='knob'?(p.displayMultiplier||1)/2:(p.min+p.max)/2*(p.displayMultiplier||1);
+const valueFor=p=>p.kind==='enum'?0:p.kind==='knob'?(p.displayMultiplier||1)/2:p.kind==='integer'?Math.round((p.min+p.max)/2)*(p.integerScale??1):(p.min+p.max)/2*(p.displayMultiplier||1);
 function fixture(slug,m){const body=Buffer.from(before),r=record(slug);for(let ch=0;ch<4;ch++)m.words.forEach((v,pid)=>body.writeUInt16LE(v,r.start+2*(ch*r.words+pid)));return body;}
 const policy=(slug,p,body,ch=0)=>typeApplicability(p,readTypeState(p,pid=>body.readUInt16LE(record(slug).start+2*(ch*record(slug).words+pid))));
 let templates=0,accepted=0,rejected=0,templateOnly=0;
