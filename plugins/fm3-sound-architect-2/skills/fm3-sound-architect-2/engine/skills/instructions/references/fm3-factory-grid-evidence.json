@@ -13,6 +13,7 @@
   "Mask bit k (0..3) = input from row k of the previous column; no set bit points to an empty cell; column 1 never has inputs.",
   "Every factory grid passes the general-grid planner (fm3-grid.mjs planCells) and every input mask is reproduced exactly from cell names plus explicit links.",
   "Cells without input beyond column 1 are only In 1/In 2 (37/38), Feedback Return (186) and Synth (130).",
+  "An Amp output reaches Out 1/Send without a Cab on at least one path in a few factory presets, so this is a warning, not a refusal.",
   "Bit 4 (value 16) appears on a few merge cells; its meaning is unknown and the generator never writes it."
  ],
  "grid": {
@@ -36,6 +37,7 @@
    "130": 4,
    "186": 9
   },
+  "ampPathWithoutCab": 20,
   "plannerAccepted": 384,
   "masksReproduced": 4801,
   "explicitLinks": 276,

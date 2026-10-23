@@ -154,13 +154,35 @@ export function gridCapabilities(){
     duplicate:{field:'spec.duplicate',instances:INSTANCE_LIMIT,record:'copy of the previous instance, own effect ID, all 8 scenes A/bypass'},
     insert:{field:'spec.insert',blocks:Object.keys(GRID_ADDABLE),record:'device-default donor, all 8 scenes A/bypass, no grid cell until placed'},
     evidence:'384 FW10 factory presets / 4801 cells: mask bit k = input from row k of the previous column (0 violations), 144 splits, 140 merges; instance records = instance 1 with its own effect ID (8 factory pairs)',
-    neverWritten:'grid mask bit 4 (seen on 8 factory merge cells, meaning unknown)',hardware:'grid-check pack: tools/fm3/grid-check-build.mjs + FM3_GRID_CHECK.py'};
+    neverWritten:'grid mask bit 4 (seen on 8 factory merge cells, meaning unknown)',hardware:'confirmed 2026-10-23: 7 generated grids (splits, merges, 4 rows, Mixer, Multiplexer, Synth source, Send/Return, instances, removals) read back identical in all 48 cells (references/fm3-grid-check-20261023.json); the FM3 screen showed the encoded branch',linkSemantics:'a link names its target cell; its source is the previous column. The report lists every split/merge source by block and warns when an Amp path reaches Out 1/Send without a Cab'};
 }
+const nameOf=id=>id===IO.in1?'In 1':id===IO.out1?'Out 1':id===IO.send?'Send':id===IO.ret?'Return':id>=SHUNT_MIN?'-':(()=>{const b=blockOf(id);return b?(SLUG_BY_EID[b.block]??'eid'+id)+(b.instance>1?b.instance:''):'eid'+id})();
 export function describeGrid(body){
-  const g=readGrid(body),nm=id=>id===IO.in1?'In 1':id===IO.out1?'Out 1':id===IO.send?'Send':id===IO.ret?'Return':id>=SHUNT_MIN?'-':(()=>{const b=blockOf(id);return b?(SLUG_BY_EID[b.block]??'eid'+id)+(b.instance>1?b.instance:''):'eid'+id})();
-  return [0,1,2,3].map(r=>g.filter(x=>x.row===r).map(x=>x.id?nm(x.id)+(x.mask&&x.mask!==1<<r?'<'+[0,1,2,3].filter(k=>x.mask>>k&1).map(k=>k+1).join('+'):''):'.').join(' | '));
+  const g=readGrid(body);
+  return [0,1,2,3].map(r=>g.filter(x=>x.row===r).map(x=>x.id?nameOf(x.id)+(x.mask&&x.mask!==1<<r?'<'+[0,1,2,3].filter(k=>x.mask>>k&1).map(k=>k+1).join('+'):''):'.').join(' | '));
 }
-
+// Every split and merge in plain words, traced back through single-input shunts to the block that
+// actually feeds it (a branch fed from the cell left of Cab is fed from Amp: the link column is the
+// target, its source is the previous column). 1-based rows/columns, as on the FM3 screen.
+export function describeLinks(body){
+  const g=readGrid(body),at=(r,c)=>g.find(x=>x.row===r&&x.col===c),ins=x=>[0,1,2,3].filter(k=>x.mask>>k&1);
+  const origin=(r,c)=>{let x=at(r,c);while(x.id>=SHUNT_MIN&&x.col>0&&ins(x).length===1)x=at(ins(x)[0],x.col-1);return x.id>=SHUNT_MIN?`shunt (rida ${x.row+1}, veerg ${x.col+1})`:`${nameOf(x.id)} (rida ${x.row+1}, veerg ${x.col+1})`;};
+  const out=[];
+  for(const x of g){if(!x.id||x.col===0)continue;const k=ins(x);
+    if(k.length>1||(k.length===1&&k[0]!==x.row))out.push(`rida ${x.row+1}, veerg ${x.col+1} (${nameOf(x.id)}) ← ${k.map(r=>origin(r,x.col-1)).join(' + ')}`);}
+  return out;
+}
+// Sound-design warnings (not refusals): an Amp output that reaches Out 1/Send without a Cab.
+export function gridWarnings(body){
+  const g=readGrid(body),at=(r,c)=>g.find(x=>x.row===r&&x.col===c),warn=[];
+  const isAmp=id=>blockOf(id)?.block===58,isCab=id=>blockOf(id)?.block===62,sink=id=>id===IO.out1||id===IO.send;
+  const bad=(x,seen)=>{ // path from x (exclusive) to a sink that meets no Cab
+    if(sink(x.id))return true;if(x.col===11)return false;
+    return g.filter(y=>y.col===x.col+1&&y.id&&y.mask>>x.row&1).some(y=>!isCab(y.id)&&(sink(y.id)||bad(y,seen)));
+  };
+  for(const x of g)if(x.id&&isAmp(x.id)&&bad(x))warn.push(`${nameOf(x.id)} (rida ${x.row+1}, veerg ${x.col+1}) jõuab Out 1/Send-ini vähemalt ühe haru kaudu ilma Cabita`);
+  return warn;
+}
 // Stage: write the general grid, then scenes, controls and the selected scene (same rules as arrangeSound).
 export function arrangeGrid(syx,spec,opts={}){
   const original=Buffer.from(inspectStructure(syx).raw.body),body=Buffer.from(original),allowed=new Set();
@@ -176,6 +198,6 @@ export function arrangeGrid(syx,spec,opts={}){
   const out=finalizeBody(syx,original,body,allowed);
   const back=readGrid(Buffer.from(inspectStructure(out).raw.body));
   for(const w of plan.words){const g=back.find(x=>x.row===w.r&&x.col===w.c);check(g.id===w.id&&g.mask===w.mask,'Grid readback')}
-  return {syx:out,rows:describeGrid(body),sceneEdits,writes,expectedGrid:plan.words.filter(w=>w.id),report:{stage:'fm3-grid 0.1.0',outputSha256:sha(out),bytes:out.length,
+  return {syx:out,rows:describeGrid(body),links:describeLinks(body),warnings:gridWarnings(body),sceneEdits,writes,expectedGrid:plan.words.filter(w=>w.id),report:{stage:'fm3-grid 0.1.0',outputSha256:sha(out),bytes:out.length,
     checks:{generalGrid:true,everyCellOnInputToOutputPath:true,maskBitsWithinRows:true,recordsUnchanged:spec.controls||spec.blockScenes?'only declared control/scene bytes':'all',systemTailPreserved:true,frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true}}};
 }

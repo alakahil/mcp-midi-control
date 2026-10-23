@@ -30,10 +30,10 @@ Faili salvestatakse ainult struktuur (arvud ja ID-d), mitte tehasepresetite vä�
   "rows": [
     ["", "", "", "", "", "", "", "", "", "", "", ""],
     ["in1", "compressor", "drive", "drive2", "amp", "cab", "delay", "-", "mixer", "-", "-", "out1"],
-    ["", "", "", "", "", "-", "reverb", "-", "", "", "", ""],
+    ["", "", "", "", "", "", "-", "reverb", "", "", "", ""],
     ["", "", "", "", "", "", "", "", "", "", "", ""]
   ],
-  "links": [{"row": 3, "col": 6, "from": [2]}, {"row": 2, "col": 9, "from": [2, 3]}]
+  "links": [{"row": 3, "col": 7, "from": [2]}, {"row": 2, "col": 9, "from": [2, 3]}]
 }
 ```
 
@@ -41,6 +41,11 @@ Faili salvestatakse ainult struktuur (arvud ja ID-d), mitte tehasepresetite vä�
 - Vaikimisi võtab lahter sisendi sama rea eelmisest veerust, kui see lahter on hõivatud. `links` annab
   lahtri sisendread selgesõnaliselt (hargnemine: `from:[2]` teises reas; liitmine: `from:[2,3]`).
   Read ja veerud on 1-põhised nagu FM3 ekraanil.
+- **Link nimetab sihtlahtri; allikas on alati eelmine veerg.** Näites on Cab veerus 6, seega algab
+  Cabi-järgne haru lahtrist rida 3, veerg 7. Link veergu 6 võtaks signaali veerust 5 ehk Ampist, enne
+  Cabi (nii juhtus testis G02). `.txt` loetleb iga hargnemise ja liitmise allika ploki nimega ning
+  hoiatab, kui Ampi väljund jõuab Out 1/Send-ini mõne haru kaudu ilma Cabita. See on hoiatus, mitte
+  keeld: 20 tehasepresetis on selline haru olemas.
 - Allikad: In 1, Return. Synth võib olla ilma sisendita. Väljundid: Out 1, Send.
 - **Kontrollid:** iga lahter peab olema allikast väljundini viival teel (katkenud või rippuv haru lükatakse
   tagasi); iga presetis olev plokk peab ruudustikul olema täpselt korra; Send ja Return käivad paaris;
@@ -62,7 +67,16 @@ Faili salvestatakse ainult struktuur (arvud ja ID-d), mitte tehasepresetite vä�
 - `controls` ja `blockScenes` töötavad ka eksemplaridega (`drive2`) ja Mixeriga (`MIXER_GAIN1..6`, %).
   Multiplexer Input Select on `enum-labels` ja vajab `allow`.
 
-## Seadme kontroll
+## Seadme kontroll (kinnitatud 2026-10-23)
+
+Kõik 7 testpresetti lugesid seadmest tagasi täpselt sellised, nagu generaator need kirjutas: 48/48 lahtrit
+igas, sh ID-d üle 127 (Send 182, Return 186, Synth 130, Multiplexer 191) ja shundid. FM3 ekraanil oli G02
+haru täpselt seal, kuhu link selle kodeeris (Ampi järel, enne Cabi). Testi küsimus ütles ekslikult
+„pärast Cabi“; generaator kirjeldab nüüd allikaid ploki nimega. Kviitung:
+`references/fm3-grid-check-20261023.json` (kontroll: `node tools/fm3/grid-check-ingest.mjs`).
+
+CPU: G01 53 / hinnang 53,4; G02 60 / 61,3; G03 63 / 63,9; G04 60 / 61,3; G05 62 / 60,9; G06 41,5 / 44,3;
+G07 67 / 71,3 %. Mixer ja Multiplexer ei lisa selle täpsusega mõõdetavat koormust.
 
 `tools/fm3/grid-check-build.mjs` koostab 7 testpresetti (G01–G07) tootmisteel (`composeSound`).
 `scripts/cpu-sweep-collector/FM3_GRID_CHECK.py` saadab igaühe FM3 redaktsioonipuhvrisse (päis
@@ -73,13 +87,13 @@ Elava ruudustiku lugemine: piirkond on vastuse viimased 226 baiti enne kontrolls
 alates bitist 45 + c·128 + r·32 (MSB-first 7-bitistes baitides), täpselt preseti keha lahtrisõna
 (u16 id + u16 mask). See lugemine taastab 2026-06-12 FM3 kogukonna salvestuse (In 1 → Amp 1 → Out 1,
 maskid 0/2/2). fractal-midi `parseGen3GridLayout` loeb samu bitte ühe võrra hiljem (7-bitine id,
-mask × 2), mis kehtib ainult id < 128 korral; kontroll otsustab ID-de > 127 (Send, Return, Synth,
-Multiplexer, shundid) lugemise.
+mask × 2), mis kehtib ainult id < 128 korral. Seadme kontroll kinnitas: see lugeja loeb iga ID üle 127
+valesti (Send 182 → 54, Return 186 → 58, Plex 178 → 50, Multiplexer 191 → 63, Synth 130 → 2).
 
 | Test | Mida tõestab |
 | --- | --- |
 | G01 | kahe rea paigutus üldise planeerija kaudu (kontroll) |
-| G02 | hargnemine Cabi järel, Delay ‖ Reverb, liitmine Mixeris, Drive 2 |
+| G02 | hargnemine Ampi järel (enne Cabi), Delay ‖ Reverb, liitmine Mixeris, Drive 2 |
 | G03 | kõik 4 rida, nelja sisendiga liitmine (mask 15) |
 | G04 | Multiplexer Drive ‖ Drive 2 ridade vahel |
 | G05 | Synth ilma sisendita reas 4, Send/Return alles |
@@ -88,7 +102,7 @@ Multiplexer, shundid) lugemise.
 
 ## Piirangud
 
-- Heli pole kontrollitud (kuulamine jääb järgmisse nädalasse).
+- Heli pole kontrollitud (kuulamine jääb järgmisse nädalasse). Ruudustiku kuju on seadmel kinnitatud.
 - Mixeri/Multiplexeri bypass-käitumine heli seisukohalt pole mõõdetud; testides on need Scene 1-s sisse lülitatud.
 - In 2 / Out 2 ja Feedback Send/Return pole toetatud. Mixer 2+ eksemplare ei lubata (tehases ainult üks
   kahtlane ID 129).

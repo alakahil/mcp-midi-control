@@ -51,6 +51,7 @@ jobs:
           python3 tools/fm3/parameter-evidence.py
           python3 tools/fm3/metadata_reconciliation.py
           node tools/fm3/encoder-matrix.mjs
+          node tools/fm3/grid-check-ingest.mjs
       - name: Replay the pinned 0.3.11 remaining-modifier audit
         run: |
           git fetch --no-tags origin f0a99bc190fcbe3a63284335c68fad66e9f9a36c 194833788d15db09d5ab9a774940ae84fcdebaad

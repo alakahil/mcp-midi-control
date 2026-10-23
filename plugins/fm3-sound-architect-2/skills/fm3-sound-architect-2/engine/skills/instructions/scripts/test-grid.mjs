@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {scanRecords,readGrid,GRID,SHUNT_MIN} from './fm3-layout.mjs';
-import {editRecords,arrangeGrid,planCells,describeGrid,isTwoRowSerial,INSTANCE_LIMIT,GRID_ADDABLE} from './fm3-grid.mjs';
+import {editRecords,arrangeGrid,planCells,describeGrid,describeLinks,gridWarnings,isTwoRowSerial,INSTANCE_LIMIT,GRID_ADDABLE} from './fm3-grid.mjs';
 import {composeSound} from './fm3-sound.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 const rd=p=>fs.readFileSync(new URL('../'+p,import.meta.url));
@@ -19,6 +19,11 @@ check(Object.keys(ev.noInputBeyondColumn1).every(k=>['37','38','130','186'].incl
 const BASE={compressor:46,geq:50,peq:54,delay:70,chorus:78,flanger:82,phaser:90,wah:94,formant:98,volpan:102,tremolo:106,filter:114,drive:118,enhancer:122,resonator:162};
 check(Object.keys(INSTANCE_LIMIT).every(k=>BASE[k]),'Instance bases');
 for(const [k,n] of Object.entries(INSTANCE_LIMIT))for(let i=2;i<=n;i++)check(ev.instanceEffectIds[BASE[k]+i-1],`${k}${i} not seen in factory presets`);
+
+// device receipt 2026-10-23: 7 generated grids read back identical in all 48 cells
+const hw=JSON.parse(rd('references/fm3-grid-check-20261023.json'));
+check(hw.tests.length===7&&hw.tests.every(t=>t.gridMatches&&t.cells===48),'Device grid-check receipt');
+check(hw.tests.some(t=>t.effectIds.includes(186)&&t.effectIds.includes(182))&&hw.tests.some(t=>t.effectIds.includes(191))&&hw.tests.some(t=>t.effectIds.includes(130)),'Receipt covers ids > 127');
 
 // 2. split/merge masks, factory style
 const role=v=>v==='in'?'source':v==='out'?'sink':'block';
@@ -64,15 +69,22 @@ const shuntsSequential=g0.filter(g=>g.id>=SHUNT_MIN).every((g,i,l)=>i===0||g.id>
 const same=arrangeGrid(NL,{grid:{rows:own}});check(isTwoRowSerial(nb)&&isTwoRowSerial(body(same.syx)),'Two-row shape');
 if(shuntsSequential)check(body(same.syx).equals(nb),'Own grid reproduces the base body');
 
-// 5. parallel grid: split after Cab, Delay || Reverb, merged by the Mixer, then Out 1
-const P=[E(),['in1','drive','drive2','amp','cab','delay','-','mixer','-','-','-','out1'],['','','','','-','reverb','-','','','','',''],E()];
-const links=[{row:3,col:5,from:[2]},{row:2,col:8,from:[2,3]}];
+// 5. parallel grid: split after Cab, Delay || Reverb, merged by the Mixer, then Out 1.
+// A link names its TARGET cell; the source is the previous column (row 3 col 6 <- row 2 col 5 = Cab).
+const P=[E(),['in1','drive','drive2','amp','cab','delay','-','mixer','-','-','-','out1'],['','','','','','-','reverb','','','','',''],E()];
+const links=[{row:3,col:6,from:[2]},{row:2,col:8,from:[2,3]}];
 const pg=arrangeGrid(editRecords(NL,{remove:['send','return'],duplicate:['drive2'],add:['mixer']}).syx,{grid:{rows:P,links}});
+const pe0=()=>editRecords(NL,{remove:['send','return'],duplicate:['drive2'],add:['mixer']}).syx;
 const pb=body(pg.syx),G=readGrid(pb),cell=(r,c)=>G.find(g=>g.row===r-1&&g.col===c-1);
-check(cell(2,8).id===126&&cell(2,8).mask===6&&cell(3,5).mask===2&&cell(3,5).id>=SHUNT_MIN&&cell(2,3).id===119&&cell(2,1).mask===0,'Parallel grid words');
+check(cell(2,8).id===126&&cell(2,8).mask===6&&cell(3,6).mask===2&&cell(3,6).id>=SHUNT_MIN&&cell(2,3).id===119&&cell(2,1).mask===0,'Parallel grid words');
 check(G.every(g=>g.mask<16),'Mask bit 4 never written');
 check(new Set(G.filter(g=>g.id>=SHUNT_MIN).map(g=>g.id)).size===G.filter(g=>g.id>=SHUNT_MIN).length,'Shunt IDs unique');
 check(!isTwoRowSerial(pb)&&describeGrid(pb)[1].includes('mixer<2+3'),'Grid description');
+check(describeLinks(pb).join('|')==='rida 2, veerg 8 (mixer) ← delay (rida 2, veerg 6) + reverb (rida 3, veerg 7)|rida 3, veerg 6 (-) ← cab (rida 2, veerg 5)','Links traced to blocks: '+describeLinks(pb).join('|'));
+check(gridWarnings(pb).length===0,'Split after Cab: no warning');
+// the 2026-10-23 G02 mistake: the branch fed from the column left of Cab is fed from Amp -> warning
+const amp=arrangeGrid(pe0(),{grid:{rows:P.map((r,i)=>i===2?['','','','','-','reverb','-','','','','','']:r),links:[{row:3,col:5,from:[2]},{row:2,col:8,from:[2,3]}]}});
+const ab=body(amp.syx);check(describeLinks(ab).some(l=>l.includes('← amp (rida 2, veerg 4)'))&&gridWarnings(ab).length===1&&amp.warnings.length===1,'Amp-fed branch is named and warned');
 const pe=editRecords(NL,{remove:['send','return'],duplicate:['drive2'],add:['mixer']}).syx;
 no(()=>arrangeGrid(pe,{grid:{rows:P}}),/has no input/,'missing split link');
 no(()=>arrangeGrid(pe,{grid:{rows:P.map((r,i)=>i===1?r.map(v=>v==='drive2'?'-':v):r),links}}),/not on the grid/,'record without cell');
@@ -96,7 +108,7 @@ const w=s.report.stages.layout.writes;
 check(w.some(x=>x.instanceBlock==='drive2'&&x.instanceEid===119&&x.block==='drive')&&w.some(x=>x.block==='mixer'),'Instance and Mixer writes');
 {const plain=composeSound(NL,{...spec,controls:[spec.controls[0]]}),pb2=body(plain.syx),p1=scanRecords(pb2).records.find(r=>r.family==='drive');
   check(pb2.subarray(p1.header,p1.header+p1.size).equals(sb.subarray(dv1.header,dv1.header+dv1.size)),'Drive 1 untouched by a Drive 2 write');}
-check(s.txt.includes('Ruudustik (4 × 12')&&s.txt.includes('mixer<2+3')&&s.report.signalLayout==='grid','Grid text');
+check(s.txt.includes('Ruudustik (4 × 12')&&s.txt.includes('mixer<2+3')&&s.txt.includes('← cab (rida 2, veerg 5)')&&!s.txt.includes('HOIATUS')&&s.report.signalLayout==='grid','Grid text');
 check(s.report.stages.records.duplicated[0].block==='drive2'&&s.report.stages.layout.expectedGrid.length===readGrid(sb).filter(g=>g.id).length,'Report stages');
 check(s.report.cpu&&Array.isArray(s.report.cpu.scenes??s.report.cpu),'CPU estimate present');
 no(()=>composeSound(NL,{...spec,layout:{row2:[],row3:[]}}),/exactly one of spec.layout/,'layout and grid together');

@@ -12,7 +12,7 @@ import {fileURLToPath} from 'node:url';
 import {banks} from './factory_structure_evidence.mjs';
 const ENGINE='../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/';
 const {parsePresetDump,decodeRawPatch}=await import(new URL(ENGINE+'scripts/drive-collector/fm3-codec.mjs',import.meta.url));
-const {planCells}=await import(new URL(ENGINE+'scripts/fm3-grid.mjs',import.meta.url));
+const {planCells,gridWarnings}=await import(new URL(ENGINE+'scripts/fm3-grid.mjs',import.meta.url));
 const {blockOf}=await import(new URL(ENGINE+'scripts/fm3-layout.mjs',import.meta.url));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const SOURCES=[37,38,186],SINKS=[42,43,182],OPTIONAL=[130,131];
@@ -20,7 +20,7 @@ const role=v=>{const id=+v.slice(1);return SOURCES.includes(id)?'source':SINKS.i
 
 export function extract(factoryDir){
   const st={presets:0,cells:0,shunts:0,splits:0,merges:0,rowsUsed:{},bit4Cells:0,maskBitsToEmptyCell:0,column1Inputs:0,
-    noInputBeyondColumn1:{},plannerAccepted:0,masksReproduced:0,explicitLinks:0,instanceEffectIds:{}};
+    noInputBeyondColumn1:{},ampPathWithoutCab:0,plannerAccepted:0,masksReproduced:0,explicitLinks:0,instanceEffectIds:{}};
   for(const [f,h] of Object.entries(banks)){
     const b=fs.readFileSync(path.join(factoryDir,f));assert.equal(sha(b),h);
     for(let i=0;i<128;i++){
@@ -43,6 +43,7 @@ export function extract(factoryDir){
         if(m!==def&&!(src&&m===0))links.push({row:r+1,col:c+1,from:bits.map(k=>k+1)});
       }
       for(let c=0;c<11;c++)for(let r=0;r<4;r++)if(g(r,c).id&&[0,1,2,3].filter(k=>g(k,c+1).id&&(g(k,c+1).m>>r&1)).length>1)st.splits++;
+      if(gridWarnings(body).length)st.ampPathWithoutCab++;
       st.rowsUsed[rows.size]=(st.rowsUsed[rows.size]??0)+1;st.explicitLinks+=links.length;
       const cells=planCells(cellAt,links,role);st.plannerAccepted++;
       for(const x of cells)if(x.mask===(g(x.r,x.c).m&15))st.masksReproduced++;
@@ -54,6 +55,7 @@ export function extract(factoryDir){
     findings:['Mask bit k (0..3) = input from row k of the previous column; no set bit points to an empty cell; column 1 never has inputs.',
       'Every factory grid passes the general-grid planner (fm3-grid.mjs planCells) and every input mask is reproduced exactly from cell names plus explicit links.',
       'Cells without input beyond column 1 are only In 1/In 2 (37/38), Feedback Return (186) and Synth (130).',
+      'An Amp output reaches Out 1/Send without a Cab on at least one path in a few factory presets, so this is a warning, not a refusal.',
       'Bit 4 (value 16) appears on a few merge cells; its meaning is unknown and the generator never writes it.'],
     grid:st};
 }

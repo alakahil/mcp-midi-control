@@ -14,7 +14,7 @@ const {composeSound}=await imp('scripts/fm3-sound.mjs');
 const {inspectStructure}=await imp('scripts/drive-collector/fm3-prototype.mjs');
 const {parsePresetDump}=await imp('scripts/fm3-codec.mjs');
 const {readGrid}=await imp('scripts/fm3-layout.mjs');
-const {describeGrid}=await imp('scripts/fm3-grid.mjs');
+const {describeGrid,describeLinks,gridWarnings}=await imp('scripts/fm3-grid.mjs');
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const BASE=fs.readFileSync(new URL(E+'examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx',import.meta.url));
 const [out]=process.argv.slice(2);assert.ok(out,'Usage: grid-check-build.mjs OUT_DIR');
@@ -25,11 +25,11 @@ const on=(...b)=>Object.fromEntries(b.map(x=>[x,[{scene:1,bypass:false}]]));
 const CASES=[
   {id:'G01',name:'GRID G01 TWO ROWS',proves:'control: the composer two-row layout through the general planner (Send 182 / Return 186 > 127)',
     spec:{grid:{rows:[e(),['in1','-','compressor','drive','-','amp','-','cab','-','-','-','send'],['return','-','-','-','-','-','-','-','delay','reverb','-','out1'],e()]}}},
-  {id:'G02',name:'GRID G02 PAR DLY REV',proves:'split after Cab, Delay || Reverb, merge in the Mixer (126), Drive 2 (119), Send/Return removed',
+  {id:'G02',name:'GRID G02 PAR DLY REV',proves:'split from Amp (the link targets column 6, so its source is column 5 = Amp, not Cab), Delay || Reverb, merge in the Mixer (126), Drive 2 (119), Send/Return removed; 2026-10-23 the user saw the branch start after Amp on the FM3 screen, as encoded',
     spec:{remove:['send','return'],duplicate:['drive2'],insert:['mixer'],blockScenes:on('mixer','drive2'),
       grid:{rows:[e(),['in1','compressor','drive','drive2','amp','cab','delay','-','mixer','-','-','out1'],['','','','','','-','reverb','-','','','',''],e()],
         links:[{row:3,col:6,from:[2]},{row:2,col:9,from:[2,3]}]}},
-    ask:'Vaata FM3 ekraanil Layout/Grid vaadet: kas rida 2 hargneb pärast Cab-i reale 3 (Reverb) ja read saavad Mixeris kokku? (j/e)'},
+    ask:'Vaata FM3 ekraanil Layout/Grid vaadet: kas rida 2 hargneb pärast Amp-i (enne Cab-i) reale 3 (Reverb) ja read saavad Mixeris kokku? (j/e)'},
   {id:'G03',name:'GRID G03 FOUR ROWS',proves:'all four rows: one split into rows 1-4 and a four-input merge (mask 15) in the Mixer',
     spec:{remove:['send','return'],insert:['mixer','plex'],blockScenes:on('mixer'),
       grid:{rows:[['','','','','','-','delay','-','','','',''],['in1','compressor','drive','amp','cab','-','reverb','-','mixer','-','-','out1'],['','','','','','-','plex','-','','','',''],['','','','','','-','-','-','','','','']],
@@ -57,7 +57,7 @@ for(const c of CASES){
   const body=Buffer.from(inspectStructure(r.syx).raw.body),grid=readGrid(body);
   assert.equal(grid.length,48);assert.ok(grid.every(g=>g.mask<16));
   const file=c.id+'.syx';fs.writeFileSync(path.join(out,file),r.syx);
-  items.push({id:c.id,file,sha256:sha(r.syx),name:c.name,proves:c.proves,...(c.ask?{ask:c.ask}:{}),rows:describeGrid(body),
+  items.push({id:c.id,file,sha256:sha(r.syx),name:c.name,proves:c.proves,...(c.ask?{ask:c.ask}:{}),rows:describeGrid(body),links:describeLinks(body),warnings:gridWarnings(body),
     expectedGrid:grid.map(g=>[g.row,g.col,g.id,g.mask]),cpuEstimate:r.report.cpu.maxPercent,cpuUnknown:[...new Set(r.report.cpu.scenes.flatMap(s=>s.unknown))]});
   assert.ok(r.report.cpu.maxPercent<72,c.id+' CPU estimate too high');
 }
