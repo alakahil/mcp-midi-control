@@ -48,6 +48,13 @@ kanal/bypass: `blockScenes.volpan`. Praegu toetatakse ainult VOLUME-tüüpi;
 TYPE, Auto-Swell, kanali BYPASS-sõna ja meter jäävad säilitatavaks. Uut
 modifikaatori/pedaali sidumist ei lisata. Aktiivse modifikaatori konflikt tõrjutakse.
 
+Volume'i jäädvustatud doonor on vaikimisi **kõigis kaheksas stseenis aktiivne,
+kanal A**. Uue soundi loomisel kirjuta `blockScenes.volpan`-i alati kõigi kaheksa
+stseeni eksplitsiitne kanal ja bypass. Aktiveeri Volume ainult kasutaja soovitud
+stseenides; määramata stseenides kasuta kanalit A ja `bypass:true`. Arvesta, et
+kanali A GAIN-i muutmine mõjutab kõiki aktiivseid sama kanalit kasutavaid stseene.
+Ainult jäädvustatud ekspordi täpsel taasesitamisel võib doonori stseene säilitada.
+
 Ühe ekspordi plokimall ja Input-sõnade säilimine on seadmetõend. Uued
 Volume-väärtused, asukohad ja stseenikombinatsioonid on tarkvaraliselt kontrollitud
 ning skaalad tuginevad FW13 native/cache/XML-i ja kõveraklassi üldistusele.
@@ -130,7 +137,9 @@ Tee väljundid töökausta väljaspool skill'i/plugina lähtefaile.
 Täiskanalimalli valik asendab valitud kanali kõigi kogutud sõnadega, sealhulgas
 selle tasemed; siis rakendatakse selgesõnalised juhid. Määramata kanalid/seaded
 säilivad alusest. Ploki lisamine, kanalivalik ja bypass on eri toimingud:
-uued plokid algavad bypass'is ning aktiveeritakse `scenes` kaudu.
+Koostaja tavapärased uued efektiplokid algavad bypass'is ning aktiveeritakse
+`scenes` kaudu. Volume/Pan-i jäädvustatud aktiivne vaikeseis on erand: määra selle
+kõik kaheksa stseeni eespool kirjeldatud `blockScenes.volpan` kaudu.
 Ajaparameetri muutmisel kasuta nõutud selgesõnalist Tempo NONE väärtust.
 Genereerimine ei salvesta midagi FM3 presetikohta ega paigalda User IR-i.
 

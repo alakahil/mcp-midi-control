@@ -29,6 +29,13 @@ Ajutine `developmentCandidate` väljaanne eemaldati capabilities'ist; funktsioon
 piiratud tõendusulatus jääb Input/Volume kirjeldustesse, avaldamisolek kviitungisse.
 Inputi tõenditekst eristab nüüd 20 sõna säilimist füüsikalise skaala mõõtmisest.
 
+Värske kontekstiga juhendi kasutuskatse avastas eraldi juhendivea: üldjuhis lubas
+uue ploki vaikimisi bypass'i, kuid Volume'i tegelik doonor on kõigis stseenides
+aktiivne kanal A. Juhend nõuab nüüd uue soundi puhul kõigi kaheksa Volume-stseeni
+eksplitsiitset kirjeldamist ning kasutaja määramata stseenides bypass'i. Doonor
+ja ekspordi täpse taastamise tee ei muutu. Esimese kasutuskatse väljund säilitati;
+parandatud juhend läbib eraldi värske konteksti kasutuskatse.
+
 ## Tõend ja piirid
 
 Uut seadmeeksporti, MIDI SET-i, STORE'i ega REA analüüsi ei tehtud. Tagastatud
