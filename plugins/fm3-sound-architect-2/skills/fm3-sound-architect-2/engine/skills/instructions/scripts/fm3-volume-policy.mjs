@@ -10,7 +10,7 @@ export function volumePolicySummary(){return {supported:true,block:'volpan',effe
  parameters:[...allowed].map(pid=>({pid,name:family.parameters[pid].name,kind:family.parameters[pid].kind,unit:volumeUnits[family.parameters[pid].name]??'',displayRange:family.parameters[pid].numericFields.slice(0,2).map(v=>v*family.parameters[pid].numericFields[2]),labels:family.parameters[pid].labels})),
  enumOptIn:'allow:["enum-labels"]',metadataSha256:inputVolumeEvidenceHash,hardwareEvidence:'one default FW13 record; 20 Input words preserved in the returned export',newPhysicalScaleMeasurements:0,fullRangeEncodingProven:false,
  preserved:['TYPE','channel BYPASS word','Auto-Swell inactive words','meter word','all existing records and system tail'],
- limits:['VOLUME type only; TYPE/Auto-Swell authoring excluded','Use blockScenes.volpan for scene channel/bypass','New physical scales and authored combinations are model-based; no new live SET/STORE/audio/CPU proof','No new modifier binding or Min/Max transfer']};}
+ limits:['VOLUME type only; TYPE/Auto-Swell authoring excluded','Use blockScenes.volpan for scene channel/bypass','New physical scales and authored combinations are model-based; no new live SET/STORE/audio/CPU proof','Default Ext1 binding uses separate volumePedal:true policy; no numeric Min/Max transfer']};}
 export const volumeState=(p,read)=>p.family==='VOLUME'?{type:read(9)}:null;
 export function volumeApplicability(p,state){
  if(p.family!=='VOLUME')return {covered:false};

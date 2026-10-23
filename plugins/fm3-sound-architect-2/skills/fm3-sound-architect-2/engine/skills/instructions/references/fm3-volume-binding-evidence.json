@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "firmware": 13,
+  "date": "2026-10-23",
+  "scope": "One user FW13 active-buffer export: External 1 -> Volume/Pan 1 Gain ALL, firmware-created defaults only",
+  "baseline": {
+    "sha256": "8cf3b5e27b9d2b8d5f5489cb930b4dff733c41ece1be85d027aef16e0d2145c3",
+    "bodySha256": "01165a6e3cc700531c0c8710b9c69464cabf4bb79c38046b11d22cfd9e8c3671",
+    "modifiersSha256": "eabd1317c3a12ab04e3cb6fd6684acd718924e20908049bb7ba5b56f90665d36",
+    "spec": {
+      "composer": {
+        "schemaVersion": 1,
+        "firmware": 13,
+        "baseProfile": "jb-composer",
+        "name": "FM3 VOL BIND CHECK",
+        "modifiers": {
+          "external1Wah": false
+        }
+      },
+      "volumePan": true,
+      "layout": {
+        "row2": [
+          "drive",
+          "amp",
+          "cab"
+        ],
+        "row3": [
+          "volpan",
+          "delay",
+          "reverb"
+        ]
+      }
+    }
+  },
+  "capture": {
+    "file": "FM3_VOL_BIND_CHECK_export.syx",
+    "sha256": "1eb2fe164824a4caffac6b101c3d16be912c64344f08f68ad2e5ae6483035493",
+    "bytes": 24680,
+    "bodyBytes": 12970,
+    "bodySha256": "f01f233b8e5195d8ef4e8d3253c85a1ce14649859838eed3c5cf65e760a8eb5e",
+    "modifiersSha256": "73e39def1f91d5877b16776304df4cdfe676c8b235333499d329a9d0ab633c1b",
+    "recordSha256": "fecd5290c960aac8cb8770ae2813cd4070d4d2e67f0d34059833eab1243171bc"
+  },
+  "binding": {
+    "record": 0,
+    "wireEffect": 3,
+    "offset": 1584,
+    "words": [
+      14,
+      0,
+      65534,
+      0,
+      32767,
+      65534,
+      32767,
+      66,
+      102,
+      0,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      66,
+      0,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      0
+    ],
+    "previousWords": [
+      0,
+      0,
+      65534,
+      0,
+      32767,
+      65534,
+      32767,
+      66,
+      94,
+      5,
+      2,
+      0,
+      0,
+      32767,
+      32767,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      0
+    ],
+    "channelScope": "ALL",
+    "source": "External 1",
+    "target": "Volume/Pan 1 Gain"
+  },
+  "changedWords": [
+    0,
+    8,
+    9,
+    10,
+    15
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "all32ModifierHeaders": true,
+    "exactlyOneNewBinding": true,
+    "allOtherBodyBytesPreserved": true
+  },
+  "dumpHeaderEqual": true,
+  "rawHeaderChangedOffsets": [
+    4,
+    5
+  ],
+  "newDeviceExports": 1,
+  "physicalScaleMeasurements": 0,
+  "fullRangeEncodingProven": false,
+  "storeReloadProven": false,
+  "pedalBehaviorProven": false,
+  "newReaAnalysis": false,
+  "limits": [
+    "No numeric Volume Min/Max codec",
+    "No arbitrary source, channel, target, record allocation or simultaneous Wah binding",
+    "Captured defaults do not prove independent fields, DSP or live SET encoding",
+    "Global External 1 assignment and pedal position are outside preset data",
+    "Wah Min/Max evidence is unchanged and not transferred"
+  ]
+}

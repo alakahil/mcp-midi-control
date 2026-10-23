@@ -1,5 +1,6 @@
 // Offline sound pipeline: templates -> layout -> scenes -> controls -> final readback.
 import fs from 'node:fs';
+import {bindVolumePedal,readVolumePedal,volumePedalCapabilities} from './fm3-volume-pedal.mjs';
 import {insertVolumePan} from './fm3-volume.mjs';
 import {volumePolicySummary} from './fm3-volume-policy.mjs';
 import {inputGateSummary} from './fm3-input-gate.mjs';
@@ -22,8 +23,8 @@ import {estimateCpu,renderCpuText} from './fm3-cpu.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.16',firmware:13,base:'jb-newlook',composer,
-    fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','insert'],
+  return {profile:'fm3-sound',revision:'0.3.17',firmware:13,base:'jb-newlook',composer,
+    fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','insert'],
     insert:insertCapabilities(),
     outputs:['.syx','.txt','.spec.json','.validation.json'],
     modifiers:{...wahModifierCapabilities(),field:'composer.modifiers.external1Wah',autoEngage:{...wahModifierCapabilities().autoEngage,field:'composer.modifiers.wahAutoEngage'},damping:{...wahModifierCapabilities().damping,field:'composer.modifiers.wahDamping'},min:{...wahModifierCapabilities().min,field:'composer.modifiers.wahMin'},controls:{...wahModifierCapabilities().controls,field:'composer.modifiers.wahControls'},exactMinMax:{...wahModifierCapabilities().exactMinMax,field:'composer.modifiers.wahMinMaxExact'}},
@@ -38,12 +39,12 @@ export function getSoundCapabilities(base){
       cabPosition:{parameters:['CABINET_DYNACAB_R1','CABINET_DYNACAB_R2'],displayRange:[0,10],unit:'unitless'},
       typeApplicability:typePolicySummary(),dependencies:dependencyPolicySummary(),
       policy:'Entry counts are not validated device coverage. Chorus/Drive, Delay/Reverb and Flanger/Phaser/Compressor/Wah/Tremolo explicit writes follow final-channel type/algorithm policy. Delay/Reverb/Flanger/Phaser/Compressor/Wah/Tremolo model selectors and Phaser Mode require full channel templates. Pitch TYPE also requires full templates. Rotary has no type selector: PID 0 is Rate. Pitch uses a pinned 34-field integer/nonzero-enum preset-word overlay. Seven local custom notes require final-scale validation; fixed/unused slots remain blocked; global scale contents and arpeggiator playback are not validated. Verified native Flanger aliases preserve exact legacy addresses. 21 tempo pairs and read-only modifier target checks are enforced; other dependencies, including automatic compressor timing/makeup, remain outside this scope. Use full templates for model/type changes.'},
-    inputGate:inputGateSummary(),volumePan:volumePolicySummary(),
+    inputGate:inputGateSummary(),volumePan:volumePolicySummary(),volumePedal:volumePedalCapabilities(),
     outputSceneLevels:{supported:true,block:'out1',parameters:'OUTPUT_SCENE1..8',rangeDb:[-20,20],channels:['A','B','C','D']},
     limitations:['No device connection','New output hardware/audio/CPU unconfirmed','Experimental raw/taper writes excluded from this entry point','Global settings and all FM3 families are not implemented','Grid mode: Mixer/Multiplexer parameters and bit 4 of the grid input mask are not decoded']};
 }
 export function composeSound(base,spec){
-  assertFields(spec,['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','insert'],'sound');
+  assertFields(spec,['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','insert'],'sound');
   check(spec.composer&&(spec.layout===undefined)!==(spec.grid===undefined),'spec.composer and exactly one of spec.layout / spec.grid are required');
   const gridMode=spec.grid!==undefined;
   check(gridMode||(spec.remove===undefined&&spec.duplicate===undefined),'remove and duplicate need grid mode (spec.grid)');
@@ -53,22 +54,30 @@ export function composeSound(base,spec){
   if(spec.purpose!==undefined)check(typeof spec.purpose==='string'&&spec.purpose.length<=4000&&!/[\x00-\x1f]/.test(spec.purpose),'Invalid sound purpose');
   if(spec.context!==undefined){assertFields(spec.context,['guitar','pickups','output'],'context');for(const v of Object.values(spec.context))check(typeof v==='string'&&v.length>0&&v.length<=300&&!/[\x00-\x1f]/.test(v),'Invalid context value');}
   if(Object.hasOwn(spec,'volumePan'))check(spec.volumePan===true,'volumePan must be true to request insertion');
+  if(Object.hasOwn(spec,'volumePedal')){
+    check(spec.volumePedal===true&&spec.volumePan===true,'volumePedal requires true and volumePan:true');
+    check(!spec.composer.modifiers||Object.keys(spec.composer.modifiers).every(k=>k==='external1Wah')&&spec.composer.modifiers.external1Wah===false,'Volume pedal: Wah modifier requests conflict with captured Volume binding');
+  }
   const first=generatePreset(base,spec.composer);
   check(first.report.baseId==='jb-newlook','Sound composer requires the jb-newlook base');
   const volume=spec.volumePan?insertVolumePan(first.syx):null;
   const inserted=gridMode||spec.insert===undefined?null:insertBlocks(volume?.syx??first.syx,spec.insert);
   const records=gridMode?editRecords(volume?.syx??first.syx,{remove:spec.remove??[],duplicate:spec.duplicate??[],add:spec.insert??[]}):null;
-  const second=gridMode?arrangeGrid(records.syx,spec,{allow:spec.allow??[]}):arrangeSound(inserted?.syx??volume?.syx??first.syx,spec,{allow:spec.allow??[]});
+  const arrangedInput=records?.syx??inserted?.syx??volume?.syx??first.syx;
+  const pedal=spec.volumePedal?bindVolumePedal(arrangedInput):null;
+  const second=gridMode?arrangeGrid(pedal?.syx??arrangedInput,spec,{allow:spec.allow??[]}):arrangeSound(pedal?.syx??arrangedInput,spec,{allow:spec.allow??[]});
   const finalBody=Buffer.from(inspectStructure(second.syx).raw.body);
   validateLegacyDependencies(finalBody,Object.fromEntries(scanRecords(finalBody).records.map(r=>[r.family,r])),spec.composer);
-  verifyWahModifierReadback(finalBody,first.report.modifierEdit);
+  const modifierEdit=pedal?null:first.report.modifierEdit??null;
+  verifyWahModifierReadback(finalBody,modifierEdit);
+  const volumePedal=pedal?readVolumePedal(finalBody):null;
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const cpuEstimate=estimateCpu(second.syx);
-  const report={generator:'fm3-sound-0.3.16',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.17',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
-    hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit:first.report.modifierEdit??null,
-    stages:{volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};
-  return {syx:second.syx,txt:renderFinalSoundText({...state,modifierEdit:first.report.modifierEdit??null},spec)+renderCpuText(cpuEstimate)+'\n',report,composerReport:first.report,layoutReport:report.stages.layout};
+    hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,
+    stages:{volumePedal:pedal?.report??null,volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,composerOutputSha256:first.report.outputSha256}}};
+  return {syx:second.syx,txt:renderFinalSoundText({...state,modifierEdit,volumePedal},spec)+renderCpuText(cpuEstimate)+'\n',report,composerReport:first.report,layoutReport:report.stages.layout};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try{const [b,s,stem,...extra]=process.argv.slice(2);

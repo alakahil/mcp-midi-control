@@ -536,6 +536,15 @@
       ],
       "scope": "Final SYX/TXT/spec/report agreement for grid, Drive 2 and Volume 2; unchanged bytes; seven valid-CRC rehashed tamper cases; no hardware I/O",
       "required": true
+    },
+    {
+      "id": "test-volume-pedal",
+      "command": [
+        "node",
+        "scripts/test-volume-pedal.mjs"
+      ],
+      "scope": "Captured FW13 Ext1 -> Volume/Pan 1 Gain ALL default record, exact entire device-body replay, all unrelated bytes preserved, raw readback, invalid inputs and rehashed tamper rejection across SYX/TXT/spec/report; no new scale, DSP or STORE proof",
+      "required": true
     }
   ]
 }

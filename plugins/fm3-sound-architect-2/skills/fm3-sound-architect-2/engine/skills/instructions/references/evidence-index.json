@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2090,
-  "filePaths": 2294,
+  "uniqueContents": 2091,
+  "filePaths": 2295,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -726,6 +726,12 @@
         "references/enhancer-full-20261012-122507/step-073-3063299f49/donor.syx"
       ]
     },
+    "0eb1abb5c47585c08ec5d1aee65a2829a8fda245f3d9f5403bc7f2b20fe9759b": {
+      "bytes": 3007,
+      "paths": [
+        "references/fm3-volume-binding-evidence.json"
+      ]
+    },
     "0ec08c717d6570e0cbbb645b531a2bfc7d764144ff5c8561300f0d7772bda109": {
       "bytes": 24680,
       "paths": [
@@ -1049,6 +1055,12 @@
       "bytes": 463,
       "paths": [
         "references/rotary-batch-20261007-151451/capture-20261007T151315-92d360bdd6/pair.json"
+      ]
+    },
+    "15fdb249eb6194bcf8f73ac06b7b96d60a6853ff10aa17c88e2f1948ad9a8090": {
+      "bytes": 19320,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "16119388236ac3a4f5c2f7ef0e76da76f2d9696dd83bd3cbd351c586bef53415": {
@@ -1754,12 +1766,6 @@
       "paths": [
         "references/rotary-batch-20261007-151451/capture-20261007T151043-10bff351c7/pair.json",
         "references/rotary-batch-20261007-151451/capture-20261007T151225-ad8403cd54/pair.json"
-      ]
-    },
-    "245619ddd1608f1cd6f8e89dc1d0eab3179c03d42680fd9fb65f7bb04da34b4e": {
-      "bytes": 18905,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "246a9500c1689e3882def90e258244bd3d02a5447dc6d55d4f56f28ae0cef1aa": {
