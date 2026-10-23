@@ -37,8 +37,8 @@ export function verifyPresetOutputs(stem){
   verifyGlobalScaleReport(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'));
   verifyWahExactOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   verifyInputGateOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
-  verifyVolumePedalOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   verifyVolumeOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
+  verifyVolumePedalOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   verifyGridOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   return report;
 }
