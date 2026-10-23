@@ -1,0 +1,55 @@
+{
+  "sourceCommit": "a4d142fccf35c83329163276dbdfcbf9927b0011",
+  "sourceTree": "23e59c2e4d49d64820211aee1c08b4b06a39dcdf",
+  "baseCommit": "121da19b07ad00b47a5fd98f03ba44611e6e7046",
+  "testedMergeCommit": "a9847a9924bbde5a32830b461386eda7926e1e57",
+  "mergeCommit": "d495927f1af4d0f498c418b9a8bce7cefe161a5c",
+  "preMergeRuns": [
+    {
+      "id": 40006917281,
+      "name": "native-matrix",
+      "event": "pull_request",
+      "headSha": "a4d142fccf35c83329163276dbdfcbf9927b0011",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/40006917281",
+      "createdAt": "2026-10-23T18:52:48Z",
+      "updatedAt": "2026-10-23T18:58:26Z"
+    },
+    {
+      "id": 40006917235,
+      "name": "preflight",
+      "event": "pull_request",
+      "headSha": "a4d142fccf35c83329163276dbdfcbf9927b0011",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/40006917235",
+      "createdAt": "2026-10-23T18:52:48Z",
+      "updatedAt": "2026-10-23T18:58:49Z"
+    },
+    {
+      "id": 40006917228,
+      "name": "FM3 plugin offline",
+      "event": "pull_request",
+      "headSha": "a4d142fccf35c83329163276dbdfcbf9927b0011",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/40006917228",
+      "createdAt": "2026-10-23T18:52:48Z",
+      "updatedAt": "2026-10-23T18:59:53Z"
+    },
+    {
+      "id": 40006911443,
+      "name": "FM3 plugin offline",
+      "event": "push",
+      "headSha": "a4d142fccf35c83329163276dbdfcbf9927b0011",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/40006911443",
+      "createdAt": "2026-10-23T18:52:45Z",
+      "updatedAt": "2026-10-23T18:59:50Z"
+    }
+  ],
+  "allFourPassed": true,
+  "requiredTests": 60
+}

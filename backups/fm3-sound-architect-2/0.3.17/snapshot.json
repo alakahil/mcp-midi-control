@@ -1,0 +1,47 @@
+{
+  "sourceCommit": "a4d142fccf35c83329163276dbdfcbf9927b0011",
+  "releaseId": "pluginrel_6adbaf0cf0d881918f7286f50ed4e36e",
+  "version": "0.3.17",
+  "files": {
+    "README.md": {
+      "sha256": "15a9855a316142668260516c4920d39bf9cd8173bf00d28c24e7e4ab407eb1b8",
+      "bytes": 2100
+    },
+    "build-backup.py": {
+      "sha256": "d17f50fe8fac8de43eaf9b0996c5f9d8c9d71081a6a6d47495355babe2c5d46d",
+      "bytes": 4705
+    },
+    "ci.json": {
+      "sha256": "f7ac91ffd3f236182df67a30a745485dc51296cc255359ef5d911e6d7dbe131b",
+      "bytes": 1951
+    },
+    "evidence-manifest.json": {
+      "sha256": "37be4ca585c99c1c79d1ef08f3554e16f3e5cc3259db12bbc5b3891a7d606f5d",
+      "bytes": 25320
+    },
+    "evidence.tar.gz": {
+      "sha256": "9ca36bd9bc9eeaec07d00770745dd845b8e219957c024dea7e9234ba095b93ee",
+      "bytes": 466909
+    },
+    "publication.json": {
+      "sha256": "761882f8f0dc4581061a82c76e5f44ce16864fa04cd5e6c49059185dc36b3618",
+      "bytes": 616
+    },
+    "published-comparison.json": {
+      "sha256": "9399a018ecc3eecb770a1c1f5eb72c78fa9116b78d2e75eef2c6d550c4d81602",
+      "bytes": 511
+    },
+    "release-receipt.json": {
+      "sha256": "0925ee87f1349b1874734a3f7989d041b20dc679bea8f8294b3935332eb93d7f",
+      "bytes": 713
+    },
+    "test-summary.json": {
+      "sha256": "1f6f2cc733cbc8e70d373c26361ffe12442d4e70e33e3eaa68f95120fdc5979d",
+      "bytes": 12867
+    },
+    "verify-backup.py": {
+      "sha256": "337f987893fb60d712b1b0dc73cc10be5c1439ff7d06f2e11243f7dde5fc0bda",
+      "bytes": 829
+    }
+  }
+}

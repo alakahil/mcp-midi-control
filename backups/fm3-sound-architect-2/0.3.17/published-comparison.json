@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "version": "0.3.17",
+  "sourceCommit": "a4d142fccf35c83329163276dbdfcbf9927b0011",
+  "releaseId": "pluginrel_6adbaf0cf0d881918f7286f50ed4e36e",
+  "filesCompared": 3185,
+  "exactInventoryAndEveryFileByte": true,
+  "sourceArchiveSha256": "7c343142bbd2cd49b76c788b3e07afe8b157ed09347822f5d880d2dd23c6041b",
+  "publishedArchiveSha256": "1ab6f9ae35726c78aed161d0d99f9ad57d5a22015c6961fe7e4be808f2c03b6e",
+  "manifestSha256": "b8bf7f1be611611add82230239ef29a5e3668e42210468c5a85821c0cc5a3ea9"
+}
