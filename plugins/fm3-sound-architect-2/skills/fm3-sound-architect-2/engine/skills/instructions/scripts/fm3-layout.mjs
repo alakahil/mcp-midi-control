@@ -21,8 +21,9 @@ const EID_BY_SLUG=Object.fromEntries(Object.entries(SLUG_BY_EID).map(([e,s])=>[s
 
 // Channel count per record when it is not 4. Send/Return: every export. Looper 166 (24×1):
 // five FW10 factory presets and the device's own FW13 export of factory 249 (2026-10-23).
-// Megatap 138, Ring Mod 150, Resonator 162 (×2): FW10 factory presets only, FW13 export pending;
-// a mismatch only stops the scan (tail), it can never misparse a record.
+// Megatap 138 (35×2), Ring Mod 150 (13×2), Resonator 162 (40×2, also Resonator 2 = 163): FW10 factory
+// presets and the device's FW13 exports of factory 147/202/259 (2026-10-23).
+// A mismatch only stops the scan (tail); it can never misparse a record.
 export const CHANNELS=Object.freeze({[IO.send]:1,[IO.ret]:1,166:1,138:2,150:2,162:2});
 // Second and later block instances (Filter 2 = 115, Drive 2 = 119, Comp 2 = 47, Delay 2 = 71,
 // Volume 2 = 103; also In 2 = 38, Out 2 = 43 in FW10 factory banks) use the instance's own effect

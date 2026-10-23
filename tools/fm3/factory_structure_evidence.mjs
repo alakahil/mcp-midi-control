@@ -3,7 +3,7 @@
 // never parameter values: no factory preset content is redistributed.
 // Usage: node tools/fm3/factory_structure_evidence.mjs FACTORY_DIR EXPORT_DIR [--write]
 //   FACTORY_DIR = unzipped FM3_Factory_Presets_10p0 (fractalaudio.com, 2025-06-04)
-//   EXPORT_DIR  = F155/F038/F163/F249/F288/F370.syx exported from FM3 FW13 (display offset 1)
+//   EXPORT_DIR  = F<shown>.syx for every entry in pairs, exported from FM3 FW13 (display offset 1)
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -17,7 +17,7 @@ export const banks={'FM3-BANK-A-250604-113656.syx':'0be1134f91aafa5c3e3d93699b96
   'FM3-BANK-B-250604-113656.syx':'20e947ac4488488e9f877facb62d86b5091f797f9da9abec082df381041d8e02',
   'FM3-BANK-C-250604-113656.syx':'3289d4274e696000c39031c31fe105131234668221e046b78a0a03a013e98cb2'};
 // displayed number (offset 1) -> zero-based factory slot
-export const pairs={155:'Bl@de Runner FM',38:'Das Metall',163:'Poltergeist Pigs FM',249:'Music Box FM',288:'Rhythm Tap',370:'MF Gift of Tone FM3'};
+export const pairs={155:'Bl@de Runner FM',38:'Das Metall',163:'Poltergeist Pigs FM',249:'Music Box FM',288:'Rhythm Tap',370:'MF Gift of Tone FM3',147:'Plex Verb 8 FM',202:'Tracking Ringmods',259:'Raja Drone FM3'};
 // Research-only walk: tolerant of FW10 word counts; stops at the system record 201.
 function walk(body){
   const out=[];let at=4610;
@@ -62,5 +62,5 @@ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.ur
   const [factoryDir,exportDir]=process.argv.slice(2);assert.ok(factoryDir&&exportDir,'Usage: factory_structure_evidence.mjs FACTORY_DIR EXPORT_DIR [--write]');
   const out=new URL(ENGINE+'references/fm3-factory-structure-evidence.json',import.meta.url),content=JSON.stringify(extract(factoryDir,exportDir),null,1)+'\n';
   if(process.argv.includes('--write'))fs.writeFileSync(out,content);else assert.equal(fs.readFileSync(out,'utf8'),content);
-  console.log(JSON.stringify({pairs:6,deviceIO:false,valuesStored:false}));
+  console.log(JSON.stringify({pairs:Object.keys(pairs).length,deviceIO:false,valuesStored:false}));
 }

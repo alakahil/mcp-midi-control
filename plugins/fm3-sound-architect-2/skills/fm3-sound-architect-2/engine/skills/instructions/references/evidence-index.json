@@ -22,12 +22,6 @@
         "references/enhancer-full-20261012-122507/step-014-161c7e2616/donor.syx"
       ]
     },
-    "0023de3ce6b0226a381afabb756104fb68afe0de7dc3b948175e454d95588039": {
-      "bytes": 15653,
-      "paths": [
-        "references/fm3-factory-structure-evidence.json"
-      ]
-    },
     "00395ad8d59493dbc467537de63a4d51d5cf5c63d0dfc286645a80fe9ec026fd": {
       "bytes": 456,
       "paths": [
@@ -11912,6 +11906,12 @@
       "bytes": 2174,
       "paths": [
         "references/geq-full-20261010-194115/step-166-63e9d5f6bf/result.json"
+      ]
+    },
+    "f4968b9557380ce26d3b9f27f0a004134f9aeb603fe5350eb6abb11efb0ea9f3": {
+      "bytes": 20863,
+      "paths": [
+        "references/fm3-factory-structure-evidence.json"
       ]
     },
     "f4bbbcecb473da67294d1a13cc65ac4d97a82016ace17d7aa0d6a8ed6b8ab489": {

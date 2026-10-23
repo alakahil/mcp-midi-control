@@ -6,8 +6,8 @@ Gate, Formant, Volume/Pan, Ten-Tap, Megatap, Ring Mod, Resonator.
 ## Tõendid (struktuur, mitte väärtused)
 
 `tools/fm3/factory_structure_evidence.mjs` → `references/fm3-factory-structure-evidence.json`.
-Allikad on Fractali FM3 tehasepangad 10p0 (2025-06-04, formaat 0x013E, SHA-256 kinnitatud) ja kuus
-kasutaja FW13 seadme-eksporti samadest presetitest (kuvatud numbrid 155, 038, 163, 249, 288, 370; Display Offset 1).
+Allikad on Fractali FM3 tehasepangad 10p0 (2025-06-04, formaat 0x013E, SHA-256 kinnitatud) ja üheksa
+kasutaja FW13 seadme-eksporti samadest presetitest (kuvatud numbrid 155, 038, 163, 249, 288, 370, 147, 202, 259; Display Offset 1).
 JSON-is on ainult efekti-ID-d, sõnade arv, kanalite arv ja muutunud sõnade indeksid. Tehasepresettide väärtusi
 ega faile repos ei ole.
 
@@ -16,11 +16,12 @@ Teisendus FW10 → FW13 (seade teeb ise):
 - Kirje päises muutub ainult sõnade arv (nihe 42).
 - Sama pikkusega plokid jäävad samaks. Erand on sõna, mille FW13 vahemik muutus: seade skaleerib selle ümber
   (nt Gate Attack pid 1, Input Attack pid 3, Pitch High Cut pid 57; log-vahemiku miinimum muutus).
+  Cab pid 85/86 indeksid nihkusid mõnes presetis (+3): valikuloendisse lisati vahepeale valikuid.
 - Pikemaks läinud plokkidel jäävad sõnad 0..vana−1 alles, uued lisatakse iga kanali lõppu.
 - FW13 kirje pikkus = sõnastiku parameetrite arv kõigil 24 plokil, millel on FW13 eksport.
 
 Kanalid: tavaliselt 4. Send/Return ja Looper 166 on ×1 (Looper on kinnitatud FW13 ekspordiga).
-Megatap 138, Ring Mod 150 ja Resonator 162 on FW10 tehasepankades ×2; FW13 eksport on veel tegemata.
+Megatap 138, Ring Mod 150 ja Resonator 162 on ×2 (FW10 ja FW13 eksport).
 Teised eksemplarid: eid = baas + eksemplar−1 (Delay 2 = 71, Volume 2 = 103, Filter 2 = 115, Drive 2 = 119, Comp 2 = 47),
 sõnade arv on sama kui baasplokil.
 
@@ -36,9 +37,10 @@ sõnade arv on sama kui baasplokil.
 | Looper | 166 | 24×1 | 24×1 | 249 |
 | Ten-Tap | 158 | 48×4 | 48×4 | 288 |
 | Multiplexer | 191 | 7×4 | 7×4 | 370 |
-| Megatap | 138 | 35×2 | (35) | ootel |
-| Ring Mod | 150 | 11×2 | (13) | ootel |
-| Resonator | 162 | 40×2 | (40) | ootel |
+| Megatap | 138 | 35×2 | 35×2 | 147 |
+| Multitap | 74 | 121×4 | 121×4 | 147 |
+| Ring Mod | 150 | 11×2 | 13×2 | 202 |
+| Resonator | 162 | 40×2 | 40×2 | 259 (ka Resonator 2 = 163) |
 | Scene MIDI | 190 | – | (257) | puudub tehasepankades |
 
 ## Parandus: `scanRecords` (fm3-layout.mjs)
@@ -50,8 +52,7 @@ Test: `scripts/test-scan-records.mjs` (offline-suite).
 
 ## Järgmine
 
-1. FW13 seade-eksport tehasepresettidest 147 (Megatap), 202 (Ring Mod), 259 (Resonator).
-2. Scene MIDI: tühi preset enne ja pärast ploki lisamist (eksportide paar).
-3. Doonorid generaatorile: kasutaja enda värsked vaikeplokid (mitte tehaseväärtused), lisamise eelkontroll
+1. Scene MIDI: tühi preset enne ja pärast ploki lisamist (eksportide paar).
+2. Doonorid generaatorile: kasutaja enda värsked vaikeplokid (mitte tehaseväärtused), lisamise eelkontroll
    nagu Enhanceril (`fm3-enhancer-insertion-check.mjs`), seejärel koondkatse seadmes.
 Mixer ja Multiplexer on paralleelharude plokid ja nende paigutamine ootab auditi punkti 5 (vaba ruudustik).

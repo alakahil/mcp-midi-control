@@ -446,6 +446,88 @@
    ]
   },
   {
+   "shown": "147",
+   "name": "Plex Verb 8 FM",
+   "factorySha256": "bf2f004d46b630a4b0b3fd2e0ef0ca82ce9b8bf4648acd01bd0000b06a6b57fa",
+   "exportSha256": "88402906a87d8b0ed48ae1b696a45191c8f00b410ec976295ce830fdfedc1b2c",
+   "blocks": [
+    {
+     "eid": 58,
+     "fw10": "144x4",
+     "fw13": "144x4",
+     "changedWords": [
+      18,
+      35,
+      40,
+      44,
+      50,
+      82
+     ],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 62,
+     "fw10": "101x4",
+     "fw13": "106x4",
+     "changedWords": [
+      85
+     ],
+     "appendedWordsPerChannel": 5
+    },
+    {
+     "eid": 46,
+     "fw10": "37x4",
+     "fw13": "37x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 74,
+     "fw10": "121x4",
+     "fw13": "121x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 37,
+     "fw10": "10x4",
+     "fw13": "10x4",
+     "changedWords": [
+      3
+     ],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 138,
+     "fw10": "35x2",
+     "fw13": "35x2",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 42,
+     "fw10": "26x4",
+     "fw13": "26x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 178,
+     "fw10": "96x4",
+     "fw13": "96x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 102,
+     "fw10": "14x4",
+     "fw13": "15x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 1
+    }
+   ]
+  },
+  {
    "shown": "155",
    "name": "Bl@de Runner FM",
    "factorySha256": "cfb454b3c53f355ea736dfeef24aab5050c4b94be07e27de6497e13f5bc9240d",
@@ -643,6 +725,86 @@
    ]
   },
   {
+   "shown": "202",
+   "name": "Tracking Ringmods",
+   "factorySha256": "d988e8f67598f38db8848f0ca4328fa0a5f6610dfee7e0796001a1dbe0b3a59a",
+   "exportSha256": "1e9df2f8b04a90b5f5665da1ea9fe1f97a0af536ff088d1ae4268000c4dea1ff",
+   "blocks": [
+    {
+     "eid": 58,
+     "fw10": "144x4",
+     "fw13": "144x4",
+     "changedWords": [
+      18,
+      35,
+      40,
+      44,
+      50,
+      82
+     ],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 62,
+     "fw10": "101x4",
+     "fw13": "106x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 5
+    },
+    {
+     "eid": 78,
+     "fw10": "29x4",
+     "fw13": "32x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 3
+    },
+    {
+     "eid": 46,
+     "fw10": "37x4",
+     "fw13": "37x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 118,
+     "fw10": "42x4",
+     "fw13": "44x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 2
+    },
+    {
+     "eid": 37,
+     "fw10": "10x4",
+     "fw13": "10x4",
+     "changedWords": [
+      3
+     ],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 42,
+     "fw10": "26x4",
+     "fw13": "26x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 66,
+     "fw10": "71x4",
+     "fw13": "71x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 150,
+     "fw10": "11x2",
+     "fw13": "13x2",
+     "changedWords": [],
+     "appendedWordsPerChannel": 2
+    }
+   ]
+  },
+  {
    "shown": "249",
    "name": "Music Box FM",
    "factorySha256": "df8d32c94deb9d99c0009ca6e5d3130ad445a03a53edcc5535bf65cd49e90a37",
@@ -737,6 +899,123 @@
      "fw13": "24x1",
      "changedWords": [],
      "appendedWordsPerChannel": 0
+    }
+   ]
+  },
+  {
+   "shown": "259",
+   "name": "Raja Drone FM3",
+   "factorySha256": "42d4249999e65e8c98d8dcec67885d22443cbbccfde90d1293b715ada0e7e7fa",
+   "exportSha256": "083f304bbcd487afd65cd24c1b8973578666ccfd1299f80e9d4d18a50fec29cf",
+   "blocks": [
+    {
+     "eid": 58,
+     "fw10": "144x4",
+     "fw13": "144x4",
+     "changedWords": [
+      18,
+      35,
+      40,
+      44,
+      50,
+      82
+     ],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 78,
+     "fw10": "29x4",
+     "fw13": "32x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 3
+    },
+    {
+     "eid": 46,
+     "fw10": "37x4",
+     "fw13": "37x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 47,
+     "fw10": "37x4",
+     "fw13": "37x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 114,
+     "fw10": "37x4",
+     "fw13": "37x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 115,
+     "fw10": "37x4",
+     "fw13": "37x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 116,
+     "fw10": "37x4",
+     "fw13": "37x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 37,
+     "fw10": "10x4",
+     "fw13": "10x4",
+     "changedWords": [
+      3
+     ],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 42,
+     "fw10": "26x4",
+     "fw13": "26x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 110,
+     "fw10": "113x4",
+     "fw13": "114x4",
+     "changedWords": [
+      57
+     ],
+     "appendedWordsPerChannel": 1
+    },
+    {
+     "eid": 162,
+     "fw10": "40x2",
+     "fw13": "40x2",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 163,
+     "fw10": "40x2",
+     "fw13": "40x2",
+     "changedWords": [],
+     "appendedWordsPerChannel": 0
+    },
+    {
+     "eid": 102,
+     "fw10": "14x4",
+     "fw13": "15x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 1
+    },
+    {
+     "eid": 103,
+     "fw10": "14x4",
+     "fw13": "15x4",
+     "changedWords": [],
+     "appendedWordsPerChannel": 1
     }
    ]
   },
