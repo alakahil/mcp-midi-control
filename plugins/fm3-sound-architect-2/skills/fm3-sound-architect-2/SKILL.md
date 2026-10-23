@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.16`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.17`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -45,8 +45,7 @@ Volume/Pan 1 praegune FW13 15-sõnaline A–D kirje on nüüd olemas. Sound-spec
 `controls` kasutab `block:"volpan"`: GAIN, BAL, PANL, PANR ja LEVEL; eraldi
 `allow:["enum-labels"]` korral ka TAPER, BYPASSMODE ja INPUTSELECT. Stseenide
 kanal/bypass: `blockScenes.volpan`. Praegu toetatakse ainult VOLUME-tüüpi;
-TYPE, Auto-Swell, kanali BYPASS-sõna ja meter jäävad säilitatavaks. Uut
-modifikaatori/pedaali sidumist ei lisata. Aktiivse modifikaatori konflikt tõrjutakse.
+TYPE, Auto-Swell, kanali BYPASS-sõna ja meter jäävad säilitatavaks. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
 
 Volume'i jäädvustatud doonor on vaikimisi **kõigis kaheksas stseenis aktiivne,
 kanal A**. Uue soundi loomisel kirjuta `blockScenes.volpan`-i alati kõigi kaheksa
@@ -61,6 +60,31 @@ ning skaalad tuginevad FW13 native/cache/XML-i ja kõveraklassi üldistusele.
 STORE/reload, heli/CPU ja täisvahemik pole sellega tõendatud. Globaalne Noisegate
 Offset / AC Line Frequency ei kuulu preseti sisusse. Wah Min/Max-i tõendusulatus
 ja `fullRangeEncodingProven=false` säilivad. Selle ekspordi kordamist pole vaja.
+
+## External 1 → Volume/Pan 1 (0.3.17)
+
+Sound-spec'i `volumePedal:true` koos `volumePan:true` lisab **External 1 →
+Volume/Pan 1 Volume (VOLUME_GAIN, PID 0), ALL** seose. Kasuta mõõdetud
+vaikeolekut; Min/Max-i, kõvera, Auto Engage'i ega ajaparameetrite valikuid sellel
+liidesel pole. [Juhend](engine/docs/FM3_VOLUME_PEDAL.md).
+Nõutav on NewLook-aluse muutmata passiivne modifikaatoripiirkond. Aktiivne Wah
+või muudetud modifikaatorid lükatakse tagasi; neid ei lülitata vaikimisi välja.
+`composer.modifiers:{external1Wah:false}` võib passiivse lähteoleku selgesõnaliselt
+fikseerida. Praegu ei toetata samaaegset Wah- ja Volume-pedaaliseost, muid
+allikaid/kanaliulatust/eksemplare ega vaba modifikaatorikirje valimist.
+
+Kasutaja üks 23.10.2026 FW13 eksport kinnitas 25-sõnalise vaikeoleku ning kõigi
+muude sisubaitide säilimise. Generaator taastab kogu mõõdetud keha täpselt.
+`--verify` võrdleb lõpp-SYX-i, TXT-i, speci ja aruannet. Selle sama sisu
+korduseksporti ei küsita. Uued paigutus/stseenikombinatsioonid on kontrollitud
+arvutis; pedaali toimimine, heli ja STORE/reload jäävad eraldi kontrollideks.
+`fullRangeEncodingProven=false` ning Wahi Min/Max-i tõendusulatus säilivad.
+
+`GAIN` käsiväärtus on seose korral kõigil A–D kanalitel blokeeritud. `LEVEL`,
+teised lubatud Volume-juhid ja stseenide bypass on eraldi seaded. Määra uue
+soundi kaheksa stseeni kanal/bypass eespool kirjeldatud viisil. External 1 peab
+seadme globaalsetes seadetes olema kasutaja pedaali/MIDI kontrolleriga seotud;
+SYX seda ei seadista ning pedaali hetkeasendit ei tõenda.
 
 ## Kasutaja kinnitatud seadistus
 

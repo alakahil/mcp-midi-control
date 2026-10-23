@@ -1,4 +1,5 @@
 // Final report is decoded AFTER all layout/control/scene stages.
+import {renderVolumePedalText} from './fm3-volume-pedal.mjs';
 import {volumeChannelText} from './fm3-volume-text.mjs';
 import {describeVolumePan} from './fm3-volume.mjs';
 import {volumeUnits} from './fm3-volume-policy.mjs';
@@ -79,7 +80,7 @@ export function renderFinalSoundText(state,spec){
     'Seade: FM3 Mk II Turbo, firmware 13.',`Kitarr: ${context.guitar??'selle kirjelduse jaoks määramata'}`,
     `Helipead: ${context.pickups??'selle kirjelduse jaoks määramata'}`,`Ühendus: ${context.output??'selle kirjelduse jaoks määramata'}`,
     `Valitud Scene: ${state.selectedScene}`,...(state.signalLayout==='grid'?['Ruudustik (4 × 12; "-" = shunt, "." = tühi, "<2+3" = sisend ridadest 2 ja 3):',...state.signalRows.map((r,i)=>`Rida ${i+1}: ${r}`),...(state.signalLinks.length?['Hargnemised ja liitmised (sihtlahter ← allikas):',...state.signalLinks.map(l=>'  '+l)]:[]),...state.gridWarnings.map(w=>'HOIATUS: '+w)]:state.signalRows.map((r,i)=>`Rida ${i+2}: ${r}`)),'','STSEENID JA LÕPLIKUD MUDELID'];
-  lines.push(...renderWahModifierText(state.modifierEdit));
+  lines.push(...renderWahModifierText(state.modifierEdit),...renderVolumePedalText(state.volumePedal));
   if(state.controls.some(w=>w.block==='in1'))lines.push('','SISENDI GATE — INPUT 1',
     'Presetis salvestatud A–D väärtused; Gate Type, Mode ja bypass säilivad. See ei ole eraldi Gate-plokk.',
     'Kodeering kasutab olemasolevaid tabelikõveraid ja FW13 metaandmeid; 20 Input-sihtsõna säilimine seadmeekspordis on kinnitatud, skaalasid eraldi ei mõõdetud.',
@@ -88,7 +89,7 @@ export function renderFinalSoundText(state,spec){
     ...state.inputGate.scenes.map(s=>`  Input 1 Scene ${s.scene}: kanal ${s.channel}; bypass raw ${s.bypassRaw}.`));
   if(state.volumePan)lines.push('','VOLUME/PAN 1 — LÕPPFAILIST',
     'FW13 seadmeekspordist saadud VOLUME-plokimall; uued skaalaväärtused ja stseenivalikud on kontrollitud tarkvaraliselt.',
-    'Auto-Swell, TYPE ja modifikaatori sidumine pole selle kirjutustoe osa. Taper ei ole salvestussõna kodeerimiskõver.',
+    'Auto-Swell ja TYPE pole selle kirjutustoe osa. Pedaaliseos vajab eraldi volumePedal:true valikut. Taper ei ole salvestussõna kodeerimiskõver.',
     ...state.volumePan.states.map(volumeChannelText),
     ...state.volumePan.scenes.map(s=>`  Volume/Pan 1 Scene ${s.scene}: kanal ${s.channel}; bypass raw ${s.bypassRaw}.`));
   for(const s of state.scenes){lines.push(`Scene ${s.scene}: ${s.name}`);for(const [family,b] of Object.entries(s.blocks)){

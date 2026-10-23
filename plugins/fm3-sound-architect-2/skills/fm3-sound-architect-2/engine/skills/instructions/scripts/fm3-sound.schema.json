@@ -2469,6 +2469,10 @@
           "resonator2"
         ]
       }
+    },
+    "volumePedal": {
+      "const": true,
+      "description": "Exact captured FW13 External 1 -> Volume/Pan 1 Gain ALL defaults in record 0. Requires volumePan:true and inactive unchanged modifier region; incompatible with active Wah. No custom Min/Max."
     }
   },
   "required": [
@@ -2509,5 +2513,10 @@
         ]
       }
     }
-  ]
+  ],
+  "dependentRequired": {
+    "volumePedal": [
+      "volumePan"
+    ]
+  }
 }
