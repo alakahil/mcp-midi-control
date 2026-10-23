@@ -64,6 +64,11 @@ jobs:
           node --test tools/fm3/test-modifier-hw-candidate-syxdiff.mjs
       - name: Run the required offline suite
         run: python3 tools/fm3/test-offline.py --output "$RUNNER_TEMP/fm3-tests"
+      - name: Verify Volume pedal research readers and static collector failure handling
+        run: |
+          node --test tools/fm3/test-volume-pedal-legacy.mjs
+          node --test tools/fm3/rea-volume-pedal/test-volume-pedal-batch.mjs
+          bash -n tools/fm3/rea-volume-pedal/FM3_REA_VOLUME_PEDAL.command
       - name: Build the tested commit
         run: python3 tools/fm3/build-release.py --commit HEAD --tests "$RUNNER_TEMP/fm3-tests/summary.json" --output "$RUNNER_TEMP/fm3-release"
       - name: Verify the unpacked package
