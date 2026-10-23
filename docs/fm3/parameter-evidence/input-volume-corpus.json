@@ -1,9 +1,19 @@
 {
   "schemaVersion": 1,
-  "files": 789,
-  "unique": 632,
-  "accepted": 622,
+  "files": 795,
+  "unique": 638,
+  "accepted": 626,
   "unsupported": [
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-default-blocks-20261023.syx",
+      "sha256": "dc382d6ded7dafc6889abc19edb5763a1b8e483bec841879108ded68423e49af",
+      "error": "Amp/Cab records not found"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-empty-preset-20261023.syx",
+      "sha256": "220866f7866d9f515a98b36b2430de6e5a69ae378e58426bc86f3bc417ea7e14",
+      "error": "Amp/Cab records not found"
+    },
     {
       "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-42.syx",
       "sha256": "c91be2fba05d044efa7eb76deb0e7f057d1e0d19543dd61542839a50019407e7",
@@ -62,6 +72,8 @@
       "recordSha256": "abe74c8f848ced1879db4573ea7dcf11c2aaf2926e6814283a7bd21a8a8f65b3",
       "record": {
         "eid": 37,
+        "block": 37,
+        "instance": 1,
         "family": "in1",
         "header": 7966,
         "start": 8012,
@@ -113,7 +125,38 @@
       ]
     }
   ],
-  "volumeInAccepted": [],
+  "volumeInAccepted": [
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_P6_INSERT_A.syx",
+      "sha256": "20c5ce35c4452c9ff2767f93f7f245409adf43e61a6d7e5d33c33f5e9ef3eeb7",
+      "record": {
+        "eid": 102,
+        "block": 102,
+        "instance": 1,
+        "family": "volpan",
+        "header": 10750,
+        "start": 10796,
+        "words": 15,
+        "channels": 4,
+        "size": 166
+      }
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_P6_INSERT_A_export.syx",
+      "sha256": "18edadfb3bafe1be03f5196a06a127b0039e816aa52b1b862fc787aa58184c00",
+      "record": {
+        "eid": 102,
+        "block": 102,
+        "instance": 1,
+        "family": "volpan",
+        "header": 10656,
+        "start": 10702,
+        "words": 15,
+        "channels": 4,
+        "size": 166
+      }
+    }
+  ],
   "oldVolume": [
     {
       "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-55.syx",
