@@ -1,0 +1,1127 @@
+{
+  "schemaVersion": 1,
+  "firmware": "13.0",
+  "editor": "1.07.17",
+  "sources": {
+    "editorSha256": "c06f993530057214205a64330116a823e5b31507610d1792c1f3617725d6e927",
+    "editorArchitecture": "PE x86-64",
+    "layoutSha256": "0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2",
+    "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4",
+    "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730"
+  },
+  "families": {
+    "INPUT": {
+      "effectId": 37,
+      "section": 41,
+      "selector": "INPUT_MODE",
+      "selectorPid": 9,
+      "descriptor": {
+        "pid": 0,
+        "name": "INPUT_THRESH",
+        "descriptorOffset": 18672528,
+        "nameOffset": 8250064,
+        "tableOffset": 18672528,
+        "tableRows": 10,
+        "bindings": [
+          [
+            0,
+            "INPUT_THRESH"
+          ],
+          [
+            1,
+            "INPUT_RATIO"
+          ],
+          [
+            2,
+            "INPUT_RELEASE"
+          ],
+          [
+            3,
+            "INPUT_ATTACK"
+          ],
+          [
+            4,
+            "INPUT_Z"
+          ],
+          [
+            5,
+            "INPUT_LEVEL"
+          ],
+          [
+            6,
+            "INPUT_BYPASS"
+          ],
+          [
+            7,
+            "INPUT_TYPE"
+          ],
+          [
+            8,
+            "INPUT_GAINMONITOR"
+          ],
+          [
+            9,
+            "INPUT_MODE"
+          ]
+        ]
+      },
+      "variants": [
+        {
+          "name": "",
+          "types": null,
+          "firmware": {},
+          "pages": [
+            {
+              "page": 0,
+              "name": "Gate",
+              "firmware": {
+                "version_gtet": "6,02"
+              },
+              "types": [
+                1
+              ],
+              "controls": [
+                {
+                  "name": "INPUT_MODE",
+                  "label": "Mode",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "INPUT_THRESH",
+                  "label": "Threshold",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "INPUT_RATIO",
+                  "label": "Ratio",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "INPUT_ATTACK",
+                  "label": "Attack",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "INPUT_RELEASE",
+                  "label": "Release",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "INPUT_GAINMONITOR",
+                  "label": "Gain",
+                  "conditions": [],
+                  "uiType": "meterGainVert"
+                },
+                {
+                  "name": "INPUT_TYPE",
+                  "label": "Gate Type",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "INPUT_LEVEL",
+                  "label": "Output Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "INPUT_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                }
+              ]
+            },
+            {
+              "page": 0,
+              "name": "Gate",
+              "firmware": {
+                "version_gtet": "6,02"
+              },
+              "types": [
+                0
+              ],
+              "controls": [
+                {
+                  "name": "INPUT_MODE",
+                  "label": "Mode",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "INPUT_THRESH",
+                  "label": "Threshold",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "INPUT_RELEASE",
+                  "label": "Release",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "INPUT_GAINMONITOR",
+                  "label": "Gain",
+                  "conditions": [],
+                  "uiType": "meterGainVert"
+                },
+                {
+                  "name": "INPUT_TYPE",
+                  "label": "Gate Type",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "INPUT_LEVEL",
+                  "label": "Output Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "INPUT_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "pid": 0,
+          "name": "INPUT_THRESH",
+          "kind": "linear",
+          "status": "taper-class-verified",
+          "numericFields": [
+            -100.0,
+            0.0,
+            1.0,
+            0.10000000149011612
+          ],
+          "labels": [],
+          "typecode": 305,
+          "cacheOffset": 248323,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Threshold"
+            },
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Threshold"
+            }
+          ]
+        },
+        {
+          "pid": 1,
+          "name": "INPUT_RATIO",
+          "kind": "log",
+          "status": "taper-class-verified",
+          "numericFields": [
+            1.0,
+            20.0,
+            1.0,
+            0.0
+          ],
+          "labels": [],
+          "typecode": 66,
+          "cacheOffset": 248355,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Ratio"
+            }
+          ]
+        },
+        {
+          "pid": 2,
+          "name": "INPUT_RELEASE",
+          "kind": "log",
+          "status": "taper-class-verified",
+          "numericFields": [
+            0.009999999776482582,
+            1.0,
+            1000.0,
+            0.0
+          ],
+          "labels": [],
+          "typecode": 1090,
+          "cacheOffset": 248387,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Release"
+            },
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Release"
+            }
+          ]
+        },
+        {
+          "pid": 3,
+          "name": "INPUT_ATTACK",
+          "kind": "log",
+          "status": "taper-class-verified",
+          "numericFields": [
+            9.999999747378752e-05,
+            0.10000000149011612,
+            1000.0,
+            0.0
+          ],
+          "labels": [],
+          "typecode": 1090,
+          "cacheOffset": 248419,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Attack"
+            }
+          ]
+        },
+        {
+          "pid": 4,
+          "name": "INPUT_Z",
+          "kind": "enum",
+          "status": "enum-labels",
+          "numericFields": [
+            0.0,
+            12.0,
+            1.0,
+            0.0
+          ],
+          "labels": [
+            "AUTO: ",
+            "1M",
+            "1M+CAP",
+            "230K",
+            "230K+CAP",
+            "90K",
+            "90K+CAP",
+            "70K",
+            "70K+CAP",
+            "32K",
+            "32K+CAP",
+            "22K",
+            "22K+CAP"
+          ],
+          "typecode": 16,
+          "cacheOffset": 248451,
+          "cases": []
+        },
+        {
+          "pid": 5,
+          "name": "INPUT_LEVEL",
+          "kind": "linear",
+          "status": "taper-class-verified",
+          "numericFields": [
+            -40.0,
+            40.0,
+            1.0,
+            0.05000000074505806
+          ],
+          "labels": [],
+          "typecode": 306,
+          "cacheOffset": 248601,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Output Level"
+            },
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Output Level"
+            }
+          ]
+        },
+        {
+          "pid": 6,
+          "name": "INPUT_BYPASS",
+          "kind": "enum",
+          "status": "enum-labels",
+          "numericFields": [
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          "labels": [],
+          "typecode": 224,
+          "cacheOffset": 248633,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Bypass"
+            },
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Bypass"
+            }
+          ]
+        },
+        {
+          "pid": 7,
+          "name": "INPUT_TYPE",
+          "kind": "enum",
+          "status": "enum-labels",
+          "numericFields": [
+            0.0,
+            2.0,
+            1.0,
+            0.0
+          ],
+          "labels": [
+            "CLASSIC",
+            "INTELLIGENT",
+            "NOISE REDUCER"
+          ],
+          "typecode": 16,
+          "cacheOffset": 248665,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Gate Type"
+            },
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Gate Type"
+            }
+          ]
+        },
+        {
+          "pid": 8,
+          "name": "INPUT_GAINMONITOR",
+          "kind": "unused",
+          "status": "n/a",
+          "numericFields": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "labels": [],
+          "typecode": 0,
+          "cacheOffset": 248740,
+          "cases": []
+        },
+        {
+          "pid": 9,
+          "name": "INPUT_MODE",
+          "kind": "enum",
+          "status": "enum-labels",
+          "numericFields": [
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          "labels": [
+            "EASY",
+            "ADVANCED"
+          ],
+          "typecode": 16,
+          "cacheOffset": 248772,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Mode"
+            },
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Mode"
+            }
+          ]
+        }
+      ]
+    },
+    "VOLUME": {
+      "effectId": 102,
+      "section": 40,
+      "selector": "VOLUME_TYPE",
+      "selectorPid": 9,
+      "descriptor": {
+        "pid": 0,
+        "name": "VOLUME_GAIN",
+        "descriptorOffset": 18656272,
+        "nameOffset": 8261480,
+        "tableOffset": 18656272,
+        "tableRows": 15,
+        "bindings": [
+          [
+            0,
+            "VOLUME_GAIN"
+          ],
+          [
+            1,
+            "VOLUME_BAL"
+          ],
+          [
+            2,
+            "VOLUME_TAPER"
+          ],
+          [
+            3,
+            "VOLUME_BYPASS"
+          ],
+          [
+            4,
+            "VOLUME_PANL"
+          ],
+          [
+            5,
+            "VOLUME_PANR"
+          ],
+          [
+            6,
+            "VOLUME_LEVEL"
+          ],
+          [
+            7,
+            "VOLUME_BYPASSMODE"
+          ],
+          [
+            8,
+            "VOLUME_INPUTSELECT"
+          ],
+          [
+            9,
+            "VOLUME_TYPE"
+          ],
+          [
+            10,
+            "VOLUME_THRESHOLD"
+          ],
+          [
+            11,
+            "VOLUME_ATTACK"
+          ],
+          [
+            12,
+            "VOLUME_RELEASE"
+          ],
+          [
+            13,
+            "VOLUME_HYSTERESIS"
+          ],
+          [
+            14,
+            "VOLUME_METER"
+          ]
+        ]
+      },
+      "variants": [
+        {
+          "name": "Volume",
+          "types": [
+            0
+          ],
+          "firmware": {},
+          "pages": [
+            {
+              "page": 0,
+              "name": "Volume/Pan",
+              "firmware": {},
+              "types": null,
+              "controls": [
+                {
+                  "name": "VOLUME_GAIN",
+                  "label": "Volume",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_PANL",
+                  "label": "Pan Left",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_PANR",
+                  "label": "Pan Right",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_TAPER",
+                  "label": "Volume Taper",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "VOLUME_LEVEL",
+                  "label": "Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_BAL",
+                  "label": "Balance",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_INPUTSELECT",
+                  "label": "Input\nSelect",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "VOLUME_BYPASSMODE",
+                  "label": "Bypass\nMode",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "VOLUME_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Auto-Swell",
+          "types": [
+            1
+          ],
+          "firmware": {},
+          "pages": [
+            {
+              "page": 0,
+              "name": "Auto-Swell",
+              "firmware": {
+                "version_gtet": "9,01"
+              },
+              "types": null,
+              "controls": [
+                {
+                  "name": "VOLUME_THRESHOLD",
+                  "label": "Threshold",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_ATTACK",
+                  "label": "Attack",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_RELEASE",
+                  "label": "Release",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_HYSTERESIS",
+                  "label": "Hysteresis",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_TAPER",
+                  "label": "Volume Taper",
+                  "conditions": [],
+                  "uiType": "dropdown1"
+                },
+                {
+                  "name": "VOLUME_LEVEL",
+                  "label": "Level",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_BAL",
+                  "label": "Balance",
+                  "conditions": [],
+                  "uiType": "knob"
+                },
+                {
+                  "name": "VOLUME_INPUTSELECT",
+                  "label": "Input\nSelect",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "VOLUME_BYPASSMODE",
+                  "label": "Bypass\nMode",
+                  "conditions": [],
+                  "uiType": "dropdown1Tight"
+                },
+                {
+                  "name": "VOLUME_BYPASS",
+                  "label": "Bypass",
+                  "conditions": [],
+                  "uiType": "btnBypass"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "pid": 0,
+          "name": "VOLUME_GAIN",
+          "kind": "linear",
+          "status": "taper-class-verified",
+          "numericFields": [
+            0.0,
+            1.0,
+            10.0,
+            0.0010000000474974513
+          ],
+          "labels": [],
+          "typecode": 50,
+          "cacheOffset": 247683,
+          "cases": [
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Volume"
+            }
+          ]
+        },
+        {
+          "pid": 1,
+          "name": "VOLUME_BAL",
+          "kind": "linear",
+          "status": "taper-class-verified",
+          "numericFields": [
+            -1.0,
+            1.0,
+            100.0,
+            0.0020000000949949026
+          ],
+          "labels": [],
+          "typecode": 50,
+          "cacheOffset": 247715,
+          "cases": [
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Balance"
+            },
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Balance"
+            }
+          ]
+        },
+        {
+          "pid": 2,
+          "name": "VOLUME_TAPER",
+          "kind": "enum",
+          "status": "enum-labels",
+          "numericFields": [
+            0.0,
+            6.0,
+            1.0,
+            0.0
+          ],
+          "labels": [
+            "LINEAR",
+            "LOG 30A",
+            "LOG 20A",
+            "LOG 15A",
+            "LOG 10A",
+            "LOG 5A",
+            "S-TAPER"
+          ],
+          "typecode": 16,
+          "cacheOffset": 247747,
+          "cases": [
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Volume Taper"
+            },
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Volume Taper"
+            }
+          ]
+        },
+        {
+          "pid": 3,
+          "name": "VOLUME_BYPASS",
+          "kind": "enum",
+          "status": "enum-labels",
+          "numericFields": [
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          "labels": [],
+          "typecode": 224,
+          "cacheOffset": 247854,
+          "cases": [
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Bypass"
+            },
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Bypass"
+            }
+          ]
+        },
+        {
+          "pid": 4,
+          "name": "VOLUME_PANL",
+          "kind": "linear",
+          "status": "taper-class-verified",
+          "numericFields": [
+            -0.9990000128746033,
+            0.9990000128746033,
+            100.0,
+            0.0020000000949949026
+          ],
+          "labels": [],
+          "typecode": 49,
+          "cacheOffset": 247886,
+          "cases": [
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Pan Left"
+            }
+          ]
+        },
+        {
+          "pid": 5,
+          "name": "VOLUME_PANR",
+          "kind": "linear",
+          "status": "taper-class-verified",
+          "numericFields": [
+            -0.9990000128746033,
+            0.9990000128746033,
+            100.0,
+            0.0020000000949949026
+          ],
+          "labels": [],
+          "typecode": 49,
+          "cacheOffset": 247918,
+          "cases": [
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Pan Right"
+            }
+          ]
+        },
+        {
+          "pid": 6,
+          "name": "VOLUME_LEVEL",
+          "kind": "linear",
+          "status": "taper-class-verified",
+          "numericFields": [
+            -80.0,
+            20.0,
+            1.0,
+            0.10000000149011612
+          ],
+          "labels": [],
+          "typecode": 385,
+          "cacheOffset": 247950,
+          "cases": [
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Level"
+            },
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Level"
+            }
+          ]
+        },
+        {
+          "pid": 7,
+          "name": "VOLUME_BYPASSMODE",
+          "kind": "enum",
+          "status": "enum-labels",
+          "numericFields": [
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          "labels": [
+            "THRU",
+            "MUTE"
+          ],
+          "typecode": 176,
+          "cacheOffset": 247982,
+          "cases": [
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Bypass\nMode"
+            },
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Bypass\nMode"
+            }
+          ]
+        },
+        {
+          "pid": 8,
+          "name": "VOLUME_INPUTSELECT",
+          "kind": "enum",
+          "status": "enum-labels",
+          "numericFields": [
+            0.0,
+            2.0,
+            1.0,
+            0.0
+          ],
+          "labels": [
+            "STEREO",
+            "LEFT ONLY",
+            "RIGHT ONLY"
+          ],
+          "typecode": 16,
+          "cacheOffset": 248030,
+          "cases": [
+            {
+              "types": [
+                0
+              ],
+              "when": {},
+              "label": "Input\nSelect"
+            },
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Input\nSelect"
+            }
+          ]
+        },
+        {
+          "pid": 9,
+          "name": "VOLUME_TYPE",
+          "kind": "enum",
+          "status": "enum-labels",
+          "numericFields": [
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          "labels": [
+            "VOLUME",
+            "AUTO-SWELL"
+          ],
+          "typecode": 16,
+          "cacheOffset": 248099,
+          "cases": []
+        },
+        {
+          "pid": 10,
+          "name": "VOLUME_THRESHOLD",
+          "kind": "linear",
+          "status": "taper-class-verified",
+          "numericFields": [
+            -80.0,
+            0.0,
+            1.0,
+            0.10000000149011612
+          ],
+          "labels": [],
+          "typecode": 305,
+          "cacheOffset": 248155,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Threshold"
+            }
+          ]
+        },
+        {
+          "pid": 11,
+          "name": "VOLUME_ATTACK",
+          "kind": "log",
+          "status": "taper-class-verified",
+          "numericFields": [
+            0.009999999776482582,
+            1.0,
+            1000.0,
+            0.0
+          ],
+          "labels": [],
+          "typecode": 1091,
+          "cacheOffset": 248187,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Attack"
+            }
+          ]
+        },
+        {
+          "pid": 12,
+          "name": "VOLUME_RELEASE",
+          "kind": "log",
+          "status": "taper-class-verified",
+          "numericFields": [
+            0.0010000000474974513,
+            0.10000000149011612,
+            1000.0,
+            0.0
+          ],
+          "labels": [],
+          "typecode": 1091,
+          "cacheOffset": 248219,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Release"
+            }
+          ]
+        },
+        {
+          "pid": 13,
+          "name": "VOLUME_HYSTERESIS",
+          "kind": "linear",
+          "status": "taper-class-verified",
+          "numericFields": [
+            0.0,
+            12.0,
+            1.0,
+            0.009999999776482582
+          ],
+          "labels": [],
+          "typecode": 305,
+          "cacheOffset": 248251,
+          "cases": [
+            {
+              "types": [
+                1
+              ],
+              "when": {},
+              "label": "Hysteresis"
+            }
+          ]
+        },
+        {
+          "pid": 14,
+          "name": "VOLUME_METER",
+          "kind": "unused",
+          "status": "n/a",
+          "numericFields": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "labels": [],
+          "typecode": 0,
+          "cacheOffset": 248283,
+          "cases": []
+        }
+      ]
+    }
+  },
+  "newREAAnalysis": false,
+  "newStaticMetadataAnalysis": true,
+  "newHardwareMeasurements": 0,
+  "fullRangeEncodingProven": false,
+  "limits": "Metadata/visibility is not a new hardware encoding test. Volume donor/current-FW13 import and modifier writes remain unverified. Input bypass is not gate-off. Mode/type are preserved by the bounded numeric writer."
+}

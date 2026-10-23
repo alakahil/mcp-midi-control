@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Legacy exact-point syntax plus the audited full five-band/A–D writer. Offline only.
 import fs from 'node:fs';
 import {matchPeqFullDeviceBody} from './fm3-peq-full-hardware.mjs';
@@ -21,7 +22,7 @@ export function loadPeqControls(){
  const root='references/'+library.evidenceDirectory+'/';
  for(const [file,key] of [['baseline.syx','baselineSha256'],['setup.json','setupSha256'],['session.json','sessionSha256'],['plan.json','planSha256']])check(sha(read(root+file))===library[key],'PEQ session source changed: '+file);
  check(JSON.parse(read(root+'setup.json')).band3TypeLabel==='Peaking','Unverified PEQ Band 3 type label');
- const baseline=read(baseFolder+'donor.syx'),state=baselinePreflight(baseline),proof=baselinePair(new URL('../'+baseFolder,import.meta.url).pathname);
+ const baseline=read(baseFolder+'donor.syx'),state=baselinePreflight(baseline),proof=baselinePair(fileURLToPath(new URL('../'+baseFolder,import.meta.url)));
  check(state.sha256===library.baselineSha256&&proof.matchedWords===132,'PEQ baseline proof mismatch');
  check(JSON.stringify(proof)===JSON.stringify(JSON.parse(read(baseFolder+'pair.json'))),'Stored PEQ baseline proof differs');
  check(state.words[17]===0,'PEQ Band 3 type changed');
@@ -32,7 +33,7 @@ function validatePoint(context,point){
  const dir=context.root+point.folder+'/',current=read(dir+'donor.syx'),previous=read(context.root+point.previousFile);
  const rb=read(dir+'result.json'),cb=read(dir+'capture.json');
  check(sha(current)===point.syxSha256&&sha(previous)===point.previousSha256&&sha(rb)===point.resultSha256&&sha(cb)===point.captureSha256,'PEQ measurement source hash mismatch');
- const result=JSON.parse(rb),comparison=compare(previous,current,point.index),proof=pair(new URL('../'+dir,import.meta.url).pathname);
+ const result=JSON.parse(rb),comparison=compare(previous,current,point.index),proof=pair(fileURLToPath(new URL('../'+dir,import.meta.url)));
  check(result.status==='passed'&&result.displayConfirmed===true&&result.displayValue===point.displayValue&&result.band3TypeLabel==='Peaking','Missing PEQ screen confirmation');
  check(JSON.stringify(comparison)===JSON.stringify(result.comparison)&&JSON.stringify(proof)===JSON.stringify(result.pair),'PEQ saved comparison differs');
  check(proof.matchedWords===132&&proof.rawRxSha256===point.rawRxSha256,'PEQ GET evidence mismatch');

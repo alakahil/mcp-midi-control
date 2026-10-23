@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 import fs from 'node:fs';
 import {enhancerRoundtrip,enhancerFeedback} from './fm3-enhancer-hardware.mjs';
 import {auditEnhancerEvidence,enhancerSha,enhancerRanges,enhancerPids,enhancerEnums,encodeEnhancerControl,decodeEnhancerNumber} from './fm3-enhancer-audit.mjs';
@@ -11,7 +12,7 @@ export function loadEnhancerFull(){
  const library=JSON.parse(bytes);
  for(const [file,hash] of Object.entries(library.files)){const [source,...parts]=file.split('/');check(enhancerSha(read('references/'+library.evidenceDirectories[source]+'/'+parts.join('/')))===hash,'Enhancer source changed: '+file);}
  if(cached)return cached;
- const roots=['full','supplement'].map(k=>new URL('../references/'+library.evidenceDirectories[k],import.meta.url).pathname);
+ const roots=['full','supplement'].map(k=>fileURLToPath(new URL('../references/'+library.evidenceDirectories[k],import.meta.url)));
  check(JSON.stringify(auditEnhancerEvidence(...roots))===JSON.stringify(library),'Enhancer registry differs from measured evidence');
  cached={library};return cached;
 }

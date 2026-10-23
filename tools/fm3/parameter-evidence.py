@@ -110,6 +110,18 @@ def join_parameters(catalog, dictionary, runtime):
                     bases.append(b['id'])
         row['tableEncoder'] = {'effectiveKind': effective['kind'], 'effectiveStatus': effective['status'], 'policy': gate, 'bases': sorted(set(bases)),
                                'available': bool(bases) and supported_kind and gate in ['default', 'opt-in']}
+        if p['family'] == 'INPUT':
+            row['tableEncoder']['available'] &= p['param'] in [0,1,2,3,5]
+            row['tableEncoder']['inputGateScope'] = 'Input 1 numeric only; valid retained TYPE/MODE; Ratio/Attack ADVANCED; Threshold OFF excluded; active modifiers rejected; no new hardware measurements'
+            if p['param'] not in [0,1,2,3,5]:
+                row['tableEncoder']['policy'] = 'blocked-input-scope'
+
+        if p['family'] == 'VOLUME':
+            row['soundEncoder'] = {'available': p['param'] in [0,1,2,4,5,6,7,8],
+                'entryPoint': 'fm3-preset.mjs; volumePan:true; controls block volpan',
+                'scope': 'Captured VOLUME type only; enum opt-in; no TYPE/channel-BYPASS/Auto-Swell/meter authoring; physical scales model-based',
+                'donorRecordSha256': 'fdf6204515c4d9e2c42b26be4ed26603becc571a1ec040f48a75d6e08b640ecc'}
+
     for row in rows.values():
         row['join'] = ('both' if row['catalogRows'] and 'dictionaryRow' in row else
                        'catalog-only' if row['catalogRows'] else 'dictionary-only')

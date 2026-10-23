@@ -1,7 +1,10 @@
+import {fileURLToPath} from 'node:url';
 // FM3 table-based parameter encoder (0.74.10). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
 import fs from 'node:fs';
+import {validateVolumeWrites} from './fm3-volume-policy.mjs';
+import {validateInputGateWrites} from './fm3-input-gate.mjs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {authorGen3PresetFromIR,reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
@@ -19,7 +22,7 @@ export const dictionaryHash='a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed1307
 // 'taper-class-verified' share the exact curve class of 280/280 hardware points.
 export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','enum-labels-crosschecked','preset-word-crosschecked']);
 export const OPT_IN_STATUSES=Object.freeze(['linear-by-structure','enum-labels']);
-export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT'});
+export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT',volpan:'VOLUME',in1:'INPUT'});
 
 let cache=null;
 export function loadDictionary(){
@@ -127,6 +130,8 @@ export function writeTableControls(baseBytes,spec,opts={}){
     const raw=c.raw!==undefined?(check(opts.experimental===true&&Number.isInteger(c.raw)&&c.raw>=0&&c.raw<=(p.signedWord?65535:65534)&&validPitchStoredWord(p,c.raw),'raw word outside allowed preset domain; experimental required'),c.raw):encodeValue(p,c.value,opts);
     writes.push({effectId:p.block,block:c.block,channel:c.channel,name:p.name,label:p.label,pid:p.param,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
   }
+  validateInputGateWrites(original,writes);
+  validateVolumeWrites(original,writes);
   validateTypeWrites(original,writes);
   validateDependencyWrites(original,writes);
   for(const {raw,offset} of writes){body.writeUInt16LE(raw,offset);allowed.add(offset);allowed.add(offset+1)}
@@ -145,7 +150,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 
-if(process.argv[1]&&new URL(import.meta.url).pathname===fs.realpathSync(process.argv[1])){
+if(process.argv[1]&&fileURLToPath(new URL(import.meta.url))===fs.realpathSync(process.argv[1])){
   try{
     const [baseFile,specFile,outStem,...flags]=process.argv.slice(2);check(baseFile&&specFile&&outStem,'Usage: node fm3-table-encoder.mjs BASE.syx SPEC.json OUTPUT_STEM [--allow=linear-by-structure,...] [--experimental]');
     const opts={allow:(flags.find(f=>f.startsWith('--allow='))??'').slice(8).split(',').filter(Boolean),experimental:flags.includes('--experimental')};

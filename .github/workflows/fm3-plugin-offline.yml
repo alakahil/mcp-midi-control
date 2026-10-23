@@ -1,9 +1,9 @@
 name: FM3 plugin offline
 on:
   push:
-    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml']
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml', '.github/workflows/native-matrix.yml']
   pull_request:
-    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml']
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml', '.github/workflows/native-matrix.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -44,6 +44,10 @@ jobs:
           python3 tools/fm3/modifier_quantization_audit.py
           python3 tools/fm3/test-modifier-value-path.py
           python3 tools/fm3/test-modifier-sharc.py
+          python3 tools/fm3/input_volume_evidence.py
+          node tools/fm3/volume-device-evidence.mjs
+          node tools/fm3/input-volume-audit.mjs
+          node tools/fm3/test-input-volume-comparison.mjs
           python3 tools/fm3/parameter-evidence.py
           python3 tools/fm3/metadata_reconciliation.py
           node tools/fm3/encoder-matrix.mjs

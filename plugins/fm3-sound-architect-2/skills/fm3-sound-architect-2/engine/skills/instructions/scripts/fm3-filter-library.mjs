@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Exact captured Filter channel templates, with a fresh offline GET/SYX check.
 // This supplies the unified composer; it does not send device commands.
 import fs from 'node:fs';import {createHash} from 'node:crypto';
@@ -17,7 +18,7 @@ export function composeFilterTemplates(selections){
   const model=lib.models.find(m=>m.name===s.type);check(model&&model.words.length===37&&model.words[0]===model.binaryId,'Unknown or invalid Filter template');
   if(!proofs.has(model.sourceCapture)){
    const dir=new URL('../references/'+lib.evidenceDirectory+'/'+model.sourceCapture+'/',import.meta.url);
-   proofs.set(model.sourceCapture,{proof:pair(dir.pathname),state:preflight(fs.readFileSync(new URL('donor.syx',dir)))});
+   proofs.set(model.sourceCapture,{proof:pair(fileURLToPath(dir)),state:preflight(fs.readFileSync(new URL('donor.syx',dir)))});
   }
   const {proof,state}=proofs.get(model.sourceCapture),offset='ABCD'.indexOf(model.sourceChannel)*37;
   check(proof.syxSha256===model.syxSha256&&proof.rawRxSha256===model.rawRxSha256&&model.words.every((v,i)=>v===state.words[offset+i]),'Filter template differs from paired source');

@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Exact measured points only. No device I/O and no inferred interpolation.
 import fs from 'node:fs';
 import {loadFilterReaControls,validateFilterReaPoint,filterReaLibraryHash} from './fm3-filter-rea-controls.mjs';
@@ -22,7 +23,7 @@ function validatePoint(context,point){
  const current=fs.readFileSync(new URL('donor.syx',dir)),previous=fs.readFileSync(new URL(point.previousFile,root));
  const rb=fs.readFileSync(new URL('result.json',dir)),cb=fs.readFileSync(new URL('capture.json',dir));
  check(sha(current)===point.syxSha256&&sha(previous)===point.previousSha256&&sha(rb)===point.resultSha256&&sha(cb)===point.captureSha256,'Filter control source hash mismatch');
- const result=JSON.parse(rb),comparison=compare(previous,current,point.index),proof=pair(dir.pathname);
+ const result=JSON.parse(rb),comparison=compare(previous,current,point.index),proof=pair(fileURLToPath(dir));
  check(result.status==='passed'&&result.displayConfirmed===true&&result.displayValue===point.displayValue,'Missing Filter display confirmation');
  check(JSON.stringify(comparison)===JSON.stringify(result.comparison)&&JSON.stringify(proof)===JSON.stringify(result.pair),'Filter control source comparison differs');
  check(proof.rawRxSha256===point.rawRxSha256&&proof.matchedWords===148,'Filter control GET evidence differs');

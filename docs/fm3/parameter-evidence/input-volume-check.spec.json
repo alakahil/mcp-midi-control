@@ -1,0 +1,153 @@
+{
+  "composer": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-composer",
+    "name": "FM3 INPUT VOL CHECK",
+    "modifiers": {
+      "external1Wah": false
+    }
+  },
+  "layout": {
+    "row2": [
+      "drive",
+      "amp",
+      "cab"
+    ],
+    "row3": [
+      "delay",
+      "reverb"
+    ],
+    "columns": {
+      "drive": 4,
+      "amp": 6,
+      "cab": 8,
+      "delay": 9,
+      "reverb": 10
+    }
+  },
+  "controls": [
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "THRESH",
+      "value": -65
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "RATIO",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "RELEASE",
+      "value": 150
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "ATTACK",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "LEVEL",
+      "value": -3
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "THRESH",
+      "value": -70
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "RATIO",
+      "value": 4
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "RELEASE",
+      "value": 200
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "ATTACK",
+      "value": 4
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "LEVEL",
+      "value": -6
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "THRESH",
+      "value": -75
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "RATIO",
+      "value": 5
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "RELEASE",
+      "value": 250
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "ATTACK",
+      "value": 5
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "LEVEL",
+      "value": -9
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "THRESH",
+      "value": -60
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "RATIO",
+      "value": 6
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "RELEASE",
+      "value": 300
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "ATTACK",
+      "value": 6
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "LEVEL",
+      "value": -12
+    }
+  ],
+  "purpose": "Input 1 A-D piiratud generaatorikandidaadi ja Volume/Pan 1 FW13 plokimalli koondkontroll. Uus riistvarakinnitus puudub.",
+  "selectedScene": 1
+}

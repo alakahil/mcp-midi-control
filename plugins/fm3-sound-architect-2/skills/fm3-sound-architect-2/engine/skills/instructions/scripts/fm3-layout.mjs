@@ -3,6 +3,8 @@
 // Rows 1 and 4 stay empty. Block records carry no grid position, so placing a block
 // is a grid-only edit; every record byte and the system tail are preserved.
 import {createHash} from 'node:crypto';
+import {validateVolumeWrites} from './fm3-volume-policy.mjs';
+import {validateInputGateWrites} from './fm3-input-gate.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
 import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG,assertFields,channelIndex,validateControl,validateOptions} from './fm3-table-encoder.mjs';
@@ -16,7 +18,7 @@ export const IO=Object.freeze({in1:37,out1:42,send:182,ret:186});
 export const SHUNT_MIN=1024;
 const RECORDS_START=4610;
 const gridAt=(row,col)=>GRID.start+col*16+row*4; // zero-based row/col
-export const SLUG_BY_EID=Object.freeze({58:'amp',62:'cab',118:'drive',70:'delay',66:'reverb',90:'phaser',46:'compressor',78:'chorus',82:'flanger',94:'wah',106:'tremolo',86:'rotary',110:'pitch',114:'filter',54:'peq',50:'geq',122:'enhancer'});
+export const SLUG_BY_EID=Object.freeze({58:'amp',62:'cab',118:'drive',70:'delay',66:'reverb',90:'phaser',46:'compressor',78:'chorus',82:'flanger',94:'wah',106:'tremolo',86:'rotary',110:'pitch',114:'filter',54:'peq',50:'geq',122:'enhancer',102:'volpan'});
 const EID_BY_SLUG=Object.fromEntries(Object.entries(SLUG_BY_EID).map(([e,s])=>[s,+e]));
 
 // Sequential effect records from 4610; stops at the first non-record (system tail).
@@ -102,6 +104,8 @@ export function applyTableControls(body,controls,opts={},allow=()=>{}){
     const raw=encodeValue(p,c.value,opts);
     writes.push({effectId:p.block,block:c.block,channel:c.channel,pid:p.param,name:p.name,label:p.label,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
   }
+  validateInputGateWrites(body,writes);
+  validateVolumeWrites(body,writes);
   validateTypeWrites(body,writes);
   validateDependencyWrites(body,writes);
   for(const {raw,offset} of writes){body.writeUInt16LE(raw,offset);allow(offset,2)}
