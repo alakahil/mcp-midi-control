@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "bodyBytes": 14222,
+  "changedBodyBytes": 0,
+  "blocks": {
+    "amp": 576,
+    "cab": 424,
+    "drive": 176,
+    "delay": 356,
+    "reverb": 284,
+    "phaser": 140,
+    "compressor": 148,
+    "chorus": 128,
+    "flanger": 132,
+    "wah": 100
+  },
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 158,
+      "after": 204,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 208,
+      "after": 36,
+      "field": "CRC"
+    }
+  ],
+  "hardware": "Import/export confirmed for this exact composed specimen only; general combinations remain separately assessed"
+}

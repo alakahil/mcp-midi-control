@@ -1,0 +1,720 @@
+{
+  "publication": {
+    "plugin_id": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+    "name": "fm3-sound-architect-2",
+    "description": "FM3 Mk II Turbo SYX/TXT generaator, 336 Amp- ja 45 Cab-malli, efektid, stseenid ning kontrollitud mõõteandmed.",
+    "version": "0.3.14",
+    "current_release_id": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+    "scope": "USER",
+    "discoverability": "PRIVATE",
+    "plugin_url": "https://chatgpt.com/plugins/plugins_6accfd716e148191b0adb61e4e36f0e4",
+    "release_id": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+    "latest_release_id": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+    "status": "updated",
+    "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+    "mainMergeCommit": "537035ef401b79dbd179ecc7b85bbb52da06b50e",
+    "pullRequest": 14,
+    "ci": [
+      {
+        "id": 39906088720,
+        "name": "FM3 plugin offline",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088720",
+        "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+      },
+      {
+        "id": 39906088706,
+        "name": "native-matrix",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088706",
+        "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+      },
+      {
+        "id": 39906088722,
+        "name": "preflight",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088722",
+        "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+      },
+      {
+        "id": 39906055413,
+        "name": "FM3 plugin offline",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906055413",
+        "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+      }
+    ]
+  },
+  "releaseReceipt": {
+    "schemaVersion": 1,
+    "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+    "version": "0.3.14",
+    "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+    "sourcePluginTreeSha256": "6f59ae6382ff1bf577c217ab62f3a886713232a18e5a5629904401765c3e05d0",
+    "archiveSha256": "0a1b959f518db91d622943bf91f625141d0bdec5a0314745b61318968eeac5f2",
+    "archiveBytes": 22673136,
+    "testSummarySha256": "ebfd88dd0a6d18f37652caf797e311d81840731ebe1d6ebc1e4b4286921d002b",
+    "manifestSha256": "007b538bd979986e96d99b631e2d4d6f49d82e7ff5ff537054680ffd077122b8",
+    "conservativeArchiveEntries": 3869,
+    "publishedReleaseId": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+    "status": "published; server byte comparison, saved launcher and fresh-context use verified",
+    "publication": {
+      "pluginUrl": "https://chatgpt.com/plugins/plugins_6accfd716e148191b0adb61e4e36f0e4",
+      "scope": "USER",
+      "discoverability": "PRIVATE",
+      "mainMergeCommit": "537035ef401b79dbd179ecc7b85bbb52da06b50e",
+      "pullRequest": 14,
+      "ciBeforeMerge": [
+        {
+          "id": 39906088720,
+          "name": "FM3 plugin offline",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088720",
+          "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+        },
+        {
+          "id": 39906088706,
+          "name": "native-matrix",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088706",
+          "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+        },
+        {
+          "id": 39906088722,
+          "name": "preflight",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088722",
+          "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+        },
+        {
+          "id": 39906055413,
+          "name": "FM3 plugin offline",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906055413",
+          "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+        }
+      ],
+      "publishedArchiveSha256": "82be8d0e4ab10b3f06224d7f13082c557e91db04fe983d61fed2e1ddd8976303",
+      "filesByteIdentical": true,
+      "filesCompared": 3130,
+      "launcherCommit": "08625c290346c5ba8643eab2725e3452a09edb9f",
+      "launcherPushConfirmed": true,
+      "freshContextUsePassed": true,
+      "freshContextReportSha256": "da4fb4644812c4b49dcbe608100e0bc88d2091d36ac86c37ad786c27bba401e8"
+    }
+  },
+  "offlineSuite": {
+    "schemaVersion": 1,
+    "scope": "Explicit offline suite; no new hardware/audio confirmation",
+    "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+    "sourceDirty": false,
+    "pluginTreeSha256": "6f59ae6382ff1bf577c217ab62f3a886713232a18e5a5629904401765c3e05d0",
+    "sourceUnchangedByTests": true,
+    "results": [
+      {
+        "id": "test-table-encoder",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.225,
+        "logSha256": "c0a34cbeab9f990dcbf598163fe6f73701561fb02fb97de22e38caaf96628e7f"
+      },
+      {
+        "id": "test-type-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 4.281,
+        "logSha256": "dc902de0dad0080ff5b4eb5caa122613aa6af8fdfbdacdd9043ea2b55421101d"
+      },
+      {
+        "id": "test-parameter-dependencies",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.073,
+        "logSha256": "10836f4ee2d2163eed57ad28ebc24cc54222fa7b62c7a2ec199314aa57a378d3"
+      },
+      {
+        "id": "test-delay-reverb-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 4.587,
+        "logSha256": "e9b1ee39f26eaf594cbec5cbe28e6950f313f1f212b954786f6dc68058dbc7bf"
+      },
+      {
+        "id": "test-modulation-dynamics-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 3.128,
+        "logSha256": "f5aacd9e51b14586c2e57c6111edf5ed6c300d907c4cd3214f95940784319c4d"
+      },
+      {
+        "id": "test-wah-tremolo-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.371,
+        "logSha256": "a233e483f179c2c8292630bba2c5d6057f183074eb2fedf60ec375de0b979787"
+      },
+      {
+        "id": "test-rotary-pitch-applicability",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.723,
+        "logSha256": "765c95063621e4c16b381ffd5d4e5188fab20c1ea31a6cca431222056db081a0"
+      },
+      {
+        "id": "test-pitch-word-codecs",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.224,
+        "logSha256": "d3384d4bd47fc12e10daf1940f47b2d75213e6e68e3cceb5efe875c2e8301bce"
+      },
+      {
+        "id": "test-pitch-custom-scales",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.022,
+        "logSha256": "d0549d8557aaa3ee9f53d0aa7cd477b4f48bb67f938de03aeda647057e7e134c"
+      },
+      {
+        "id": "test-layout",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.519,
+        "logSha256": "800ce26ac824e809159deaabaa50691dd08df9d35a45536b8ede836456ea9a5b"
+      },
+      {
+        "id": "test-generate",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.97,
+        "logSha256": "afcab745bd4e8fbb7b8eae0b5d8c87da0b9f63b01041a489d3817beebfdbb102"
+      },
+      {
+        "id": "test-jb-composer",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.69,
+        "logSha256": "b18c1e82b9f48cbae9eb0072f7d665e8df4370864ad4f7474a2468a1ee08f972"
+      },
+      {
+        "id": "test-jb-composer-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.418,
+        "logSha256": "b97b15a682fdcfeb1256be66e4cd11350a16edc13d696093b7212da4c7cafd60"
+      },
+      {
+        "id": "test-composer-integration",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 11.551,
+        "logSha256": "7d8599693b9dd2085070d83f33f023b6a2fa393c1c9e72637fced97b2096e8e7"
+      },
+      {
+        "id": "test-composer-scenes",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.435,
+        "logSha256": "9ec2228a83011a1f1f413c07e565d267307d0184a9b93b203991e33bb6ee0e47"
+      },
+      {
+        "id": "test-composer-amp-cab",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 20.587,
+        "logSha256": "d95bae0ada2dc052d9c2db3b51197792161865161c6338ec5ad5f0f275968bf6"
+      },
+      {
+        "id": "test-composer-amp-cab-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.723,
+        "logSha256": "a79d07e8ac52bb900a7aee5e52d14ff6b73eb620c6034e622c5c77e3cc2f0796"
+      },
+      {
+        "id": "test-composer-amp-levels",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 3.778,
+        "logSha256": "231290848505ef39beba354d8ba90ac964da28428b97712b52a5e7bd41d7db81"
+      },
+      {
+        "id": "test-composer-amp-cd-levels",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 4.78,
+        "logSha256": "05cd824ac2aff63620f71b4687febcd7ecdc5808f778028522bb1a7cc03479b2"
+      },
+      {
+        "id": "test-composer-filter",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 8.342,
+        "logSha256": "0005850bda0b52d757ab57902d38e10e125eaeb7e615d27320487463b3d04765"
+      },
+      {
+        "id": "test-composer-filter-controls",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 10.449,
+        "logSha256": "83b488601b36665dd3501905eb7f4fb2c332cfdbf85caa5943167f86d4635e73"
+      },
+      {
+        "id": "test-composer-filter-rea",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 12.654,
+        "logSha256": "540190bc9d7b32a35d01cf9cd7dc4dd913c4318256b36430789ebf25737a7fd1"
+      },
+      {
+        "id": "test-composer-peq-full",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 18.874,
+        "logSha256": "22fb552bd1705d001f987e62bbb677b4a1157275f119f76df490c57d85b202c9"
+      },
+      {
+        "id": "test-composer-peq-full-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.182,
+        "logSha256": "24862b07c2e9f36dea17d610da1720e29e8bc674fdb30e643209078d0bd917dd"
+      },
+      {
+        "id": "test-composer-geq-full",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 54.032,
+        "logSha256": "5fcf58d2564d8c19d9117ced54df8427da89aec6558ad4a9c5174b527538db36"
+      },
+      {
+        "id": "test-composer-geq-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.936,
+        "logSha256": "4d5cda6a03d806f99678abd94ed3293d58fa23d2e63f16e36ed200db1d2b26a4"
+      },
+      {
+        "id": "test-composer-enhancer-full",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 7.241,
+        "logSha256": "6a80927f8c880d7a9e2743eea3978d1765055c60d77005f4c040f4208d812fea"
+      },
+      {
+        "id": "test-composer-enhancer-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.735,
+        "logSha256": "3924bc16d64f8bc2e0fa445606ba015b2a0798886e98b689efc1e8e81d1a3ac6"
+      },
+      {
+        "id": "test-composer-newlook",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.486,
+        "logSha256": "bb90eba06fef59e6a803bca3bd54fa5b069a66c3c6d79d0ff7b738e1acd589ff"
+      },
+      {
+        "id": "test-composer-newlook-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.368,
+        "logSha256": "68c69203d403458328c64ca072ca21cc7c019b224e125e4567799d4306366a88"
+      },
+      {
+        "id": "test-composer-newlook-filter-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.471,
+        "logSha256": "a2b2e31ab2d372d076d6b6c72f0c7adca45419e13f806eeb9f68abd1850f7f04"
+      },
+      {
+        "id": "test-composer-newlook-pitch-hardware",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 1.368,
+        "logSha256": "ee399447b67c1eee96fea065e16c7ea6a3b4222f28cbcfc9108790c1d2695b08"
+      },
+      {
+        "id": "test-composer-amp-level-measurements",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.886,
+        "logSha256": "84373309d50e1a5fb9dd0533bf513a1c4589a1185606ecf8c41acd3b13239e15"
+      },
+      {
+        "id": "test-sound-release",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 7.639,
+        "logSha256": "ac28a62d913106ae521b48bf60d29a330f98bf538787554618e46d17f0814922"
+      },
+      {
+        "id": "test-upstream-fm3",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.267,
+        "logSha256": "77c9903811054b2013233cb51e7a801dcc548fe9f5597372c02e18745461379f"
+      },
+      {
+        "id": "amp-history-integrity",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.115,
+        "logSha256": "7b2aafdb833fef16a1d5f7a3cda214c422bdd51d6eeebe701c61dd87cd4cb03a"
+      },
+      {
+        "id": "test-global-scale-collector",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.315,
+        "logSha256": "d8900509d361995604b5469bd1df36e819d61a6964add654708f76ee581afa4d"
+      },
+      {
+        "id": "test-global-scale-decode",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 2.823,
+        "logSha256": "33b3ba6e69ec9b2c37f7d370ad9b813da86ce99d24d43aec9c11b241d489d015"
+      },
+      {
+        "id": "test-global-scale-observations",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 14.819,
+        "logSha256": "99a3935e766850ec7b920cdd15db91d3347cf4632e6bb42669a4f6471f1c81b7"
+      },
+      {
+        "id": "test-global-scale-wire",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.215,
+        "logSha256": "2a017d31f068bc02e85ada78f2f9a5723d83146bc0823f949251504a03d69eed"
+      },
+      {
+        "id": "test-wah-modifier",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.686,
+        "logSha256": "8a1c2a35d9a0928219eb532e9c500cd6b1e770099f74dc53d0f641a305306baf"
+      },
+      {
+        "id": "test-modifier-audit",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 15.676,
+        "logSha256": "0a8810dbb39fd07982cd7cc337c28648bc6270248afc4df9854d92f22a54fe97"
+      },
+      {
+        "id": "test-modifier-context",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.416,
+        "logSha256": "1502213cac2919ad222062c3b51dcda15901453be3e7b5a99ff71e1cd2a0eb6e"
+      },
+      {
+        "id": "test-modifier-types",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 0.516,
+        "logSha256": "f044d9b5b516463f33d7d1419ccc11956baf64116f5e2d011e2e4be2f3191318"
+      },
+      {
+        "id": "test-wah-auto-engage",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.182,
+        "logSha256": "806091ee3196ea50f15ce42f6d2a4f52dabb80bde38f001298c458eabd31eca1"
+      },
+      {
+        "id": "test-wah-damping",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.438,
+        "logSha256": "47e514f030eed0b7bfc316bc46a01586975647ae787eb2f7bead3cfb04dfccb7"
+      },
+      {
+        "id": "test-wah-min",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 6.082,
+        "logSha256": "ff1b18ab39902f8e1b8c4a4140578364fa2c523fc5815d3c3ee1d45c1612d177"
+      },
+      {
+        "id": "test-wah-measured-controls",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 5.732,
+        "logSha256": "b980c9c5a32501b8107f97150c8e0e81b3614fb4d6c26f12dc561f6431cd23af"
+      },
+      {
+        "id": "test-wah-minmax-exact",
+        "status": "passed",
+        "exitCode": 0,
+        "seconds": 9.298,
+        "logSha256": "3846fbd43060130b5d832a20623ff9ba72cd0f65d76fa2bdac21bf465188af1c"
+      }
+    ],
+    "passed": true
+  },
+  "packageChecks": {
+    "passed": true,
+    "deterministic": true,
+    "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+    "archiveSha256": "0a1b959f518db91d622943bf91f625141d0bdec5a0314745b61318968eeac5f2",
+    "selfCheck": {
+      "passed": true,
+      "scope": "Files and runtime at the invoked path; host discovery must separately identify this path",
+      "path": "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/package/fm3-sound-architect-2",
+      "version": "0.3.14",
+      "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+      "filesVerified": 3129,
+      "knownPresetSha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+      "deviceIO": false
+    },
+    "cliGeneration": {
+      "outputSha256": "48da255d65cdb30eb171cc14ed5ee12115230668dff20aa93045a33f2797c1e5",
+      "files": [
+        "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/example/WAH_EXACT_REVIEW.syx",
+        "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/example/WAH_EXACT_REVIEW.txt",
+        "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/example/WAH_EXACT_REVIEW.spec.json",
+        "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/example/WAH_EXACT_REVIEW.validation.json"
+      ]
+    },
+    "cliVerification": {
+      "passed": true,
+      "outputSha256": "48da255d65cdb30eb171cc14ed5ee12115230668dff20aa93045a33f2797c1e5"
+    },
+    "matchesIndependentForwardExample": true,
+    "minRaw": 16384,
+    "maxRaw": 42401,
+    "allEightScenesWahBypass": true,
+    "newDeviceIO": false,
+    "actualPublishedHostLoadingVerified": false,
+    "files": {
+      "WAH_EXACT_REVIEW.spec.json": {
+        "bytes": 349,
+        "sha256": "ad4f66381b2b488b35af84ad03383fd94a5cc2f5286d912e68a58fd31b1a22db"
+      },
+      "WAH_EXACT_REVIEW.syx": {
+        "bytes": 24680,
+        "sha256": "48da255d65cdb30eb171cc14ed5ee12115230668dff20aa93045a33f2797c1e5"
+      },
+      "WAH_EXACT_REVIEW.txt": {
+        "bytes": 6997,
+        "sha256": "7403bc6d4c52ebf817696a1ac4f257a87679cdbe53e509e6065f2bfd14440745"
+      },
+      "WAH_EXACT_REVIEW.validation.json": {
+        "bytes": 24071,
+        "sha256": "8e4bb8e35c3430fc2238d9ad2cc46224fd127907a22ae07c01f067dc213d9f1b"
+      }
+    },
+    "scopeNote": "Local candidate checks at packaging time; the separate freshContextUse result supplies the subsequent published host loading proof."
+  },
+  "publishedReadback": {
+    "passed": true,
+    "totalFiles": 3130,
+    "sourceFiles": 3129,
+    "missing": [],
+    "extra": [],
+    "different": [],
+    "candidateArchiveSha256": "0a1b959f518db91d622943bf91f625141d0bdec5a0314745b61318968eeac5f2",
+    "publishedArchiveSha256": "82be8d0e4ab10b3f06224d7f13082c557e91db04fe983d61fed2e1ddd8976303",
+    "manifestSha256": "007b538bd979986e96d99b631e2d4d6f49d82e7ff5ff537054680ffd077122b8",
+    "manifest": {
+      "schemaVersion": 1,
+      "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+      "name": "fm3-sound-architect-2",
+      "version": "0.3.14",
+      "sourceRepository": "https://github.com/alakahil/mcp-midi-control",
+      "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+      "sourcePluginTreeSha256": "6f59ae6382ff1bf577c217ab62f3a886713232a18e5a5629904401765c3e05d0",
+      "generatedFiles": [
+        "release-manifest.json"
+      ]
+    }
+  },
+  "publishedSelfCheck": {
+    "passed": true,
+    "scope": "Files and runtime at the invoked path; host discovery must separately identify this path",
+    "path": "/workspace/scratch/f678d3fbe33c/research/publication-0314/published-runtime",
+    "version": "0.3.14",
+    "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+    "filesVerified": 3129,
+    "knownPresetSha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+    "deviceIO": false
+  },
+  "authorization": {
+    "date": "2026-10-23",
+    "status": "published; PR merged after all four CI runs succeeded",
+    "userAuthorization": "Luban avaldada 0.3.14 kandidaadi kõik 154 faili, sealhulgas FM3_MOD_HW_RESULTS_20261022T144240Z_583c0f.zip, avalikus repos alakahil/mcp-midi-control, ühendada PR pärast CI läbimist ning uuendada olemasoleva privaatse plugina versioonile 0.3.14.",
+    "previousBlockResolvedByExplicitUserAuthorization": true,
+    "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+    "reviewedLocalCommit": "3f29db586cce4b3f8e698ac83e14d55c39287c6d",
+    "bothTreeSha": "464ad2d7d2ed29029c063b66678aefad43a8826f",
+    "pullRequest": 14,
+    "pullRequestUrl": "https://github.com/alakahil/mcp-midi-control/pull/14",
+    "branch": "fm3/release-0.3.14",
+    "changedFiles": 154,
+    "expectedPreviousReleaseId": "pluginrel_6ad8c64cdf2c81919b518b861f836843",
+    "samePrivatePluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+    "newHardwareActions": 0
+  },
+  "launcher": {
+    "commit": "08625c290346c5ba8643eab2725e3452a09edb9f",
+    "pushConfirmed": true,
+    "binding": {
+      "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+      "releaseId": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+      "version": "0.3.14",
+      "sourceRepository": "https://github.com/alakahil/mcp-midi-control",
+      "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+      "manifestSha256": "007b538bd979986e96d99b631e2d4d6f49d82e7ff5ff537054680ffd077122b8"
+    },
+    "catalogDescriptionInCurrentSession": "0.3.13 (cached); saved SKILL.md and agents/openai.yaml state 0.3.14",
+    "freshContextDescriptionVersion": "0.3.14",
+    "freshContextContentVersion": "0.3.14",
+    "freshContextEngineVersion": "0.3.14"
+  },
+  "newDeviceActions": 0,
+  "fullRangeEncodingProven": false,
+  "freshContextUse": {
+    "status": "passed",
+    "task": "offline FW13 FM3 WAH EXACT",
+    "workDirectory": "/workspace/scratch/f678d3fbe33c/research/host-forward-0314",
+    "hostSkill": {
+      "name": "fm3-sound-architect-2",
+      "source": "skill://flora-user-skills/root/.codex/skills/remote-skills/skill-6accfd6fb6f48191a5211c5b063bee5d/SKILL.md",
+      "path": "/root/.codex/skills/remote-skills/skill-6accfd6fb6f48191a5211c5b063bee5d/SKILL.md",
+      "sha256": "ac65706a578020dd1e8d34a1f57336973fb058127cad5ab6091cc3cadd7c8757",
+      "descriptionVersion": "0.3.14",
+      "contentVersion": "0.3.14",
+      "observedRole": "Host-discovered saved launcher; forwards to pinned published package"
+    },
+    "release": {
+      "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+      "releaseId": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+      "version": "0.3.14",
+      "identityCheckedBeforeDownload": true,
+      "manifestSha256": "007b538bd979986e96d99b631e2d4d6f49d82e7ff5ff537054680ffd077122b8",
+      "filesVerified": 3129
+    },
+    "engine": {
+      "skillPath": "/workspace/scratch/f678d3fbe33c/research/host-forward-0314/published-package/skills/fm3-sound-architect-2/SKILL.md",
+      "skillDescriptionVersion": null,
+      "skillContentVersion": "0.3.14",
+      "capabilitiesRevision": "0.3.14",
+      "selfCheckVersion": "0.3.14",
+      "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+      "internalComposerIdentifier": "jb-composer-0.13.0-dev",
+      "packageSelfCheckPassed": true,
+      "knownPresetSha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+      "packageUnchangedAfterUse": true
+    },
+    "preset": {
+      "name": "FM3 WAH EXACT",
+      "firmware": 13,
+      "base": "jb-newlook",
+      "baseSha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
+      "wah": {
+        "block": "Wah 1",
+        "channel": "A",
+        "type": "FAS Wah",
+        "allEightScenesBypass": true
+      },
+      "binding": "External 1 -> Wah 1 Control ALL",
+      "policy": "exact-wah-cent-fw13-hw1",
+      "min": {
+        "requested": "2.50",
+        "raw": 16384,
+        "evidence": "hardware-exact-input",
+        "display": null
+      },
+      "max": {
+        "requested": "6.47",
+        "raw": 42401,
+        "evidence": "hardware-exact-input",
+        "display": null
+      },
+      "selectedScene": 2
+    },
+    "checks": {
+      "fourFileVerifyPassed": true,
+      "structuralChecks": {
+        "frameChecksums": true,
+        "presetCrc": true,
+        "footer": true,
+        "exactBodyReadback": true,
+        "onlyDeclaredRegionsChanged": true,
+        "routingPreserved": false,
+        "onlyDeclaredSlotInsertions": true,
+        "existingBlockRecordsPreservedDuringInsertion": true,
+        "selectedScenePreserved": true,
+        "unrelatedHeadersPreserved": true,
+        "encodedSizesAndPadding": true,
+        "componentEvidence": true
+      },
+      "existingBlockRecordsByteIdentical": 9,
+      "existingSceneNamesChannelsBypassPreserved": true,
+      "otherModifierValuesPreserved": true,
+      "systemTailPreserved": true,
+      "preservationEvidence": "preservation-check.json",
+      "exactInputCaptureSha256": "f99bdfdcdb695b80e6059a772f6095e9f2a2a385628a1a7bd1804c53049ea44e"
+    },
+    "artifacts": [
+      {
+        "file": "FM3_WAH_EXACT.syx",
+        "bytes": 24680,
+        "sha256": "dd63e3362cf4b593b58c885982dc99fa17550ee87bae42de9e86169e4357032a"
+      },
+      {
+        "file": "FM3_WAH_EXACT.txt",
+        "bytes": 6991,
+        "sha256": "8f93d8a2986ee1dc2c4413a064f4937365cd2f8121012b1fe8c091f284644a12"
+      },
+      {
+        "file": "FM3_WAH_EXACT.spec.json",
+        "bytes": 346,
+        "sha256": "1505f909165478979532325fe662508de1211a0fe3d9cece383e1de9c837b4f4"
+      },
+      {
+        "file": "FM3_WAH_EXACT.validation.json",
+        "bytes": 24065,
+        "sha256": "e08e58489534d417028cd03116cb6122d0a8d9c7ab53100becd028ad625bdc1f"
+      }
+    ],
+    "boundaries": {
+      "deviceIO": false,
+      "pluginOrSkillSourcesModified": false,
+      "publishedAnything": false,
+      "readPriorWorkReportsOrOtherAttempts": false
+    },
+    "limitations": [
+      "Host discovery confirmed the saved launcher; runtime was fetched through its pinned-release workflow, not automatically mounted as a full engine.",
+      "New output import/export, pedal behavior, audio, CPU and STORE/reload were not tested.",
+      "Exact requested input values are supported by existing hardware evidence; display is null because this run contains no new screen observation.",
+      "Full-range encoding and runtime mode at STORE are not proven.",
+      "External 1 global pedal/MIDI mapping is not read or changed.",
+      "TXT contains standard future manual import instructions; none were executed."
+    ],
+    "passed": true,
+    "context": "Fresh agent context using host-discovered saved skill and its pinned published package; not a directly observed human chat UI",
+    "reportSha256": "da4fb4644812c4b49dcbe608100e0bc88d2091d36ac86c37ad786c27bba401e8"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+  "version": "0.3.14",
+  "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+  "sourcePluginTreeSha256": "6f59ae6382ff1bf577c217ab62f3a886713232a18e5a5629904401765c3e05d0",
+  "archiveSha256": "0a1b959f518db91d622943bf91f625141d0bdec5a0314745b61318968eeac5f2",
+  "archiveBytes": 22673136,
+  "testSummarySha256": "ebfd88dd0a6d18f37652caf797e311d81840731ebe1d6ebc1e4b4286921d002b",
+  "manifestSha256": "007b538bd979986e96d99b631e2d4d6f49d82e7ff5ff537054680ffd077122b8",
+  "conservativeArchiveEntries": 3869,
+  "publishedReleaseId": "pluginrel_6adaf28e90708191bf43faf7c8bb2115",
+  "status": "published; server byte comparison, saved launcher and fresh-context use verified",
+  "publication": {
+    "pluginUrl": "https://chatgpt.com/plugins/plugins_6accfd716e148191b0adb61e4e36f0e4",
+    "scope": "USER",
+    "discoverability": "PRIVATE",
+    "mainMergeCommit": "537035ef401b79dbd179ecc7b85bbb52da06b50e",
+    "pullRequest": 14,
+    "ciBeforeMerge": [
+      {
+        "id": 39906088720,
+        "name": "FM3 plugin offline",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088720",
+        "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+      },
+      {
+        "id": 39906088706,
+        "name": "native-matrix",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088706",
+        "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+      },
+      {
+        "id": 39906088722,
+        "name": "preflight",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906088722",
+        "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+      },
+      {
+        "id": 39906055413,
+        "name": "FM3 plugin offline",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39906055413",
+        "headSha": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b"
+      }
+    ],
+    "publishedArchiveSha256": "82be8d0e4ab10b3f06224d7f13082c557e91db04fe983d61fed2e1ddd8976303",
+    "filesByteIdentical": true,
+    "filesCompared": 3130,
+    "launcherCommit": "08625c290346c5ba8643eab2725e3452a09edb9f",
+    "launcherPushConfirmed": true,
+    "freshContextUsePassed": true,
+    "freshContextReportSha256": "da4fb4644812c4b49dcbe608100e0bc88d2091d36ac86c37ad786c27bba401e8"
+  }
+}

@@ -1,0 +1,1032 @@
+{
+  "generator": "jb-composer-0.13.0-dev",
+  "knownDeviceBody": null,
+  "spec": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-composer",
+    "name": "FM3 WAH EXACT",
+    "wahChannels": [
+      {
+        "channel": "A",
+        "type": "FAS Wah"
+      }
+    ],
+    "modifiers": {
+      "external1Wah": true,
+      "wahMinMaxExact": {
+        "policy": "exact-wah-cent-fw13-hw1",
+        "min": "2.50",
+        "max": "6.47"
+      }
+    }
+  },
+  "baseId": "jb-newlook",
+  "baseFile": "examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
+  "baseSha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
+  "baseLayout": "newlook",
+  "sourceBodyBytes": 12804,
+  "bodyBytes": 13050,
+  "insertions": [
+    {
+      "family": "wah",
+      "eid": 94,
+      "row": 2,
+      "column": 3,
+      "replacedShunt": 1025,
+      "donor": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+      "donorSha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+      "recordBytes": 246,
+      "defaultScenes": "A, bypass",
+      "sceneAssignments": [],
+      "hardware": "Pending generated-layout import/export"
+    }
+  ],
+  "changeOffsetReference": "assembled body after declared insertions",
+  "signalRows": [
+    "Input 1 → Wah 1 → Drive 1 → Amp 1 → Cab 1 → Send 1",
+    "Return 1 → Delay 1 → Reverb 1 → Output 1"
+  ],
+  "outputSha256": "dd63e3362cf4b593b58c885982dc99fa17550ee87bae42de9e86169e4357032a",
+  "components": {
+    "wah": [
+      {
+        "channel": "A",
+        "type": "FAS Wah",
+        "binaryId": 0,
+        "sourceChannel": "D",
+        "sourceCapture": "capture-001",
+        "sourceSyxSha256": "96280e726f4871a6bd5d63770acd595d4ba1cfcc36c8c9931e9686ae93cbb604",
+        "words": [
+          0,
+          39455,
+          39455,
+          37619,
+          49151,
+          0,
+          52427,
+          32767,
+          0,
+          52427,
+          32767,
+          1,
+          0,
+          32767,
+          32767,
+          1,
+          32767,
+          32767,
+          32767,
+          32767,
+          32767,
+          32767,
+          32767,
+          32767,
+          0
+        ],
+        "affectedScenes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "activeScenes": []
+      }
+    ]
+  },
+  "sceneEdits": [],
+  "modifierEdit": {
+    "requested": true,
+    "before": 0,
+    "after": 14,
+    "changed": true,
+    "offset": 1584,
+    "bytes": 2,
+    "autoEngage": {
+      "requested": null,
+      "before": 2,
+      "after": 2,
+      "label": "MED SPD",
+      "changed": false,
+      "offset": 1604,
+      "bytes": 2,
+      "evidence": "FW13 user export/display pair: MED SPD=2, OFF=0; other modes and behavior untested"
+    },
+    "damping": {
+      "requested": null,
+      "before": 0,
+      "after": 0,
+      "label": "EXPONENTIAL",
+      "changed": false,
+      "offset": 1632,
+      "bytes": 2,
+      "evidence": "FW13 user export/display pair: EXPONENTIAL=0, LINEAR=1; timing behavior untested"
+    },
+    "min": {
+      "requested": "2.50",
+      "before": 0,
+      "after": 16384,
+      "display": null,
+      "exactDecimal": "2.50",
+      "evidenceBasis": "hardware-exact-input",
+      "changed": true,
+      "offset": 1586,
+      "bytes": 2,
+      "evidence": "Exact-input contract; see exactMinMax evidence"
+    },
+    "controls": {
+      "max": {
+        "requested": "6.47",
+        "before": 65534,
+        "after": 42401,
+        "display": null,
+        "changed": true,
+        "offset": 1588,
+        "bytes": 2,
+        "label": "Max",
+        "unit": "Wah Control 0..10",
+        "decimals": 2,
+        "exactDecimal": "6.47",
+        "evidenceBasis": "hardware-exact-input"
+      },
+      "startPercent": {
+        "requested": null,
+        "before": 0,
+        "after": 0,
+        "display": 0,
+        "changed": false,
+        "offset": 1590,
+        "bytes": 2,
+        "label": "Start",
+        "unit": "%",
+        "decimals": 1
+      },
+      "midPercent": {
+        "requested": null,
+        "before": 32767,
+        "after": 32767,
+        "display": 50,
+        "changed": false,
+        "offset": 1592,
+        "bytes": 2,
+        "label": "Mid",
+        "unit": "%",
+        "decimals": 1
+      },
+      "endPercent": {
+        "requested": null,
+        "before": 65534,
+        "after": 65534,
+        "display": 100,
+        "changed": false,
+        "offset": 1594,
+        "bytes": 2,
+        "label": "End",
+        "unit": "%",
+        "decimals": 1
+      },
+      "slopePercent": {
+        "requested": null,
+        "before": 32767,
+        "after": 32767,
+        "display": 50,
+        "changed": false,
+        "offset": 1596,
+        "bytes": 2,
+        "label": "Slope",
+        "unit": "%",
+        "decimals": 1
+      },
+      "attackMs": {
+        "requested": null,
+        "before": 66,
+        "after": 66,
+        "display": 10.1,
+        "changed": false,
+        "offset": 1598,
+        "bytes": 2,
+        "label": "Attack",
+        "unit": "ms",
+        "decimals": 1
+      },
+      "releaseMs": {
+        "requested": null,
+        "before": 0,
+        "after": 0,
+        "display": 0,
+        "changed": false,
+        "offset": 1614,
+        "bytes": 2,
+        "label": "Release",
+        "unit": "ms",
+        "decimals": 1
+      },
+      "scale": {
+        "requested": null,
+        "before": 32767,
+        "after": 32767,
+        "display": 1,
+        "changed": false,
+        "offset": 1610,
+        "bytes": 2,
+        "label": "Scale",
+        "unit": "unitless",
+        "decimals": 3
+      },
+      "offsetPercent": {
+        "requested": null,
+        "before": 32767,
+        "after": 32767,
+        "display": 0,
+        "changed": false,
+        "offset": 1612,
+        "bytes": 2,
+        "label": "Offset",
+        "unit": "%",
+        "decimals": 1
+      },
+      "offValuePercent": {
+        "requested": null,
+        "before": 0,
+        "after": 0,
+        "display": 5,
+        "changed": false,
+        "offset": 1608,
+        "bytes": 2,
+        "label": "Off Value",
+        "unit": "%",
+        "decimals": 1
+      }
+    },
+    "exactMinMax": {
+      "policy": "exact-wah-cent-fw13-hw1",
+      "changes": [
+        {
+          "field": "min",
+          "pid": 1,
+          "offset": 1586,
+          "exactDecimal": "2.50",
+          "normalizedBits": "0x3e800000",
+          "raw": 16384,
+          "evidenceBasis": "hardware-exact-input",
+          "measuredSteps": [
+            "02",
+            "30"
+          ]
+        },
+        {
+          "field": "max",
+          "pid": 2,
+          "offset": 1588,
+          "exactDecimal": "6.47",
+          "normalizedBits": "0x3f25a1cb",
+          "raw": 42401,
+          "evidenceBasis": "hardware-exact-input",
+          "measuredSteps": [
+            "22"
+          ]
+        }
+      ],
+      "captureSha256": "f99bdfdcdb695b80e6059a772f6095e9f2a2a385628a1a7bd1804c53049ea44e",
+      "fullRangeEncodingProven": false,
+      "runtimeModeAtStoreProven": false,
+      "deviceImportTested": false,
+      "allRequestedInputsHardwareMeasured": true
+    },
+    "sourceName": "External 1",
+    "targetName": "WAH_CONTROL",
+    "channelScope": "ALL",
+    "evidence": "existing-export-and-FW13-metadata-crosschecked",
+    "deviceIO": false,
+    "newHardwareMeasurements": false
+  },
+  "effective": [
+    {
+      "key": "gainB",
+      "label": "Amp B Gain",
+      "unit": "/10",
+      "raw": 32767,
+      "value": 5,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "bassB",
+      "label": "Amp B Bass",
+      "unit": "/10",
+      "raw": 26214,
+      "value": 4.000061037018952,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "midB",
+      "label": "Amp B Mid",
+      "unit": "/10",
+      "raw": 42597,
+      "value": 6.499984740745262,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "trebleB",
+      "label": "Amp B Treble",
+      "unit": "/10",
+      "raw": 34078,
+      "value": 5.200048829615161,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "presenceB",
+      "label": "Amp B Presence",
+      "unit": "/10",
+      "raw": 19660,
+      "value": 2.999969481490524,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "levelB",
+      "label": "Amp B Level",
+      "unit": "dB",
+      "raw": 50461,
+      "value": -3.000274666585284,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayMixA",
+      "label": "Delay A Mix",
+      "unit": "%",
+      "raw": 9830,
+      "value": 14.999847407452622,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbMixA",
+      "label": "Reverb A Mix",
+      "unit": "%",
+      "raw": 13107,
+      "value": 20.00030518509476,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayTimeMs",
+      "label": "Delay A Time",
+      "unit": "ms",
+      "raw": 1634,
+      "value": 399.9130222479934,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayFeedback",
+      "label": "Delay A Feedback",
+      "unit": "%",
+      "raw": 40959,
+      "value": 25.0007629627369,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbTimeS",
+      "label": "Reverb A Time",
+      "unit": "s",
+      "raw": 1010,
+      "value": 1.6396435438093206,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbPredelayMs",
+      "label": "Reverb A Pre-Delay",
+      "unit": "ms",
+      "raw": 1966,
+      "value": 29.99969481490524,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayTempoA",
+      "label": "Delay A Tempo",
+      "unit": "",
+      "raw": 0,
+      "value": "NONE",
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbPredelayTempoA",
+      "label": "Reverb A Pre-Delay Tempo",
+      "unit": "",
+      "raw": 0,
+      "value": "NONE",
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "delayScene2",
+      "label": "Scene 2 Delay",
+      "unit": "",
+      "raw": 1,
+      "value": false,
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    },
+    {
+      "key": "reverbScene1",
+      "label": "Scene 1 Reverb kanal",
+      "unit": "",
+      "raw": 0,
+      "value": "A",
+      "requested": null,
+      "source": "base",
+      "displaySupported": true
+    }
+  ],
+  "affectedChannels": [
+    {
+      "family": "wah",
+      "channel": "A",
+      "scenes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "activeScenes": []
+    }
+  ],
+  "scenes": [
+    {
+      "scene": 1,
+      "name": "Clean",
+      "blocks": {
+        "amp": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 18,
+          "type": "USA MK IV Rhythm 1",
+          "levelDb": -9.000213629566332
+        },
+        "cab": {
+          "channel": "D",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 25,
+              "name": "2x12 Chiefman"
+            },
+            {
+              "id": 25,
+              "name": "2x12 Chiefman"
+            }
+          ]
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        },
+        "wah": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 0,
+          "type": "FAS Wah"
+        }
+      }
+    },
+    {
+      "scene": 2,
+      "name": "Rhythm Fat",
+      "blocks": {
+        "amp": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 103,
+          "type": "Brit Silver",
+          "levelDb": -3.000274666585284
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        },
+        "wah": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 0,
+          "type": "FAS Wah"
+        }
+      }
+    },
+    {
+      "scene": 3,
+      "name": "Lead Bright",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false,
+          "typeId": 24,
+          "type": "USA MK IV Lead Bright",
+          "levelDb": -8.000732444227424
+        },
+        "cab": {
+          "channel": "C",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 39,
+              "name": "4x12 Recto Straight"
+            },
+            {
+              "id": 39,
+              "name": "4x12 Recto Straight"
+            }
+          ]
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        },
+        "wah": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 0,
+          "type": "FAS Wah"
+        }
+      }
+    },
+    {
+      "scene": 4,
+      "name": "Mid Gain",
+      "blocks": {
+        "amp": {
+          "channel": "D",
+          "bypass": false,
+          "typeId": 77,
+          "type": "USA MK IV Lead Mid",
+          "levelDb": -8.159428693502605
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        },
+        "wah": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 0,
+          "type": "FAS Wah"
+        }
+      }
+    },
+    {
+      "scene": 5,
+      "name": "Clean Comp Chorus",
+      "blocks": {
+        "amp": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 18,
+          "type": "USA MK IV Rhythm 1",
+          "levelDb": -9.000213629566332
+        },
+        "cab": {
+          "channel": "D",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 25,
+              "name": "2x12 Chiefman"
+            },
+            {
+              "id": 25,
+              "name": "2x12 Chiefman"
+            }
+          ]
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 14,
+          "type": "Full OD"
+        },
+        "reverb": {
+          "channel": "C",
+          "bypass": false,
+          "typeId": 53,
+          "type": "Hall: Colosseum"
+        },
+        "wah": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 0,
+          "type": "FAS Wah"
+        }
+      }
+    },
+    {
+      "scene": 6,
+      "name": "JB SOLO",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false,
+          "typeId": 24,
+          "type": "USA MK IV Lead Bright",
+          "levelDb": -8.000732444227424
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 6,
+          "type": "T808 OD"
+        },
+        "reverb": {
+          "channel": "D",
+          "bypass": false,
+          "typeId": 1,
+          "type": "Room: Medium Room"
+        },
+        "wah": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 0,
+          "type": "FAS Wah"
+        }
+      }
+    },
+    {
+      "scene": 7,
+      "name": "Drive Lead Brt",
+      "blocks": {
+        "amp": {
+          "channel": "C",
+          "bypass": false,
+          "typeId": 24,
+          "type": "USA MK IV Lead Bright",
+          "levelDb": -8.000732444227424
+        },
+        "cab": {
+          "channel": "C",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 39,
+              "name": "4x12 Recto Straight"
+            },
+            {
+              "id": 39,
+              "name": "4x12 Recto Straight"
+            }
+          ]
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "D",
+          "bypass": false,
+          "typeId": 46,
+          "type": "Box o' Crunch"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        },
+        "wah": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 0,
+          "type": "FAS Wah"
+        }
+      }
+    },
+    {
+      "scene": 8,
+      "name": "Lead Mid FX",
+      "blocks": {
+        "amp": {
+          "channel": "D",
+          "bypass": false,
+          "typeId": 77,
+          "type": "USA MK IV Lead Mid",
+          "levelDb": -8.159428693502605
+        },
+        "cab": {
+          "channel": "B",
+          "bypass": false,
+          "mode": "DYNA-CAB",
+          "cabs": [
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            },
+            {
+              "id": 40,
+              "name": "4x12 Rumble EV12L"
+            }
+          ]
+        },
+        "delay": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 14,
+          "type": "Deluxe Mind Guy"
+        },
+        "drive": {
+          "channel": "B",
+          "bypass": false,
+          "typeId": 6,
+          "type": "T808 OD"
+        },
+        "reverb": {
+          "channel": "A",
+          "bypass": false,
+          "typeId": 2,
+          "type": "Room: Large Room"
+        },
+        "wah": {
+          "channel": "A",
+          "bypass": true,
+          "typeId": 0,
+          "type": "FAS Wah"
+        }
+      }
+    }
+  ],
+  "selectedScene": 2,
+  "exportFilename": "FM3_WAH_EXACT_export.syx",
+  "changedBodyOffsets": [
+    1584,
+    1587,
+    1588,
+    1589,
+    9006,
+    9008,
+    9009,
+    9010,
+    9011,
+    9012,
+    9013,
+    9014,
+    9015,
+    9018,
+    9019,
+    9024,
+    9025,
+    9026,
+    9027,
+    9032,
+    9033,
+    9034,
+    9035
+  ],
+  "allowedBodyOffsets": [
+    1584,
+    1585,
+    1586,
+    1587,
+    1588,
+    1589,
+    9006,
+    9007,
+    9008,
+    9009,
+    9010,
+    9011,
+    9012,
+    9013,
+    9014,
+    9015,
+    9016,
+    9017,
+    9018,
+    9019,
+    9020,
+    9021,
+    9022,
+    9023,
+    9024,
+    9025,
+    9026,
+    9027,
+    9028,
+    9029,
+    9030,
+    9031,
+    9032,
+    9033,
+    9034,
+    9035,
+    9036,
+    9037,
+    9038,
+    9039,
+    9040,
+    9041,
+    9042,
+    9043,
+    9044,
+    9045,
+    9046,
+    9047,
+    9048,
+    9049,
+    9050,
+    9051,
+    9052,
+    9053,
+    9054,
+    9055
+  ],
+  "checks": {
+    "frameChecksums": true,
+    "presetCrc": true,
+    "footer": true,
+    "exactBodyReadback": true,
+    "onlyDeclaredRegionsChanged": true,
+    "routingPreserved": false,
+    "onlyDeclaredSlotInsertions": true,
+    "existingBlockRecordsPreservedDuringInsertion": true,
+    "selectedScenePreserved": true,
+    "unrelatedHeadersPreserved": true,
+    "encodedSizesAndPadding": true,
+    "componentEvidence": true
+  },
+  "hardware": "New composition pending device import/export; base and component specimens have separate evidence.",
+  "audio": "Not assessed for this composition",
+  "cpu": "Not supplied for this composition",
+  "limitations": [
+    "Only listed SHA-pinned bases; new blocks only on declared jb-newlook shunts",
+    "New inserted layouts require device import/export confirmation; no arbitrary routing or block removal",
+    "Amp/Cab full templates target A-D, including collected levels; unselected channels preserved; Gain/EQ scalars still target B; ampLevels adds measured A/C/D points and B alias",
+    "Drive scalar overrides retain measured type/channel/value combinations",
+    "Delay A scalar overrides only type14; Reverb A only type2; Rotary A only measured points",
+    "scenes defines names/channels/bypass for present or inserted effects; duplicate legacy assignments are rejected; new blocks default to A/bypass",
+    "Shared channel changes affect every scene using that channel",
+    "Filter copies all 37 paired words then applies only listed measured type/channel/values; recorded display rounding is explicit; Order 2nd/4th is measured for A High-Pass and B Low-Pass; no interpolation",
+    "PEQ A-D starts from a fully paired 33-word baseline; five bands, measured enums and fitted numeric scales; per-value evidence is reported. Hardware proof is matched only to exact full bodies; Blocking has no Q/Gain control; PID23/24 remain opaque",
+    "Only the existing External 1 to Wah source toggle and OFF/MED SPD Auto Engage and EXPONENTIAL/LINEAR Damping pairs and measured Min display points 0/2.5 plus ten bounded wahControls point lookups and the separate exact-wah-cent-fw13-hw1 policy; exact requests report hardware vs four-mode-consensus evidence per point, no full-range hardware proof; new combinations are software-only; no arbitrary modifier/expression or external IR writing"
+  ],
+  "artifacts": {
+    ".syx": {
+      "sha256": "dd63e3362cf4b593b58c885982dc99fa17550ee87bae42de9e86169e4357032a",
+      "bytes": 24680
+    },
+    ".txt": {
+      "sha256": "8f93d8a2986ee1dc2c4413a064f4937365cd2f8121012b1fe8c091f284644a12",
+      "bytes": 6991
+    },
+    ".spec.json": {
+      "sha256": "1505f909165478979532325fe662508de1211a0fe3d9cece383e1de9c837b4f4",
+      "bytes": 346
+    }
+  }
+}

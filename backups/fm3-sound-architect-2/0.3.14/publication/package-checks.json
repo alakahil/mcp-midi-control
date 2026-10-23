@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "deterministic": true,
+  "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+  "archiveSha256": "0a1b959f518db91d622943bf91f625141d0bdec5a0314745b61318968eeac5f2",
+  "selfCheck": {
+    "passed": true,
+    "scope": "Files and runtime at the invoked path; host discovery must separately identify this path",
+    "path": "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/package/fm3-sound-architect-2",
+    "version": "0.3.14",
+    "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+    "filesVerified": 3129,
+    "knownPresetSha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+    "deviceIO": false
+  },
+  "cliGeneration": {
+    "outputSha256": "48da255d65cdb30eb171cc14ed5ee12115230668dff20aa93045a33f2797c1e5",
+    "files": [
+      "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/example/WAH_EXACT_REVIEW.syx",
+      "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/example/WAH_EXACT_REVIEW.txt",
+      "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/example/WAH_EXACT_REVIEW.spec.json",
+      "/workspace/scratch/f678d3fbe33c/deliverables/publication-0314/example/WAH_EXACT_REVIEW.validation.json"
+    ]
+  },
+  "cliVerification": {
+    "passed": true,
+    "outputSha256": "48da255d65cdb30eb171cc14ed5ee12115230668dff20aa93045a33f2797c1e5"
+  },
+  "matchesIndependentForwardExample": true,
+  "minRaw": 16384,
+  "maxRaw": 42401,
+  "allEightScenesWahBypass": true,
+  "newDeviceIO": false,
+  "actualPublishedHostLoadingVerified": false,
+  "files": {
+    "WAH_EXACT_REVIEW.spec.json": {
+      "bytes": 349,
+      "sha256": "ad4f66381b2b488b35af84ad03383fd94a5cc2f5286d912e68a58fd31b1a22db"
+    },
+    "WAH_EXACT_REVIEW.syx": {
+      "bytes": 24680,
+      "sha256": "48da255d65cdb30eb171cc14ed5ee12115230668dff20aa93045a33f2797c1e5"
+    },
+    "WAH_EXACT_REVIEW.txt": {
+      "bytes": 6997,
+      "sha256": "7403bc6d4c52ebf817696a1ac4f257a87679cdbe53e509e6065f2bfd14440745"
+    },
+    "WAH_EXACT_REVIEW.validation.json": {
+      "bytes": 24071,
+      "sha256": "8e4bb8e35c3430fc2238d9ad2cc46224fd127907a22ae07c01f067dc213d9f1b"
+    }
+  }
+}

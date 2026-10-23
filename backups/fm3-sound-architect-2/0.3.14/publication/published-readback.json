@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "totalFiles": 3130,
+  "sourceFiles": 3129,
+  "missing": [],
+  "extra": [],
+  "different": [],
+  "candidateArchiveSha256": "0a1b959f518db91d622943bf91f625141d0bdec5a0314745b61318968eeac5f2",
+  "publishedArchiveSha256": "82be8d0e4ab10b3f06224d7f13082c557e91db04fe983d61fed2e1ddd8976303",
+  "manifestSha256": "007b538bd979986e96d99b631e2d4d6f49d82e7ff5ff537054680ffd077122b8",
+  "manifest": {
+    "schemaVersion": 1,
+    "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+    "name": "fm3-sound-architect-2",
+    "version": "0.3.14",
+    "sourceRepository": "https://github.com/alakahil/mcp-midi-control",
+    "sourceCommit": "43debb6fb7f3a2cc0baf14f3b3b3debe93a0a04b",
+    "sourcePluginTreeSha256": "6f59ae6382ff1bf577c217ab62f3a886713232a18e5a5629904401765c3e05d0",
+    "generatedFiles": [
+      "release-manifest.json"
+    ]
+  }
+}

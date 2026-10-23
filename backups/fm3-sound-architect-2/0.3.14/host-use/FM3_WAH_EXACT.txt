@@ -1,0 +1,129 @@
+FM3 SOUND ARCHITECT — ÜHISE PRESETIKOOSTAJA KATSE
+Preset: FM3 WAH EXACT
+Eesmärk: Kogutud plokimallide ja kinnitatud parameetrite ühine koostamine.
+FM3 Mk II Turbo, firmware 13. Kasutaja senine kontekst: Ibanez humbuckeritega; OUT 1 stereo FOH.
+Alus: examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx (jb-newlook). Valitud Scene 2 säilib.
+Rida 2: Input 1 → Wah 1 → Drive 1 → Amp 1 → Cab 1 → Send 1
+Rida 3: Return 1 → Delay 1 → Reverb 1 → Output 1
+
+KÜSITUD KANALIMALLID
+
+EXTERNAL 1 → WAH — LÕPPFAILIST
+Seos: sees (External 1); siht Wah 1 Control; kanalid ALL (A–D).
+Muudeti olemasoleva modifikaatori allikat.
+Auto Engage: MED SPD; säilitatud; salvestatud kood 2.
+Damping: EXPONENTIAL; säilitatud; salvestatud kood 0.
+Min: täpne sisestussiht 2.50; salvestatud kood 16384; sama sisend riistvaral mõõdetud.
+Max: täpne sisestussiht 6.47; salvestatud kood 42401; sama sisend riistvaral mõõdetud.
+Täpne sisestussiht ei ole uus ekraanivaatlus. Kogu vahemiku riistvarakinnitus puudub; selle genereeritud faili import ja pedaali/heli kontroll on tegemata.
+Start: 0.0%; säilitatud; salvestatud kood 0.
+Mid: 50.0%; säilitatud; salvestatud kood 32767.
+End: 100.0%; säilitatud; salvestatud kood 65534.
+Slope: 50.0%; säilitatud; salvestatud kood 32767.
+Attack: 10.1 ms; säilitatud; salvestatud kood 66.
+Release: 0.0 ms; säilitatud; salvestatud kood 0.
+Scale: 1.000; säilitatud; salvestatud kood 32767.
+Offset: 0.0%; säilitatud; salvestatud kood 32767.
+Off Value: 5.0%; säilitatud; salvestatud kood 0.
+Attack/Release ajad säilisid muutmata.
+Min/Max täpse päringu tõenditase on toodud iga välja juures; ajaloolised kuvapunktid säilitavad oma tähenduse.
+Wah-ploki stseenikanal ja bypass on eraldi seaded. Seose sisselülitamine ei aktiveeri bypass-is Wah-plokki.
+External 1 peab seadme globaalsetes seadetes olema seotud soovitud pedaali või MIDI-kontrolleriga. Generaator seda ei seadista ega kontrolli pedaali asendit.
+Seose väljalülitamine säilitab Wah Control’i salvestatud väärtuse. Aktiivne seos blokeerib selle käsitsi kirjutamise.
+Tõend: olemasolevad võrdluspresetid ja FW13 metaandmed; Auto Engage MED SPD=2 / OFF=0, Damping EXPONENTIAL=0 / LINEAR=1 ning Min 0.00=0 / 2.50=16375 on kinnitatud 21.10.2026 eraldi kasutaja muutmispaaride, ekraanipiltide ja algväärtuste kinnitustega. Maxi ja wahControls punktid põhinevad kahel koondkatsel ning eraldi Max 7.50 → 5.00 katsel; koondkatsed ei ole sõltumatud üksikkatsed. Damping’u ajakäitumine, uue väljundi import, pedaali toimimine, heli ja CPU on eraldi kontrollid.
+Lisatud wah: rida 2, veerg 3; küsitud stseenivalikud on allpool, muud stseenid A/bypass. Uue paigutuse seadmering OOTEL.
+wah A: FAS Wah; täielik kogutud kanalimall.
+
+PARAMEETRID
+Amp B Gain: 5.00 /10 [alusfailist]
+Amp B Bass: 4.00 /10 [alusfailist]
+Amp B Mid: 6.50 /10 [alusfailist]
+Amp B Treble: 5.20 /10 [alusfailist]
+Amp B Presence: 3.00 /10 [alusfailist]
+Amp B Level: -3.00 dB [alusfailist]
+Delay A Mix: 15.00 % [alusfailist]
+Reverb A Mix: 20.00 % [alusfailist]
+Delay A Time: 399.91 ms [alusfailist]
+Delay A Feedback: 25.00 % [alusfailist]
+Reverb A Time: 1.64 s [alusfailist]
+Reverb A Pre-Delay: 30.00 ms [alusfailist]
+Delay A Tempo: NONE  [alusfailist]
+Reverb A Pre-Delay Tempo: NONE  [alusfailist]
+Scene 2 Delay: bypass  [alusfailist]
+Scene 1 Reverb kanal: A  [alusfailist]
+
+KANALITE MÕJU
+wah A: stseenid 1, 2, 3, 4, 5, 6, 7, 8; efekt sees stseenides puuduvad.
+
+STSEENID 1–8
+Scene 1: Clean
+  amp A: USA MK IV Rhythm 1; sees; Level -9.00 dB
+  cab D: 2x12 Chiefman + 2x12 Chiefman; sees
+  delay A: Deluxe Mind Guy; sees
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; sees
+  wah A: FAS Wah; bypass
+Scene 2: Rhythm Fat
+  amp B: Brit Silver; sees; Level -3.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb B: Room: Large Room; sees
+  wah A: FAS Wah; bypass
+Scene 3: Lead Bright
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab C: 4x12 Recto Straight + 4x12 Recto Straight; sees
+  delay A: Deluxe Mind Guy; sees
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; sees
+  wah A: FAS Wah; bypass
+Scene 4: Mid Gain
+  amp D: USA MK IV Lead Mid; sees; Level -8.16 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; sees
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; sees
+  wah A: FAS Wah; bypass
+Scene 5: Clean Comp Chorus
+  amp A: USA MK IV Rhythm 1; sees; Level -9.00 dB
+  cab D: 2x12 Chiefman + 2x12 Chiefman; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb C: Hall: Colosseum; sees
+  wah A: FAS Wah; bypass
+Scene 6: JB SOLO
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; sees
+  drive B: T808 OD; sees
+  reverb D: Room: Medium Room; sees
+  wah A: FAS Wah; bypass
+Scene 7: Drive Lead Brt
+  amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
+  cab C: 4x12 Recto Straight + 4x12 Recto Straight; sees
+  delay A: Deluxe Mind Guy; sees
+  drive D: Box o' Crunch; sees
+  reverb A: Room: Large Room; sees
+  wah A: FAS Wah; bypass
+Scene 8: Lead Mid FX
+  amp D: USA MK IV Lead Mid; sees; Level -8.16 dB
+  cab B: 4x12 Rumble EV12L + 4x12 Rumble EV12L; sees
+  delay A: Deluxe Mind Guy; sees
+  drive B: T808 OD; sees
+  reverb A: Room: Large Room; sees
+  wah A: FAS Wah; bypass
+
+Olemasolevate plokkide määramata seaded, kanalivalikud, bypass ja lülitid säilivad alusfailist; modifikaatorid säilivad, välja arvatud selgesõnaliselt küsitud External 1 → Wah seose allika, Auto Engage’i, Damping’u režiimi või Min-i mõõdetud punkti muudatus. Kogutud mallid pole tingimata tehasevaikeväärtused.
+Tüübimalli valik üksi ei aktiveeri efekti. Stseenikirjeldus määrab kanalid ja efekti sees/bypass oleku; lisatud plokid algavad A/bypass. Kanalite mõju on eespool.
+NewLook-alusel lisatakse üksnes küsitud toetatud plokid vabade shuntide asemele. Send/Return ja kaks rida säilivad. Väliseid IR-e ei lisata. Rotary A on piiratud mõõdetud punktidega.
+Failitasemel kontrollitud: GET/SYX komponenditõendid, kõik sisubaidid, lubatud alad, routing, kaadrid, CRC, footer, pikkused ja lõputäide.
+Selle uue kombinatsiooni seadmeimport, heli, tasemed ja CPU: OOTEL. Aluse ja varasemate üksikplokkide kinnitused ei kinnita automaatselt uut kombinatsiooni.
+
+KASUTAMINE
+1. Säilita praegune töö ja impordi SYX FM3-Editi tööpuhvrisse.
+2. Kontrolli FM3-Editi võimalikke veateateid. Täpseks tagasivõrdluseks ära muuda parameetreid, kanalivalikuid ega expression-pedaali asendit.
+3. Enne eksporti vali tagasi Scene 2. Kui muutsid ise seadeid, märgi need ekspordi juurde.
+4. Ekspordi terve preset nimega FM3_WAH_EXACT_export.syx ja saada võrdluseks.
+5. Kirjelda kuuldavat tasakaalu ja vajalike efektide sobivust.
+Tööriist ei ühenda seadet ega saada MIDI/SET/SAVE-käske.
+SHA-256: dd63e3362cf4b593b58c885982dc99fa17550ee87bae42de9e86169e4357032a
