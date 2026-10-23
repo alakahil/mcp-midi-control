@@ -4,7 +4,9 @@
 Device writes are limited to ONE kind: a complete preset dump (0x77 + 8 x 0x78 + 0x79) whose
 0x77 header is 7F 00 00 40 00, i.e. the edit buffer, exactly as FM3-Edit exports it. Every file
 must match the manifest SHA-256. The only other frame sent is the read-only grid/meter request
-fn=0x01 sub=0x2E (CPU % = 32 + frame[37] * 0.5). No store (sub=0x26), no parameter SET, no
+fn=0x01 sub=0x2E. CPU byte = frame[37]: raw < 64 -> 32 + raw/2 %, raw >= 64 -> raw %
+(calibrated 2026-10-23 against 12 hand readings, all within +/-0.5 %; the earlier ForgeFX
+formula 32 + raw*0.5 holds only below 64 %). No store (sub=0x26), no parameter SET, no
 preset change. Nothing is saved: after the run, select any preset on the FM3 and the edit
 buffer is discarded.
 
@@ -53,10 +55,17 @@ def dump_frames(data):
     check(frames[0][6:11] == HEADER, 'Header is not the edit buffer (7F 00 00 40 00); refusing')
     return [bytes(f) for f in frames]
 
-def parse_cpu(frame):
+def cpu_from_raw(raw):
+    return 32 + raw / 2 if raw < 64 else float(raw)
+
+def parse_raw(frame):
     if len(frame) > 40 and frame[:5] == [0xf0, 0x00, 0x01, 0x74, MODEL] and frame[5] == 0x01 and frame[6] == 0x2e:
-        return 32 + frame[37] * 0.5
+        return frame[37]
     return None
+
+def parse_cpu(frame):
+    raw = parse_raw(frame)
+    return None if raw is None else cpu_from_raw(raw)
 
 class Framer:
     def __init__(self): self.partial = None; self.frames = []
@@ -105,7 +114,7 @@ def read_cpu(port, timeout=2.0):
     while time.monotonic() < end:
         port.drain(0.05)
         for f in port.framer.frames:
-            v = parse_cpu(f)
+            v = parse_raw(f)
             if v is not None: return v
     return None
 
@@ -146,22 +155,25 @@ def run(pack, session, port_path):
     port = Port(port_path)
     try:
         before, _ = settle(port, first_wait=0.2)
-        print('CPU enne algust (praegune preset): %s %%' % before)
+        print('CPU enne algust (praegune preset): %s %%' % (None if before is None else cpu_from_raw(before)))
+        confirmed = bool(done)
         for n, it in enumerate(items, 1):
             if it['id'] in done: continue
             send_preset(port, frames[it['id']])
-            value, reads = settle(port)
-            rec = {'id': it['id'], 'family': it['family'], 'cpuPercent': value, 'reads': reads,
-                   'saturated': value is not None and value >= 95.5, 'time': time.strftime('%Y-%m-%dT%H:%M:%S')}
-            if it['id'] == 'cal-newlook' and 'cal-newlook' not in done:
-                ans = input('\nFM3 ekraanil peaks nüüd olema nimi "CPU CAL NEWLOOK". Kas on? (j/e): ').strip().lower()
+            raw, reads = settle(port)
+            value = None if raw is None else cpu_from_raw(raw)
+            rec = {'id': it['id'], 'family': it['family'], 'cpuPercent': value, 'raw': raw, 'reads': reads,
+                   'saturated': raw is not None and raw >= 127, 'decode': 'piecewise-20261023', 'time': time.strftime('%Y-%m-%dT%H:%M:%S')}
+            if not confirmed:
+                name = manifest.get('confirmName') or 'CPU CAL NEWLOOK'
+                ans = input('\nFM3 ekraanil peaks nüüd olema nimi "%s". Kas on? (j/e): ' % name).strip().lower()
                 check(ans.startswith('j'), 'Seade ei laadinud presetti redaktsioonipuhvrisse; midagi ei salvestatud.')
-                rec['userConfirmedName'] = True
+                rec['userConfirmedName'] = True; confirmed = True
             if 'expectPercent' in it:
                 ok = value is not None and abs(value - it['expectPercent']) <= 2.0
                 rec['calibrationOk'] = ok
                 print('Kalibreerimine %s: seade %s %%, käsitsi mõõdetud %s %%' % (it['id'], value, it['expectPercent']))
-                if not ok:
+                if not ok and not manifest.get('calibrationOnly'):
                     with log.open('a') as f: f.write(json.dumps(rec) + '\n')
                     check(False, 'CPU näit ei klapi käsitsi mõõtmisega; mõõtmine peatatud (dekodeering kontrollimata).')
             with log.open('a') as f: f.write(json.dumps(rec, ensure_ascii=False) + '\n')
@@ -175,6 +187,8 @@ def self_test():
     req = cpu_request(); check(req[:7] == bytes([0xf0, 0, 1, 0x74, 0x11, 0x01, 0x2e]) and len(req) == 23, 'request')
     fake = [0xf0, 0, 1, 0x74, 0x11, 0x01, 0x2e] + [0] * 30 + [41] + [0] * 10 + [0xf7]
     check(parse_cpu(fake) == 52.5, 'cpu parse')
+    for raw, want in [(41, 52.5), (60, 62.0), (63, 63.5), (64, 64.0), (82, 82.0), (127, 127.0)]:
+        check(cpu_from_raw(raw) == want, 'piecewise decode %d' % raw)
     here = Path(__file__).resolve().parents[2]
     src = here / 'examples/FM3_P6_INSERT_A.syx'
     if not src.exists():

@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2086,
-  "filePaths": 2290,
+  "uniqueContents": 2087,
+  "filePaths": 2291,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -4912,6 +4912,12 @@
       "bytes": 7209,
       "paths": [
         "references/peq-full-20261009-152606/step-070-802e4b14d6/capture.json"
+      ]
+    },
+    "662b534e23092e54fcffcd3387800d7919c72424f64cb77350ded6bb039a4439": {
+      "bytes": 1183,
+      "paths": [
+        "references/fm3-cpu-calibration-20261023.json"
       ]
     },
     "663476fe973e417942394436fc449b2b9090fa441f2d11102fc3220170e49ba6": {

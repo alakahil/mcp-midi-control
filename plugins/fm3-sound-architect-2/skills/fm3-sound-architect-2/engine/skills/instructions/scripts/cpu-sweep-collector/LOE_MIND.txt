@@ -19,7 +19,7 @@ Käivitamine
 
    cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_CPU_SWEEP
 
-   python3 FM3_CPU_SWEEP.py --pack . --session ~/Downloads/FM3_REA_DEVELOPMENT/FM3_CPU_SESSION
+   python3 FM3_CPU_SWEEP.py --pack . --session ~/Downloads/FM3_REA_DEVELOPMENT/FM3_CPU_SESSION2
 
 5. Esimese preseti järel küsib skript: kas FM3 ekraanil on nimi "CPU CAL NEWLOOK"?
    Vaata FM3 ekraani. Kui on, kirjuta j ja Enter. Kui ei ole, kirjuta e ja Enter
@@ -34,4 +34,4 @@ Kui midagi katkeb
 Lõpus
 8. Vali FM3-l esipaneelilt mõni preset (redaktsioonipuhver tühistub). ÄRA salvesta.
 9. Kirjuta vestlusesse "valmis". Tulemused on kaustas
-   ~/Downloads/FM3_REA_DEVELOPMENT/FM3_CPU_SESSION/results.jsonl
+   ~/Downloads/FM3_REA_DEVELOPMENT/FM3_CPU_SESSION2/results.jsonl
