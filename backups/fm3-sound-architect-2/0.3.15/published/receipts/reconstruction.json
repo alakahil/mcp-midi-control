@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "sourceCommit": "15840e463b0d8f90ab3c46b8c0d4e6865b88a004",
+  "method": "Fresh detached Git worktree; build-release.py with original exact-commit offline summary",
+  "replayedOriginalTestAttestation": true,
+  "newFullSuiteRun": false,
+  "byteIdenticalArchive": true,
+  "archiveSha256": "79005e509f85317173b625f92b8ff5bb35ecc570ae5ba3cd70910e6212cf0507"
+}

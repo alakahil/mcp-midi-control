@@ -1,0 +1,108 @@
+{
+  "composer": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-composer",
+    "name": "DAILY VOLUME",
+    "modifiers": {
+      "external1Wah": false
+    }
+  },
+  "volumePan": true,
+  "layout": {
+    "row2": [
+      "drive",
+      "amp",
+      "cab"
+    ],
+    "row3": [
+      "volpan",
+      "delay",
+      "reverb"
+    ],
+    "columns": {
+      "drive": 4,
+      "amp": 6,
+      "cab": 8,
+      "volpan": 8,
+      "delay": 9,
+      "reverb": 10
+    }
+  },
+  "controls": [
+    {
+      "block": "volpan",
+      "channel": "A",
+      "param": "GAIN",
+      "value": 6
+    },
+    {
+      "block": "volpan",
+      "channel": "B",
+      "param": "GAIN",
+      "value": 8
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "THRESH",
+      "value": -65
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "LEVEL",
+      "value": -3
+    }
+  ],
+  "blockScenes": {
+    "volpan": [
+      {
+        "scene": 1,
+        "channel": "A",
+        "bypass": false
+      },
+      {
+        "scene": 2,
+        "channel": "B",
+        "bypass": false
+      },
+      {
+        "scene": 3,
+        "channel": "A",
+        "bypass": true
+      },
+      {
+        "scene": 4,
+        "channel": "A",
+        "bypass": true
+      },
+      {
+        "scene": 5,
+        "channel": "A",
+        "bypass": true
+      },
+      {
+        "scene": 6,
+        "channel": "A",
+        "bypass": true
+      },
+      {
+        "scene": 7,
+        "channel": "A",
+        "bypass": true
+      },
+      {
+        "scene": 8,
+        "channel": "A",
+        "bypass": true
+      }
+    ]
+  },
+  "purpose": "DAILY VOLUME: säilitada NewLook-aluse Amp/Cab seaded; Volume/Pan enne Delay/Reverbi, A Gain 6/10 stseenis 1 ning B Gain 8/10 stseenis 2, stseenides 3–8 bypass. Input 1 A Threshold −65 dB ja Level −3 dB. Uut pedaalisidumist ei lisata.",
+  "context": {
+    "guitar": "Fender Stratocaster",
+    "pickups": "single coil",
+    "output": "OUT1 stereo FOH"
+  }
+}

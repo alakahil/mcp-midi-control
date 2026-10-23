@@ -1,0 +1,14 @@
+[
+  {
+    "original": "DAILY_VOLUME.validation.json",
+    "stored": "DAILY_VOLUME.validation.json.gz",
+    "originalBytes": 853596,
+    "originalSha256": "4d7e8005d8197d61e2c11985a0b7d0b3b9d8b6b28afe1a25e8e79308fcac2578"
+  },
+  {
+    "original": "capabilities.json",
+    "stored": "capabilities.json.gz",
+    "originalBytes": 132716,
+    "originalSha256": "86ad518b8a439535fa78d29280df61d4d3884d2b6e7ce542373b292dc9896fcb"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "bodyBytes": 13762,
+  "changedBodyBytes": 0,
+  "pitchWords": 456,
+  "sceneChannels": [
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "C",
+    "A",
+    "A"
+  ],
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 254,
+      "after": 67,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 4,
+      "after": 194,
+      "field": "CRC"
+    }
+  ],
+  "hardware": "Import/export confirmed for this six-family composition with automatic Pitch insertion on NewLook. Other insertions/combinations are not inferred to be device-tested."
+}

@@ -1,0 +1,9 @@
+{
+  "sourceCommit": "c22065baab663828dbd5860689f998167325f3c1",
+  "stage": "unpacked package self-check",
+  "status": "failed",
+  "exitCode": 1,
+  "filesVerified": 3141,
+  "message": "ENOENT: no such file or directory, open '/workspace/scratch/7bb7161c8153/research/release-0315/unpacked%20check/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/drive-batch-20261006-112254/capture-20261006T110554-7b0304f87e/donor.syx'",
+  "published": false
+}

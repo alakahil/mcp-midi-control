@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "files": 3142,
+  "allManifestHashes": true,
+  "selfCheck": {
+    "passed": true,
+    "scope": "Files and runtime at the invoked path; host discovery must separately identify this path",
+    "path": "/workspace/scratch/7bb7161c8153/research/release-0315-final/unpacked check % # \u00fc/fm3-sound-architect-2",
+    "version": "0.3.15",
+    "sourceCommit": "981806a528934d2196a3f29f98fb38328693f705",
+    "filesVerified": 3141,
+    "knownPresetSha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+    "deviceIO": false
+  },
+  "generation": {
+    "sha256": "7560d5510041676201e154553f1aba7d0c7239e55db22431a3f8a1c9c82c44fe",
+    "rows": [
+      "In 1(1) \u2192 drive(4) \u2192 amp(6) \u2192 cab(8) \u2192 Send(12)",
+      "Return(1) \u2192 volpan(2) \u2192 delay(9) \u2192 reverb(10) \u2192 Out 1(12)"
+    ],
+    "outputs": 4
+  },
+  "fourFileVerify": {
+    "passed": true,
+    "outputSha256": "7560d5510041676201e154553f1aba7d0c7239e55db22431a3f8a1c9c82c44fe"
+  },
+  "pathContainsSpacesPercentHashUnicode": true,
+  "sameSyxAsForwardTestBeforePathFix": true
+}

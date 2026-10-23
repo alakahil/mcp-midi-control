@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "outputSha256": "a851e8f5aa49b4738945d18668367953a9977f89c6af6de8b8ebf7534911332b",
+  "generator": "fm3-sound-0.3.15",
+  "independentDecoderCrcValid": true,
+  "completeOriginalRecordsPreserved": [
+    "amp",
+    "cab",
+    "delay",
+    "return",
+    "send",
+    "drive",
+    "out1",
+    "reverb"
+  ],
+  "inputTargetWordsChecked": 20,
+  "inputOtherBytesPreserved": true,
+  "requestedControlsChecked": 28,
+  "volumeScene1to5Match": true,
+  "volumeStereoInput": true,
+  "volumeBypassMode": "THRU",
+  "activeModifierCount": 0,
+  "newPedalBinding": false,
+  "selectedScene": 2,
+  "unspecifiedVolumeScenes": [
+    {
+      "scene": 6,
+      "channel": "A",
+      "bypassRaw": 0
+    },
+    {
+      "scene": 7,
+      "channel": "A",
+      "bypassRaw": 0
+    },
+    {
+      "scene": 8,
+      "channel": "A",
+      "bypassRaw": 0
+    }
+  ],
+  "limitations": [
+    "Stseenid 6–8 jäid Volume/Pan doonori vaikeseisu: A aktiivne, GAIN 7.5. Need stseenid ei olnud päringus määratud.",
+    "Arvväärtustes esinevad 16-bitise kodeeringu ümardused, mis on TXT-s ja validation.json-is nähtavad.",
+    "Ühe FW13 ekspordi Volume-plokimall ja Input 20 sõna säilimine on varasem seadmetõend; selle uue kombinatsiooni STORE/reload, import, heli ja CPU on kontrollimata.",
+    "Uute Volume-väärtuste skaalad on mudelipõhised; fullRangeEncodingProven=false.",
+    "Globaalne Noisegate Offset, AC Line Frequency ning pedaalide globaalne vastendus ei kuulu selle preseti sisusse.",
+    "Aluse väljalülitatud Wah sihtkirje säilib. Aktiivseid modifikaatoreid pole; modifikaatori audit märgib puuduva Wah-ploki kohta ajaloolise passiivse sihtkirje.",
+    "Kasutatud on määratud kohalikku 0.3.15 mootorit; avaldamist või hosti laadimist selle tööga ei kinnitata."
+  ]
+}
