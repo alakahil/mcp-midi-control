@@ -1,0 +1,52 @@
+{
+  "sourceCommit": "981806a528934d2196a3f29f98fb38328693f705",
+  "allRequiredWorkflowsPassed": false,
+  "checkedAt": "2026-10-23T09:43Z",
+  "runs": [
+    {
+      "id": 39931314886,
+      "name": "FM3 plugin offline",
+      "event": "pull_request",
+      "head_sha": "981806a528934d2196a3f29f98fb38328693f705",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39931314886",
+      "updated_at": "2026-10-23T09:29:45Z"
+    },
+    {
+      "id": 39931314788,
+      "name": "preflight",
+      "event": "pull_request",
+      "head_sha": "981806a528934d2196a3f29f98fb38328693f705",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39931314788",
+      "updated_at": "2026-10-23T09:29:27Z"
+    },
+    {
+      "id": 39931314789,
+      "name": "native-matrix",
+      "event": "pull_request",
+      "head_sha": "981806a528934d2196a3f29f98fb38328693f705",
+      "status": "queued",
+      "conclusion": null,
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39931314789",
+      "updated_at": "2026-10-23T09:21:51Z",
+      "runAttempt": 2,
+      "firstAttemptConclusion": "failure",
+      "firstMacJobConclusion": "cancelled",
+      "macJobId": 120347394646
+    },
+    {
+      "id": 39931309304,
+      "name": "FM3 plugin offline",
+      "event": "push",
+      "head_sha": "981806a528934d2196a3f29f98fb38328693f705",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/alakahil/mcp-midi-control/actions/runs/39931309304",
+      "updated_at": "2026-10-23T09:21:52Z"
+    }
+  ],
+  "releaseBlockedBy": "macOS arm64 job was cancelled before a runner and any steps; one justified retry remains queued; Linux arm is success"
+}

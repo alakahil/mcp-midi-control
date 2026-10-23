@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "version": "0.3.15",
   "releaseSourceCommit": "981806a528934d2196a3f29f98fb38328693f705",
-  "status": "verified candidate; publication pending",
+  "status": "verified candidate; publication pending GitHub macOS CI",
   "files": {
     "README.md": {
-      "bytes": 1042,
-      "sha256": "f711a98bc8a5c597d0c3606dfa5ae7adb6f2596bf8a90b679c136144b3f0497c"
+      "bytes": 3380,
+      "sha256": "0ec2c2db4020ceb89de9f3bec4373074c3dea89142f778d5ff5680c9d37496d5"
     },
     "forward-final/FM3_DAILY_CONTROL.spec.json": {
       "bytes": 4655,
@@ -292,6 +292,14 @@
       "bytes": 161,
       "sha256": "a233e483f179c2c8292630bba2c5d6057f183074eb2fedf60ec375de0b979787"
     },
+    "publication/ci-checkpoint.json": {
+      "bytes": 1835,
+      "sha256": "18c776588dac54fb037a110a558f4dcea5e0cad2004512bbf85b2972d03e0ca5"
+    },
+    "publication/native-attempt1.json": {
+      "bytes": 4218,
+      "sha256": "d99912b7d81498caa08ad7e0a71e840dd6f22a2dafad6572b744f8929f588bf7"
+    },
     "publication/package-use.json": {
       "bytes": 1101,
       "sha256": "d8f8ff38901f86eeedd18fc78d0f745d2e2dc27770625f6eb79932f3e5cf3486"
@@ -323,6 +331,10 @@
     "publication/superseded-ci.json": {
       "bytes": 1148,
       "sha256": "4910a1a80683667394b62e92617a3448d94b06e42c64c0eff6f7784819977b12"
+    },
+    "reports/FM3_0.3.1_TOOTULEMUS_2026-10-19-2-2.md": {
+      "bytes": 722474,
+      "sha256": "da2910878e257de61a8ca93a8f5d1c5a713ca9d842fba2e5bdb974e6655634c6"
     },
     "review/0315-preservation.json": {
       "bytes": 1566,
