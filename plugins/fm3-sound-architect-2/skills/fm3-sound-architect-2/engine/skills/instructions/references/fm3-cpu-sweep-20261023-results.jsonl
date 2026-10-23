@@ -1,0 +1,356 @@
+{"id": "cal-newlook", "family": "calibration", "cpuPercent": 52.5, "raw": 41, "reads": [41, 41, 41], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:39:50", "userConfirmedName": true, "calibrationOk": true}
+{"id": "cal-p6a", "family": "calibration", "cpuPercent": 82.0, "raw": 82, "reads": [82, 82, 82], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:00", "calibrationOk": true}
+{"id": "drive:'77 Custom OD", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:03"}
+{"id": "drive:Angry Chuck", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:06"}
+{"id": "drive:BB Pre", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:08"}
+{"id": "drive:BB Pre AT", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:11"}
+{"id": "drive:Bender Fuzz", "family": "drive", "cpuPercent": 40.0, "raw": 16, "reads": [16, 16, 16], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:13"}
+{"id": "drive:Bit Crusher", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:16"}
+{"id": "drive:Blackglass 7K", "family": "drive", "cpuPercent": 41.0, "raw": 18, "reads": [18, 18, 18], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:18"}
+{"id": "drive:Blues OD", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:21"}
+{"id": "drive:Bosom Boost", "family": "drive", "cpuPercent": 38.0, "raw": 12, "reads": [12, 12, 12], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:23"}
+{"id": "drive:Box o' Crunch", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:26"}
+{"id": "drive:Colortone Booster", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:28"}
+{"id": "drive:Colortone OD", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:31"}
+{"id": "drive:Compulsion Distortion HP", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:33"}
+{"id": "drive:Compulsion Distortion LP", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:36"}
+{"id": "drive:DS1 Distortion", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:39"}
+{"id": "drive:DS1 Distortion Mod", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:41"}
+{"id": "drive:Esoteric ACB", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:44"}
+{"id": "drive:Esoteric Bass RCB", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:46"}
+{"id": "drive:Esoteric RCB", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:49"}
+{"id": "drive:Eternal Love", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:51"}
+{"id": "drive:Face Fuzz", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [16, 16, 17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:55"}
+{"id": "drive:FAS Boost", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:40:57"}
+{"id": "drive:FAS LED-Drive", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:00"}
+{"id": "drive:Fat Rat", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:02"}
+{"id": "drive:FET Boost", "family": "drive", "cpuPercent": 40.0, "raw": 16, "reads": [16, 16, 16], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:05"}
+{"id": "drive:FET Preamp", "family": "drive", "cpuPercent": 40.0, "raw": 16, "reads": [16, 16, 16], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:07"}
+{"id": "drive:Full OD", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:10"}
+{"id": "drive:Gauss Drive", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:12"}
+{"id": "drive:Griddle Cake", "family": "drive", "cpuPercent": 39.5, "raw": 15, "reads": [15, 15, 15], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:15"}
+{"id": "drive:Guardian Photon Speed", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:17"}
+{"id": "drive:Hard Fuzz", "family": "drive", "cpuPercent": 40.0, "raw": 16, "reads": [16, 16, 16], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:20"}
+{"id": "drive:Heartpedal 11", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:22"}
+{"id": "drive:Hoodoo Drive", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:25"}
+{"id": "drive:Horizon Precision Drive", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:28"}
+{"id": "drive:Integral Pre", "family": "drive", "cpuPercent": 38.0, "raw": 12, "reads": [12, 12, 12], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:30"}
+{"id": "drive:Jam Ray", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:33"}
+{"id": "drive:Klone Chiron", "family": "drive", "cpuPercent": 43.5, "raw": 23, "reads": [23, 23, 23], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:35"}
+{"id": "drive:M-Zone Distortion", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:38"}
+{"id": "drive:Master Fuzz", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:40"}
+{"id": "drive:Maxoff 808", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:43"}
+{"id": "drive:MCMLXXXI Drive", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:45"}
+{"id": "drive:Micro Boost", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 16, 17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:49"}
+{"id": "drive:Mid Boost", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:51"}
+{"id": "drive:MOSFET Distortion", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:54"}
+{"id": "drive:NoAmp Bass DI", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:57"}
+{"id": "drive:NoAmp Bass Pre", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:41:59"}
+{"id": "drive:Nobelium OVD-1", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:02"}
+{"id": "drive:Octave Distortion", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:04"}
+{"id": "drive:OD 250", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:07"}
+{"id": "drive:OD 250 Gray", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:09"}
+{"id": "drive:OD-One Overdrive", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:12"}
+{"id": "drive:Paradigm Shifter", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:14"}
+{"id": "drive:PI Fuzz", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:17"}
+{"id": "drive:PI Fuzz - Bass", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:19"}
+{"id": "drive:PI Fuzz - Ram's Head", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:22"}
+{"id": "drive:PI Fuzz - Russian", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:25"}
+{"id": "drive:PI Fuzz - Triangle", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:27"}
+{"id": "drive:Plus Distortion", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:30"}
+{"id": "drive:Rat Distortion", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:32"}
+{"id": "drive:Royal Bass DI", "family": "drive", "cpuPercent": 40.0, "raw": 16, "reads": [16, 16, 16], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:35"}
+{"id": "drive:SDD Preamp", "family": "drive", "cpuPercent": 40.0, "raw": 16, "reads": [16, 16, 16], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:37"}
+{"id": "drive:Shimmer Drive", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:40"}
+{"id": "drive:Shred Distortion", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:42"}
+{"id": "drive:Sonic Drive", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:45"}
+{"id": "drive:Suhr Riot Ge (R)", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:47"}
+{"id": "drive:Suhr Riot LED (L)", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:50"}
+{"id": "drive:Suhr Riot LED/Si (M)", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:52"}
+{"id": "drive:Sunrise Splendor", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 24, 25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:56"}
+{"id": "drive:Sunrise Splendor Hi-Cut", "family": "drive", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:42:58"}
+{"id": "drive:Super Fuzz", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:01"}
+{"id": "drive:Super OD", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:03"}
+{"id": "drive:Swedish Metal", "family": "drive", "cpuPercent": 45.0, "raw": 26, "reads": [26, 26, 26], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:06"}
+{"id": "drive:T808 Mod", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:08"}
+{"id": "drive:T808 OD", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:11"}
+{"id": "drive:Tape Distortion", "family": "drive", "cpuPercent": 40.0, "raw": 16, "reads": [16, 16, 16], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:14"}
+{"id": "drive:Timothy Down", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:16"}
+{"id": "drive:Timothy Mid", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:19"}
+{"id": "drive:Timothy Up", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:21"}
+{"id": "drive:Tone of Kings", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:24"}
+{"id": "drive:Treble Boost", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:26"}
+{"id": "drive:TS9DX +", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:29"}
+{"id": "drive:TS9DX Hot", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:31"}
+{"id": "drive:Tube Drive 3-Knob", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:34"}
+{"id": "drive:Tube Drive 4-Knob", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:36"}
+{"id": "drive:Tube Drive 5-Knob", "family": "drive", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:39"}
+{"id": "drive:Valve Screamer VS9", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:41"}
+{"id": "drive:Zen Master", "family": "drive", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:44"}
+{"id": "reverb:Chamber: Deep Chamber", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:47"}
+{"id": "reverb:Chamber: Large Chamber", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:49"}
+{"id": "reverb:Chamber: Medium Chamber", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:52"}
+{"id": "reverb:Chamber: Small Chamber", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:54"}
+{"id": "reverb:Cloud: Cirrocumulus", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:57"}
+{"id": "reverb:Cloud: Cumulonimbus", "family": "reverb", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:43:59"}
+{"id": "reverb:Cloud: Nimbostratus", "family": "reverb", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:02"}
+{"id": "reverb:Cloud: Stratocumulus", "family": "reverb", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:04"}
+{"id": "reverb:Echo: Echo Hall", "family": "reverb", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:07"}
+{"id": "reverb:Echo: Echo Pitch Plate", "family": "reverb", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:09"}
+{"id": "reverb:Echo: Echo Plate", "family": "reverb", "cpuPercent": 45.5, "raw": 27, "reads": [27, 27, 27], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:12"}
+{"id": "reverb:Echo: Echo Room", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:14"}
+{"id": "reverb:Echo: Fields Of Pyrite", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:17"}
+{"id": "reverb:Hall: Asylum", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:20"}
+{"id": "reverb:Hall: Chorus Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:22"}
+{"id": "reverb:Hall: Colosseum", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:25"}
+{"id": "reverb:Hall: Concert Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:27"}
+{"id": "reverb:Hall: Large Deep Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:30"}
+{"id": "reverb:Hall: Large Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:32"}
+{"id": "reverb:Hall: Marble Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:35"}
+{"id": "reverb:Hall: Mechanic's Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:37"}
+{"id": "reverb:Hall: Medium Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:40"}
+{"id": "reverb:Hall: Music Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:42"}
+{"id": "reverb:Hall: Nashville Church", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:45"}
+{"id": "reverb:Hall: North Church", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:47"}
+{"id": "reverb:Hall: Opera House", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:50"}
+{"id": "reverb:Hall: Small Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:53"}
+{"id": "reverb:Hall: South Church", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:55"}
+{"id": "reverb:Hall: St. Albans Cathedral", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:44:58"}
+{"id": "reverb:Hall: St. George's Church", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:00"}
+{"id": "reverb:Hall: Symphony Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:03"}
+{"id": "reverb:Hall: Tunnel", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:05"}
+{"id": "reverb:Hall: Wide Hall", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:08"}
+{"id": "reverb:Hall: York Minster Cathedral", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:11"}
+{"id": "reverb:Huge: Cavern", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:13"}
+{"id": "reverb:Huge: Deep Space", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:16"}
+{"id": "reverb:Huge: Gymnasium", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:18"}
+{"id": "reverb:Huge: Ice Castle", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:21"}
+{"id": "reverb:Huge: Mausoleum", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:24"}
+{"id": "reverb:Huge: Stone Quarry", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:26"}
+{"id": "reverb:Huge: Warehouse", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:29"}
+{"id": "reverb:Plate: Gold Plate", "family": "reverb", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 57, 56, 57, 56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:33"}
+{"id": "reverb:Plate: Large Plate", "family": "reverb", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:36"}
+{"id": "reverb:Plate: London Plate", "family": "reverb", "cpuPercent": 52.5, "raw": 41, "reads": [41, 41, 41], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:38"}
+{"id": "reverb:Plate: Medium Plate", "family": "reverb", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:41"}
+{"id": "reverb:Plate: Small Plate", "family": "reverb", "cpuPercent": 54.0, "raw": 44, "reads": [44, 44, 44], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:44"}
+{"id": "reverb:Plate: Sun Plate", "family": "reverb", "cpuPercent": 55.5, "raw": 47, "reads": [47, 47, 47], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:46"}
+{"id": "reverb:Plate: Vocal Plate", "family": "reverb", "cpuPercent": 56.5, "raw": 49, "reads": [49, 49, 49], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:49"}
+{"id": "reverb:Room: Ambience", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:51"}
+{"id": "reverb:Room: Drum Room", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:54"}
+{"id": "reverb:Room: Hallway", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:57"}
+{"id": "reverb:Room: Huge Room", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:45:59"}
+{"id": "reverb:Room: Large Room", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:02"}
+{"id": "reverb:Room: Large Tiled Room", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:04"}
+{"id": "reverb:Room: Large Wooden Room", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:07"}
+{"id": "reverb:Room: Medium Room", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:10"}
+{"id": "reverb:Room: Recording Studio A", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:12"}
+{"id": "reverb:Room: Recording Studio C", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:15"}
+{"id": "reverb:Room: Small Room", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:17"}
+{"id": "reverb:Room: Studio", "family": "reverb", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:20"}
+{"id": "reverb:Sfx: Andromeda", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:23"}
+{"id": "reverb:Sfx: Aquarius", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:25"}
+{"id": "reverb:Sfx: Capricorn", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:28"}
+{"id": "reverb:Sfx: Centaurus", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:30"}
+{"id": "reverb:Sfx: Gemini", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:33"}
+{"id": "reverb:Sfx: Pegasus", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:36"}
+{"id": "reverb:Sfx: Pleiades", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:38"}
+{"id": "reverb:Sfx: Sagittarius", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [35, 34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:41"}
+{"id": "reverb:Sfx: Ursa Major", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:44"}
+{"id": "reverb:Spring: British Spring", "family": "reverb", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:46"}
+{"id": "reverb:Spring: Deluxe Spring", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:49"}
+{"id": "reverb:Spring: Large Spring", "family": "reverb", "cpuPercent": 59.5, "raw": 55, "reads": [54, 55, 54, 55, 55, 55], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:53"}
+{"id": "reverb:Spring: Lush Spring", "family": "reverb", "cpuPercent": 74.0, "raw": 74, "reads": [74, 74, 74], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:55"}
+{"id": "reverb:Spring: Medium Spring", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:46:58"}
+{"id": "reverb:Spring: Small Spring", "family": "reverb", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:01"}
+{"id": "reverb:Spring: Studio Spring", "family": "reverb", "cpuPercent": 53.5, "raw": 43, "reads": [43, 43, 43], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:03"}
+{"id": "reverb:Spring: Tube Spring", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:06"}
+{"id": "reverb:Spring: Vibra-King", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:08"}
+{"id": "reverb:Spring: Vibra-King Custom", "family": "reverb", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:11"}
+{"id": "delay:2290 w/ Modulation", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:14"}
+{"id": "delay:Ambient Stereo", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:16"}
+{"id": "delay:Analog Mono", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:19"}
+{"id": "delay:Analog Stereo", "family": "delay", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:21"}
+{"id": "delay:Deluxe Mind Guy", "family": "delay", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:24"}
+{"id": "delay:Digital Mono", "family": "delay", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:26"}
+{"id": "delay:Digital Stereo", "family": "delay", "cpuPercent": 44.0, "raw": 24, "reads": [24, 24, 24], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:29"}
+{"id": "delay:DM-Two Delay", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [24, 25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:32"}
+{"id": "delay:Dual Delay", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:34"}
+{"id": "delay:Dual Head Tape", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:37"}
+{"id": "delay:Ducking Delay", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:40"}
+{"id": "delay:Graphite Copy Delay", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:42"}
+{"id": "delay:Lo-Fi Tape", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:45"}
+{"id": "delay:Mono BBD", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:47"}
+{"id": "delay:Mono Tape", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:50"}
+{"id": "delay:Pan Delay", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:52"}
+{"id": "delay:Ping-Pong", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:55"}
+{"id": "delay:Reverse Delay", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:47:57"}
+{"id": "delay:Stereo BBD", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:00"}
+{"id": "delay:Stereo Mind Guy", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:02"}
+{"id": "delay:Stereo Tape", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:05"}
+{"id": "delay:Stereo Trem Delay", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:07"}
+{"id": "delay:Surround Delay", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:10"}
+{"id": "delay:Sweep Delay", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:13"}
+{"id": "delay:Vintage Digital", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:15"}
+{"id": "delay:Wandering Delays", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:18"}
+{"id": "delay:Worn Tape", "family": "delay", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:20"}
+{"id": "compressor:Analog Compressor", "family": "compressor", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:23"}
+{"id": "compressor:Analog Sustainer", "family": "compressor", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:25"}
+{"id": "compressor:Citrus Juicer", "family": "compressor", "cpuPercent": 52.0, "raw": 40, "reads": [40, 40, 40], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:28"}
+{"id": "compressor:Classic VCA Compressor", "family": "compressor", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:30"}
+{"id": "compressor:Compander", "family": "compressor", "cpuPercent": 54.0, "raw": 44, "reads": [44, 44, 44], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:33"}
+{"id": "compressor:Dynami-Comp Classic", "family": "compressor", "cpuPercent": 51.0, "raw": 38, "reads": [38, 38, 38], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:35"}
+{"id": "compressor:Dynami-Comp Modern", "family": "compressor", "cpuPercent": 51.0, "raw": 38, "reads": [38, 38, 38], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:38"}
+{"id": "compressor:Dynami-Comp Soft", "family": "compressor", "cpuPercent": 51.0, "raw": 38, "reads": [38, 38, 38], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:41"}
+{"id": "compressor:Dynamics Processor", "family": "compressor", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 30, 29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:44"}
+{"id": "compressor:Econo-Dyno-Comp", "family": "compressor", "cpuPercent": 47.5, "raw": 31, "reads": [31, 31, 31], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:47"}
+{"id": "compressor:JFET Pedal Compressor", "family": "compressor", "cpuPercent": 48.0, "raw": 32, "reads": [32, 32, 32], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:49"}
+{"id": "compressor:JFET Studio Compressor", "family": "compressor", "cpuPercent": 52.0, "raw": 40, "reads": [40, 40, 40], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:52"}
+{"id": "compressor:Modern VCA Compressor", "family": "compressor", "cpuPercent": 50.5, "raw": 37, "reads": [37, 37, 37], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:54"}
+{"id": "compressor:Optical Compressor", "family": "compressor", "cpuPercent": 53.0, "raw": 42, "reads": [42, 42, 42], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:48:57"}
+{"id": "compressor:Rockguy Compressor", "family": "compressor", "cpuPercent": 47.5, "raw": 31, "reads": [31, 32, 31, 31, 31], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:00"}
+{"id": "compressor:Vari-Mu Tube Compressor", "family": "compressor", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:03"}
+{"id": "compressor:VCA Bus Compressor", "family": "compressor", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:05"}
+{"id": "compressor:VCA FB Sustainer", "family": "compressor", "cpuPercent": 51.5, "raw": 39, "reads": [39, 39, 39], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:08"}
+{"id": "compressor:VCA FF Sustainer", "family": "compressor", "cpuPercent": 51.0, "raw": 38, "reads": [38, 38, 38], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:10"}
+{"id": "chorus:4-Voice Analog", "family": "chorus", "cpuPercent": 51.5, "raw": 39, "reads": [39, 39, 39], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:13"}
+{"id": "chorus:8-Voice Analog", "family": "chorus", "cpuPercent": 54.5, "raw": 45, "reads": [45, 45, 45], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:15"}
+{"id": "chorus:8-Voice Stereo", "family": "chorus", "cpuPercent": 54.0, "raw": 44, "reads": [44, 44, 44], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:18"}
+{"id": "chorus:80's Style", "family": "chorus", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:21"}
+{"id": "chorus:Analog Mono", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:23"}
+{"id": "chorus:Analog Stereo", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:26"}
+{"id": "chorus:Digital Mono", "family": "chorus", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 36, 36, 35, 35, 36, 36, 35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:31"}
+{"id": "chorus:Digital Stereo", "family": "chorus", "cpuPercent": 49.5, "raw": 35, "reads": [35, 36, 36, 35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:35"}
+{"id": "chorus:Dimension 1", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:37"}
+{"id": "chorus:Dimension 2", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:40"}
+{"id": "chorus:Dimension 3", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:42"}
+{"id": "chorus:Dual Chorus", "family": "chorus", "cpuPercent": 48.0, "raw": 32, "reads": [32, 32, 32], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:45"}
+{"id": "chorus:Japan CE-1 Chorus", "family": "chorus", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:47"}
+{"id": "chorus:Japan CE-1 Vibrato", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:50"}
+{"id": "chorus:Japan CE-2", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:53"}
+{"id": "chorus:Japan CE-2 Bass", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:55"}
+{"id": "chorus:Japan Ch-1", "family": "chorus", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:49:58"}
+{"id": "chorus:Mx134 Stereo", "family": "chorus", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:00"}
+{"id": "chorus:Mx234", "family": "chorus", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 36, 36, 35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:04"}
+{"id": "chorus:Rockguy", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:07"}
+{"id": "chorus:Small Copy", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:09"}
+{"id": "chorus:Stereo Tri-Chorus", "family": "chorus", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:12"}
+{"id": "chorus:Tape Chorus", "family": "chorus", "cpuPercent": 49.0, "raw": 34, "reads": [35, 34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:15"}
+{"id": "chorus:Tape Flanger", "family": "chorus", "cpuPercent": 49.0, "raw": 34, "reads": [34, 33, 34, 34, 33, 35, 34, 34, 35, 33, 34, 34, 33, 34, 34, 33, 34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:23"}
+{"id": "chorus:Triangle Chorus", "family": "chorus", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:26"}
+{"id": "chorus:Vibrato", "family": "chorus", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:28"}
+{"id": "chorus:Warm Stereo", "family": "chorus", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:31"}
+{"id": "flanger:80's Rack Flanger", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:33"}
+{"id": "flanger:Analog Mono", "family": "flanger", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:36"}
+{"id": "flanger:Analog Stereo", "family": "flanger", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:38"}
+{"id": "flanger:BBF-2", "family": "flanger", "cpuPercent": 50.5, "raw": 37, "reads": [37, 37, 37], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:41"}
+{"id": "flanger:Binary Flange", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:43"}
+{"id": "flanger:Cancel Flange", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:46"}
+{"id": "flanger:Count of Flanging", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:48"}
+{"id": "flanger:Cuda Flange", "family": "flanger", "cpuPercent": 50.5, "raw": 37, "reads": [37, 37, 37], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:51"}
+{"id": "flanger:D/AD 185", "family": "flanger", "cpuPercent": 50.0, "raw": 36, "reads": [36, 36, 36], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:54"}
+{"id": "flanger:Deluxe Mystery", "family": "flanger", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:56"}
+{"id": "flanger:Digital Mono", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:50:59"}
+{"id": "flanger:Digital Stereo", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:01"}
+{"id": "flanger:Electric Mystery", "family": "flanger", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:04"}
+{"id": "flanger:FAS Flanger", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:06"}
+{"id": "flanger:Harmonoflange", "family": "flanger", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:09"}
+{"id": "flanger:Hemisflange", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [34, 33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:12"}
+{"id": "flanger:Lofty Flange", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:14"}
+{"id": "flanger:Manual Thru-Zero Flanger", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 34, 33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:18"}
+{"id": "flanger:Melodic Flange", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:20"}
+{"id": "flanger:MXF-117", "family": "flanger", "cpuPercent": 50.5, "raw": 37, "reads": [37, 37, 37], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:23"}
+{"id": "flanger:Pop Flanger", "family": "flanger", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:26"}
+{"id": "flanger:Scion Stereo Flange", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:28"}
+{"id": "flanger:Spirit Flange", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:31"}
+{"id": "flanger:Starship Flanger", "family": "flanger", "cpuPercent": 49.5, "raw": 35, "reads": [35, 34, 35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:34"}
+{"id": "flanger:Step Flanger", "family": "flanger", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:36"}
+{"id": "flanger:Stereo Jet", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:39"}
+{"id": "flanger:Thru-Zero", "family": "flanger", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:42"}
+{"id": "flanger:Trippy Flanger", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:44"}
+{"id": "flanger:Tubular", "family": "flanger", "cpuPercent": 49.0, "raw": 34, "reads": [34, 34, 34], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:47"}
+{"id": "flanger:Vowel Flanger", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:49"}
+{"id": "flanger:Zero Flanger", "family": "flanger", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 34, 33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:53"}
+{"id": "phaser:Barber Pole", "family": "phaser", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:55"}
+{"id": "phaser:Block 90", "family": "phaser", "cpuPercent": 47.0, "raw": 30, "reads": [30, 30, 30], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:51:58"}
+{"id": "phaser:Borg Phaser", "family": "phaser", "cpuPercent": 47.0, "raw": 30, "reads": [30, 30, 30], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:00"}
+{"id": "phaser:Classic Vibe", "family": "phaser", "cpuPercent": 47.5, "raw": 31, "reads": [31, 31, 31], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:03"}
+{"id": "phaser:Digital Mono", "family": "phaser", "cpuPercent": 47.0, "raw": 30, "reads": [30, 30, 30], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:06"}
+{"id": "phaser:Digital Stereo", "family": "phaser", "cpuPercent": 47.0, "raw": 30, "reads": [30, 30, 30], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:08"}
+{"id": "phaser:FAS Vibe", "family": "phaser", "cpuPercent": 47.5, "raw": 31, "reads": [31, 31, 31], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:11"}
+{"id": "phaser:Modern Vibe", "family": "phaser", "cpuPercent": 47.5, "raw": 31, "reads": [31, 31, 31], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:13"}
+{"id": "phaser:Mutated Twin-Phaser", "family": "phaser", "cpuPercent": 47.0, "raw": 30, "reads": [30, 30, 30], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:16"}
+{"id": "phaser:Naughty Rock", "family": "phaser", "cpuPercent": 47.5, "raw": 31, "reads": [31, 31, 31], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:18"}
+{"id": "phaser:Script 45", "family": "phaser", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:21"}
+{"id": "phaser:Script 90", "family": "phaser", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:23"}
+{"id": "phaser:Stereo 8-Stage", "family": "phaser", "cpuPercent": 47.5, "raw": 31, "reads": [31, 31, 31], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:26"}
+{"id": "phaser:Stripe 90", "family": "phaser", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:28"}
+{"id": "phaser:Treadle Phaser", "family": "phaser", "cpuPercent": 47.0, "raw": 30, "reads": [30, 30, 30], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:31"}
+{"id": "phaser:Ultra-Super-Mega Phaser", "family": "phaser", "cpuPercent": 48.5, "raw": 33, "reads": [33, 34, 34, 33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:35"}
+{"id": "phaser:Virtuoso Phaser", "family": "phaser", "cpuPercent": 47.0, "raw": 30, "reads": [30, 30, 30], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:37"}
+{"id": "wah:Clyde", "family": "wah", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:40"}
+{"id": "wah:Color-Tone", "family": "wah", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:42"}
+{"id": "wah:Cry Babe", "family": "wah", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:45"}
+{"id": "wah:FAS Wah", "family": "wah", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:47"}
+{"id": "wah:Funk Wah", "family": "wah", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:50"}
+{"id": "wah:Mortal", "family": "wah", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:52"}
+{"id": "wah:Paragon", "family": "wah", "cpuPercent": 45.5, "raw": 27, "reads": [27, 27, 27], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:55"}
+{"id": "wah:Vx845", "family": "wah", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:52:57"}
+{"id": "wah:Vx846", "family": "wah", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:00"}
+{"id": "tremolo:Bias Trem", "family": "tremolo", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:03"}
+{"id": "tremolo:Harmonic Trem", "family": "tremolo", "cpuPercent": 47.0, "raw": 30, "reads": [30, 30, 30], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:05"}
+{"id": "tremolo:Neon Trem", "family": "tremolo", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:08"}
+{"id": "tremolo:Optical Trem 1", "family": "tremolo", "cpuPercent": 46.0, "raw": 28, "reads": [29, 28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:11"}
+{"id": "tremolo:Optical Trem 2", "family": "tremolo", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 29, 28, 28, 29, 28, 29, 28, 29, 28, 29, 28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:17"}
+{"id": "tremolo:Panner", "family": "tremolo", "cpuPercent": 47.5, "raw": 31, "reads": [31, 31, 31], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:20"}
+{"id": "tremolo:VCA Trem", "family": "tremolo", "cpuPercent": 45.5, "raw": 27, "reads": [27, 27, 27], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:23"}
+{"id": "pitch:Advanced Whammy", "family": "pitch", "cpuPercent": 52.0, "raw": 40, "reads": [40, 40, 40], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:25"}
+{"id": "pitch:Arpeggiator", "family": "pitch", "cpuPercent": 53.5, "raw": 43, "reads": [43, 43, 43], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:28"}
+{"id": "pitch:Classic Whammy", "family": "pitch", "cpuPercent": 52.5, "raw": 41, "reads": [41, 41, 41], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:30"}
+{"id": "pitch:Crystal Echoes", "family": "pitch", "cpuPercent": 51.0, "raw": 38, "reads": [38, 38, 38], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:33"}
+{"id": "pitch:Custom Shifter", "family": "pitch", "cpuPercent": 55.0, "raw": 46, "reads": [46, 46, 47, 46, 46, 46], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:36"}
+{"id": "pitch:Dual Chromatic", "family": "pitch", "cpuPercent": 55.0, "raw": 46, "reads": [46, 46, 46], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:39"}
+{"id": "pitch:Dual Detune", "family": "pitch", "cpuPercent": 53.5, "raw": 43, "reads": [43, 43, 43], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:41"}
+{"id": "pitch:Dual Detune Delay", "family": "pitch", "cpuPercent": 53.5, "raw": 43, "reads": [43, 43, 43], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:44"}
+{"id": "pitch:Dual Diatonic", "family": "pitch", "cpuPercent": 55.5, "raw": 47, "reads": [47, 46, 47, 46, 47, 47, 47], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:48"}
+{"id": "pitch:Octave Divider", "family": "pitch", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:51"}
+{"id": "pitch:Quad Chromatic", "family": "pitch", "cpuPercent": 61.0, "raw": 58, "reads": [58, 57, 58, 58, 58], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:54"}
+{"id": "pitch:Quad Chromatic Delay", "family": "pitch", "cpuPercent": 61.0, "raw": 58, "reads": [58, 58, 58], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:53:56"}
+{"id": "pitch:Quad Detune", "family": "pitch", "cpuPercent": 58.5, "raw": 53, "reads": [54, 54, 53, 53, 53], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:00"}
+{"id": "pitch:Quad Diatonic", "family": "pitch", "cpuPercent": 61.5, "raw": 59, "reads": [59, 59, 59], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:02"}
+{"id": "pitch:Quad Diatonic Delay", "family": "pitch", "cpuPercent": 61.5, "raw": 59, "reads": [59, 59, 59], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:05"}
+{"id": "pitch:Virtual Capo", "family": "pitch", "cpuPercent": 52.0, "raw": 40, "reads": [41, 40, 41, 40, 41, 40, 40, 40], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:09"}
+{"id": "filter:All-Pass", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [27, 27, 28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:12"}
+{"id": "filter:Auto-Wah", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:15"}
+{"id": "filter:Band-Pass", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:17"}
+{"id": "filter:Envelope Filter", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 29, 28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:21"}
+{"id": "filter:Feedback Comb", "family": "filter", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:23"}
+{"id": "filter:Feedforward Comb", "family": "filter", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:26"}
+{"id": "filter:High-Pass", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:28"}
+{"id": "filter:High-Shelf", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:31"}
+{"id": "filter:High-Shelf 2", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:33"}
+{"id": "filter:Low-Pass", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:36"}
+{"id": "filter:Low-Shelf", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 29, 28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:40"}
+{"id": "filter:Low-Shelf 2", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:42"}
+{"id": "filter:Notch", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:45"}
+{"id": "filter:Null", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:47"}
+{"id": "filter:Peaking", "family": "filter", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:50"}
+{"id": "filter:Peaking 2", "family": "filter", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:52"}
+{"id": "filter:Tilt EQ", "family": "filter", "cpuPercent": 46.0, "raw": 28, "reads": [29, 28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:55"}
+{"id": "filter:Touch-Wah", "family": "filter", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:54:58"}
+{"id": "reverb-quality:Room: Large Room:ECONOMY", "family": "reverb-quality", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:00"}
+{"id": "reverb-quality:Room: Large Room:NORMAL", "family": "reverb-quality", "cpuPercent": 47.0, "raw": 30, "reads": [30, 30, 30], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:03"}
+{"id": "reverb-quality:Room: Large Room:HIGH", "family": "reverb-quality", "cpuPercent": 53.5, "raw": 43, "reads": [43, 43, 43], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:05"}
+{"id": "reverb-quality:Room: Large Room:ULTRA-HIGH", "family": "reverb-quality", "cpuPercent": 56.0, "raw": 48, "reads": [48, 48, 48], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:08"}
+{"id": "reverb-quality:Plate: Medium Plate:ECONOMY", "family": "reverb-quality", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:11"}
+{"id": "reverb-quality:Plate: Medium Plate:NORMAL", "family": "reverb-quality", "cpuPercent": 61.0, "raw": 58, "reads": [58, 58, 58], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:13"}
+{"id": "reverb-quality:Plate: Medium Plate:HIGH", "family": "reverb-quality", "cpuPercent": 61.0, "raw": 58, "reads": [58, 58, 58], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:16"}
+{"id": "reverb-quality:Plate: Medium Plate:ULTRA-HIGH", "family": "reverb-quality", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:18"}
+{"id": "reverb-quality:Hall: Large Hall:ECONOMY", "family": "reverb-quality", "cpuPercent": 44.5, "raw": 25, "reads": [25, 25, 25], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:21"}
+{"id": "reverb-quality:Hall: Large Hall:NORMAL", "family": "reverb-quality", "cpuPercent": 48.5, "raw": 33, "reads": [33, 33, 33], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:23"}
+{"id": "reverb-quality:Hall: Large Hall:HIGH", "family": "reverb-quality", "cpuPercent": 55.0, "raw": 46, "reads": [46, 46, 46], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:26"}
+{"id": "reverb-quality:Hall: Large Hall:ULTRA-HIGH", "family": "reverb-quality", "cpuPercent": 57.5, "raw": 51, "reads": [51, 51, 51], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:28"}
+{"id": "anchor:rotary", "family": "rotary", "cpuPercent": 49.5, "raw": 35, "reads": [35, 35, 35], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:31"}
+{"id": "anchor:peq", "family": "peq", "cpuPercent": 46.0, "raw": 28, "reads": [28, 28, 28], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:33"}
+{"id": "anchor:geq", "family": "geq", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:36"}
+{"id": "anchor:enhancer", "family": "enhancer", "cpuPercent": 46.5, "raw": 29, "reads": [29, 29, 29], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:39"}
+{"id": "anchor:synth", "family": "synth", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 57, 56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-23T15:55:42"}

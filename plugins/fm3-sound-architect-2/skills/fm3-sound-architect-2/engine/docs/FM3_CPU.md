@@ -40,8 +40,30 @@ Kontrollrida B6 = 52,9 % ja A5 = 52,8 % sama plokikomplektiga.
   esitatakse hinnang alampiirina ja vastav tüüp nimetatakse.
 - Ohutu piir on 80 %. Üle selle vaigistab seade heli ja kuvab hoiatuse.
 
+## Automaatne mõõtmine (2026-10-23)
+
+`tools/fm3/cpu-sweep-build.mjs` koostab mõõtepaki: 356 presetti NewLook-alusel, igas üks tüüp, Scene 1,
+päis `7F 00 00 40 00`. `scripts/cpu-sweep-collector/FM3_CPU_SWEEP.py` saadab need FM3 redaktsioonipuhvrisse
+ja loeb CPU `fn=0x01 sub=0x2E` vastusest. Midagi ei salvestata.
+`tools/fm3/cpu-sweep-ingest.mjs` teeb tulemustest `references/fm3-cpu-types-20261023.json`
+(toorandmed on failis `references/fm3-cpu-sweep-20261023-results.jsonl`).
+
+- **Redaktsioonipuhvrisse laadimine on FM3-l kinnitatud.** Päisega 7F 00 dump laaditakse redaktsioonipuhvrisse;
+  kasutaja nägi ekraanil nime.
+- **CPU baidi dekodeering** (`f[37]`): raw < 64 → 32 + raw/2, raw ≥ 64 → raw. Kontrollitud 12 käsitsi näidu vastu,
+  suurim viga ±0,5 % (`references/fm3-cpu-calibration-20261023.json`). ForgeFX-i valem 32 + raw × 0,5 kehtib
+  ainult alla 64 %.
+- 342 tüüpi 16 perest. Suurimad kulud: Spring: Lush Spring 42,7; plate-reverbid ~28,7; Pitch Quad ~17;
+  Synth 7,5; 8-Voice Chorus ~10; Compander/Optical Comp ~9; drive 1,9–8,9. Kõik delayd 1,2–1,7 (Ampi tuum).
+- Reverbi kvaliteet (lisa Economy suhtes): Large Room +2,5/+9/+11,5, Large Hall +4/+10,5/+13,
+  Medium Plate +1/+1/+2 (Normal/High/Ultra-High). Teistele algoritmidele võetakse sama kategooria suurim lisa.
+- Kontroll: Satriani V1 Scene 4 hinnang 60,1 %, mõõdetud 61 %. P6 A hinnang 83,1 %, mõõdetud 82,5 %.
+  P6 B hinnang 86,3 %, seadmes „CPU LIMIT EXCEEDED".
+
+`fm3-cpu.mjs` 0.2.0 arvutab iga stseeni CPU aktiivse kanali tüübi järgi. Mõõtmata tüübi korral kasutab see
+pere suurimat kulu ja nimetab selle. Hoiatus antakse alates 72 %-st; üle 80 % on ohutu piir ületatud.
+
 ## Järgmine
 
-Mõõta generaatori tüüpide kulud: reverb 79, drive 87, delay 27, compressor 19, phaser 17 ja teised.
-CPU lugemine on dekodeeritud (`fn=0x01 sub=0x2E`, CPU = 32 + f[37] × 0,5; ForgeFX FM3 fw12, FM9-l ristkontrollitud),
-nii et tüüpide läbimine saaks olla automaatne. See aga nõuab tüübi kirjutamist seadme redaktsioonipuhvrisse.
+- Mõõtmata on veel point-6 perede teised tüübid (Plex, Megatap jt), Cab LEGACY ja Amp (Ampi tuum).
+- Sama mõõtjaga saab tulevikus mõõta iga uue perekonna või püsivara (käivita builder, siis FM3_CPU_SWEEP.py).

@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2087,
-  "filePaths": 2291,
+  "uniqueContents": 2088,
+  "filePaths": 2292,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -5373,6 +5373,12 @@
         "references/pitch-batch-20261007-153634/capture-20261007T153251-32882a2cb4/capture.json"
       ]
     },
+    "70452a45e40f8e8dc802a3d38827d3d41219713ad7622ebda9095ea085923bac": {
+      "bytes": 17673,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "704a0bf414f8dc39f03ec557fd9d02d09efbde7655f60228ccc76ebdc0611ef4": {
       "bytes": 452,
       "paths": [
@@ -5637,12 +5643,6 @@
       "bytes": 2314,
       "paths": [
         "references/enhancer-full-20261012-122507/step-013-6fe53655fb/result.json"
-      ]
-    },
-    "7596f6c2e139ecd526753809e3b18a7f8009d712826e40b90cd0279e18208def": {
-      "bytes": 17663,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "759d25bd9ad90d83b3795c3dff04915d45b8519ddffd16aa9bf594bb90e6902d": {
@@ -6699,6 +6699,12 @@
       "bytes": 2320,
       "paths": [
         "references/enhancer-full-20261012-122507/step-014-161c7e2616/result.json"
+      ]
+    },
+    "8976c3114255ac18ef8847d332e760bbe2485aaf19c2890bf62dbdd53f0626a9": {
+      "bytes": 10488,
+      "paths": [
+        "references/fm3-cpu-types-20261023.json"
       ]
     },
     "89885998c219534cd3eab95e4aaa320b15669aaa811076b62f7b9d0993e02233": {

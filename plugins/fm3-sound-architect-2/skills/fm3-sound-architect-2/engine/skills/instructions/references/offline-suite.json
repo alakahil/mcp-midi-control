@@ -118,7 +118,7 @@
         "node",
         "scripts/test-cpu.mjs"
       ],
-      "scope": "point-7 CPU floor: subtractive costs reproduce session A, unmeasured Synth and other types flagged (Satriani V1); no device I/O",
+      "scope": "point-7 CPU estimate: hand costs consistent, 342 swept types, quality deltas, P6 A/B and Satriani V1 hardware cross-checks; no device I/O",
       "required": true
     },
     {
