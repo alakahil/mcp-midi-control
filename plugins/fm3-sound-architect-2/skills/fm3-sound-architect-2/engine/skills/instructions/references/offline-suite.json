@@ -113,6 +113,15 @@
       "required": true
     },
     {
+      "id": "test-grid",
+      "command": [
+        "node",
+        "scripts/test-grid.mjs"
+      ],
+      "scope": "General 4x12 grid (audit point 5): factory receipt (384 grids accepted, 4801 masks reproduced), split/merge masks, graph refusals, exact record removal and second instances, Mixer/Multiplexer insertion, own-grid body reproduction, full grid-mode pipeline; no device or audio proof",
+      "required": true
+    },
+    {
       "id": "test-cpu",
       "command": [
         "node",

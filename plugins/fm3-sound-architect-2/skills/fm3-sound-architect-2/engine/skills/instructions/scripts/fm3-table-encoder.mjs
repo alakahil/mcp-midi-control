@@ -24,7 +24,8 @@ export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','
 export const OPT_IN_STATUSES=Object.freeze(['linear-by-structure','enum-labels']);
 export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT',volpan:'VOLUME',in1:'INPUT'
 ,
-  plex:'PLEX',multiband:'MULTICOMP',synth:'SYNTH',looper:'LOOPER',gate:'GATE',formant:'FORMANT',tentap:'TENTAP',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR'});
+  plex:'PLEX',multiband:'MULTICOMP',synth:'SYNTH',looper:'LOOPER',gate:'GATE',formant:'FORMANT',tentap:'TENTAP',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',
+  mixer:'MIXER',multiplexer:'MULTIPLEXER'});
 
 // Class 0x01 non-enum words are stored integers, not normalised 0…65534 values (Claude, 2026-10-23):
 // all 57 class-0x01 parameters that occur in 574 distinct bodies (bundled exports + nine device FW13
@@ -50,8 +51,11 @@ export function loadDictionary(){
   for(const p of d.params){byKey.set(p.block+':'+p.param,p);if(p.name)byName.set(p.family+':'+p.name,p)}
   return cache={...d,byKey,byName};
 }
+// Second and later block instances use the base family's slug plus the instance number (drive2, delay2,
+// filter3); same dictionary entries, own effect ID (record header word 0 only, see fm3-layout blockOf).
+export function baseSlug(slug){const m=/^([a-z]+?)([2-4])$/.exec(String(slug));return m&&Object.hasOwn(FAMILY_BY_SLUG,m[1])?m[1]:slug;}
 export function findParam(family,param){
-  const d=loadDictionary(),fam=FAMILY_BY_SLUG[family]??family;
+  const d=loadDictionary(),fam=FAMILY_BY_SLUG[family]??FAMILY_BY_SLUG[baseSlug(family)]??family;
   const byPid=pid=>[...d.byKey.values()].find(x=>x.family===fam&&x.param===pid);
   const p=typeof param==='number'?byPid(param):d.byName.get(fam+':'+param)??d.byName.get(fam+':'+fam+'_'+String(param).toUpperCase())??byPid(nativeParameterId(fam,param));
   check(p,`Unknown parameter ${family}/${param}`);return p;
@@ -76,7 +80,7 @@ export function validateOptions(opts){
 }
 export function validateControl(c,experimental=false){
   assertFields(c,experimental?['block','channel','param','value','raw']:['block','channel','param','value'],'control');
-  check(Object.hasOwn(FAMILY_BY_SLUG,c.block),'Unknown control block');
+  check(Object.hasOwn(FAMILY_BY_SLUG,baseSlug(c.block)),'Unknown control block');
   channelIndex(c.channel);
   check((typeof c.param==='string'&&c.param.length>0)||(Number.isInteger(c.param)&&c.param>=0),'Invalid parameter');
   check(Object.hasOwn(c,'raw')!==Object.hasOwn(c,'value'),'Exactly one control value is required');

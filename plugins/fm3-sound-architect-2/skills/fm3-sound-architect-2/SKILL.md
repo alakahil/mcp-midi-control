@@ -106,8 +106,8 @@ Tee väljundid töökausta väljaspool skill'i/plugina lähtefaile.
    järgi: `schemaVersion:1`, `firmware:13`, `baseProfile:"jb-composer"`, nimi,
    vajalikud mallid/juhid ning `scenes`. Paigutuse või tabelijuhtide jaoks kasuta
    [soundi skeemi](engine/skills/instructions/scripts/fm3-sound.schema.json):
-   eelmine kirjeldus läheb väljale `composer`; lisa `layout` ning vajadusel
-   `insert`, `controls`, `blockScenes`, `selectedScene`, `purpose`, `context`. Alusta toimivast
+   eelmine kirjeldus läheb väljale `composer`; lisa `layout` (kaks jadarida) või `grid` (üldine
+   4 × 12 ruudustik, vt allpool) ning vajadusel `insert`, `controls`, `blockScenes`, `selectedScene`, `purpose`, `context`. Alusta toimivast
    `examples/SATRIANI_SOAP_ON_A_ROPE_V3.spec.json` näitest, kui siht seda eeldab.
    `context` väljad on `guitar`, `pickups`, `output`; ära mõtle kasutajainfot välja.
    Loe soovitud efektipere juhendit allpool.
@@ -286,13 +286,27 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   värsketest vaikeplokkidest (`references/fm3-default-blocks-20261023.syx`). Lisatud plokk on kõigis
   8 stseenis kanalil A ja bypassis; sisse lülita `blockScenes` abil. Looperil on 1 kanal, Megatap/Ring Mod/
   Resonatoril 2 (A/B). Plexi TIME1–8 ja LFO Rate kirjutamine nõuab samas spetsis vastava TEMPO = NONE
-  (FM3-Edit'i paigutuse lukud, `references/fm3-insert-tempo-locks.json`). Mixer ja Multiplexer ootavad
-  paralleelharusid (punkt 5); Scene MIDI väljad on dekodeerimata — need lükatakse tagasi. Mix-juhid
+  (FM3-Edit'i paigutuse lukud, `references/fm3-insert-tempo-locks.json`). Mixer ja Multiplexer lisanduvad
+  ainult `grid`-režiimis (punkt 5); Scene MIDI väljad on dekodeerimata — see lükatakse tagasi. Mix-juhid
   vajavad `allow: ["linear-by-structure"]`, valikuloendid `enum-labels`. Seadmel kinnitatud on kirjete
   kuju ja genereeritud lisamise import/eksport (`examples/FM3_P6_INSERT_{A,B}*`; seade normaliseerib kirjete
   järjekorra, sisu sama). Kuus CPU-raskemat plokki korraga ületasid CPU piiri: hoia lisatud plokkide arv mõõdukas.
   Klassi 0x01 juhid (nt Shift, Number of Taps) on täisarvud.
   Detailid: `engine/docs/FM3_POINT6_BLOCKS.md`.
+- **Üldine ruudustik (auditi punkt 5)** `scripts/fm3-grid.mjs`, väli `grid` (`layout` asemel):
+  `rows` = 4 rida × 12 lahtrit (`""` tühi, `"-"` shunt, muidu ploki nimi: in1, out1, send, return, amp,
+  drive2, mixer …); `links` = `[{row, col, from:[read]}]` (1-põhine) hargnemiseks ja liitmiseks, muidu võtab
+  lahter sisendi sama rea eelmisest veerust. Link nimetab SIHTlahtri, allikas on eelmine veerg: Cabi-järgne haru
+  algab Cabist ühe veeru võrra paremal (muidu tuleb signaal Ampist). Kontrolli `.txt` hargnemiste loendit
+  ja HOIATUS-ridu. Iga plokk peab olema In 1/Return/Synth'ist Out 1/Send'ini
+  ühendatud; iga presetis olev plokk peab ruudustikul olema. `remove` eemaldab plokke (mitte In 1/Out 1/
+  Amp/Cab; Send+Return koos), `duplicate` lisab teise eksemplari (drive2, delay2, compressor2, filter2–4 jt,
+  ainult tehasepresetites nähtud), `insert` lisab ka mixer/multiplexer. Uued plokid: A, bypass; lülita
+  sisse `blockScenes` abil. Tõend: kõik 384 tehase ruudustikku läbivad planeerija ja 4801/4801 sisendmaski
+  taastuvad (`references/fm3-factory-grid-evidence.json`). **Seadmel kinnitatud** 2026-10-23: 7 testruudustikku
+  (hargnemised, liitmised, 4 rida, Mixer, Multiplexer, Synth, eksemplarid, eemaldamine) lugesid tagasi 48/48
+  lahtrit (`references/fm3-grid-check-20261023.json`). Ära küsi seda uuesti; heli on veel kuulamata.
+  Detailid: `engine/docs/FM3_GRID.md`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
   (342 seadmes mõõdetud tüüpi + reverbi kvaliteet, ±1 %; ohutu piir 80 %, hoiatus alates 72 %). Mõõtmata tüüp kasutab
   pere maksimumi ja nimetatakse. Amp/Delay tuuma ei näe. Ütle kasutajale hinnang; vali raskete tüüpide (Plate/Spring

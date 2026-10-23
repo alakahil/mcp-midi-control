@@ -7,7 +7,8 @@ import {validateVolumeWrites} from './fm3-volume-policy.mjs';
 import {validateInputGateWrites} from './fm3-input-gate.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
-import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG,assertFields,channelIndex,validateControl,validateOptions} from './fm3-table-encoder.mjs';
+import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG,assertFields,channelIndex,validateControl,validateOptions,baseSlug} from './fm3-table-encoder.mjs';
+import {readModifiers} from './fm3-parameter-dependencies.mjs';
 import {validateDependencyWrites} from './fm3-parameter-dependencies.mjs';
 import {validateTypeWrites} from './fm3-type-applicability.mjs';
 import {validateInsertedTempo} from './fm3-insert-tempo.mjs';
@@ -21,7 +22,9 @@ const RECORDS_START=4610;
 const gridAt=(row,col)=>GRID.start+col*16+row*4; // zero-based row/col
 export const SLUG_BY_EID=Object.freeze({58:'amp',62:'cab',118:'drive',70:'delay',66:'reverb',90:'phaser',46:'compressor',78:'chorus',82:'flanger',94:'wah',106:'tremolo',86:'rotary',110:'pitch',114:'filter',54:'peq',50:'geq',122:'enhancer',102:'volpan',
   // audit point 6, placed by fm3-insert-blocks.mjs
-  178:'plex',154:'multiband',130:'synth',166:'looper',146:'gate',98:'formant',158:'tentap',138:'megatap',150:'ringmod',162:'resonator'});
+  178:'plex',154:'multiband',130:'synth',166:'looper',146:'gate',98:'formant',158:'tentap',138:'megatap',150:'ringmod',162:'resonator',
+  // audit point 5, parallel routing (fm3-grid.mjs)
+  126:'mixer',191:'multiplexer'});
 const EID_BY_SLUG=Object.fromEntries(Object.entries(SLUG_BY_EID).map(([e,s])=>[s,+e]));
 
 // Channel count per record when it is not 4. Send/Return: every export. Looper 166 (24×1):
@@ -124,11 +127,14 @@ export function applyTableControls(body,controls,opts={},allow=()=>{}){
   for(const c of controls){
     validateControl(c);
     const r=records.find(x=>x.family===c.block);check(r,`Block ${c.block} is not placed in this preset`);
-    const p=findParam(c.block,c.param);check(p.block===r.eid&&p.param<r.words,'Parameter/record mismatch');
+    const p=findParam(c.block,c.param);check(p.block===r.block&&p.param<r.words,'Parameter/record mismatch');
+    // Instance blocks: validators see the base family (type policy, tempo locks); modifiers are bound
+    // to the instance's own effect ID, which those validators do not know, so a bound target is refused.
+    if(r.instance>1)check(!readModifiers(body).some(m=>m.active&&m.effectId===r.eid&&m.pid===p.param),`${c.block} ${p.name}: modifier-controlled on instance ${r.instance}`);
     const ch=channelIndex(c.channel);check(ch<r.channels,'Channel absent in block');
     const offset=r.start+ch*r.words*2+p.param*2;check(!seen.has(offset),'Duplicate control');seen.add(offset);
     const raw=encodeValue(p,c.value,opts);
-    writes.push({effectId:p.block,block:c.block,channel:c.channel,pid:p.param,name:p.name,label:p.label,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
+    writes.push({effectId:p.block,block:baseSlug(c.block),instanceBlock:c.block,instanceEid:r.eid,channel:c.channel,pid:p.param,name:p.name,label:p.label,status:p.status,kind:p.kind,value:c.value,raw,before:body.readUInt16LE(offset),offset,display:decodeValue(p,raw)});
   }
   validateInputGateWrites(body,writes);
   validateVolumeWrites(body,writes);
@@ -140,7 +146,7 @@ export function applyTableControls(body,controls,opts={},allow=()=>{}){
 }
 // Scene channel/bypass for any placed block: {block:[{scene,channel,bypass}]}
 export function applyBlockScenes(body,blockScenes,allow=()=>{}){
-  assertFields(blockScenes,Object.keys(SLUG_BY_EID).map(k=>SLUG_BY_EID[k]),'blockScenes');
+  check(blockScenes&&typeof blockScenes==='object'&&!Array.isArray(blockScenes)&&Object.keys(blockScenes).every(k=>Object.values(SLUG_BY_EID).includes(baseSlug(k))),'Unknown blockScenes field');
   const {records}=scanRecords(body),edits=[];
   for(const [family,list] of Object.entries(blockScenes)){
     const r=records.find(x=>x.family===family);check(r,`Block ${family} is not placed`);

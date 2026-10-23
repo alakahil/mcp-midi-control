@@ -5,6 +5,7 @@ import {volumeUnits} from './fm3-volume-policy.mjs';
 import {describeInputGate,inputUnits} from './fm3-input-gate.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {scanRecords,describeRows,SLUG_BY_EID} from './fm3-layout.mjs';
+import {describeGrid,describeLinks,gridWarnings,isTwoRowSerial} from './fm3-grid.mjs';
 import {layouts,filterDonor,peqDonor,geqDonor,enhancerDonor} from './fm3-composer-bases.mjs';
 import {describeComposerScenes} from './fm3-jb-composer.mjs';
 import {loadDictionary,decodeValue,DEFAULT_STATUSES,OPT_IN_STATUSES,findParam} from './fm3-table-encoder.mjs';
@@ -36,7 +37,7 @@ export function finalSoundState(syx,writes,opts={}){
     const activeChannels=new Set(scenes.map(s=>s.blocks[r.family]?.channel).filter(Boolean));
     if(r.family==='out1')activeChannels.add('A');
     if(r.family==='in1')for(let n=0;n<8;n++){const ch=body.readUInt16LE(r.header+10+n*2);if(ch<4)activeChannels.add('ABCD'[ch]);}
-    for(const w of writes.filter(w=>w.block===r.family))activeChannels.add(w.channel);
+    for(const w of writes.filter(w=>(w.instanceBlock??w.block)===r.family))activeChannels.add(w.channel);
     for(const channel of [...activeChannels].sort()){
       const i='ABCD'.indexOf(channel);
       for(const p of dictionary.params.filter(p=>p.block===r.eid&&p.param<r.words&&statuses.has(p.status))){
@@ -48,7 +49,7 @@ export function finalSoundState(syx,writes,opts={}){
     }
   }
   const inputGate=describeInputGate(body,records.find(r=>r.eid===37));
-  return {inputGate,volumePan:describeVolumePan(body,records.find(r=>r.eid===102)),name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalRows:describeRows(body),scenes,controls:effective,channels,parameters,dependencies:dependencyPolicySummary(),modifiers,typeApplicability:typePolicySummary(),pitchCustomScales:pitchCustomScaleSummary(),globalScaleDependencies:globalScaleDependencies(channels),outputSha256:sha256(syx)};
+  return {inputGate,volumePan:describeVolumePan(body,records.find(r=>r.eid===102)),name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalLayout:isTwoRowSerial(body)?'two-row':'grid',signalRows:isTwoRowSerial(body)?describeRows(body):describeGrid(body),signalLinks:isTwoRowSerial(body)?[]:describeLinks(body),gridWarnings:isTwoRowSerial(body)?[]:gridWarnings(body),scenes,controls:effective,channels,parameters,dependencies:dependencyPolicySummary(),modifiers,typeApplicability:typePolicySummary(),pitchCustomScales:pitchCustomScaleSummary(),globalScaleDependencies:globalScaleDependencies(channels),outputSha256:sha256(syx)};
 }
 function unitFor(p){
   // Only explicit, already used units; unknown units stay labelled as editor values.
@@ -77,7 +78,7 @@ export function renderFinalSoundText(state,spec){
     `Eesmärk: ${spec.purpose??spec.composer.purpose??'Kirjeldatud soundi koostamine.'}`,
     'Seade: FM3 Mk II Turbo, firmware 13.',`Kitarr: ${context.guitar??'selle kirjelduse jaoks määramata'}`,
     `Helipead: ${context.pickups??'selle kirjelduse jaoks määramata'}`,`Ühendus: ${context.output??'selle kirjelduse jaoks määramata'}`,
-    `Valitud Scene: ${state.selectedScene}`,...state.signalRows.map((r,i)=>`Rida ${i+2}: ${r}`),'','STSEENID JA LÕPLIKUD MUDELID'];
+    `Valitud Scene: ${state.selectedScene}`,...(state.signalLayout==='grid'?['Ruudustik (4 × 12; "-" = shunt, "." = tühi, "<2+3" = sisend ridadest 2 ja 3):',...state.signalRows.map((r,i)=>`Rida ${i+1}: ${r}`),...(state.signalLinks.length?['Hargnemised ja liitmised (sihtlahter ← allikas):',...state.signalLinks.map(l=>'  '+l)]:[]),...state.gridWarnings.map(w=>'HOIATUS: '+w)]:state.signalRows.map((r,i)=>`Rida ${i+2}: ${r}`)),'','STSEENID JA LÕPLIKUD MUDELID'];
   lines.push(...renderWahModifierText(state.modifierEdit));
   if(state.controls.some(w=>w.block==='in1'))lines.push('','SISENDI GATE — INPUT 1',
     'Presetis salvestatud A–D väärtused; Gate Type, Mode ja bypass säilivad. See ei ole eraldi Gate-plokk.',
