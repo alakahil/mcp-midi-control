@@ -1,0 +1,256 @@
+{
+  "composer": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-composer",
+    "name": "FM3 DAILY CONTROL",
+    "modifiers": {
+      "external1Wah": false
+    }
+  },
+  "volumePan": true,
+  "layout": {
+    "row2": [
+      "drive",
+      "amp",
+      "cab"
+    ],
+    "row3": [
+      "volpan",
+      "delay",
+      "reverb"
+    ],
+    "columns": {
+      "drive": 4,
+      "amp": 6,
+      "cab": 8,
+      "volpan": 2,
+      "delay": 9,
+      "reverb": 10
+    }
+  },
+  "controls": [
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "THRESH",
+      "value": -65
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "RATIO",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "ATTACK",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "RELEASE",
+      "value": 150
+    },
+    {
+      "block": "in1",
+      "channel": "A",
+      "param": "LEVEL",
+      "value": -3
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "THRESH",
+      "value": -65
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "RATIO",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "ATTACK",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "RELEASE",
+      "value": 150
+    },
+    {
+      "block": "in1",
+      "channel": "B",
+      "param": "LEVEL",
+      "value": -3
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "THRESH",
+      "value": -65
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "RATIO",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "ATTACK",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "RELEASE",
+      "value": 150
+    },
+    {
+      "block": "in1",
+      "channel": "C",
+      "param": "LEVEL",
+      "value": -3
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "THRESH",
+      "value": -65
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "RATIO",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "ATTACK",
+      "value": 3
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "RELEASE",
+      "value": 150
+    },
+    {
+      "block": "in1",
+      "channel": "D",
+      "param": "LEVEL",
+      "value": -3
+    },
+    {
+      "block": "volpan",
+      "channel": "A",
+      "param": "GAIN",
+      "value": 7.5
+    },
+    {
+      "block": "volpan",
+      "channel": "A",
+      "param": "TAPER",
+      "value": "LINEAR"
+    },
+    {
+      "block": "volpan",
+      "channel": "B",
+      "param": "GAIN",
+      "value": 5
+    },
+    {
+      "block": "volpan",
+      "channel": "B",
+      "param": "TAPER",
+      "value": "LINEAR"
+    },
+    {
+      "block": "volpan",
+      "channel": "C",
+      "param": "GAIN",
+      "value": 2.5
+    },
+    {
+      "block": "volpan",
+      "channel": "C",
+      "param": "TAPER",
+      "value": "LINEAR"
+    },
+    {
+      "block": "volpan",
+      "channel": "D",
+      "param": "GAIN",
+      "value": 10
+    },
+    {
+      "block": "volpan",
+      "channel": "D",
+      "param": "TAPER",
+      "value": "LINEAR"
+    }
+  ],
+  "blockScenes": {
+    "volpan": [
+      {
+        "scene": 1,
+        "channel": "A",
+        "bypass": false
+      },
+      {
+        "scene": 2,
+        "channel": "B",
+        "bypass": false
+      },
+      {
+        "scene": 3,
+        "channel": "C",
+        "bypass": false
+      },
+      {
+        "scene": 4,
+        "channel": "D",
+        "bypass": false
+      },
+      {
+        "scene": 5,
+        "channel": "A",
+        "bypass": true
+      },
+      {
+        "scene": 6,
+        "channel": "A",
+        "bypass": true
+      },
+      {
+        "scene": 7,
+        "channel": "A",
+        "bypass": true
+      },
+      {
+        "scene": 8,
+        "channel": "A",
+        "bypass": true
+      }
+    ]
+  },
+  "allow": [
+    "enum-labels"
+  ],
+  "selectedScene": 1,
+  "purpose": "FM3 DAILY CONTROL: NewLook-aluse igapäevane tasemejuhtimine. Amp/Cab mudelid ja muud algsed efektiseaded säilivad. Input 1 A–D: Threshold −65 dB, Ratio 3:1, Attack 3 ms, Release 150 ms, Level −3 dB. Volume/Pan 1 enne Delay ja Reverb plokke: A 7.5, B 5, C 2.5, D 10; LINEAR taper. Scene 1–4 Volume A/B/C/D aktiivne; Scene 5–8 Volume bypass. Uut modifikaatorit ega pedaalisidumist ei lisata.",
+  "context": {
+    "guitar": "Fender Stratocaster",
+    "pickups": "single coil",
+    "output": "OUT 1 stereo FOH"
+  }
+}

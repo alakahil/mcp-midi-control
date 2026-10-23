@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "bodyBytes": 12804,
+  "changedBodyBytes": 0,
+  "ampWords": 576,
+  "cabWords": 424,
+  "scene2And6Preserved": true,
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 5,
+      "after": 106,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 35,
+      "after": 50,
+      "field": "CRC"
+    }
+  ],
+  "hardware": "Exact representative NewLook Amp A/D + Cab A/C/D composition import/export confirmed. Other models/destinations/combinations retain offline tests only."
+}

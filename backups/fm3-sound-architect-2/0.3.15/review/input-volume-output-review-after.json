@@ -1,0 +1,25 @@
+{
+  "sourceCommit": "881bb54e36a4e678e413f8b84d171f2eb53a7b4a",
+  "results": [
+    {
+      "name": "volume-header",
+      "accepted": false,
+      "error": "Undeclared Volume header changed\n+ actual - expected\n... Skipped lines\n\n  Buffer(46) [Uint8Array] [\n    102,\n    0,\n+   1,\n    0,\n    0,\n    0,\n    0,\n    0,\n...\n    0,\n-   0,\n    15,\n    0,\n    4,\n    0\n  ]\n",
+      "crc": true
+    },
+    {
+      "name": "volume-active-modifier",
+      "accepted": false,
+      "error": "volpan A VOLUME_GAIN: modifier-controlled; explicit static write conflicts with active or uncertain modifier",
+      "crc": true
+    },
+    {
+      "name": "input-active-modifier",
+      "accepted": false,
+      "error": "in1 A INPUT_THRESH: modifier-controlled; explicit static write conflicts with active or uncertain modifier",
+      "crc": true
+    }
+  ],
+  "scope": "working-tree fix after the recorded base commit",
+  "sourceDirty": true
+}

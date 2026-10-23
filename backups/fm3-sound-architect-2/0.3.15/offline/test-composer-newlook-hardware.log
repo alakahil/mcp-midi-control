@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "bodyBytes": 13106,
+  "changedBodyBytes": 0,
+  "headerChanges": [
+    {
+      "offset": 4,
+      "before": 77,
+      "after": 214,
+      "field": "CRC"
+    },
+    {
+      "offset": 5,
+      "before": 250,
+      "after": 227,
+      "field": "CRC"
+    }
+  ],
+  "chorus": {
+    "eid": 78,
+    "header": 6702,
+    "recordBytes": 302,
+    "matchedParameterWords": 128,
+    "channels": 4,
+    "sceneChannels": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "B",
+      "A",
+      "A"
+    ],
+    "sceneBypass": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "hardware": "Import/export confirmed for this exact automatic Chorus insertion on the NewLook base. Other inserted families/combinations retain separate offline evidence."
+}

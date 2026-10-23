@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "bodyBytes": 13804,
+  "changedBodyBytes": 0,
+  "matchedEnhancerWords": 48,
+  "identicalGeneratedSyx": true,
+  "cpu": {
+    "maximumObservedPercent": 52.7,
+    "source": "User report",
+    "scope": "This combined Enhancer A-D test; not a universal maximum"
+  },
+  "audio": {
+    "userReport": "Enhancer toimib",
+    "meaning": "User confirms Enhancer works; no separate assertion of equal loudness, mono compatibility or every parameter display"
+  }
+}

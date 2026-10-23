@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+  "version": "0.3.15",
+  "sourceCommit": "981806a528934d2196a3f29f98fb38328693f705",
+  "sourcePluginTreeSha256": "96630a890427c949b94f41ada753f0dd1c463ea9001fca1bff6b1c07afa6724b",
+  "archiveSha256": "2da1c745246df270e7b69eb1da6c35f2f417838e11443f0232c45ed8e2ac0dc6",
+  "archiveBytes": 22688309,
+  "testSummarySha256": "f847bae8c121e0909528a49ed03d5f95c124b895439c9aa4bb429aba65151e0b",
+  "manifestSha256": "0e0c2adca5e57ec531b31550dfe97547c025763006e79b7573d5fea0992a5bff",
+  "conservativeArchiveEntries": 3881,
+  "publishedReleaseId": null,
+  "status": "candidate; remote commit and host loading require separate confirmation"
+}

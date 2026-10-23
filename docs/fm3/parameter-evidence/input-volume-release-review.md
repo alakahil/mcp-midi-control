@@ -1,3 +1,5 @@
+> **Avaldatud seis, 23.10.2026:** 0.3.15, lähtecommit `15840e463b0d8f90ab3c46b8c0d4e6865b88a004`, privaatne release `pluginrel_6adb3151f998819193808162d75516b5`. Allpool säilib arenduse ajalugu. Lõplikud avaldamise ja laadimise tõendid: [taastamise varukoopia](../../../backups/fm3-sound-architect-2/0.3.15/README.md). Järgmine kitsas uurimus: [Volume pedaaliseos](volume-pedal-next-step.md).
+
 # FM3 0.3.15 — Input gate / Volume-Pan väljalaskeülevaatus
 
 Lähtekandidaat on `881bb54e36a4e678e413f8b84d171f2eb53a7b4a` (PR #16).

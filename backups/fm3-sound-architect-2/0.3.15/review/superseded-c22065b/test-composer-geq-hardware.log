@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "bodyBytes": 13662,
+  "changedBodyBytes": 0,
+  "matchedGeqWords": 80,
+  "screenshotChannelCMatches": true,
+  "firstBand": "100 Hz",
+  "levelDisplay": -0.7,
+  "identicalGeneratedSyx": true,
+  "cpu": {
+    "maximumObservedPercent": 50,
+    "source": "User report for this GEQ combined specimen; not a universal maximum"
+  },
+  "audio": "User reports GEQ worked; no artist-reference comparison claimed"
+}

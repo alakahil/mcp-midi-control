@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "bodyBytes": 13146,
+  "changedOffsets": [
+    5234,
+    5235,
+    5522,
+    5523
+  ],
+  "individualCases": 14,
+  "combinedCases": 7,
+  "rejected": 14,
+  "oldV2Unchanged": true,
+  "points": [
+    {
+      "channel": "C",
+      "model": "USA MK IV Lead Bright",
+      "displayDb": -11,
+      "raw": 45218
+    },
+    {
+      "channel": "D",
+      "model": "Plexi 50W High 1",
+      "displayDb": -11,
+      "raw": 45218
+    }
+  ]
+}

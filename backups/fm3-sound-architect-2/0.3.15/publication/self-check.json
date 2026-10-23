@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "scope": "Files and runtime at the invoked path; host discovery must separately identify this path",
+  "path": "/workspace/scratch/7bb7161c8153/research/release-0315-final/unpacked check % # \u00fc/fm3-sound-architect-2",
+  "version": "0.3.15",
+  "sourceCommit": "981806a528934d2196a3f29f98fb38328693f705",
+  "filesVerified": 3141,
+  "knownPresetSha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+  "deviceIO": false
+}

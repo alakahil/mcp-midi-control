@@ -1,0 +1,8 @@
+{
+  "sourceCommit": "981806a528934d2196a3f29f98fb38328693f705",
+  "prMergeCommit": "232992e3c4e3c53e44252649b7a19124075875d9",
+  "sourceTree": "65f372a926189e38f8f1fcb110c6eb5a3934c661",
+  "prMergeTree": "65f372a926189e38f8f1fcb110c6eb5a3934c661",
+  "identical": true,
+  "note": "PR workflow checks temporary merge commit; local and push workflow attest branch source commit."
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "sourceCommit": "15840e463b0d8f90ab3c46b8c0d4e6865b88a004",
+  "files": 3142,
+  "allManifestHashes": true,
+  "selfCheck": {
+    "passed": true,
+    "scope": "Files and runtime at the invoked path; host discovery must separately identify this path",
+    "path": "/workspace/scratch/7bb7161c8153/research/release-0315-publish/unpacked check % # \u00fc/fm3-sound-architect-2",
+    "version": "0.3.15",
+    "sourceCommit": "15840e463b0d8f90ab3c46b8c0d4e6865b88a004",
+    "filesVerified": 3141,
+    "knownPresetSha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+    "deviceIO": false
+  },
+  "fourFileVerify": true,
+  "syxSha256": "7560d5510041676201e154553f1aba7d0c7239e55db22431a3f8a1c9c82c44fe",
+  "pathContainsSpacesPercentHashUnicode": true
+}

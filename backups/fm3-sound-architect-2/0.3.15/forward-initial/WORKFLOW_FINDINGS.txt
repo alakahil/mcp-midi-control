@@ -1,0 +1,22 @@
+FM3 Sound Architect 2 — 0.3.15 offline kasutuskatse
+
+Loodud preset: FM3 DAILY CONTROL
+Alus: JB_RHYTHM_LEVEL_MINUS3_NewLook.syx
+Kontroll: fm3-preset.mjs --verify läbitud; lisakontroll FM3_DAILY_CONTROL.checks.json läbitud.
+Väljundit ega plugina lähtefaile pärast kontrolli ei muudetud. Avaldamist ja seadmeühendust ei tehtud.
+
+LEID: VOLUME/PAN-I MÄÄRAMATA STSEENIDE VAIKESEIS
+Loetud SKILL.md üldjuhis: „uued plokid algavad bypass'is ning aktiveeritakse scenes kaudu.”
+Volume/Pan 1 doonori tegelik seis: kõik 8 stseeni algavad kanalil A aktiivsena.
+Päring määras ainult Scene 1–5. Lõppfail vastab neile täpselt, aga Scene 6–8 jäid doonori seisundisse A aktiivne.
+Kuna kanali A GAIN on nüüd 7.5, rakendub see ka stseenides 6–8.
+See ei ole binaarse faili viga. Tegemist on üldjuhise ja selle ploki doonori erisuse kirjeldamise puudusega.
+Praegune väljund säilitati muutmata, et tulemust saaks korrata ning juhendit selle alusel täpsustada.
+
+TÄIENDAVAD MÄRKUSED
+- Valitud Scene 2 säilis alusest; päring ei määranud algstseeni.
+- Amp/Cab ja kõik muud algsed plokikirjed peale 20 küsitud Input-sihtsõna säilisid baittäpselt.
+- Input 1 A–D Type INTELLIGENT, Mode ADVANCED säilisid; Ratio ja Attack kirjutamine oli seetõttu lubatud.
+- Aktiivseid modifikaatoreid on 0. Aluse passiivne Wah Control sihtkirje jääb alles ja on puuduva Wah-ploki tõttu auditis infona märgitud.
+- Volume/Pan on VOLUME, INPUTSELECT STEREO, BYPASSMODE THRU; uusi pedaalisidumisi ei lisatud.
+- TXT ja JSON näitavad täpseid salvestatud ümardusi. Uute skaalaväärtuste füüsikalist mõõtmist, importi, STORE/reload'i, heli ega CPU-d see katse ei kinnita.

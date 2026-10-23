@@ -1,0 +1,8 @@
+{
+  "pluginId": "plugins_6accfd716e148191b0adb61e4e36f0e4",
+  "releaseId": "pluginrel_6adb3151f998819193808162d75516b5",
+  "version": "0.3.15",
+  "sourceRepository": "https://github.com/alakahil/mcp-midi-control",
+  "sourceCommit": "15840e463b0d8f90ab3c46b8c0d4e6865b88a004",
+  "manifestSha256": "f5c16eed79b107dd3544f81e6bf9d029e51fa0aa9ff744f1e5909fa98805a7ab"
+}
