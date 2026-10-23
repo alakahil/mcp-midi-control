@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "archive": "FM3_REA_VOLUME_PEDAL_20261023T175341Z_G3eREA.zip",
+  "archiveSha256": "872db78e6a487a97247e7acf9d94392696bd1099cbf481a8ed442507e1a41b7d",
+  "archiveBytes": 2863758,
+  "verified": true,
+  "newMacREAAnalysis": true,
+  "directREAAvailableInChatGPT": false,
+  "targetSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "editorVersion": "1.07.17",
+  "reaVersion": "6.4.0",
+  "nodeVersion": "v26.7.0",
+  "ghidraVersion": "12.1.4",
+  "startedAt": "2026-10-23T17:53:41.899Z",
+  "finishedAt": "2026-10-23T17:55:54.838Z",
+  "doctorScopePassed": 9,
+  "doctorScopeTotal": 9,
+  "environmentHealthy": false,
+  "informationalFailures": [
+    "ida-registration",
+    "registration:codex"
+  ],
+  "queryStatuses": {
+    "ok": 27,
+    "limited": 3
+  },
+  "queryEvidenceMatchesExport": true,
+  "evidenceRecords": 35,
+  "functionCheckpoints": [
+    {
+      "id": "source-create-remove",
+      "address": "0x1001796d4",
+      "bytes": 416,
+      "sha256": "4cde5fb91417a25f626203404c33671bceb3cc4ce94c491592247af3e45aa3dc",
+      "verified": true
+    },
+    {
+      "id": "assigned-id-and-pending-source",
+      "address": "0x1001795f8",
+      "bytes": 220,
+      "sha256": "d93c6d510bf0b581ae5f053531362c5c23ea3ce1155ea3fd83889dcb91841b2f",
+      "verified": true
+    },
+    {
+      "id": "target-dialog-setup",
+      "address": "0x10017b200",
+      "bytes": 2588,
+      "sha256": "77987eee799cdd14ff4bb1efef9ee5a31e7ee12f756f5621840e8fc13c3c9ff8",
+      "verified": true
+    },
+    {
+      "id": "target-open-caller-1",
+      "address": "0x100129578",
+      "bytes": 900,
+      "sha256": "6041344a541375a45faf8898b144ea15fb683dafe5602ef5b43173b130810718",
+      "verified": true
+    },
+    {
+      "id": "target-open-caller-2",
+      "address": "0x1001c1e8c",
+      "bytes": 1116,
+      "sha256": "c3f233a2d6df544f6c463ccf75e325dc5e0ef75b567c993468384b961915ba6c",
+      "verified": true
+    },
+    {
+      "id": "target-open-caller-3",
+      "address": "0x1001ca93c",
+      "bytes": 1048,
+      "sha256": "df816c52f1159d05b256fdbf56f3db15d7a82109dce8c4fc85047c5904594a60",
+      "verified": true
+    },
+    {
+      "id": "block-channel-metadata",
+      "address": "0x1000ca538",
+      "bytes": 312,
+      "sha256": "65166331c72d35ce95f670d8280b7a92b5c4ee2f4638e0964e5a132d11e0f58d",
+      "verified": true
+    },
+    {
+      "id": "outbound-request-queue",
+      "address": "0x1000b0744",
+      "bytes": 212,
+      "sha256": "dda59bcd4264001e0bb01f8664b3d97643531414230b4fc028e18558be1871d0",
+      "verified": true
+    }
+  ],
+  "functionAnalyses": [
+    {
+      "query": "source-create-remove",
+      "evidenceId": "ev_784cc0098db1536eafb1c15d25dd355d7dce49c6a67585460102dad2bce08731",
+      "address": "0x1001796d4",
+      "pseudocodeSha256": "f185e2635299ec08b178873947ce3b0d611a46166fa970fe3d5e30236f98fe57",
+      "instructionRows": 95,
+      "nativeValueFlowTruncated": false
+    },
+    {
+      "query": "assigned-id-and-pending-source",
+      "evidenceId": "ev_259fb84ac60341484d7feb1c0539c03b5475a8260542c2d3985dabc24750df76",
+      "address": "0x1001795f8",
+      "pseudocodeSha256": "7293ab09884a39c0f05c2212ea1ff615be3fa1b6b4962ca91d8904ed01b1019f",
+      "instructionRows": 55,
+      "nativeValueFlowTruncated": false
+    },
+    {
+      "query": "target-dialog-setup",
+      "evidenceId": "ev_05dd454ff5ac3a5e0429cd0c267303fcf48aebaadcc3cbe143c68d49c83191d6",
+      "address": "0x10017b200",
+      "pseudocodeSha256": "1c1d26829ce26ca456ef55e61d6a6a97a0fdf0bc1555781ce0aa1cc87fc1b18e",
+      "instructionRows": 594,
+      "nativeValueFlowTruncated": false
+    },
+    {
+      "query": "target-open-caller-1",
+      "evidenceId": "ev_b31e43e9f51c4d94d6313a40124d77c16639c2d561fe9ebd411772826fd87621",
+      "address": "0x100129578",
+      "pseudocodeSha256": "a444420154bf84daa35f886ec85a07b6cfe41f90a48872f8863342e502dac6b1",
+      "instructionRows": 168,
+      "nativeValueFlowTruncated": false
+    },
+    {
+      "query": "target-open-caller-2",
+      "evidenceId": "ev_e34e3ea47e2738dd42493f4bd668033bc4ac0dce599e0375be375dbe939fc578",
+      "address": "0x1001c1e8c",
+      "pseudocodeSha256": "1a60fa951d792888b8fe7eaed933946818fc946b78b878705e8793634c87d92b",
+      "instructionRows": 214,
+      "nativeValueFlowTruncated": false
+    },
+    {
+      "query": "target-open-caller-3",
+      "evidenceId": "ev_650dd1cd039b0af0004719f44e7265006e89b4fabc01b4aac400b6b27376d8c3",
+      "address": "0x1001ca93c",
+      "pseudocodeSha256": "2e6f27a08b9ecf12745258ece3f3f9fe6e37c51d998e04bf7e05fe9e3f7a77da",
+      "instructionRows": 197,
+      "nativeValueFlowTruncated": false
+    },
+    {
+      "query": "block-channel-metadata",
+      "evidenceId": "ev_4e545af40045d3a43f378ddbec24af30a355f0b27d8fbca8f9e69b7377c718cf",
+      "address": "0x1000ca538",
+      "pseudocodeSha256": "87290b3b48b32095dd98c366028e8f9ede6ef8b35e75b0a63a310cf31b70da59",
+      "instructionRows": 76,
+      "nativeValueFlowTruncated": false
+    },
+    {
+      "query": "outbound-request-queue",
+      "evidenceId": "ev_8dc67f64aff87b7ea98c07861ab23f948af52b7e817f1ea3a66fc6f6912d9e1d",
+      "address": "0x1000b0744",
+      "pseudocodeSha256": "dc4d19e9cee6b7410e08f4ddaa15d052b11c740478dbfe9780c190b2b0153490",
+      "instructionRows": 53,
+      "nativeValueFlowTruncated": false
+    },
+    {
+      "query": "xref-function-0x100179ee0",
+      "evidenceId": "ev_56e918c68918cafd4faceb3f5ce963dd3d951da1b833fb2b63dbd38c92b631ea",
+      "address": "0x100179ee0",
+      "pseudocodeSha256": "65ebc5eebe46c76ce320b62550f472ca695238d707e426934a0b1e8ab9bff42b",
+      "instructionRows": 2,
+      "nativeValueFlowTruncated": false
+    },
+    {
+      "query": "xref-function-0x100179ed8",
+      "evidenceId": "ev_ea3f4bec32db3fa25b0ceb9001bd8b8150e49a09250495a304d58e905e1b24fe",
+      "address": "0x100179ed8",
+      "pseudocodeSha256": "f27f3d10a3d2b5bbc477243fd7512a1c71bd57431f247e7169e910fd031af865",
+      "instructionRows": 2,
+      "nativeValueFlowTruncated": false
+    }
+  ],
+  "boundedTraces": [
+    {
+      "query": "trace-source-create-remove",
+      "evidenceId": "ev_35b00079806061e81d1cb6dea306f81dc306f42a01f84d653ebb4c9a20a19d5d",
+      "nodes": 1727,
+      "edges": 2039,
+      "decompilations": 6,
+      "truncated": true,
+      "unknownReasons": {
+        "Call target unresolved": 1,
+        "Call target not-call": 1,
+        "Call depth budget reached": 2,
+        "decompilation budget reached": 1,
+        "Argument 2 for 0x100237874 was not recovered": 3,
+        "Parameter bindings for 0x1000803e8 are unavailable or omitted": 1,
+        "Parameter bindings for 0x100510958 are unavailable or omitted": 2,
+        "Parameter bindings for 0x100510970 are unavailable or omitted": 2,
+        "Parameter bindings for 0x100510358 are unavailable or omitted": 2,
+        "Parameter bindings for 0x10051070c are unavailable or omitted": 1,
+        "Parameter bindings for 0x100510334 are unavailable or omitted": 2,
+        "Parameter bindings for 0x100345594 are unavailable or omitted": 1,
+        "Parameter bindings for 0x10051043c are unavailable or omitted": 1,
+        "Parameter bindings for 0x1002fc3e4 are unavailable or omitted": 7,
+        "Parameter bindings for 0x100239c18 are unavailable or omitted": 1,
+        "Parameter bindings for 0x10022956c are unavailable or omitted": 1,
+        "Parameter bindings for 0x1002d2100 are unavailable or omitted": 1,
+        "Parameter bindings for 0x1005109d0 are unavailable or omitted": 1,
+        "Parameter bindings for 0x100230b18 are unavailable or omitted": 1
+      }
+    },
+    {
+      "query": "trace-assigned-id-and-pending-source",
+      "evidenceId": "ev_300ba6077c33f1f99cb9659e11cb356bee63e9290bf907c6fea4d72e8ccd9391",
+      "nodes": 1100,
+      "edges": 1357,
+      "decompilations": 6,
+      "truncated": true,
+      "unknownReasons": {
+        "Call target unresolved": 2,
+        "Call target not-call": 3,
+        "decompilation budget reached": 1,
+        "Parameter bindings for 0x1000ca670 are unavailable or omitted": 1,
+        "Parameter bindings for 0x1000803e8 are unavailable or omitted": 1,
+        "Parameter bindings for 0x100510958 are unavailable or omitted": 1,
+        "Parameter bindings for 0x100510970 are unavailable or omitted": 1,
+        "Parameter bindings for 0x10051070c are unavailable or omitted": 1,
+        "Parameter bindings for 0x100510334 are unavailable or omitted": 2,
+        "Parameter bindings for 0x100345594 are unavailable or omitted": 1,
+        "Parameter bindings for 0x100237874 are unavailable or omitted": 1,
+        "Parameter bindings for 0x1000b0744 are unavailable or omitted": 1,
+        "Parameter bindings for 0x10051043c are unavailable or omitted": 1
+      }
+    },
+    {
+      "query": "trace-target-dialog-setup",
+      "evidenceId": "ev_7a69ec7bc27a1353ac0faaf864be3862fdad58b623670823fc7cabdc96aebc89",
+      "nodes": 3000,
+      "edges": 4184,
+      "decompilations": 4,
+      "truncated": true,
+      "unknownReasons": {
+        "Call target unresolved": 16,
+        "Call-site resolution budget reached": 1,
+        "Parameter bindings for 0x1003d4420 are unavailable or omitted": 3,
+        "Parameter bindings for 0x10051034c are unavailable or omitted": 2,
+        "Parameter bindings for 0x1005103e8 are unavailable or omitted": 4,
+        "Parameter bindings for 0x100043878 are unavailable or omitted": 1,
+        "Parameter bindings for 0x10007854c are unavailable or omitted": 1,
+        "Parameter bindings for 0x100075f44 are unavailable or omitted": 1,
+        "Parameter bindings for 0x10017b05c are unavailable or omitted": 1,
+        "Parameter bindings for 0x100510334 are unavailable or omitted": 3,
+        "Parameter bindings for 0x100510340 are unavailable or omitted": 1,
+        "Parameter bindings for 0x100510628 are unavailable or omitted": 4,
+        "Parameter bindings for 0x100510958 are unavailable or omitted": 2,
+        "Parameter bindings for 0x100510970 are unavailable or omitted": 2,
+        "Parameter bindings for 0x1005109d0 are unavailable or omitted": 3,
+        "Parameter bindings for 0x100349db4 are unavailable or omitted": 1,
+        "Parameter bindings for 0x1001321b0 are unavailable or omitted": 2,
+        "Parameter bindings for 0x100043948 are unavailable or omitted": 1,
+        "Parameter bindings for 0x10048dd4c are unavailable or omitted": 1,
+        "Parameter bindings for 0x1003aef98 are unavailable or omitted": 1,
+        "Parameter bindings for 0x1003fb874 are unavailable or omitted": 1,
+        "Parameter bindings for 0x10051043c are unavailable or omitted": 1,
+        "Parameter bindings for 0x10040321c are unavailable or omitted": 1,
+        "Parameter bindings for 0x1002fea70 are unavailable or omitted": 1,
+        "Parameter bindings for 0x100327cac are unavailable or omitted": 1,
+        "Parameter bindings for 0x1003082b8 are unavailable or omitted": 1,
+        "Parameter bindings for 0x1003af3cc are unavailable or omitted": 1,
+        "Parameter bindings for 0x1004038a4 are unavailable or omitted": 1,
+        "Parameter bindings for 0x1003af22c are unavailable or omitted": 2,
+        "Parameter bindings for 0x100510358 are unavailable or omitted": 1,
+        "Parameter bindings for 0x1003ace28 are unavailable or omitted": 1
+      }
+    }
+  ],
+  "physicalExports": 0,
+  "generatorWriteSupportAdded": false,
+  "fullRangeEncodingProven": false,
+  "files": [
+    {
+      "path": "READ_ME_FIRST.txt",
+      "bytes": 384,
+      "sha256": "1b53fd50fb00a2c218cae5a0e9fbe37c35a3e7a2ef85070a8c056228ce538887"
+    },
+    {
+      "path": "collector-used.mjs",
+      "bytes": 22320,
+      "sha256": "f71b872fb2d5b27517eb30efbf2a0f1a9036d8985ea5b6036e0605126beab095"
+    },
+    {
+      "path": "doctor-command.json",
+      "bytes": 72027,
+      "sha256": "51a8181b5383c3e7626f83c9ebdcc49dabe9b5cf38dff358b59232e4e9b58795"
+    },
+    {
+      "path": "doctor.json",
+      "bytes": 111011,
+      "sha256": "649eb7e2b50a8d68136535243ae65ad253ef6f06b9d568b834f2e86ff52bf443"
+    },
+    {
+      "path": "plan.json",
+      "bytes": 5818,
+      "sha256": "2dcbbd0d65378aa47acf844cb66ab13600cb40d359542962857ed5781313fac6"
+    },
+    {
+      "path": "progress.log",
+      "bytes": 1268,
+      "sha256": "65a41ada22a65771be11a8c60b712be84831bdfbe3ed94a155f4936461354b02"
+    },
+    {
+      "path": "queries/001-open-target.json",
+      "bytes": 983,
+      "sha256": "667c334779a0dfe50be7225daa22015a5b21f40af201eb007c7bdc19822e6e12"
+    },
+    {
+      "path": "queries/002-session-open.json",
+      "bytes": 725335,
+      "sha256": "115030ff289b6d1a144122135f5ea82a474b797076f125115ab6ee4e55153466"
+    },
+    {
+      "path": "queries/003-source-create-remove.json",
+      "bytes": 764689,
+      "sha256": "3d1c1d615d1b8c0b8a21fb3f09098e14b35cab3629adaf03756ec2fbabec992c"
+    },
+    {
+      "path": "queries/004-assigned-id-and-pending-source.json",
+      "bytes": 490190,
+      "sha256": "d43062970d0478725981753cfb70a0f8ed5a76ac81c09b89ddff123d6ce79133"
+    },
+    {
+      "path": "queries/005-target-dialog-setup.json",
+      "bytes": 9907440,
+      "sha256": "5a7c5b4e8b2394a3e57d11d67627a79581f0a83791dfc8c0877ccad315e834a5"
+    },
+    {
+      "path": "queries/006-target-open-caller-1.json",
+      "bytes": 1732127,
+      "sha256": "139e81cb8498c3d2305f2bea015d0cf7cca0bc4857ac81bfd8280a6ddc998748"
+    },
+    {
+      "path": "queries/007-target-open-caller-2.json",
+      "bytes": 2310953,
+      "sha256": "d30339796ce4b1cc365be9b788fe66d403669117a65c0c5840d883b8e5d606a5"
+    },
+    {
+      "path": "queries/008-target-open-caller-3.json",
+      "bytes": 2171633,
+      "sha256": "9da07bcebb38a8ec3a508d4a46c5c7812c757f1f2cd5ad278d57e53f83c157f7"
+    },
+    {
+      "path": "queries/009-block-channel-metadata.json",
+      "bytes": 1094362,
+      "sha256": "9edb3f73ac7cc83e1da40127a4ef864e52d7a36390378ff9daa78d6a49f45698"
+    },
+    {
+      "path": "queries/010-outbound-request-queue.json",
+      "bytes": 791452,
+      "sha256": "e72415f83460678a42f1ea29056ca2bb04dda5c322b9052538e6ae4d3bf7487a"
+    },
+    {
+      "path": "queries/011-xref-source-create-remove.json",
+      "bytes": 8451,
+      "sha256": "2e0f60d586a7981cc3953e160f727e3ed76c6d3dce8337f5ca77c8f3c09faa73"
+    },
+    {
+      "path": "queries/012-xref-assigned-id-and-pending-source.json",
+      "bytes": 8451,
+      "sha256": "d997ced54cf1c223aecda8ca16ce62794eaf0684a4d8a1fba19449d7433bc584"
+    },
+    {
+      "path": "queries/013-xref-target-dialog-setup.json",
+      "bytes": 8529,
+      "sha256": "c2e9b79ffc303dad75597b229c18d428ddcbb881add243c98688ab88facb4128"
+    },
+    {
+      "path": "queries/014-owner-0x100179ee4.json",
+      "bytes": 10489,
+      "sha256": "18c647a6d7d6e6ec94f7242d090911e975e13afd545481f1feae3d9f1254223c"
+    },
+    {
+      "path": "queries/015-owner-0x100179edc.json",
+      "bytes": 10489,
+      "sha256": "422af8f2e6b785a2a0d9aa232583bb6a044abe5cbd7eedccae45d396decefef7"
+    },
+    {
+      "path": "queries/016-owner-0x1001297b4.json",
+      "bytes": 10505,
+      "sha256": "626db7a0f735bfdc16f9698fc361a35b4f140d4c84ee695a83efc6d1606024e1"
+    },
+    {
+      "path": "queries/017-owner-0x100dab678.json",
+      "bytes": 8485,
+      "sha256": "acf8c0b4cf8df988e83dde23a1e3b8c028451614c578c48949e5913403b3addd"
+    },
+    {
+      "path": "queries/018-owner-0x100dab670.json",
+      "bytes": 8485,
+      "sha256": "e39024157cf815545b21ea9687b11888be83bea72ecf7b6ab1bd54d555d3071b"
+    },
+    {
+      "path": "queries/019-owner-0x1001c21d8.json",
+      "bytes": 10505,
+      "sha256": "9475bf1f19cd89d0b7cc7a754917dd46fde110d18b0ba5bc81092eb184a1ea7f"
+    },
+    {
+      "path": "queries/020-owner-0x100eb8b58.json",
+      "bytes": 8485,
+      "sha256": "bae562aa841fe5b07f8c41efb98595b8d0180f2565a5826b09579b75f05cadbf"
+    },
+    {
+      "path": "queries/021-owner-0x100eb8b56.json",
+      "bytes": 8485,
+      "sha256": "c0d29ed4b758b44411d16a0bdf0dced636ae151f9fbb382ab2f9308a6546c822"
+    },
+    {
+      "path": "queries/022-owner-0x1001cabcc.json",
+      "bytes": 10505,
+      "sha256": "c1237e35f4a94d0b8b15aeb114786a26a98f406980a66b890dd8c6deb2416162"
+    },
+    {
+      "path": "queries/023-owner-0x100eb8b88.json",
+      "bytes": 8485,
+      "sha256": "6d8179e57072801d9cd84621f995e1060b7f7f1c09a3d53124bc3ba3f2edc7bf"
+    },
+    {
+      "path": "queries/024-xref-function-0x100179ee0.json",
+      "bytes": 61616,
+      "sha256": "339f5ae4285394407cc6e10334f89203d3127cd26cf22185ab51faccc8042dfa"
+    },
+    {
+      "path": "queries/025-xref-function-0x100179ed8.json",
+      "bytes": 61616,
+      "sha256": "229aa2287ce8db60b310bdd6d3a1c98b968b8c2b0a17b876d460bdc97114fac1"
+    },
+    {
+      "path": "queries/026-trace-source-create-remove.json",
+      "bytes": 4220557,
+      "sha256": "6a2150747b82ebde75b225137705ccabd04a88ef15c27489915bb775d513f51a"
+    },
+    {
+      "path": "queries/027-trace-assigned-id-and-pending-source.json",
+      "bytes": 2750585,
+      "sha256": "d669c0a687484053c850284d68e86b6a3b9091ae1d3c140213d21c07349eab58"
+    },
+    {
+      "path": "queries/028-trace-target-dialog-setup.json",
+      "bytes": 7929676,
+      "sha256": "ae67bee908a9e96328bd89769e6f9ada70267bc88940fc18e7ab946337b6656e"
+    },
+    {
+      "path": "queries/029-evidence-export.json",
+      "bytes": 903,
+      "sha256": "5ab36d80bf24a427e2692d4faf1d172de9d2414df17b090af947e4580db04b3b"
+    },
+    {
+      "path": "queries/030-close-target.json",
+      "bytes": 427,
+      "sha256": "224dbcae4bae0300c9f4b90f7f6114cf5ba24b40184ac43a6d6b9211c4443b36"
+    },
+    {
+      "path": "query-index.json",
+      "bytes": 51929,
+      "sha256": "1f21672b9f4ba6023fa0e50a2cb3bd0cee02779dec9312ca717c4a7a784172bf"
+    },
+    {
+      "path": "rea-evidence.json",
+      "bytes": 33901852,
+      "sha256": "d726e31ada8696704cbb2372ae84ed991929d935ce564d8c4287fd7932984f31"
+    },
+    {
+      "path": "rea-stderr.log",
+      "bytes": 5123,
+      "sha256": "dbf5e83b9b8eacfd0f267ff9f3e70ea37ae66b763a91141782792e76b060fb14"
+    },
+    {
+      "path": "reference-followup.json",
+      "bytes": 1167,
+      "sha256": "79da13ddc5c7afa6892187f41dca217dd4e6027b7459a810fa5eec3906fc23b9"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 57761,
+      "sha256": "bc19aee749225af653fa549cd0e658e821644913f1372c737f70f6bea10986df"
+    },
+    {
+      "path": "tool-schemas.json",
+      "bytes": 182845,
+      "sha256": "56278844dd718c6676dcbf8837fbe2645a6a4bd5e9afc23aa871c4f670878bec"
+    }
+  ]
+}

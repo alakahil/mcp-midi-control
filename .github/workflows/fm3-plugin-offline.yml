@@ -68,6 +68,7 @@ jobs:
         run: |
           node --test tools/fm3/test-volume-pedal-legacy.mjs
           node --test tools/fm3/rea-volume-pedal/test-volume-pedal-batch.mjs
+          node --test tools/fm3/rea-volume-pedal/test-binding.mjs
           bash -n tools/fm3/rea-volume-pedal/FM3_REA_VOLUME_PEDAL.command
       - name: Build the tested commit
         run: python3 tools/fm3/build-release.py --commit HEAD --tests "$RUNNER_TEMP/fm3-tests/summary.json" --output "$RUNNER_TEMP/fm3-release"

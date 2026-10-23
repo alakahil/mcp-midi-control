@@ -1,5 +1,8 @@
 # Volume/Pan pedaalijuhtimine — olemasoleva tõendi piir, 23.10.2026
 
+> **Uuem tulemus 23.10.2026:** [Maci REA jooks on tehtud ja kontrollitud](volume-pedal-rea-result.md): 9/9 eelkontrolli, 27 ok + 3 piiratud päringut. Järgmine samm on ettevalmistatud üks Volume-seose doonorieksport; uut REA jooksu ei küsita. Allpool säilib eelnev uurimisstaatus.
+
+
 > **Hilisem jätk 23.10.2026:** [korpuse ja loomistee uus tulemus](volume-pedal-static-result.md).
 > 0.3.16 korpuse kõik 638 unikaalset faili on nüüd loetud; 10 vana vormingu
 > eraldi lugeja leidis ühe effect 102 / PID 1 seose, kuid mitte Ext1 → Gain’i.
