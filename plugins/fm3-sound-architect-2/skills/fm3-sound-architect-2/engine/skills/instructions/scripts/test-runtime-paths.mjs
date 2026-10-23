@@ -7,6 +7,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {execFileSync} from 'node:child_process';
 
+const expectedVersion=JSON.parse(fs.readFileSync(new URL('../../../../../../plugin.json',import.meta.url))).version;
 const source=fileURLToPath(new URL('../',import.meta.url));
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3 paths % # ü '));
 try {
@@ -27,6 +28,6 @@ try {
   const stem=path.join(temp,'input volume output % # ü');
   assert.equal(run('fm3-sound.mjs',base,specPath,stem).outputs,4);
   assert.equal(run('fm3-preset.mjs','--verify',stem).passed,true);
-  const caps=run('fm3-preset.mjs','--capabilities',base);assert.equal(caps.revision,'0.3.15');
+  const caps=run('fm3-preset.mjs','--capabilities',base);assert.equal(caps.revision,expectedVersion);
   console.log(JSON.stringify({passed:true,realRelocatedDirectory:true,spacesPercentHashUnicode:true,knownPresetByteReplay:true,inputVolumeFourFiles:true,deviceIO:false}));
 } finally {fs.rmSync(temp,{recursive:true,force:true});}
