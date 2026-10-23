@@ -1,5 +1,8 @@
 # Volume’i pedaaliseos: korpuse sulgemine ja loomistee, 23.10.2026
 
+> **Uuem tulemus 23.10.2026:** [Maci REA jooks on tehtud ja kontrollitud](volume-pedal-rea-result.md): 9/9 eelkontrolli, 27 ok + 3 piiratud päringut. Järgmine samm on ettevalmistatud üks Volume-seose doonorieksport; uut REA jooksu ei küsita. Allpool säilib eelnev uurimisstaatus.
+
+
 **Uurimisetapp on tehtud; generaatorisse uut seosekirjutajat veel ei lisata.**
 Avaldatud privaatne plugin jääb 0.3.16-ks, release
 `pluginrel_6adb8d341ba48191996d947712c344cf`, mootori lähtecommit

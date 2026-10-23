@@ -1,0 +1,20 @@
+{
+  "archive": "FM3_VOLUME_BINDING_CHECK_2026-10-23.zip",
+  "bytes": 328869,
+  "sha256": "cc82b318ed52e998dc9a1fb425b9cec1f7298c946a75b3430a60b93b4fa7d8ca",
+  "baselineSha256": "8cf3b5e27b9d2b8d5f5489cb930b4dff733c41ece1be85d027aef16e0d2145c3",
+  "files": 13,
+  "syntheticTestsPassed": 7,
+  "complexPathStandaloneCheck": true,
+  "extractionAndManifestVerified": true,
+  "newDeviceExports": 0,
+  "deviceWritesByScripts": false,
+  "minimumRequiredPhysicalExports": 1,
+  "engineSource": "a11d8e44d0df339411d7e45ad6bea126b0bf89d5",
+  "generatedOutputNames": [
+    "FM3_VOL_BIND_CHECK.spec.json",
+    "FM3_VOL_BIND_CHECK.syx",
+    "FM3_VOL_BIND_CHECK.txt",
+    "FM3_VOL_BIND_CHECK.validation.json"
+  ]
+}
