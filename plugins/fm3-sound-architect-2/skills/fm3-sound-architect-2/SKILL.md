@@ -335,6 +335,10 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Koguja peatub vale või ebastabiilse tagasilugemise järel ning säilitab saadetud kaadrid, vastuse ja vea.
   Ebaõnnestunud seanssi ei jätkata automaatselt.
   Detailid: `engine/docs/FM3_GRID.md`.
+- **Seadmest tagasilugemine (2026-10-23)**: 7 genereeritud presetti (kõik pered, eksemplarid, Mixer/Multiplexer,
+  Volume pedaaliseosega, Satriani V3) loeti redaktsioonipuhvrist tagasi; kõik 16 756 väärtust ja ruudustik klappisid.
+  Kohta 436 salvestatud preset (kasutaja STORE) ja selle uuesti laadimine säilitasid sisu; seade järjestab kirjed
+  efekti-ID järgi. Ära küsi neid uuesti. Detailid: `engine/docs/FM3_DEVICE_READS.md`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
   (342 seadmes mõõdetud tüüpi + reverbi kvaliteet; piir 80 %, hoiatus üle 72 %).
   Mõõdetud üksikkulud ei taga kombineeritud preseti veapiiri: G06 hinnang 44,3 %, mõõdetud 41,5 %.

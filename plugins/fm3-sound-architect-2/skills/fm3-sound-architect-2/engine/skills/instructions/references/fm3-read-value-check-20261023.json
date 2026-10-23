@@ -1,0 +1,327 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-23",
+ "method": "Edit-buffer loads (7F 00) and read-only requests only (FM3_READ_PROBE.py / FM3_VALUE_CHECK.py). The STORE to location 436 was done by the user on the front panel; the collectors never store.",
+ "readPaths": {
+  "blockBulkRead": {
+   "request": "fn=0x1F eid",
+   "result": "returns every stored word of every channel: 2752/2752 equal in the probe",
+   "usable": true
+  },
+  "storedDump": {
+   "request": "fn=0x03 hi lo 00",
+   "result": "location 436 read as a normal 0x77/0x78/0x79 dump (before the test: \"<EMPTY>\", CRC valid)",
+   "usable": true
+  },
+  "editBufferDump": {
+   "request": "fn=0x43",
+   "result": "0x51 head + 64 x 0x52 (3082 B) + 0x53 tail: a 128 KB internal image, not the preset body; not decoded",
+   "usable": false,
+   "frames": 66,
+   "sha256": "a2b94987a5c73df4c9025dd3644d0f18f01f703e5de7c78df13b02d5b5e770cb"
+  },
+  "displayRead": {
+   "request": "fn=0x01 sub=0x1F eid pid, value 0",
+   "result": "knob parameters: no text (23-byte reply). Type parameters: the label of the enum index carried in the value field (0), NOT the current type: 6/6 equal the dictionary index-0 label while the stored types were other entries",
+   "usable": false,
+   "cases": [
+    {
+     "label": "amp.DISTORT_TYPE",
+     "effectId": 58,
+     "paramId": 6,
+     "storedRaw": 18,
+     "storedDisplay": "USA MK IV Rhythm 1",
+     "replyBytes": 44,
+     "textLength": 18,
+     "enumIndex0": "59 Bassguy Bright"
+    },
+    {
+     "label": "amp.DISTORT_DRIVE",
+     "effectId": 58,
+     "paramId": 7,
+     "storedRaw": 45874,
+     "storedDisplay": "7.000030518509476",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "amp.DISTORT_LEVEL",
+     "effectId": 58,
+     "paramId": 1,
+     "storedRaw": 46529,
+     "storedDisplay": "-9.000213629566332",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "drive.FUZZ_TYPE",
+     "effectId": 118,
+     "paramId": 0,
+     "storedRaw": 14,
+     "storedDisplay": "Full OD",
+     "replyBytes": 41,
+     "textLength": 15,
+     "enumIndex0": "Rat Distortion"
+    },
+    {
+     "label": "drive.FUZZ_DRIVE",
+     "effectId": 118,
+     "paramId": 1,
+     "storedRaw": 21626,
+     "storedDisplay": "3.2999664296395763",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "drive2.FUZZ_DRIVE",
+     "effectId": 119,
+     "paramId": 1,
+     "storedRaw": 43252,
+     "storedDisplay": "6.599932859279153",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "reverb.REVERB_TYPE",
+     "effectId": 66,
+     "paramId": 0,
+     "storedRaw": 2,
+     "storedDisplay": "Room: Large Room",
+     "replyBytes": 43,
+     "textLength": 17,
+     "enumIndex0": "Room: Small Room"
+    },
+    {
+     "label": "reverb.REVERB_MIX",
+     "effectId": 66,
+     "paramId": 13,
+     "storedRaw": 24248,
+     "storedDisplay": "37.000640888698996",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "reverb.REVERB_LEVEL",
+     "effectId": 66,
+     "paramId": 14,
+     "storedRaw": 52427,
+     "storedDisplay": "-0.00030518509475996325",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "delay.DELAY_MODEL",
+     "effectId": 70,
+     "paramId": 6,
+     "storedRaw": 14,
+     "storedDisplay": "Deluxe Mind Guy",
+     "replyBytes": 38,
+     "textLength": 13,
+     "enumIndex0": "Digital Mono"
+    },
+    {
+     "label": "delay.DELAY_TIME",
+     "effectId": 70,
+     "paramId": 8,
+     "storedRaw": 1634,
+     "storedDisplay": "399.9130222943066",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "compressor.COMP_TYPE",
+     "effectId": 46,
+     "paramId": 12,
+     "storedRaw": 4,
+     "storedDisplay": "Optical Compressor",
+     "replyBytes": 49,
+     "textLength": 22,
+     "enumIndex0": "Modern VCA Compressor"
+    },
+    {
+     "label": "compressor.COMP_MIX",
+     "effectId": 46,
+     "paramId": 11,
+     "storedRaw": 45874,
+     "storedDisplay": "70.00030518509476",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "cab.CABINET_LEVEL",
+     "effectId": 62,
+     "paramId": 28,
+     "storedRaw": 52427,
+     "storedDisplay": "-0.00030518509475996325",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "mixer.MIXER_GAIN1",
+     "effectId": 126,
+     "paramId": 0,
+     "storedRaw": 32767,
+     "storedDisplay": "50",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "plex.PLEX_MIX",
+     "effectId": 178,
+     "paramId": 73,
+     "storedRaw": 16384,
+     "storedDisplay": "25.0007629627369",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "in1.INPUT_THRESH",
+     "effectId": 37,
+     "paramId": 0,
+     "storedRaw": 26214,
+     "storedDisplay": "-59.99938962981048",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    },
+    {
+     "label": "in1.INPUT_TYPE",
+     "effectId": 37,
+     "paramId": 7,
+     "storedRaw": 1,
+     "storedDisplay": "INTELLIGENT",
+     "replyBytes": 33,
+     "textLength": 8,
+     "enumIndex0": "CLASSIC"
+    },
+    {
+     "label": "out1.OUTPUT_LEVEL",
+     "effectId": 42,
+     "paramId": 12,
+     "storedRaw": 52427,
+     "storedDisplay": "-0.00030518509475996325",
+     "replyBytes": 23,
+     "textLength": 0,
+     "enumIndex0": null
+    }
+   ]
+  }
+ },
+ "valueCheck": {
+  "presets": [
+   {
+    "id": "V01",
+    "name": "VALUE V01 PROBE SET",
+    "proves": "composer blocks + Drive 2 + Mixer + Plex with distinct control values (same content as READ PROBE 1)",
+    "blocks": 11,
+    "values": 2752,
+    "gridCells": 48,
+    "allMatch": true
+   },
+   {
+    "id": "V02",
+    "name": "VALUE V02 P6 FAMILIES A",
+    "proves": "Gate, Looper (1 ch), Ring Mod (2 ch), Formant, Volume/Pan",
+    "blocks": 13,
+    "values": 2342,
+    "gridCells": 48,
+    "allMatch": true
+   },
+   {
+    "id": "V03",
+    "name": "VALUE V03 P6 FAMILIES B",
+    "proves": "Synth and Megatap (2 ch)",
+    "blocks": 10,
+    "values": 2346,
+    "gridCells": 48,
+    "allMatch": true
+   },
+   {
+    "id": "V07",
+    "name": "VALUE V07 P6 FAMILIES C",
+    "proves": "Ten-Tap, Resonator (2 ch) and Multiband",
+    "blocks": 10,
+    "values": 2380,
+    "gridCells": 48,
+    "allMatch": true
+   },
+   {
+    "id": "V04",
+    "name": "VALUE V04 GRID INSTANCES",
+    "proves": "Multiplexer, Compressor 2 / Drive 2 / Delay 2, parallel rows; also the STORE/reload preset",
+    "blocks": 12,
+    "values": 2816,
+    "gridCells": 48,
+    "allMatch": true
+   },
+   {
+    "id": "V05",
+    "name": "SATCH SOAP ON A ROPE V3",
+    "proves": "a real generated sound: Satriani Soap On A Rope V3 (published example, byte-identical to the composer)",
+    "blocks": 8,
+    "values": 2100,
+    "gridCells": 48,
+    "allMatch": true
+   },
+   {
+    "id": "V06",
+    "name": "FM3 VOL BIND CHECK",
+    "proves": "0.3.17 Volume/Pan with the captured External 1 -> Volume Gain binding (block words; the modifier itself is not a block record)",
+    "blocks": 8,
+    "values": 2020,
+    "gridCells": 48,
+    "allMatch": true
+   }
+  ],
+  "totalValues": 16756,
+  "store": {
+   "preset": "V04",
+   "location": 436,
+   "bodyBytes": 14638,
+   "crcValid": true,
+   "prefixIdentical": true,
+   "systemTailIdentical": true,
+   "recordsIdenticalAsSet": true,
+   "recordOrder": "device sorts records by effect ID on store (generator appends new records)",
+   "deviceOrder": [
+    "amp",
+    "cab",
+    "compressor",
+    "compressor2",
+    "delay",
+    "delay2",
+    "drive",
+    "drive2",
+    "in1",
+    "multiplexer",
+    "out1",
+    "reverb"
+   ]
+  },
+  "reload": {
+   "allMatch": true,
+   "blocks": 12
+  }
+ },
+ "findings": [
+  "The fn=0x1F block bulk read returns the stored words exactly: 7 generated presets (all composer and point-6 families, Mixer, Multiplexer, Compressor 2/Drive 2/Delay 2, Volume/Pan with the pedal binding, Satriani V3), every word of every channel, plus the 48-cell grid, matched.",
+  "A preset stored to 436 from the front panel holds the identical body (prefix, records, system tail); the device only reorders records by effect ID. After reloading 436 every value and the grid matched again.",
+  "fn=0x01 sub=0x1F does not read the current type name: it labels the value in the request (0 -> enum index 0). The fractal-midi/fractal-gen3 \"current type name\" read and its FM9 evidence (index-0 names) need correcting.",
+  "fn=0x43 returns an internal 128 KB image, not the preset body."
+ ],
+ "probeResultsSha256": "0ffba8869caa8a2d1b04cd7a4b88ca5ef5d4e2db2ecfb1fd51c4d4de8957963b",
+ "valueResultsSha256": "b75a54f5482cad3c9703e8644f8145ee5fd52f74fc12131412d2e125948fe4dc"
+}
