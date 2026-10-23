@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // FM3 table-based parameter encoder (0.74.10). Class 0x5 'knob' confirmed by taper batch 2026-10-13.
 // Source: FracTool 3.87 embedded FM3 table (model 0x11, format 0x0146) merged with
 // forgefx-midi FM3 names; see docs/FM3_TABLE_ENCODER.md. Offline only: no device I/O.
@@ -149,7 +150,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 
-if(process.argv[1]&&new URL(import.meta.url).pathname===fs.realpathSync(process.argv[1])){
+if(process.argv[1]&&fileURLToPath(new URL(import.meta.url))===fs.realpathSync(process.argv[1])){
   try{
     const [baseFile,specFile,outStem,...flags]=process.argv.slice(2);check(baseFile&&specFile&&outStem,'Usage: node fm3-table-encoder.mjs BASE.syx SPEC.json OUTPUT_STEM [--allow=linear-by-structure,...] [--experimental]');
     const opts={allow:(flags.find(f=>f.startsWith('--allow='))??'').slice(8).split(',').filter(Boolean),experimental:flags.includes('--experimental')};

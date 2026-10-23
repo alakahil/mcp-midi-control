@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Adapters retain every component's pinned-source and parameter validation.
 // Component generators always receive their OWN approved donor, never a newly
 // modified composer output. Only declared channel/control words are transferred.
@@ -42,7 +43,7 @@ function verifyDriveSources(lib,selections){
     check(s&&typeof s==='object'&&!Array.isArray(s),'Invalid Drive selection');
     const m=lib.models.find(m=>m.name===s.type);check(m,'Unknown Drive type');
     const dir=new URL('../references/drive-batch-20261006-112254/'+m.source.capture+'/',import.meta.url);
-    if(!proofs.has(m.source.capture))proofs.set(m.source.capture,{proof:drivePair(dir.pathname),state:drivePreflight(fs.readFileSync(new URL('donor.syx',dir)))});
+    if(!proofs.has(m.source.capture))proofs.set(m.source.capture,{proof:drivePair(fileURLToPath(dir)),state:drivePreflight(fs.readFileSync(new URL('donor.syx',dir)))});
     const {proof,state}=proofs.get(m.source.capture),start='ABCD'.indexOf(m.source.channel)*44;
     check(proof.syxSha256===m.source.syxSha256&&proof.rawRxSha256===m.source.rawRxSha256&&m.words.every((w,i)=>w===state.words[start+i]),'Drive template differs from paired source');
   }

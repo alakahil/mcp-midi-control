@@ -36,6 +36,18 @@ eksplitsiitset kirjeldamist ning kasutaja määramata stseenides bypass'i. Doono
 ja ekspordi täpse taastamise tee ei muutu. Esimese kasutuskatse väljund säilitati;
 parandatud juhend läbib eraldi värske konteksti kasutuskatse.
 
+## Paketi käivitus tegelikul failiteel
+
+Esimese 52/52 läbinud commit'i `c22065baab663828dbd5860689f998167325f3c1`
+paketi enesekontroll katkes tühikutega kaustas: vanemad komponendimoodulid
+andsid `URL.pathname`-i protsendikodeeritud teksti failisüsteemi lugejale.
+Selle commit'i arhiivi ei avaldatud. 19 käitusmooduli URL → failitee üleminek
+kasutab nüüd Node'i `fileURLToPath`-i. Kodeeringud ja presetibaidid ei muutu.
+Uus kohustuslik `test-runtime-paths` käivitab päriselt ümberpaigutatud mootori
+tühikute, `%`, `#` ja Unicode'iga kaustas: tuntud preseti baitidentne taasesitus,
+Input/Volume genereerimine, nelja faili kontroll ja capabilities.
+Algne ebaõnnestumine ning mõlema lähtecommit'i kontrollid säilivad eraldi.
+
 ## Tõend ja piirid
 
 Uut seadmeeksporti, MIDI SET-i, STORE'i ega REA analüüsi ei tehtud. Tagastatud
@@ -48,7 +60,7 @@ Wah Min/Max ei muutunud: kuus mõõdetud punkti välja kohta, 995 nelja mudeli
 kokkulangevusel põhinevat väärtust ning `fullRangeEncodingProven=false`.
 Hiirega valitud ajaloolisi punkte ei võrdsustata klaviatuurisisendiga.
 
-52 kontrolliga lõppkomplekt tuleb siduda puhta commit'iga, mille põhjal luuakse
+53 kontrolliga lõppkomplekt tuleb siduda puhta commit'iga, mille põhjal luuakse
 deterministlik arhiiv. Selle arhiivi self-check, nelja faili kasutuskatse,
 GitHubi CI ning avaldatud paketi ja hosti kontroll talletatakse tööaruandesse.
 See lähtefail ei asenda hilisemaid käivituskviitungeid.

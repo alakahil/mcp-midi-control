@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Firmware 13: audited screen values plus actual GET/SYX pairs. Offline only.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -31,14 +32,14 @@ export function loadPeqFull(){
  if(cached)return cached;
  const baseline=read(root+'baseline.syx'),base=preflight(baseline);
  check(base.sha256==='c1a706b9078793dd3c8db4873e329f06d2a5f96a1f4be201a4501477821277be','PEQ baseline changed');
- const proof=baselinePair(new URL('../references/peq-baseline-20261009-114022/capture-20261009T114021-4e486c054d/',import.meta.url).pathname);
+ const proof=baselinePair(fileURLToPath(new URL('../references/peq-baseline-20261009-114022/capture-20261009T114021-4e486c054d/',import.meta.url)));
  check(proof.matchedWords===132&&proof.syxSha256===base.sha256,'PEQ baseline is not paired');
  let previous='baseline.syx',numericAnchors=0,enumAnchors=0;
  const observed=[];
  for(const [i,point] of library.passed.entries()){
   check(point.index===i&&point.previousFile===previous,'PEQ measurement chain changed');
   const folder=root+point.folder+'/',result=JSON.parse(read(folder+'result.json'));
-  const comparison=compare(read(root+previous),read(folder+'donor.syx'),i),actualPair=pair(new URL('../'+folder,import.meta.url).pathname);
+  const comparison=compare(read(root+previous),read(folder+'donor.syx'),i),actualPair=pair(fileURLToPath(new URL('../'+folder,import.meta.url)));
   check(result.status==='passed'&&result.displayConfirmed===true,'PEQ screen confirmation missing');
   check(JSON.stringify(comparison)===JSON.stringify(result.comparison)&&JSON.stringify(actualPair)===JSON.stringify(result.pair),'PEQ stored proof differs from actual sources');
   check(comparison.typeCoupledChanges.length===0,'PEQ type has unhandled coupled changes');

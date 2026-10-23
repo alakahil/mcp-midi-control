@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Offline Rotary A measured points; no device access or interpolation.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -15,7 +16,7 @@ function evidence(){
  for(const [file,hash] of Object.entries(registry.fileHashes))check(sha(read(prefix+file))===hash,'Evidence hash mismatch: '+file);
  let previous=preflight(read(prefix+'start.syx'));
  for(const s of registry.steps){
-  const folder=new URL(prefix+s.capture+'/',import.meta.url).pathname;
+  const folder=fileURLToPath(new URL(prefix+s.capture+'/',import.meta.url));
   const p=pair(folder),current=preflight(read(prefix+s.capture+'/donor.syx'));
   check(p.syxSha256===s.proof.syxSha256,'Pair mismatch');
   const changes=current.words.flatMap((v,i)=>v===previous.words[i]?[]:[{pid:i,before:previous.words[i],after:v}]);

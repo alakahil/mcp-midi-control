@@ -473,6 +473,15 @@
         "node",
         "scripts/test-input-volume-output.mjs"
       ]
+    },
+    {
+      "id": "test-runtime-paths",
+      "command": [
+        "node",
+        "scripts/test-runtime-paths.mjs"
+      ],
+      "scope": "Relocated package under spaces, percent, hash and Unicode; known preset byte replay, Input/Volume four-file generation and verification; no hardware I/O",
+      "required": true
     }
   ]
 }

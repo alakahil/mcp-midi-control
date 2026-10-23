@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 // Offline firmware-13 Wah channel templates. No device or network access.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -36,7 +37,7 @@ export function generateWahMulti(base,spec){
     check(m&&m.words.length===25&&m.words[0]===m.binaryId,'Unknown or invalid Wah template');
     if(!proofs.has(m.sourceCapture)){
       const folder=new URL('../references/'+library.evidenceDirectory+'/'+m.sourceCapture+'/',import.meta.url);
-      const proof=pair(folder.pathname),state=preflight(fs.readFileSync(new URL('donor.syx',folder)));
+      const proof=pair(fileURLToPath(folder)),state=preflight(fs.readFileSync(new URL('donor.syx',folder)));
       proofs.set(m.sourceCapture,{proof,state});
     }
     const {proof,state}=proofs.get(m.sourceCapture),sourceStart='ABCD'.indexOf(m.sourceChannel)*25;
