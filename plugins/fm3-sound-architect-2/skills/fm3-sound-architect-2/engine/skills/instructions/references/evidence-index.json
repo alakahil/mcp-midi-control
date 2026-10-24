@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2101,
-  "filePaths": 2305,
+  "uniqueContents": 2102,
+  "filePaths": 2306,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -3196,12 +3196,6 @@
         "references/enhancer-full-20261012-122507/step-036-75bdc8b3fb/result.json"
       ]
     },
-    "4087748cb6d29b3ea1155d20b9a8e76c43d23ef2d82a51ff69d16b2d1c42bd1e": {
-      "bytes": 2169,
-      "paths": [
-        "references/fm3-scene-midi-pc-20261024.json"
-      ]
-    },
     "40be64a74947d2f885ecb750347321b5fecfc5c1649f1a920ff7aa0e5c0272ee": {
       "bytes": 24680,
       "paths": [
@@ -6339,6 +6333,12 @@
         "references/peq-full-20261009-152606/step-051-d7023eeb5a/result.json"
       ]
     },
+    "814a161166c9d4794359c2ba36baf715bcf024cf99d5f6f885dbd4f366199e0c": {
+      "bytes": 7081,
+      "paths": [
+        "references/fm3-scene-midi-verify-20261024-results.json"
+      ]
+    },
     "817270771edf9c3cf5a53aff3ea00c4970399f8184a0362dc6d8567688215818": {
       "bytes": 453,
       "paths": [
@@ -8198,6 +8198,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-148-6b8f074483/donor.syx"
+      ]
+    },
+    "a87d4d9ef7c6660503c02d68277b863ae26d69f854ff404b48f6cbcc6afa1f3a": {
+      "bytes": 2716,
+      "paths": [
+        "references/fm3-scene-midi-pc-20261024.json"
       ]
     },
     "a87e186ad87589d94c10925004b7b0160dfe6b9a8ded5da8e6bfc9aabae48ce5": {

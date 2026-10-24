@@ -56,6 +56,13 @@ numbrisõnasse. Genereeritud preseti „SCENE MIDI GEN 2“ tagasilugemine klapp
 Seega on PC programm väli Value ehk sõna 192 + k. Generaator kirjutab nüüd sinna ja kodeerija taastab
 kõik 5 sammu.
 
+Parandatud generaatori kontroll (`tools/fm3/scene-midi-verify-build.mjs`, tulemus
+`references/fm3-scene-midi-verify-20261024-results.json`):
+
+- kaks genereeritud presetti loeti redaktsioonipuhvrist tagasi ning kõik plokid ja ruudustik klappisid;
+- FM3 näitas „SCENE MIDI GEN 2“ puhul Scene 1, Command 1 väärtusi „Type PC, Channel 3, Number --, Value 1“,
+  nagu generaator kirjutas.
+
 **Mõõdetud punktid**: käsud S1C1, S2C1, S2C2, S8C1, S8C7; tüübid puudub/CC/PC; kanalid 1–3;
 numbrid 0, 1, 5, 20; väärtused 0, 10 ja 64.
 

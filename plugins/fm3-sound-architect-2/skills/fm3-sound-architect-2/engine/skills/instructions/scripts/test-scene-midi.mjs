@@ -14,7 +14,7 @@ let refusals=0;const no=(f,re,why)=>{refuse(f,re,why);refusals++};
 const rc=JSON.parse(rd('references/fm3-scene-midi-20261024.json'));
 check(rc.steps.length===11&&rc.checks.everyStepOneWord&&rc.checks.encoderReproducesEveryStep&&rc.checks.finalWordsEqual,'Scene MIDI receipt');
 const pc=JSON.parse(rd('references/fm3-scene-midi-pc-20261024.json'));
-check(pc.steps.length===5&&pc.checks.encoderReproducesEveryStep&&pc.checks.decodeMatchesFrontPanel&&pc.steps[2].changed[0].word===192,'PC follow-up receipt: program is the Value word');
+check(pc.steps.length===5&&pc.checks.encoderReproducesEveryStep&&pc.checks.decodeMatchesFrontPanel&&pc.steps[2].changed[0].word===192&&pc.checks.generatorConfirmedOnDevice&&pc.generatorVerify.presets.every(x=>x.allMatch&&x.gridMatches),'PC follow-up receipt: program is the Value word');
 check(rc.layout.type.values[1]==='CC'&&rc.layout.type.values[2]==='PC'&&SCENE_MIDI_TYPES.CC===1&&SCENE_MIDI_TYPES.PC===2,'type codes');
 // 2. pipeline: grid mode, block unconnected in row 1, commands written to the right words
 const e=()=>Array(12).fill('');

@@ -60,9 +60,29 @@
    ]
   }
  ],
+ "generatorVerify": {
+  "pack": "tools/fm3/scene-midi-verify-build.mjs",
+  "presets": [
+   {
+    "id": "M1",
+    "name": "SCENE MIDI GEN 1",
+    "allMatch": true,
+    "gridMatches": true
+   },
+   {
+    "id": "M2",
+    "name": "SCENE MIDI GEN 2",
+    "allMatch": true,
+    "gridMatches": true
+   }
+  ],
+  "frontPanel": "SCENE MIDI GEN 2, Scene 1 Command 1: Type PC, Channel 3, Number --, Value 1 (generated program 1)",
+  "resultsSha256": "814a161166c9d4794359c2ba36baf715bcf024cf99d5f6f885dbd4f366199e0c"
+ },
  "checks": {
   "encoderReproducesEveryStep": true,
-  "decodeMatchesFrontPanel": true
+  "decodeMatchesFrontPanel": true,
+  "generatorConfirmedOnDevice": true
  },
  "notMeasured": [
   "whether the PC sent on a scene change equals the shown value or one less (display offset)",

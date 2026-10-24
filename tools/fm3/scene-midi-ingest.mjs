@@ -72,11 +72,21 @@ const pcSteps=pcRes.steps.map((s,i)=>{const m=PC_STEPS[i],next=play(pw,m.model);
   assert.deepEqual(changes(pw,next),s.changed,'encoder reproduces PC step '+(i+1));assert.deepEqual(next,s.words,'device words after PC step '+(i+1));
   if(m.expect)assert.deepEqual(s1(next),{scene:1,command:1,...m.expect},'decode PC step '+(i+1));pw=next;
   return {step:i+1,asked:s.asked,userNote:s.userNote,changed:s.changed};});
+// Corrected generator on the device: the verify pack rebuilds identically, both presets read back exactly,
+// and the user saw S1C1 "Type PC, Channel 3, Number --, Value 1" on SCENE MIDI GEN 2 (chat 2026-10-24).
+const vFile=path.join(ENG,'references/fm3-scene-midi-verify-20261024-results.json'),vRes=JSON.parse(fs.readFileSync(vFile,'utf8'));
+const vTmp=path.join(tmp,'verify');execFileSync('node',[path.join(ROOT,'tools/fm3/scene-midi-verify-build.mjs'),vTmp],{stdio:'ignore'});
+assert.equal(sha(fs.readFileSync(path.join(vTmp,'manifest.json'))),vRes.packSha256,'Scene MIDI verify pack rebuilt identically');
+assert.deepEqual(vRes.presets.map(x=>[x.id,x.allMatch,x.gridMatches]),[['M1',true,true],['M2',true,true]],'verify: every block and the grid read back exactly');
+const vM2=JSON.parse(fs.readFileSync(path.join(vTmp,'manifest.json'),'utf8')).items.find(i=>i.id==='M2');
+assert.deepEqual(vM2.sceneMidi[0],{scene:1,command:1,type:'PC',channel:3,program:1});
+const generatorVerify={pack:'tools/fm3/scene-midi-verify-build.mjs',presets:vRes.presets.map(x=>({id:x.id,name:x.name,allMatch:x.allMatch,gridMatches:x.gridMatches})),
+  frontPanel:'SCENE MIDI GEN 2, Scene 1 Command 1: Type PC, Channel 3, Number --, Value 1 (generated program 1)',resultsSha256:sha(fs.readFileSync(vFile))};
 const pcOut={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-10-24',block:{effectId:190,words:257},
   method:'FM3_SCENE_MIDI_CHECK.py on the generated preset SCENE MIDI GEN 2 (edit buffer only); the user changed S1C1 on the front panel one field per step; block 190 read with fn=0x1F after each step.',
   finding:'For type PC the FM3 shows Number "--", refuses edits to Number, and keeps the program in the Value field (word 192 + k). Switching the type to CC shows the kept number word again. A type change touches only the type word.',
   consequence:'The generator writes a PC program to the value word and does not write the number word for PC (fixes the earlier encoder, which put the program in the number word).',
-  steps:pcSteps,checks:{encoderReproducesEveryStep:true,decodeMatchesFrontPanel:true},
+  steps:pcSteps,generatorVerify,checks:{encoderReproducesEveryStep:true,decodeMatchesFrontPanel:true,generatorConfirmedOnDevice:true},
   notMeasured:['whether the PC sent on a scene change equals the shown value or one less (display offset)','MIDI actually transmitted on scene change'],
   resultsSha256:sha(fs.readFileSync(pcFile))};
 const out={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-10-24',block:{effectId:190,name:'Scene MIDI (FM3 menu "MIDI")',words:257,channels:1},
@@ -92,4 +102,4 @@ for(const [name,obj] of [['fm3-scene-midi-20261024.json',out],['fm3-scene-midi-p
   const target=path.join(ENG,'references',name),content=JSON.stringify(obj,null,1)+'\n';
   if(process.argv.includes('--write'))fs.writeFileSync(target,content);else assert.equal(fs.readFileSync(target,'utf8'),content,'Scene MIDI receipt stale: '+name);}
 fs.rmSync(tmp,{recursive:true,force:true});
-console.log(JSON.stringify({steps:steps.length,pcSteps:pcSteps.length,encoderReproduces:true}));
+console.log(JSON.stringify({steps:steps.length,pcSteps:pcSteps.length,verifyPresets:vRes.presets.length,encoderReproduces:true}));
