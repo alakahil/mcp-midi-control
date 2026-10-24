@@ -54,7 +54,17 @@ try{
   // 8. tampered preset refused before any device write
   const t=path.join(tmp,'tampered');fs.cpSync(pack,t,{recursive:true});const s=fs.readFileSync(path.join(t,'SWEEP.syx'));s[100]^=1;fs.writeFileSync(path.join(t,'SWEEP.syx'),s);
   const h=run(t,path.join(tmp,'s7'));check(h.fake.exit.includes('SHA-256 mismatch')&&h.fake.dumpsReceived===0,'tampered refused');
-  for(const sc of ['FM3_LABEL_SWEEP.py','FM3_READ_PROBE.py'])
+  // 9. the encoding probe: one request per variant, each followed by a full re-read
+  const lp=path.join(tmp,'probe');execFileSync('node',[path.join(root,'tools/fm3/label-probe-build.mjs'),lp],{stdio:'ignore'});
+  const pm=JSON.parse(fs.readFileSync(path.join(lp,'manifest.json'),'utf8'));
+  const pr=execFileSync('python3',['-B',harness,lp,path.join(tmp,'sp'),'--probe'],{encoding:'utf8'}),pf=JSON.parse(pr.split('\n').find(l=>l.startsWith('FAKE ')).slice(5));
+  const pres=JSON.parse(fs.readFileSync(path.join(tmp,'sp','label-probe-results.json'),'utf8'));
+  check(pf.exit==='ok'&&pf.refusedShapes===0&&pf.otherFrames===0&&pf.labelRequests===pm.variants.length&&pres.finalUnchanged&&pres.variants.every(v=>v.unchanged),'probe run: '+JSON.stringify(pf));
+  check(pf.bulkReads===pm.families.length*(1+pm.variants.length),'probe re-reads every block after every variant');
+  const pc=execFileSync('python3',['-B',harness,lp,path.join(tmp,'sp2'),'--probe','--change-after','0'],{encoding:'utf8'});
+  const pcf=JSON.parse(pc.split('\n').find(l=>l.startsWith('FAKE ')).slice(5));
+  check(pcf.exit.includes('PEATUS: ruudustik muutus pärast päringut A0')&&pcf.labelRequests===1,'probe stops on a change: '+pcf.exit);
+  for(const sc of ['FM3_LABEL_SWEEP.py','FM3_READ_PROBE.py','FM3_LABEL_PROBE.py'])
     check(JSON.parse(execFileSync('python3',['-B',path.join(here,'cpu-sweep-collector',sc),'--self-test'],{encoding:'utf8'}).trim().split('\n').pop()).selfTest==='passed',sc+' self-test');
-  console.log(JSON.stringify({scenarios:8,requestsSimulated:a.fake.labelRequests,deviceIO:false}));
+  console.log(JSON.stringify({scenarios:10,requestsSimulated:a.fake.labelRequests,deviceIO:false}));
 }finally{fs.rmSync(tmp,{recursive:true,force:true});}

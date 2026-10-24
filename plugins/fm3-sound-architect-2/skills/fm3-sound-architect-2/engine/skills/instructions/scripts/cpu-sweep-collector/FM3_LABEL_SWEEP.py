@@ -142,9 +142,9 @@ def run(pack, session, port_path):
         pf = next(f for f in fams if f['effectId'] == pilot['effectId'])
         r, h = ask_label(port, pilot['effectId'], pilot['paramId'], pilot['index'])
         res['pilot'] = {'request': label_request(pilot['effectId'], pilot['paramId'], pilot['index']).hex(), 'reply': h, 'parsed': list(r) if r else None}
-        S.check(r is not None and r[2] == pilot['index'], 'Esimene päring ei andnud oodatud vastust; peatun. Midagi ei muudetud.')
         unchanged(port, manifest, base, fams, 'esimest päringut')
         res['pilot']['unchanged'] = True
+        S.check(r is not None and r[2] == pilot['index'] and r[3], 'Esimene päring ei andnud oodatud silti; peatun. Seade loeti üle: midagi ei muutunud.')
         print('Ohutuskontroll läbitud: "%s" (indeks %d); seade ei muutunud.' % (r[3], pilot['index']))
         for f in fams:
             rec = {'family': f['family'], 'slug': f['slug'], 'effectId': f['effectId'], 'present': f['present'], 'params': []}

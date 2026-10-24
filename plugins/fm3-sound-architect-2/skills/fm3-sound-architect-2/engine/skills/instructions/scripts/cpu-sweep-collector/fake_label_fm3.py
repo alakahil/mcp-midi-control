@@ -6,8 +6,9 @@ pack's expected words, and label reads of blocks in the preset with "L<eid>.<pid
 value echoed). Blocks not in the preset get no label reply unless --absent-text. Options make
 it misbehave on purpose.
 
+Runs FM3_LABEL_PROBE.run instead with --probe.
 Usage: python3 -B fake_label_fm3.py PACK SESSION [--answer j|e] [--change-after N] [--absent-text]
-       [--no-echo] [--block-change-after N] [--silent-param PID]
+       [--no-echo] [--block-change-after N] [--silent-param PID] [--probe]
 Used by tools/fm3/test-label-sweep-collector.mjs.
 """
 import argparse, builtins, json, sys
@@ -18,11 +19,12 @@ import FM3_CPU_SWEEP as S
 import FM3_GRID_CHECK as G
 import FM3_READ_PROBE as P
 import FM3_LABEL_SWEEP as L
+import FM3_LABEL_PROBE as LP
 
 ap = argparse.ArgumentParser()
 ap.add_argument('pack', type=Path); ap.add_argument('session', type=Path)
 ap.add_argument('--answer', default='j'); ap.add_argument('--change-after', type=int); ap.add_argument('--block-change-after', type=int)
-ap.add_argument('--absent-text', action='store_true'); ap.add_argument('--no-echo', action='store_true'); ap.add_argument('--silent-param', type=int)
+ap.add_argument('--absent-text', action='store_true'); ap.add_argument('--no-echo', action='store_true'); ap.add_argument('--silent-param', type=int); ap.add_argument('--probe', action='store_true')
 a = ap.parse_args()
 manifest = json.loads((a.pack / 'manifest.json').read_text())
 fams = {f['effectId']: f for f in manifest['families']}
@@ -58,16 +60,16 @@ class FakePort:
             f = bytearray(G.encode_grid(G.GOLDEN, cells)); f[-2] = S.checksum(list(f[:-2])); self.framer.frames.append(list(f)); return
         if kind == 'bulk':
             log['bulkReads'] += 1; eid = d[6] | d[7] << 7; w = list(fams[eid]['expectedWords'])
-            if a.block_change_after is not None and log['labelRequests'] > a.block_change_after and eid == manifest['pilot']['effectId']: w[0] ^= 1
+            if a.block_change_after is not None and log['labelRequests'] > a.block_change_after and eid == manifest.get('pilot', {'effectId': 58})['effectId']: w[0] ^= 1
             self.framer.frames.append(frame(0x74, [eid & 0x7f, eid >> 7, len(w) & 0x7f, len(w) >> 7]))
             for o in range(0, len(w), 40):
                 self.framer.frames.append(frame(0x75, [0, 0] + sum([[v & 0x7f, (v >> 7) & 0x7f, (v >> 14) & 3] for v in w[o:o + 40]], [])))
             self.framer.frames.append(frame(0x76, [])); return
-        if kind in ('display', 'label'):
+        if kind in ('display', 'label', 'labelInt'):
             log['labelRequests'] += 1; eid, pid = d[8] | d[9] << 7, d[10] | d[11] << 7; sept = d[12:17]
-            idx = 0 if sept == [0] * 5 else P.label_index(sept)
+            idx = 0 if sept == [0] * 5 else (sept[0] | sept[1] << 7) if kind == 'labelInt' else P.label_index(sept)
             if not fams[eid]['present'] and not a.absent_text: return
-            if eid == manifest['pilot']['effectId'] and pid == a.silent_param: return
+            if eid == manifest.get('pilot', {'effectId': 58})['effectId'] and pid == a.silent_param: return
             echo = P.float_septets(idx + 1) if a.no_echo else sept
             self.framer.frames.append(label_reply(eid, pid, echo, 'L%d.%d.%d' % (eid, pid, idx))); return
         log['otherFrames'] += 1
@@ -81,7 +83,7 @@ def monotonic():
 for mod in (L, G, P): mod.time.monotonic = monotonic; mod.time.sleep = lambda s: None
 builtins.input = lambda prompt: a.answer
 try:
-    L.run(a.pack, a.session, '/dev/null')
+    (LP.run if a.probe else L.run)(a.pack, a.session, '/dev/null')
     log['exit'] = 'ok'
 except SystemExit as e:
     log['exit'] = str(e)
