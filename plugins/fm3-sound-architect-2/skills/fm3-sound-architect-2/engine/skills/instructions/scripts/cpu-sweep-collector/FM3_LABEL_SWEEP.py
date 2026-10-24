@@ -16,6 +16,9 @@ change. Safety: the grid and every block of the pack preset are read first; afte
 label request and after every block's sweep they are read again, and the script stops at the
 first difference (then select another preset on the FM3 without saving).
 
+Pacing: 20 ms between requests and a grid health check every 50 requests. Results are saved
+after every parameter; running again with the same --session resumes where it stopped.
+
 Usage:
   python3 FM3_LABEL_SWEEP.py --pack DIR --session DIR [--port /dev/cu.usbmodemXXXX]
   python3 FM3_LABEL_SWEEP.py --self-test
@@ -77,8 +80,8 @@ def gather(port, quiet, max_wait):
         elif n and time.monotonic() - last_t >= quiet: break
     return [bytes(f).hex() for f in port.framer.frames]
 
-def read_grid(port, req):
-    for _ in range(4):
+def read_grid(port, req, tries=4):
+    for _ in range(tries):
         port.framer.frames.clear(); port.write(req)
         for h in gather(port, quiet=0.2, max_wait=2.0):
             f = list(bytes.fromhex(h))
@@ -100,9 +103,24 @@ def unchanged(port, manifest, base, fams, where):
         S.check(read_block(port, f) == base['blocks'][str(f['effectId'])],
                 'PEATUS: plokk %s muutus pärast %s. Vali FM3-l mõni muu preset, ÄRA salvesta.' % (f['slug'], where))
 
-def sweep_param(port, f, p, extra):
+PACE = 0.02         # s between label requests
+HEALTH_EVERY = 50   # label requests between grid health checks
+
+def healthy(port, manifest, base, state, where):
+    """Grid read with patient retries (the FM3 must still answer and the grid must be unchanged)."""
+    state['sinceHealth'] = 0
+    try: g = read_grid(port, bytes.fromhex(manifest['gridRequest']), tries=12)
+    except SystemExit: S.check(False, 'PEATUS: FM3 lakkas vastamast (%s). Vali FM3-l mõni muu preset, ÄRA salvesta. Kui FM3 ei reageeri, lülita see välja ja uuesti sisse.' % where)
+    S.check(g == base['grid'], 'PEATUS: ruudustik muutus (%s). Vali FM3-l mõni muu preset, ÄRA salvesta.' % where)
+
+def sweep_param(port, f, p, extra, manifest=None, base=None, state=None):
     texts = []; missing = []
     for i in range(p['count'] + extra):
+        if state is not None:
+            state['last'] = {'block': f['slug'], 'param': p['name'], 'index': i}
+            if state['sinceHealth'] >= HEALTH_EVERY: healthy(port, manifest, base, state, '%s %s indeks %d' % (f['slug'], p['name'], i))
+            state['sinceHealth'] += 1
+        time.sleep(PACE)
         r, _ = ask_label(port, f['effectId'], p['paramId'], i)
         if r is None: missing.append(i); texts.append(None)
         else: texts.append(r[3])
@@ -121,9 +139,18 @@ def run(pack, session, port_path):
     for f in fams:
         for p in f['params']: label_request(f['effectId'], p['paramId'], p['count'] + extra - 1)  # every frame passes the shape check
     session.mkdir(parents=True, exist_ok=True); out = session / 'label-results.json'
-    S.check(not out.exists(), 'Sessioonis on juba label-results.json; kasuta uut --session kausta.')
-    res = {'kind': 'fm3-label-sweep-results', 'packSha256': hashlib.sha256(mb).hexdigest(), 'time': time.strftime('%Y-%m-%dT%H:%M:%S'), 'families': []}
+    pack_sha = hashlib.sha256(mb).hexdigest(); prior = {}
+    if out.exists():  # resume: keep every parameter already swept in this session
+        old = json.loads(out.read_text())
+        S.check(old.get('kind') == 'fm3-label-sweep-results' and old.get('packSha256') == pack_sha, 'Sessioonis on teise paki tulemused; kasuta uut --session kausta.')
+        S.check(not old.get('finalUnchanged'), 'See seanss on juba lõpetatud; kasuta uut --session kausta.')
+        prior = {(r['effectId'], p['paramId']): p for r in old.get('families', []) for p in r['params']}
+        print('Jätkan varasemat seanssi: %d parameetrit juba loetud.' % len(prior))
+    res = {'kind': 'fm3-label-sweep-results', 'packSha256': pack_sha, 'time': time.strftime('%Y-%m-%dT%H:%M:%S'), 'families': [], 'resumedParams': len(prior)}
+    def save():
+        tmp = out.with_suffix('.tmp'); tmp.write_text(json.dumps(res, ensure_ascii=False) + '\n'); tmp.replace(out)
     total = sum(p['count'] + extra for f in fams for p in f['params']); done = 0; t0 = time.monotonic()
+    state = {'sinceHealth': 0, 'last': None}
     port = S.Port(port_path)
     try:
         load(port, dump); time.sleep(1.0)
@@ -139,32 +166,36 @@ def run(pack, session, port_path):
                                       'blocks': all(base['blocks'][str(f['effectId'])] == f['expectedWords'] for f in fams if f['present'])}
         print('Algseis loetud: ruudustik ja %d plokki.' % len(base['blocks']))
         # Pilot: one label request, then everything must read back unchanged.
-        pf = next(f for f in fams if f['effectId'] == pilot['effectId'])
         r, h = ask_label(port, pilot['effectId'], pilot['paramId'], pilot['index'])
         res['pilot'] = {'request': label_request(pilot['effectId'], pilot['paramId'], pilot['index']).hex(), 'reply': h, 'parsed': list(r) if r else None}
         unchanged(port, manifest, base, fams, 'esimest päringut')
         res['pilot']['unchanged'] = True
         S.check(r is not None and r[3] == pilot['label'], 'Esimene päring ei andnud oodatud silti; peatun. Seade loeti üle: midagi ei muutunud.')
-        print('Ohutuskontroll läbitud: "%s" (indeks %d); seade ei muutunud.' % (r[3], pilot['index']))
+        print('Ohutuskontroll läbitud: "%s" (indeks %d); seade ei muutunud.' % (r[3], pilot['index'])); save()
         for f in fams:
             rec = {'family': f['family'], 'slug': f['slug'], 'effectId': f['effectId'], 'present': f['present'], 'params': []}
+            res['families'].append(rec)
             if not f['present']:
-                p0 = f['params'][0]; probe = [ask_label(port, f['effectId'], p0['paramId'], i)[0] for i in (0, 1)]
+                p0 = f['params'][0]; probe = []
+                for i in (0, 1): time.sleep(PACE); probe.append(ask_label(port, f['effectId'], p0['paramId'], i)[0])
                 rec['absentProbe'] = [list(x) if x else None for x in probe]
                 if not any(x and x[3] for x in probe):
-                    rec['skipped'] = 'block not in the preset and no label reply'; res['families'].append(rec)
+                    rec['skipped'] = 'block not in the preset and no label reply'; save()
                     done += sum(p['count'] + extra for p in f['params']); continue
             for p in f['params']:
-                rec['params'].append(sweep_param(port, f, p, extra)); done += p['count'] + extra
+                key = (f['effectId'], p['paramId'])
+                rec['params'].append(prior[key] if key in prior else sweep_param(port, f, p, extra, manifest, base, state))
+                done += p['count'] + extra; save()
             unchanged(port, manifest, base, [f], 'ploki %s päringuid' % f['slug'])
-            rec['unchanged'] = True; res['families'].append(rec)
+            rec['unchanged'] = True; save(); state['sinceHealth'] = 0
             got = sum(1 for p in rec['params'] for t in p['texts'] if t)
             print('  %-12s %3d parameetrit, %4d silti  (%d%%, %.0f s)' % (f['slug'], len(rec['params']), got, 100 * done // total, time.monotonic() - t0))
         unchanged(port, manifest, base, fams, 'kõiki päringuid')
         res['finalUnchanged'] = True
+    except SystemExit:
+        res['stoppedAt'] = state['last']; raise
     finally:
-        port.close()
-        out.write_text(json.dumps(res, ensure_ascii=False) + '\n')
+        port.close(); save()
     print('\nValmis. Tulemused: %s' % out)
     print('Vali FM3-l mõni preset (redaktsioonipuhver tühistub). ÄRA salvesta.')
 

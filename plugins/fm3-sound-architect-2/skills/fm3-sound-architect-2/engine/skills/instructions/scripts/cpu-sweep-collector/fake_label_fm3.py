@@ -8,7 +8,7 @@ it misbehave on purpose.
 
 Runs FM3_LABEL_PROBE.run instead with --probe.
 Usage: python3 -B fake_label_fm3.py PACK SESSION [--answer j|e] [--change-after N] [--absent-text]
-       [--wrong-label] [--block-change-after N] [--silent-param PID] [--probe]
+       [--wrong-label] [--block-change-after N] [--silent-param PID] [--probe] [--hang-after N]
 Used by tools/fm3/test-label-sweep-collector.mjs.
 """
 import argparse, builtins, json, sys
@@ -24,7 +24,7 @@ import FM3_LABEL_PROBE as LP
 ap = argparse.ArgumentParser()
 ap.add_argument('pack', type=Path); ap.add_argument('session', type=Path)
 ap.add_argument('--answer', default='j'); ap.add_argument('--change-after', type=int); ap.add_argument('--block-change-after', type=int)
-ap.add_argument('--absent-text', action='store_true'); ap.add_argument('--wrong-label', action='store_true'); ap.add_argument('--silent-param', type=int); ap.add_argument('--probe', action='store_true')
+ap.add_argument('--absent-text', action='store_true'); ap.add_argument('--wrong-label', action='store_true'); ap.add_argument('--silent-param', type=int); ap.add_argument('--probe', action='store_true'); ap.add_argument('--hang-after', type=int)
 a = ap.parse_args()
 manifest = json.loads((a.pack / 'manifest.json').read_text())
 fams = {f['effectId']: f for f in manifest['families']}
@@ -52,6 +52,7 @@ class FakePort:
             if d[5] == 0x79: log['dumpsReceived'] += 1
             return
         kind = P.read_only_shape(bytes(d))
+        if a.hang_after is not None and log['labelRequests'] >= a.hang_after: log['ignoredWhileHung'] = log.get('ignoredWhileHung', 0) + 1; return
         if kind is None: log['refusedShapes'] += 1; return
         if kind == 'grid':
             log['gridReads'] += 1; cells = [list(c) for c in manifest['expectedGrid']]

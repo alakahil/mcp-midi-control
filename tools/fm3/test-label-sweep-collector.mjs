@@ -54,7 +54,14 @@ try{
   // 8. tampered preset refused before any device write
   const t=path.join(tmp,'tampered');fs.cpSync(pack,t,{recursive:true});const s=fs.readFileSync(path.join(t,'SWEEP.syx'));s[100]^=1;fs.writeFileSync(path.join(t,'SWEEP.syx'),s);
   const h=run(t,path.join(tmp,'s7'));check(h.fake.exit.includes('SHA-256 mismatch')&&h.fake.dumpsReceived===0,'tampered refused');
-  // 9. the encoding probe: one request per variant, each followed by a full re-read
+  // 9. the FM3 stops answering mid-sweep: stop with the position saved; the same session resumes
+  const hs=path.join(tmp,'s9'),hn=400,hg=run(pack,hs,'--hang-after',String(hn));
+  check(hg.fake.exit.includes('PEATUS: FM3 lakkas vastamast')&&hg.res.stoppedAt&&hg.res.families[0].params.length>0,'hang stops with progress saved: '+hg.fake.exit);
+  const kept=hg.res.families.flatMap(f=>f.params).length,rs=run(pack,hs);
+  check(rs.fake.exit==='ok'&&rs.res.finalUnchanged&&rs.res.resumedParams===kept&&rs.fake.labelRequests<a.fake.labelRequests,'resume: '+JSON.stringify(rs.fake));
+  check(JSON.stringify(rs.res.families.map(f=>f.params.map(p=>p.texts)))===JSON.stringify(a.res.families.map(f=>f.params.map(p=>p.texts))),'resumed texts equal an uninterrupted run');
+  check(a.fake.gridReads>=Math.floor(swept/50),'health checks during the sweep');
+  // 10. the encoding probe: one request per variant, each followed by a full re-read
   const lp=path.join(tmp,'probe');execFileSync('node',[path.join(root,'tools/fm3/label-probe-build.mjs'),lp],{stdio:'ignore'});
   const pm=JSON.parse(fs.readFileSync(path.join(lp,'manifest.json'),'utf8'));
   const pr=execFileSync('python3',['-B',harness,lp,path.join(tmp,'sp'),'--probe'],{encoding:'utf8'}),pf=JSON.parse(pr.split('\n').find(l=>l.startsWith('FAKE ')).slice(5));
@@ -66,5 +73,5 @@ try{
   check(pcf.exit.includes('PEATUS: ruudustik muutus pärast päringut A0')&&pcf.labelRequests===1,'probe stops on a change: '+pcf.exit);
   for(const sc of ['FM3_LABEL_SWEEP.py','FM3_READ_PROBE.py','FM3_LABEL_PROBE.py'])
     check(JSON.parse(execFileSync('python3',['-B',path.join(here,'cpu-sweep-collector',sc),'--self-test'],{encoding:'utf8'}).trim().split('\n').pop()).selfTest==='passed',sc+' self-test');
-  console.log(JSON.stringify({scenarios:10,requestsSimulated:a.fake.labelRequests,deviceIO:false}));
+  console.log(JSON.stringify({scenarios:11,requestsSimulated:a.fake.labelRequests,deviceIO:false}));
 }finally{fs.rmSync(tmp,{recursive:true,force:true});}

@@ -30,7 +30,7 @@ const r=composeSound(BASE,spec);
 assert.deepEqual([...parsePresetDump(r.syx,0,17).headerPayload],[0x7f,0,0,0x40,0],'edit-buffer header');
 assert.ok(r.report.cpu.maxPercent<72,'CPU estimate');
 const body=Buffer.from(inspectStructure(r.syx).raw.body),{records}=scanRecords(body),d=loadDictionary();
-const EXTRA=2;
+const EXTRA=0;  // no out-of-range indexes: the 2026-10-24 run lost the FM3 during the first block with extra=2
 const families=Object.entries(FAMILY_BY_SLUG).map(([slug,family])=>{
   const params=d.params.filter(p=>p.family===family&&Array.isArray(p.enum)&&p.enum.length).sort((a,b)=>a.param-b.param);
   assert.ok(params.length,family);const eid=params[0].block;assert.ok(params.every(p=>p.block===eid),family+' effect id');
