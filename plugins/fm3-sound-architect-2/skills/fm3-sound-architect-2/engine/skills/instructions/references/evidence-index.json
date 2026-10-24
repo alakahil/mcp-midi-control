@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2115,
-  "filePaths": 2319,
+  "uniqueContents": 2117,
+  "filePaths": 2321,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -6791,6 +6791,12 @@
         "references/delay-batch-20261006-134023/capture-20261006T133830-b175fdafea/capture.json"
       ]
     },
+    "89d1b97d7bae3a7a23117b2818eca6ec024b558051e2572a63e13a5f4fa8bc2c": {
+      "bytes": 6031,
+      "paths": [
+        "references/fm3-step-diff-gate-pan-20261024-results.json"
+      ]
+    },
     "89d5c92716bd3e6959ed451b3da9ea2cb592925a397e7fb4b66cf6aec58d233b": {
       "bytes": 637,
       "paths": [
@@ -12896,6 +12902,12 @@
       "bytes": 5052,
       "paths": [
         "references/rotary-batch-20261007-151451/capture-20261007T151133-39ef0f4204/capture.json"
+      ]
+    },
+    "ffc5d78030260cc5eda88bddb5a9e2bb3fc98657f3112102b7254c2afa16ff83": {
+      "bytes": 2879,
+      "paths": [
+        "references/fm3-step-diff-gate-pan-20261024.json"
       ]
     },
     "ffcda66421c28c978943d566b435e4a11e2508d2429186e53696d4f45903dc7a": {
