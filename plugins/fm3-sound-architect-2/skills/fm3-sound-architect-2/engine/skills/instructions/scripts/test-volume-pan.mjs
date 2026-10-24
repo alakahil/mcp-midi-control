@@ -38,11 +38,27 @@ for(const [pid,values] of [[0,[0,2.5,5,7.5,10]],[1,[-100,-50,0,50,100]],[4,[-99.
 }
 // Fixed normalized anchors are software expectations, not fresh physical points.
 for(const [p,v,raw] of [[0,5,32767],[1,0,32767],[4,0,32767],[6,-30,32767]])assert.equal(encodeValue(findParam('volpan',p),v),raw);
-const invalid=[c('E',0,5),c('A',0,-1),c('A',0,11),c('A',0,'5'),c('A',1,101),c('A',4,-100),c('A',5,100),c('A',6,21),c('A',2,7),c('A',3,0),c('A',9,0),c('A',10,-40),c('A',11,100),c('A',12,10),c('A',13,6),c('A',14,0),c('A',0,NaN),{...c('A',0,5),extra:1}];
+const invalid=[c('E',0,5),c('A',0,-1),c('A',0,11),c('A',0,'5'),c('A',1,101),c('A',4,-100),c('A',5,100),c('A',6,21),c('A',2,7),c('A',3,0),c('A',9,2),c('A',10,-40),c('A',11,100),c('A',12,10),c('A',13,6),c('A',14,0),c('A',0,NaN),{...c('A',0,5),extra:1}];
 for(const bad of invalid){const b=Buffer.from(original);let calls=0;assert.throws(()=>applyTableControls(b,[c('B',0,8),bad],{allow:['enum-labels']},()=>calls++));assert.deepEqual(b,original);assert.equal(calls,0);}
 assert.throws(()=>applyTableControls(Buffer.from(original),[c('A',2,'LINEAR')]),/not writable/);
 assert.throws(()=>applyTableControls(Buffer.from(original),[c('A',0,1),c('A','GAIN',2)]),/Duplicate/);
-for(const type of [1,2,65535]){const b=Buffer.from(original);b.writeUInt16LE(type,r.start+18);assert.throws(()=>applyTableControls(b,[c('A',0,5)]),/captured VOLUME/);}
+for(const type of [1,2,65535]){const b=Buffer.from(original);b.writeUInt16LE(type,r.start+18);assert.throws(()=>applyTableControls(b,[c('A',0,5)]),type===1?/hidden in final type AUTO-SWELL/:/unknown Volume type/);}
+// AUTO-SWELL (front-panel check 2026-10-24): TYPE is one word; Auto-Swell controls follow the FINAL type, in any order.
+let swell=0;
+for(const channel of 'ABCD')for(const order of [0,1]){
+  const ctl=[c(channel,10,-40),c(channel,11,250),c(channel,12,20),c(channel,13,3),c(channel,1,-25),c(channel,6,-6)],typ=c(channel,9,'AUTO-SWELL');
+  const before=Buffer.from(original),after=Buffer.from(original),allowed=new Set();
+  applyTableControls(after,order?[...ctl,typ]:[typ,...ctl],{allow:['enum-labels']},(at,n)=>{for(let j=0;j<n;j++)allowed.add(at+j);});
+  for(let i=0;i<before.length;i++)if(!allowed.has(i))assert.equal(after[i],before[i],'Collateral word (Auto-Swell)');
+  const at=r.start+'ABCD'.indexOf(channel)*30;assert.equal(after.readUInt16LE(at+18),1);
+  for(const [pid,v] of [[10,-40],[11,250],[12,20],[13,3],[1,-25],[6,-6]])assert.equal(after.readUInt16LE(at+2*pid),encodeValue(findParam('volpan',pid),v));
+  for(const pid of [0,2,4,5,7,8])assert.equal(after.readUInt16LE(at+2*pid),original.readUInt16LE(at+2*pid),'other words kept');
+  swell++;}
+// The device words of the front-panel check: Threshold -40 dB = 32767; Attack 100 ms and Hysteresis 6 dB defaults = 32767.
+for(const [pid,v,raw] of [[10,-40,32767],[11,100,32767],[13,6,32767]])assert.equal(encodeValue(findParam('volpan',pid),v),raw);
+for(const bad of [[c('A',9,'AUTO-SWELL'),c('A',0,5)],[c('A',9,'AUTO-SWELL'),c('A',4,-50)],[c('A',9,'AUTO-SWELL'),c('A',5,50)],[c('A',10,-40)],[c('A',9,'VOLUME'),c('A',13,6)]]){
+  const b=Buffer.from(original);assert.throws(()=>applyTableControls(b,bad,{allow:['enum-labels']}),/hidden in final type/);assert.deepEqual(b,original);}
+assert.throws(()=>applyTableControls(Buffer.from(original),[c('A',9,'AUTO-SWELL')]),/not writable/);
 const mod=Buffer.from(original);mod.writeUInt16LE(1,1584);mod.writeUInt16LE(102,1600);mod.writeUInt16LE(0,1602);mod.writeUInt16LE(0,1618);assert.throws(()=>applyTableControls(mod,[c('D',0,5)]),/modifier-controlled/);
 const scene=Buffer.from(original),scenes=[1,2,3,4,5,6,7,8].map(n=>({scene:n,channel:'ABCD'[(n-1)%4],bypass:n%2===0}));
 const allowed=new Set();applyBlockScenes(scene,{volpan:scenes},(at,n)=>{for(let i=0;i<n;i++)allowed.add(at+i)});
@@ -61,4 +77,4 @@ try{
 assert.throws(()=>createPreset(base,{...spec,volumePan:false}),/must be true/);
 assert.throws(()=>createPreset(base,{...spec,volumePan:undefined}),/must be true/);
 assert.throws(()=>createPreset(base,{...spec,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']}}),/exactly/);
-console.log(JSON.stringify({passed:true,capturedBodyReconstructed:true,baseInsertions:insertions,rejectedLayouts,parameterWrites:writes,invalidCases:invalid.length,sceneCases:8,independentRawDecoder:true,fourFileTamper:true,newPhysicalScaleMeasurements:0}));
+console.log(JSON.stringify({passed:true,autoSwellCases:swell,capturedBodyReconstructed:true,baseInsertions:insertions,rejectedLayouts,parameterWrites:writes,invalidCases:invalid.length,sceneCases:8,independentRawDecoder:true,fourFileTamper:true,newPhysicalScaleMeasurements:0}));

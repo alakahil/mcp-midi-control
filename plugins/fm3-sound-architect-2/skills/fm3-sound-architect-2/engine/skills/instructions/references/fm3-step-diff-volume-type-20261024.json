@@ -77,7 +77,7 @@
  ],
  "notMeasured": [
   "other Release / Attack points",
-  "writing AUTO-SWELL from the generator (still preserved, not authored)"
+  "a generated AUTO-SWELL preset on the device (the generator writes it from this evidence)"
  ],
  "resultsSha256": "35df948d1bb62771e8dab7d67d7a64adb7f049813f990ef5932da43302f7d412"
 }

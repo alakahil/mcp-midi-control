@@ -81,4 +81,6 @@ Kviitung on `references/fm3-step-diff-volume-type-20261024.json`.
   - Release'iks lasi FM3 valida 19,999 ms (sõna 42623). Generaator loeb selle sõna 19,989 ms-ina ja
     kirjutaks 20 ms sõnana 42631, mis on 0,05 % erinevus. Logaritmiline kõver on lähedane, aga selles
     punktis mitte sõna-täpne.
-- Generaator säilitab TYPE-i ja Auto-Swelli, aga ei kirjuta neid.
+- **Generaator** kirjutab nüüd ka TYPE-i (`VOLUME` / `AUTO-SWELL`, `allow:["enum-labels"]`) ja Auto-Swelli
+  väljad Threshold, Attack, Release ja Hysteresis (`fm3-volume-policy.mjs`). Iga välja kontrollitakse kanali
+  lõpliku tüübi järgi ja lõplikus tüübis peidetud väli tõrjutakse. `volumePedal` AUTO-SWELL-iga tõrjutakse.

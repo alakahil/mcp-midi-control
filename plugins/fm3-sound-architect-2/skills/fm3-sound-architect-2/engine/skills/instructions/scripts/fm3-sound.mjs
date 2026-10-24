@@ -71,6 +71,8 @@ export function composeSound(base,spec){
   validateLegacyDependencies(finalBody,Object.fromEntries(scanRecords(finalBody).records.map(r=>[r.family,r])),spec.composer);
   const modifierEdit=pedal?null:first.report.modifierEdit??null;
   verifyWahModifierReadback(finalBody,modifierEdit);
+  if(pedal){const vr=scanRecords(finalBody).records.find(r=>r.eid===102);
+    for(let ch=0;ch<4;ch++)check(finalBody.readUInt16LE(vr.start+ch*vr.words*2+18)===0,`volumePedal binds Volume, which AUTO-SWELL hides (volpan channel ${'ABCD'[ch]})`);}
   const volumePedal=pedal?readVolumePedal(finalBody):null;
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const cpuEstimate=estimateCpu(second.syx);

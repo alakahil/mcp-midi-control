@@ -68,7 +68,7 @@ const out5={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-10-2
   findings:['TYPE VOLUME <-> AUTO-SWELL is one word (VOLUME_TYPE, 0 = VOLUME, 1 = AUTO-SWELL); switching back left Volume at 10.00: no other word changes.',
     'Auto-Swell Threshold -40 dB equals the encoding word for word; the Attack 100 ms and Hysteresis 6.00 dB defaults equal the encoding of those values.',
     'Release: the FM3 offered 19.999 ms (word 42623); the generator decodes that word as 19.989 ms and encodes 20 ms as 42631 (0.05 % apart). The log curve is close but not word-exact at this point.'],
-  steps:steps5,notMeasured:['other Release / Attack points','writing AUTO-SWELL from the generator (still preserved, not authored)'],resultsSha256:sha(fs.readFileSync(f5))};
+  steps:steps5,notMeasured:['other Release / Attack points','a generated AUTO-SWELL preset on the device (the generator writes it from this evidence)'],resultsSha256:sha(fs.readFileSync(f5))};
 const target5=path.join(ENG,'references/fm3-step-diff-volume-type-20261024.json'),content5=JSON.stringify(out5,null,1)+'\n';
 if(process.argv.includes('--write'))fs.writeFileSync(target5,content5);else assert.equal(fs.readFileSync(target5,'utf8'),content5,'test 5 receipt stale');
 fs.rmSync(tmp,{recursive:true,force:true});
