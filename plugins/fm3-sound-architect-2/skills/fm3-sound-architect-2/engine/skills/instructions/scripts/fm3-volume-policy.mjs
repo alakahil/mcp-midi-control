@@ -16,7 +16,7 @@ export function volumePolicySummary(){return {supported:true,block:'volpan',effe
  enumOptIn:'allow:["enum-labels"]',metadataSha256:inputVolumeEvidenceHash,hardwareEvidence:'one default FW13 record; 20 Input words preserved in the returned export',newPhysicalScaleMeasurements:0,fullRangeEncodingProven:false,
  frontPanelChecks:['references/fm3-step-diff-input-volume-20261024.json','references/fm3-step-diff-volume-type-20261024.json'],
  preserved:['TYPE unless written','channel BYPASS word','words of the other type','meter word','all existing records and system tail'],
- limits:['Controls hidden in the final type are refused (Volume/Pan L/R in AUTO-SWELL; Threshold/Attack/Release/Hysteresis in VOLUME)','Auto-Swell Release: the log curve is 0.05 % off the FM3 at 20 ms','volumePedal binds Volume and is refused with AUTO-SWELL','Use blockScenes.volpan for scene channel/bypass','New physical scales and authored combinations are model-based; no new live SET/STORE/audio/CPU proof','Default Ext1 binding uses separate volumePedal:true policy; no numeric Min/Max transfer']};}
+ limits:['Controls hidden in the final type are refused (Volume/Pan L/R in AUTO-SWELL; Threshold/Attack/Release/Hysteresis in VOLUME)','volumePedal binds Volume and is refused with AUTO-SWELL','Use blockScenes.volpan for scene channel/bypass','New physical scales and authored combinations are model-based; no new live SET/STORE/audio/CPU proof','Default Ext1 binding uses separate volumePedal:true policy; no numeric Min/Max transfer']};}
 export const volumeState=(p,read)=>p.family==='VOLUME'?{type:read(TYPE_PID)}:null;
 export function volumeApplicability(p,state){
  if(p.family!=='VOLUME')return {covered:false};
@@ -33,6 +33,6 @@ export function validateVolumeWrites(body,writes){
   const at=w.offset-2*w.pid,read=pid=>planned.get(at+2*pid)??body.readUInt16LE(at+2*pid);  // final type, even if TYPE is written later in the list
   const a=volumeApplicability({family:'VOLUME',param:w.pid,label:w.label},volumeState({family:'VOLUME'},read));
   if(!a.allowed)throw Error('Volume/Pan '+w.channel+' '+w.name+': '+a.reason);
-  w.typeApplicability=a;w.encodingEvidence=w.pid===12?'log curve class; front panel 19.999 ms vs generator 19.989 ms at word 42623 (0.05 %)':'FW13 metadata and curve classes; front-panel checks 2026-10-24 matched the encoding';
+  w.typeApplicability=a;w.encodingEvidence='FW13 metadata and curve classes; front-panel checks 2026-10-24 matched the encoding at the FM3 display precision';
  }
 }

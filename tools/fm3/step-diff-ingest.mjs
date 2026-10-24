@@ -71,5 +71,26 @@ const out5={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-10-2
   steps:steps5,notMeasured:['other Release / Attack points','a generated AUTO-SWELL preset on the device (the generator writes it from this evidence)'],resultsSha256:sha(fs.readFileSync(f5))};
 const target5=path.join(ENG,'references/fm3-step-diff-volume-type-20261024.json'),content5=JSON.stringify(out5,null,1)+'\n';
 if(process.argv.includes('--write'))fs.writeFileSync(target5,content5);else assert.equal(fs.readFileSync(target5,'utf8'),content5,'test 5 receipt stale');
+// Test 6: Input 1 Ratio / Attack / Release and Volume Pan L/R. Where the knob could not hit the asked value the
+// user typed the value the FM3 offered; the generator decoding of the stored word must round to that reading.
+const f6=path.join(ENG,'references/fm3-step-diff-gate-pan-20261024-results.json'),r6=JSON.parse(fs.readFileSync(f6,'utf8'));
+const t6=path.join(tmp,'t6');execFileSync('node',[path.join(ROOT,'tools/fm3/step-diff-build.mjs'),'gate-pan',t6],{stdio:'ignore'});
+const m6=JSON.parse(fs.readFileSync(path.join(t6,'manifest.json'),'utf8'));
+assert.equal(sha(fs.readFileSync(path.join(t6,'manifest.json'))),r6.packSha256,'gate-pan pack rebuilt identically');
+assert.ok(r6.baselineMatchesPack,'test 6 baseline equals the pack preset');
+const SHOWN6={ratio4:'4.00',att10:'10.03',rel200:'199.89',ratio10:'10.00','panl-50':'-50.0',panr50:'50.0'};
+const steps6=r6.steps.map((s,i)=>{const st=m6.steps[i];assert.equal(s.id,st.id);const p=findParam(st.block,st.param);
+  assert.ok(s.changed.length===1&&s.changed[0].param===p.param&&s.changed[0].channel==='A'&&s.changed[0].block===st.block,'one word changed at '+s.id);
+  const w=s.changed[0].after,d=decodeValue(p,w),txt=SHOWN6[s.id],dec=(txt.split('.')[1]??'').length;
+  assert.equal(d.toFixed(dec),txt,`generator decoding rounds to the FM3 reading at ${s.id}`);
+  return {id:s.id,asked:s.asked,userReading:s.userReading,param:p.name,deviceWord:w,generatorDecodes:Number(d.toFixed(4)),fm3Shows:Number(txt),generatorWordForAsked:encodeValue(p,{ratio4:4,att10:10,rel200:200,ratio10:10,'panl-50':-50,panr50:50}[s.id])};});
+const out6={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-10-24',auditPoint:4,
+  method:'FM3_STEP_DIFF.py: the generated preset STEP 6 GATE PAN in the edit buffer only; one front-panel field per step; Input 1 and Volume/Pan 1 read with fn=0x1F after each step.',
+  findings:['Every reading equals the generator decoding of the stored word at the precision the FM3 shows: Input Ratio 4.00 / 10.00, Attack 10.03 ms, Release 199.89 ms, Volume Pan Left -50.0, Pan Right 50.0 (Pan words equal the encoding exactly).',
+    'Where the knob could not reach the asked value (Attack 10 ms, Release 200 ms) the FM3 offered neighbouring steps; the generator still writes the exact asked value.',
+    'Input Release (log 10..1000 ms) showed 199.89 ms at word 42623, exactly the generator decoding. Volume Release uses the same 100:1 log curve; the test-5 reading of 19.999 ms at the same word is therefore most likely 19.989 misread (the generated 20 ms word 42631 showed 20.000 as decoded, references/fm3-auto-swell-verify-20261024.json).'],
+  steps:steps6,notMeasured:['values between the measured points'],resultsSha256:sha(fs.readFileSync(f6))};
+const target6=path.join(ENG,'references/fm3-step-diff-gate-pan-20261024.json'),content6=JSON.stringify(out6,null,1)+'\n';
+if(process.argv.includes('--write'))fs.writeFileSync(target6,content6);else assert.equal(fs.readFileSync(target6,'utf8'),content6,'test 6 receipt stale');
 fs.rmSync(tmp,{recursive:true,force:true});
-console.log(JSON.stringify({test4Steps:steps.length,test5Steps:steps5.length,allEqualEncoder:true,thresholdOffWord:0,releaseRelDiff:steps5.find(s=>s.kind==='near').relativeDifference}));
+console.log(JSON.stringify({test4Steps:steps.length,test5Steps:steps5.length,test6Steps:steps6.length,allEqualEncoder:true,thresholdOffWord:0,releaseRelDiff:steps5.find(s=>s.kind==='near').relativeDifference}));

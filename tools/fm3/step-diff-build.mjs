@@ -4,7 +4,8 @@
 // Level and Volume / Level / Balance on the front panel one at a time and types the shown value.
 // Pack "volume-type" (test 5): the same layout; the user switches Volume/Pan 1 TYPE to AUTO-SWELL, sets
 // its Threshold / Attack / Release / Hysteresis, then switches back to VOLUME.
-// Usage: node tools/fm3/step-diff-build.mjs PACK OUT_DIR   (PACK: input-volume | volume-type)
+// Pack "gate-pan": the same layout; Input 1 Ratio / Attack / Release (Mode ADVANCED) and Volume Pan L/R.
+// Usage: node tools/fm3/step-diff-build.mjs PACK OUT_DIR   (PACK: input-volume | volume-type | gate-pan)
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
@@ -17,8 +18,8 @@ const {inspectStructure}=await imp('scripts/drive-collector/fm3-prototype.mjs');
 const {parsePresetDump}=await imp('scripts/fm3-codec.mjs');
 const {scanRecords,readGrid}=await imp('scripts/fm3-layout.mjs');
 const sha=b=>createHash('sha256').update(b).digest('hex'),hex=a=>Buffer.from(a).toString('hex');
-const [pack,out]=process.argv.slice(2);assert.ok(['input-volume','volume-type'].includes(pack)&&out,'Usage: step-diff-build.mjs input-volume|volume-type OUT_DIR');
-const NAME=pack==='input-volume'?'STEP 4 IN VOL':'STEP 5 VOL TYPE';
+const [pack,out]=process.argv.slice(2);assert.ok(['input-volume','volume-type','gate-pan'].includes(pack)&&out,'Usage: step-diff-build.mjs input-volume|volume-type|gate-pan OUT_DIR');
+const NAME={'input-volume':'STEP 4 IN VOL','volume-type':'STEP 5 VOL TYPE','gate-pan':'STEP 6 GATE PAN'}[pack];
 const read=p=>fs.readFileSync(new URL(E+p,import.meta.url));
 const evidence=JSON.parse(read('references/fm3-volume-binding-evidence.json'));
 const spec=JSON.parse(JSON.stringify(evidence.baseline.spec));spec.composer.name=NAME;spec.blockScenes={volpan:[{scene:1,channel:'A',bypass:false}]};spec.selectedScene=1;
@@ -31,7 +32,14 @@ const blocks=[['in1',37],['volpan',102]].map(([slug,eid])=>{const r=records.find
     expectedWords:Array.from({length:r.words*r.channels},(_,i)=>body.readUInt16LE(r.start+2*i))};});
 const IN=`LAYOUT, NAV-nuppudega rida ${blocks[0].cell.row} veerg ${blocks[0].cell.col} (IN 1), siis EDIT; vali lehel noise gate'i väljad`;
 const VOL=`LAYOUT, NAV-nuppudega rida ${blocks[1].cell.row} veerg ${blocks[1].cell.col} (VOL), siis EDIT`;
-const steps=pack==='volume-type'?[
+const steps=pack==='gate-pan'?[
+  {id:'ratio4',where:IN,block:'in1',param:'INPUT_RATIO',text:'Input 1: sea Ratio väärtuseks 4.00'},
+  {id:'att10',where:IN,block:'in1',param:'INPUT_ATTACK',text:'Input 1: sea Attack väärtuseks 10.0 ms'},
+  {id:'rel200',where:IN,block:'in1',param:'INPUT_RELEASE',text:'Input 1: sea Release väärtuseks 200 ms'},
+  {id:'ratio10',where:IN,block:'in1',param:'INPUT_RATIO',text:'Input 1: sea Ratio väärtuseks 10.0'},
+  {id:'panl-50',where:VOL,block:'volpan',param:'VOLUME_PANL',text:'Volume: sea Pan Left väärtuseks -50 (või L50; kirjuta täpselt, mida näitab)'},
+  {id:'panr50',where:VOL,block:'volpan',param:'VOLUME_PANR',text:'Volume: sea Pan Right väärtuseks 50 (või R50; kirjuta täpselt, mida näitab)'},
+]:pack==='volume-type'?[
   {id:'type-swell',where:VOL,block:'volpan',param:'VOLUME_TYPE',text:'Volume: vaheta Type väärtuseks AUTO-SWELL (kirjuta ka, mis väljad nüüd lehel on)'},
   {id:'sw-thr-40',where:VOL,block:'volpan',param:'VOLUME_THRESHOLD',text:'Auto-Swell: sea Threshold väärtuseks -40.0 dB'},
   {id:'sw-att100',where:VOL,block:'volpan',param:'VOLUME_ATTACK',text:'Auto-Swell: sea Attack väärtuseks 100 ms'},
@@ -49,7 +57,7 @@ const steps=pack==='volume-type'?[
   {id:'vlvl-10',where:VOL,block:'volpan',param:'VOLUME_LEVEL',text:'Volume: sea Level väärtuseks -10.0 dB'},
   {id:'bal',where:VOL,block:'volpan',param:'VOLUME_BAL',text:'Volume: keera Balance vasakule umbes poole peale (kirjuta täpselt, mida näitab)'},
 ];
-fs.mkdirSync(out,{recursive:true});const FILE=pack==='input-volume'?'STEP4.syx':'STEP5.syx';fs.writeFileSync(path.join(out,FILE),syx);
+fs.mkdirSync(out,{recursive:true});const FILE={'input-volume':'STEP4.syx','volume-type':'STEP5.syx','gate-pan':'STEP6.syx'}[pack];fs.writeFileSync(path.join(out,FILE),syx);
 const manifest={kind:'fm3-step-diff',version:1,date:'2026-10-24',pack,confirmName:NAME,preset:{file:FILE,sha256:sha(syx)},blocks:pack==='volume-type'?blocks.filter(b=>b.slug==='volpan'):blocks,steps,
   method:pack==='input-volume'?'Edit-buffer load (7F 00) only; the user changes one front-panel field per step and types the shown value; Input 1 and Volume/Pan 1 are read with fn=0x1F after each step. No store, no SET.':'Edit-buffer load (7F 00) only; the user changes one front-panel field per step and types the shown value; Volume/Pan 1 is read with fn=0x1F after each step. No store, no SET.'};
 fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest)+'\n');

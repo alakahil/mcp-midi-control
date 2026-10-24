@@ -43,7 +43,8 @@ Esipaneeli kontroll (24.10.2026, `references/fm3-step-diff-input-volume-20261024
 klappisid generaatori kodeeringuga sõna-sõnalt. Mõõdeti:
 - Input Threshold −40 dB, OFF ja −80 dB ning Level +6 dB;
 - Volume 0 / 2,5 / 7,5, Level −10 dB ja Balance −67.
-Ratio, Attack, Release ja Pan L/R skaalasid pole esipaneelilt mõõdetud.
+Katse 6 (`references/fm3-step-diff-gate-pan-20261024.json`) mõõtis Input Ratio 4,00/10,00, Attack 10,03 ms,
+Release 199,89 ms ning Volume Pan L −50 ja Pan R 50. Kõik klappisid FM3 näidu täpsusega, Pan-i sõnad täpselt.
 
 Volume/Pan 1 praegune FW13 15-sõnaline A–D kirje on nüüd olemas. Sound-spec'i
 `volumePan:true` lisab selle NewLook-alusele; valitud `layout` või `grid` peab sisaldama `volpan`-i.
@@ -62,7 +63,8 @@ Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiiv
 Esipaneeli kontroll (24.10.2026, `references/fm3-step-diff-volume-type-20261024.json`):
 - TYPE VOLUME ↔ AUTO-SWELL muudab ainult ühte sõna ja teisi väärtusi ei puuduta.
 - Auto-Swell Threshold, Attack ja Hysteresis klappisid kodeeringuga.
-- Release 20 ms erines 0,05 %.
+- Release'i näit 19,999 ms oli tõenäoliselt lugemisviga. Sama sõna andis Input Release'il täpselt
+  generaatori väärtuse ja genereeritud 20 ms näitas 20,000.
 Generaatori AUTO-SWELL preset kontrolliti seadmel (`references/fm3-auto-swell-verify-20261024.json`):
 - kõik plokid ja ruudustik loeti tagasi täpselt sellisena, nagu generaator need kirjutas;
 - ekraan näitas küsitud väärtusi: Attack 250 ms kui 249,99 ms ja Release 20 ms kui 20,000 ms. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.

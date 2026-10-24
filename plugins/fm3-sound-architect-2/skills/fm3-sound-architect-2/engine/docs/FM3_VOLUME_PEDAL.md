@@ -79,7 +79,9 @@ Kviitung on `references/fm3-step-diff-volume-type-20261024.json`.
   - Attack 100 ms ja Hysteresis 6.00 dB olid juba vaikimisi seatud ning nende salvestatud sõnad
     võrduvad nende väärtuste kodeeringuga.
   - Release'iks lasi FM3 valida 19,999 ms (sõna 42623). Generaator loeb selle sõna 19,989 ms-ina ja
-    kirjutaks 20 ms sõnana 42631, mis on 0,05 % erinevus. Logaritmiline kõver on lähedane, aga selles
+    kirjutaks 20 ms sõnana 42631, mis on 0,05 % erinevus. **Parandus (katse 6):** Input Release kasutab sama
+    100:1 logaritmilist kõverat. Seal näitas sama sõna 42623 täpselt generaatori väärtust (199,89 ms) ja
+    genereeritud 20 ms näitas 20,000. Seega oli 19,999 tõenäoliselt valesti loetud 19,989. Algne märkus: logaritmiline kõver on lähedane, aga selles
     punktis mitte sõna-täpne.
 - **Generaator** kirjutab nüüd ka TYPE-i (`VOLUME` / `AUTO-SWELL`, `allow:["enum-labels"]`) ja Auto-Swelli
   väljad Threshold, Attack, Release ja Hysteresis (`fm3-volume-policy.mjs`). Iga välja kontrollitakse kanali
@@ -89,3 +91,16 @@ Seadmekontroll (`references/fm3-auto-swell-verify-20261024.json`, `tools/fm3/aut
 preset oli kanalil A AUTO-SWELL (Threshold −40 dB, Attack 250 ms, Release 20 ms, Hysteresis 3 dB) ja kanalil B
 VOLUME 7.5. Kõik plokid ja ruudustik loeti redaktsioonipuhvrist tagasi täpselt. FM3 näitas Attack'i 249,99 ms-ina ja
 Release'i 20,000 ms-ina. Ülejäänud väärtused klappisid täpselt.
+
+## Input Ratio / Attack / Release ja Volume Pan (katse 6, 24.10.2026)
+
+Kviitung on `references/fm3-step-diff-gate-pan-20261024.json`. Kõik 6 näitu võrdusid generaatori dekodeeringuga
+FM3 näidu täpsusega:
+
+- Ratio 4,00 ja 10,00;
+- Attack 10,03 ms;
+- Release 199,89 ms;
+- Pan Left −50,0 ja Pan Right 50,0. Pan-i sõnad võrduvad kodeeringuga täpselt.
+
+Attack'i ja Release'i nupp ei jõudnud täpselt küsitud väärtuseni, sest FM3 pakkus naaberastmeid (9,96/10,03 ja
+199,89/200,79). Generaator kirjutab siiski täpse küsitud väärtuse.
