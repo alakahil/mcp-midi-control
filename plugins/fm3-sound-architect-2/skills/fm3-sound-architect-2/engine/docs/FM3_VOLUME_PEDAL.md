@@ -39,5 +39,19 @@ Kirjutaja kopeerib täpse 25-sõnalise kirje. See **ei arvuta** uusi Min/Max-, k
 - Avalik `fm3-preset.mjs --verify` kontrollib kõiki 25 sõna, modifikaatoripiirkonda, sihtplokki, TXT/spec/aruande kooskõla. Uuendatud CRC ja artefaktiräsid ei peida lepinguvälist muudatust.
 - Generaator taastab seadmeekspordi kogu 12970-baidise keha räsiga `f01f233b8e5195d8ef4e8d3253c85a1ce14649859838eed3c5cf65e760a8eb5e`. Täpselt sama keha ei vaja uut korduseksporti. Uut kodeeritud faili ei ole eraldi tagasi imporditud.
 - Ainult esimene mõõdetud kirje ja passiivne lähteolek. Vaba kirje jaotamist, samaaegset Wah- ja Volume-seost, muid allikaid/sihtmärke/kanaleid ega modifikaatori eemaldamist ei lisata. Aktiivset seost ei lülitata vaikimisi välja.
-- Globaalne External 1 määrang, live SET/GET, pedaali asend/käitumine, heli ja STORE/reload on eraldi. See on aktiivse puhvri eksporditõend. `fullRangeEncodingProven=false` jääb kehtima.
+- Globaalne External 1 määrang, live SET/GET, heli ja STORE/reload on eraldi (pedaali käitumist vt allpool). See on aktiivse puhvri eksporditõend. `fullRangeEncodingProven=false` jääb kehtima.
 - Uut REA/Ghidra analüüsi selles etapis ei tehtud. Varasema Maci analüüsi loomise → ID → Source tee oli katse põhjendus; presetisõnade tõend tuleb nüüd eraldi seadmeekspordist. Wahi kuus mõõdetud Min/Max punkti ja 995 mudelipõhist väärtust välja kohta ning ajaloolised hiirepunktid jäävad muutmata.
+
+## Pedaali käitumine (24.10.2026)
+
+Katse 4a. Kviitung on failis [references/fm3-pedal-check-20261024.json](../skills/instructions/references/fm3-pedal-check-20261024.json),
+mida kontrollib `node tools/fm3/pedal-check-ingest.mjs`. Mõõtepaki koostab `tools/fm3/pedal-check-build.mjs`,
+mõõteskript on `FM3_PEDAL_CHECK.py`. Mõlemad presetid laaditi ainult redaktsioonipuhvrisse.
+
+- **P1 (`volumePedal:true`)**: FM3-Editis on Volume nupul modifikaatori märk, allikas on External 1 ja nupp
+  järgib Valeton mini pedaali kannast varbani.
+- **P0 (sama preset ilma seoseta)**: modifikaatorit pole ja Volume jääb 10.00 peale.
+- **Masinloetavus**: ploki koondlugemine (`fn=0x1F`) tagastab igas pedaaliasendis salvestatud sõna 65534 (10.00).
+  FM3 ei saada pedaali liigutamise ajal ise kaadreid, seega seda väärtust praeguste lugemisteedega skriptiga ei loe.
+- **Mõõtmata**: täpsed kanna/varba numbrid, kõver (taper) ja heli.
+- FM3 esipaneelil avatakse ploki leht ruudustikust EDIT-nupuga. ENTER ja VALUE valivad lahtrisse uue ploki.

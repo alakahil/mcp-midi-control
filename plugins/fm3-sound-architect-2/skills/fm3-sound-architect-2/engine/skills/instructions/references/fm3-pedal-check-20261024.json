@@ -1,0 +1,70 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "method": "FM3_PEDAL_CHECK.py loaded P1 (0.3.17 volumePedal binding) and P0 (same preset, no binding) into the edit buffer only, asked for the Volume value at heel/toe/middle/heel and recorded the Volume bulk read and any frames the FM3 sent; the user then checked both presets in FM3-Edit.",
+ "presets": [
+  {
+   "id": "P1",
+   "name": "PEDAL 4A BIND",
+   "binding": true,
+   "positions": [
+    "heel",
+    "toe",
+    "middle",
+    "heel2"
+   ],
+   "storedVolumeGain": [
+    65534,
+    65534,
+    65534,
+    65534
+   ],
+   "bulkReadAtEveryPosition": "stored word 65534 (10.00), unchanged",
+   "unsolicitedPedalFrames": 0,
+   "frontPanelReading": "values not visible on the FM3 Volume page"
+  },
+  {
+   "id": "P0",
+   "name": "PEDAL 4A NO BIND",
+   "binding": false,
+   "positions": [
+    "heel",
+    "toe",
+    "middle",
+    "heel2"
+   ],
+   "storedVolumeGain": [
+    65534,
+    65534,
+    65534,
+    65534
+   ],
+   "bulkReadAtEveryPosition": "stored word 65534 (10.00), unchanged",
+   "unsolicitedPedalFrames": 0,
+   "frontPanelReading": "values not visible on the FM3 Volume page"
+  }
+ ],
+ "editorCheck": {
+  "date": "2026-10-24",
+  "tool": "FM3-Edit (edit buffer, nothing saved)",
+  "P1": {
+   "modifierMarkOnVolume": true,
+   "sourceExternal1": true,
+   "knobFollowsPedalHeelToToe": true,
+   "heelToeValuesRecorded": false
+  },
+  "P0": {
+   "modifierMarkOnVolume": false,
+   "volumeStays": "10.00"
+  },
+  "userWords": "Kõigile küsimustele vastus jah. 4. oli nii nagu kirjeldasid"
+ },
+ "findings": [
+  "Pedal behaviour confirmed: with P1 the FM3-Edit Volume knob carries the External 1 modifier and follows the Valeton pedal from heel to toe; P0 has no modifier and stays at 10.00.",
+  "The fn=0x1F bulk read returns the stored Volume word (10.00) at every pedal position, and the FM3 sends no frames while the pedal moves: the modulated value is not machine-readable with the current read paths.",
+  "Not measured: the numeric heel/toe values and the gain curve (taper); audio not checked."
+ ],
+ "resultsSha256": "97e2c2d69a7cf504505eca19db0aa7ed3ed7d84d52710bd0de331f33e9aba762"
+}
