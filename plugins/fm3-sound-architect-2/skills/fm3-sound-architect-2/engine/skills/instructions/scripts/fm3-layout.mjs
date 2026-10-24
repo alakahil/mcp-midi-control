@@ -24,7 +24,9 @@ export const SLUG_BY_EID=Object.freeze({58:'amp',62:'cab',118:'drive',70:'delay'
   // audit point 6, placed by fm3-insert-blocks.mjs
   178:'plex',154:'multiband',130:'synth',166:'looper',146:'gate',98:'formant',158:'tentap',138:'megatap',150:'ringmod',162:'resonator',
   // audit point 5, parallel routing (fm3-grid.mjs)
-  126:'mixer',191:'multiplexer'});
+  126:'mixer',191:'multiplexer',
+  // audit point 6, Scene MIDI (fm3-scene-midi.mjs; grid mode only, unconnected)
+  190:'scenemidi'});
 const EID_BY_SLUG=Object.fromEntries(Object.entries(SLUG_BY_EID).map(([e,s])=>[s,+e]));
 
 // Channel count per record when it is not 4. Send/Return: every export. Looper 166 (24×1):

@@ -1,0 +1,176 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "block": {
+  "effectId": 190,
+  "name": "Scene MIDI (FM3 menu \"MIDI\")",
+  "words": 257,
+  "channels": 1
+ },
+ "method": "FM3_SCENE_MIDI_CHECK.py: the measurement preset (device-default Scene MIDI record) loaded to the edit buffer only; the user changed one field per step on the front panel; block 190 read with the read-only fn=0x1F bulk read after each step.",
+ "layout": {
+  "commandIndex": "(scene-1)*8 + (command-1), 8 scenes x 8 commands",
+  "type": {
+   "words": "0..63",
+   "values": {
+    "0": "none",
+    "1": "CC",
+    "2": "PC"
+   }
+  },
+  "channel": {
+   "words": "64..127",
+   "encoding": "MIDI channel - 1"
+  },
+  "number": {
+   "words": "128..191",
+   "encoding": "as shown (PC program / CC number)"
+  },
+  "value": {
+   "words": "192..255",
+   "encoding": "as shown; kept when the type is changed to PC"
+  },
+  "word256": "never changed"
+ },
+ "measuredPoints": {
+  "commands": [
+   "S1C1",
+   "S2C1",
+   "S2C2",
+   "S8C1",
+   "S8C7"
+  ],
+  "types": [
+   "none",
+   "CC",
+   "PC"
+  ],
+  "channels": [
+   1,
+   2
+  ],
+  "numbers": [
+   0,
+   5,
+   20
+  ],
+  "values": [
+   0,
+   64
+  ]
+ },
+ "steps": [
+  {
+   "step": 1,
+   "userNote": "S2 Command 1 Type PC, Channel 1, value 0",
+   "changed": {
+    "word": 8,
+    "before": 0,
+    "after": 2
+   }
+  },
+  {
+   "step": 2,
+   "userNote": "",
+   "changed": {
+    "word": 72,
+    "before": 0,
+    "after": 1
+   }
+  },
+  {
+   "step": 3,
+   "userNote": "ei saa number välja muuta",
+   "changed": {
+    "word": 136,
+    "before": 0,
+    "after": 5
+   }
+  },
+  {
+   "step": 4,
+   "userNote": "S1, Command 1, Channel 2, Number 5, Value 0",
+   "changed": {
+    "word": 8,
+    "before": 2,
+    "after": 1
+   }
+  },
+  {
+   "step": 5,
+   "userNote": "",
+   "changed": {
+    "word": 136,
+    "before": 5,
+    "after": 20
+   }
+  },
+  {
+   "step": 6,
+   "userNote": "Value 64",
+   "changed": {
+    "word": 200,
+    "before": 0,
+    "after": 64
+   }
+  },
+  {
+   "step": 7,
+   "userNote": "CC muutsin PC",
+   "changed": {
+    "word": 8,
+    "before": 1,
+    "after": 2
+   }
+  },
+  {
+   "step": 8,
+   "userNote": "Muutsin Command 2 ja valisin PC",
+   "changed": {
+    "word": 9,
+    "before": 0,
+    "after": 2
+   }
+  },
+  {
+   "step": 9,
+   "userNote": "Valisin scene 8 ja type pc",
+   "changed": {
+    "word": 56,
+    "before": 0,
+    "after": 2
+   }
+  },
+  {
+   "step": 10,
+   "userNote": "Scene8, Command 7, Type CC, channel 1, number, value 0",
+   "changed": {
+    "word": 62,
+    "before": 0,
+    "after": 1
+   }
+  },
+  {
+   "step": 11,
+   "userNote": "Scene 1, type PC",
+   "changed": {
+    "word": 0,
+    "before": 0,
+    "after": 2
+   }
+  }
+ ],
+ "checks": {
+  "everyStepOneWord": true,
+  "encoderReproducesEveryStep": true,
+  "finalWordsEqual": true
+ },
+ "notMeasured": [
+  "other message types",
+  "range ends (channel 16, number/value 127)",
+  "MIDI actually transmitted on scene change"
+ ],
+ "resultsSha256": "d0e7f399f1b8cecd75b7ea980917b5df5ff26918c8647249ceafd41aca535f37"
+}

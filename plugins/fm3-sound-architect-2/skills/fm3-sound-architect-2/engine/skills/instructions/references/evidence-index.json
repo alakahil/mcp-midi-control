@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2096,
-  "filePaths": 2300,
+  "uniqueContents": 2098,
+  "filePaths": 2302,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -310,6 +310,12 @@
       "paths": [
         "references/cab-batch-20261005-135019/capture-20261005T091020-fff845f79b/donor.syx",
         "references/cab-batch-20261005-135600/capture-20261005T091020-fff845f79b/donor.syx"
+      ]
+    },
+    "05de8ea7d155eaeeec52be9c6db033af45791b399e3298c14f6bf870ec465ae9": {
+      "bytes": 3031,
+      "paths": [
+        "references/fm3-scene-midi-20261024.json"
       ]
     },
     "05ef29f1adc0f4deacf99e19ea5678abd5675aedde28531570e194e8035c3137": {
@@ -2715,12 +2721,6 @@
       "bytes": 455,
       "paths": [
         "references/reverb-batch-20261006-181951/capture-20261006T162637-97eeb369f4/pair.json"
-      ]
-    },
-    "364663355bec251e445c8694ac3f14a79f989ad6fea9982f4f7e63819ba7c4be": {
-      "bytes": 19418,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "364b74463ee112dde82886c87d0e89e97d26354f0b9a1c098b22e53777686eac": {
@@ -9615,6 +9615,12 @@
         "references/reverb-batch-20261006-181951/capture-20261006T162732-aeac5ab47a/labels.json"
       ]
     },
+    "c4758a9cdb5d731c2e113410979c577e6567846876aa929402a223df976afc7a": {
+      "bytes": 19834,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "c4b9b38aea16c31d63af95eb6889f90d24cb090bd1eb8bc49367c21d0cb6614b": {
       "bytes": 24680,
       "paths": [
@@ -10220,6 +10226,12 @@
       "bytes": 3390,
       "paths": [
         "references/peq-full-20261009-152606/step-049-e0ab3c0cd4/result.json"
+      ]
+    },
+    "d0e7f399f1b8cecd75b7ea980917b5df5ff26918c8647249ceafd41aca535f37": {
+      "bytes": 43998,
+      "paths": [
+        "references/fm3-scene-midi-20261024-results.json"
       ]
     },
     "d0fc4e48d522b15b56a137ead11f24619b64fc2fcd007a25689b629422773235": {

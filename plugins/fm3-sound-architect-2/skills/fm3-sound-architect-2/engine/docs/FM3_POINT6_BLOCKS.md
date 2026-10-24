@@ -62,7 +62,7 @@ Test: `scripts/test-scan-records.mjs` (offline-suite).
 - **Stseeniväljad ei ole vaikimisi:** värskelt lisatud ploki stseenid 2–8 pärinevad viimasest presetist,
   milles see plokk oli (nt Gate = tehasepreset 038). Seade lähtestab ainult aktiivse stseeni. Lisaja kirjutab
   seetõttu alati kõik 8 stseeni (kanal A, bypass).
-- Scene MIDI (menüüs „MIDI Block") on eid 190, 257×1, kõik sõnad 0. Väljade tähendus on dekodeerimata.
+- Scene MIDI (menüüs „MIDI Block") on eid 190, 257×1, kõik sõnad 0. Väljad on dekodeeritud 24.10.2026, vt `FM3_SCENE_MIDI.md`.
 
 ## Lisamine generaatoris (`scripts/fm3-insert-blocks.mjs`, väli `insert`)
 
@@ -77,7 +77,7 @@ Test: `scripts/test-scan-records.mjs` (offline-suite).
   viilus identne ja võrdne juba kinnitatud SHA `0fc5f3…`-ga). Plex TIME1–8 ↔ TEMPO1–8, LFO Rate ↔ LFO Tempo,
   Ten-Tap Time ↔ Rhythm Tempo; sildid on võrreldud FW13 editori cache'iga (sektsioonid 15 ja 38). Lukustatud
   sihti kirjutatakse ainult siis, kui lõplik Tempo on NONE.
-- Keeldutakse: Mixer ja Multiplexer (paralleelharud, punkt 5), Scene MIDI (dekodeerimata), sama pere kaks korda.
+- Kahe rea režiimis keeldutakse: Mixer ja Multiplexer (paralleelharud, punkt 5) ning Scene MIDI (ainult `grid`, vt `FM3_SCENE_MIDI.md`); sama pere kaks korda.
 - Seadmekatse: `examples/FM3_P6_INSERT_A.*` (Gate, Multiband, Plex, Looper, Volume) ja `_B.*` (Synth, Ten-Tap,
   Megatap, Ring Mod, Resonator, Formant).
 
