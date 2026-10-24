@@ -1,0 +1,89 @@
+{
+ "kind": "fm3-scene-midi-listen-results",
+ "packSha256": "53a3730d679e507d2bcc633230a893eb237cb7c4a14cab9889e36bb98f5122a6",
+ "time": "2026-10-24T12:40:58",
+ "steps": [
+  {
+   "rawHex": "",
+   "messages": [],
+   "step": 1,
+   "scene": 2,
+   "userNote": "ok"
+  },
+  {
+   "rawHex": "",
+   "messages": [],
+   "step": 2,
+   "scene": 3,
+   "userNote": "ok"
+  },
+  {
+   "rawHex": "",
+   "messages": [],
+   "step": 3,
+   "scene": 8,
+   "userNote": "ok"
+  },
+  {
+   "rawHex": "",
+   "messages": [],
+   "step": 4,
+   "scene": 1,
+   "userNote": "ok"
+  }
+ ],
+ "beforeLoad": {
+  "rawHex": "",
+  "messages": []
+ },
+ "afterLoad": {
+  "rawHex": "f00001741164770007f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164790009f7",
+  "messages": [
+   {
+    "type": "sysex",
+    "hex": "f00001741164770007f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164790009f7"
+   }
+  ]
+ },
+ "userConfirmedName": true,
+ "idle": {
+  "rawHex": "",
+  "messages": []
+ }
+}
