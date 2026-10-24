@@ -66,5 +66,14 @@ Parandatud generaatori kontroll (`tools/fm3/scene-midi-verify-build.mjs`, tulemu
 **Mõõdetud punktid**: käsud S1C1, S2C1, S2C2, S8C1, S8C7; tüübid puudub/CC/PC; kanalid 1–3;
 numbrid 0, 1, 5, 20; väärtused 0, 10 ja 64.
 
+## Kas käsud välja lähevad (24.10.2026)
+
+Kviitung on `references/fm3-scene-midi-listen-20261024.json` (`node tools/fm3/scene-midi-listen-ingest.mjs`).
+Mõõteskript on `FM3_SCENE_MIDI_LISTEN.py` ja mõõtepreseti koostab `tools/fm3/scene-midi-listen-build.mjs`.
+Preset saatis igas stseenis N kanalil 3 programmivahetuse N ja CC 20 väärtusega 10 × N. Kasutaja valis
+stseenid 2, 3, 8 ja 1, kuid **FM3 ei saatnud USB pordi kaudu ühtegi baiti**. Pärast laadimist tulid ainult
+dumpi kinnitused. Seega ei saada FM3 Scene MIDI käske USB kaudu. MIDI OUT pesa kontrolliks on vaja
+MIDI-liidest või MIDI OUT pessa ühendatud seadet.
+
 **Mõõtmata**: muud sõnumitüübid, vahemike otsad (kanal 16, 127), kas sõnum stseeni vahetusel
 tegelikult välja läheb ja kas saadetud PC võrdub näidatud väärtusega või on ühe võrra väiksem.
