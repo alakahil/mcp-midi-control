@@ -26,11 +26,11 @@
   },
   "number": {
    "words": "128..191",
-   "encoding": "as shown (PC program / CC number)"
+   "encoding": "CC number as shown; unused for PC (shown --)"
   },
   "value": {
    "words": "192..255",
-   "encoding": "as shown; kept when the type is changed to PC"
+   "encoding": "CC value or PC program, as shown in the Value field"
   },
   "word256": "never changed"
  },
@@ -61,6 +61,7 @@
    64
   ]
  },
+ "pcFollowUp": "references/fm3-scene-midi-pc-20261024.json",
  "steps": [
   {
    "step": 1,

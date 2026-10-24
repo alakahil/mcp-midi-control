@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2098,
-  "filePaths": 2302,
+  "uniqueContents": 2101,
+  "filePaths": 2305,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -310,12 +310,6 @@
       "paths": [
         "references/cab-batch-20261005-135019/capture-20261005T091020-fff845f79b/donor.syx",
         "references/cab-batch-20261005-135600/capture-20261005T091020-fff845f79b/donor.syx"
-      ]
-    },
-    "05de8ea7d155eaeeec52be9c6db033af45791b399e3298c14f6bf870ec465ae9": {
-      "bytes": 3031,
-      "paths": [
-        "references/fm3-scene-midi-20261024.json"
       ]
     },
     "05ef29f1adc0f4deacf99e19ea5678abd5675aedde28531570e194e8035c3137": {
@@ -3202,6 +3196,12 @@
         "references/enhancer-full-20261012-122507/step-036-75bdc8b3fb/result.json"
       ]
     },
+    "4087748cb6d29b3ea1155d20b9a8e76c43d23ef2d82a51ff69d16b2d1c42bd1e": {
+      "bytes": 2169,
+      "paths": [
+        "references/fm3-scene-midi-pc-20261024.json"
+      ]
+    },
     "40be64a74947d2f885ecb750347321b5fecfc5c1649f1a920ff7aa0e5c0272ee": {
       "bytes": 24680,
       "paths": [
@@ -4993,6 +4993,12 @@
       "bytes": 4971,
       "paths": [
         "references/geq-full-20261010-194115/step-177-4dee4a7ec5/capture.json"
+      ]
+    },
+    "67759a288fe4e6c89aa6bc654ac231299a7a29742e0528ae9ba39a3eb354c99e": {
+      "bytes": 908,
+      "paths": [
+        "references/fm3-scene-midi-pc-20261024-pack.json"
       ]
     },
     "68594d27c29d5432ed925e400162e276317071b9998418817c6cf81031a43808": {
@@ -10362,6 +10368,12 @@
         "references/geq-full-20261010-194115/step-127-9c0ebdf713/donor.syx"
       ]
     },
+    "d4b365b7c36763b1fee23ba8f1b2cdc5ab2db9b42fb448ff4fbec68ae0622381": {
+      "bytes": 21920,
+      "paths": [
+        "references/fm3-scene-midi-pc-20261024-results.json"
+      ]
+    },
     "d4b752532b624756b81df3b6d6a939c0852281fce59b7c895677ebfe7a2ae5c7": {
       "bytes": 24680,
       "paths": [
@@ -10972,6 +10984,12 @@
       "bytes": 3470,
       "paths": [
         "references/enhancer-lisa-20261012-125350/step-005-7f082d6938/capture.json"
+      ]
+    },
+    "dd4bc173715ec05467b7cc7157f254360ed0109aabab169f8a9183fb5a12aeaa": {
+      "bytes": 3109,
+      "paths": [
+        "references/fm3-scene-midi-20261024.json"
       ]
     },
     "dd8ebfc95e3b82b281d1de73dd88c273ebad34c1389094cd075f099676526bf9": {

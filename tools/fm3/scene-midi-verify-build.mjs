@@ -23,11 +23,11 @@ const composer=name=>({schemaVersion:1,firmware:13,baseProfile:'jb-composer',nam
 const CASES=[
   {id:'M1',name:'SCENE MIDI GEN 1',proves:'PC/CC in scenes 1, 2, 8; channel 1/2/16; numbers and values up to 127',
     spec:{insert:['scenemidi'],grid:{rows:[['scenemidi',...Array(11).fill('')],...main,e()]},
-      sceneMidi:[{scene:1,command:1,type:'PC',channel:2,number:5},{scene:1,command:2,type:'CC',channel:2,number:7,value:100},
-        {scene:2,command:1,type:'PC',channel:1,number:12},{scene:8,command:8,type:'CC',channel:16,number:127,value:127}]}},
-  {id:'M2',name:'SCENE MIDI GEN 2',proves:'every scene sends one PC (program = scene number) on channel 3; block in row 4',
+      sceneMidi:[{scene:1,command:1,type:'PC',channel:2,program:5},{scene:1,command:2,type:'CC',channel:2,number:7,value:100},
+        {scene:2,command:1,type:'PC',channel:1,program:12},{scene:8,command:8,type:'CC',channel:16,number:127,value:127}]}},
+  {id:'M2',name:'SCENE MIDI GEN 2',proves:'every scene sends one PC (program = scene number, FM3 Value field) on channel 3; block in row 4',
     spec:{insert:['scenemidi'],grid:{rows:[e(),...main,['','','','','','','','','','','','scenemidi']]},
-      sceneMidi:Array.from({length:8},(_,i)=>({scene:i+1,command:1,type:'PC',channel:3,number:i+1}))}},
+      sceneMidi:Array.from({length:8},(_,i)=>({scene:i+1,command:1,type:'PC',channel:3,program:i+1}))}},
 ];
 fs.mkdirSync(out,{recursive:true});
 const items=CASES.map(c=>{

@@ -1,0 +1,72 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "block": {
+  "effectId": 190,
+  "words": 257
+ },
+ "method": "FM3_SCENE_MIDI_CHECK.py on the generated preset SCENE MIDI GEN 2 (edit buffer only); the user changed S1C1 on the front panel one field per step; block 190 read with fn=0x1F after each step.",
+ "finding": "For type PC the FM3 shows Number \"--\", refuses edits to Number, and keeps the program in the Value field (word 192 + k). Switching the type to CC shows the kept number word again. A type change touches only the type word.",
+ "consequence": "The generator writes a PC program to the value word and does not write the number word for PC (fixes the earlier encoder, which put the program in the number word).",
+ "steps": [
+  {
+   "step": 1,
+   "asked": "Scene 1, Command 1 (Type PC): ÄRA muuda midagi, kirjuta ainult, mida näitavad Number ja Value",
+   "userNote": "Number --, Value 0",
+   "changed": []
+  },
+  {
+   "step": 2,
+   "asked": "Scene 1, Command 1: proovi muuta Number väärtuseks 10 (kui ei lase, kirjuta \"ei lase\")",
+   "userNote": "ei lase",
+   "changed": []
+  },
+  {
+   "step": 3,
+   "asked": "Scene 1, Command 1: muuda Value väärtuseks 10",
+   "userNote": "Value 10",
+   "changed": [
+    {
+     "word": 192,
+     "before": 0,
+     "after": 10
+    }
+   ]
+  },
+  {
+   "step": 4,
+   "asked": "Scene 1, Command 1: muuda Type CC ja kirjuta, mida nüüd näitavad Number ja Value",
+   "userNote": "Number 1, Value 10",
+   "changed": [
+    {
+     "word": 0,
+     "before": 2,
+     "after": 1
+    }
+   ]
+  },
+  {
+   "step": 5,
+   "asked": "Scene 1, Command 1: muuda Type tagasi PC ja kirjuta, mida näitavad Number ja Value",
+   "userNote": "Number --, Value 10",
+   "changed": [
+    {
+     "word": 0,
+     "before": 1,
+     "after": 2
+    }
+   ]
+  }
+ ],
+ "checks": {
+  "encoderReproducesEveryStep": true,
+  "decodeMatchesFrontPanel": true
+ },
+ "notMeasured": [
+  "whether the PC sent on a scene change equals the shown value or one less (display offset)",
+  "MIDI actually transmitted on scene change"
+ ],
+ "resultsSha256": "d4b365b7c36763b1fee23ba8f1b2cdc5ab2db9b42fb448ff4fbec68ae0622381"
+}

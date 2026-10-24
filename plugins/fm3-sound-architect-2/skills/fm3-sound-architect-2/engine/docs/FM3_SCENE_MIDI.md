@@ -8,13 +8,14 @@ Tegemist on FM3 menüü „MIDI“ plokiga: efekti-ID 190, 257 sõna, 1 kanal. G
 "insert": ["scenemidi"],
 "grid": {"rows": [["scenemidi", "", "", "", "", "", "", "", "", "", "", ""], "...": "ülejäänud read"]},
 "sceneMidi": [
-  {"scene": 1, "command": 1, "type": "PC", "channel": 2, "number": 5},
+  {"scene": 1, "command": 1, "type": "PC", "channel": 2, "program": 5},
   {"scene": 2, "command": 1, "type": "CC", "channel": 1, "number": 7, "value": 100}
 ]
 ```
 
-- **Käsk**: igas 8 stseenis on 8 käsku. `type` on PC, CC või NONE; `channel` 1–16 (vaikimisi 1);
-  `number` 0–127 (PC programm või CC number); `value` 0–127 ainult CC jaoks (vaikimisi 0).
+- **Käsk**: igas 8 stseenis on 8 käsku. `type` on PC, CC või NONE; `channel` 1–16 (vaikimisi 1).
+  PC: `program` 0–127, mille FM3 näitab väljal **Value** (Number näitab PC puhul „--“).
+  CC: `number` 0–127 ja `value` 0–127 (vaikimisi 0). PC-le `number`/`value` või CC-le `program` tõrjutakse.
 - **Paigutus**: plokk ei kanna heli. Sellel ei tohi olla sisendit ja sellest ei tohi midagi sisendit võtta,
   seega jäta selle järel olev lahter tühjaks. Täpselt nii paigutas FM3 selle ka kasutaja ekspordis.
   Kahe rea `layout`-režiimis plokk tõrjutakse.
@@ -33,13 +34,30 @@ kodeerija taastab iga sammu ning lõpliku 257 sõna täpselt.
 | --- | --- | --- |
 | tüüp | 0–63 | 0 = puudub, 1 = CC, 2 = PC |
 | kanal | 64–127 | kanal − 1 |
-| number | 128–191 | otse |
-| väärtus | 192–255 | otse (PC-le vahetamisel jääb alles) |
+| number | 128–191 | CC number otse; PC ei kasuta (ekraanil „--“) |
+| väärtus | 192–255 | CC väärtus või PC programm otse (väli Value) |
 
 Käsu indeks on (stseen − 1) × 8 + (käsk − 1). Sõna 256 ei muutunud ja seda ei kirjutata.
 
-**Mõõdetud punktid**: käsud S1C1, S2C1, S2C2, S8C1, S8C7; tüübid puudub/CC/PC; kanalid 1 ja 2;
-numbrid 0, 5, 20; väärtused 0 ja 64.
+Tüübi vahetus muudab ainult tüübisõna; teised sõnad jäävad alles. Seepärast ei kirjuta generaator PC
+puhul numbrisõna.
 
-**Mõõtmata**: muud sõnumitüübid, vahemike otsad (kanal 16, 127) ja see, kas sõnum stseeni vahetusel
-tegelikult välja läheb.
+## PC programm (järelkatse 24.10.2026)
+
+Kviitung on `references/fm3-scene-midi-pc-20261024.json`. Esimene generaatori versioon kirjutas PC programmi
+numbrisõnasse. Genereeritud preseti „SCENE MIDI GEN 2“ tagasilugemine klappis, aga FM3 näitas
+„Number --, Value 0“. Järelkatses kasutaja:
+
+1. ei saanud PC puhul Number välja muuta;
+2. muutis Value väärtuseks 10, mis muutis sõna 192;
+3. vahetas tüübi CC-ks, mille järel ekraan näitas alles jäänud numbrisõna („Number 1, Value 10“);
+4. vahetas tüübi tagasi PC-ks.
+
+Seega on PC programm väli Value ehk sõna 192 + k. Generaator kirjutab nüüd sinna ja kodeerija taastab
+kõik 5 sammu.
+
+**Mõõdetud punktid**: käsud S1C1, S2C1, S2C2, S8C1, S8C7; tüübid puudub/CC/PC; kanalid 1–3;
+numbrid 0, 1, 5, 20; väärtused 0, 10 ja 64.
+
+**Mõõtmata**: muud sõnumitüübid, vahemike otsad (kanal 16, 127), kas sõnum stseeni vahetusel
+tegelikult välja läheb ja kas saadetud PC võrdub näidatud väärtusega või on ühe võrra väiksem.

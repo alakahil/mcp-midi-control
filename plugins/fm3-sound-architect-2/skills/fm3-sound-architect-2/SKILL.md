@@ -343,9 +343,11 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Kohta 436 salvestatud preset (kasutaja STORE) ja selle uuesti laadimine säilitasid sisu; seade järjestab kirjed
   efekti-ID järgi. Ära küsi neid uuesti. Detailid: `engine/docs/FM3_DEVICE_READS.md`.
 - **Scene MIDI (auditi punkt 6)** `scripts/fm3-scene-midi.mjs`, `grid`-režiimis `insert:["scenemidi"]` ja
-  `sceneMidi:[{scene, command, type:"PC"|"CC"|"NONE", channel, number, value}]` (8 stseeni × 8 käsku). Plokk paigutatakse
-  ühendamata lahtrisse (järgmine lahter tühi). Paigutus dekodeeriti seadmel 24.10.2026: 11 esipaneeli muudatust, igaüks
-  üks sõna (`references/fm3-scene-midi-20261024.json`). Kas sõnum stseeni vahetusel välja läheb, pole mõõdetud.
+  `sceneMidi:[{scene, command, type:"PC"|"CC"|"NONE", channel, program (PC) | number, value (CC)}]` (8 stseeni × 8 käsku).
+  PC programm on FM3 väli Value (Number näitab PC puhul „--“). Plokk paigutatakse ühendamata lahtrisse (järgmine
+  lahter tühi). Paigutus dekodeeriti seadmel 24.10.2026: 11 esipaneeli muudatust, igaüks üks sõna, pluss PC järelkatse
+  (`references/fm3-scene-midi-20261024.json`, `references/fm3-scene-midi-pc-20261024.json`). Kas sõnum stseeni vahetusel
+  välja läheb ja kas saadetud PC on näidatud väärtus või ühe võrra väiksem, pole mõõdetud.
   Detailid: `engine/docs/FM3_SCENE_MIDI.md`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
   (342 seadmes mõõdetud tüüpi + reverbi kvaliteet; piir 80 %, hoiatus üle 72 %).

@@ -2520,7 +2520,7 @@
       "type": "array",
       "minItems": 1,
       "maxItems": 64,
-      "description": "Grid mode only, needs insert [\"scenemidi\"]. Scene MIDI commands decoded on FM3 fw 13 (2026-10-24): type PC/CC/NONE, MIDI channel 1..16, number 0..127, value 0..127 (CC only).",
+      "description": "Grid mode only, needs insert [\"scenemidi\"]. Scene MIDI commands decoded on FM3 fw 13 (2026-10-24): type PC/CC/NONE, MIDI channel 1..16; PC takes program 0..127 (the FM3 Value field; Number shows --); CC takes number 0..127 and value 0..127.",
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -2558,6 +2558,11 @@
             "maximum": 127
           },
           "value": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "program": {
             "type": "integer",
             "minimum": 0,
             "maximum": 127
