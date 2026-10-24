@@ -342,6 +342,10 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Volume pedaaliseosega, Satriani V3) loeti redaktsioonipuhvrist tagasi; kõik 16 756 väärtust ja ruudustik klappisid.
   Kohta 436 salvestatud preset (kasutaja STORE) ja selle uuesti laadimine säilitasid sisu; seade järjestab kirjed
   efekti-ID järgi. Ära küsi neid uuesti. Detailid: `engine/docs/FM3_DEVICE_READS.md`.
+- **Loendite nimed seadmest (auditi punkt 3, 2026-10-24)**: kõigi 32 pere 363 loendiparameetri 5275 nime
+  küsiti FM3-lt ja kõik vastasid sõnastikule salvestatud sõna kaupa (41 erinesid ainult lõputühiku poolest).
+  Tüübi- ja režiiminimesid ei pea seadmes uuesti kontrollima. Nuppude skaalasid see ei tõenda.
+  Kviitung: `references/fm3-label-sweep-20261024.json`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
   (342 seadmes mõõdetud tüüpi + reverbi kvaliteet; piir 80 %, hoiatus üle 72 %).
   Mõõdetud üksikkulud ei taga kombineeritud preseti veapiiri: G06 hinnang 44,3 %, mõõdetud 41,5 %.
