@@ -62,7 +62,10 @@ Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiiv
 Esipaneeli kontroll (24.10.2026, `references/fm3-step-diff-volume-type-20261024.json`):
 - TYPE VOLUME ↔ AUTO-SWELL muudab ainult ühte sõna ja teisi väärtusi ei puuduta.
 - Auto-Swell Threshold, Attack ja Hysteresis klappisid kodeeringuga.
-- Release 20 ms erines 0,05 %. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
+- Release 20 ms erines 0,05 %.
+Generaatori AUTO-SWELL preset kontrolliti seadmel (`references/fm3-auto-swell-verify-20261024.json`):
+- kõik plokid ja ruudustik loeti tagasi täpselt sellisena, nagu generaator need kirjutas;
+- ekraan näitas küsitud väärtusi: Attack 250 ms kui 249,99 ms ja Release 20 ms kui 20,000 ms. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
 
 Volume'i jäädvustatud doonor on vaikimisi **kõigis kaheksas stseenis aktiivne,
 kanal A**. Uue soundi loomisel kirjuta `blockScenes.volpan`-i alati kõigi kaheksa

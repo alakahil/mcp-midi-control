@@ -84,3 +84,8 @@ Kviitung on `references/fm3-step-diff-volume-type-20261024.json`.
 - **Generaator** kirjutab nüüd ka TYPE-i (`VOLUME` / `AUTO-SWELL`, `allow:["enum-labels"]`) ja Auto-Swelli
   väljad Threshold, Attack, Release ja Hysteresis (`fm3-volume-policy.mjs`). Iga välja kontrollitakse kanali
   lõpliku tüübi järgi ja lõplikus tüübis peidetud väli tõrjutakse. `volumePedal` AUTO-SWELL-iga tõrjutakse.
+
+Seadmekontroll (`references/fm3-auto-swell-verify-20261024.json`, `tools/fm3/auto-swell-verify-build.mjs`): generaatori
+preset oli kanalil A AUTO-SWELL (Threshold −40 dB, Attack 250 ms, Release 20 ms, Hysteresis 3 dB) ja kanalil B
+VOLUME 7.5. Kõik plokid ja ruudustik loeti redaktsioonipuhvrist tagasi täpselt. FM3 näitas Attack'i 249,99 ms-ina ja
+Release'i 20,000 ms-ina. Ülejäänud väärtused klappisid täpselt.
