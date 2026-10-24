@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2102,
-  "filePaths": 2306,
+  "uniqueContents": 2105,
+  "filePaths": 2309,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -6198,6 +6198,12 @@
         "references/enhancer-full-20261012-122507/step-072-ea672a19cb/result.json"
       ]
     },
+    "7ed3c83acc785e8e4cdcf06b4df785dbfb169963716b1a19c8855dfdedc17f69": {
+      "bytes": 99192,
+      "paths": [
+        "references/fm3-label-sweep-20261024-results.json"
+      ]
+    },
     "7ef5377ac79aa259287c1d5eb11a78595c587639cc5025bab992264fe35a2e66": {
       "bytes": 28437,
       "paths": [
@@ -7737,6 +7743,12 @@
       "bytes": 3305,
       "paths": [
         "references/peq-full-20261009-152606/step-029-ef132c65e1/result.json"
+      ]
+    },
+    "9f230931d0c26b5a65903b31993e5b3d9c5d6f21fa63078035e02c3d46833a10": {
+      "bytes": 3388,
+      "paths": [
+        "references/fm3-label-probe-20261024-results.json"
       ]
     },
     "9f3228fc9f8bb49af7d313a7e3e5ea069824650e4ffaf01ea47a9575cd701ed9": {
@@ -10898,6 +10910,12 @@
       "bytes": 3659,
       "paths": [
         "references/geq-full-20261010-194115/step-138-3880458408/result.json"
+      ]
+    },
+    "dc2fdaa1269ec40ae90a9e47bcb90e83f74523a3afc2abbe660540f301ee259f": {
+      "bytes": 7721,
+      "paths": [
+        "references/fm3-label-sweep-20261024.json"
       ]
     },
     "dc382d6ded7dafc6889abc19edb5763a1b8e483bec841879108ded68423e49af": {

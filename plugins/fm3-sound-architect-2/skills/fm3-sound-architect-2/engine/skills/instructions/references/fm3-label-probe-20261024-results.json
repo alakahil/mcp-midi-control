@@ -1,0 +1,159 @@
+{
+ "kind": "fm3-label-probe-results",
+ "packSha256": "c24cae5d3130b3bc4e8983710ab12e3816c573dbdd8e4cfe6ebe02f9b03f2555",
+ "time": "2026-10-24T11:59:07",
+ "variants": [
+  {
+   "id": "A0",
+   "what": "amp type, value 0 (control)",
+   "request": "f000017411011f003a00060000000000000000000036f7",
+   "reply": "f000017411011f003a0006000000000000000012001a4e240413056673335d2f1202096469335a0e400021f7",
+   "otherFrames": [],
+   "parsed": {
+    "effectId": 58,
+    "paramId": 6,
+    "valueIndex": 0,
+    "text": "59 Bassguy Bright",
+    "valueField": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "unchanged": true
+  },
+  {
+   "id": "A1",
+   "what": "amp type, integer 1",
+   "request": "f000017411011f003a00060001000000000000000037f7",
+   "reply": "f000017411011f003a0006000000000000000012001b0d240413056673335d2f1202395e7236582d400056f7",
+   "otherFrames": [],
+   "parsed": {
+    "effectId": 58,
+    "paramId": 6,
+    "valueIndex": 0,
+    "text": "65 Bassguy Normal",
+    "valueField": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "unchanged": true
+  },
+  {
+   "id": "A2",
+   "what": "amp type, integer 18 (stored)",
+   "request": "f000017411011f003a00060012000000000000000024f7",
+   "reply": "f000017411011f003a0006000000000000000013002a546812023516202455440513217274341b2403080024f7",
+   "otherFrames": [],
+   "parsed": {
+    "effectId": 58,
+    "paramId": 6,
+    "valueIndex": 0,
+    "text": "USA MK IV Rhythm 1",
+    "valueField": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "unchanged": true
+  },
+  {
+   "id": "A3",
+   "what": "amp type, float 18 (stored)",
+   "request": "f000017411011f003a0006000000400c04000000007ef7",
+   "reply": "f000017411011f003a0006006402000000000002001a000048f7",
+   "otherFrames": [],
+   "parsed": {
+    "effectId": 58,
+    "paramId": 6,
+    "valueIndex": null,
+    "text": "4",
+    "valueField": [
+     100,
+     2,
+     0,
+     0,
+     0
+    ]
+   },
+   "unchanged": true
+  },
+  {
+   "id": "R0",
+   "what": "reverb type, value 0 (control)",
+   "request": "f000017411011f004200000000000000000000000048f7",
+   "reply": "f000017411011f0042000000000000000000001100291b6d766968405336582d466101246f375b200000f7",
+   "otherFrames": [],
+   "parsed": {
+    "effectId": 66,
+    "paramId": 0,
+    "valueIndex": 0,
+    "text": "Room: Small Room",
+    "valueField": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "unchanged": true
+  },
+  {
+   "id": "R1",
+   "what": "reverb type, integer 5",
+   "request": "f000017411011f00420000000500000000000000004df7",
+   "reply": "f000017411011f004200000000000000000000110024182d466168404c305c4c7629011061361b000029f7",
+   "otherFrames": [],
+   "parsed": {
+    "effectId": 66,
+    "paramId": 0,
+    "valueIndex": 0,
+    "text": "Hall: Large Hall",
+    "valueField": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "unchanged": true
+  },
+  {
+   "id": "R2",
+   "what": "reverb type, integer 2 (stored)",
+   "request": "f000017411011f00420000000200000000000000004af7",
+   "reply": "f000017411011f0042000000000000000000001100291b6d766968404c305c4c762901246f375b200004f7",
+   "otherFrames": [],
+   "parsed": {
+    "effectId": 66,
+    "paramId": 0,
+    "valueIndex": 0,
+    "text": "Room: Large Room",
+    "valueField": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "unchanged": true
+  }
+ ],
+ "baselineMatchesPack": {
+  "grid": true,
+  "blocks": true
+ },
+ "finalUnchanged": true
+}
