@@ -1,0 +1,70 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "auditPoint": 5,
+ "method": "No preset sent. The user selected four factory locations whose FW10 grid has a mask bit-4 cell; each was read with fn=0x03 (stored, CRC checked) and the live grid with fn=0x01 sub=0x2E; the user described the LAYOUT cell.",
+ "findings": [
+  "On fw 13 the stored factory presets still carry bit 4 (value 16) on exactly the FW10 cells, and the live grid read returns it unchanged.",
+  "The LAYOUT screen shows only the ordinary cables of mask bits 0..3 at those cells (user descriptions below); nothing marks bit 4.",
+  "Bit 4 therefore has no visible meaning on the device; its audio effect is not measured. The generator keeps never writing it."
+ ],
+ "factoryBit4Cells": 8,
+ "items": [
+  {
+   "shownLocation": 109,
+   "row": 2,
+   "col": 9,
+   "what": "shunt",
+   "mask": 18,
+   "inputsFromRows": [
+    2
+   ],
+   "userLayout": "Vasakul caktiivne chorus ja paremal bypass Delay kõik \"kaablitega\" ühendatud"
+  },
+  {
+   "shownLocation": 122,
+   "row": 2,
+   "col": 10,
+   "what": "shunt",
+   "mask": 30,
+   "inputsFromRows": [
+    2,
+    3,
+    4
+   ],
+   "userLayout": "jah, shundiga on ühendatud 2. rea chorus(bypass), kolmanda rea Multi-delay (bypass) ja 4. rea Delay (aktiivne)"
+  },
+  {
+   "shownLocation": 83,
+   "row": 4,
+   "col": 9,
+   "what": "Out 1",
+   "mask": 30,
+   "inputsFromRows": [
+    2,
+    3,
+    4
+   ],
+   "userLayout": "Sinna tulevad 2. rea veerg 8 Delay (bypass), 3. rea veerg 8 Delay (bypass) ja 4. rea veerg 8 shunt, kõik kaablid ühenduvad out1-te"
+  },
+  {
+   "shownLocation": 211,
+   "row": 3,
+   "col": 6,
+   "what": "block 106",
+   "mask": 28,
+   "inputsFromRows": [
+    3,
+    4
+   ],
+   "userLayout": "tremolo plokk, sinna on ühendatud rida 3 veerg 5 Wah ja rida 4 veerg 5 wah, tremolo on omakorda ühendatud rida 2 veerg 7 compressorisse"
+  }
+ ],
+ "notMeasured": [
+  "audio effect of bit 4",
+  "what operation in the editor or on the device sets it"
+ ],
+ "factsSha256": "b881406dc18f3f544fc268138de2d6500a6bf410fe6c23d0ea50c84928f2b803"
+}

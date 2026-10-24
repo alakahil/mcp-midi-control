@@ -337,6 +337,8 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   `--verify` kontrollib ruudustikku, eksemplare ja CPU aruannet ka uuendatud failiräside korral.
   Koguja peatub vale või ebastabiilse tagasilugemise järel ning säilitab saadetud kaadrid, vastuse ja vea.
   Ebaõnnestunud seanssi ei jätkata automaatselt.
+  Maski bitt 4 (mõnes tehasepresetis) ei ole FM3 LAYOUT ekraanil nähtav ja generaator seda ei kirjuta
+  (seadmekatse 24.10.2026, `references/fm3-bit4-check-20261024.json`).
   Detailid: `engine/docs/FM3_GRID.md`.
 - **Seadmest tagasilugemine (2026-10-23)**: 7 genereeritud presetti (kõik pered, eksemplarid, Mixer/Multiplexer,
   Volume pedaaliseosega, Satriani V3) loeti redaktsioonipuhvrist tagasi; kõik 16 756 väärtust ja ruudustik klappisid.

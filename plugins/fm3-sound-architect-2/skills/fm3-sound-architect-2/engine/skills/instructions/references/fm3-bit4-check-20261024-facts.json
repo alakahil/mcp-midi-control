@@ -1,0 +1,141 @@
+{
+ "kind": "fm3-bit4-check-facts",
+ "date": "2026-10-24",
+ "packSha256": "b3ec46084366f2257d3e5347bed0b613e1187019ad078c4955e35397eb6c7ac6",
+ "factoryBit4Cells": 8,
+ "items": [
+  {
+   "id": "B1",
+   "shownLocation": 109,
+   "cell": {
+    "row": 2,
+    "col": 9,
+    "what": "shunt",
+    "id": 1025,
+    "mask": 18,
+    "inputsFromRows": [
+     2
+    ]
+   },
+   "userSelected": "ok",
+   "stored": {
+    "crcValid": true,
+    "locationIndex": 108,
+    "cell": [
+     1025,
+     18
+    ],
+    "gridEqualsFactory": true
+   },
+   "live": {
+    "cell": [
+     1025,
+     18
+    ],
+    "gridEqualsFactory": true
+   },
+   "userLayout": "Vasakul caktiivne chorus ja paremal bypass Delay kõik \"kaablitega\" ühendatud"
+  },
+  {
+   "id": "B2",
+   "shownLocation": 122,
+   "cell": {
+    "row": 2,
+    "col": 10,
+    "what": "shunt",
+    "id": 1027,
+    "mask": 30,
+    "inputsFromRows": [
+     2,
+     3,
+     4
+    ]
+   },
+   "userSelected": "ok",
+   "stored": {
+    "crcValid": true,
+    "locationIndex": 121,
+    "cell": [
+     1027,
+     30
+    ],
+    "gridEqualsFactory": true
+   },
+   "live": {
+    "cell": [
+     1027,
+     30
+    ],
+    "gridEqualsFactory": true
+   },
+   "userLayout": "jah, shundiga on ühendatud 2. rea chorus(bypass), kolmanda rea Multi-delay (bypass) ja 4. rea Delay (aktiivne)"
+  },
+  {
+   "id": "B3",
+   "shownLocation": 83,
+   "cell": {
+    "row": 4,
+    "col": 9,
+    "what": "Out 1",
+    "id": 42,
+    "mask": 30,
+    "inputsFromRows": [
+     2,
+     3,
+     4
+    ]
+   },
+   "userSelected": "ok",
+   "stored": {
+    "crcValid": true,
+    "locationIndex": 82,
+    "cell": [
+     42,
+     30
+    ],
+    "gridEqualsFactory": true
+   },
+   "live": {
+    "cell": [
+     42,
+     30
+    ],
+    "gridEqualsFactory": true
+   },
+   "userLayout": "Sinna tulevad 2. rea veerg 8 Delay (bypass), 3. rea veerg 8 Delay (bypass) ja 4. rea veerg 8 shunt, kõik kaablid ühenduvad out1-te"
+  },
+  {
+   "id": "B4",
+   "shownLocation": 211,
+   "cell": {
+    "row": 3,
+    "col": 6,
+    "what": "block 106",
+    "id": 106,
+    "mask": 28,
+    "inputsFromRows": [
+     3,
+     4
+    ]
+   },
+   "userSelected": "ok",
+   "stored": {
+    "crcValid": true,
+    "locationIndex": 210,
+    "cell": [
+     106,
+     28
+    ],
+    "gridEqualsFactory": true
+   },
+   "live": {
+    "cell": [
+     106,
+     28
+    ],
+    "gridEqualsFactory": true
+   },
+   "userLayout": "tremolo plokk, sinna on ühendatud rida 3 veerg 5 Wah ja rida 4 veerg 5 wah, tremolo on omakorda ühendatud rida 2 veerg 7 compressorisse"
+  }
+ ]
+}
