@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2111,
-  "filePaths": 2315,
+  "uniqueContents": 2113,
+  "filePaths": 2317,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -2709,6 +2709,12 @@
       "bytes": 3202,
       "paths": [
         "references/peq-full-20261009-152606/step-014-dad3bb686a/result.json"
+      ]
+    },
+    "35df948d1bb62771e8dab7d67d7a64adb7f049813f990ef5932da43302f7d412": {
+      "bytes": 4228,
+      "paths": [
+        "references/fm3-step-diff-volume-type-20261024-results.json"
       ]
     },
     "35fa5f4a46a226d2755dc0019078156389591a74d3a9c92681c0393f76b0838f": {
@@ -6325,6 +6331,12 @@
       "bytes": 9245,
       "paths": [
         "references/drive-controls-20261006-123230/step-08-89cea10be6/capture.json"
+      ]
+    },
+    "809199f72bffc80180ac2b7d48d85530ac886dd3f9a8bdaed4addc7fc5d9fe0d": {
+      "bytes": 2789,
+      "paths": [
+        "references/fm3-step-diff-volume-type-20261024.json"
       ]
     },
     "80bd0da1fc02d50b72264cdd38ad0a06a4c3e3a99eefdb2a416bbfde3837705c": {
