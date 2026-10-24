@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2099,
-  "filePaths": 2303,
+  "uniqueContents": 2105,
+  "filePaths": 2309,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -2717,12 +2717,6 @@
         "references/reverb-batch-20261006-181951/capture-20261006T162637-97eeb369f4/pair.json"
       ]
     },
-    "364663355bec251e445c8694ac3f14a79f989ad6fea9982f4f7e63819ba7c4be": {
-      "bytes": 19418,
-      "paths": [
-        "references/offline-suite.json"
-      ]
-    },
     "364b74463ee112dde82886c87d0e89e97d26354f0b9a1c098b22e53777686eac": {
       "bytes": 455,
       "paths": [
@@ -4995,6 +4989,12 @@
         "references/geq-full-20261010-194115/step-177-4dee4a7ec5/capture.json"
       ]
     },
+    "67759a288fe4e6c89aa6bc654ac231299a7a29742e0528ae9ba39a3eb354c99e": {
+      "bytes": 908,
+      "paths": [
+        "references/fm3-scene-midi-pc-20261024-pack.json"
+      ]
+    },
     "68594d27c29d5432ed925e400162e276317071b9998418817c6cf81031a43808": {
       "bytes": 5024,
       "paths": [
@@ -6337,6 +6337,12 @@
       "bytes": 3390,
       "paths": [
         "references/peq-full-20261009-152606/step-051-d7023eeb5a/result.json"
+      ]
+    },
+    "814a161166c9d4794359c2ba36baf715bcf024cf99d5f6f885dbd4f366199e0c": {
+      "bytes": 7081,
+      "paths": [
+        "references/fm3-scene-midi-verify-20261024-results.json"
       ]
     },
     "817270771edf9c3cf5a53aff3ea00c4970399f8184a0362dc6d8567688215818": {
@@ -8206,6 +8212,12 @@
         "references/geq-full-20261010-194115/step-148-6b8f074483/donor.syx"
       ]
     },
+    "a87d4d9ef7c6660503c02d68277b863ae26d69f854ff404b48f6cbcc6afa1f3a": {
+      "bytes": 2716,
+      "paths": [
+        "references/fm3-scene-midi-pc-20261024.json"
+      ]
+    },
     "a87e186ad87589d94c10925004b7b0160dfe6b9a8ded5da8e6bfc9aabae48ce5": {
       "bytes": 9246,
       "paths": [
@@ -9627,6 +9639,12 @@
         "references/reverb-batch-20261006-181951/capture-20261006T162732-aeac5ab47a/labels.json"
       ]
     },
+    "c4758a9cdb5d731c2e113410979c577e6567846876aa929402a223df976afc7a": {
+      "bytes": 19834,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "c4b9b38aea16c31d63af95eb6889f90d24cb090bd1eb8bc49367c21d0cb6614b": {
       "bytes": 24680,
       "paths": [
@@ -10234,6 +10252,12 @@
         "references/peq-full-20261009-152606/step-049-e0ab3c0cd4/result.json"
       ]
     },
+    "d0e7f399f1b8cecd75b7ea980917b5df5ff26918c8647249ceafd41aca535f37": {
+      "bytes": 43998,
+      "paths": [
+        "references/fm3-scene-midi-20261024-results.json"
+      ]
+    },
     "d0fc4e48d522b15b56a137ead11f24619b64fc2fcd007a25689b629422773235": {
       "bytes": 24680,
       "paths": [
@@ -10360,6 +10384,12 @@
       "paths": [
         "references/geq-full-20261010-194115/step-127-7d1981de0c/donor.syx",
         "references/geq-full-20261010-194115/step-127-9c0ebdf713/donor.syx"
+      ]
+    },
+    "d4b365b7c36763b1fee23ba8f1b2cdc5ab2db9b42fb448ff4fbec68ae0622381": {
+      "bytes": 21920,
+      "paths": [
+        "references/fm3-scene-midi-pc-20261024-results.json"
       ]
     },
     "d4b752532b624756b81df3b6d6a939c0852281fce59b7c895677ebfe7a2ae5c7": {
@@ -10978,6 +11008,12 @@
       "bytes": 3470,
       "paths": [
         "references/enhancer-lisa-20261012-125350/step-005-7f082d6938/capture.json"
+      ]
+    },
+    "dd4bc173715ec05467b7cc7157f254360ed0109aabab169f8a9183fb5a12aeaa": {
+      "bytes": 3109,
+      "paths": [
+        "references/fm3-scene-midi-20261024.json"
       ]
     },
     "dd8ebfc95e3b82b281d1de73dd88c273ebad34c1389094cd075f099676526bf9": {

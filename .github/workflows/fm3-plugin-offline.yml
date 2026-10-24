@@ -54,6 +54,7 @@ jobs:
           node tools/fm3/grid-check-ingest.mjs
           node tools/fm3/read-value-ingest.mjs
           node tools/fm3/pedal-check-ingest.mjs
+          node tools/fm3/scene-midi-ingest.mjs
           node tools/fm3/test-read-requests.mjs
           node tools/fm3/test-label-sweep-collector.mjs
           node tools/fm3/label-sweep-ingest.mjs
