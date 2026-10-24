@@ -10,14 +10,14 @@ export const bulkReadPoll=eid=>env(0x1f,s14(eid));
 export const storedDumpRequest=index=>env(0x03,[(index>>7)&0x7f,index&0x7f,0x00]);
 export const editBufferDumpRequest=()=>env(0x43,[]);
 export const displayRequest=(eid,pid)=>env(0x01,[0x1f,0x00,...s14(eid),...s14(pid),...Array(9).fill(0)]);
-// Label read for one value: the display read with float32(index) in the value field (5 septets, LSB
-// first, = encode5SeptetFloat32 of the gen-3 SET frame; sub-action 1F 00 is not a SET sub-action).
-// On FM3 fw 13 the reply to a type parameter carries the label of the value in the request
-// (references/fm3-read-probe-20261023.json); index 0 is byte-identical to displayRequest.
+// Label read for one list index: the display read with the index n as a plain 14-bit integer in
+// its value field. On FM3 fw 13 the reply carries the label of index n and a zero value field
+// (label probe 2026-10-24, references/fm3-label-probe-20261024-results.json; float32(n) gives no
+// label). Sub-action 1F 00 is not a SET sub-action. Index 0 is byte-identical to displayRequest.
 export const floatSeptets=v=>{const d=new DataView(new ArrayBuffer(4));d.setFloat32(0,v,true);const u=d.getUint32(0,true);return [0,7,14,21,28].map(s=>(u>>>s)&0x7f);};
 const septetsFloat=b=>{const u=b.reduce((a,x,i)=>a+((x&0x7f)*2**(7*i)),0)>>>0,d=new DataView(new ArrayBuffer(4));d.setUint32(0,u,true);return d.getFloat32(0,true);};
 export const labelRequest=(eid,pid,index)=>{if(!(Number.isInteger(index)&&index>=0&&index<=4095))throw Error('label index must be 0..4095');
-  return env(0x01,[0x1f,0x00,...s14(eid),...s14(pid),...floatSeptets(index),0,0,0,0]);};
+  return env(0x01,[0x1f,0x00,...s14(eid),...s14(pid),...s14(index),0,0,0,0,0,0,0]);};
 // 7-to-8 bit unpacking of the display string (= fractal-midi unpackValue / unpackValueChunked).
 const unpack=(w,n)=>{const o=new Array(n).fill(0);for(let i=0;i<w.length;i++){const k=i+1,b=w[i]&0x7f;
   if(i>0&&i-1<n)o[i-1]|=((~(0x7f>>k)&b)>>(8-k))&0xff;if(i<n)o[i]=(b<<k)&0xff;}return o;};

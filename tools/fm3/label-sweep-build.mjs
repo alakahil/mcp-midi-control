@@ -1,7 +1,8 @@
 // Build the list-label sweep pack (FM3_LABEL_SWEEP.py, audit point 3). Offline.
 // One measurement preset (the READ PROBE 1 layout: 11 blocks, CPU estimate < 72 %) for the edit
 // buffer, and every list parameter of every generator family with its dictionary length. The
-// collector asks the FM3 for labels 0 .. count+extra-1 of each; blocks not in the preset are tried
+// collector asks the FM3 for labels 0 .. count+extra-1 of each (integer value field, decoded by the
+// 2026-10-24 label probe); the pilot must return the dictionary label of amp type 1; blocks not in the preset are tried
 // with two requests first and swept only if the FM3 answers them with text.
 // Usage: node tools/fm3/label-sweep-build.mjs OUT_DIR
 import fs from 'node:fs';
@@ -15,7 +16,7 @@ const {composeSound}=await imp('scripts/fm3-sound.mjs');
 const {inspectStructure}=await imp('scripts/drive-collector/fm3-prototype.mjs');
 const {parsePresetDump}=await imp('scripts/fm3-codec.mjs');
 const {scanRecords,readGrid}=await imp('scripts/fm3-layout.mjs');
-const {loadDictionary,FAMILY_BY_SLUG,dictionaryHash}=await imp('scripts/fm3-table-encoder.mjs');
+const {loadDictionary,FAMILY_BY_SLUG,dictionaryHash,findParam}=await imp('scripts/fm3-table-encoder.mjs');
 const sha=b=>createHash('sha256').update(b).digest('hex'),hex=a=>Buffer.from(a).toString('hex');
 const [out]=process.argv.slice(2);assert.ok(out,'Usage: label-sweep-build.mjs OUT_DIR');
 const BASE=fs.readFileSync(new URL(E+'examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx',import.meta.url));
@@ -43,8 +44,8 @@ const requests=families.reduce((n,f)=>n+f.params.reduce((a,p)=>a+p.count+EXTRA,0
 fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'SWEEP.syx'),r.syx);
 const manifest={kind:'fm3-label-sweep',version:1,date:'2026-10-24',confirmName:'LABEL SWEEP 3',
   preset:{file:'SWEEP.syx',sha256:sha(r.syx),bodySha256:sha(body)},dictionarySha256:dictionaryHash,gridRequest:hex(R.gridRequest()),
-  expectedGrid:readGrid(body).map(g=>[g.row,g.col,g.id,g.mask]),pilot:{effectId:58,paramId:6,index:1},extra:EXTRA,
-  method:'Edit-buffer load (7F 00) only; fn=0x01 sub=0x1F display reads with float32(n) in the value field, n = 0..count+extra-1 per list parameter; grid + block bulk reads before, after the first request and after every block. No store, no SET.',
+  expectedGrid:readGrid(body).map(g=>[g.row,g.col,g.id,g.mask]),pilot:{effectId:58,paramId:6,index:1,label:findParam('amp','DISTORT_TYPE').enum[1]},extra:EXTRA,
+  method:'Edit-buffer load (7F 00) only; fn=0x01 sub=0x1F display reads with the list index n as a 14-bit integer in the value field, n = 0..count+extra-1 per list parameter; grid + block bulk reads before, after the first request and after every block. No store, no SET.',
   requests,families};
 fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest)+'\n');
 console.log(JSON.stringify({families:families.length,present:families.filter(f=>f.present).map(f=>f.slug),params:families.reduce((n,f)=>n+f.params.length,0),requests}));

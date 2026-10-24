@@ -3,12 +3,12 @@
 
 The fake device answers grid reads with the pack's expected grid, block bulk reads with the
 pack's expected words, and label reads of blocks in the preset with "L<eid>.<pid>.<n>" (the
-value echoed). Blocks not in the preset get no label reply unless --absent-text. Options make
+pilot index with the manifest's expected label; value field zero, as the FM3). Blocks not in the preset get no label reply unless --absent-text. Options make
 it misbehave on purpose.
 
 Runs FM3_LABEL_PROBE.run instead with --probe.
 Usage: python3 -B fake_label_fm3.py PACK SESSION [--answer j|e] [--change-after N] [--absent-text]
-       [--no-echo] [--block-change-after N] [--silent-param PID] [--probe]
+       [--wrong-label] [--block-change-after N] [--silent-param PID] [--probe]
 Used by tools/fm3/test-label-sweep-collector.mjs.
 """
 import argparse, builtins, json, sys
@@ -24,7 +24,7 @@ import FM3_LABEL_PROBE as LP
 ap = argparse.ArgumentParser()
 ap.add_argument('pack', type=Path); ap.add_argument('session', type=Path)
 ap.add_argument('--answer', default='j'); ap.add_argument('--change-after', type=int); ap.add_argument('--block-change-after', type=int)
-ap.add_argument('--absent-text', action='store_true'); ap.add_argument('--no-echo', action='store_true'); ap.add_argument('--silent-param', type=int); ap.add_argument('--probe', action='store_true')
+ap.add_argument('--absent-text', action='store_true'); ap.add_argument('--wrong-label', action='store_true'); ap.add_argument('--silent-param', type=int); ap.add_argument('--probe', action='store_true')
 a = ap.parse_args()
 manifest = json.loads((a.pack / 'manifest.json').read_text())
 fams = {f['effectId']: f for f in manifest['families']}
@@ -70,8 +70,10 @@ class FakePort:
             idx = 0 if sept == [0] * 5 else (sept[0] | sept[1] << 7) if kind == 'labelInt' else P.label_index(sept)
             if not fams[eid]['present'] and not a.absent_text: return
             if eid == manifest.get('pilot', {'effectId': 58})['effectId'] and pid == a.silent_param: return
-            echo = P.float_septets(idx + 1) if a.no_echo else sept
-            self.framer.frames.append(label_reply(eid, pid, echo, 'L%d.%d.%d' % (eid, pid, idx))); return
+            text = 'L%d.%d.%d' % (eid, pid, idx)
+            if a.wrong_label: text = 'WRONG'
+            elif eid == manifest.get('pilot', {}).get('effectId') and pid == manifest['pilot']['paramId'] and idx == manifest['pilot']['index']: text = manifest['pilot']['label']
+            self.framer.frames.append(label_reply(eid, pid, [0] * 5, text)); return
         log['otherFrames'] += 1
     def drain(self, seconds): pass
     def close(self): pass

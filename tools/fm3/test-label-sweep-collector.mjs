@@ -30,8 +30,8 @@ try{
   check(a.fake.labelRequests===1+swept+2*absent,'request count '+a.fake.labelRequests+' vs '+(1+swept+2*absent));
   check(a.res.pilot.unchanged&&a.res.finalUnchanged&&a.res.baselineMatchesPack.grid&&a.res.baselineMatchesPack.blocks,'safety reads');
   const sw=a.res.families.filter(f=>!f.skipped);check(sw.length===present.length&&a.res.families.filter(f=>f.skipped).length===absent,'present swept, absent skipped');
-  for(const f of sw)for(const p of f.params){check(p.texts.length===p.count+m.extra&&!p.noReply.length&&!p.echoMismatch.length,'complete '+f.slug+'.'+p.name);
-    check(p.texts.every((t,i)=>t===`L${f.effectId}.${p.paramId}.${i}`),'texts '+f.slug+'.'+p.name);}
+  for(const f of sw)for(const p of f.params){check(p.texts.length===p.count+m.extra&&!p.noReply.length,'complete '+f.slug+'.'+p.name);
+    check(p.texts.every((t,i)=>t===((f.effectId===m.pilot.effectId&&p.paramId===m.pilot.paramId&&i===m.pilot.index)?m.pilot.label:`L${f.effectId}.${p.paramId}.${i}`)),'texts '+f.slug+'.'+p.name);}
   // 2. absent blocks that do answer are swept too
   const b=run(pack,path.join(tmp,'s2'),'--absent-text');
   check(b.fake.exit==='ok'&&b.res.families.every(f=>!f.skipped)&&b.fake.labelRequests===1+m.requests+2*absent,'absent blocks with text are swept');
@@ -41,9 +41,9 @@ try{
   // 4. a block change during the sweep stops after that block
   const d=run(pack,path.join(tmp,'s4'),'--block-change-after','5');
   check(d.fake.exit.includes('PEATUS: plokk amp muutus')&&!d.res.finalUnchanged,'block change stops: '+d.fake.exit);
-  // 5. a reply that does not echo the requested index stops at the pilot
-  const e=run(pack,path.join(tmp,'s5'),'--no-echo');
-  check(e.fake.exit.includes('Esimene päring ei andnud')&&e.fake.labelRequests===1,'no echo stops');
+  // 5. a pilot reply with the wrong label stops after the re-read
+  const e=run(pack,path.join(tmp,'s5'),'--wrong-label');
+  check(e.fake.exit.includes('Esimene päring ei andnud oodatud silti')&&e.fake.labelRequests===1&&e.res.pilot.unchanged,'wrong pilot label stops');
   // 6. the user does not see the name: stop after the dump, nothing else sent
   const g=run(pack,path.join(tmp,'s6'),'--answer','e');
   check(g.fake.exit.includes('redaktsioonipuhvrisse')&&g.fake.labelRequests===0&&g.fake.bulkReads===0,'name refusal stops');

@@ -3,9 +3,11 @@
 
 Asks the FM3 for the label of every value of every list parameter in the pack and saves the
 texts, so the generator's dictionaries can be compared offline with the device's own names.
-The request is the fn=0x01 sub=0x1F display read with float32(n) in its value field; on FM3
-fw 13 the reply to a list parameter carries the label of the value in the request (read probe
-2026-10-23). Sub-action 1F 00 is not a SET sub-action (SET is 09 00 / 52 00).
+The request is the fn=0x01 sub=0x1F display read with the list index n as a plain 14-bit
+integer in its value field. On FM3 fw 13 the reply carries the label of index n (label probe
+2026-10-24: integers 1, 18 / 5, 2 gave the dictionary names; float32(n) gives no label; the reply
+value field stays zero). Sub-action 1F 00 is not a SET sub-action (SET is 09 00 / 52 00), and the
+probe re-read the whole preset unchanged after every request.
 
 Device frames: one manifest-pinned edit-buffer dump (0x77 header 7F 00 00 40 00, SHA-256
 checked) and the read-only shapes of FM3_READ_PROBE.read_only_shape (grid, bulk read, display
@@ -25,13 +27,13 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import FM3_CPU_SWEEP as S
 import FM3_GRID_CHECK as G
-from FM3_READ_PROBE import read_only_shape, float_septets, label_index
+from FM3_READ_PROBE import read_only_shape, label_index
 from FM3_VALUE_CHECK import bulk_values, load
 
 def label_request(eid, pid, index):
-    f = [0xf0, 0, 1, 0x74, S.MODEL, 0x01, 0x1f, 0x00, eid & 0x7f, eid >> 7, pid & 0x7f, pid >> 7] + float_septets(index) + [0, 0, 0, 0]
+    f = [0xf0, 0, 1, 0x74, S.MODEL, 0x01, 0x1f, 0x00, eid & 0x7f, eid >> 7, pid & 0x7f, pid >> 7] + [index & 0x7f, (index >> 7) & 0x7f, 0, 0, 0] + [0, 0, 0, 0]
     f = bytes(f + [S.checksum(f), 0xf7])
-    S.check(read_only_shape(f) == ('display' if index == 0 else 'label'), 'Refusing non-read request: %s' % f.hex())
+    S.check(read_only_shape(f) == ('display' if index == 0 else 'labelInt'), 'Refusing non-read request: %s' % f.hex())
     return f
 
 def unpack(w, n):
@@ -99,16 +101,14 @@ def unchanged(port, manifest, base, fams, where):
                 'PEATUS: plokk %s muutus pärast %s. Vali FM3-l mõni muu preset, ÄRA salvesta.' % (f['slug'], where))
 
 def sweep_param(port, f, p, extra):
-    texts = []; echo_bad = []; missing = []
+    texts = []; missing = []
     for i in range(p['count'] + extra):
         r, _ = ask_label(port, f['effectId'], p['paramId'], i)
         if r is None: missing.append(i); texts.append(None)
-        else:
-            if r[2] != i: echo_bad.append(i)
-            texts.append(r[3])
+        else: texts.append(r[3])
         if i == 2 and not any(texts):  # three silent or text-less replies: this parameter gives no labels
-            return {'paramId': p['paramId'], 'name': p['name'], 'count': p['count'], 'texts': texts, 'noReply': missing, 'echoMismatch': echo_bad, 'stopped': 'no text for indexes 0..2'}
-    return {'paramId': p['paramId'], 'name': p['name'], 'count': p['count'], 'texts': texts, 'noReply': missing, 'echoMismatch': echo_bad}
+            return {'paramId': p['paramId'], 'name': p['name'], 'count': p['count'], 'texts': texts, 'noReply': missing, 'stopped': 'no text for indexes 0..2'}
+    return {'paramId': p['paramId'], 'name': p['name'], 'count': p['count'], 'texts': texts, 'noReply': missing}
 
 def run(pack, session, port_path):
     mb = (pack / 'manifest.json').read_bytes(); manifest = json.loads(mb)
@@ -144,7 +144,7 @@ def run(pack, session, port_path):
         res['pilot'] = {'request': label_request(pilot['effectId'], pilot['paramId'], pilot['index']).hex(), 'reply': h, 'parsed': list(r) if r else None}
         unchanged(port, manifest, base, fams, 'esimest päringut')
         res['pilot']['unchanged'] = True
-        S.check(r is not None and r[2] == pilot['index'] and r[3], 'Esimene päring ei andnud oodatud silti; peatun. Seade loeti üle: midagi ei muutunud.')
+        S.check(r is not None and r[3] == pilot['label'], 'Esimene päring ei andnud oodatud silti; peatun. Seade loeti üle: midagi ei muutunud.')
         print('Ohutuskontroll läbitud: "%s" (indeks %d); seade ei muutunud.' % (r[3], pilot['index']))
         for f in fams:
             rec = {'family': f['family'], 'slug': f['slug'], 'effectId': f['effectId'], 'present': f['present'], 'params': []}
@@ -170,8 +170,8 @@ def run(pack, session, port_path):
 
 def self_test():
     f = label_request(58, 6, 16)
-    S.check(read_only_shape(f) == 'label' and read_only_shape(label_request(58, 6, 0)) == 'display', 'request shapes')
-    S.check(list(f[12:17]) == [0, 0, 0, 0x0c, 0x04], 'float32(16) value field')
+    S.check(read_only_shape(f) == 'labelInt' and read_only_shape(label_request(58, 6, 0)) == 'display', 'request shapes')
+    S.check(list(f[12:17]) == [16, 0, 0, 0, 0] and list(label_request(58, 6, 300)[12:17]) == [44, 2, 0, 0, 0], 'integer value field')
     # Replies pinned from the 2026-10-23 read probe: amp type (value 0) and amp drive (a knob: no text).
     t = parse_label(bytes.fromhex('f000017411011f003a0006000000000000000012001a4e240413056673335d2f1202096469335a0e400021f7'))
     S.check(t == (58, 6, 0, '59 Bassguy Bright'), 'type reply: %r' % (t,))
