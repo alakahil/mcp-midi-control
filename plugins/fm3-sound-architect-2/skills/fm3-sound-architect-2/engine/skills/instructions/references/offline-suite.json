@@ -122,12 +122,21 @@
       "required": true
     },
     {
+      "id": "test-scene-midi",
+      "command": [
+        "node",
+        "scripts/test-scene-midi.mjs"
+      ],
+      "scope": "Scene MIDI (audit point 6): device receipt (11 front-panel steps, encoder reproduces each), command word layout, unconnected grid placement, engaged scenes, report text, 16 refusals; no device or MIDI-output proof",
+      "required": true
+    },
+    {
       "id": "test-grid-check-collector",
       "command": [
         "node",
         "scripts/test-grid-check-collector.mjs"
       ],
-      "scope": "FM3_GRID_CHECK.py against a simulated FM3 (fake_fm3.py): only edit-buffer dumps and read requests sent, name confirmed once, mismatching cell detected, resume without resending, tampered and stored-location files refused before any write; FM3_GRID_CHECK.py and FM3_CPU_SWEEP.py self-tests; no device; FM3_READ_PROBE.py and FM3_VALUE_CHECK.py self-tests (read-only request shapes, bulk-read decode)",
+      "scope": "FM3_GRID_CHECK.py against a simulated FM3 (fake_fm3.py): only edit-buffer dumps and read requests sent, name confirmed once, mismatching cell detected, resume without resending, tampered and stored-location files refused before any write; FM3_GRID_CHECK.py and FM3_CPU_SWEEP.py self-tests; no device; FM3_READ_PROBE.py and FM3_VALUE_CHECK.py self-tests (read-only request shapes, bulk-read decode); FM3_SCENE_MIDI_CHECK.py self-test",
       "required": true
     },
     {

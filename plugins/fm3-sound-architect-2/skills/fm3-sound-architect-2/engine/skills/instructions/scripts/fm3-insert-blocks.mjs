@@ -28,7 +28,7 @@ export const GATED=Object.freeze({
   volpan:'Volume/Pan 1 has its own inserter and policy: use volumePan:true (fm3-volume.mjs)',
   mixer:'Mixer combines parallel rows; the two-row layout is serial, use grid mode (spec.grid, audit point 5)',
   multiplexer:'Multiplexer selects between parallel rows; use grid mode (spec.grid, audit point 5)',
-  scenemidi:'Scene MIDI (MIDI Block, eid 190, 257×1) has no decoded parameter semantics yet'});
+  scenemidi:'Scene MIDI (MIDI block, eid 190) carries no audio: use grid mode (spec.grid) with insert:["scenemidi"] and spec.sceneMidi'});
 
 let donorCache=null;
 export function insertDonor(){

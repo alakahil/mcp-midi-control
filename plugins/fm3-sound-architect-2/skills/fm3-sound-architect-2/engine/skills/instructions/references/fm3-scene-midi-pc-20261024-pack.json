@@ -1,0 +1,20 @@
+{
+ "kind": "fm3-scene-midi-check",
+ "version": 1,
+ "date": "2026-10-24",
+ "confirmName": "SCENE MIDI GEN 2",
+ "preset": {
+  "file": "M2.syx",
+  "sha256": "d2716757ca5428c4dd44badba020094142e039eac19bf3f792161efc81aad5e2"
+ },
+ "blockRequest": "f0000174111f3e0134f7",
+ "steps": [
+  "Scene 1, Command 1 (Type PC): ÄRA muuda midagi, kirjuta ainult, mida näitavad Number ja Value",
+  "Scene 1, Command 1: proovi muuta Number väärtuseks 10 (kui ei lase, kirjuta \"ei lase\")",
+  "Scene 1, Command 1: muuda Value väärtuseks 10",
+  "Scene 1, Command 1: muuda Type CC ja kirjuta, mida nüüd näitavad Number ja Value",
+  "Scene 1, Command 1: muuda Type tagasi PC ja kirjuta, mida näitavad Number ja Value"
+ ],
+ "method": "PC field semantics follow-up: edit-buffer load + read-only fn=0x1F reads of effect 190 after each front-panel step.",
+ "blockWhere": "reas 4 (alumine rida) viimane plokk paremal (MIDI)"
+}

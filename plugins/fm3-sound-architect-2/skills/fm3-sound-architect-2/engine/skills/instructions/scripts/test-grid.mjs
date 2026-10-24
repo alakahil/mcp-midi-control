@@ -59,7 +59,7 @@ no(()=>editRecords(NL,{remove:['chorus']}),/Not placed/,'remove absent block');
 no(()=>editRecords(NL,{duplicate:['delay3']}),/not evidenced/,'Delay 3');
 no(()=>editRecords(NL,{duplicate:['chorus2']}),/needs chorus/,'instance without base');
 no(()=>editRecords(NL,{duplicate:['drive']}),/instance name/,'duplicate without number');
-no(()=>editRecords(NL,{add:['scenemidi']}),/not addable/,'Scene MIDI');
+no(()=>editRecords(NL,{add:['volpan']}),/not addable.*volumePan/,'Volume/Pan has its own inserter');
 no(()=>editRecords(NL,{remove:['drive'],duplicate:['drive2']}),/needs drive/,'duplicate a removed block');
 
 // 4. the base's own two-row grid through the general planner reproduces the base byte for byte
@@ -116,5 +116,5 @@ check(s.txt.includes('drive2 A Drive (FUZZ_DRIVE):')&&!s.txt.includes('drive A D
 no(()=>composeSound(NL,{...spec,layout:{row2:[],row3:[]}}),/exactly one of spec.layout/,'layout and grid together');
 no(()=>composeSound(NL,{composer:spec.composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},remove:['delay']}),/need grid mode/,'remove in layout mode');
 no(()=>composeSound(NL,{composer:spec.composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},insert:['mixer']}),/grid mode/,'mixer in layout mode');
-check(Object.keys(GRID_ADDABLE).length===12,'Addable blocks');
+check(Object.keys(GRID_ADDABLE).length===13&&GRID_ADDABLE.scenemidi===190,'Addable blocks (incl. Scene MIDI, 2026-10-24)');
 console.log(JSON.stringify({factoryGrids:ev.plannerAccepted,masks:ev.masksReproduced,ownGridReproduced:shuntsSequential,refusals,parallel:describeGrid(pb).filter((r,i)=>i===1||i===2)}));

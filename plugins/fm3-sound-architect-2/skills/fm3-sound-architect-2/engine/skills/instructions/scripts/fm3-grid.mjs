@@ -13,6 +13,7 @@ import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
 import {scanRecords,readGrid,blockOf,SLUG_BY_EID,IO,SHUNT_MIN,GRID,applyBlockScenes,applyTableControls,finalizeBody} from './fm3-layout.mjs';
 import {INSERTABLE,GATED,insertDonor} from './fm3-insert-blocks.mjs';
+import {applySceneMidi,SCENE_MIDI_EID,sceneMidiCapabilities} from './fm3-scene-midi.mjs';
 import {baseSlug,assertFields} from './fm3-table-encoder.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -43,7 +44,7 @@ function reencode(syx,before,body){
 
 // Blocks the grid mode may add from the device-default donor: the point-6 set plus the two
 // parallel-routing blocks (Mixer 126, Multiplexer 191; same donor export, all channels identical).
-export const GRID_ADDABLE=Object.freeze({...INSERTABLE,mixer:126,multiplexer:191});
+export const GRID_ADDABLE=Object.freeze({...INSERTABLE,mixer:126,multiplexer:191,scenemidi:190});
 
 // Remove records, add donor blocks and second instances. Grid cells of removed blocks become
 // empty; added records get no cell. The grid stage then writes the whole layout.
@@ -56,9 +57,11 @@ export function editRecords(syx,{remove=[],duplicate=[],add=[]}={}){
   check(new Set(remove).size===remove.length,'A block is removed twice');
   check(remove.includes('send')===remove.includes('return'),'Send and Return are removed as a pair');
   for(const slug of add){
-    check(typeof slug==='string'&&Object.hasOwn(GRID_ADDABLE,slug),`${slug}: not addable${GATED[slug]&&!['mixer','multiplexer'].includes(slug)?' — '+GATED[slug]:''}`);
+    check(typeof slug==='string'&&Object.hasOwn(GRID_ADDABLE,slug),`${slug}: not addable${GATED[slug]&&!['mixer','multiplexer','scenemidi'].includes(slug)?' — '+GATED[slug]:''}`);
     const eid=GRID_ADDABLE[slug];check(!records.some(r=>r.eid===eid),slug+' is already placed');
-    const rec=Buffer.from(insertDonor().byEid.get(eid));for(let s=0;s<8;s++){rec.writeUInt16LE(0,10+2*s);rec.writeUInt16LE(1,26+2*s);}
+    const rec=Buffer.from(insertDonor().byEid.get(eid));
+    // Scene MIDI is engaged in every scene (channel A), as in the device's own fresh block; effect blocks start bypassed.
+    for(let s=0;s<8;s++){rec.writeUInt16LE(0,10+2*s);rec.writeUInt16LE(slug==='scenemidi'?0:1,26+2*s);}
     added.push({slug,eid,rec,from:'device-default donor'});
   }
   check(new Set(add).size===add.length,'A block is inserted twice');
@@ -82,7 +85,7 @@ export function editRecords(syx,{remove=[],duplicate=[],add=[]}={}){
   keep.forEach((k,i)=>{const n=after.records[i];check(body.subarray(n.header,n.header+n.size).equals(k),'Kept record modified');});
   const out=reencode(syx,before,body);
   return {syx:out,removed:removed.map(r=>r.family),
-    inserted:added.filter(a=>a.from==='device-default donor').map(a=>({block:a.slug,effectId:a.eid,defaultScenes:'A, bypass (all 8 scenes)'})),
+    inserted:added.filter(a=>a.from==='device-default donor').map(a=>({block:a.slug,effectId:a.eid,defaultScenes:a.slug==='scenemidi'?'A, engaged (all 8 scenes)':'A, bypass (all 8 scenes)'})),
     duplicated:added.filter(a=>a.from!=='device-default donor').map(a=>({block:a.slug,effectId:a.eid,from:a.from,defaultScenes:'A, bypass (all 8 scenes)'})),
     report:{stage:'fm3-grid records 0.1.0',outputSha256:sha(out),bodyBytes:body.length,
       checks:{keptRecordsByteIdentical:true,systemTailPreserved:true,instanceRecordsDifferOnlyInEffectIdAndScenes:true,bodyReadback:true}}};
@@ -105,8 +108,10 @@ export function planCells(cellAt,links,role){
   for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){const v=cellAt(r,c);if(!v)continue;const kind=v==='-'?'block':role(v);
     let ins=inputs.get(`${r}:${c}`)??(c>0&&cellAt(r,c-1)?[r]:[]);
     if(kind==='source'){check(!inputs.has(`${r}:${c}`)||!inputs.get(`${r}:${c}`).length,`${v} is a source and takes no input`);ins=[];}
+    // Scene MIDI carries no audio: no input, and nothing may take its output (as in the device's own export).
+    if(kind==='standalone'){check(!inputs.get(`${r}:${c}`)?.length,`${v} carries no audio and takes no input`);ins=[];}
     if(c===0)check(ins.length===0,'Column 1 has no inputs');
-    if(kind!=='source'&&kind!=='optional')check(ins.length>0,`${v==='-'?'Shunt':v} at row ${r+1}, col ${c+1} has no input`);
+    if(kind!=='source'&&kind!=='optional'&&kind!=='standalone')check(ins.length>0,`${v==='-'?'Shunt':v} at row ${r+1}, col ${c+1} has no input`);
     cells.push({r,c,v,kind,ins});
   }
   // Every cell lies on a source -> sink path.
@@ -116,11 +121,13 @@ export function planCells(cellAt,links,role){
     const outs=cells.filter(y=>y.c===x.c+1&&y.ins.includes(x.r));
     if(x.kind==='sink'||outs.some(y=>toSink.has(key(y.r,y.c))))toSink.add(key(x.r,x.c));
   }
-  for(const x of cells){check(fromSrc.has(key(x.r,x.c)),`${x.v} at row ${x.r+1}, col ${x.c+1} is not fed from an input`);
+  for(const x of cells)for(const i of x.ins){const s=cells.find(y=>y.r===i&&y.c===x.c-1);check(!s||s.kind!=='standalone',`${x.v==='-'?'Shunt':x.v} at row ${x.r+1}, col ${x.c+1} takes input from ${s?.v}, which carries no audio (leave the next cell empty or link it from another row)`);}
+  for(const x of cells.filter(x=>x.kind!=='standalone')){check(fromSrc.has(key(x.r,x.c)),`${x.v} at row ${x.r+1}, col ${x.c+1} is not fed from an input`);
     check(toSink.has(key(x.r,x.c)),`${x.v} at row ${x.r+1}, col ${x.c+1} does not reach Out 1 or Send`);}
   return cells.map(x=>({...x,mask:x.ins.reduce((m,i)=>m|1<<i,0)}));
 }
-const roleOf=v=>SOURCES.has(v)?'source':SINKS.has(v)?'sink':OPTIONAL_INPUT.has(baseSlug(v))?'optional':'block';
+const STANDALONE=new Set(['scenemidi']);
+const roleOf=v=>STANDALONE.has(v)?'standalone':SOURCES.has(v)?'source':SINKS.has(v)?'sink':OPTIONAL_INPUT.has(baseSlug(v))?'optional':'block';
 
 // grid: {rows:[[12 cells] x 4], links?:[{row,col,from:[rows]}]} with 1-based row/col; a cell is
 // null|'' (empty), '-' (shunt) or a block name (in1, out1, send, return, amp, drive2, mixer ...).
@@ -154,7 +161,7 @@ export function gridCapabilities(){
     duplicate:{field:'spec.duplicate',instances:INSTANCE_LIMIT,record:'copy of the previous instance, own effect ID, all 8 scenes A/bypass'},
     insert:{field:'spec.insert',blocks:Object.keys(GRID_ADDABLE),record:'device-default donor, all 8 scenes A/bypass, no grid cell until placed'},
     evidence:'384 FW10 factory presets / 4801 cells: mask bit k = input from row k of the previous column (0 violations), 144 splits, 140 merges; instance records = instance 1 with its own effect ID (8 factory pairs)',
-    neverWritten:'grid mask bit 4 (seen on 8 factory merge cells, meaning unknown)',hardware:'confirmed 2026-10-23: 7 generated grids (splits, merges, 4 rows, Mixer, Multiplexer, Synth source, Send/Return, instances, removals) read back identical in all 48 cells (references/fm3-grid-check-20261023.json); the FM3 screen showed the encoded branch',linkSemantics:'a link names its target cell; its source is the previous column. The report lists every split/merge source by block and warns when an Amp path reaches Out 1/Send without a Cab'};
+    neverWritten:'grid mask bit 4 (seen on 8 factory merge cells, meaning unknown)',sceneMidi:sceneMidiCapabilities(),hardware:'confirmed 2026-10-23: 7 generated grids (splits, merges, 4 rows, Mixer, Multiplexer, Synth source, Send/Return, instances, removals) read back identical in all 48 cells (references/fm3-grid-check-20261023.json); the FM3 screen showed the encoded branch',linkSemantics:'a link names its target cell; its source is the previous column. The report lists every split/merge source by block and warns when an Amp path reaches Out 1/Send without a Cab'};
 }
 const nameOf=id=>id===IO.in1?'In 1':id===IO.out1?'Out 1':id===IO.send?'Send':id===IO.ret?'Return':id>=SHUNT_MIN?'-':(()=>{const b=blockOf(id);return b?(SLUG_BY_EID[b.block]??'eid'+id)+(b.instance>1?b.instance:''):'eid'+id})();
 export function describeGrid(body){
@@ -191,6 +198,7 @@ export function arrangeGrid(syx,spec,opts={}){
   for(const w of plan.words){const o=gridAt(w.r,w.c);body.writeUInt16LE(w.id,o);body.writeUInt16LE(w.mask,o+2);}allow(GRID.start,GRID.end-GRID.start);
   const sceneEdits=spec.blockScenes?applyBlockScenes(body,spec.blockScenes,allow):[];
   const writes=spec.controls?applyTableControls(body,spec.controls,opts,allow):[];
+  const sceneMidi=spec.sceneMidi===undefined?null:applySceneMidi(body,scanRecords(body).records.find(r=>r.eid===SCENE_MIDI_EID),spec.sceneMidi,allow);
   if(spec.selectedScene!==undefined){check(Number.isInteger(spec.selectedScene)&&spec.selectedScene>=1&&spec.selectedScene<=8,'selectedScene must be 1..8');body[0]=spec.selectedScene-1;allow(0,1)}
   const recordsAfter=scanRecords(body);
   check(recordsAfter.tail===recordsBefore.tail&&body.subarray(recordsAfter.tail).equals(original.subarray(recordsBefore.tail)),'System tail changed');
@@ -198,6 +206,6 @@ export function arrangeGrid(syx,spec,opts={}){
   const out=finalizeBody(syx,original,body,allowed);
   const back=readGrid(Buffer.from(inspectStructure(out).raw.body));
   for(const w of plan.words){const g=back.find(x=>x.row===w.r&&x.col===w.c);check(g.id===w.id&&g.mask===w.mask,'Grid readback')}
-  return {syx:out,rows:describeGrid(body),links:describeLinks(body),warnings:gridWarnings(body),sceneEdits,writes,expectedGrid:plan.words.filter(w=>w.id),report:{stage:'fm3-grid 0.1.0',outputSha256:sha(out),bytes:out.length,
+  return {syx:out,rows:describeGrid(body),links:describeLinks(body),warnings:gridWarnings(body),sceneEdits,writes,sceneMidi,expectedGrid:plan.words.filter(w=>w.id),report:{stage:'fm3-grid 0.1.0',outputSha256:sha(out),bytes:out.length,
     checks:{generalGrid:true,everyCellOnInputToOutputPath:true,maskBitsWithinRows:true,recordsUnchanged:spec.controls||spec.blockScenes?'only declared control/scene bytes':'all',systemTailPreserved:true,frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true}}};
 }

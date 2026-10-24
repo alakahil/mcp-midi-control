@@ -12,7 +12,7 @@
       "minItems": 1,
       "maxItems": 10,
       "uniqueItems": true,
-      "description": "Point-6 blocks inserted from the device-default donor; all 8 scenes start on channel A, bypassed. Mixer and Multiplexer only in grid mode; Scene MIDI is refused; Volume/Pan uses volumePan.",
+      "description": "Point-6 blocks inserted from the device-default donor; all 8 scenes start on channel A, bypassed. Mixer and Multiplexer only in grid mode; Scene MIDI (grid mode only) is placed unconnected; Volume/Pan uses volumePan.",
       "items": {
         "enum": [
           "plex",
@@ -26,7 +26,8 @@
           "ringmod",
           "resonator",
           "mixer",
-          "multiplexer"
+          "multiplexer",
+          "scenemidi"
         ]
       }
     },
@@ -2237,6 +2238,46 @@
               }
             ]
           }
+        },
+        "scenemidi": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
         }
       }
     },
@@ -2364,7 +2405,8 @@
                     "filter4",
                     "drive2",
                     "enhancer2",
-                    "resonator2"
+                    "resonator2",
+                    "scenemidi"
                   ]
                 }
               ]
@@ -2473,6 +2515,60 @@
     "volumePedal": {
       "const": true,
       "description": "Exact captured FW13 External 1 -> Volume/Pan 1 Gain ALL defaults in record 0. Requires volumePan:true and inactive unchanged modifier region; incompatible with active Wah. No custom Min/Max."
+    },
+    "sceneMidi": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "description": "Grid mode only, needs insert [\"scenemidi\"]. Scene MIDI commands decoded on FM3 fw 13 (2026-10-24): type PC/CC/NONE, MIDI channel 1..16; PC takes program 0..127 (the FM3 Value field; Number shows --); CC takes number 0..127 and value 0..127.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "scene",
+          "command",
+          "type"
+        ],
+        "properties": {
+          "scene": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          },
+          "command": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          },
+          "type": {
+            "enum": [
+              "PC",
+              "CC",
+              "NONE"
+            ]
+          },
+          "channel": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 16
+          },
+          "number": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "value": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "program": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          }
+        }
+      }
     }
   },
   "required": [
@@ -2498,6 +2594,11 @@
           {
             "required": [
               "duplicate"
+            ]
+          },
+          {
+            "required": [
+              "sceneMidi"
             ]
           }
         ]
