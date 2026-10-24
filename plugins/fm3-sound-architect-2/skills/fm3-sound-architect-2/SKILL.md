@@ -67,6 +67,9 @@ Sound-spec'i `volumePedal:true` koos `volumePan:true` lisab **External 1 →
 Volume/Pan 1 Volume (VOLUME_GAIN, PID 0), ALL** seose. Kasuta mõõdetud
 vaikeolekut; Min/Max-i, kõvera, Auto Engage'i ega ajaparameetrite valikuid sellel
 liidesel pole. [Juhend](engine/docs/FM3_VOLUME_PEDAL.md).
+Pedaali käitumine on **seadmel kinnitatud** 24.10.2026: FM3-Editis on Volume nupul External 1 modifikaator
+ja nupp järgib pedaali kannast varbani; ilma seoseta preset jääb 10.00 peale. Täpseid kanna/varba numbreid
+ja heli ei mõõdetud. Ära küsi seda uuesti.
 Nõutav on NewLook-aluse muutmata passiivne modifikaatoripiirkond. Aktiivne Wah
 või muudetud modifikaatorid lükatakse tagasi; neid ei lülitata vaikimisi välja.
 `composer.modifiers:{external1Wah:false}` võib passiivse lähteoleku selgesõnaliselt

@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2094,
-  "filePaths": 2298,
+  "uniqueContents": 2096,
+  "filePaths": 2300,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1809,6 +1809,12 @@
       "paths": [
         "references/filter-rea-20261012/JATKA_SIIT.syx",
         "references/filter-rea-20261012/step-014-0cc8be10c7/donor.syx"
+      ]
+    },
+    "25fa723600045c6670ed553ca072986743d9967c4e3b47c0d599118d4b7d2700": {
+      "bytes": 2183,
+      "paths": [
+        "references/fm3-pedal-check-20261024.json"
       ]
     },
     "260dbe9a5bd3ff34c8b408bf70dacd2fc902dded898a8cc861a7f08d03853c64": {
@@ -7394,6 +7400,12 @@
       "bytes": 2279,
       "paths": [
         "references/geq-full-20261010-194115/step-018-fe082647e3/result.json"
+      ]
+    },
+    "97e2c2d69a7cf504505eca19db0aa7ed3ed7d84d52710bd0de331f33e9aba762": {
+      "bytes": 27757,
+      "paths": [
+        "references/fm3-pedal-check-20261024-results.json"
       ]
     },
     "97eb7827a1ce5cb3ee7d187965953c8f52b9b0a2a57e682d973a7f2724323323": {

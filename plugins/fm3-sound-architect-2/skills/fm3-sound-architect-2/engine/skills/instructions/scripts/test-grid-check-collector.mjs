@@ -79,7 +79,7 @@ try{
   const h=run(stored,path.join(tmp,'s5'));
   check(h.fake.exit.includes('edit buffer')&&h.fake.dumpsReceived===0,'Stored-location header refused: '+h.fake.exit);
   // 7. the shipped collectors' own self-tests
-  for(const s of ['FM3_GRID_CHECK.py','FM3_CPU_SWEEP.py','FM3_READ_PROBE.py','FM3_VALUE_CHECK.py'])
+  for(const s of ['FM3_GRID_CHECK.py','FM3_CPU_SWEEP.py','FM3_READ_PROBE.py','FM3_VALUE_CHECK.py','FM3_PEDAL_CHECK.py'])
     check(JSON.parse(execFileSync('python3',['-B',path.join(here,'cpu-sweep-collector',s),'--self-test'],{encoding:'utf8'}).trim().split('\n').pop()).selfTest.startsWith('passed'),s+' self-test');
   console.log(JSON.stringify({scenarios:10,deviceIO:false,collector:'FM3_GRID_CHECK.py'}));
 }finally{fs.rmSync(tmp,{recursive:true,force:true});}
