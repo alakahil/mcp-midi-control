@@ -36,16 +36,36 @@ Selles versioonis on piiratud Input 1 ja Volume/Pan 1 kirjutustugi.
 Tegelik avaldamine ja laaditud commit kinnitatakse väljalaskekviitungist. Input 1 viie arvparameetri
 A–D kirjutustugi säilib: THRESH, RATIO, RELEASE, ATTACK, LEVEL. Ratio/Attack
 vajavad ADVANCED-režiimi. Type, Mode, Input bypass, impedants ja meter säilivad;
-Threshold OFF-äärpunkti ei kirjutata. See on Input 1, mitte eraldi Gate-plokk.
+Threshold −100 dB on FM3-l „OFF“ (salvestatud sõna 0). See on Input 1, mitte eraldi Gate-plokk.
 Kasutaja ühe tagastatud FW13 ekspordiga kinnitati kõigi 20 valitud Input-sihtsõna
-ning kogu ülejäänud Input-kirje säilimine. See ei tõenda eraldi füüsikalisi skaalasid.
+ning kogu ülejäänud Input-kirje säilimine.
+Esipaneeli kontroll (24.10.2026, `references/fm3-step-diff-input-volume-20261024.json`): kõik 9 näitu
+klappisid generaatori kodeeringuga sõna-sõnalt. Mõõdeti:
+- Input Threshold −40 dB, OFF ja −80 dB ning Level +6 dB;
+- Volume 0 / 2,5 / 7,5, Level −10 dB ja Balance −67.
+Ratio, Attack, Release ja Pan L/R skaalasid pole esipaneelilt mõõdetud.
 
 Volume/Pan 1 praegune FW13 15-sõnaline A–D kirje on nüüd olemas. Sound-spec'i
 `volumePan:true` lisab selle NewLook-alusele; valitud `layout` või `grid` peab sisaldama `volpan`-i.
 `controls` kasutab `block:"volpan"`: GAIN, BAL, PANL, PANR ja LEVEL; eraldi
 `allow:["enum-labels"]` korral ka TAPER, BYPASSMODE ja INPUTSELECT. Stseenide
-kanal/bypass: `blockScenes.volpan`. Praegu toetatakse ainult VOLUME-tüüpi;
-TYPE, Auto-Swell, kanali BYPASS-sõna ja meter jäävad säilitatavaks. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
+kanal/bypass: `blockScenes.volpan`.
+
+**Tüübid**: `TYPE` on `VOLUME` või `AUTO-SWELL` ja vajab `allow:["enum-labels"]`.
+- AUTO-SWELL-is on `THRESHOLD`, `ATTACK`, `RELEASE` ja `HYSTERESIS`, lisaks BAL, LEVEL, TAPER, BYPASSMODE ja INPUTSELECT.
+- VOLUME-is on GAIN, BAL, PANL, PANR, LEVEL ja enum-väljad.
+- Iga välja kontrollitakse kanali lõpliku tüübi järgi. Lõplikus tüübis peidetud väli tõrjutakse, näiteks GAIN AUTO-SWELL-is.
+- Kanali BYPASS-sõna ja meter jäävad säilitatavaks.
+- `volumePedal` seob Volume'i ja AUTO-SWELL-iga see tõrjutakse.
+
+Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
+Esipaneeli kontroll (24.10.2026, `references/fm3-step-diff-volume-type-20261024.json`):
+- TYPE VOLUME ↔ AUTO-SWELL muudab ainult ühte sõna ja teisi väärtusi ei puuduta.
+- Auto-Swell Threshold, Attack ja Hysteresis klappisid kodeeringuga.
+- Release 20 ms erines 0,05 %.
+Generaatori AUTO-SWELL preset kontrolliti seadmel (`references/fm3-auto-swell-verify-20261024.json`):
+- kõik plokid ja ruudustik loeti tagasi täpselt sellisena, nagu generaator need kirjutas;
+- ekraan näitas küsitud väärtusi: Attack 250 ms kui 249,99 ms ja Release 20 ms kui 20,000 ms. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
 
 Volume'i jäädvustatud doonor on vaikimisi **kõigis kaheksas stseenis aktiivne,
 kanal A**. Uue soundi loomisel kirjuta `blockScenes.volpan`-i alati kõigi kaheksa

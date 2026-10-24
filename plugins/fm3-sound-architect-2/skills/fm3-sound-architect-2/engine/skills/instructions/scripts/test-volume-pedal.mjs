@@ -27,6 +27,8 @@ assert.deepEqual(Array.from({length:25},(_,i)=>body.readUInt16LE(1584+2*i)),evid
 // than only the writer. Codec ancestry is shared, not independent FW evidence.
 const decoded=decodeGen3PresetDump(good.syx,17);
 assert.equal(decoded.crc_valid,true);assert.deepEqual(Buffer.from(decoded.decompressed_body),body);
+// The binding drives Volume (Gain), which AUTO-SWELL hides: the combination is refused on any channel.
+for(const ch of 'ABCD')assert.throws(()=>createPreset(base,{...spec,allow:['enum-labels'],controls:[{block:'volpan',channel:ch,param:'TYPE',value:'AUTO-SWELL'}]}),/AUTO-SWELL hides/);
 const cap=getPresetCapabilities().volumePedal;
 assert.equal(cap.fullRangeEncodingProven,false);assert.equal(cap.numericMinMaxAuthoring,false);
 assert.equal(cap.target.pid,0);assert.equal(cap.target.channelScope,'ALL');

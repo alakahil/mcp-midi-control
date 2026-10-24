@@ -34,9 +34,12 @@ for(const b of composerBases){
   for(const w of out.writes){assert.equal(after.readUInt16LE(w.offset),w.raw);if(w.channel==='A')assert.equal(independent.params.find(p=>p.paramId===w.pid).raw,w.raw);writesCount++;}
 }
 const base=read('examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx'),original=bodyOf(base),r=scanRecords(original).records.find(r=>r.eid===37);
-const invalid=[c('E','THRESH',-60),c('A','THRESH',-100),c('A','THRESH',1),c('A','THRESH','-60'),c('A','ATTACK',0),c('A','LEVEL',NaN),c('A','RATIO',21),c('A','Z',0),c('A','GAINMONITOR',0),c('A','BYPASS',0),c('A','TYPE',1),c('A','MODE',1),{...c('A','THRESH',-60),extra:1}, {block:'volpan',channel:'A',param:'GAIN',value:5},{block:'gate',channel:'A',param:'THRESH',value:-60}];
+const invalid=[c('E','THRESH',-60),c('A','THRESH',-100.1),c('A','THRESH',1),c('A','THRESH','-60'),c('A','ATTACK',0),c('A','LEVEL',NaN),c('A','RATIO',21),c('A','Z',0),c('A','GAINMONITOR',0),c('A','BYPASS',0),c('A','TYPE',1),c('A','MODE',1),{...c('A','THRESH',-60),extra:1}, {block:'volpan',channel:'A',param:'GAIN',value:5},{block:'gate',channel:'A',param:'THRESH',value:-60}];
 for(const bad of invalid){const b=Buffer.from(original);let calls=0;assert.throws(()=>applyTableControls(b,[c('B','LEVEL',-5),bad],{allow:['enum-labels']},()=>calls++));assert.deepEqual(b,original);assert.equal(calls,0);}
 assert.throws(()=>applyTableControls(Buffer.from(original),[c('A',0,-60),c('A','THRESH',-65)]),/Duplicate/);
+// Threshold -100 dB is the FM3's OFF: stored word 0 (front-panel check 2026-10-24).
+{const b=Buffer.from(original);const w=applyTableControls(b,[c('A','THRESH',-100)]);const x=(w.writes??w).find(q=>q.pid===0);
+  assert.equal(b.readUInt16LE(r.start),0);assert.equal(x.raw,0);assert.equal(x.deviceDisplay,'OFF');}
 for(const type of [0,1,2])for(const mode of [0,1])for(const pid of [0,1,2,3,5]){
   const b=Buffer.from(original);b.writeUInt16LE(type,r.start+14);b.writeUInt16LE(mode,r.start+18);
   const p=findParam('in1',pid),v={0:-65,1:3,2:150,3:2,5:-3}[pid];

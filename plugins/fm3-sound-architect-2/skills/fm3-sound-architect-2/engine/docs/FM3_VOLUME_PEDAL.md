@@ -55,3 +55,37 @@ mõõteskript on `FM3_PEDAL_CHECK.py`. Mõlemad presetid laaditi ainult redaktsi
   FM3 ei saada pedaali liigutamise ajal ise kaadreid, seega seda väärtust praeguste lugemisteedega skriptiga ei loe.
 - **Mõõtmata**: täpsed kanna/varba numbrid, kõver (taper) ja heli.
 - FM3 esipaneelil avatakse ploki leht ruudustikust EDIT-nupuga. ENTER ja VALUE valivad lahtrisse uue ploki.
+
+## Esipaneeli skaalakontroll (24.10.2026)
+
+Kviitung on `references/fm3-step-diff-input-volume-20261024.json` (`node tools/fm3/step-diff-ingest.mjs`).
+Kasutaja muutis FM3 esipaneelil ühe välja korraga. Pärast iga sammu luges `FM3_STEP_DIFF.py` Input 1 ja
+Volume/Pan 1 ploki. Iga näit klappis generaatori kodeeringuga sõna-sõnalt:
+
+- Volume 0.00 / 2.50 / 7.50 → sõnad 0 / 16384 / 49151. See on lineaarne 0–10 näiduskaala, mitte dB.
+- Level −10 dB ja Balance −67 klappisid samuti.
+- Input Threshold −40 dB ja −80 dB ning Output Level +6 dB klappisid.
+- Input Threshold miinimum näitab **OFF** ja salvestub sõnana 0, mis vastab −100 dB-le. Generaator
+  kirjutab nüüd −100 dB OFF-ina.
+
+## TYPE ja Auto-Swell (24.10.2026)
+
+Kviitung on `references/fm3-step-diff-volume-type-20261024.json`.
+
+- **TYPE**: VOLUME ↔ AUTO-SWELL on üks sõna (`VOLUME_TYPE`, 0 = VOLUME, 1 = AUTO-SWELL). Pärast tagasi
+  vahetamist näitas Volume endiselt 10.00, seega teisi sõnu tüübivahetus ei muuda.
+- **Auto-Swell väljad**:
+  - Threshold −40 dB klappis kodeeringuga sõna-sõnalt.
+  - Attack 100 ms ja Hysteresis 6.00 dB olid juba vaikimisi seatud ning nende salvestatud sõnad
+    võrduvad nende väärtuste kodeeringuga.
+  - Release'iks lasi FM3 valida 19,999 ms (sõna 42623). Generaator loeb selle sõna 19,989 ms-ina ja
+    kirjutaks 20 ms sõnana 42631, mis on 0,05 % erinevus. Logaritmiline kõver on lähedane, aga selles
+    punktis mitte sõna-täpne.
+- **Generaator** kirjutab nüüd ka TYPE-i (`VOLUME` / `AUTO-SWELL`, `allow:["enum-labels"]`) ja Auto-Swelli
+  väljad Threshold, Attack, Release ja Hysteresis (`fm3-volume-policy.mjs`). Iga välja kontrollitakse kanali
+  lõpliku tüübi järgi ja lõplikus tüübis peidetud väli tõrjutakse. `volumePedal` AUTO-SWELL-iga tõrjutakse.
+
+Seadmekontroll (`references/fm3-auto-swell-verify-20261024.json`, `tools/fm3/auto-swell-verify-build.mjs`): generaatori
+preset oli kanalil A AUTO-SWELL (Threshold −40 dB, Attack 250 ms, Release 20 ms, Hysteresis 3 dB) ja kanalil B
+VOLUME 7.5. Kõik plokid ja ruudustik loeti redaktsioonipuhvrist tagasi täpselt. FM3 näitas Attack'i 249,99 ms-ina ja
+Release'i 20,000 ms-ina. Ülejäänud väärtused klappisid täpselt.

@@ -1,0 +1,51 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "method": "tools/fm3/auto-swell-verify-build.mjs: a generated preset (Volume/Pan 1 channel A AUTO-SWELL, channel B VOLUME 7.5) loaded to the edit buffer and read back with FM3_VALUE_CHECK.py --skip-store; the user read the Volume page.",
+ "readback": {
+  "blocks": 8,
+  "allMatch": true,
+  "gridMatches": true
+ },
+ "channelA": [
+  {
+   "param": "VOLUME_TYPE",
+   "asked": "AUTO-SWELL",
+   "word": 1,
+   "generatorDecodes": "AUTO-SWELL",
+   "fm3Shows": "AUTO-SWELL"
+  },
+  {
+   "param": "VOLUME_THRESHOLD",
+   "asked": -40,
+   "word": 32767,
+   "generatorDecodes": -40,
+   "fm3Shows": -40
+  },
+  {
+   "param": "VOLUME_ATTACK",
+   "asked": 250,
+   "word": 45806,
+   "generatorDecodes": 249.9947,
+   "fm3Shows": 249.99
+  },
+  {
+   "param": "VOLUME_RELEASE",
+   "asked": 20,
+   "word": 42631,
+   "generatorDecodes": 20.0002,
+   "fm3Shows": 20
+  },
+  {
+   "param": "VOLUME_HYSTERESIS",
+   "asked": 3,
+   "word": 16384,
+   "generatorDecodes": 3.0001,
+   "fm3Shows": 3
+  }
+ ],
+ "finding": "The generated AUTO-SWELL record reads back word for word and the FM3 shows the asked values (Attack 250 ms as 249.99, Release 20 ms as 20.000).",
+ "resultsSha256": "21e61d02262cac45d499e962714dc0401714912244e05a14c161165bac94e519"
+}

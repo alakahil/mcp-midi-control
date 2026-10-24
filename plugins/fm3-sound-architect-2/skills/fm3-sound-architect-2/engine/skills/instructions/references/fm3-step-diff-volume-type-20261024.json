@@ -1,0 +1,83 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "auditPoint": 4,
+ "method": "FM3_STEP_DIFF.py: the generated preset STEP 5 VOL TYPE in the edit buffer only; the user switched Volume/Pan 1 TYPE and set the Auto-Swell controls on the front panel; Volume/Pan 1 read with fn=0x1F after each step.",
+ "findings": [
+  "TYPE VOLUME <-> AUTO-SWELL is one word (VOLUME_TYPE, 0 = VOLUME, 1 = AUTO-SWELL); switching back left Volume at 10.00: no other word changes.",
+  "Auto-Swell Threshold -40 dB equals the encoding word for word; the Attack 100 ms and Hysteresis 6.00 dB defaults equal the encoding of those values.",
+  "Release: the FM3 offered 19.999 ms (word 42623); the generator decodes that word as 19.989 ms and encodes 20 ms as 42631 (0.05 % apart). The log curve is close but not word-exact at this point."
+ ],
+ "steps": [
+  {
+   "id": "type-swell",
+   "asked": "Volume: vaheta Type väärtuseks AUTO-SWELL (kirjuta ka, mis väljad nüüd lehel on)",
+   "userReading": "vahetasin VOLUME AUTO-SWELLi vastu välja",
+   "param": "VOLUME_TYPE",
+   "kind": "exact",
+   "shown": "AUTO-SWELL",
+   "deviceWord": 1,
+   "generatorWord": 1
+  },
+  {
+   "id": "sw-thr-40",
+   "asked": "Auto-Swell: sea Threshold väärtuseks -40.0 dB",
+   "userReading": "-40.0 dB",
+   "param": "VOLUME_THRESHOLD",
+   "kind": "exact",
+   "shown": -40,
+   "deviceWord": 32767,
+   "generatorWord": 32767
+  },
+  {
+   "id": "sw-att100",
+   "asked": "Auto-Swell: sea Attack väärtuseks 100 ms",
+   "userReading": "oli juba 100.0 ms",
+   "param": "VOLUME_ATTACK",
+   "kind": "preset",
+   "shown": 100,
+   "deviceWord": 32767,
+   "generatorWord": 32767
+  },
+  {
+   "id": "sw-rel20",
+   "asked": "Auto-Swell: sea Release väärtuseks 20 ms",
+   "userReading": "sai valida 19.999 ms",
+   "param": "VOLUME_RELEASE",
+   "kind": "near",
+   "shown": 19.999,
+   "deviceWord": 42623,
+   "deviceShown": 19.999,
+   "generatorDecodes": 19.989,
+   "relativeDifference": 0.0005,
+   "generatorWordFor20ms": 42631
+  },
+  {
+   "id": "sw-hys6",
+   "asked": "Auto-Swell: sea Hysteresis väärtuseks 6.00 dB",
+   "userReading": "oli juba 6.00 db",
+   "param": "VOLUME_HYSTERESIS",
+   "kind": "preset",
+   "shown": 6,
+   "deviceWord": 32767,
+   "generatorWord": 32767
+  },
+  {
+   "id": "type-volume",
+   "asked": "Volume: vaheta Type tagasi VOLUME (kirjuta, mida Volume nüüd näitab)",
+   "userReading": "Vahetasin tagasi VOLUME peale Volume näitab 10.00",
+   "param": "VOLUME_TYPE",
+   "kind": "exact",
+   "shown": "VOLUME",
+   "deviceWord": 0,
+   "generatorWord": 0
+  }
+ ],
+ "notMeasured": [
+  "other Release / Attack points",
+  "a generated AUTO-SWELL preset on the device (the generator writes it from this evidence)"
+ ],
+ "resultsSha256": "35df948d1bb62771e8dab7d67d7a64adb7f049813f990ef5932da43302f7d412"
+}

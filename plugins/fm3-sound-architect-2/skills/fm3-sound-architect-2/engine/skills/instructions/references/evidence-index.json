@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2109,
-  "filePaths": 2313,
+  "uniqueContents": 2115,
+  "filePaths": 2319,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1157,6 +1157,12 @@
         "references/reverb-batch-20261006-181951/capture-20261006T151228-65854467e6/pair.json"
       ]
     },
+    "17a91e0e09acee46bda7eb781dc3e4c4e92100a2d7f3917dab887db6b6fabc14": {
+      "bytes": 2808,
+      "paths": [
+        "references/fm3-step-diff-volume-type-20261024.json"
+      ]
+    },
     "17bc8786fa9b8c550205269b7e4f37bd30e3a4049124b551076b435a3726acbd": {
       "bytes": 2674,
       "paths": [
@@ -1657,6 +1663,12 @@
       "bytes": 24680,
       "paths": [
         "examples/FM3_SA_TEST_MODEL_CAB_export.syx"
+      ]
+    },
+    "21e61d02262cac45d499e962714dc0401714912244e05a14c161165bac94e519": {
+      "bytes": 3506,
+      "paths": [
+        "references/fm3-auto-swell-verify-20261024-results.json"
       ]
     },
     "21f40e37d4c2fa6d09cbc0b062f245a5713891513826d4b5332e18c8db84268f": {
@@ -2709,6 +2721,12 @@
       "bytes": 3202,
       "paths": [
         "references/peq-full-20261009-152606/step-014-dad3bb686a/result.json"
+      ]
+    },
+    "35df948d1bb62771e8dab7d67d7a64adb7f049813f990ef5932da43302f7d412": {
+      "bytes": 4228,
+      "paths": [
+        "references/fm3-step-diff-volume-type-20261024-results.json"
       ]
     },
     "35fa5f4a46a226d2755dc0019078156389591a74d3a9c92681c0393f76b0838f": {
@@ -7317,6 +7335,12 @@
         "references/geq-full-20261010-194115/step-005-85115b89d4/result.json"
       ]
     },
+    "9587de6e34974975332e5330ef910eb51bfe66024b02f8f18c7f8957f16ba9b2": {
+      "bytes": 1310,
+      "paths": [
+        "references/fm3-auto-swell-verify-20261024.json"
+      ]
+    },
     "95911cba471c5b37a433a6d288222496d204e2be6d86590ede3342cda7341eaf": {
       "bytes": 3305,
       "paths": [
@@ -7966,6 +7990,12 @@
       "bytes": 5922,
       "paths": [
         "references/wah-batch-20261007-140115/capture-001/capture.json"
+      ]
+    },
+    "a3e771a0969faf0530867a708a1d65531d5b01fd0dc2e0488588d64137bbe4e5": {
+      "bytes": 8339,
+      "paths": [
+        "references/fm3-step-diff-input-volume-20261024-results.json"
       ]
     },
     "a400c87c087ce6373e0fceffe722c51fb717f5c2ed7483e310cabb641a5099c6": {
@@ -9913,6 +9943,12 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-080-7dbcc1079a/donor.syx"
+      ]
+    },
+    "c8aa893f2b9e7f8a88a2b1c1c8eebd0c86927c4bd95678cef36394aa404ed893": {
+      "bytes": 3408,
+      "paths": [
+        "references/fm3-step-diff-input-volume-20261024.json"
       ]
     },
     "c8f4d3789dd1fd782a89acb8a40c70b21da38591bf86865aaf731ed069069ddc": {
