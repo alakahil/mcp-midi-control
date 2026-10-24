@@ -55,3 +55,15 @@ mõõteskript on `FM3_PEDAL_CHECK.py`. Mõlemad presetid laaditi ainult redaktsi
   FM3 ei saada pedaali liigutamise ajal ise kaadreid, seega seda väärtust praeguste lugemisteedega skriptiga ei loe.
 - **Mõõtmata**: täpsed kanna/varba numbrid, kõver (taper) ja heli.
 - FM3 esipaneelil avatakse ploki leht ruudustikust EDIT-nupuga. ENTER ja VALUE valivad lahtrisse uue ploki.
+
+## Esipaneeli skaalakontroll (24.10.2026)
+
+Kviitung on `references/fm3-step-diff-input-volume-20261024.json` (`node tools/fm3/step-diff-ingest.mjs`).
+Kasutaja muutis FM3 esipaneelil ühe välja korraga. Pärast iga sammu luges `FM3_STEP_DIFF.py` Input 1 ja
+Volume/Pan 1 ploki. Iga näit klappis generaatori kodeeringuga sõna-sõnalt:
+
+- Volume 0.00 / 2.50 / 7.50 → sõnad 0 / 16384 / 49151. See on lineaarne 0–10 näiduskaala, mitte dB.
+- Level −10 dB ja Balance −67 klappisid samuti.
+- Input Threshold −40 dB ja −80 dB ning Output Level +6 dB klappisid.
+- Input Threshold miinimum näitab **OFF** ja salvestub sõnana 0, mis vastab −100 dB-le. Generaator
+  kirjutab nüüd −100 dB OFF-ina.

@@ -36,9 +36,14 @@ Selles versioonis on piiratud Input 1 ja Volume/Pan 1 kirjutustugi.
 Tegelik avaldamine ja laaditud commit kinnitatakse väljalaskekviitungist. Input 1 viie arvparameetri
 A–D kirjutustugi säilib: THRESH, RATIO, RELEASE, ATTACK, LEVEL. Ratio/Attack
 vajavad ADVANCED-režiimi. Type, Mode, Input bypass, impedants ja meter säilivad;
-Threshold OFF-äärpunkti ei kirjutata. See on Input 1, mitte eraldi Gate-plokk.
+Threshold −100 dB on FM3-l „OFF“ (salvestatud sõna 0). See on Input 1, mitte eraldi Gate-plokk.
 Kasutaja ühe tagastatud FW13 ekspordiga kinnitati kõigi 20 valitud Input-sihtsõna
-ning kogu ülejäänud Input-kirje säilimine. See ei tõenda eraldi füüsikalisi skaalasid.
+ning kogu ülejäänud Input-kirje säilimine.
+Esipaneeli kontroll (24.10.2026, `references/fm3-step-diff-input-volume-20261024.json`): kõik 9 näitu
+klappisid generaatori kodeeringuga sõna-sõnalt. Mõõdeti:
+- Input Threshold −40 dB, OFF ja −80 dB ning Level +6 dB;
+- Volume 0 / 2,5 / 7,5, Level −10 dB ja Balance −67.
+Ratio, Attack, Release ja Pan L/R skaalasid pole esipaneelilt mõõdetud.
 
 Volume/Pan 1 praegune FW13 15-sõnaline A–D kirje on nüüd olemas. Sound-spec'i
 `volumePan:true` lisab selle NewLook-alusele; valitud `layout` või `grid` peab sisaldama `volpan`-i.

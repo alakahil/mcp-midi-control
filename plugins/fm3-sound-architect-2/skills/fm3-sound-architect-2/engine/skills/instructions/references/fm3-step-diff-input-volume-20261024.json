@@ -1,0 +1,118 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "auditPoint": 4,
+ "method": "FM3_STEP_DIFF.py: the generated preset STEP 4 IN VOL in the edit buffer only; the user set one field per step on the front panel and typed the shown value; Input 1 and Volume/Pan 1 were read with fn=0x1F after each step.",
+ "findings": [
+  "Every reading equals the generator encoding word for word: Input Threshold -40 / -80 dB, Input Output Level +6 dB, Volume 0.00 / 2.50 / 7.50, Volume Level -10 dB, Balance -67.",
+  "Input Threshold at its minimum shows OFF and is stored as word 0 (= -100 dB in the dictionary scale). The generator now writes -100 dB as OFF.",
+  "Volume (Gain) is the 0..10 display scale, linear in the stored word (0 / 16384 / 49151 for 0 / 2.5 / 7.5)."
+ ],
+ "steps": [
+  {
+   "id": "thr-40",
+   "asked": "Input 1: sea Threshold väärtuseks -40.0 dB",
+   "userReading": "valisin -40 dB",
+   "param": "INPUT_THRESH",
+   "shown": -40,
+   "deviceWord": 39320,
+   "generatorWord": 39320,
+   "decoded": -40.0006
+  },
+  {
+   "id": "thr-off",
+   "asked": "Input 1: keera Threshold päris lõpuni vasakule (miinimum, peaks näitama OFF)",
+   "userReading": "OFF",
+   "param": "INPUT_THRESH",
+   "shown": "OFF",
+   "deviceWord": 0,
+   "generatorWord": 0,
+   "decoded": -100
+  },
+  {
+   "id": "thr-80",
+   "asked": "Input 1: sea Threshold väärtuseks -80.0 dB",
+   "userReading": "-80",
+   "param": "INPUT_THRESH",
+   "shown": -80,
+   "deviceWord": 13107,
+   "generatorWord": 13107,
+   "decoded": -79.9997
+  },
+  {
+   "id": "lvl+6",
+   "asked": "Input 1: sea Output Level (Level) väärtuseks +6.0 dB",
+   "userReading": "Output level +6 dB, selle väärtuse muutmise nuppu ei leidnud kohe, loodan, et ma midagi otsimisega ära ei muutnud",
+   "param": "INPUT_LEVEL",
+   "shown": 6,
+   "deviceWord": 37682,
+   "generatorWord": 37682,
+   "decoded": 5.9999
+  },
+  {
+   "id": "vol0",
+   "asked": "Volume: sea Volume väärtuseks 0.00 (päris vasakule)",
+   "userReading": "0.00",
+   "param": "VOLUME_GAIN",
+   "shown": 0,
+   "deviceWord": 0,
+   "generatorWord": 0,
+   "decoded": 0
+  },
+  {
+   "id": "vol2.5",
+   "asked": "Volume: sea Volume väärtuseks 2.50",
+   "userReading": "2.50",
+   "param": "VOLUME_GAIN",
+   "shown": 2.5,
+   "deviceWord": 16384,
+   "generatorWord": 16384,
+   "decoded": 2.5001
+  },
+  {
+   "id": "vol7.5",
+   "asked": "Volume: sea Volume väärtuseks 7.50",
+   "userReading": "7.50",
+   "param": "VOLUME_GAIN",
+   "shown": 7.5,
+   "deviceWord": 49151,
+   "generatorWord": 49151,
+   "decoded": 7.5001
+  },
+  {
+   "id": "vlvl-10",
+   "asked": "Volume: sea Level väärtuseks -10.0 dB",
+   "userReading": "output level -10.0dB",
+   "param": "VOLUME_LEVEL",
+   "shown": -10,
+   "deviceWord": 45874,
+   "generatorWord": 45874,
+   "decoded": -9.9997,
+   "accidental": [
+    {
+     "param": "VOLUME_TAPER",
+     "before": "LOG 20A",
+     "after": "LOG 30A"
+    }
+   ]
+  },
+  {
+   "id": "bal",
+   "asked": "Volume: keera Balance vasakule umbes poole peale (kirjuta täpselt, mida näitab)",
+   "userReading": "-67.00",
+   "param": "VOLUME_BAL",
+   "shown": -67,
+   "deviceWord": 10813,
+   "generatorWord": 10813,
+   "decoded": -67.0003
+  }
+ ],
+ "notMeasured": [
+  "Input Ratio / Attack / Release scales",
+  "Volume Pan L/R",
+  "values between the measured points"
+ ],
+ "resultsSha256": "a3e771a0969faf0530867a708a1d65531d5b01fd0dc2e0488588d64137bbe4e5"
+}
