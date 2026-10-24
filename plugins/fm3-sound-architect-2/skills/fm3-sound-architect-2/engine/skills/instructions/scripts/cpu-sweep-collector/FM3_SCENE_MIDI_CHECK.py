@@ -48,7 +48,8 @@ def run(pack, session, port_path):
         S.check(len(base) == 257, 'Scene MIDI plokk ei vastanud ootuspäraselt (%d väärtust)' % len(base))
         res['baseline'] = {'frames': frames, 'words': base}
         print('Algseis loetud: 257 väärtust, nullist erinevaid %d.' % sum(1 for v in base if v))
-        input('\nAva FM3-l Scene MIDI plokk: LAYOUT, NAV-nuppudega reas 1 esimene plokk (MIDI), siis EDIT. Kui leht on avatud, vajuta Enter. ')
+        where = manifest.get('blockWhere', 'reas 1 esimene plokk (MIDI)')
+        input('\nAva FM3-l Scene MIDI plokk: LAYOUT, NAV-nuppudega %s, siis EDIT. Kui leht on avatud, vajuta Enter. ' % where)
         prev = base; steps = list(manifest['steps'])
         n = 0
         while True:
