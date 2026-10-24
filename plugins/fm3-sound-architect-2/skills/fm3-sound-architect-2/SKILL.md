@@ -50,7 +50,11 @@ Volume/Pan 1 praegune FW13 15-sõnaline A–D kirje on nüüd olemas. Sound-spec
 `controls` kasutab `block:"volpan"`: GAIN, BAL, PANL, PANR ja LEVEL; eraldi
 `allow:["enum-labels"]` korral ka TAPER, BYPASSMODE ja INPUTSELECT. Stseenide
 kanal/bypass: `blockScenes.volpan`. Praegu toetatakse ainult VOLUME-tüüpi;
-TYPE, Auto-Swell, kanali BYPASS-sõna ja meter jäävad säilitatavaks. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
+TYPE, Auto-Swell, kanali BYPASS-sõna ja meter jäävad säilitatavaks. Esipaneeli kontroll (24.10.2026, `references/fm3-step-diff-volume-type-20261024.json`):
+- TYPE VOLUME ↔ AUTO-SWELL muudab ainult ühte sõna ja teisi väärtusi ei puuduta.
+- Auto-Swell Threshold, Attack ja Hysteresis klappisid kodeeringuga.
+- Release 20 ms erines 0,05 %.
+- Generaator AUTO-SWELL-i veel ei kirjuta. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
 
 Volume'i jäädvustatud doonor on vaikimisi **kõigis kaheksas stseenis aktiivne,
 kanal A**. Uue soundi loomisel kirjuta `blockScenes.volpan`-i alati kõigi kaheksa

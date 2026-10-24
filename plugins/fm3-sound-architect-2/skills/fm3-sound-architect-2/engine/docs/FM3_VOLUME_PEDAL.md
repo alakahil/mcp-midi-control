@@ -67,3 +67,18 @@ Volume/Pan 1 ploki. Iga näit klappis generaatori kodeeringuga sõna-sõnalt:
 - Input Threshold −40 dB ja −80 dB ning Output Level +6 dB klappisid.
 - Input Threshold miinimum näitab **OFF** ja salvestub sõnana 0, mis vastab −100 dB-le. Generaator
   kirjutab nüüd −100 dB OFF-ina.
+
+## TYPE ja Auto-Swell (24.10.2026)
+
+Kviitung on `references/fm3-step-diff-volume-type-20261024.json`.
+
+- **TYPE**: VOLUME ↔ AUTO-SWELL on üks sõna (`VOLUME_TYPE`, 0 = VOLUME, 1 = AUTO-SWELL). Pärast tagasi
+  vahetamist näitas Volume endiselt 10.00, seega teisi sõnu tüübivahetus ei muuda.
+- **Auto-Swell väljad**:
+  - Threshold −40 dB klappis kodeeringuga sõna-sõnalt.
+  - Attack 100 ms ja Hysteresis 6.00 dB olid juba vaikimisi seatud ning nende salvestatud sõnad
+    võrduvad nende väärtuste kodeeringuga.
+  - Release'iks lasi FM3 valida 19,999 ms (sõna 42623). Generaator loeb selle sõna 19,989 ms-ina ja
+    kirjutaks 20 ms sõnana 42631, mis on 0,05 % erinevus. Logaritmiline kõver on lähedane, aga selles
+    punktis mitte sõna-täpne.
+- Generaator säilitab TYPE-i ja Auto-Swelli, aga ei kirjuta neid.
