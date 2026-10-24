@@ -1,0 +1,60 @@
+// Regression for the FM3_LABEL_SWEEP.py collector against a simulated FM3 (fake_label_fm3.py).
+// Offline: no serial port, no device. Builds the real pack (tools/fm3/label-sweep-build.mjs), then
+// checks that the collector sends only one edit-buffer dump and read-only requests, sweeps every
+// list parameter of the blocks in the preset, skips silent absent blocks, and stops at the first
+// device change (grid or block), at a missing echo, or when the user does not see the name.
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+const check=(v,m)=>{if(!v)throw Error(m)};
+const root=fileURLToPath(new URL('../../',import.meta.url));
+const here=path.join(root,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts');
+const harness=path.join(here,'cpu-sweep-collector/fake_label_fm3.py');
+const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-labels-'));
+const run=(pack,session,...args)=>{
+  const out=execFileSync('python3',['-B',harness,pack,session,...args],{encoding:'utf8'});
+  const fake=JSON.parse(out.split('\n').find(l=>l.startsWith('FAKE ')).slice(5));
+  const f=path.join(session,'label-results.json');
+  return {fake,out,res:fs.existsSync(f)?JSON.parse(fs.readFileSync(f,'utf8')):null};
+};
+try{
+  const pack=path.join(tmp,'pack');execFileSync('node',[path.join(root,'tools/fm3/label-sweep-build.mjs'),pack],{stdio:'ignore'});
+  const m=JSON.parse(fs.readFileSync(path.join(pack,'manifest.json'),'utf8'));
+  const present=m.families.filter(f=>f.present),swept=present.reduce((n,f)=>n+f.params.reduce((a,p)=>a+p.count+m.extra,0),0);
+  // 1. normal run: every present list parameter swept with echoed indexes; absent blocks skipped
+  const a=run(pack,path.join(tmp,'s1'));
+  check(a.fake.exit==='ok'&&a.fake.dumpsReceived===1&&a.fake.otherFrames===0&&a.fake.refusedShapes===0,'normal run: '+JSON.stringify(a.fake));
+  const absent=m.families.length-present.length;
+  check(a.fake.labelRequests===1+swept+2*absent,'request count '+a.fake.labelRequests+' vs '+(1+swept+2*absent));
+  check(a.res.pilot.unchanged&&a.res.finalUnchanged&&a.res.baselineMatchesPack.grid&&a.res.baselineMatchesPack.blocks,'safety reads');
+  const sw=a.res.families.filter(f=>!f.skipped);check(sw.length===present.length&&a.res.families.filter(f=>f.skipped).length===absent,'present swept, absent skipped');
+  for(const f of sw)for(const p of f.params){check(p.texts.length===p.count+m.extra&&!p.noReply.length&&!p.echoMismatch.length,'complete '+f.slug+'.'+p.name);
+    check(p.texts.every((t,i)=>t===`L${f.effectId}.${p.paramId}.${i}`),'texts '+f.slug+'.'+p.name);}
+  // 2. absent blocks that do answer are swept too
+  const b=run(pack,path.join(tmp,'s2'),'--absent-text');
+  check(b.fake.exit==='ok'&&b.res.families.every(f=>!f.skipped)&&b.fake.labelRequests===1+m.requests+2*absent,'absent blocks with text are swept');
+  // 3. a grid change after the pilot request stops before the sweep
+  const c=run(pack,path.join(tmp,'s3'),'--change-after','0');
+  check(c.fake.exit.includes('PEATUS: ruudustik muutus pärast esimest päringut')&&c.fake.labelRequests===1&&c.res.families.length===0,'grid change stops: '+c.fake.exit);
+  // 4. a block change during the sweep stops after that block
+  const d=run(pack,path.join(tmp,'s4'),'--block-change-after','5');
+  check(d.fake.exit.includes('PEATUS: plokk amp muutus')&&!d.res.finalUnchanged,'block change stops: '+d.fake.exit);
+  // 5. a reply that does not echo the requested index stops at the pilot
+  const e=run(pack,path.join(tmp,'s5'),'--no-echo');
+  check(e.fake.exit.includes('Esimene päring ei andnud')&&e.fake.labelRequests===1,'no echo stops');
+  // 6. the user does not see the name: stop after the dump, nothing else sent
+  const g=run(pack,path.join(tmp,'s6'),'--answer','e');
+  check(g.fake.exit.includes('redaktsioonipuhvrisse')&&g.fake.labelRequests===0&&g.fake.bulkReads===0,'name refusal stops');
+  // 7. a list parameter that never answers is given up after three requests
+  const sp=present.find(f=>f.effectId===m.pilot.effectId).params.find(p=>p.paramId!==m.pilot.paramId&&p.count>3);
+  const q=run(pack,path.join(tmp,'s8'),'--silent-param',String(sp.paramId)),qp=q.res.families.find(f=>f.effectId===m.pilot.effectId).params.find(p=>p.paramId===sp.paramId);
+  check(q.fake.exit==='ok'&&qp.stopped&&qp.texts.length===3&&q.fake.labelRequests===a.fake.labelRequests-(sp.count+m.extra-3),'silent parameter given up');
+  // 8. tampered preset refused before any device write
+  const t=path.join(tmp,'tampered');fs.cpSync(pack,t,{recursive:true});const s=fs.readFileSync(path.join(t,'SWEEP.syx'));s[100]^=1;fs.writeFileSync(path.join(t,'SWEEP.syx'),s);
+  const h=run(t,path.join(tmp,'s7'));check(h.fake.exit.includes('SHA-256 mismatch')&&h.fake.dumpsReceived===0,'tampered refused');
+  for(const sc of ['FM3_LABEL_SWEEP.py','FM3_READ_PROBE.py'])
+    check(JSON.parse(execFileSync('python3',['-B',path.join(here,'cpu-sweep-collector',sc),'--self-test'],{encoding:'utf8'}).trim().split('\n').pop()).selfTest==='passed',sc+' self-test');
+  console.log(JSON.stringify({scenarios:8,requestsSimulated:a.fake.labelRequests,deviceIO:false}));
+}finally{fs.rmSync(tmp,{recursive:true,force:true});}
