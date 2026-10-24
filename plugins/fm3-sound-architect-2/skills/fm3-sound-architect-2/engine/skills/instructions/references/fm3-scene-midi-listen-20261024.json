@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "preset": {
+  "name": "SCENE MIDI SEND",
+  "sceneMidi": "every scene N: PC channel 3 program N, CC 20 = 10*N on channel 3"
+ },
+ "method": "Edit-buffer load (7F 00) only; the script then sent nothing and recorded every raw byte on the FM3 USB serial port while the user selected scenes 2, 3, 8, 1 on the FM3.",
+ "afterLoad": {
+  "frames": 10,
+  "kind": "fn=0x64 dump acknowledgements"
+ },
+ "steps": [
+  {
+   "scene": 2,
+   "userNote": "ok",
+   "bytesReceived": 0
+  },
+  {
+   "scene": 3,
+   "userNote": "ok",
+   "bytesReceived": 0
+  },
+  {
+   "scene": 8,
+   "userNote": "ok",
+   "bytesReceived": 0
+  },
+  {
+   "scene": 1,
+   "userNote": "ok",
+   "bytesReceived": 0
+  }
+ ],
+ "finding": "The FM3 does not send Scene MIDI commands over its USB port. Whether they go out on the MIDI OUT jack, and with which program byte, needs a MIDI interface or a MIDI device on MIDI OUT.",
+ "resultsSha256": "1ca454a7025783f2b39aa08d8e844ef63561fe36e53fa01a0907c88ae3c46de6"
+}

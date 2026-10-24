@@ -55,6 +55,8 @@ jobs:
           node tools/fm3/read-value-ingest.mjs
           node tools/fm3/pedal-check-ingest.mjs
           node tools/fm3/scene-midi-ingest.mjs
+          node tools/fm3/scene-midi-listen-ingest.mjs
+          python3 -B tools/fm3/test-scene-midi-listen.py
           node tools/fm3/test-read-requests.mjs
           node tools/fm3/test-label-sweep-collector.mjs
           node tools/fm3/label-sweep-ingest.mjs

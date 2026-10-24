@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2105,
-  "filePaths": 2309,
+  "uniqueContents": 2107,
+  "filePaths": 2311,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1389,6 +1389,12 @@
       "bytes": 5025,
       "paths": [
         "references/geq-full-20261010-194115/step-115-5921def5f9/capture.json"
+      ]
+    },
+    "1ca454a7025783f2b39aa08d8e844ef63561fe36e53fa01a0907c88ae3c46de6": {
+      "bytes": 1596,
+      "paths": [
+        "references/fm3-scene-midi-listen-20261024-results.json"
       ]
     },
     "1cad82411062c775fe4ef5f9837e808e21ea237645d3c77c9e3f2763bf5663a8": {
@@ -6111,6 +6117,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-132-1d359632dc/donor.syx"
+      ]
+    },
+    "7d0f10fe32bd9da42b2bbe237ee54f90bff8f7eb2f2be3b03045480a64112e7b": {
+      "bytes": 1052,
+      "paths": [
+        "references/fm3-scene-midi-listen-20261024.json"
       ]
     },
     "7d6fc4c463e245f095b783e8e8148413e919b03cce8a4b1c4064001edaf13f4a": {
