@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2113,
-  "filePaths": 2317,
+  "uniqueContents": 2115,
+  "filePaths": 2319,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1157,6 +1157,12 @@
         "references/reverb-batch-20261006-181951/capture-20261006T151228-65854467e6/pair.json"
       ]
     },
+    "17a91e0e09acee46bda7eb781dc3e4c4e92100a2d7f3917dab887db6b6fabc14": {
+      "bytes": 2808,
+      "paths": [
+        "references/fm3-step-diff-volume-type-20261024.json"
+      ]
+    },
     "17bc8786fa9b8c550205269b7e4f37bd30e3a4049124b551076b435a3726acbd": {
       "bytes": 2674,
       "paths": [
@@ -1657,6 +1663,12 @@
       "bytes": 24680,
       "paths": [
         "examples/FM3_SA_TEST_MODEL_CAB_export.syx"
+      ]
+    },
+    "21e61d02262cac45d499e962714dc0401714912244e05a14c161165bac94e519": {
+      "bytes": 3506,
+      "paths": [
+        "references/fm3-auto-swell-verify-20261024-results.json"
       ]
     },
     "21f40e37d4c2fa6d09cbc0b062f245a5713891513826d4b5332e18c8db84268f": {
@@ -6333,12 +6345,6 @@
         "references/drive-controls-20261006-123230/step-08-89cea10be6/capture.json"
       ]
     },
-    "809199f72bffc80180ac2b7d48d85530ac886dd3f9a8bdaed4addc7fc5d9fe0d": {
-      "bytes": 2789,
-      "paths": [
-        "references/fm3-step-diff-volume-type-20261024.json"
-      ]
-    },
     "80bd0da1fc02d50b72264cdd38ad0a06a4c3e3a99eefdb2a416bbfde3837705c": {
       "bytes": 24680,
       "paths": [
@@ -7327,6 +7333,12 @@
       "bytes": 2686,
       "paths": [
         "references/geq-full-20261010-194115/step-005-85115b89d4/result.json"
+      ]
+    },
+    "9587de6e34974975332e5330ef910eb51bfe66024b02f8f18c7f8957f16ba9b2": {
+      "bytes": 1310,
+      "paths": [
+        "references/fm3-auto-swell-verify-20261024.json"
       ]
     },
     "95911cba471c5b37a433a6d288222496d204e2be6d86590ede3342cda7341eaf": {
