@@ -8,6 +8,9 @@ must be one of these read-only shapes, checked byte by byte before anything is s
 
   fn=0x01 sub=0x2E, zero target          grid + meters (as FM3_GRID_CHECK.py)
   fn=0x01 sub=0x1F eid pid, zero value   current display text of one parameter
+  fn=0x01 sub=0x1F eid pid, float32(n)   label request for value n, n an integer 1..4095, as a float32
+  fn=0x01 sub=0x1F eid pid, int n        or as a plain 14-bit integer (FM3_LABEL_SWEEP.py / FM3_LABEL_PROBE.py;
+                                         sub 1F 00 is not a SET sub-action, SET is 09 00 / 52 00)
   fn=0x1F eid                            block bulk read (all values, all channels)
   fn=0x43, no payload                    edit-buffer dump
   fn=0x03 hi lo 00                       stored-preset dump (read only)
@@ -20,13 +23,25 @@ Usage:
   python3 FM3_READ_PROBE.py --self-test
 Close FM3-Edit and Fractal-Bot first (the USB port is exclusive).
 """
-import argparse, hashlib, json, sys, time
+import argparse, hashlib, json, math, struct, sys, time
 from pathlib import Path
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import FM3_CPU_SWEEP as S
 
 PREFIX = [0xf0, 0x00, 0x01, 0x74, S.MODEL]
+
+def float_septets(v):
+    """float32 as 5 septets, LSB first (the gen-3 fn=0x01 value field)."""
+    u = struct.unpack('<I', struct.pack('<f', float(v)))[0]
+    return [(u >> s) & 0x7f for s in (0, 7, 14, 21, 28)]
+
+def label_index(sept):
+    """The integer carried by a 5-septet float32 value field, else None."""
+    if len(sept) != 5 or sept[4] > 0x0f: return None
+    u = sum((b & 0x7f) << (7 * i) for i, b in enumerate(sept))
+    v = struct.unpack('<f', struct.pack('<I', u))[0]
+    return int(v) if math.isfinite(v) and v >= 0 and float(int(v)) == v and float_septets(int(v)) == list(sept) else None
 
 def read_only_shape(frame):
     """Return the request kind if `frame` is one of the allowed read-only shapes, else None."""
@@ -36,6 +51,11 @@ def read_only_shape(frame):
     fn, payload = f[5], f[6:-2]
     if fn == 0x01 and len(payload) == 15 and payload[0] == 0x2e and payload[1:] == [0] * 14: return 'grid'
     if fn == 0x01 and len(payload) == 15 and payload[0] == 0x1f and payload[1] == 0 and payload[6:] == [0] * 9: return 'display'
+    if fn == 0x01 and len(payload) == 15 and payload[0] == 0x1f and payload[1] == 0 and payload[11:] == [0] * 4:
+        idx = label_index(payload[6:11])
+        if idx is not None and 1 <= idx <= 4095: return 'label'
+        v = payload[6] | payload[7] << 7
+        if payload[8:11] == [0, 0, 0] and 1 <= v <= 4095: return 'labelInt'
     if fn == 0x1f and len(payload) == 2: return 'bulk'
     if fn == 0x43 and payload == []: return 'editBufferDump'
     if fn == 0x03 and len(payload) == 3 and payload[2] == 0: return 'storedDump'
@@ -90,17 +110,30 @@ def run(pack, session, port_path):
 def self_test():
     ok = [bytes.fromhex(h) for h in ['f000017411012e00000000000000000000000000003bf7', 'f000017411011f003a00060000000000000000000036f7',
                                        'f0000174111f3a0031f7', 'f0000174114357f7', 'f0000174110303330027f7']]
-    S.check([read_only_shape(f) for f in ok] == ['grid', 'display', 'bulk', 'editBufferDump', 'storedDump'], 'allowed shapes')
     def fix(h):
         f = bytearray(bytes.fromhex(h)); f[-2] = S.checksum(list(f[:-2])); return bytes(f)
+    def lab(sub, sept, tail=(0, 0, 0, 0)):
+        return fix(bytes([0xf0, 0, 1, 0x74, S.MODEL, 1] + list(sub) + [0x3a, 0, 6, 0] + list(sept) + list(tail) + [0, 0xf7]).hex())
+    S.check(float_septets(16) == [0, 0, 0, 0x0c, 0x04] and label_index(float_septets(335)) == 335, 'float septets')
+    ok += [lab((0x1f, 0), float_septets(16)), lab((0x1f, 0), float_septets(4095)), lab((0x1f, 0), [18, 0, 0, 0, 0])]
+    S.check([read_only_shape(f) for f in ok] == ['grid', 'display', 'bulk', 'editBufferDump', 'storedDump', 'label', 'label', 'labelInt'], 'allowed shapes')
     bad = [fix('f000017411010900' + '3a0006' + '00' * 9 + '00f7'),      # sub 09 00 = SET with zero value
            fix('f00001741101520' + '03a0006' + '00' * 9 + '00f7'),      # continuous SET
            fix('f000017411011f003a000600000000010000000000' + '00f7'),  # display read carrying a value
            fix('f00001741101260000000000f7'),                           # store (sub 0x26)
            fix('f0000174110303330100f7'),                               # stored dump with non-zero flag
-           bytes.fromhex('f0000174111f3a0030f7')]                       # bad checksum
+           bytes.fromhex('f0000174111f3a0030f7'),                       # bad checksum
+           lab((0x09, 0), float_septets(16)),                            # discrete SET of ordinal 16
+           lab((0x52, 0), float_septets(0.5)),                           # continuous SET
+           lab((0x1f, 0), float_septets(0.5)),                           # label read of a non-integer
+           lab((0x1f, 0), float_septets(4096)),                          # label index out of range
+           lab((0x1f, 0), float_septets(-1)),                            # negative
+           lab((0x1f, 0), float_septets(16), (0, 0, 0, 1)),              # trailing byte set
+           lab((0x1f, 0), [0, 0x20, 0, 0, 0]),                           # integer 4096
+           lab((0x1f, 0), [0, 0, 0, 0x7c, 0x07]),                        # float +infinity
+           lab((0x09, 0), [18, 0, 0, 0, 0])]                             # SET sub-action with an integer
     S.check(all(read_only_shape(f) is None for f in bad), 'refused shapes')
-    print(json.dumps({'selfTest': 'passed', 'allowed': 5, 'refused': len(bad)}))
+    print(json.dumps({'selfTest': 'passed', 'allowed': len(ok), 'refused': len(bad)}))
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)

@@ -1,0 +1,372 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "auditPoint": 3,
+ "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
+ "request": {
+  "shape": "fn=0x01 sub=0x1F 00 eid(14b) pid(14b) index(14b) 00*7",
+  "meaning": "label of list index n; reply value field zero; sub-action 1F 00 is not a SET sub-action",
+  "probe": [
+   {
+    "id": "A0",
+    "what": "amp type, value 0 (control)",
+    "field": "zero",
+    "deviceText": "59 Bassguy Bright",
+    "dictionaryLabel": "59 Bassguy Bright",
+    "matches": true
+   },
+   {
+    "id": "A1",
+    "what": "amp type, integer 1",
+    "field": "integer",
+    "deviceText": "65 Bassguy Normal",
+    "dictionaryLabel": "65 Bassguy Normal",
+    "matches": true
+   },
+   {
+    "id": "A2",
+    "what": "amp type, integer 18 (stored)",
+    "field": "integer",
+    "deviceText": "USA MK IV Rhythm 1",
+    "dictionaryLabel": "USA MK IV Rhythm 1",
+    "matches": true
+   },
+   {
+    "id": "A3",
+    "what": "amp type, float 18 (stored)",
+    "field": "float32",
+    "deviceText": "4",
+    "dictionaryLabel": "USA MK IV Rhythm 1",
+    "matches": false
+   },
+   {
+    "id": "R0",
+    "what": "reverb type, value 0 (control)",
+    "field": "zero",
+    "deviceText": "Room: Small Room",
+    "dictionaryLabel": "Room: Small Room",
+    "matches": true
+   },
+   {
+    "id": "R1",
+    "what": "reverb type, integer 5",
+    "field": "integer",
+    "deviceText": "Hall: Large Hall",
+    "dictionaryLabel": "Hall: Large Hall",
+    "matches": true
+   },
+   {
+    "id": "R2",
+    "what": "reverb type, integer 2 (stored)",
+    "field": "integer",
+    "deviceText": "Room: Large Room",
+    "dictionaryLabel": "Room: Large Room",
+    "matches": true
+   }
+  ],
+  "probeResultsSha256": "9f230931d0c26b5a65903b31993e5b3d9c5d6f21fa63078035e02c3d46833a10"
+ },
+ "sweep": {
+  "families": [
+   {
+    "slug": "amp",
+    "effectId": 58,
+    "inPreset": true,
+    "listParams": 36,
+    "entries": 782,
+    "match": 782
+   },
+   {
+    "slug": "cab",
+    "effectId": 62,
+    "inPreset": true,
+    "listParams": 25,
+    "entries": 172,
+    "match": 172
+   },
+   {
+    "slug": "drive",
+    "effectId": 118,
+    "inPreset": true,
+    "listParams": 12,
+    "entries": 163,
+    "match": 163
+   },
+   {
+    "slug": "delay",
+    "effectId": 70,
+    "inPreset": true,
+    "listParams": 28,
+    "entries": 598,
+    "match": 598
+   },
+   {
+    "slug": "reverb",
+    "effectId": 66,
+    "inPreset": true,
+    "listParams": 15,
+    "entries": 194,
+    "match": 194
+   },
+   {
+    "slug": "phaser",
+    "effectId": 90,
+    "inPreset": false,
+    "listParams": 13,
+    "entries": 167,
+    "match": 167
+   },
+   {
+    "slug": "compressor",
+    "effectId": 46,
+    "inPreset": true,
+    "listParams": 11,
+    "entries": 62,
+    "match": 62
+   },
+   {
+    "slug": "chorus",
+    "effectId": 78,
+    "inPreset": false,
+    "listParams": 10,
+    "entries": 213,
+    "match": 213
+   },
+   {
+    "slug": "flanger",
+    "effectId": 82,
+    "inPreset": false,
+    "listParams": 14,
+    "entries": 186,
+    "match": 186
+   },
+   {
+    "slug": "wah",
+    "effectId": 94,
+    "inPreset": false,
+    "listParams": 6,
+    "entries": 23,
+    "match": 23
+   },
+   {
+    "slug": "tremolo",
+    "effectId": 106,
+    "inPreset": false,
+    "listParams": 7,
+    "entries": 105,
+    "match": 105
+   },
+   {
+    "slug": "rotary",
+    "effectId": 86,
+    "inPreset": false,
+    "listParams": 5,
+    "entries": 89,
+    "match": 89
+   },
+   {
+    "slug": "pitch",
+    "effectId": 110,
+    "inPreset": false,
+    "listParams": 33,
+    "entries": 924,
+    "match": 924
+   },
+   {
+    "slug": "filter",
+    "effectId": 114,
+    "inPreset": false,
+    "listParams": 12,
+    "entries": 160,
+    "match": 160
+   },
+   {
+    "slug": "peq",
+    "effectId": 54,
+    "inPreset": false,
+    "listParams": 15,
+    "entries": 48,
+    "match": 48
+   },
+   {
+    "slug": "geq",
+    "effectId": 50,
+    "inPreset": false,
+    "listParams": 4,
+    "entries": 24,
+    "match": 24
+   },
+   {
+    "slug": "enhancer",
+    "effectId": 122,
+    "inPreset": false,
+    "listParams": 4,
+    "entries": 11,
+    "match": 11
+   },
+   {
+    "slug": "out1",
+    "effectId": 42,
+    "inPreset": true,
+    "listParams": 1,
+    "entries": 2,
+    "match": 2
+   },
+   {
+    "slug": "volpan",
+    "effectId": 102,
+    "inPreset": false,
+    "listParams": 5,
+    "entries": 16,
+    "match": 16
+   },
+   {
+    "slug": "in1",
+    "effectId": 37,
+    "inPreset": true,
+    "listParams": 4,
+    "entries": 20,
+    "match": 20
+   },
+   {
+    "slug": "plex",
+    "effectId": 178,
+    "inPreset": true,
+    "listParams": 20,
+    "entries": 794,
+    "match": 794
+   },
+   {
+    "slug": "multiband",
+    "effectId": 154,
+    "inPreset": false,
+    "listParams": 12,
+    "entries": 24,
+    "match": 24
+   },
+   {
+    "slug": "synth",
+    "effectId": 130,
+    "inPreset": false,
+    "listParams": 10,
+    "entries": 45,
+    "match": 45
+   },
+   {
+    "slug": "looper",
+    "effectId": 166,
+    "inPreset": false,
+    "listParams": 6,
+    "entries": 14,
+    "match": 14
+   },
+   {
+    "slug": "gate",
+    "effectId": 146,
+    "inPreset": false,
+    "listParams": 7,
+    "entries": 26,
+    "match": 26
+   },
+   {
+    "slug": "formant",
+    "effectId": 98,
+    "inPreset": false,
+    "listParams": 6,
+    "entries": 37,
+    "match": 37
+   },
+   {
+    "slug": "tentap",
+    "effectId": 158,
+    "inPreset": false,
+    "listParams": 10,
+    "entries": 258,
+    "match": 258
+   },
+   {
+    "slug": "megatap",
+    "effectId": 138,
+    "inPreset": false,
+    "listParams": 9,
+    "entries": 54,
+    "match": 54
+   },
+   {
+    "slug": "ringmod",
+    "effectId": 150,
+    "inPreset": false,
+    "listParams": 6,
+    "entries": 14,
+    "match": 14
+   },
+   {
+    "slug": "resonator",
+    "effectId": 162,
+    "inPreset": false,
+    "listParams": 9,
+    "entries": 26,
+    "match": 26
+   },
+   {
+    "slug": "mixer",
+    "effectId": 126,
+    "inPreset": true,
+    "listParams": 3,
+    "entries": 6,
+    "match": 6
+   },
+   {
+    "slug": "multiplexer",
+    "effectId": 191,
+    "inPreset": false,
+    "listParams": 5,
+    "entries": 18,
+    "match": 18
+   }
+  ],
+  "listParams": 363,
+  "entriesCompared": 5275,
+  "exact": 5234,
+  "trailingSpaceOnly": 41,
+  "trailingSpaceNote": "the dictionary label ends in a space; the reply text is read with trailing spaces trimmed, so a device trailing space cannot be seen",
+  "mismatches": 0,
+  "deviceOnlyWords": [
+   {
+    "param": "pitch.PITCH_TRACKMODE",
+    "word": 0,
+    "deviceText": "OFF"
+   },
+   {
+    "param": "pitch.PITCH_TEMPO",
+    "word": 0,
+    "deviceText": "NONE"
+   }
+  ],
+  "notRequested": [
+   {
+    "param": "pitch.PITCH_TRACKMODE",
+    "word": 2,
+    "dictionary": "CHORDS"
+   },
+   {
+    "param": "pitch.PITCH_TEMPO",
+    "word": 78,
+    "dictionary": "63/64"
+   }
+  ],
+  "blocksNotInPreset": "answered too: labels do not need the block in the preset",
+  "resultsSha256": "7ed3c83acc785e8e4cdcf06b4df785dbfb169963716b1a19c8855dfdedc17f69"
+ },
+ "safety": [
+  "Edit-buffer loads only; grid + every block of the preset re-read after the first request and after every block: unchanged.",
+  "A first sweep (float32 form) stopped at the pilot without a label. A second sweep (integer form, two words past every list end, no pacing) froze the FM3 after the amp block; the user power-cycled it. The third sweep (in-range words only, 20 ms pacing, health check every 50 requests) completed. Which of the two changes avoided the freeze is not known: never request words past a list end."
+ ],
+ "notMeasured": [
+  "words past the dictionary end (deliberately not requested)",
+  "the last entry of the enumBase-1 lists above",
+  "labels of knob parameters (short reply without text)"
+ ]
+}

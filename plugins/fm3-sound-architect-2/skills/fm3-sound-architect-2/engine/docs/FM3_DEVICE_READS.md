@@ -16,10 +16,33 @@ salvesta kunagi.
 | `fn=0x03` salvestatud koha dump | Tavaline 0x77/0x78/0x79 dump, mida meie lugeja avab (CRC kehtib). | jah |
 | `fn=0x01 sub=0x2E` ruudustik + CPU | 48 lahtrit ja CPU (punkt 5). | jah |
 | `fn=0x43` redaktsioonipuhvri dump | 0x51 + 64 × 0x52 + 0x53: 128 KB sisemine kujutis, mitte preseti keha. Dekodeerimata. | ei |
-| `fn=0x01 sub=0x1F` näidutekst | Nuppude kohta teksti ei anna. Tüübiparameetrite puhul annab päringus oleva väärtuse (0) nime, mitte praeguse tüübi nime: kõik 6 juhtu klappisid sõnastiku indeksi 0 nimega, kuigi salvestatud tüüp oli muu. | ei |
+| `fn=0x01 sub=0x1F` näidutekst | Nuppude kohta teksti ei anna. Loendiparameetrite puhul annab päringu väärtusväljal oleva indeksi nime, mitte praeguse väärtuse nime. Indeks peab olema täisarv (14 bitti); float32 kujul nime ei tule. | jah, loendite nimede kontrolliks |
 
-`sub=0x1F` tulemus tähendab, et fractal-midi/fractal-gen3 „current type name“ lugemine näitab
-esimest tüübinime. Ka varasem FM9 tõend oli samade indeks-0 nimedega. Parandus on eraldi töö.
+Seega näitab fractal-midi/fractal-gen3 „current type name“ lugemine nullväärtusega alati esimest
+tüübinime. Ka varasem FM9 tõend oli samade indeks-0 nimedega. Parandus on eraldi töö.
+
+## Loendite nimed seadmest (auditi punkt 3, 2026-10-24)
+
+Kviitung on `references/fm3-label-sweep-20261024.json` (`node tools/fm3/label-sweep-ingest.mjs`).
+Toorandmed on `fm3-label-probe-20261024-results.json` ja `fm3-label-sweep-20261024-results.json`.
+Kogujad on `FM3_LABEL_PROBE.py` ja `FM3_LABEL_SWEEP.py`.
+
+- **Päringu kuju**: `fn=0x01 sub=0x1F 00`, ploki ID, parameetri ID ja loendi indeks täisarvuna.
+  Vastuses on selle indeksi nimi. Lühike täpsustuskatse proovis 7 kuju ja selgitas selle välja.
+- **Tulemus**: küsiti kõigi 32 generaatori pere 363 loendiparameetri kõik sõnastikus olevad sõnad,
+  kokku 5275 nime. Kõik vastasid sõnastikule salvestatud sõna kaupa (sõna w = `enum[w − enumBase]`):
+  - 5234 nime klappisid täpselt;
+  - 41 nime erinesid ainult lõputühiku poolest. Vastuse tekstist eemaldatakse lõputühikud, seega
+    seadme võimalikku lõputühikut ei näe.
+- **Seadme lisasõnad**: kahe Pitch-loendi (`PITCH_TRACKMODE`, `PITCH_TEMPO`, `enumBase` 1) sõna 0 on
+  seadmes „OFF“ / „NONE“. Generaator seda sõna ei kirjuta. Nende loendite viimast sõna ei küsitud.
+- **Plokid väljaspool presetti** vastasid samuti, seega nimede küsimiseks ei pea plokk presetis olema.
+- **Ohutus**: kirjutati ainult redaktsioonipuhvrisse. Ruudustik ja preseti kõik plokid loeti pärast
+  esimest päringut ja iga ploki järel üle ning need ei muutunud.
+- **Hangumine**: üks katse küsis iga loendi lõpust kaks sõna üle ja saatis päringuid ilma pausita. See
+  hangutas FM3 pärast Amp-plokki ja kasutaja pidi selle välja ja sisse lülitama. Õnnestunud katse küsis
+  ainult sõnastiku vahemikku, tegi päringute vahel 20 ms pausi ja kontrollis iga 50 päringu järel, kas
+  FM3 vastab. Kumb muudatus hangumise ära hoidis, pole teada. **Ära küsi sõnu üle loendi lõpu.**
 
 ## Väärtuste kontroll (punktid 3, 4, 6)
 
