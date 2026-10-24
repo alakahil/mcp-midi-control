@@ -1,0 +1,79 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-24",
+ "auditPoint": 4,
+ "method": "FM3_STEP_DIFF.py: the generated preset STEP 6 GATE PAN in the edit buffer only; one front-panel field per step; Input 1 and Volume/Pan 1 read with fn=0x1F after each step.",
+ "findings": [
+  "Every reading equals the generator decoding of the stored word at the precision the FM3 shows: Input Ratio 4.00 / 10.00, Attack 10.03 ms, Release 199.89 ms, Volume Pan Left -50.0, Pan Right 50.0 (Pan words equal the encoding exactly).",
+  "Where the knob could not reach the asked value (Attack 10 ms, Release 200 ms) the FM3 offered neighbouring steps; the generator still writes the exact asked value.",
+  "Input Release (log 10..1000 ms) showed 199.89 ms at word 42623, exactly the generator decoding. Volume Release uses the same 100:1 log curve; the test-5 reading of 19.999 ms at the same word is therefore most likely 19.989 misread (the generated 20 ms word 42631 showed 20.000 as decoded, references/fm3-auto-swell-verify-20261024.json)."
+ ],
+ "steps": [
+  {
+   "id": "ratio4",
+   "asked": "Input 1: sea Ratio väärtuseks 4.00",
+   "userReading": "4.00",
+   "param": "INPUT_RATIO",
+   "deviceWord": 30331,
+   "generatorDecodes": 4.0009,
+   "fm3Shows": 4,
+   "generatorWordForAsked": 30326
+  },
+  {
+   "id": "att10",
+   "asked": "Input 1: sea Attack väärtuseks 10.0 ms",
+   "userReading": "sai valida kas 9.96 või 10.03, valisin 10.03",
+   "param": "INPUT_ATTACK",
+   "deviceWord": 43717,
+   "generatorDecodes": 10.0292,
+   "fm3Shows": 10.03,
+   "generatorWordForAsked": 43689
+  },
+  {
+   "id": "rel200",
+   "asked": "Input 1: sea Release väärtuseks 200 ms",
+   "userReading": "sai valida 199.89 ms või 200.79 ms, valisin 199.89",
+   "param": "INPUT_RELEASE",
+   "deviceWord": 42623,
+   "generatorDecodes": 199.8897,
+   "fm3Shows": 199.89,
+   "generatorWordForAsked": 42631
+  },
+  {
+   "id": "ratio10",
+   "asked": "Input 1: sea Ratio väärtuseks 10.0",
+   "userReading": "10.00",
+   "param": "INPUT_RATIO",
+   "deviceWord": 50363,
+   "generatorDecodes": 9.9964,
+   "fm3Shows": 10,
+   "generatorWordForAsked": 50371
+  },
+  {
+   "id": "panl-50",
+   "asked": "Volume: sea Pan Left väärtuseks -50 (või L50; kirjuta täpselt, mida näitab)",
+   "userReading": "-50.0",
+   "param": "VOLUME_PANL",
+   "deviceWord": 16367,
+   "generatorDecodes": -50.0003,
+   "fm3Shows": -50,
+   "generatorWordForAsked": 16367
+  },
+  {
+   "id": "panr50",
+   "asked": "Volume: sea Pan Right väärtuseks 50 (või R50; kirjuta täpselt, mida näitab)",
+   "userReading": "50.0",
+   "param": "VOLUME_PANR",
+   "deviceWord": 49167,
+   "generatorDecodes": 50.0003,
+   "fm3Shows": 50,
+   "generatorWordForAsked": 49167
+  }
+ ],
+ "notMeasured": [
+  "values between the measured points"
+ ],
+ "resultsSha256": "89d1b97d7bae3a7a23117b2818eca6ec024b558051e2572a63e13a5f4fa8bc2c"
+}
