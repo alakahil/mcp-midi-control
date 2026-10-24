@@ -10,8 +10,9 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.14 kandidaati: täpse Wah Min/Max-sisendi
-piiratud leping, tõenditasemete eristus ja lõppfaili sihtseose kontroll.
+Praegune lähtekood valmistab ette 0.3.18 väljalaset: GitHubi 23.–24.10.2026
+Scene MIDI, AUTO-SWELL, Input OFF, pedaali- ja skaalakatsete koondamine.
+Kehtiv tõendusulatus on plugina SKILL.md-s ning vastavate katsete kviitungites.
 Avaldamine, täpne commit ja käivitajajuhendi uuendus tuleb kinnitada
 väljalaskekviitungis. Versiooninumber üksi ei kinnita avaldamist.
 
@@ -91,7 +92,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 49 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 61 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.

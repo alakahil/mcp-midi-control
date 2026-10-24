@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.17`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.18`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -30,7 +30,18 @@ Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
 
-## Input gate ja Volume/Pan (0.3.15)
+## GitHubi andmete koondamine (0.3.18, 24.10.2026)
+
+0.3.18 sisaldab GitHubi põhiharu `93811dc6c4b9579fdd1076910443aba99773ab84`
+uusi andmeid: Scene MIDI PC/CC, Volume/Pan AUTO-SWELL, Input Threshold OFF,
+23.–24.10 seadme tagasilugemised, loendinimed, skaalapunktid ja pedaali vaatlus.
+Väljalaske enda täpne commit tuleb avaldamiskviitungist ja release-manifest.json-ist.
+Järgnevad kehtivad kokkuvõtted asendavad ajalooliste kviitungite „notMeasured”
+märked ainult konkreetselt lisandunud tõendi ulatuses. Varasemaid toorandmeid ei muudeta.
+Riistvarakinnitus puudutab nimetatud katsepresette ja punkte; uus kombinatsioon,
+täisvahemik, heli ja MIDI OUT-i tegelikud sõnumid vajavad eraldi tõendit.
+
+## Input gate ja Volume/Pan (0.3.15–0.3.18)
 
 Selles versioonis on piiratud Input 1 ja Volume/Pan 1 kirjutustugi.
 Tegelik avaldamine ja laaditud commit kinnitatakse väljalaskekviitungist. Input 1 viie arvparameetri
@@ -67,7 +78,7 @@ Esipaneeli kontroll (24.10.2026, `references/fm3-step-diff-volume-type-20261024.
   generaatori väärtuse ja genereeritud 20 ms näitas 20,000.
 Generaatori AUTO-SWELL preset kontrolliti seadmel (`references/fm3-auto-swell-verify-20261024.json`):
 - kõik plokid ja ruudustik loeti tagasi täpselt sellisena, nagu generaator need kirjutas;
-- ekraan näitas küsitud väärtusi: Attack 250 ms kui 249,99 ms ja Release 20 ms kui 20,000 ms. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
+- ekraan näitas küsitud väärtusi: Attack 250 ms kui 249,99 ms ja Release 20 ms kui 20,000 ms.
 
 Volume'i jäädvustatud doonor on vaikimisi **kõigis kaheksas stseenis aktiivne,
 kanal A**. Uue soundi loomisel kirjuta `blockScenes.volpan`-i alati kõigi kaheksa
@@ -77,9 +88,10 @@ kanali A GAIN-i muutmine mõjutab kõiki aktiivseid sama kanalit kasutavaid stse
 Ainult jäädvustatud ekspordi täpsel taasesitamisel võib doonori stseene säilitada.
 
 Ühe ekspordi plokimall ja Input-sõnade säilimine on seadmetõend. Uued
-Volume-väärtused, asukohad ja stseenikombinatsioonid on tarkvaraliselt kontrollitud
-ning skaalad tuginevad FW13 native/cache/XML-i ja kõveraklassi üldistusele.
-STORE/reload, heli/CPU ja täisvahemik pole sellega tõendatud. Globaalne Noisegate
+Volume-väärtused ja skaalad tuginevad FW13 native/cache/XML-i kõveraklassidele ning
+eespool loetletud 24.10 mõõtepunktidele. Uued asukohad ja stseenikombinatsioonid
+vajavad oma kontrolli. V04 STORE/reload on tõendatud allpool kirjeldatud katses;
+see ei tõenda kõigi uute presetite salvestamist, heli/CPU-d ega täisvahemikku. Globaalne Noisegate
 Offset / AC Line Frequency ei kuulu preseti sisusse. Wah Min/Max-i tõendusulatus
 ja `fullRangeEncodingProven=false` säilivad. Selle ekspordi kordamist pole vaja.
 
@@ -102,7 +114,8 @@ Kasutaja üks 23.10.2026 FW13 eksport kinnitas 25-sõnalise vaikeoleku ning kõi
 muude sisubaitide säilimise. Generaator taastab kogu mõõdetud keha täpselt.
 `--verify` võrdleb lõpp-SYX-i, TXT-i, speci ja aruannet. Selle sama sisu
 korduseksporti ei küsita. Uued paigutus/stseenikombinatsioonid on kontrollitud
-arvutis; pedaali toimimine, heli ja STORE/reload jäävad eraldi kontrollideks.
+arvutis; P1 pedaali järgimine on kinnitatud eespool nimetatud FM3-Editi vaatlusega.
+Täpsed kanna/varba arvud, heli ja selle pedaalipreseti STORE/reload on kontrollimata.
 `fullRangeEncodingProven=false` ning Wahi Min/Max-i tõendusulatus säilivad.
 
 `GAIN` käsiväärtus on seose korral kõigil A–D kanalitel blokeeritud. `LEVEL`,
@@ -350,7 +363,7 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   ja HOIATUS-ridu. Iga plokk peab olema In 1/Return/Synth'ist Out 1/Send'ini
   ühendatud; iga presetis olev plokk peab ruudustikul olema. `remove` eemaldab plokke (mitte In 1/Out 1/
   Amp/Cab; Send+Return koos), `duplicate` lisab teise eksemplari (drive2, delay2, compressor2, filter2–4 jt,
-  ainult tehasepresetites nähtud), `insert` lisab ka mixer/multiplexer ja scenemidi. Uued plokid: A, bypass; lülita
+  ainult tehasepresetites nähtud), `insert` lisab ka mixer/multiplexer ja scenemidi. Uued heliplokid: A, bypass; lülita
   sisse `blockScenes` abil. Tõend: kõik 384 tehase ruudustikku läbivad planeerija ja 4801/4801 sisendmaski
   taastuvad (`references/fm3-factory-grid-evidence.json`). **Seadmel kinnitatud** 2026-10-23: 7 testruudustikku
   (hargnemised, liitmised, 4 rida, Mixer, Multiplexer, Synth, eksemplarid, eemaldamine) lugesid tagasi 48/48
@@ -376,7 +389,7 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   lahter tühi). Paigutus dekodeeriti seadmel 24.10.2026: 11 esipaneeli muudatust, igaüks üks sõna, pluss PC järelkatse
   (`references/fm3-scene-midi-20261024.json`, `references/fm3-scene-midi-pc-20261024.json`). Kas sõnum stseeni vahetusel
   MIDI OUT pessa välja läheb ja kas saadetud PC on näidatud väärtus või ühe võrra väiksem, pole mõõdetud. USB kaudu
-  FM3 neid ei saada (`references/fm3-scene-midi-listen-20261024.json`).
+  selles katses sõnumeid ei täheldatud (`references/fm3-scene-midi-listen-20261024.json`).
   Detailid: `engine/docs/FM3_SCENE_MIDI.md`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
   (342 seadmes mõõdetud tüüpi + reverbi kvaliteet; piir 80 %, hoiatus üle 72 %).

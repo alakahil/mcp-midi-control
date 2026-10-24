@@ -72,4 +72,5 @@ V04 salvestati esipaneelilt kohta 436 ja loeti `fn=0x03` päringuga tagasi.
 
 - See tõendab, et seade hoiab kirjutatud väärtusi. Uute skaalade tähendust (nt dB ja ms näidud) see ei
   tõenda, sest FM3 ei anna nuppude näiduteksti.
-- Heli, pedaali füüsiline liikumine ja Scene MIDI on eraldi katsed.
+- Heli on mõõtmata. Pedaali järgimise ja Scene MIDI hilisemad katsed on kirjeldatud failides
+  `FM3_VOLUME_PEDAL.md` ja `FM3_SCENE_MIDI.md`; käesolev tagasilugemiskatse neid ei tõenda.
