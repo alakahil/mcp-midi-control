@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2107,
-  "filePaths": 2311,
+  "uniqueContents": 2109,
+  "filePaths": 2313,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1414,6 +1414,12 @@
       "paths": [
         "references/cab-batch-20261005-135019/capture-20261005T091341-b238d43a16/capture.json",
         "references/cab-batch-20261005-135600/capture-20261005T091341-b238d43a16/capture.json"
+      ]
+    },
+    "1d10324cb254d8921c54e540171e5ceff3a22f3f5be8725a2942d7a954bd62f2": {
+      "bytes": 2103,
+      "paths": [
+        "references/fm3-bit4-check-20261024.json"
       ]
     },
     "1d105d1b3108e1b715b702741f02369f799430323ab49669543bc2a307909cfc": {
@@ -9039,6 +9045,12 @@
       "bytes": 2527,
       "paths": [
         "references/filter-rea-20261012/step-006-4d624419d7/result.json"
+      ]
+    },
+    "b881406dc18f3f544fc268138de2d6500a6bf410fe6c23d0ea50c84928f2b803": {
+      "bytes": 2511,
+      "paths": [
+        "references/fm3-bit4-check-20261024-facts.json"
       ]
     },
     "b8994fcf800c7c3babff0a2c3b56a69300467bae475d241dd6136f523584a35d": {

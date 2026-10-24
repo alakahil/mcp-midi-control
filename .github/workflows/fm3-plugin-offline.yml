@@ -60,6 +60,8 @@ jobs:
           node tools/fm3/test-read-requests.mjs
           node tools/fm3/test-label-sweep-collector.mjs
           node tools/fm3/label-sweep-ingest.mjs
+          node tools/fm3/bit4-check-ingest.mjs
+          python3 -B tools/fm3/test-bit4-check.py
           node tools/fm3/cpu-sweep-ingest.mjs plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cpu-sweep-20261023-results.jsonl
       - name: Replay the pinned 0.3.11 remaining-modifier audit
         run: |

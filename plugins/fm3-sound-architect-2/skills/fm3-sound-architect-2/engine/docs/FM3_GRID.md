@@ -12,7 +12,14 @@ nihkel `260 + c·16 + r·4`.
 - **id**: ploki efekti-ID (In 1 = 37, Amp = 58, Mixer = 126, Return = 186 …), shunt = 1024 + järjenumber,
   tühi lahter = 0.
 - **sisendmask**: bitt k = sisend eelmise veeru reast k. Veerus 1 sisendeid pole.
-- Bitt 4 (väärtus 16) esineb 8 tehase liitmislahtris; tähendus on teadmata. Generaator seda ei kirjuta.
+- Bitt 4 (väärtus 16) esineb 8 tehasepreseti lahtris. Seitse neist on liitmised, üks on üksik shunt
+  jadareas. Generaator seda ei kirjuta. Seadmekatse (24.10.2026, `references/fm3-bit4-check-20261024.json`,
+  `FM3_BIT4_CHECK.py`):
+  - kasutaja valis FM3-l neli sellist tehasepresetti (109, 122, 83, 211);
+  - fw 13 salvestatud koopiad (CRC kehtib) ja ruudustiku lugemine sisaldasid bitti 4 täpselt samades
+    lahtrites nagu FW10 tehasefailid;
+  - LAYOUT ekraan näitas neis lahtrites ainult bittide 0–3 tavalisi kaableid ja bitti 4 miski ei tähistanud.
+  Seega pole bitil 4 seadmes nähtavat tähendust. Mõju helile pole mõõdetud.
 
 Tõend (`references/fm3-factory-grid-evidence.json`, `tools/fm3/factory_grid_evidence.mjs`): kõik 384
 FW10 tehasepresetit, 4801 hõivatud lahtrit, 144 hargnemist, 140 liitmist. Ükski maskibitt ei osuta
