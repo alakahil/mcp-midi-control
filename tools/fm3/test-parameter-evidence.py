@@ -63,6 +63,8 @@ class AccountingTests(unittest.TestCase):
                         'familyBySlug': {'flanger': 'FLANGER'}}
 
     def rows(self):
+        self.runtime['effectiveParameters'] = copy.deepcopy(self.dictionary)
+        self.runtime['typePolicies'] = {'insertFamilies': {'families': {}}}
         return evidence.join_parameters(self.catalog, self.dictionary, self.runtime)
 
     def test_aliases_count_once_and_taper_claim_is_not_measurement(self):
@@ -96,6 +98,51 @@ class AccountingTests(unittest.TestCase):
         row = self.rows()[0]
         self.assertEqual(row['join'], 'catalog-only')
         self.assertNotIn('tableEncoder', row)
+
+
+class RecentEvidenceTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        import subprocess, json
+        cls.runtime = json.loads(subprocess.check_output(['node', str(evidence.ROOT/'tools/fm3/registry-runtime.mjs')], input=b'{}'))
+
+    def collect(self, reg):
+        from recent_evidence import collect
+        return collect(reg, evidence.REF, self.runtime, evidence.parse_get, evidence.require, evidence.sha)
+
+    def test_distinct_evidence_axes_and_unrequested_pitch_words(self):
+        reg = evidence.Registry()
+        stats = self.collect(reg)
+        self.assertEqual([stats[k] for k in ['labelsCompared','labelParameters','frontPanelReadbacks','storedDefaultReadings','disputedReadings']], [5275,363,18,2,1])
+        self.assertEqual(stats['storedValueReceipt']['words'], 16756)
+        omitted = [o['scope']['notRequestedWords'] for o in reg.observations if o['kind']=='device-enum-labels' and o['scope']['notRequestedWords']]
+        self.assertEqual(sorted(omitted), [[2],[78]])
+        self.assertFalse(any(o['kind']=='paired-point' for o in reg.observations))
+        disputed = [o for o in reg.observations if o['kind']=='front-panel-disputed-reading']
+        self.assertEqual(disputed[0]['scope']['raw'], 42623)
+
+    def test_snapshot_mismatch_is_rejected(self):
+        reg = evidence.Registry()
+        file = evidence.REF/'fm3-step-diff-input-volume-20261024-results.json'
+        reg.read(file)['steps'][0]['words']['in1'][0] += 1
+        with self.assertRaisesRegex(ValueError, 'diff differs'):
+            self.collect(reg)
+
+    def test_label_mismatch_is_rejected(self):
+        reg = evidence.Registry()
+        file = evidence.REF/'fm3-label-sweep-20261024-results.json'
+        reg.read(file)['families'][0]['params'][0]['texts'][0] = 'WRONG'
+        with self.assertRaisesRegex(ValueError, 'Label mismatch'):
+            self.collect(reg)
+
+    def test_registry_uses_effective_integer_codec(self):
+        dictionary = evidence.Registry().read(evidence.REF/'fm3-param-dictionary.json')['params']
+        rows = evidence.join_parameters([], dictionary, self.runtime)
+        tap = next(p for p in rows if p['id']=='TENTAP:7')
+        self.assertEqual(tap['tableEncoder']['effectiveKind'], 'integer')
+        swell = next(p for p in rows if p['id']=='VOLUME:11')
+        self.assertTrue(swell['soundEncoder']['available'])
+        self.assertIn('AUTO-SWELL', swell['soundEncoder']['scope']['types'])
 
 
 class LegacyTests(unittest.TestCase):

@@ -1,3 +1,4 @@
+import {verifyControlsOutput} from './fm3-controls-output.mjs';
 import {verifyVolumePedalOutput} from './fm3-volume-pedal.mjs';
 import {verifyGridOutput} from './fm3-grid-output.mjs';
 import {verifyVolumeOutput} from './fm3-volume-output.mjs';
@@ -40,5 +41,6 @@ export function verifyPresetOutputs(stem){
   verifyVolumeOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   verifyVolumePedalOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   verifyGridOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
+  verifyControlsOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
   return report;
 }

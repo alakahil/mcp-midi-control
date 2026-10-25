@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.18`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.19`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,27 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## Auditi offline-täiendused (0.3.19, 25.10.2026)
+
+Kasuta PlexDelay, Gate/Expander, TenTapDelay, Synth ja Multiband Compressori
+kirjutamisel lõpliku kanali tüübipoliitikat (`references/fm3-insert-applicability.json`):
+242 parameetri nähtavus pärineb sama FM3-Edit 1.07.17 FW13 paigutusest.
+Peidetud väljad, mõõdikud, TenTap Learn/Reset ja Plexi presetivalik ei ole lubatud
+skalaarseadistused. Synthi ostsillaatorite ja Multibandi Auto Att/Rel dünaamikat
+see XML-kontroll ei tõenda. Tundmatute skaalade kirjutamine jääb blokeerituks.
+Plexi/TenTapi 10 tempo-seost kuvatakse ka lõpparuandes; aktiivse modifikaatori
+siht ja tempo ei tohi sattuda vastuollu.
+
+Käivita `--verify OUTPUT_STEM` kõigi nelja väljundfaili kontrolliks. Kontroll loeb
+SYX-i uuesti, rakendab spetsifikatsiooni kontrollid muutmata koopiale ning võrdleb
+kanalisõnu, nähtavaid parameetreid, sõltuvusi, raportit ja TXT väärtusi nii `layout`
+kui ka `grid` režiimis. Räsid üksi ei kinnita sisulist kooskõla.
+
+Lähterepo `docs/fm3/parameter-evidence/registry.json` loeb efektiivsed skaalad ja kirjutamispoliitika töötavast mootorist.
+23.–24.10 valikunimed, paneelinäidud, muutmata algväärtused, vaieldav Release'i näit
+ja 16 756 salvestatud sõna on eraldi tõendiliigid. Ära käsitle neid täieliku
+skaala, kõigi kombinatsioonide, heli ega uue seadmekatse kinnitusena.
 
 ## GitHubi andmete koondamine (0.3.18, 24.10.2026)
 

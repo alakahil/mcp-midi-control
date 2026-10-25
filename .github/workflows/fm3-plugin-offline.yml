@@ -44,6 +44,8 @@ jobs:
           python3 tools/fm3/modifier_quantization_audit.py
           python3 tools/fm3/test-modifier-value-path.py
           python3 tools/fm3/test-modifier-sharc.py
+          python3 tools/fm3/insert_applicability.py
+          python3 tools/fm3/test-insert-applicability.py
           python3 tools/fm3/input_volume_evidence.py
           node tools/fm3/volume-device-evidence.mjs
           node tools/fm3/input-volume-audit.mjs

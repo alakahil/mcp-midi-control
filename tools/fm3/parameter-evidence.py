@@ -84,8 +84,8 @@ def join_parameters(catalog, dictionary, runtime):
         require(p['name'] not in row['names'], f'Duplicate catalog symbol: {p["name"]}')
         row['catalogRows'].append(i)
         row['names'].append(p['name'])
-    from pitch_word_codecs import load, apply_override
-    codecs = load()
+    effective_rows = {(p['family'], p['param']): p for p in runtime['effectiveParameters']}
+    require(len(effective_rows) == len({(p['family'], p['param']) for p in dictionary}), 'Runtime parameter coverage differs')
     seen = set()
     for i, p in enumerate(dictionary):
         k = key(p['family'], p['param'])
@@ -97,10 +97,11 @@ def join_parameters(catalog, dictionary, runtime):
         if not row['names'] and p['name']:
             row['names'].append(p['name'])
         # Eligible is a policy gate, not a claim that every value/model was measured.
-        effective = apply_override(p, codecs)
+        effective = effective_rows[p['family'], p['param']]
+        require(effective['name'] == p['name'] and effective['block'] == p['block'], 'Runtime binding differs')
         gate = ('default' if effective['status'] in runtime['defaultStatuses'] else
                 'opt-in' if effective['status'] in runtime['optInStatuses'] else
-                'experimental-only' if p['status'] == 'unverified-taper' else 'blocked')
+                'experimental-only' if effective['status'] == 'unverified-taper' else 'blocked')
         supported_kind = effective['kind'] in ['linear', 'log', 'knob', 'enum', 'integer']
         bases = []
         for b in runtime['composerBases']:
@@ -111,16 +112,21 @@ def join_parameters(catalog, dictionary, runtime):
         row['tableEncoder'] = {'effectiveKind': effective['kind'], 'effectiveStatus': effective['status'], 'policy': gate, 'bases': sorted(set(bases)),
                                'available': bool(bases) and supported_kind and gate in ['default', 'opt-in']}
         if p['family'] == 'INPUT':
-            row['tableEncoder']['available'] &= p['param'] in [0,1,2,3,5]
-            row['tableEncoder']['inputGateScope'] = 'Input 1 numeric only; valid retained TYPE/MODE; Ratio/Attack ADVANCED; Threshold OFF excluded; active modifiers rejected; no new hardware measurements'
-            if p['param'] not in [0,1,2,3,5]:
+            policy = runtime['typePolicies']['inputGate']
+            supported = p['param'] in [v['pid'] for v in policy['parameters']]
+            row['tableEncoder']['available'] &= supported
+            row['tableEncoder']['inputGateScope'] = policy
+            if not supported:
                 row['tableEncoder']['policy'] = 'blocked-input-scope'
-
         if p['family'] == 'VOLUME':
-            row['soundEncoder'] = {'available': p['param'] in [0,1,2,4,5,6,7,8],
+            policy = runtime['typePolicies']['volumePan']
+            row['soundEncoder'] = {'available': p['param'] in [v['pid'] for v in policy['parameters']],
                 'entryPoint': 'fm3-preset.mjs; volumePan:true; controls block volpan',
-                'scope': 'Captured VOLUME type only; enum opt-in; no TYPE/channel-BYPASS/Auto-Swell/meter authoring; physical scales model-based',
-                'donorRecordSha256': 'fdf6204515c4d9e2c42b26be4ed26603becc571a1ec040f48a75d6e08b640ecc'}
+                'scope': policy, 'fullRangeProven': False}
+        if p['family'] in runtime['typePolicies']['insertFamilies']['families']:
+            row['soundVisibility'] = {'policy': 'fm3-insert-applicability.json',
+                'parameterPointer': '/families/'+p['family']+'/parameters/'+str(p['param']),
+                'scope': 'final channel type; scalar codec and placement gates remain separate'}
 
     for row in rows.values():
         row['join'] = ('both' if row['catalogRows'] and 'dictionaryRow' in row else
@@ -375,6 +381,8 @@ def build():
     reg.read(REF / 'fm3-pitch-factory-evidence.json')
     require(sha((REF / 'fm3-param-dictionary.json').read_bytes()) == runtime['dictionaryHash'], 'Encoder dictionary pin differs')
     cap = reg.read(ENGINE / 'docs/FM3_COMPOSER_CAPABILITIES.json')
+    from recent_evidence import collect
+    recent = collect(reg, REF, runtime, parse_get, require, sha)
     template_support = reg.model_templates(cap)
     rows = join_parameters(cat, dictionary['params'], runtime)
     by_id = {p['id']: p for p in rows}
@@ -395,6 +403,8 @@ def build():
     summary = {'schemaVersion': 1, 'scope': 'Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.',
         'inventory': inventory, 'catalogRows': len(cat), 'catalogKeys': catalog_keys, 'aliasRows': len(cat) - catalog_keys,
         'dictionaryRows': len(dictionary['params']), 'unionKeys': len(rows), 'joins': dict(sorted(Counter(p['join'] for p in rows).items())),
+        'effectiveStatusClaims': dict(sorted(Counter(p['status'] for p in runtime['effectiveParameters']).items())),
+        'recentEvidence': recent,
         'dictionaryStatusClaims': dict(sorted(Counter(p['status'] for p in dictionary['params']).items())),
         'observations': dict(sorted(Counter(o['kind'] for o in reg.observations).items())), 'pairedCapturesReplayed': pairs,
         'parametersWithPairedPoint': len(measured), 'catalogKeysWithPairedPoint': len(measured & {p['id'] for p in rows if p['catalogRows']}),
@@ -405,7 +415,7 @@ def build():
     tasks = [
         {'id': 'existing-evidence-adapters', 'priority': 1, 'userPhysicalActions': 0,
          'action': 'Selected legacy scalar adapters are complete. Mine remaining historical return reports and compressed Amp evidence for additional explicit display observations; do not infer knob measurements from template words.',
-         'completed': ['Amp Gain/Bass eight isolated exports', 'G5/TONE/TIME historical returns', 'Drive six isolated exports and 18 paired captures', 'Rotary five baseline points and carried Rate 2 state'],
+         'completed': ['24 Oct: 363 enum lists; 18 front-panel readbacks; two retained defaults; one disputed reading kept separate', '23 Oct: seven preset raw-value receipts, V04-only STORE scope; no scale promotion', 'Amp Gain/Bass eight isolated exports', 'G5/TONE/TIME historical returns', 'Drive six isolated exports and 18 paired captures', 'Rotary five baseline points and carried Rate 2 state'],
          'inputs': ['references/amp-history.json.gz', 'references/offline-suite.json', 'docs/*HARDWARE*'],
          'doneWhen': 'Every promoted point has a source pointer, model/channel scope and replayed raw evidence; skipped/ambiguous points stay separate.'},
         {'id': 'metadata-join-gaps', 'priority': 1, 'userPhysicalActions': 0,
@@ -430,7 +440,9 @@ def build():
     for path in sorted((ROOT / 'tools/fm3').glob('*')):
         if path.suffix in ['.py', '.mjs']:
             reg.source(path)
-    for path in [INS / 'scripts/fm3-table-encoder.mjs', INS / 'scripts/fm3-composer-bases.mjs',
+    for path in [INS / 'scripts/fm3-insert-applicability.mjs', REF / 'fm3-insert-applicability.json',
+                 INS / 'scripts/fm3-type-applicability.mjs', INS / 'scripts/fm3-input-gate.mjs',
+                 INS / 'scripts/fm3-volume-policy.mjs', INS / 'scripts/fm3-table-encoder.mjs', INS / 'scripts/fm3-composer-bases.mjs',
                  INS / 'scripts/drive-collector/fm3-prototype.mjs', INS / 'scripts/drive-collector/fm3-codec.mjs']:
         reg.source(path)
     registry = {'schemaVersion': 1, 'policy': {
@@ -445,6 +457,7 @@ def build():
         'replayOnlyPairs': reg.legacy.replay_only,
         'templates': reg.templates, 'composerTemplates': template_support,
         'composerDeclarations': {k: v for k, v in cap.items() if k != 'templates'},
+        'runtimePolicies': runtime['typePolicies'], 'recentEvidence': recent,
         'excludedOrSkipped': reg.exclusions}
     # Intern repeated file references; the source map retains full paths and hashes.
     source_ids = {path: f'S{i:04d}' for i, path in enumerate(sorted(reg.sources))}
@@ -471,6 +484,9 @@ def markdown(s):
         '| Kontroll | Tulemus |', '| --- | ---: |',
         f'| Kataloogi read / erinevad pere–PID paarid | {s["catalogRows"]} / {s["catalogKeys"]} |',
         f'| Lisanimega read | {s["aliasRows"]} |',
+        f'| 24.10 seadme enum-sildid / parameetrid | {s["recentEvidence"]["labelsCompared"]} / {s["recentEvidence"]["labelParameters"]} |',
+        f'| 24.10 paneelinäidu ja salvestatud väärtuse vaatlused | {s["recentEvidence"]["frontPanelReadbacks"]} |',
+        f'| Eraldi algväärtuste näidud / vaieldav näit | {s["recentEvidence"]["storedDefaultReadings"]} / {s["recentEvidence"]["disputedReadings"]} |',
         f'| Parameetrisõnastiku kirjed | {s["dictionaryRows"]} |',
         f'| Kataloogi ja sõnastiku ühised paarid | {s["joins"]["both"]} |',
         f'| Ainult kataloogis / ainult sõnastikus | {s["joins"]["catalog-only"]} / {s["joins"]["dictionary-only"]} |',
@@ -482,6 +498,7 @@ def markdown(s):
         f'| Vähemalt ühe paaristatud või ekspordipunktiga parameetrid | {s["parametersWithPairedOrExportPoint"]} |',
         f'| Vahele jäetud või välistatud lähtekirjed | {s["excludedOrSkippedRecords"]} |', '',
         'Üks GET/SYX paar võib tõendada mitut punkti. Terve kanali mall ei tõenda kõigi nuppude skaalasid. Sõnastiku `measured` ja `taper-class-verified` on lähteallika väited; need ei suurenda automaatselt mõõdetud punktide arvu.', '',
+        '23.–24.10 tõendid on eraldi telgedel: 16 756 salvestatud sõna seitsmest presetist ei tõenda skaalasid; STORE/reload kehtib üksnes V04 kohta. Siltide kontroll ei muuda kirjutamisõigust. Pitchi enumBase=1 loendite viimased sõnad jäid küsimata. Vaieldav Auto-Swell Release näit jääb eraldi.', '',
         'Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik ja parameetri asukoht tuntud alusfailis. See ei laiene suvalisele presetile. Composeri lisatavate plokkide tugi on eraldi `registry.json` failis; allolev null ei tähenda, et composer plokki ei toeta.', '',
         '| Pere | Kataloogi PID-d | Sõnastiku PID-d | Paaristatud punktiga PID-d | Tabelikirjutaja vaikimisi / eraldi lubamisel |',
         '| --- | ---: | ---: | ---: | ---: |']

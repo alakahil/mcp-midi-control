@@ -554,6 +554,24 @@
       ],
       "scope": "Captured FW13 Ext1 -> Volume/Pan 1 Gain ALL default record, exact entire device-body replay, all unrelated bytes preserved, raw readback, invalid inputs and rehashed tamper rejection across SYX/TXT/spec/report; no new scale, DSP or STORE proof",
       "required": true
+    },
+    {
+      "id": "test-insert-applicability",
+      "command": [
+        "node",
+        "scripts/test-insert-applicability.mjs"
+      ],
+      "scope": "Five FW13 XML families, 242 PIDs, A-D type matrix, independent visibility negatives, final-type ordering and atomic failure; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-controls-output",
+      "command": [
+        "node",
+        "scripts/test-controls-output.mjs"
+      ],
+      "scope": "Ordinary layout five-family SYX/TXT/spec/report consistency; eleven valid-CRC rehashed tamper cases; no device I/O",
+      "required": true
     }
   ]
 }
