@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.23`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.24`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,23 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## 3. punkti parameetrikaart (0.3.24, 25.10.2026)
+
+Enne parameetri skaala või toe oletamist küsi `node MOOTOR/scripts/fm3-preset.mjs
+--parameter-map PERE PID_VÕI_NIMI`, näiteks `chorus VOICES`, `cab 93` või
+`pitch TEMPO`. Ilma pere argumendita saad koondi; `--all` väljastab kogu kaardi.
+Kasuta [parameetrikaardi juhendit ja tõenditasemete selgitust](engine/docs/FM3_POINT3_PARAMETERS.md).
+Kaart ühendab 3223 pere/PID võtit, 2892 sõnastikukirjet ja 1298 varasemat
+vaatlust. See on ainult lugemine. `tableScalarEligible` ei anna kirjutusluba:
+tervikpreset kontrollib lõpptüüpi, kanalit, paigutust, tempot ja modifikaatoreid.
+Erista algset `dictionary` väidet, `effective.scale` sisendit ning `evidence`
+mõõteulatust. Tundmatut kõverat või vigast salvestussõna ära kuva arvuna.
+Chorus Voices kasutab näite 2/4/6/8; Plex Number of Delays 4/6/8; Cab R1/R2
+0..10. Pitchi globaalskaala vali sildiga `SCALE 1`…`SCALE 32`.
+Korduva loendisildi puhul valib string esimese vaste; teise jaoks kasuta kaardi
+arvulist `word` väärtust. Kahe 1-põhise Pitch-loendi viimane silt jääb seadmel
+küsimata; suur tarkvaratest ega ülejäänud sildid ei tõenda seda tagantjärele.
 
 ## 2. punkti lõppfailide kontroll (0.3.23, 25.10.2026)
 

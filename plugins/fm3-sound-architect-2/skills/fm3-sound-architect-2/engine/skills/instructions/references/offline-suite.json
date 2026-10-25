@@ -599,6 +599,24 @@
       ],
       "scope": "50 historical example specs classified: 47 complete SYX byte replays and fresh four-file checks including two metadata-only adaptations and two explicit historical request reconstructions; three historical/experimental requests remain rejected; no source-fixture changes or new hardware proof",
       "required": true
+    },
+    {
+      "id": "test-parameter-domain",
+      "command": [
+        "node",
+        "scripts/test-parameter-domain.mjs"
+      ],
+      "scope": "All 2101 supported scalar descriptors, exhaustive finite preset-word domain, malformed and out-of-range words; software conformance only",
+      "required": true
+    },
+    {
+      "id": "test-parameter-map",
+      "command": [
+        "node",
+        "scripts/test-parameter-map.mjs"
+      ],
+      "scope": "3223 parameter identities, effective scales, source-vs-runtime evidence, all named lookups, 1298 observations, label gaps, native aliases, pin integrity and public read-only CLI",
+      "required": true
     }
   ]
 }
