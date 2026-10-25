@@ -10,8 +10,8 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.22 koondväljalaset: [6. punkti seadmevaba töö](FM3_POINT6_BLOCKS.md),
-13 pere nähtavuspoliitika, Mixeri nimeseosed, Scene MIDI testid ja kohalik korpuseaudit.
+Praegune lähtekood valmistab ette 0.3.23 väljalaset: [2. punkti lõppfailide kontroll](FM3_POINT2_OUTPUTS.md),
+kogu SYX/TXT/spec/raporti taasesitus, ajalooliste näidiste audit ning failivigade tõrjumine.
 Uusi seadmekatseid ega skaalamõõtmisi ei lisandu.
 Kehtiv tõendusulatus on plugina SKILL.md-s ning vastavate katsete kviitungites.
 Avaldamine, täpne commit ja käivitajajuhendi uuendus tuleb kinnitada
@@ -93,7 +93,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 64 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 66 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.

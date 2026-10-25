@@ -581,6 +581,24 @@
       ],
       "scope": "13 families / 515 PIDs, scalar domain checks, all available channels and types, read-only MultiDelay policy, atomic rejection, Scene MIDI position/value coverage, and private local corpus audit; no device I/O",
       "required": true
+    },
+    {
+      "id": "test-output-replay",
+      "command": [
+        "node",
+        "scripts/test-output-replay.mjs"
+      ],
+      "scope": "All public generator dispatch paths and seven composer bases; complete request/base/SYX/TXT/report replay, 96 refreshed-hash semantic mutations, UTF-8 and transport errors, collision/rollback fault injection; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-example-bundles",
+      "command": [
+        "node",
+        "scripts/test-example-bundles.mjs"
+      ],
+      "scope": "50 historical example specs classified: 47 complete SYX byte replays and fresh four-file checks including two metadata-only adaptations and two explicit historical request reconstructions; three historical/experimental requests remain rejected; no source-fixture changes or new hardware proof",
+      "required": true
     }
   ]
 }

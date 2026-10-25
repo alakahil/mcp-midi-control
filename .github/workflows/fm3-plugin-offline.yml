@@ -51,6 +51,7 @@ jobs:
           python3 tools/fm3/insert_applicability.py
           python3 tools/fm3/test-insert-applicability.py
           node tools/fm3/point6-evidence.mjs
+          node tools/fm3/point2-evidence.mjs
           python3 tools/fm3/input_volume_evidence.py
           node tools/fm3/volume-device-evidence.mjs
           node tools/fm3/input-volume-audit.mjs

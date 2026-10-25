@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.22`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.23`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,26 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## 2. punkti lõppfailide kontroll (0.3.23, 25.10.2026)
+
+Kasuta [nelja faili kontrolli ulatust ja näidiste seisundit](engine/docs/FM3_POINT2_OUTPUTS.md).
+`--verify OUTPUT_STEM` kontrollib räside kõrval kogu SYX-i, TXT-i ja raporti
+vastavust spetsifikatsioonist ning räsi järgi leitud paketi alusfailist uuesti
+koostatud tulemusele. See kehtib nii `layout`/`grid` kui ka toetatud vanade
+koostajaprofiilide kohta. Muudetud Amp/Cab-mallipäring, stseen, säilitatav sõna,
+vahearuande sisu või kontrolliväide ei tohi uuendatud räsiga kontrolli läbida.
+Ära eemalda ebaõnnestuvat kontrolli ega arvuta räsi ümber selle peitmiseks.
+
+Kontrolli ajaloolist nelja faili komplekti sama kontrollitud mootoriversiooniga,
+mis selle lõi. Uue mootori raport/poliitika võib erineda ka muutmata SYX-i korral.
+Vanad `examples`-failid on tõendite ajalugu: 47 näidet taastuvad baittäpselt,
+kahel neist lisab test mälus puuduva schemaVersion/firmware päise ning kahel
+taastab täieliku päringu olemasoleva ajaloolise regressioonitesti põhjal.
+P6 A/B vanad sisendid ja eksperimentaalne Taper-test ei ole praeguse avaliku
+sisendilepingu näidised; ära lõdvenda nende pärast Volume/Ten-Tap/raw kaitseid.
+Failikontroll on tarkvaraline kooskõla, mitte autentsusallkiri ega seadme-,
+heli- või CPU-kinnitus. Kontrollitud globaalvaatlused jäävad kogumisaja tõendiks.
 
 ## 6. punkti seadmevaba kontroll (0.3.22, 25.10.2026)
 
