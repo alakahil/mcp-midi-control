@@ -10,12 +10,17 @@ import {writePresetOutputs,verifyPresetOutputs} from './fm3-output.mjs';
 import {loadGlobalScaleObservations} from './fm3-global-scale-observations.mjs';
 import {auditModifiers,renderModifierAuditText} from './fm3-modifier-audit.mjs';
 import {parameterMapCLI} from './fm3-parameter-map.mjs';
+import {readGridPreset,renderGridAuditText} from './fm3-grid-audit.mjs';
 export {getSoundCapabilities as getPresetCapabilities,writePresetOutputs,verifyPresetOutputs,auditModifiers,renderModifierAuditText};
 
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  try{const [b,s,stem,...extra]=process.argv.slice(2);
   if(b==='--capabilities'){if(stem||extra.length)throw Error('Usage: --capabilities [BASE.syx]');console.log(JSON.stringify(getSoundCapabilities(s?fs.readFileSync(s):undefined),null,2));}
   else if(b==='--parameter-map'){console.log(JSON.stringify(parameterMapCLI([s,stem,...extra].filter(v=>v!==undefined)),null,2));}
+  else if(b==='--inspect-grid'){
+    if(!s||!((!stem&&!extra.length)||(stem==='--format'&&extra.length===1&&['json','txt'].includes(extra[0]))))throw Error('Usage: --inspect-grid PRESET.syx [--format json|txt]');
+    const audit=readGridPreset(s);process.stdout.write(extra[0]==='txt'?renderGridAuditText(audit):JSON.stringify(audit,null,2)+'\n');
+  }
   else if(b==='--inspect-modifiers'){
     if(!s||!((!stem&&!extra.length)||(stem==='--format'&&extra.length===1&&['json','txt'].includes(extra[0]))))throw Error('Usage: --inspect-modifiers PRESET.syx [--format json|txt]');
     const audit=auditModifiers(fs.readFileSync(s));process.stdout.write(extra[0]==='txt'?renderModifierAuditText(audit):JSON.stringify(audit,null,2)+'\n');

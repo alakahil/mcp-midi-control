@@ -10,6 +10,7 @@ import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {decodeGridReply} from '../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid-audit.mjs';
 const ROOT=fileURLToPath(new URL('../../',import.meta.url));
 const REF=path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/');
 const PINNED=path.join(REF,'fm3-grid-check-20261023-results.jsonl');
@@ -26,6 +27,7 @@ const tests=manifest.items.map(it=>{
   const r=results.find(x=>x.id===it.id);assert.ok(r,'missing '+it.id);
   assert.ok(it.sha256.startsWith(MEASURED[it.id]),'rebuilt preset differs from the measured one: '+it.id);
   assert.deepEqual(r.deviceGrid,it.expectedGrid,'device grid '+it.id);assert.equal(r.gridMatches,true);
+  assert.deepEqual(decodeGridReply(Buffer.from(r.frameHex,'hex')).map(c=>[c.row,c.col,c.id,c.mask]),r.deviceGrid,'original wire frame '+it.id);
   assert.equal(sha(Buffer.from(r.frameHex,'hex')).length,64);assert.equal(r.frameBytes,Buffer.from(r.frameHex,'hex').length);
   const ids=[...new Set(it.expectedGrid.map(c=>c[2]).filter(i=>i&&i<1024))].sort((a,b)=>a-b);
   const tsMisread=[...new Set(r.tsDecode.filter(c=>!c[3]).map(c=>c[2]))].filter(i=>!ids.includes(i)).sort((a,b)=>a-b);

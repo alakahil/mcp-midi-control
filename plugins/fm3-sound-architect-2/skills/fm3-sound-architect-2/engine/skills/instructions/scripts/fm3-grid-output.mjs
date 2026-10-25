@@ -18,7 +18,8 @@ export function verifyGridOutput(report,syx,txt,spec){
     else if(name==='-')assert.ok(c.id>=1024,'Grid shunt differs');
     else assert.equal(c.id,records.find(r=>r.family===name)?.eid,'Grid block differs');
     const link=spec.grid.links?.find(l=>l.row===c.row+1&&l.col===c.col+1);
-    const source=['in1','return'].includes(name);
+    // Sources and Scene MIDI do not inherit the preceding cell's audio cable.
+    const source=['in1','return','scenemidi'].includes(name);
     const from=!c.id||source||!c.col?[]:link?.from??(cells.some(g=>g.row===c.row&&g.col===c.col-1&&g.id)?[c.row+1]:[]);
     assert.equal(c.mask,from.reduce((v,row)=>v|1<<(row-1),0),'Grid input mask differs');
   }

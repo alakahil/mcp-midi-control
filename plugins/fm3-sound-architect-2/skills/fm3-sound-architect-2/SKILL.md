@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.24`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.25`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,26 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## 5. punkti ruudustikuaudit (0.3.25, 25.10.2026)
+
+Olemasoleva SYX-i marsruutimise uurimiseks kasuta `node MOOTOR/scripts/fm3-preset.mjs
+--inspect-grid PRESET.syx`; tekstiks lisa `--format txt`. Loe
+[ruudustikuauditi ulatust](engine/docs/FM3_GRID.md). Käsk ainult loeb faili.
+Kontrolli kõiki 48 lahtrit, `raw`/`knownMask`/`unknownMask` eristust, allikaid,
+lõppe, katkenud harusid ja kirjete täielikku lugemist. Bitt 4 ei ole viies rida
+ega tõendatud heliühendus. Tundmatuid bitte ära eemalda ega tõlgenda.
+
+`consistent-known-edges` ei kinnita heli, bypass'i, IR-i, Mixeri/Multiplexeri
+sisemist valikut ega kirjutusluba. Send/Return on auditis eraldi lõpp ja allikas;
+audit ei lisa nende vahele oletuslikku kaablit. In 2/Out 2 tuvastamine ei ava
+nende kirjutustuge ega kinnita FOH+monitori või 4CM-i töövoogu. Osaline
+kirjelugemine ei tõenda puuduvat plokki; eraldatud plokk võib olla tahtlik.
+Generaator kasutab endiselt ainult toetatud alusfaile ja tervikpreseti kontrolle.
+
+Scene MIDI jääb ühendamata ka heliploki kõrval; 0.3.25 lõppkontroll arvestab
+seda õigesti. Sisend Scene MIDI-sse või heli võtmine selle väljundist jääb
+keelatuks. Tarkvaratestid ei ole uued seadme tagasilugemised.
 
 ## 3. punkti parameetrikaart (0.3.24, 25.10.2026)
 
@@ -483,7 +503,7 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Amp/Cab; Send+Return koos), `duplicate` lisab teise eksemplari (drive2, delay2, compressor2, filter2–4 jt,
   ainult tehasepresetites nähtud), `insert` lisab ka mixer/multiplexer ja scenemidi. Uued heliplokid: A, bypass; lülita
   sisse `blockScenes` abil. Tõend: kõik 384 tehase ruudustikku läbivad planeerija ja 4801/4801 sisendmaski
-  taastuvad (`references/fm3-factory-grid-evidence.json`). **Seadmel kinnitatud** 2026-10-23: 7 testruudustikku
+  taastuvad bittide 0–3 osas; bit 4 jääb eraldi tundmatuks (`references/fm3-factory-grid-evidence.json`). **Seadmel kinnitatud** 2026-10-23: 7 testruudustikku
   (hargnemised, liitmised, 4 rida, Mixer, Multiplexer, Synth, eksemplarid, eemaldamine) lugesid tagasi 48/48
   lahtrit (`references/fm3-grid-check-20261023.json`). Ära küsi seda uuesti; heli on veel kuulamata.
   Teiste eksemplaride nimed (`drive2`, `volpan2` jne), kanalid ja bypass kajastuvad lõppfailidest loetud TXT-s ja aruandes.

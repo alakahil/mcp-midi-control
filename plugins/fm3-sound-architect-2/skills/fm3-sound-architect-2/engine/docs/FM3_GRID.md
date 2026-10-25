@@ -1,4 +1,73 @@
-# Auditi punkt 5: üldine ruudustik (Claude, 2026-10-23)
+# Auditi punkt 5: üldine ruudustik
+
+## Seadmevaba täiendus 0.3.25 — 25.10.2026
+
+Olemasolevat üksikut FM3 SYX-i saab nüüd uurida seda muutmata:
+
+```sh
+node engine/skills/instructions/scripts/fm3-preset.mjs --inspect-grid PRESET.syx
+node engine/skills/instructions/scripts/fm3-preset.mjs --inspect-grid PRESET.syx --format txt
+```
+
+Väljund läheb standardväljundisse; failinime/presetinime ega parameetriväärtusi
+aruandesse ei lisata. Raport sisaldab siiski ruudustiku paigutust: kasutaja või
+kommertspaketi raportit ei avaldata automaatselt. Toetatud sisend on üks
+24680-baidine 0x0146 preset; kaadrid, CRC ja footer peavad läbima kontrolli.
+Vormingusõna ei tuvasta püsivara versiooni. Pangad ja muud vormingud tõrjutakse.
+
+| Raporti osa | Täpne tähendus |
+| --- | --- |
+| `grid.cells` | Kõik 48 lahtrit, 1-põhised koordinaadid, ID ja muutmata toormask |
+| `raw`, `knownMask`, `unknownMask` | Algne uint16, teadaolevad bitid 0–3 ning lahendamata bitid 4–15 |
+| `edges`, `paths` | Ainult eelmise veeru nähtavad kaablid ning nende kaudu leitud allika/lõpu paarid |
+| `ampRoutes` | Cab-plokiga ja Cabita harud eraldi; liitmine ei varja Cabita haru |
+| `violations` | Koostaja reeglite rikkumised: tühi lähtelahter, korduv ID, katkenud haru, Scene MIDI heliühendus jne |
+| `unresolved` | Tundmatu mask või ploki roll; teadaolevatest kaablitest ei oletata puuduva biti tähendust |
+| `recordAssociation` | Ruudustiku ID-de ja loetud kirjete seos; täielikkus nõuab kinnitatud süsteemilõpu räsi |
+| `generatorEligibility` | Alati `not-evaluated`; lugemisaudit ei anna kirjutusluba |
+
+`consistent-known-edges` tähendab ainult teadaolevate kaablite struktuurset
+kooskõla. Eraldatud plokk võib olla kasutaja teadlik valik, seega koostaja
+reegli rikkumine ei tähenda automaatselt seadmele vigast presetti. Osaline
+kirjelugemine ei luba järeldada, et loemata plokk puudub.
+
+Send ja Return on selles graafis eraldi lõpp ja allikas. Nendevahelist kaudset
+sidet, füüsilist kaablit, USB-d ega globaalset I/O seadet ei simuleerita.
+In 2/Out 2 saab lugemisel ära tunda; nende kirjutamist ei lisata. Cab-ploki
+olemasolu ei kinnita stseeni bypass'i, kanalit, IR-i ega kuuldavat tulemust.
+Mixeri/Multiplexeri sisemised valikud ei kuulu kaabli-graafi tõendisse.
+
+### Parandatud viga ja kontrollid
+
+0.3.24 planeerija kirjutas heliploki kõrval oleva ühendamata Scene MIDI maskiks
+õigesti 0, kuid `--verify` ootas ekslikult eelmise lahtri heliühendust. 0.3.25
+kontroll käsitleb Scene MIDI-t ühendamata plokina ka selles paigutuses.
+Sisend ja väljundkaabel jäävad keelatuks; rikutud mask ei läbi kontrolli ka
+kehtiva CRC ning uuendatud failiräsidega.
+
+| Seadmevaba kontroll | Ulatus |
+| --- | --- |
+| Maskid | Kõik 65536 uint16 maski eraldatakse teadaolevaks ja tundmatuks osaks; see ei tähenda, et kõik on lubatud |
+| Veerupiirid | 11264 paigutuse/maski juhtu kõigil 11 veerupiiril ja kõigis neljas reas |
+| Sõltumatu graafikontroll | 512 graafi võrdlus BFS-algoritmiga ning 384 ridade ümberjärjestust |
+| Scene MIDI | 40 eraldatud paigutust, kaks täielikku SYX/TXT/spec/raporti katset ning muudetud maskide tõrjumine |
+| Varasemad seadmevastused | 7 algse 590-baidise vastuse kaadrid/kontrollsummad ja 336 lahtri uus dekodeerimine; ingest võrdleb nüüd ka tegelikke vastusebaite |
+| Tehasekorpus | Kolm algsete räsidega panka, 384 presetti, 4801 hõivatud lahtrit; bit 4 jääb kaheksas lahtris lahendamata |
+| Paketi korpus | Kõik paketis olevad üksikpresetid, räsiga kordused eraldi; vigased/ajaloolised ja osaliselt loetavad failid raporteeritakse |
+
+Tuletatud tabelid on lähterepo failides
+`docs/fm3/parameter-evidence/point5-grid-audit.json` ja `point5-factory-grid.json`.
+`node tools/fm3/point5-evidence.mjs` kordab tarkvaratestid ja paketi korpuse.
+Tehasekorpuse kviitung on seotud koodi ning algsete pangafailide räsidega;
+CI ei laadi panku võrgust. Kohalikuks taasteks kasuta
+`node tools/fm3/point5-evidence.mjs --factory FACTORY_DIR --write`.
+Avaldatakse koondandmed, mitte tehasepresetite failid, nimed ega paigutused.
+
+REA/Ghidra uut jooksu ega seadmepäringut ei tehtud. Bit 4 heli mõju ja tekkimine,
+suvalise aluspreseti kirjutamine, In 2/Out 2, FOH+monitor, 4CM, globaalolek,
+tegelik heli/CPU ja täiendav import/STORE jäävad eraldi tõendamist vajavaks.
+
+## Varasem kirjutustugi ja seadmetõendid (23.–24.10.2026)
 
 `scripts/fm3-grid.mjs` kirjutab FM3 kogu 4 × 12 ruudustiku: paralleelharud, hargnemised, liitmised,
 plokkide eemaldamise ja teised eksemplarid (Drive 2, Delay 2 jne). Soundi koostajas on see väli `grid`
@@ -12,8 +81,9 @@ nihkel `260 + c·16 + r·4`.
 - **id**: ploki efekti-ID (In 1 = 37, Amp = 58, Mixer = 126, Return = 186 …), shunt = 1024 + järjenumber,
   tühi lahter = 0.
 - **sisendmask**: bitt k = sisend eelmise veeru reast k. Veerus 1 sisendeid pole.
-- Bitt 4 (väärtus 16) esineb 8 tehasepreseti lahtris. Seitse neist on liitmised, üks on üksik shunt
-  jadareas. Generaator seda ei kirjuta. Seadmekatse (24.10.2026, `references/fm3-bit4-check-20261024.json`,
+- Bitt 4 (väärtus 16) esineb 8 tehasepreseti lahtris. Kuus neist on liitmised, kaks on ühe sisendiga lahtrid
+  (shunt ja Volume/Pan 2). Varasem 7/1 jaotus oli ebatäpne; 0.3.25 korduslugemine
+  kinnitab 6/2 jaotuse algsetest pangafailidest. Generaator seda ei kirjuta. Seadmekatse (24.10.2026, `references/fm3-bit4-check-20261024.json`,
   `FM3_BIT4_CHECK.py`):
   - kasutaja valis FM3-l neli sellist tehasepresetti (109, 122, 83, 211);
   - fw 13 salvestatud koopiad (CRC kehtib) ja ruudustiku lugemine sisaldasid bitti 4 täpselt samades
@@ -24,7 +94,7 @@ nihkel `260 + c·16 + r·4`.
 Tõend (`references/fm3-factory-grid-evidence.json`, `tools/fm3/factory_grid_evidence.mjs`): kõik 384
 FW10 tehasepresetit, 4801 hõivatud lahtrit, 144 hargnemist, 140 liitmist. Ükski maskibitt ei osuta
 tühjale lahtrile. Iga tehase ruudustik läbib planeerija (`planCells`) ja kõik 4801 maski taastuvad täpselt
-lahtrinimedest ja selgetest linkidest. Read: 1 rida 275 presetis, 2 rida 81, 3 rida 26, 4 rida 2.
+lahtrinimedest ja selgetest linkidest **bittide 0–3 osas**, bit 4 välja arvatud. Read: 1 rida 275 presetis, 2 rida 81, 3 rida 26, 4 rida 2.
 Faili salvestatakse ainult struktuur (arvud ja ID-d), mitte tehasepresetite väärtusi ega paigutusi.
 
 ## Spets
@@ -116,5 +186,6 @@ valesti (Send 182 → 54, Return 186 → 58, Plex 178 → 50, Multiplexer 191 �
 
 - Heli pole kontrollitud (kuulamine jääb järgmisse nädalasse). Ruudustiku kuju on seadmel kinnitatud.
 - Mixeri/Multiplexeri bypass-käitumine heli seisukohalt pole mõõdetud; testides on need Scene 1-s sisse lülitatud.
-- In 2 / Out 2 ja Feedback Send/Return pole toetatud. Mixer 2+ eksemplare ei lubata (tehases ainult üks
+- In 2 / Out 2 kirjutamine ja uue suvalise Feedback Send/Return seose lisamine pole toetatud;
+  olemasoleva aluse ID-de 182/186 säilitamine või paarina eemaldamine on eespool kirjeldatud ulatuses olemas. Mixer 2+ eksemplare ei lubata (tehases ainult üks
   kahtlane ID 129).

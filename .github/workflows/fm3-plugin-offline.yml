@@ -61,6 +61,7 @@ jobs:
           node tools/fm3/encoder-matrix.mjs
           python3 tools/fm3/point3-index.py
           node tools/fm3/point3-evidence.mjs
+          node tools/fm3/point5-evidence.mjs
           node tools/fm3/grid-check-ingest.mjs
           node tools/fm3/read-value-ingest.mjs
           node tools/fm3/pedal-check-ingest.mjs

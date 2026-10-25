@@ -10,7 +10,8 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.24 väljalaset: [3. punkti parameetrikaart](FM3_POINT3_PARAMETERS.md),
+Praegune lähtekood valmistab ette 0.3.25 väljalaset: [5. punkti ruudustikuaudit](FM3_GRID.md),
+koos [3. punkti parameetrikaardiga](FM3_POINT3_PARAMETERS.md),
 koos [2. punkti lõppfailide kontrolliga](FM3_POINT2_OUTPUTS.md),
 kogu SYX/TXT/spec/raporti taasesitus, ajalooliste näidiste audit ning failivigade tõrjumine.
 Uusi seadmekatseid ega skaalamõõtmisi ei lisandu.
@@ -94,7 +95,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 68 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Suite sisaldab 70 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.

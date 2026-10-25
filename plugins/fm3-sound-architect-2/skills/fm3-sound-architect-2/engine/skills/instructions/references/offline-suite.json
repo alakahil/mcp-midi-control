@@ -617,6 +617,24 @@
       ],
       "scope": "3223 parameter identities, effective scales, source-vs-runtime evidence, all named lookups, 1298 observations, label gaps, native aliases, pin integrity and public read-only CLI",
       "required": true
+    },
+    {
+      "id": "test-grid-domain",
+      "command": [
+        "node",
+        "scripts/test-grid-domain.mjs"
+      ],
+      "scope": "All 65536 masks, 11264 adjacent-column cases, independent BFS graph oracle and row permutations; software conformance only",
+      "required": true
+    },
+    {
+      "id": "test-grid-audit",
+      "command": [
+        "node",
+        "scripts/test-grid-audit.mjs"
+      ],
+      "scope": "Read-only raw grid and record association, captured 590-byte wire frames, unknown mask bits, malformed inputs, Scene MIDI adjacency and refreshed-hash rejection; no device I/O",
+      "required": true
     }
   ]
 }

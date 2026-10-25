@@ -89,7 +89,7 @@ Input hashes, not the current checkout's HEAD, determine the generated content. 
 
 This is an evidence-indexing baseline, not a percentage of all FM3 features. The selected older Amp/Drive/Delay/Reverb scalar evidence and Rotary baseline points are now indexed. Remaining historical reports and compressed Amp sources still need review for additional explicit observations. Zero indexed points means **not indexed**, not unmeasured or unsupported. The queue prioritizes reuse of existing evidence and automated tests before asking for new measurements. General routing, modifiers, controller assignments, CPU and audio need separate coverage models.
 
-The earlier 0.3.3 logarithm fix is historical. The current source prepares 0.3.24; publication is established by its separate exact-commit CI and release readback. Registry and matrix outputs live in the repository; 0.3.24 also packages a derived, pinned parameter evidence index. Hardware import/audio/CPU results remain separate.
+The earlier 0.3.3 logarithm fix is historical. The current source prepares 0.3.25; publication is established by its separate exact-commit CI and release readback. Registry and matrix outputs live in the repository; the package includes a derived, pinned parameter evidence index. Hardware import/audio/CPU results remain separate.
 
 ## Metadata reconciliation and software matrix
 
@@ -132,3 +132,11 @@ The updated regression passes 2,152 accepted Pitch writes / 4,440 authoring refu
 The [parameter map](../../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_POINT3_PARAMETERS.md) exposes effective scales, authoring gates and historical observations through `fm3-preset.mjs --parameter-map`. The 3223-key union preserves catalog-only gaps. A query never grants write permission. `dictionary` and `effective` remain distinct, and the two unrequested Pitch labels are explicit.
 
 [Point-3 evidence](point3-parameter-map.json) records exhaustive finite-word codec checks, malformed word refusals, all named lookups and source hashes. Regenerate in this order after reviewed source changes: evidence-index, parameter-evidence, metadata_reconciliation, point3-index; update the derived index pin in fm3-parameter-map.mjs, then run point3-evidence. The derived index is in engine/docs so the source evidence inventory does not recursively include its own derivative.
+
+## Audit point 5 — 0.3.25
+
+[Grid inspection](../../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_GRID.md) adds `fm3-preset.mjs --inspect-grid PRESET.syx [--format json|txt]`. The report preserves all raw mask bits, traces known previous-column cables and distinguishes incomplete record scans. It does not infer physical/global routing or enable arbitrary preset writes. The output verifier now accepts a correctly isolated Scene MIDI cell next to an audio cell.
+
+[Point-5 evidence](point5-grid-audit.json) binds exhaustive masks/adjacent-column cases, independent graph traversal, original seven wire replies, malformed input and refreshed-hash cases, and the bundled preset corpus. [Factory replay](point5-factory-grid.json) repeats all 384 pinned factory grids locally, retaining aggregates only. Its code/source hashes are checked in CI; the factory banks are not downloaded by CI or redistributed. Eight cells retain unknown bit 4 (six merges, two single-input cells).
+
+Run `node tools/fm3/point5-evidence.mjs` to check the derived report; use `--factory FACTORY_DIR --write` after reviewing changes to the factory replay's source bindings. No new device, REA/Ghidra, audio/CPU, In 2/Out 2 authoring, FOH+monitor, 4CM or global I/O result is claimed.
