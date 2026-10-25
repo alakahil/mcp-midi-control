@@ -10,8 +10,8 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.20 väljalaset: modifikaatorite auditi
-laiendamine 16 plokiperele ning Wah/Volume kirjepesade tõendipõhine eeltöö.
+Praegune lähtekood valmistab ette 0.3.21 koondväljalaset: [4. punkti seadmevaba töö](FM3_POINT4_OFFLINE.md),
+modifikaatorite elutsükli staatilised tõendid, korpuse inventuur ja täpsem failiaudit.
 Uusi seadmekatseid ega skaalamõõtmisi ei lisandu.
 Kehtiv tõendusulatus on plugina SKILL.md-s ning vastavate katsete kviitungites.
 Avaldamine, täpne commit ja käivitajajuhendi uuendus tuleb kinnitada

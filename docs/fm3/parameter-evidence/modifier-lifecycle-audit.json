@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "firmwareSha256": "239fd73a2a39eb02789632b9f2dc47a88c174f5dd7fd8946b4ce60097a11ee8d",
+  "loaderSha256": "a12e2be85f0e7dbb29255e04d0ec86381d4a4ac6cd308d3c5650a187d6d905c3",
+  "checkpointSha256": "1e90b517a64d184de26605030716a05035db7265e2e2079be0115469b90b83b9",
+  "method": "Bounded native operand checks plus hash-bound manual control/data-flow review; exploratory Capstone 5.0.6 and pypcode 4.0.1 / ghidra-sharc f4ebdfa7865241249dc8c918291ee55ea4af5a13, with SHARC+ widths checked independently. Not firmware execution.",
+  "nativeSpansVerified": 14,
+  "priorREAReceiptSha256": "604f3745cceb557666509898bc8d11f854ff7e8d7be2baba2ea57245713576ac",
+  "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "editorSpansVerified": 2,
+  "findings": {
+    "dispatch": {
+      "createOperation": 58,
+      "removeOperation": 59,
+      "conditionalArmForwarder": "0xc441bf38",
+      "sharcCreate": "0x814536",
+      "sharcRemove": "0x8145d7"
+    },
+    "selection": {
+      "entry": "0x813d9f",
+      "examinedObjects": 32,
+      "objectBytes": 712,
+      "predicate": "cached Source field at object+0x200 equals zero",
+      "order": "ascending index; first match",
+      "noMatch": "null object, create returns zero",
+      "runtimeCacheEqualityToEveryPresetNotProven": true
+    },
+    "slotIdentity": {
+      "wireEffectIdBase": 3,
+      "rawBytesPerRecord": 50,
+      "serializedWords": 25,
+      "rawPool": "0xc2096ff0",
+      "runtimeObjectPool": "0x80906788"
+    },
+    "initialization": {
+      "targetOrder": [
+        8,
+        9
+      ],
+      "callbackOperation": 9,
+      "defaultPidOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        13,
+        14,
+        7,
+        15,
+        10,
+        12,
+        11,
+        16,
+        17,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "defaultValues": [
+        {
+          "pid": 0,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x10",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 1,
+          "defaultFloatBits": "0xc2c80000",
+          "defaultPhysical": -100.0,
+          "descriptorType": "0x0",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 2,
+          "defaultFloatBits": "0x469c4000",
+          "defaultPhysical": 20000.0,
+          "descriptorType": "0x0",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 3,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x531",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 4,
+          "defaultFloatBits": "0x3f000000",
+          "defaultPhysical": 0.5,
+          "descriptorType": "0x531",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 5,
+          "defaultFloatBits": "0x3f800000",
+          "defaultPhysical": 1.0,
+          "descriptorType": "0x531",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 6,
+          "defaultFloatBits": "0x3f000000",
+          "defaultPhysical": 0.5,
+          "descriptorType": "0x531",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 13,
+          "defaultFloatBits": "0x3f800000",
+          "defaultPhysical": 1.0,
+          "descriptorType": "0x43",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 14,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x531",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 7,
+          "defaultFloatBits": "0x3c23d70a",
+          "defaultPhysical": 0.009999999776482582,
+          "descriptorType": "0x431",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 15,
+          "defaultFloatBits": "0x3c23d70a",
+          "defaultPhysical": 0.009999999776482582,
+          "descriptorType": "0x431",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 10,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x10",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 12,
+          "defaultFloatBits": "0x3d4ccccd",
+          "defaultPhysical": 0.05000000074505806,
+          "descriptorType": "0x531",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 11,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x10",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 16,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x10",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 17,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x10",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 20,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x0",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 21,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x0",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 22,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x0",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 23,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x0",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        },
+        {
+          "pid": 24,
+          "defaultFloatBits": "0x0",
+          "defaultPhysical": 0.0,
+          "descriptorType": "0x10",
+          "warning": "Input to callback operation 9, not an encoded preset word."
+        }
+      ],
+      "notInResetList": [
+        18,
+        19
+      ],
+      "reservedWordsNotProvenZero": true,
+      "defaultsAreCallbackInputsNotSerializedWords": true
+    },
+    "removal": {
+      "acceptedWireEffectIds": [
+        3,
+        34
+      ],
+      "firstCallback": {
+        "pid": 0,
+        "value": 0
+      },
+      "lastCallback": {
+        "pid": 8,
+        "value": 0
+      },
+      "targetPid9NotExplicitlyCleared": true,
+      "conditionalTargetCallback": "If the reviewed gate permits and a target object exists, invoke its callback with op0 and target PID.",
+      "doesNotMemsetWholeRecord": true
+    },
+    "sourceNoneVsRemoval": {
+      "sourceNoneAloneDoesNotClearTarget": true,
+      "sourceZeroIsNotBlankRecord": true,
+      "editorRemovalAlsoQueuesOperation59": true
+    }
+  },
+  "limits": [
+    "The reviewed selector examines 32 objects; this is not a guaranteed usable hardware capacity.",
+    "The callback conversions, cache initialization, reserved PID18/19, target support and import path are not fully emulated.",
+    "Copying record0 to record1 is not certified by the selector alone. No simultaneous Wah/Volume writer is enabled.",
+    "Other source codes, targets, channel scopes and Volume Min/Max need their own evidence.",
+    "Global controller assignments and instantaneous values are not supplied by the preset or this analysis.",
+    "Removal and reallocation are statically traced but not exercised on FM3; no import/STORE/audio claim."
+  ],
+  "allocationRuleStaticallyLocated": true,
+  "serializedInitializationFullyProven": false,
+  "arbitraryWriterSupported": false,
+  "newREAInvocation": false,
+  "newHardwareMeasurements": false,
+  "deviceIO": false,
+  "presetWrites": false
+}

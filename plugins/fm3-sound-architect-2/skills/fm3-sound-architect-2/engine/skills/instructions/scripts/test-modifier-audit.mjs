@@ -41,6 +41,40 @@ for(const secondary of [false,true])for(let start=0;start<sources.length;start+=
   }
 }
 const inactive=run(b=>target(b,1,{source:0}));assert.equal(inactive.overlappingTargets.length,0);
+assert.equal(inactive.modifiers[1].state,'inactive-binding');
+assert.equal(inactive.modifiers[1].sourceActivity,'none');
+assert.deepEqual(inactive.lifecycle.inactiveBoundRecords,[1]);
+assert.equal(inactive.lifecycle.inactiveUnboundRecords.includes(1),false);
+const secondaryOnly=run(b=>target(b,1,{source:0,secondary:15}));
+assert.equal(secondaryOnly.modifiers[1].active,true);
+assert.equal(secondaryOnly.modifiers[1].sourceActivity,'secondary-only');
+assert.deepEqual(secondaryOnly.lifecycle.secondaryOnlyRecords,[1]);
+assert.equal(secondaryOnly.lifecycle.storedPrimarySourceZeroRecords.includes(1),true);
+assert.equal(secondaryOnly.lifecycle.inactiveBoundRecords.includes(1),false);
+assert.deepEqual(secondaryOnly.externalControllers.find(x=>x.source===15).references,[{record:1,role:'secondary'}]);
+assert.equal(secondaryOnly.externalControllers.find(x=>x.source===15).assignmentVerified,false);
+assert.equal(secondaryOnly.externalControllers.find(x=>x.source===15).currentValue,null);
+assert.match(renderModifierAuditText(secondaryOnly),/#2 teisene allikas/);
+assert.match(renderModifierAuditText(secondaryOnly),/teisese allikaga aktiivseid: 1/);
+const both=run(b=>target(b,1,{source:14,secondary:14}));
+assert.equal(both.modifiers[1].sourceActivity,'primary-and-secondary');
+assert.deepEqual(both.externalControllers[0].references,[{record:0,role:'primary'},{record:1,role:'primary'},{record:1,role:'secondary'}]);
+const allOccupied=run(b=>{for(let r=0;r<32;r++)target(b,r);});
+assert.deepEqual(allOccupied.lifecycle.storedPrimarySourceZeroRecords,[]);
+assert.equal(allOccupied.summary.active,32);
+const allUnbound=run(b=>{for(let r=0;r<32;r++)target(b,r,{source:0,effect:0});});
+assert.equal(allUnbound.lifecycle.inactiveUnboundRecords.length,32);
+assert.equal(allUnbound.lifecycle.inactiveBoundRecords.length,0);
+for(const a of [inactive,secondaryOnly,both,allOccupied,allUnbound]){
+  assert.equal(a.lifecycle.allocationDecision,'unsupported');assert.equal(a.lifecycle.removalDecision,'unsupported');
+  assert.equal(a.lifecycle.arbitraryAllocationSupported,false);assert.equal(a.lifecycle.simultaneousWahVolumeWriterSupported,false);
+  assert.equal(a.lifecycle.serializedInitializationFullyProven,false);assert.equal(a.lifecycle.sourceNoneIsNotRemoval,true);
+  assert.match(renderModifierAuditText(a),new RegExp(a.typePolicy.families.length+' efektipere'));
+  assert.equal(a.lifecycle.evidence.corpus.accepted,628);
+}
+// Callers cannot mutate the internal evidence used by later reports.
+secondaryOnly.lifecycle.evidence.findings.selection.examinedObjects=1;
+assert.equal(auditModifiers(base).lifecycle.evidence.findings.selection.examinedObjects,32);
 const overlap=run(b=>target(b,1));assert.deepEqual(overlap.overlappingTargets,[{records:[0,1],certainty:'same-target'}]);
 const disjoint=run(b=>{target(b,0,{channel:1});target(b,1,{channel:2});});assert.equal(disjoint.overlappingTargets.length,0);
 const uncertain=run(b=>target(b,1,{channel:65535,effect:0,source:65535,secondary:65534,operation:2}));

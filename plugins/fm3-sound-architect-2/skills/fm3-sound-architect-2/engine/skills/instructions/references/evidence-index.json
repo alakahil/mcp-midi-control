@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2118,
-  "filePaths": 2322,
+  "uniqueContents": 2119,
+  "filePaths": 2323,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -12452,6 +12452,12 @@
       "bytes": 1804,
       "paths": [
         "references/filter-controls-20261008-165150/step-08-9516c67865/result.json"
+      ]
+    },
+    "f8fa6b4077772ee33a18f0da7fa18cdc282b82a8e465563793da8a253e2b9da7": {
+      "bytes": 10748,
+      "paths": [
+        "references/fm3-modifier-lifecycle-evidence.json"
       ]
     },
     "f90520e6a7d617dd7e8932e83200631d028061d42722e81515eced962baf335b": {

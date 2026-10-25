@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.20`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.21`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,23 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## 4. punkti seadmevaba koondtöö (0.3.21, 25.10.2026)
+
+Kasuta [4. punkti tõendi- ja piirangutabelit](engine/docs/FM3_POINT4_OFFLINE.md).
+Uus staatiline analüüs leidis FW13 kirjepesa otsingu ning loomise/eemaldamise
+harud. See ei tõenda veel täielikku serialiseeritud lähtestust ega luba teise
+kirje kirjutamist. Wah ja Volume samaaegne kirjutamine, üldine jaotaja,
+eemaldamine ja suvaline Volume Min/Max jäävad toetamata.
+
+`--inspect-modifiers` eristab põhi- ja teisese allika aktiivsust, Source NONE-i,
+väljalülitatud sihtseost ja sidumata kirjet. External-kontrolleri sõltuvused
+näitavad iga viite kirjet ja rolli; globaalne pedaali/CC vastendus ning hetkeväärtus
+jäävad teadmata. TXT ja JSON lähtuvad samast 16 pere tüübipoliitikast.
+Kogu paketi SYX-korpuse inventuur ei leidnud toetatud vormingus kahe aktiivse
+seose näidet. Ära nimeta sidumata või Source NONE kirjet tõendatult vabaks pesaks.
+Uut REA teenusekäivitust ega seadmemõõtmist ei tehtud; varasem REA eksport ja
+uued kohalikud staatilised kontrollid on eraldi tõendikihid.
 
 ## Modifikaatorite auditi laiendus (0.3.20, 25.10.2026)
 

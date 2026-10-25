@@ -35,6 +35,9 @@ Kirjutaja kopeerib täpse 25-sõnalise kirje. See **ei arvuta** uusi Min/Max-, k
 
 ## Kontroll ja piirid
 
+0.3.21 [elutsükli analüüs ja 4. punkti tabel](FM3_POINT4_OFFLINE.md) täpsustavad
+loomist, eemaldamist ja algväärtusi. See ei laienda selle piiratud kirjutaja tuge.
+
 0.3.20 [kirjepesade eeltöö](FM3_MODIFIER_AUDIT.md#wah-ja-volume-koos-kirjepesade-eeltöö-0320)
 kinnitab, et praegused Wah- ja Volume-kirjutajad kasutavad sama esimest kirjet.
 Ülejäänud sidumata kirjete loend ei anna neile veel üldist kirjutusluba.

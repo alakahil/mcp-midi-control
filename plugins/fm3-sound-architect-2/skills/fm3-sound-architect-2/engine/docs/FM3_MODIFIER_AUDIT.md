@@ -4,6 +4,7 @@
 0.3.7 lisas sihtploki kirje, ruudustiku ja salvestatud stseenide konteksti;
 0.3.8 lisab sihtparameetri FW13 tüübisobivuse lugemise A–D kanalites.
 0.3.20 laiendab sama tüübisobivuse auditit viiele 0.3.19-s lisatud perele.
+0.3.21 lisab [elutsükli ja globaalsete sõltuvuste auditi](FM3_POINT4_OFFLINE.md).
 See aitab enne uue kirjutustoe kavandamist kindlaks teha, millised seosed on
 failis tegelikult salvestatud. Uusi kirjutusvõimalusi ega seadmeühendust ei lisata.
 
@@ -192,3 +193,18 @@ Uut REA/Ghidra jooksu, seadmetoimingut ega presetikirjutust see eeltöö ei tee.
 Samaaegne Wah/Volume, vaba kirjepesa jaotamine ja globaalsed pedaalimäärangud
 ei saa 0.3.20-ga uut kirjutustuge. Kahe sihi ühine External 1 allikas oleks
 ühine juhtsignaal; eraldi pedaalide määrangut ei tohi sellest oletada.
+
+## Elutsükli audit (0.3.21)
+
+`lifecycle` seob leitud FW13 otsingu/loomise/eemaldamise harud räsitud tõenditega.
+Nullise põhiallikaga kirje võib olla teisese allika tõttu aktiivne. Audit kasutab
+aktiivsuse määramisel mõlemat allikat ning ei samasta Source NONE-i eemaldamisega.
+`sourceActivity` väärtused on `primary-only`, `secondary-only`,
+`primary-and-secondary` ja `none`; need kirjeldavad salvestatud sõnu, mitte heli.
+
+`externalControllers[].references` näitab viite kirjet ja rolli (`primary` või
+`secondary`). `assignmentVerified:false` ja `currentValue:null` on tahtlikud:
+globaalne määrang ja kontrolleri hetkeväärtus pole presetist tõendatud.
+Kõik uued elutsükli väljad on lugemiseks; `allocationDecision` ja
+`removalDecision` jäävad `unsupported`. Ka kõigi 32 nullise Source-välja korral
+ei lubata automaatset jaotamist. Täpne ulatus on [4. punkti tabelis](FM3_POINT4_OFFLINE.md).
