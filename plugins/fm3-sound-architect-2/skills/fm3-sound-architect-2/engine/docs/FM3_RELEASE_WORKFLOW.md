@@ -10,8 +10,8 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.19 väljalaset: efektiivse tõendiregistri,
-viie lisatava pere XML-nähtavuse ning nelja väljundfaili sisulise kontrolli täiendamine.
+Praegune lähtekood valmistab ette 0.3.20 väljalaset: modifikaatorite auditi
+laiendamine 16 plokiperele ning Wah/Volume kirjepesade tõendipõhine eeltöö.
 Uusi seadmekatseid ega skaalamõõtmisi ei lisandu.
 Kehtiv tõendusulatus on plugina SKILL.md-s ning vastavate katsete kviitungites.
 Avaldamine, täpne commit ja käivitajajuhendi uuendus tuleb kinnitada

@@ -14,11 +14,15 @@ const fixtures={
   flanger:[standard,8150,33],drive:[standard,8460,44],phaser:[standard,9238,35],
   reverb:[standard,9564,71],wah:[standard,10178,25],
   tremolo:['FM3_TREMOLO_ABCD_TEST_export.syx',9868,22],
-  rotary:['FM3_ROTARY_A_TEST_export.syx',9868,21],pitch:['FM3_PITCH_ABCD_TEST_export.syx',8928,114]
+  rotary:['FM3_ROTARY_A_TEST_export.syx',9868,21],pitch:['FM3_PITCH_ABCD_TEST_export.syx',8928,114],
+  gate:['FM3_P6_INSERT_A_export.syx',8354,19],multiband:['FM3_P6_INSERT_A_export.syx',8678,37],
+  plex:['FM3_P6_INSERT_A_export.syx',9274,96],
+  synth:['FM3_P6_INSERT_B_export.syx',9980,42],tentap:['FM3_P6_INSERT_B_export.syx',10362,48]
 };
 function run(slug,param,models=null,edit=()=>{},scope=0){
   const [file,start,words]=fixtures[slug],input=read('examples/'+file),decoded=inspectStructure(input);
   const body=Buffer.from(decoded.raw.body),p=findParam(slug,param);
+  body.writeUInt16LE(14,1584); // Synthetic External 1 binding, never a device observation.
   body.writeUInt16LE(p.block,1600);body.writeUInt16LE(p.param,1602);body.writeUInt16LE(scope,1618);
   if(models){
     const library=JSON.parse(read('references/'+slug+'-library.json'));
@@ -32,7 +36,7 @@ function run(slug,param,models=null,edit=()=>{},scope=0){
   const syx=Buffer.from(reencodeDumpFromRawPatch(input,reencodeRawPatch(decoded.raw.rawPatch,body))),copy=Buffer.from(syx);
   const audit=auditModifiers(syx);assert.deepEqual(syx,copy,'audit changed input');
   assert.equal(audit.contextScan.status,'complete');assert.equal(audit.presetWritten,false);assert.equal(audit.deviceIO,false);
-  assert.equal(audit.typePolicy.families.length,11);assert.equal(audit.typePolicy.grantsWritePermission,false);
+  assert.equal(audit.typePolicy.families.length,16);assert.equal(audit.typePolicy.grantsWritePermission,false);
   const m=audit.modifiers[0],a=m.targetApplicability;
   assert.equal(a.modifierSupportVerified,false);assert.equal(a.status,'evaluated');
   assert.deepEqual(a.channels.map(c=>c.channel),['A','B','C','D']);
@@ -76,6 +80,39 @@ assert.ok(fixed.a.channels.every(c=>c.blockedReason));
 const selector=check('wah','TYPE',repeat('Clyde'),repeat(A));
 assert.ok(selector.a.channels.every(c=>c.templateOnly));
 check('chorus','BASS',repeat(2),[U,A,A,A],w=>w(0,0,65535));
+const legacyCases=cases;
+// Independent FW13 page expectations; do not derive expected results from the
+// policy under test. The captured P6 files supply layout/defaults, not bindings.
+const types=(pid,values)=>w=>values.forEach((v,ch)=>w(ch,pid,v));
+const plex=check('plex','SHIFT1',null,[E,E,A,U],types(0,[0,1,2,65535]));
+assert.deepEqual(plex.a.scopedExcludedChannels,['A','B']);
+assert.deepEqual(plex.a.scopedUnknownChannels,['D']);
+assert.ok(plex.m.issues.includes('target-type-excluded'));
+assert.ok(plex.m.issues.includes('target-type-unknown'));
+assert.equal(plex.a.channels[2].typeName,'Plex Shift');
+check('plex','SIZE',null,[A,A,E,E],types(0,[3,4,0,2]));
+check('plex','PRESETS',null,repeat(E),types(0,[0,1,2,3]));
+check('gate','RATIO',null,[A,E,E,A],types(14,[0,1,2,3]));
+check('gate','KNEE',null,[E,E,E,A],types(14,[0,1,2,3]));
+check('gate','GAINMONITOR',null,repeat(E),types(14,[0,1,2,3]));
+check('gate','RATIO',null,[U,A,A,A],types(14,[65535,0,0,0]));
+const insertedScope=check('gate','RATIO',null,[A,E,E,A],types(14,[0,1,2,3]),4);
+assert.deepEqual(insertedScope.a.scopedExcludedChannels,[]);
+assert.deepEqual(insertedScope.a.channels.map(c=>c.inModifierScope),[false,false,false,true]);
+const insertedUnknownScope=check('gate','RATIO',null,[A,E,E,A],types(14,[0,1,2,3]),65535);
+assert.equal(insertedUnknownScope.a.scopeKnown,false);
+assert.deepEqual(insertedUnknownScope.a.scopedExcludedChannels,[]);
+check('tentap','FEEDBACK',null,[E,A,U,E],types(0,[0,1,65535,0]));
+check('tentap','NUMTAPS',null,[A,E,A,E],types(0,[0,1,0,1]));
+check('tentap','LEARN',null,repeat(E),types(0,[0,1,0,1]));
+const synth=check('synth','TYPE3',null,repeat(A),w=>w(0,0,65535));
+const multiband=check('multiband','AUTO',null,repeat(A),w=>w(0,0,65535));
+for(const result of [synth,multiband])assert.ok(result.a.channels.every(c=>Object.keys(c.selectorWords).length===0));
+check('multiband','GAINMON1',null,repeat(E));
+const insertedText=renderModifierAuditText(plex.audit);
+assert.ok(insertedText.includes('Plex Shift'));assert.ok(insertedText.includes('D: teadmata'));
+assert.ok(insertedText.includes('ei kinnita modifikaatori tuge'));
+assert.ok(Object.hasOwn(plex.audit.typePolicy.sha256,'fm3-insert-applicability.json'));
 // Unknown context and families never acquire a type verdict.
 const original=read('examples/'+standard),decoded=inspectStructure(original);
 function synthetic(change){const b=Buffer.from(decoded.raw.body);return auditModifiers(Buffer.from(reencodeDumpFromRawPatch(original,reencodeRawPatch(decoded.raw.rawPatch,change(b)??b))));}
@@ -83,6 +120,7 @@ for(const [mutate,reason] of [
   [b=>{b[b.length-1]^=1;},'target-record-unresolved'],
   [b=>Buffer.concat([b.subarray(0,10378),b.subarray(10132,10378),b.subarray(10378)]),'target-record-unresolved'],
   [b=>{b.writeUInt16LE(58,1600);b.writeUInt16LE(0,1602);},'family-not-covered'],
+  [b=>{b.writeUInt16LE(178,1600);b.writeUInt16LE(2,1602);},'target-record-unresolved'],
   [b=>{b.writeUInt16LE(65535,1602);},'target-parameter-unknown']
 ]){
   const a=synthetic(mutate).modifiers[0].targetApplicability;
@@ -98,4 +136,4 @@ for(const file of ['JB_YDOM_RHYTHM.syx','JB_RHYTHM_LEVEL_MINUS3.syx',standard,'F
 const txt=renderModifierAuditText(drive.audit);
 assert.ok(txt.includes('A: välistatud; BB Pre'));assert.ok(txt.includes('seose ulatus jah'));
 assert.ok(txt.includes('ei kinnita modifikaatori tuge'));assert.ok(txt.includes('globaalseid skaalaväärtusi ei kontrollita'));
-console.log(JSON.stringify({passed:true,families:11,semanticCases:cases,channels:'ABCD',unknownContextCases:5,pinnedBases:7,inputPreserved:true,deviceIO:false,newHardwareMeasurements:false}));
+console.log(JSON.stringify({passed:true,families:16,legacySemanticCases:legacyCases,insertedSemanticCases:cases-legacyCases,channels:'ABCD',unknownContextCases:6,pinnedBases:7,inputPreserved:true,deviceIO:false,newHardwareMeasurements:false}));

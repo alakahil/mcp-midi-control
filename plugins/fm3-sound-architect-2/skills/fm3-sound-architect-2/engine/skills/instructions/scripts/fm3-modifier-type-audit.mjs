@@ -6,12 +6,14 @@ import {algorithmPolicyHash} from './fm3-delay-reverb-applicability.mjs';
 import {modulationPolicyHash} from './fm3-modulation-dynamics-applicability.mjs';
 import {rotaryPitchPolicyHash} from './fm3-rotary-pitch-applicability.mjs';
 import {pitchCustomScaleHash} from './fm3-pitch-custom-scales.mjs';
+import {insertPolicyHash} from './fm3-insert-applicability.mjs';
 const hashes={
   'fm3-type-applicability.json':typePolicyHash,
   'fm3-delay-reverb-applicability.json':algorithmPolicyHash,
   'fm3-modulation-dynamics-applicability.json':modulationPolicyHash,
   'fm3-rotary-pitch-applicability.json':rotaryPitchPolicyHash,
-  'fm3-pitch-custom-scales.json':pitchCustomScaleHash
+  'fm3-pitch-custom-scales.json':pitchCustomScaleHash,
+  'fm3-insert-applicability.json':insertPolicyHash
 };
 const policies=Object.fromEntries(Object.entries(hashes).map(([file,hash])=>{
   const bytes=fs.readFileSync(new URL('../references/'+file,import.meta.url));

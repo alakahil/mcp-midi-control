@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.19`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.20`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,20 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## Modifikaatorite auditi laiendus (0.3.20, 25.10.2026)
+
+`--inspect-modifiers` kontrollib nüüd 16 pere salvestatud A–D tüübisobivust:
+varasemale 11 perele lisanduvad PlexDelay, Gate/Expander, TenTapDelay, Synth
+ja Multiband Compressor. Kasutatakse samu räsi järgi kinnitatud FW13 reegleid
+nagu generaatoris. Tundmatu tüüp jääb teadmata; Synthi ja Multibandi PID 0
+ei ole plokitüübi valija. `available` ei kinnita modifikaatori tuge, DSP mõju
+ega kirjuta seost presetisse.
+
+[Kirjepesade eeltöö](engine/docs/FM3_MODIFIER_AUDIT.md#wah-ja-volume-koos-kirjepesade-eeltöö-0320)
+eristab passiivset Wah-seost ja sidumata kirjeid. Mõlemad praegused Wah/Volume
+kirjutajad kasutavad esimest kirjet; samaaegset seost ega vaba pesa jaotamist
+veel ei toetata. Uusi seadmetõendeid või REA/Ghidra jooksu pole lisatud.
 
 ## Auditi offline-täiendused (0.3.19, 25.10.2026)
 
@@ -568,7 +582,7 @@ Tundmatu kirjeloendi või süsteemisaba korral on ploki olemasolu teadmata;
 toimimist ega kuuldavust. Eksporditud Bonamassa aluses on External 1 aktiivne,
 kuid Wah kõigis stseenides bypass'is; NewLookis on sihtseos väljas ja plokk puudub.
 
-Vaata `targetApplicability`: 11 kaetud efektipere A–D kanalite FW13 tüübireegel
+Vaata `targetApplicability`: 16 kaetud efektipere A–D kanalite FW13 tüübireegel
 annab sobiva, välistatud või teadmata tulemuse. Tundmatu mudeli/valija ega
 puuduva või korduva sihtkirje puhul ära järelda sobivust. Kõik kanalid kuvatakse;
 `inModifierScope` eristab seose ALL/A–D ulatust. Tüübireegli läbimine ei kinnita

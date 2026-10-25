@@ -35,6 +35,10 @@ Kirjutaja kopeerib täpse 25-sõnalise kirje. See **ei arvuta** uusi Min/Max-, k
 
 ## Kontroll ja piirid
 
+0.3.20 [kirjepesade eeltöö](FM3_MODIFIER_AUDIT.md#wah-ja-volume-koos-kirjepesade-eeltöö-0320)
+kinnitab, et praegused Wah- ja Volume-kirjutajad kasutavad sama esimest kirjet.
+Ülejäänud sidumata kirjete loend ei anna neile veel üldist kirjutusluba.
+
 - Sisendit ei muudeta kohapeal. Enne kirjutamist kontrollitakse kogu 32-kirjelise lähtepiirkonna räsi, sihtplokki ja A–D VOLUME-tüüpi. Ainult esimese kirje 50-baidine sisu võib muutuda. Täpne lõpppiirkond loetakse uuesti lõplikust SYX-ist.
 - Avalik `fm3-preset.mjs --verify` kontrollib kõiki 25 sõna, modifikaatoripiirkonda, sihtplokki, TXT/spec/aruande kooskõla. Uuendatud CRC ja artefaktiräsid ei peida lepinguvälist muudatust.
 - Generaator taastab seadmeekspordi kogu 12970-baidise keha räsiga `f01f233b8e5195d8ef4e8d3253c85a1ce14649859838eed3c5cf65e760a8eb5e`. Täpselt sama keha ei vaja uut korduseksporti. Uut kodeeritud faili ei ole eraldi tagasi imporditud.
