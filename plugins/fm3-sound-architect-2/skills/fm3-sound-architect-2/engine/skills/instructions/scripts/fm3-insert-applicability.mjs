@@ -1,10 +1,17 @@
 // Firmware-active XML visibility; scalar support and tempo locks are separate.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-export const insertPolicyHash='718900399d68946ce6e30d0414b2f3f631a31de20839ffec042b70dd7700aa5b';
+export const insertPolicyHash='9cedfafba267139f220224ac63a6013dd524c1c0914b49207368f590c3eb0b2a';
 const bytes=fs.readFileSync(new URL('../references/fm3-insert-applicability.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==insertPolicyHash)throw Error('Insert applicability policy changed; review and regenerate');
 const policy=JSON.parse(bytes);
+// Name-only overlay. Keep the historical dictionary and every scalar field intact.
+export function effectiveInsertParameter(p){
+  const r=policy.families[p.family]?.parameters[p.param];
+  if(!r||!Object.hasOwn(r,'dictionaryName'))return p;
+  if(p.family!=='MIXER'||p.param<17||p.param>20||p.name!==null||r.dictionaryName!==null||r.name!=='MIXER_DELAY'+(p.param-16))throw Error('Mixer native name binding differs');
+  return {...p,dictionaryName:p.name,name:r.name,label:r.label};
+}
 export function insertState(p,read){
   const f=policy.families[p.family];
   return f?{type:f.selectorPid===null?0:read(f.selectorPid)}:null;

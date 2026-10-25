@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {readModifiers,dependencyPolicyHash} from './fm3-parameter-dependencies.mjs';
 import {loadDictionary} from './fm3-table-encoder.mjs';
-import {scanRecords,readGrid,SLUG_BY_EID} from './fm3-layout.mjs';
+import {scanRecords,readGrid,SLUG_BY_EID,CHANNELS} from './fm3-layout.mjs';
 import {auditModifierTargetType,modifierTypeAuditPolicy} from './fm3-modifier-type-audit.mjs';
 const policyBytes=fs.readFileSync(new URL('../references/fm3-parameter-dependencies.json',import.meta.url));
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -55,12 +55,12 @@ function targetContext(body,m,index,sceneNames){
   if(gridPresence==='absent')issues.push('target-not-in-grid');
   if(gridPresence==='ambiguous')issues.push('duplicate-target-grid-cell');
   const r=recordPresence==='present'?matches[0]:null;
-  const supported=!!r&&r.channels===4&&Object.hasOwn(SLUG_BY_EID,r.eid);
+  const supported=!!r&&r.channels===(CHANNELS[r.block]??4)&&Object.hasOwn(SLUG_BY_EID,r.block);
   if(r&&!supported)issues.push('target-scene-layout-unsupported');
   const scenes=supported?Array.from({length:8},(_,i)=>{
     const channelRaw=body.readUInt16LE(r.header+10+2*i),bypassRaw=body.readUInt16LE(r.header+26+2*i);
-    const channel=channelRaw<4?'ABCD'[channelRaw]:null,bypass=bypassRaw<2?bypassRaw===1:null;
-    const modifierChannelMatches=channel===null||m.channel>4?null:m.channel===0||m.channel===channelRaw+1;
+    const channel=channelRaw<r.channels?'ABCD'[channelRaw]:null,bypass=bypassRaw<2?bypassRaw===1:null;
+    const modifierChannelMatches=channel===null||m.channel>r.channels?null:m.channel===0||m.channel===channelRaw+1;
     return {scene:i+1,name:sceneNames[i]??null,channelRaw,channel,bypassRaw,bypass,modifierChannelMatches};
   }):[];
   if(scenes.some(s=>s.channel===null))issues.push('unknown-target-scene-channel');
@@ -100,6 +100,7 @@ export function auditModifiers(syx){
     if(target)issues.push(...target.issues);
     const record=target?.recordPresence==='present'?context.records.find(r=>r.header===target.recordHeader):null;
     const applicability=auditModifierTargetType(body,m,p,record);
+    if(applicability&&!applicability.scopeKnown)issues.push('target-channel-scope-unknown');
     if(applicability?.scopedExcludedChannels.length)issues.push('target-type-excluded');
     if(applicability?.scopedUnknownChannels.length)issues.push('target-type-unknown');
     return {...m,sourceName:sourceName(m.source),secondarySourceName:sourceName(m.secondarySource),

@@ -10,8 +10,7 @@ Erinevused on liigitatud olemasolevate allikate järgi. Liigitus ei kinnita tund
 | `high-id-editor-control` | 42 |
 | `midi-row-action` | 8 |
 | `midi-slot-without-scalar-definition` | 252 |
-| `named-dictionary-gap` | 4 |
-| `unnamed-active-descriptor` | 4 |
+| `named-dictionary-gap` | 8 |
 | `unnamed-family` | 7 |
 | `unnamed-unused-slot` | 15 |
 

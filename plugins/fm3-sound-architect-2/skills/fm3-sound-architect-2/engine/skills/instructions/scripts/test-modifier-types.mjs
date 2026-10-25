@@ -36,7 +36,7 @@ function run(slug,param,models=null,edit=()=>{},scope=0){
   const syx=Buffer.from(reencodeDumpFromRawPatch(input,reencodeRawPatch(decoded.raw.rawPatch,body))),copy=Buffer.from(syx);
   const audit=auditModifiers(syx);assert.deepEqual(syx,copy,'audit changed input');
   assert.equal(audit.contextScan.status,'complete');assert.equal(audit.presetWritten,false);assert.equal(audit.deviceIO,false);
-  assert.equal(audit.typePolicy.families.length,16);assert.equal(audit.typePolicy.grantsWritePermission,false);
+  assert.equal(audit.typePolicy.families.length,24);assert.equal(audit.typePolicy.grantsWritePermission,false);
   const m=audit.modifiers[0],a=m.targetApplicability;
   assert.equal(a.modifierSupportVerified,false);assert.equal(a.status,'evaluated');
   assert.deepEqual(a.channels.map(c=>c.channel),['A','B','C','D']);
@@ -136,4 +136,4 @@ for(const file of ['JB_YDOM_RHYTHM.syx','JB_RHYTHM_LEVEL_MINUS3.syx',standard,'F
 const txt=renderModifierAuditText(drive.audit);
 assert.ok(txt.includes('A: välistatud; BB Pre'));assert.ok(txt.includes('seose ulatus jah'));
 assert.ok(txt.includes('ei kinnita modifikaatori tuge'));assert.ok(txt.includes('globaalseid skaalaväärtusi ei kontrollita'));
-console.log(JSON.stringify({passed:true,families:16,legacySemanticCases:legacyCases,insertedSemanticCases:cases-legacyCases,channels:'ABCD',unknownContextCases:6,pinnedBases:7,inputPreserved:true,deviceIO:false,newHardwareMeasurements:false}));
+console.log(JSON.stringify({passed:true,families:24,legacySemanticCases:legacyCases,insertedSemanticCases:cases-legacyCases,channels:'ABCD',unknownContextCases:6,pinnedBases:7,inputPreserved:true,deviceIO:false,newHardwareMeasurements:false}));

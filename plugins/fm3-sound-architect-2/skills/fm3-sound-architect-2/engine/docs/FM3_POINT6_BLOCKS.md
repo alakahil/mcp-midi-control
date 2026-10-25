@@ -1,3 +1,96 @@
+# Auditi punkt 6 — seis 0.3.22 (25.10.2026)
+
+## Kehtiv katvus
+
+Uus seadmevaba töö laiendab lõpliku kanali XML-kontrolli 5 perelt / 242 PID-ilt
+13 perele / 515 PID-ile. Tabeli „nähtav” tähendab vähemalt ühes režiimis aktiivset
+FW13 juhikut; see ei tühista skalaarse kodeeringu, tempo või modifikaatori piiranguid.
+
+| Pere | PID-e | Nähtava juhikuga PID-e | Kanalid | Režiim |
+| --- | ---: | ---: | --- | --- |
+| Plex | 96 | 93 | A–D | 5 tüüpi |
+| Gate/Expander | 19 | 17 | A–D | 4 tüüpi |
+| TenTap | 48 | 42 | A–D | 2 tüüpi |
+| Synth | 42 | 40 | A–D | Tüübivalijata |
+| Multiband | 37 | 32 | A–D | Tüübivalijata |
+| Mixer | 21 | 15 | A–D | Tüübivalijata |
+| Multiplexer | 7 | 5 | A–D | Tüübivalijata |
+| Formant | 12 | 11 | A–D | Tüübivalijata |
+| Megatap | 35 | 33 | A–B | Tüübivalijata |
+| RingMod | 13 | 11 | A–B | Tüübivalijata |
+| Resonator | 40 | 39 | A–B | Manual / Chordal |
+| Looper | 24 | 16 | A | Salvestatavad juhikud |
+| MultiDelay/MULTITAP | 121 | 117 | A–D | 6 tüüpi; ainult loetav metaandmestik |
+
+Lähteallikad on kinnitatud FM3-Edit 1.07.17 XML ja FW13 vahemälu. Mixeri
+Delay 1–4 nimed/PID-id 17–20 lahendati ARM64 binaari 23 järjestikuse
+kirjeldusrea abil. Vahemälu kinnitab olemasoleva sõnastiku vahemiku 0–64,
+kordaja ja sammu; see ei ole uus riistvaramõõtmine. Nimekiht jätab ajaloolise
+sõnastiku, kodeeringu ja staatuse muutmata. Binaari Delay 5/6 ei esine FW13
+vahemälus ega XML-juhikutes, mistõttu neid ei avata.
+
+Tõendid: `references/fm3-insert-applicability.json`,
+`references/fm3-point6-native-bindings.json` ning lähterepo
+`docs/fm3/parameter-evidence/point6-offline.json`.
+Korduskontrollid: `tools/fm3/insert_applicability.py`,
+`tools/fm3/point6_native_bindings.py`, `tools/fm3/point6-evidence.mjs`.
+`--editor` kordab vastava kinnitatud binaari väljavõttu; ilma selleta kontrollitakse
+salvestatud tuletisi ja nende kooskõla. Ühtegi native programmi ega REA teenust ei käivitata.
+
+## Tarkvaratestid
+
+- 515 PID-i skalaarse toe kontroll; 5722 skalaarkontrolli.
+- 6268 tüübi/kanali juhtu, sealhulgas 2904 MultiDelay ainult lugemise juhtu.
+- 2364 tegelikku puhverkirjutust koos kõigi kõrvaliste baitide säilimise kontrolliga.
+- 49 eraldi sõnastatud nähtavusjuhtu; 4357 vigase sisendi/keelatud kirjutuse kontrolli.
+- 24 576 Scene MIDI juhtu: kõik 64 käsukohta, 7-bitised väärtused ja kõik 16 kanalit.
+  Väärtused/kanalid on süsteemselt jaotatud, mitte kogu võimaliku ristkorrutise läbimine.
+  PC säilitab Number-sõna, NONE säilitab muud väljad, sõna 256 ja ümbrus säilivad.
+- 12 kirjutatava pere SYX/TXT/spec/report kontroll ning 13 kehtiva CRC ja uuendatud
+  räsidega sisulise rikkumise tõrjumist, nii layout- kui ka grid-režiimis.
+- Looperi käivitusnupud ja mõõdikud, peidetud TYPE-id, vale kanal, tundmatu tüüp,
+  poolik Scene MIDI kirje ja hõre massiiv tõrjutakse enne osalist kirjutamist.
+
+Resonatori Mode'i ja juhiku järjekord plaanis ei mõjuta tulemust. Teise Resonatori
+kirjutus kontrollitakse oma kirjes. Modifikaatori audit katab nüüd 24 peret ja
+tegelikke 1/2/4-kanalilisi kirjeid; `available` ei tähenda tõendatud modifikaatorituge.
+
+Paketi 795 SYX-faili annavad 638 erinevat sisu: 626 täielikku struktuuriskanni,
+2 osalist skanni ning 10 toetamata/vanema vormingu faili. Osaline skann ei tõenda
+ploki puudumist. Korpus sisaldab ka genereeritud näiteid, mitte 638 sõltumatut
+seadmekatset. AustinBuddy Live Gold Tonepack ei olnud siin kättesaadav ega kuulu
+nende arvude hulka.
+
+## Kasutaja kohaliku kausta audit
+
+Käivita Node.js-iga avaldatud paketi MOOTOR-kaustast:
+
+```sh
+node scripts/fm3-corpus-audit.mjs --input "$HOME/Documents/Fractal Audio/JULY_2026_LiveGold" --output /ABS/LiveGold_structure_audit.json
+```
+
+Vali uus `.json` väljundtee; olemasolevat faili ei kirjutata üle. Audit ei muuda
+preseteid, ei ava MIDI-t/võrku ega järgi sümbollinke. Toetatud on üksikud 24680-baidised
+FM3 0x0146 dump'id; pangafailid/teised vormingud jäävad eraldi. Väljumiskood 2
+märgib toetamata sisu või osalist skanni; raport salvestatakse siiski.
+Raportis on ainult räsid ja tuletatud struktuur, mitte failinimed, presetinimed,
+parameetriväärtused või binaarne presetisisu. Kommertspaketi faile ei tohi selle
+auditi käigus avalikku reposse või pluginasse kopeerida.
+
+## Alles jääv tõendipiir
+
+MultiDelay dünaamiline Feedback Send/Return ja presetivalik, Looperi jooksva oleku
+käsud, Synthi ostsillaatorite ja Multibandi automaatse ajastuse DSP-sõltuvused ei
+ole skalaarne kirjutustugi. MultiDelay ploki lisamist pole avatud. Tundmatud skaalad
+jäävad blokeerituks. Täiendav staatiline uurimine võib osa lünki veel vähendada;
+see väljalase ei väida kogu seadme käitumise ammendavat tõendamist.
+
+Uue faili import/STORE, tegelik heli, CPU, Looperi transport ning Scene MIDI DIN
+väljund ja PC võimalik kuvanihe vajavad eraldi seadmetõendit. Alljärgnev on
+ajalooline allikakontekst, mille varasemaid ootemärke tuleb lugeda koos ülaltoodud seisuga.
+
+---
+
 # Auditi punkt 6: ülejäänud plokipered (Claude, 2026-10-23)
 
 Pered: Mixer/Multiplexer, Multiband/Plex, Synth, Looper, Scene MIDI. Lisaks samast allikast

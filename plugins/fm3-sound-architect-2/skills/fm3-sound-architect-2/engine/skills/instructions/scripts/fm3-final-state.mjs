@@ -10,7 +10,7 @@ import {describeGrid,describeLinks,gridWarnings,isTwoRowSerial} from './fm3-grid
 import {describeSceneMidi,SCENE_MIDI_EID} from './fm3-scene-midi.mjs';
 import {layouts,filterDonor,peqDonor,geqDonor,enhancerDonor} from './fm3-composer-bases.mjs';
 import {describeComposerScenes} from './fm3-jb-composer.mjs';
-import {loadDictionary,decodeValue,DEFAULT_STATUSES,OPT_IN_STATUSES,findParam,baseSlug} from './fm3-table-encoder.mjs';
+import {loadDictionary,decodeValue,DEFAULT_STATUSES,OPT_IN_STATUSES,findParam,baseSlug,FAMILY_BY_SLUG} from './fm3-table-encoder.mjs';
 import {sha256} from './fm3-output.mjs';
 import {typeApplicability,typePolicySummary,readTypeState} from './fm3-type-applicability.mjs';
 import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
@@ -22,7 +22,8 @@ const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,
 export function finalSoundState(syx,writes,opts={}){
   const after=inspectStructure(syx),body=Buffer.from(after.raw.body),{records}=scanRecords(body),dictionary=loadDictionary();
   const blocks=Object.fromEntries(records.filter(r=>SLUG_BY_EID[r.block]).map(r=>[r.family,{...r,typePid:definitions[baseSlug(r.family)]?.typePid??INSERT_TYPE_PID[baseSlug(r.family)]}]));
-  const scenes=describeComposerScenes(after,blocks);
+  const scenes=describeComposerScenes(after,blocks),typePolicies=typePolicySummary();
+  for(const scene of scenes)for(const [family,b] of Object.entries(scene.blocks))if(typePolicies.insertFamilies.families[FAMILY_BY_SLUG[baseSlug(family)]]?.selectorPid===null)b.type="tüübivalijata";
   // Inserted point-6 families: name the type from the dictionary enum (no composer library exists).
   for(const s of scenes)for(const [family,b] of Object.entries(s.blocks))if(Object.hasOwn(INSERT_TYPE_PID,baseSlug(family))&&b.typeId!==undefined)b.type=findParam(family,INSERT_TYPE_PID[baseSlug(family)]).enum?.[b.typeId]?.trim()??b.type;
   const channels=records.map(r=>({block:r.family,effectId:r.eid,wordsPerChannel:r.words,channels:Array.from({length:r.channels},(_,i)=>({channel:'ABCD'[i],words:Array.from({length:r.words},(_,pid)=>body.readUInt16LE(r.start+(i*r.words+pid)*2))}))}));
@@ -51,7 +52,7 @@ export function finalSoundState(syx,writes,opts={}){
     }
   }
   const inputGate=describeInputGate(body,records.find(r=>r.eid===37));
-  return {inputGate,volumePan:describeVolumePan(body,records.find(r=>r.eid===102)),name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalLayout:isTwoRowSerial(body)?'two-row':'grid',signalRows:isTwoRowSerial(body)?describeRows(body):describeGrid(body),signalLinks:isTwoRowSerial(body)?[]:describeLinks(body),gridWarnings:isTwoRowSerial(body)?[]:gridWarnings(body),sceneMidi:records.some(r=>r.eid===SCENE_MIDI_EID)?describeSceneMidi(body,records.find(r=>r.eid===SCENE_MIDI_EID)):null,scenes,controls:effective,channels,parameters,dependencies:dependencyPolicySummary(),modifiers,typeApplicability:typePolicySummary(),pitchCustomScales:pitchCustomScaleSummary(),globalScaleDependencies:globalScaleDependencies(channels),outputSha256:sha256(syx)};
+  return {inputGate,volumePan:describeVolumePan(body,records.find(r=>r.eid===102)),name:after.decoded.preset_name,firmware:13,selectedScene:body[0]+1,signalLayout:isTwoRowSerial(body)?'two-row':'grid',signalRows:isTwoRowSerial(body)?describeRows(body):describeGrid(body),signalLinks:isTwoRowSerial(body)?[]:describeLinks(body),gridWarnings:isTwoRowSerial(body)?[]:gridWarnings(body),sceneMidi:records.some(r=>r.eid===SCENE_MIDI_EID)?describeSceneMidi(body,records.find(r=>r.eid===SCENE_MIDI_EID)):null,scenes,controls:effective,channels,parameters,dependencies:dependencyPolicySummary(),modifiers,typeApplicability:typePolicies,pitchCustomScales:pitchCustomScaleSummary(),globalScaleDependencies:globalScaleDependencies(channels),outputSha256:sha256(syx)};
 }
 function unitFor(p){
   // Only explicit, already used units; unknown units stay labelled as editor values.
@@ -76,6 +77,8 @@ const dependencyNote=p=>p.dependencies?.mode==='tempo'?`; salvestatud väärtus,
 const fmt=v=>typeof v==='number'?String(Number(v.toFixed(4))):String(v);
 export function renderFinalSoundText(state,spec){
   const context=spec.context??{};
+  const point6=state.typeApplicability.insertFamilies.families;
+  const point6Note=`6. punkti ${Object.keys(point6).length} pere / ${Object.values(point6).reduce((n,f)=>n+f.parameters,0)} PID-i XML-nähtavus on kontrollitud. MultiDelay metaandmestik on ainult loetav ega ava selle ploki lisamist. Mõõdikud, tegevusnupud ja XML-is puuduvad juhikud ei ole skalaarseadistused.`;
   const lines=['FM3 SOUND ARCHITECT 2 — LÕPLIK PRESET',`Preset: ${state.name}`,
     `Eesmärk: ${spec.purpose??spec.composer.purpose??'Kirjeldatud soundi koostamine.'}`,
     'Seade: FM3 Mk II Turbo, firmware 13.',`Kitarr: ${context.guitar??'selle kirjelduse jaoks määramata'}`,
@@ -110,7 +113,7 @@ export function renderFinalSoundText(state,spec){
   lines.push('','SÕLTUVUSED JA KONTROLLITASE','Kanalimuudatus mõjutab kõiki seda kanalit kasutavaid stseene. Määramata väärtused pärinevad alusest või kopeeritud täiskanalimallist.',
     'Cab-mallid kasutavad olemasolevat Dyna-Cab teeki. Väliseid User IR-faile ei paigaldata; muutmata IR/pedaali/globaalseadistuse sõltuvused säilivad alusfailist.',
     'Koostamisel kontrolliti lõppfaili kaadreid, CRC-d, sisu, marsruutimist ja deklareeritud muudatusi. Nelja väljundfaili terviklikkuse kinnitab edukas --verify. Selle lõppfaili import, heli ja CPU pole uue kontrolliga kinnitatud.',
-    'Choruse, Drive’i, Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri parameetriloend ning tabelikirjutused järgivad piiratud FW13 tüübi- ja algoritmireegleid. Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri mudelivahetus ning Phaseri Mode nõuavad täiskanalimalli. Rotaryl puudub tüübi valija; PID 0 on Rate. Pitchi 16 mudelit kontrollitakse eraldi ja TYPE nõuab täiskanalimalli; 34 täisarvu/enum-välja kasutavad eraldi kontrollitud presetisõna kodeeringut. Seitse kohandatud noodivälja nõuavad kogu lõpliku skaala kontrolli; toonika kuvaseade jääb suletuks. Globaalse skaala valik ei lisa presetile skaala sisu ning salvestatud arpedžiaatorisamm ei kinnita selle kõlamist. PlexDelay, Gate/Expander, TenTapDelay, Synth ja Multiband Compressor lisavad 242 välja XML-nähtavuse kontrolli; mõõdikud, tegevusnupud ja peidetud juhid ei ole skalaarseadistused. 21 põhiseost ning 10 Plexi/TenTapi tempo-seost ja olemasolevad modifikaatorisihtmärgid on eraldi kontrollitud; muud sõltuvused, sh Compressori automaatne ajastus/võimendus ja muude plokkide tüübinähtavus, jäävad katmata. Tempo või modifikaatori juhitud parameetri salvestatud väärtus ei tõenda hetkel kõlavat väärtust. Peidetud salvestatud sõnad säilivad toorandmetena.',
+    'Choruse, Drive’i, Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri parameetriloend ning tabelikirjutused järgivad piiratud FW13 tüübi- ja algoritmireegleid. Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri mudelivahetus ning Phaseri Mode nõuavad täiskanalimalli. Rotaryl puudub tüübi valija; PID 0 on Rate. Pitchi 16 mudelit kontrollitakse eraldi ja TYPE nõuab täiskanalimalli; 34 täisarvu/enum-välja kasutavad eraldi kontrollitud presetisõna kodeeringut. Seitse kohandatud noodivälja nõuavad kogu lõpliku skaala kontrolli; toonika kuvaseade jääb suletuks. Globaalse skaala valik ei lisa presetile skaala sisu ning salvestatud arpedžiaatorisamm ei kinnita selle kõlamist. '+point6Note+' 21 põhiseost ning 10 Plexi/TenTapi tempo-seost ja olemasolevad modifikaatorisihtmärgid on eraldi kontrollitud; muud sõltuvused, sh Compressori automaatne ajastus/võimendus ja muude plokkide tüübinähtavus, jäävad katmata. Tempo või modifikaatori juhitud parameetri salvestatud väärtus ei tõenda hetkel kõlavat väärtust. Peidetud salvestatud sõnad säilivad toorandmetena.',
     '','KASUTAMINE','1. Säilita pooleliolev töö ning impordi fail FM3-Editi tööpuhvrisse.',
     `2. Kontrolli veateateid, valitud Scene ${state.selectedScene}, kanaleid ja soovitud helitasemeid.`,
     '3. Uut eksporti küsi ainult konkreetse seni kinnitamata katse jaoks; varasemaid piisavaid tõendeid kasuta uuesti.',

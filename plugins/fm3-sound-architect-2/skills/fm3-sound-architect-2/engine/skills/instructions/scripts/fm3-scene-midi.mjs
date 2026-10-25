@@ -23,7 +23,7 @@ const index=(scene,command)=>(scene-1)*8+(command-1);
 export function validateSceneMidi(list){
   check(Array.isArray(list)&&list.length>0&&list.length<=64,'sceneMidi must be a list of 1..64 commands');
   const seen=new Set(),byte=(v,i,f,what)=>check(Number.isInteger(v)&&v>=0&&v<=127,`sceneMidi[${i}]: ${f} must be 0..127 (${what})`);
-  return list.map((c,i)=>{
+  return Array.from(list,(c,i)=>{
     check(c&&typeof c==='object'&&!Array.isArray(c),'sceneMidi entry must be an object');
     for(const k of Object.keys(c))check(FIELDS.includes(k),`sceneMidi[${i}]: unknown field ${k}`);
     check(Number.isInteger(c.scene)&&c.scene>=1&&c.scene<=8,`sceneMidi[${i}]: scene must be 1..8`);
@@ -45,9 +45,15 @@ export function validateSceneMidi(list){
 // Words a command writes: [base, raw]. A type change on the device touches only the type word, and PC
 // never touches the number word, so neither is written here.
 const wordsOf=c=>c.type==='NONE'?[[0,0]]:c.type==='PC'?[[0,2],[64,c.channel-1],[192,c.program]]:[[0,1],[64,c.channel-1],[128,c.number],[192,c.value]];
+function validateRecord(body,record){
+  check(Buffer.isBuffer(body)&&record&&record.eid===SCENE_MIDI_EID&&record.words===257&&record.channels===1,
+    'sceneMidi needs the Scene MIDI block in the preset (insert: ["scenemidi"])');
+  check(Number.isSafeInteger(record.start)&&record.start>=0&&record.start%2===0&&record.start+514<=body.length,
+    'sceneMidi record is outside the body or unaligned');
+}
 // Write commands into the Scene MIDI record (record from scanRecords). allow(offset, bytes) marks writes.
 export function applySceneMidi(body,record,list,allow=()=>{}){
-  check(record&&record.eid===SCENE_MIDI_EID&&record.words===257&&record.channels===1,'sceneMidi needs the Scene MIDI block in the preset (insert: ["scenemidi"])');
+  validateRecord(body,record);
   const cmds=validateSceneMidi(list),writes=[];
   for(const c of cmds)for(const [base,v] of wordsOf(c)){
     const o=record.start+2*(base+c.index);writes.push({word:base+c.index,before:body.readUInt16LE(o),raw:v});body.writeUInt16LE(v,o);allow(o,2);}
@@ -55,6 +61,7 @@ export function applySceneMidi(body,record,list,allow=()=>{}){
 }
 // Decode every command whose type is set (for the final .txt / report), as the FM3 shows it.
 export function describeSceneMidi(body,record){
+  validateRecord(body,record);
   const out=[];
   for(let k=0;k<64;k++){const w=b=>body.readUInt16LE(record.start+2*(b+k)),t=w(0);if(!t)continue;
     const c={scene:Math.floor(k/8)+1,command:k%8+1,type:TYPE_NAME[t]??`unknown(${t})`,channel:w(64)+1};

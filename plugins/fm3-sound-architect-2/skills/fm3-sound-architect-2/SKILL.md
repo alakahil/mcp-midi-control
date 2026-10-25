@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.21`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.22`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,35 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## 6. punkti seadmevaba kontroll (0.3.22, 25.10.2026)
+
+Kasuta [6. punkti katvuse ja piirangute tabelit](engine/docs/FM3_POINT6_BLOCKS.md).
+FW13 XML-poliitika katab nüüd 13 peret ja 515 PID-i. Lisanduvad Mixer,
+Multiplexer, Formant, Megatap, RingMod, Resonator, Looper ning ainult loetava
+metaandmestikuna MultiDelay. Kirjutamisel kontrolli lõplikku tüüpi ja tegelikku
+kanalite arvu: Looper A; Megatap/RingMod/Resonator A–B; teised A–D.
+Resonatori Manual/Chordal juhikud erinevad. Synthi, Megatapi ja RingModi
+PID 0 või peidetud TYPE ei tähenda kasutajale valitavat plokitüüpi.
+
+Mixeri `DELAY1`…`DELAY4` nimed seotakse PID-idega 17…20 kinnitatud
+FM3-Edit ARM64 kirjeldustabeli ja FW13 vahemälu alusel. Ajaloolise sõnastiku
+skaalad ja tõendistaatused ei muutu. Delay 5/6 ei ole toetatud.
+Looperi Record/Play/Once/Reverse/Undo/Dub on käivituskäsud, mitte lubatud
+skalaarseadistused. MultiDelay dünaamilised Feedback Send/Return ja
+presetivalik jäävad blokeerituks; selle ploki lisamist ei avata.
+`--inspect-modifiers` kasutab 24 pere poliitikaid ning kontrollib ka 1/2-kanalilisi
+kirjeid. Puuduv kanal ja tundmatu seis jäävad teadmata; nähtavus ei tõenda
+modifikaatori tuge ega luba uut seost kirjutada.
+
+Kasutaja presetikausta inventeerimiseks käivita MOOTOR-i
+`scripts/fm3-corpus-audit.mjs --input DIRECTORY --output NEW_REPORT.json`.
+See loeb kohalikke `.syx` faile, ei ava MIDI-t ega võrku ning ei muuda preseteid.
+Raport sisaldab räsi- ja struktuuriandmeid; failinimesid, presetinimesid ja
+parameetriväärtusi ei väljastata. Kommertspaketi presetifaile ära avalda.
+Kui nimetatud kaust pole selles keskkonnas kättesaadav, ütle seda; ära väida,
+et selle sisu on kontrollitud. Seadme import/STORE, heli, CPU ja Scene MIDI
+tegelik väljund ei ole nende tarkvaratestidega kinnitatud.
 
 ## 4. punkti seadmevaba koondtöö (0.3.21, 25.10.2026)
 

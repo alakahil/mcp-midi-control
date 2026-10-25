@@ -40,5 +40,26 @@ try{
     const target=path.join(dir,String(i));writePresetOutputs(target,r,r.spec);
     assert.throws(()=>verifyPresetOutputs(target),error,name);
   }
+  const more={composer:{...spec.composer,name:'POINT6 REMAINING'},allow:spec.allow,
+    insert:['formant','megatap','ringmod','resonator','looper'],
+    layout:{row2:['drive','amp','cab','formant','looper'],row3:['delay','megatap','ringmod','resonator','reverb']},
+    controls:[{block:'formant',channel:'D',param:'MIX',value:20},{block:'megatap',channel:'B',param:'MIX',value:20},
+      {block:'ringmod',channel:'B',param:'MIX',value:20},{block:'resonator',channel:'B',param:'CHORD',value:0},
+      {block:'resonator',channel:'B',param:'MODE',value:'CHORDAL'},{block:'looper',channel:'A',param:'PLAYLEVEL',value:-3}]};
+  const parallel={composer:{...spec.composer,name:'POINT6 ROUTING'},allow:spec.allow,
+    insert:['mixer','multiplexer'],remove:['send','return'],grid:{rows:[Array(12).fill(''),
+      ['in1','drive','amp','cab','mixer','multiplexer','delay','reverb','-','-','-','out1'],Array(12).fill(''),Array(12).fill('')]},
+    controls:[{block:'mixer',channel:'D',param:'GAIN1',value:50},{block:'mixer',channel:'D',param:'DELAY4',value:32},{block:'multiplexer',channel:'D',param:'INPUTSEL',value:'ROW 2'}]};
+  for(const [i,specification] of [more,parallel].entries()){
+    const result=createPreset(base,specification),stem=path.join(dir,'point6-'+i);
+    writePresetOutputs(stem,result,specification);verifyPresetOutputs(stem);
+    for(const c of result.report.controls)assert.equal(c.typeApplicability.allowed,true);
+    const parsed=inspectStructure(result.syx),b=Buffer.from(parsed.raw.body),w=result.report.controls[0];
+    b.writeUInt16LE(w.raw^1,w.offset);
+    const forged={...result,report:structuredClone(result.report),syx:Buffer.from(reencodeDumpFromRawPatch(result.syx,reencodeRawPatch(parsed.raw.rawPatch,b)))};
+    forged.report.outputSha256=sha256(forged.syx);assert.equal(decodeGen3PresetDump(forged.syx,17).crc_valid,true);
+    const target=path.join(dir,'point6-forged-'+i);writePresetOutputs(target,forged,specification);
+    assert.throws(()=>verifyPresetOutputs(target),/Final controls differ|Control SYX differs from spec/);
+  }
 }finally{fs.rmSync(dir,{recursive:true,force:true});}
-console.log(JSON.stringify({passed:true,ordinaryLayout:true,families:5,rehashedTamperCases:cases.length,deviceIO:false}));
+console.log(JSON.stringify({passed:true,ordinaryLayout:true,grid:true,families:12,rehashedTamperCases:cases.length+2,deviceIO:false}));

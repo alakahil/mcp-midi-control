@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "editor": "1.07.17",
+  "firmware": 13,
+  "editorSha256": "62d53aef2b4cc02ffbbcc91be8b04b17411deb51bce729c0a0c6e1ca76efbb1a",
+  "cacheSha256": "7b8463963d03c3ae9bae54ddd7ff5981ee461fb61f54bd7d248a9b2411123ec4",
+  "rows": [
+    {
+      "pid": 0,
+      "name": "MIXER_GAIN1",
+      "descriptorOffset": 14449792,
+      "nameOffset": 5400617,
+      "nameVirtualAddress": 4300367913,
+      "descriptorHex": "00000000000000002968520001000000",
+      "cacheRecord": {
+        "offset": 234304,
+        "end_offset": 234336,
+        "param_id": 0,
+        "typecode": 1329,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f0000c8426f12833a",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 1,
+      "name": "MIXER_GAIN2",
+      "descriptorOffset": 14449808,
+      "nameOffset": 5400629,
+      "nameVirtualAddress": 4300367925,
+      "descriptorHex": "01000000000000003568520001000000",
+      "cacheRecord": {
+        "offset": 234336,
+        "end_offset": 234368,
+        "param_id": 1,
+        "typecode": 1329,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f0000c8426f12833a",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 2,
+      "name": "MIXER_GAIN3",
+      "descriptorOffset": 14449824,
+      "nameOffset": 5400641,
+      "nameVirtualAddress": 4300367937,
+      "descriptorHex": "02000000000000004168520001000000",
+      "cacheRecord": {
+        "offset": 234368,
+        "end_offset": 234400,
+        "param_id": 2,
+        "typecode": 1329,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f0000c8426f12833a",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 3,
+      "name": "MIXER_GAIN4",
+      "descriptorOffset": 14449840,
+      "nameOffset": 5400653,
+      "nameVirtualAddress": 4300367949,
+      "descriptorHex": "03000000000000004d68520001000000",
+      "cacheRecord": {
+        "offset": 234400,
+        "end_offset": 234432,
+        "param_id": 3,
+        "typecode": 1329,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f0000c8426f12833a",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 4,
+      "name": "MIXER_GAIN5",
+      "descriptorOffset": 14449856,
+      "nameOffset": 5400665,
+      "nameVirtualAddress": 4300367961,
+      "descriptorHex": "04000000000000005968520001000000",
+      "cacheRecord": {
+        "offset": 234432,
+        "end_offset": 234464,
+        "param_id": 4,
+        "typecode": 1329,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f0000c8426f12833a",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 5,
+      "name": "MIXER_GAIN6",
+      "descriptorOffset": 14449872,
+      "nameOffset": 5400677,
+      "nameVirtualAddress": 4300367973,
+      "descriptorHex": "05000000000000006568520001000000",
+      "cacheRecord": {
+        "offset": 234464,
+        "end_offset": 234496,
+        "param_id": 5,
+        "typecode": 1329,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          100.0,
+          0.0010000000474974513
+        ],
+        "numeric_fields_hex": "000000000000803f0000c8426f12833a",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 6,
+      "name": "MIXER_PAN1",
+      "descriptorOffset": 14449888,
+      "nameOffset": 5400689,
+      "nameVirtualAddress": 4300367985,
+      "descriptorHex": "06000000000000007168520001000000",
+      "cacheRecord": {
+        "offset": 234496,
+        "end_offset": 234528,
+        "param_id": 6,
+        "typecode": 50,
+        "numeric_fields": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ],
+        "numeric_fields_hex": "000080bf0000803f0000c8426f12033b",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 7,
+      "name": "MIXER_PAN2",
+      "descriptorOffset": 14449904,
+      "nameOffset": 5400700,
+      "nameVirtualAddress": 4300367996,
+      "descriptorHex": "07000000000000007c68520001000000",
+      "cacheRecord": {
+        "offset": 234528,
+        "end_offset": 234560,
+        "param_id": 7,
+        "typecode": 50,
+        "numeric_fields": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ],
+        "numeric_fields_hex": "000080bf0000803f0000c8426f12033b",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 8,
+      "name": "MIXER_PAN3",
+      "descriptorOffset": 14449920,
+      "nameOffset": 5400711,
+      "nameVirtualAddress": 4300368007,
+      "descriptorHex": "08000000000000008768520001000000",
+      "cacheRecord": {
+        "offset": 234560,
+        "end_offset": 234592,
+        "param_id": 8,
+        "typecode": 50,
+        "numeric_fields": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ],
+        "numeric_fields_hex": "000080bf0000803f0000c8426f12033b",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 9,
+      "name": "MIXER_PAN4",
+      "descriptorOffset": 14449936,
+      "nameOffset": 5400722,
+      "nameVirtualAddress": 4300368018,
+      "descriptorHex": "09000000000000009268520001000000",
+      "cacheRecord": {
+        "offset": 234592,
+        "end_offset": 234624,
+        "param_id": 9,
+        "typecode": 50,
+        "numeric_fields": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ],
+        "numeric_fields_hex": "000080bf0000803f0000c8426f12033b",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 10,
+      "name": "MIXER_PAN5",
+      "descriptorOffset": 14449952,
+      "nameOffset": 5400733,
+      "nameVirtualAddress": 4300368029,
+      "descriptorHex": "0a000000000000009d68520001000000",
+      "cacheRecord": {
+        "offset": 234624,
+        "end_offset": 234656,
+        "param_id": 10,
+        "typecode": 50,
+        "numeric_fields": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ],
+        "numeric_fields_hex": "000080bf0000803f0000c8426f12033b",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 11,
+      "name": "MIXER_PAN6",
+      "descriptorOffset": 14449968,
+      "nameOffset": 5400744,
+      "nameVirtualAddress": 4300368040,
+      "descriptorHex": "0b00000000000000a868520001000000",
+      "cacheRecord": {
+        "offset": 234656,
+        "end_offset": 234688,
+        "param_id": 11,
+        "typecode": 50,
+        "numeric_fields": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ],
+        "numeric_fields_hex": "000080bf0000803f0000c8426f12033b",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 12,
+      "name": "MIXER_MASTER",
+      "descriptorOffset": 14449984,
+      "nameOffset": 5400755,
+      "nameVirtualAddress": 4300368051,
+      "descriptorHex": "0c00000000000000b368520001000000",
+      "cacheRecord": {
+        "offset": 234688,
+        "end_offset": 234720,
+        "param_id": 12,
+        "typecode": 305,
+        "numeric_fields": [
+          -80.0,
+          20.0,
+          1.0,
+          0.10000000149011612
+        ],
+        "numeric_fields_hex": "0000a0c20000a0410000803fcdcccc3d",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 13,
+      "name": "MIXER_PAN",
+      "descriptorOffset": 14450000,
+      "nameOffset": 5400768,
+      "nameVirtualAddress": 4300368064,
+      "descriptorHex": "0d00000000000000c068520001000000",
+      "cacheRecord": {
+        "offset": 234720,
+        "end_offset": 234752,
+        "param_id": 13,
+        "typecode": 145,
+        "numeric_fields": [
+          -1.0,
+          1.0,
+          100.0,
+          0.0020000000949949026
+        ],
+        "numeric_fields_hex": "000080bf0000803f0000c8426f12033b",
+        "labels": [],
+        "tail_flags_raw": 1,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 14,
+      "name": "MIXER_MODE",
+      "descriptorOffset": 14450016,
+      "nameOffset": 5400778,
+      "nameVirtualAddress": 4300368074,
+      "descriptorHex": "0e00000000000000ca68520001000000",
+      "cacheRecord": {
+        "offset": 234752,
+        "end_offset": 234802,
+        "param_id": 14,
+        "typecode": 16,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "numeric_fields_hex": "000000000000803f0000803f0000803f",
+        "labels": [
+          "STEREO",
+          "MONO"
+        ],
+        "tail_flags_raw": 32769,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 15,
+      "name": "MIXER_BYPASSMODE",
+      "descriptorOffset": 14450032,
+      "nameOffset": 5400789,
+      "nameVirtualAddress": 4300368085,
+      "descriptorHex": "0f00000000000000d568520001000000",
+      "cacheRecord": {
+        "offset": 234802,
+        "end_offset": 234850,
+        "param_id": 15,
+        "typecode": 176,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "000000000000803f0000803f00000000",
+        "labels": [
+          "THRU",
+          "MUTE"
+        ],
+        "tail_flags_raw": 32768,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 16,
+      "name": "MIXER_BYPASS",
+      "descriptorOffset": 14450048,
+      "nameOffset": 5400806,
+      "nameVirtualAddress": 4300368102,
+      "descriptorHex": "1000000000000000e668520001000000",
+      "cacheRecord": {
+        "offset": 234850,
+        "end_offset": 234882,
+        "param_id": 16,
+        "typecode": 224,
+        "numeric_fields": [
+          0.0,
+          1.0,
+          1.0,
+          0.0
+        ],
+        "numeric_fields_hex": "000000000000803f0000803f00000000",
+        "labels": [],
+        "tail_flags_raw": 32769,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 17,
+      "name": "MIXER_DELAY1",
+      "descriptorOffset": 14450064,
+      "nameOffset": 5400819,
+      "nameVirtualAddress": 4300368115,
+      "descriptorHex": "1100000000000000f368520001000000",
+      "cacheRecord": {
+        "offset": 234882,
+        "end_offset": 234914,
+        "param_id": 17,
+        "typecode": 49,
+        "numeric_fields": [
+          0.0,
+          64.0,
+          1.0,
+          0.10000000149011612
+        ],
+        "numeric_fields_hex": "00000000000080420000803fcdcccc3d",
+        "labels": [],
+        "tail_flags_raw": 16,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 18,
+      "name": "MIXER_DELAY2",
+      "descriptorOffset": 14450080,
+      "nameOffset": 5400832,
+      "nameVirtualAddress": 4300368128,
+      "descriptorHex": "12000000000000000069520001000000",
+      "cacheRecord": {
+        "offset": 234914,
+        "end_offset": 234946,
+        "param_id": 18,
+        "typecode": 49,
+        "numeric_fields": [
+          0.0,
+          64.0,
+          1.0,
+          0.10000000149011612
+        ],
+        "numeric_fields_hex": "00000000000080420000803fcdcccc3d",
+        "labels": [],
+        "tail_flags_raw": 16,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 19,
+      "name": "MIXER_DELAY3",
+      "descriptorOffset": 14450096,
+      "nameOffset": 5400845,
+      "nameVirtualAddress": 4300368141,
+      "descriptorHex": "13000000000000000d69520001000000",
+      "cacheRecord": {
+        "offset": 234946,
+        "end_offset": 234978,
+        "param_id": 19,
+        "typecode": 49,
+        "numeric_fields": [
+          0.0,
+          64.0,
+          1.0,
+          0.10000000149011612
+        ],
+        "numeric_fields_hex": "00000000000080420000803fcdcccc3d",
+        "labels": [],
+        "tail_flags_raw": 16,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 20,
+      "name": "MIXER_DELAY4",
+      "descriptorOffset": 14450112,
+      "nameOffset": 5400858,
+      "nameVirtualAddress": 4300368154,
+      "descriptorHex": "14000000000000001a69520001000000",
+      "cacheRecord": {
+        "offset": 234978,
+        "end_offset": 235010,
+        "param_id": 20,
+        "typecode": 49,
+        "numeric_fields": [
+          0.0,
+          64.0,
+          1.0,
+          0.10000000149011612
+        ],
+        "numeric_fields_hex": "00000000000080420000803fcdcccc3d",
+        "labels": [],
+        "tail_flags_raw": 16,
+        "auxiliary_u32_raw": []
+      }
+    },
+    {
+      "pid": 21,
+      "name": "MIXER_DELAY5",
+      "descriptorOffset": 14450128,
+      "nameOffset": 5400871,
+      "nameVirtualAddress": 4300368167,
+      "descriptorHex": "15000000000000002769520001000000",
+      "cacheRecord": null
+    },
+    {
+      "pid": 22,
+      "name": "MIXER_DELAY6",
+      "descriptorOffset": 14450144,
+      "nameOffset": 5400884,
+      "nameVirtualAddress": 4300368180,
+      "descriptorHex": "16000000000000003469520001000000",
+      "cacheRecord": null
+    }
+  ],
+  "overrides": {
+    "17": {
+      "name": "MIXER_DELAY1",
+      "label": "Delay 1"
+    },
+    "18": {
+      "name": "MIXER_DELAY2",
+      "label": "Delay 2"
+    },
+    "19": {
+      "name": "MIXER_DELAY3",
+      "label": "Delay 3"
+    },
+    "20": {
+      "name": "MIXER_DELAY4",
+      "label": "Delay 4"
+    }
+  },
+  "limits": "Descriptor/PID and cache agreement, not device measurement. Native Mixer Delay 5/6 have no FM3 FW13 cache words and remain unavailable.",
+  "nativeExecution": false,
+  "deviceIO": false
+}

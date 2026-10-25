@@ -98,7 +98,11 @@ def join_parameters(catalog, dictionary, runtime):
             row['names'].append(p['name'])
         # Eligible is a policy gate, not a claim that every value/model was measured.
         effective = effective_rows[p['family'], p['param']]
-        require(effective['name'] == p['name'] and effective['block'] == p['block'], 'Runtime binding differs')
+        native_mixer_name = p['family'] == 'MIXER' and 17 <= p['param'] <= 20 and p['name'] is None and effective.get('dictionaryName', 'missing') is None and effective['name'] == 'MIXER_DELAY'+str(p['param']-16)
+        require((effective['name'] == p['name'] or native_mixer_name) and effective['block'] == p['block'], 'Runtime binding differs')
+        if native_mixer_name:
+            row['names'].append(effective['name'])
+            row['nativeNameBinding'] = {'policy': 'fm3-point6-native-bindings.json', 'scalarMetadataChanged': False}
         gate = ('default' if effective['status'] in runtime['defaultStatuses'] else
                 'opt-in' if effective['status'] in runtime['optInStatuses'] else
                 'experimental-only' if effective['status'] == 'unverified-taper' else 'blocked')

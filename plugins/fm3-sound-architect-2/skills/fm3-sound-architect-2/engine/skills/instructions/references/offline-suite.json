@@ -570,7 +570,16 @@
         "node",
         "scripts/test-controls-output.mjs"
       ],
-      "scope": "Ordinary layout five-family SYX/TXT/spec/report consistency; eleven valid-CRC rehashed tamper cases; no device I/O",
+      "scope": "Twelve point-6 families in layout/grid SYX/TXT/spec/report, thirteen rehashed valid-CRC tamper cases; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-point6-offline",
+      "command": [
+        "node",
+        "scripts/test-point6-offline.mjs"
+      ],
+      "scope": "13 families / 515 PIDs, scalar domain checks, all available channels and types, read-only MultiDelay policy, atomic rejection, Scene MIDI position/value coverage, and private local corpus audit; no device I/O",
       "required": true
     }
   ]

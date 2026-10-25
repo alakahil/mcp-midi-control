@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2119,
-  "filePaths": 2323,
+  "uniqueContents": 2120,
+  "filePaths": 2324,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -962,6 +962,12 @@
       "bytes": 1625,
       "paths": [
         "references/amp-level-cd-plan.json"
+      ]
+    },
+    "1478988278fe87eb5fff6e06a7f07dfad30c12e09afc60dbc5365a2ca1d6f4b3": {
+      "bytes": 20837,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "1488791f055de5961fea740740a1ac08fca20f9a325ac3b5865c758d9e858942": {
@@ -5483,12 +5489,6 @@
         "references/reverb-batch-20261006-181951/capture-20261006T181409-b0910aac4b/capture.json"
       ]
     },
-    "718900399d68946ce6e30d0414b2f3f631a31de20839ffec042b70dd7700aa5b": {
-      "bytes": 251628,
-      "paths": [
-        "references/fm3-insert-applicability.json"
-      ]
-    },
     "71d22d620411e118b3a193c881eadf2d503fa610bfe8beaa3cdffe06613a2591": {
       "bytes": 2427,
       "paths": [
@@ -7724,6 +7724,12 @@
       "paths": [
         "references/geq-full-20261010-194115/step-064-79aee8cc1f/donor.syx",
         "references/geq-full-20261010-194115/step-068-540815a1eb/donor.syx"
+      ]
+    },
+    "9cedfafba267139f220224ac63a6013dd524c1c0914b49207368f590c3eb0b2a": {
+      "bytes": 610081,
+      "paths": [
+        "references/fm3-insert-applicability.json"
       ]
     },
     "9d121a7a850e1fd0a988bdb068bcafa7d044e4f6da46cd30a73e54fc0f7ac629": {
@@ -10043,12 +10049,6 @@
         "references/drive-batch-20261006-112254/capture-20261006T110100-23b81b0ef6/donor.syx"
       ]
     },
-    "cabc719dc6971a63be1e651e920beb319e2c456ef31ecf5750bec12a69e441a3": {
-      "bytes": 20452,
-      "paths": [
-        "references/offline-suite.json"
-      ]
-    },
     "cad024b54a8126c637bc0665fff1b036c53e35c391b4ba9c20428ab55cd00ab3": {
       "bytes": 24680,
       "paths": [
@@ -11327,6 +11327,12 @@
       "bytes": 9389,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T111556-477e5c69fb/capture.json"
+      ]
+    },
+    "e2205597c48e85ab510aec9f9546964d6ad13b2aea1ffcf0f91c3a22f7cb7160": {
+      "bytes": 14433,
+      "paths": [
+        "references/fm3-point6-native-bindings.json"
       ]
     },
     "e232ee4e4deaf9e4bce91ae84bd9488243a3192907f8cad5cf05c85fe72f399d": {
