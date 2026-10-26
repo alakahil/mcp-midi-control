@@ -16,7 +16,7 @@ const gate=p=>DEFAULT_STATUSES.includes(p.status)?'default':OPT_IN_STATUSES.incl
 const originalDictionary=JSON.parse(fs.readFileSync(new URL('../references/fm3-param-dictionary.json',import.meta.url),'utf8'));
 const originals=new Map(originalDictionary.params.map(p=>[key(p),p]));
 const effective=new Map(loadDictionary().params.map(p=>[key(p),p]));
-export const parameterEvidenceIndexHash='493cced340cb77cf2845450585f4cdb71fe2bae6cdb72b3f69544aca2ad21249';
+export const parameterEvidenceIndexHash='9fb3e34103343a0af3de4f21c1e5fa81342646e04d29d1331d074533bdf5fe2e';
 export function validateParameterIndex(bytes){
  if(sha(bytes)!==parameterEvidenceIndexHash)throw Error('Parameter evidence index hash mismatch');
  const d=JSON.parse(bytes);
