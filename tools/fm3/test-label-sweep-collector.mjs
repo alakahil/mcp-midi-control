@@ -71,7 +71,16 @@ try{
   const pc=execFileSync('python3',['-B',harness,lp,path.join(tmp,'sp2'),'--probe','--change-after','0'],{encoding:'utf8'});
   const pcf=JSON.parse(pc.split('\n').find(l=>l.startsWith('FAKE ')).slice(5));
   check(pcf.exit.includes('PEATUS: ruudustik muutus pärast päringut A0')&&pcf.labelRequests===1,'probe stops on a change: '+pcf.exit);
+  // 12. T3 boundary pack: Pitch TRACKMODE 0..2 and TEMPO 0..78 only, never past the FW13 list end;
+  //     the blocks in the preset are re-read by every check.
+  const lb=path.join(tmp,'lb');execFileSync('node',[path.join(root,'tools/fm3/label-boundary-build.mjs'),lb],{stdio:'ignore'});
+  const lm=JSON.parse(fs.readFileSync(path.join(lb,'manifest.json'),'utf8')),lp2=lm.families.find(f=>f.slug==='pitch').params;
+  check(JSON.stringify(lp2.map(p=>[p.name,p.count,p.lastWord,p.expectLast]))===JSON.stringify([['PITCH_TRACKMODE',3,2,'CHORDS'],['PITCH_TEMPO',79,78,'63/64']]),'boundary params');
+  check(lm.families.filter(f=>f.slug!=='pitch').every(f=>f.present&&f.params.length===0)&&lm.requests===82,'boundary pack shape');
+  const bd=run(lb,path.join(tmp,'sb'),'--absent-text');
+  check(bd.fake.exit==='ok'&&bd.fake.labelRequests===1+2+82&&bd.fake.otherFrames===0&&bd.res.finalUnchanged,'boundary run: '+JSON.stringify(bd.fake));
+  check(bd.res.families.find(f=>f.slug==='pitch').params.map(p=>p.texts.length).join()==='3,79','boundary indexes asked');
   for(const sc of ['FM3_LABEL_SWEEP.py','FM3_READ_PROBE.py','FM3_LABEL_PROBE.py'])
     check(JSON.parse(execFileSync('python3',['-B',path.join(here,'cpu-sweep-collector',sc),'--self-test'],{encoding:'utf8'}).trim().split('\n').pop()).selfTest==='passed',sc+' self-test');
-  console.log(JSON.stringify({scenarios:11,requestsSimulated:a.fake.labelRequests,deviceIO:false}));
+  console.log(JSON.stringify({scenarios:12,requestsSimulated:a.fake.labelRequests,deviceIO:false}));
 }finally{fs.rmSync(tmp,{recursive:true,force:true});}
