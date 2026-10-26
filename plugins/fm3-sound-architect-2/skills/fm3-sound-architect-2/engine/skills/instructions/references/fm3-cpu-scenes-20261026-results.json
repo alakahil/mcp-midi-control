@@ -1,0 +1,114 @@
+{
+ "kind": "fm3-cpu-scenes-results",
+ "packSha256": "7290ce52510bfd78fcd9cf28e3d51ea5dac027deda9bd969cb32341ed07c4cd0",
+ "time": "2026-10-26T16:43:19",
+ "steps": [
+  {
+   "cpuPercent": 71.0,
+   "raw": 71,
+   "reads": [
+    71,
+    71,
+    71
+   ],
+   "step": 1,
+   "scene": 1,
+   "userNote": "ok"
+  },
+  {
+   "cpuPercent": 63.0,
+   "raw": 62,
+   "reads": [
+    62,
+    62,
+    62
+   ],
+   "step": 2,
+   "scene": 2,
+   "userNote": "ok"
+  },
+  {
+   "cpuPercent": 63.0,
+   "raw": 62,
+   "reads": [
+    62,
+    62,
+    62
+   ],
+   "step": 3,
+   "scene": 3,
+   "userNote": "ok"
+  },
+  {
+   "cpuPercent": 76.0,
+   "raw": 76,
+   "reads": [
+    76,
+    76,
+    76
+   ],
+   "step": 4,
+   "scene": 4,
+   "userNote": "ok"
+  },
+  {
+   "cpuPercent": 82.0,
+   "raw": 82,
+   "reads": [
+    82,
+    82,
+    82
+   ],
+   "step": 5,
+   "scene": 5,
+   "userNote": "ok"
+  },
+  {
+   "cpuPercent": 63.5,
+   "raw": 63,
+   "reads": [
+    63,
+    63,
+    63
+   ],
+   "step": 6,
+   "scene": 6,
+   "userNote": "ok"
+  },
+  {
+   "cpuPercent": 63.5,
+   "raw": 63,
+   "reads": [
+    63,
+    63,
+    63
+   ],
+   "step": 7,
+   "scene": 7,
+   "userNote": "ok"
+  },
+  {
+   "cpuPercent": 71.0,
+   "raw": 71,
+   "reads": [
+    71,
+    71,
+    71
+   ],
+   "step": 8,
+   "scene": 8,
+   "userNote": "ok"
+  }
+ ],
+ "userConfirmedName": true,
+ "sceneAfterLoad": "4",
+ "afterLoad": {
+  "cpuPercent": 76.0,
+  "raw": 76,
+  "reads": [
+   76,
+   76,
+   76
+  ]
+ }
+}

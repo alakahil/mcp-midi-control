@@ -17,8 +17,8 @@ import assert from 'node:assert/strict';
 const E='../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/';
 const imp=p=>import(new URL(E+p,import.meta.url));
 const {inspectStructure}=await imp('scripts/drive-collector/fm3-prototype.mjs');
-const {parsePresetDump,reencodeRawPatch,reencodeDumpFromRawPatch}=await imp('scripts/fm3-codec.mjs');
 const {estimateCpu}=await imp('scripts/fm3-cpu.mjs');
+const {toEditBuffer,selectScene}=await import(new URL('./cpu-check-edit-buffer.mjs',import.meta.url));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const args=process.argv.slice(2),files=args.filter(a=>!a.startsWith('--')),out=files.shift();
 const pickArg=args.find(a=>a.startsWith('--pick='));const pick=pickArg?Number(pickArg.slice(7)):8;
@@ -28,23 +28,6 @@ const sceneArg=(args.find(a=>a.startsWith('--scene='))??'--scene=worst').slice(8
 assert.ok(['worst','stored'].includes(sceneArg),'--scene must be worst or stored');
 const SIZE=24680;
 
-// Select scene s (1..8): body byte 0 only, re-encoded; everything else in the body is unchanged.
-function selectScene(syx,s){
-  const before=inspectStructure(syx),body=Buffer.from(before.raw.body);if(body[0]===s-1)return Buffer.from(syx);
-  body[0]=s-1;const out=Buffer.from(reencodeDumpFromRawPatch(syx,reencodeRawPatch(before.raw.rawPatch,body)));
-  const after=Buffer.from(inspectStructure(out).raw.body);assert.ok(after.equals(body)&&inspectStructure(out).raw.crcValid,'scene readback');
-  return out;
-}
-export function toEditBuffer(syx){
-  const b=Buffer.from(syx),end=b.indexOf(0xf7);
-  assert.ok(end===12&&b[5]===0x77,'unexpected 0x77 header frame');
-  b[6]=0x7f;b[7]=0;let x=0;for(let i=0;i<end-1;i++)x^=b[i];b[end-1]=x&0x7f;
-  const a=inspectStructure(syx),c=inspectStructure(b);
-  assert.ok(c.raw.crcValid&&Buffer.from(a.raw.body).equals(Buffer.from(c.raw.body)),'body changed');
-  assert.ok(b.subarray(13).equals(Buffer.from(syx).subarray(13)),'only the header frame may change');
-  assert.deepEqual([...parsePresetDump(b,0,17).headerPayload],[0x7f,0,0,0x40,0],'edit-buffer header');
-  return b;
-}
 const cands=[];
 for(const f of files){const all=fs.readFileSync(f);assert.ok(all.length%SIZE===0,`${f}: not a multiple of ${SIZE} bytes`);
   for(let i=0;i<all.length/SIZE;i++){const syx=all.subarray(i*SIZE,(i+1)*SIZE);let st,est;
@@ -61,7 +44,7 @@ fs.mkdirSync(out,{recursive:true});
 const calSrc=fs.readFileSync(new URL(E+'examples/FM3_P6_INSERT_A.syx',import.meta.url));
 const items=[{id:'cal-p6a',family:'calibration',file:'CAL_P6A.syx',sha256:sha(calSrc),expectPercent:82.5}];
 fs.writeFileSync(path.join(out,'CAL_P6A.syx'),calSrc);
-for(const [k,c] of picked.entries()){const file=`P${String(k+1).padStart(2,'0')}.syx`,b=toEditBuffer(c.syx);fs.writeFileSync(path.join(out,file),b);
+for(const [k,c] of picked.entries()){const file=`P${String(k+1).padStart(2,'0')}.syx`,b=toEditBuffer(selectScene(c.syx,c.selectedScene));fs.writeFileSync(path.join(out,file),b);
   items.push({id:`p${String(k+1).padStart(2,'0')}`,family:'user-preset',file,sha256:sha(b),name:c.name,source:`${c.source} #${c.index+1}`,
     storedScene:c.storedScene,selectedScene:c.selectedScene,estimatePercent:c.estimatePercent,estimateMaxPercent:c.estimateMaxPercent,measuredTypeCoverage:c.measuredTypeCoverage,unknown:c.unknown});}
 const manifest={kind:'fm3-cpu-check',version:1,confirmName:String(inspectStructure(calSrc).decoded.preset_name).trim(),

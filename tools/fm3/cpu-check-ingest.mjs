@@ -30,21 +30,29 @@ function summarize(items){
 if(process.argv.includes('--write')){
   const mf=process.argv[process.argv.indexOf('--manifest')+1];assert.ok(mf&&fs.existsSync(mf),'--manifest FILE (the local pack manifest) is required to write');
   const man=JSON.parse(fs.readFileSync(mf,'utf8'));assert.equal(man.kind,'fm3-cpu-check');
-  const items=man.items.filter(i=>i.family==='user-preset').map(i=>({id:i.id,selectedScene:i.selectedScene,sceneSetToWorst:i.selectedScene!==i.storedScene,
-    estimatePercent:i.estimatePercent,measuredTypeCoverage:i.measuredTypeCoverage,familiesWithoutCost:i.unknown}));
+  // Scene and estimate come from the measured FILES (body byte 0), not from the manifest's claims:
+  // the 2026-10-26 builder recorded --scene=worst but did not apply it, so every file kept its stored scene.
+  const {inspectStructure}=await import(path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/drive-collector/fm3-prototype.mjs'));
+  const {estimateCpu}=await import(path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-cpu.mjs'));
+  const items=man.items.filter(i=>i.family==='user-preset').map(i=>{const b=fs.readFileSync(path.join(path.dirname(mf),i.file));
+    assert.equal(sha(b),i.sha256,i.file);const sc=Buffer.from(inspectStructure(b).raw.body)[0]+1,e=estimateCpu(b),es=e.scenes.find(x=>x.scene===sc);
+    return {id:i.id,measuredScene:sc,storedScene:i.storedScene,estimatePercent:es.percent,estimateMaxPercent:e.maxPercent,measuredTypeCoverage:es.measuredTypeCoverage,familiesWithoutCost:es.unknown};});
+  assert.ok(items.every(i=>i.measuredScene===i.storedScene),'files kept the stored scene');
   const out={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-10-26',
     source:'8 presets picked by cpu-check-build.mjs (--pick=8 --scene=worst) from the 328 amp presets of a purchased fw13 tonepack; files, names and parameter values are not in the repository',
     estimator:{model:'fm3-cpu 0.2.1',measurementsSha256:cpuMeasurementsHash},
-    method:'Each preset was sent to the edit buffer (7F 00) and the CPU meter (fn=0x01 sub=0x2E, piecewise decode) read until three equal values; nothing stored. The selected scene was set to the scene with the highest estimate; that the FM3 was in that scene was not observed on screen.',
+    method:'Each preset was sent to the edit buffer (7F 00) and the CPU meter (fn=0x01 sub=0x2E, piecewise decode) read until three equal values; nothing stored. The pack was built with --scene=worst, but that builder version did not apply it (fixed afterwards): every file kept its stored selected scene, which is the scene measured here; estimates are for that scene.',
     ...summarize(items),
-    findings:['All measured presets stay below the 80 % safe limit (max 76 %).','The estimate is within about ±2 points where the selected scene is the stored scene 1 and in one other preset; for four presets whose worst scene has another channel type it is 3.2 to 4.9 points too high (conservative).'],
-    notMeasured:['whether the FM3 applied the re-encoded selected scene on load (CPU per scene of one preset)','the Out 2 block cost (omitted by the estimator)','audio'],
+    findings:['In the stored scene every measured preset is below 80 % (max 76 %).','The estimate is within 1.8 points of the meter: seven presets 1.0 to 1.8 points below, one 0.4 above; the Out 2 block, which the estimator omits, is a likely part of the low offset.'],
+    perSceneFollowUp:'references/fm3-cpu-scenes-20261026.json (one preset, all 8 scenes)',
+    notMeasured:['the other scenes of seven presets','the Out 2 block cost (omitted by the estimator)','audio'],
     resultsSha256:sha(fs.readFileSync(resFile))};
   fs.writeFileSync(target,JSON.stringify(out,null,1)+'\n');
 }
 const rec=JSON.parse(fs.readFileSync(target,'utf8'));
 assert.equal(rec.resultsSha256,sha(fs.readFileSync(resFile)),'results file pinned');
 const again=summarize(rec.presets.map(({measuredPercent,errorPoints,...i})=>i));
+assert.ok(rec.presets.every(p=>p.measuredScene===p.storedScene),'measured in the stored scene');
 assert.deepEqual({calibration:rec.calibration,presets:rec.presets,summary:rec.summary},again,'receipt matches the device results');
 assert.ok(!JSON.stringify(rec).match(/'26|\.syx|Bank_|LiveGold/),'no third-party names or files in the receipt');
 console.log(JSON.stringify(rec.summary));

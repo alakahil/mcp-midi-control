@@ -6,7 +6,7 @@ bank), and checks: every item is an edit-buffer dump the CPU collector accepts; 
 item comes first; picks span the lowest and highest estimate; --scene=stored changes only the
 13-byte header frame; --scene=worst sets the worst scene and keeps the rest of the body; bad sizes
 and bad options are refused."""
-import json, subprocess, sys, tempfile, hashlib
+import json, os, subprocess, sys, tempfile, hashlib
 from pathlib import Path
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[2]
@@ -46,6 +46,16 @@ for scene in ('stored', 'worst'):
             check(d[13:] == orig[13:] and d[6:11] == bytes([0x7f, 0, 0, 0x40, 0]), 'only the header frame changes')
     else:
         check(all(i['estimatePercent'] == i['estimateMaxPercent'] for i in users), 'worst scene estimate')
+    # The FILE must hold the selected scene (body byte 0), decoded independently of the manifest.
+    # (module path via env: fm3-prototype.mjs runs its own CLI when it is process.argv[1])
+    got = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', '''
+import fs from 'node:fs';const {inspectStructure}=await import(process.env.FM3_PROTO);
+console.log(JSON.stringify(process.argv.slice(1).map(f=>{const s=inspectStructure(fs.readFileSync(f));return [Buffer.from(s.raw.body)[0]+1,s.raw.crcValid];})));
+''', *[str(out / i['file']) for i in users]], env={**os.environ, 'FM3_PROTO': str(INS / 'scripts/drive-collector/fm3-prototype.mjs')}))
+    check(all(ok for _, ok in got), 'CRC valid')
+    check([s for s, _ in got] == [i['selectedScene'] for i in users], '%s: file scene %r vs manifest %r' % (scene, [s for s, _ in got], [i['selectedScene'] for i in users]))
+    if scene == 'worst':
+        check(any(i['selectedScene'] != i['storedScene'] for i in users), 'worst-scene case exercised (some stored scene differs)')
 check(build(tmp / 'w2', '--pick=1', ok=False) is None and build(tmp / 'w3', '--scene=x', ok=False) is None, 'bad options refused')
 odd = tmp / 'odd.syx'; odd.write_bytes(b'\0' * 100)
 r = subprocess.run(['node', str(ROOT / 'tools/fm3/cpu-check-build.mjs'), str(tmp / 'w4'), str(odd)], capture_output=True)

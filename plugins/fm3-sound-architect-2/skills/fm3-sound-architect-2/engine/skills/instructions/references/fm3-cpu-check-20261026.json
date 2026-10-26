@@ -8,7 +8,7 @@
   "model": "fm3-cpu 0.2.1",
   "measurementsSha256": "dbe43ad7c772634dcf24b7924f6bea6f141407cff49b738ebacc1b1951e741c3"
  },
- "method": "Each preset was sent to the edit buffer (7F 00) and the CPU meter (fn=0x01 sub=0x2E, piecewise decode) read until three equal values; nothing stored. The selected scene was set to the scene with the highest estimate; that the FM3 was in that scene was not observed on screen.",
+ "method": "Each preset was sent to the edit buffer (7F 00) and the CPU meter (fn=0x01 sub=0x2E, piecewise decode) read until three equal values; nothing stored. The pack was built with --scene=worst, but that builder version did not apply it (fixed afterwards): every file kept its stored selected scene, which is the scene measured here; estimates are for that scene.",
  "calibration": {
   "id": "cal-p6a",
   "handMeasuredPercent": 82.5,
@@ -17,9 +17,10 @@
  "presets": [
   {
    "id": "p01",
-   "selectedScene": 1,
-   "sceneSetToWorst": false,
+   "measuredScene": 1,
+   "storedScene": 1,
    "estimatePercent": 39,
+   "estimateMaxPercent": 39,
    "measuredTypeCoverage": false,
    "familiesWithoutCost": [
     "out2"
@@ -29,9 +30,10 @@
   },
   {
    "id": "p02",
-   "selectedScene": 1,
-   "sceneSetToWorst": false,
+   "measuredScene": 1,
+   "storedScene": 1,
    "estimatePercent": 57.4,
+   "estimateMaxPercent": 57.4,
    "measuredTypeCoverage": false,
    "familiesWithoutCost": [
     "out2"
@@ -41,9 +43,10 @@
   },
   {
    "id": "p03",
-   "selectedScene": 1,
-   "sceneSetToWorst": false,
+   "measuredScene": 1,
+   "storedScene": 1,
    "estimatePercent": 60.2,
+   "estimateMaxPercent": 60.2,
    "measuredTypeCoverage": false,
    "familiesWithoutCost": [
     "out2"
@@ -53,81 +56,87 @@
   },
   {
    "id": "p04",
-   "selectedScene": 4,
-   "sceneSetToWorst": true,
-   "estimatePercent": 61.9,
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 57.4,
+   "estimateMaxPercent": 61.9,
    "measuredTypeCoverage": false,
    "familiesWithoutCost": [
     "out2"
    ],
    "measuredPercent": 57,
-   "errorPoints": 4.9
+   "errorPoints": 0.4
   },
   {
    "id": "p05",
-   "selectedScene": 8,
-   "sceneSetToWorst": true,
-   "estimatePercent": 62.4,
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 57.4,
+   "estimateMaxPercent": 62.4,
    "measuredTypeCoverage": false,
    "familiesWithoutCost": [
     "out2"
    ],
    "measuredPercent": 59,
-   "errorPoints": 3.4
+   "errorPoints": -1.6
   },
   {
    "id": "p06",
-   "selectedScene": 3,
-   "sceneSetToWorst": true,
-   "estimatePercent": 67.2,
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 62.7,
+   "estimateMaxPercent": 67.2,
    "measuredTypeCoverage": false,
    "familiesWithoutCost": [
     "out2"
    ],
    "measuredPercent": 64,
-   "errorPoints": 3.2
+   "errorPoints": -1.3
   },
   {
    "id": "p07",
-   "selectedScene": 4,
-   "sceneSetToWorst": true,
-   "estimatePercent": 68.5,
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 68,
+   "estimateMaxPercent": 68.5,
    "measuredTypeCoverage": false,
    "familiesWithoutCost": [
     "out2"
    ],
    "measuredPercent": 69,
-   "errorPoints": -0.5
+   "errorPoints": -1
   },
   {
    "id": "p08",
-   "selectedScene": 5,
-   "sceneSetToWorst": true,
-   "estimatePercent": 80.5,
+   "measuredScene": 4,
+   "storedScene": 4,
+   "estimatePercent": 75,
+   "estimateMaxPercent": 80.5,
    "measuredTypeCoverage": false,
    "familiesWithoutCost": [
     "out2"
    ],
    "measuredPercent": 76,
-   "errorPoints": 4.5
+   "errorPoints": -1
   }
  ],
  "summary": {
   "n": 8,
   "measuredMin": 40.5,
   "measuredMax": 76,
-  "meanErrorPoints": 1.4,
-  "meanAbsErrorPoints": 2.6,
-  "largestOverestimatePoints": 4.9,
+  "meanErrorPoints": -1.1,
+  "meanAbsErrorPoints": 1.2,
+  "largestOverestimatePoints": 0.4,
   "largestUnderestimatePoints": 1.8,
   "overSafeLimit80": 0
  },
  "findings": [
-  "All measured presets stay below the 80 % safe limit (max 76 %).",
-  "The estimate is within about ±2 points where the selected scene is the stored scene 1 and in one other preset; for four presets whose worst scene has another channel type it is 3.2 to 4.9 points too high (conservative)."
+  "In the stored scene every measured preset is below 80 % (max 76 %).",
+  "The estimate is within 1.8 points of the meter: seven presets 1.0 to 1.8 points below, one 0.4 above; the Out 2 block, which the estimator omits, is a likely part of the low offset."
  ],
+ "perSceneFollowUp": "references/fm3-cpu-scenes-20261026.json (one preset, all 8 scenes)",
  "notMeasured": [
-  "whether the FM3 applied the re-encoded selected scene on load (CPU per scene of one preset)",
+  "the other scenes of seven presets",
   "the Out 2 block cost (omitted by the estimator)",
   "audio"
  ],
