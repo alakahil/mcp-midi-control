@@ -9,7 +9,7 @@ import {auditModifierTargetType,modifierTypeAuditPolicy} from './fm3-modifier-ty
 const policyBytes=fs.readFileSync(new URL('../references/fm3-parameter-dependencies.json',import.meta.url));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const lifecycleBytes=fs.readFileSync(new URL('../references/fm3-modifier-lifecycle-evidence.json',import.meta.url));
-const lifecycleSha256='f8fa6b4077772ee33a18f0da7fa18cdc282b82a8e465563793da8a253e2b9da7';
+const lifecycleSha256='802c614b8697fdb14535ec93e23124245430a3d67f55774ba3869a3246cf9384';
 if(sha(lifecycleBytes)!==lifecycleSha256)throw Error('Modifier lifecycle evidence changed');
 const lifecycleEvidence=JSON.parse(lifecycleBytes);
 function lifecycleCapabilities(){return {
