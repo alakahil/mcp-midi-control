@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "files": 795,
-  "unique": 638,
-  "accepted": 626,
+  "files": 796,
+  "unique": 639,
+  "accepted": 627,
   "unsupported": [
     {
       "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-default-blocks-20261023.syx",
