@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-26",
+ "auditPoint": 3,
+ "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
+ "method": "Edit-buffer load (7F 00) of the label-sweep preset; integer-form fn=0x01 sub=0x1F label requests for Pitch TRACKMODE 0..2 and TEMPO 0..78 only (inside the FW13 lists, 20 ms pacing), grid and every block re-read before and after. No store, no SET.",
+ "params": [
+  {
+   "param": "pitch.PITCH_TRACKMODE",
+   "paramId": 35,
+   "words": 3,
+   "deviceOnlyWord0": "OFF",
+   "compared": 2,
+   "exact": 2,
+   "lastWord": {
+    "word": 2,
+    "deviceText": "CHORDS"
+   }
+  },
+  {
+   "param": "pitch.PITCH_TEMPO",
+   "paramId": 76,
+   "words": 79,
+   "deviceOnlyWord0": "NONE",
+   "compared": 78,
+   "exact": 78,
+   "lastWord": {
+    "word": 78,
+    "deviceText": "63/64"
+   }
+  }
+ ],
+ "closes": "fm3-label-sweep-20261024.json notRequested: pitch.PITCH_TRACKMODE word 2 and pitch.PITCH_TEMPO word 78",
+ "finding": "Both last labels equal the dictionary (CHORDS, 63/64); all 80 dictionary words of both lists now match the device by stored word; word 0 is the device-only OFF / NONE. The preset was unchanged and the FM3 stayed responsive.",
+ "resultsSha256": "fec27dd74fc806a43b1a2b65c4b4ca5c84c119982f9370e8644f7466f4dc5059"
+}

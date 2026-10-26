@@ -521,6 +521,8 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   küsiti FM3-lt ja kõik vastasid sõnastikule salvestatud sõna kaupa (41 erinesid ainult lõputühiku poolest).
   Tüübi- ja režiiminimesid ei pea seadmes uuesti kontrollima. Nuppude skaalasid see ei tõenda.
   Kviitung: `references/fm3-label-sweep-20261024.json`.
+  Kaks küsimata jäänud viimast nime (Pitch Track Mode „CHORDS“, Tempo „63/64“) kontrolliti 26.10.2026; ka need
+  klappisid (`references/fm3-label-boundary-20261026.json`).
 - **Scene MIDI (auditi punkt 6)** `scripts/fm3-scene-midi.mjs`, `grid`-režiimis `insert:["scenemidi"]` ja
   `sceneMidi:[{scene, command, type:"PC"|"CC"|"NONE", channel, program (PC) | number, value (CC)}]` (8 stseeni × 8 käsku).
   PC programm on FM3 väli Value (Number näitab PC puhul „--“). Plokk paigutatakse ühendamata lahtrisse (järgmine
