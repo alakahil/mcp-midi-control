@@ -6,6 +6,9 @@ Automaatselt korratav audit avaldatud firmware 13 andmetest. Arvud näitavad all
 | --- | ---: |
 | Kataloogi read / erinevad pere–PID paarid | 2021 / 1999 |
 | Lisanimega read | 22 |
+| 24.10 seadme enum-sildid / parameetrid | 5275 / 363 |
+| 24.10 paneelinäidu ja salvestatud väärtuse vaatlused | 18 |
+| Eraldi algväärtuste näidud / vaieldav näit | 2 / 1 |
 | Parameetrisõnastiku kirjed | 2892 |
 | Kataloogi ja sõnastiku ühised paarid | 1668 |
 | Ainult kataloogis / ainult sõnastikus | 331 / 1224 |
@@ -18,6 +21,8 @@ Automaatselt korratav audit avaldatud firmware 13 andmetest. Arvud näitavad all
 | Vahele jäetud või välistatud lähtekirjed | 36 |
 
 Üks GET/SYX paar võib tõendada mitut punkti. Terve kanali mall ei tõenda kõigi nuppude skaalasid. Sõnastiku `measured` ja `taper-class-verified` on lähteallika väited; need ei suurenda automaatselt mõõdetud punktide arvu.
+
+23.–24.10 tõendid on eraldi telgedel: 16 756 salvestatud sõna seitsmest presetist ei tõenda skaalasid; STORE/reload kehtib üksnes V04 kohta. Siltide kontroll ei muuda kirjutamisõigust. Pitchi enumBase=1 loendite viimased sõnad jäid küsimata. Vaieldav Auto-Swell Release näit jääb eraldi.
 
 Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik ja parameetri asukoht tuntud alusfailis. See ei laiene suvalisele presetile. Composeri lisatavate plokkide tugi on eraldi `registry.json` failis; allolev null ei tähenda, et composer plokki ei toeta.
 

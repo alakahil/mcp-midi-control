@@ -72,7 +72,8 @@ Kviitung on `references/fm3-scene-midi-listen-20261024.json` (`node tools/fm3/sc
 Mõõteskript on `FM3_SCENE_MIDI_LISTEN.py` ja mõõtepreseti koostab `tools/fm3/scene-midi-listen-build.mjs`.
 Preset saatis igas stseenis N kanalil 3 programmivahetuse N ja CC 20 väärtusega 10 × N. Kasutaja valis
 stseenid 2, 3, 8 ja 1, kuid **FM3 ei saatnud USB pordi kaudu ühtegi baiti**. Pärast laadimist tulid ainult
-dumpi kinnitused. Seega ei saada FM3 Scene MIDI käske USB kaudu. MIDI OUT pesa kontrolliks on vaja
+dumpi kinnitused. See katse ei tuvastanud Scene MIDI väljundit USB kaudu; ära üldista tulemust
+kõigile seadistustele. MIDI OUT pesa kontrolliks on vaja
 MIDI-liidest või MIDI OUT pessa ühendatud seadet.
 
 **Mõõtmata**: muud sõnumitüübid, vahemike otsad (kanal 16, 127), kas sõnum stseeni vahetusel

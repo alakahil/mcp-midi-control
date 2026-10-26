@@ -1,3 +1,5 @@
+import {verifyPresetReplay} from './fm3-preset-core.mjs';
+import {verifyControlsOutput} from './fm3-controls-output.mjs';
 import {verifyVolumePedalOutput} from './fm3-volume-pedal.mjs';
 import {verifyGridOutput} from './fm3-grid-output.mjs';
 import {verifyVolumeOutput} from './fm3-volume-output.mjs';
@@ -22,23 +24,34 @@ export function writePresetOutputs(stem,result,spec){
   try{
     for(const [ext,value] of Object.entries(values))fs.writeFileSync(path.join(temp,'preset'+ext),value,{flag:'wx'});
     for(const ext of Object.keys(values)){fs.linkSync(path.join(temp,'preset'+ext),stem+ext);created.push(ext);}
-  }catch(e){for(const ext of created){const dest=stem+ext,src=path.join(temp,'preset'+ext);if(fs.existsSync(dest)&&fs.statSync(dest).ino===fs.statSync(src).ino)fs.unlinkSync(dest);}throw e;}
+  }catch(e){for(const ext of created){
+    const dest=stem+ext,src=path.join(temp,'preset'+ext),owned=fs.lstatSync(src),current=fs.lstatSync(dest,{throwIfNoEntry:false});
+    if(current?.isFile()&&current.dev===owned.dev&&current.ino===owned.ino)fs.unlinkSync(dest);
+  }throw e;}
   finally{fs.rmSync(temp,{recursive:true,force:true});}
   return Object.keys(values).map(ext=>stem+ext);
 }
 export function verifyPresetOutputs(stem){
-  const report=JSON.parse(fs.readFileSync(stem+'.validation.json','utf8'));
-  if(!report.artifacts)throw Error('Missing artifact manifest');
-  for(const ext of ['.syx','.txt','.spec.json']){
-    const bytes=fs.readFileSync(stem+ext),entry=report.artifacts[ext];
-    if(!entry||sha256(bytes)!==entry.sha256||bytes.length!==entry.bytes)throw Error('Artifact mismatch: '+ext);
+  // Read one consistent snapshot. Every semantic check uses these same bytes.
+  const utf8=new TextDecoder('utf-8',{fatal:true,ignoreBOM:true});
+  const report=JSON.parse(utf8.decode(fs.readFileSync(stem+'.validation.json')));
+  if(!report||typeof report!=='object'||Array.isArray(report)||!report.artifacts)throw Error('Missing artifact manifest');
+  const extensions=['.syx','.txt','.spec.json'];
+  if(Object.keys(report.artifacts).sort().join('|')!==[...extensions].sort().join('|'))throw Error('Unexpected artifact manifest fields');
+  const files=Object.fromEntries(extensions.map(ext=>[ext,fs.readFileSync(stem+ext)]));
+  for(const ext of extensions){
+    const bytes=files[ext],entry=report.artifacts[ext];
+    if(!entry||Object.keys(entry).sort().join('|')!=='bytes|sha256'||sha256(bytes)!==entry.sha256||bytes.length!==entry.bytes)throw Error('Artifact mismatch: '+ext);
   }
-  if(sha256(fs.readFileSync(stem+'.syx'))!==report.outputSha256)throw Error('Final SYX hash mismatch');
-  verifyGlobalScaleReport(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'));
-  verifyWahExactOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
-  verifyInputGateOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
-  verifyVolumeOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
-  verifyVolumePedalOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
-  verifyGridOutput(report,fs.readFileSync(stem+'.syx'),fs.readFileSync(stem+'.txt','utf8'),JSON.parse(fs.readFileSync(stem+'.spec.json','utf8')));
+  const syx=files['.syx'],txt=utf8.decode(files['.txt']),spec=JSON.parse(utf8.decode(files['.spec.json']));
+  if(sha256(syx)!==report.outputSha256)throw Error('Final SYX hash mismatch');
+  verifyGlobalScaleReport(report,syx,txt);
+  verifyWahExactOutput(report,syx,txt,spec);
+  verifyInputGateOutput(report,syx,txt,spec);
+  verifyVolumeOutput(report,syx,txt,spec);
+  verifyVolumePedalOutput(report,syx,txt,spec);
+  verifyGridOutput(report,syx,txt,spec);
+  verifyControlsOutput(report,syx,txt,spec);
+  verifyPresetReplay(report,syx,txt,spec);
   return report;
 }

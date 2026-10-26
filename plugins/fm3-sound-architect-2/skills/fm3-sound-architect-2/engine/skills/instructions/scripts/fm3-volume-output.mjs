@@ -34,7 +34,7 @@ export function verifyVolumeOutput(report,syx,txt,spec){
  // Every unrequested word must still be the captured default, including inactive
  // Auto-Swell words, the meter, TYPE and the channel BYPASS slot.
  for(let ch=0;ch<4;ch++)for(let pid=0;pid<15;pid++)assert.equal(body.readUInt16LE(r.start+ch*30+pid*2),planned.get(ch+':'+pid)??donorWords.readUInt16LE(ch*30+pid*2),'Undeclared Volume word changed');
- for(const s of state.states){assert.equal(s.typeRaw,0,'Volume TYPE is not captured VOLUME');assert.ok(txt.includes(volumeChannelText(s)),'Volume retained TXT values differ');}
+ for(const s of state.states){assert.ok(s.typeRaw===0||s.typeRaw===1,'Unsupported Volume TYPE');assert.ok(txt.includes(volumeChannelText(s)),'Volume retained TXT values differ');}
  const scenePlan=spec.blockScenes?.volpan??[];
  const expectedHeader=Buffer.from(captured.recordHex,'hex').subarray(0,46);
  for(const edit of scenePlan){if(edit.channel!==undefined)expectedHeader.writeUInt16LE('ABCD'.indexOf(edit.channel),10+2*(edit.scene-1));if(edit.bypass!==undefined)expectedHeader.writeUInt16LE(edit.bypass?1:0,26+2*(edit.scene-1));}

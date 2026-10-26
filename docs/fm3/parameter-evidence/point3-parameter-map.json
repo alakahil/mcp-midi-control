@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "version": "0.3.24",
+  "auditPoint": 3,
+  "scope": "Finite preset-word codec conformance and evidence-linked parameter map; not a device range measurement, DSP model or expanded write permission",
+  "sources": {
+    "tools/fm3/point3-index.py": "2053c97e456d7cd8d161e9575ba3ccd335939aa9f0ca64a3e5ea9a7dc5a01d71",
+    "tools/fm3/point3-evidence.mjs": "6159c69d4923af5de3ae66b94801f08bc7f444bd7048654685af98963f95b4ac",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "3600d4c3286c6b29c7060fc28d58fe7b9e734380b6e892826d86b1f881ed4186",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-parameter-map.mjs": "c74d2538d51271a8a8e66755a87e71ac1c0ea0e82e1fc7d18316c3de1674ef57",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-parameter-domain.mjs": "8782ecf4f3e7672de0c1b97fe9e6113ce2f935d23a09f6b595a1366623280e84",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-parameter-map.mjs": "0278d40d8a0454ca7e7584c2bc92b4c3d6a76052988a8aa33b4c4e15ad9244db",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_PARAMETER_EVIDENCE.json": "1849074a5e3014e003e0156974d51921303b16ab3471d3fbbde28f2facf03b8b"
+  },
+  "baseline": {
+    "version": "0.3.23",
+    "commit": "b2c677831fdb664def04a48aeeca104c6e603db3",
+    "reproducedGaps": [
+      "Negative raw word extrapolated",
+      "String raw word coerced into a number",
+      "Normalized raw 65535 extrapolated beyond display maximum",
+      "Chorus Voices raw 65535 displayed 131070",
+      "Unknown Ten-Tap curve decoded as linear",
+      "Non-string enum object coerced to a label"
+    ]
+  },
+  "results": {
+    "test-parameter-domain": {
+      "passed": true,
+      "dictionaryRows": 2892,
+      "scalarDescriptors": 2101,
+      "validWords": 67515216,
+      "normalizedWords": 67501050,
+      "integerWords": 5194,
+      "enumWords": 8972,
+      "rejections": 38311107,
+      "repeatedLabelWords": 5,
+      "deviceIO": false,
+      "fullRangeHardwareProven": false
+    },
+    "test-parameter-map": {
+      "passed": true,
+      "parameterKeys": 3223,
+      "dictionaryRows": 2892,
+      "namedLookups": 1676,
+      "indexedObservations": 1298,
+      "labelParameters": 363,
+      "comparedLabelWords": 5275,
+      "unrequestedLabelWords": 2,
+      "disputedReadings": 1,
+      "hashedBundledEvidenceSources": 1213,
+      "deviceIO": false
+    }
+  },
+  "limits": [
+    "2101 scalar descriptors include global and metadata-only fields; scalar conformance is not public preset support.",
+    "Catalogue-only keys, unknown curves, hidden controls and global writes remain unsupported.",
+    "5275 checked device labels retain the two unrequested final words of 1-based Pitch lists; labels do not establish numeric scales.",
+    "All 36 catalogue/display-range differences remain explicit source claims; canonical Cab input is 0..10, historical percent is 0..100.",
+    "No new device import, STORE, live SET, audio/CPU, commercial preset audit, REA or Ghidra invocation."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false,
+  "newREAInvocation": false
+}

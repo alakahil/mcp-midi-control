@@ -3,6 +3,8 @@
 0.3.6 lisas olemasoleva FM3 presetifaili modifikaatorite loetava inventuuri;
 0.3.7 lisas sihtploki kirje, ruudustiku ja salvestatud stseenide konteksti;
 0.3.8 lisab sihtparameetri FW13 tüübisobivuse lugemise A–D kanalites.
+0.3.20 laiendab sama tüübisobivuse auditit viiele 0.3.19-s lisatud perele.
+0.3.21 lisab [elutsükli ja globaalsete sõltuvuste auditi](FM3_POINT4_OFFLINE.md).
 See aitab enne uue kirjutustoe kavandamist kindlaks teha, millised seosed on
 failis tegelikult salvestatud. Uusi kirjutusvõimalusi ega seadmeühendust ei lisata.
 
@@ -109,11 +111,12 @@ eraldi määratud baidiasukohtadega ning kontrollib A–D/ALL kattumist, puuduva
 sihti, korduvaid plokke/lahte, tundmatuid koode ja pooliku lugemise ohutut tulemust.
 PEQ/GEQ/Enhanceri/Filteri näited kasutavad samuti juba olemasolevaid faile.
 
-## Sihtparameetri tüübisobivus (0.3.8)
+## Sihtparameetri tüübisobivus (0.3.8–0.3.20)
 
-JSON-i `typePolicy` loetleb viis SHA-256-ga kinnitatud reeglifaili ning kaetud
-11 efektiperet: Chorus, Drive (FUZZ), Delay, Reverb, Flanger, Phaser,
-Compressor (COMP), Wah, Tremolo, Rotary ja Pitch. Muude perede tüübisobivus
+JSON-i `typePolicy` loetleb kuus SHA-256-ga kinnitatud reeglifaili ning kaetud
+16 efektiperet: Chorus, Drive (FUZZ), Delay, Reverb, Flanger, Phaser,
+Compressor (COMP), Wah, Tremolo, Rotary, Pitch, PlexDelay, Gate/Expander,
+TenTapDelay, Synth ja Multiband Compressor. Muude perede tüübisobivus
 jääb teadmata. Need on olemasolevad FW13 koostamisreeglid, mitte uued mõõtmised.
 
 Iga seotud kirje `targetApplicability` kirjeldab nelja salvestatud kanalit.
@@ -150,6 +153,58 @@ Kõigi tulemuste juures on `modifierSupportVerified:false`; audit ei lisa
 kirjutusluba ega hinda allika väärtust, kõverat, tempot, DSP-d või kuuldavust.
 
 `test-modifier-types.mjs` kasutab olemasolevaid kanalimallide sõnu ja eraldi
-määratud fixture'i baidiasukohti. Test katab 20 sisulist A–D juhtumit kõigis
-11 peres, teadmata olekud, ulatuse eristamise ning seitsme aluse säilimise.
+määratud fixture'i baidiasukohti. Test katab 20 varasemat ja 15 uut sisulist
+A–D juhtumit kõigis 16 peres, teadmata olekud, ulatuse eristamise ning seitsme aluse säilimise.
 Sünteetilised seosed on tarkvaratestid, mitte uued seadmetõendid.
+
+Plex Shift 1 sobib Plex Shift-tüübiga, Gate Ratio ainult Expander-tüüpidega
+ning TenTap Feedback Rhythm Tap Delayga. Plexi presetivalik, TenTap Learn
+ja mõõdikud on autoriseeritud skalaarjuhikute poliitikas välistatud. See ei
+ole eraldi tõend nende tegeliku modifikaatoritoe kohta.
+Synthil ja Multibandil pole ühist plokitüübi valijat: nende PID 0 väärtust
+ei tõlgendata tüübina. Üksikute ostsillaatorite või Auto Att/Rel DSP mõju
+ei arvutata. Tundmatu Plexi/Gate'i/TenTapi tüüp annab endiselt `unknown`.
+
+## Wah ja Volume koos: kirjepesade eeltöö (0.3.20)
+
+Lähterepo `tools/fm3/modifier_slot_readiness.mjs` kordab olemasolevaid tõendeid;
+tulemus on `docs/fm3/parameter-evidence/modifier-slot-readiness.json`.
+CI kontrollib nii selle värskust kui ka tõendite omavahelist kooskõla.
+
+- Bonamassa lähteekspordis on esimene kirje External 1 → Wah 1 Control ALL.
+- NewLookis on samas kirjes säilinud Wah-siht, kuid allikas on NONE.
+  See on passiivne seos, mitte sihtandmeteta kirje.
+- Mõlemas näites on ülejäänud 31 serialiseeritud kirjet passiivsed ja sidumata.
+  See ei tõenda seadme kasutatavat mahtu ega vaba kirje jaotamise reeglit.
+- Volume'i olemasolev FW13 doonor asendab sama esimest kirjet. Selle eelseis
+  kattub NewLooki 25 sõnaga; muutuvad ainult sõnad 0, 8, 9, 10 ja 15.
+- Mõlemad piiratud kirjutajad kasutavad seega indeksit 0 / wire effect 3 /
+  keha nihet 1584. Doonori nihutamine teise kirjesse ei ole kummagi olemasoleva
+  kogu keha võrdlusega tõendatud.
+
+Varasem native-analüüs näitab editori loomispäringut, vastuses määratud ID-d
+ning ootel Source-muudatuse edasisaatmist. Püsivara teise kirje jaotamine,
+lähtestamine ja eemaldamise järel taaskasutamine jäävad uuritavaks.
+Järgmine täpne offline-küsimus on selle püsivarapoolse tee leidmine olemasolevast
+analüüsist, säilitades esimese aktiivse seose. Sama editori jooksu kordamine
+ilma uue küsimuseta ei lisa tõendit.
+
+Uut REA/Ghidra jooksu, seadmetoimingut ega presetikirjutust see eeltöö ei tee.
+Samaaegne Wah/Volume, vaba kirjepesa jaotamine ja globaalsed pedaalimäärangud
+ei saa 0.3.20-ga uut kirjutustuge. Kahe sihi ühine External 1 allikas oleks
+ühine juhtsignaal; eraldi pedaalide määrangut ei tohi sellest oletada.
+
+## Elutsükli audit (0.3.21)
+
+`lifecycle` seob leitud FW13 otsingu/loomise/eemaldamise harud räsitud tõenditega.
+Nullise põhiallikaga kirje võib olla teisese allika tõttu aktiivne. Audit kasutab
+aktiivsuse määramisel mõlemat allikat ning ei samasta Source NONE-i eemaldamisega.
+`sourceActivity` väärtused on `primary-only`, `secondary-only`,
+`primary-and-secondary` ja `none`; need kirjeldavad salvestatud sõnu, mitte heli.
+
+`externalControllers[].references` näitab viite kirjet ja rolli (`primary` või
+`secondary`). `assignmentVerified:false` ja `currentValue:null` on tahtlikud:
+globaalne määrang ja kontrolleri hetkeväärtus pole presetist tõendatud.
+Kõik uued elutsükli väljad on lugemiseks; `allocationDecision` ja
+`removalDecision` jäävad `unsupported`. Ka kõigi 32 nullise Source-välja korral
+ei lubata automaatset jaotamist. Täpne ulatus on [4. punkti tabelis](FM3_POINT4_OFFLINE.md).

@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "scope": "Existing pinned examples and one FW13 donor receipt; not a complete device/preset corpus.",
+  "sources": {
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_RHYTHM_LEVEL_MINUS3_export.syx": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-volume-binding-evidence.json": "0eb1abb5c47585c08ec5d1aee65a2829a8fda245f3d9f5403bc7f2b20fe9759b",
+    "docs/fm3/parameter-evidence/volume-pedal-static-audit.json": "ae844a6257a5bf2bdb1df26b256c7283527bfca06bfa27236528895fdcf345e0",
+    "tools/fm3/modifier_slot_readiness.mjs": "4f20c08e1e28d8f3af198b416a023459083bf83fa3e89dbaa27afbd74282590d"
+  },
+  "observations": [
+    {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+      "inputSha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+      "serializedRecords": 32,
+      "activeRecords": [
+        0
+      ],
+      "inactiveBoundRecords": [],
+      "inactiveUnboundRecords": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "firstRecordWords": [
+        14,
+        0,
+        65534,
+        0,
+        32767,
+        65534,
+        32767,
+        66,
+        94,
+        5,
+        2,
+        0,
+        0,
+        32767,
+        32767,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        65534,
+        65534,
+        0,
+        0
+      ],
+      "inference": "Inactive/unbound describes stored words only; it is not an allocation or capacity guarantee."
+    },
+    {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
+      "inputSha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
+      "serializedRecords": 32,
+      "activeRecords": [],
+      "inactiveBoundRecords": [
+        0
+      ],
+      "inactiveUnboundRecords": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "firstRecordWords": [
+        0,
+        0,
+        65534,
+        0,
+        32767,
+        65534,
+        32767,
+        66,
+        94,
+        5,
+        2,
+        0,
+        0,
+        32767,
+        32767,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        65534,
+        65534,
+        0,
+        0
+      ],
+      "inference": "Inactive/unbound describes stored words only; it is not an allocation or capacity guarantee."
+    }
+  ],
+  "volumeDonor": {
+    "record": 0,
+    "wireEffect": 3,
+    "offset": 1584,
+    "changedWords": [
+      0,
+      8,
+      9,
+      10,
+      15
+    ],
+    "captureSha256": "1eb2fe164824a4caffac6b101c3d16be912c64344f08f68ad2e5ae6483035493",
+    "recordSha256": "fecd5290c960aac8cb8770ae2813cd4070d4d2e67f0d34059833eab1243171bc",
+    "allOtherBodyBytesPreserved": true
+  },
+  "priorNativeEvidence": {
+    "path": "docs/fm3/parameter-evidence/volume-pedal-static-audit.json",
+    "findings": [
+      {
+        "name": "create-serializer-argument",
+        "address": "0x1001797c0",
+        "bytes": 76,
+        "sha256": "2c45d26af854ba3a838d393d62b875c549fae0de5f4dcc05d8eca213c59c1ffd",
+        "observation": "Loads target fields +0x4f4/+0x4f6 and supplies internal request code 0x3a to serializer."
+      },
+      {
+        "name": "assigned-modifier-id",
+        "address": "0x100179608",
+        "bytes": 20,
+        "sha256": "15da188fcb47ec055e8a853dcb96529039a1d1afc6c94a1466843ff117231fbc",
+        "observation": "Compares and stores incoming W3 as current modifier ID at +0x4f8."
+      },
+      {
+        "name": "send-pending-after-id",
+        "address": "0x100179684",
+        "bytes": 52,
+        "sha256": "00632519f5882a666918d366eeb467f2aba7a7ae5b7743559fd4d9803c49b2a1",
+        "observation": "Nonzero ID and pending PID allow forwarding the saved request; pending PID is cleared to 0xffff."
+      }
+    ],
+    "limit": "The editor requests a binding and receives an assigned ID; this does not resolve firmware allocation/default initialization."
+  },
+  "decision": {
+    "bothCurrentWritersUseRecord": 0,
+    "inactiveUnboundSlotsAreNotProvenFree": true,
+    "simultaneousWahVolumeWriterSupported": false,
+    "arbitraryAllocationSupported": false,
+    "reason": "Both bounded writers use the same proven first record. Moving a donor to a second serialized record is not covered by either existing exact-body proof."
+  },
+  "nextOfflineQuestions": [
+    "Locate firmware handling of assigned modifier IDs and second-record initialization using existing native evidence before requesting new captures.",
+    "Establish removal/reuse semantics and whether the first active binding is preserved when another is created.",
+    "Keep the two sources, target/channel overlap and global controller mapping explicit in any later allocation design."
+  ],
+  "checks": {
+    "passed": true,
+    "independentWordCoordinates": true,
+    "volumeRecordHash": true,
+    "baselineWordsMatch": true,
+    "inputPreserved": true
+  },
+  "deviceIO": false,
+  "presetWrites": false,
+  "newHardwareMeasurements": false,
+  "newREAAnalysis": false
+}

@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scope": "Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.",
   "inventory": {
-    "filePaths": 2321,
-    "uniqueContents": 2117,
+    "filePaths": 2324,
+    "uniqueContents": 2120,
     "archivePaths": 990,
     "archiveContents": 164
   },
@@ -17,6 +17,80 @@
     "catalog-only": 331,
     "dictionary-only": 1224
   },
+  "effectiveStatusClaims": {
+    "blocked-hidden-editor": 1,
+    "enum-labels": 348,
+    "enum-labels-crosschecked": 137,
+    "linear-by-structure": 600,
+    "measured": 22,
+    "n/a": 760,
+    "preset-word-crosschecked": 34,
+    "taper-class-verified": 960,
+    "unverified-taper": 30
+  },
+  "recentEvidence": {
+    "labelParameters": 363,
+    "labelsCompared": 5275,
+    "exactLabels": 5234,
+    "trailingSpaceLabels": 41,
+    "frontPanelReadbacks": 18,
+    "storedDefaultReadings": 2,
+    "disputedReadings": 1,
+    "storedValueReceipt": {
+      "presets": 7,
+      "words": 16756,
+      "evidence": {
+        "source": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-read-value-check-20261023.json",
+        "pointer": "/valueCheck"
+      },
+      "verification": "existing collector receipt, not independent scalar scale measurements",
+      "storeReloadScope": "V04 only; does not extend to all seven presets"
+    },
+    "volumeBinding": {
+      "evidence": {
+        "source": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-volume-binding-evidence.json",
+        "pointer": ""
+      },
+      "scope": "captured Ext1 default modifier record; no numeric Min/Max codec or pedal/DSP proof"
+    },
+    "featureEvidence": {
+      "fm3-auto-swell-verify-20261024.json": {
+        "evidence": {
+          "source": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-auto-swell-verify-20261024.json",
+          "pointer": ""
+        },
+        "scope": "one generated AUTO-SWELL combination and readback"
+      },
+      "fm3-pedal-check-20261024.json": {
+        "evidence": {
+          "source": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-pedal-check-20261024.json",
+          "pointer": ""
+        },
+        "scope": "reported pedal behavior; no numeric Min/Max codec"
+      },
+      "fm3-grid-check-20261023.json": {
+        "evidence": {
+          "source": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-grid-check-20261023.json",
+          "pointer": ""
+        },
+        "scope": "captured grid cases, not arbitrary DSP routing"
+      },
+      "fm3-scene-midi-20261024.json": {
+        "evidence": {
+          "source": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-scene-midi-20261024.json",
+          "pointer": ""
+        },
+        "scope": "stored scene MIDI fields"
+      },
+      "fm3-scene-midi-listen-20261024.json": {
+        "evidence": {
+          "source": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-scene-midi-listen-20261024.json",
+          "pointer": ""
+        },
+        "scope": "no messages observed in this listening test; transmission not proven"
+      }
+    }
+  },
   "dictionaryStatusClaims": {
     "blocked-hidden-editor": 1,
     "enum-labels": 350,
@@ -28,6 +102,10 @@
     "unverified-taper": 36
   },
   "observations": {
+    "device-enum-labels": 363,
+    "front-panel-default-reading": 2,
+    "front-panel-disputed-reading": 1,
+    "front-panel-readback": 18,
     "paired-point": 869,
     "screen-reading-no-export": 15,
     "syx-export-no-get": 30

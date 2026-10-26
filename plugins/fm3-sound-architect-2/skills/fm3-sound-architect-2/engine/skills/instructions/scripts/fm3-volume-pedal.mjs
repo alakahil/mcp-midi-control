@@ -13,6 +13,11 @@ const bytes=fs.readFileSync(new URL('../references/fm3-volume-binding-evidence.j
 export const volumeBindingEvidenceHash='0eb1abb5c47585c08ec5d1aee65a2829a8fda245f3d9f5403bc7f2b20fe9759b';
 check(sha(bytes)===volumeBindingEvidenceHash,'evidence drift');
 const evidence=JSON.parse(bytes),start=1584,end=start+50;
+const pedalReceipt='references/fm3-pedal-check-20261024.json';
+const pedalCheck=JSON.parse(fs.readFileSync(new URL('../'+pedalReceipt,import.meta.url)));
+check(pedalCheck.editorCheck.P1.knobFollowsPedalHeelToToe===true&&pedalCheck.editorCheck.P1.sourceExternal1===true&&pedalCheck.editorCheck.P0.volumeStays==='10.00','pedal observation receipt');
+const pedalBehaviorEvidence=()=>({receipt:pedalReceipt,date:'2026-10-24',scope:'captured P1/P0 presets on FM3 Mk II Turbo FW13; FM3-Edit observation',
+  knobFollowsPedal:true,numericHeelToeMeasured:false,taperMeasured:false,audioVerified:false,currentGeneratedPresetHardwareTested:false});
 const words=()=>Array.from(evidence.binding.words);
 function target(body){
  const found=scanRecords(body).records.filter(r=>r.eid===102);
@@ -26,7 +31,7 @@ export function volumePedalCapabilities(){return {
  source:'External 1',sourceCode:14,target:{effectId:102,pid:0,name:'VOLUME_GAIN',displayLabel:'Volume',channelScope:'ALL'},
  record:0,words:words(),policy:'captured-volume-default-fw13',evidenceSha256:volumeBindingEvidenceHash,
  captureSha256:evidence.capture.sha256,fullRangeEncodingProven:false,numericMinMaxAuthoring:false,
- globalControllerSetup:false,deviceIO:false,storeReloadProven:false,
+ globalControllerSetup:false,deviceIO:false,storeReloadProven:false,pedalBehaviorEvidence:pedalBehaviorEvidence(),
  limits:evidence.limits};}
 export function readVolumePedal(body){
  target(body);
@@ -40,7 +45,7 @@ export function readVolumePedal(body){
   evidenceSha256:volumeBindingEvidenceHash,captureSha256:evidence.capture.sha256,
   capturedDefaults:true,fullRangeEncodingProven:false,physicalScaleMeasurements:0,storeReloadProven:false,
   entireBodyMatchesCapture:sha(body)===evidence.capture.bodySha256,
-  submittedFileReimported:false,pedalBehavior:'not tested',globalControllerSetup:false};
+  submittedFileReimported:false,pedalBehavior:'confirmed on captured P1/P0 presets; see evidence scope',pedalBehaviorEvidence:pedalBehaviorEvidence(),globalControllerSetup:false};
 }
 export function bindVolumePedal(syx){
  const before=inspectStructure(syx),original=Buffer.from(before.raw.body);
@@ -68,7 +73,7 @@ export function renderVolumePedalText(state){
   `Modifikaatori 25 toorsõna: ${state.words.join(', ')}.`,
   state.entireBodyMatchesCapture?'Kogu preseti keha kattub kasutaja Volume-seose ekspordiga; selle sisu korduseksporti pole vaja. Uut kodeeritud faili eraldi seadmesse ei imporditud.':'See on uus kombinatsioon: seose vaikeolek on seadmeekspordist, lõppfaili kombinatsioon kontrollitud tarkvaraliselt.',
   'External 1 globaalne pedaali/MIDI määrang ja pedaali asend ei sisaldu presetis. Seos ei muuda stseenide kanalit ega bypass’i.',
-  'Pedaali toimimine, heli ja STORE/reload on kontrollimata; fullRangeEncodingProven=false. Wahi Min/Max tõendeid Volume’ile ei laiendata.'];
+  '24.10.2026 P1/P0 katses kinnitati FM3-Editis pedaali järgimine. Täpsed kanna/varba arvud, taper, heli ja pedaalipreseti STORE/reload on kontrollimata. Uue faili riistvarakatset sellest ei järeldu; fullRangeEncodingProven=false. Wahi Min/Max tõendeid Volume’ile ei laiendata.'];
 }
 export function verifyVolumePedalOutput(report,syx,txt,spec){
  const requested=Object.hasOwn(spec??{},'volumePedal');

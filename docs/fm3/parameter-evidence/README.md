@@ -31,7 +31,7 @@ Current modifier research (2026-10-22): [MODE1 stack-slot provenance and five un
 [input methods and 3/3 conditional drag model](modifier-drag-result.md),
 [drag audit](modifier-drag-audit.json), [new Mac REA/Ghidra batch findings](modifier-rea-batch-result.md),
 [audit](modifier-rea-batch-audit.json), and [source/checkpoint hashes](modifier-rea-batch-checkpoints.json).
-Production remains 0.3.13. This research identifies drag and step input paths;
+This section records the historical 0.3.13 research and identifies drag and step input paths;
 it does not establish complete Min/Max encoding or enable generator writes.
 Version references in older sections below describe their historical work.
 
@@ -89,7 +89,7 @@ Input hashes, not the current checkout's HEAD, determine the generated content. 
 
 This is an evidence-indexing baseline, not a percentage of all FM3 features. The selected older Amp/Drive/Delay/Reverb scalar evidence and Rotary baseline points are now indexed. Remaining historical reports and compressed Amp sources still need review for additional explicit observations. Zero indexed points means **not indexed**, not unmeasured or unsupported. The queue prioritizes reuse of existing evidence and automated tests before asking for new measurements. General routing, modifiers, controller assignments, CPU and audio need separate coverage models.
 
-The installed private plugin remains at 0.3.2. The PR now includes a 0.3.3 source candidate fixing rejection of nonpositive logarithmic inputs; it is not a published release. Registry and matrix outputs live outside the plugin package. A future release still requires exact-commit packaging, the offline suite, package self-check and fresh-chat launcher validation; hardware import/audio/CPU results must remain separate.
+The earlier 0.3.3 logarithm fix is historical. The current source prepares 0.3.25; publication is established by its separate exact-commit CI and release readback. Registry and matrix outputs live in the repository; the package includes a derived, pinned parameter evidence index. Hardware import/audio/CPU results remain separate.
 
 ## Metadata reconciliation and software matrix
 
@@ -97,7 +97,7 @@ The installed private plugin remains at 0.3.2. The PR now includes a 0.3.3 sourc
 
 [Encoder matrix](encoder-matrix.json) tests every table-eligible parameter's scalar policy, fixed normalized-position anchors, all option indices/labels, invalid inputs and roundtrips. It also replays the already indexed measurements; PEQ slope values use their explicit dB/OCT option label. It runs three batched writes on every bundled base across all A-D slots, independently calculates offsets and expected raw values, and checks the complete output body for collateral changes. Batched software presets are kept in memory and are not supplied for device import.
 
-The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. Chorus/Drive, Delay/Reverb and Flanger/Phaser/Compressor/Wah/Tremolo batch writes follow the FW13 final-channel type/algorithm policy: incompatible candidates are counted as exclusions, not successful writes. Scalar conformance remains separate. The 21 tempo dependencies and existing modifier targets gate explicit writes too. There are 37,465 accepted writes, 5,776 type/authoring exclusions, 415 tempo exclusions, 72 modifier exclusions and 684 model/internal-selector exclusions requiring full templates. The type/authoring count includes dynamic/fixed slots as well as visibility. Effective BPM/controller evaluation, other-family visibility, arbitrary presets, audio and CPU remain outside this matrix. Changing the matrix or its inputs requires regeneration in the command order above.
+The matrix distinguishes passed software checks from unresolved source-scale conflicts and from hardware validation. Chorus/Drive, Delay/Reverb and Flanger/Phaser/Compressor/Wah/Tremolo batch writes follow the FW13 final-channel type/algorithm policy: incompatible candidates are counted as exclusions, not successful writes. Scalar conformance remains separate. The 21 tempo dependencies and existing modifier targets gate explicit writes too. The current counts are recorded in `encoder-matrix.json.summary`; they are regenerated from the actual runtime. Model/internal-selector exclusions require full templates. The type/authoring count includes dynamic/fixed slots as well as visibility. Effective BPM/controller evaluation, other-family visibility, arbitrary presets, audio and CPU remain outside this matrix. Changing the matrix or its inputs requires regeneration in the command order above.
 
 The bounded type policy is documented in the packaged `engine/docs/FM3_TYPE_APPLICABILITY.md`. Reproduce extraction with `python3 tools/fm3/type_applicability.py --editor /path/to/FM3-Edit.exe`; without `--editor`, verify the committed receipt against its pages, native name/PID bindings, dictionary and FW13 cache. `test-type-applicability.py` covers compiler failures, and the packaged Node regression reuses all 114 captured Chorus/Drive type templates on A–D. No new hardware measurements are inferred from either check.
 
@@ -126,3 +126,17 @@ The additional 16-template A–D regression passes 1,260 accepted writes, 136 vi
 
 `engine/docs/FM3_ROTARY_PITCH_APPLICABILITY.md` covers type-free Rotary (PID 0 is Rate) and 16 Pitch templates, using 135 native bindings. Pitch TYPE requires full templates. **27 discrete/enum conflicts now use a pinned preset-word overlay**: 20 signed integers, five direct integers and two enums starting at ID 1. Seven dynamic note selectors and fixed/unused slots stay blocked. `openScaleConflicts` is the separate metadata-reconciliation report, not a complete unresolved-semantics inventory. Current policies cover 11 families and 319 captured templates, excluding model-free Rotary.
 The updated regression passes 2,152 accepted Pitch writes / 4,440 authoring refusals / 64 template requirements across 16 models A–D, plus 80 Rotary writes and 80 dynamic/fixed raw refusals. `engine/docs/FM3_PITCH_WORD_CODECS.md` records the exact overlay, official factory source hashes, older-format read-only adapter, 432 selected factory words and FW13 metadata/native bindings. Original dictionary claims and 899 historical observations remain unchanged; `effectiveKind` and `effectiveStatus` record encoder policy separately. Global scales, dynamic notes, repeat-code display labels and controller dynamics remain separate work. The 1,175-value codec regression and 254 rejected inputs do not imply new hardware measurements. No user actions are needed.
+
+## Audit point 3 — 0.3.24
+
+The [parameter map](../../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_POINT3_PARAMETERS.md) exposes effective scales, authoring gates and historical observations through `fm3-preset.mjs --parameter-map`. The 3223-key union preserves catalog-only gaps. A query never grants write permission. `dictionary` and `effective` remain distinct, and the two unrequested Pitch labels are explicit.
+
+[Point-3 evidence](point3-parameter-map.json) records exhaustive finite-word codec checks, malformed word refusals, all named lookups and source hashes. Regenerate in this order after reviewed source changes: evidence-index, parameter-evidence, metadata_reconciliation, point3-index; update the derived index pin in fm3-parameter-map.mjs, then run point3-evidence. The derived index is in engine/docs so the source evidence inventory does not recursively include its own derivative.
+
+## Audit point 5 — 0.3.25
+
+[Grid inspection](../../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_GRID.md) adds `fm3-preset.mjs --inspect-grid PRESET.syx [--format json|txt]`. The report preserves all raw mask bits, traces known previous-column cables and distinguishes incomplete record scans. It does not infer physical/global routing or enable arbitrary preset writes. The output verifier now accepts a correctly isolated Scene MIDI cell next to an audio cell.
+
+[Point-5 evidence](point5-grid-audit.json) binds exhaustive masks/adjacent-column cases, independent graph traversal, original seven wire replies, malformed input and refreshed-hash cases, and the bundled preset corpus. [Factory replay](point5-factory-grid.json) repeats all 384 pinned factory grids locally, retaining aggregates only. Its code/source hashes are checked in CI; the factory banks are not downloaded by CI or redistributed. Eight cells retain unknown bit 4 (six merges, two single-input cells).
+
+Run `node tools/fm3/point5-evidence.mjs` to check the derived report; use `--factory FACTORY_DIR --write` after reviewing changes to the factory replay's source bindings. No new device, REA/Ghidra, audio/CPU, In 2/Out 2 authoring, FOH+monitor, 4CM or global I/O result is claimed.

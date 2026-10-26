@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.17`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.25`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -30,7 +30,156 @@ Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
 
-## Input gate ja Volume/Pan (0.3.15)
+## 5. punkti ruudustikuaudit (0.3.25, 25.10.2026)
+
+Olemasoleva SYX-i marsruutimise uurimiseks kasuta `node MOOTOR/scripts/fm3-preset.mjs
+--inspect-grid PRESET.syx`; tekstiks lisa `--format txt`. Loe
+[ruudustikuauditi ulatust](engine/docs/FM3_GRID.md). Käsk ainult loeb faili.
+Kontrolli kõiki 48 lahtrit, `raw`/`knownMask`/`unknownMask` eristust, allikaid,
+lõppe, katkenud harusid ja kirjete täielikku lugemist. Bitt 4 ei ole viies rida
+ega tõendatud heliühendus. Tundmatuid bitte ära eemalda ega tõlgenda.
+
+`consistent-known-edges` ei kinnita heli, bypass'i, IR-i, Mixeri/Multiplexeri
+sisemist valikut ega kirjutusluba. Send/Return on auditis eraldi lõpp ja allikas;
+audit ei lisa nende vahele oletuslikku kaablit. In 2/Out 2 tuvastamine ei ava
+nende kirjutustuge ega kinnita FOH+monitori või 4CM-i töövoogu. Osaline
+kirjelugemine ei tõenda puuduvat plokki; eraldatud plokk võib olla tahtlik.
+Generaator kasutab endiselt ainult toetatud alusfaile ja tervikpreseti kontrolle.
+
+Scene MIDI jääb ühendamata ka heliploki kõrval; 0.3.25 lõppkontroll arvestab
+seda õigesti. Sisend Scene MIDI-sse või heli võtmine selle väljundist jääb
+keelatuks. Tarkvaratestid ei ole uued seadme tagasilugemised.
+
+## 3. punkti parameetrikaart (0.3.24, 25.10.2026)
+
+Enne parameetri skaala või toe oletamist küsi `node MOOTOR/scripts/fm3-preset.mjs
+--parameter-map PERE PID_VÕI_NIMI`, näiteks `chorus VOICES`, `cab 93` või
+`pitch TEMPO`. Ilma pere argumendita saad koondi; `--all` väljastab kogu kaardi.
+Kasuta [parameetrikaardi juhendit ja tõenditasemete selgitust](engine/docs/FM3_POINT3_PARAMETERS.md).
+Kaart ühendab 3223 pere/PID võtit, 2892 sõnastikukirjet ja 1298 varasemat
+vaatlust. See on ainult lugemine. `tableScalarEligible` ei anna kirjutusluba:
+tervikpreset kontrollib lõpptüüpi, kanalit, paigutust, tempot ja modifikaatoreid.
+Erista algset `dictionary` väidet, `effective.scale` sisendit ning `evidence`
+mõõteulatust. Tundmatut kõverat või vigast salvestussõna ära kuva arvuna.
+Chorus Voices kasutab näite 2/4/6/8; Plex Number of Delays 4/6/8; Cab R1/R2
+0..10. Pitchi globaalskaala vali sildiga `SCALE 1`…`SCALE 32`.
+Korduva loendisildi puhul valib string esimese vaste; teise jaoks kasuta kaardi
+arvulist `word` väärtust. Kahe 1-põhise Pitch-loendi viimane silt jääb seadmel
+küsimata; suur tarkvaratest ega ülejäänud sildid ei tõenda seda tagantjärele.
+
+## 2. punkti lõppfailide kontroll (0.3.23, 25.10.2026)
+
+Kasuta [nelja faili kontrolli ulatust ja näidiste seisundit](engine/docs/FM3_POINT2_OUTPUTS.md).
+`--verify OUTPUT_STEM` kontrollib räside kõrval kogu SYX-i, TXT-i ja raporti
+vastavust spetsifikatsioonist ning räsi järgi leitud paketi alusfailist uuesti
+koostatud tulemusele. See kehtib nii `layout`/`grid` kui ka toetatud vanade
+koostajaprofiilide kohta. Muudetud Amp/Cab-mallipäring, stseen, säilitatav sõna,
+vahearuande sisu või kontrolliväide ei tohi uuendatud räsiga kontrolli läbida.
+Ära eemalda ebaõnnestuvat kontrolli ega arvuta räsi ümber selle peitmiseks.
+
+Kontrolli ajaloolist nelja faili komplekti sama kontrollitud mootoriversiooniga,
+mis selle lõi. Uue mootori raport/poliitika võib erineda ka muutmata SYX-i korral.
+Vanad `examples`-failid on tõendite ajalugu: 47 näidet taastuvad baittäpselt,
+kahel neist lisab test mälus puuduva schemaVersion/firmware päise ning kahel
+taastab täieliku päringu olemasoleva ajaloolise regressioonitesti põhjal.
+P6 A/B vanad sisendid ja eksperimentaalne Taper-test ei ole praeguse avaliku
+sisendilepingu näidised; ära lõdvenda nende pärast Volume/Ten-Tap/raw kaitseid.
+Failikontroll on tarkvaraline kooskõla, mitte autentsusallkiri ega seadme-,
+heli- või CPU-kinnitus. Kontrollitud globaalvaatlused jäävad kogumisaja tõendiks.
+
+## 6. punkti seadmevaba kontroll (0.3.22, 25.10.2026)
+
+Kasuta [6. punkti katvuse ja piirangute tabelit](engine/docs/FM3_POINT6_BLOCKS.md).
+FW13 XML-poliitika katab nüüd 13 peret ja 515 PID-i. Lisanduvad Mixer,
+Multiplexer, Formant, Megatap, RingMod, Resonator, Looper ning ainult loetava
+metaandmestikuna MultiDelay. Kirjutamisel kontrolli lõplikku tüüpi ja tegelikku
+kanalite arvu: Looper A; Megatap/RingMod/Resonator A–B; teised A–D.
+Resonatori Manual/Chordal juhikud erinevad. Synthi, Megatapi ja RingModi
+PID 0 või peidetud TYPE ei tähenda kasutajale valitavat plokitüüpi.
+
+Mixeri `DELAY1`…`DELAY4` nimed seotakse PID-idega 17…20 kinnitatud
+FM3-Edit ARM64 kirjeldustabeli ja FW13 vahemälu alusel. Ajaloolise sõnastiku
+skaalad ja tõendistaatused ei muutu. Delay 5/6 ei ole toetatud.
+Looperi Record/Play/Once/Reverse/Undo/Dub on käivituskäsud, mitte lubatud
+skalaarseadistused. MultiDelay dünaamilised Feedback Send/Return ja
+presetivalik jäävad blokeerituks; selle ploki lisamist ei avata.
+`--inspect-modifiers` kasutab 24 pere poliitikaid ning kontrollib ka 1/2-kanalilisi
+kirjeid. Puuduv kanal ja tundmatu seis jäävad teadmata; nähtavus ei tõenda
+modifikaatori tuge ega luba uut seost kirjutada.
+
+Kasutaja presetikausta inventeerimiseks käivita MOOTOR-i
+`scripts/fm3-corpus-audit.mjs --input DIRECTORY --output NEW_REPORT.json`.
+See loeb kohalikke `.syx` faile, ei ava MIDI-t ega võrku ning ei muuda preseteid.
+Raport sisaldab räsi- ja struktuuriandmeid; failinimesid, presetinimesid ja
+parameetriväärtusi ei väljastata. Kommertspaketi presetifaile ära avalda.
+Kui nimetatud kaust pole selles keskkonnas kättesaadav, ütle seda; ära väida,
+et selle sisu on kontrollitud. Seadme import/STORE, heli, CPU ja Scene MIDI
+tegelik väljund ei ole nende tarkvaratestidega kinnitatud.
+
+## 4. punkti seadmevaba koondtöö (0.3.21, 25.10.2026)
+
+Kasuta [4. punkti tõendi- ja piirangutabelit](engine/docs/FM3_POINT4_OFFLINE.md).
+Uus staatiline analüüs leidis FW13 kirjepesa otsingu ning loomise/eemaldamise
+harud. See ei tõenda veel täielikku serialiseeritud lähtestust ega luba teise
+kirje kirjutamist. Wah ja Volume samaaegne kirjutamine, üldine jaotaja,
+eemaldamine ja suvaline Volume Min/Max jäävad toetamata.
+
+`--inspect-modifiers` eristab põhi- ja teisese allika aktiivsust, Source NONE-i,
+väljalülitatud sihtseost ja sidumata kirjet. External-kontrolleri sõltuvused
+näitavad iga viite kirjet ja rolli; globaalne pedaali/CC vastendus ning hetkeväärtus
+jäävad teadmata. TXT ja JSON lähtuvad samast 16 pere tüübipoliitikast.
+Kogu paketi SYX-korpuse inventuur ei leidnud toetatud vormingus kahe aktiivse
+seose näidet. Ära nimeta sidumata või Source NONE kirjet tõendatult vabaks pesaks.
+Uut REA teenusekäivitust ega seadmemõõtmist ei tehtud; varasem REA eksport ja
+uued kohalikud staatilised kontrollid on eraldi tõendikihid.
+
+## Modifikaatorite auditi laiendus (0.3.20, 25.10.2026)
+
+`--inspect-modifiers` kontrollib nüüd 16 pere salvestatud A–D tüübisobivust:
+varasemale 11 perele lisanduvad PlexDelay, Gate/Expander, TenTapDelay, Synth
+ja Multiband Compressor. Kasutatakse samu räsi järgi kinnitatud FW13 reegleid
+nagu generaatoris. Tundmatu tüüp jääb teadmata; Synthi ja Multibandi PID 0
+ei ole plokitüübi valija. `available` ei kinnita modifikaatori tuge, DSP mõju
+ega kirjuta seost presetisse.
+
+[Kirjepesade eeltöö](engine/docs/FM3_MODIFIER_AUDIT.md#wah-ja-volume-koos-kirjepesade-eeltöö-0320)
+eristab passiivset Wah-seost ja sidumata kirjeid. Mõlemad praegused Wah/Volume
+kirjutajad kasutavad esimest kirjet; samaaegset seost ega vaba pesa jaotamist
+veel ei toetata. Uusi seadmetõendeid või REA/Ghidra jooksu pole lisatud.
+
+## Auditi offline-täiendused (0.3.19, 25.10.2026)
+
+Kasuta PlexDelay, Gate/Expander, TenTapDelay, Synth ja Multiband Compressori
+kirjutamisel lõpliku kanali tüübipoliitikat (`references/fm3-insert-applicability.json`):
+242 parameetri nähtavus pärineb sama FM3-Edit 1.07.17 FW13 paigutusest.
+Peidetud väljad, mõõdikud, TenTap Learn/Reset ja Plexi presetivalik ei ole lubatud
+skalaarseadistused. Synthi ostsillaatorite ja Multibandi Auto Att/Rel dünaamikat
+see XML-kontroll ei tõenda. Tundmatute skaalade kirjutamine jääb blokeerituks.
+Plexi/TenTapi 10 tempo-seost kuvatakse ka lõpparuandes; aktiivse modifikaatori
+siht ja tempo ei tohi sattuda vastuollu.
+
+Käivita `--verify OUTPUT_STEM` kõigi nelja väljundfaili kontrolliks. Kontroll loeb
+SYX-i uuesti, rakendab spetsifikatsiooni kontrollid muutmata koopiale ning võrdleb
+kanalisõnu, nähtavaid parameetreid, sõltuvusi, raportit ja TXT väärtusi nii `layout`
+kui ka `grid` režiimis. Räsid üksi ei kinnita sisulist kooskõla.
+
+Lähterepo `docs/fm3/parameter-evidence/registry.json` loeb efektiivsed skaalad ja kirjutamispoliitika töötavast mootorist.
+23.–24.10 valikunimed, paneelinäidud, muutmata algväärtused, vaieldav Release'i näit
+ja 16 756 salvestatud sõna on eraldi tõendiliigid. Ära käsitle neid täieliku
+skaala, kõigi kombinatsioonide, heli ega uue seadmekatse kinnitusena.
+
+## GitHubi andmete koondamine (0.3.18, 24.10.2026)
+
+0.3.18 sisaldab GitHubi põhiharu `93811dc6c4b9579fdd1076910443aba99773ab84`
+uusi andmeid: Scene MIDI PC/CC, Volume/Pan AUTO-SWELL, Input Threshold OFF,
+23.–24.10 seadme tagasilugemised, loendinimed, skaalapunktid ja pedaali vaatlus.
+Väljalaske enda täpne commit tuleb avaldamiskviitungist ja release-manifest.json-ist.
+Järgnevad kehtivad kokkuvõtted asendavad ajalooliste kviitungite „notMeasured”
+märked ainult konkreetselt lisandunud tõendi ulatuses. Varasemaid toorandmeid ei muudeta.
+Riistvarakinnitus puudutab nimetatud katsepresette ja punkte; uus kombinatsioon,
+täisvahemik, heli ja MIDI OUT-i tegelikud sõnumid vajavad eraldi tõendit.
+
+## Input gate ja Volume/Pan (0.3.15–0.3.18)
 
 Selles versioonis on piiratud Input 1 ja Volume/Pan 1 kirjutustugi.
 Tegelik avaldamine ja laaditud commit kinnitatakse väljalaskekviitungist. Input 1 viie arvparameetri
@@ -67,7 +216,7 @@ Esipaneeli kontroll (24.10.2026, `references/fm3-step-diff-volume-type-20261024.
   generaatori väärtuse ja genereeritud 20 ms näitas 20,000.
 Generaatori AUTO-SWELL preset kontrolliti seadmel (`references/fm3-auto-swell-verify-20261024.json`):
 - kõik plokid ja ruudustik loeti tagasi täpselt sellisena, nagu generaator need kirjutas;
-- ekraan näitas küsitud väärtusi: Attack 250 ms kui 249,99 ms ja Release 20 ms kui 20,000 ms. Pedaaliseose jaoks kasuta allpool kirjeldatud `volumePedal:true` valikut. Aktiivse modifikaatori konflikt tõrjutakse.
+- ekraan näitas küsitud väärtusi: Attack 250 ms kui 249,99 ms ja Release 20 ms kui 20,000 ms.
 
 Volume'i jäädvustatud doonor on vaikimisi **kõigis kaheksas stseenis aktiivne,
 kanal A**. Uue soundi loomisel kirjuta `blockScenes.volpan`-i alati kõigi kaheksa
@@ -77,9 +226,10 @@ kanali A GAIN-i muutmine mõjutab kõiki aktiivseid sama kanalit kasutavaid stse
 Ainult jäädvustatud ekspordi täpsel taasesitamisel võib doonori stseene säilitada.
 
 Ühe ekspordi plokimall ja Input-sõnade säilimine on seadmetõend. Uued
-Volume-väärtused, asukohad ja stseenikombinatsioonid on tarkvaraliselt kontrollitud
-ning skaalad tuginevad FW13 native/cache/XML-i ja kõveraklassi üldistusele.
-STORE/reload, heli/CPU ja täisvahemik pole sellega tõendatud. Globaalne Noisegate
+Volume-väärtused ja skaalad tuginevad FW13 native/cache/XML-i kõveraklassidele ning
+eespool loetletud 24.10 mõõtepunktidele. Uued asukohad ja stseenikombinatsioonid
+vajavad oma kontrolli. V04 STORE/reload on tõendatud allpool kirjeldatud katses;
+see ei tõenda kõigi uute presetite salvestamist, heli/CPU-d ega täisvahemikku. Globaalne Noisegate
 Offset / AC Line Frequency ei kuulu preseti sisusse. Wah Min/Max-i tõendusulatus
 ja `fullRangeEncodingProven=false` säilivad. Selle ekspordi kordamist pole vaja.
 
@@ -102,7 +252,8 @@ Kasutaja üks 23.10.2026 FW13 eksport kinnitas 25-sõnalise vaikeoleku ning kõi
 muude sisubaitide säilimise. Generaator taastab kogu mõõdetud keha täpselt.
 `--verify` võrdleb lõpp-SYX-i, TXT-i, speci ja aruannet. Selle sama sisu
 korduseksporti ei küsita. Uued paigutus/stseenikombinatsioonid on kontrollitud
-arvutis; pedaali toimimine, heli ja STORE/reload jäävad eraldi kontrollideks.
+arvutis; P1 pedaali järgimine on kinnitatud eespool nimetatud FM3-Editi vaatlusega.
+Täpsed kanna/varba arvud, heli ja selle pedaalipreseti STORE/reload on kontrollimata.
 `fullRangeEncodingProven=false` ning Wahi Min/Max-i tõendusulatus säilivad.
 
 `GAIN` käsiväärtus on seose korral kõigil A–D kanalitel blokeeritud. `LEVEL`,
@@ -350,9 +501,9 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   ja HOIATUS-ridu. Iga plokk peab olema In 1/Return/Synth'ist Out 1/Send'ini
   ühendatud; iga presetis olev plokk peab ruudustikul olema. `remove` eemaldab plokke (mitte In 1/Out 1/
   Amp/Cab; Send+Return koos), `duplicate` lisab teise eksemplari (drive2, delay2, compressor2, filter2–4 jt,
-  ainult tehasepresetites nähtud), `insert` lisab ka mixer/multiplexer ja scenemidi. Uued plokid: A, bypass; lülita
+  ainult tehasepresetites nähtud), `insert` lisab ka mixer/multiplexer ja scenemidi. Uued heliplokid: A, bypass; lülita
   sisse `blockScenes` abil. Tõend: kõik 384 tehase ruudustikku läbivad planeerija ja 4801/4801 sisendmaski
-  taastuvad (`references/fm3-factory-grid-evidence.json`). **Seadmel kinnitatud** 2026-10-23: 7 testruudustikku
+  taastuvad bittide 0–3 osas; bit 4 jääb eraldi tundmatuks (`references/fm3-factory-grid-evidence.json`). **Seadmel kinnitatud** 2026-10-23: 7 testruudustikku
   (hargnemised, liitmised, 4 rida, Mixer, Multiplexer, Synth, eksemplarid, eemaldamine) lugesid tagasi 48/48
   lahtrit (`references/fm3-grid-check-20261023.json`). Ära küsi seda uuesti; heli on veel kuulamata.
   Teiste eksemplaride nimed (`drive2`, `volpan2` jne), kanalid ja bypass kajastuvad lõppfailidest loetud TXT-s ja aruandes.
@@ -376,7 +527,7 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   lahter tühi). Paigutus dekodeeriti seadmel 24.10.2026: 11 esipaneeli muudatust, igaüks üks sõna, pluss PC järelkatse
   (`references/fm3-scene-midi-20261024.json`, `references/fm3-scene-midi-pc-20261024.json`). Kas sõnum stseeni vahetusel
   MIDI OUT pessa välja läheb ja kas saadetud PC on näidatud väärtus või ühe võrra väiksem, pole mõõdetud. USB kaudu
-  FM3 neid ei saada (`references/fm3-scene-midi-listen-20261024.json`).
+  selles katses sõnumeid ei täheldatud (`references/fm3-scene-midi-listen-20261024.json`).
   Detailid: `engine/docs/FM3_SCENE_MIDI.md`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
   (342 seadmes mõõdetud tüüpi + reverbi kvaliteet; piir 80 %, hoiatus üle 72 %).
@@ -534,7 +685,7 @@ Tundmatu kirjeloendi või süsteemisaba korral on ploki olemasolu teadmata;
 toimimist ega kuuldavust. Eksporditud Bonamassa aluses on External 1 aktiivne,
 kuid Wah kõigis stseenides bypass'is; NewLookis on sihtseos väljas ja plokk puudub.
 
-Vaata `targetApplicability`: 11 kaetud efektipere A–D kanalite FW13 tüübireegel
+Vaata `targetApplicability`: 16 kaetud efektipere A–D kanalite FW13 tüübireegel
 annab sobiva, välistatud või teadmata tulemuse. Tundmatu mudeli/valija ega
 puuduva või korduva sihtkirje puhul ära järelda sobivust. Kõik kanalid kuvatakse;
 `inModifierScope` eristab seose ALL/A–D ulatust. Tüübireegli läbimine ei kinnita

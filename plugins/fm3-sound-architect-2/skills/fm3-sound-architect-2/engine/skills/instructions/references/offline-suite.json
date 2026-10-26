@@ -554,6 +554,87 @@
       ],
       "scope": "Captured FW13 Ext1 -> Volume/Pan 1 Gain ALL default record, exact entire device-body replay, all unrelated bytes preserved, raw readback, invalid inputs and rehashed tamper rejection across SYX/TXT/spec/report; no new scale, DSP or STORE proof",
       "required": true
+    },
+    {
+      "id": "test-insert-applicability",
+      "command": [
+        "node",
+        "scripts/test-insert-applicability.mjs"
+      ],
+      "scope": "Five FW13 XML families, 242 PIDs, A-D type matrix, independent visibility negatives, final-type ordering and atomic failure; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-controls-output",
+      "command": [
+        "node",
+        "scripts/test-controls-output.mjs"
+      ],
+      "scope": "Twelve point-6 families in layout/grid SYX/TXT/spec/report, thirteen rehashed valid-CRC tamper cases; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-point6-offline",
+      "command": [
+        "node",
+        "scripts/test-point6-offline.mjs"
+      ],
+      "scope": "13 families / 515 PIDs, scalar domain checks, all available channels and types, read-only MultiDelay policy, atomic rejection, Scene MIDI position/value coverage, and private local corpus audit; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-output-replay",
+      "command": [
+        "node",
+        "scripts/test-output-replay.mjs"
+      ],
+      "scope": "All public generator dispatch paths and seven composer bases; complete request/base/SYX/TXT/report replay, 96 refreshed-hash semantic mutations, UTF-8 and transport errors, collision/rollback fault injection; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-example-bundles",
+      "command": [
+        "node",
+        "scripts/test-example-bundles.mjs"
+      ],
+      "scope": "50 historical example specs classified: 47 complete SYX byte replays and fresh four-file checks including two metadata-only adaptations and two explicit historical request reconstructions; three historical/experimental requests remain rejected; no source-fixture changes or new hardware proof",
+      "required": true
+    },
+    {
+      "id": "test-parameter-domain",
+      "command": [
+        "node",
+        "scripts/test-parameter-domain.mjs"
+      ],
+      "scope": "All 2101 supported scalar descriptors, exhaustive finite preset-word domain, malformed and out-of-range words; software conformance only",
+      "required": true
+    },
+    {
+      "id": "test-parameter-map",
+      "command": [
+        "node",
+        "scripts/test-parameter-map.mjs"
+      ],
+      "scope": "3223 parameter identities, effective scales, source-vs-runtime evidence, all named lookups, 1298 observations, label gaps, native aliases, pin integrity and public read-only CLI",
+      "required": true
+    },
+    {
+      "id": "test-grid-domain",
+      "command": [
+        "node",
+        "scripts/test-grid-domain.mjs"
+      ],
+      "scope": "All 65536 masks, 11264 adjacent-column cases, independent BFS graph oracle and row permutations; software conformance only",
+      "required": true
+    },
+    {
+      "id": "test-grid-audit",
+      "command": [
+        "node",
+        "scripts/test-grid-audit.mjs"
+      ],
+      "scope": "Read-only raw grid and record association, captured 590-byte wire frames, unknown mask bits, malformed inputs, Scene MIDI adjacency and refreshed-hash rejection; no device I/O",
+      "required": true
     }
   ]
 }

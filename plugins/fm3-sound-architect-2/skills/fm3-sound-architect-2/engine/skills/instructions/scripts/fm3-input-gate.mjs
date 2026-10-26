@@ -9,12 +9,13 @@ const numericPids=new Set([0,1,2,3,5]);
 export const inputUnits=Object.freeze({INPUT_THRESH:'dB',INPUT_RATIO:':1',INPUT_RELEASE:'ms',INPUT_ATTACK:'ms',INPUT_LEVEL:'dB'});
 export function inputGateSummary(){return {supported:true,block:'in1',effectId:37,channels:['A','B','C','D'],
   parameters:[...numericPids].map(pid=>({pid,name:input.parameters[pid].name,unit:inputUnits[input.parameters[pid].name],kind:input.parameters[pid].kind,displayRange:input.parameters[pid].numericFields.slice(0,2).map(v=>v*input.parameters[pid].numericFields[2])})),
-  evidenceSha256:inputVolumeEvidenceHash,encoding:'existing table curve classes; metadata/model generalization, no new physical scale measurements',
-  newHardwareMeasurements:0,newPhysicalScaleMeasurements:0,fullRangeEncodingProven:false,
+  evidenceSha256:inputVolumeEvidenceHash,encoding:'FW13 table curves; selected front-panel points checked on 2026-10-24; unmeasured values remain model-based',
+  hardwareMeasurementsPerformedByGenerator:0,frontPanelScalePoints:8,fullRangeEncodingProven:false,
   hardwareStorageRoundtrip:{targetWords:20,channels:['A','B','C','D'],captureSha256:'e6537e4a8f86b7bb9d125e341567b7c5b354afac65fc4f325a8580d0d8a06356',scope:'one imported combination; entire Input record preserved'},
   preserved:['Gate Type','Mode','Input bypass','meter/reserved words','scene assignments','global Noisegate Offset','global AC Line Frequency','modifiers'],
   frontPanelScaleCheck:{receipt:'references/fm3-step-diff-input-volume-20261024.json',points:{INPUT_THRESH:['-40 dB','OFF (= -100, word 0)','-80 dB'],INPUT_LEVEL:['+6 dB']},
     result:'every front-panel reading equals the generator encoding word for word'},
+  additionalFrontPanelScaleCheck:{receipt:'references/fm3-step-diff-gate-pan-20261024.json',points:{INPUT_RATIO:[4,10],INPUT_ATTACK:[10.03],INPUT_RELEASE:[199.89]},result:'stored words decode to the observed display precision; this does not assert word-exact encoding of rounded Ratio/Attack/Release readings'},
   limits:['Input 1 only; separate Gate block excluded','Ratio and Attack require final ADVANCED; Release is visible in both FW13 modes','Threshold -100 dB = OFF on the FM3 (stored word 0, front-panel check 2026-10-24)','No new Input controller binding; Volume/Pan has a separate bounded writer']};}
 export function inputGateState(p,read){
   return p.family==='INPUT'?{mode:read(9),type:read(7)}:null;
@@ -40,7 +41,7 @@ export function validateInputGateWrites(body,writes){
     if(!a.allowed)throw Error('Input gate: '+a.reason);
     if(w.pid===0&&w.raw===0)w.deviceDisplay='OFF';  // -100 dB: the FM3 shows OFF (front-panel check 2026-10-24)
     w.typeApplicability=a;
-    w.encodingEvidence='taper-class-verified; storage roundtrip confirmed; front-panel readings equal the encoding (Threshold -40/OFF/-80, Level +6; references/fm3-step-diff-input-volume-20261024.json)';
+    w.encodingEvidence='FW13 curve classes; 20-word storage roundtrip; selected Threshold/Level words exact and Ratio/Attack/Release matched at display precision (references/fm3-step-diff-input-volume-20261024.json; references/fm3-step-diff-gate-pan-20261024.json). Other values remain model-based.';
   }
 }
 export function describeInputGate(body,record){

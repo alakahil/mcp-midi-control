@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2117,
-  "filePaths": 2321,
+  "uniqueContents": 2120,
+  "filePaths": 2324,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -5864,6 +5864,12 @@
         "references/reverb-batch-20261006-181951/capture-20261006T162732-aeac5ab47a/pair.json"
       ]
     },
+    "788a47d7fd5cad356dea563fc225dd556cff34520e004d74e7df9bb9d7f4eea7": {
+      "bytes": 23005,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "7897f675fd83e6c14211b5b1c8c1209f08bf7d7ac5bd8dd420e389ccbbbe876a": {
       "bytes": 952,
       "paths": [
@@ -7718,6 +7724,12 @@
       "paths": [
         "references/geq-full-20261010-194115/step-064-79aee8cc1f/donor.syx",
         "references/geq-full-20261010-194115/step-068-540815a1eb/donor.syx"
+      ]
+    },
+    "9cedfafba267139f220224ac63a6013dd524c1c0914b49207368f590c3eb0b2a": {
+      "bytes": 610081,
+      "paths": [
+        "references/fm3-insert-applicability.json"
       ]
     },
     "9d121a7a850e1fd0a988bdb068bcafa7d044e4f6da46cd30a73e54fc0f7ac629": {
@@ -9699,12 +9711,6 @@
         "references/reverb-batch-20261006-181951/capture-20261006T162732-aeac5ab47a/labels.json"
       ]
     },
-    "c4758a9cdb5d731c2e113410979c577e6567846876aa929402a223df976afc7a": {
-      "bytes": 19834,
-      "paths": [
-        "references/offline-suite.json"
-      ]
-    },
     "c4b9b38aea16c31d63af95eb6889f90d24cb090bd1eb8bc49367c21d0cb6614b": {
       "bytes": 24680,
       "paths": [
@@ -11323,6 +11329,12 @@
         "references/drive-batch-20261006-112254/capture-20261006T111556-477e5c69fb/capture.json"
       ]
     },
+    "e2205597c48e85ab510aec9f9546964d6ad13b2aea1ffcf0f91c3a22f7cb7160": {
+      "bytes": 14433,
+      "paths": [
+        "references/fm3-point6-native-bindings.json"
+      ]
+    },
     "e232ee4e4deaf9e4bce91ae84bd9488243a3192907f8cad5cf05c85fe72f399d": {
       "bytes": 5022,
       "paths": [
@@ -12446,6 +12458,12 @@
       "bytes": 1804,
       "paths": [
         "references/filter-controls-20261008-165150/step-08-9516c67865/result.json"
+      ]
+    },
+    "f8fa6b4077772ee33a18f0da7fa18cdc282b82a8e465563793da8a253e2b9da7": {
+      "bytes": 10748,
+      "paths": [
+        "references/fm3-modifier-lifecycle-evidence.json"
       ]
     },
     "f90520e6a7d617dd7e8932e83200631d028061d42722e81515eced962baf335b": {

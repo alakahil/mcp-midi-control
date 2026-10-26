@@ -4,10 +4,21 @@ import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {readModifiers,dependencyPolicyHash} from './fm3-parameter-dependencies.mjs';
 import {loadDictionary} from './fm3-table-encoder.mjs';
-import {scanRecords,readGrid,SLUG_BY_EID} from './fm3-layout.mjs';
+import {scanRecords,readGrid,SLUG_BY_EID,CHANNELS} from './fm3-layout.mjs';
 import {auditModifierTargetType,modifierTypeAuditPolicy} from './fm3-modifier-type-audit.mjs';
 const policyBytes=fs.readFileSync(new URL('../references/fm3-parameter-dependencies.json',import.meta.url));
 const sha=b=>createHash('sha256').update(b).digest('hex');
+const lifecycleBytes=fs.readFileSync(new URL('../references/fm3-modifier-lifecycle-evidence.json',import.meta.url));
+const lifecycleSha256='f8fa6b4077772ee33a18f0da7fa18cdc282b82a8e465563793da8a253e2b9da7';
+if(sha(lifecycleBytes)!==lifecycleSha256)throw Error('Modifier lifecycle evidence changed');
+const lifecycleEvidence=JSON.parse(lifecycleBytes);
+function lifecycleCapabilities(){return {
+  evidenceSha256:lifecycleSha256,metadataFirmware:13,
+  allocationRuleStaticallyLocated:true,serializedInitializationFullyProven:false,
+  arbitraryAllocationSupported:false,simultaneousWahVolumeWriterSupported:false,removalWriterSupported:false,
+  sourceNoneIsNotRemoval:true,globalAssignmentsVerified:false,
+  evidence:structuredClone(lifecycleEvidence)
+};}
 if(sha(policyBytes)!==dependencyPolicyHash)throw Error('Modifier audit metadata changed');
 const policy=JSON.parse(policyBytes),sourceName=n=>policy.modifiers.sources[n]?.trim()??'unknown';
 // All seven pinned bases have this identical system tail. Requiring its full
@@ -44,12 +55,12 @@ function targetContext(body,m,index,sceneNames){
   if(gridPresence==='absent')issues.push('target-not-in-grid');
   if(gridPresence==='ambiguous')issues.push('duplicate-target-grid-cell');
   const r=recordPresence==='present'?matches[0]:null;
-  const supported=!!r&&r.channels===4&&Object.hasOwn(SLUG_BY_EID,r.eid);
+  const supported=!!r&&r.channels===(CHANNELS[r.block]??4)&&Object.hasOwn(SLUG_BY_EID,r.block);
   if(r&&!supported)issues.push('target-scene-layout-unsupported');
   const scenes=supported?Array.from({length:8},(_,i)=>{
     const channelRaw=body.readUInt16LE(r.header+10+2*i),bypassRaw=body.readUInt16LE(r.header+26+2*i);
-    const channel=channelRaw<4?'ABCD'[channelRaw]:null,bypass=bypassRaw<2?bypassRaw===1:null;
-    const modifierChannelMatches=channel===null||m.channel>4?null:m.channel===0||m.channel===channelRaw+1;
+    const channel=channelRaw<r.channels?'ABCD'[channelRaw]:null,bypass=bypassRaw<2?bypassRaw===1:null;
+    const modifierChannelMatches=channel===null||m.channel>r.channels?null:m.channel===0||m.channel===channelRaw+1;
     return {scene:i+1,name:sceneNames[i]??null,channelRaw,channel,bypassRaw,bypass,modifierChannelMatches};
   }):[];
   if(scenes.some(s=>s.channel===null))issues.push('unknown-target-scene-channel');
@@ -69,6 +80,7 @@ export function modifierAuditCapabilities(){return {
   targetContext:'Supported sequential effect records, pinned system tail, grid cells and stored A-D scene channel/bypass words',
   unresolvedContext:'reported as unknown; never inferred absent',evaluatesSignalPath:false,
   targetTypePolicy:modifierTypeAuditPolicy(),
+  lifecycle:lifecycleCapabilities(),
   evaluatesControllerValue:false,deviceIO:false
 };}
 export function auditModifiers(syx){
@@ -88,9 +100,12 @@ export function auditModifiers(syx){
     if(target)issues.push(...target.issues);
     const record=target?.recordPresence==='present'?context.records.find(r=>r.header===target.recordHeader):null;
     const applicability=auditModifierTargetType(body,m,p,record);
+    if(applicability&&!applicability.scopeKnown)issues.push('target-channel-scope-unknown');
     if(applicability?.scopedExcludedChannels.length)issues.push('target-type-excluded');
     if(applicability?.scopedUnknownChannels.length)issues.push('target-type-unknown');
     return {...m,sourceName:sourceName(m.source),secondarySourceName:sourceName(m.secondarySource),
+      sourceActivity:m.source!==0?(m.secondarySource!==0?'primary-and-secondary':'primary-only'):
+        m.secondarySource!==0?'secondary-only':'none',
       state:m.active?'active':m.effectId===0?'inactive-unbound':'inactive-binding',
       targetName:p?.name??null,targetLabel:p?.label??null,targetFamily:p?.family??null,
       targetContext:target,targetApplicability:applicability,issues,words:Array.from({length:25},(_,i)=>body.readUInt16LE(m.offset+2*i))};
@@ -104,7 +119,19 @@ export function auditModifiers(syx){
       certainty:x.effectId!==0&&x.effectId===y.effectId&&x.channel<=4&&y.channel<=4?'same-target':'possible-target'});
   }
   const externalControllers=[...new Set(active.flatMap(m=>[m.source,m.secondarySource]).filter(n=>n>=14&&n<=29))]
-    .sort((a,b)=>a-b).map(n=>({source:n,name:sourceName(n),mapping:'global; not contained or verified here'}));
+    .sort((a,b)=>a-b).map(n=>({source:n,name:sourceName(n),mapping:'global; not contained or verified here',
+      assignmentVerified:false,currentValue:null,
+      references:active.flatMap(m=>[
+        ...(m.source===n?[{record:m.record,role:'primary'}]:[]),
+        ...(m.secondarySource===n?[{record:m.record,role:'secondary'}]:[])
+      ])}));
+  const lifecycle={...lifecycleCapabilities(),
+    storedPrimarySourceZeroRecords:modifiers.filter(m=>m.source===0).map(m=>m.record),
+    secondaryOnlyRecords:modifiers.filter(m=>m.sourceActivity==='secondary-only').map(m=>m.record),
+    inactiveBoundRecords:modifiers.filter(m=>m.state==='inactive-binding').map(m=>m.record),
+    inactiveUnboundRecords:modifiers.filter(m=>m.state==='inactive-unbound').map(m=>m.record),
+    interpretation:'Stored source-zero and unbound records are observations, not certified free slots. The native selector reads a runtime cache; preset-to-cache initialization is not fully proven.',
+    allocationDecision:'unsupported',removalDecision:'unsupported'};
   return {schemaVersion:1,mode:'read-only-modifier-audit',name:inspected.decoded.preset_name,
     inputSha256:sha(syx),inputBytes:syx.length,bodyBytes:body.length,format:'0x0146',
     firmwareDetected:null,metadataFirmware:13,metadataSha256:dependencyPolicyHash,
@@ -113,14 +140,15 @@ export function auditModifiers(syx){
       inactiveBindings:modifiers.filter(m=>m.state==='inactive-binding').length,
       inactiveUnbound:modifiers.filter(m=>m.state==='inactive-unbound').length,
       recordsWithIssues:modifiers.filter(m=>m.issues.length).length,overlappingTargets:overlappingTargets.length},
-    contextScan:context.report,typePolicy:modifierTypeAuditPolicy(),modifiers,overlappingTargets,externalControllers,
+    contextScan:context.report,typePolicy:modifierTypeAuditPolicy(),lifecycle,modifiers,overlappingTargets,externalControllers,
     limits:['Serialized record count is not a usable modifier capacity claim.',
       'Target applicability uses bounded FW13 authoring policies, not native UI execution, modifier support or DSP validation.',
       'Block absence requires the complete supported record scan and pinned system tail; otherwise presence is unknown.',
       'Grid cells and stored scene channel/bypass words do not establish a connected or audible signal path.',
       'Local custom-note context is checked, but complete scale contents and global scale values are not validated.',
       'Curve, range, damping and operation words are retained as raw integers, not decoded or evaluated.',
-      'Active means a nonzero stored source. Scene summaries do not evaluate modifiers, bypass mode or current controller value.',
+      'Active means a nonzero stored primary or secondary source. Scene summaries do not evaluate modifiers, bypass mode or current controller value.',
+      'Source NONE alone is not removal. Inactive/unbound and source-zero records grant no allocation or reuse permission.',
       'Audit success grants no writing permission for an unknown preset or modifier configuration.',
       'Device import, pedal operation, audio and CPU are not tested.'],
     deviceIO:false,presetWritten:false};
@@ -194,10 +222,20 @@ export function renderModifierAuditText(audit){
   for(const o of audit.overlappingTargets)lines.push(`Kirjed ${o.records.map(n=>n+1).join(' ja ')}: ${o.certainty==='same-target'?'sama siht ja kattuvad kanalid':'võimalik kattumine; siht või kanal on ebaselge'}. See ei kinnita DSP-konflikti.`);
   if(!audit.overlappingTargets.length)lines.push('Aktiivsete kirjete vahel kattuvaid sihte ei leitud.');
   lines.push('','GLOBAALSED SÕLTUVUSED');
-  for(const c of audit.externalControllers)lines.push(`${c.name}: pedaali/MIDI vastendus on globaalne ega ole selles auditis kontrollitud.`);
+  for(const c of audit.externalControllers)lines.push(`${c.name}: pedaali/MIDI vastendus on globaalne ega ole selles auditis kontrollitud. Viited: ${c.references.map(r=>`#${r.record+1} ${r.role==='primary'?'põhiallikas':'teisene allikas'}`).join(', ')}.`);
   if(!audit.externalControllers.length)lines.push('Aktiivset External-kontrolleri viidet ei leitud.');
+  const l=audit.lifecycle;
+  lines.push('','KIRJE LOOMINE, VÄLJALÜLITAMINE JA EEMALDAMINE',
+    `Põhiallikas NONE: ${l.storedPrimarySourceZeroRecords.length} kirjet; neist teisese allikaga aktiivseid: ${l.secondaryOnlyRecords.length}.`,
+    'Aktiivne tähendab siin mittenullist põhi- või teisest allikat. Allikate arvulist mõju ei hinnata.',
+    `Väljalülitatud sihtseoseid: ${l.inactiveBoundRecords.length}; passiivseid sidumata kirjeid: ${l.inactiveUnboundRecords.length}. Kumbki ei kinnita vaba kirjepesa.`,
+    'FW13 staatiline analüüs leidis 32 objekti hulgast esimese nullise Source-puhvriväljaga objekti otsingu ning loomise ja eemaldamise harud.',
+    'Loomisel seatakse siht ja 21 välja vaikimisi väärtused callback-konversioonide kaudu; need pole valmis SYX-toorsõnad. PID18/19 täielik lähtestus pole tõendatud.',
+    'Source NONE üksi ei eemalda sihtseost. Eemaldamise haru puhastab Source ja sihtploki, mitte tervet kirjet; taaskasutust see audit ei luba.',
+    'Wah ja Volume samaaegne kirjutamine, suvaline kirjepesa loomine ning seose eemaldamise kirjutamine pole toetatud.',
+    `Tõendikokkuvõtte SHA-256: ${l.evidenceSha256}.`);
   lines.push('','PIIRID',
-    'Tüübisobivus põhineb 11 efektipere FW13 koostamisreeglitel; see ei tõenda modifikaatori tuge, natiivse kasutajaliidese käitumist ega DSP mõju.',
+    `Tüübisobivus põhineb ${audit.typePolicy.families.length} efektipere FW13 koostamisreeglitel; see ei tõenda modifikaatori tuge, natiivse kasutajaliidese käitumist ega DSP mõju.`,
     'Ploki puudumine kinnitatakse ainult toetatud kirjeloendi ja süsteemisaba korral; muul juhul on olemasolu teadmata.',
     'Ruudustiku asukoht ei kinnita ühendatud signaaliteed. Stseenide kanal/bypass on failis salvestatud olek.',
     'Kohaliku kohandatud noodi kontekst ei kinnita terve skaala korrektset sisu; globaalseid skaalaväärtusi ei kontrollita.',

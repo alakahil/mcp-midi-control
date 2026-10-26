@@ -32,6 +32,14 @@ for(const ch of 'ABCD')assert.throws(()=>createPreset(base,{...spec,allow:['enum
 const cap=getPresetCapabilities().volumePedal;
 assert.equal(cap.fullRangeEncodingProven,false);assert.equal(cap.numericMinMaxAuthoring,false);
 assert.equal(cap.target.pid,0);assert.equal(cap.target.channelScope,'ALL');
+const observation=JSON.parse(fs.readFileSync(new URL('../references/fm3-pedal-check-20261024.json',import.meta.url)));
+assert.equal(cap.pedalBehaviorEvidence.knobFollowsPedal,observation.editorCheck.P1.knobFollowsPedalHeelToToe);
+assert.equal(good.report.volumePedal.pedalBehaviorEvidence.numericHeelToeMeasured,observation.editorCheck.P1.heelToeValuesRecorded);
+assert.equal(good.report.volumePedal.pedalBehaviorEvidence.currentGeneratedPresetHardwareTested,false);
+assert.equal(good.report.volumePedal.storeReloadProven,false);
+assert.ok(good.txt.includes('P1/P0 katses kinnitati FM3-Editis pedaali järgimine'));
+assert.ok(!good.txt.includes('Pedaali toimimine, heli ja STORE/reload on kontrollimata'));
+
 const rewrite=(input,mutate)=>{const p=inspectStructure(input),b=Buffer.from(p.raw.body);mutate(b);return Buffer.from(reencodeDumpFromRawPatch(input,reencodeRawPatch(p.raw.rawPatch,b)));};
 let rejected=0;
 const badSpec=edit=>{const s=structuredClone(spec);edit(s);const before=Buffer.from(base);assert.throws(()=>createPreset(base,s));assert.deepEqual(base,before);rejected++;};
@@ -71,6 +79,7 @@ try{
  for(let i=0;i<25;i++)fail('word-'+i,r=>{r.syx=rewrite(good.syx,b=>b.writeUInt16LE(b.readUInt16LE(1584+2*i)^1,1584+2*i));r.report.outputSha256=sha(r.syx);r.report.volumePedal.words[i]^=1;assert.equal(decodeGen3PresetDump(r.syx,17).crc_valid,true);});
  fail('other-record',r=>{r.syx=rewrite(good.syx,b=>b.writeUInt16LE(1,1680));r.report.outputSha256=sha(r.syx);});
  fail('report',r=>r.report.volumePedal.fullRangeEncodingProven=true);
+ fail('pedal-evidence-overclaim',r=>r.report.volumePedal.pedalBehaviorEvidence.currentGeneratedPresetHardwareTested=true);
  fail('report-missing',r=>delete r.report.volumePedal);
  fail('other-report',r=>r.report.modifiers[1].source=14);
  fail('intermediate-wah',r=>r.report.modifierEdit=r.report.stages.composer.modifierEdit);

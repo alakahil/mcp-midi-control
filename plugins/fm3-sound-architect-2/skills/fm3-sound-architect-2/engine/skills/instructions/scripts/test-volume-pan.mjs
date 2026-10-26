@@ -69,6 +69,18 @@ const out=createPreset(base,demo),d=decodeGen3PresetDump(out.syx,17),independent
 assert.equal(d.crc_valid,true);assert.equal(independent.params.find(p=>p.paramId===0).raw,49151);
 const dir=fs.mkdtempSync(path.join(os.tmpdir(),'fm3 volume ')),stem=path.join(dir,'four files');
 try{
+ // Full public four-file verification, not only the scalar writer. TYPE may
+ // occur before or after its controls; unrequested words must remain captured.
+ for(const reverse of [false,true]){
+  const controls=[c('A','TYPE','AUTO-SWELL'),c('A','THRESHOLD',-40),c('A','ATTACK',250),c('A','RELEASE',20),c('A','HYSTERESIS',3),c('B','GAIN',7.5)];
+  const mixed={...spec,allow:['enum-labels'],controls:reverse?controls.reverse():controls,blockScenes:{volpan:[{scene:1,channel:'A',bypass:false},{scene:2,channel:'B',bypass:false}]}};
+  const result=createPreset(base,mixed),swellStem=path.join(dir,'swell-'+reverse);
+  writePresetOutputs(swellStem,result,mixed);verifyPresetOutputs(swellStem);
+  const line=result.txt.split('\n').find(l=>l.startsWith('Volume/Pan 1 kanal A:'));
+  assert.ok(line.includes('TYPE=AUTO-SWELL')&&line.includes('THRESHOLD=')&&line.includes('ATTACK=')&&line.includes('RELEASE=')&&line.includes('HYSTERESIS='));
+  assert.ok(!/GAIN=|PANL=|PANR=/.test(line),'hidden VOLUME controls must not describe AUTO-SWELL');
+  assert.ok(!result.txt.includes('Auto-Swell ja TYPE pole selle kirjutustoe osa'));
+ }
  writePresetOutputs(stem,out,demo);verifyPresetOutputs(stem);
  const report=JSON.parse(fs.readFileSync(stem+'.validation.json')),saved=JSON.stringify(report);
  report.volumePan.states[0].words[0]++;fs.writeFileSync(stem+'.validation.json',JSON.stringify(report));assert.throws(()=>verifyPresetOutputs(stem),/final state/);

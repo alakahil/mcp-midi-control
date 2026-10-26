@@ -9,6 +9,7 @@ import {createPreset,writePresetOutputs,verifyPresetOutputs} from './fm3-preset.
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {scanRecords} from './fm3-layout.mjs';
 import {describeInputGate} from './fm3-input-gate.mjs';
+import {describeVolumePan} from './fm3-volume.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch,decodeGen3PresetDump} from './fm3-codec.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const base=fs.readFileSync(new URL('../examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx',import.meta.url));
@@ -35,6 +36,17 @@ const cases=[
 const dir=fs.mkdtempSync(path.join(os.tmpdir(),'fm3 input volume output '));
 try{
  writePresetOutputs(path.join(dir,'good'),good,spec);verifyPresetOutputs(path.join(dir,'good'));
+ // Accept declared AUTO-SWELL while still rejecting a changed hidden VOLUME
+ // word, even when the attacker refreshes CRC, artifact hashes and the report.
+ const swellSpec={...spec,allow:['enum-labels'],controls:[{block:'volpan',channel:'A',param:'TYPE',value:'AUTO-SWELL'},{block:'volpan',channel:'A',param:'ATTACK',value:250}]};
+ const swell=createPreset(base,swellSpec),sp=inspectStructure(swell.syx),sb=Buffer.from(sp.raw.body),sr=scanRecords(sb).records.find(r=>r.eid===102);
+ writePresetOutputs(path.join(dir,'swell'),swell,swellSpec);verifyPresetOutputs(path.join(dir,'swell'));
+ sb.writeUInt16LE(12345,sr.start); // hidden Gain must remain the captured default
+ const changed=Buffer.from(reencodeDumpFromRawPatch(swell.syx,reencodeRawPatch(sp.raw.rawPatch,sb)));
+ assert.equal(decodeGen3PresetDump(changed,17).crc_valid,true);
+ const refreshed=structuredClone(swell.report);refreshed.outputSha256=sha(changed);refreshed.bytes=changed.length;refreshed.volumePan=describeVolumePan(sb,sr);
+ writePresetOutputs(path.join(dir,'swell-tampered'),{...swell,syx:changed,report:refreshed},swellSpec);
+ assert.throws(()=>verifyPresetOutputs(path.join(dir,'swell-tampered')),/Undeclared Volume word changed/);
  for(const [i,[name,mutate,error]] of cases.entries()){
   const body=Buffer.from(parsed.raw.body);mutate(body);
   const syx=Buffer.from(reencodeDumpFromRawPatch(good.syx,reencodeRawPatch(parsed.raw.rawPatch,body)));

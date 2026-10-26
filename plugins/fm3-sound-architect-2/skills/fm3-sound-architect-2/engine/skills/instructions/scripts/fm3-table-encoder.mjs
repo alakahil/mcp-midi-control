@@ -11,6 +11,7 @@ import {authorGen3PresetFromIR,reencodeRawPatch,reencodeDumpFromRawPatch} from '
 import {composerBases,layouts,checkComposerStructure} from './fm3-composer-bases.mjs';
 import {validateDependencyWrites,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 import {validateTypeWrites,typePolicySummary} from './fm3-type-applicability.mjs';
+import {effectiveInsertParameter} from './fm3-insert-applicability.mjs';
 import {nativeParameterId} from './fm3-modulation-dynamics-applicability.mjs';
 
 import {effectivePitchParameter,validPitchStoredWord,pitchWordCodecSummary} from './fm3-pitch-word-codecs.mjs';
@@ -46,7 +47,7 @@ export function loadDictionary(){
   const bytes=fs.readFileSync(new URL('../references/fm3-param-dictionary.json',import.meta.url));
   check(sha(bytes)===dictionaryHash,'Parameter dictionary changed; run test-table-encoder.mjs and review evidence before use');
   const d=JSON.parse(bytes);check(d.params.length===2892,'Unexpected dictionary size');
-  d.params=d.params.map(effectivePitchParameter).map(effectiveIntegerParameter);
+  d.params=d.params.map(effectivePitchParameter).map(effectiveIntegerParameter).map(effectiveInsertParameter);
   const byKey=new Map(),byName=new Map();
   for(const p of d.params){byKey.set(p.block+':'+p.param,p);if(p.name)byName.set(p.family+':'+p.name,p)}
   return cache={...d,byKey,byName};
@@ -90,6 +91,7 @@ export function encodeValue(p,value,opts={}){
   validateOptions(opts);
   gate(p,opts);
   if(p.kind==='enum'){
+    check(typeof value==='number'||typeof value==='string',`${p.name}: option must be a numeric stored word or a label string`);
     const base=p.enumBase??0;
     const i=typeof value==='number'?value-base:p.enum.findIndex(x=>x.trim().toLowerCase()===String(value).trim().toLowerCase());
     check(Number.isInteger(i)&&i>=0&&i<p.enum.length,`${p.name}: unknown option ${value}`);return i+base;
@@ -116,7 +118,17 @@ export function encodeValue(p,value,opts={}){
   return Math.min(65534,Math.max(0,Math.round(n*65534)));
 }
 export function decodeValue(p,raw){
+  // A metadata descriptor is not a decoder for unknown curve classes. Do not
+  // extrapolate malformed/reserved words into plausible FM3 display values.
+  if(!Number.isInteger(raw)||raw<0||raw>65535)return undefined;
+  if(p.status==='unverified-taper'||p.status==='n/a')return undefined;
   if(!validPitchStoredWord(p,raw))return undefined;
+  if(p.kind==='integer'){
+    const value=p.signedWord&&raw>=32768?raw-65536:raw;
+    if(value<p.min||value>p.max)return undefined;
+  }
+  if(!['integer','enum','linear','log','knob'].includes(p.kind))return undefined;
+  if(['linear','log','knob'].includes(p.kind)&&raw>65534)return undefined;
   if(p.displayCodec?.kind==='global-scale-label')return 'SCALE '+(raw+p.displayCodec.displayOffset);
   if(p.displayCodec?.kind==='repeat-label'&&raw===p.displayCodec.infiniteCode)return p.displayCodec.infiniteLabel;
   if(p.kind==='integer')return (p.signedWord&&raw>=32768?raw-65536:raw)*(p.integerScale??1);
@@ -171,7 +183,7 @@ export function writeTableControls(baseBytes,spec,opts={}){
     checks:{frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true,noCollateralChanges:true,headerPreserved:true},experimental:opts.experimental===true,hardwareImport:'not tested',audio:'not tested'}};
 }
 
-if(process.argv[1]&&fileURLToPath(new URL(import.meta.url))===fs.realpathSync(process.argv[1])){
+if(process.argv[1]&&fs.existsSync(process.argv[1])&&fileURLToPath(new URL(import.meta.url))===fs.realpathSync(process.argv[1])){
   try{
     const [baseFile,specFile,outStem,...flags]=process.argv.slice(2);check(baseFile&&specFile&&outStem,'Usage: node fm3-table-encoder.mjs BASE.syx SPEC.json OUTPUT_STEM [--allow=linear-by-structure,...] [--experimental]');
     const opts={allow:(flags.find(f=>f.startsWith('--allow='))??'').slice(8).split(',').filter(Boolean),experimental:flags.includes('--experimental')};

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "sourceURL": "https://www.fractalaudio.com/downloads/firmware-presets/fm3/10p0/FM3_Factory_Presets_10p0.zip",
+  "banks": {
+    "FM3-BANK-A-250604-113656.syx": "0be1134f91aafa5c3e3d93699b96a4e27334e8b185e15fddb68d1b31e5f93159",
+    "FM3-BANK-B-250604-113656.syx": "20e947ac4488488e9f877facb62d86b5091f797f9da9abec082df381041d8e02",
+    "FM3-BANK-C-250604-113656.syx": "3289d4274e696000c39031c31fe105131234668221e046b78a0a03a013e98cb2"
+  },
+  "sources": {
+    "tools/fm3/point5-evidence.mjs": "a152d7259a65cf33915236a30bcd7931652d7bd307216d1e90ae3f5da1d00388",
+    "tools/fm3/factory_grid_evidence.mjs": "944a7f108edebac46088c5bd12194328e34a9b5fb6373d31c5aa7601744b23ac",
+    "tools/fm3/factory_structure_evidence.mjs": "fefa0169dfeb774726c293d86212bc436e4d1b8168bd30b5dd460371c07eaaa2",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid.mjs": "d98516e70d0526e12b47bb189b6b99d4b74776597e3fcb3a080a3b6669a8202e",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid-audit.mjs": "f8affe5ed83b59f7d59da1da5543d6455fe3d8617b1bfec2b58c17e5c8a844c2",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-layout.mjs": "fe3161f19971dedaff224671ca93a660e1fffa2603fcc4d9721ba916779e5756",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/drive-collector/fm3-codec.mjs": "17693f90b9ddb24bcad0b79d204dc1ab9e2d2ff02a7a4629c4be6bcfb16d3c67",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-factory-grid-evidence.json": "829ffe64878c0b5c00cbf1062c404dabce28e979eb406d7b37766d12d4b67528"
+  },
+  "legacyPlannerReplay": {
+    "presets": 384,
+    "cells": 4801,
+    "shunts": 652,
+    "splits": 144,
+    "merges": 140,
+    "rowsUsed": {
+      "1": 275,
+      "2": 81,
+      "3": 26,
+      "4": 2
+    },
+    "bit4Cells": 8,
+    "maskBitsToEmptyCell": 0,
+    "column1Inputs": 0,
+    "noInputBeyondColumn1": {
+      "37": 2,
+      "38": 1,
+      "130": 4,
+      "186": 9
+    },
+    "ampPathWithoutCab": 20,
+    "plannerAccepted": 384,
+    "masksReproduced": 4801,
+    "explicitLinks": 276,
+    "instanceEffectIds": {
+      "38": 3,
+      "43": 7,
+      "47": 58,
+      "51": 4,
+      "55": 10,
+      "71": 53,
+      "79": 10,
+      "83": 3,
+      "91": 3,
+      "95": 3,
+      "99": 1,
+      "103": 15,
+      "107": 1,
+      "115": 19,
+      "116": 7,
+      "117": 1,
+      "119": 44,
+      "123": 1,
+      "129": 1,
+      "163": 1
+    }
+  },
+  "gridAuditReplay": {
+    "presets": 384,
+    "occupiedCells": 4801,
+    "knownEdges": 4558,
+    "bit4Cells": 8,
+    "bit4MergeCells": 6,
+    "bit4SingleInputCells": 2,
+    "violations": {},
+    "unresolved": {
+      "unknown-mask-bits": 8
+    }
+  },
+  "scope": "Derived aggregate only; no factory names, parameter values, layouts or preset bytes. Known bits 0..3 are replayed; bit 4 remains unresolved.",
+  "deviceIO": false
+}

@@ -1,3 +1,4 @@
+import {insertTempoLocks,insertTempoHash} from './fm3-insert-tempo.mjs';
 // Bounded dependency checks. Reads modifier records; never writes controller data.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -6,7 +7,9 @@ const bytes=fs.readFileSync(new URL('../references/fm3-parameter-dependencies.js
 if(createHash('sha256').update(bytes).digest('hex')!==dependencyPolicyHash)throw Error('Parameter dependency policy changed; review and regenerate');
 const policy=JSON.parse(bytes);
 export const tempoLocks=Object.freeze(policy.tempoLocks.map(Object.freeze));
+const allTempoLocks=Object.freeze([...tempoLocks,...insertTempoLocks]);
 export function dependencyPolicySummary(){return {sha256:dependencyPolicyHash,firmware:policy.firmware,tempoPairs:tempoLocks.length,
+  insertedTempo:{sha256:insertTempoHash,pairs:insertTempoLocks.length,families:[...new Set(insertTempoLocks.map(r=>r.family))]},
   families:[...new Set(tempoLocks.map(r=>r.family))],modifierMode:'read-only; reject explicit writes to active or uncertain targets',
   serializedModifierRecords:policy.modifiers.layout.records,limits:policy.limits};}
 export function readModifiers(body){
@@ -25,7 +28,7 @@ export function readModifiers(body){
 }
 const applies=(m,eid,pid,ch)=>m.active&&(m.effectId===eid||m.effectId===0)&&m.pid===pid&&(m.channel===0||m.channel>4||m.channel==='ABCD'.indexOf(ch)+1);
 export function dependencyState(body,w,{planned=new Map(),modifiers=readModifiers(body)}={}){
-  const r=tempoLocks.find(r=>r.effectId===w.effectId&&r.targetPid===w.pid);
+  const r=allTempoLocks.find(r=>r.effectId===w.effectId&&r.targetPid===w.pid);
   const mods=modifiers.filter(m=>applies(m,w.instanceEid??w.effectId,w.pid,w.channel));
   let tempo;
   if(r){const at=w.offset+2*(r.tempoPid-w.pid),raw=planned.get(at)??body.readUInt16LE(at);
@@ -40,7 +43,7 @@ export function validateDependencyWrites(body,writes){
   for(const w of writes){
     const d=dependencyState(body,w,{planned,modifiers});
     if(d.blocked)throw Error(`${w.block} ${w.channel} ${w.name}: ${d.blocked}; ${d.tempo&&!d.tempo.manual?'final Tempo must be NONE':'explicit static write conflicts with active or uncertain modifier'}`);
-    for(const r of tempoLocks.filter(r=>r.effectId===w.effectId&&r.tempoPid===w.pid)){
+    for(const r of allTempoLocks.filter(r=>r.effectId===w.effectId&&r.tempoPid===w.pid)){
       if(!Number.isInteger(w.raw)||w.raw<0||w.raw>=r.labels.length)throw Error(w.name+': unknown Tempo enum');
       if(w.raw!==r.noneRaw&&modifiers.some(m=>applies(m,w.instanceEid??w.effectId,r.targetPid,w.channel)))throw Error(w.name+': tempo conflicts with modifier-controlled target');
     }

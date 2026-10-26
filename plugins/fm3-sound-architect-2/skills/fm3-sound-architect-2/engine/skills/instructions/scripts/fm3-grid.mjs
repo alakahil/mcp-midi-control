@@ -5,7 +5,8 @@
 // 384 presets, 4801 occupied cells. Mask bit k = input from row k of the previous column; every set
 // bit (0..3) points to an occupied cell; column 1 never has inputs; 144 fan-outs and 140 merges.
 // Cells without input in columns > 1 are sources only (In 1/In 2, Feedback Return, Synth).
-// Bit 4 occurs on 8 merge cells with no known meaning: never written here. Shunts: ids 1024+, unique.
+// Bit 4 occurs on 8 cells (6 merges, 2 single-input cells) with no known meaning: never written here.
+// Shunts: ids 1024+, unique.
 // Instance records differ from instance 1 only in the effect ID (8 factory pairs), so a second
 // instance is the instance-1 record with eid = base + instance - 1 and fresh scenes (A, bypass).
 import {createHash} from 'node:crypto';
@@ -161,7 +162,7 @@ export function gridCapabilities(){
     duplicate:{field:'spec.duplicate',instances:INSTANCE_LIMIT,record:'copy of the previous instance, own effect ID, all 8 scenes A/bypass'},
     insert:{field:'spec.insert',blocks:Object.keys(GRID_ADDABLE),record:'device-default donor, all 8 scenes A/bypass, no grid cell until placed'},
     evidence:'384 FW10 factory presets / 4801 cells: mask bit k = input from row k of the previous column (0 violations), 144 splits, 140 merges; instance records = instance 1 with its own effect ID (8 factory pairs)',
-    neverWritten:'grid mask bit 4 (seen on 8 factory merge cells, meaning unknown)',sceneMidi:sceneMidiCapabilities(),hardware:'confirmed 2026-10-23: 7 generated grids (splits, merges, 4 rows, Mixer, Multiplexer, Synth source, Send/Return, instances, removals) read back identical in all 48 cells (references/fm3-grid-check-20261023.json); the FM3 screen showed the encoded branch',linkSemantics:'a link names its target cell; its source is the previous column. The report lists every split/merge source by block and warns when an Amp path reaches Out 1/Send without a Cab'};
+    neverWritten:'grid mask bit 4 (seen on 8 factory cells: 6 merges and 2 single-input cells; meaning unknown)',sceneMidi:sceneMidiCapabilities(),hardware:'confirmed 2026-10-23: 7 generated grids (splits, merges, 4 rows, Mixer, Multiplexer, Synth source, Send/Return, instances, removals) read back identical in all 48 cells (references/fm3-grid-check-20261023.json); the FM3 screen showed the encoded branch',linkSemantics:'a link names its target cell; its source is the previous column. The report lists every split/merge source by block and warns when an Amp path reaches Out 1/Send without a Cab'};
 }
 const nameOf=id=>id===IO.in1?'In 1':id===IO.out1?'Out 1':id===IO.send?'Send':id===IO.ret?'Return':id>=SHUNT_MIN?'-':(()=>{const b=blockOf(id);return b?(SLUG_BY_EID[b.block]??'eid'+id)+(b.instance>1?b.instance:''):'eid'+id})();
 export function describeGrid(body){

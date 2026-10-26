@@ -141,8 +141,8 @@ export function applyTableControls(body,controls,opts={},allow=()=>{}){
   validateInputGateWrites(body,writes);
   validateVolumeWrites(body,writes);
   validateTypeWrites(body,writes);
-  validateDependencyWrites(body,writes);
   validateInsertedTempo(body,writes);
+  validateDependencyWrites(body,writes);
   for(const {raw,offset} of writes){body.writeUInt16LE(raw,offset);allow(offset,2)}
   return writes;
 }

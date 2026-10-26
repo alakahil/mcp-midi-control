@@ -44,6 +44,14 @@ jobs:
           python3 tools/fm3/modifier_quantization_audit.py
           python3 tools/fm3/test-modifier-value-path.py
           python3 tools/fm3/test-modifier-sharc.py
+          node tools/fm3/modifier_slot_readiness.mjs
+          node tools/fm3/modifier-corpus-audit.mjs
+          python3 tools/fm3/point4-evidence.py
+          python3 tools/fm3/point6_native_bindings.py
+          python3 tools/fm3/insert_applicability.py
+          python3 tools/fm3/test-insert-applicability.py
+          node tools/fm3/point6-evidence.mjs
+          node tools/fm3/point2-evidence.mjs
           python3 tools/fm3/input_volume_evidence.py
           node tools/fm3/volume-device-evidence.mjs
           node tools/fm3/input-volume-audit.mjs
@@ -51,6 +59,9 @@ jobs:
           python3 tools/fm3/parameter-evidence.py
           python3 tools/fm3/metadata_reconciliation.py
           node tools/fm3/encoder-matrix.mjs
+          python3 tools/fm3/point3-index.py
+          node tools/fm3/point3-evidence.mjs
+          node tools/fm3/point5-evidence.mjs
           node tools/fm3/grid-check-ingest.mjs
           node tools/fm3/read-value-ingest.mjs
           node tools/fm3/pedal-check-ingest.mjs

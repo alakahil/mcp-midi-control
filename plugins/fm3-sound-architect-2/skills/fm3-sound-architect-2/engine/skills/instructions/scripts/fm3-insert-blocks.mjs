@@ -22,7 +22,7 @@ export const INSERT_DONOR=Object.freeze({file:'references/fm3-default-blocks-202
   empty:'references/fm3-empty-preset-20261023.syx',emptySha256:'220866f7866d9f515a98b36b2430de6e5a69ae378e58426bc86f3bc417ea7e14'});
 export const INSERTABLE=Object.freeze({plex:178,multiband:154,synth:130,looper:166,gate:146,formant:98,tentap:158,megatap:138,ringmod:150,resonator:162});
 // Type/mode selector per family (dictionary), for the final text report only.
-export const INSERT_TYPE_PID=Object.freeze({plex:0,synth:0,gate:14,tentap:0,megatap:28,ringmod:10,resonator:0});
+export const INSERT_TYPE_PID=Object.freeze({plex:0,gate:14,tentap:0,resonator:0});
 export const GATED=Object.freeze({
   volume:'Volume/Pan 1 has its own inserter and policy: use volumePan:true (fm3-volume.mjs)',
   volpan:'Volume/Pan 1 has its own inserter and policy: use volumePan:true (fm3-volume.mjs)',

@@ -6,12 +6,15 @@ import {algorithmPolicyHash} from './fm3-delay-reverb-applicability.mjs';
 import {modulationPolicyHash} from './fm3-modulation-dynamics-applicability.mjs';
 import {rotaryPitchPolicyHash} from './fm3-rotary-pitch-applicability.mjs';
 import {pitchCustomScaleHash} from './fm3-pitch-custom-scales.mjs';
+import {insertPolicyHash} from './fm3-insert-applicability.mjs';
+import {CHANNELS} from './fm3-layout.mjs';
 const hashes={
   'fm3-type-applicability.json':typePolicyHash,
   'fm3-delay-reverb-applicability.json':algorithmPolicyHash,
   'fm3-modulation-dynamics-applicability.json':modulationPolicyHash,
   'fm3-rotary-pitch-applicability.json':rotaryPitchPolicyHash,
-  'fm3-pitch-custom-scales.json':pitchCustomScaleHash
+  'fm3-pitch-custom-scales.json':pitchCustomScaleHash,
+  'fm3-insert-applicability.json':insertPolicyHash
 };
 const policies=Object.fromEntries(Object.entries(hashes).map(([file,hash])=>{
   const bytes=fs.readFileSync(new URL('../references/'+file,import.meta.url));
@@ -29,8 +32,11 @@ export function auditModifierTargetType(body,m,p,record){
   if(m.effectId===0)return null;
   const f=families[p?.family],covered=!!f;
   const reason=!p?'target-parameter-unknown':!covered?'family-not-covered':!record?'target-record-unresolved':
-    record.channels!==4?'channel-layout-unsupported':p.param>=record.words?'target-word-out-of-bounds':null;
-  const channels=reason?[]:Array.from({length:4},(_,i)=>{
+    record.channels!==(CHANNELS[p.block]??4)?'channel-layout-unsupported':
+    !Number.isInteger(record.start)||record.start<0||record.start+record.words*record.channels*2>body.length?'target-record-out-of-bounds':
+    p.param>=record.words?'target-word-out-of-bounds':null;
+  const scopeKnown=Number.isInteger(m.channel)&&m.channel>=0&&m.channel<=(record?.channels??4);
+  const channels=reason?[]:Array.from({length:record.channels},(_,i)=>{
     const selectorWords={};let outOfBounds=false;
     const state=readTypeState(p,pid=>{
       if(!Number.isInteger(pid)||pid<0||pid>=record.words){outOfBounds=true;return null;}
@@ -48,7 +54,7 @@ export function auditModifierTargetType(body,m,p,record){
        (state[notes.scalePid]!==notes.customScaleCode||
         (Number.isInteger(state[notes.countPid])&&state[notes.countPid]>=notes.countMin&&state[notes.countPid]<=notes.countMax)));
     const known=!outOfBounds&&validType&&validSelectors&&validNoteContext;
-    return {channel:'ABCD'[i],inModifierScope:m.channel>4?null:m.channel===0||m.channel===i+1,
+    return {channel:'ABCD'[i],inModifierScope:!scopeKnown?null:m.channel===0||m.channel===i+1,
       status:!known?'unknown':result.allowed?'available':'excluded',
       reason:outOfBounds?'selector-word-out-of-bounds':!validType?'unknown-or-mismatched-type':
         !validSelectors?'unknown-selector':!validNoteContext?'unknown-custom-note-context':'FW13-authoring-policy',
@@ -58,7 +64,7 @@ export function auditModifierTargetType(body,m,p,record){
       blockedReason:result.blockedReason??null};
   });
   return {status:reason?'unresolved':'evaluated',reason,policyCovered:covered,
-    modifierSupportVerified:false,scopeKnown:m.channel<=4,channels,
+    modifierSupportVerified:false,scopeKnown,channels,
     scopedExcludedChannels:channels.filter(c=>c.inModifierScope===true&&c.status==='excluded').map(c=>c.channel),
     scopedUnknownChannels:channels.filter(c=>c.inModifierScope===true&&c.status==='unknown').map(c=>c.channel)};
 }
