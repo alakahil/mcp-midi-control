@@ -9,9 +9,11 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const ROOT=fileURLToPath(new URL('../../',import.meta.url));
+// Raw device results live outside the packaged plugin (package entry budget); receipts stay in references/.
+const RAW=path.join(ROOT,'docs/fm3/hardware-results/2026-10-26/');
 const REF=path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/');
 const sha=b=>createHash('sha256').update(b).digest('hex');
-const resFile=path.join(REF,'fm3-cpu-check-20261026-results.jsonl'),target=path.join(REF,'fm3-cpu-check-20261026.json');
+const resFile=path.join(RAW,'fm3-cpu-check-20261026-results.jsonl'),target=path.join(REF,'fm3-cpu-check-20261026.json');
 const rows=fs.readFileSync(resFile,'utf8').split('\n').filter(Boolean).map(l=>JSON.parse(l));
 const {cpuMeasurementsHash}=await import(path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-cpu.mjs'));
 const r1=x=>Math.round(x*10)/10;

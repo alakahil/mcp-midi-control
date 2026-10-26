@@ -12,10 +12,12 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const ROOT=fileURLToPath(new URL('../../',import.meta.url));
 const ENG=path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/');
+// Raw device results live outside the packaged plugin (package entry budget); receipts stay in references/.
+const RAW=path.join(ROOT,'docs/fm3/hardware-results/2026-10-26/');
 const REF=path.join(ENG,'references/');
 const {inspectStructure}=await import(path.join(ENG,'scripts/drive-collector/fm3-prototype.mjs'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
-const file=path.join(REF,'fm3-pedal-store-20261026-results.json'),loadFile=path.join(REF,'fm3-pedal-store-20261026-load.json');
+const file=path.join(RAW,'fm3-pedal-store-20261026-results.json'),loadFile=path.join(RAW,'fm3-pedal-store-20261026-load.json');
 const res=JSON.parse(fs.readFileSync(file,'utf8')),load=JSON.parse(fs.readFileSync(loadFile,'utf8'));
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-pst-'));
 execFileSync('node',[path.join(ROOT,'tools/fm3/pedal-store-build.mjs'),tmp],{stdio:'ignore'});

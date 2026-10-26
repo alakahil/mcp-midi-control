@@ -12,10 +12,12 @@ import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const ROOT=fileURLToPath(new URL('../../',import.meta.url));
+// Raw device results live outside the packaged plugin (package entry budget); receipts stay in references/.
+const RAW=path.join(ROOT,'docs/fm3/hardware-results/2026-10-26/');
 const REF=path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/');
 const sha=b=>createHash('sha256').update(b).digest('hex');
-const file=path.join(REF,'fm3-scene-midi-din-20261026-results.json'),res=JSON.parse(fs.readFileSync(file,'utf8'));
-const abFile=path.join(REF,'fm3-scene-midi-din-20261026-aborted-results.json'),ab=JSON.parse(fs.readFileSync(abFile,'utf8'));
+const file=path.join(RAW,'fm3-scene-midi-din-20261026-results.json'),res=JSON.parse(fs.readFileSync(file,'utf8'));
+const abFile=path.join(RAW,'fm3-scene-midi-din-20261026-aborted-results.json'),ab=JSON.parse(fs.readFileSync(abFile,'utf8'));
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-smd-'));
 execFileSync('node',[path.join(ROOT,'tools/fm3/scene-midi-din-build.mjs'),tmp],{stdio:'ignore'});
 const m=JSON.parse(fs.readFileSync(path.join(tmp,'manifest.json'),'utf8'));

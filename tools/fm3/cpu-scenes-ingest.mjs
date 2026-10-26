@@ -10,9 +10,11 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 const ROOT=fileURLToPath(new URL('../../',import.meta.url));
+// Raw device results live outside the packaged plugin (package entry budget); receipts stay in references/.
+const RAW=path.join(ROOT,'docs/fm3/hardware-results/2026-10-26/');
 const REF=path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/');
 const sha=b=>createHash('sha256').update(b).digest('hex'),r1=x=>Math.round(x*10)/10;
-const resFile=path.join(REF,'fm3-cpu-scenes-20261026-results.json'),target=path.join(REF,'fm3-cpu-scenes-20261026.json');
+const resFile=path.join(RAW,'fm3-cpu-scenes-20261026-results.json'),target=path.join(REF,'fm3-cpu-scenes-20261026.json');
 const res=JSON.parse(fs.readFileSync(resFile,'utf8'));
 function summarize(perScene){
   assert.ok(res.userConfirmedName&&String(res.sceneAfterLoad).trim()==='4','loaded in its stored scene 4');
