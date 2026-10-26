@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2131,
-  "filePaths": 2335,
+  "uniqueContents": 2125,
+  "filePaths": 2329,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -2012,12 +2012,6 @@
       "bytes": 454,
       "paths": [
         "references/reverb-batch-20261006-181951/capture-20261006T181409-b0910aac4b/pair.json"
-      ]
-    },
-    "28925d1c161c85995673fd334be5aa1751512658aa34693b44de3537c3cfd330": {
-      "bytes": 1416,
-      "paths": [
-        "references/fm3-cpu-scenes-20261026-results.json"
       ]
     },
     "28d11e923efe606ea18887485677472243a26fab4599369e52e46e99fb31a6d7": {
@@ -4278,12 +4272,6 @@
       "bytes": 1861,
       "paths": [
         "references/filter-controls-20261008-165150/step-16-725cca46ff/result.json"
-      ]
-    },
-    "560ebd28c193e7694068a0853f55598e2507420414aacb6f4acb0b5a0a60f4bd": {
-      "bytes": 1245,
-      "paths": [
-        "references/fm3-scene-midi-din-20261026-aborted-results.json"
       ]
     },
     "56140411889a9aa31074cbf734729a9b57d31b345b01f0da59051281b8a10364": {
@@ -7335,12 +7323,6 @@
         "references/chorus-library.json"
       ]
     },
-    "94fd459604b39e6836f553d94addcef6e534225b74827e9aed8df47ff9361029": {
-      "bytes": 50027,
-      "paths": [
-        "references/fm3-pedal-store-20261026-results.json"
-      ]
-    },
     "950b3b6181e10693604cc393e266d058562084241b2a4b02756c87cb2284751b": {
       "bytes": 7269,
       "paths": [
@@ -8995,12 +8977,6 @@
       "bytes": 1775,
       "paths": [
         "references/drive-controls-20261006-123230/step-17-d9cc5aa516/result.json"
-      ]
-    },
-    "b567bf1f5fc456ec4a07944400171f570c1f57c454b528839c351bebdb79f478": {
-      "bytes": 1690,
-      "paths": [
-        "references/fm3-scene-midi-din-20261026-results.json"
       ]
     },
     "b5848890def0c95177da0de07ad7657c91de105b403d662ae5c66be5135c36cd": {
@@ -12372,12 +12348,6 @@
         "references/cab-batch-20261005-135600/capture-20261005T085910-d82850c9cc/capture.json"
       ]
     },
-    "f5ff81690f0ba2ce7367ae905bf985175a011f29e939a01e668d9164abdcbb84": {
-      "bytes": 173,
-      "paths": [
-        "references/fm3-pedal-store-20261026-load.json"
-      ]
-    },
     "f62f8d56ffd159b99f4dc442d53fb993daa20d2ac5ce5e71056614f2f392f930": {
       "bytes": 24680,
       "paths": [
@@ -12904,12 +12874,6 @@
       "bytes": 3187,
       "paths": [
         "references/geq-full-20261010-194115/step-084-bb735d1383/result.json"
-      ]
-    },
-    "fec27dd74fc806a43b1a2b65c4b4ca5c84c119982f9370e8644f7466f4dc5059": {
-      "bytes": 3529,
-      "paths": [
-        "references/fm3-label-boundary-20261026-results.json"
       ]
     },
     "fecac6a61d3a33c547a12e69b5056fd8750f9ded789e44672744d2e32e29c2c4": {
