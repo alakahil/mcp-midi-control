@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2128,
-  "filePaths": 2332,
+  "uniqueContents": 2131,
+  "filePaths": 2335,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -6339,6 +6339,12 @@
         "references/filter-controls-20261008-165150/step-04-560512bddc/capture.json"
       ]
     },
+    "7fd05efa032f00006674b9fd1f09ea22bc0cac4fe538eafbeff4499d1a0957ff": {
+      "bytes": 2138,
+      "paths": [
+        "references/fm3-pedal-store-20261026.json"
+      ]
+    },
     "800e9afa9d1369df46571e8d3f70097759307462fa38ae4a70687fe42bbdcea4": {
       "bytes": 7983,
       "paths": [
@@ -7327,6 +7333,12 @@
       "bytes": 19222,
       "paths": [
         "references/chorus-library.json"
+      ]
+    },
+    "94fd459604b39e6836f553d94addcef6e534225b74827e9aed8df47ff9361029": {
+      "bytes": 50027,
+      "paths": [
+        "references/fm3-pedal-store-20261026-results.json"
       ]
     },
     "950b3b6181e10693604cc393e266d058562084241b2a4b02756c87cb2284751b": {
@@ -12358,6 +12370,12 @@
         "references/cab-batch-20261005-085919/capture-20261005T085910-d82850c9cc/capture.json",
         "references/cab-batch-20261005-135019/capture-20261005T085910-d82850c9cc/capture.json",
         "references/cab-batch-20261005-135600/capture-20261005T085910-d82850c9cc/capture.json"
+      ]
+    },
+    "f5ff81690f0ba2ce7367ae905bf985175a011f29e939a01e668d9164abdcbb84": {
+      "bytes": 173,
+      "paths": [
+        "references/fm3-pedal-store-20261026-load.json"
       ]
     },
     "f62f8d56ffd159b99f4dc442d53fb993daa20d2ac5ce5e71056614f2f392f930": {
