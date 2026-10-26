@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "scope": "All distinct SYX bytes currently packaged; includes generated examples and captures, not all independent hardware observations.",
-  "files": 795,
-  "unique": 638,
-  "accepted": 628,
+  "files": 796,
+  "unique": 639,
+  "accepted": 629,
   "unsupported": [
     {
       "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-42.syx",
@@ -1730,6 +1730,17 @@
     {
       "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/SATRIANI_SOAP_ON_A_ROPE_V3.syx",
       "sha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+      "aliases": [],
+      "active": [],
+      "inactiveBound": [
+        0
+      ],
+      "secondaryWithoutPrimary": [],
+      "gapsBeforeActive": []
+    },
+    {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/SATRIANI_SOAP_ON_A_ROPE_V4.syx",
+      "sha256": "cc24d3f7cfcb5a6537a07a12fc6246a9de94c49bcf84301a8a632916c1437037",
       "aliases": [],
       "active": [],
       "inactiveBound": [
