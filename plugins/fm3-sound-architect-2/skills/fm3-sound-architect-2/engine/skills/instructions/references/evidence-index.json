@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2120,
-  "filePaths": 2324,
+  "uniqueContents": 2124,
+  "filePaths": 2328,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -3823,6 +3823,12 @@
         "references/enhancer-lisa-20261012-125350/step-011-3d66698af2/donor.syx"
       ]
     },
+    "4dd152c8af3c5df5b7689aa4ebd9959a8ed519d1a7d7077eb47b69169ec312f6": {
+      "bytes": 3488,
+      "paths": [
+        "references/fm3-cpu-check-20261026.json"
+      ]
+    },
     "4e304356b1e620fcec9081dc20cdb9a9e2b3a2438b99919378c8f02e78da476a": {
       "bytes": 24680,
       "paths": [
@@ -4272,6 +4278,12 @@
       "bytes": 1861,
       "paths": [
         "references/filter-controls-20261008-165150/step-16-725cca46ff/result.json"
+      ]
+    },
+    "560ebd28c193e7694068a0853f55598e2507420414aacb6f4acb0b5a0a60f4bd": {
+      "bytes": 1245,
+      "paths": [
+        "references/fm3-scene-midi-din-20261026-aborted-results.json"
       ]
     },
     "56140411889a9aa31074cbf734729a9b57d31b345b01f0da59051281b8a10364": {
@@ -8955,6 +8967,12 @@
         "references/drive-controls-20261006-123230/step-17-d9cc5aa516/result.json"
       ]
     },
+    "b567bf1f5fc456ec4a07944400171f570c1f57c454b528839c351bebdb79f478": {
+      "bytes": 1690,
+      "paths": [
+        "references/fm3-scene-midi-din-20261026-results.json"
+      ]
+    },
     "b5848890def0c95177da0de07ad7657c91de105b403d662ae5c66be5135c36cd": {
       "bytes": 3439,
       "paths": [
@@ -11724,6 +11742,12 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-full-20261012-122507/step-019-84404523c8/donor.syx"
+      ]
+    },
+    "e9b13afd7fbfde0293af94066f964b6b4036d927c92ee8727df322223ac0c7a7": {
+      "bytes": 2780,
+      "paths": [
+        "references/fm3-scene-midi-din-20261026.json"
       ]
     },
     "ea04468933eec6c603ef7701cf060eec23e36b49bf2298c248539fba32efc8d6": {
