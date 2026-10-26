@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2126,
-  "filePaths": 2330,
+  "uniqueContents": 2128,
+  "filePaths": 2332,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -2014,6 +2014,12 @@
         "references/reverb-batch-20261006-181951/capture-20261006T181409-b0910aac4b/pair.json"
       ]
     },
+    "28925d1c161c85995673fd334be5aa1751512658aa34693b44de3537c3cfd330": {
+      "bytes": 1416,
+      "paths": [
+        "references/fm3-cpu-scenes-20261026-results.json"
+      ]
+    },
     "28d11e923efe606ea18887485677472243a26fab4599369e52e46e99fb31a6d7": {
       "bytes": 5027,
       "paths": [
@@ -3821,12 +3827,6 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-lisa-20261012-125350/step-011-3d66698af2/donor.syx"
-      ]
-    },
-    "4dd152c8af3c5df5b7689aa4ebd9959a8ed519d1a7d7077eb47b69169ec312f6": {
-      "bytes": 3488,
-      "paths": [
-        "references/fm3-cpu-check-20261026.json"
       ]
     },
     "4e304356b1e620fcec9081dc20cdb9a9e2b3a2438b99919378c8f02e78da476a": {
@@ -6689,6 +6689,12 @@
         "references/geq-full-20261010-194115/step-084-bb735d1383/capture.json"
       ]
     },
+    "878f0645aa9bc71e4fe9feec7d4236743a0a390c9ad987360b4cb979bb222e11": {
+      "bytes": 3751,
+      "paths": [
+        "references/fm3-cpu-check-20261026.json"
+      ]
+    },
     "87a4e10b7dd7764fa8891bc3d50a64a4ad81b50aee26e0065777bae9f371ad01": {
       "bytes": 24680,
       "paths": [
@@ -8457,6 +8463,12 @@
       "paths": [
         "references/amp-level-20261013/session/baseline.syx",
         "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
+      ]
+    },
+    "aade9bff69b4105a187163fd64b6bf9ce009cf2c5b5c072f74f2d4622e75ce69": {
+      "bytes": 2063,
+      "paths": [
+        "references/fm3-cpu-scenes-20261026.json"
       ]
     },
     "aaed16fd41abe7daee7fbc2843ebad9b83f77675146d456c9262d060c64261cf": {
