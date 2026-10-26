@@ -13,7 +13,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-final-state.mjs": "aeb2949d7ed2c3de30906a7f295bdfdcff470f2dde83f22b712ceddb178f1448",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-controls-output.mjs": "7d0a6bf4b2bb8bb6a466e43a746a77e71b51194f41f8d5672caade1dd911699e",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-output-replay.mjs": "f15db063408025ca3408245bfc260476b3fc0ad2140647772a10ab95b27bf36a",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-example-bundles.mjs": "810e227886e89e04d8313f02e5290c5615eed90e6ee2a2bee83125b2d4a13522"
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-example-bundles.mjs": "481a033cbb97b1b9dafb9d0c1876227105b280cdaa2e03762373fb05db8d96f7"
   },
   "baseline": {
     "version": "0.3.22",
@@ -64,8 +64,8 @@
     },
     "test-example-bundles": {
       "passed": true,
-      "exampleSpecs": 50,
-      "byteIdenticalAndVerified": 47,
+      "exampleSpecs": 51,
+      "byteIdenticalAndVerified": 48,
       "metadataOnlyAdaptations": 2,
       "historicalRequestReconstructions": 2,
       "expectedHistoricalRejections": 3,
@@ -365,6 +365,12 @@
           "name": "SATRIANI_SOAP_ON_A_ROPE_V3",
           "status": "byte-identical-and-bundle-verified",
           "outputSha256": "9c928eeacd4462b4cabae5ef5e06d4f13a47306421301f73690152251dee9a3f",
+          "historicalRequestAdaptation": null
+        },
+        {
+          "name": "SATRIANI_SOAP_ON_A_ROPE_V4",
+          "status": "byte-identical-and-bundle-verified",
+          "outputSha256": "cc24d3f7cfcb5a6537a07a12fc6246a9de94c49bcf84301a8a632916c1437037",
           "historicalRequestAdaptation": null
         }
       ],
