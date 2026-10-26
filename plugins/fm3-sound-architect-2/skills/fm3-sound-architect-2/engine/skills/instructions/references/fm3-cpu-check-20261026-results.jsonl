@@ -1,0 +1,9 @@
+{"id": "cal-p6a", "family": "calibration", "cpuPercent": 82.0, "raw": 82, "reads": [82, 82, 82], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-26T16:20:31", "userConfirmedName": true, "calibrationOk": true}
+{"id": "p01", "family": "user-preset", "cpuPercent": 40.5, "raw": 17, "reads": [17, 17, 17], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-26T16:20:41"}
+{"id": "p02", "family": "user-preset", "cpuPercent": 58.5, "raw": 53, "reads": [53, 53, 53], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-26T16:20:44"}
+{"id": "p03", "family": "user-preset", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-26T16:20:46"}
+{"id": "p04", "family": "user-preset", "cpuPercent": 57.0, "raw": 50, "reads": [50, 50, 50], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-26T16:20:49"}
+{"id": "p05", "family": "user-preset", "cpuPercent": 59.0, "raw": 54, "reads": [54, 54, 54], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-26T16:20:51"}
+{"id": "p06", "family": "user-preset", "cpuPercent": 64.0, "raw": 64, "reads": [64, 64, 64], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-26T16:20:54"}
+{"id": "p07", "family": "user-preset", "cpuPercent": 69.0, "raw": 69, "reads": [69, 69, 69], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-26T16:20:57"}
+{"id": "p08", "family": "user-preset", "cpuPercent": 76.0, "raw": 76, "reads": [76, 76, 76], "saturated": false, "decode": "piecewise-20261023", "time": "2026-10-26T16:20:59"}

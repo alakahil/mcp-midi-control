@@ -1,0 +1,112 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-26",
+ "preset": {
+  "name": "SCENE MIDI DIN CH1",
+  "sceneMidi": [
+   {
+    "scene": 1,
+    "command": 1,
+    "type": "PC",
+    "channel": 1,
+    "program": 2
+   },
+   {
+    "scene": 2,
+    "command": 8,
+    "type": "PC",
+    "channel": 1,
+    "program": 5
+   },
+   {
+    "scene": 3,
+    "command": 1,
+    "type": "CC",
+    "channel": 1,
+    "number": 69,
+    "value": 2
+   },
+   {
+    "scene": 4,
+    "command": 1,
+    "type": "PC",
+    "channel": 1,
+    "program": 0
+   },
+   {
+    "scene": 4,
+    "command": 2,
+    "type": "CC",
+    "channel": 1,
+    "number": 69,
+    "value": 1
+   }
+  ]
+ },
+ "receiver": "Line 6 Helix on the FM3 MIDI OUT jack, MIDI base channel 1, PC receive on; Helix PC byte p selects preset bank floor(p/4)+1, letter ABCD[p%4]; CC 69 value v selects snapshot v+1",
+ "method": "Edit-buffer load (7F 00) only; the script then sent nothing. The user selected scenes on the FM3 and typed what the Helix screen showed; every byte on the FM3 USB port was recorded.",
+ "receiverBefore": {
+  "preset": "03A",
+  "snapshot": 1
+ },
+ "afterLoad": {
+  "preset": "01C",
+  "snapshot": 1
+ },
+ "steps": [
+  {
+   "scene": 2,
+   "commands": "command 8 PC Value 5",
+   "receiver": {
+    "preset": "02B",
+    "snapshot": 1
+   },
+   "usbBytes": 0
+  },
+  {
+   "scene": 3,
+   "commands": "command 1 CC 69 value 2",
+   "receiver": {
+    "preset": "02B",
+    "snapshot": 3
+   },
+   "usbBytes": 0
+  },
+  {
+   "scene": 4,
+   "commands": "command 1 PC Value 0, command 2 CC 69 value 1",
+   "receiver": {
+    "preset": "01A",
+    "snapshot": 2
+   },
+   "usbBytes": 0
+  },
+  {
+   "scene": 1,
+   "commands": "command 1 PC Value 2",
+   "receiver": {
+    "preset": "01C",
+    "snapshot": 1
+   },
+   "usbBytes": 0
+  }
+ ],
+ "findings": [
+  "The FM3 sends Scene MIDI commands on the MIDI OUT jack, both on scene change and when a preset is loaded into the edit buffer (Scene 1 commands; seen in two runs).",
+  "The PC program byte equals the FM3 Value field (Value 2 -> byte 2, 5 -> 5, 0 -> 0); there is no display offset.",
+  "Command slot 8 is sent; two commands in one scene (PC then CC) both arrive; a scene with a CC only leaves the receiver preset unchanged.",
+  "CC 69 values 1 and 2 arrive unchanged (Helix snapshots 2 and 3).",
+  "Nothing is sent on the USB port (as on 2026-10-24)."
+ ],
+ "notMeasured": [
+  "MIDI channels other than 1 (16 is built and offline-tested only)",
+  "CC numbers 0/127 and values 127",
+  "message types other than PC/CC",
+  "scenes 5..8 on this jack",
+  "a receiver other than the Helix"
+ ],
+ "resultsSha256": "b567bf1f5fc456ec4a07944400171f570c1f57c454b528839c351bebdb79f478",
+ "abortedRunSha256": "560ebd28c193e7694068a0853f55598e2507420414aacb6f4acb0b5a0a60f4bd"
+}

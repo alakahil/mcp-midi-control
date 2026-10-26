@@ -1,0 +1,58 @@
+{
+ "kind": "fm3-scene-midi-din-results",
+ "packSha256": "c459ad93360394357907f24d53cd6c822f97af794ceb474b36818ef6e4b8f1d3",
+ "time": "2026-10-26T16:10:23",
+ "steps": [],
+ "receiverBefore": "03A snapshot 1",
+ "beforeLoad": {
+  "rawHex": "",
+  "messages": []
+ },
+ "afterLoad": {
+  "rawHex": "f00001741164770007f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164780008f7f00001741164790009f7",
+  "messages": [
+   {
+    "type": "sysex",
+    "hex": "f00001741164770007f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164780008f7"
+   },
+   {
+    "type": "sysex",
+    "hex": "f00001741164790009f7"
+   }
+  ]
+ },
+ "userConfirmedName": true,
+ "receiverAfterLoad": "01C snapshot 1"
+}

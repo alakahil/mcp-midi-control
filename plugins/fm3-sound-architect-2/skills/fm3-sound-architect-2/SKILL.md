@@ -525,9 +525,10 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   `sceneMidi:[{scene, command, type:"PC"|"CC"|"NONE", channel, program (PC) | number, value (CC)}]` (8 stseeni × 8 käsku).
   PC programm on FM3 väli Value (Number näitab PC puhul „--“). Plokk paigutatakse ühendamata lahtrisse (järgmine
   lahter tühi). Paigutus dekodeeriti seadmel 24.10.2026: 11 esipaneeli muudatust, igaüks üks sõna, pluss PC järelkatse
-  (`references/fm3-scene-midi-20261024.json`, `references/fm3-scene-midi-pc-20261024.json`). Kas sõnum stseeni vahetusel
-  MIDI OUT pessa välja läheb ja kas saadetud PC on näidatud väärtus või ühe võrra väiksem, pole mõõdetud. USB kaudu
-  selles katses sõnumeid ei täheldatud (`references/fm3-scene-midi-listen-20261024.json`).
+  (`references/fm3-scene-midi-20261024.json`, `references/fm3-scene-midi-pc-20261024.json`). Käsud lähevad MIDI OUT
+  pesast välja stseeni vahetusel ja preseti laadimisel (Scene 1); PC bait on täpselt väli Value (Helix, kanal 1,
+  26.10.2026: `references/fm3-scene-midi-din-20261026.json`). USB kaudu neid ei saadeta
+  (`references/fm3-scene-midi-listen-20261024.json`). Ütle kasutajale, et preseti laadimine saadab Scene 1 käsud.
   Detailid: `engine/docs/FM3_SCENE_MIDI.md`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
   (342 seadmes mõõdetud tüüpi + reverbi kvaliteet; piir 80 %, hoiatus üle 72 %).

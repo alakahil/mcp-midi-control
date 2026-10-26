@@ -76,5 +76,26 @@ dumpi kinnitused. See katse ei tuvastanud Scene MIDI väljundit USB kaudu; ära 
 kõigile seadistustele. MIDI OUT pesa kontrolliks on vaja
 MIDI-liidest või MIDI OUT pessa ühendatud seadet.
 
-**Mõõtmata**: muud sõnumitüübid, vahemike otsad (kanal 16, 127), kas sõnum stseeni vahetusel
-tegelikult välja läheb ja kas saadetud PC võrdub näidatud väärtusega või on ühe võrra väiksem.
+## MIDI OUT pesa ja Helix (26.10.2026)
+
+Kviitung on `references/fm3-scene-midi-din-20261026.json` (`node tools/fm3/scene-midi-din-ingest.mjs`).
+Mõõtepreseti koostab `tools/fm3/scene-midi-din-build.mjs`, mõõteskript on `FM3_SCENE_MIDI_DIN.py`.
+FM3 MIDI OUT oli ühendatud Line 6 Helixi MIDI IN-iga (baaskanal 1, PC vastuvõtt sees). Kasutaja valis
+FM3-l stseene ja luges Helixi ekraani:
+
+| FM3 | Käsud | Helix |
+| --- | --- | --- |
+| preseti laadimine (Scene 1) | C1 PC Value 2 | 03A → 01C |
+| stseen 2 | C8 PC Value 5 | 02B |
+| stseen 3 | C1 CC 69 = 2 | 02B, snapshot 3 |
+| stseen 4 | C1 PC Value 0, C2 CC 69 = 1 | 01A, snapshot 2 |
+| stseen 1 | C1 PC Value 2 | 01C |
+
+- Käsud lähevad MIDI OUT pesast välja stseeni vahetusel ja ka siis, kui preset laaditakse
+  redaktsioonipuhvrisse (Scene 1 käsud; kahes katses).
+- PC programmi bait on täpselt väli Value (2 → 2, 5 → 5, 0 → 0), nihet ei ole.
+- Käsupesa 8 töötab; ühe stseeni kaks käsku (PC, siis CC) jõuavad mõlemad kohale.
+- USB kaudu ei saadetud midagi.
+
+**Mõõtmata**: muud sõnumitüübid, kanalid peale 1 MIDI OUT pesas, vahemike otsad (CC 0/127,
+väärtus 127), stseenid 5–8 pesas ja muud vastuvõtjad.

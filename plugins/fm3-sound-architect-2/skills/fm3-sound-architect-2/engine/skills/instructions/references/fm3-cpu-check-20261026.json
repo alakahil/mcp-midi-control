@@ -1,0 +1,135 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-26",
+ "source": "8 presets picked by cpu-check-build.mjs (--pick=8 --scene=worst) from the 328 amp presets of a purchased fw13 tonepack; files, names and parameter values are not in the repository",
+ "estimator": {
+  "model": "fm3-cpu 0.2.1",
+  "measurementsSha256": "dbe43ad7c772634dcf24b7924f6bea6f141407cff49b738ebacc1b1951e741c3"
+ },
+ "method": "Each preset was sent to the edit buffer (7F 00) and the CPU meter (fn=0x01 sub=0x2E, piecewise decode) read until three equal values; nothing stored. The selected scene was set to the scene with the highest estimate; that the FM3 was in that scene was not observed on screen.",
+ "calibration": {
+  "id": "cal-p6a",
+  "handMeasuredPercent": 82.5,
+  "meterPercent": 82
+ },
+ "presets": [
+  {
+   "id": "p01",
+   "selectedScene": 1,
+   "sceneSetToWorst": false,
+   "estimatePercent": 39,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 40.5,
+   "errorPoints": -1.5
+  },
+  {
+   "id": "p02",
+   "selectedScene": 1,
+   "sceneSetToWorst": false,
+   "estimatePercent": 57.4,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 58.5,
+   "errorPoints": -1.1
+  },
+  {
+   "id": "p03",
+   "selectedScene": 1,
+   "sceneSetToWorst": false,
+   "estimatePercent": 60.2,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 62,
+   "errorPoints": -1.8
+  },
+  {
+   "id": "p04",
+   "selectedScene": 4,
+   "sceneSetToWorst": true,
+   "estimatePercent": 61.9,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 57,
+   "errorPoints": 4.9
+  },
+  {
+   "id": "p05",
+   "selectedScene": 8,
+   "sceneSetToWorst": true,
+   "estimatePercent": 62.4,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 59,
+   "errorPoints": 3.4
+  },
+  {
+   "id": "p06",
+   "selectedScene": 3,
+   "sceneSetToWorst": true,
+   "estimatePercent": 67.2,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 64,
+   "errorPoints": 3.2
+  },
+  {
+   "id": "p07",
+   "selectedScene": 4,
+   "sceneSetToWorst": true,
+   "estimatePercent": 68.5,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 69,
+   "errorPoints": -0.5
+  },
+  {
+   "id": "p08",
+   "selectedScene": 5,
+   "sceneSetToWorst": true,
+   "estimatePercent": 80.5,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 76,
+   "errorPoints": 4.5
+  }
+ ],
+ "summary": {
+  "n": 8,
+  "measuredMin": 40.5,
+  "measuredMax": 76,
+  "meanErrorPoints": 1.4,
+  "meanAbsErrorPoints": 2.6,
+  "largestOverestimatePoints": 4.9,
+  "largestUnderestimatePoints": 1.8,
+  "overSafeLimit80": 0
+ },
+ "findings": [
+  "All measured presets stay below the 80 % safe limit (max 76 %).",
+  "The estimate is within about ±2 points where the selected scene is the stored scene 1 and in one other preset; for four presets whose worst scene has another channel type it is 3.2 to 4.9 points too high (conservative)."
+ ],
+ "notMeasured": [
+  "whether the FM3 applied the re-encoded selected scene on load (CPU per scene of one preset)",
+  "the Out 2 block cost (omitted by the estimator)",
+  "audio"
+ ],
+ "resultsSha256": "4f65c4b8d36238f698dc0d91d498d7da2b58047a3c4d1594f5bd3e46bd77d3b6"
+}

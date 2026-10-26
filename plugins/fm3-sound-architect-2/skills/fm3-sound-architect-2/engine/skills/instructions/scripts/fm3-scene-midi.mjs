@@ -12,6 +12,8 @@
 // kept number word again. A type change touches only the type word, so a PC leaves the number word as is.
 // Measured points: types none/CC/PC; channel 1..3; number 0, 1, 5, 20; value 0, 10, 64; commands
 // S1C1, S2C1, S2C2, S8C1, S8C7. Ranges beyond those follow MIDI (channel 1..16, number/value 0..127).
+// Output (references/fm3-scene-midi-din-20261026.json): the commands go out on the MIDI OUT jack on scene change
+// and on edit-buffer load (Scene 1); the PC program byte equals the Value field (2->2, 5->5, 0->0); nothing on USB.
 const check=(v,m)=>{if(!v)throw Error(m)};
 export const SCENE_MIDI_EID=190;
 export const SCENE_MIDI_TYPES=Object.freeze({NONE:0,CC:1,PC:2});
@@ -72,5 +74,6 @@ export function sceneMidiCapabilities(){
   return {field:'sceneMidi',block:'scenemidi (insert in grid mode; placed unconnected, no input, feeds nothing)',
     entry:'{scene 1..8, command 1..8, type PC|CC|NONE, channel 1..16 (default 1); PC: program 0..127 (FM3 Value field); CC: number 0..127, value 0..127 (default 0)}',
     evidence:'decoded on FM3 fw 13, 2026-10-24: 11 single-field front-panel changes, each one word (references/fm3-scene-midi-20261024.json); PC program = Value field (references/fm3-scene-midi-pc-20261024.json)',
-    notVerified:'other message types, range ends beyond the measured points, MIDI actually transmitted on scene change, whether the sent PC equals the shown value or one less (display offset)'};
+    output:'MIDI OUT jack on scene change and on preset load; PC byte = Value field (Helix receiver, channel 1, 2026-10-26: references/fm3-scene-midi-din-20261026.json); not sent over USB',
+    notVerified:'other message types, channels other than 1 on the jack, range ends beyond the measured points (CC 0/127, value 127), scenes 5..8 on the jack'};
 }
