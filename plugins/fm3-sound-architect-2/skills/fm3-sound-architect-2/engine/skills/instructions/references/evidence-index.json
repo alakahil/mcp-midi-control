@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2120,
-  "filePaths": 2324,
+  "uniqueContents": 2125,
+  "filePaths": 2329,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -6327,6 +6327,12 @@
         "references/filter-controls-20261008-165150/step-04-560512bddc/capture.json"
       ]
     },
+    "7fd05efa032f00006674b9fd1f09ea22bc0cac4fe538eafbeff4499d1a0957ff": {
+      "bytes": 2138,
+      "paths": [
+        "references/fm3-pedal-store-20261026.json"
+      ]
+    },
     "800e9afa9d1369df46571e8d3f70097759307462fa38ae4a70687fe42bbdcea4": {
       "bytes": 7983,
       "paths": [
@@ -6675,6 +6681,12 @@
       "bytes": 4915,
       "paths": [
         "references/geq-full-20261010-194115/step-084-bb735d1383/capture.json"
+      ]
+    },
+    "878f0645aa9bc71e4fe9feec7d4236743a0a390c9ad987360b4cb979bb222e11": {
+      "bytes": 3751,
+      "paths": [
+        "references/fm3-cpu-check-20261026.json"
       ]
     },
     "87a4e10b7dd7764fa8891bc3d50a64a4ad81b50aee26e0065777bae9f371ad01": {
@@ -7774,6 +7786,12 @@
         "references/enhancer-full-20261012-122507/step-021-1ea1bf8987/result.json"
       ]
     },
+    "9e08201463bfd865c574975726ee3f7f66f54e0e248ecb5d352782bbda9149fa": {
+      "bytes": 1330,
+      "paths": [
+        "references/fm3-label-boundary-20261026.json"
+      ]
+    },
     "9e576e59062d41c58def68f666f7f6d688622f5979bc447354323d9d48cc9cd3": {
       "bytes": 24680,
       "paths": [
@@ -8439,6 +8457,12 @@
       "paths": [
         "references/amp-level-20261013/session/baseline.syx",
         "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
+      ]
+    },
+    "aade9bff69b4105a187163fd64b6bf9ce009cf2c5b5c072f74f2d4622e75ce69": {
+      "bytes": 2063,
+      "paths": [
+        "references/fm3-cpu-scenes-20261026.json"
       ]
     },
     "aaed16fd41abe7daee7fbc2843ebad9b83f77675146d456c9262d060c64261cf": {
@@ -11724,6 +11748,12 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-full-20261012-122507/step-019-84404523c8/donor.syx"
+      ]
+    },
+    "e9b13afd7fbfde0293af94066f964b6b4036d927c92ee8727df322223ac0c7a7": {
+      "bytes": 2780,
+      "paths": [
+        "references/fm3-scene-midi-din-20261026.json"
       ]
     },
     "ea04468933eec6c603ef7701cf060eec23e36b49bf2298c248539fba32efc8d6": {

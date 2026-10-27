@@ -1,0 +1,58 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-26",
+ "preset": {
+  "name": "PEDAL T2 STORE",
+  "binding": "0.3.17 volumePedal: External 1 -> Volume/Pan 1 Gain, Channels ALL",
+  "sha256": "73cb9354730e99a921cc5c506e00835eb21accba59126e6f69a6b92ff7f7f629"
+ },
+ "pedal": "Valeton expression pedal on External 1 (global setting unchanged)",
+ "method": "Edit-buffer load (7F 00) by the script; the user read the Volume knob in FM3-Edit at heel / about 25 / 50 / 75 % / toe, STOREd the preset himself, selected another preset and back, and read again. The script then read the stored location with fn=0x03 (read-only). The script never stored or set anything.",
+ "readings": {
+  "units": "Volume (0..10) as FM3-Edit shows it; intermediate pedal positions are approximate",
+  "beforeStore": {
+   "heel": 0,
+   "p25": 1.94,
+   "p50": 5,
+   "p75": 7.85,
+   "toe": 10
+  },
+  "afterReload": {
+   "heel": 0,
+   "p25": 1.94,
+   "p50": 5,
+   "p75": 7.85,
+   "toe": 10
+  }
+ },
+ "modifierAfterReload": true,
+ "storedLocation": {
+  "shown": 423,
+  "index": 422
+ },
+ "storedVsGenerated": {
+  "bodyWords": 6485,
+  "differingWords": [
+   {
+    "byteOffset": 0,
+    "generated": 0,
+    "stored": 3,
+    "meaning": "selected scene (body word 0): stored with the scene active at STORE time"
+   }
+  ]
+ },
+ "findings": [
+  "The volumePedal binding survives STORE and reload: modifier mark on Volume, identical readings (heel 0.00, toe 10.00) before and after.",
+  "The stored preset equals the generated one word for word (6485 body words) except body word 0, the selected scene, which the FM3 stores as the scene active at STORE time.",
+  "The readings rise monotonically heel -> toe (0.00, 1.94, 5.00, 7.85, 10.00 at approximate pedal positions); the gain curve is not determined because the pedal positions are estimates."
+ ],
+ "notMeasured": [
+  "exact pedal positions / the Volume taper",
+  "audio level",
+  "other modifier sources or ranges"
+ ],
+ "resultsSha256": "94fd459604b39e6836f553d94addcef6e534225b74827e9aed8df47ff9361029",
+ "loadSha256": "f5ff81690f0ba2ce7367ae905bf985175a011f29e939a01e668d9164abdcbb84"
+}

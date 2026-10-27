@@ -1,0 +1,80 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-26",
+ "preset": "one preset of a purchased fw13 tonepack (CPU check item p08, references/fm3-cpu-check-20261026.json); file, name and values not in the repository",
+ "estimator": {
+  "model": "fm3-cpu 0.2.1"
+ },
+ "method": "Edit-buffer load (7F 00) of the preset with its stored scene 4; the user selected scenes 1..8 on the FM3 and the CPU meter (fn=0x01 sub=0x2E) was read after each until three equal values. No store, no SET, no scene change by the script.",
+ "afterLoad": {
+  "scene": 4,
+  "measuredPercent": 76
+ },
+ "scenes": [
+  {
+   "scene": 1,
+   "estimatePercent": 70,
+   "measuredPercent": 71,
+   "errorPoints": -1
+  },
+  {
+   "scene": 2,
+   "estimatePercent": 62,
+   "measuredPercent": 63,
+   "errorPoints": -1
+  },
+  {
+   "scene": 3,
+   "estimatePercent": 62,
+   "measuredPercent": 63,
+   "errorPoints": -1
+  },
+  {
+   "scene": 4,
+   "estimatePercent": 75,
+   "measuredPercent": 76,
+   "errorPoints": -1
+  },
+  {
+   "scene": 5,
+   "estimatePercent": 80.5,
+   "measuredPercent": 82,
+   "errorPoints": -1.5
+  },
+  {
+   "scene": 6,
+   "estimatePercent": 62,
+   "measuredPercent": 63.5,
+   "errorPoints": -1.5
+  },
+  {
+   "scene": 7,
+   "estimatePercent": 62,
+   "measuredPercent": 63.5,
+   "errorPoints": -1.5
+  },
+  {
+   "scene": 8,
+   "estimatePercent": 69.5,
+   "measuredPercent": 71,
+   "errorPoints": -1.5
+  }
+ ],
+ "summary": {
+  "errorMinPoints": -1.5,
+  "errorMaxPoints": -1,
+  "measuredMax": 82,
+  "scenesOver80": [
+   5
+  ],
+  "sameOrderAsEstimate": true
+ },
+ "findings": [
+  "The meter changes with the scene exactly as the per-scene estimate (same order, same steps); bypass does not set the cost, the active channel types do.",
+  "The estimate is 1.0 to 1.5 points below the meter in every scene (a near-constant offset; the omitted Out 2 block is a likely part).",
+  "Scene 5 measured 82 %, above the 80 % safe limit; the estimate (80.5 %) already flagged it."
+ ],
+ "resultsSha256": "28925d1c161c85995673fd334be5aa1751512658aa34693b44de3537c3cfd330"
+}

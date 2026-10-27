@@ -1,0 +1,144 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-26",
+ "source": "8 presets picked by cpu-check-build.mjs (--pick=8 --scene=worst) from the 328 amp presets of a purchased fw13 tonepack; files, names and parameter values are not in the repository",
+ "estimator": {
+  "model": "fm3-cpu 0.2.1",
+  "measurementsSha256": "dbe43ad7c772634dcf24b7924f6bea6f141407cff49b738ebacc1b1951e741c3"
+ },
+ "method": "Each preset was sent to the edit buffer (7F 00) and the CPU meter (fn=0x01 sub=0x2E, piecewise decode) read until three equal values; nothing stored. The pack was built with --scene=worst, but that builder version did not apply it (fixed afterwards): every file kept its stored selected scene, which is the scene measured here; estimates are for that scene.",
+ "calibration": {
+  "id": "cal-p6a",
+  "handMeasuredPercent": 82.5,
+  "meterPercent": 82
+ },
+ "presets": [
+  {
+   "id": "p01",
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 39,
+   "estimateMaxPercent": 39,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 40.5,
+   "errorPoints": -1.5
+  },
+  {
+   "id": "p02",
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 57.4,
+   "estimateMaxPercent": 57.4,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 58.5,
+   "errorPoints": -1.1
+  },
+  {
+   "id": "p03",
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 60.2,
+   "estimateMaxPercent": 60.2,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 62,
+   "errorPoints": -1.8
+  },
+  {
+   "id": "p04",
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 57.4,
+   "estimateMaxPercent": 61.9,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 57,
+   "errorPoints": 0.4
+  },
+  {
+   "id": "p05",
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 57.4,
+   "estimateMaxPercent": 62.4,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 59,
+   "errorPoints": -1.6
+  },
+  {
+   "id": "p06",
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 62.7,
+   "estimateMaxPercent": 67.2,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 64,
+   "errorPoints": -1.3
+  },
+  {
+   "id": "p07",
+   "measuredScene": 1,
+   "storedScene": 1,
+   "estimatePercent": 68,
+   "estimateMaxPercent": 68.5,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 69,
+   "errorPoints": -1
+  },
+  {
+   "id": "p08",
+   "measuredScene": 4,
+   "storedScene": 4,
+   "estimatePercent": 75,
+   "estimateMaxPercent": 80.5,
+   "measuredTypeCoverage": false,
+   "familiesWithoutCost": [
+    "out2"
+   ],
+   "measuredPercent": 76,
+   "errorPoints": -1
+  }
+ ],
+ "summary": {
+  "n": 8,
+  "measuredMin": 40.5,
+  "measuredMax": 76,
+  "meanErrorPoints": -1.1,
+  "meanAbsErrorPoints": 1.2,
+  "largestOverestimatePoints": 0.4,
+  "largestUnderestimatePoints": 1.8,
+  "overSafeLimit80": 0
+ },
+ "findings": [
+  "In the stored scene every measured preset is below 80 % (max 76 %).",
+  "The estimate is within 1.8 points of the meter: seven presets 1.0 to 1.8 points below, one 0.4 above; the Out 2 block, which the estimator omits, is a likely part of the low offset."
+ ],
+ "perSceneFollowUp": "references/fm3-cpu-scenes-20261026.json (one preset, all 8 scenes)",
+ "notMeasured": [
+  "the other scenes of seven presets",
+  "the Out 2 block cost (omitted by the estimator)",
+  "audio"
+ ],
+ "resultsSha256": "4f65c4b8d36238f698dc0d91d498d7da2b58047a3c4d1594f5bd3e46bd77d3b6"
+}

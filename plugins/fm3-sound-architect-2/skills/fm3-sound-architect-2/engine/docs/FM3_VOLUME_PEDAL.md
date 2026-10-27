@@ -46,7 +46,7 @@ kinnitab, et praegused Wah- ja Volume-kirjutajad kasutavad sama esimest kirjet.
 - Avalik `fm3-preset.mjs --verify` kontrollib kõiki 25 sõna, modifikaatoripiirkonda, sihtplokki, TXT/spec/aruande kooskõla. Uuendatud CRC ja artefaktiräsid ei peida lepinguvälist muudatust.
 - Generaator taastab seadmeekspordi kogu 12970-baidise keha räsiga `f01f233b8e5195d8ef4e8d3253c85a1ce14649859838eed3c5cf65e760a8eb5e`. Täpselt sama keha ei vaja uut korduseksporti. Uut kodeeritud faili ei ole eraldi tagasi imporditud.
 - Ainult esimene mõõdetud kirje ja passiivne lähteolek. Vaba kirje jaotamist, samaaegset Wah- ja Volume-seost, muid allikaid/sihtmärke/kanaleid ega modifikaatori eemaldamist ei lisata. Aktiivset seost ei lülitata vaikimisi välja.
-- Globaalne External 1 määrang, live SET/GET, heli ja STORE/reload on eraldi (pedaali käitumist vt allpool). See on aktiivse puhvri eksporditõend. `fullRangeEncodingProven=false` jääb kehtima.
+- Globaalne External 1 määrang, live SET/GET ja heli on eraldi; STORE/reload on kontrollitud 26.10.2026 (vt allpool). See on aktiivse puhvri eksporditõend. `fullRangeEncodingProven=false` jääb kehtima.
 - Uut REA/Ghidra analüüsi selles etapis ei tehtud. Varasema Maci analüüsi loomise → ID → Source tee oli katse põhjendus; presetisõnade tõend tuleb nüüd eraldi seadmeekspordist. Wahi kuus mõõdetud Min/Max punkti ja 995 mudelipõhist väärtust välja kohta ning ajaloolised hiirepunktid jäävad muutmata.
 
 ## Pedaali käitumine (24.10.2026)
@@ -61,6 +61,18 @@ mõõteskript on `FM3_PEDAL_CHECK.py`. Mõlemad presetid laaditi ainult redaktsi
 - **Masinloetavus**: ploki koondlugemine (`fn=0x1F`) tagastab igas pedaaliasendis salvestatud sõna 65534 (10.00).
   FM3 ei saada pedaali liigutamise ajal ise kaadreid, seega seda väärtust praeguste lugemisteedega skriptiga ei loe.
 - **Mõõtmata**: täpsed kanna/varba numbrid, kõver (taper) ja heli.
+
+## Salvestamine ja uuesti laadimine (T2, 26.10.2026)
+
+Kviitung on [references/fm3-pedal-store-20261026.json](../skills/instructions/references/fm3-pedal-store-20261026.json)
+(`node tools/fm3/pedal-store-ingest.mjs`; pakk `tools/fm3/pedal-store-build.mjs`, skript `FM3_PEDAL_STORE.py`).
+Skript laadis „PEDAL T2 STORE“ redaktsioonipuhvrisse; kasutaja salvestas selle ise asukohta 423 ja laadis uuesti.
+
+- FM3-Edit-is Volume (0..10): kand 0.00, umbes veerand 1.94, pool 5.00, kolmveerand 7.85, varvas 10.00;
+  pärast salvestamist ja uuesti laadimist täpselt samad väärtused ja modifikaatori märk alles.
+- Salvestatud asukoha lugemine (`fn=0x03`): keha klapib genereeritud failiga sõna sõnalt, välja arvatud sõna 0
+  (valitud stseen), mille FM3 salvestab salvestamise hetkel aktiivse stseenina.
+- Vahepealsed pedaaliasendid on hinnangulised, seega kõverat (taper) see ei määra. Heli on mõõtmata.
 - FM3 esipaneelil avatakse ploki leht ruudustikust EDIT-nupuga. ENTER ja VALUE valivad lahtrisse uue ploki.
 
 ## Esipaneeli skaalakontroll (24.10.2026)

@@ -240,8 +240,10 @@ Volume/Pan 1 Volume (VOLUME_GAIN, PID 0), ALL** seose. Kasuta mõõdetud
 vaikeolekut; Min/Max-i, kõvera, Auto Engage'i ega ajaparameetrite valikuid sellel
 liidesel pole. [Juhend](engine/docs/FM3_VOLUME_PEDAL.md).
 Pedaali käitumine on **seadmel kinnitatud** 24.10.2026: FM3-Editis on Volume nupul External 1 modifikaator
-ja nupp järgib pedaali kannast varbani; ilma seoseta preset jääb 10.00 peale. Täpseid kanna/varba numbreid
-ja heli ei mõõdetud. Ära küsi seda uuesti.
+ja nupp järgib pedaali kannast varbani; ilma seoseta preset jääb 10.00 peale. 26.10.2026 (T2): kand 0.00, varvas
+10.00; kasutaja salvestas preseti ja laadis uuesti, seos ja väärtused jäid samaks ning salvestatud keha klappis
+genereerituga peale valitud stseeni (`references/fm3-pedal-store-20261026.json`). Heli ja kõver on mõõtmata.
+Ära küsi seda uuesti.
 Nõutav on NewLook-aluse muutmata passiivne modifikaatoripiirkond. Aktiivne Wah
 või muudetud modifikaatorid lükatakse tagasi; neid ei lülitata vaikimisi välja.
 `composer.modifiers:{external1Wah:false}` võib passiivse lähteoleku selgesõnaliselt
@@ -521,13 +523,16 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   küsiti FM3-lt ja kõik vastasid sõnastikule salvestatud sõna kaupa (41 erinesid ainult lõputühiku poolest).
   Tüübi- ja režiiminimesid ei pea seadmes uuesti kontrollima. Nuppude skaalasid see ei tõenda.
   Kviitung: `references/fm3-label-sweep-20261024.json`.
+  Kaks küsimata jäänud viimast nime (Pitch Track Mode „CHORDS“, Tempo „63/64“) kontrolliti 26.10.2026; ka need
+  klappisid (`references/fm3-label-boundary-20261026.json`).
 - **Scene MIDI (auditi punkt 6)** `scripts/fm3-scene-midi.mjs`, `grid`-režiimis `insert:["scenemidi"]` ja
   `sceneMidi:[{scene, command, type:"PC"|"CC"|"NONE", channel, program (PC) | number, value (CC)}]` (8 stseeni × 8 käsku).
   PC programm on FM3 väli Value (Number näitab PC puhul „--“). Plokk paigutatakse ühendamata lahtrisse (järgmine
   lahter tühi). Paigutus dekodeeriti seadmel 24.10.2026: 11 esipaneeli muudatust, igaüks üks sõna, pluss PC järelkatse
-  (`references/fm3-scene-midi-20261024.json`, `references/fm3-scene-midi-pc-20261024.json`). Kas sõnum stseeni vahetusel
-  MIDI OUT pessa välja läheb ja kas saadetud PC on näidatud väärtus või ühe võrra väiksem, pole mõõdetud. USB kaudu
-  selles katses sõnumeid ei täheldatud (`references/fm3-scene-midi-listen-20261024.json`).
+  (`references/fm3-scene-midi-20261024.json`, `references/fm3-scene-midi-pc-20261024.json`). Käsud lähevad MIDI OUT
+  pesast välja stseeni vahetusel ja preseti laadimisel (Scene 1); PC bait on täpselt väli Value (Helix, kanal 1,
+  26.10.2026: `references/fm3-scene-midi-din-20261026.json`). USB kaudu neid ei saadeta
+  (`references/fm3-scene-midi-listen-20261024.json`). Ütle kasutajale, et preseti laadimine saadab Scene 1 käsud.
   Detailid: `engine/docs/FM3_SCENE_MIDI.md`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
   (342 seadmes mõõdetud tüüpi + reverbi kvaliteet; piir 80 %, hoiatus üle 72 %).

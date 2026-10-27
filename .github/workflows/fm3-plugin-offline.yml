@@ -76,6 +76,14 @@ jobs:
           node tools/fm3/auto-swell-verify-ingest.mjs
           python3 -B tools/fm3/test-step-diff.py
           python3 -B tools/fm3/test-bit4-check.py
+          python3 -B tools/fm3/test-scene-midi-din.py
+          node tools/fm3/scene-midi-din-ingest.mjs
+          node tools/fm3/cpu-check-ingest.mjs
+          node tools/fm3/label-boundary-ingest.mjs
+          node tools/fm3/cpu-scenes-ingest.mjs
+          python3 -B tools/fm3/test-cpu-scenes.py
+          node tools/fm3/pedal-store-ingest.mjs
+          python3 -B tools/fm3/test-cpu-check-build.py
           node tools/fm3/cpu-sweep-ingest.mjs plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cpu-sweep-20261023-results.jsonl
       - name: Replay the pinned 0.3.11 remaining-modifier audit
         run: |
