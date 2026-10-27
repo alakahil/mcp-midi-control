@@ -10,11 +10,12 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.25 väljalaset: [5. punkti ruudustikuaudit](FM3_GRID.md),
-koos [3. punkti parameetrikaardiga](FM3_POINT3_PARAMETERS.md),
-koos [2. punkti lõppfailide kontrolliga](FM3_POINT2_OUTPUTS.md),
-kogu SYX/TXT/spec/raporti taasesitus, ajalooliste näidiste audit ning failivigade tõrjumine.
-Uusi seadmekatseid ega skaalamõõtmisi ei lisandu.
+Praegune lähtekood valmistab ette 0.3.26 väljalaset: GitHubi põhiharusse
+liidetud 26.10.2026 T1/T2/T3/T6 seadmetõendite koondamine. Lisanduvad
+Scene MIDI MIDI OUT pesa kontroll, Volume-pedaali STORE/reload,
+Pitchi kaks viimast loendisilti ja CPU võrdlused. 0.3.25 ruudustikuaudit,
+parameetrikaart ning nelja lõppfaili kontroll säilivad. Uut seadmekatset
+selles väljalaske koostamise etapis ei tehtud.
 Kehtiv tõendusulatus on plugina SKILL.md-s ning vastavate katsete kviitungites.
 Avaldamine, täpne commit ja käivitajajuhendi uuendus tuleb kinnitada
 väljalaskekviitungis. Versiooninumber üksi ei kinnita avaldamist.
