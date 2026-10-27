@@ -108,7 +108,9 @@ jobs:
         run: |
           FM3_PACKAGE_VERSION="$(node -p "require('./plugins/fm3-sound-architect-2/plugin.json').version")"
           tar -xzf "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2-$FM3_PACKAGE_VERSION.tar.gz" -C "$RUNNER_TEMP/fm3-release"
-          node "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-self-check.mjs" "$GITHUB_SHA"
+          python3 "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-session-archive.py" verify
+          python3 "$RUNNER_TEMP/fm3-release/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-session-archive.py" prepare --output "$RUNNER_TEMP/fm3-runtime"
+          node "$RUNNER_TEMP/fm3-runtime/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-self-check.mjs" "$GITHUB_SHA"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

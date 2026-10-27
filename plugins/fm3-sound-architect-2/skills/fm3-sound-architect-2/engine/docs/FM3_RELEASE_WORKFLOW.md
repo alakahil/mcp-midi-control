@@ -10,11 +10,11 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.25 väljalaset: [5. punkti ruudustikuaudit](FM3_GRID.md),
-koos [3. punkti parameetrikaardiga](FM3_POINT3_PARAMETERS.md),
-koos [2. punkti lõppfailide kontrolliga](FM3_POINT2_OUTPUTS.md),
-kogu SYX/TXT/spec/raporti taasesitus, ajalooliste näidiste audit ning failivigade tõrjumine.
-Uusi seadmekatseid ega skaalamõõtmisi ei lisandu.
+Praegune lähtekood valmistab ette 0.3.28 väljalaset: kadudeta levipakendi
+vähendamine. GEQ, PEQ ja Enhanceri kolme ajaloolise mõõtesessiooni 1080 faili
+pakitakse ehitamisel ühte taastatavasse arhiivi. GitHubi lähtepuu algandmed,
+arendusradade nimed, generaatori kirjutustugi ja kõik varasemad tõendid säilivad.
+Uut seadmekatset selles väljalaske koostamise etapis ei tehtud.
 Kehtiv tõendusulatus on plugina SKILL.md-s ning vastavate katsete kviitungites.
 Avaldamine, täpne commit ja käivitajajuhendi uuendus tuleb kinnitada
 väljalaskekviitungis. Versiooninumber üksi ei kinnita avaldamist.
@@ -110,8 +110,20 @@ ei muuda globaalset väärtusvahemikku riistvaras kinnitatuks.
 piiratud korduskontrolli; skaala arvupuhvri tootja jääb veel tõendamata.
 
 Builder nõuab puhast checkout'i ja sama commit'i täieliku suite'i edukat raportit.
-Kõik lähtefailid loetakse Git objektidest. Paketi sees genereeritakse ainult
-`release-manifest.json`; selle erand on manifestis nimetatud. Pakett on
+Kõik lähtefailid loetakse Git objektidest. Paketi sees genereeritakse
+`release-manifest.json` ja `references/session-history.json.gz`; mõlemad on
+manifesti `generatedFiles` loendis. `packaging` nimetab täpse teisenduse ja
+1080 algfaili. Manifesti `files` kontrollib levipakendit ning
+`sourcePluginTreeSha256` kontrollib täielikult taastatud Git lähtepuud.
+`fm3-session-archive.py materialize --output NEW_PLUGIN_SOURCE` taastab kogu
+lähtepuu baittäpselt uude kausta; juhendi ajaloolised failiteed töötavad seal.
+Enne täieliku SYX-korpuse auditit taasta see koopia. GitHubis pole lisasammu.
+Käivitaja kontrollib levipakendit ja taastab automaatselt kõik failid enne
+mootori käivitamist. Otse paketi kasutamisel teeb sama `fm3-session-archive.py
+prepare --output NEW_RUNTIME`; saadud runtime sisaldab muutmata levimanifesti.
+Enesekontroll võrdleb runtime'i täielikku lähtepuuräsi. Testirunner kontrollib
+pakkimise/taaste negatiivseid juhte ja käivitab kõik 70 mootoritesti pakitud ning
+seejärel taastatud ajutises koopias. Pakett on
 deterministlik: sama commit annab sama arhiivi. Väline `release-receipt.json`
 seob commit'i, arhiivi räsi ja testiraporti räsi. Paketis pole kviitungit,
 mis väldib enesele viitavat arhiiviräsi.
@@ -131,6 +143,8 @@ tegelikult lõppenud töövoogu. Testiraamistik ei asenda hosti laadimiskontroll
 1. Kontrolli Plugin Creatori avaldamisvastuses komponente, versiooni ja release ID-d.
 2. Võta avaldatud pakett tagasi ja võrdle manifesti ning faile kandidaadiga.
 3. Tuvasta uues hostis päriselt kasutatav skill ja engine'i absoluutne tee.
+   Käivitaja peab enne mootorikäsku olema tihendatud sessioonid automaatselt
+   taastanud. Otse paketi kasutamisel käivita `fm3-session-archive.py prepare`.
 4. Käivita seal `scripts/fm3-self-check.mjs EXPECTED_COMMIT_SHA`; kasuta kviitungist
    teadaolevat commit'i. Skript kontrollib faililoendit, räsisid, versiooni,
    capabilities't ning tuntud preseti taastebaiti.

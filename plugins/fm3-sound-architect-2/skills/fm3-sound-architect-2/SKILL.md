@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.25`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.28`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,63 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## Kadudeta arhiivi vähendamine (0.3.28, 27.10.2026)
+
+Levipaketis on kolme GEQ-, PEQ- ja Enhanceri mõõtesessiooni 1080 faili ühes
+`MOOTOR/references/session-history.json.gz` arhiivis. Need andmed on vajalikud
+ka mootori kontrollides. Käivitaja taastab need automaatselt enne mootori tööd;
+kõik generaatorid, mallid, näited, testid ja sisemised failiteed säilivad.
+GitHubi lähtepuus on kõik algfailid endistel radadel. Pakkimine toimub ainult
+väljalaske ehitamisel; arenduscheckout ei vaja lisasammu.
+Arhiivi mahukontroll kasutab tegelikku 4000 kirje piiri; uued lähtefailid
+võivad kasutada kogu vaba ruumi.
+
+Kui kasutad paketti otse ja `session-history.json.gz` on veel olemas, käivita
+**enne ühtegi mootorikäsku** järgmine ettevalmistus. Tee see ise, ära lisa
+kasutajale tehnilist sammu. Vaja on Python 3 ja Node.js-i.
+
+```bash
+python3 "$FM3_ENGINE/scripts/fm3-session-archive.py" prepare --output /ABS/NEW_FM3_RUNTIME
+```
+
+Käsk kontrollib iga faili räsi ja kogu taastatud lähtepuu vastavust avaldatud
+commit'ile ning tagastab `skill`, `generator` ja `selfCheck` absoluutsed teed.
+Suuna kõik järgnevad engine-viited tagastatud töökoopiasse; lähtepakett jääb
+muutmata. Kui käivitaja on juba taastanud runtime'i, pole uut koopiat vaja.
+Käivita `selfCheck` väljalaske teadaoleva commit'iga. Taastatud runtime'is
+on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
+senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
+`materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
+
+## GitHubi seadmetõendite koondamine (0.3.26, 27.10.2026)
+
+See väljalase toob pluginasse GitHubi põhiharusse commit'iga
+`7dd70a5a2fc3145b03177c9913e8bd458166565f` liidetud 26.10.2026 katsed.
+Kasuta allolevaid uusi tõendeid varasemate „mõõtmata” märkuste täpsustamiseks;
+ajaloolisi toorandmeid ei muudeta ega samu katseid uuesti nõuta.
+
+- **T1 Scene MIDI:** Helix kinnitas kanalil 1 MIDI OUT pesa PC/CC käsud,
+  käsupesa 8 ning kahe käsu saatmise. PC bait vastab FM3 Value väljale.
+  Preseti laadimine redaktsioonipuhvrisse saatis katses Scene 1 käsud:
+  teavita sellest kasutajat enne sellise preseti kontrollimporti. USB väljundit
+  nendes katsetes ei täheldatud. Muud kanalid, vastuvõtjad ja vahemike otsad
+  jäävad eraldi. Loe [Scene MIDI juhendit](engine/docs/FM3_SCENE_MIDI.md).
+- **T2 Volume-pedaal:** kand 0.00 ja varvas 10.00 ning seos säilisid pärast
+  kasutaja STORE/reload'i. Salvestatud 6485 sõna erinesid genereeritust ainult
+  valitud stseeni sõna poolest. Heli ja täpne pedaalikõver on mõõtmata.
+  Loe [Volume-pedaali juhendit](engine/docs/FM3_VOLUME_PEDAL.md).
+- **T3 Pitchi loendipiirid:** TRACKMODE word 2 = CHORDS ja TEMPO word 78 =
+  63/64 on seadmel kinnitatud; mõlema loendi kõik 80 sõnastikus olevat silti
+  klapivad. Tõend: `MOOTOR/references/fm3-label-boundary-20261026.json`.
+- **T6 CPU:** kaheksa preseti salvestatud stseenides oli näit 40,5–76 %.
+  Esimene koguja ei valinud soovitud suurima kuluga stseeni; ära nimeta seda
+  kõigi stseenide kontrolliks. Ühe preseti eraldi kaheksa stseeni katses oli
+  maksimum 82 % ja hinnang 80,5 %. Out 2 kulu on mudelist puudu; hinnang pole
+  täpne piirgarantii. Loe [CPU juhendit](engine/docs/FM3_CPU.md).
+
+Kommertspaketi presetid ei kuulu pluginasse. Uut seadmekatset selles
+väljalaske koostamise etapis ei tehtud. Kirjutustoe ulatus ja kaitsed säilivad.
 
 ## 5. punkti ruudustikuaudit (0.3.25, 25.10.2026)
 
@@ -64,8 +121,9 @@ mõõteulatust. Tundmatut kõverat või vigast salvestussõna ära kuva arvuna.
 Chorus Voices kasutab näite 2/4/6/8; Plex Number of Delays 4/6/8; Cab R1/R2
 0..10. Pitchi globaalskaala vali sildiga `SCALE 1`…`SCALE 32`.
 Korduva loendisildi puhul valib string esimese vaste; teise jaoks kasuta kaardi
-arvulist `word` väärtust. Kahe 1-põhise Pitch-loendi viimane silt jääb seadmel
-küsimata; suur tarkvaratest ega ülejäänud sildid ei tõenda seda tagantjärele.
+arvulist `word` väärtust. Kahe 1-põhise Pitch-loendi viimased sildid on 26.10.2026 seadmel kontrollitud:
+TRACKMODE word 2 = CHORDS ja TEMPO word 78 = 63/64. Tõend on
+`MOOTOR/references/fm3-label-boundary-20261026.json`; see ei tõenda nuppude skaalasid.
 
 ## 2. punkti lõppfailide kontroll (0.3.23, 25.10.2026)
 
@@ -531,7 +589,7 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   lahter tühi). Paigutus dekodeeriti seadmel 24.10.2026: 11 esipaneeli muudatust, igaüks üks sõna, pluss PC järelkatse
   (`references/fm3-scene-midi-20261024.json`, `references/fm3-scene-midi-pc-20261024.json`). Käsud lähevad MIDI OUT
   pesast välja stseeni vahetusel ja preseti laadimisel (Scene 1); PC bait on täpselt väli Value (Helix, kanal 1,
-  26.10.2026: `references/fm3-scene-midi-din-20261026.json`). USB kaudu neid ei saadeta
+  26.10.2026: `references/fm3-scene-midi-din-20261026.json`). USB kaudu neid katsetes ei täheldatud
   (`references/fm3-scene-midi-listen-20261024.json`). Ütle kasutajale, et preseti laadimine saadab Scene 1 käsud.
   Detailid: `engine/docs/FM3_SCENE_MIDI.md`.
 - **CPU hinnang (auditi punkt 7)** `scripts/fm3-cpu.mjs`: iga stseeni CPU aktiivse kanali tüübi järgi
