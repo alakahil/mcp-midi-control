@@ -23,7 +23,7 @@ import {estimateCpu,renderCpuText} from './fm3-cpu.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.26',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.27',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','insert','sceneMidi'],
     insert:insertCapabilities(),
     outputs:['.syx','.txt','.spec.json','.validation.json'],
@@ -79,7 +79,7 @@ export function composeSound(base,spec){
   const volumePedal=pedal?readVolumePedal(finalBody):null;
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const cpuEstimate=estimateCpu(second.syx);
-  const report={generator:'fm3-sound-0.3.26',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.27',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,
     stages:{volumePedal:pedal?.report??null,volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};

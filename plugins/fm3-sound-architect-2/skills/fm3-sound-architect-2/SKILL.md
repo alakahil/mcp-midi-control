@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.26`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.27`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,32 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## Kadudeta arhiivi vähendamine (0.3.27, 27.10.2026)
+
+Levipaketis on kolme GEQ-, PEQ- ja Enhanceri mõõtesessiooni 1080 faili ühes
+`MOOTOR/references/session-history.json.gz` arhiivis. Need andmed on vajalikud
+ka mootori kontrollides. Käivitaja taastab need automaatselt enne mootori tööd;
+kõik generaatorid, mallid, näited, testid ja sisemised failiteed säilivad.
+GitHubi lähtepuus on kõik algfailid endistel radadel. Pakkimine toimub ainult
+väljalaske ehitamisel; arenduscheckout ei vaja lisasammu.
+
+Kui kasutad paketti otse ja `session-history.json.gz` on veel olemas, käivita
+**enne ühtegi mootorikäsku** järgmine ettevalmistus. Tee see ise, ära lisa
+kasutajale tehnilist sammu. Vaja on Python 3 ja Node.js-i.
+
+```bash
+python3 "$FM3_ENGINE/scripts/fm3-session-archive.py" prepare --output /ABS/NEW_FM3_RUNTIME
+```
+
+Käsk kontrollib iga faili räsi ja kogu taastatud lähtepuu vastavust avaldatud
+commit'ile ning tagastab `skill`, `generator` ja `selfCheck` absoluutsed teed.
+Suuna kõik järgnevad engine-viited tagastatud töökoopiasse; lähtepakett jääb
+muutmata. Kui käivitaja on juba taastanud runtime'i, pole uut koopiat vaja.
+Käivita `selfCheck` väljalaske teadaoleva commit'iga. Taastatud runtime'is
+on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
+senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
+`materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
 ## GitHubi seadmetõendite koondamine (0.3.26, 27.10.2026)
 

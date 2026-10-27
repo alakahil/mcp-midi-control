@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build deterministic plugin bytes from one clean, tested Git commit."""
-import argparse,gzip,hashlib,io,json,subprocess,tarfile
+import argparse,gzip,hashlib,io,json,runpy,subprocess,tarfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 PREFIX='plugins/fm3-sound-architect-2/'
@@ -22,18 +22,22 @@ def build(commit,tests,output):
     suite=json.loads(files['skills/fm3-sound-architect-2/engine/skills/instructions/references/offline-suite.json'])
     required={t['id'] for t in suite['tests'] if t['required']}
     passed={r['id'] for r in report['results'] if r['status']=='passed'}
-    if not (report['passed'] and report['sourceUnchangedByTests'] and not report['sourceDirty'] and
+    if not (report['passed'] and report['sourceUnchangedByTests'] and report.get('compactLayoutVerified') and not report['sourceDirty'] and
             report['sourceCommit']==commit and report['pluginTreeSha256']==tree_sha and required<=passed):
         raise ValueError('Tests do not attest this clean commit and complete suite')
     portable=json.loads(files['plugin.json']);legacy=json.loads(files['.codex-plugin/plugin.json'])
     if (portable['name'],portable['version'])!=(legacy['name'],legacy['version']):raise ValueError('Manifest mismatch')
     canonical_legacy=(json.dumps(legacy,ensure_ascii=True,indent=2)+'\n').encode()
     if files['.codex-plugin/plugin.json']!=canonical_legacy:raise ValueError('Compatibility manifest must match observed platform JSON formatting')
+    layout=runpy.run_path(str(ROOT/PREFIX/'skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-session-archive.py'))
+    files,packaging=layout['pack_files'](files)
     manifest={'schemaVersion':1,'pluginId':'plugins_6accfd716e148191b0adb61e4e36f0e4','name':portable['name'],
       'version':portable['version'],'sourceRepository':'https://github.com/alakahil/mcp-midi-control',
       'sourceCommit':commit,'sourcePluginTreeSha256':tree_sha,
-      'generatedFiles':['release-manifest.json'],'files':{p:{'sha256':sha(b),'bytes':len(b)} for p,b in sorted(files.items())}}
+      'packaging':packaging,'generatedFiles':['release-manifest.json',packaging['archive']],
+      'files':{p:{'sha256':sha(b),'bytes':len(b)} for p,b in sorted(files.items())}}
     files['release-manifest.json']=json_bytes(manifest)
+    layout['restore_files'](files,manifest)
     dirs={str(parent) for p in files for parent in Path(p).parents if str(parent)!='.'}
     if len(files)+len(dirs)+1>4000:raise ValueError('Package entry budget exceeded')
     if sum(map(len,files.values()))>512*1024*1024:raise ValueError('Uncompressed package too large')
@@ -53,7 +57,8 @@ def build(commit,tests,output):
     receipt.write_bytes(json_bytes({'schemaVersion':1,'pluginId':manifest['pluginId'],'version':portable['version'],
       'sourceCommit':commit,'sourcePluginTreeSha256':tree_sha,'archiveSha256':sha(data),'archiveBytes':len(data),
       'testSummarySha256':sha(tests.read_bytes()),'manifestSha256':sha(files['release-manifest.json']),
-      'conservativeArchiveEntries':len(files)+len(dirs)+1,'publishedReleaseId':None,
+      'conservativeArchiveEntries':len(files)+len(dirs)+1,'archiveFiles':len(files),'archiveDirectories':len(dirs),
+      'packedHistoricalFiles':packaging['archivedFiles'],'publishedReleaseId':None,
       'status':'candidate; remote commit and host loading require separate confirmation'}))
     print(json.dumps({'archive':str(package),'receipt':str(receipt),'sourceCommit':commit,'sha256':sha(data)}))
 if __name__=='__main__':
