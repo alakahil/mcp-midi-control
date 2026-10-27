@@ -61,7 +61,10 @@ class ReleaseLayout(unittest.TestCase):
         for p in set(self.source) & set(self.packed):
             self.assertEqual(self.source[p], self.packed[p], p)
         dirs = {str(d) for p in self.package for d in Path(p).parents if str(d) != '.'}
-        self.assertLess(len(self.package) + len(dirs) + 1, 2600)
+        self.assertLessEqual(len(self.package) + len(dirs) + 1, 4000)
+        source_dirs = {str(d) for p in self.source for d in Path(p).parents if str(d) != '.'}
+        source_entries = len(self.source) + len(source_dirs) + 1
+        self.assertGreaterEqual(source_entries - len(self.package) - len(dirs) - 1, 1400)
 
     def test_deterministic_pack_and_unchanged_source(self):
         before = API['tree_hash'](self.source)

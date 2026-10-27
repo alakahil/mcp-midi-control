@@ -10,7 +10,7 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.27 väljalaset: kadudeta levipakendi
+Praegune lähtekood valmistab ette 0.3.28 väljalaset: kadudeta levipakendi
 vähendamine. GEQ, PEQ ja Enhanceri kolme ajaloolise mõõtesessiooni 1080 faili
 pakitakse ehitamisel ühte taastatavasse arhiivi. GitHubi lähtepuu algandmed,
 arendusradade nimed, generaatori kirjutustugi ja kõik varasemad tõendid säilivad.
