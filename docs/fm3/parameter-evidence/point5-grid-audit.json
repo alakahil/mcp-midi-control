@@ -60,12 +60,12 @@
     }
   },
   "corpus": {
-    "files": 795,
-    "sizedInputs": 795,
-    "unique": 638,
+    "files": 796,
+    "sizedInputs": 796,
+    "unique": 639,
     "duplicates": 157,
     "statuses": {
-      "consistent-known-edges": 626,
+      "consistent-known-edges": 627,
       "unresolved": 1,
       "unsupported-or-invalid": 10,
       "violations-of-authoring-rules": 1
@@ -9007,6 +9007,24 @@
         "occupiedCells": 12,
         "shunts": 0,
         "edges": 11,
+        "splits": 0,
+        "merges": 0,
+        "standalone": 0,
+        "unknownMaskCells": 0,
+        "bit4Cells": 0,
+        "violations": 0,
+        "unresolved": 0,
+        "violationCodes": [],
+        "unresolvedCodes": []
+      },
+      {
+        "sha256": "cc24d3f7cfcb5a6537a07a12fc6246a9de94c49bcf84301a8a632916c1437037",
+        "copies": 1,
+        "status": "consistent-known-edges",
+        "completeRecordScan": true,
+        "occupiedCells": 24,
+        "shunts": 14,
+        "edges": 22,
         "splits": 0,
         "merges": 0,
         "standalone": 0,

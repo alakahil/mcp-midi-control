@@ -4,7 +4,7 @@
   "sources": {
     "docs/fm3/parameter-evidence/modifier-lifecycle-checkpoints.json": "1e90b517a64d184de26605030716a05035db7265e2e2079be0115469b90b83b9",
     "docs/fm3/parameter-evidence/modifier-lifecycle-audit.json": "237bb7cb6b1152a178991e10db0caba94d5fef0283413995812fa031e11da53f",
-    "docs/fm3/parameter-evidence/modifier-corpus-audit.json": "802120fc7b62704cb1eb3d861f7d3f81719b99ee87747ff00bf5af35095f90d7",
+    "docs/fm3/parameter-evidence/modifier-corpus-audit.json": "ec0abbc7672863af1692499a1bb56c195e86bf815a30b727e6507ebc26262b18",
     "docs/fm3/parameter-evidence/volume-pedal-rea-result.json": "604f3745cceb557666509898bc8d11f854ff7e8d7be2baba2ea57245713576ac",
     "docs/fm3/parameter-evidence/volume-pedal-legacy.json": "cf4b993166a597bdd43aa660732a8b8a16f3f4cd90fc3ec641a00a1234798f5e"
   },
@@ -247,9 +247,9 @@
     }
   },
   "corpus": {
-    "files": 795,
-    "unique": 638,
-    "accepted": 628,
+    "files": 796,
+    "unique": 639,
+    "accepted": 629,
     "unsupported": 10,
     "scope": "All distinct SYX bytes currently packaged; includes generated examples and captures, not all independent hardware observations.",
     "summary": {

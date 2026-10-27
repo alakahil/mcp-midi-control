@@ -598,8 +598,10 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Mõõtmata tüüp kasutab olemasolevat pere maksimumi või mõõdetud võrdlustüüpi; teadmata pered jäävad summast välja ja nimetatakse. Amp/Delay tuuma ei näe. Ütle kasutajale hinnang; vali raskete tüüpide (Plate/Spring
   reverb, Pitch Quad, High/Ultra-High kvaliteet) puhul kergem alternatiiv, kui stseen läheneb piirile.
   Detailid: `engine/docs/FM3_CPU.md`.
-- **Satriani "Soap On A Rope"** `examples/SATRIANI_SOAP_ON_A_ROPE{,_V2,_V3}.*`: V1/V2 kuulatud, V3 (tämber
-  eraldatud originaali kitarriraja järgi) ootab kuulamist. Kõik kolm on SA2 koostajaga baitidentsed.
+- **Satriani "Soap On A Rope"** `examples/SATRIANI_SOAP_ON_A_ROPE{,_V2,_V3,_V4}.*`: V1–V3 kuulatud (V3 26.10.2026:
+  Scene 2 RIFF PUSH, Scene 4 SOLO JS410 ja Scene 8 meeldisid; Scene 5 Crunch liiga lahja ja puhas). V4 = V3 + täidlasem
+  Scene 5 (ainult Amp C: Crunch Orange, Gain 6, Bass 5.5, Mid 7.5, Presence 4, Level −10 dB); ootab kuulamist.
+  Kõik on SA2 koostajaga baitidentsed.
 - **Helivõrdlus** `scripts/fm3-audio-compare.py REF FM3`: kolmandikoktaavi tämber ja stereolaius
   (eelista eraldatud kitarrirada). Efektide tuvastamine EI ole valideeritud — ära väida helianalüüsi
   põhjal phaserit/delay'd.

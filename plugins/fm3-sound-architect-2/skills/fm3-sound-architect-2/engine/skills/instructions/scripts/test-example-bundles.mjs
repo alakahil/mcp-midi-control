@@ -22,7 +22,7 @@ const excluded={
 };
 const dir=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-point2-examples-')),rows=[];
 try{
- const files=fs.readdirSync(examples).filter(f=>f.endsWith('.spec.json')).sort();assert.equal(files.length,50,'Review added/removed examples');
+ const files=fs.readdirSync(examples).filter(f=>f.endsWith('.spec.json')).sort();assert.equal(files.length,51,'Review added/removed examples');
  for(const file of files){
   const stem=file.slice(0,-10),original=JSON.parse(read('examples/'+file)),spec=missingHeaders.has(stem)?{schemaVersion:1,firmware:13,...original,...(reconstructed[stem]??{})}:original;
   const reportFile=path.join(examples,stem+'.validation.json'),report=fs.existsSync(reportFile)?JSON.parse(fs.readFileSync(reportFile)):{};
@@ -35,6 +35,6 @@ try{
   const output=path.join(dir,stem);writePresetOutputs(output,result,spec);verifyPresetOutputs(output);
   rows.push({name:stem,status:'byte-identical-and-bundle-verified',outputSha256:sha256(golden),historicalRequestAdaptation:reconstructed[stem]?'complete contract from test-generate.mjs':missingHeaders.has(stem)?'schemaVersion and firmware headers only':null});
  }
- assert.equal(rows.filter(r=>r.status==='byte-identical-and-bundle-verified').length,47);
- console.log(JSON.stringify({passed:true,exampleSpecs:50,byteIdenticalAndVerified:47,metadataOnlyAdaptations:2,historicalRequestReconstructions:2,expectedHistoricalRejections:3,rows,sourceExamplesModified:false,newHardwareMeasurements:0}));
+ assert.equal(rows.filter(r=>r.status==='byte-identical-and-bundle-verified').length,48);
+ console.log(JSON.stringify({passed:true,exampleSpecs:51,byteIdenticalAndVerified:48,metadataOnlyAdaptations:2,historicalRequestReconstructions:2,expectedHistoricalRejections:3,rows,sourceExamplesModified:false,newHardwareMeasurements:0}));
 }finally{fs.rmSync(dir,{recursive:true,force:true});}

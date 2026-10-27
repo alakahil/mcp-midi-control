@@ -1,0 +1,145 @@
+FM3 SOUND ARCHITECT 2 — LÕPLIK PRESET
+Preset: SATCH SOAP ON A ROPE V4
+Eesmärk: Chickenfoot – Soap On A Rope (2009), Joe Satriani. V4 = V3 + täidlasem Scene 5 (kasutaja kuulamine 26.10.2026: Scene 5 Crunch liiga lahja ja puhas; Scene 2 RIFF PUSH, Scene 4 SOLO JS410 ja Scene 8 meeldisid). Ainult Amp C muutub: Brit JVM Crunch Green → Crunch Orange, Drive 5.0→6.0, Bass 5.0→5.5, Mid 7.0→7.5, Presence 4.0, Level −9→−10 dB (rohkem gaini, tase hoitakse riffiga samas kohas; Output Scene 5 +1 dB jääb). Muu nagu V3-s.
+Seade: FM3 Mk II Turbo, firmware 13.
+Kitarr: selle kirjelduse jaoks määramata
+Helipead: selle kirjelduse jaoks määramata
+Ühendus: selle kirjelduse jaoks määramata
+Valitud Scene: 1
+Rida 2: In 1(1) → drive(4) → phaser(5) → amp(6) → cab(8) → Send(12)
+Rida 3: Return(1) → delay(9) → reverb(10) → Out 1(12)
+
+STSEENID JA LÕPLIKUD MUDELID
+Scene 1: RIFF
+  amp A: Brit JVM Crunch Red; sees; Level -9.9997 dB
+  cab A: 4x12 Friedman GB + 4x12 Friedman GB; sees
+  delay A: Digital Mono; bypass
+  drive A: DS1 Distortion Mod; bypass
+  phaser A: Script 90; bypass
+  reverb A: Room: Recording Studio A; sees
+Scene 2: RIFF PUSH
+  amp A: Brit JVM Crunch Red; sees; Level -9.9997 dB
+  cab A: 4x12 Friedman GB + 4x12 Friedman GB; sees
+  delay A: Digital Mono; bypass
+  drive B: T808 OD; sees
+  phaser A: Script 90; bypass
+  reverb A: Room: Recording Studio A; sees
+Scene 3: SOLO
+  amp B: Brit JVM OD1 Orange; sees; Level -10.5002 dB
+  cab B: 4x12 Friedman GB + 4x12 Friedman GB; sees
+  delay A: Digital Mono; sees
+  drive A: DS1 Distortion Mod; sees
+  phaser A: Script 90; sees
+  reverb B: Plate: Medium Plate; sees
+Scene 4: SOLO JS410
+  amp D: JS410 Lead Orange; sees; Level -6.9997 dB
+  cab D: 4x12 1960TV + 4x12 1960TV; sees
+  delay B: Digital Stereo; sees
+  drive A: DS1 Distortion Mod; sees
+  phaser A: Script 90; sees
+  reverb B: Plate: Medium Plate; sees
+Scene 5: CRUNCH FULL
+  amp C: Brit JVM Crunch Orange; sees; Level -9.9997 dB
+  cab C: 4x12 Friedman GB + 4x12 Friedman GB; sees
+  delay A: Digital Mono; bypass
+  drive A: DS1 Distortion Mod; bypass
+  phaser A: Script 90; bypass
+  reverb A: Room: Recording Studio A; sees
+Scene 6: RIFF DRY
+  amp A: Brit JVM Crunch Red; sees; Level -9.9997 dB
+  cab A: 4x12 Friedman GB + 4x12 Friedman GB; sees
+  delay A: Digital Mono; bypass
+  drive A: DS1 Distortion Mod; bypass
+  phaser A: Script 90; bypass
+  reverb A: Room: Recording Studio A; bypass
+Scene 7: SOLO DRY
+  amp B: Brit JVM OD1 Orange; sees; Level -10.5002 dB
+  cab B: 4x12 Friedman GB + 4x12 Friedman GB; sees
+  delay A: Digital Mono; bypass
+  drive A: DS1 Distortion Mod; sees
+  phaser A: Script 90; bypass
+  reverb A: Room: Recording Studio A; sees
+Scene 8: SOLO LONG DLY
+  amp B: Brit JVM OD1 Orange; sees; Level -10.5002 dB
+  cab B: 4x12 Friedman GB + 4x12 Friedman GB; sees
+  delay B: Digital Stereo; sees
+  drive A: DS1 Distortion Mod; sees
+  phaser A: Script 90; sees
+  reverb B: Plate: Medium Plate; sees
+
+TABELIGA MÄÄRATUD PARAMEETRID — LÕPPFAILIST
+amp A Gain (DISTORT_DRIVE): 6.5 /10; küsitud 6.5; raw 42597; taper-class-verified.
+amp A Bass (DISTORT_BASS): 5 /10; küsitud 5; raw 32767; taper-class-verified.
+amp A Mid (DISTORT_MID): 7.5001 /10; küsitud 7.5; raw 49151; taper-class-verified.
+amp A Treble (DISTORT_TREBLE): 4.5 /10; küsitud 4.5; raw 29490; taper-class-verified.
+amp A Presence (DISTORT_PRESENCE): 4.0001 /10; küsitud 4; raw 26214; taper-class-verified.
+amp B Gain (DISTORT_DRIVE): 5.9999 /10; küsitud 6; raw 39320; taper-class-verified.
+amp B Bass (DISTORT_BASS): 4.0001 /10; küsitud 4; raw 26214; taper-class-verified.
+amp B Mid (DISTORT_MID): 7.5001 /10; küsitud 7.5; raw 49151; taper-class-verified.
+amp B Treble (DISTORT_TREBLE): 5 /10; küsitud 5; raw 32767; taper-class-verified.
+amp B Presence (DISTORT_PRESENCE): 4.5 /10; küsitud 4.5; raw 29490; taper-class-verified.
+amp C Gain (DISTORT_DRIVE): 5.9999 /10; küsitud 6; raw 39320; taper-class-verified.
+amp C Bass (DISTORT_BASS): 5.5 /10; küsitud 5.5; raw 36044; taper-class-verified.
+amp C Mid (DISTORT_MID): 7.5001 /10; küsitud 7.5; raw 49151; taper-class-verified.
+amp C Treble (DISTORT_TREBLE): 4.5 /10; küsitud 4.5; raw 29490; taper-class-verified.
+amp C Presence (DISTORT_PRESENCE): 4.0001 /10; küsitud 4; raw 26214; taper-class-verified.
+amp C Amp1 Level (DISTORT_LEVEL): -9.9997 dB; küsitud -10; raw 45874; taper-class-verified.
+amp D Gain (DISTORT_DRIVE): 5.9999 /10; küsitud 6; raw 39320; taper-class-verified.
+amp D Bass (DISTORT_BASS): 3.5 /10; küsitud 3.5; raw 22937; taper-class-verified.
+amp D Mid (DISTORT_MID): 7 /10; küsitud 7; raw 45874; taper-class-verified.
+amp D Treble (DISTORT_TREBLE): 5 /10; küsitud 5; raw 32767; taper-class-verified.
+drive A Distortion (FUZZ_DRIVE): 2.5001 /10; küsitud 2.5; raw 16384; measured.
+drive A Tone (FUZZ_TONE): 5.9999 /10; küsitud 6; raw 39320; measured.
+drive A Level (FUZZ_LEVEL): 6.5 /10; küsitud 6.5; raw 42597; measured.
+drive A Mix (FUZZ_MIX): 100 %; küsitud 100; raw 65534; measured.
+drive B Drive (FUZZ_DRIVE): 1.5 /10; küsitud 1.5; raw 9830; measured.
+drive B Tone (FUZZ_TONE): 5.5 /10; küsitud 5.5; raw 36044; measured.
+drive B Level (FUZZ_LEVEL): 7 /10; küsitud 7; raw 45874; measured.
+drive B Mix (FUZZ_MIX): 100 %; küsitud 100; raw 65534; measured.
+delay A Tempo (DELAY_TEMPO): NONE  ; küsitud NONE; raw 0; enum-labels-crosschecked.
+delay A Time (DELAY_TIME): 379.8941 ms; küsitud 380; raw 1552; taper-class-verified.
+delay A Feedback (DELAY_FEED): 22.0008 %; küsitud 22; raw 39976; taper-class-verified.
+delay A Mix (DELAY_MIX): 15.9993 %; küsitud 16; raw 10485; linear-by-structure.
+delay B Tempo (DELAY_TEMPO): NONE  ; küsitud NONE; raw 0; enum-labels-crosschecked.
+delay B Time (DELAY_TIME): 479.9886 ms; küsitud 480; raw 1962; taper-class-verified.
+delay B Feedback L (DELAY_FEED): 31.9987 %; küsitud 32; raw 43252; taper-class-verified.
+delay B Mix (DELAY_MIX): 23.9998 %; küsitud 24; raw 15728; linear-by-structure.
+reverb A Mix (REVERB_MIX): 11.9999 %; küsitud 12; raw 7864; linear-by-structure.
+reverb B Mix (REVERB_MIX): 17.9998 %; küsitud 18; raw 11796; linear-by-structure.
+amp A Amp1 Level (DISTORT_LEVEL): -9.9997 dB; küsitud -10; raw 45874; taper-class-verified.
+amp B Amp1 Level (DISTORT_LEVEL): -10.5002 dB; küsitud -10.5; raw 45546; taper-class-verified.
+amp D Amp1 Level (DISTORT_LEVEL): -6.9997 dB; küsitud -7; raw 47840; taper-class-verified.
+out1 A Scene 8 Level (OUTPUT_SCENE8): 0.9998 dB; küsitud 1; raw 34405; taper-class-verified.
+out1 B Scene 8 Level (OUTPUT_SCENE8): 0.9998 dB; küsitud 1; raw 34405; taper-class-verified.
+out1 C Scene 8 Level (OUTPUT_SCENE8): 0.9998 dB; küsitud 1; raw 34405; taper-class-verified.
+out1 D Scene 8 Level (OUTPUT_SCENE8): 0.9998 dB; küsitud 1; raw 34405; taper-class-verified.
+out1 A Scene 5 Level (OUTPUT_SCENE5): 0.9998 dB; küsitud 1; raw 34405; taper-class-verified.
+out1 B Scene 5 Level (OUTPUT_SCENE5): 0.9998 dB; küsitud 1; raw 34405; taper-class-verified.
+out1 C Scene 5 Level (OUTPUT_SCENE5): 0.9998 dB; küsitud 1; raw 34405; taper-class-verified.
+out1 D Scene 5 Level (OUTPUT_SCENE5): 0.9998 dB; küsitud 1; raw 34405; taper-class-verified.
+
+MUUD PÕHISEADED LÕPPFAILIST
+Ümardatud salvestatud väärtused; detailne loend ja toorsõnad on validation.json failis.
+amp D Presence: 3 /10 [taper-class-verified]
+reverb A Time: 0.9003 s [taper-class-verified]
+reverb B Time: 1.9506 s [taper-class-verified]
+
+SÕLTUVUSED JA KONTROLLITASE
+Kanalimuudatus mõjutab kõiki seda kanalit kasutavaid stseene. Määramata väärtused pärinevad alusest või kopeeritud täiskanalimallist.
+Cab-mallid kasutavad olemasolevat Dyna-Cab teeki. Väliseid User IR-faile ei paigaldata; muutmata IR/pedaali/globaalseadistuse sõltuvused säilivad alusfailist.
+Koostamisel kontrolliti lõppfaili kaadreid, CRC-d, sisu, marsruutimist ja deklareeritud muudatusi. Nelja väljundfaili terviklikkuse kinnitab edukas --verify. Selle lõppfaili import, heli ja CPU pole uue kontrolliga kinnitatud.
+Choruse, Drive’i, Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri parameetriloend ning tabelikirjutused järgivad piiratud FW13 tüübi- ja algoritmireegleid. Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri mudelivahetus ning Phaseri Mode nõuavad täiskanalimalli. Rotaryl puudub tüübi valija; PID 0 on Rate. Pitchi 16 mudelit kontrollitakse eraldi ja TYPE nõuab täiskanalimalli; 34 täisarvu/enum-välja kasutavad eraldi kontrollitud presetisõna kodeeringut. Seitse kohandatud noodivälja nõuavad kogu lõpliku skaala kontrolli; toonika kuvaseade jääb suletuks. Globaalse skaala valik ei lisa presetile skaala sisu ning salvestatud arpedžiaatorisamm ei kinnita selle kõlamist. 6. punkti 13 pere / 515 PID-i XML-nähtavus on kontrollitud. MultiDelay metaandmestik on ainult loetav ega ava selle ploki lisamist. Mõõdikud, tegevusnupud ja XML-is puuduvad juhikud ei ole skalaarseadistused. 21 põhiseost ning 10 Plexi/TenTapi tempo-seost ja olemasolevad modifikaatorisihtmärgid on eraldi kontrollitud; muud sõltuvused, sh Compressori automaatne ajastus/võimendus ja muude plokkide tüübinähtavus, jäävad katmata. Tempo või modifikaatori juhitud parameetri salvestatud väärtus ei tõenda hetkel kõlavat väärtust. Peidetud salvestatud sõnad säilivad toorandmetena.
+
+KASUTAMINE
+1. Säilita pooleliolev töö ning impordi fail FM3-Editi tööpuhvrisse.
+2. Kontrolli veateateid, valitud Scene 1, kanaleid ja soovitud helitasemeid.
+3. Uut eksporti küsi ainult konkreetse seni kinnitamata katse jaoks; varasemaid piisavaid tõendeid kasuta uuesti.
+Generaator ei ava seadmeühendust ega saada MIDI/SET/SAVE-käske.
+SHA-256: cc24d3f7cfcb5a6537a07a12fc6246a9de94c49bcf84301a8a632916c1437037
+
+CPU HINNANG (FM3 Mk II Turbo, püsivara 13; mõõdetud 2026-10-23)
+Suurim: 62.4 % (Scene 3); ohutu piir 80 %.
+Stseenid: S1 46.9 %, S2 46.9 %, S3 62.4 %, S4 62.4 %, S5 46.9 %, S6 46.9 %, S7 46.9 %, S8 62.4 %
+Kõigi plokkide valitud tüüpidel on mõõteandmed; nende summa ei taga presetipõhist veapiiri.
+Koondmudeli kontrollnäide G06: hinnang 44,3 %, mõõdetud 41,5 % (erinevus 2,8 protsendipunkti).
+Amp ja Delay töötavad eraldi tuumal; selle koormust see hinnang ei näe.

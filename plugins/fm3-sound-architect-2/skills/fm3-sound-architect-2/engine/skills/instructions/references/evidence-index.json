@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2125,
-  "filePaths": 2329,
+  "uniqueContents": 2128,
+  "filePaths": 2332,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1852,6 +1852,12 @@
       "paths": [
         "references/drive-batch-20261006-110109/capture-001/labels.json",
         "references/drive-batch-20261006-112254/capture-001/labels.json"
+      ]
+    },
+    "266b7fa24f06edecbd04e8a228eaaeee2bd49f907031b3a5cf834094abe87407": {
+      "bytes": 12597,
+      "paths": [
+        "examples/SATRIANI_SOAP_ON_A_ROPE_V4.spec.json"
       ]
     },
     "268c426357a8db5ff61de1456168ae6b0dfe49541920ca8766dfafc549bd6f61": {
@@ -6345,6 +6351,12 @@
         "references/geq-full-20261010-194115/step-049-9a21155b46/result.json"
       ]
     },
+    "802c614b8697fdb14535ec93e23124245430a3d67f55774ba3869a3246cf9384": {
+      "bytes": 10748,
+      "paths": [
+        "references/fm3-modifier-lifecycle-evidence.json"
+      ]
+    },
     "80816bd29feaa63880b74ec9ca962ac5445feac1476ca390beced7c5c13c9629": {
       "bytes": 3428,
       "paths": [
@@ -8943,6 +8955,12 @@
         "examples/FM3_PEQ_ABCD_TEST_export.syx"
       ]
     },
+    "b48bc60cc221c4599b2f27e8aecf9ac3ce71b059a1354375e96b2b071151b787": {
+      "bytes": 1048429,
+      "paths": [
+        "examples/SATRIANI_SOAP_ON_A_ROPE_V4.validation.json"
+      ]
+    },
     "b49284b82199d6ae4bd364545605a6ef2db1886a6adaaacbc5011caeddfcc25a": {
       "bytes": 24680,
       "paths": [
@@ -10134,6 +10152,12 @@
         "references/reverb-batch-20261006-181951/capture-001/donor.syx",
         "references/reverb-capture/FM3_REVERB_SELECTION_001.syx",
         "references/reverb-seed-result/FM3_REVERB_SELECTION_001.syx"
+      ]
+    },
+    "cc24d3f7cfcb5a6537a07a12fc6246a9de94c49bcf84301a8a632916c1437037": {
+      "bytes": 24680,
+      "paths": [
+        "examples/SATRIANI_SOAP_ON_A_ROPE_V4.syx"
       ]
     },
     "cc401d0e934272ca3bcd72cdac8d9983e0adf711aea6c1cfd8ffe16b5ced7859": {
@@ -12488,12 +12512,6 @@
       "bytes": 1804,
       "paths": [
         "references/filter-controls-20261008-165150/step-08-9516c67865/result.json"
-      ]
-    },
-    "f8fa6b4077772ee33a18f0da7fa18cdc282b82a8e465563793da8a253e2b9da7": {
-      "bytes": 10748,
-      "paths": [
-        "references/fm3-modifier-lifecycle-evidence.json"
       ]
     },
     "f90520e6a7d617dd7e8932e83200631d028061d42722e81515eced962baf335b": {
