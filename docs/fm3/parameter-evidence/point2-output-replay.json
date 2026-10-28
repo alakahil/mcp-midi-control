@@ -5,13 +5,13 @@
   "scope": "Deterministic consistency of supported SYX/TXT/spec/report bundles; not an independent DSP model or authenticity signature",
   "sources": {
     "tools/fm3/point2-evidence.mjs": "5beaa606fe4954ecae49c434f447f49c4288e56ea06ae2e32eec2c178e95b105",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-output.mjs": "71ce86eb03bfa7eb0406e1609b47cd889688f093ebc3236fb5076da606375813",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-output.mjs": "bc51afb7938811c3e98df4533c62b3efda1d132c5c52638cda2f314ea691045d",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset.mjs": "a264cd9e881cefd16a07537bd80bb33e811ee350cb56c2a57b886a85df345ce6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset-core.mjs": "9538c809743d216d3334fb51acaf7fee71e33daf7da8c21eec8336acd571bfda",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-sound.mjs": "cd1e0b2c88a34cc41921b896efc0bee17e584c24578184bcf8c2459c667d67bb",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-sound.mjs": "19f84e48d18a1da284639cf2113fd29747f908143be910f141977fcb2a2460a1",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-jb-composer.mjs": "7bf064a6edca0495c04fbbb696d0a6b6fe09af6e5cc8ca8044b5af3a6e4ff115",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-final-state.mjs": "aeb2949d7ed2c3de30906a7f295bdfdcff470f2dde83f22b712ceddb178f1448",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-controls-output.mjs": "7d0a6bf4b2bb8bb6a466e43a746a77e71b51194f41f8d5672caade1dd911699e",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-final-state.mjs": "54000ab11485790d8cb54eef3c29d92b0438a135300d48545a8f4062f5d3d591",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-controls-output.mjs": "ba30e7577150e2c79d7d51e0e7bece3699cd727f8b5e23dd0406a241d9aa7868",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-output-replay.mjs": "f15db063408025ca3408245bfc260476b3fc0ad2140647772a10ab95b27bf36a",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-example-bundles.mjs": "481a033cbb97b1b9dafb9d0c1876227105b280cdaa2e03762373fb05db8d96f7"
   },
