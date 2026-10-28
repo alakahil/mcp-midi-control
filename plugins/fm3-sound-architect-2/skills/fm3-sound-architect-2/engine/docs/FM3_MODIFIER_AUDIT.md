@@ -194,6 +194,17 @@ Samaaegne Wah/Volume, vaba kirjepesa jaotamine ja globaalsed pedaalimäärangud
 ei saa 0.3.20-ga uut kirjutustuge. Kahe sihi ühine External 1 allikas oleks
 ühine juhtsignaal; eraldi pedaalide määrangut ei tohi sellest oletada.
 
+## Seis 28.10.2026 (0.3.30–0.3.32)
+
+- Väljade dekodeering on koondatud failis `docs/fm3/parameter-evidence/modifier-fields-status.md`: sõna indeks =
+  modifikaatori PID. Min/Max on sihtparameetri salvestussõna (T7b; Volume'il seadmes kinnitatud T10-s).
+- Kirjutajad: Control Switch → Amp lülitid (vaikemall, `invert`, `channel`), Volume pedaal (kirje 0 või Wahi
+  kõrval kirje 1, `min`/`max`). Wah + Volume + kaks Control Switchi jäid pärast STORE-i alles (T9).
+- FM3 eemaldamise kuju: sõnad 0, 8 ja 9 saavad nulli, teised jäävad, ja kirjeid ei kompakteerita
+  (`references/fm3-modifier-removal-20261028.json`). See on koodekina olemas (`fm3-modifier-removal.mjs`).
+- `modifier-fields-audit.json` on oma baas-commiti replay ja jääb muutmata. Selle sõnade 1/2 „blocked“ otsuse asendab
+  ülalnimetatud seisufail.
+
 ## Elutsükli audit (0.3.21)
 
 `lifecycle` seob leitud FW13 otsingu/loomise/eemaldamise harud räsitud tõenditega.

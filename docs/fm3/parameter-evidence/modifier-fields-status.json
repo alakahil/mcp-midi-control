@@ -1,0 +1,227 @@
+{
+ "schemaVersion": 1,
+ "date": "2026-10-28",
+ "scope": "Offline join of existing receipts; no new device I/O.",
+ "sources": {
+  "audit": {
+   "path": "docs/fm3/parameter-evidence/modifier-fields-audit.json",
+   "sha256": "961885bf2fe2476a3d32da3e808a5b738646223f74cf98256e4d0079b1a211da"
+  },
+  "display": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-modifier-display-20261028.json",
+   "sha256": "a05a22e35e5c7a157a15fd093d92a5653fcaaf85736f4da2b5a57068ee279e9a"
+  },
+  "volumeRange": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-volume-range-20261028.json",
+   "sha256": "2a816bf1e748fc1be61a6a3fff8210dfd39d63f1d19ca332cc71917ec8a3081b"
+  },
+  "bindStore": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-bind-store-20261028.json",
+   "sha256": "059382c1f7e8d896f77451a2645d2a946f26d43069ed334b7ddb24b8b94c1d45"
+  },
+  "controlSwitches": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-control-switch-evidence-20261028.json",
+   "sha256": "7b7e7e2f8addc4abe9da2c7fd2b9ae8866aa98f10b88e9b6da83e43674f29945"
+  },
+  "removal": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-modifier-removal-20261028.json",
+   "sha256": "585ac02a39738b6f7c4d5bcccbb411b59f7b64d30f0f3574253926fd28913675"
+  }
+ },
+ "wordIndexIsModifierPid": "The Codex field audit maps native MOD descriptor PIDs to record words 1:1 (MOD_AUTOENGAGE PID 10 = body offset 1604 = word 10).",
+ "fields": [
+  {
+   "word": 0,
+   "name": "Source",
+   "codexAudit": null,
+   "display": "code + 1 is the FM3 list number (51 -> \"52 Control Switch 2\", 14 -> \"15 External 1\")",
+   "status": "decoded",
+   "writer": "controlSwitches (Control Switch 1..6), volumePedal (External 1), Wah toggle"
+  },
+  {
+   "word": 1,
+   "name": "MOD_MIN",
+   "codexAudit": {
+    "pid": 1,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "target stored word: Rotary Rate 3299 -> 0.503 Hz; Amp GEQ band 32854 -> 0.03; Volume 16384 -> 2.50 (T10); switch 0 -> OFF, 65534 -> ON",
+   "status": "decoded, device-confirmed on Volume",
+   "writer": "volumePedal {min,max}; controlSwitches invert"
+  },
+  {
+   "word": 2,
+   "name": "MOD_MAX",
+   "codexAudit": {
+    "pid": 2,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "target stored word: Rotary Rate 42097 -> 6.424 Hz; Amp GEQ band 43630 -> 3.98; Volume 49151 -> 7.50 (T10)",
+   "status": "decoded, device-confirmed on Volume",
+   "writer": "volumePedal {min,max}; controlSwitches invert"
+  },
+  {
+   "word": 3,
+   "name": "MOD_STARTPT",
+   "codexAudit": {
+    "pid": 3,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "0 -> 0.0%",
+   "status": "default only",
+   "writer": "template value"
+  },
+  {
+   "word": 4,
+   "name": "MOD_MIDPT",
+   "codexAudit": {
+    "pid": 4,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "32767 -> 50%; 30368 -> 46.3% (word / 65534)",
+   "status": "decoded (2 points)",
+   "writer": "template value"
+  },
+  {
+   "word": 5,
+   "name": "MOD_ENDPT",
+   "codexAudit": {
+    "pid": 5,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "65534 -> 100%",
+   "status": "default only",
+   "writer": "template value"
+  },
+  {
+   "word": 6,
+   "name": "MOD_SLOPE",
+   "codexAudit": {
+    "pid": 6,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "32767 -> 50%; 39651 -> 60.5% (word / 65534)",
+   "status": "decoded (2 points)",
+   "writer": "template value"
+  },
+  {
+   "word": 7,
+   "name": "MOD_ATTACK",
+   "codexAudit": {
+    "pid": 7,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "66 -> 10.1 ms; 65 -> 9.9 ms",
+   "status": "two points",
+   "writer": "template value"
+  },
+  {
+   "word": 8,
+   "name": "Target effect ID",
+   "codexAudit": null,
+   "display": "-",
+   "status": "structural",
+   "writer": "all writers"
+  },
+  {
+   "word": 9,
+   "name": "Target PID",
+   "codexAudit": null,
+   "display": "-",
+   "status": "structural",
+   "writer": "all writers"
+  },
+  {
+   "word": 10,
+   "name": "MOD_AUTOENGAGE",
+   "codexAudit": {
+    "pid": 10,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "0 -> OFF; 5 -> MED POS",
+   "status": "two labels (plus the existing Wah OFF / MED SPD pair)",
+   "writer": "Wah modifier (existing)"
+  },
+  {
+   "word": 12,
+   "name": "MOD_OFFVAL",
+   "codexAudit": {
+    "pid": 12,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "0 and 65534 both displayed 5.0%",
+   "status": "unresolved (readings do not discriminate)",
+   "writer": "template value"
+  },
+  {
+   "word": 13,
+   "name": "MOD_SCALE",
+   "codexAudit": {
+    "pid": 13,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "32767 -> 1.000; 39366 -> 1.590 (10^((w - 32767) / 32767) fits)",
+   "status": "one non-default point",
+   "writer": "template value"
+  },
+  {
+   "word": 14,
+   "name": "MOD_OFFSET",
+   "codexAudit": {
+    "pid": 14,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "32767 -> 0.0%",
+   "status": "default only",
+   "writer": "template value"
+  },
+  {
+   "word": 15,
+   "name": "MOD_RELEASE",
+   "codexAudit": {
+    "pid": 15,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "66 -> 10.1 ms; 65 -> 9.9 ms",
+   "status": "two points",
+   "writer": "template value"
+  },
+  {
+   "word": 17,
+   "name": "Channel",
+   "codexAudit": null,
+   "display": "0 -> ALL; 4 -> CHAN D; 1 -> CHAN A",
+   "status": "decoded",
+   "writer": "controlSwitches channel"
+  },
+  {
+   "word": 20,
+   "name": "Secondary source",
+   "codexAudit": null,
+   "display": "0 in every written record",
+   "status": "not written",
+   "writer": "-"
+  },
+  {
+   "word": 24,
+   "name": "MOD_DAMPING",
+   "codexAudit": {
+    "pid": 24,
+    "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
+   },
+   "display": "template value -> EXPONENTIAL",
+   "status": "default only (plus the existing Wah Damping pair)",
+   "writer": "Wah modifier (existing)"
+  }
+ ],
+ "supersedes": "modifier-fields-audit.json writeDecision \"blocked-pending-discriminating-preset-and-display-evidence\" for words 1 and 2 (that file is a pinned replay of its baseline commit and is not rewritten).",
+ "removal": "words 0, 8 and 9 -> 0, other words kept, no compaction (references/fm3-modifier-removal-20261028.json)",
+ "storeReload": "Wah + Volume + two Control Switch records stored and reloaded unchanged (T9, references/fm3-bind-store-20261028.json)",
+ "stillOpen": [
+  "Start / End / Offset away from their defaults",
+  "Off Value (word 12)",
+  "Scale beyond one point",
+  "Attack / Release scale beyond 65 / 66",
+  "curve writing (Mid, Slope, Scale)"
+ ]
+}

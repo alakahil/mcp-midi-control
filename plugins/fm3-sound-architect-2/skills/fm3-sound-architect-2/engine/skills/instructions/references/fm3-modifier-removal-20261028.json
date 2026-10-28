@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "firmware": 13,
+ "date": "2026-10-28",
+ "scope": "Modifier records of one user-owned commercial FW13 tonepack as serialised by the FM3 (counts only; tools/fm3/tonepack-structure-evidence.mjs).",
+ "corpus": {
+  "presets": 384,
+  "activeRecords": 1624,
+  "inactiveRecords": 10664,
+  "unusedRecords": 10012,
+  "initialisedInactiveRecords": 652,
+  "initialisedInactiveWithTargetCleared": 652,
+  "initialisedInactiveWithTargetKept": 0,
+  "initialisedInactiveBetweenActive": 265,
+  "initialisedInactiveAfterLastActive": 387,
+  "initialisedInactiveKeepingNonDefaultMinMax": 50,
+  "activeRecordsAllContiguousFrom0or1": 307,
+  "presetsWithActive": 331
+ },
+ "removalForm": {
+  "clearedWords": [
+   0,
+   8,
+   9
+  ],
+  "meaning": "source, target effect ID and target PID set to 0",
+  "keptWords": "all other words (Min/Max, curve, times, channel, words 21-24)",
+  "compaction": false
+ },
+ "findings": [
+  "All 652 initialised but inactive records (source 0) also have target effect 0 and PID 0, and keep their other words (50 keep a non-default Min/Max): this is the form a removed binding leaves.",
+  "265 of them sit between active records: the FM3 does not move later bindings down when one is removed.",
+  "The 10012 other inactive records are unused (words 0-20 zero, 21/22 = 65534)."
+ ],
+ "use": "scripts/fm3-modifier-removal.mjs writes this form for one record (codec only; no generator field uses it yet because every generated preset starts from a base without that binding).",
+ "notProven": [
+  "device import of a file where a binding was removed this way",
+  "FM3-Edit behaviour when such a record is reused"
+ ]
+}

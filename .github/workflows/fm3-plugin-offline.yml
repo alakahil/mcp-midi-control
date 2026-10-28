@@ -87,6 +87,7 @@ jobs:
           node tools/fm3/mod-display-ingest.mjs
           node tools/fm3/cpu-t8-ingest.mjs
           node tools/fm3/volume-range-ingest.mjs
+          node tools/fm3/modifier-fields-status.mjs
           python3 -B plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/cpu-sweep-collector/FM3_BIND_STORE.py --self-test
           python3 -B plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/cpu-sweep-collector/FM3_MOD_READ.py --self-test
           python3 -B plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/cpu-sweep-collector/FM3_CPU_STEPS.py --self-test

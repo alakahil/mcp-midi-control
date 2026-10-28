@@ -16,6 +16,13 @@ ja `DISTORT_SATSWITCH` (Saturation Switch). Kanalid on alati ALL ja Min/Max täi
 }
 ```
 
+## Lisavalikud (0.3.32)
+
+- `invert:true` kirjutab Min 65534 ja Max 0. FM3 näitab Min ON ja Max OFF (T7), nii et lüliti vajutamine lülitab
+  sihtmärgi välja. Tonepackis on sellist pööratud seost 164 korral.
+- `channel:"A"|"B"|"C"|"D"` kirjutab sõnasse 17 väärtuse 1..4 (vaikimisi ALL = 0). T7-s näitas FM3 väärtusele 4 CHAN D.
+  Teiste kanalite staatiline `controls` kirjutus samale lülitile on lubatud; seotud kanali oma tõrjutakse.
+
 ## Kirje ja paigutus
 
 - Kirjutaja kasutab FM3 enda vaikemalli: `[allikas, 0, 65534, 0, 32767, 65534, 32767, 66, 58, PID, 0, 0, 0,
