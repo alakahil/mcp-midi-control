@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2129,
-  "filePaths": 2333,
+  "uniqueContents": 2132,
+  "filePaths": 2336,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -285,6 +285,12 @@
       "bytes": 5023,
       "paths": [
         "references/geq-full-20261010-194115/step-026-a2e9bc2d7f/capture.json"
+      ]
+    },
+    "059382c1f7e8d896f77451a2645d2a946f26d43069ed334b7ddb24b8b94c1d45": {
+      "bytes": 3415,
+      "paths": [
+        "references/fm3-bind-store-20261028.json"
       ]
     },
     "059d90d1cce46c507d9715597aff717c24048b6ab93a19cc9f7a541209714f64": {
@@ -4166,6 +4172,12 @@
       "bytes": 24680,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T111455-04a249b6ed/donor.syx"
+      ]
+    },
+    "53e502a7abe9e79592cdf8c4098cbae3e23269c32ad77f37a2b37f0e858f4769": {
+      "bytes": 3121,
+      "paths": [
+        "references/fm3-cpu-t8-20261028.json"
       ]
     },
     "53e822f7c6a6bc53cb8c66bbfd23bdc9374e48af43d5b4384752ae5f48bf7f88": {
@@ -11681,6 +11693,12 @@
       "bytes": 2279,
       "paths": [
         "references/geq-full-20261010-194115/step-063-074a631538/result.json"
+      ]
+    },
+    "e71b44d8ee6c0191513f2231dfdb9dd9069d89e20a55cdfccb8ad7f011bacb3e": {
+      "bytes": 7161,
+      "paths": [
+        "references/fm3-modifier-display-20261028.json"
       ]
     },
     "e72e52a16122fa442a2fe058a12801f51029944750e48de094f1316fb8736a55": {
