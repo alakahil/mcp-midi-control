@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.31`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.32`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -130,8 +130,8 @@ ega tõendatud heliühendus. Tundmatuid bitte ära eemalda ega tõlgenda.
 
 `consistent-known-edges` ei kinnita heli, bypass'i, IR-i, Mixeri/Multiplexeri
 sisemist valikut ega kirjutusluba. Send/Return on auditis eraldi lõpp ja allikas;
-audit ei lisa nende vahele oletuslikku kaablit. In 2/Out 2 tuvastamine ei ava
-nende kirjutustuge ega kinnita FOH+monitori või 4CM-i töövoogu. Osaline
+audit ei lisa nende vahele oletuslikku kaablit. Out 2 kirjutamine on olemas (`duplicate:["out2"]`, 0.3.32);
+In 2 tuvastamine ei ava kirjutustuge. FOH+monitori ega 4CM-i töövoogu see ei kinnita. Osaline
 kirjelugemine ei tõenda puuduvat plokki; eraldatud plokk võib olla tahtlik.
 Generaator kasutab endiselt ainult toetatud alusfaile ja tervikpreseti kontrolle.
 
@@ -329,6 +329,19 @@ ja `fullRangeEncodingProven=false` säilivad. Selle ekspordi kordamist pole vaja
 lisab FM3 vaikemalliga seose kanalitega ALL ja täisvahemikus Min/Max. Seosed lähevad kirjetesse alates kirjest 1,
 Wahi ja Volume'i kõrval kirjest 2. Mall tuleb FM3 enda salvestatud presetitest (1401 kirjet). STORE ja uuesti laadimine
 on kinnitatud (T9); lülitamine on kontrollimata. Control Switchi tüübi ja jalglüliti määrab kasutaja FM3-l. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md).
+0.3.32: `invert:true` (Min ON, Max OFF) ja `channel:"A".."D"` (sõna 17) on lisavalikud. Kuvamine on kinnitatud T7-s.
+
+## Out 2, bit 4 ja modifikaatori eemaldamine (0.3.32, offline)
+
+- **Out 2:** grid-režiimis `duplicate:["out2"]` ja `out2` lahter (tavaliselt Out 1 all, link samast reast). Kirje on
+  aluse Out 1 kirje ID-ga 43, nagu 332/332 FM3 salvestatud tonepacki presetis. Signaal Out 2 pesadest ja FOH/monitor
+  on seadmes kontrollimata. [Ruudustiku juhend](engine/docs/FM3_GRID.md#out-2-0332).
+- **Bit 4:** FW13 tonepacki 8463 lahtrist mitte ükski ei kasuta bitti 4 (`MOOTOR/references/fm3-grid-bit4-fw13-20261028.json`).
+  Generaator kirjutab edasi ainult bitte 0–3. Biti tähendus on teadmata.
+- **Eemaldamine:** FM3 jätab eemaldatud seose kirjesse allika, sihtploki ja PID-i nulliks ning ülejäänud sõnad alles.
+  Kirjeid ei nihutata (652/652 kirjet, `MOOTOR/references/fm3-modifier-removal-20261028.json`). `fm3-modifier-removal.mjs`
+  oskab seda kirjutada, aga generaator ei vaja seda veel, sest iga preset algab aluselt, millel seda seost pole.
+- **Väljade seis:** `docs/fm3/parameter-evidence/modifier-fields-status.md` (GitHub) koondab kõigi 25 sõna dekodeeringu.
 
 ## External 1 → Volume/Pan 1 (0.3.17)
 

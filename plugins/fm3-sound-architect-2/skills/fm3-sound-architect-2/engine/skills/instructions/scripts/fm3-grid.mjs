@@ -21,8 +21,13 @@ const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(v,m)=>{if(!v)throw Error(m)};
 const RECORDS_START=4610,ROWS=4,COLS=12;
 const gridAt=(row,col)=>GRID.start+col*16+row*4;
-const IO_SLUG={in1:IO.in1,out1:IO.out1,send:IO.send,return:IO.ret};
-const SOURCES=new Set(['in1','return']),OPTIONAL_INPUT=new Set(['synth']),SINKS=new Set(['out1','send']);
+// Out 2 (effect ID 43, 0.3.32): in 332/332 FM3-saved presets of a FW13 tonepack the Out 2 record is the
+// preset's own Out 1 record with effect ID 43 (header zero, 26 words x 4 channels) and directly follows
+// Out 1 in record order; 327/332 place it in Out 1's column, one row lower, fed from the same row
+// (references/fm3-out2-evidence-20261028.json). Its Out 1 template equals the jb-newlook base's Out 1.
+export const OUT2=43;
+const IO_SLUG={in1:IO.in1,out1:IO.out1,send:IO.send,return:IO.ret,out2:OUT2};
+const SOURCES=new Set(['in1','return']),OPTIONAL_INPUT=new Set(['synth']),SINKS=new Set(['out1','send','out2']);
 // Instances seen in the FW10 factory banks / FW13 exports (effect ID = base + n - 1).
 export const INSTANCE_LIMIT=Object.freeze({compressor:2,geq:2,peq:2,delay:2,chorus:2,flanger:2,phaser:2,wah:2,formant:2,volpan:2,tremolo:2,filter:4,drive:2,enhancer:2,resonator:2});
 const eidOfSlug=slug=>{
@@ -69,6 +74,13 @@ export function editRecords(syx,{remove=[],duplicate=[],add=[]}={}){
   for(const r of records)if(!removed.includes(r))keep.push(Buffer.from(original.subarray(r.header,r.header+r.size)));
   for(const g of readGrid(original))if(removed.some(r=>r.eid===g.id)){prefix.writeUInt16LE(0,gridAt(g.row,g.col));prefix.writeUInt16LE(0,gridAt(g.row,g.col)+2);}
   for(const slug of duplicate){
+    if(slug==='out2'){
+      const o1=records.find(x=>x.eid===IO.out1);check(o1,'out2 needs Out 1 in the preset');
+      check(!records.some(r=>r.eid===OUT2)&&!added.some(a=>a.eid===OUT2),'out2 already exists');
+      const rec=Buffer.from(original.subarray(o1.header,o1.header+o1.size));rec.writeUInt16LE(OUT2,0);
+      check(rec.subarray(2,42).every(x=>x===0),'Out 1 record header is not the I/O form');
+      added.push({slug,eid:OUT2,rec,from:'out1',after:IO.out1});continue;
+    }
     const base=baseSlug(slug);check(base!==slug,'Duplicate needs an instance name such as drive2: '+slug);
     const n=Number(slug.slice(base.length));check(n<=(INSTANCE_LIMIT[base]??1),`${slug}: instance ${n} not evidenced on FM3 (limit ${INSTANCE_LIMIT[base]??1})`);
     const src=records.find(x=>x.family===(n===2?base:base+(n-1)))??records.find(x=>x.family===base);check(src&&!removed.includes(src),`${slug} needs ${base} in the preset`);
@@ -78,16 +90,19 @@ export function editRecords(syx,{remove=[],duplicate=[],add=[]}={}){
     added.push({slug,eid,rec,from:src.family});
   }
   check(new Set(duplicate).size===duplicate.length,'A block is duplicated twice');
-  const body=Buffer.concat([prefix,...keep,...added.map(a=>a.rec),original.subarray(tail)]);
+  // Records: kept order; Out 2 directly after Out 1 (as the FM3 serialises it), other additions at the end.
+  const keptRecords=records.filter(r=>!removed.includes(r)),ordered=[];
+  keptRecords.forEach((r,i)=>{ordered.push(keep[i]);for(const a of added.filter(a=>a.after===r.eid))ordered.push(a.rec);});
+  const body=Buffer.concat([prefix,...ordered,...added.filter(a=>!a.after).map(a=>a.rec),original.subarray(tail)]);
   const after=scanRecords(body);
   check(after.records.length===records.length-removed.length+added.length,'Record count after edit');
   check(body.subarray(after.tail).equals(original.subarray(tail)),'System tail changed');
   for(const a of added)check(after.records.some(r=>r.eid===a.eid&&r.family===a.slug),'Record not scanned as '+a.slug);
-  keep.forEach((k,i)=>{const n=after.records[i];check(body.subarray(n.header,n.header+n.size).equals(k),'Kept record modified');});
+  keptRecords.forEach((r,i)=>{const n=after.records.find(x=>x.eid===r.eid);check(n&&body.subarray(n.header,n.header+n.size).equals(keep[i]),'Kept record modified');});
   const out=reencode(syx,before,body);
   return {syx:out,removed:removed.map(r=>r.family),
     inserted:added.filter(a=>a.from==='device-default donor').map(a=>({block:a.slug,effectId:a.eid,defaultScenes:a.slug==='scenemidi'?'A, engaged (all 8 scenes)':'A, bypass (all 8 scenes)'})),
-    duplicated:added.filter(a=>a.from!=='device-default donor').map(a=>({block:a.slug,effectId:a.eid,from:a.from,defaultScenes:'A, bypass (all 8 scenes)'})),
+    duplicated:added.filter(a=>a.from!=='device-default donor').map(a=>({block:a.slug,effectId:a.eid,from:a.from,...(a.slug==='out2'?{record:'Out 1 record with effect ID 43 (I/O header, no scenes)',position:'after Out 1'}:{defaultScenes:'A, bypass (all 8 scenes)'})})),
     report:{stage:'fm3-grid records 0.1.0',outputSha256:sha(out),bodyBytes:body.length,
       checks:{keptRecordsByteIdentical:true,systemTailPreserved:true,instanceRecordsDifferOnlyInEffectIdAndScenes:true,bodyReadback:true}}};
 }
@@ -159,12 +174,14 @@ export function gridCapabilities(){
   return {field:'grid',rows:ROWS,columns:COLS,cell:'"" or null = empty, "-" = shunt, otherwise a placed block (in1, out1, send, return, amp, drive2, mixer ...)',
     links:'[{row,col,from:[rows]}] (1-based); default input is the same row of the previous column when occupied',
     sources:[...SOURCES],sinks:[...SINKS],inputOptional:[...OPTIONAL_INPUT],remove:'spec.remove: block names (not In 1/Out 1/Amp/Cab; Send+Return together)',
-    duplicate:{field:'spec.duplicate',instances:INSTANCE_LIMIT,record:'copy of the previous instance, own effect ID, all 8 scenes A/bypass'},
+    duplicate:{field:'spec.duplicate',instances:INSTANCE_LIMIT,record:'copy of the previous instance, own effect ID, all 8 scenes A/bypass',
+      out2:{name:'out2',record:'Out 1 record with effect ID 43, placed after Out 1 in record order',placement:'a sink like Out 1; FM3 presets put it below Out 1, fed from the same row (link {row, col 12, from:[Out 1 row]})',
+        evidence:'references/fm3-out2-evidence-20261028.json',cpu:'about 1 point (references/fm3-cpu-t8-20261028.json)',levels:'Out 2 scene levels stay at the Out 1 template default (0 dB); not writable',hardware:'not tested (import, signal on the Out 2 jacks)'}},
     insert:{field:'spec.insert',blocks:Object.keys(GRID_ADDABLE),record:'device-default donor, all 8 scenes A/bypass, no grid cell until placed'},
     evidence:'384 FW10 factory presets / 4801 cells: mask bit k = input from row k of the previous column (0 violations), 144 splits, 140 merges; instance records = instance 1 with its own effect ID (8 factory pairs)',
-    neverWritten:'grid mask bit 4 (seen on 8 factory cells: 6 merges and 2 single-input cells; meaning unknown)',sceneMidi:sceneMidiCapabilities(),hardware:'confirmed 2026-10-23: 7 generated grids (splits, merges, 4 rows, Mixer, Multiplexer, Synth source, Send/Return, instances, removals) read back identical in all 48 cells (references/fm3-grid-check-20261023.json); the FM3 screen showed the encoded branch',linkSemantics:'a link names its target cell; its source is the previous column. The report lists every split/merge source by block and warns when an Amp path reaches Out 1/Send without a Cab'};
+    neverWritten:'grid mask bit 4 (seen on 8 FW10 factory cells: 6 merges and 2 single-input cells; meaning unknown; 0 of 8463 cells in a FW13 tonepack, references/fm3-grid-bit4-fw13-20261028.json)',sceneMidi:sceneMidiCapabilities(),hardware:'confirmed 2026-10-23: 7 generated grids (splits, merges, 4 rows, Mixer, Multiplexer, Synth source, Send/Return, instances, removals) read back identical in all 48 cells (references/fm3-grid-check-20261023.json); the FM3 screen showed the encoded branch',linkSemantics:'a link names its target cell; its source is the previous column. The report lists every split/merge source by block and warns when an Amp path reaches Out 1/Send without a Cab'};
 }
-const nameOf=id=>id===IO.in1?'In 1':id===IO.out1?'Out 1':id===IO.send?'Send':id===IO.ret?'Return':id>=SHUNT_MIN?'-':(()=>{const b=blockOf(id);return b?(SLUG_BY_EID[b.block]??'eid'+id)+(b.instance>1?b.instance:''):'eid'+id})();
+const nameOf=id=>id===IO.in1?'In 1':id===IO.out1?'Out 1':id===OUT2?'Out 2':id===IO.send?'Send':id===IO.ret?'Return':id>=SHUNT_MIN?'-':(()=>{const b=blockOf(id);return b?(SLUG_BY_EID[b.block]??'eid'+id)+(b.instance>1?b.instance:''):'eid'+id})();
 export function describeGrid(body){
   const g=readGrid(body);
   return [0,1,2,3].map(r=>g.filter(x=>x.row===r).map(x=>x.id?nameOf(x.id)+(x.mask&&x.mask!==1<<r?'<'+[0,1,2,3].filter(k=>x.mask>>k&1).map(k=>k+1).join('+'):''):'.').join(' | '));
@@ -183,7 +200,7 @@ export function describeLinks(body){
 // Sound-design warnings (not refusals): an Amp output that reaches Out 1/Send without a Cab.
 export function gridWarnings(body){
   const g=readGrid(body),at=(r,c)=>g.find(x=>x.row===r&&x.col===c),warn=[];
-  const isAmp=id=>blockOf(id)?.block===58,isCab=id=>blockOf(id)?.block===62,sink=id=>id===IO.out1||id===IO.send;
+  const isAmp=id=>blockOf(id)?.block===58,isCab=id=>blockOf(id)?.block===62,sink=id=>id===IO.out1||id===IO.send;  // Out 2 not counted: keeps the pinned factory replay (Out 2 normally mirrors Out 1)
   const bad=(x,seen)=>{ // path from x (exclusive) to a sink that meets no Cab
     if(sink(x.id))return true;if(x.col===11)return false;
     return g.filter(y=>y.col===x.col+1&&y.id&&y.mask>>x.row&1).some(y=>!isCab(y.id)&&(sink(y.id)||bad(y,seen)));

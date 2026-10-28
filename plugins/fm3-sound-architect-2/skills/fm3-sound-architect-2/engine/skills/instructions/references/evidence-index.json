@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2133,
-  "filePaths": 2337,
+  "uniqueContents": 2136,
+  "filePaths": 2340,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1779,12 +1779,6 @@
         "references/filter-batch-20261008-132133/capture-20261008T132055-400fabfd5d/labels.json"
       ]
     },
-    "2409aecbf808fd1103bc5c8e2ae3fb518b626bcb3c7c613cd4deff1453405201": {
-      "bytes": 23638,
-      "paths": [
-        "references/offline-suite.json"
-      ]
-    },
     "241b83294cb731023219bc18077964db05fb7f3166f2e21ea79f88ffe9b8be5d": {
       "bytes": 5018,
       "paths": [
@@ -1864,6 +1858,12 @@
       "paths": [
         "references/drive-batch-20261006-110109/capture-001/labels.json",
         "references/drive-batch-20261006-112254/capture-001/labels.json"
+      ]
+    },
+    "2653e9ad9d691b03b17b2fff662b8a69539df3dcd07c0fcc47370d787d0ca987": {
+      "bytes": 1841,
+      "paths": [
+        "references/fm3-out2-evidence-20261028.json"
       ]
     },
     "266b7fa24f06edecbd04e8a228eaaeee2bd49f907031b3a5cf834094abe87407": {
@@ -3733,6 +3733,12 @@
         "references/drive-controls-20261006-123230/step-02-15c3334599/capture.json"
       ]
     },
+    "4b514abb50fdda0d4f32fc85302c673f3fea34a9ef16122b615cda1a307e28fa": {
+      "bytes": 1282,
+      "paths": [
+        "references/fm3-grid-bit4-fw13-20261028.json"
+      ]
+    },
     "4b849ed301e44e8cdd966fbb5433ecaf68643ed5965ca1181e216bf67b35d79a": {
       "bytes": 2266,
       "paths": [
@@ -4374,6 +4380,12 @@
       "bytes": 359,
       "paths": [
         "examples/FM3_PHASER_ABCD_TEST.spec.json"
+      ]
+    },
+    "585ac02a39738b6f7c4d5bcccbb411b59f7b64d30f0f3574253926fd28913675": {
+      "bytes": 1640,
+      "paths": [
+        "references/fm3-modifier-removal-20261028.json"
       ]
     },
     "587a4d70a967a8a168993fd1c0d56553cf06ab36f9c757426b5430d173f023ec": {
@@ -9001,6 +9013,12 @@
       "bytes": 3472,
       "paths": [
         "references/enhancer-lisa-20261012-125350/step-007-ffa21a8daf/capture.json"
+      ]
+    },
+    "b49ef66d087e2eed3b641b849ed742f6db5fb54d4eea7187b1c7badef947b3b5": {
+      "bytes": 24326,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "b4abab56d8e0fe278d1fb561a59beeafe3666adc3a94f902d50daf074307023a": {

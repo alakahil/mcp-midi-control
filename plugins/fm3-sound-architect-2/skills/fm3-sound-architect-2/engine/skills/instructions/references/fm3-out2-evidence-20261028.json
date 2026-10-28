@@ -1,0 +1,53 @@
+{
+ "schemaVersion": 1,
+ "firmware": 13,
+ "date": "2026-10-28",
+ "scope": "Aggregate structure of the Out 2 block (effect ID 43) in one user-owned commercial FW13 tonepack, as serialised by the FM3. Counts only: no preset files, names or parameter values. Produced by tools/fm3/out2-corpus-evidence.mjs.",
+ "corpus": {
+  "presets": 384,
+  "withOut2": 332,
+  "out2EqualsOwnOut1AfterEffectId": 332,
+  "out2EqualsBaseOut1AfterEffectId": 332,
+  "out2HeaderZeroExceptSize": 332,
+  "out2Cell": {
+   "row 3, col 12": 9,
+   "row 4, col 12": 315,
+   "row 4, col 11": 3,
+   "row 4, col 10": 1,
+   "row 3, col 11": 3,
+   "row 3, col 10": 1
+  },
+  "out2Mask": {
+   "2": 7,
+   "4": 325
+  },
+  "out2FedFromCellFeedingOut1": 327,
+  "out1Cell": {
+   "row 2, col 12": 9,
+   "row 3, col 12": 315,
+   "row 3, col 11": 3,
+   "row 3, col 10": 1,
+   "row 2, col 11": 3,
+   "row 2, col 10": 1
+  },
+  "recordAfterOut1": 332,
+  "deadPreCabShunts": 312,
+  "out2Words": {
+   "26": 332
+  },
+  "out2Channels": {
+   "4": 332
+  }
+ },
+ "findings": [
+  "In every preset with Out 2 (332/332) its record is the preset's own Out 1 record with effect ID 43: I/O header (zero), 26 words x 4 channels, and it follows Out 1 in record order.",
+  "The Out 2 record also equals the jb-newlook base's Out 1 record after the effect ID (332/332), so the base supplies the template; no tonepack content is copied.",
+  "315/332 place Out 2 at row 4, column 12 under Out 1 (row 3, column 12); 327/332 feed it from the same row as Out 1 (mask 4 = row 3, mask 2 = row 2).",
+  "312 presets also keep two shunts in row 4 (columns 10-11) fed from row 2 that reach no output (a pre-Cab branch template); the generator does not write them."
+ ],
+ "notProven": [
+  "Out 2 signal on the physical jacks",
+  "Out 2 scene levels (left at the Out 1 template default)",
+  "FOH/monitor or 4CM routing"
+ ]
+}

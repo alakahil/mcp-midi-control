@@ -565,6 +565,24 @@
       "required": true
     },
     {
+      "id": "test-out2",
+      "command": [
+        "node",
+        "scripts/test-out2.mjs"
+      ],
+      "scope": "Out 2 in grid mode: record = base Out 1 with effect ID 43 directly after Out 1, sink placement and link, aggregate tonepack receipt, invalid inputs and CRC-valid tamper rejection; no Out 2 jack or audio proof",
+      "required": true
+    },
+    {
+      "id": "test-modifier-removal",
+      "command": [
+        "node",
+        "scripts/test-modifier-removal.mjs"
+      ],
+      "scope": "FM3 removal form (words 0, 8, 9 -> 0, other words kept, no compaction) from an aggregate tonepack receipt; refusals; codec only, no device proof",
+      "required": true
+    },
+    {
       "id": "test-insert-applicability",
       "command": [
         "node",

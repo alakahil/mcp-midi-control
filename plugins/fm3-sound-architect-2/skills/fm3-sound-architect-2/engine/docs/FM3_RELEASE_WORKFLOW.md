@@ -10,7 +10,8 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.31 väljalaset: Volume pedaali numbriline Min/Max
+Praegune lähtekood valmistab ette 0.3.32 väljalaset: Out 2 grid-režiimis, Control Switchi `invert`/`channel`,
+modifikaatori eemaldamise koodek, bit 4 FW13 korpuses ja modifikaatori väljade seisufail. Selle aluseks on 0.3.31: Volume pedaali numbriline Min/Max
 (`volumePedal:{min,max}`) ja T7b modifikaatori korduslugemine. Selle aluseks on 0.3.30: Control Switch → Amp lülitite
 seosed (`controlSwitches`), Wah + Volume kahe seose paigutus (Volume kirjes 1), T7
 modifikaatorinäitude ja T8 CPU-sammude kogujad ning pordikontroll (`--check-port`).

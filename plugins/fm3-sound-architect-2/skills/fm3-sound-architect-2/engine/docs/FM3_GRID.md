@@ -33,7 +33,7 @@ kirjelugemine ei luba järeldada, et loemata plokk puudub.
 
 Send ja Return on selles graafis eraldi lõpp ja allikas. Nendevahelist kaudset
 sidet, füüsilist kaablit, USB-d ega globaalset I/O seadet ei simuleerita.
-In 2/Out 2 saab lugemisel ära tunda; nende kirjutamist ei lisata. Cab-ploki
+In 2/Out 2 saab lugemisel ära tunda. Out 2 kirjutamine on 0.3.32-st olemas (vt „Out 2“ allpool); In 2 kirjutamist ei lisata. Cab-ploki
 olemasolu ei kinnita stseeni bypass'i, kanalit, IR-i ega kuuldavat tulemust.
 Mixeri/Multiplexeri sisemised valikud ei kuulu kaabli-graafi tõendisse.
 
@@ -182,10 +182,36 @@ valesti (Send 182 → 54, Return 186 → 58, Plex 178 → 50, Multiplexer 191 �
 | G06 | eemaldamine ja üks rida |
 | G07 | Compressor 2, Drive 2, Delay 2 järjest |
 
+## Out 2 (0.3.32)
+
+Grid-režiimis `duplicate:["out2"]` lisab Out 2 ploki (efekti ID 43). Selle kirje on aluse Out 1 kirje ID-ga 43
+ja see tuleb kirjete järjekorras kohe Out 1 järel. Ruudustikus on `out2` väljund nagu Out 1. FM3 presetid
+panevad selle Out 1 alla samasse veergu ja toidavad seda samast reast:
+
+```json
+"grid": {"rows": [[...], [...rida 2...], [..., "out1"], ["", "", "", "", "", "", "", "", "", "", "", "out2"]],
+         "links": [{"row": 4, "col": 12, "from": [3]}]},
+"duplicate": ["out2"]
+```
+
+Tõend on `references/fm3-out2-evidence-20261028.json`. Kasutaja FW13 tonepackis on Out 2 332 presetis. Kõigis on
+Out 2 kirje sama mis preseti enda Out 1 kirje ja ka jb-newlook aluse Out 1 kirje (efekti ID-st alates). Kõigis tuleb
+see kirjete järjekorras kohe Out 1 järel. 327 presetis toidetakse Out 2 samast reast kui Out 1. Out 2 stseeninivood
+jäävad Out 1 malli vaikeväärtusele (0 dB) ega ole kirjutatavad. CPU-kulu on umbes 1 punkt
+(`references/fm3-cpu-t8-20261028.json`). Signaali Out 2 pesadest ja FOH/monitori jaotust ei ole seadmes
+kontrollitud. Tonepacki rea 4 surnud eel-Cabi shunte (312 presetti) ei kirjutata.
+
+## Bit 4 FW13 presetites (28.10.2026)
+
+`references/fm3-grid-bit4-fw13-20261028.json`: FM3-ga salvestatud FW13 tonepackis ei kasuta ükski 8463 hõivatud
+lahtrist maski bitti 4 ega kõrgemaid bitte, kuigi seal on 22 liitmist ja 679 hargnemist. FW13 liitmiste ja
+hargnemiste kirjeldamiseks piisab bittidest 0–3. Tehasekorpuse kaheksa bit 4 lahtrit pärinevad FW10 pankadest ja
+FM3 säilitab biti STORE-il (24.10.2026). Biti tähendus on endiselt teadmata. Generaator kirjutab edasi ainult bitte 0–3.
+
 ## Piirangud
 
 - Heli pole kontrollitud (kuulamine jääb järgmisse nädalasse). Ruudustiku kuju on seadmel kinnitatud.
 - Mixeri/Multiplexeri bypass-käitumine heli seisukohalt pole mõõdetud; testides on need Scene 1-s sisse lülitatud.
-- In 2 / Out 2 kirjutamine ja uue suvalise Feedback Send/Return seose lisamine pole toetatud;
+- In 2 kirjutamine ja uue suvalise Feedback Send/Return seose lisamine pole toetatud. Out 2 on toetatud, vt allpool;
   olemasoleva aluse ID-de 182/186 säilitamine või paarina eemaldamine on eespool kirjeldatud ulatuses olemas. Mixer 2+ eksemplare ei lubata (tehases ainult üks
   kahtlane ID 129).

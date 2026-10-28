@@ -1,0 +1,25 @@
+{
+ "schemaVersion": 1,
+ "firmware": 13,
+ "date": "2026-10-28",
+ "scope": "Grid input masks of one user-owned commercial FW13 tonepack as serialised by the FM3 (counts only; tools/fm3/tonepack-structure-evidence.mjs). Compared with the FW10 factory corpus (references/fm3-factory-grid-evidence.json) and the 2026-10-24 store check (references/fm3-bit4-check-20261024.json).",
+ "corpus": {
+  "presets": 384,
+  "occupiedCells": 8463,
+  "maskBit4Cells": 0,
+  "maskBits5to15Cells": 0,
+  "mergeCells": 22,
+  "mergePresets": 18,
+  "splits": 679,
+  "crossRowSingleInputs": 684
+ },
+ "findings": [
+  "No cell of the FW13 corpus uses mask bit 4 or any bit above 3 (0 of 8463 occupied cells), although it has 22 merges in 18 presets and 679 splits.",
+  "Merges and splits are fully described by bits 0-3 in FW13-saved presets; bit 4 is not needed to write them. The 8 factory cells with bit 4 come from FW10 banks converted by the device, and the 2026-10-24 check showed the FM3 keeps the bit on STORE without showing it in LAYOUT.",
+  "The generator therefore keeps writing bits 0-3 only. The meaning of bit 4 itself is still unknown (it may be a FW10-era flag); no hardware test was made for this receipt."
+ ],
+ "notProven": [
+  "what bit 4 does when present",
+  "audio effect of bit 4"
+ ]
+}

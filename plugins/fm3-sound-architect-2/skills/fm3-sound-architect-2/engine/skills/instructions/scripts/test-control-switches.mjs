@@ -62,7 +62,8 @@ for(const v of [0,7,'2',1.5,null])bad(s=>s.controlSwitches=[{...switches[0],swit
 for(const v of ['drive','cab','AMP',undefined])bad(s=>s.controlSwitches=[{...switches[0],block:v}]);
 for(const v of ['DISTORT_GAIN','BOOST',42,'DISTORT_BOOSTLVL'])bad(s=>s.controlSwitches=[{...switches[0],param:v}]);
 bad(s=>s.controlSwitches=[switches[0],{...switches[0],switch:3}]);
-bad(s=>s.controlSwitches=[{...switches[0],channel:'A'}]);
+for(const v of ['E','a',1,null,'CHAN A'])bad(s=>s.controlSwitches=[{...switches[0],channel:v}]);
+for(const v of ['true',1,null])bad(s=>s.controlSwitches=[{...switches[0],invert:v}]);
 bad(s=>s.controlSwitches=[{...switches[0],min:0}]);
 // A static write to a bound switch is refused by the dependency policy.
 bad(s=>{s.allow=['enum-labels'];s.controls=[{block:'amp',channel:'A',param:'DISTORT_BOOST',value:'ON'}];},/modifier-controlled/);
@@ -73,10 +74,21 @@ assert.throws(()=>bindControlSwitches(busy,[switches[0]]),/no unused modifier re
 const r1changed=rewrite(plain.syx,b=>b.writeUInt16LE(1,1584+96+2*3));
 assert.equal(bindControlSwitches(r1changed,[switches[0]]).writes[0].record,2,'changed record 1 is skipped, not overwritten');
 
+// Variants: inverted Min/Max and a channel-limited binding (words 1/2 and 17 only).
+const varSpec={...spec,composer:{...composer,name:'CS VARIANTS'},controlSwitches:[{switch:2,block:'amp',param:'DISTORT_BOOST',invert:true},{switch:3,block:'amp',param:'DISTORT_FAT',channel:'D'}]};
+const vres=createPreset(base,varSpec),vb=bodyOf(vres.syx);
+{const e1=[...receipt.template];e1[0]=51;e1[8]=58;e1[9]=42;e1[1]=65534;e1[2]=0;assert.deepEqual(words(vb,1),e1);
+ const e2=[...receipt.template];e2[0]=52;e2[8]=58;e2[9]=80;e2[17]=4;assert.deepEqual(words(vb,2),e2);}
+assert.deepEqual(vres.report.controlSwitches.map(x=>[x.invert,x.channelScope,x.min,x.max]),[[true,'ALL','ON (stored 65534)','OFF (stored 0)'],[false,'CHAN D','OFF (stored 0)','ON (stored 65534)']]);
+assert.ok(vres.txt.includes('kanalid CHAN D; kirje 2;')&&vres.txt.includes('pööratud: Min ON, Max OFF'));
+assert.deepEqual(stripControlSwitchRecords(vb),bodyOf(createPreset(base,{...noSwitches,composer:{...composer,name:'CS VARIANTS'}}).syx));
+// A channel-limited binding leaves the other channels writable; the bound channel is refused.
+const chOk={...varSpec,allow:['enum-labels'],controls:[{block:'amp',channel:'A',param:'DISTORT_FAT',value:'ON'}]};createPreset(base,chOk);
+assert.throws(()=>createPreset(base,{...chOk,controls:[{block:'amp',channel:'D',param:'DISTORT_FAT',value:'ON'}]}),/modifier-controlled/);
 const temp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3 control switch % ü '));let tamper=0;
 try{
   const verify=(name,result,s)=>{const stem=path.join(temp,name);writePresetOutputs(stem,result,s);return verifyPresetOutputs(stem);};
-  verify('good',good,spec);verify('vol',vr,vol);verify('wah',wr,wah);verify('wah-only',wo,wahOnly);verify('plain',plain,noSwitches);
+  verify('good',good,spec);verify('variants',vres,varSpec);verify('variants-controls',createPreset(base,chOk),chOk);verify('vol',vr,vol);verify('wah',wr,wah);verify('wah-only',wo,wahOnly);verify('plain',plain,noSwitches);
   const fail=(name,change,src=good,s0=spec)=>{const r={...src,report:structuredClone(src.report)},s=structuredClone(s0);change(r,s);assert.throws(()=>verify(name,r,s),/Control|modifier|TXT|differs|Volume/);tamper++;};
   for(let i=0;i<25;i++)fail('word-'+i,r=>{r.syx=rewrite(good.syx,b=>b.writeUInt16LE(b.readUInt16LE(1584+96+2*i)^1,1584+96+2*i));r.report.outputSha256=sha(r.syx);});
   fail('extra-binding',r=>{r.syx=rewrite(good.syx,b=>{b.writeUInt16LE(50,1584+96*6);b.writeUInt16LE(58,1584+96*6+16);b.writeUInt16LE(47,1584+96*6+18);});r.report.outputSha256=sha(r.syx);});
@@ -87,6 +99,9 @@ try{
   fail('report-missing',r=>delete r.report.controlSwitches);
   fail('txt',r=>r.txt=r.txt.replace('Control Switch 2 → amp Boost','Control Switch 1 → amp Boost'));
   fail('switch-number',(_r,s)=>s.controlSwitches[0].switch=1);
+  fail('invert-spec',(_r,s)=>s.controlSwitches[0].invert=true);
+  fail('channel-spec',(_r,s)=>s.controlSwitches[0].channel='A');
+  fail('variant-word',r=>{r.syx=rewrite(vres.syx,b=>b.writeUInt16LE(3,1584+96*2+2*17));r.report.outputSha256=sha(r.syx);},vres,varSpec);
   fail('unrequested',(r,s)=>{delete s.controlSwitches;delete r.report.controlSwitches;delete r.report.stages.controlSwitches;});
   fail('volume-moved',r=>{r.syx=rewrite(wr.syx,b=>{for(let i=0;i<25;i++){const a=b.readUInt16LE(1584+96+2*i),c=b.readUInt16LE(1584+96*2+2*i);b.writeUInt16LE(c,1584+96+2*i);b.writeUInt16LE(a,1584+96*2+2*i);}});r.report.outputSha256=sha(r.syx);},wr,wah);
 }finally{fs.rmSync(temp,{recursive:true,force:true});}

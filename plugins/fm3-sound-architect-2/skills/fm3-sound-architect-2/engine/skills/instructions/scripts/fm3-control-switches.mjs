@@ -34,10 +34,15 @@ const UNUSED=Object.freeze([...Array(21).fill(0),65534,65534,0,0]);
 const same=(a,b)=>a.length===b.length&&a.every((x,i)=>x===b[i]);
 const baseForm=r=>r===1?BASE_RECORD1:UNUSED;
 const writable=(r,w)=>same(w,UNUSED)||same(w,baseForm(r));
-const templateFor=(source,eid,pid)=>{const t=[...TEMPLATE,65534,65534,0,0];t[0]=source;t[8]=eid;t[9]=pid;return t;};
+// Variants (0.3.32): invert = Min 65534 / Max 0 (T7: displays Min ON, Max OFF; 164 tonepack records);
+// channel = word 17 (0 ALL, 1..4 CHAN A..D; T7: 4 displays CHAN D; tonepack records with 1, 2 and 4).
+const CHANNELS=Object.freeze(['ALL','A','B','C','D']);
+const templateFor=(source,eid,pid,{invert=false,channel='ALL'}={})=>{const t=[...TEMPLATE,65534,65534,0,0];t[0]=source;t[8]=eid;t[9]=pid;
+  if(invert){t[1]=65534;t[2]=0;}t[17]=CHANNELS.indexOf(channel);return t;};
+const variantOf=w=>({invert:w[1]===65534&&w[2]===0,channel:CHANNELS[w[17]]??'?'});
 const SOURCES=new Set(Object.values(CONTROL_SWITCH_SOURCE)),PIDS=new Map(CONTROL_SWITCH_TARGETS.amp.map(n=>[findParam('amp',n).param,n]));
-// A record this engine writes: Control Switch source, amp effect, a listed PID, exactly the default template.
-export function isControlSwitchRecord(w){return SOURCES.has(w[0])&&w[8]===EID.amp&&PIDS.has(w[9])&&same(w,templateFor(w[0],w[8],w[9]));}
+// A record this engine writes: Control Switch source, amp effect, a listed PID, exactly the template (or a variant).
+export function isControlSwitchRecord(w){return SOURCES.has(w[0])&&w[8]===EID.amp&&PIDS.has(w[9])&&w[17]<CHANNELS.length&&same(w,templateFor(w[0],w[8],w[9],variantOf(w)));}
 // Copy of the body with every Control Switch record reset to its base form, so other verifiers can pin the rest.
 export function stripControlSwitchRecords(body){
   const out=Buffer.from(body);
@@ -49,13 +54,15 @@ export function validateControlSwitches(list){
   const seen=new Set();
   return list.map((c,i)=>{
     check(c&&typeof c==='object'&&!Array.isArray(c),`controlSwitches[${i}] must be an object`);
-    for(const k of Object.keys(c))check(['switch','block','param'].includes(k),`controlSwitches[${i}]: unknown field ${k}`);
+    for(const k of Object.keys(c))check(['switch','block','param','invert','channel'].includes(k),`controlSwitches[${i}]: unknown field ${k}`);
+    check(c.invert===undefined||typeof c.invert==='boolean',`controlSwitches[${i}].invert must be true or false`);
+    check(c.channel===undefined||CHANNELS.includes(c.channel),`controlSwitches[${i}].channel must be ${CHANNELS.join(', ')}`);
     check(Number.isInteger(c.switch)&&CONTROL_SWITCH_SOURCE[c.switch],`controlSwitches[${i}].switch must be 1..6`);
     check(Object.hasOwn(CONTROL_SWITCH_TARGETS,c.block),`controlSwitches[${i}].block must be ${Object.keys(CONTROL_SWITCH_TARGETS).join(', ')}`);
     check(CONTROL_SWITCH_TARGETS[c.block].includes(c.param),`controlSwitches[${i}].param must be one of ${CONTROL_SWITCH_TARGETS[c.block].join(', ')}`);
     const key=c.block+'.'+c.param;check(!seen.has(key),`controlSwitches: ${key} bound twice`);seen.add(key);
     const p=findParam(c.block,c.param);check(p&&p.param>=0,`controlSwitches[${i}]: ${key} not in the dictionary`);
-    return {switch:c.switch,source:CONTROL_SWITCH_SOURCE[c.switch],block:c.block,param:c.param,label:p.label??c.param,effectId:EID[c.block],pid:p.param};
+    return {switch:c.switch,source:CONTROL_SWITCH_SOURCE[c.switch],block:c.block,param:c.param,label:p.label??c.param,effectId:EID[c.block],pid:p.param,invert:c.invert===true,channel:c.channel??'ALL'};
   });
 }
 export function bindControlSwitches(syx,list){
@@ -70,7 +77,7 @@ export function bindControlSwitches(syx,list){
   for(const w of wanted){
     while(r<RECORDS&&!writable(r,words(body,r)))r++;
     check(r<RECORDS,'no unused modifier record left');
-    const was=words(body,r),state=same(was,UNUSED)?'unused':'inactive-default',next=templateFor(w.source,w.effectId,w.pid).slice(0,21);
+    const was=words(body,r),state=same(was,UNUSED)?'unused':'inactive-default',next=templateFor(w.source,w.effectId,w.pid,w).slice(0,21);
     next.forEach((v,i)=>body.writeUInt16LE(v,FIELDS0+RECORD*r+2*i));
     writes.push({...w,record:r,recordState:state,before:was.slice(0,21),after:next});r++;
   }
@@ -89,20 +96,23 @@ export function readControlSwitches(body,list){
   return wanted.map(w=>{const m=mods.filter(x=>x.active&&x.effectId===w.effectId&&x.pid===w.pid);
     check(m.length===1,`${w.block}.${w.param}: expected exactly one active modifier, found ${m.length}`);
     check(m[0].source===w.source,`${w.block}.${w.param}: bound to ${m[0].sourceName}, expected Control Switch ${w.switch}`);
-    check(isControlSwitchRecord(words(body,m[0].record)),`${w.block}.${w.param}: record ${m[0].record} is not the default template`);
-    return {switch:w.switch,sourceName:m[0].sourceName,block:w.block,param:w.param,label:w.label,record:m[0].record,channelScope:m[0].channelScope,min:'full range (stored 0)',max:'full range (stored 65534)'};});
+    const ws=words(body,m[0].record);
+    check(isControlSwitchRecord(ws)&&same(ws,templateFor(w.source,w.effectId,w.pid,w)),`${w.block}.${w.param}: record ${m[0].record} is not the requested template`);
+    return {switch:w.switch,sourceName:m[0].sourceName,block:w.block,param:w.param,label:w.label,record:m[0].record,channelScope:m[0].channelScope,invert:w.invert,
+      min:w.invert?'ON (stored 65534)':'OFF (stored 0)',max:w.invert?'OFF (stored 0)':'ON (stored 65534)'};});
 }
 export function renderControlSwitchText(state){
   if(!state?.length)return [];
   return ['','CONTROL SWITCH SEOSED — LÕPPFAILIST',
-    ...state.map(s=>`Control Switch ${s.switch} → ${s.block} ${s.label} (${s.param}); kanalid ALL; kirje ${s.record}; Min/Max täisvahemik (FM3 tonepacki vaikemall).`),
+    ...state.map(s=>`Control Switch ${s.switch} → ${s.block} ${s.label} (${s.param}); kanalid ${s.channelScope}; kirje ${s.record}; ${s.invert?'pööratud: Min ON, Max OFF (lüliti vajutamine lülitab välja)':'Min OFF, Max ON (FM3 tonepacki vaikemall)'}.`),
     'Control Switchi tüüp (latching/momentary), algolek ja jalglüliti määrang ei ole selle seose osa: määra need FM3-l (Controllers / FC).',
     'Seose mall on FM3 enda salvestatud presetitest (1401 sama malliga kirjet). 28.10.2026 katses T9 jäid sama malliga seosed (CS2 → Input Boost, CS3 → Bright) pärast STORE-i ja uuesti laadimist alles; selle uue faili import ja lülitamine on seadmes kontrollimata.'];
 }
-export function controlSwitchCapabilities(){return {field:'controlSwitches',entry:'{switch 1..6, block "amp", param DISTORT_BOOST|DISTORT_BRIGHT|DISTORT_CUT|DISTORT_FAT|DISTORT_SATSWITCH}',
+export function controlSwitchCapabilities(){return {field:'controlSwitches',entry:'{switch 1..6, block "amp", param DISTORT_BOOST|DISTORT_BRIGHT|DISTORT_CUT|DISTORT_FAT|DISTORT_SATSWITCH, invert?: boolean, channel?: ALL|A|B|C|D}',
+  variants:{invert:'Min 65534 / Max 0 (T7 display Min ON, Max OFF)',channel:'word 17: 0 ALL, 1..4 CHAN A..D (T7: 4 = CHAN D)'},
   maxBindings:8,records:'consecutive from record 1 (record 0 = Wah template); only unused or inactive default records',template:TEMPLATE,
   evidence:{receipt:'references/fm3-control-switch-evidence-20261028.json',sha256:controlSwitchEvidenceHash,corpusRecords:evidence.corpus?.templateRecords??null},
-  notSupported:['inverted or partial Min/Max','channel-limited scope','other sources or targets','Control Switch type/default state','footswitch assignment'],
+  notSupported:['partial Min/Max','other sources or targets','Control Switch type/default state','footswitch assignment'],
   hardware:{storeReload:'confirmed 2026-10-28 (T9: CS2 -> Boost, CS3 -> Bright next to Wah + Volume; references/fm3-bind-store-20261028.json)',display:'default template shows the default Modify page (T7, references/fm3-modifier-display-20261028.json)',switching:'not tested',thisFile:'not tested'}};}
 // Final artifact check (verifyPresetOutputs): bindings, stage report, active-record inventory and TXT.
 export function verifyControlSwitchOutput(report,syx,txt,spec){
