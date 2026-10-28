@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.30`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.31`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -103,7 +103,12 @@ ajaloolisi toorandmeid ei muudeta ega samu katseid uuesti nõuta.
 - **T7 modifikaatorinäidud (28.10.2026):** FM3 näitab allika numbrit kujul kood + 1
   (51 → „52 Control Switch 2“). Lüliti Min/Max 0/65534 = OFF/ON; sõna 17 = 4 → CHAN D;
   sõna 10 = 5 → Auto-Engage MED POS; sõnad 7/15 väärtusega 66 → 10,1 ms, väärtusega 65 → 9,9 ms.
-  Pidevate sihtmärkide Min/Max ja kõvera näit jäid lugemata. Tõend: `MOOTOR/references/fm3-modifier-display-20261028.json`.
+  Korduskatse T7b: pidevate sihtmärkide Min/Max on sihtparameetri enda salvestussõna (Rotary Rate 0,503/6,424 Hz,
+  Ampi graafilise EQ 3. riba 0,03/3,98, Wah Control 0/10). Mid ja Slope = sõna/65534 %, Scale ≈ 10^((sõna−32767)/32767).
+  Tõend: `MOOTOR/references/fm3-modifier-display-20261028.json`.
+- **Volume pedaali Min/Max (0.3.31):** `volumePedal:{min:0..10, max:0..10}` kirjutab sõnadesse 1/2 VOLUME_GAIN-i
+  kodeeringu (näiteks 2.5 → 16384). Teised sõnad jäävad ekspordi vaikeolekusse. Kodeering on seadme näiduga
+  kinnitatud kolmel teisel sihtmärgil; Volume'il endal on muu kui 0/10 seadmes kontrollimata. `true` tähendab 0/10.
 - **T9 seoste STORE (28.10.2026):** Wah (External 1, kirje 0), Volume (External 1, kirje 1),
   CS2 → Input Boost ja CS3 → Bright jäid pärast STORE-i ja uuesti laadimist alles. Modifikaatorikirjed
   klappisid sõna-sõnalt ja pedaal liigutas nii Wahi kui Volume'i. Wahi Scene 1 bypass salvestus
@@ -327,8 +332,8 @@ on kinnitatud (T9); lülitamine on kontrollimata. Control Switchi tüübi ja jal
 ## External 1 → Volume/Pan 1 (0.3.17)
 
 Sound-spec'i `volumePedal:true` koos `volumePan:true` lisab **External 1 →
-Volume/Pan 1 Volume (VOLUME_GAIN, PID 0), ALL** seose. Kasuta mõõdetud
-vaikeolekut; Min/Max-i, kõvera, Auto Engage'i ega ajaparameetrite valikuid sellel
+Volume/Pan 1 Volume (VOLUME_GAIN, PID 0), ALL** seose. Vaikimisi on Min 0 ja Max 10;
+`volumePedal:{min, max}` seab vahemiku (0.3.31). Kõvera, Auto Engage'i ega ajaparameetrite valikuid sellel
 liidesel pole. [Juhend](engine/docs/FM3_VOLUME_PEDAL.md).
 Pedaali käitumine on **seadmel kinnitatud** 24.10.2026: FM3-Editis on Volume nupul External 1 modifikaator
 ja nupp järgib pedaali kannast varbani; ilma seoseta preset jääb 10.00 peale. 26.10.2026 (T2): kand 0.00, varvas

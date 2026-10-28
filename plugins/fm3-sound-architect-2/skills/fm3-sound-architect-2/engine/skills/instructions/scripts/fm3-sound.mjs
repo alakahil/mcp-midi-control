@@ -1,6 +1,6 @@
 // Offline sound pipeline: templates -> layout -> scenes -> controls -> final readback.
 import fs from 'node:fs';
-import {bindVolumePedal,readVolumePedal,volumePedalCapabilities} from './fm3-volume-pedal.mjs';
+import {bindVolumePedal,readVolumePedal,volumePedalCapabilities,volumeRange} from './fm3-volume-pedal.mjs';
 import {bindControlSwitches,readControlSwitches,controlSwitchCapabilities,validateControlSwitches} from './fm3-control-switches.mjs';
 import {insertVolumePan} from './fm3-volume.mjs';
 import {volumePolicySummary} from './fm3-volume-policy.mjs';
@@ -24,7 +24,7 @@ import {estimateCpu,renderCpuText} from './fm3-cpu.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.30',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.31',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','insert','sceneMidi'],
     insert:insertCapabilities(),
     outputs:['.syx','.txt','.spec.json','.validation.json'],
@@ -60,7 +60,7 @@ export function composeSound(base,spec){
   if(spec.context!==undefined){assertFields(spec.context,['guitar','pickups','output'],'context');for(const v of Object.values(spec.context))check(typeof v==='string'&&v.length>0&&v.length<=300&&!/[\x00-\x1f]/.test(v),'Invalid context value');}
   if(Object.hasOwn(spec,'volumePan'))check(spec.volumePan===true,'volumePan must be true to request insertion');
   if(Object.hasOwn(spec,'volumePedal')){
-    check(spec.volumePedal===true&&spec.volumePan===true,'volumePedal requires true and volumePan:true');
+    volumeRange(spec.volumePedal);check(spec.volumePan===true,'volumePedal requires volumePan:true');
     const mods=spec.composer.modifiers;
     check(!mods||mods.external1Wah===true||Object.keys(mods).every(k=>k==='external1Wah'),'Volume pedal: Wah modifier settings need external1Wah:true (the Volume binding then goes to record 1)');
   }
@@ -71,7 +71,7 @@ export function composeSound(base,spec){
   const inserted=gridMode||spec.insert===undefined?null:insertBlocks(volume?.syx??first.syx,spec.insert);
   const records=gridMode?editRecords(volume?.syx??first.syx,{remove:spec.remove??[],duplicate:spec.duplicate??[],add:spec.insert??[]}):null;
   const arrangedInput=records?.syx??inserted?.syx??volume?.syx??first.syx;
-  const pedal=spec.volumePedal?bindVolumePedal(arrangedInput):null;
+  const pedal=spec.volumePedal?bindVolumePedal(arrangedInput,spec.volumePedal):null;
   const switches=spec.controlSwitches?bindControlSwitches(pedal?.syx??arrangedInput,spec.controlSwitches):null;
   const bound=switches?.syx??pedal?.syx??arrangedInput;
   const second=gridMode?arrangeGrid(bound,spec,{allow:spec.allow??[]}):arrangeSound(bound,spec,{allow:spec.allow??[]});
@@ -82,11 +82,11 @@ export function composeSound(base,spec){
   verifyWahModifierReadback(finalBody,modifierEdit);
   if(pedal){const vr=scanRecords(finalBody).records.find(r=>r.eid===102);
     for(let ch=0;ch<4;ch++)check(finalBody.readUInt16LE(vr.start+ch*vr.words*2+18)===0,`volumePedal binds Volume, which AUTO-SWELL hides (volpan channel ${'ABCD'[ch]})`);}
-  const volumePedal=pedal?readVolumePedal(finalBody):null;
+  const volumePedal=pedal?readVolumePedal(finalBody,volumeRange(spec.volumePedal)):null;
   const controlSwitches=switches?readControlSwitches(finalBody,spec.controlSwitches):null;
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const cpuEstimate=estimateCpu(second.syx);
-  const report={generator:'fm3-sound-0.3.30',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.31',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,...(switches?{controlSwitches}:{}),
     stages:{volumePedal:pedal?.report??null,...(switches?{controlSwitches:switches.report}:{}),volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};

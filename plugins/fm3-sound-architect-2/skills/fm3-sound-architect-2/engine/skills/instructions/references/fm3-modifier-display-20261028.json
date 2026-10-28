@@ -214,7 +214,125 @@
    "validReading": true
   }
  ],
+ "repeat": {
+  "pack": {
+   "presets": 2,
+   "cases": [
+    "continuous",
+    "curve"
+   ],
+   "manifestSha256": "06ff922acd3b150740a3399eabc1d47e3eff43bc4623c36229afa57bfbe6a235",
+   "collectorAddition": "per-item hint and the expected Source 1 printed before the reading"
+  },
+  "items": [
+   {
+    "id": "continuous",
+    "binding": "External 2 (15) -> Rotary ROTARY_RATE, CHAN A, Min/Max inside the range",
+    "words": {
+     "0": 15,
+     "1": 3299,
+     "2": 42097,
+     "3": 0,
+     "4": 32767,
+     "5": 65534,
+     "6": 32767,
+     "7": 66,
+     "10": 0,
+     "13": 32767,
+     "14": 32767,
+     "15": 66,
+     "17": 1
+    },
+    "source1": "16 External 2",
+    "validReading": true,
+    "fields": {
+     "Channel": "CHAN A",
+     "Min": "0.503 Hz",
+     "Max": "6.424 Hz",
+     "Start": "0.0%",
+     "Mid": "50.0%",
+     "End": "100.0%",
+     "Slope": "50.0%",
+     "Scale": "1.000",
+     "Offset": "0.0%",
+     "Damping": "EXPONENTIAL",
+     "Attack": "10.1 ms",
+     "Release": "10.1 ms",
+     "Auto-Engage": "OFF",
+     "Off Value": "5.0%",
+     "PC Reset": "OFF",
+     "Update Rate": "SLOW"
+    },
+    "check": {
+     "minDisplay": 0.503,
+     "minDecodedByTargetCodec": 0.503,
+     "maxDisplay": 6.424,
+     "maxDecodedByTargetCodec": 6.424,
+     "midPercent": 50,
+     "midWord": 50,
+     "slopePercent": 50,
+     "slopeWord": 50,
+     "scaleDisplay": 1,
+     "scaleWord": 1
+    }
+   },
+   {
+    "id": "curve",
+    "binding": "Pitch Follower (9) -> Amp DISTORT_EQ3, ALL, Mid/Slope/Scale away from the default",
+    "words": {
+     "0": 9,
+     "1": 32854,
+     "2": 43630,
+     "3": 0,
+     "4": 30368,
+     "5": 65534,
+     "6": 39651,
+     "7": 66,
+     "10": 0,
+     "13": 39366,
+     "14": 32767,
+     "15": 66,
+     "17": 0
+    },
+    "source1": "10 Pitch Follower",
+    "validReading": true,
+    "fields": {
+     "Channel": "ALL",
+     "Min": "0.03",
+     "Max": "3.98",
+     "Start": "0.0%",
+     "Mid": "46.3%",
+     "End": "100.0%",
+     "Slope": "60.5%",
+     "Scale": "1.590",
+     "Offset": "0.0%",
+     "Damping": "EXPONENTIAL",
+     "Attack": "10.1 ms",
+     "Release": "10.1 ms",
+     "Auto-Engage": "OFF",
+     "Off Value": "5.0%",
+     "PC Reset": "OFF",
+     "Update Rate": "SLOW"
+    },
+    "check": {
+     "minDisplay": 0.03,
+     "minDecodedByTargetCodec": 0.032,
+     "maxDisplay": 3.98,
+     "maxDecodedByTargetCodec": 3.978,
+     "midPercent": 46.3,
+     "midWord": 46.339,
+     "slopePercent": 60.5,
+     "slopeWord": 60.504,
+     "scaleDisplay": 1.59,
+     "scaleWord": 1.59
+    }
+   }
+  ]
+ },
  "decoded": {
+  "continuousMinMax": "Words 1 (Min) and 2 (Max) are the target parameter stored words: the target codec decodes them to the displayed values (Rotary Rate 3299 -> 0.503 Hz, 42097 -> 6.424 Hz; Amp graphic EQ band 3 32854 -> 0.03, 43630 -> 3.98; Wah Control 0 -> 0.00, 65534 -> 10.00).",
+  "midSlope": "Mid (word 4) and Slope (word 6) display word / 65534 in percent (30368 -> 46.3 %, 39651 -> 60.5 %; 32767 -> 50 %).",
+  "scale": "Scale (word 13) displays 10^((w - 32767) / 32767): 32767 -> 1.000, 39366 -> 1.590 (one non-default point; the 10^x form is the fit, range 0.1..10 if it holds).",
   "sourceDisplayNumber": "The Source list number shown on the FM3 is the stored source code + 1: 51 -> \"52 Control Switch 2\", 53 -> \"54 Control Switch 4\", 14 -> \"15 External 1\"; 0 -> \"1 NONE\".",
   "switchMinMax": "Switch targets: word 1 (Min) / word 2 (Max) 0 -> OFF, 65534 -> ON; 1707 (2.6 % of 65534) displays OFF. Inverted 65534/0 shows Min ON, Max OFF.",
   "channelWord17": "Word 17 = 4 displays Channel \"CHAN D\" (0 ALL, 1..4 CHAN A..D, as the policy table).",
@@ -224,15 +342,17 @@
   "offValueWord12": "Word 12 = 0 and 65534 both displayed Off Value 5.0 %: word 12 is not Off Value (unresolved)."
  },
  "notResolved": [
-  "continuous Min/Max display (the Rotary Rate reading was taken on another parameter)",
-  "Mid / Slope / Scale curve words (the Pitch Follower case showed Source NONE; the Modify page could not be opened)",
   "which of words 7 / 15 is Attack",
-  "word 12"
+  "word 12",
+  "Start / End / Offset away from their defaults",
+  "Scale beyond one non-default point"
  ],
  "findings": [
   "The FM3 default template written by controlSwitches displays as the default Modify page: Min OFF, Max ON, full curve defaults, channel ALL.",
   "Source numbers on the FM3 screen are 1-based (stored code + 1).",
-  "Switch Min/Max are stored 0 / 65534; an inverted binding stores 65534 / 0."
+  "Switch Min/Max are stored 0 / 65534; an inverted binding stores 65534 / 0.",
+  "Continuous Min/Max are stored in the target parameter own word encoding (three targets, six points), so a display-unit Min/Max can be encoded with the target codec."
  ],
- "resultsSha256": "c19e7ab1dadb76401df05e4938706486a57ca596151a633610c74e661d38d834"
+ "resultsSha256": "c19e7ab1dadb76401df05e4938706486a57ca596151a633610c74e661d38d834",
+ "repeatResultsSha256": "b6bb4ab0184f9bd7b34683119ed513f0bc1cbfd6f9f3fd2f7b6af5ebe8b92cf3"
 }

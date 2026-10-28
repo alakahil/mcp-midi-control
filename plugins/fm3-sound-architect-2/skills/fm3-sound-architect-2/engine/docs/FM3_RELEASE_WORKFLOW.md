@@ -10,7 +10,8 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.30 väljalaset: Control Switch → Amp lülitite
+Praegune lähtekood valmistab ette 0.3.31 väljalaset: Volume pedaali numbriline Min/Max
+(`volumePedal:{min,max}`) ja T7b modifikaatori korduslugemine. Selle aluseks on 0.3.30: Control Switch → Amp lülitite
 seosed (`controlSwitches`), Wah + Volume kahe seose paigutus (Volume kirjes 1), T7
 modifikaatorinäitude ja T8 CPU-sammude kogujad ning pordikontroll (`--check-port`).
 Uute seoste seadme-STORE on ootel. Kehtivad 0.3.29 Satriani V4 näide ja 0.3.28
