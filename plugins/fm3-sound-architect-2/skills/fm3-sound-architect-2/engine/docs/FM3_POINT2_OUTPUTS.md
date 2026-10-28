@@ -1,6 +1,7 @@
 # Auditi punkt 2: SYX, TXT, spetsifikatsioon ja raport
 
-0.3.23, 25.10.2026. Alus: `FM3_Auditi_edenemisaruanne_2026-10-24`,
+Algne etapp 0.3.23, 25.10.2026; näidiste ja regressioonide loendus uuendatud
+versioonile 0.3.29, 28.10.2026. Alus: `FM3_Auditi_edenemisaruanne_2026-10-24`,
 auditi etapp 2 „SYX / TXT / raport”, mitte aruande teise peatüki seadmekatsed.
 Algne hinnang oli „Valmis toetatud ulatuses”. See töö täpsustab failikontrolli
 ulatust ja sulgeb tuvastatud tarkvaralised lüngad. Uusi seadmemõõtmisi ei tehta.
@@ -51,8 +52,8 @@ Masinloetav ja uuesti toodetav tõend asub lähterepo failis
 | Sisulised rikkumised | 96 tõrjutud juhtu uuendatud räsidega; seitse SYX-i muutust ka korrektse CRC-ga |
 | Failivorming ja manifest | 17 puudumise, kärpimise, UTF-8, vigase sisu või manifesti riket |
 | Kirjutamise vead | 15 kokkupõrke, iga nelja etapi kirjutus-/linkimisvea ja asendusfaili juhtumit |
-| Ajaloolised näited | 50 spetsifikatsiooni; 47 SYX-i taastuvad baittäpselt ja värsked neli faili läbivad kontrolli |
-| Ülejäänud regressioonid | Täielik 66 kohustusliku testi komplekt, sh globaalvaatlused, modifikaatorid, tüübi-/tempo-piirid, Input/Volume, grid, Scene MIDI ja kolitav käivituskaust |
+| Ajaloolised näited | 51 spetsifikatsiooni; 48 SYX-i taastuvad baittäpselt ja värsked neli faili läbivad kontrolli |
+| Ülejäänud regressioonid | Täielik 70 kohustusliku testi komplekt, sh globaalvaatlused, modifikaatorid, tüübi-/tempo-piirid, Input/Volume, grid, Scene MIDI ja kolitav käivituskaust |
 
 Kahele varasele näitele (`FM3_SA_TEST_G5`, `FM3_SA_TEST_SCENES`) lisab test
 ainult mälus `schemaVersion:1` ja `firmware:13`. `FM3_SA_TEST_TIME` ja
@@ -83,7 +84,7 @@ preset võib olla korrektne uus komplekt.
 Kontrolli varem loodud nelja faili sama kontrollitud mootoriversiooniga.
 Uue versiooni raport, kuvatud poliitika või TXT võib erineda ka muutmata SYX-i
 korral. Ära muuda vana raporti versiooni või räsi pelgalt kontrolli läbimiseks.
-47 ajaloolise SYX-i baittäpne taaste ei tähenda nende ajalooliste raportite
+48 ajaloolise SYX-i baittäpne taaste ei tähenda nende ajalooliste raportite
 ümberkirjutamist ega tagantjärele riistvarakinnituse lisamist.
 
 Globaalvaatlused jäävad kogumisaja tõendiks; nende sisu ei kandu SYX-iga seadmesse.

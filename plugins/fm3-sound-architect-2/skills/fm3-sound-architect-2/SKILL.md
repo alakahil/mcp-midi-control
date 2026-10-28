@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.28`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.29`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,20 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+## GitHubi Satriani V4 täiendus (0.3.29, 28.10.2026)
+
+Lisatud on GitHubi PR #37 põhiharusse liidetud `SATRIANI_SOAP_ON_A_ROPE_V4`
+nelja faili näide. V4 muudab ainult Amp C seadeid ning preseti ja 5. stseeni
+nime; stseeni uus nimi on `CRUNCH FULL`. Amp C: Crunch Orange, Gain 6,
+Bass 5.5, Mid 7.5, Presence 4 ja Level −10 dB; Output Scene 5 jääb +1 dB peale.
+V1–V3 kuulamistagasiside on allpool; V4 seadmeimport ja kuulamine on ootel.
+Ära omista V3 seadmetõendit automaatselt V4-le.
+
+Näidiste kontroll hõlmab 51 spetsifikatsiooni: 48 SYX-i taastuvad baittäpselt,
+kolm ajaloolist uurimissisendit jäävad teadlikult avaliku sisendilepingu väliseks.
+Korpuse audit aktsepteerib 629 erinevat toetatud vormingus sisu. Need arvud
+sisaldavad genereeritud näiteid ega tähenda uusi sõltumatuid seadmemõõtmisi.
 
 ## Kadudeta arhiivi vähendamine (0.3.28, 27.10.2026)
 
@@ -137,7 +151,7 @@ vahearuande sisu või kontrolliväide ei tohi uuendatud räsiga kontrolli läbid
 
 Kontrolli ajaloolist nelja faili komplekti sama kontrollitud mootoriversiooniga,
 mis selle lõi. Uue mootori raport/poliitika võib erineda ka muutmata SYX-i korral.
-Vanad `examples`-failid on tõendite ajalugu: 47 näidet taastuvad baittäpselt,
+Vanad `examples`-failid on tõendite ajalugu: 48 näidet taastuvad baittäpselt,
 kahel neist lisab test mälus puuduva schemaVersion/firmware päise ning kahel
 taastab täieliku päringu olemasoleva ajaloolise regressioonitesti põhjal.
 P6 A/B vanad sisendid ja eksperimentaalne Taper-test ei ole praeguse avaliku
