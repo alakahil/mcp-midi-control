@@ -1,0 +1,24 @@
+{
+ "schemaVersion": 1,
+ "firmware": 13,
+ "date": "2026-10-28",
+ "scope": "Aggregate structural statistics of Control Switch -> Amp switch modifier bindings serialised by the FM3 (FW13) in one user-owned commercial tonepack. No preset files, names or values are stored here; the pack stays on the user's machine.",
+ "method": "Each preset decoded with scripts/fm3-modifier-audit.mjs; active records whose source is Control Switch 1..6 and whose target is amp DISTORT_BOOST/BRIGHT/CUT/FAT/SATSWITCH compared word for word with the default template.",
+ "template": [0,0,65534,0,32767,65534,32767,66,0,0,0,0,0,32767,32767,66,0,0,0,0,0,65534,65534,0,0],
+ "templateVariableWords": {"0": "source (Control Switch n = 49+n)", "8": "target effect id (amp = 58)", "9": "target PID"},
+ "corpus": {
+  "presets": 384,
+  "presetsWithControlSwitchBindings": 328,
+  "ampSwitchBindings": 1610,
+  "templateRecords": 1401,
+  "nonTemplate": {"DISTORT_BRIGHT words 1,2 (inverted or partial Min/Max)": 200, "DISTORT_SATSWITCH word 2 (partial Max)": 4, "DISTORT_FAT word 17 (channel scope)": 4, "DISTORT_BRIGHT word 17 (channel scope)": 1},
+  "targetPids": {"DISTORT_BRIGHT": 41, "DISTORT_BOOST": 42, "DISTORT_CUT": 47, "DISTORT_SATSWITCH": 56, "DISTORT_FAT": 80},
+  "targetEffectIds": {"58": 1610},
+  "byTarget": {"DISTORT_BOOST": 328, "DISTORT_BRIGHT": 322, "DISTORT_CUT": 328, "DISTORT_FAT": 328, "DISTORT_SATSWITCH": 304},
+  "bySource": {"Control Switch 2": 328, "Control Switch 3": 330, "Control Switch 4": 319, "Control Switch 5": 305, "Control Switch 6": 328},
+  "recordIndex": {"0": 88, "1": 323, "2": 327, "3": 316, "4": 309, "5": 245, "6": 1, "8": 1},
+  "placement": {"controlSwitchRecordsContiguousFromRecord1": 235, "otherPlacement": 93, "firstControlSwitchRecord": {"0": 88, "1": 240}}
+ },
+ "crossCheck": "references/fm3-volume-binding-evidence.json: the user's own FM3-created External 1 -> Volume binding has the same template words 1..7 and 10..24.",
+ "notProven": ["device import, STORE and reload of a newly written binding", "switch behaviour on the front panel", "Control Switch type/default state (not part of the record)", "inverted, partial or channel-limited forms (seen but not written)"]
+}

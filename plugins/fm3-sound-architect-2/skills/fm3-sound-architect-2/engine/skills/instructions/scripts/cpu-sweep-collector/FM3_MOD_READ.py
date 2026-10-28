@@ -9,6 +9,7 @@ Device frames: edit-buffer dumps only. No store, no SET, no scene change by the 
 
 Usage:
   python3 FM3_MOD_READ.py --pack DIR --session DIR [--port /dev/cu.usbmodemXXXX]
+  python3 FM3_MOD_READ.py --check-port [--port ...]   (read-only: lists ports, FM3 must answer)
   python3 FM3_MOD_READ.py --self-test
 Close FM3-Edit and Fractal-Bot first (the USB port is exclusive).
 """
@@ -17,6 +18,22 @@ from pathlib import Path
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import FM3_CPU_SWEEP as S
+
+def require_fm3(port, path):
+    """Read-only identity check before the first dump: the FM3 (model 0x11) must answer the CPU request."""
+    v = S.read_cpu(port, timeout=2.0)
+    S.check(v is not None, 'Port %s ei vastanud FM3 päringule; ühtegi presetti ei saadetud. Kontrolli USB-kaablit ja jagajat, sulge FM3-Edit/Fractal-Bot.' % path)
+    print('FM3 vastas pordis %s (CPU %s %%).' % (path, S.cpu_from_raw(v)))
+
+def check_port(port_path):
+    import glob
+    c = sorted(glob.glob('/dev/cu.usbmodem*')) + sorted(glob.glob('/dev/ttyACM*'))
+    print('Leitud pordid: %s' % (', '.join(c) or 'mitte ühtegi'))
+    path = port_path or S.find_port()
+    port = S.Port(path)
+    try: require_fm3(port, path)
+    finally: port.close()
+    print('Pordikontroll OK. Midagi ei saadetud peale CPU lugemispäringu.')
 
 def run(pack, session, port_path):
     manifest = json.loads((pack / 'manifest.json').read_text())
@@ -32,6 +49,7 @@ def run(pack, session, port_path):
     if done: print('Jätkan: juba loetud %d presetti.' % len(done))
     port = S.Port(port_path)
     try:
+        require_fm3(port, port_path)
         for n, it in enumerate(manifest['items'], 1):
             if it['id'] in done: continue
             S.send_preset(port, frames[it['id']]); time.sleep(1.0)
@@ -60,8 +78,9 @@ def self_test():
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--pack', type=Path); ap.add_argument('--session', type=Path); ap.add_argument('--port')
-    ap.add_argument('--self-test', action='store_true'); a = ap.parse_args()
+    ap.add_argument('--self-test', action='store_true'); ap.add_argument('--check-port', action='store_true'); a = ap.parse_args()
     if a.self_test: self_test()
+    elif a.check_port: check_port(a.port)
     else:
         S.check(a.pack and a.session, 'Anna --pack ja --session')
         run(a.pack.expanduser(), a.session.expanduser(), a.port or S.find_port())

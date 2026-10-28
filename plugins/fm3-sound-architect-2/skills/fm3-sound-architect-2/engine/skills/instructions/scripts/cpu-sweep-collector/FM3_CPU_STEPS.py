@@ -9,6 +9,7 @@ selected. Device frames: one edit-buffer dump and the read-only CPU request.
 
 Usage:
   python3 FM3_CPU_STEPS.py --pack DIR --session DIR [--port /dev/cu.usbmodemXXXX]
+  python3 FM3_CPU_STEPS.py --check-port [--port ...]   (read-only: lists ports, FM3 must answer)
   python3 FM3_CPU_STEPS.py --self-test
 Close FM3-Edit and Fractal-Bot first (the USB port is exclusive).
 """
@@ -22,6 +23,22 @@ def reading(port):
     raw, reads = S.settle(port, first_wait=1.0)
     return {'cpuPercent': None if raw is None else S.cpu_from_raw(raw), 'raw': raw, 'reads': reads}
 
+def require_fm3(port, path):
+    """Read-only identity check before the first dump: the FM3 (model 0x11) must answer the CPU request."""
+    v = S.read_cpu(port, timeout=2.0)
+    S.check(v is not None, 'Port %s ei vastanud FM3 päringule; ühtegi presetti ei saadetud. Kontrolli USB-kaablit ja jagajat, sulge FM3-Edit/Fractal-Bot.' % path)
+    print('FM3 vastas pordis %s (CPU %s %%).' % (path, S.cpu_from_raw(v)))
+
+def check_port(port_path):
+    import glob
+    c = sorted(glob.glob('/dev/cu.usbmodem*')) + sorted(glob.glob('/dev/ttyACM*'))
+    print('Leitud pordid: %s' % (', '.join(c) or 'mitte ühtegi'))
+    path = port_path or S.find_port()
+    port = S.Port(path)
+    try: require_fm3(port, path)
+    finally: port.close()
+    print('Pordikontroll OK. Midagi ei saadetud peale CPU lugemispäringu.')
+
 def run(pack, session, port_path):
     mb = (pack / 'manifest.json').read_bytes(); manifest = json.loads(mb)
     S.check(manifest.get('kind') == 'fm3-cpu-steps', 'Not a CPU steps pack')
@@ -33,6 +50,7 @@ def run(pack, session, port_path):
     res = {'kind': 'fm3-cpu-steps-results', 'packSha256': hashlib.sha256(mb).hexdigest(), 'time': time.strftime('%Y-%m-%dT%H:%M:%S'), 'steps': []}
     port = S.Port(port_path)
     try:
+        require_fm3(port, port_path)
         S.send_preset(port, frames); time.sleep(1.0)
         ans = input('\nFM3 ekraanil peaks nüüd olema nimi "%s". Kas on? (j/e): ' % manifest['confirmName']).strip().lower()
         S.check(ans.startswith('j'), 'Seade ei laadinud presetti redaktsioonipuhvrisse; midagi ei salvestatud.')
@@ -57,8 +75,9 @@ def self_test():
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--pack', type=Path); ap.add_argument('--session', type=Path); ap.add_argument('--port')
-    ap.add_argument('--self-test', action='store_true'); a = ap.parse_args()
+    ap.add_argument('--self-test', action='store_true'); ap.add_argument('--check-port', action='store_true'); a = ap.parse_args()
     if a.self_test: self_test()
+    elif a.check_port: check_port(a.port)
     else:
         S.check(a.pack and a.session, 'Anna --pack ja --session')
         run(a.pack.expanduser(), a.session.expanduser(), a.port or S.find_port())
