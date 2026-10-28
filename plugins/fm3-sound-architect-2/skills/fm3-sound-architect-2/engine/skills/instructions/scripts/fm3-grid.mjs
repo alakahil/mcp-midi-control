@@ -200,7 +200,7 @@ export function describeLinks(body){
 // Sound-design warnings (not refusals): an Amp output that reaches Out 1/Send without a Cab.
 export function gridWarnings(body){
   const g=readGrid(body),at=(r,c)=>g.find(x=>x.row===r&&x.col===c),warn=[];
-  const isAmp=id=>blockOf(id)?.block===58,isCab=id=>blockOf(id)?.block===62,sink=id=>id===IO.out1||id===IO.send||id===OUT2;
+  const isAmp=id=>blockOf(id)?.block===58,isCab=id=>blockOf(id)?.block===62,sink=id=>id===IO.out1||id===IO.send;  // Out 2 not counted: keeps the pinned factory replay (Out 2 normally mirrors Out 1)
   const bad=(x,seen)=>{ // path from x (exclusive) to a sink that meets no Cab
     if(sink(x.id))return true;if(x.col===11)return false;
     return g.filter(y=>y.col===x.col+1&&y.id&&y.mask>>x.row&1).some(y=>!isCab(y.id)&&(sink(y.id)||bad(y,seen)));

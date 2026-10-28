@@ -8,7 +8,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-output.mjs": "bc51afb7938811c3e98df4533c62b3efda1d132c5c52638cda2f314ea691045d",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset.mjs": "a264cd9e881cefd16a07537bd80bb33e811ee350cb56c2a57b886a85df345ce6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset-core.mjs": "9538c809743d216d3334fb51acaf7fee71e33daf7da8c21eec8336acd571bfda",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-sound.mjs": "a751d615f90d7dc8d3423399ddee21a1a79b62e7b80e32137be37dd2e9dbe3bb",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-sound.mjs": "355468db23dc594ba9ed584a870462bf8df33ffe51dadf481f6e856417a813f2",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-jb-composer.mjs": "7bf064a6edca0495c04fbbb696d0a6b6fe09af6e5cc8ca8044b5af3a6e4ff115",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-final-state.mjs": "54000ab11485790d8cb54eef3c29d92b0438a135300d48545a8f4062f5d3d591",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-controls-output.mjs": "ba30e7577150e2c79d7d51e0e7bece3699cd727f8b5e23dd0406a241d9aa7868",
