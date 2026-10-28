@@ -1,0 +1,43 @@
+{
+ "kind": "fm3-cpu-steps-results",
+ "packSha256": "2d1e4b67458f98d11d5ff8b2de93dbe5ed36be8d35ae11a69b4529275534fc7f",
+ "time": "2026-10-28T14:58:02",
+ "steps": [
+  {
+   "cpuPercent": 75.0,
+   "raw": 75,
+   "reads": [
+    75,
+    75,
+    75
+   ],
+   "step": 1,
+   "id": "remove-out2",
+   "userNote": "Enter ei andnud mingit tulemust, eemaldasin bloki Delete nupust, jäi alles shunt kaabliga ühendatuna"
+  },
+  {
+   "cpuPercent": 75.0,
+   "raw": 75,
+   "reads": [
+    74,
+    75,
+    75,
+    75
+   ],
+   "step": 2,
+   "id": "remove-row4-shunts",
+   "userNote": "Shundid kustusid koos kaabliühendusega"
+  }
+ ],
+ "userConfirmedName": true,
+ "sceneAfterLoad": "4",
+ "afterLoad": {
+  "cpuPercent": 76.0,
+  "raw": 76,
+  "reads": [
+   76,
+   76,
+   76
+  ]
+ }
+}

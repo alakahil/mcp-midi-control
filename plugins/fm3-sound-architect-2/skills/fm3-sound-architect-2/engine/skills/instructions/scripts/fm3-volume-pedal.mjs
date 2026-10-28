@@ -88,7 +88,7 @@ export function renderVolumePedalText(state){
  if(!state)return [];
  return ['','EXTERNAL 1 → VOLUME/PAN 1 — LÕPPFAILIST',
   `Seos: External 1 → Volume/Pan 1 Volume (VOLUME_GAIN, PID 0); kanalid ALL (A–D); modifikaatori kirje ${state.record}.`,
-  ...(state.withWahBinding?['Kirjes 0 on External 1 → Wah seos; mõlemad järgivad sama pedaali (External 1). Selle kahe seosega faili import ja STORE on seadmes kontrollimata.']:[]),
+  ...(state.withWahBinding?['Kirjes 0 on External 1 → Wah seos; mõlemad järgivad sama pedaali (External 1). 28.10.2026 katses T9 jäid mõlemad seosed pärast STORE-i ja uuesti laadimist alles ning pedaal liigutas mõlemat; selle uue faili import on kontrollimata.']:[]),
   'Min/Max, kõver ja muud modifikaatori väljad: 23.10.2026 FW13 ekspordist kopeeritud vaikeolek. Arvulist Min/Max muutmist ei toetata.',
   `Modifikaatori 25 toorsõna: ${state.words.join(', ')}.`,
   state.entireBodyMatchesCapture?'Kogu preseti keha kattub kasutaja Volume-seose ekspordiga; selle sisu korduseksporti pole vaja. Uut kodeeritud faili eraldi seadmesse ei imporditud.':'See on uus kombinatsioon: seose vaikeolek on seadmeekspordist, lõppfaili kombinatsioon kontrollitud tarkvaraliselt.',

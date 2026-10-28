@@ -41,7 +41,7 @@ assert.deepEqual(good.report.controlSwitches.map(s=>[s.switch,s.param,s.record,s
 assert.deepEqual(good.report.stages.controlSwitches.records,[1,2,3,4,5]);
 for(const line of ['CONTROL SWITCH SEOSED — LÕPPFAILIST','Control Switch 2 → amp Boost (DISTORT_BOOST); kanalid ALL; kirje 1;','Control Switch 6 → amp Saturation Switch (DISTORT_SATSWITCH); kanalid ALL; kirje 5;'])assert.ok(good.txt.includes(line),line);
 const cap=getPresetCapabilities().controlSwitches;
-assert.equal(cap.field,'controlSwitches');assert.equal(cap.evidence.sha256,controlSwitchEvidenceHash);assert.equal(cap.hardware,'not yet tested (import, STORE, switching)');
+assert.equal(cap.field,'controlSwitches');assert.equal(cap.evidence.sha256,controlSwitchEvidenceHash);assert.equal(cap.hardware.switching,'not tested');assert.equal(cap.hardware.thisFile,'not tested');assert.match(cap.hardware.storeReload,/^confirmed 2026-10-28/);
 
 // Placement next to the Volume binding (record 0) and next to Wah (record 0) + Volume (record 1).
 const vol={...spec,composer:{...composer,name:'CS VOL'},volumePan:true,volumePedal:true,layout:{row2:['drive','amp','cab'],row3:['volpan','delay','reverb']},controlSwitches:switches.slice(0,2)};
@@ -90,4 +90,4 @@ try{
   fail('unrequested',(r,s)=>{delete s.controlSwitches;delete r.report.controlSwitches;delete r.report.stages.controlSwitches;});
   fail('volume-moved',r=>{r.syx=rewrite(wr.syx,b=>{for(let i=0;i<25;i++){const a=b.readUInt16LE(1584+96+2*i),c=b.readUInt16LE(1584+96*2+2*i);b.writeUInt16LE(c,1584+96+2*i);b.writeUInt16LE(a,1584+96*2+2*i);}});r.report.outputSha256=sha(r.syx);},wr,wah);
 }finally{fs.rmSync(temp,{recursive:true,force:true});}
-console.log(JSON.stringify({passed:true,records:[1,2,3,4,5],withVolume:[1,2],withWahAndVolume:[2,3],invalidSpecs:rejected,crcValidTamperCases:tamper,evidenceTemplateRecords:receipt.corpus.templateRecords,deviceIO:false,hardwareTested:false}));
+console.log(JSON.stringify({passed:true,records:[1,2,3,4,5],withVolume:[1,2],withWahAndVolume:[2,3],invalidSpecs:rejected,crcValidTamperCases:tamper,evidenceTemplateRecords:receipt.corpus.templateRecords,deviceIO:false,storeReloadConfirmed:true,switchingTested:false}));

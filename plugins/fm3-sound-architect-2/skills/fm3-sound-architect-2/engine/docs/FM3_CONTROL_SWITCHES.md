@@ -42,4 +42,15 @@ External 1 → Volume seos kasutab samu mallisõnu.
 - Control Switchi tüüp (latching/momentary), algolek ja jalglüliti määrang ei ole seose osa. Need määratakse
   FM3-l Controllers- või FC-menüüs.
 - Pööratud või osalist Min/Max-i, kanalipiirangut ega muid allikaid ja sihtmärke ei kirjutata.
-- Uue faili import, STORE, reload ja lülitamine on seadmes kontrollimata (`hardware: not yet tested`).
+- Control Switchi lülitamist ja selle uue faili importi ei ole seadmes kontrollitud.
+
+## Seadmekatsed (28.10.2026)
+
+- **T7 näidud** (`references/fm3-modifier-display-20261028.json`): vaikemalli seos näitab vaikimisi
+  Modify lehte: Min OFF, Max ON, Start 0 %, Mid 50 %, End 100 %, Slope 50 %, Scale 1.000, Offset 0 %,
+  Damping EXPONENTIAL, Attack ja Release 10,1 ms, Auto-Engage OFF, PC Reset OFF, Update Rate SLOW.
+  Source loendi number on salvestatud kood + 1 (51 → „52 Control Switch 2“). Pööratud seos 65534/0
+  näitab Min ON ja Max OFF; Max 1707 näitab lülitil OFF. Sõna 17 = 4 näitab CHAN D.
+- **T9 STORE ja uuesti laadimine** (`references/fm3-bind-store-20261028.json`): CS2 → Input Boost ja
+  CS3 → Bright (kirjed 2 ja 3, Wahi ja Volume'i kõrval) jäid alles. Salvestatud preseti 32
+  modifikaatorikirjet klappisid genereeritud failiga sõna-sõnalt.

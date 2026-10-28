@@ -1,0 +1,110 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-28",
+ "preset": {
+  "name": "BIND T9 STORE",
+  "generator": "0.3.30 (composer Wah + volumePedal + controlSwitches)",
+  "sha256": "221f9b84da2ff200fcab636a6d12a4c9ce15a3c24f9715640e1e30924358b221",
+  "bindings": [
+   {
+    "record": 0,
+    "source": "External 1",
+    "effectId": 94,
+    "pid": 5,
+    "channel": "ALL"
+   },
+   {
+    "record": 1,
+    "source": "External 1",
+    "effectId": 102,
+    "pid": 0,
+    "channel": "ALL"
+   },
+   {
+    "record": 2,
+    "source": "Control Switch 2",
+    "effectId": 58,
+    "pid": 42,
+    "channel": "ALL"
+   },
+   {
+    "record": 3,
+    "source": "Control Switch 3",
+    "effectId": 58,
+    "pid": 41,
+    "channel": "ALL"
+   }
+  ]
+ },
+ "method": "Edit-buffer load (7F 00) by the script; the user read Source 1 of each bound parameter on the FM3 front panel and moved the expression pedal, STOREd the preset himself, selected another preset and back, and checked again. The script then read the stored location with fn=0x03 (read-only). The script never stored or set anything.",
+ "readings": {
+  "beforeStore": {
+   "wahSource": "External 1",
+   "volumeSource": "External 1",
+   "boostSource": "Control Switch 2",
+   "brightSource": "Control Switch 3",
+   "pedal": "mõlemad"
+  },
+  "afterReload": {
+   "wahSource": "External 1",
+   "volumeSource": "External 1",
+   "boostSource": "Control Switch 2",
+   "brightSource": "Control Switch 3",
+   "pedal": "mõlemad"
+  },
+  "controlSwitchFootswitch": "not assigned; switching not checked"
+ },
+ "storedLocation": {
+  "shown": 424,
+  "index": 423
+ },
+ "storedVsGenerated": {
+  "bodyBytes": 13216,
+  "modifierRegionIdentical": true,
+  "beforeRecordsIdentical": true,
+  "afterRecordsIdentical": true,
+  "recordContentDiffs": [
+   {
+    "family": "wah",
+    "diffs": [
+     {
+      "headerByte": 26,
+      "generated": 1,
+      "stored": 0,
+      "meaning": "Scene 1 bypass word (header byte 26): 1 = bypassed in the file, 0 = engaged when stored"
+     }
+    ]
+   }
+  ],
+  "recordOrder": {
+   "moved": [
+    {
+     "family": "wah",
+     "generatedIndex": 9,
+     "storedIndex": 10
+    },
+    {
+     "family": "volpan",
+     "generatedIndex": 10,
+     "storedIndex": 9
+    }
+   ],
+   "meaning": "the FM3 stores Volume/Pan 1 before Wah 1; the generated file has Wah first. Record contents are equal."
+  }
+ },
+ "findings": [
+  "All four bindings survive STORE and reload: Wah and Volume on External 1 (records 0 and 1), Input Boost on Control Switch 2, Bright on Control Switch 3; the pedal moved both Wah Control and Volume before and after.",
+  "The 32 modifier records of the stored preset equal the generated ones word for word.",
+  "The Wah Scene 1 bypass word was stored as engaged (0) instead of the file value (1). The Wah binding has the base Auto-Engage word (2), so moving the pedal engaged the Wah before STORE; the FM3 stores the current state, like the selected scene in T2.",
+  "The FM3 reorders the Wah and Volume/Pan block records when storing; their contents are unchanged."
+ ],
+ "notMeasured": [
+  "Control Switch switching (no footswitch assigned to Control Switch 2/3)",
+  "audio",
+  "Auto-Engage behaviour itself (word 2 not displayed in this run)"
+ ],
+ "resultsSha256": "579bad394d47f64ae5ca84669cfb089bdb3490698a6ed13a93a278027fd47d35",
+ "loadSha256": "0bb34ad2927222a30688c6b0ba7426fe2affb5580c87e44b0b6080029eb5b9d9"
+}
