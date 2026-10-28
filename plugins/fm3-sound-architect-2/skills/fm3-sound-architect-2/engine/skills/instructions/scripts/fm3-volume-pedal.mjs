@@ -57,7 +57,7 @@ export function volumePedalCapabilities(){return {
  source:'External 1',sourceCode:14,target:{effectId:102,pid:0,name:'VOLUME_GAIN',displayLabel:'Volume',channelScope:'ALL'},
  record:'0, or 1 when External 1 -> Wah is active in record 0',words:words(),policy:'captured-volume-default-fw13',evidenceSha256:volumeBindingEvidenceHash,
  captureSha256:evidence.capture.sha256,fullRangeEncodingProven:false,numericMinMaxAuthoring:true,
- minMaxEncoding:{words:[1,2],codec:'target VOLUME_GAIN stored word (0..10)',evidence:displayReceipt,sha256:modifierDisplayHash,hardware:'display decode confirmed on other targets; a Volume Min/Max other than 0/10 is not tested on the device'},
+ minMaxEncoding:{words:[1,2],codec:'target VOLUME_GAIN stored word (0..10)',evidence:displayReceipt,sha256:modifierDisplayHash,hardware:'confirmed 2026-10-28 (T10: Min 2.50 / Max 7.50 on the Modify page, knob 2.50 heel -> 7.50 toe; references/fm3-volume-range-20261028.json); other ranges follow the same codec'},
  globalControllerSetup:false,deviceIO:false,storeReloadProven:false,pedalBehaviorEvidence:pedalBehaviorEvidence(),
  limits:evidence.limits.map(x=>x.startsWith('No arbitrary source')?'No arbitrary source, channel, target or record allocation; with External 1 -> Wah the binding goes to record 1':x)};}
 export function readVolumePedal(body,range=volumeRange(true)){
@@ -109,7 +109,7 @@ export function renderVolumePedalText(state){
  return ['','EXTERNAL 1 → VOLUME/PAN 1 — LÕPPFAILIST',
   `Seos: External 1 → Volume/Pan 1 Volume (VOLUME_GAIN, PID 0); kanalid ALL (A–D); modifikaatori kirje ${state.record}.`,
   ...(state.withWahBinding?['Kirjes 0 on External 1 → Wah seos; mõlemad järgivad sama pedaali (External 1). 28.10.2026 katses T9 jäid mõlemad seosed pärast STORE-i ja uuesti laadimist alles ning pedaal liigutas mõlemat; selle uue faili import on kontrollimata.']:[]),
-  state.capturedDefaults?'Min/Max, kõver ja muud modifikaatori väljad: 23.10.2026 FW13 ekspordist kopeeritud vaikeolek (Min 0.00, Max 10.00).':`Min ${state.min.display.toFixed(2)} / Max ${state.max.display.toFixed(2)} (Volume skaalas; sõnad ${state.min.word} / ${state.max.word}). Kõver ja muud väljad on 23.10.2026 ekspordi vaikeolek. Min/Max kodeering on seadme näiduga kinnitatud teistel sihtmärkidel (T7/T7b); Volume'il seda väärtust seadmes kontrollitud pole.`,
+  state.capturedDefaults?'Min/Max, kõver ja muud modifikaatori väljad: 23.10.2026 FW13 ekspordist kopeeritud vaikeolek (Min 0.00, Max 10.00).':`Min ${state.min.display.toFixed(2)} / Max ${state.max.display.toFixed(2)} (Volume skaalas; sõnad ${state.min.word} / ${state.max.word}). Kõver ja muud väljad on 23.10.2026 ekspordi vaikeolek. Min/Max kodeering on seadme näiduga kinnitatud (T7/T7b teistel sihtmärkidel; 28.10.2026 T10 Volume'il: Min 2.50 / Max 7.50, nupp kannas 2.50 ja varbas 7.50). Selle faili vahemikku eraldi ei mõõdetud.`,
   `Modifikaatori 25 toorsõna: ${state.words.join(', ')}.`,
   state.entireBodyMatchesCapture?'Kogu preseti keha kattub kasutaja Volume-seose ekspordiga; selle sisu korduseksporti pole vaja. Uut kodeeritud faili eraldi seadmesse ei imporditud.':'See on uus kombinatsioon: seose vaikeolek on seadmeekspordist, lõppfaili kombinatsioon kontrollitud tarkvaraliselt.',
   'External 1 globaalne pedaali/MIDI määrang ja pedaali asend ei sisaldu presetis. Seos ei muuda stseenide kanalit ega bypass’i.',

@@ -108,7 +108,8 @@ ajaloolisi toorandmeid ei muudeta ega samu katseid uuesti nõuta.
   Tõend: `MOOTOR/references/fm3-modifier-display-20261028.json`.
 - **Volume pedaali Min/Max (0.3.31):** `volumePedal:{min:0..10, max:0..10}` kirjutab sõnadesse 1/2 VOLUME_GAIN-i
   kodeeringu (näiteks 2.5 → 16384). Teised sõnad jäävad ekspordi vaikeolekusse. Kodeering on seadme näiduga
-  kinnitatud kolmel teisel sihtmärgil; Volume'il endal on muu kui 0/10 seadmes kontrollimata. `true` tähendab 0/10.
+  kinnitatud kolmel teisel sihtmärgil ja Volume'il endal (T10: Modify leht Min 2.50 / Max 7.50, pedaal kannas 2.50 → varbas 7.50,
+  `MOOTOR/references/fm3-volume-range-20261028.json`). `true` tähendab 0/10.
 - **T9 seoste STORE (28.10.2026):** Wah (External 1, kirje 0), Volume (External 1, kirje 1),
   CS2 → Input Boost ja CS3 → Bright jäid pärast STORE-i ja uuesti laadimist alles. Modifikaatorikirjed
   klappisid sõna-sõnalt ja pedaal liigutas nii Wahi kui Volume'i. Wahi Scene 1 bypass salvestus

@@ -1,0 +1,14 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "e12f9391ce9460573a9c5a3e096ae9fe7ab92a5684b3826e436b79d583b90b8f",
+ "time": "2026-10-28T16:25:14",
+ "readings": {
+  "source": "15 External 1",
+  "min": "2.50",
+  "max": "7.50",
+  "heel": "2.50",
+  "mid": "4.90",
+  "toe": "7.50"
+ },
+ "note": ""
+}

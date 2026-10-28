@@ -32,7 +32,7 @@ sõnad 1 ja 2 hoiavad sihtparameetri salvestussõna. See dekodeeriti 28.10.2026 
 sihtmärgil (Rotary Rate, Ampi graafilise EQ riba, Wah Control) sihtkodeekiga
 (`references/fm3-modifier-display-20261028.json`). VOLUME_GAIN-i kodeering (0 / 2.5 / 7.5 → 0 / 16384 / 49151)
 on 24.10.2026 esipaneeli katsest. Muutuvad ainult sõnad 1 ja 2, pööratud vahemik (min > max) on lubatud.
-Volume'i muud kui 0/10 vahemikku ei ole seadmes kontrollitud. Kõverat (Mid, Slope, Scale) ei kirjutata.
+28.10.2026 katses T10 (`references/fm3-volume-range-20261028.json`) näitas FM3 Modify leht vahemikku 2,5–7,5 kui Min 2.50 ja Max 7.50. FM3-Editis järgis Volume nupp pedaali: kannas 2,50, pooles umbes 4,90 ja varbas 7,50. Kõverat (Mid, Slope, Scale) ei kirjutata.
 
 ## Tõend
 

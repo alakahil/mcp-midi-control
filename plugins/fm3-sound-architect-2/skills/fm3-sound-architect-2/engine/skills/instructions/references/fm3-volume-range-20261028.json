@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-28",
+ "preset": {
+  "name": "VOL RANGE T10",
+  "generator": "0.3.31 volumePedal {min:2.5, max:7.5}",
+  "sha256": "b6d760e041589ddac2d9741eb6c4db8830daf156a07e08870307caa0c4d36175",
+  "words": {
+   "min": 16384,
+   "max": 49151
+  }
+ },
+ "pedal": "Valeton expression pedal on External 1 (global setting unchanged)",
+ "method": "--load: edit-buffer dump (7F 00) only. The user reads the FM3 Modify page and the Volume knob in FM3-Edit. --record saves the typed readings without device I/O. Nothing is stored or set.",
+ "readings": {
+  "source1": "15 External 1",
+  "modifyPage": {
+   "min": 2.5,
+   "max": 7.5
+  },
+  "fm3EditVolumeKnob": {
+   "heel": 2.5,
+   "aboutMiddle": 4.9,
+   "toe": 7.5
+  },
+  "units": "Volume (0..10); the middle pedal position is approximate"
+ },
+ "findings": [
+  "The Modify page shows Min 2.50 and Max 7.50 for words 16384 / 49151: numeric Volume Min/Max encode with the VOLUME_GAIN codec as decoded in T7/T7b.",
+  "The Volume knob follows the pedal from 2.50 (heel) to 7.50 (toe), about 4.90 in the middle."
+ ],
+ "notMeasured": [
+  "STORE/reload of a ranged binding (the record format is the one T9 stored)",
+  "audio",
+  "the curve between the end points"
+ ],
+ "resultsSha256": "826152cf5cecfe67674bf62ce843eb85e714e2c3114b8c2059c8ac179f6d4a22",
+ "loadSha256": "2ad2b787fce8f4e7361620b17558a1a44570969a2687b8daf737878648d8a21a"
+}
