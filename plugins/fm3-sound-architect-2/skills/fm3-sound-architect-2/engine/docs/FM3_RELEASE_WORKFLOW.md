@@ -10,8 +10,10 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.28 väljalaset: kadudeta levipakendi
-vähendamine. GEQ, PEQ ja Enhanceri kolme ajaloolise mõõtesessiooni 1080 faili
+Praegune lähtekood valmistab ette 0.3.29 väljalaset: GitHubi PR #37 Satriani
+„Soap On A Rope” V4 näide, uuendatud tõendiinventuur ja kontrollide loendus.
+V4 seadmeimport ja kuulamine on ootel. Säilib 0.3.28 kadudeta levipakend.
+GEQ, PEQ ja Enhanceri kolme ajaloolise mõõtesessiooni 1080 faili
 pakitakse ehitamisel ühte taastatavasse arhiivi. GitHubi lähtepuu algandmed,
 arendusradade nimed, generaatori kirjutustugi ja kõik varasemad tõendid säilivad.
 Uut seadmekatset selles väljalaske koostamise etapis ei tehtud.

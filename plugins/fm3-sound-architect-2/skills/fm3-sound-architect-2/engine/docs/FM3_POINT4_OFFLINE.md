@@ -24,7 +24,7 @@ Uus kohalik taasesitus kontrollis 14 püsivara-/andmelõiku ja kahte editori
 funktsioonikeha. Uut REA teenusekäivitust ei tehtud; kasutati olemasolevat
 23.10.2026 REA eksporti ning uut kohalikku staatilist analüüsi.
 
-Korpuses on 795 failiteed ja 638 erinevat sisu. Neist 628 sobib kaasaegse
+0.3.29 korpuses on 796 failiteed ja 639 erinevat sisu. Neist 629 sobib kaasaegse
 `0x0146` auditi jaoks ning 10 vanema vormingu faili jäävad eraldi pärandanalüüsi.
 Kõik 220 aktiivset kaasaegset kirjet asuvad esimeses pesas; üheski toetatud
 failis ei ole kahte aktiivset seost. Genereeritud näited ja failikordused ei ole
