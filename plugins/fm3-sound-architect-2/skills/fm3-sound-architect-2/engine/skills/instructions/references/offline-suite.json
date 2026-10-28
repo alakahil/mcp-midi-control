@@ -552,7 +552,16 @@
         "node",
         "scripts/test-volume-pedal.mjs"
       ],
-      "scope": "Captured FW13 Ext1 -> Volume/Pan 1 Gain ALL default record, exact entire device-body replay, all unrelated bytes preserved, raw readback, invalid inputs and rehashed tamper rejection across SYX/TXT/spec/report; no new scale, DSP or STORE proof",
+      "scope": "Captured FW13 Ext1 -> Volume/Pan 1 Gain ALL default record: record 0 exact entire device-body replay, or record 1 next to an active External 1 -> Wah record 0 (records 2..31 pinned to the baseline); all unrelated bytes preserved, raw readback, invalid inputs and rehashed tamper rejection across SYX/TXT/spec/report; no new scale, DSP or STORE proof",
+      "required": true
+    },
+    {
+      "id": "test-control-switches",
+      "command": [
+        "node",
+        "scripts/test-control-switches.mjs"
+      ],
+      "scope": "Control Switch 1..6 -> Amp Boost/Bright/Cut/Fat/Saturation default-template bindings from an aggregate FW13 tonepack receipt: consecutive records from 1 (2 with Wah + Volume), base-form records only, only declared words changed, dependency conflict refusal, invalid inputs and CRC-valid tamper rejection; no device import, STORE or switching proof",
       "required": true
     },
     {

@@ -1,0 +1,238 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-28",
+ "pack": {
+  "presets": 7,
+  "source": "user-owned commercial FW13 tonepack presets, chosen by structural criteria (tools/fm3/modifier-display-build.mjs); files and names not in the repository",
+  "manifestSha256": "5eb975ce333fc58782559f6452058ac453aeb089a3b606afb68e247db7813675"
+ },
+ "method": "Edit-buffer loads (7F 00) only. The user opened the bound parameter on the FM3 front panel, pressed ENTER (Modifier menu), read Source 1, then PAGE RIGHT (Modify page) and typed every field. No store, no SET.",
+ "items": [
+  {
+   "id": "baseline",
+   "binding": "Control Switch 2 (51) -> Amp DISTORT_BOOST, channels ALL",
+   "words": {
+    "0": 51,
+    "1": 0,
+    "2": 65534,
+    "3": 0,
+    "4": 32767,
+    "5": 65534,
+    "6": 32767,
+    "7": 66,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 32767,
+    "14": 32767,
+    "15": 66,
+    "16": 0,
+    "17": 0,
+    "18": 0,
+    "19": 0,
+    "20": 0
+   },
+   "source1": "52 Control Switch 2",
+   "source1AsTyped": "NONE",
+   "correction": "user correction in the conversation, 2026-10-28 14:24 (first answer \"NONE\" was a misread)",
+   "fields": {
+    "Channel": "ALL",
+    "Min": "OFF",
+    "Max": "ON",
+    "Start": "0.0%",
+    "Mid": "50%",
+    "End": "100%",
+    "Slope": "50%",
+    "Scale": "1.000",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "10.1 ms",
+    "Release": "10.1 ms",
+    "Auto-Engage": "OFF",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": "",
+   "validReading": true
+  },
+  {
+   "id": "inverted",
+   "binding": "Control Switch 4 (53) -> Amp DISTORT_BRIGHT, ALL",
+   "words": {
+    "0": 53,
+    "1": 65534,
+    "2": 0
+   },
+   "source1": "54 Control Switch 4",
+   "fields": {
+    "Min": "ON",
+    "Max": "OFF"
+   },
+   "note": "Siin on veel samad väljad, mis eelmises katses",
+   "validReading": true
+  },
+  {
+   "id": "partial",
+   "binding": "Control Switch 4 (53) -> Amp DISTORT_BRIGHT, ALL",
+   "words": {
+    "0": 53,
+    "1": 65534,
+    "2": 1707
+   },
+   "source1": "54 Control Switch 4",
+   "fields": {
+    "Min": "ON",
+    "Max": "OFF"
+   },
+   "note": "",
+   "validReading": true
+  },
+  {
+   "id": "continuous",
+   "binding": "External 2 (15) -> Rotary ROTARY_RATE, CHAN A, Min/Max inside the range",
+   "words": {
+    "0": 15,
+    "17": 1
+   },
+   "source1": "54 Control Switch 4",
+   "fields": {
+    "Channel": "ALL",
+    "Min": "OFF",
+    "Max": "ON",
+    "Start": "0.0%",
+    "Mid": "50%",
+    "End": "100%",
+    "Slope": "50.0%",
+    "Scale": "1.000",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "10.1 ms",
+    "Release": "10.1 ms",
+    "Auto-Engage": "OFF",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": "",
+   "validReading": false
+  },
+  {
+   "id": "curve",
+   "binding": "Pitch Follower (9) -> Amp DISTORT_EQ3, ALL, Mid/Slope/Scale away from the default",
+   "words": {
+    "0": 9
+   },
+   "source1": "1 NONE",
+   "fields": {
+    "Channel": "ei luba liikuda Modify'le Page nupuga",
+    "Min": "ei luba liikuda Modify'le Page nupuga",
+    "Max": "ei luba liikuda Modify'le Page nupuga",
+    "Start": "ei luba liikuda Modify'le Page nupuga",
+    "Mid": "ei luba liikuda Modify'le Page nupuga",
+    "End": "ei luba liikuda Modify'le Page nupuga",
+    "Slope": "ei luba liikuda Modify'le Page nupuga",
+    "Scale": "ei luba liikuda Modify'le Page nupuga",
+    "Offset": "ei luba liikuda Modify'le Page nupuga",
+    "Damping": "ei luba liikuda Modify'le Page nupuga",
+    "Attack": "ei luba liikuda Modify'le Page nupuga",
+    "Release": "ei luba liikuda Modify'le Page nupuga",
+    "Auto-Engage": "ei luba liikuda Modify'le Page nupuga",
+    "Off Value": "ei luba liikuda Modify'le Page nupuga",
+    "PC Reset": "ei luba liikuda Modify'le Page nupuga",
+    "Update Rate": "ei luba liikuda Modify'le Page nupuga"
+   },
+   "note": "ei luba liikuda Modify'le Page nupuga",
+   "validReading": false
+  },
+  {
+   "id": "autoengage",
+   "binding": "External 1 (14) -> Wah WAH_CONTROL, ALL",
+   "words": {
+    "0": 14,
+    "1": 0,
+    "2": 65534,
+    "7": 65,
+    "10": 5,
+    "12": 65534,
+    "15": 65,
+    "17": 0
+   },
+   "source1": "15 External 1",
+   "fields": {
+    "Channel": "ALL",
+    "Min": "0.00",
+    "Max": "10.00",
+    "Start": "0.0%",
+    "Mid": "50.0%",
+    "End": "100.0%",
+    "Slope": "50.0%",
+    "Scale": "1.000",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "9.9 ms",
+    "Release": "9.9 ms",
+    "Auto-Engage": "MED POS",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": "",
+   "validReading": true
+  },
+  {
+   "id": "word17",
+   "binding": "Control Switch 4 (53) -> Amp DISTORT_BRIGHT",
+   "words": {
+    "0": 53,
+    "1": 0,
+    "2": 65534,
+    "17": 4
+   },
+   "source1": "54 Control Switch 4",
+   "fields": {
+    "Channel": "CHAN D",
+    "Min": "OFF",
+    "Max": "ON",
+    "Start": "0.0%",
+    "Mid": "50.0%",
+    "End": "100.0%",
+    "Slope": "50.0%",
+    "Scale": "1.000",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "10.1 ms",
+    "Release": "10.1 ms",
+    "Auto-Engage": "OFF",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": "",
+   "validReading": true
+  }
+ ],
+ "decoded": {
+  "sourceDisplayNumber": "The Source list number shown on the FM3 is the stored source code + 1: 51 -> \"52 Control Switch 2\", 53 -> \"54 Control Switch 4\", 14 -> \"15 External 1\"; 0 -> \"1 NONE\".",
+  "switchMinMax": "Switch targets: word 1 (Min) / word 2 (Max) 0 -> OFF, 65534 -> ON; 1707 (2.6 % of 65534) displays OFF. Inverted 65534/0 shows Min ON, Max OFF.",
+  "channelWord17": "Word 17 = 4 displays Channel \"CHAN D\" (0 ALL, 1..4 CHAN A..D, as the policy table).",
+  "autoEngageWord10": "Word 10 = 5 displays Auto-Engage \"MED POS\"; 0 displays OFF.",
+  "attackReleaseWords7and15": "Words 7 and 15 = 66 display Attack 10.1 ms and Release 10.1 ms; 65 displays 9.9 ms for both. Both words changed together in this corpus, so which word is Attack and which is Release is not separated.",
+  "defaultsOfTheModifyPage": "Default binding page: Min OFF, Max ON, Start 0.0 %, Mid 50 %, End 100 %, Slope 50 %, Scale 1.000, Offset 0.0 %, Damping EXPONENTIAL, Auto-Engage OFF, Off Value 5.0 %, PC Reset OFF, Update Rate SLOW.",
+  "offValueWord12": "Word 12 = 0 and 65534 both displayed Off Value 5.0 %: word 12 is not Off Value (unresolved)."
+ },
+ "notResolved": [
+  "continuous Min/Max display (the Rotary Rate reading was taken on another parameter)",
+  "Mid / Slope / Scale curve words (the Pitch Follower case showed Source NONE; the Modify page could not be opened)",
+  "which of words 7 / 15 is Attack",
+  "word 12"
+ ],
+ "findings": [
+  "The FM3 default template written by controlSwitches displays as the default Modify page: Min OFF, Max ON, full curve defaults, channel ALL.",
+  "Source numbers on the FM3 screen are 1-based (stored code + 1).",
+  "Switch Min/Max are stored 0 / 65534; an inverted binding stores 65534 / 0."
+ ],
+ "resultsSha256": "c19e7ab1dadb76401df05e4938706486a57ca596151a633610c74e661d38d834"
+}

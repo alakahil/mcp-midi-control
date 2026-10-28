@@ -3,6 +3,7 @@
 // of 342 types (fm3-cpu-types: edit-buffer loads + calibrated CPU meter, ±0.5 %). The FM3-Edit CPU
 // meter counts every placed block (bypass does not save CPU) on the effects core; Amp and Delay run
 // on the amp core, which the meter barely shows. Satriani V1 Scene 4: estimate 60.1 %, measured 61 %.
+// 0.2.2: Out 2 = 1 point (T8b); Satriani V4 all 8 scenes within 0.4 points (T8a, references/fm3-cpu-t8-20261028.json).
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
@@ -15,6 +16,10 @@ export const cpuMeasurementsHash='dbe43ad7c772634dcf24b7924f6bea6f141407cff49b73
 export const cpuTypesHash='8976c3114255ac18ef8847d332e760bbe2485aaf19c2890bf62dbdd53f0626a9';
 export const cpuMeasurements=pinned('fm3-cpu-measurements-20261023.json',cpuMeasurementsHash);
 export const cpuTypes=pinned('fm3-cpu-types-20261023.json',cpuTypesHash);
+// Out 2 (2026-10-28, test T8b): removing the block lowered the meter 76 -> 75 %; its feeding shunts cost 0.
+export const cpuT8Hash='53e502a7abe9e79592cdf8c4098cbae3e23269c32ad77f37a2b37f0e858f4769';
+export const cpuT8=pinned('fm3-cpu-t8-20261028.json',cpuT8Hash);
+const OUT2_COST=cpuT8.out2.costPoints.out2;
 // Type selector per family (decoded from the scene's active channel).
 const TYPE_FIELD={drive:'FUZZ_TYPE',reverb:'REVERB_TYPE',delay:'DELAY_MODEL',compressor:'COMP_TYPE',chorus:'CHORUS_TYPE',flanger:'FLANGER_TYPE',
   phaser:'PHASER_TYPE',wah:'WAH_TYPE',tremolo:'TREMOLO_TYPE',pitch:'PITCH_TYPE',filter:'FILTER_TYPE',
@@ -34,6 +39,7 @@ export function qualityDelta(type,quality){
 }
 const readLabel=(body,r,ch,name)=>{const p=findParam(r.family.replace(/\d+$/,''),name);return String(decodeValue(p,body.readUInt16LE(r.start+2*(ch*r.words+p.param)))).trim();};
 function blockCost(body,r,s){
+  if(r.family==='out2')return {cost:OUT2_COST,label:'Out 2',notes:[]};
   const fam=r.instance>1?r.family.replace(/\d+$/,''):r.family,notes=[];
   const ch=Math.min(body.readUInt16LE(r.header+10+2*s),r.channels-1);
   if(r.instance>1)notes.push(fam+' instance '+r.instance+' assumed equal to instance 1');
@@ -61,7 +67,7 @@ export function estimateCpu(syx){
       warning:pct>limit?'over the safe limit':pct>limit-8?'within 8 % of the safe limit':null};
   });
   const worst=scenes.reduce((a,b)=>b.percent>a.percent?b:a);
-  return {model:'fm3-cpu 0.2.1',measurementsSha256:cpuMeasurementsHash,typesSha256:cpuTypesHash,limitPercent:limit,maxPercent:worst.percent,worstScene:worst.scene,
+  return {model:'fm3-cpu 0.2.2',measurementsSha256:cpuMeasurementsHash,typesSha256:cpuTypesHash,out2Sha256:cpuT8Hash,limitPercent:limit,maxPercent:worst.percent,worstScene:worst.scene,
     measuredTypeCoverageAllScenes:scenes.every(s=>s.measuredTypeCoverage),
     exactAllScenes:scenes.every(s=>s.exact),exactFieldsMeaning:'Legacy aliases for measured-type coverage, not prediction accuracy',scenes,
     scope:'Effects-core meter (FM3-Edit CPU). Measured component costs do not establish a bound on combined-preset error (G06: estimate 44.3 %, measured 41.5 %). Unmeasured types use an available family maximum or a single measured reference; unknown families are omitted and named. Amp/Delay core not visible. Bypass does not reduce CPU.'};

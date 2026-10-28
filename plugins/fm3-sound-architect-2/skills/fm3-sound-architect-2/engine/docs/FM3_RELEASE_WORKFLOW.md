@@ -10,9 +10,11 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.29 väljalaset: GitHubi PR #37 Satriani
-„Soap On A Rope” V4 näide, uuendatud tõendiinventuur ja kontrollide loendus.
-V4 seadmeimport ja kuulamine on ootel. Säilib 0.3.28 kadudeta levipakend.
+Praegune lähtekood valmistab ette 0.3.30 väljalaset: Control Switch → Amp lülitite
+seosed (`controlSwitches`), Wah + Volume kahe seose paigutus (Volume kirjes 1), T7
+modifikaatorinäitude ja T8 CPU-sammude kogujad ning pordikontroll (`--check-port`).
+Uute seoste seadme-STORE on ootel. Kehtivad 0.3.29 Satriani V4 näide ja 0.3.28
+kadudeta levipakend.
 GEQ, PEQ ja Enhanceri kolme ajaloolise mõõtesessiooni 1080 faili
 pakitakse ehitamisel ühte taastatavasse arhiivi. GitHubi lähtepuu algandmed,
 arendusradade nimed, generaatori kirjutustugi ja kõik varasemad tõendid säilivad.

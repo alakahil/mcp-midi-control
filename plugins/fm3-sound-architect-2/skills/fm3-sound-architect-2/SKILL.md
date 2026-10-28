@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.29`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.30`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -95,8 +95,20 @@ ajaloolisi toorandmeid ei muudeta ega samu katseid uuesti nõuta.
 - **T6 CPU:** kaheksa preseti salvestatud stseenides oli näit 40,5–76 %.
   Esimene koguja ei valinud soovitud suurima kuluga stseeni; ära nimeta seda
   kõigi stseenide kontrolliks. Ühe preseti eraldi kaheksa stseeni katses oli
-  maksimum 82 % ja hinnang 80,5 %. Out 2 kulu on mudelist puudu; hinnang pole
-  täpne piirgarantii. Loe [CPU juhendit](engine/docs/FM3_CPU.md).
+  maksimum 82 % ja hinnang 80,5 %. Hinnang pole täpne piirgarantii.
+  Loe [CPU juhendit](engine/docs/FM3_CPU.md).
+- **T8 CPU (28.10.2026):** Satriani V4 kõigi 8 stseeni hinnang klappis näiduga 0,4 punkti
+  piires. Out 2 ploki eemaldamine langetas näitu 1 punkti, shundid 0 punkti.
+  `fm3-cpu 0.2.2` arvestab Out 2 kuluks 1 punkti. Tõend: `MOOTOR/references/fm3-cpu-t8-20261028.json`.
+- **T7 modifikaatorinäidud (28.10.2026):** FM3 näitab allika numbrit kujul kood + 1
+  (51 → „52 Control Switch 2“). Lüliti Min/Max 0/65534 = OFF/ON; sõna 17 = 4 → CHAN D;
+  sõna 10 = 5 → Auto-Engage MED POS; sõnad 7/15 väärtusega 66 → 10,1 ms, väärtusega 65 → 9,9 ms.
+  Pidevate sihtmärkide Min/Max ja kõvera näit jäid lugemata. Tõend: `MOOTOR/references/fm3-modifier-display-20261028.json`.
+- **T9 seoste STORE (28.10.2026):** Wah (External 1, kirje 0), Volume (External 1, kirje 1),
+  CS2 → Input Boost ja CS3 → Bright jäid pärast STORE-i ja uuesti laadimist alles. Modifikaatorikirjed
+  klappisid sõna-sõnalt ja pedaal liigutas nii Wahi kui Volume'i. Wahi Scene 1 bypass salvestus
+  sisselülitatuna, sest Auto-Engage lülitas Wahi pedaali liigutamisel sisse. FM3 salvestab hetkeoleku.
+  Control Switchi lülitamist ei kontrollitud. Tõend: `MOOTOR/references/fm3-bind-store-20261028.json`.
 
 Kommertspaketi presetid ei kuulu pluginasse. Uut seadmekatset selles
 väljalaske koostamise etapis ei tehtud. Kirjutustoe ulatus ja kaitsed säilivad.
@@ -305,6 +317,13 @@ see ei tõenda kõigi uute presetite salvestamist, heli/CPU-d ega täisvahemikku
 Offset / AC Line Frequency ei kuulu preseti sisusse. Wah Min/Max-i tõendusulatus
 ja `fullRangeEncodingProven=false` säilivad. Selle ekspordi kordamist pole vaja.
 
+## Control Switch → Amp lülitid ja Wah + Volume (0.3.30, 28.10.2026)
+
+`controlSwitches:[{switch:1..6, block:"amp", param:"DISTORT_BOOST"|"DISTORT_BRIGHT"|"DISTORT_CUT"|"DISTORT_FAT"|"DISTORT_SATSWITCH"}]`
+lisab FM3 vaikemalliga seose kanalitega ALL ja täisvahemikus Min/Max. Seosed lähevad kirjetesse alates kirjest 1,
+Wahi ja Volume'i kõrval kirjest 2. Mall tuleb FM3 enda salvestatud presetitest (1401 kirjet). STORE ja uuesti laadimine
+on kinnitatud (T9); lülitamine on kontrollimata. Control Switchi tüübi ja jalglüliti määrab kasutaja FM3-l. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md).
+
 ## External 1 → Volume/Pan 1 (0.3.17)
 
 Sound-spec'i `volumePedal:true` koos `volumePan:true` lisab **External 1 →
@@ -316,11 +335,11 @@ ja nupp järgib pedaali kannast varbani; ilma seoseta preset jääb 10.00 peale.
 10.00; kasutaja salvestas preseti ja laadis uuesti, seos ja väärtused jäid samaks ning salvestatud keha klappis
 genereerituga peale valitud stseeni (`references/fm3-pedal-store-20261026.json`). Heli ja kõver on mõõtmata.
 Ära küsi seda uuesti.
-Nõutav on NewLook-aluse muutmata passiivne modifikaatoripiirkond. Aktiivne Wah
-või muudetud modifikaatorid lükatakse tagasi; neid ei lülitata vaikimisi välja.
-`composer.modifiers:{external1Wah:false}` võib passiivse lähteoleku selgesõnaliselt
-fikseerida. Praegu ei toetata samaaegset Wah- ja Volume-pedaaliseost, muid
-allikaid/kanaliulatust/eksemplare ega vaba modifikaatorikirje valimist.
+Nõutav on NewLook-aluse muutmata passiivne modifikaatoripiirkond. Muudetud modifikaatorid lükatakse tagasi;
+neid ei lülitata vaikimisi välja. `composer.modifiers:{external1Wah:false}` võib passiivse lähteoleku
+selgesõnaliselt fikseerida. **Wah + Volume (0.3.30):** `external1Wah:true` korral läheb Volume-seos kirjesse 1.
+Mõlemad seosed järgivad sama External 1 pedaali; STORE ja uuesti laadimine on kinnitatud (T9). Muid allikaid,
+kanaliulatust, eksemplare ega vaba modifikaatorikirje valimist ei toetata.
 
 Kasutaja üks 23.10.2026 FW13 eksport kinnitas 25-sõnalise vaikeoleku ning kõigi
 muude sisubaitide säilimise. Generaator taastab kogu mõõdetud keha täpselt.

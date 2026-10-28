@@ -1,0 +1,96 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-28",
+ "v4": {
+  "preset": "examples/SATRIANI_SOAP_ON_A_ROPE_V4.syx (pack rebuilt by tools/fm3/cpu-scenes-build.mjs)",
+  "packSha256": "888dec836650917fc377b391be7a00108b5a09dabc50bd4f8d7d1009f535dca4",
+  "estimator": "fm3-cpu 0.2.1",
+  "method": "Edit-buffer load (7F 00) with its stored scene 1; the user selected scenes 1..8 on the FM3, the CPU meter (fn=0x01 sub=0x2E) was read after each until three equal values.",
+  "scenes": [
+   {
+    "scene": 1,
+    "estimatePercent": 46.9,
+    "measuredPercent": 47,
+    "errorPoints": -0.1
+   },
+   {
+    "scene": 2,
+    "estimatePercent": 46.9,
+    "measuredPercent": 46.5,
+    "errorPoints": 0.4
+   },
+   {
+    "scene": 3,
+    "estimatePercent": 62.4,
+    "measuredPercent": 62.5,
+    "errorPoints": -0.1
+   },
+   {
+    "scene": 4,
+    "estimatePercent": 62.4,
+    "measuredPercent": 62.5,
+    "errorPoints": -0.1
+   },
+   {
+    "scene": 5,
+    "estimatePercent": 46.9,
+    "measuredPercent": 47,
+    "errorPoints": -0.1
+   },
+   {
+    "scene": 6,
+    "estimatePercent": 46.9,
+    "measuredPercent": 47,
+    "errorPoints": -0.1
+   },
+   {
+    "scene": 7,
+    "estimatePercent": 46.9,
+    "measuredPercent": 47,
+    "errorPoints": -0.1
+   },
+   {
+    "scene": 8,
+    "estimatePercent": 62.4,
+    "measuredPercent": 62.5,
+    "errorPoints": -0.1
+   }
+  ],
+  "summary": {
+   "maxAbsErrorPoints": 0.4,
+   "meanErrorPoints": 0,
+   "measuredMax": 62.5
+  }
+ },
+ "out2": {
+  "preset": "one user-owned commercial FW13 preset with an Out 2 branch fed from row 3 (file and name not in the repository)",
+  "manifestSha256": "2d1e4b67458f98d11d5ff8b2de93dbe5ed36be8d35ae11a69b4529275534fc7f",
+  "scene": 4,
+  "method": "Edit-buffer load (7F 00); the user removed the Out 2 block (row 4, column 12) on the front panel, then the two row-4 shunts; the meter was read after the load and after each step. Nothing was stored.",
+  "readings": {
+   "afterLoadPercent": 76,
+   "afterRemovingOut2Percent": 75,
+   "afterRemovingShuntsPercent": 75
+  },
+  "userNotes": {
+   "removeOut2": "Enter ei andnud mingit tulemust, eemaldasin bloki Delete nupust, jäi alles shunt kaabliga ühendatuna",
+   "removeShunts": "Shundid kustusid koos kaabliühendusega"
+  },
+  "costPoints": {
+   "out2": 1,
+   "row4Shunts": 0
+  },
+  "resolution": "The meter reads in whole percent above 64 %: the Out 2 cost is 1 point within ±1."
+ },
+ "findings": [
+  "V4: the per-scene estimate matches the meter within 0.5 points in all eight scenes (47 / 46.5 / 62.5 / 62.5 / 47 / 47 / 47 / 62.5 measured).",
+  "Out 2 costs about 1 point of effects-core CPU; the shunts that feed it cost nothing measurable. This accounts for the 1.0 to 1.5 point under-estimate in the 2026-10-26 run (references/fm3-cpu-scenes-20261026.json), whose preset has an Out 2 branch.",
+  "Deleting Out 2 on the front panel leaves a shunt with its cable in its place (user note)."
+ ],
+ "resultsSha256": {
+  "v4": "203748d213e09e7ab1a8f9857f5458a4b3dead2b5bfbe86d65e92dd2ca8728b9",
+  "out2": "09e01427b91dce2f6ae993246410874e614c02966cb2afa1fc96d877aad5397e"
+ }
+}

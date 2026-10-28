@@ -1,0 +1,139 @@
+{
+ "kind": "fm3-modifier-display-results",
+ "time": "2026-10-28T14:10:56",
+ "items": [
+  {
+   "id": "baseline",
+   "source1": "NONE",
+   "fields": {
+    "Channel": "Channel  - ALL; Min - OFF; Max - ON; Start 0.0%; Mid - 50%; End - 100%; Slope - 50%;Scale - 1.000; Offset - 0.0%; Damping - EXPONENTIAL; Attack - 10.1 ms; Release -10.1 ms; Auto-Engage - OFF; Off Value - 5.0%; PC Reset - OFF; Update Rate - SLOW",
+    "Min": "OFF",
+    "Max": "ON",
+    "Start": "0.0%",
+    "Mid": "50%",
+    "End": "100%",
+    "Slope": "50%",
+    "Scale": "1.000",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "10.1 ms",
+    "Release": "10.1 ms",
+    "Auto-Engage": "OFF",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": ""
+  },
+  {
+   "id": "inverted",
+   "source1": "54 Control Swich 4",
+   "fields": {
+    "Min": "ON",
+    "Max": "OFF"
+   },
+   "note": "Siin on veel samad väljad, mis eelmises katses"
+  },
+  {
+   "id": "partial",
+   "source1": "54 Control Swich 4",
+   "fields": {
+    "Min": "ON",
+    "Max": "OFF"
+   },
+   "note": ""
+  },
+  {
+   "id": "continuous",
+   "source1": "54 Control Swich 4",
+   "fields": {
+    "Channel": "ALL",
+    "Min": "OFF",
+    "Max": "ON",
+    "Start": "0.0%",
+    "Mid": "50%",
+    "End": "100%",
+    "Slope": "50.0%",
+    "Scale": "1.000",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "10.1 ms",
+    "Release": "10.1 ms",
+    "Auto-Engage": "OFF",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": ""
+  },
+  {
+   "id": "curve",
+   "source1": "1 NONE",
+   "fields": {
+    "Channel": "ei luba liikuda Modify'le Page nupuga",
+    "Min": "ei luba liikuda Modify'le Page nupuga",
+    "Max": "ei luba liikuda Modify'le Page nupuga",
+    "Start": "ei luba liikuda Modify'le Page nupuga",
+    "Mid": "ei luba liikuda Modify'le Page nupuga",
+    "End": "ei luba liikuda Modify'le Page nupuga",
+    "Slope": "ei luba liikuda Modify'le Page nupuga",
+    "Scale": "ei luba liikuda Modify'le Page nupuga",
+    "Offset": "ei luba liikuda Modify'le Page nupuga",
+    "Damping": "ei luba liikuda Modify'le Page nupuga",
+    "Attack": "ei luba liikuda Modify'le Page nupuga",
+    "Release": "ei luba liikuda Modify'le Page nupuga",
+    "Auto-Engage": "ei luba liikuda Modify'le Page nupuga",
+    "Off Value": "ei luba liikuda Modify'le Page nupuga",
+    "PC Reset": "ei luba liikuda Modify'le Page nupuga",
+    "Update Rate": "ei luba liikuda Modify'le Page nupuga"
+   },
+   "note": "ei luba liikuda Modify'le Page nupuga"
+  },
+  {
+   "id": "autoengage",
+   "source1": "15 External 1",
+   "fields": {
+    "Channel": "ALL",
+    "Min": "0.00",
+    "Max": "10.00",
+    "Start": "0.0%",
+    "Mid": "50.0%",
+    "End": "100.0%",
+    "Slope": "50.0%",
+    "Scale": "1.000",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "9.9 ms",
+    "Release": "9.9 ms",
+    "Auto-Engage": "MED POS",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": ""
+  },
+  {
+   "id": "word17",
+   "source1": "54 Control Swich 4",
+   "fields": {
+    "Channel": "CHAN D",
+    "Min": "OFF",
+    "Max": "ON",
+    "Start": "0.0%",
+    "Mid": "50.0%",
+    "End": "100.0%",
+    "Slope": "50.0%",
+    "Scale": "1.000",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "10.1 ms",
+    "Release": "10.1 ms",
+    "Auto-Engage": "OFF",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": ""
+  }
+ ]
+}

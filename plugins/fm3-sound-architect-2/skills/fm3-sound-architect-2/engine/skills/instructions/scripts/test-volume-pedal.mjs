@@ -84,10 +84,29 @@ try{
  fail('other-report',r=>r.report.modifiers[1].source=14);
  fail('intermediate-wah',r=>r.report.modifierEdit=r.report.stages.composer.modifierEdit);
  fail('stage',r=>r.report.stages.volumePedal.changedWordIndices=[0]);
- fail('txt',r=>r.txt=r.txt.replace('kanalid ALL (A–D).','kanal A.'));
+ fail('txt',r=>r.txt=r.txt.replace('kanalid ALL (A–D);','kanal A;'));
  fail('txt-words',r=>r.txt=r.txt.replace('Modifikaatori 25 toorsõna:','Words:'));
  fail('unrequested',(r,s)=>{delete s.volumePedal;delete r.report.volumePedal;delete r.report.stages.volumePedal;});
  fail('false-request',(_r,s)=>s.volumePedal=false);
  fail('static-conflict',(_r,s)=>s.controls=[{block:'volpan',channel:'A',param:0,value:10}]);
+ // External 1 -> Wah active in record 0: the same captured words go to record 1; records 2..31 stay baseline.
+ const wahSpec={...spec,composer:{...spec.composer,name:'WAH AND VOLUME',wahChannels:[{channel:'A',type:'FAS Wah'}],modifiers:{external1Wah:true}},layout:{row2:['wah','drive','amp','cab'],row3:['volpan','delay','reverb']}};
+ const wah=createPreset(base,wahSpec),wb=Buffer.from(inspectStructure(wah.syx).raw.body);
+ assert.equal(wah.report.volumePedal.record,1);assert.equal(wah.report.volumePedal.withWahBinding,true);
+ assert.deepEqual(Array.from({length:25},(_,i)=>wb.readUInt16LE(1680+2*i)),evidence.binding.words);
+ assert.equal(wb.readUInt16LE(1584),14);assert.equal(wb.readUInt16LE(1584+16),94);assert.equal(wah.report.modifierEdit.after,14);
+ assert.deepEqual(wah.report.stages.volumePedal.changedWordIndices,[0,8,15]);
+ assert.ok(wah.txt.includes('EXTERNAL 1 → WAH — LÕPPFAILIST')&&wah.txt.includes('modifikaatori kirje 1'));
+ verify('wah',wah,wahSpec);
+ const wahAuto={...wahSpec,composer:{...wahSpec.composer,modifiers:{external1Wah:true,wahAutoEngage:'OFF'}}};verify('wah-auto',createPreset(base,wahAuto),wahAuto);
+ badSpec(s=>s.composer.modifiers={external1Wah:false,wahAutoEngage:'OFF'});
+ const wfail=(name,change)=>{const r={...wah,report:structuredClone(wah.report)},s=structuredClone(wahSpec);change(r,s);assert.throws(()=>verify(name,r,s),/Volume pedal|Volume|modifier|TXT|Wah/);tamperCases++;};
+ for(let i=0;i<25;i++)wfail('wah-word-'+i,r=>{r.syx=rewrite(wah.syx,b=>b.writeUInt16LE(b.readUInt16LE(1680+2*i)^1,1680+2*i));r.report.outputSha256=sha(r.syx);r.report.volumePedal.words[i]^=1;});
+ wfail('wah-other-record',r=>{r.syx=rewrite(wah.syx,b=>b.writeUInt16LE(1,1776));r.report.outputSha256=sha(r.syx);});
+ wfail('wah-off',r=>{r.syx=rewrite(wah.syx,b=>b.writeUInt16LE(0,1584));r.report.outputSha256=sha(r.syx);});
+ wfail('wah-hidden',r=>r.report.modifierEdit=null);
+ wfail('wah-request-mismatch',(_r,s)=>s.composer.modifiers={external1Wah:false});
+ // Binding twice is refused on the Wah path too.
+ assert.throws(()=>bindVolumePedal(wah.syx),/Wah binding|inactive/);
 }finally{fs.rmSync(temp,{recursive:true,force:true});}
 console.log(JSON.stringify({passed:true,hardwareBodyReplay:true,allOtherBodyBytesPreserved:true,invalidSpecs:rejected,invalidBodies,crcValidRehashedTamperCases:tamperCases,cliFourFiles:true,gridAndSecondInstance:true,fullRangeEncodingProven:false,deviceIO:false}));
