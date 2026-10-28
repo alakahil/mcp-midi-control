@@ -58,6 +58,8 @@ def run(pack, session, port_path):
             b = it['binding']
             print('  Ava LAYOUT-is plokk %s (rida %d, veerg %d), EDIT. Vali parameeter "%s" ja vajuta ENTER.'
                   % (b['block'], b['grid']['row'], b['grid']['column'], b['param']))
+            if it.get('hint'): print('  NB: ' + it['hint'])
+            if it.get('expectSource'): print('  Õige parameetri puhul on Source 1: "%s". Kui näed muud, oled vale parameetri juures.' % it['expectSource'])
             rec = {'id': it['id'], 'source1': input('  Source 1 lehel: mis on Source 1? > ').strip(), 'fields': {}}
             print('  Nüüd PAGE RIGHT (Modify leht). Kirjuta iga väli täpselt nagu ekraanil (kui välja pole, kirjuta "-").')
             for f in it['fields']:
