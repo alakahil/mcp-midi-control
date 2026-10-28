@@ -1,0 +1,52 @@
+{
+ "kind": "fm3-modifier-display-results",
+ "time": "2026-10-28T15:57:08",
+ "items": [
+  {
+   "id": "continuous",
+   "source1": "16 External 2",
+   "fields": {
+    "Channel": "CHAN A",
+    "Min": "0.503 Hz",
+    "Max": "6.424 Hz",
+    "Start": "0.0%",
+    "Mid": "50.0%",
+    "End": "100.0%",
+    "Slope": "50.0%",
+    "Scale": "1.000",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "10.1 ms",
+    "Release": "10.1 ms",
+    "Auto-Engage": "OFF",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": ""
+  },
+  {
+   "id": "curve",
+   "source1": "10 Pitch Follower",
+   "fields": {
+    "Channel": "ALL",
+    "Min": "0.03",
+    "Max": "3.98",
+    "Start": "0.0%",
+    "Mid": "46.3%",
+    "End": "100.0%",
+    "Slope": "60.5%",
+    "Scale": "1.590",
+    "Offset": "0.0%",
+    "Damping": "EXPONENTIAL",
+    "Attack": "10.1 ms",
+    "Release": "10.1 ms",
+    "Auto-Engage": "OFF",
+    "Off Value": "5.0%",
+    "PC Reset": "OFF",
+    "Update Rate": "SLOW"
+   },
+   "note": ""
+  }
+ ]
+}

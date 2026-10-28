@@ -30,7 +30,7 @@ assert.equal(decoded.crc_valid,true);assert.deepEqual(Buffer.from(decoded.decomp
 // The binding drives Volume (Gain), which AUTO-SWELL hides: the combination is refused on any channel.
 for(const ch of 'ABCD')assert.throws(()=>createPreset(base,{...spec,allow:['enum-labels'],controls:[{block:'volpan',channel:ch,param:'TYPE',value:'AUTO-SWELL'}]}),/AUTO-SWELL hides/);
 const cap=getPresetCapabilities().volumePedal;
-assert.equal(cap.fullRangeEncodingProven,false);assert.equal(cap.numericMinMaxAuthoring,false);
+assert.equal(cap.fullRangeEncodingProven,false);assert.equal(cap.numericMinMaxAuthoring,true);assert.deepEqual(cap.minMaxEncoding.words,[1,2]);
 assert.equal(cap.target.pid,0);assert.equal(cap.target.channelScope,'ALL');
 const observation=JSON.parse(fs.readFileSync(new URL('../references/fm3-pedal-check-20261024.json',import.meta.url)));
 assert.equal(cap.pedalBehaviorEvidence.knobFollowsPedal,observation.editorCheck.P1.knobFollowsPedalHeelToToe);
@@ -43,7 +43,7 @@ assert.ok(!good.txt.includes('Pedaali toimimine, heli ja STORE/reload on kontrol
 const rewrite=(input,mutate)=>{const p=inspectStructure(input),b=Buffer.from(p.raw.body);mutate(b);return Buffer.from(reencodeDumpFromRawPatch(input,reencodeRawPatch(p.raw.rawPatch,b)));};
 let rejected=0;
 const badSpec=edit=>{const s=structuredClone(spec);edit(s);const before=Buffer.from(base);assert.throws(()=>createPreset(base,s));assert.deepEqual(base,before);rejected++;};
-for(const value of [false,0,1,'true',null,{},[],{min:'0.00'},{channel:'A'}])badSpec(s=>s.volumePedal=value);
+for(const value of [false,0,1,'true',null,{},[],{min:'0.00'},{channel:'A'},{min:-0.1},{max:10.5},{min:5,max:5},{min:2,curve:1},{max:NaN}])badSpec(s=>s.volumePedal=value);
 badSpec(s=>delete s.volumePan);badSpec(s=>s.composer.modifiers={external1Wah:true});
 badSpec(s=>s.composer.modifiers={external1Wah:false,wahMinMaxExact:{policy:'exact-wah-cent-fw13-hw1',min:'0.00'}});
 for(const channel of 'ABCD')for(const param of [0,'GAIN','VOLUME_GAIN'])badSpec(s=>s.controls=[{block:'volpan',channel,param,value:7.5}]);
@@ -89,6 +89,21 @@ try{
  fail('unrequested',(r,s)=>{delete s.volumePedal;delete r.report.volumePedal;delete r.report.stages.volumePedal;});
  fail('false-request',(_r,s)=>s.volumePedal=false);
  fail('static-conflict',(_r,s)=>s.controls=[{block:'volpan',channel:'A',param:0,value:10}]);
+ // Numeric Min/Max: words 1/2 = VOLUME_GAIN stored words (0..10 codec); only those two words differ from the default.
+ const rangeSpec={...spec,composer:{...spec.composer,name:'VOLUME RANGE'},volumePedal:{min:2.5,max:7.5}};
+ const ranged=createPreset(base,rangeSpec),rb=Buffer.from(inspectStructure(ranged.syx).raw.body),defb=Buffer.from(inspectStructure(createPreset(base,{...spec,composer:{...spec.composer,name:'VOLUME RANGE'}}).syx).raw.body);
+ assert.equal(rb.readUInt16LE(1586),16384);assert.equal(rb.readUInt16LE(1588),49151);
+ for(let o=0;o<rb.length;o+=2)if(o!==1586&&o!==1588)assert.equal(rb.readUInt16LE(o),defb.readUInt16LE(o),'only Min/Max words differ at '+o);
+ assert.deepEqual([ranged.report.volumePedal.min.display,ranged.report.volumePedal.max.display],[2.5,7.5]);assert.equal(ranged.report.volumePedal.capturedDefaults,false);
+ assert.deepEqual(ranged.report.stages.volumePedal.changedWordIndices,[0,1,2,8,9,10,15]);
+ assert.ok(ranged.txt.includes('Min 2.50 / Max 7.50 (Volume skaalas; sõnad 16384 / 49151).'));
+ verify('range',ranged,rangeSpec);
+ const inverted={...rangeSpec,volumePedal:{min:10,max:0}};verify('range-inverted',createPreset(base,inverted),inverted);
+ const rfail=(name,change)=>{const r={...ranged,report:structuredClone(ranged.report)},s=structuredClone(rangeSpec);change(r,s);assert.throws(()=>verify(name,r,s),/Volume pedal|Volume|modifier|TXT/);tamperCases++;};
+ rfail('range-word',r=>{r.syx=rewrite(ranged.syx,b=>b.writeUInt16LE(16385,1586));r.report.outputSha256=sha(r.syx);});
+ rfail('range-spec',(_r,s)=>s.volumePedal={min:2.5,max:8});
+ rfail('range-default-spec',(_r,s)=>s.volumePedal=true);
+ rfail('range-report',r=>r.report.volumePedal.min.display=3);
  // External 1 -> Wah active in record 0: the same captured words go to record 1; records 2..31 stay baseline.
  const wahSpec={...spec,composer:{...spec.composer,name:'WAH AND VOLUME',wahChannels:[{channel:'A',type:'FAS Wah'}],modifiers:{external1Wah:true}},layout:{row2:['wah','drive','amp','cab'],row3:['volpan','delay','reverb']}};
  const wah=createPreset(base,wahSpec),wb=Buffer.from(inspectStructure(wah.syx).raw.body);
@@ -98,6 +113,8 @@ try{
  assert.deepEqual(wah.report.stages.volumePedal.changedWordIndices,[0,8,15]);
  assert.ok(wah.txt.includes('EXTERNAL 1 → WAH — LÕPPFAILIST')&&wah.txt.includes('modifikaatori kirje 1'));
  verify('wah',wah,wahSpec);
+ const wahRange={...wahSpec,volumePedal:{min:0,max:8}},wr=createPreset(base,wahRange);verify('wah-range',wr,wahRange);
+ assert.equal(Buffer.from(inspectStructure(wr.syx).raw.body).readUInt16LE(1680+4),52427);assert.deepEqual(wr.report.stages.volumePedal.changedWordIndices,[0,2,8,15]);
  const wahAuto={...wahSpec,composer:{...wahSpec.composer,modifiers:{external1Wah:true,wahAutoEngage:'OFF'}}};verify('wah-auto',createPreset(base,wahAuto),wahAuto);
  badSpec(s=>s.composer.modifiers={external1Wah:false,wahAutoEngage:'OFF'});
  const wfail=(name,change)=>{const r={...wah,report:structuredClone(wah.report)},s=structuredClone(wahSpec);change(r,s);assert.throws(()=>verify(name,r,s),/Volume pedal|Volume|modifier|TXT|Wah/);tamperCases++;};

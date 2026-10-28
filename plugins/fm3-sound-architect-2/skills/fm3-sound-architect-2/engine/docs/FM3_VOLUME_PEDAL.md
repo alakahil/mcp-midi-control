@@ -25,6 +25,15 @@
 
 Seos rakendub enne tabelijuhtide kirjutamist: GAIN-i käsiväärtus tõrjutakse kõigil neljal kanalil. LEVEL, muud toetatud Volume-juhid ja stseeni bypass jäävad eraldi. Muude eksemplaride staatiline GAIN ei muutu selle seose sihtmärgiks. `grid` töötab samuti, kuid Volume/Pan 1 peab lõppfailis alles olema.
 
+## Min/Max (0.3.31)
+
+`volumePedal:{min:2.5, max:7.5}` seab pedaali vahemiku Volume skaalas 0..10 (`true` = 0/10). Modifikaatori
+sõnad 1 ja 2 hoiavad sihtparameetri salvestussõna. See dekodeeriti 28.10.2026 katsetes T7/T7b kolmel pideval
+sihtmärgil (Rotary Rate, Ampi graafilise EQ riba, Wah Control) sihtkodeekiga
+(`references/fm3-modifier-display-20261028.json`). VOLUME_GAIN-i kodeering (0 / 2.5 / 7.5 → 0 / 16384 / 49151)
+on 24.10.2026 esipaneeli katsest. Muutuvad ainult sõnad 1 ja 2, pööratud vahemik (min > max) on lubatud.
+28.10.2026 katses T10 (`references/fm3-volume-range-20261028.json`) näitas FM3 Modify leht vahemikku 2,5–7,5 kui Min 2.50 ja Max 7.50. FM3-Editis järgis Volume nupp pedaali: kannas 2,50, pooles umbes 4,90 ja varbas 7,50. Kõverat (Mid, Slope, Scale) ei kirjutata.
+
 ## Tõend
 
 [Masinloetav tõend](../skills/instructions/references/fm3-volume-binding-evidence.json) sisaldab lähte-speci, lähte- ja ekspordifaili räsisid, 25 sõna, kogu keha ja modifikaatoripiirkonna räsisid. Toor-SYX on kasutaja algne tagastatud fail; seda ei ole selles lähtekoodimuudatuses avalikku reposse kopeeritud. Tõend sisaldab ainult vajalikku tuletatud kirjet ja kontrollandmeid.
