@@ -198,8 +198,10 @@ Tõend on `references/fm3-out2-evidence-20261028.json`. Kasutaja FW13 tonepackis
 Out 2 kirje sama mis preseti enda Out 1 kirje ja ka jb-newlook aluse Out 1 kirje (efekti ID-st alates). Kõigis tuleb
 see kirjete järjekorras kohe Out 1 järel. 327 presetis toidetakse Out 2 samast reast kui Out 1. Out 2 stseeninivood
 jäävad Out 1 malli vaikeväärtusele (0 dB) ega ole kirjutatavad. CPU-kulu on umbes 1 punkt
-(`references/fm3-cpu-t8-20261028.json`). Signaali Out 2 pesadest ja FOH/monitori jaotust ei ole seadmes
-kontrollitud. Tonepacki rea 4 surnud eel-Cabi shunte (312 presetti) ei kirjutata.
+(`references/fm3-cpu-t8-20261028.json`). T11 (`references/fm3-combo-store-20261029.json`) kinnitab Out 2
+ploki ja ruudustiku säilimist STORE/reload'il. Kasutaja kuulas Out 2 L väljundit: efektid ja helitase
+vastasid Out 1-le pärast Out 2 tasemenupu tõstmist. Out 2 stereo ja üldine FOH/monitori jaotus jäävad
+eraldi kontrollideks. Tonepacki rea 4 surnud eel-Cabi shunte (312 presetti) ei kirjutata.
 
 ## Bit 4 FW13 presetites (28.10.2026)
 

@@ -42,6 +42,10 @@ bad(s=>s.controlSwitchScenes={});bad(s=>s.footswitches[0].function='toggle');
 bad(s=>s.footswitches[0].controlSwitch=4);bad(s=>s.footswitches[0].controlSwitch=7);bad(s=>s.footswitches.push({...s.footswitches[0]}));bad(s=>s.footswitches[0].hold='x');
 bad(s=>s.footswitches=[]);bad(s=>{delete s.controlSwitches;});bad(s=>s.footswitches[0].switch=13);bad(s=>s.footswitches[0].layout=10);bad(s=>s.footswitches[0].layout=0);
 bad(s=>s.footswitches=Array.from({length:25},(_,i)=>({layout:1+Math.floor(i/12),switch:1+i%12,function:'latching',controlSwitch:2})));
+// JSON arrays must not be coerced into enum keys. In 0.3.36 ['latching'] wrote
+// Latching to SYX but rendered Momentary in TXT, and --verify accepted both.
+for(const value of [['ON'],[['ON']],['LAST']])bad(s=>s.controlSwitchScenes[0].state=value);
+for(const value of [['latching'],[['latching']],['momentary']])bad(s=>s.footswitches[0].function=value);
 assert.equal(Object.keys(OVERRIDE_POSITIONS).length,108);assert.equal(OVERRIDE_POSITIONS['1/1'],0);assert.equal(OVERRIDE_POSITIONS['1/12'],11);assert.equal(OVERRIDE_POSITIONS['9/12'],107);
 // Three footswitches: PP#1..PP#3 in list order, parameters 12 bytes apart, count word 3 (T16 layout).
 const three=createPreset(base,{...plainSpec,footswitches:[{layout:1,switch:1,function:'latching',controlSwitch:2},{layout:1,switch:2,function:'momentary',controlSwitch:3},{layout:3,switch:5,function:'latching',controlSwitch:3}]}),tb=bodyOf(three.syx),D=L-3052;
@@ -71,6 +75,11 @@ try{
  fail('spec state',(_r,s)=>s.controlSwitchScenes[1].state='LAST');
  fail('spec dropped',(_r,s)=>delete s.footswitches);
  fail('report',r=>r.report.csPreset.footswitches[0].function='momentary');
+ // Rehashed bundle in the previously accepted malformed-input shape.
+ fail('array function in spec, report and matching old TXT',(r,s)=>{
+  s.footswitches[0].function=['latching'];r.report.csPreset.footswitches[0].function=['latching'];
+  r.txt=r.txt.replace('Latching (vajutus lülitab sisse/välja)','Momentary (sees ainult hoidmise ajal)');
+ });
  fail('unrequested scene state',r=>syx(r,b=>b.writeUInt16LE(0,L-482)),plain,plainSpec,/unrequested per-preset switch/);
  fail('unrequested override',r=>syx(r,b=>b.writeUInt16LE(0,L-3052+1920)),plain,plainSpec,/unrequested per-preset switch/);
 }finally{fs.rmSync(dir,{recursive:true,force:true});}

@@ -10,20 +10,17 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.36 väljalaset: `footswitches` iga layout'i (1–9) ja lüliti (1–12) jaoks ning kuni 24
-per-preset definitsiooni (T15 asukohad, T16 definitsioonide paigutus ja loendur; kolme lülitiga generaatori tulemus võrdub FM3
-salvestatud kehaga); soundi skeem 0.8.0. Selle aluseks on 0.3.35: Control Switchi olek stseeni kaupa (`controlSwitchScenes`) ja preseti-põhine
-Control Switchi jalglüliti (`footswitches`, Layout 1 lüliti 1), mõlemad FC PER-PRESET andmed presetis (`fm3-cs-preset.mjs`, T14/T14B,
-generaatori tulemus võrdub FM3 salvestatud kehaga); soundi skeem 0.7.0. Selle aluseks on 0.3.34: modifikaatori kõvera ja aegade täisvahemiku koodek (`fm3-modifier-curve.mjs`,
-natiivse kirjeldaja valemid, mis kordavad kõiki 77 seadmenäitu, sh T12 ühe välja kaupa katse), `volumePedal.curve` ning
-`wahControls`-i kõvera/aja väljad suvalise väärtusega vahemikus (Max jääb mõõdetud punktidele); soundi skeem 0.6.0. Selle aluseks on 0.3.33: soundi skeem 0.5.0 (controlSwitches, volumePedal {min,max},
-out2) koos skeemi ja generaatori kooskõlatestiga ning aegunud piirangulausete ühtlustusega. Selle aluseks on 0.3.32: Out 2 grid-režiimis, Control Switchi `invert`/`channel`,
-modifikaatori eemaldamise koodek, bit 4 FW13 korpuses ja modifikaatori väljade seisufail. Selle aluseks on 0.3.31: Volume pedaali numbriline Min/Max
-(`volumePedal:{min,max}`) ja T7b modifikaatori korduslugemine. Selle aluseks on 0.3.30: Control Switch → Amp lülitite
-seosed (`controlSwitches`), Wah + Volume kahe seose paigutus (Volume kirjes 1), T7
-modifikaatorinäitude ja T8 CPU-sammude kogujad ning pordikontroll (`--check-port`).
-Uute seoste seadme-STORE on ootel. Kehtivad 0.3.29 Satriani V4 näide ja 0.3.28
-kadudeta levipakend.
+Praegune lähtekood valmistab ette 0.3.37 parandusväljalaset. Control Switchi stseeniolek
+ja jalglüliti funktsioon nõuavad stringi; massiiviks vormistatud enum ei tohi läbida
+sisendikontrolli ega `--verify` kontrolli. Regressioonid hõlmavad varasemat Latching-SYX / Momentary-TXT
+vastuolu ning skeemi ja generaatori ühist keeldumist. Korrektse sisendi binaarne kirjutus ei muutu.
+Juhendi kehtiv versioon ja Wah + Volume, `invert`/`channel`, Out 2 ning T2/T9/T10/T11/T14/T14b/T16
+seadmetõendite ulatus on ühtlustatud. Uusi seadmemõõtmisi ei lisata.
+
+Säilib 0.3.36 tugi: `footswitches` layout'idele 1–9 ja lülititele 1–12, kuni 24
+per-preset definitsiooni; soundi skeem 0.8.0. T16 kolme definitsiooniga keha kordusvõrdlus
+ning T15 asukohavaatlus ei kinnita kõigi 24 määrangu seadmekatset. Varasemate funktsioonide
+kehtiv kasutus ja tõendiulatus on plugina SKILL.md-s ning vastavates juhendites.
 GEQ, PEQ ja Enhanceri kolme ajaloolise mõõtesessiooni 1080 faili
 pakitakse ehitamisel ühte taastatavasse arhiivi. GitHubi lähtepuu algandmed,
 arendusradade nimed, generaatori kirjutustugi ja kõik varasemad tõendid säilivad.
@@ -108,7 +105,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Suite sisaldab 70 testi, sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Kohustuslik testiloend on `references/offline-suite.json` (0.3.37: 76 testi), sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.
@@ -135,7 +132,7 @@ Käivitaja kontrollib levipakendit ja taastab automaatselt kõik failid enne
 mootori käivitamist. Otse paketi kasutamisel teeb sama `fm3-session-archive.py
 prepare --output NEW_RUNTIME`; saadud runtime sisaldab muutmata levimanifesti.
 Enesekontroll võrdleb runtime'i täielikku lähtepuuräsi. Testirunner kontrollib
-pakkimise/taaste negatiivseid juhte ja käivitab kõik 70 mootoritesti pakitud ning
+pakkimise/taaste negatiivseid juhte ja käivitab kõik testiloendi mootoritestid pakitud ning
 seejärel taastatud ajutises koopias. Pakett on
 deterministlik: sama commit annab sama arhiivi. Väline `release-receipt.json`
 seob commit'i, arhiivi räsi ja testiraporti räsi. Paketis pole kviitungit,

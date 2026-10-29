@@ -35,6 +35,8 @@ const both=[
   ['extra key',s=>s.controlSwitches[0].min=0,0],['nine bindings',s=>s.controlSwitches=Array(9).fill(s.controlSwitches[0]),0],['empty list',s=>s.controlSwitches=[],0],
   ['duplicate out3',s=>s.duplicate=['out3'],6],['out3 cell',s=>s.grid.rows[3][11]='out3',6],
   ['cs scene 9',s=>s.controlSwitchScenes[0].scene=9,1],['cs state on',s=>s.controlSwitchScenes[0].state='on',1],['cs scene extra key',s=>s.controlSwitchScenes[0].x=1,1],
+  ['cs state array',s=>s.controlSwitchScenes[0].state=['ON'],1],['cs state nested array',s=>s.controlSwitchScenes[0].state=[['LAST']],1],
+  ['footswitch function array',s=>s.footswitches[0].function=['latching'],1],['footswitch function nested array',s=>s.footswitches[0].function=[['momentary']],1],
   ['footswitch layout 10',s=>s.footswitches[0].layout=10,1],['footswitch switch 13',s=>s.footswitches[0].switch=13,1],['footswitch toggle',s=>s.footswitches[0].function='toggle',1],
   ['footswitch cs 7',s=>s.footswitches[0].controlSwitch=7,1],['25 footswitches',s=>s.footswitches=Array.from({length:25},(_,i)=>({layout:1+Math.floor(i/12),switch:1+i%12,function:'latching',controlSwitch:2})),1],['cs scenes without bindings',s=>delete s.controlSwitches,1],
   ['curve unknown key',s=>s.volumePedal.curve.offValuePercent=50,4],['curve start above 100',s=>s.volumePedal.curve.startPercent=101,4],['curve scale below 0.1',s=>s.volumePedal.curve.scale=0.05,4],

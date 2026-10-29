@@ -25,7 +25,7 @@ import {estimateCpu,renderCpuText} from './fm3-cpu.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.36',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.37',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi'],
     insert:insertCapabilities(),
     outputs:['.syx','.txt','.spec.json','.validation.json'],
@@ -91,7 +91,7 @@ export function composeSound(base,spec){
   const csPreset=csp?readCsPreset(finalBody,spec):null;
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const cpuEstimate=estimateCpu(second.syx);
-  const report={generator:'fm3-sound-0.3.36',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.37',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,...(switches?{controlSwitches}:{}),...(csp?{csPreset}:{}),
     stages:{volumePedal:pedal?.report??null,...(switches?{controlSwitches:switches.report}:{}),...(csp?{csPreset:csp.report}:{}),volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};
