@@ -105,15 +105,15 @@ export function renderControlSwitchText(state){
   if(!state?.length)return [];
   return ['','CONTROL SWITCH SEOSED — LÕPPFAILIST',
     ...state.map(s=>`Control Switch ${s.switch} → ${s.block} ${s.label} (${s.param}); kanalid ${s.channelScope}; kirje ${s.record}; ${s.invert?'pööratud: Min ON, Max OFF (lüliti vajutamine lülitab välja)':'Min OFF, Max ON (FM3 tonepacki vaikemall)'}.`),
-    'Control Switchi tüüp (latching/momentary), algolek ja jalglüliti määrang ei ole selle seose osa: määra need FM3-l (Controllers / FC).',
+    'Control Switchi olek stseeni kaupa ja jalglüliti (Latching/Momentary) on eraldi väljad controlSwitchScenes / footswitches (FC PER-PRESET, salvestub presetti); ilma nendeta on kõik CS-id igas stseenis OFF ja jalglüliti määra FM3-l.',
     'Seose mall on FM3 enda salvestatud presetitest (1401 sama malliga kirjet). 28.10.2026 katses T9 jäid sama malliga seosed (CS2 → Input Boost, CS3 → Bright) pärast STORE-i ja uuesti laadimist alles; selle uue faili import ja lülitamine on seadmes kontrollimata.'];
 }
 export function controlSwitchCapabilities(){return {field:'controlSwitches',entry:'{switch 1..6, block "amp", param DISTORT_BOOST|DISTORT_BRIGHT|DISTORT_CUT|DISTORT_FAT|DISTORT_SATSWITCH, invert?: boolean, channel?: ALL|A|B|C|D}',
   variants:{invert:'Min 65534 / Max 0 (T7 display Min ON, Max OFF)',channel:'word 17: 0 ALL, 1..4 CHAN A..D (T7: 4 = CHAN D)'},
   maxBindings:8,records:'consecutive from record 1 (record 0 = Wah template); only unused or inactive default records',template:TEMPLATE,
   evidence:{receipt:'references/fm3-control-switch-evidence-20261028.json',sha256:controlSwitchEvidenceHash,corpusRecords:evidence.corpus?.templateRecords??null},
-  notSupported:['partial Min/Max','other sources or targets','Control Switch type/default state','footswitch assignment'],
-  hardware:{storeReload:'confirmed 2026-10-28 (T9: CS2 -> Boost, CS3 -> Bright next to Wah + Volume; references/fm3-bind-store-20261028.json)',display:'default template shows the default Modify page (T7, references/fm3-modifier-display-20261028.json)',switching:'not tested',thisFile:'not tested'}};}
+  notSupported:['partial Min/Max','other sources or targets'],stateAndFootswitch:'controlSwitchScenes / footswitches (fm3-cs-preset.mjs)',
+  hardware:{storeReload:'confirmed 2026-10-28 (T9: CS2 -> Boost, CS3 -> Bright next to Wah + Volume; references/fm3-bind-store-20261028.json)',display:'default template shows the default Modify page (T7, references/fm3-modifier-display-20261028.json)',switching:'confirmed 2026-10-29 (T13 PEDAL 2 ring momentary; T14/T14b per-preset Latching and Momentary footswitch: normal, inverted and CHAN D records behave as written; references/fm3-cs-steps-b-20261029.json)',thisFile:'not tested'}};}
 // Final artifact check (verifyPresetOutputs): bindings, stage report, active-record inventory and TXT.
 export function verifyControlSwitchOutput(report,syx,txt,spec){
   const requested=Object.hasOwn(spec??{},'controlSwitches'),body=Buffer.from(inspectStructure(syx).raw.body);

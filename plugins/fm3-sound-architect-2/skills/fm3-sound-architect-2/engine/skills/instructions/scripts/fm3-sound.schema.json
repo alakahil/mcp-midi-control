@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.6.0 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.7.0 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -2698,6 +2698,75 @@
           }
         }
       }
+    },
+    "controlSwitchScenes": {
+      "description": "Control Switch state per scene (FC PER-PRESET -> CS Per Scene, stored in the preset). Each listed Control Switch needs a controlSwitches binding; unlisted states stay OFF. T14b device-confirmed codes.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 48,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "switch",
+          "scene",
+          "state"
+        ],
+        "properties": {
+          "switch": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "scene": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8
+          },
+          "state": {
+            "enum": [
+              "ON",
+              "OFF",
+              "LAST"
+            ]
+          }
+        }
+      }
+    },
+    "footswitches": {
+      "description": "Per-preset Control Switch footswitch (Per-Preset FC definition + Overrides, stored in the preset). Only Layout 1 switch 1 is device-confirmed. The Control Switch needs a controlSwitches binding.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "layout",
+          "switch",
+          "function",
+          "controlSwitch"
+        ],
+        "properties": {
+          "layout": {
+            "const": 1
+          },
+          "switch": {
+            "const": 1
+          },
+          "function": {
+            "enum": [
+              "latching",
+              "momentary"
+            ]
+          },
+          "controlSwitch": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          }
+        }
+      }
     }
   },
   "required": [
@@ -2747,6 +2816,12 @@
   "dependentRequired": {
     "volumePedal": [
       "volumePan"
+    ],
+    "controlSwitchScenes": [
+      "controlSwitches"
+    ],
+    "footswitches": [
+      "controlSwitches"
     ]
   }
 }

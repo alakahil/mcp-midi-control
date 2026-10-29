@@ -256,7 +256,7 @@
  "switching": "Inverted and CHAN D records behave as written on the device: PEDAL 2 ring switch (T13, momentary) and per-preset Control Switch: Latching and Momentary footswitches (T14/T14b, stored in the preset, no global setting); CS Per Scene ON/OFF/LAST applied on scene change (T14b)",
  "controlSwitchPreset": "CS Per Scene: 482 bytes before the body end, 6 CS x 8 scenes, ON 0 / OFF 1 / LAST 2; per-preset definitions 3052 bytes before the end (category 7 = Control Switch, function 1 Latching / 0 Momentary, parameter CS number - 1); overrides 1920 bytes after (references/fm3-cs-steps-b-20261029.json)",
  "stillOpen": [
-  "generator fields for CS Per Scene and per-preset Control Switch footswitches",
+  "footswitch positions other than Layout 1 switch 1 (override word order)",
   "per-preset Hold functions"
  ]
 }

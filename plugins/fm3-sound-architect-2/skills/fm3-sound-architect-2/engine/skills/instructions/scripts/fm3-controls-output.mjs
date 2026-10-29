@@ -25,6 +25,6 @@ export function verifyControlsOutput(report,syx,txt,spec){
     assert.ok(txt.includes(`${w.instanceBlock??w.block} ${w.channel} ${w.label??w.name} (${w.name}): ${fmt(w.display)} ${w.unit}; küsitud ${fmt(w.value)}; raw ${w.raw};`),'Final control TXT differs');
   }
   // Global observations and pedal/modifier additions have their own verifiers.
-  const textState={...final,globalScaleDependencies:report.globalScaleDependencies,modifierEdit:report.modifierEdit,volumePedal:report.volumePedal,controlSwitches:report.controlSwitches};
+  const textState={...final,globalScaleDependencies:report.globalScaleDependencies,modifierEdit:report.modifierEdit,volumePedal:report.volumePedal,controlSwitches:report.controlSwitches,csPreset:report.csPreset};
   assert.equal(txt,renderFinalSoundText(textState,spec)+renderCpuText(report.cpu)+'\n','Final TXT differs from decoded state/spec');
 }
