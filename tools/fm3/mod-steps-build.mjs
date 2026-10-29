@@ -45,7 +45,7 @@ const steps=[
   {id:'updaterate',field:'Update Rate',text:'Modify leht: Update Rate → järgmine valik (praegu SLOW).'},
   {id:'pcreset',field:'PC Reset',text:'Modify leht: PC Reset → ON.'},
   {id:'remove',field:'Source 1',text:'Mine tagasi Source lehele (PAGE LEFT): Source 1 → NONE (eemaldab seose).'}];
-const manifest={kind:'fm3-mod-steps',version:1,date:'2026-10-29',confirmName:NAME,preset:{file:'STEPS.syx',sha256:sha(syx)},
+const manifest={kind:'fm3-mod-steps',version:1,date:'2026-10-29',revision:2,confirmName:NAME,preset:{file:'STEPS.syx',sha256:sha(syx)},
   binding:{record:0,source:'External 1',target:'Volume/Pan 1 Volume (VOLUME_GAIN)'},
   open:'LAYOUT: Volume/Pan plokk → EDIT → parameeter Volume → ENTER (Modifier menüü) → PAGE RIGHT (Modify leht). Jää sellele lehele; iga samm muudab ainult ühte välja.',
   steps,method:'Edit-buffer load (7F 00) once; after each user STORE one read-only stored-dump request (fn=0x03 hi lo 00). The script never stores and never sets.'};
