@@ -1,0 +1,12 @@
+{
+ "kind": "fm3-out2-audio-check",
+ "date": "2026-10-29",
+ "test": "T11 follow-up",
+ "preset": {"shownLocation": 425, "name": "COMBO T11 STORE"},
+ "method": "User recalled the stored T11 preset on the FM3 front panel and listened to Out 1 (XLR, balanced) and Out 2 L (1/4\" TS, unbalanced) through his own monitoring; no script, no device I/O. He compared the effects (block bypass) and the level.",
+ "readings": {
+  "first": "Effektid on samad nii out1, kui out2. Aga out 2 on tuntavalt vaiksem",
+  "afterRaisingOut2Knob": "Jah, siiski kõik ok ja sama valjusega, OUT 2 nupp oli maas"
+ },
+ "conversation": "Typed by the user in the conversation on 2026-10-29 12:45 and 12:47 (Europe/Tallinn); transcribed here verbatim."
+}

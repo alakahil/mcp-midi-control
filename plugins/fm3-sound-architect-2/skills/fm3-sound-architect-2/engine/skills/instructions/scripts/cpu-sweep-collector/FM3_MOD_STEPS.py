@@ -59,13 +59,22 @@ def run(pack, session, port_path):
         print('\nAva: %s' % manifest['open'])
         for n, st in enumerate(manifest['steps'], 1):
             if st['id'] in done: continue
-            print('\n[%d/%d] %s' % (n, len(manifest['steps']), st['text']))
-            shown = input('  Mida ekraan selle välja kohta nüüd näitab? (täpselt) > ').strip() if st.get('ask', True) else ''
-            input('  Nüüd STORE asukohta %d (kinnita FM3-l). Kui salvestatud, vajuta Enter. ' % res['shownLocation'])
-            rec = {'id': st['id'], 'field': st.get('field'), 'shown': shown, 'storedDumpFrames': read_location(port, port_path, res['index'])}
-            rec['note'] = input('  Kas midagi muud muutus või oli märkimisväärne? (Enter = ei) > ').strip()
+            while True:
+                print('\n[%d/%d] %s' % (n, len(manifest['steps']), st['text']))
+                if st.get('ask', True):
+                    shown = input('  Mida ekraan selle välja kohta nüüd näitab? (täpselt; "s" = jäta samm vahele) > ').strip()
+                    if shown.lower() == 's':
+                        rec = {'id': st['id'], 'field': st.get('field'), 'skipped': True, 'note': input('  Miks jätsid vahele? > ').strip()}
+                        break
+                else: shown = ''
+                input('  Nüüd STORE asukohta %d (kinnita FM3-l). Kui salvestatud, vajuta Enter. ' % res['shownLocation'])
+                rec = {'id': st['id'], 'field': st.get('field'), 'shown': shown, 'storedDumpFrames': read_location(port, port_path, res['index'])}
+                rec['note'] = input('  Kas midagi muud muutus või oli märkimisväärne? (Enter = ei) > ').strip()
+                again = input('  Kas see samm läks õigesti? (Enter = jah, "k" = korda sama sammu) > ').strip().lower()
+                if again != 'k': break
+                print('  Kordame. Sea väli uuesti soovitud väärtusele (eelmine lugemine jäetakse kõrvale).')
             res['steps'].append(rec); out.write_text(json.dumps(res, ensure_ascii=False, indent=1) + '\n')
-            print('  Loetud ja salvestatud.')
+            print('  Salvestatud.')
     finally:
         port.close()
     print('\nValmis. Tulemused: %s\nKirjuta vestlusesse "valmis". Asukoha võid hiljem tühjendada.' % out)
