@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.4.0 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.5.0 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -2357,6 +2357,7 @@
                     ".",
                     "in1",
                     "out1",
+                    "out2",
                     "send",
                     "return",
                     "amp",
@@ -2489,7 +2490,7 @@
     "duplicate": {
       "type": "array",
       "uniqueItems": true,
-      "description": "Grid mode only. Second/later instances seen in FW10 factory presets; copy of the previous instance with its own effect ID, all 8 scenes A/bypass.",
+      "description": "Grid mode only. Second/later instances seen in FW10 factory presets; copy of the previous instance with its own effect ID, all 8 scenes A/bypass. \"out2\": Out 1 record with effect ID 43 directly after Out 1 (place out2 as a sink, usually under Out 1).",
       "items": {
         "enum": [
           "compressor2",
@@ -2508,13 +2509,35 @@
           "filter4",
           "drive2",
           "enhancer2",
-          "resonator2"
+          "resonator2",
+          "out2"
         ]
       }
     },
     "volumePedal": {
-      "const": true,
-      "description": "Exact captured FW13 External 1 -> Volume/Pan 1 Gain ALL defaults in record 0. Requires volumePan:true and inactive unchanged modifier region; incompatible with active Wah. No custom Min/Max."
+      "description": "External 1 -> Volume/Pan 1 Volume (VOLUME_GAIN), channels ALL, FW13 captured defaults. true = Min 0 / Max 10; {min,max} sets modifier words 1/2 with the VOLUME_GAIN codec (T10). Record 0, or record 1 when composer.modifiers.external1Wah is true. Requires volumePan:true.",
+      "oneOf": [
+        {
+          "const": true
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "min": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "max": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            }
+          }
+        }
+      ]
     },
     "sceneMidi": {
       "type": "array",
@@ -2566,6 +2589,56 @@
             "type": "integer",
             "minimum": 0,
             "maximum": 127
+          }
+        }
+      }
+    },
+    "controlSwitches": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "description": "Control Switch 1..6 -> Amp switch bindings with the FM3 default template, consecutive records from 1 (2 next to Wah + Volume). Each target once.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "switch",
+          "block",
+          "param"
+        ],
+        "properties": {
+          "switch": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "block": {
+            "enum": [
+              "amp"
+            ]
+          },
+          "param": {
+            "enum": [
+              "DISTORT_BOOST",
+              "DISTORT_BRIGHT",
+              "DISTORT_CUT",
+              "DISTORT_FAT",
+              "DISTORT_SATSWITCH"
+            ]
+          },
+          "invert": {
+            "type": "boolean",
+            "description": "true = Min ON / Max OFF (stored 65534 / 0)"
+          },
+          "channel": {
+            "enum": [
+              "ALL",
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "description": "word 17: ALL (0) or CHAN A..D (1..4)"
           }
         }
       }
