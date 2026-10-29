@@ -59,7 +59,7 @@ export function validateCsPreset(spec){
    for(const k of Object.keys(x))check(['switch','scene','state'].includes(k),`controlSwitchScenes[${i}]: unknown field ${k}`);
    check(Number.isInteger(x.switch)&&x.switch>=1&&x.switch<=6,`controlSwitchScenes[${i}].switch must be 1..6`);
    check(Number.isInteger(x.scene)&&x.scene>=1&&x.scene<=8,`controlSwitchScenes[${i}].scene must be 1..8`);
-   check(Object.hasOwn(CS_STATES,x.state),`controlSwitchScenes[${i}].state must be ON, OFF or LAST`);
+   check(typeof x.state==='string'&&Object.hasOwn(CS_STATES,x.state),`controlSwitchScenes[${i}].state must be a string: ON, OFF or LAST`);
    check(bound.has(x.switch),`controlSwitchScenes[${i}]: Control Switch ${x.switch} has no binding in controlSwitches`);
    const key=x.switch+'/'+x.scene;check(!seen.has(key),`controlSwitchScenes: Control Switch ${x.switch} scene ${x.scene} set twice`);seen.add(key);
    outScenes.push({switch:x.switch,scene:x.scene,state:x.state,code:CS_STATES[x.state]});});
@@ -72,7 +72,7 @@ export function validateCsPreset(spec){
    const pos=x.layout+'/'+x.switch;
    check(Number.isInteger(x.layout)&&x.layout>=1&&x.layout<=LAYOUTS,`footswitches[${i}].layout must be 1..${LAYOUTS}`);
    check(Number.isInteger(x.switch)&&x.switch>=1&&x.switch<=SWITCHES,`footswitches[${i}].switch must be 1..${SWITCHES}`);
-   check(Object.hasOwn(FOOTSWITCH_FUNCTIONS,x.function),`footswitches[${i}].function must be latching or momentary`);
+   check(typeof x.function==='string'&&Object.hasOwn(FOOTSWITCH_FUNCTIONS,x.function),`footswitches[${i}].function must be a string: latching or momentary`);
    check(Number.isInteger(x.controlSwitch)&&x.controlSwitch>=1&&x.controlSwitch<=6,`footswitches[${i}].controlSwitch must be 1..6`);
    check(bound.has(x.controlSwitch),`footswitches[${i}]: Control Switch ${x.controlSwitch} has no binding in controlSwitches`);
    check(!seen.has(pos),`footswitches: Layout ${x.layout} switch ${x.switch} set twice`);seen.add(pos);

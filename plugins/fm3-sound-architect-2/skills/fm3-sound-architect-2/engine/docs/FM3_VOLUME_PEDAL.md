@@ -61,7 +61,9 @@ OFF peal.
 
 23.10.2026 üks füüsiline eksport, SHA-256 `1eb2fe164824a4caffac6b101c3d16be912c64344f08f68ad2e5ae6483035493`, taaskasutas esimest mitteaktiivset kirjet (wire effect 3, body 1584). Muutusid sõnad 0, 8, 9, 10 ja 15. Kõik ülejäänud keha baidid säilisid. Kõik 32 kirjepäist, kaadrikontrollsummad, CRC ja footer läbisid. Transportpäis säilis; raw-päises muutusid tihenduspikkuse baidid 4 ja 5.
 
-Kirjutaja kopeerib täpse 25-sõnalise kirje. See **ei arvuta** uusi Min/Max-, kõvera- või ajaväärtusi ega kasuta Wahi skaalat. Sõnad 1/2 on vaikekoodid 0/65534, mitte selles katses klaviatuurilt sisestatud arvude mõõtmised. Samuti ei tõenda toorsõna 15 väärtus 66 eraldi füüsikalist Release-skaalat.
+0.3.17 kirjutaja kopeeris täpse 25-sõnalise kirje. Selles algses katses olid sõnad 1/2 vaikekoodid
+0/65534, mitte klaviatuurilt sisestatud arvude mõõtmised. Praegune kirjutaja toetab Min/Max-i ja
+kõvera/aja välju eespool kirjeldatud T10/T12 tõendite alusel; Wahi Min/Max-skaalat selleks ei kasutata.
 
 ## Kontroll ja piirid
 
@@ -69,10 +71,10 @@ Kirjutaja kopeerib täpse 25-sõnalise kirje. See **ei arvuta** uusi Min/Max-, k
 loomist, eemaldamist ja algväärtusi. See ei laienda selle piiratud kirjutaja tuge.
 
 0.3.20 [kirjepesade eeltöö](FM3_MODIFIER_AUDIT.md#wah-ja-volume-koos-kirjepesade-eeltöö-0320)
-kinnitab, et praegused Wah- ja Volume-kirjutajad kasutavad sama esimest kirjet.
-Ülejäänud sidumata kirjete loend ei anna neile veel üldist kirjutusluba.
+kirjeldab tollast sama esimese kirje kasutamist. Alates 0.3.30-st kasutab Wah + Volume
+kirjeid 0 ja 1; ülejäänud sidumata kirjete loend ei anna üldist kirjutusluba.
 
-- Sisendit ei muudeta kohapeal. Enne kirjutamist kontrollitakse kogu 32-kirjelise lähtepiirkonna räsi, sihtplokki ja A–D VOLUME-tüüpi. Ainult esimese kirje 50-baidine sisu võib muutuda. Täpne lõpppiirkond loetakse uuesti lõplikust SYX-ist.
+- Sisendit ei muudeta kohapeal. Enne kirjutamist kontrollitakse lähtepiirkonna säilitatavaid sõnu, sihtplokki ja A–D VOLUME-tüüpi. Volume-kirjutaja muudab ainult valitud kirjet 0 või 1 allpool kirjeldatud paigutuse järgi. Täpne lõpppiirkond loetakse uuesti lõplikust SYX-ist.
 - Avalik `fm3-preset.mjs --verify` kontrollib kõiki 25 sõna, modifikaatoripiirkonda, sihtplokki, TXT/spec/aruande kooskõla. Uuendatud CRC ja artefaktiräsid ei peida lepinguvälist muudatust.
 - Generaator taastab seadmeekspordi kogu 12970-baidise keha räsiga `f01f233b8e5195d8ef4e8d3253c85a1ce14649859838eed3c5cf65e760a8eb5e`. Täpselt sama keha ei vaja uut korduseksporti. Uut kodeeritud faili ei ole eraldi tagasi imporditud.
 - Kirje 0 passiivse lähteoleku korral. **Wah + Volume (0.3.30):** kui `composer.modifiers.external1Wah:true` on kirjes 0 aktiivne, läheb sama 25-sõnaline Volume-kirje kirjesse 1. Enne kirjutamist peavad kirjed 1..31 võrduma mõõdetud lähteolekuga (räsi kirje 0 väljadeta). Kirjes 1 muutuvad sõnad 0, 8 ja 15. FM3 ise paigutab järgmised seosed järjestikustesse kirjetesse (`references/fm3-control-switch-evidence-20261028.json`, Control Switchi seosed kirjetes 1..7). Mõlemad seosed järgivad External 1 pedaali. 28.10.2026 katses T9 (`references/fm3-bind-store-20261028.json`) jäid mõlemad seosed pärast STORE-i ja uuesti laadimist alles ning pedaal liigutas nii Wahi kui Volume'i. Salvestatud modifikaatorikirjed klappisid sõna-sõnalt. Wahi Scene 1 bypass salvestus sisselülitatuna, sest Auto-Engage lülitas Wahi pedaali liigutamisel sisse.
@@ -91,7 +93,8 @@ mõõteskript on `FM3_PEDAL_CHECK.py`. Mõlemad presetid laaditi ainult redaktsi
 - **P0 (sama preset ilma seoseta)**: modifikaatorit pole ja Volume jääb 10.00 peale.
 - **Masinloetavus**: ploki koondlugemine (`fn=0x1F`) tagastab igas pedaaliasendis salvestatud sõna 65534 (10.00).
   FM3 ei saada pedaali liigutamise ajal ise kaadreid, seega seda väärtust praeguste lugemisteedega skriptiga ei loe.
-- **Mõõtmata**: täpsed kanna/varba numbrid, kõver (taper) ja heli.
+- **Selles 24.10 katses mõõtmata**: täpsed kanna/varba numbrid, kõver (taper) ja heli.
+  Kanna/varba arvud mõõdeti hiljem T2 ja T10 katsetes; täielik DSP-kõver ja heli jäävad eraldi.
 
 ## Salvestamine ja uuesti laadimine (T2, 26.10.2026)
 

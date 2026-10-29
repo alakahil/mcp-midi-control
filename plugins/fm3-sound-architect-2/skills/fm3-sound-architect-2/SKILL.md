@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.33`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.37`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -29,6 +29,25 @@ arhiiviviga ei tähenda, et selle uue plugina avaldamine on automaatselt blokeer
 Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
+
+0.3.37 nõuab `controlSwitchScenes[].state` ja `footswitches[].function` väärtuseks
+stringi. Näiteks `"function":"latching"` on lubatud, `["latching"]` ei ole.
+Vigane tüüp tõrjutakse nii genereerimisel kui ka nelja lõppfaili kontrollis;
+SYX-i Latching-funktsiooni ei tohi TXT-s kirjeldada Momentary-funktsioonina.
+
+Kehtiv modifikaatoritugi: Wah + Volume koos (0.3.30), Volume Min/Max (0.3.31),
+Control Switchi `invert`/`channel` ja Out 2 (0.3.32), kõvera/aja väljad (0.3.34)
+ning Control Switchi stseeniolekud ja jalglülitid (0.3.35–0.3.36).
+Allpool olevad versioonipealkirjad tähistavad funktsiooni lisamise aega.
+Üldine modifikaatorikirjete jaotaja, suvalised allikad/sihtmärgid ja eemaldamise
+avalik sisendiväli jäävad toetamata.
+
+T11 (`MOOTOR/references/fm3-combo-store-20261029.json`) kinnitab viie seose ja
+Out 2 säilimist STORE/reload'il ning selles katses Out 2 L tööd ja helitaset.
+Out 2 stereo ning iga uue preseti heli vajavad oma kontrolli. T14/T14b kinnitavad
+Latching/Momentary ja CS Per Scene käitumist. T16 kinnitab genereeritud PP#1
+näitu ning kolme definitsiooni kodeeringut; kõigi 24 määrangu ega iga layout'i
+seadmekatset sellest ei järeldu. Ära korda neid juba kinnitatud katseid.
 
 ## GitHubi Satriani V4 täiendus (0.3.29, 28.10.2026)
 
@@ -209,17 +228,18 @@ tegelik väljund ei ole nende tarkvaratestidega kinnitatud.
 ## 4. punkti seadmevaba koondtöö (0.3.21, 25.10.2026)
 
 Kasuta [4. punkti tõendi- ja piirangutabelit](engine/docs/FM3_POINT4_OFFLINE.md).
-Uus staatiline analüüs leidis FW13 kirjepesa otsingu ning loomise/eemaldamise
-harud. See ei tõenda veel täielikku serialiseeritud lähtestust ega luba teise
-kirje kirjutamist. Wah ja Volume samaaegne kirjutamine, üldine jaotaja,
-eemaldamine ja suvaline Volume Min/Max jäävad toetamata.
+0.3.21 staatiline analüüs leidis FW13 kirjepesa otsingu ning loomise/eemaldamise
+harud. Tookord ei olnud teise kirje lähtestus tõendatud. Hilisem piiratud
+Wah + Volume kirjutaja kasutab kirjeid 0 ja 1; Volume Min/Max on toetatud.
+Üldist jaotajat ja eemaldamise avalikku sisendivälja endiselt ei ole.
 
 `--inspect-modifiers` eristab põhi- ja teisese allika aktiivsust, Source NONE-i,
 väljalülitatud sihtseost ja sidumata kirjet. External-kontrolleri sõltuvused
 näitavad iga viite kirjet ja rolli; globaalne pedaali/CC vastendus ning hetkeväärtus
 jäävad teadmata. TXT ja JSON lähtuvad samast 16 pere tüübipoliitikast.
-Kogu paketi SYX-korpuse inventuur ei leidnud toetatud vormingus kahe aktiivse
-seose näidet. Ära nimeta sidumata või Source NONE kirjet tõendatult vabaks pesaks.
+0.3.21 ajal tehtud paketiinventuur ei leidnud kahe aktiivse seose näidet;
+hilisemad T9 ja T11 tõendid kinnitavad piiratud mitme seose kirjutust.
+Ära nimeta sidumata või Source NONE kirjet üldiselt tõendatult vabaks pesaks.
 Uut REA teenusekäivitust ega seadmemõõtmist ei tehtud; varasem REA eksport ja
 uued kohalikud staatilised kontrollid on eraldi tõendikihid.
 
@@ -233,9 +253,9 @@ ei ole plokitüübi valija. `available` ei kinnita modifikaatori tuge, DSP mõju
 ega kirjuta seost presetisse.
 
 [Kirjepesade eeltöö](engine/docs/FM3_MODIFIER_AUDIT.md#wah-ja-volume-koos-kirjepesade-eeltöö-0320)
-eristab passiivset Wah-seost ja sidumata kirjeid. Mõlemad praegused Wah/Volume
-kirjutajad kasutavad esimest kirjet; samaaegset seost ega vaba pesa jaotamist
-veel ei toetata. Uusi seadmetõendeid või REA/Ghidra jooksu pole lisatud.
+eristab passiivset Wah-seost ja sidumata kirjeid. 0.3.20 kirjutajad kasutasid
+mõlemad esimest kirjet. Alates 0.3.30-st kasutab samaaegne Volume-seos kirjet 1;
+vaba pesa üldist jaotamist ei toetata. See ajalooline eeltöö ei olnud seadmekatse.
 
 ## Auditi offline-täiendused (0.3.19, 25.10.2026)
 
@@ -328,7 +348,8 @@ ja `fullRangeEncodingProven=false` säilivad. Selle ekspordi kordamist pole vaja
 `controlSwitches:[{switch:1..6, block:"amp", param:"DISTORT_BOOST"|"DISTORT_BRIGHT"|"DISTORT_CUT"|"DISTORT_FAT"|"DISTORT_SATSWITCH"}]`
 lisab FM3 vaikemalliga seose kanalitega ALL ja täisvahemikus Min/Max. Seosed lähevad kirjetesse alates kirjest 1,
 Wahi ja Volume'i kõrval kirjest 2. Mall tuleb FM3 enda salvestatud presetitest (1401 kirjet). STORE ja uuesti laadimine
-on kinnitatud (T9); lülitamine on kontrollimata. Control Switchi tüübi ja jalglüliti määrab kasutaja FM3-l. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md).
+on kinnitatud T9 ja T11 katsetes. Lülitamist kinnitavad T14/T14b; jalglüliti saab määrata
+allpool kirjeldatud `footswitches` väljaga. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md).
 0.3.32: `invert:true` (Min ON, Max OFF) ja `channel:"A".."D"` (sõna 17) on lisavalikud. Kuvamine on kinnitatud T7-s.
 
 ## Control Switchi stseeniolek ja jalglüliti (0.3.35)
@@ -341,7 +362,7 @@ CS-i seost `controlSwitches`-is. Ilma nendeta on iga CS igas stseenis OFF. Kodee
 generaatori tulemus võrdub FM3 enda salvestatud kehaga (T14/T14B/T16; asukohad T15). Kui kasutaja on FM3 üldseadetes
 per-preset override'i keelanud, asendus ei rakendu – ütle seda. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md#stseeniolek-ja-jalglüliti-0335).
 
-## Skeem (0.3.36)
+## Skeem ja sisendikontroll (0.3.37)
 
 `scripts/fm3-sound.schema.json` (0.8.0) tunneb nüüd `controlSwitches`-it (sh `invert`, `channel`), `controlSwitchScenes`, `footswitches`, `volumePedal` kujul
 `true` või `{min, max, curve}` ning `out2` ruudustikulahtris ja `duplicate`-is. `test-sound-schema.mjs` kontrollib, et skeem ja
@@ -351,8 +372,9 @@ min = max, sama sihtmärk kaks korda, Out 2 ilma lingita) kontrollib ainult gene
 ## Out 2, bit 4 ja modifikaatori eemaldamine (0.3.32, offline)
 
 - **Out 2:** grid-režiimis `duplicate:["out2"]` ja `out2` lahter (tavaliselt Out 1 all, link samast reast). Kirje on
-  aluse Out 1 kirje ID-ga 43, nagu 332/332 FM3 salvestatud tonepacki presetis. Signaal Out 2 pesadest ja FOH/monitor
-  on seadmes kontrollimata. [Ruudustiku juhend](engine/docs/FM3_GRID.md#out-2-0332).
+  aluse Out 1 kirje ID-ga 43, nagu 332/332 FM3 salvestatud tonepacki presetis. T11 kinnitab STORE/reload'i
+  ning Out 2 L heli selles katses. Stereo ja üldine FOH/monitori töövoog jäävad kinnitamata.
+  [Ruudustiku juhend](engine/docs/FM3_GRID.md#out-2-0332).
 - **Bit 4:** FW13 tonepacki 8463 lahtrist mitte ükski ei kasuta bitti 4 (`MOOTOR/references/fm3-grid-bit4-fw13-20261028.json`).
   Generaator kirjutab edasi ainult bitte 0–3. Biti tähendus on teadmata.
 - **Eemaldamine:** FM3 jätab eemaldatud seose kirjesse allika, sihtploki ja PID-i nulliks ning ülejäänud sõnad alles.
@@ -387,7 +409,8 @@ muude sisubaitide säilimise. Generaator taastab kogu mõõdetud keha täpselt.
 `--verify` võrdleb lõpp-SYX-i, TXT-i, speci ja aruannet. Selle sama sisu
 korduseksporti ei küsita. Uued paigutus/stseenikombinatsioonid on kontrollitud
 arvutis; P1 pedaali järgimine on kinnitatud eespool nimetatud FM3-Editi vaatlusega.
-Täpsed kanna/varba arvud, heli ja selle pedaalipreseti STORE/reload on kontrollimata.
+Kanna/varba arvud ja STORE/reload on kinnitatud T2/T10 ning seoste säilimine T9/T11 katsetes.
+Pedaali täielik DSP-kõver ja heli mõju ei ole nende arvunäitudega kinnitatud.
 `fullRangeEncodingProven=false` ning Wahi Min/Max-i tõendusulatus säilivad.
 
 `GAIN` käsiväärtus on seose korral kõigil A–D kanalitel blokeeritud. `LEVEL`,
@@ -795,8 +818,10 @@ Auto Engage ja Damping’u režiimi sõnadel on kummalgi kaks allpool kirjeldatu
 NewLookil puudub Wah: sisselülitamiseks küsi ka `wahChannels` täiskanalimall.
 Seos ei muuda stseenide bypass'i ega seadista globaalset pedaali/MIDI vastendust.
 Aktiivse seose puhul lükatakse tabeli Wah Control kirjutus tagasi kõigil A–D
-kanalitel. Ära lülita seost välja ilma selgesõnalise soovita. Kõvera vabade väärtuste, muude
-allikate, uute kirjete ja globaalsete skaalade kirjutamine jääb toetamata.
+kanalitel. Ära lülita seost välja ilma selgesõnalise soovita. Kõvera/aja väljade
+tugi on alates 0.3.34-st kirjeldatud allpool. Suvaliste allikate, üldise kirjepesade
+jaotaja ja globaalsete skaalade kirjutamine jääb toetamata; Volume ja Control Switch
+kasutavad eespool kirjeldatud eraldi piiratud kirjutajaid.
 0.3.13 piiratud mõõtepunktid on kirjeldatud allpool.
 
 0.3.9 ühtlustab JSON-skeemi generaatoriga: ainult `modifiers.external1Wah`

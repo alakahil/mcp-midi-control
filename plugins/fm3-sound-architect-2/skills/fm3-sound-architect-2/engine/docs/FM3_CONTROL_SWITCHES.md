@@ -2,7 +2,8 @@
 
 Sound-spec'i `controlSwitches` seob FM3 Control Switchi 1..6 Ampi lülitiga. Toetatud sihtmärgid on ainult
 `amp` plokis: `DISTORT_BOOST` (Input Boost), `DISTORT_BRIGHT` (Bright), `DISTORT_CUT` (Cut), `DISTORT_FAT` (Fat)
-ja `DISTORT_SATSWITCH` (Saturation Switch). Kanalid on alati ALL ja Min/Max täisvahemik.
+ja `DISTORT_SATSWITCH` (Saturation Switch). Vaikimisi on kanalid ALL ja Min/Max OFF/ON;
+`invert` ja `channel` lisavalikud on kirjeldatud allpool.
 
 ```json
 {
@@ -41,15 +42,16 @@ ja `DISTORT_SATSWITCH` (Saturation Switch). Kanalid on alati ALL ja Min/Max täi
 `references/fm3-control-switch-evidence-20261028.json` on koondkviitung. Selles on ainult struktuur ja arvud:
 presetifaile ja -nimesid ei ole. Kasutaja FW13 tonepackis on 384 presetti. Neist 328-s on Control Switch → Amp
 seosed, kokku 1610 kirjet. 1401 kirjet on täpselt see mall. Ülejäänutel on pööratud või osaline Min/Max või
-kanalipiirang. Neid vorme ei kirjutata, sest nende näitu kontrollib alles katse T7. Kasutaja enda FM3-s loodud
+kanalipiirang. T7 kinnitas pööratud Min/Max-i ja kanalinäidu; nende kirjutus on alates 0.3.32-st toetatud.
+Osalist Min/Max-i see liides ei paku. Kasutaja enda FM3-s loodud
 External 1 → Volume seos kasutab samu mallisõnu.
 
 ## Mida see ei tee
 
 - Control Switchi olek stseeni kaupa ja jalglüliti määrang ei ole seose osa, vaid eraldi väljad
   `controlSwitchScenes` ja `footswitches` (0.3.35, vt allpool „Stseeniolek ja jalglüliti“).
-- Pööratud või osalist Min/Max-i, kanalipiirangut ega muid allikaid ja sihtmärke ei kirjutata.
-- Control Switchi lülitamist ja selle uue faili importi ei ole seadmes kontrollitud.
+- Osalist Min/Max-i ega muid allikaid ja sihtmärke ei kirjutata; pööratud täisvahemik ja kanalipiirang on toetatud.
+- Uue faili importi ei kinnita varasemad katsed. Lülitamine on kinnitatud T14/T14b ulatuses (vt allpool).
 
 ## Seadmekatsed (28.10.2026)
 
@@ -73,6 +75,8 @@ FM3 hoiab mõlemat **presetis** (FC PER-PRESET menüü), mitte üldseadetes. Kod
   12 × (layout − 1) + (lüliti − 1) (0.3.36: T15 asukohad Overrides lehel, T16 FM3 enda salvestatud asendused). FM3 esipaneeli
   lülitid on layout'i lülitid 1–3. Asendus kehtib ainult siis, kui FM3 on selles layout'is.
 - Mõlemad nõuavad, et sama Control Switch oleks `controlSwitches`-is seotud.
+- `state` ja `function` peavad olema stringid. 0.3.37 tõrjub ka üheelemendilised ja pesastatud massiivid;
+  vigase tüübi tõrjumine kehtib generaatoris ning `--verify` kontrollis.
 
 Näide: Boost CS 2 peal, Scene 2-s sees, jalglüliti 1 lülitab:
 ```json
