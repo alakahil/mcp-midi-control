@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2141,
-  "filePaths": 2345,
+  "uniqueContents": 2143,
+  "filePaths": 2347,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -5705,6 +5705,12 @@
       "bytes": 1746,
       "paths": [
         "references/fm3-volume-donor.json"
+      ]
+    },
+    "748c74dfecc9f0ebe3aa0cb5139f18fba79b116fe0f608e0f9bc37846ccab36d": {
+      "bytes": 2942,
+      "paths": [
+        "references/fm3-pp-steps-20261029.json"
       ]
     },
     "748ecaf75262546ef04c8876137552aa872ee4e2374a16fc5880728485541be5": {
@@ -12602,6 +12608,12 @@
       "bytes": 83054,
       "paths": [
         "examples/FM3_AMP_CD_LEVEL_CHECK.validation.json"
+      ]
+    },
+    "f93b52e77b6902ebf0965be6368495eed46eb8a9d062d953b8fe58bfb39dd790": {
+      "bytes": 2975,
+      "paths": [
+        "references/fm3-fs-index-20261029.json"
       ]
     },
     "f9694067db3a6c3f253fd39ddcb8977fab9354e857885be22e19c388dd22af96": {

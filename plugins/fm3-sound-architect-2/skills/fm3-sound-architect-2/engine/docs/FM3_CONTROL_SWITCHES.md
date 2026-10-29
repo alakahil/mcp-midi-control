@@ -68,9 +68,10 @@ FM3 hoiab mõlemat **presetis** (FC PER-PRESET menüü), mitte üldseadetes. Kod
 
 - `controlSwitchScenes: [{switch: 1..6, scene: 1..8, state: "ON" | "OFF" | "LAST"}]` – Control Switchi olek stseeni
   valimisel (FC PER-PRESET → CS Per Scene). Loetlemata olekud jäävad OFF-iks. LAST jätab eelmise stseeni oleku.
-- `footswitches: [{layout: 1, switch: 1, function: "latching" | "momentary", controlSwitch: 1..6}]` – preseti-põhine
-  lülitidefinitsioon (Per-Preset FC, PP#1…) ja selle asendus (Overrides). Praegu on seadmel kinnitatud ainult
-  Layout 1 lüliti 1; teiste asukohtade asendussõna järjekord on veel kontrollimata, nii et generaator neid ei paku.
+- `footswitches: [{layout: 1..9, switch: 1..12, function: "latching" | "momentary", controlSwitch: 1..6}]` – kuni 24
+  preseti-põhist lülitidefinitsiooni (Per-Preset FC, PP#1… loendi järjekorras) ja nende asendused (Overrides). Asendussõna on
+  12 × (layout − 1) + (lüliti − 1) (0.3.36: T15 asukohad Overrides lehel, T16 FM3 enda salvestatud asendused). FM3 esipaneeli
+  lülitid on layout'i lülitid 1–3. Asendus kehtib ainult siis, kui FM3 on selles layout'is.
 - Mõlemad nõuavad, et sama Control Switch oleks `controlSwitches`-is seotud.
 
 Näide: Boost CS 2 peal, Scene 2-s sees, jalglüliti 1 lülitab:
@@ -82,7 +83,8 @@ Näide: Boost CS 2 peal, Scene 2-s sees, jalglüliti 1 lülitab:
 
 Tõend (29.10.2026): katsetes T14 ja T14B muudeti iga välja FM3-l ükshaaval, salvestati ja loeti sõna-sõnalt tagasi
 (`references/fm3-cs-steps-20261029.json`, `references/fm3-cs-steps-b-20261029.json`). Generaatori tulemus võrdub FM3 enda
-salvestatud kehaga sõna-sõnalt (`tools/fm3/test-cs-preset-replay.mjs`, 4 juhtumit). Seadmel: Latching lülitab vajutusega
+salvestatud kehaga sõna-sõnalt (`tools/fm3/test-cs-preset-replay.mjs`, 5 juhtumit, sh T16 kolme lülitiga). T16 näitas, et iga
+definitsiooni parameetrid on 6 sõna (12 baiti) ja definitsioonide loendur on asenduste järel (`references/fm3-pp-steps-20261029.json`). Seadmel: Latching lülitab vajutusega
 sisse/välja ja LED järgib; Momentary on sees ainult hoidmise ajal; CS Per Scene rakendub stseeni valikul; tavaline,
 pööratud ja CHAN D seos käituvad nii, nagu kirjas. Kui per-preset override on FM3 üldseadetes keelatud, asendus ei rakendu.
 Selle uue faili importi pole eraldi kontrollitud.

@@ -54,7 +54,7 @@ const out={schemaVersion:1,date:'2026-10-29',scope:'Offline join of existing rec
   storeReload:'Wah + Volume + two Control Switch records stored and reloaded unchanged (T9); Wah + Volume 2.50..7.50 + three Control Switch records (normal, inverted, CHAN D) + Out 2 stored and reloaded unchanged (T11)',
   switching:'Inverted and CHAN D records behave as written on the device: PEDAL 2 ring switch (T13, momentary) and per-preset Control Switch: Latching and Momentary footswitches (T14/T14b, stored in the preset, no global setting); CS Per Scene ON/OFF/LAST applied on scene change (T14b)',
   controlSwitchPreset:'CS Per Scene: 482 bytes before the body end, 6 CS x 8 scenes, ON 0 / OFF 1 / LAST 2; per-preset definitions 3052 bytes before the end (category 7 = Control Switch, function 1 Latching / 0 Momentary, parameter CS number - 1); overrides 1920 bytes after (references/fm3-cs-steps-b-20261029.json)',
-  stillOpen:['footswitch positions other than Layout 1 switch 1 (override word order)','per-preset Hold functions']};
+  stillOpen:['per-preset Hold functions']};
 const md=['# Modifikaatori kirje väljad, seis 29.10.2026','',`Allikad: ${Object.values(out.sources).map(s=>'`'+s.path+'`').join(', ')}. Uut seadmekatset selle koondi jaoks ei tehtud.`,'',
   '| Sõna | Väli | Näit / dekodeering | Seis | Kirjutaja |','|---|---|---|---|---|',...fields.map(x=>`| ${x.word} | ${x.name} | ${x.display} | ${x.status} | ${x.writer} |`),'',
   `Sõna indeks = modifikaatori PID (${out.wordIndexIsModifierPid})`,'',`Eemaldamine: ${out.removal}.`,'',`STORE: ${out.storeReload}.`,'',
