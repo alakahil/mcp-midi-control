@@ -4,11 +4,354 @@
   "firmware": 13,
   "bases": [
     {
+      "id": "jb-original",
+      "file": "examples/JB_YDOM_RHYTHM.syx",
+      "sha256": "bffe9dd559b443ebe3822532e951a27cb0a827600cb929d52dfccd3228d611ca",
+      "bodyBytes": 14222,
+      "blocks": [
+        "in1",
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "flanger",
+        "wah"
+      ],
+      "fields": [
+        "modifiers",
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "flangerChannels",
+        "phaserChannels",
+        "wahChannels"
+      ]
+    },
+    {
+      "id": "jb-balanced",
+      "file": "examples/JB_RHYTHM_LEVEL_MINUS3.syx",
+      "sha256": "7df04a541f45ef0d73e08de3583f0cd8a34f061392a28aa6691875689563b902",
+      "bodyBytes": 14222,
+      "blocks": [
+        "in1",
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "flanger",
+        "wah"
+      ],
+      "fields": [
+        "modifiers",
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "flangerChannels",
+        "phaserChannels",
+        "wahChannels"
+      ]
+    },
+    {
+      "id": "jb-balanced-export",
+      "file": "examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+      "sha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+      "bodyBytes": 14222,
+      "blocks": [
+        "in1",
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "flanger",
+        "wah"
+      ],
+      "fields": [
+        "modifiers",
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "flangerChannels",
+        "phaserChannels",
+        "wahChannels"
+      ]
+    },
+    {
+      "id": "jb-tremolo",
+      "file": "examples/FM3_TREMOLO_ABCD_TEST_export.syx",
+      "sha256": "de7dfc12cbcd2ad517f10f13d392f8b859aee75e94286152d14b80fe9d1596f1",
+      "bodyBytes": 14134,
+      "blocks": [
+        "in1",
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "wah",
+        "tremolo"
+      ],
+      "fields": [
+        "modifiers",
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "phaserChannels",
+        "wahChannels",
+        "tremoloChannels"
+      ]
+    },
+    {
+      "id": "jb-rotary",
+      "file": "examples/FM3_ROTARY_A_TEST_export.syx",
+      "sha256": "4eda4d22b89fb843ce47ab011bf01290a2cdbaabb9fe0219038faa5f5f0e7095",
+      "bodyBytes": 14126,
+      "blocks": [
+        "in1",
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "wah",
+        "rotary"
+      ],
+      "fields": [
+        "modifiers",
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "phaserChannels",
+        "wahChannels",
+        "rotaryA"
+      ]
+    },
+    {
+      "id": "jb-pitch",
+      "file": "examples/FM3_PITCH_ABCD_TEST_export.syx",
+      "sha256": "1b7ffc02a8e56749677a24fc55b192b0cb414dc960c3af408c17e3d78fc918a8",
+      "bodyBytes": 14870,
+      "blocks": [
+        "in1",
+        "amp",
+        "cab",
+        "drive",
+        "delay",
+        "reverb",
+        "phaser",
+        "compressor",
+        "chorus",
+        "wah",
+        "pitch"
+      ],
+      "fields": [
+        "modifiers",
+        "scenes",
+        "ampChannels",
+        "cabChannels",
+        "ampLevels",
+        "gainB",
+        "bassB",
+        "midB",
+        "trebleB",
+        "presenceB",
+        "levelB",
+        "delayMixA",
+        "reverbMixA",
+        "delayTimeMs",
+        "delayFeedback",
+        "reverbTimeS",
+        "reverbPredelayMs",
+        "delayTempoA",
+        "reverbPredelayTempoA",
+        "delayScene2",
+        "reverbScene1",
+        "ampModelB",
+        "cabModelB",
+        "scene6Name",
+        "phaserScene6Bypass",
+        "reverbScene6",
+        "delayScene6Bypass",
+        "ampScene6",
+        "driveChannels",
+        "delayChannels",
+        "reverbChannels",
+        "compressorChannels",
+        "chorusChannels",
+        "phaserChannels",
+        "wahChannels",
+        "pitchChannels"
+      ]
+    },
+    {
       "id": "jb-newlook",
       "file": "examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx",
       "sha256": "afacded0a3c3a30cfbf48b4e3daa08c0639482f0f1973e429763150ff7e9372c",
       "bodyBytes": 12804,
       "blocks": [
+        "in1",
         "amp",
         "cab",
         "drive",
@@ -16,6 +359,7 @@
         "reverb"
       ],
       "fields": [
+        "modifiers",
         "scenes",
         "ampChannels",
         "cabChannels",
@@ -61,6 +405,409 @@
       ]
     }
   ],
+  "modifiers": {
+    "field": "modifiers.external1Wah",
+    "values": [
+      false,
+      true
+    ],
+    "record": 0,
+    "sourceWord": 0,
+    "offset": 1584,
+    "sourceCodes": {
+      "NONE": 0,
+      "External 1": 14
+    },
+    "target": {
+      "block": "wah",
+      "effectId": 94,
+      "pid": 5,
+      "name": "WAH_CONTROL",
+      "channelScope": "ALL"
+    },
+    "evidence": "existing-export-and-FW13-metadata-crosschecked",
+    "metadataSha256": "0a209c8709b043500cf222252a1ee98abaff389a39c014d936e350e32cbedab6",
+    "autoEngage": {
+      "field": "modifiers.wahAutoEngage",
+      "values": [
+        "OFF",
+        "MED SPD"
+      ],
+      "codes": {
+        "OFF": 0,
+        "MED SPD": 2
+      },
+      "word": 10,
+      "offset": 1604,
+      "evidence": "FW13 user changed-field export and screenshot, 2026-10-21",
+      "requires": "Final External 1 -> Wah1 Control ALL binding",
+      "evidenceFile": "references/wah-auto-engage-evidence.json",
+      "deviceBehavior": "not tested",
+      "audio": "not tested"
+    },
+    "damping": {
+      "field": "modifiers.wahDamping",
+      "values": [
+        "EXPONENTIAL",
+        "LINEAR"
+      ],
+      "codes": {
+        "EXPONENTIAL": 0,
+        "LINEAR": 1
+      },
+      "word": 24,
+      "offset": 1632,
+      "evidence": "FW13 user changed-field export and screenshot, 2026-10-21",
+      "requires": "Final External 1 -> Wah1 Control ALL binding",
+      "evidenceFile": "references/wah-damping-evidence.json",
+      "deviceBehavior": "not tested",
+      "audio": "not tested"
+    },
+    "min": {
+      "field": "modifiers.wahMin",
+      "values": [
+        0,
+        2.5
+      ],
+      "codes": {
+        "0": 0,
+        "2.5": 16375
+      },
+      "word": 1,
+      "offset": 1586,
+      "encoding": "Exact observed display-point lookup; no interpolation or full-range codec",
+      "fullRange": false,
+      "evidence": "FW13 user changed-field export, screenshot and baseline confirmation, 2026-10-21",
+      "requires": "Final External 1 -> Wah1 Control ALL binding; supported measured Max code",
+      "evidenceFile": "references/wah-min-evidence.json",
+      "deviceBehavior": "not tested",
+      "audio": "not tested"
+    },
+    "controls": {
+      "field": "modifiers.wahControls",
+      "fullRange": "curve and timing fields (Max: measured points only)",
+      "interpolation": "native descriptor formula for curve and timing fields",
+      "fieldIndependenceVerified": true,
+      "properties": {
+        "max": {
+          "word": 2,
+          "offset": 1588,
+          "unit": "Wah Control 0..10",
+          "values": [
+            10,
+            7.5,
+            5
+          ],
+          "points": [
+            {
+              "input": 10,
+              "display": 10,
+              "raw": 65534
+            },
+            {
+              "input": 7.5,
+              "display": 7.5,
+              "raw": 49159
+            },
+            {
+              "input": 5,
+              "display": 5,
+              "raw": 32784
+            }
+          ]
+        },
+        "startPercent": {
+          "word": 3,
+          "offset": 1590,
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "decimals": 1,
+          "measuredPoints": [
+            {
+              "input": 0,
+              "display": 0,
+              "raw": 0
+            },
+            {
+              "input": 10,
+              "display": 10,
+              "raw": 6553
+            },
+            {
+              "input": 20,
+              "display": 20,
+              "raw": 13107
+            }
+          ]
+        },
+        "midPercent": {
+          "word": 4,
+          "offset": 1592,
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "decimals": 1,
+          "measuredPoints": [
+            {
+              "input": 50,
+              "display": 50,
+              "raw": 32767
+            },
+            {
+              "input": 40,
+              "display": 40,
+              "raw": 26214
+            },
+            {
+              "input": 55,
+              "display": 55,
+              "raw": 36044
+            }
+          ]
+        },
+        "endPercent": {
+          "word": 5,
+          "offset": 1594,
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "decimals": 1,
+          "measuredPoints": [
+            {
+              "input": 100,
+              "display": 100,
+              "raw": 65534
+            },
+            {
+              "input": 90,
+              "display": 90,
+              "raw": 58981
+            },
+            {
+              "input": 80,
+              "display": 80,
+              "raw": 52427
+            }
+          ]
+        },
+        "slopePercent": {
+          "word": 6,
+          "offset": 1596,
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "decimals": 1,
+          "measuredPoints": [
+            {
+              "input": 50,
+              "display": 50,
+              "raw": 32767
+            },
+            {
+              "input": 60,
+              "display": 60,
+              "raw": 39320
+            },
+            {
+              "input": 35,
+              "display": 35,
+              "raw": 22937
+            }
+          ]
+        },
+        "attackMs": {
+          "word": 7,
+          "offset": 1598,
+          "unit": "ms",
+          "min": 0,
+          "max": 10000,
+          "decimals": 1,
+          "measuredPoints": [
+            {
+              "input": 10.1,
+              "display": 10.1,
+              "raw": 66
+            },
+            {
+              "input": 99.9,
+              "display": 99.9,
+              "raw": 655
+            },
+            {
+              "input": 500,
+              "display": 500,
+              "raw": 3277
+            },
+            {
+              "input": 100,
+              "display": 99.9,
+              "raw": 655
+            }
+          ]
+        },
+        "releaseMs": {
+          "word": 15,
+          "offset": 1614,
+          "unit": "ms",
+          "min": 0,
+          "max": 10000,
+          "decimals": 1,
+          "measuredPoints": [
+            {
+              "input": 0,
+              "display": 0,
+              "raw": 0
+            },
+            {
+              "input": 249.9,
+              "display": 249.9,
+              "raw": 1638
+            },
+            {
+              "input": 999.9,
+              "display": 999.9,
+              "raw": 6553
+            },
+            {
+              "input": 250,
+              "display": 249.9,
+              "raw": 1638
+            },
+            {
+              "input": 1000,
+              "display": 999.9,
+              "raw": 6553
+            }
+          ]
+        },
+        "scale": {
+          "word": 13,
+          "offset": 1610,
+          "unit": "unitless",
+          "min": 0.1,
+          "max": 10,
+          "decimals": 3,
+          "measuredPoints": [
+            {
+              "input": 1,
+              "display": 1,
+              "raw": 32767
+            },
+            {
+              "input": 1.5,
+              "display": 1.5,
+              "raw": 38537
+            },
+            {
+              "input": 0.75,
+              "display": 0.75,
+              "raw": 28673
+            }
+          ]
+        },
+        "offsetPercent": {
+          "word": 14,
+          "offset": 1612,
+          "unit": "%",
+          "min": -100,
+          "max": 100,
+          "decimals": 1,
+          "measuredPoints": [
+            {
+              "input": 0,
+              "display": 0,
+              "raw": 32767
+            },
+            {
+              "input": -10,
+              "display": -10,
+              "raw": 29490
+            },
+            {
+              "input": 15,
+              "display": 15,
+              "raw": 37682
+            }
+          ]
+        },
+        "offValuePercent": {
+          "word": 12,
+          "offset": 1608,
+          "unit": "%",
+          "min": 5,
+          "max": 95,
+          "decimals": 1,
+          "measuredPoints": [
+            {
+              "input": 5,
+              "display": 5,
+              "raw": 0
+            },
+            {
+              "input": 20,
+              "display": 20,
+              "raw": 10922
+            },
+            {
+              "input": 80,
+              "display": 80,
+              "raw": 54612
+            }
+          ]
+        }
+      },
+      "evidenceFile": "references/wah-measured-controls.json",
+      "curveCodec": "scripts/fm3-modifier-curve.mjs",
+      "curveDevicePoints": 77,
+      "evidence": "Two FW13 joint captures, native word bindings, one isolated Max 7.50 -> 5.00 capture, and the T12 one-field-per-step device check (2026-10-29). Max: exact observed codes. Curve and timing fields: native descriptor formula reproducing every observed point; values between them hardware-unverified.",
+      "requires": "Final External 1 -> Wah1 Control ALL binding and present Wah1",
+      "deviceBehavior": "not tested",
+      "audio": "not tested"
+    },
+    "exactMinMax": {
+      "field": "modifiers.wahMinMaxExact",
+      "policy": "exact-wah-cent-fw13-hw1",
+      "status": "bounded-exact-input",
+      "fields": [
+        "min",
+        "max"
+      ],
+      "input": "Exact decimal strings 0.00..10.00, step 0.01; at least one field",
+      "targetScope": {
+        "firmware": "13.00",
+        "modifierRecord": 0,
+        "source": 14,
+        "targetEffectId": 94,
+        "targetPid": 5,
+        "modifierChannel": 0,
+        "modifierChannelScope": "ALL",
+        "targetDescriptorType": 50,
+        "low": 0,
+        "high": 1,
+        "multiplier": 10
+      },
+      "countsPerField": {
+        "hardwareExactInput": 6,
+        "fourModeConsensusOnly": 995
+      },
+      "evidenceFile": "references/wah-minmax-exact.json",
+      "captureSha256": "f99bdfdcdb695b80e6059a772f6095e9f2a2a385628a1a7bd1804c53049ea44e",
+      "fullRangeEncodingProven": false,
+      "runtimeModeAtStoreProven": false,
+      "deviceImportTested": false,
+      "interpretation": "Exact requested values; not recovered mouse/keyboard input or observed display lookup",
+      "conflicts": "Do not specify the same field using wahMin or wahControls.max",
+      "requires": "Final External 1 -> Wah1 Control ALL; existing retained configuration checks",
+      "deviceIO": false
+    },
+    "preserves": "All bytes except explicitly requested source / Auto Engage / Damping / measured Min / wahControls / explicit exact Min/Max words; other composer requests remain separate",
+    "requires": "Retained configuration uses only supported source, Auto Engage, Damping, Min and measured control codes; present Wah1 when enabled; no competing target",
+    "deviceIO": false,
+    "newDeviceExportEvidence": true,
+    "globalControllerSetup": false,
+    "arbitraryModifierWrites": false
+  },
   "templates": {
     "amp": {
       "count": 336,
@@ -2984,7 +3731,7 @@
   "limitations": [
     "Automatic known-block insertion only on jb-newlook serial shunts; other bases retain their existing grid",
     "Amp/Cab full templates target A-D; scalar controls keep their existing measured scope",
-    "Scene names, effect channels and bypass are supported; no per-scene output level or modifier writing",
+    "Scene names, effect channels and bypass are supported; no arbitrary modifier writing; only the retained External 1 to Wah binding and its OFF/MED SPD Auto Engage and EXPONENTIAL/LINEAR Damping pairs and measured Min display points 0/2.5 plus explicit wahMinMaxExact with per-point evidence",
     "Filter A-D templates on NewLook; exact measured controls only: A High-Pass frequency, B Low-Pass frequency, C Peaking frequency/Q/Gain/Level",
     "PEQ five bands and A-D: measured types/slopes, numeric scales and common controls; intermediate values and new combinations require independent device checks; opaque PID23/24 preserved",
     "GEQ 18 types and A-D: paired templates and audited scales; intermediate values and new compositions require separate device checks",

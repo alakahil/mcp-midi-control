@@ -38,7 +38,7 @@ const fields=[
   f(9,'Target PID','-','structural','all writers'),
   f(10,'MOD_AUTOENGAGE',`0 -> ${base.fields['Auto-Engage']}; 1 -> SLOW SPD (T12); 5 -> ${auto.fields['Auto-Engage']}`,'three labels (plus the existing Wah OFF / MED SPD pair)','Wah modifier (existing)'),
   f(11,'PC Reset',pts(11),'decoded (T12)','template value'),
-  f(12,'MOD_OFFVAL',`${D(12).display}: ${pts(12)}; ${D(12).open}`,'one non-default point (T12); word 0 unexplained','template value'),
+  f(12,'MOD_OFFVAL',`${D(12).display}: ${pts(12)}; ${D(12).open}`,'decoded (native descriptor 5..95 %, T12, Wah captures); T7 word 65534 reading is an outlier','template value'),
   f(13,'MOD_SCALE',`${D(13).display}: ${pts(13)}; ${curve.words[13]} -> ${curve.fields.Scale}`,'decoded, device-stepped (T12)','template value'),
   f(14,'MOD_OFFSET',`${D(14).display}: ${pts(14)}`,'decoded, device-stepped (T12)','template value'),
   f(15,'MOD_RELEASE',`${D(15).display}: ${pts(15)}`,'decoded, device-stepped (T12)','template value'),
@@ -52,7 +52,7 @@ const out={schemaVersion:1,date:'2026-10-29',scope:'Offline join of existing rec
   removal:'words 0, 8 and 9 -> 0, other words kept, no compaction (references/fm3-modifier-removal-20261028.json; stored by the FM3 itself in T12)',
   storeReload:'Wah + Volume + two Control Switch records stored and reloaded unchanged (T9); Wah + Volume 2.50..7.50 + three Control Switch records (normal, inverted, CHAN D) + Out 2 stored and reloaded unchanged (T11)',
   switching:'Inverted and CHAN D records behave as written on the device when driven by the PEDAL 2 ring switch (T13, momentary); Control Switch footswitch state not checked (global setting)',
-  stillOpen:['Off Value word 0 (T7 read 5.0%)','curve writing in the generator (Start, End, Mid, Slope, Scale, Offset, Attack, Release are decoded but not exposed)','Control Switch footswitch behaviour (needs a global FC assignment)']};
+  stillOpen:['Off Value word 65534 (T7 read 5.0%, formula 95.0%; one-step device check)','curve writing in the generator (Start, End, Mid, Slope, Scale, Offset, Attack, Release are decoded but not exposed)','Control Switch footswitch behaviour (needs a global FC assignment)']};
 const md=['# Modifikaatori kirje väljad, seis 29.10.2026','',`Allikad: ${Object.values(out.sources).map(s=>'`'+s.path+'`').join(', ')}. Uut seadmekatset selle koondi jaoks ei tehtud.`,'',
   '| Sõna | Väli | Näit / dekodeering | Seis | Kirjutaja |','|---|---|---|---|---|',...fields.map(x=>`| ${x.word} | ${x.name} | ${x.display} | ${x.status} | ${x.writer} |`),'',
   `Sõna indeks = modifikaatori PID (${out.wordIndexIsModifierPid})`,'',`Eemaldamine: ${out.removal}.`,'',`STORE: ${out.storeReload}.`,'',

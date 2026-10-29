@@ -21,6 +21,7 @@ const valid=[
   {composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},controlSwitches:[{switch:2,block:'amp',param:'DISTORT_BOOST'},{switch:3,block:'amp',param:'DISTORT_BRIGHT',invert:true},{switch:4,block:'amp',param:'DISTORT_FAT',channel:'D'}]},
   {composer,volumePan:true,volumePedal:true,layout:{row2:['drive','amp','cab'],row3:['volpan','delay','reverb']}},
   {composer,volumePan:true,volumePedal:{min:2.5,max:7.5},layout:{row2:['drive','amp','cab'],row3:['volpan','delay','reverb']}},
+  {composer,volumePan:true,volumePedal:{min:1,max:9,curve:{startPercent:10,endPercent:90,slopePercent:65,scale:1.5,offsetPercent:-5,attackMs:50,releaseMs:400}},layout:{row2:['drive','amp','cab'],row3:['volpan','delay','reverb']}},
   {composer:wahComposer,volumePan:true,volumePedal:{max:8},layout:{row2:['wah','drive','amp','cab'],row3:['volpan','delay','reverb']},controlSwitches:[{switch:2,block:'amp',param:'DISTORT_CUT',channel:'ALL'}]},
   {composer,grid:{rows:[E,['in1','drive','-','-','amp','cab','-','-','-','-','-','send'],['return','delay','-','-','reverb','-','-','-','-','-','-','out1'],[...Array(11).fill(''),'out2']],links:[{row:4,col:12,from:[3]}]},duplicate:['out2']}];
 for(const s of valid)ok(s);
@@ -31,13 +32,15 @@ const both=[
   ['switch 7',s=>s.controlSwitches[0].switch=7,0],['switch 0',s=>s.controlSwitches[0].switch=0,0],['block cab',s=>s.controlSwitches[0].block='cab',0],
   ['param gain',s=>s.controlSwitches[0].param='DISTORT_GAIN',0],['invert string',s=>s.controlSwitches[0].invert='yes',0],['channel E',s=>s.controlSwitches[0].channel='E',0],
   ['extra key',s=>s.controlSwitches[0].min=0,0],['nine bindings',s=>s.controlSwitches=Array(9).fill(s.controlSwitches[0]),0],['empty list',s=>s.controlSwitches=[],0],
-  ['duplicate out3',s=>s.duplicate=['out3'],4],['out3 cell',s=>s.grid.rows[3][11]='out3',4]];
+  ['duplicate out3',s=>s.duplicate=['out3'],5],['out3 cell',s=>s.grid.rows[3][11]='out3',5],
+  ['curve unknown key',s=>s.volumePedal.curve.offValuePercent=50,3],['curve start above 100',s=>s.volumePedal.curve.startPercent=101,3],['curve scale below 0.1',s=>s.volumePedal.curve.scale=0.05,3],
+  ['curve attack above 10 s',s=>s.volumePedal.curve.attackMs=10001,3],['curve empty',s=>s.volumePedal.curve={},3],['curve string',s=>s.volumePedal.curve.midPercent='50',3]];
 for(const [name,edit,i] of both){const s=structuredClone(valid[i]);edit(s);
   assert.notDeepEqual(checkSchema(S,s),[],'schema accepts: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
 // Generator-only rules: the schema accepts the shape, the generator refuses the content.
 const generatorOnly=[
   ['volumePedal min == max',s=>s.volumePedal={min:5,max:5},2],['same target twice',s=>s.controlSwitches=[s.controlSwitches[0],{...s.controlSwitches[0],switch:5}],0],
-  ['out2 without duplicate',s=>s.duplicate=[],4],['out2 unlinked',s=>s.grid.links=[],4],
+  ['out2 without duplicate',s=>s.duplicate=[],5],['out2 unlinked',s=>s.grid.links=[],5],
   ['static write to a bound switch',s=>{s.allow=['enum-labels'];s.controls=[{block:'amp',channel:'A',param:'DISTORT_BOOST',value:'ON'}];},0]];
 for(const [name,edit,i] of generatorOnly){const s=structuredClone(valid[i]);edit(s);
   assert.deepEqual(checkSchema(S,s),[],'schema refuses (move it to the both-list): '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}

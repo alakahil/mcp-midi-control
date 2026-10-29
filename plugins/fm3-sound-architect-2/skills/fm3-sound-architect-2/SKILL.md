@@ -331,10 +331,10 @@ Wahi ja Volume'i kõrval kirjest 2. Mall tuleb FM3 enda salvestatud presetitest 
 on kinnitatud (T9); lülitamine on kontrollimata. Control Switchi tüübi ja jalglüliti määrab kasutaja FM3-l. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md).
 0.3.32: `invert:true` (Min ON, Max OFF) ja `channel:"A".."D"` (sõna 17) on lisavalikud. Kuvamine on kinnitatud T7-s.
 
-## Skeem (0.3.33)
+## Skeem (0.3.34)
 
-`scripts/fm3-sound.schema.json` (0.5.0) tunneb nüüd `controlSwitches`-it (sh `invert`, `channel`), `volumePedal` kujul
-`true` või `{min, max}` ning `out2` ruudustikulahtris ja `duplicate`-is. `test-sound-schema.mjs` kontrollib, et skeem ja
+`scripts/fm3-sound.schema.json` (0.6.0) tunneb nüüd `controlSwitches`-it (sh `invert`, `channel`), `volumePedal` kujul
+`true` või `{min, max, curve}` ning `out2` ruudustikulahtris ja `duplicate`-is. `test-sound-schema.mjs` kontrollib, et skeem ja
 generaator otsustavad uute väljade ja kõigi praeguste näidete puhul sama. Skeemis väljendamatud reeglid (näiteks
 min = max, sama sihtmärk kaks korda, Out 2 ilma lingita) kontrollib ainult generaator.
 
@@ -354,8 +354,13 @@ min = max, sama sihtmärk kaks korda, Out 2 ilma lingita) kontrollib ainult gene
 
 Sound-spec'i `volumePedal:true` koos `volumePan:true` lisab **External 1 →
 Volume/Pan 1 Volume (VOLUME_GAIN, PID 0), ALL** seose. Vaikimisi on Min 0 ja Max 10;
-`volumePedal:{min, max}` seab vahemiku (0.3.31). Kõvera, Auto Engage'i ega ajaparameetrite valikuid sellel
-liidesel pole. [Juhend](engine/docs/FM3_VOLUME_PEDAL.md).
+`volumePedal:{min, max}` seab vahemiku (0.3.31). `volumePedal.curve` (0.3.34) seab Modify-lehe kõvera ja ajad:
+`startPercent`, `midPercent`, `endPercent`, `slopePercent` (0–100), `scale` (0.1–10), `offsetPercent` (−100…100),
+`attackMs`, `releaseMs` (0–10000). Näiteks `{"min":0,"max":10,"curve":{"startPercent":10,"slopePercent":65}}`.
+Puuduv väli jääb ekspordi vaikeolekusse. Kodeering on FM3 natiivne vahemik; iga väli on 29.10.2026 (T12) seadmel ükshaaval
+läbi astutud ja valem kordab kõiki 77 seadmenäitu. Mõõdetud punktide vahelised väärtused on seadmel kontrollimata, ütle seda
+kasutajale. Kuvanäit võib erineda 0.1 ms võrra (50 ms → 50.1 ms), sest FM3 salvestab sõna. Auto Engage'i ja Off Value'i
+valikuid sellel liidesel pole. [Juhend](engine/docs/FM3_VOLUME_PEDAL.md).
 Pedaali käitumine on **seadmel kinnitatud** 24.10.2026: FM3-Editis on Volume nupul External 1 modifikaator
 ja nupp järgib pedaali kannast varbani; ilma seoseta preset jääb 10.00 peale. 26.10.2026 (T2): kand 0.00, varvas
 10.00; kasutaja salvestas preseti ja laadis uuesti, seos ja väärtused jäid samaks ning salvestatud keha klappis
@@ -867,11 +872,12 @@ sellega eraldi seadmesse imporditud. Pedaal, DSP, heli ja CPU jäävad eraldi ko
 
 ## Modifikaatori kümne välja mõõdetud punktid (0.3.13 kandidaat)
 
-`modifiers.wahControls` lisab Max, Start/Mid/End/Slope, Attack/Release,
-Scale/Offset ja Off Value täpsed mõõtepunktid. Soundi ümbrises kasuta
+`modifiers.wahControls` lisab Max-i täpsed mõõtepunktid ning Start/Mid/End/Slope, Attack/Release,
+Scale/Offset ja Off Value suvalise väärtuse FM3 vahemikus (0.3.34: natiivse kirjeldaja valem, mis kordab kõiki
+mõõtepunkte ja T12 katset; Off Value 5–95 %). Soundi ümbrises kasuta
 `composer.modifiers.wahControls`. Vaata capabilities'i `modifiers.controls`
 ja [mõõtepunktide juhendit](engine/docs/FM3_WAH_MODIFIER.md#kümne-välja-mõõdetud-punktid-0313-kandidaat).
-Ära interpoleeri ega paku suvalist vaheväärtust toetatuna. `wahMin` jääb eraldi.
+Max-i ei interpoleerita. Kõvera/aja välja vahepealne väärtus on valemi järgi ja seadmel kontrollimata; aruanne märgib selle (`basis`). `wahMin` jääb eraldi.
 
 Näiteks `{"wahMin":2.5,"wahControls":{"max":5,"attackMs":500,"releaseMs":1000}}`
 kirjutab täpsed mõõdetud koodid; Release'i lõppnäit on 999.9 ms. Täielik B+Max

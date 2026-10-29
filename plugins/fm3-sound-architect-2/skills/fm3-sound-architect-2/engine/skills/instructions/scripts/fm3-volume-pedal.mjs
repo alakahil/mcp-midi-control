@@ -1,5 +1,6 @@
-// Exact firmware-created binding from one FW13 export; optional numeric Min/Max (words 1/2, target codec).
-// No curve codec, global controller setup or device I/O. Record 0 (the captured place) when the Wah binding is
+// Exact firmware-created binding from one FW13 export; optional numeric Min/Max (words 1/2, target codec) and
+// optional curve / timing fields (words 3-7, 13-15, native-descriptor codec: fm3-modifier-curve.mjs). No global
+// controller setup or device I/O. Record 0 (the captured place) when the Wah binding is
 // inactive; record 1 when External 1 -> Wah is active in record 0 (the FM3 places further bindings in the
 // next records: references/fm3-control-switch-evidence-20261028.json). The 25 words are the same in both.
 import fs from 'node:fs';
@@ -11,6 +12,7 @@ import {readModifiers} from './fm3-parameter-dependencies.mjs';
 import {scanRecords,readGrid} from './fm3-layout.mjs';
 import {stripControlSwitchRecords,BASE_RECORD1} from './fm3-control-switches.mjs';
 import {findParam,encodeValue,decodeValue} from './fm3-table-encoder.mjs';
+import {modifierCurveFields,encodeCurveValue,decodeCurveWord,modifierCurveCapability} from './fm3-modifier-curve.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(ok,message)=>{if(!ok)throw Error('Volume pedal: '+message);};
 const bytes=fs.readFileSync(new URL('../references/fm3-volume-binding-evidence.json',import.meta.url));
@@ -35,15 +37,27 @@ const displayReceipt='references/fm3-modifier-display-20261028.json';
 export const modifierDisplayHash='a05a22e35e5c7a157a15fd093d92a5653fcaaf85736f4da2b5a57068ee279e9a';
 check(sha(fs.readFileSync(new URL('../'+displayReceipt,import.meta.url)))===modifierDisplayHash,'modifier display receipt drift');
 const GAIN=findParam('volpan','VOLUME_GAIN');
+// Off Value only acts with Auto-Engage, which this binding keeps OFF; it is not offered here.
+const CURVE=modifierCurveFields.filter(f=>f.key!=='offValuePercent'),CURVE_WORDS=CURVE.map(f=>f.word);
+// The record each binding replaces (record 0: inactive Wah default; record 1: BASE_RECORD1) holds the same curve words.
+check(CURVE_WORDS.every(i=>BASE_RECORD1[i]===(i===15?0:evidence.binding.words[i])),'curve base words');
 export function volumeRange(request){
  if(request===true)return {min:0,max:10,custom:false};
- check(request&&typeof request==='object'&&!Array.isArray(request)&&Object.keys(request).length>0&&Object.keys(request).every(k=>k==='min'||k==='max'),'volumePedal must be true or {min, max}');
+ check(request&&typeof request==='object'&&!Array.isArray(request)&&Object.keys(request).length>0&&Object.keys(request).every(k=>k==='min'||k==='max'||k==='curve'),'volumePedal must be true or {min, max, curve}');
  const r={min:request.min??0,max:request.max??10};
  for(const k of ['min','max'])check(typeof r[k]==='number'&&Number.isFinite(r[k])&&r[k]>=0&&r[k]<=10,`volumePedal.${k} must be a number 0..10`);
  check(r.min!==r.max,'volumePedal min and max must differ');
- return {...r,custom:!(r.min===0&&r.max===10)};
+ const c=request.curve,curve={};
+ if(Object.hasOwn(request,'curve')){
+  check(c&&typeof c==='object'&&!Array.isArray(c)&&Object.keys(c).length>0&&Object.keys(c).every(k=>CURVE.some(f=>f.key===k)),'volumePedal.curve must name '+CURVE.map(f=>f.key).join(', '));
+  for(const f of CURVE)if(Object.hasOwn(c,f.key)){try{curve[f.key]=encodeCurveValue(f.key,c[f.key]);}catch(e){check(false,'curve.'+e.message.replace(/^Modifier curve: /,''));}}
+ }
+ const curveChanged=CURVE.some(f=>Object.hasOwn(curve,f.key)&&curve[f.key]!==evidence.binding.words[f.word]);
+ return {...r,curve,custom:!(r.min===0&&r.max===10)||curveChanged};
 }
-const words=(range=volumeRange(true))=>{const w=Array.from(evidence.binding.words);w[1]=encodeValue(GAIN,range.min);w[2]=encodeValue(GAIN,range.max);return w;};
+const words=(range=volumeRange(true))=>{const w=Array.from(evidence.binding.words);w[1]=encodeValue(GAIN,range.min);w[2]=encodeValue(GAIN,range.max);
+ for(const f of CURVE)if(Object.hasOwn(range.curve??{},f.key))w[f.word]=range.curve[f.key];return w;};
+const curveState=w=>Object.fromEntries(CURVE.map(f=>[f.key,{word:w[f.word],display:decodeCurveWord(f.key,w[f.word]),unit:f.unit}]));
 check(words().every((x,i)=>x===evidence.binding.words[i]),'default range must reproduce the captured words');
 function target(body){
  const found=scanRecords(body).records.filter(r=>r.eid===102);
@@ -57,9 +71,11 @@ export function volumePedalCapabilities(){return {
  source:'External 1',sourceCode:14,target:{effectId:102,pid:0,name:'VOLUME_GAIN',displayLabel:'Volume',channelScope:'ALL'},
  record:'0, or 1 when External 1 -> Wah is active in record 0',words:words(),policy:'captured-volume-default-fw13',evidenceSha256:volumeBindingEvidenceHash,
  captureSha256:evidence.capture.sha256,fullRangeEncodingProven:false,numericMinMaxAuthoring:true,
+ curve:{field:'volumePedal.curve',...modifierCurveCapability(),keys:Object.fromEntries(CURVE.map(f=>[f.key,{word:f.word,label:f.label,unit:f.unit,min:f.min,max:f.max,decimals:f.decimals}])),defaults:Object.fromEntries(CURVE.map(f=>[f.key,decodeCurveWord(f.key,evidence.binding.words[f.word])]))},
  minMaxEncoding:{words:[1,2],codec:'target VOLUME_GAIN stored word (0..10)',evidence:displayReceipt,sha256:modifierDisplayHash,hardware:'confirmed 2026-10-28 (T10: Min 2.50 / Max 7.50 on the Modify page, knob 2.50 heel -> 7.50 toe; references/fm3-volume-range-20261028.json); other ranges follow the same codec'},
  globalControllerSetup:false,deviceIO:false,storeReloadProven:false,pedalBehaviorEvidence:pedalBehaviorEvidence(),
- limits:evidence.limits.map(x=>x.startsWith('No arbitrary source')?'No arbitrary source, channel, target or record allocation; with External 1 -> Wah the binding goes to record 1':x)};}
+ limits:evidence.limits.filter(x=>!x.startsWith('No numeric Volume Min/Max codec')).map(x=>x.startsWith('No arbitrary source')?'No arbitrary source, channel, target or record allocation; with External 1 -> Wah the binding goes to record 1':
+  x.startsWith('Captured defaults do not prove')?'Min/Max (T10) and the curve / timing fields (T12, one field per step) are device-confirmed point by point; other values follow the codecs; DSP and live SET encoding not tested':x)};}
 export function readVolumePedal(body,range=volumeRange(true)){
  target(body);
  const modifiers=readModifiers(body),found=modifiers.filter(m=>m.active&&m.effectId===102&&m.pid===0);
@@ -70,12 +86,13 @@ export function readVolumePedal(body,range=volumeRange(true)){
  // Remaining records: Control Switch records written by this engine are reset to their base form; the rest
  // must equal the capture (record 0) or the baseline (record 1, with record 0 holding the Wah binding).
  const rest=stripControlSwitchRecords(body);
- [1,2].forEach(i=>rest.writeUInt16LE(evidence.binding.words[i],start+2*i));  // Min/Max checked above
+ [1,2,...CURVE_WORDS].forEach(i=>rest.writeUInt16LE(evidence.binding.words[i],start+2*i));  // Min/Max and curve checked above
  if(record===0)check(sha(rest.subarray(...REGION))===evidence.capture.modifiersSha256,'final modifier region differs from captured binding');
  else{BASE_RECORD1.forEach((x,i)=>rest.writeUInt16LE(x,offsetOf(1)+2*i));check(outsideRecord0(rest)===baselineOutsideRecord0Sha256,'final modifier region differs from the baseline outside the Wah and Volume records');}
  return {policy:'captured-volume-default-fw13',record,offset:start,source:m.source,sourceName:m.sourceName,
   effectId:m.effectId,pid:m.pid,targetName:'VOLUME_GAIN',displayLabel:'Volume',channelScope:m.channelScope,words:w,
   withWahBinding:record===1,min:{display:Math.round(decodeValue(GAIN,w[1])*100)/100,word:w[1]},max:{display:Math.round(decodeValue(GAIN,w[2])*100)/100,word:w[2]},
+  curve:curveState(w),curveCustom:CURVE.some(f=>w[f.word]!==evidence.binding.words[f.word]),
   evidenceSha256:volumeBindingEvidenceHash,captureSha256:evidence.capture.sha256,
   capturedDefaults:!range.custom,fullRangeEncodingProven:false,physicalScaleMeasurements:0,storeReloadProven:false,
   entireBodyMatchesCapture:sha(body)===evidence.capture.bodySha256,
@@ -109,7 +126,8 @@ export function renderVolumePedalText(state){
  return ['','EXTERNAL 1 → VOLUME/PAN 1 — LÕPPFAILIST',
   `Seos: External 1 → Volume/Pan 1 Volume (VOLUME_GAIN, PID 0); kanalid ALL (A–D); modifikaatori kirje ${state.record}.`,
   ...(state.withWahBinding?['Kirjes 0 on External 1 → Wah seos; mõlemad järgivad sama pedaali (External 1). 28.10.2026 katses T9 jäid mõlemad seosed pärast STORE-i ja uuesti laadimist alles ning pedaal liigutas mõlemat; selle uue faili import on kontrollimata.']:[]),
-  state.capturedDefaults?'Min/Max, kõver ja muud modifikaatori väljad: 23.10.2026 FW13 ekspordist kopeeritud vaikeolek (Min 0.00, Max 10.00).':`Min ${state.min.display.toFixed(2)} / Max ${state.max.display.toFixed(2)} (Volume skaalas; sõnad ${state.min.word} / ${state.max.word}). Kõver ja muud väljad on 23.10.2026 ekspordi vaikeolek. Min/Max kodeering on seadme näiduga kinnitatud (T7/T7b teistel sihtmärkidel; 28.10.2026 T10 Volume'il: Min 2.50 / Max 7.50, nupp kannas 2.50 ja varbas 7.50). Selle faili vahemikku eraldi ei mõõdetud.`,
+  state.capturedDefaults?'Min/Max, kõver ja muud modifikaatori väljad: 23.10.2026 FW13 ekspordist kopeeritud vaikeolek (Min 0.00, Max 10.00).':`Min ${state.min.display.toFixed(2)} / Max ${state.max.display.toFixed(2)} (Volume skaalas; sõnad ${state.min.word} / ${state.max.word}). ${state.curveCustom?'Kõver ja ajad on allpool; ülejäänud väljad on 23.10.2026 ekspordi vaikeolek.':'Kõver ja muud väljad on 23.10.2026 ekspordi vaikeolek.'} Min/Max kodeering on seadme näiduga kinnitatud (T7/T7b teistel sihtmärkidel; 28.10.2026 T10 Volume'il: Min 2.50 / Max 7.50, nupp kannas 2.50 ja varbas 7.50). Selle faili vahemikku eraldi ei mõõdetud.`,
+  ...(state.curveCustom?[`Kõver ja ajad: ${Object.entries(state.curve).map(([k,c])=>`${CURVE.find(f=>f.key===k).label} ${c.display}${c.unit==='%'?'%':c.unit==='ms'?' ms':''}`).join(', ')} (sõnad ${CURVE.map(f=>state.curve[f.key].word).join('/')}). Kodeering: FM3 modifikaatori natiivne vahemik; iga väli on 29.10.2026 katses T12 seadmel ükshaaval läbi astutud, väärtused mõõdetud punktide vahel on valemi järgi.`]:[]),
   `Modifikaatori 25 toorsõna: ${state.words.join(', ')}.`,
   state.entireBodyMatchesCapture?'Kogu preseti keha kattub kasutaja Volume-seose ekspordiga; selle sisu korduseksporti pole vaja. Uut kodeeritud faili eraldi seadmesse ei imporditud.':'See on uus kombinatsioon: seose vaikeolek on seadmeekspordist, lõppfaili kombinatsioon kontrollitud tarkvaraliselt.',
   'External 1 globaalne pedaali/MIDI määrang ja pedaali asend ei sisaldu presetis. Seos ei muuda stseenide kanalit ega bypass’i.',
@@ -134,10 +152,10 @@ export function verifyVolumePedalOutput(report,syx,txt,spec){
   check(!spec.composer?.modifiers||Object.keys(spec.composer.modifiers).every(k=>k==='external1Wah'),'Wah modifier settings need external1Wah:true next to the Volume binding');
   check(report.modifierEdit===null,'intermediate Wah edit must not be reported as final');
   check(stage.beforeModifiersSha256===evidence.baseline.modifiersSha256&&(range.custom||stage.afterModifiersSha256===evidence.capture.modifiersSha256),'stage report differs');
-  assert.deepEqual(stage.changedWordIndices,[...new Set([...evidence.changedWords,...[1,2].filter(i=>words(range)[i]!==BASE_RECORD1[i])])].sort((a,b)=>a-b),'Volume pedal declared changes differ');
+  assert.deepEqual(stage.changedWordIndices,[...new Set([...evidence.changedWords.filter(i=>!CURVE_WORDS.includes(i)),...[1,2,...CURVE_WORDS].filter(i=>words(range)[i]!==BASE_RECORD1[i])])].sort((a,b)=>a-b),'Volume pedal declared changes differ');
  }else{
   check(report.modifierEdit?.after===14,'Wah binding must be reported next to the Volume binding');
-  assert.deepEqual(stage.changedWordIndices,[...new Set([0,8,15,...[1,2].filter(i=>words(range)[i]!==BASE_RECORD1[i])])].sort((a,b)=>a-b),'Volume pedal declared changes differ');
+  assert.deepEqual(stage.changedWordIndices,[...new Set([0,8,...[1,2,...CURVE_WORDS].filter(i=>words(range)[i]!==BASE_RECORD1[i])])].sort((a,b)=>a-b),'Volume pedal declared changes differ');
  }
  const m=report.modifiers?.find(r=>r.record===state.record);
  check(m?.source===14&&m.effectId===102&&m.pid===0&&m.channel===0&&m.active===true&&!m.uncertain,'reported modifier differs');

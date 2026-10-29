@@ -958,6 +958,7 @@
       "changed": false
     }
   ],
+  "modifierEdit": null,
   "effective": [
     {
       "key": "gainB",
@@ -1272,6 +1273,10 @@
           "typeId": 14,
           "type": "Full OD"
         },
+        "in1": {
+          "channel": "A",
+          "bypass": false
+        },
         "reverb": {
           "channel": "A",
           "bypass": false,
@@ -1323,6 +1328,10 @@
           "bypass": true,
           "typeId": 14,
           "type": "Full OD"
+        },
+        "in1": {
+          "channel": "A",
+          "bypass": false
         },
         "reverb": {
           "channel": "B",
@@ -1376,6 +1385,10 @@
           "typeId": 14,
           "type": "Full OD"
         },
+        "in1": {
+          "channel": "A",
+          "bypass": false
+        },
         "reverb": {
           "channel": "A",
           "bypass": false,
@@ -1427,6 +1440,10 @@
           "bypass": true,
           "typeId": 14,
           "type": "Full OD"
+        },
+        "in1": {
+          "channel": "A",
+          "bypass": false
         },
         "reverb": {
           "channel": "A",
@@ -1480,6 +1497,10 @@
           "typeId": 14,
           "type": "Full OD"
         },
+        "in1": {
+          "channel": "A",
+          "bypass": false
+        },
         "reverb": {
           "channel": "C",
           "bypass": false,
@@ -1531,6 +1552,10 @@
           "bypass": false,
           "typeId": 6,
           "type": "T808 OD"
+        },
+        "in1": {
+          "channel": "A",
+          "bypass": false
         },
         "reverb": {
           "channel": "D",
@@ -1584,6 +1609,10 @@
           "typeId": 46,
           "type": "Box o' Crunch"
         },
+        "in1": {
+          "channel": "A",
+          "bypass": false
+        },
         "reverb": {
           "channel": "A",
           "bypass": false,
@@ -1635,6 +1664,10 @@
           "bypass": false,
           "typeId": 6,
           "type": "T808 OD"
+        },
+        "in1": {
+          "channel": "A",
+          "bypass": false
         },
         "reverb": {
           "channel": "A",
@@ -2562,6 +2595,6 @@
     "Shared channel changes affect every scene using that channel",
     "Filter copies all 37 paired words then applies only listed measured type/channel/values; recorded display rounding is explicit; Order 2nd/4th is measured for A High-Pass and B Low-Pass; no interpolation",
     "PEQ A-D starts from a fully paired 33-word baseline; five bands, measured enums and fitted numeric scales; per-value evidence is reported. Hardware proof is matched only to exact full bodies; Blocking has no Q/Gain control; PID23/24 remain opaque",
-    "No new output boost, modifier/expression or external IR writing"
+    "Only the existing External 1 to Wah source toggle and OFF/MED SPD Auto Engage and EXPONENTIAL/LINEAR Damping pairs and measured Min display points 0/2.5 plus ten bounded wahControls point lookups and the separate exact-wah-cent-fw13-hw1 policy; exact requests report hardware vs four-mode-consensus evidence per point, no full-range hardware proof; new combinations are software-only; no arbitrary modifier/expression or external IR writing"
   ]
 }

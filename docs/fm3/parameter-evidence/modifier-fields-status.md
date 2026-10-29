@@ -16,7 +16,7 @@ Allikad: `docs/fm3/parameter-evidence/modifier-fields-audit.json`, `plugins/fm3-
 | 9 | Target PID | - | structural | all writers |
 | 10 | MOD_AUTOENGAGE | 0 -> OFF; 1 -> SLOW SPD (T12); 5 -> MED POS | three labels (plus the existing Wah OFF / MED SPD pair) | Wah modifier (existing) |
 | 11 | PC Reset | 0 -> OFF; 1 -> ON | decoded (T12) | template value |
-| 12 | MOD_OFFVAL | word / 65534 x 100 % (one non-default point): 32767 -> 50.0%; T7 read 5.0% for word 0; not explained by this formula | one non-default point (T12); word 0 unexplained | template value |
+| 12 | MOD_OFFVAL | 5 + 90 x word / 65534 % (native descriptor 5..95 %): 0 -> 5.0%; 32767 -> 50.0%; word 0 = 5.0% read in T7; T7 read word 65534 (Wah record) as 5.0%; the formula and the Wah measured captures (10922 -> 20 %, 54612 -> 80 %) give 95.0% | decoded (native descriptor 5..95 %, T12, Wah captures); T7 word 65534 reading is an outlier | template value |
 | 13 | MOD_SCALE | 10^((word - 32767) / 32767), 0.100..10.000: 22911 -> 0.500; 32767 -> 1.000; 42623 -> 1.999; 39366 -> 1.590 | decoded, device-stepped (T12) | template value |
 | 14 | MOD_OFFSET | (word - 32767) / 32767 x 100 %: 32767 -> 0.0%; 36044 -> 10.0% | decoded, device-stepped (T12) | template value |
 | 15 | MOD_RELEASE | same scale as Attack: 66 -> 10.1 ms; 3277 -> 500.0 ms | decoded, device-stepped (T12) | template value |
@@ -33,4 +33,4 @@ STORE: Wah + Volume + two Control Switch records stored and reloaded unchanged (
 
 Lülitus: Inverted and CHAN D records behave as written on the device when driven by the PEDAL 2 ring switch (T13, momentary); Control Switch footswitch state not checked (global setting).
 
-Endiselt lahti: Off Value word 0 (T7 read 5.0%); curve writing in the generator (Start, End, Mid, Slope, Scale, Offset, Attack, Release are decoded but not exposed); Control Switch footswitch behaviour (needs a global FC assignment).
+Endiselt lahti: Off Value word 65534 (T7 read 5.0%, formula 95.0%; one-step device check); curve writing in the generator (Start, End, Mid, Slope, Scale, Offset, Attack, Release are decoded but not exposed); Control Switch footswitch behaviour (needs a global FC assignment).

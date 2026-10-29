@@ -250,7 +250,11 @@ toorkoodid, lähtefailide ja piltide räsid, tegelikud näidud ning vastuolud.
 Pilte ei pakita. Kõik kolm täisbody't taastatakse olemasolevast kinnitatud
 koostajaalusest, uut üldist alusfaili lubamata.
 
-| `wahControls` väli | Lubatud kuvanäidud / sisendid | Ühik |
+0.3.34: Max jääb allolevatele punktidele. Teised väljad võtavad iga väärtuse FM3 vahemikus (Start/Mid/End/Slope 0–100 %,
+Attack/Release 0–10000 ms, Scale 0.1–10, Offset −100…100 %, Off Value 5–95 %); kodeering on `scripts/fm3-modifier-curve.mjs`
+(natiivse kirjeldaja valem, kordab kõiki allolevaid punkte ja T12 ühe välja kaupa katset). Tabeli punktid on seadmel mõõdetud.
+
+| `wahControls` väli | Mõõdetud kuvanäidud / sisendid | Ühik |
 | --- | --- | --- |
 | `max` | 5.00, 7.50, 10.00 | Wah Control 0–10 |
 | `startPercent` | 0, 10, 20 | % |

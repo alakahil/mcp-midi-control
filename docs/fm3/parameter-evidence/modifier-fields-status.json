@@ -33,7 +33,7 @@
   },
   "modSteps": {
    "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-mod-steps-20261029.json",
-   "sha256": "9498679d63da877fbb52943eb6d794d3393447712b32d4f90a084493cab9b9f6"
+   "sha256": "22d3eae35e206b3efb86af4307daf36acb2341406892273645a80bdf1e232d48"
   },
   "switchDirect": {
    "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-switch-direct-20261029.json",
@@ -169,8 +169,8 @@
     "pid": 12,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "word / 65534 x 100 % (one non-default point): 32767 -> 50.0%; T7 read 5.0% for word 0; not explained by this formula",
-   "status": "one non-default point (T12); word 0 unexplained",
+   "display": "5 + 90 x word / 65534 % (native descriptor 5..95 %): 0 -> 5.0%; 32767 -> 50.0%; word 0 = 5.0% read in T7; T7 read word 65534 (Wah record) as 5.0%; the formula and the Wah measured captures (10922 -> 20 %, 54612 -> 80 %) give 95.0%",
+   "status": "decoded (native descriptor 5..95 %, T12, Wah captures); T7 word 65534 reading is an outlier",
    "writer": "template value"
   },
   {
@@ -247,7 +247,7 @@
  "storeReload": "Wah + Volume + two Control Switch records stored and reloaded unchanged (T9); Wah + Volume 2.50..7.50 + three Control Switch records (normal, inverted, CHAN D) + Out 2 stored and reloaded unchanged (T11)",
  "switching": "Inverted and CHAN D records behave as written on the device when driven by the PEDAL 2 ring switch (T13, momentary); Control Switch footswitch state not checked (global setting)",
  "stillOpen": [
-  "Off Value word 0 (T7 read 5.0%)",
+  "Off Value word 65534 (T7 read 5.0%, formula 95.0%; one-step device check)",
   "curve writing in the generator (Start, End, Mid, Slope, Scale, Offset, Attack, Release are decoded but not exposed)",
   "Control Switch footswitch behaviour (needs a global FC assignment)"
  ]

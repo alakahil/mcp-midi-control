@@ -588,7 +588,16 @@
         "node",
         "scripts/test-sound-schema.mjs"
       ],
-      "scope": "Bundled fm3-sound.schema.json and the generator agree on the 0.3.30-0.3.32 fields (controlSwitches, volumePedal {min,max}, Wah + Volume, out2) and on every current example spec; generator-only rules listed",
+      "scope": "Bundled fm3-sound.schema.json and the generator agree on the 0.3.30-0.3.32 fields (controlSwitches, volumePedal {min,max,curve}, Wah + Volume, out2) and on every current example spec; generator-only rules listed",
+      "required": true
+    },
+    {
+      "id": "test-modifier-curve",
+      "command": [
+        "node",
+        "scripts/test-modifier-curve.mjs"
+      ],
+      "scope": "Modifier curve / timing codec (Start, Mid, End, Slope, Attack, Release, Scale, Offset, Off Value): native-descriptor formulas reproduce every device reading (T12 steps, Wah measured captures, T7/T7b) except one listed T7 Off Value outlier; bounds and display round trips",
       "required": true
     },
     {

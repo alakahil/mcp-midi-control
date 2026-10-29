@@ -1,5 +1,5 @@
 {
-  "generator": "jb-composer-0.7.1",
+  "generator": "jb-composer-0.13.0-dev",
   "knownDeviceBody": {
     "file": "examples/FM3_AMP_CAB_AD_TEST_export.syx",
     "sha256": "22b6df6e5c3edf26ba3d9542179fc643ae3f6f9fabdcd3d61a7d4c57dfa33248",
@@ -353,6 +353,7 @@
       "changed": false
     }
   ],
+  "modifierEdit": null,
   "effective": [
     {
       "key": "gainB",
@@ -614,6 +615,10 @@
           "typeId": 14,
           "type": "Full OD"
         },
+        "in1": {
+          "channel": "A",
+          "bypass": false
+        },
         "reverb": {
           "channel": "A",
           "bypass": false,
@@ -659,6 +664,10 @@
           "bypass": true,
           "typeId": 14,
           "type": "Full OD"
+        },
+        "in1": {
+          "channel": "A",
+          "bypass": false
         },
         "reverb": {
           "channel": "B",
@@ -706,6 +715,10 @@
           "typeId": 14,
           "type": "Full OD"
         },
+        "in1": {
+          "channel": "A",
+          "bypass": false
+        },
         "reverb": {
           "channel": "A",
           "bypass": false,
@@ -751,6 +764,10 @@
           "bypass": true,
           "typeId": 14,
           "type": "Full OD"
+        },
+        "in1": {
+          "channel": "A",
+          "bypass": false
         },
         "reverb": {
           "channel": "A",
@@ -798,6 +815,10 @@
           "typeId": 14,
           "type": "Full OD"
         },
+        "in1": {
+          "channel": "A",
+          "bypass": false
+        },
         "reverb": {
           "channel": "C",
           "bypass": false,
@@ -843,6 +864,10 @@
           "bypass": false,
           "typeId": 6,
           "type": "T808 OD"
+        },
+        "in1": {
+          "channel": "A",
+          "bypass": false
         },
         "reverb": {
           "channel": "D",
@@ -890,6 +915,10 @@
           "typeId": 46,
           "type": "Box o' Crunch"
         },
+        "in1": {
+          "channel": "A",
+          "bypass": false
+        },
         "reverb": {
           "channel": "A",
           "bypass": false,
@@ -935,6 +964,10 @@
           "bypass": false,
           "typeId": 6,
           "type": "T808 OD"
+        },
+        "in1": {
+          "channel": "A",
+          "bypass": false
         },
         "reverb": {
           "channel": "A",
@@ -2521,15 +2554,17 @@
   },
   "hardware": "This exact generated SYX was imported and its entire unnormalised body matches the user device export. No repeat export needed.",
   "audio": "Not assessed for this composition",
+  "cpu": "Not supplied for this composition",
   "limitations": [
     "Only listed SHA-pinned bases; new blocks only on declared jb-newlook shunts",
     "New inserted layouts require device import/export confirmation; no arbitrary routing or block removal",
-    "Amp/Cab full templates target A-D, including collected levels; unselected channels preserved; Amp scalar overrides still target B only",
+    "Amp/Cab full templates target A-D, including collected levels; unselected channels preserved; Gain/EQ scalars still target B; ampLevels adds measured A/C/D points and B alias",
     "Drive scalar overrides retain measured type/channel/value combinations",
     "Delay A scalar overrides only type14; Reverb A only type2; Rotary A only measured points",
     "scenes defines names/channels/bypass for present or inserted effects; duplicate legacy assignments are rejected; new blocks default to A/bypass",
     "Shared channel changes affect every scene using that channel",
-    "Filter copies all 37 paired words then applies only listed measured type/channel/values; recorded display rounding is explicit; no interpolation or Order",
-    "No new output boost, modifier/expression or external IR writing"
+    "Filter copies all 37 paired words then applies only listed measured type/channel/values; recorded display rounding is explicit; Order 2nd/4th is measured for A High-Pass and B Low-Pass; no interpolation",
+    "PEQ A-D starts from a fully paired 33-word baseline; five bands, measured enums and fitted numeric scales; per-value evidence is reported. Hardware proof is matched only to exact full bodies; Blocking has no Q/Gain control; PID23/24 remain opaque",
+    "Only the existing External 1 to Wah source toggle and OFF/MED SPD Auto Engage and EXPONENTIAL/LINEAR Damping pairs and measured Min display points 0/2.5 plus ten bounded wahControls point lookups and the separate exact-wah-cent-fw13-hw1 policy; exact requests report hardware vs four-mode-consensus evidence per point, no full-range hardware proof; new combinations are software-only; no arbitrary modifier/expression or external IR writing"
   ]
 }

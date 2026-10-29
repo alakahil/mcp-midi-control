@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""FM3 modifier field step check (test T12). macOS/Linux, POSIX serial, no pyserial.
+"""FM3 store-step check (T12 modifier fields, T14 Control Switch / per-preset switches). macOS/Linux, POSIX serial, no pyserial.
 
 Loads one generated preset (one modifier binding) into the edit buffer (0x77 header 7F 00 00 40 00, SHA-256
 checked). Then, step by step, the USER changes ONE field of that binding on the FM3 front panel (Modifier menu,
 Modify page), types the value the screen shows, and STOREs the preset to the SAME test location each time.
 After each STORE the script reads that location with the read-only stored-dump request (fn=0x03 hi lo 00) and
-saves the frames; the changed words are found offline by comparing consecutive steps.
+saves the frames; the changed words are found offline by comparing consecutive steps. Steps marked store:false only
+record what the user observed (no STORE, no read).
 The script never stores and never sets. Results are saved after every step, so a stopped run resumes.
 Display Offset 1: shown location N is index N-1.
 
@@ -34,7 +35,7 @@ def read_location(port, path, index):
 
 def run(pack, session, port_path):
     mb = (pack / 'manifest.json').read_bytes(); manifest = json.loads(mb)
-    S.check(manifest.get('kind') == 'fm3-mod-steps', 'Not a modifier steps pack')
+    S.check(manifest.get('kind') in ('fm3-mod-steps', 'fm3-store-steps'), 'Not a store steps pack')
     data = (pack / manifest['preset']['file']).read_bytes()
     S.check(hashlib.sha256(data).hexdigest() == manifest['preset']['sha256'], 'SHA-256 mismatch: preset')
     frames = S.dump_frames(data)
@@ -62,11 +63,16 @@ def run(pack, session, port_path):
             while True:
                 print('\n[%d/%d] %s' % (n, len(manifest['steps']), st['text']))
                 if st.get('ask', True):
-                    shown = input('  Mida ekraan selle välja kohta nüüd näitab? (täpselt; "s" = jäta samm vahele) > ').strip()
+                    shown = input('  %s (täpselt; "s" = jäta samm vahele) > ' % st.get('question', 'Mida ekraan selle välja kohta nüüd näitab?')).strip()
                     if shown.lower() == 's':
                         rec = {'id': st['id'], 'field': st.get('field'), 'skipped': True, 'note': input('  Miks jätsid vahele? > ').strip()}
                         break
                 else: shown = ''
+                if st.get('store', True) is False:
+                    rec = {'id': st['id'], 'field': st.get('field'), 'shown': shown, 'observationOnly': True}
+                    again = input('  Kas see samm läks õigesti? (Enter = jah, "k" = korda sama sammu) > ').strip().lower()
+                    if again != 'k': break
+                    continue
                 input('  Nüüd STORE asukohta %d (kinnita FM3-l). Kui salvestatud, vajuta Enter. ' % res['shownLocation'])
                 rec = {'id': st['id'], 'field': st.get('field'), 'shown': shown, 'storedDumpFrames': read_location(port, port_path, res['index'])}
                 rec['note'] = input('  Kas midagi muud muutus või oli märkimisväärne? (Enter = ei) > ').strip()
