@@ -1,0 +1,110 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-29",
+ "test": "T16",
+ "preset": {
+  "name": "PP STEPS T16",
+  "sha256": "602b29e2b5cdcdbb036510fd2550b8db71ce859f603d4431f35b8d89bf2bb62a"
+ },
+ "method": "Edit-buffer load (7F 00) once; one FC PER-PRESET change per stored step, STORE by the user, read with fn=0x03 (read-only); observation steps without STORE. No global setting changed.",
+ "storedLocation": {
+  "shown": 426,
+  "index": 425
+ },
+ "steps": [
+  {
+   "id": "base",
+   "shown": "Kategooria: Control Swich; Funktsioon: Latching; Control Swich: CS2. Overrides Layout 1, lüliti 1: PP#1: Control Swich, Latching",
+   "words": []
+  },
+  {
+   "id": "pp2",
+   "shown": "PP#2; kategooria Control Switch; Control Switch: Latching; Control Switch 3",
+   "words": [
+    {
+     "fromEnd": 3050,
+     "before": 0,
+     "after": 7
+    },
+    {
+     "fromEnd": 3002,
+     "before": 0,
+     "after": 1
+    },
+    {
+     "fromEnd": 2896,
+     "before": 0,
+     "after": 2
+    },
+    {
+     "fromEnd": 916,
+     "before": 1,
+     "after": 2
+    }
+   ]
+  },
+  {
+   "id": "pp3",
+   "shown": "Nagu eelpool kirjeldatud",
+   "words": [
+    {
+     "fromEnd": 3048,
+     "before": 0,
+     "after": 7
+    },
+    {
+     "fromEnd": 2884,
+     "before": 0,
+     "after": 2
+    },
+    {
+     "fromEnd": 916,
+     "before": 2,
+     "after": 3
+    }
+   ]
+  },
+  {
+   "id": "ov2",
+   "shown": "PP#2: Control Swich, Latching",
+   "words": [
+    {
+     "fromEnd": 1130,
+     "before": 65535,
+     "after": 1
+    }
+   ]
+  },
+  {
+   "id": "ov12",
+   "shown": "PP#3: Control Swich, Momentary",
+   "words": [
+    {
+     "fromEnd": 1110,
+     "before": 65535,
+     "after": 2
+    }
+   ]
+  },
+  {
+   "id": "press",
+   "shown": "Enne: OFF/ON; 1 vajutus: OFF/ON (Muutus Scene 2 peale) 2. vajutus:OFF/ON",
+   "observationOnly": true
+  },
+  {
+   "id": "press1",
+   "shown": "OFF/ON (läks tagasi Scene1 peale",
+   "observationOnly": true
+  }
+ ],
+ "decoded": {
+  "generatorPP1": "the generator-made PP#1 (category 7, function 1, parameter 1) reads \"Control Switch, Latching, CS2\" and is the Layout 1 switch 1 override: the 0.3.35 single-footswitch output is confirmed on the device",
+  "definitionLayout": "category at +2k, function at +48+2k, parameters at +144+12k (six words per definition, first = Control Switch number - 1); k = PP# - 1",
+  "count": "the word after the 108 override words went 1 -> 2 -> 3 as PP#2 and PP#3 were added",
+  "overrides": "Layout 1 switch 2 = word 1, Layout 1 switch 12 = word 11 (with T15: word = 12 x (layout - 1) + (switch - 1))"
+ },
+ "observation": "The press steps changed scenes (switch 2 -> Scene 2, switch 1 -> Scene 1): the FM3 was on a layout whose switches select scenes (Layout 2 in T15), not Layout 1 where the overrides were set; switching not re-checked here (T14/T14b confirmed it on Layout 1).",
+ "resultsSha256": "dc5ecba1a825537d1a6b6789942dbe44af4a7b8346301fdbaf399b8e25b1c361"
+}

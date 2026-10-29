@@ -334,15 +334,16 @@ on kinnitatud (T9); lülitamine on kontrollimata. Control Switchi tüübi ja jal
 ## Control Switchi stseeniolek ja jalglüliti (0.3.35)
 
 `controlSwitchScenes: [{switch, scene, state: ON|OFF|LAST}]` seab Control Switchi oleku stseeni valikul ja
-`footswitches: [{layout:1, switch:1, function: latching|momentary, controlSwitch}]` paneb FM3 lüliti 1 (Layout 1) selles
-presetis Control Switchi juhtima. Mõlemad salvestuvad presetti (FC PER-PRESET), üldseadeid ei muudeta, ja mõlemad vajavad sama
+`footswitches: [{layout 1–9, switch 1–12, function: latching|momentary, controlSwitch}]` (0.3.36: kuni 24, iga kirje saab oma
+PP#-i loendi järjekorras) paneb valitud layout'i lüliti selles presetis Control Switchi juhtima. FM3 esipaneeli lülitid on
+layout'i lülitid 1–3; asendus kehtib ainult siis, kui FM3 on selles layout'is. Mõlemad salvestuvad presetti (FC PER-PRESET), üldseadeid ei muudeta, ja mõlemad vajavad sama
 CS-i seost `controlSwitches`-is. Ilma nendeta on iga CS igas stseenis OFF. Kodeering on seadmel kinnitatud (T14/T14B) ja
-generaatori tulemus võrdub FM3 enda salvestatud kehaga. Teisi lülitiasukohti veel ei pakuta. Kui kasutaja on FM3 üldseadetes
+generaatori tulemus võrdub FM3 enda salvestatud kehaga (T14/T14B/T16; asukohad T15). Kui kasutaja on FM3 üldseadetes
 per-preset override'i keelanud, asendus ei rakendu – ütle seda. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md#stseeniolek-ja-jalglüliti-0335).
 
-## Skeem (0.3.35)
+## Skeem (0.3.36)
 
-`scripts/fm3-sound.schema.json` (0.7.0) tunneb nüüd `controlSwitches`-it (sh `invert`, `channel`), `controlSwitchScenes`, `footswitches`, `volumePedal` kujul
+`scripts/fm3-sound.schema.json` (0.8.0) tunneb nüüd `controlSwitches`-it (sh `invert`, `channel`), `controlSwitchScenes`, `footswitches`, `volumePedal` kujul
 `true` või `{min, max, curve}` ning `out2` ruudustikulahtris ja `duplicate`-is. `test-sound-schema.mjs` kontrollib, et skeem ja
 generaator otsustavad uute väljade ja kõigi praeguste näidete puhul sama. Skeemis väljendamatud reeglid (näiteks
 min = max, sama sihtmärk kaks korda, Out 2 ilma lingita) kontrollib ainult generaator.

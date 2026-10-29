@@ -40,4 +40,14 @@ for(const c of cases){const {b}=packSpec(c.variant);
     assert.equal(gen.length,dev.length);
     const diff=[];for(let o=0;o<gen.length;o+=2)if(gen.readUInt16LE(o)!==dev.readUInt16LE(o))diff.push(o);
     assert.deepEqual(diff,[],`${c.name} ${id}: generated body equals the FM3-stored body`);replays++;}}
+// T16: generator PP#1 plus the FM3's own PP#2 / PP#3 and overrides on Layout 1 switches 2 and 12.
+{const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-csr16-'));execFileSync('node',[path.join(ROOT,'tools/fm3/pp-steps-build.mjs'),tmp],{stdio:'ignore'});
+ const m=JSON.parse(fs.readFileSync(path.join(tmp,'manifest.json'),'utf8')),b=fs.readFileSync(path.join(tmp,m.preset.file));fs.rmSync(tmp,{recursive:true,force:true});
+ const s16={composer:{schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:'PP STEPS T16',modifiers:{external1Wah:false}},layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},selectedScene:1,
+  controlSwitches:[{switch:2,block:'amp',param:'DISTORT_BOOST'},{switch:3,block:'amp',param:'DISTORT_BRIGHT',invert:true}],footswitches:[{layout:1,switch:1,function:'latching',controlSwitch:2}]};
+ assert.deepEqual(Buffer.from(inspectStructure(Buffer.from(createPreset(BASE,s16).syx)).raw.body),Buffer.from(inspectStructure(b).raw.body),'spec reproduces the T16 pack');
+ const full={...s16,footswitches:[...s16.footswitches,{layout:1,switch:2,function:'latching',controlSwitch:3},{layout:1,switch:12,function:'momentary',controlSwitch:3}]};
+ const gen=Buffer.from(inspectStructure(Buffer.from(createPreset(BASE,full).syx)).raw.body),dev=stored('fm3-pp-steps-20261029-results.json','ov12');
+ const diff=[];for(let o=0;o<gen.length;o+=2)if(gen.readUInt16LE(o)!==dev.readUInt16LE(o))diff.push(o);
+ assert.deepEqual(diff,[],'T16 ov12: generated body equals the FM3-stored body');replays++;}
 console.log(JSON.stringify({passed:true,deviceReplays:replays}));

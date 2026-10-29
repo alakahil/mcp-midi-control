@@ -10,7 +10,9 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.35 väljalaset: Control Switchi olek stseeni kaupa (`controlSwitchScenes`) ja preseti-põhine
+Praegune lähtekood valmistab ette 0.3.36 väljalaset: `footswitches` iga layout'i (1–9) ja lüliti (1–12) jaoks ning kuni 24
+per-preset definitsiooni (T15 asukohad, T16 definitsioonide paigutus ja loendur; kolme lülitiga generaatori tulemus võrdub FM3
+salvestatud kehaga); soundi skeem 0.8.0. Selle aluseks on 0.3.35: Control Switchi olek stseeni kaupa (`controlSwitchScenes`) ja preseti-põhine
 Control Switchi jalglüliti (`footswitches`, Layout 1 lüliti 1), mõlemad FC PER-PRESET andmed presetis (`fm3-cs-preset.mjs`, T14/T14B,
 generaatori tulemus võrdub FM3 salvestatud kehaga); soundi skeem 0.7.0. Selle aluseks on 0.3.34: modifikaatori kõvera ja aegade täisvahemiku koodek (`fm3-modifier-curve.mjs`,
 natiivse kirjeldaja valemid, mis kordavad kõiki 77 seadmenäitu, sh T12 ühe välja kaupa katse), `volumePedal.curve` ning

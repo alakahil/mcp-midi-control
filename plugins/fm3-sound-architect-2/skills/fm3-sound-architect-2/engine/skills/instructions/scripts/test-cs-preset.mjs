@@ -38,10 +38,16 @@ const sc=createPreset(base,{...plainSpec,controlSwitchScenes:[{switch:3,scene:8,
 let rejected=0;const bad=edit=>{const s=structuredClone(spec);edit(s);assert.throws(()=>createPreset(base,s),/Control Switch preset|controlSwitchScenes|footswitches|unknown|Unknown/);rejected++;};
 bad(s=>s.controlSwitchScenes[0].switch=7);bad(s=>s.controlSwitchScenes[0].switch=0);bad(s=>s.controlSwitchScenes[0].scene=9);bad(s=>s.controlSwitchScenes[0].state='on');
 bad(s=>s.controlSwitchScenes[0].switch=5);bad(s=>s.controlSwitchScenes.push({...s.controlSwitchScenes[0]}));bad(s=>s.controlSwitchScenes[0].extra=1);bad(s=>s.controlSwitchScenes=[]);
-bad(s=>s.controlSwitchScenes={});bad(s=>s.footswitches[0].switch=2);bad(s=>s.footswitches[0].layout=2);bad(s=>s.footswitches[0].function='toggle');
+bad(s=>s.controlSwitchScenes={});bad(s=>s.footswitches[0].function='toggle');
 bad(s=>s.footswitches[0].controlSwitch=4);bad(s=>s.footswitches[0].controlSwitch=7);bad(s=>s.footswitches.push({...s.footswitches[0]}));bad(s=>s.footswitches[0].hold='x');
-bad(s=>s.footswitches=[]);bad(s=>{delete s.controlSwitches;});
-assert.deepEqual(Object.keys(OVERRIDE_POSITIONS),['1/1']);
+bad(s=>s.footswitches=[]);bad(s=>{delete s.controlSwitches;});bad(s=>s.footswitches[0].switch=13);bad(s=>s.footswitches[0].layout=10);bad(s=>s.footswitches[0].layout=0);
+bad(s=>s.footswitches=Array.from({length:25},(_,i)=>({layout:1+Math.floor(i/12),switch:1+i%12,function:'latching',controlSwitch:2})));
+assert.equal(Object.keys(OVERRIDE_POSITIONS).length,108);assert.equal(OVERRIDE_POSITIONS['1/1'],0);assert.equal(OVERRIDE_POSITIONS['1/12'],11);assert.equal(OVERRIDE_POSITIONS['9/12'],107);
+// Three footswitches: PP#1..PP#3 in list order, parameters 12 bytes apart, count word 3 (T16 layout).
+const three=createPreset(base,{...plainSpec,footswitches:[{layout:1,switch:1,function:'latching',controlSwitch:2},{layout:1,switch:2,function:'momentary',controlSwitch:3},{layout:3,switch:5,function:'latching',controlSwitch:3}]}),tb=bodyOf(three.syx),D=L-3052;
+assert.deepEqual([0,1,2].map(k=>[tb.readUInt16LE(D+2*k),tb.readUInt16LE(D+48+2*k),tb.readUInt16LE(D+144+12*k)]),[[7,1,1],[7,0,2],[7,1,2]]);
+assert.deepEqual([tb.readUInt16LE(D+1920),tb.readUInt16LE(D+1922),tb.readUInt16LE(D+1920+2*28),tb.readUInt16LE(D+1920+216)],[0,1,2,3]);
+assert.deepEqual(three.report.csPreset.footswitches.map(f=>[f.layout,f.switch,f.definition]),[[1,1,1],[1,2,2],[3,5,3]]);
 // A base whose region is not the FM3 default is refused (no merging with unknown switch content).
 for(const [off,v] of [[3052,7],[3052-1920,3],[482,0]]){const tampered=rewrite(plain.syx,b=>b.writeUInt16LE(v,L-off));
   assert.throws(()=>applyCsPreset(tampered,spec),/FM3 defaults/);rejected++;}
@@ -59,6 +65,8 @@ try{
  fail('number word',r=>syx(r,b=>b.writeUInt16LE(2,L-3052+144)));
  fail('override word',r=>syx(r,b=>b.writeUInt16LE(65535,L-3052+1920)));
  fail('second override',r=>syx(r,b=>b.writeUInt16LE(0,L-3052+1922)));
+ fail('count word',r=>syx(r,b=>b.writeUInt16LE(2,L-3052+1920+216)));
+ fail('second definition parameter',r=>syx(r,b=>b.writeUInt16LE(1,L-3052+144+12)));
  fail('txt',r=>r.txt=r.txt.replace('Control Switch 2, Scene 2: ON.','Control Switch 2, Scene 2: OFF.'));
  fail('spec state',(_r,s)=>s.controlSwitchScenes[1].state='LAST');
  fail('spec dropped',(_r,s)=>delete s.footswitches);
@@ -68,4 +76,4 @@ try{
 }finally{fs.rmSync(dir,{recursive:true,force:true});}
 assert.deepEqual(readCsPreset(gb,spec),good.report.csPreset);assert.equal(CS_STATES.LAST,2);
 const caps=getPresetCapabilities();assert.ok(caps.csPreset&&caps.csPreset.storage.includes('in the preset'));
-console.log(JSON.stringify({passed:true,declaredWords:changed.length,rejected,tamperCases:tamper,positions:Object.keys(OVERRIDE_POSITIONS),deviceIO:false}));
+console.log(JSON.stringify({passed:true,declaredWords:changed.length,rejected,tamperCases:tamper,positions:Object.keys(OVERRIDE_POSITIONS).length,deviceIO:false}));
