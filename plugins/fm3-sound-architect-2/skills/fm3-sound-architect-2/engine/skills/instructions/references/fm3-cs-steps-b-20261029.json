@@ -1,0 +1,199 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-29",
+ "test": "T14b",
+ "preset": {
+  "name": "CS STEPS T14B",
+  "sha256": "99b045dcf01fe9d60ed928d76108a69580fb5ea0c0e10aa6828e3ca5b8a22dd1",
+  "bindings": [
+   {
+    "record": 0,
+    "source": "External 1",
+    "effectId": 94,
+    "pid": 5,
+    "channel": "ALL"
+   },
+   {
+    "record": 1,
+    "source": "Control Switch 2",
+    "effectId": 58,
+    "pid": 42,
+    "channel": "ALL"
+   },
+   {
+    "record": 2,
+    "source": "Control Switch 3",
+    "effectId": 58,
+    "pid": 41,
+    "channel": "ALL"
+   },
+   {
+    "record": 3,
+    "source": "Control Switch 4",
+    "effectId": 58,
+    "pid": 80,
+    "channel": "CHAN D"
+   }
+  ],
+  "scenes": {
+   "1": "Amp channel A",
+   "2": "Amp channel D"
+  }
+ },
+ "method": "Edit-buffer load (7F 00) once; one FC PER-PRESET change per stored step, STORE by the user to his test location, read with fn=0x03 (read-only) after each STORE; observation steps without STORE. No global setting changed.",
+ "storedLocation": {
+  "shown": 426,
+  "index": 425
+ },
+ "steps": [
+  {
+   "id": "base",
+   "shown": "",
+   "words": []
+  },
+  {
+   "id": "csLook",
+   "shown": "Veerud: SCENE 1,2,3,4,5,6,7,8; CS1, CS2,CS3,CS4,CS5,CS6. Kõik CS väärtused hetkel OFF",
+   "observationOnly": true
+  },
+  {
+   "id": "cs2scene1",
+   "shown": "ON",
+   "words": [
+    {
+     "fromEnd": 466,
+     "before": 1,
+     "after": 0
+    }
+   ]
+  },
+  {
+   "id": "cs2scene2",
+   "shown": "LAST",
+   "words": [
+    {
+     "fromEnd": 464,
+     "before": 1,
+     "after": 2
+    }
+   ]
+  },
+  {
+   "id": "cs3scene1",
+   "shown": "ON",
+   "words": [
+    {
+     "fromEnd": 450,
+     "before": 1,
+     "after": 0
+    }
+   ]
+  },
+  {
+   "id": "ppDefine",
+   "shown": "Control Switch; Latching; CS2",
+   "words": [
+    {
+     "fromEnd": 3052,
+     "before": 0,
+     "after": 7
+    },
+    {
+     "fromEnd": 3004,
+     "before": 0,
+     "after": 1
+    },
+    {
+     "fromEnd": 2908,
+     "before": 0,
+     "after": 1
+    }
+   ]
+  },
+  {
+   "id": "ppNumber",
+   "shown": "CS3",
+   "words": [
+    {
+     "fromEnd": 2908,
+     "before": 1,
+     "after": 2
+    }
+   ]
+  },
+  {
+   "id": "ppMomentary",
+   "shown": "Momentary",
+   "words": [
+    {
+     "fromEnd": 3004,
+     "before": 1,
+     "after": 0
+    }
+   ]
+  },
+  {
+   "id": "ppOverride",
+   "shown": "PP#1",
+   "words": [
+    {
+     "fromEnd": 1132,
+     "before": 65535,
+     "after": 0
+    }
+   ]
+  },
+  {
+   "id": "scene1",
+   "shown": "Scene 2:OFF  / ON / OFF; Scene 1: ON  / OFF / OFF",
+   "observationOnly": true
+  },
+  {
+   "id": "scene2",
+   "shown": "ON / ON /OFF",
+   "observationOnly": true
+  },
+  {
+   "id": "hold",
+   "shown": "ON/OFF/OFF. vajutades; ON/ON/OFF vabastades",
+   "observationOnly": true
+  }
+ ],
+ "decoded": {
+  "csPerScene": {
+   "position": "482 bytes before the end of the body; 6 Control Switches x 8 scenes, one word each; CS n scene s at -482 + 16(n-1) + 2(s-1)",
+   "codes": {
+    "ON": 0,
+    "OFF": 1,
+    "LAST": 2
+   },
+   "generatedDefault": "all 48 OFF (1)",
+   "page": "FC PER-PRESET -> CS Per Scene (columns Scene 1-8, rows CS1-CS6)"
+  },
+  "perPresetDefinition": {
+   "position": "3052 bytes before the end; 24 definitions as 8 arrays of 24 words (array k at +48k)",
+   "words": {
+    "array0": "Tap category (7 = Control Switch)",
+    "array1": "Tap function within the category (Control Switch: 1 = Latching, 0 = Momentary)",
+    "array3": "Tap parameter: Control Switch number - 1 (1 = CS 2, 2 = CS 3)"
+   },
+   "holdUnassigned": "arrays 2 and 4-7 stay 0"
+  },
+  "overrides": {
+   "position": "1920 bytes after the definitions; one word per footswitch, 65535 = none, n = definition n+1; Layout 1 switch 1 = first word"
+  }
+ },
+ "behaviour": [
+  "CS Per Scene applies when a scene is selected: Scene 1 (CS 2 ON, CS 3 ON) shows Input Boost ON, Bright OFF (inverted record at Max); Scene 2 (CS 2 LAST) keeps CS 2 ON from Scene 1 and CS 3 OFF, showing ON / ON / OFF.",
+  "Control Switch: Momentary on CS 3 drives CS 3 while the switch is held and sets it OFF on release, replacing the scene state: held ON / OFF / OFF, released ON / ON / OFF.",
+  "With T14 (Latching toggles, LED follows) both per-preset Control Switch functions behave as written, without any global setting."
+ ],
+ "notMeasured": [
+  "Hold functions on per-preset definitions",
+  "Layouts other than 1 and override words beyond the first",
+  "audio"
+ ],
+ "resultsSha256": "cabc34388cb4b3c6ed1d3a9089b3c11583805b6b041eed47965dd5e3b9bb1b16"
+}

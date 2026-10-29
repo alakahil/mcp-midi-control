@@ -42,6 +42,10 @@
   "csSteps": {
    "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cs-steps-20261029.json",
    "sha256": "58e4cb0e30eef1fded80443e6eb4aa9b25ec978af66f40345db3ea315c765c7b"
+  },
+  "csStepsB": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cs-steps-b-20261029.json",
+   "sha256": "8e45f37e27e999a7fcfd2627ad5dc0d97fa5d220cf09750d4649b2423ea83e9f"
   }
  },
  "wordIndexIsModifierPid": "The Codex field audit maps native MOD descriptor PIDs to record words 1:1 (MOD_AUTOENGAGE PID 10 = body offset 1604 = word 10).",
@@ -249,9 +253,10 @@
  "supersedes": "modifier-fields-audit.json writeDecision \"blocked-pending-discriminating-preset-and-display-evidence\" for words 1 and 2 (that file is a pinned replay of its baseline commit and is not rewritten).",
  "removal": "words 0, 8 and 9 -> 0, other words kept, no compaction (references/fm3-modifier-removal-20261028.json; stored by the FM3 itself in T12)",
  "storeReload": "Wah + Volume + two Control Switch records stored and reloaded unchanged (T9); Wah + Volume 2.50..7.50 + three Control Switch records (normal, inverted, CHAN D) + Out 2 stored and reloaded unchanged (T11)",
- "switching": "Inverted and CHAN D records behave as written on the device: PEDAL 2 ring switch (T13, momentary) and a per-preset Control Switch: Latching footswitch (T14, stored in the preset, no global setting)",
+ "switching": "Inverted and CHAN D records behave as written on the device: PEDAL 2 ring switch (T13, momentary) and per-preset Control Switch: Latching and Momentary footswitches (T14/T14b, stored in the preset, no global setting); CS Per Scene ON/OFF/LAST applied on scene change (T14b)",
+ "controlSwitchPreset": "CS Per Scene: 482 bytes before the body end, 6 CS x 8 scenes, ON 0 / OFF 1 / LAST 2; per-preset definitions 3052 bytes before the end (category 7 = Control Switch, function 1 Latching / 0 Momentary, parameter CS number - 1); overrides 1920 bytes after (references/fm3-cs-steps-b-20261029.json)",
  "stillOpen": [
-  "CS Per Scene state and per-preset switch word meanings (T14b)",
-  "Control Switch: Momentary on a per-preset switch"
+  "generator fields for CS Per Scene and per-preset Control Switch footswitches",
+  "per-preset Hold functions"
  ]
 }
