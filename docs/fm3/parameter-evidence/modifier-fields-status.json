@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "date": "2026-10-28",
+ "date": "2026-10-29",
  "scope": "Offline join of existing receipts; no new device I/O.",
  "sources": {
   "audit": {
@@ -26,6 +26,18 @@
   "removal": {
    "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-modifier-removal-20261028.json",
    "sha256": "585ac02a39738b6f7c4d5bcccbb411b59f7b64d30f0f3574253926fd28913675"
+  },
+  "comboStore": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-combo-store-20261029.json",
+   "sha256": "d2f4828c71a0fabc9b5f1ba2b45a5161e10feb63fa0b80d6d85c1fafb9a6bacc"
+  },
+  "modSteps": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-mod-steps-20261029.json",
+   "sha256": "9498679d63da877fbb52943eb6d794d3393447712b32d4f90a084493cab9b9f6"
+  },
+  "switchDirect": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-switch-direct-20261029.json",
+   "sha256": "1135da8ca6e1c18d8350f21aa6cd382cfbf607126a2f212788d50f9927120d39"
   }
  },
  "wordIndexIsModifierPid": "The Codex field audit maps native MOD descriptor PIDs to record words 1:1 (MOD_AUTOENGAGE PID 10 = body offset 1604 = word 10).",
@@ -34,7 +46,7 @@
    "word": 0,
    "name": "Source",
    "codexAudit": null,
-   "display": "code + 1 is the FM3 list number (51 -> \"52 Control Switch 2\", 14 -> \"15 External 1\")",
+   "display": "code + 1 is the FM3 list number (51 -> \"52 Control Switch 2\", 14 -> \"15 External 1\", 13 -> \"14 PEDAL 2 (SW RING)\" (T13))",
    "status": "decoded",
    "writer": "controlSwitches (Control Switch 1..6), volumePedal (External 1), Wah toggle"
   },
@@ -67,8 +79,8 @@
     "pid": 3,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "0 -> 0.0%",
-   "status": "default only",
+   "display": "word / 65534 x 100 %: 0 -> 0.0%; 13107 -> 20.0%",
+   "status": "decoded, device-stepped (T12)",
    "writer": "template value"
   },
   {
@@ -78,8 +90,8 @@
     "pid": 4,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "32767 -> 50%; 30368 -> 46.3% (word / 65534)",
-   "status": "decoded (2 points)",
+   "display": "word / 65534 x 100 %: 16384 -> 25.0%; 32767 -> 50%; 30368 -> 46.3%",
+   "status": "decoded, device-stepped (T12)",
    "writer": "template value"
   },
   {
@@ -89,8 +101,8 @@
     "pid": 5,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "65534 -> 100%",
-   "status": "default only",
+   "display": "word / 65534 x 100 %: 52427 -> 80.0%; 65534 -> 100%",
+   "status": "decoded, device-stepped (T12)",
    "writer": "template value"
   },
   {
@@ -100,8 +112,8 @@
     "pid": 6,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "32767 -> 50%; 39651 -> 60.5% (word / 65534)",
-   "status": "decoded (2 points)",
+   "display": "word / 65534 x 100 %: 32767 -> 50%; 49151 -> 75.0%; 39651 -> 60.5%",
+   "status": "decoded, device-stepped (T12)",
    "writer": "template value"
   },
   {
@@ -111,8 +123,8 @@
     "pid": 7,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "66 -> 10.1 ms; 65 -> 9.9 ms",
-   "status": "two points",
+   "display": "word x 10000 / 65534 ms (0..10000 ms), shown to 0.1 ms: 65 -> 9.9 ms; 66 -> 10.1 ms; 655 -> 99.9 ms",
+   "status": "decoded, device-stepped (T12)",
    "writer": "template value"
   },
   {
@@ -138,9 +150,17 @@
     "pid": 10,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "0 -> OFF; 5 -> MED POS",
-   "status": "two labels (plus the existing Wah OFF / MED SPD pair)",
+   "display": "0 -> OFF; 1 -> SLOW SPD (T12); 5 -> MED POS",
+   "status": "three labels (plus the existing Wah OFF / MED SPD pair)",
    "writer": "Wah modifier (existing)"
+  },
+  {
+   "word": 11,
+   "name": "PC Reset",
+   "codexAudit": null,
+   "display": "0 -> OFF; 1 -> ON",
+   "status": "decoded (T12)",
+   "writer": "template value"
   },
   {
    "word": 12,
@@ -149,8 +169,8 @@
     "pid": 12,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "0 and 65534 both displayed 5.0%",
-   "status": "unresolved (readings do not discriminate)",
+   "display": "word / 65534 x 100 % (one non-default point): 32767 -> 50.0%; T7 read 5.0% for word 0; not explained by this formula",
+   "status": "one non-default point (T12); word 0 unexplained",
    "writer": "template value"
   },
   {
@@ -160,8 +180,8 @@
     "pid": 13,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "32767 -> 1.000; 39366 -> 1.590 (10^((w - 32767) / 32767) fits)",
-   "status": "one non-default point",
+   "display": "10^((word - 32767) / 32767), 0.100..10.000: 22911 -> 0.500; 32767 -> 1.000; 42623 -> 1.999; 39366 -> 1.590",
+   "status": "decoded, device-stepped (T12)",
    "writer": "template value"
   },
   {
@@ -171,8 +191,8 @@
     "pid": 14,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "32767 -> 0.0%",
-   "status": "default only",
+   "display": "(word - 32767) / 32767 x 100 %: 32767 -> 0.0%; 36044 -> 10.0%",
+   "status": "decoded, device-stepped (T12)",
    "writer": "template value"
   },
   {
@@ -182,8 +202,16 @@
     "pid": 15,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "66 -> 10.1 ms; 65 -> 9.9 ms",
-   "status": "two points",
+   "display": "same scale as Attack: 66 -> 10.1 ms; 3277 -> 500.0 ms",
+   "status": "decoded, device-stepped (T12)",
+   "writer": "template value"
+  },
+  {
+   "word": 16,
+   "name": "Update Rate",
+   "codexAudit": null,
+   "display": "0 -> SLOW; 1 -> MEDIUM",
+   "status": "decoded (T12)",
    "writer": "template value"
   },
   {
@@ -209,19 +237,18 @@
     "pid": 24,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "template value -> EXPONENTIAL",
-   "status": "default only (plus the existing Wah Damping pair)",
+   "display": "0 -> EXPONENTIAL; 1 -> LINEAR",
+   "status": "decoded (T12, plus the existing Wah Damping pair)",
    "writer": "Wah modifier (existing)"
   }
  ],
  "supersedes": "modifier-fields-audit.json writeDecision \"blocked-pending-discriminating-preset-and-display-evidence\" for words 1 and 2 (that file is a pinned replay of its baseline commit and is not rewritten).",
- "removal": "words 0, 8 and 9 -> 0, other words kept, no compaction (references/fm3-modifier-removal-20261028.json)",
- "storeReload": "Wah + Volume + two Control Switch records stored and reloaded unchanged (T9, references/fm3-bind-store-20261028.json)",
+ "removal": "words 0, 8 and 9 -> 0, other words kept, no compaction (references/fm3-modifier-removal-20261028.json; stored by the FM3 itself in T12)",
+ "storeReload": "Wah + Volume + two Control Switch records stored and reloaded unchanged (T9); Wah + Volume 2.50..7.50 + three Control Switch records (normal, inverted, CHAN D) + Out 2 stored and reloaded unchanged (T11)",
+ "switching": "Inverted and CHAN D records behave as written on the device when driven by the PEDAL 2 ring switch (T13, momentary); Control Switch footswitch state not checked (global setting)",
  "stillOpen": [
-  "Start / End / Offset away from their defaults",
-  "Off Value (word 12)",
-  "Scale beyond one point",
-  "Attack / Release scale beyond 65 / 66",
-  "curve writing (Mid, Slope, Scale)"
+  "Off Value word 0 (T7 read 5.0%)",
+  "curve writing in the generator (Start, End, Mid, Slope, Scale, Offset, Attack, Release are decoded but not exposed)",
+  "Control Switch footswitch behaviour (needs a global FC assignment)"
  ]
 }

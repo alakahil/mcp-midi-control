@@ -1,0 +1,103 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-29",
+ "test": "T13",
+ "variant": "B_RING",
+ "experiment": "Generated Control Switch records with word 0 set to 13 (PEDAL 2 (SW RING)); not a generator feature",
+ "preset": {
+  "name": "SW T13 RING",
+  "sha256": "65d992ec8bfda5d3002f683dc4919241d9dc66d758e2ad6607e3d2ce5e38b653",
+  "bindings": [
+   {
+    "record": 1,
+    "source": "PEDAL 2 (SW RING)",
+    "pid": 42,
+    "channel": "ALL"
+   },
+   {
+    "record": 2,
+    "source": "PEDAL 2 (SW RING)",
+    "pid": 41,
+    "channel": "ALL"
+   },
+   {
+    "record": 3,
+    "source": "PEDAL 2 (SW RING)",
+    "pid": 80,
+    "channel": "CHAN D"
+   }
+  ],
+  "scenes": {
+   "1": "Amp channel A",
+   "2": "Amp channel D"
+  }
+ },
+ "method": "Edit-buffer load (7F 00) by the script; the user pressed the Ampero B switch (PEDAL 2 ring) briefly, selected scenes on the FM3 front panel and read Input Boost / Bright / Fat on the Amp page after each press. Nothing stored or set; no global setting changed. Readings typed into a TextEdit note.",
+ "storedAmpValues": {
+  "channelA": {
+   "boost": "OFF",
+   "bright": "OFF",
+   "fat": "OFF"
+  },
+  "channelD": {
+   "boost": "OFF",
+   "bright": "ON",
+   "fat": "ON"
+  }
+ },
+ "readings": {
+  "scene1": {
+   "before": {
+    "boost": "ON",
+    "bright": "OFF",
+    "fat": "OFF"
+   },
+   "press1": {
+    "boost": "ON",
+    "bright": "OFF",
+    "fat": "OFF"
+   },
+   "press2": {
+    "boost": "ON",
+    "bright": "OFF",
+    "fat": "OFF"
+   }
+  },
+  "scene2": {
+   "before": {
+    "boost": "ON",
+    "bright": "OFF",
+    "fat": "ON"
+   },
+   "press1": {
+    "boost": "ON",
+    "bright": "OFF",
+    "fat": "ON"
+   },
+   "press2": {
+    "boost": "ON",
+    "bright": "OFF",
+    "fat": "ON"
+   }
+  },
+  "source1": "14 PEDAL 2 (SW RING)",
+  "behaviour": "momentary"
+ },
+ "findings": [
+  "Source 1 shows \"14 PEDAL 2 (SW RING)\" for word 0 = 13: the FM3 list number is the source code + 1, as for External 1 and the Control Switches.",
+  "At rest the three records show their Max side: Input Boost ON in both scenes although both stored channels hold OFF; Bright OFF in scene 2 although channel D stores ON (inverted record: Max = OFF).",
+  "The CHAN D record applies only on channel D: Fat stays at its stored OFF in scene 1 (channel A) and shows the record value ON in scene 2 (channel D).",
+  "The PEDAL 2 ring source is momentary: the values change only while the switch is held and return after release, so the readings after one and two short presses equal the readings before."
+ ],
+ "notMeasured": [
+  "values while the switch is held (only the momentary behaviour was noted)",
+  "PEDAL 2 TIP variant (A_TIP loaded, not used: the A switch is reserved)",
+  "Control Switch 1-6 sources driven by a footswitch (needs a global FC assignment)",
+  "audio"
+ ],
+ "implication": "The generator keeps writing Control Switch sources (latching state is a per-switch global setting); a direct PEDAL 2 source would be momentary with this switch and is not a generator feature.",
+ "loadSha256": "f925927b0b7349c6f49ab99b4637ac44f4c7221e4c61eecb38097154467e2798",
+ "notesSha256": "fd777b0fbe75a5e37256cc7683dc4e3d8a80d8b016e2c30b4b291f38e764c2d5"
+}

@@ -1,0 +1,362 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-29",
+ "test": "T12",
+ "preset": {
+  "name": "MOD STEPS T12",
+  "sha256": "edf9f570723539901a9fe374d3a13cc993af26416ec161fb4fa33dc8497fee57",
+  "binding": {
+   "record": 0,
+   "source": "External 1",
+   "target": "Volume/Pan 1 Volume (VOLUME_GAIN)"
+  },
+  "packRevision": 2
+ },
+ "method": "Edit-buffer load (7F 00) once by the script; per step the user changed one Modify-page field on the FM3 front panel, typed the shown value and STOREd to his test location; the script then read that location with fn=0x03 (read-only). The script never stored or set anything. Consecutive stored bodies compared word for word.",
+ "storedLocation": {
+  "shown": 426,
+  "index": 425
+ },
+ "steps": [
+  {
+   "id": "base",
+   "field": null,
+   "shown": "",
+   "words": [],
+   "note": ""
+  },
+  {
+   "id": "start",
+   "field": "Start",
+   "shown": "20.0%",
+   "words": [
+    {
+     "word": 3,
+     "before": 0,
+     "after": 13107
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "end",
+   "field": "End",
+   "shown": "80.0%",
+   "words": [
+    {
+     "word": 5,
+     "before": 65534,
+     "after": 52427
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "mid",
+   "field": "Mid",
+   "shown": "25.0%",
+   "words": [
+    {
+     "word": 4,
+     "before": 32767,
+     "after": 16384
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "slope",
+   "field": "Slope",
+   "shown": "75.0%",
+   "words": [
+    {
+     "word": 6,
+     "before": 32767,
+     "after": 49151
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "scale",
+   "field": "Scale",
+   "shown": "1.999",
+   "words": [
+    {
+     "word": 13,
+     "before": 32767,
+     "after": 42623
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "scale2",
+   "field": "Scale",
+   "shown": "0.500",
+   "words": [
+    {
+     "word": 13,
+     "before": 42623,
+     "after": 22911
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "offset",
+   "field": "Offset",
+   "shown": "10.0%",
+   "words": [
+    {
+     "word": 14,
+     "before": 32767,
+     "after": 36044
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "attack",
+   "field": "Attack",
+   "shown": "99,9 ms",
+   "words": [
+    {
+     "word": 7,
+     "before": 66,
+     "after": 655
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "release",
+   "field": "Release",
+   "shown": "500.0 ms",
+   "words": [
+    {
+     "word": 15,
+     "before": 66,
+     "after": 3277
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "damping",
+   "field": "Damping",
+   "shown": "LINEAR",
+   "words": [
+    {
+     "word": 24,
+     "before": 0,
+     "after": 1
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "autoengage",
+   "field": "Auto-Engage",
+   "shown": "SLOW SPD",
+   "words": [
+    {
+     "word": 10,
+     "before": 0,
+     "after": 1
+    }
+   ],
+   "volumePanScene1Bypass": {
+    "before": 0,
+    "after": 1
+   },
+   "note": ""
+  },
+  {
+   "id": "offvalue",
+   "field": "Off Value",
+   "shown": "50.0%",
+   "words": [
+    {
+     "word": 12,
+     "before": 0,
+     "after": 32767
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "updaterate",
+   "field": "Update Rate",
+   "shown": "MEDIUM",
+   "words": [
+    {
+     "word": 16,
+     "before": 0,
+     "after": 1
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "pcreset",
+   "field": "PC Reset",
+   "shown": "ON",
+   "words": [
+    {
+     "word": 11,
+     "before": 0,
+     "after": 1
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "remove",
+   "field": "Source 1",
+   "shown": "NONE",
+   "words": [
+    {
+     "word": 0,
+     "before": 14,
+     "after": 0
+    },
+    {
+     "word": 8,
+     "before": 102,
+     "after": 0
+    }
+   ],
+   "volumePanScene1Bypass": {
+    "before": 1,
+    "after": 0
+   },
+   "note": ""
+  }
+ ],
+ "decoded": {
+  "word3": {
+   "field": "Start",
+   "display": "word / 65534 x 100 %",
+   "points": {
+    "0": "0.0%",
+    "13107": "20.0%"
+   }
+  },
+  "word4": {
+   "field": "Mid",
+   "display": "word / 65534 x 100 %",
+   "points": {
+    "16384": "25.0%",
+    "32767": "50%"
+   }
+  },
+  "word5": {
+   "field": "End",
+   "display": "word / 65534 x 100 %",
+   "points": {
+    "52427": "80.0%",
+    "65534": "100%"
+   }
+  },
+  "word6": {
+   "field": "Slope",
+   "display": "word / 65534 x 100 %",
+   "points": {
+    "32767": "50%",
+    "49151": "75.0%"
+   }
+  },
+  "word7": {
+   "field": "Attack",
+   "display": "word x 10000 / 65534 ms (0..10000 ms), shown to 0.1 ms",
+   "points": {
+    "65": "9.9 ms",
+    "66": "10.1 ms",
+    "655": "99.9 ms"
+   }
+  },
+  "word10": {
+   "field": "Auto-Engage",
+   "display": "enum",
+   "points": {
+    "0": "OFF",
+    "1": "SLOW SPD",
+    "5": "MED POS (T7)"
+   }
+  },
+  "word11": {
+   "field": "PC Reset",
+   "display": "enum",
+   "points": {
+    "0": "OFF",
+    "1": "ON"
+   }
+  },
+  "word12": {
+   "field": "Off Value",
+   "display": "word / 65534 x 100 % (one non-default point)",
+   "points": {
+    "32767": "50.0%"
+   },
+   "open": "T7 read 5.0% for word 0; not explained by this formula"
+  },
+  "word13": {
+   "field": "Scale",
+   "display": "10^((word - 32767) / 32767), 0.100..10.000",
+   "points": {
+    "22911": "0.500",
+    "32767": "1.000",
+    "42623": "1.999"
+   }
+  },
+  "word14": {
+   "field": "Offset",
+   "display": "(word - 32767) / 32767 x 100 %",
+   "points": {
+    "32767": "0.0%",
+    "36044": "10.0%"
+   }
+  },
+  "word15": {
+   "field": "Release",
+   "display": "same scale as Attack",
+   "points": {
+    "66": "10.1 ms",
+    "3277": "500.0 ms"
+   }
+  },
+  "word16": {
+   "field": "Update Rate",
+   "display": "enum",
+   "points": {
+    "0": "SLOW",
+    "1": "MEDIUM"
+   }
+  },
+  "word24": {
+   "field": "Damping",
+   "display": "enum",
+   "points": {
+    "0": "EXPONENTIAL",
+    "1": "LINEAR"
+   }
+  }
+ },
+ "findings": [
+  "Every step changed exactly one modifier word (record 0), so all thirteen Modify-page fields are now paired with their record words; words 11 (PC Reset) and 16 (Update Rate) were not named before.",
+  "Start, Mid, End, Slope and Off Value are word / 65534; Offset is centred at 32767 (+/-100 %); Scale is 10^((word - 32767) / 32767), confirmed at 2.000 and 0.500 (the FM3 offered 1.999 for 2.000).",
+  "Attack and Release use word x 10000 / 65534 ms, which also fits the earlier 65 / 66 readings.",
+  "Setting Auto-Engage to SLOW SPD also stored the Volume/Pan Scene 1 bypass word as bypassed (0 -> 1); removing the binding stored it engaged again. The FM3 stores the live bypass state that Auto-Engage produces (as in T9).",
+  "Setting Source 1 to NONE stored the FM3 removal form on the device: words 0 and 8 -> 0 (word 9 was already 0), every other word kept, no compaction. This matches references/fm3-modifier-removal-20261028.json."
+ ],
+ "notMeasured": [
+  "audio",
+  "Auto-Engage labels other than OFF / SLOW SPD / MED POS",
+  "Update Rate and Damping options beyond the second",
+  "Off Value word 0"
+ ],
+ "resultsSha256": "ed7f05c798330e827ccd05e648772e57f5c06c7e810571cee9a0a05e79121f72"
+}
