@@ -71,6 +71,12 @@
         "references/chorus-batch-20261007-134057/capture-20261007T133922-af47950280/capture.json"
       ]
     },
+    "01413789eaf83820370883f4bcd35574750848e20295277d63ba32b9a8699e03": {
+      "bytes": 40825,
+      "paths": [
+        "examples/FM3_AMP_CAB_AD_TEST.validation.json"
+      ]
+    },
     "0167549b7ced5b5faed8bec22327a89056530e058a727c3ba202741975c71f38": {
       "bytes": 3709,
       "paths": [
@@ -540,12 +546,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-092-64fc9eeb3d/donor.syx"
-      ]
-    },
-    "09f1f3e2226b172c136c0b59b3143ae6524296eea06139c6289995639ec9f83f": {
-      "bytes": 46602,
-      "paths": [
-        "examples/FM3_FILTER_CONTROLS_VERIFIED.validation.json"
       ]
     },
     "0a17b54fcee104887b6707b29ae34ea7bec6e049a341c1ec8e77ec75c7b68683": {
@@ -1719,6 +1719,12 @@
         "examples/FM3_SA_TEST_G5.syx"
       ]
     },
+    "22d3eae35e206b3efb86af4307daf36acb2341406892273645a80bdf1e232d48": {
+      "bytes": 7079,
+      "paths": [
+        "references/fm3-mod-steps-20261029.json"
+      ]
+    },
     "22dbcb2892a077d96865365f7861754df47751daafbc04f4bbeb7dbcdac739e8": {
       "bytes": 456,
       "paths": [
@@ -2682,12 +2688,6 @@
       "bytes": 24680,
       "paths": [
         "examples/FM3_SA_TEST_CAB_BASSGUY_export.syx"
-      ]
-    },
-    "33fbb4b9b9b4b3b7e59368297d1ad2100a61c51b4afc89e6c1bbc5edd97e2178": {
-      "bytes": 39390,
-      "paths": [
-        "examples/FM3_AMP_CAB_AD_TEST.validation.json"
       ]
     },
     "34929b0d9bbab9df0195f29f64c0eb9bba84c0ebc68970d52f3c418112b87377": {
@@ -4508,6 +4508,12 @@
         "references/geq-full-20261010-194115/step-014-afc8223cbe/capture.json"
       ]
     },
+    "5b26f3af0cecd71243de51e04827f4447ff1fc01fcb8795dc444725e6964440a": {
+      "bytes": 47643,
+      "paths": [
+        "examples/FM3_FILTER_CONTROLS_VERIFIED.validation.json"
+      ]
+    },
     "5b2f7ed97f938f36bf797c21e618d7cfd119e1fc0ed32fc11f01915859ae13df": {
       "bytes": 24680,
       "paths": [
@@ -5089,6 +5095,12 @@
       "bytes": 4811,
       "paths": [
         "references/filter-rea-20261012/step-001-c1ebbcd791/result.json"
+      ]
+    },
+    "68a7718959b51ca7961b792cfc61558bcad72ec231c0706f7cda2218cd4f34af": {
+      "bytes": 25155,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "68c0a3d9b2908a9dacb3983b9e3bc6d536a9f50753d2e8fefdd60fd771710fd1": {
@@ -7371,12 +7383,6 @@
         "references/peq-full-20261009-152606/step-012-953f98ce28/capture.json"
       ]
     },
-    "9498679d63da877fbb52943eb6d794d3393447712b32d4f90a084493cab9b9f6": {
-      "bytes": 6844,
-      "paths": [
-        "references/fm3-mod-steps-20261029.json"
-      ]
-    },
     "949cc035614bd29ab301d9e74939f9cf01d829c5ae624192da8092774cbc6e59": {
       "bytes": 5027,
       "paths": [
@@ -9578,12 +9584,6 @@
       "bytes": 7211,
       "paths": [
         "references/peq-full-20261009-152606/step-075-cbf510b4e6/capture.json"
-      ]
-    },
-    "bfd2c6473c75b3e5f90560299789fe637958978936406cae22d3b5035d22f5c5": {
-      "bytes": 24703,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "bfdd23b4cbaf1b802cc315c99eda8f459e5f5caf7be93daed1a62c5036ebd17e": {
