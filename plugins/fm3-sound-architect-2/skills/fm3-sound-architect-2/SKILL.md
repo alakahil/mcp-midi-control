@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.32`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.33`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -330,6 +330,13 @@ lisab FM3 vaikemalliga seose kanalitega ALL ja täisvahemikus Min/Max. Seosed l�
 Wahi ja Volume'i kõrval kirjest 2. Mall tuleb FM3 enda salvestatud presetitest (1401 kirjet). STORE ja uuesti laadimine
 on kinnitatud (T9); lülitamine on kontrollimata. Control Switchi tüübi ja jalglüliti määrab kasutaja FM3-l. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md).
 0.3.32: `invert:true` (Min ON, Max OFF) ja `channel:"A".."D"` (sõna 17) on lisavalikud. Kuvamine on kinnitatud T7-s.
+
+## Skeem (0.3.33)
+
+`scripts/fm3-sound.schema.json` (0.5.0) tunneb nüüd `controlSwitches`-it (sh `invert`, `channel`), `volumePedal` kujul
+`true` või `{min, max}` ning `out2` ruudustikulahtris ja `duplicate`-is. `test-sound-schema.mjs` kontrollib, et skeem ja
+generaator otsustavad uute väljade ja kõigi praeguste näidete puhul sama. Skeemis väljendamatud reeglid (näiteks
+min = max, sama sihtmärk kaks korda, Out 2 ilma lingita) kontrollib ainult generaator.
 
 ## Out 2, bit 4 ja modifikaatori eemaldamine (0.3.32, offline)
 

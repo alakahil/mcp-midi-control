@@ -113,7 +113,7 @@ export function renderVolumePedalText(state){
   `Modifikaatori 25 toorsõna: ${state.words.join(', ')}.`,
   state.entireBodyMatchesCapture?'Kogu preseti keha kattub kasutaja Volume-seose ekspordiga; selle sisu korduseksporti pole vaja. Uut kodeeritud faili eraldi seadmesse ei imporditud.':'See on uus kombinatsioon: seose vaikeolek on seadmeekspordist, lõppfaili kombinatsioon kontrollitud tarkvaraliselt.',
   'External 1 globaalne pedaali/MIDI määrang ja pedaali asend ei sisaldu presetis. Seos ei muuda stseenide kanalit ega bypass’i.',
-  '24.10.2026 P1/P0 katses kinnitati FM3-Editis pedaali järgimine. Täpsed kanna/varba arvud, taper, heli ja pedaalipreseti STORE/reload on kontrollimata. Uue faili riistvarakatset sellest ei järeldu; fullRangeEncodingProven=false. Wahi Min/Max tõendeid Volume’ile ei laiendata.'];
+  '24.10.2026 P1/P0 katses kinnitati FM3-Editis pedaali järgimine. 26.10.2026 (T2): kand 0.00, varvas 10.00, seos säilis STORE/reload-is. 28.10.2026 (T10): vahemik 2.50/7.50 kuvati ja pedaal järgis seda. Taper ja heli on mõõtmata; selle uue faili riistvarakatset sellest ei järeldu.'];
 }
 export function verifyVolumePedalOutput(report,syx,txt,spec){
  const requested=Object.hasOwn(spec??{},'volumePedal');

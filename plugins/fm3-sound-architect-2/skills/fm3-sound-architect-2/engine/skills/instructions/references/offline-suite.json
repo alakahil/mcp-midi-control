@@ -583,6 +583,15 @@
       "required": true
     },
     {
+      "id": "test-sound-schema",
+      "command": [
+        "node",
+        "scripts/test-sound-schema.mjs"
+      ],
+      "scope": "Bundled fm3-sound.schema.json and the generator agree on the 0.3.30-0.3.32 fields (controlSwitches, volumePedal {min,max}, Wah + Volume, out2) and on every current example spec; generator-only rules listed",
+      "required": true
+    },
+    {
       "id": "test-insert-applicability",
       "command": [
         "node",
