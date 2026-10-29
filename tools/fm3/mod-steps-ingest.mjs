@@ -44,7 +44,7 @@ const after=prev;assert.equal(after.readUInt16LE(W(9)),0,'target PID already 0 (
 const num=s=>Number(String(s).replace(',','.').replace(/[^0-9.\-]/g,''));
 const shown=Object.fromEntries(steps.map(s=>[s.id,s.shown]));
 const pct=w=>Math.round(w/65534*1000)/10, scale=w=>10**((w-32767)/32767), offs=w=>Math.round((w-32767)/32767*1000)/10, ms=w=>w*10000/65534;
-for(const [id,w] of [['start',13107],['end',52427],['mid',16384],['slope',49151],['offvalue',32767]])assert.equal(pct(w),num(shown[id]),id);
+for(const [id,w] of [['start',13107],['end',52427],['mid',16384],['slope',49151],['offvalue',32767]])assert.equal(id==='offvalue'?Math.round((5+90*w/65534)*10)/10:pct(w),num(shown[id]),id);
 for(const [id,w] of [['scale',42623],['scale2',22911]])assert.equal(scale(w).toFixed(3),num(shown[id]).toFixed(3),id);
 assert.equal(offs(36044),num(shown.offset),'offset');
 for(const [id,w] of [['attack',655],['release',3277]])assert.equal(Math.floor(ms(w)*10)/10,num(shown[id]),id);
@@ -63,18 +63,18 @@ const out={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-10-29
     word7:{field:'Attack',display:'word x 10000 / 65534 ms (0..10000 ms), shown to 0.1 ms',points:{65:'9.9 ms',66:'10.1 ms',655:'99.9 ms'}},
     word10:{field:'Auto-Engage',display:'enum',points:{0:'OFF',1:'SLOW SPD',5:'MED POS (T7)'}},
     word11:{field:'PC Reset',display:'enum',points:{0:'OFF',1:'ON'}},
-    word12:{field:'Off Value',display:'word / 65534 x 100 % (one non-default point)',points:{32767:'50.0%'},open:'T7 read 5.0% for word 0; not explained by this formula'},
+    word12:{field:'Off Value',display:'5 + 90 x word / 65534 % (native descriptor 5..95 %)',points:{0:'5.0%',32767:'50.0%'},open:'word 0 = 5.0% read in T7; T7 read word 65534 (Wah record) as 5.0%; the formula and the Wah measured captures (10922 -> 20 %, 54612 -> 80 %) give 95.0%'},
     word13:{field:'Scale',display:'10^((word - 32767) / 32767), 0.100..10.000',points:{32767:'1.000',42623:'1.999',22911:'0.500'}},
     word14:{field:'Offset',display:'(word - 32767) / 32767 x 100 %',points:{32767:'0.0%',36044:'10.0%'}},
     word15:{field:'Release',display:'same scale as Attack',points:{66:'10.1 ms',3277:'500.0 ms'}},
     word16:{field:'Update Rate',display:'enum',points:{0:'SLOW',1:'MEDIUM'}},
     word24:{field:'Damping',display:'enum',points:{0:'EXPONENTIAL',1:'LINEAR'}}},
   findings:['Every step changed exactly one modifier word (record 0), so all thirteen Modify-page fields are now paired with their record words; words 11 (PC Reset) and 16 (Update Rate) were not named before.',
-    'Start, Mid, End, Slope and Off Value are word / 65534; Offset is centred at 32767 (+/-100 %); Scale is 10^((word - 32767) / 32767), confirmed at 2.000 and 0.500 (the FM3 offered 1.999 for 2.000).',
+    'Start, Mid, End and Slope are word / 65534; Off Value is 5 + 90 x word / 65534 % (native range 5..95 %, so word 0 shows 5.0% as in T7); Offset is centred at 32767 (+/-100 %); Scale is 10^((word - 32767) / 32767), confirmed at 2.000 and 0.500 (the FM3 offered 1.999 for 2.000).',
     'Attack and Release use word x 10000 / 65534 ms, which also fits the earlier 65 / 66 readings.',
     'Setting Auto-Engage to SLOW SPD also stored the Volume/Pan Scene 1 bypass word as bypassed (0 -> 1); removing the binding stored it engaged again. The FM3 stores the live bypass state that Auto-Engage produces (as in T9).',
     'Setting Source 1 to NONE stored the FM3 removal form on the device: words 0 and 8 -> 0 (word 9 was already 0), every other word kept, no compaction. This matches references/fm3-modifier-removal-20261028.json.'],
-  notMeasured:['audio','Auto-Engage labels other than OFF / SLOW SPD / MED POS','Update Rate and Damping options beyond the second','Off Value word 0'],
+  notMeasured:['audio','Auto-Engage labels other than OFF / SLOW SPD / MED POS','Update Rate and Damping options beyond the second','Off Value word 65534 (T7 read 5.0%, formula 95.0%)'],
   resultsSha256:sha(fs.readFileSync(file))};
 const target=path.join(ENG,'references/fm3-mod-steps-20261029.json'),content=JSON.stringify(out,null,1)+'\n';
 if(process.argv.includes('--write'))fs.writeFileSync(target,content);else assert.equal(fs.readFileSync(target,'utf8'),content,'modifier steps receipt stale');

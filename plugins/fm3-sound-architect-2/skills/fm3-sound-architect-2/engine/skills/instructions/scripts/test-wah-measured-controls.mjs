@@ -8,6 +8,8 @@ import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {composerBases,layouts} from './fm3-composer-bases.mjs';
 import {applyWahModifier,verifyWahModifierReadback} from './fm3-wah-modifier.mjs';
 import {createPreset,writePresetOutputs,verifyPresetOutputs,getPresetCapabilities} from './fm3-preset.mjs';
+import {modifierCurveFields,encodeCurveValue} from './fm3-modifier-curve.mjs';
+const curve=Object.fromEntries(modifierCurveFields.map(f=>[f.key,f]));
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url)),sha=b=>createHash('sha256').update(b).digest('hex');
 const body=b=>Buffer.from(inspectStructure(b).raw.body);
 const evidence=JSON.parse(read('references/wah-measured-controls.json'));
@@ -44,17 +46,19 @@ for(const b of composerBases){
   const edit=applyWahModifier(copy,{wahControls:{[f.key]:point.input}},layout,(at,n)=>calls.push([at,n]));
   assert.deepEqual(copy,want);assert.deepEqual(calls,initial.readUInt16LE(f.offset)===point.raw?[]:[[f.offset,2]]);
   assert.equal(edit.controls[f.key].display,point.display);verifyWahModifierReadback(copy,edit);
-  assert.deepEqual(schema.properties[f.key].enum,f.points.map(p=>p.input));pointWrites++;
+  if(f.key==='max')assert.deepEqual(schema.properties[f.key].enum,f.points.map(p=>p.input));
+  else{assert.equal(schema.properties[f.key].minimum,curve[f.key].min);assert.equal(schema.properties[f.key].maximum,curve[f.key].max);assert.equal(edit.controls[f.key].basis,'measured point');}
+  pointWrites++;
  }
 }
 function reject(request,mutate=()=>{},target=blocks){const copy=Buffer.from(original);mutate(copy);const before=Buffer.from(copy);let calls=0;
  assert.throws(()=>applyWahModifier(copy,request,target,()=>calls++),/Wah modifier|Unsupported modifier/);assert.deepEqual(copy,before);assert.equal(calls,0);negative++;}
 for(const value of [undefined,null,[],{},true,false,5,'5'])reject({wahControls:value});
 for(const f of evidence.fields){
- for(const value of [undefined,null,NaN,Infinity,-Infinity,true,false,'1',{},[],123.456])reject({wahControls:{[f.key]:value}});
+ for(const value of [undefined,null,NaN,Infinity,-Infinity,true,false,'1',{},[],...(f.key==='max'?[123.456]:[curve[f.key].min-0.001,curve[f.key].max+0.001])])reject({wahControls:{[f.key]:value}});
  reject({wahControls:{[f.key]:f.points[0].input}},b=>b.writeUInt16LE(65535,f.offset));
 }
-for(const request of [{wahControls:{unknown:1}},{wahControls:{max:5},external1Wah:false},{wahControls:{max:5},extra:true},{wahControls:{max:5,scale:2}},{wahControls:{attackMs:9.99}}])reject(request);
+for(const request of [{wahControls:{unknown:1}},{wahControls:{max:5},external1Wah:false},{wahControls:{max:5},extra:true},{wahControls:{max:5,scale:20}},{wahControls:{max:6}},{wahControls:{attackMs:10001}}])reject(request);
 reject({wahControls:{max:5}},()=>{},{});
 reject({wahControls:{max:5}},b=>b.writeUInt16LE(0,1584));
 reject({wahControls:{max:5}},b=>{b.writeUInt16LE(14,1680);b.writeUInt16LE(94,1696);b.writeUInt16LE(5,1698);});
@@ -71,5 +75,10 @@ assert.equal(composed.report.modifierEdit.controls.attackMs.display,99.9);assert
 assert.ok(composed.txt.includes('Max: 5.00'));assert.ok(composed.txt.includes('Attack: 99.9 ms'));assert.ok(composed.txt.includes('Release: 999.9 ms'));
 assert.equal(composed.report.knownDeviceBody,undefined);
 for(const channel of 'ABCD')assert.throws(()=>createPreset(newlook,{...sound,controls:[{block:'wah',channel,param:5,value:5}],allow:['linear-by-structure']}),/modifier-controlled/);
-const caps=getPresetCapabilities().modifiers.controls;assert.equal(caps.field,'composer.modifiers.wahControls');assert.equal(caps.fullRange,false);assert.equal(caps.fieldIndependenceVerified,false);
-console.log(JSON.stringify({passed:true,deviceCaptures:3,jointCaptures:2,isolatedMaxChanges:1,reconstructions,pointWrites,negative,channelLocks:4,fullRangeCodec:false,newCombinationsDeviceConfirmed:false,deviceIO:false}));
+// Values between the measured points: descriptor formula (fm3-modifier-curve.mjs), reported as such.
+let formulaWrites=0;
+for(const [key,value,raw,shown] of [['attackMs',9.99,65,9.9],['scale',2,42631,2],['offValuePercent',95,65534,95],['startPercent',33.3,21823,33.3],['offsetPercent',-50,16384,-50],['releaseMs',2500,16384,2500.1]]){
+ const copy=Buffer.from(original),e=applyWahModifier(copy,{wahControls:{[key]:value}},blocks),f=evidence.fields.find(x=>x.key===key);
+ assert.equal(encodeCurveValue(key,value),raw);assert.equal(copy.readUInt16LE(f.offset),raw);assert.equal(e.controls[key].display,shown);assert.equal(e.controls[key].basis,'descriptor formula');verifyWahModifierReadback(copy,e);formulaWrites++;}
+const caps=getPresetCapabilities().modifiers.controls;assert.equal(caps.field,'composer.modifiers.wahControls');assert.equal(caps.fullRange,'curve and timing fields (Max: measured points only)');assert.equal(caps.fieldIndependenceVerified,true);
+console.log(JSON.stringify({passed:true,deviceCaptures:3,jointCaptures:2,isolatedMaxChanges:1,reconstructions,pointWrites,formulaWrites,negative,channelLocks:4,fullRangeCodec:'curve and timing fields',newCombinationsDeviceConfirmed:false,deviceIO:false}));

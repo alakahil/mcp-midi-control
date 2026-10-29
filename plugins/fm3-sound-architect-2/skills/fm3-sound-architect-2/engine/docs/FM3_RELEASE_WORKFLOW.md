@@ -10,7 +10,9 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.33 väljalaset: soundi skeem 0.5.0 (controlSwitches, volumePedal {min,max},
+Praegune lähtekood valmistab ette 0.3.34 väljalaset: modifikaatori kõvera ja aegade täisvahemiku koodek (`fm3-modifier-curve.mjs`,
+natiivse kirjeldaja valemid, mis kordavad kõiki 77 seadmenäitu, sh T12 ühe välja kaupa katse), `volumePedal.curve` ning
+`wahControls`-i kõvera/aja väljad suvalise väärtusega vahemikus (Max jääb mõõdetud punktidele); soundi skeem 0.6.0. Selle aluseks on 0.3.33: soundi skeem 0.5.0 (controlSwitches, volumePedal {min,max},
 out2) koos skeemi ja generaatori kooskõlatestiga ning aegunud piirangulausete ühtlustusega. Selle aluseks on 0.3.32: Out 2 grid-režiimis, Control Switchi `invert`/`channel`,
 modifikaatori eemaldamise koodek, bit 4 FW13 korpuses ja modifikaatori väljade seisufail. Selle aluseks on 0.3.31: Volume pedaali numbriline Min/Max
 (`volumePedal:{min,max}`) ja T7b modifikaatori korduslugemine. Selle aluseks on 0.3.30: Control Switch → Amp lülitite

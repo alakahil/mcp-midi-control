@@ -33,11 +33,19 @@
   },
   "modSteps": {
    "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-mod-steps-20261029.json",
-   "sha256": "9498679d63da877fbb52943eb6d794d3393447712b32d4f90a084493cab9b9f6"
+   "sha256": "22d3eae35e206b3efb86af4307daf36acb2341406892273645a80bdf1e232d48"
   },
   "switchDirect": {
    "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-switch-direct-20261029.json",
    "sha256": "1135da8ca6e1c18d8350f21aa6cd382cfbf607126a2f212788d50f9927120d39"
+  },
+  "csSteps": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cs-steps-20261029.json",
+   "sha256": "58e4cb0e30eef1fded80443e6eb4aa9b25ec978af66f40345db3ea315c765c7b"
+  },
+  "csStepsB": {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cs-steps-b-20261029.json",
+   "sha256": "8e45f37e27e999a7fcfd2627ad5dc0d97fa5d220cf09750d4649b2423ea83e9f"
   }
  },
  "wordIndexIsModifierPid": "The Codex field audit maps native MOD descriptor PIDs to record words 1:1 (MOD_AUTOENGAGE PID 10 = body offset 1604 = word 10).",
@@ -81,7 +89,7 @@
    },
    "display": "word / 65534 x 100 %: 0 -> 0.0%; 13107 -> 20.0%",
    "status": "decoded, device-stepped (T12)",
-   "writer": "template value"
+   "writer": "volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)"
   },
   {
    "word": 4,
@@ -92,7 +100,7 @@
    },
    "display": "word / 65534 x 100 %: 16384 -> 25.0%; 32767 -> 50%; 30368 -> 46.3%",
    "status": "decoded, device-stepped (T12)",
-   "writer": "template value"
+   "writer": "volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)"
   },
   {
    "word": 5,
@@ -103,7 +111,7 @@
    },
    "display": "word / 65534 x 100 %: 52427 -> 80.0%; 65534 -> 100%",
    "status": "decoded, device-stepped (T12)",
-   "writer": "template value"
+   "writer": "volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)"
   },
   {
    "word": 6,
@@ -114,7 +122,7 @@
    },
    "display": "word / 65534 x 100 %: 32767 -> 50%; 49151 -> 75.0%; 39651 -> 60.5%",
    "status": "decoded, device-stepped (T12)",
-   "writer": "template value"
+   "writer": "volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)"
   },
   {
    "word": 7,
@@ -125,7 +133,7 @@
    },
    "display": "word x 10000 / 65534 ms (0..10000 ms), shown to 0.1 ms: 65 -> 9.9 ms; 66 -> 10.1 ms; 655 -> 99.9 ms",
    "status": "decoded, device-stepped (T12)",
-   "writer": "template value"
+   "writer": "volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)"
   },
   {
    "word": 8,
@@ -169,9 +177,9 @@
     "pid": 12,
     "writeDecision": "blocked-pending-discriminating-preset-and-display-evidence"
    },
-   "display": "word / 65534 x 100 % (one non-default point): 32767 -> 50.0%; T7 read 5.0% for word 0; not explained by this formula",
-   "status": "one non-default point (T12); word 0 unexplained",
-   "writer": "template value"
+   "display": "5 + 90 x word / 65534 % (native descriptor 5..95 %): 0 -> 5.0%; 32767 -> 50.0%; 65534 -> 95.0% (T14)",
+   "status": "decoded, device-confirmed at 5 / 50 / 95 % (T7, T12, T14); the T7 reading of 65534 as 5.0% was a misreading",
+   "writer": "wahControls offValuePercent"
   },
   {
    "word": 13,
@@ -182,7 +190,7 @@
    },
    "display": "10^((word - 32767) / 32767), 0.100..10.000: 22911 -> 0.500; 32767 -> 1.000; 42623 -> 1.999; 39366 -> 1.590",
    "status": "decoded, device-stepped (T12)",
-   "writer": "template value"
+   "writer": "volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)"
   },
   {
    "word": 14,
@@ -193,7 +201,7 @@
    },
    "display": "(word - 32767) / 32767 x 100 %: 32767 -> 0.0%; 36044 -> 10.0%",
    "status": "decoded, device-stepped (T12)",
-   "writer": "template value"
+   "writer": "volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)"
   },
   {
    "word": 15,
@@ -204,7 +212,7 @@
    },
    "display": "same scale as Attack: 66 -> 10.1 ms; 3277 -> 500.0 ms",
    "status": "decoded, device-stepped (T12)",
-   "writer": "template value"
+   "writer": "volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)"
   },
   {
    "word": 16,
@@ -245,10 +253,10 @@
  "supersedes": "modifier-fields-audit.json writeDecision \"blocked-pending-discriminating-preset-and-display-evidence\" for words 1 and 2 (that file is a pinned replay of its baseline commit and is not rewritten).",
  "removal": "words 0, 8 and 9 -> 0, other words kept, no compaction (references/fm3-modifier-removal-20261028.json; stored by the FM3 itself in T12)",
  "storeReload": "Wah + Volume + two Control Switch records stored and reloaded unchanged (T9); Wah + Volume 2.50..7.50 + three Control Switch records (normal, inverted, CHAN D) + Out 2 stored and reloaded unchanged (T11)",
- "switching": "Inverted and CHAN D records behave as written on the device when driven by the PEDAL 2 ring switch (T13, momentary); Control Switch footswitch state not checked (global setting)",
+ "switching": "Inverted and CHAN D records behave as written on the device: PEDAL 2 ring switch (T13, momentary) and per-preset Control Switch: Latching and Momentary footswitches (T14/T14b, stored in the preset, no global setting); CS Per Scene ON/OFF/LAST applied on scene change (T14b)",
+ "controlSwitchPreset": "CS Per Scene: 482 bytes before the body end, 6 CS x 8 scenes, ON 0 / OFF 1 / LAST 2; per-preset definitions 3052 bytes before the end (category 7 = Control Switch, function 1 Latching / 0 Momentary, parameter CS number - 1); overrides 1920 bytes after (references/fm3-cs-steps-b-20261029.json)",
  "stillOpen": [
-  "Off Value word 0 (T7 read 5.0%)",
-  "curve writing in the generator (Start, End, Mid, Slope, Scale, Offset, Attack, Release are decoded but not exposed)",
-  "Control Switch footswitch behaviour (needs a global FC assignment)"
+  "generator fields for CS Per Scene and per-preset Control Switch footswitches",
+  "per-preset Hold functions"
  ]
 }

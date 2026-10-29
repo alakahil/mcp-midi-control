@@ -99,6 +99,29 @@ try{
  assert.ok(ranged.txt.includes('Min 2.50 / Max 7.50 (Volume skaalas; sõnad 16384 / 49151).'));
  verify('range',ranged,rangeSpec);
  const inverted={...rangeSpec,volumePedal:{min:10,max:0}};verify('range-inverted',createPreset(base,inverted),inverted);
+ // Curve / timing words (native-descriptor codec, T12): only the requested words differ from the default binding.
+ const curveReq={startPercent:10,midPercent:40,endPercent:90,slopePercent:65,attackMs:50,scale:1.5,offsetPercent:-5,releaseMs:400};
+ const curveWords={3:6553,4:26214,5:58981,6:42597,7:328,13:38537,14:31129,15:2621};
+ const curveSpec={...spec,composer:{...spec.composer,name:'VOLUME RANGE'},volumePedal:{min:2.5,max:7.5,curve:curveReq}};
+ const curved=createPreset(base,curveSpec),cb=Buffer.from(inspectStructure(curved.syx).raw.body);
+ for(const [w,v] of Object.entries(curveWords))assert.equal(cb.readUInt16LE(1584+2*w),v,'curve word '+w);
+ for(let o=0;o<cb.length;o+=2)if(!(o>=1586&&o<=1614&&[1,2,...Object.keys(curveWords).map(Number)].includes((o-1584)/2)))assert.equal(cb.readUInt16LE(o),defb.readUInt16LE(o),'only Min/Max and curve words differ at '+o);
+ assert.deepEqual(Object.fromEntries(Object.entries(curved.report.volumePedal.curve).map(([k,c])=>[k,c.display])),{startPercent:10,midPercent:40,endPercent:90,slopePercent:65,attackMs:50.1,offsetPercent:-5,scale:1.5,releaseMs:399.9});
+ assert.equal(curved.report.volumePedal.curveCustom,true);assert.deepEqual(curved.report.stages.volumePedal.changedWordIndices,[0,1,2,3,4,5,6,7,8,9,10,13,14,15]);
+ assert.ok(curved.txt.includes('Kõver ja ajad: Start 10%, Mid 40%, End 90%, Slope 65%, Attack 50.1 ms, Scale 1.5, Offset -5%, Release 399.9 ms'));
+ verify('curve',curved,curveSpec);
+ const curveOnly={...spec,composer:{...spec.composer,name:'VOLUME RANGE'},volumePedal:{curve:{releaseMs:0}}},co=createPreset(base,curveOnly);verify('curve-only',co,curveOnly);
+ assert.deepEqual(co.report.stages.volumePedal.changedWordIndices,[0,8,9,10]);assert.equal(co.report.volumePedal.curve.releaseMs.display,0);
+ const sameAsDefault={...spec,volumePedal:{curve:{startPercent:0,attackMs:10.1}}},sd=createPreset(base,sameAsDefault);
+ assert.equal(sd.report.volumePedal.curveCustom,false);assert.equal(sha(sd.syx),sha(good.syx),'default curve values reproduce the captured body');
+ for(const bad of [{offValuePercent:50},{startPercent:-1},{endPercent:100.1},{scale:0},{scale:10.5},{offsetPercent:101},{attackMs:-1},{releaseMs:10001},{midPercent:'50'},{},null,[],5])
+  {assert.throws(()=>createPreset(base,{...spec,volumePedal:{curve:bad}}),/Volume pedal/);rejected++;}
+ const cfail=(name,change)=>{const r={...curved,report:structuredClone(curved.report)},s=structuredClone(curveSpec);change(r,s);assert.throws(()=>verify(name,r,s),/Volume pedal|Volume|modifier|TXT/);tamperCases++;};
+ cfail('curve-word',r=>{r.syx=rewrite(curved.syx,b=>b.writeUInt16LE(6554,1590));r.report.outputSha256=sha(r.syx);});
+ cfail('curve-spec',(_r,s)=>s.volumePedal.curve.startPercent=11);
+ cfail('curve-dropped',(_r,s)=>delete s.volumePedal.curve);
+ cfail('curve-report',r=>r.report.volumePedal.curve.scale.display=2);
+ cfail('curve-txt',r=>r.txt=r.txt.replace('Release 399.9 ms','Release 500 ms'));
  const rfail=(name,change)=>{const r={...ranged,report:structuredClone(ranged.report)},s=structuredClone(rangeSpec);change(r,s);assert.throws(()=>verify(name,r,s),/Volume pedal|Volume|modifier|TXT/);tamperCases++;};
  rfail('range-word',r=>{r.syx=rewrite(ranged.syx,b=>b.writeUInt16LE(16385,1586));r.report.outputSha256=sha(r.syx);});
  rfail('range-spec',(_r,s)=>s.volumePedal={min:2.5,max:8});
@@ -114,6 +137,9 @@ try{
  assert.ok(wah.txt.includes('EXTERNAL 1 → WAH — LÕPPFAILIST')&&wah.txt.includes('modifikaatori kirje 1'));
  verify('wah',wah,wahSpec);
  const wahRange={...wahSpec,volumePedal:{min:0,max:8}},wr=createPreset(base,wahRange);verify('wah-range',wr,wahRange);
+ const wahCurve={...wahSpec,volumePedal:{curve:{endPercent:80,releaseMs:250}}},wc=createPreset(base,wahCurve);verify('wah-curve',wc,wahCurve);
+ const wcb=Buffer.from(inspectStructure(wc.syx).raw.body);assert.equal(wcb.readUInt16LE(1680+10),52427);assert.equal(wcb.readUInt16LE(1680+30),1638);
+ assert.deepEqual(wc.report.stages.volumePedal.changedWordIndices,[0,5,8,15]);assert.equal(getPresetCapabilities().volumePedal.curve.fieldIndependenceVerified,true);
  assert.equal(Buffer.from(inspectStructure(wr.syx).raw.body).readUInt16LE(1680+4),52427);assert.deepEqual(wr.report.stages.volumePedal.changedWordIndices,[0,2,8,15]);
  const wahAuto={...wahSpec,composer:{...wahSpec.composer,modifiers:{external1Wah:true,wahAutoEngage:'OFF'}}};verify('wah-auto',createPreset(base,wahAuto),wahAuto);
  badSpec(s=>s.composer.modifiers={external1Wah:false,wahAutoEngage:'OFF'});

@@ -14,8 +14,9 @@ const P=path.join(ROOT,'docs/fm3/parameter-evidence/');
 const sha=f=>createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 const src={audit:path.join(P,'modifier-fields-audit.json'),display:path.join(REF,'fm3-modifier-display-20261028.json'),volumeRange:path.join(REF,'fm3-volume-range-20261028.json'),
   bindStore:path.join(REF,'fm3-bind-store-20261028.json'),controlSwitches:path.join(REF,'fm3-control-switch-evidence-20261028.json'),removal:path.join(REF,'fm3-modifier-removal-20261028.json'),
-  comboStore:path.join(REF,'fm3-combo-store-20261029.json'),modSteps:path.join(REF,'fm3-mod-steps-20261029.json'),switchDirect:path.join(REF,'fm3-switch-direct-20261029.json')};
+  comboStore:path.join(REF,'fm3-combo-store-20261029.json'),modSteps:path.join(REF,'fm3-mod-steps-20261029.json'),switchDirect:path.join(REF,'fm3-switch-direct-20261029.json'),csSteps:path.join(REF,'fm3-cs-steps-20261029.json'),csStepsB:path.join(REF,'fm3-cs-steps-b-20261029.json')};
 const audit=JSON.parse(fs.readFileSync(src.audit,'utf8')),disp=JSON.parse(fs.readFileSync(src.display,'utf8')),vr=JSON.parse(fs.readFileSync(src.volumeRange,'utf8'));
+const t14=JSON.parse(fs.readFileSync(src.csSteps,'utf8')),t14b=JSON.parse(fs.readFileSync(src.csStepsB,'utf8'));assert.deepEqual(t14b.decoded.csPerScene.codes,{ON:0,OFF:1,LAST:2});assert.equal(t14.readings.offValue,'95.0%');
 const st=JSON.parse(fs.readFileSync(src.modSteps,'utf8')),sw=JSON.parse(fs.readFileSync(src.switchDirect,'utf8')),cs=JSON.parse(fs.readFileSync(src.comboStore,'utf8'));
 const D=w=>st.decoded['word'+w],pts=w=>Object.entries(D(w).points).map(([k,v])=>k+' -> '+v).join('; ');
 assert.equal(sw.readings.source1,'14 PEDAL 2 (SW RING)');assert.equal(cs.storedVsGenerated.blockRecordWordDiffs,0);
@@ -29,19 +30,19 @@ const fields=[
   f(0,'Source',`code + 1 is the FM3 list number (51 -> "${base.source1}", 14 -> "${auto.source1}", 13 -> "${sw.readings.source1}" (T13))`,'decoded','controlSwitches (Control Switch 1..6), volumePedal (External 1), Wah toggle'),
   f(1,'MOD_MIN',`target stored word: Rotary Rate ${cont.words[1]} -> ${cont.fields.Min}; Amp GEQ band ${curve.words[1]} -> ${curve.fields.Min}; Volume 16384 -> 2.50 (T10); switch 0 -> OFF, 65534 -> ON`,'decoded, device-confirmed on Volume','volumePedal {min,max}; controlSwitches invert'),
   f(2,'MOD_MAX',`target stored word: Rotary Rate ${cont.words[2]} -> ${cont.fields.Max}; Amp GEQ band ${curve.words[2]} -> ${curve.fields.Max}; Volume 49151 -> 7.50 (T10)`,'decoded, device-confirmed on Volume','volumePedal {min,max}; controlSwitches invert'),
-  f(3,'MOD_STARTPT',`${D(3).display}: ${pts(3)}`,'decoded, device-stepped (T12)','template value'),
-  f(4,'MOD_MIDPT',`${D(4).display}: ${pts(4)}; ${curve.words[4]} -> ${curve.fields.Mid}`,'decoded, device-stepped (T12)','template value'),
-  f(5,'MOD_ENDPT',`${D(5).display}: ${pts(5)}`,'decoded, device-stepped (T12)','template value'),
-  f(6,'MOD_SLOPE',`${D(6).display}: ${pts(6)}; ${curve.words[6]} -> ${curve.fields.Slope}`,'decoded, device-stepped (T12)','template value'),
-  f(7,'MOD_ATTACK',`${D(7).display}: ${pts(7)}`,'decoded, device-stepped (T12)','template value'),
+  f(3,'MOD_STARTPT',`${D(3).display}: ${pts(3)}`,'decoded, device-stepped (T12)','volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)'),
+  f(4,'MOD_MIDPT',`${D(4).display}: ${pts(4)}; ${curve.words[4]} -> ${curve.fields.Mid}`,'decoded, device-stepped (T12)','volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)'),
+  f(5,'MOD_ENDPT',`${D(5).display}: ${pts(5)}`,'decoded, device-stepped (T12)','volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)'),
+  f(6,'MOD_SLOPE',`${D(6).display}: ${pts(6)}; ${curve.words[6]} -> ${curve.fields.Slope}`,'decoded, device-stepped (T12)','volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)'),
+  f(7,'MOD_ATTACK',`${D(7).display}: ${pts(7)}`,'decoded, device-stepped (T12)','volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)'),
   f(8,'Target effect ID','-','structural','all writers'),
   f(9,'Target PID','-','structural','all writers'),
   f(10,'MOD_AUTOENGAGE',`0 -> ${base.fields['Auto-Engage']}; 1 -> SLOW SPD (T12); 5 -> ${auto.fields['Auto-Engage']}`,'three labels (plus the existing Wah OFF / MED SPD pair)','Wah modifier (existing)'),
   f(11,'PC Reset',pts(11),'decoded (T12)','template value'),
-  f(12,'MOD_OFFVAL',`${D(12).display}: ${pts(12)}; ${D(12).open}`,'one non-default point (T12); word 0 unexplained','template value'),
-  f(13,'MOD_SCALE',`${D(13).display}: ${pts(13)}; ${curve.words[13]} -> ${curve.fields.Scale}`,'decoded, device-stepped (T12)','template value'),
-  f(14,'MOD_OFFSET',`${D(14).display}: ${pts(14)}`,'decoded, device-stepped (T12)','template value'),
-  f(15,'MOD_RELEASE',`${D(15).display}: ${pts(15)}`,'decoded, device-stepped (T12)','template value'),
+  f(12,'MOD_OFFVAL',`${D(12).display}: ${pts(12)}; 65534 -> ${t14.readings.offValue} (T14)`,'decoded, device-confirmed at 5 / 50 / 95 % (T7, T12, T14); the T7 reading of 65534 as 5.0% was a misreading','wahControls offValuePercent'),
+  f(13,'MOD_SCALE',`${D(13).display}: ${pts(13)}; ${curve.words[13]} -> ${curve.fields.Scale}`,'decoded, device-stepped (T12)','volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)'),
+  f(14,'MOD_OFFSET',`${D(14).display}: ${pts(14)}`,'decoded, device-stepped (T12)','volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)'),
+  f(15,'MOD_RELEASE',`${D(15).display}: ${pts(15)}`,'decoded, device-stepped (T12)','volumePedal.curve; wahControls (0.3.34, fm3-modifier-curve.mjs)'),
   f(16,'Update Rate',pts(16),'decoded (T12)','template value'),
   f(17,'Channel',`0 -> ALL; 4 -> ${w17.fields.Channel}; 1 -> ${cont.fields.Channel}`,'decoded','controlSwitches channel'),
   f(20,'Secondary source','0 in every written record','not written','-'),
@@ -51,12 +52,13 @@ const out={schemaVersion:1,date:'2026-10-29',scope:'Offline join of existing rec
   supersedes:'modifier-fields-audit.json writeDecision "blocked-pending-discriminating-preset-and-display-evidence" for words 1 and 2 (that file is a pinned replay of its baseline commit and is not rewritten).',
   removal:'words 0, 8 and 9 -> 0, other words kept, no compaction (references/fm3-modifier-removal-20261028.json; stored by the FM3 itself in T12)',
   storeReload:'Wah + Volume + two Control Switch records stored and reloaded unchanged (T9); Wah + Volume 2.50..7.50 + three Control Switch records (normal, inverted, CHAN D) + Out 2 stored and reloaded unchanged (T11)',
-  switching:'Inverted and CHAN D records behave as written on the device when driven by the PEDAL 2 ring switch (T13, momentary); Control Switch footswitch state not checked (global setting)',
-  stillOpen:['Off Value word 0 (T7 read 5.0%)','curve writing in the generator (Start, End, Mid, Slope, Scale, Offset, Attack, Release are decoded but not exposed)','Control Switch footswitch behaviour (needs a global FC assignment)']};
+  switching:'Inverted and CHAN D records behave as written on the device: PEDAL 2 ring switch (T13, momentary) and per-preset Control Switch: Latching and Momentary footswitches (T14/T14b, stored in the preset, no global setting); CS Per Scene ON/OFF/LAST applied on scene change (T14b)',
+  controlSwitchPreset:'CS Per Scene: 482 bytes before the body end, 6 CS x 8 scenes, ON 0 / OFF 1 / LAST 2; per-preset definitions 3052 bytes before the end (category 7 = Control Switch, function 1 Latching / 0 Momentary, parameter CS number - 1); overrides 1920 bytes after (references/fm3-cs-steps-b-20261029.json)',
+  stillOpen:['generator fields for CS Per Scene and per-preset Control Switch footswitches','per-preset Hold functions']};
 const md=['# Modifikaatori kirje väljad, seis 29.10.2026','',`Allikad: ${Object.values(out.sources).map(s=>'`'+s.path+'`').join(', ')}. Uut seadmekatset selle koondi jaoks ei tehtud.`,'',
   '| Sõna | Väli | Näit / dekodeering | Seis | Kirjutaja |','|---|---|---|---|---|',...fields.map(x=>`| ${x.word} | ${x.name} | ${x.display} | ${x.status} | ${x.writer} |`),'',
   `Sõna indeks = modifikaatori PID (${out.wordIndexIsModifierPid})`,'',`Eemaldamine: ${out.removal}.`,'',`STORE: ${out.storeReload}.`,'',
-  `Lülitus: ${out.switching}.`,'','Endiselt lahti: '+out.stillOpen.join('; ')+'.',''].join('\n');
+  `Lülitus: ${out.switching}.`,'',`Control Switchi preset-andmed: ${out.controlSwitchPreset}.`,'','Endiselt lahti: '+out.stillOpen.join('; ')+'.',''].join('\n');
 const tj=path.join(P,'modifier-fields-status.json'),tm=path.join(P,'modifier-fields-status.md'),cj=JSON.stringify(out,null,1)+'\n';
 if(process.argv.includes('--write')){fs.writeFileSync(tj,cj);fs.writeFileSync(tm,md);}
 else{assert.equal(fs.readFileSync(tj,'utf8'),cj,'modifier fields status stale');assert.equal(fs.readFileSync(tm,'utf8'),md,'modifier fields status (md) stale');}

@@ -32,7 +32,28 @@ sõnad 1 ja 2 hoiavad sihtparameetri salvestussõna. See dekodeeriti 28.10.2026 
 sihtmärgil (Rotary Rate, Ampi graafilise EQ riba, Wah Control) sihtkodeekiga
 (`references/fm3-modifier-display-20261028.json`). VOLUME_GAIN-i kodeering (0 / 2.5 / 7.5 → 0 / 16384 / 49151)
 on 24.10.2026 esipaneeli katsest. Muutuvad ainult sõnad 1 ja 2, pööratud vahemik (min > max) on lubatud.
-28.10.2026 katses T10 (`references/fm3-volume-range-20261028.json`) näitas FM3 Modify leht vahemikku 2,5–7,5 kui Min 2.50 ja Max 7.50. FM3-Editis järgis Volume nupp pedaali: kannas 2,50, pooles umbes 4,90 ja varbas 7,50. Kõverat (Mid, Slope, Scale) ei kirjutata.
+28.10.2026 katses T10 (`references/fm3-volume-range-20261028.json`) näitas FM3 Modify leht vahemikku 2,5–7,5 kui Min 2.50 ja Max 7.50. FM3-Editis järgis Volume nupp pedaali: kannas 2,50, pooles umbes 4,90 ja varbas 7,50. Kõverat (Mid, Slope, Scale) ei kirjutata ilma `curve`-väljata.
+
+## Kõver ja ajad (0.3.34)
+
+`volumePedal:{curve:{...}}` (koos või ilma `min`/`max`-ita) kirjutab Modify-lehe väljad samasse kirjesse:
+
+| Väli | Sõna | Vahemik | Vaikimisi |
+|---|---|---|---|
+| `startPercent` | 3 | 0–100 % | 0 |
+| `midPercent` | 4 | 0–100 % | 50 |
+| `endPercent` | 5 | 0–100 % | 100 |
+| `slopePercent` | 6 | 0–100 % | 50 |
+| `attackMs` | 7 | 0–10000 ms | 10.1 |
+| `scale` | 13 | 0.1–10 (log) | 1.000 |
+| `offsetPercent` | 14 | −100…100 % | 0 |
+| `releaseMs` | 15 | 0–10000 ms | 10.1 |
+
+Kodeering on `scripts/fm3-modifier-curve.mjs`: FM3 natiivse MOD-kirjeldaja vahemik 0..65534 sõnal. See kordab kõiki 77
+seadmenäitu: 29.10.2026 katse T12 (`references/fm3-mod-steps-20261029.json`, iga väli seadmel ükshaaval muudetud ja salvestatud),
+Wahi mõõtepunktid ja T7/T7b näidud. Mõõtmata vaheväärtused on valemi järgi (seadmel kontrollimata). Kuva ümardub 0.1 ms / 0.1 %
+täpsusele salvestatud sõnast, nii et 50 ms näidatakse 50.1 ms. Off Value'i ja Auto Engage'i siin ei paku: seos hoiab Auto Engage'i
+OFF peal.
 
 ## Tõend
 

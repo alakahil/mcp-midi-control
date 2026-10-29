@@ -1,5 +1,6 @@
 {
   "date": "2026-10-12",
+  "sourceCollectionDate": "2026-10-08",
   "passed": true,
   "generator": "jb-composer-0.13.0-dev",
   "measuredPoints": 17,
@@ -24,6 +25,5 @@
   "examplePresetName": "FM3 FILTER CONTROLS VERIFIED",
   "measurements": "A High-Pass frequency; B Low-Pass frequency; C Peaking frequency/Q/Gain/Level; exact listed points only",
   "skipped": "Q 0.707 was skipped in the old collection; now supplied by the 2026-10-12 supplemental evidence",
-  "audio": "Filter remained bypassed in the device evidence; no active sound or CPU approval",
-  "sourceCollectionDate": "2026-10-08"
+  "audio": "Filter remained bypassed in the device evidence; no active sound or CPU approval"
 }

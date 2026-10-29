@@ -25,6 +25,7 @@ Selle katse kuulamine: Filter bypassed; active effect audio and CPU not assessed
 Cab B: 4x12 Rumble EV12L; mõlemad Dyna-Cab pesad ja kogu kogutud kanal, sh mikrofonid, segu, filtrid ning tasemed.
 
 PARAMEETRID
+Salvestatud väärtused nimetatud kanalites; kasutatavad kanalid ja bypass on allpool stseenide tabelis. Kasutamata kanali väärtus ei kirjelda aktiivset soundi.
 Amp B Gain: 5.00 /10 [määratud kirjelduses]
 Amp B Bass: 4.00 /10 [määratud kirjelduses]
 Amp B Mid: 6.50 /10 [määratud kirjelduses]
@@ -60,6 +61,7 @@ Scene 1: Clean
   delay A: Deluxe Mind Guy; sees
   filter A: High-Pass; bypass
   drive A: Full OD; bypass
+  in1 A: seaded alusfailist; sees
   reverb A: Room: Large Room; sees
 Scene 2: Rhythm Fat
   amp B: Brit Silver; sees; Level -3.00 dB
@@ -67,6 +69,7 @@ Scene 2: Rhythm Fat
   delay A: Deluxe Mind Guy; bypass
   filter B: Low-Pass; bypass
   drive A: Full OD; bypass
+  in1 A: seaded alusfailist; sees
   reverb B: Room: Large Room; sees
 Scene 3: Lead Bright
   amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
@@ -74,6 +77,7 @@ Scene 3: Lead Bright
   delay A: Deluxe Mind Guy; sees
   filter A: High-Pass; bypass
   drive A: Full OD; bypass
+  in1 A: seaded alusfailist; sees
   reverb A: Room: Large Room; sees
 Scene 4: Mid Gain
   amp D: USA MK IV Lead Mid; sees; Level -8.16 dB
@@ -81,6 +85,7 @@ Scene 4: Mid Gain
   delay A: Deluxe Mind Guy; sees
   filter A: High-Pass; bypass
   drive A: Full OD; bypass
+  in1 A: seaded alusfailist; sees
   reverb A: Room: Large Room; sees
 Scene 5: Clean Comp Chorus
   amp A: USA MK IV Rhythm 1; sees; Level -9.00 dB
@@ -88,6 +93,7 @@ Scene 5: Clean Comp Chorus
   delay A: Deluxe Mind Guy; bypass
   filter A: High-Pass; bypass
   drive A: Full OD; bypass
+  in1 A: seaded alusfailist; sees
   reverb C: Hall: Colosseum; sees
 Scene 6: JB SOLO
   amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
@@ -95,6 +101,7 @@ Scene 6: JB SOLO
   delay A: Deluxe Mind Guy; sees
   filter C: Peaking; bypass
   drive B: T808 OD; sees
+  in1 A: seaded alusfailist; sees
   reverb D: Room: Medium Room; sees
 Scene 7: Drive Lead Brt
   amp C: USA MK IV Lead Bright; sees; Level -8.00 dB
@@ -102,6 +109,7 @@ Scene 7: Drive Lead Brt
   delay A: Deluxe Mind Guy; sees
   filter A: High-Pass; bypass
   drive D: Box o' Crunch; sees
+  in1 A: seaded alusfailist; sees
   reverb A: Room: Large Room; sees
 Scene 8: Lead Mid FX
   amp D: USA MK IV Lead Mid; sees; Level -8.16 dB
@@ -109,13 +117,14 @@ Scene 8: Lead Mid FX
   delay A: Deluxe Mind Guy; sees
   filter A: High-Pass; bypass
   drive B: T808 OD; sees
+  in1 A: seaded alusfailist; sees
   reverb A: Room: Large Room; sees
 
-Olemasolevate plokkide määramata seaded, kanalivalikud, bypass, lülitid ja modifierid säilivad alusfailist. Kogutud mallid pole tingimata tehasevaikeväärtused.
+Olemasolevate plokkide määramata seaded, kanalivalikud, bypass ja lülitid säilivad alusfailist; modifikaatorid säilivad, välja arvatud selgesõnaliselt küsitud External 1 → Wah seose allika, Auto Engage’i, Damping’u režiimi või Min-i mõõdetud punkti muudatus. Kogutud mallid pole tingimata tehasevaikeväärtused.
 Tüübimalli valik üksi ei aktiveeri efekti. Stseenikirjeldus määrab kanalid ja efekti sees/bypass oleku; lisatud plokid algavad A/bypass. Kanalite mõju on eespool.
 NewLook-alusel lisatakse üksnes küsitud toetatud plokid vabade shuntide asemele. Send/Return ja kaks rida säilivad. Väliseid IR-e ei lisata. Rotary A on piiratud mõõdetud punktidega.
 Failitasemel kontrollitud: GET/SYX komponenditõendid, kõik sisubaidid, lubatud alad, routing, kaadrid, CRC, footer, pikkused ja lõputäide.
-Kogu lahtipakitud sisu kattub varasema kasutaja seadmeekspordiga. Uue nimega faili pole eraldi seadmesse imporditud; sama sisu korduseksporti pole vaja. Uut kuulamis- või CPU-hinnangut ei lisandu.
+Kogu lahtipakitud sisu kattub varasema kasutaja seadmeekspordiga. Seda kodeeritud faili pole eraldi seadmesse imporditud; sama sisu korduseksporti pole vaja. Uut kuulamis- või CPU-hinnangut ei lisandu.
 
 KASUTAMINE
 Impordi soovi korral FM3-Editi tööpuhvrisse. Stseenid ja heliseaded kattuvad raportis nimetatud seadmeekspordiga. Täiendavat ekspordikatset ei nõuta.

@@ -7233,101 +7233,18 @@
               "type": "object",
               "additionalProperties": false,
               "minProperties": 1,
-              "description": "Exact FW13 observed points/recorded rounded aliases only; requires final External 1 -> Wah1 Control ALL. No interpolation; new combinations are software-checked, not independently measured.",
+              "description": "Requires final External 1 -> Wah1 Control ALL. Max: exact FW13 observed points only. Curve and timing fields: any value in the FM3 range, encoded with the native descriptor formula that reproduces every device reading (T12 one-field steps, measured Wah captures); values between measured points are hardware-unverified.",
               "properties": {
-                "max": {
-                  "type": "number",
-                  "enum": [
-                    10,
-                    7.5,
-                    5
-                  ],
-                  "description": "Max (Wah Control 0..10); use the recorded raw code and display."
-                },
-                "startPercent": {
-                  "type": "number",
-                  "enum": [
-                    0,
-                    10,
-                    20
-                  ],
-                  "description": "Start (%); use the recorded raw code and display."
-                },
-                "midPercent": {
-                  "type": "number",
-                  "enum": [
-                    50,
-                    40,
-                    55
-                  ],
-                  "description": "Mid (%); use the recorded raw code and display."
-                },
-                "endPercent": {
-                  "type": "number",
-                  "enum": [
-                    100,
-                    90,
-                    80
-                  ],
-                  "description": "End (%); use the recorded raw code and display."
-                },
-                "slopePercent": {
-                  "type": "number",
-                  "enum": [
-                    50,
-                    60,
-                    35
-                  ],
-                  "description": "Slope (%); use the recorded raw code and display."
-                },
-                "attackMs": {
-                  "type": "number",
-                  "enum": [
-                    10.1,
-                    99.9,
-                    500,
-                    100
-                  ],
-                  "description": "Attack (ms); use the recorded raw code and display."
-                },
-                "releaseMs": {
-                  "type": "number",
-                  "enum": [
-                    0,
-                    249.9,
-                    999.9,
-                    250,
-                    1000
-                  ],
-                  "description": "Release (ms); use the recorded raw code and display."
-                },
-                "scale": {
-                  "type": "number",
-                  "enum": [
-                    1,
-                    1.5,
-                    0.75
-                  ],
-                  "description": "Scale (unitless); use the recorded raw code and display."
-                },
-                "offsetPercent": {
-                  "type": "number",
-                  "enum": [
-                    0,
-                    -10,
-                    15
-                  ],
-                  "description": "Offset (%); use the recorded raw code and display."
-                },
-                "offValuePercent": {
-                  "type": "number",
-                  "enum": [
-                    5,
-                    20,
-                    80
-                  ],
-                  "description": "Off Value (%); use the recorded raw code and display."
-                }
+                "max": {"type": "number", "enum": [10, 7.5, 5], "description": "Max (Wah Control 0..10); use the recorded raw code and display."},
+                "startPercent": {"type": "number", "minimum": 0, "maximum": 100, "description": "Start (%) 0..100; the FM3 shows the decoded stored word (fm3-modifier-curve.mjs)."},
+                "midPercent": {"type": "number", "minimum": 0, "maximum": 100, "description": "Mid (%) 0..100; the FM3 shows the decoded stored word (fm3-modifier-curve.mjs)."},
+                "endPercent": {"type": "number", "minimum": 0, "maximum": 100, "description": "End (%) 0..100; the FM3 shows the decoded stored word (fm3-modifier-curve.mjs)."},
+                "slopePercent": {"type": "number", "minimum": 0, "maximum": 100, "description": "Slope (%) 0..100; the FM3 shows the decoded stored word (fm3-modifier-curve.mjs)."},
+                "attackMs": {"type": "number", "minimum": 0, "maximum": 10000, "description": "Attack (ms) 0..10000; the FM3 shows the decoded stored word (fm3-modifier-curve.mjs)."},
+                "releaseMs": {"type": "number", "minimum": 0, "maximum": 10000, "description": "Release (ms) 0..10000; the FM3 shows the decoded stored word (fm3-modifier-curve.mjs)."},
+                "scale": {"type": "number", "minimum": 0.1, "maximum": 10, "description": "Scale (unitless) 0.1..10; the FM3 shows the decoded stored word (fm3-modifier-curve.mjs)."},
+                "offsetPercent": {"type": "number", "minimum": -100, "maximum": 100, "description": "Offset (%) -100..100; the FM3 shows the decoded stored word (fm3-modifier-curve.mjs)."},
+                "offValuePercent": {"type": "number", "minimum": 5, "maximum": 95, "description": "Off Value (%) 5..95; the FM3 shows the decoded stored word (fm3-modifier-curve.mjs)."}
               }
             },
             "wahDamping": {

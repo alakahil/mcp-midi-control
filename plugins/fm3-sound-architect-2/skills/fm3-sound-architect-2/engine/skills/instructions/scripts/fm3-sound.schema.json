@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.5.0 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.6.0 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -2515,7 +2515,7 @@
       }
     },
     "volumePedal": {
-      "description": "External 1 -> Volume/Pan 1 Volume (VOLUME_GAIN), channels ALL, FW13 captured defaults. true = Min 0 / Max 10; {min,max} sets modifier words 1/2 with the VOLUME_GAIN codec (T10). Record 0, or record 1 when composer.modifiers.external1Wah is true. Requires volumePan:true.",
+      "description": "External 1 -> Volume/Pan 1 Volume (VOLUME_GAIN), channels ALL, FW13 captured defaults. true = Min 0 / Max 10; {min,max} sets modifier words 1/2 with the VOLUME_GAIN codec (T10); curve sets the curve and timing words 3-7 and 13-15 with the native-descriptor codec (T12; fm3-modifier-curve.mjs). Record 0, or record 1 when composer.modifiers.external1Wah is true. Requires volumePan:true.",
       "oneOf": [
         {
           "const": true
@@ -2534,6 +2534,62 @@
               "type": "number",
               "minimum": 0,
               "maximum": 10
+            },
+            "curve": {
+              "type": "object",
+              "additionalProperties": false,
+              "minProperties": 1,
+              "description": "Modify-page curve and timing fields; omitted fields keep the captured defaults (Start 0, Mid 50, End 100, Slope 50, Attack 10.1 ms, Scale 1, Offset 0, Release 10.1 ms).",
+              "properties": {
+                "startPercent": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Start %"
+                },
+                "midPercent": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Mid %"
+                },
+                "endPercent": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "End %"
+                },
+                "slopePercent": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Slope %"
+                },
+                "attackMs": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10000,
+                  "description": "Attack ms"
+                },
+                "scale": {
+                  "type": "number",
+                  "minimum": 0.1,
+                  "maximum": 10,
+                  "description": "Scale"
+                },
+                "offsetPercent": {
+                  "type": "number",
+                  "minimum": -100,
+                  "maximum": 100,
+                  "description": "Offset %"
+                },
+                "releaseMs": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10000,
+                  "description": "Release ms"
+                }
+              }
             }
           }
         }
