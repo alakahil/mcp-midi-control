@@ -1,0 +1,12 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "86a21cd0c818886ea9771299e89289ef79ddb8d0d89efde95ca23ea4fe046e7a",
+ "time": "2026-10-29T16:58:36",
+ "readings": {
+  "layout1": "1: Preset, Select in Bank - PP#1: Control Swich, Momentary; 2: Preset, Select in Bank - PP#2: Unassigned, --- 3: Preset, Select in Bank - PP#3: Unassigned,--; 4: Scene, Toggle - PP#4: Unassigned, --;5: Scene, Toggle -   --;6: Scene, Toggle -   --, 7: Unassigned  --;8: Unassigned  ----; 9: Unassigned  --; 10: Unassigned  --; 11: Layout, Inc/Dec; 12: Unassigned - PP#6: Unassigned, --",
+  "layout2": "1: Scene Select - PP#6: Unassigned, --; 2: Scene Select -   --; 3: Scene Select -   --; 4: Scene Select -   --; 5: Scene Select -   --; 6: Scene Select -   --; 7: Scene Select -   --; 8: Scene Select -   --; 9: Utility Tuner -   --; 10: Unassigned -   --; 11: Unassigned -   --; 12: Unassigned -   --",
+  "otherLayouts": "9 LAYOUTI; LAYOUT 3",
+  "perPresetFc": "1:Effect, Bypass - PP#7: Unassigned, - -"
+ },
+ "note": ""
+}
