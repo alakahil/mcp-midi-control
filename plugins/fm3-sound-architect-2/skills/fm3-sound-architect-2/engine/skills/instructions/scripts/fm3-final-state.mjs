@@ -1,6 +1,7 @@
 // Final report is decoded AFTER all layout/control/scene stages.
 import {renderVolumePedalText} from './fm3-volume-pedal.mjs';
 import {renderControlSwitchText} from './fm3-control-switches.mjs';
+import {renderCsPresetText} from './fm3-cs-preset.mjs';
 import {volumeChannelText} from './fm3-volume-text.mjs';
 import {describeVolumePan} from './fm3-volume.mjs';
 import {volumeUnits} from './fm3-volume-policy.mjs';
@@ -85,7 +86,7 @@ export function renderFinalSoundText(state,spec){
     'Seade: FM3 Mk II Turbo, firmware 13.',`Kitarr: ${context.guitar??'selle kirjelduse jaoks määramata'}`,
     `Helipead: ${context.pickups??'selle kirjelduse jaoks määramata'}`,`Ühendus: ${context.output??'selle kirjelduse jaoks määramata'}`,
     `Valitud Scene: ${state.selectedScene}`,...(state.signalLayout==='grid'?['Ruudustik (4 × 12; "-" = shunt, "." = tühi, "<2+3" = sisend ridadest 2 ja 3):',...state.signalRows.map((r,i)=>`Rida ${i+1}: ${r}`),...(state.signalLinks.length?['Hargnemised ja liitmised (sihtlahter ← allikas):',...state.signalLinks.map(l=>'  '+l)]:[]),...state.gridWarnings.map(w=>'HOIATUS: '+w)]:state.signalRows.map((r,i)=>`Rida ${i+2}: ${r}`)),...(state.sceneMidi?['','SCENE MIDI (salvestatud käsud; MIDI OUT väljastus ja PC nihe on mõõtmata)',...(state.sceneMidi.length?state.sceneMidi.map(c=>`Scene ${c.scene}, käsk ${c.command}: ${c.type} kanal ${c.channel}, ${c.type==='PC'?`programm ${c.program} (FM3 Value väli)`:`CC ${c.number}, väärtus ${c.value}`}`):['  käske pole'])]:[]),'','STSEENID JA LÕPLIKUD MUDELID'];
-  lines.push(...renderWahModifierText(state.modifierEdit),...renderVolumePedalText(state.volumePedal),...renderControlSwitchText(state.controlSwitches));
+  lines.push(...renderWahModifierText(state.modifierEdit),...renderVolumePedalText(state.volumePedal),...renderControlSwitchText(state.controlSwitches),...renderCsPresetText(state.csPreset));
   if(state.controls.some(w=>w.block==='in1'))lines.push('','SISENDI GATE — INPUT 1',
     'Presetis salvestatud A–D väärtused; Gate Type, Mode ja bypass säilivad. See ei ole eraldi Gate-plokk.',
     'Kodeering kasutab FW13 tabelikõveraid; 20 Input-sihtsõna säilimine ja 24.10.2026 valitud skaalapunktid on kinnitatud. Mõõtmata vaheväärtused tuginevad mudelile.',

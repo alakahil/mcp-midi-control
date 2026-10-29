@@ -35,4 +35,4 @@ Lülitus: Inverted and CHAN D records behave as written on the device: PEDAL 2 r
 
 Control Switchi preset-andmed: CS Per Scene: 482 bytes before the body end, 6 CS x 8 scenes, ON 0 / OFF 1 / LAST 2; per-preset definitions 3052 bytes before the end (category 7 = Control Switch, function 1 Latching / 0 Momentary, parameter CS number - 1); overrides 1920 bytes after (references/fm3-cs-steps-b-20261029.json).
 
-Endiselt lahti: generator fields for CS Per Scene and per-preset Control Switch footswitches; per-preset Hold functions.
+Endiselt lahti: footswitch positions other than Layout 1 switch 1 (override word order); per-preset Hold functions.

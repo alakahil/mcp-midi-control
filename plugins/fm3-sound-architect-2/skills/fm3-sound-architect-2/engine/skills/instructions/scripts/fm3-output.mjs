@@ -2,6 +2,7 @@ import {verifyPresetReplay} from './fm3-preset-core.mjs';
 import {verifyControlsOutput} from './fm3-controls-output.mjs';
 import {verifyVolumePedalOutput} from './fm3-volume-pedal.mjs';
 import {verifyControlSwitchOutput} from './fm3-control-switches.mjs';
+import {verifyCsPresetOutput} from './fm3-cs-preset.mjs';
 import {verifyGridOutput} from './fm3-grid-output.mjs';
 import {verifyVolumeOutput} from './fm3-volume-output.mjs';
 import {verifyInputGateOutput} from './fm3-input-gate-output.mjs';
@@ -52,6 +53,7 @@ export function verifyPresetOutputs(stem){
   verifyVolumeOutput(report,syx,txt,spec);
   verifyVolumePedalOutput(report,syx,txt,spec);
   verifyControlSwitchOutput(report,syx,txt,spec);
+  verifyCsPresetOutput(report,syx,txt,spec);
   verifyGridOutput(report,syx,txt,spec);
   verifyControlsOutput(report,syx,txt,spec);
   verifyPresetReplay(report,syx,txt,spec);

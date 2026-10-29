@@ -331,9 +331,18 @@ Wahi ja Volume'i kõrval kirjest 2. Mall tuleb FM3 enda salvestatud presetitest 
 on kinnitatud (T9); lülitamine on kontrollimata. Control Switchi tüübi ja jalglüliti määrab kasutaja FM3-l. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md).
 0.3.32: `invert:true` (Min ON, Max OFF) ja `channel:"A".."D"` (sõna 17) on lisavalikud. Kuvamine on kinnitatud T7-s.
 
-## Skeem (0.3.34)
+## Control Switchi stseeniolek ja jalglüliti (0.3.35)
 
-`scripts/fm3-sound.schema.json` (0.6.0) tunneb nüüd `controlSwitches`-it (sh `invert`, `channel`), `volumePedal` kujul
+`controlSwitchScenes: [{switch, scene, state: ON|OFF|LAST}]` seab Control Switchi oleku stseeni valikul ja
+`footswitches: [{layout:1, switch:1, function: latching|momentary, controlSwitch}]` paneb FM3 lüliti 1 (Layout 1) selles
+presetis Control Switchi juhtima. Mõlemad salvestuvad presetti (FC PER-PRESET), üldseadeid ei muudeta, ja mõlemad vajavad sama
+CS-i seost `controlSwitches`-is. Ilma nendeta on iga CS igas stseenis OFF. Kodeering on seadmel kinnitatud (T14/T14B) ja
+generaatori tulemus võrdub FM3 enda salvestatud kehaga. Teisi lülitiasukohti veel ei pakuta. Kui kasutaja on FM3 üldseadetes
+per-preset override'i keelanud, asendus ei rakendu – ütle seda. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md#stseeniolek-ja-jalglüliti-0335).
+
+## Skeem (0.3.35)
+
+`scripts/fm3-sound.schema.json` (0.7.0) tunneb nüüd `controlSwitches`-it (sh `invert`, `channel`), `controlSwitchScenes`, `footswitches`, `volumePedal` kujul
 `true` või `{min, max, curve}` ning `out2` ruudustikulahtris ja `duplicate`-is. `test-sound-schema.mjs` kontrollib, et skeem ja
 generaator otsustavad uute väljade ja kõigi praeguste näidete puhul sama. Skeemis väljendamatud reeglid (näiteks
 min = max, sama sihtmärk kaks korda, Out 2 ilma lingita) kontrollib ainult generaator.
