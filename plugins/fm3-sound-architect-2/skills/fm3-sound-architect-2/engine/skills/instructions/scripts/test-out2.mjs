@@ -52,4 +52,4 @@ try{
   fail('out2-mask',x=>{x.syx=rewrite(r.syx,bb2=>bb2.writeUInt16LE(2,260+11*16+3*4+2));x.report.outputSha256=sha(x.syx);});
   fail('spec-no-out2',(_x,s)=>{s.duplicate=[];});
 }finally{fs.rmSync(temp,{recursive:true,force:true});}
-console.log(JSON.stringify({passed:true,out2AfterOut1:true,templateFromBaseOut1:true,invalidSpecs:rejected,tamperCases:tamper,hardwareTested:false}));
+console.log(JSON.stringify({passed:true,out2AfterOut1:true,templateFromBaseOut1:true,invalidSpecs:rejected,tamperCases:tamper,hardwareConfirmed:cap.hardware.startsWith("confirmed")}));
