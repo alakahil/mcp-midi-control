@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2136,
-  "filePaths": 2340,
+  "uniqueContents": 2139,
+  "filePaths": 2343,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -834,6 +834,12 @@
       "bytes": 2868,
       "paths": [
         "references/geq-full-20261010-194115/step-057-89f7a5714f/result.json"
+      ]
+    },
+    "1135da8ca6e1c18d8350f21aa6cd382cfbf607126a2f212788d50f9927120d39": {
+      "bytes": 3197,
+      "paths": [
+        "references/fm3-switch-direct-20261029.json"
       ]
     },
     "113e6f4911df6aa43435318ade37e98ebc8f78c9e483ed618697507edb82d267": {
@@ -7359,6 +7365,12 @@
         "references/peq-full-20261009-152606/step-012-953f98ce28/capture.json"
       ]
     },
+    "9498679d63da877fbb52943eb6d794d3393447712b32d4f90a084493cab9b9f6": {
+      "bytes": 6844,
+      "paths": [
+        "references/fm3-mod-steps-20261029.json"
+      ]
+    },
     "949cc035614bd29ab301d9e74939f9cf01d829c5ae624192da8092774cbc6e59": {
       "bytes": 5027,
       "paths": [
@@ -10478,6 +10490,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-011-4618179c1f/donor.syx"
+      ]
+    },
+    "d2f4828c71a0fabc9b5f1ba2b45a5161e10feb63fa0b80d6d85c1fafb9a6bacc": {
+      "bytes": 3576,
+      "paths": [
+        "references/fm3-combo-store-20261029.json"
       ]
     },
     "d323890bc91dec92471eb330d847cf9b10038a3da5a9d7dc6b021aa5f4b162c5": {
