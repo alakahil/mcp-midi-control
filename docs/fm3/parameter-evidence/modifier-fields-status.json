@@ -29,7 +29,7 @@
   },
   "comboStore": {
    "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-combo-store-20261029.json",
-   "sha256": "d2f4828c71a0fabc9b5f1ba2b45a5161e10feb63fa0b80d6d85c1fafb9a6bacc"
+   "sha256": "2a31b8aa42c357fb87d0273c1466685517a5f0a6a90e0ad1e2e9eeddf0bed62c"
   },
   "modSteps": {
    "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-mod-steps-20261029.json",

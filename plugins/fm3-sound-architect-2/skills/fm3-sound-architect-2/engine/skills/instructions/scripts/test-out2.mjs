@@ -31,7 +31,7 @@ assert.ok(!b.subarray(o1.header,o1.header+o1.size).equals(bb.subarray(baseOut1.h
 assert.deepEqual(readGrid(b).filter(g=>g.id===42||g.id===43).map(g=>[g.row,g.col,g.id,g.mask]),[[2,11,42,4],[3,11,43,4]]);
 assert.equal(r.report.cpu.scenes[0].parts.out2,1);assert.equal(r.report.stages.records.duplicated[0].block,'out2');
 assert.ok(r.txt.includes('rida 4, veerg 12 (Out 2) ← reverb (rida 3, veerg 5)'));
-const cap=getPresetCapabilities().grid.duplicate.out2;assert.equal(cap.hardware,'not tested (import, signal on the Out 2 jacks)');
+const cap=getPresetCapabilities().grid.duplicate.out2;assert.equal(cap.hardware,'confirmed 2026-10-29 (T11): stored and reloaded unchanged; Out 2 L carried the same processed signal as Out 1 at the same loudness once the Out 2 level knob was up (references/fm3-combo-store-20261029.json); stereo not checked');
 let rejected=0;
 const bad=(edit,re)=>{const s=structuredClone(spec);edit(s);assert.throws(()=>createPreset(base,s),re);rejected++;};
 bad(s=>s.duplicate=['out2','out2'],/twice|already/);

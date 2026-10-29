@@ -76,7 +76,13 @@
    "out2Layout": "Out 2",
    "out2Audio": "-"
   },
-  "note": "out2Audio \"-\": nothing connected to Out 2; audio not checked"
+  "note": "out2Audio \"-\": nothing connected to Out 2 during the run; checked afterwards, see out2Audio",
+  "out2Audio": {
+   "first": "Effektid on samad nii out1, kui out2. Aga out 2 on tuntavalt vaiksem",
+   "afterRaisingOut2Knob": "Jah, siiski kõik ok ja sama valjusega, OUT 2 nupp oli maas",
+   "method": "User recalled the stored T11 preset on the FM3 front panel and listened to Out 1 (XLR, balanced) and Out 2 L (1/4\" TS, unbalanced) through his own monitoring; no script, no device I/O. He compared the effects (block bypass) and the level.",
+   "result": "Out 2 carries the same processed signal as Out 1 and, with the Out 2 level knob raised, the same loudness. The first quieter reading was the Out 2 knob turned down, not the preset."
+  }
  },
  "storedLocation": {
   "shown": 425,
@@ -106,12 +112,14 @@
  "findings": [
   "All five bindings survive STORE and reload unchanged: External 1 -> Wah (record 0), External 1 -> Volume with Min 2.50 / Max 7.50 (record 1), Control Switch 2 -> Input Boost, Control Switch 3 -> Bright inverted (Min ON / Max OFF), Control Switch 4 -> Fat on CHAN D only.",
   "Out 2 (effect ID 43) under Out 1 at row 4 column 12 is shown in LAYOUT and survives STORE; its grid cell and block record are stored as generated.",
+  "Out 2 audio (follow-up, stored preset 425): the same effects as Out 1 and the same loudness once the Out 2 level knob was raised; the earlier quieter reading came from that knob being down.",
   "Apart from the Wah / Volume/Pan record order (the same reordering as T9) the stored body equals the generated body word for word. Unlike T9, the Wah Scene 1 bypass word was not changed, because the pedal was not moved before STORE."
  ],
  "notMeasured": [
-  "Out 2 audio",
+  "Out 2 stereo (only Out 2 L connected)",
   "Control Switch switching (no footswitch assigned to Control Switches 2-4; see T13)"
  ],
  "resultsSha256": "4f71040f39e38805cd134f9dd7c5b4f6c750ad33156f050563aeaf5a1e62deea",
- "loadSha256": "39ab0d16c9e85f4b86771ccb519b3c02bc5e1aa6518896b55cdc144ed1a99ab1"
+ "loadSha256": "39ab0d16c9e85f4b86771ccb519b3c02bc5e1aa6518896b55cdc144ed1a99ab1",
+ "out2AudioSha256": "ef1065ffdd279d447f5c83ba76531ace652115ef1ae6815c6403fb60bcd5f6bc"
 }
