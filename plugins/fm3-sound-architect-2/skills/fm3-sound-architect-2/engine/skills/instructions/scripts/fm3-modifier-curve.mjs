@@ -32,21 +32,22 @@ export function decodeCurveWord(key,word){
  return round(f.dec(word),f.decimals);
 }
 // Every device reading of these words, joined by word index; the codec must reproduce each one.
-const REF=new URL('../references/',import.meta.url),EV=['fm3-mod-steps-20261029.json','wah-measured-controls.json','fm3-modifier-display-20261028.json'];
-export const curveEvidenceHashes=Object.freeze({'fm3-mod-steps-20261029.json':'22d3eae35e206b3efb86af4307daf36acb2341406892273645a80bdf1e232d48','wah-measured-controls.json':'f5112b4340c09eabee0fc366fc6a9f1394c2bcb969b2b0fe8f88760ee2225406','fm3-modifier-display-20261028.json':'a05a22e35e5c7a157a15fd093d92a5653fcaaf85736f4da2b5a57068ee279e9a'});
+const REF=new URL('../references/',import.meta.url),EV=['fm3-mod-steps-20261029.json','wah-measured-controls.json','fm3-modifier-display-20261028.json','fm3-cs-steps-20261029.json'];
+export const curveEvidenceHashes=Object.freeze({'fm3-cs-steps-20261029.json':'58e4cb0e30eef1fded80443e6eb4aa9b25ec978af66f40345db3ea315c765c7b','fm3-mod-steps-20261029.json':'22d3eae35e206b3efb86af4307daf36acb2341406892273645a80bdf1e232d48','wah-measured-controls.json':'f5112b4340c09eabee0fc366fc6a9f1394c2bcb969b2b0fe8f88760ee2225406','fm3-modifier-display-20261028.json':'a05a22e35e5c7a157a15fd093d92a5653fcaaf85736f4da2b5a57068ee279e9a'});
 function devicePoints(){
- const [steps,wah,disp]=EV.map(f=>{const b=fs.readFileSync(new URL(f,REF));check(sha(b)===curveEvidenceHashes[f],'evidence drift: '+f);return JSON.parse(b);});
+ const [steps,wah,disp,cs]=EV.map(f=>{const b=fs.readFileSync(new URL(f,REF));check(sha(b)===curveEvidenceHashes[f],'evidence drift: '+f);return JSON.parse(b);});
  const pts=[],num=s=>Number(String(s).replace(',','.').replace(/[^0-9.\-]/g,''));
  for(const f of modifierCurveFields){
   for(const [w,shown] of Object.entries(steps.decoded['word'+f.word]?.points??{}))pts.push({key:f.key,word:+w,display:num(shown),source:'T12'});
   for(const p of wah.fields.find(x=>x.word===f.word)?.points??[])pts.push({key:f.key,word:p.raw,display:p.display,input:p.input,source:'wah-measured-controls'});
+  if(f.key==='offValuePercent')pts.push({key:f.key,word:cs.preset.offValueWord,display:num(cs.readings.offValue),source:'T14'});
   for(const it of [...disp.items,...disp.repeat.items].filter(i=>i.validReading!==false&&i.words?.[f.word]!==undefined&&i.fields?.[f.label]!==undefined))
    pts.push({key:f.key,word:it.words[f.word],display:num(it.fields[f.label]),source:'T7/T7b '+it.id});
  }
  return pts;
 }
-// One T7 reading disagrees with the codec: the Wah record with Off Value word 65534 was read as "5.0%" (95.0%
-// expected). Five other device points, the native descriptor (5..95 %) and T12 agree; kept visible, not used.
+// One T7 reading disagrees with the codec: the Wah record with Off Value word 65534 was read as "5.0%". T14 read
+// the same word on the device as 95.0% (the codec value), so the T7 reading was a misreading; kept visible, not used.
 const KNOWN_OUTLIERS=[{key:'offValuePercent',word:65534,display:5,source:'T7/T7b autoengage'}];
 export function verifyCurveEvidence(){
  const pts=devicePoints(),out=[];
@@ -66,4 +67,4 @@ export function modifierCurveCapability(){return {
  codec:'native FW13 MOD descriptor ranges on the 0..65534 stored word (linear; Scale log10 0.1..10; Offset centred at 32767)',
  evidence:EV.map(f=>'references/'+f),fullRange:true,fieldIndependenceVerified:true,
  hardware:'every field stepped on the device one at a time (T12, 2026-10-29); values between the measured points follow the descriptor formula, hardware-unverified',
- offValueOutlier:'T7 read Off Value word 65534 as 5.0%; the codec gives 95.0% (all other readings agree)',deviceIO:false};}
+ offValueOutlier:'T7 read Off Value word 65534 as 5.0%; T14 read the same word as 95.0% (codec value): a T7 misreading',deviceIO:false};}

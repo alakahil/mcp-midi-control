@@ -1,0 +1,102 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-10-29",
+ "test": "T14",
+ "preset": {
+  "name": "CS STEPS T14",
+  "sha256": "357fcd98000bb1d22294ea17078531579e5c17011a514130e142d4d770ab133d",
+  "bindings": [
+   {
+    "record": 0,
+    "source": "External 1",
+    "effectId": 94,
+    "pid": 5,
+    "channel": "ALL"
+   },
+   {
+    "record": 1,
+    "source": "Control Switch 2",
+    "effectId": 58,
+    "pid": 42,
+    "channel": "ALL"
+   },
+   {
+    "record": 2,
+    "source": "Control Switch 3",
+    "effectId": 58,
+    "pid": 41,
+    "channel": "ALL"
+   },
+   {
+    "record": 3,
+    "source": "Control Switch 4",
+    "effectId": 58,
+    "pid": 80,
+    "channel": "CHAN D"
+   }
+  ],
+  "scenes": {
+   "1": "Amp channel A",
+   "2": "Amp channel D"
+  },
+  "offValueWord": 65534
+ },
+ "method": "Edit-buffer load (7F 00) once; the user made one front-panel change per stored step and STOREd to his test location; the script read it with fn=0x03 (read-only) after each STORE. Observation steps: no STORE, no read. No global setting changed.",
+ "storedLocation": {
+  "shown": 426,
+  "index": 425
+ },
+ "readings": {
+  "offValue": "95.0%",
+  "controllersMenu": "CONTROLLERS menüü valikud: ADSR 1; ADSR 2; Sequencer; Env Follower;Pich; Scene Ctrl; Manual; Modifiers. Scened 1-8 ja Controller 1-4 näitavad kõik 0.0%",
+  "fcPerPresetMenu": "FC PER-PRESET menüüd: Per-Preset FC; Overrides; CS Per Scene",
+  "definition": "kategooria Control Switch, funktsioon \"Control Switch: Latching\", Control Switch 2. Hold Function/Category - unassigned",
+  "override": "Esimest lülitit, PP#1 Control Swich. Latching",
+  "scene1": {
+   "before": "OFF ON OFF",
+   "press1": "ON ON OFF",
+   "press2": "OFF ON OFF",
+   "led": "dim -> bright (active) -> dim",
+   "source": "note file; the terminal answer for press 1 (\"ON/OFF/OFF\") was corrected by the user to ON ON OFF"
+  },
+  "scene2": "Enne - OFF/ ON/OFF Prast vajutust - ON/ON/OFF",
+  "scene1Reselected": "OFF/ ON/OFF",
+  "skipped": [
+   {
+    "id": "cs2scene2",
+    "note": "CONTROLLERS menüüs CS lehte pole"
+   },
+   {
+    "id": "cs3scene1",
+    "note": "CONTROLLERS menüüs CS lehte pole"
+   }
+  ]
+ },
+ "decoded": {
+  "offValue": "word 12 = 65534 shows 95.0% (native 5..95 % range); the T7 \"5.0%\" reading for the same word was a misreading",
+  "perPresetSwitchRegion": {
+   "position": "fixed distance from the end of the body: definitions start 3052 bytes before the end (13050-byte body: offset 9998); marker 1525 four bytes before; the same marker sits at the same distance in 384/384 tonepack presets",
+   "definitions": "24 definitions x 8 words, stored as 8 arrays of 24 words (array k at +48k). Definition 1 \"Control Switch: Latching, Control Switch 2, Hold unassigned\" = arrays 0/1/3 -> 7 / 1 / 1 (array 0 = Tap category, 7 = Control Switch). Which of arrays 1 and 3 is the function and which the Control Switch number is not yet separated (T14b).",
+   "overrides": "from 1920 bytes after the definitions: one word per footswitch, 65535 = none, n = definition n+1; Layout 1 switch 1 is the first word"
+  },
+  "controlSwitchBehaviour": [
+   "At rest (switch off) the records show their Min side: Input Boost OFF; Bright ON (inverted record); Fat OFF in scene 2 although channel D stores Fat ON (CHAN D record at Min).",
+   "Control Switch: Latching on the overridden switch toggles Control Switch 2: first press Input Boost ON and the LED lights, second press OFF and the LED dims. Bright (CS 3) and Fat (CS 4) do not move.",
+   "Scene 2: OFF ON OFF at selection, ON ON OFF after one press. Re-selecting Scene 1 shows OFF ON OFF: the latched state did not carry over the scene change (CS Per Scene state of the preset, not checked yet)."
+  ]
+ },
+ "findings": [
+  "Per-preset switch definitions and overrides are stored in the preset (STORE changed only those words); no global setting is needed for a Control Switch footswitch.",
+  "The FM3 keeps \"CS Per Scene\" under FC PER-PRESET (not under CONTROLLERS as on the Axe-Fx III); the three CS-per-scene steps of this pack were skipped and move to T14b."
+ ],
+ "notMeasured": [
+  "CS Per Scene words",
+  "Control Switch: Momentary",
+  "Control Switch number word vs function word (arrays 1 / 3)",
+  "audio"
+ ],
+ "resultsSha256": "38c78eb41dcf33b5157995dbbd33b5608fafc9388088ab08ab3f9b7cb9f9b885",
+ "notesSha256": "25776aa777055a98d3a8e07e80c201a075dd4e67e0916709749b7a9ccec9b1c2"
+}

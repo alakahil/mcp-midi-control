@@ -8,7 +8,9 @@
 // The user makes ONE change per step on the front panel and STOREs to his test location; the collector reads that
 // location after each STORE (fn=0x03, read only), so consecutive dumps locate the CS-per-scene and per-preset switch
 // words. Observation steps (store:false) record what a footswitch press does.
-// Usage: node tools/fm3/cs-steps-build.mjs OUT_DIR
+// Variant B (T14b): same bindings; steps on FC PER-PRESET -> CS Per Scene and on the per-preset switch definition
+// (Control Switch number, then Latching -> Momentary), so each word of the definition is identified on its own.
+// Usage: node tools/fm3/cs-steps-build.mjs OUT_DIR [B]
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
@@ -20,9 +22,9 @@ const {inspectStructure}=await imp('scripts/drive-collector/fm3-prototype.mjs');
 const {parsePresetDump}=await imp('scripts/fm3-codec.mjs');
 const {readModifiers}=await imp('scripts/fm3-parameter-dependencies.mjs');
 const sha=b=>createHash('sha256').update(b).digest('hex');
-const [out]=process.argv.slice(2);assert.ok(out,'Usage: cs-steps-build.mjs OUT_DIR');
+const [out,variant]=process.argv.slice(2);assert.ok(out&&(variant===undefined||variant==='B'),'Usage: cs-steps-build.mjs OUT_DIR [B]');
 const BASE=fs.readFileSync(new URL(E+'examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx',import.meta.url));
-const NAME='CS STEPS T14';
+const NAME=variant==='B'?'CS STEPS T14B':'CS STEPS T14';
 export const spec={composer:{schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:NAME,wahChannels:[{channel:'A',type:'FAS Wah'}],modifiers:{external1Wah:true,wahControls:{offValuePercent:95}}},
   layout:{row2:['wah','drive','amp','cab'],row3:['delay','reverb']},selectedScene:1,
   blockScenes:{wah:[{scene:1,channel:'A',bypass:true},{scene:2,channel:'A',bypass:true}],amp:[{scene:1,channel:'A',bypass:false},{scene:2,channel:'D',bypass:false}]},
@@ -55,9 +57,25 @@ const steps=[
    text:'Vali Scene 2 (Amp kanal D). Loe kohe; siis vajuta asendatud jalglülitit üks kord ja loe.'},
   {id:'scene1again',field:null,store:false,question:'Scene 1 kohe pärast valimist: '+BBF,
    text:'Vali uuesti Scene 1 ja loe kohe (vajutamata). See näitab, kas CS 2 Scene 1 = ON rakendub stseeni valikul.'}];
-const manifest={kind:'fm3-store-steps',version:1,date:'2026-10-29',test:'T14',confirmName:NAME,preset:{file:'CS_STEPS.syx',sha256:sha(syx)},
+const stepsB=[
+  {id:'base',field:null,ask:false,text:'Ära muuda midagi. (Võrdlus: genereeritud fail pärast STORE-i.)'},
+  {id:'csLook',field:null,store:false,question:'Mida CS Per Scene leht näitab (ridade/veergude nimed; CS 2 ja CS 3 väärtused Scene 1 ja 2 jaoks; millised valikud on)?',
+   text:'HOME → nupp D (FC PER-PRESET) → leht CS Per Scene. ÄRA veel muuda midagi.'},
+  {id:'cs2scene1',field:'CS 2 Scene 1',text:'CS Per Scene: CS 2, Scene 1 → ON (kui juba ON, siis OFF). Muuda ainult seda.'},
+  {id:'cs2scene2',field:'CS 2 Scene 2',text:'CS Per Scene: CS 2, Scene 2 → LAST (kui LAST-i pole, vali kolmas valik). Muuda ainult seda.'},
+  {id:'cs3scene1',field:'CS 3 Scene 1',text:'CS Per Scene: CS 3, Scene 1 → ON (kui juba ON, siis OFF). Muuda ainult seda.'},
+  {id:'ppDefine',field:'Per-preset switch 1',question:'Mis on nüüd definitsiooni 1 Tap ja Hold, ja mis Control Switchi number?',
+   text:'Per-Preset FC: definitsioon 1 → Tap: kategooria Control Switch, "Control Switch: Latching", Control Switch 2. Hold jäta Unassigned. (Sama mis T14-s.)'},
+  {id:'ppNumber',field:'Per-preset switch 1 CS number',text:'Per-Preset FC: definitsioon 1 → muuda AINULT Control Switchi number 2 → 3.'},
+  {id:'ppMomentary',field:'Per-preset switch 1 function',text:'Per-Preset FC: definitsioon 1 → muuda AINULT funktsioon "Control Switch: Latching" → "Control Switch: Momentary".'},
+  {id:'ppOverride',field:'Override',question:'Millise lüliti see nüüd asendab?',text:'Overrides: Layout 1, lüliti 1 → PP#1 (nagu T14-s).'},
+  {id:'scene1',field:null,store:false,question:'Scene 1 kohe pärast valimist: '+BBF,text:'Vali Scene 2, siis uuesti Scene 1 ja loe kohe (vajutamata).'},
+  {id:'scene2',field:null,store:false,question:'Scene 2 kohe pärast valimist: '+BBF,text:'Vali Scene 2 ja loe kohe (vajutamata).'},
+  {id:'hold',field:null,store:false,question:'Scene 1, lüliti 1 ALL HOIDES ja pärast lahti laskmist: '+BBF+' (näiteks "hoides ON OFF OFF / lahti ON ON OFF")',
+   text:'Vali Scene 1. Hoia FM3 lülitit 1 umbes 2 sekundit all, loe; lase lahti, loe.'}];
+const manifest={kind:'fm3-store-steps',version:1,date:'2026-10-29',test:variant==='B'?'T14b':'T14',confirmName:NAME,preset:{file:'CS_STEPS.syx',sha256:sha(syx)},
   bindings:active.map(([record,source,effectId,pid,channel])=>({record,source,effectId,pid,channel})),scenes:{1:'Amp channel A',2:'Amp channel D'},offValueWord:65534,
   open:'Vali HOME leht. Kõik muudatused on ainult selles presetis; üldseadeid (SETUP) ära muuda.',
-  steps,method:'Edit-buffer load (7F 00) once; after each user STORE one read-only stored-dump request (fn=0x03 hi lo 00); observation steps have no STORE and no read. The script never stores and never sets. Per-preset switches and CS-per-scene states are stored in the preset; no global setting is changed.'};
+  steps:variant==='B'?stepsB:steps,method:'Edit-buffer load (7F 00) once; after each user STORE one read-only stored-dump request (fn=0x03 hi lo 00); observation steps have no STORE and no read. The script never stores and never sets. Per-preset switches and CS-per-scene states are stored in the preset; no global setting is changed.'};
 fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest,null,1)+'\n');
-console.log(JSON.stringify({name:NAME,sha256:manifest.preset.sha256,steps:steps.length,bindings:active.length}));
+console.log(JSON.stringify({name:NAME,sha256:manifest.preset.sha256,steps:manifest.steps.length,bindings:active.length}));
