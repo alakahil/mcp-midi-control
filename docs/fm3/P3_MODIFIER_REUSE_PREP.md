@@ -1,10 +1,11 @@
-# P3: bounded modifier removal and reuse preparation
+# P3: bounded modifier removal and reuse — completed device test
 
-Status: offline candidate; hardware import, STORE/reload, UI state and export are pending.
+Status: completed on 2026-10-30. The user confirmed all five device steps; the
+retained export passes the full record comparison.
 The installed plugin remains 0.3.38. This research tool adds no public generator
 field and enables no general allocator or arbitrary-base editing.
 
-The audit's removal/reuse item can be tested with one generated preset and one
+The bounded removal/reuse device test used one generated preset and one
 user export. The fixture is derived from two ordinary 0.3.38 presets, both of
 whose quartets pass the unchanged public verifier. The final research quartet
 has its own explicit verifier and must not be labelled as passing the public
@@ -50,7 +51,7 @@ it does not ignore bypass changes or unknown-byte differences. Comparison alone
 does not certify the user's import, STORE/reload or observations. Synthetic
 exports in the tests are explicitly software evidence only.
 
-## One device test
+## Completed device test protocol
 
 Import `FM3_P3_REMOVE_REUSE.syx` to a spare user-selected location. This is a
 structural/controller test; guitar audio is not needed. Leave the expression
@@ -69,6 +70,31 @@ pedal still, so Wah auto-engage does not change a stored bypass state.
    it with the UI/STORE confirmation. Do not clear or recreate bindings manually.
 
 If a field differs, retain that observation and export for analysis instead of
-editing it to match. A successful test would establish this fixed generated
-removal/reuse case; it would not prove FM3-Edit's own automatic slot allocation,
+editing it to match. This successful test establishes the fixed generated
+removal/reuse case; it does not prove FM3-Edit's own automatic slot allocation,
 all 32 slots, other source/target families, audio, CPU or a general public API.
+
+
+## Retained result
+
+The [six evidence files](hardware-results/2026-10-30/p3-modifier-reuse/) contain
+an unchanged original research quartet, the user export, and the completed
+[receipt](hardware-results/2026-10-30/p3-modifier-reuse/FM3_P3_seadmekatse_kviitung_2026-10-30.json).
+The original TXT/validation still say hardware pending because they describe the
+pre-test state; the separate completed receipt records the later observation.
+
+All 32 modifier records match byte for byte. Active records remain 0, 1, 3, 4;
+record 2 remains an interior inactive hole. Source, effect and nonzero PID 42
+were cleared in that removed Input Boost record, with every other word kept.
+Record 1 retains the new CS2 → Cut binding, including its reset range and curve.
+
+The 13,216-byte bodies differ only in block ordering: the FM3 placed Volume/Pan
+(effect 102) before Wah (effect 94), exchanging block indices 9 and 10. Every
+block byte, prefix, scene word and system-tail byte is preserved after this
+ordering normalization. The raw SYX files and raw bodies are not byte-identical.
+The user supplied a grouped confirmation of all five steps, rather than
+separately transcribed numeric measurements. No audio or CPU result is inferred.
+
+The existing test now replays the retained hardware export and checks the receipt
+as well as the 47 synthetic rejection cases. Public distribution of these P3
+files was explicitly authorized on 2026-10-30.

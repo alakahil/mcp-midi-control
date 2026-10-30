@@ -1,7 +1,9 @@
-// Offline checks of the bounded P3 experiment; synthetic exports are not hardware evidence.
+// Offline regression checks plus replay of the separately retained P3 device export.
+// Synthetic exports below are never counted as hardware evidence.
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import assert from 'node:assert/strict';
 import {context,candidate,reuseFixtureRecord,words,writeCandidate,verifyCandidate,compareExport,decode,sha} from './p3-modifier-reuse.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from '../../plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-codec.mjs';
@@ -59,5 +61,31 @@ try{
  fs.writeFileSync(stem+'.txt',changed);report.artifacts['.txt']={sha256:sha(changed),bytes:changed.length};
  fs.writeFileSync(stem+'.validation.json',JSON.stringify(report,null,2)+'\n');rejects(()=>verifyCandidate(stem));
 }finally{fs.rmSync(tmp,{recursive:true,force:true});}
+// The original pre-test quartet is retained unchanged; a separate receipt holds
+// the later grouped user confirmation and the actual stored device export.
+const dir=fileURLToPath(new URL('../../docs/fm3/hardware-results/2026-10-30/p3-modifier-reuse/',import.meta.url));
+const retainedStem=path.join(dir,'FM3_P3_REMOVE_REUSE');
+verifyCandidate(retainedStem);
+const hardware=fs.readFileSync(retainedStem+'_export.syx');
+assert.equal(sha(hardware),'33a379410482de1f0e722efc8a2c54540c067ec845f32451d4cfe9394578a2d8','actual export hash');
+const comparison=compareExport(hardware),hb=decode(hardware).body;
+assert.equal(comparison.bodyByteIdentical,false);
+assert.deepEqual(comparison.reorderedBlocks,[{effectId:94,generatedIndex:9,exportIndex:10},{effectId:102,generatedIndex:10,exportIndex:9}]);
+const receipt=JSON.parse(fs.readFileSync(path.join(dir,'FM3_P3_seadmekatse_kviitung_2026-10-30.json')));
+assert.equal(receipt.status,'completed_passed');assert.equal(receipt.passed,true);
+assert.equal(receipt.import.sha256,sha(r.syx));assert.equal(receipt.import.bytes,r.syx.length);
+assert.equal(receipt.export.sha256,sha(hardware));assert.equal(receipt.export.bytes,hardware.length);
+assert.equal(receipt.comparison.bodyBytes,hb.length);assert.equal(hb.length,13216);
+for(const [key,value] of Object.entries(comparison))assert.deepEqual(receipt.comparison[key],value,'receipt comparison '+key);
+assert.equal(receipt.comparison.all32ModifierRecordsByteIdentical,true);
+assert.deepEqual(hb.subarray(1538,4610),r.body.subarray(1538,4610));
+assert.deepEqual(receipt.activeModifiers,r.report.activeModifiers);
+assert.deepEqual(receipt.removal.words,words(hb,2));assert.deepEqual(receipt.reuse.words,words(hb,1));
+assert.equal(receipt.removal.formerTargetPid,42);assert.equal(receipt.removal.noCompaction,true);
+for(const key of ['importAndSixSourcesMatch','cutMinMaxChannelMidAttackMatch','scene1CutOffScene2CutOn','storeOtherPresetReturnAndRepeatMatch'])
+ assert.equal(receipt.userConfirmation[key],true,'retained user confirmation '+key);
+assert.equal(receipt.userConfirmation.finalSelectedScene,1);assert.equal(hb[0],0);
+assert.equal(receipt.publication.newP3DeviceEvidenceAuthorized,true);
 console.log(JSON.stringify({passed:true,negativeCases:negatives,changedBytes:13,activeRecords:[0,1,3,4],inactiveHole:2,
- sourceQuartetsVerified:true,finalResearchQuartetVerified:true,syntheticExportComparison:true,deviceIO:false,hardwareVerified:false}));
+ sourceQuartetsVerified:true,finalResearchQuartetVerified:true,syntheticExportComparison:true,
+ retainedHardwareExportVerified:true,all32ModifierRecordsPreserved:true,reorderedBlocks:2,deviceIO:false}));

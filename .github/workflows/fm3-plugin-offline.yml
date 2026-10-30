@@ -1,9 +1,9 @@
 name: FM3 plugin offline
 on:
   push:
-    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml', '.github/workflows/native-matrix.yml']
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'docs/fm3/hardware-results/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml', '.github/workflows/native-matrix.yml']
   pull_request:
-    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml', '.github/workflows/native-matrix.yml']
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/**', 'docs/fm3/parameter-evidence/**', 'docs/fm3/hardware-results/**', 'packages/fractal-midi/catalog/fm3.json', 'packages/fractal-midi/src/gen3/fm3/**', 'packages/fractal-midi/docs/research/primitives/_negative/gen3-paramid-reuse-across-model-bytes.md', '.github/workflows/fm3-plugin-offline.yml', '.github/workflows/native-matrix.yml']
   workflow_dispatch:
 permissions:
   contents: read
