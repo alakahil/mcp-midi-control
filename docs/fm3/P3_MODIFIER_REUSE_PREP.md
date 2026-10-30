@@ -1,0 +1,74 @@
+# P3: bounded modifier removal and reuse preparation
+
+Status: offline candidate; hardware import, STORE/reload, UI state and export are pending.
+The installed plugin remains 0.3.38. This research tool adds no public generator
+field and enables no general allocator or arbitrary-base editing.
+
+The audit's removal/reuse item can be tested with one generated preset and one
+user export. The fixture is derived from two ordinary 0.3.38 presets, both of
+whose quartets pass the unchanged public verifier. The final research quartet
+has its own explicit verifier and must not be labelled as passing the public
+`fm3-preset.mjs --verify` interface.
+
+| Record | Original binding | Candidate |
+| --- | --- | --- |
+| 0 | External 1 → Wah Control | Preserved |
+| 1 | External 1 → Volume, range 2.5–7.5, Mid 25%, Attack 500 ms | Removed, then reused for CS2 → Amp Cut, normal full range, ALL channels, default curve |
+| 2 | CS2 → Amp Input Boost, inverted, CHAN D | Removed; words 0, 8 and 9 cleared; all remaining words preserved |
+| 3 | CS3 → Amp Bright, inverted, ALL | Preserved at record 3 |
+| 4 | CS4 → Amp Fat, normal, CHAN D | Preserved at record 4 |
+
+Record 2 remains a hole between active records. Reuse of record 1 writes only
+words 0–20 from the exact generated Cut donor; its header and words 21–24 remain
+unchanged. The final body differs from the generated seed in exactly 13 bytes.
+The replacement resets nondefault range/curve values instead of carrying Volume
+settings into a switch target. The fixed preimage guard rejects every other
+body, occupied/secondary-source records, duplicate targets, unknown headers,
+reserved-word changes and unapproved replacement templates.
+
+Evidence: `fm3-modifier-removal-20261028.json` describes 652 initialized inactive
+records, including 265 interior holes. T12 (`fm3-mod-steps-20261029.json`) confirms
+Source NONE on Volume clears words 0 and 8 while preserving the others; its PID
+word 9 was already zero. Thus T12 alone does not prove nonzero-PID clearing. This
+candidate additionally exercises clearing the Input Boost PID 42. Firmware
+runtime free-object search is not treated as serialized-slot allocation proof.
+
+## Reproduce offline
+
+Run from the repository root; use a new output stem outside the source tree:
+
+```bash
+node tools/fm3/test-p3-modifier-reuse.mjs
+node tools/fm3/p3-modifier-reuse.mjs build /ABS/OUTPUT/FM3_P3_REMOVE_REUSE
+node tools/fm3/p3-modifier-reuse.mjs verify /ABS/OUTPUT/FM3_P3_REMOVE_REUSE
+node tools/fm3/p3-modifier-reuse.mjs compare /ABS/USER_EXPORT.syx
+```
+
+The comparator requires every modifier byte, gap, block byte, scene word and
+system byte to match. It can normalize block order by unique effect ID only;
+it does not ignore bypass changes or unknown-byte differences. Comparison alone
+does not certify the user's import, STORE/reload or observations. Synthetic
+exports in the tests are explicitly software evidence only.
+
+## One device test
+
+Import `FM3_P3_REMOVE_REUSE.syx` to a spare user-selected location. This is a
+structural/controller test; guitar audio is not needed. Leave the expression
+pedal still, so Wah auto-engage does not change a stored bypass state.
+
+1. Confirm the preset name and scene 1, `CUT OFF`. Read the modifier sources:
+   Wah Control = External 1; Volume = NONE; Input Boost = NONE; Cut = Control
+   Switch 2; Bright = Control Switch 3; Fat = Control Switch 4.
+2. On Cut's Modify page confirm Min OFF, Max ON, Channel ALL, Mid 50.0%, Attack
+   about 10.1 ms. The removed Volume range and custom curve must not remain.
+3. Select scene 2, `CUT ON`: Amp channel A Cut should be ON. Return to scene 1:
+   Cut should be OFF. This uses CS per scene; no footswitch assignment is needed.
+4. STORE in scene 1, select another preset and return. Repeat source, Cut
+   range/curve and scene checks, then return to scene 1 and STORE.
+5. Export that stored preset once as `FM3_P3_REMOVE_REUSE_export.syx`, and provide
+   it with the UI/STORE confirmation. Do not clear or recreate bindings manually.
+
+If a field differs, retain that observation and export for analysis instead of
+editing it to match. A successful test would establish this fixed generated
+removal/reuse case; it would not prove FM3-Edit's own automatic slot allocation,
+all 32 slots, other source/target families, audio, CPU or a general public API.
