@@ -19,5 +19,14 @@ salvestatud sisu ning tõrjub rikutud faile. Vana tõendi generaator jääb 0.3.
 D1: T8 kinnitab Satriani V4 laadimist ja kaheksa stseeni CPU-näite. V4 terviklik
 uus tagasilugemine ning V3/V4 kuulamisvõrdlus on eraldi kinnitamata.
 
+P2 kaks SYX-i viivad korpuse loenduse 798 failitee ja 641 erineva sisuni;
+631 on toetatud ning 10 vanemat faili jäävad eraldi. Korpuse koond ja selle
+pakendatud räsi on uuendatud. Kohalik testirunner kontrollib nüüd enne täissuite'i
+ka korpuse ja pakendatud koondi ajakohasust, nagu GitHubi CI.
+
+Üldine ruudustikuaudit märgib P2 failide kirjeskanni süsteemisaba muutuse tõttu
+lahendamata; seda piiri ei eemaldata. P2 regressioon võrdleb kogu salvestatud
+keha, sealhulgas jalglülitite ja stseenide andmeid, algse genereeritud failiga.
+
 Täpset commit'i, 77 testi, CI-d, avaldatud paketi tagasivõrdlust ja käivitaja
 sidumist kinnitab pärast avaldamist eraldi väljalaskekviitung.

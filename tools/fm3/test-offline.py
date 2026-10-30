@@ -13,6 +13,10 @@ def tree_hash(root):
 def run(output):
     output.mkdir(parents=True,exist_ok=True)
     before=tree_hash(PLUGIN);results=[]
+    # New SYX fixtures change the corpus summary and its pinned runtime copy.
+    # Catch stale evidence locally, before the full suite, as CI already does.
+    subprocess.run(['node',str(ROOT/'tools/fm3/modifier-corpus-audit.mjs')],check=True)
+    subprocess.run(['python3',str(ROOT/'tools/fm3/point4-evidence.py')],check=True)
     subprocess.run(['python3',str(ROOT/'tools/fm3/evidence-index.py')],check=True)
     # Keep the packaged Node-only lookup tied to the independently replayed
     # hardware capture and Python arithmetic model, not just its pinned hash.

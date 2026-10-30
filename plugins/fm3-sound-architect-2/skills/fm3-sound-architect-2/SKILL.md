@@ -76,7 +76,7 @@ V3/V4 kuulamisvõrdlus on eraldi kinnitamata.
 
 Näidiste kontroll hõlmab 51 spetsifikatsiooni: 48 SYX-i taastuvad baittäpselt,
 kolm ajaloolist uurimissisendit jäävad teadlikult avaliku sisendilepingu väliseks.
-Korpuse audit aktsepteerib 629 erinevat toetatud vormingus sisu. Need arvud
+Korpuse audit aktsepteerib 631 erinevat toetatud vormingus sisu. Need arvud
 sisaldavad genereeritud näiteid ega tähenda uusi sõltumatuid seadmemõõtmisi.
 
 ## Kadudeta arhiivi vähendamine (0.3.28, 27.10.2026)
