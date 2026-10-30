@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.37`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.38`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -49,13 +49,29 @@ Latching/Momentary ja CS Per Scene käitumist. T16 kinnitab genereeritud PP#1
 näitu ning kolme definitsiooni kodeeringut; kõigi 24 määrangu ega iga layout'i
 seadmekatset sellest ei järeldu. Ära korda neid juba kinnitatud katseid.
 
+## P2 kolme jalglüliti seadmetõend (0.3.38, 30.10.2026)
+
+`MOOTOR/references/p2-three-switches-20261030/receipt.json` kinnitab 0.3.37-ga
+loodud `FM3 P2 THREE SWITCHES` preseti käsitsi importi, Layout 1 lüliteid 1–3,
+CS2 Latching Boost ALL, CS3 pööratud Momentary Bright ALL ning CS4 Latching
+Fat kanalil D. Kasutaja kinnitas ON/OFF/LAST käitumise, Amp A Fat-i säilimise
+OFF-is ning STORE → muu preset → tagasi taastumise 4. stseenis.
+Ekspordi kogu 12804-baidine dekodeeritud keha vastab algfailile; ainus erinevus
+on valitud stseen (bait 0: 0 → 3). Algne nelja faili komplekt ja eksport on
+samasse tõendikausta säilitatud. `test-p2-three-switches` taastab algse SYX-i
+praeguse generaatoriga ning kontrollib ekspordi terviklikku keha ja vigade tõrjumist.
+See tõend piirdub selle preseti ja kolme määranguga; kõigi 24 määrangu, teiste
+layout'ide, heli või CPU seadmekatset sellest ei järeldu. Ära nõua P2 kordamist.
+
 ## GitHubi Satriani V4 täiendus (0.3.29, 28.10.2026)
 
 Lisatud on GitHubi PR #37 põhiharusse liidetud `SATRIANI_SOAP_ON_A_ROPE_V4`
 nelja faili näide. V4 muudab ainult Amp C seadeid ning preseti ja 5. stseeni
 nime; stseeni uus nimi on `CRUNCH FULL`. Amp C: Crunch Orange, Gain 6,
 Bass 5.5, Mid 7.5, Presence 4 ja Level −10 dB; Output Scene 5 jääb +1 dB peale.
-V1–V3 kuulamistagasiside on allpool; V4 seadmeimport ja kuulamine on ootel.
+V1–V3 kuulamistagasiside on allpool. T8 kinnitab V4 laadimist CPU-katseks
+ning kõigi kaheksa stseeni CPU-näite. V4 terviklik uus tagasilugemine ja
+V3/V4 kuulamisvõrdlus on eraldi kinnitamata.
 Ära omista V3 seadmetõendit automaatselt V4-le.
 
 Näidiste kontroll hõlmab 51 spetsifikatsiooni: 48 SYX-i taastuvad baittäpselt,

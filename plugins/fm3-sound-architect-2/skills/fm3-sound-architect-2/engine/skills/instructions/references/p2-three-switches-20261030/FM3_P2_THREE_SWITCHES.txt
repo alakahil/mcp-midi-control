@@ -1,0 +1,171 @@
+FM3 SOUND ARCHITECT 2 — LÕPLIK PRESET
+Preset: FM3 P2 THREE SWITCHES
+Eesmärk: Kolme genereeritud jalglüliti koondkatse. Offline-kontroll; import, vajutused ja STORE/reload vajavad üht tulevast seadmekatset.
+Seade: FM3 Mk II Turbo, firmware 13.
+Kitarr: selle kirjelduse jaoks määramata
+Helipead: selle kirjelduse jaoks määramata
+Ühendus: selle kirjelduse jaoks määramata
+Valitud Scene: 1
+Rida 2: In 1(1) → drive(3) → amp(7) → cab(10) → Send(12)
+Rida 3: Return(1) → delay(4) → reverb(9) → Out 1(12)
+
+STSEENID JA LÕPLIKUD MUDELID
+
+EXTERNAL 1 → WAH — LÕPPFAILIST
+Seos: väljas (NONE); siht Wah 1 Control; kanalid ALL (A–D).
+Soovitud allikas oli juba valitud; allikasõna säilis muutmata.
+Auto Engage: MED SPD; säilitatud; salvestatud kood 2.
+Damping: EXPONENTIAL; säilitatud; salvestatud kood 0.
+Min: 0.00; säilitatud; salvestatud kood 0; täpne mõõdetud kuvapunkt, kogu skaala valem kinnitamata.
+Max: 10.00; säilitatud; salvestatud kood 65534.
+Start: 0.0%; säilitatud; salvestatud kood 0.
+Mid: 50.0%; säilitatud; salvestatud kood 32767.
+End: 100.0%; säilitatud; salvestatud kood 65534.
+Slope: 50.0%; säilitatud; salvestatud kood 32767.
+Attack: 10.1 ms; säilitatud; salvestatud kood 66.
+Release: 0.0 ms; säilitatud; salvestatud kood 0.
+Scale: 1.000; säilitatud; salvestatud kood 32767.
+Offset: 0.0%; säilitatud; salvestatud kood 32767.
+Off Value: 5.0%; säilitatud; salvestatud kood 0.
+Attack/Release ajad säilisid muutmata.
+Muudetakse ainult selgesõnaliselt valitud mõõtepunkte. Täisvahemiku valem ja väljade sõltumatus pole kinnitatud; uued kombinatsioonid on kontrollitud ainult arvutis. Auto Engage OFF ei lülita External 1 → Wah Control seost välja.
+Wah-ploki stseenikanal ja bypass on eraldi seaded. Seose sisselülitamine ei aktiveeri bypass-is Wah-plokki.
+External 1 peab seadme globaalsetes seadetes olema seotud soovitud pedaali või MIDI-kontrolleriga. Generaator seda ei seadista ega kontrolli pedaali asendit.
+Seose väljalülitamine säilitab Wah Control’i salvestatud väärtuse. Aktiivne seos blokeerib selle käsitsi kirjutamise.
+Tõend: olemasolevad võrdluspresetid ja FW13 metaandmed; Auto Engage MED SPD=2 / OFF=0, Damping EXPONENTIAL=0 / LINEAR=1 ning Min 0.00=0 / 2.50=16375 on kinnitatud 21.10.2026 eraldi kasutaja muutmispaaride, ekraanipiltide ja algväärtuste kinnitustega. Maxi ja wahControls punktid põhinevad kahel koondkatsel ning eraldi Max 7.50 → 5.00 katsel; koondkatsed ei ole sõltumatud üksikkatsed. Damping’u ajakäitumine, uue väljundi import, pedaali toimimine, heli ja CPU on eraldi kontrollid.
+
+CONTROL SWITCH SEOSED — LÕPPFAILIST
+Control Switch 2 → amp Boost (DISTORT_BOOST); kanalid ALL; kirje 1; Min OFF, Max ON (FM3 tonepacki vaikemall).
+Control Switch 3 → amp Bright (DISTORT_BRIGHT); kanalid ALL; kirje 2; pööratud: Min ON, Max OFF (lüliti vajutamine lülitab välja).
+Control Switch 4 → amp Fat (DISTORT_FAT); kanalid CHAN D; kirje 3; Min OFF, Max ON (FM3 tonepacki vaikemall).
+Control Switchi olek stseeni kaupa ja jalglüliti (Latching/Momentary) on eraldi väljad controlSwitchScenes / footswitches (FC PER-PRESET, salvestub presetti); ilma nendeta on kõik CS-id igas stseenis OFF ja jalglüliti määra FM3-l.
+Seose mall on FM3 enda salvestatud presetitest (1401 sama malliga kirjet). 28.10.2026 katses T9 jäid sama malliga seosed (CS2 → Input Boost, CS3 → Bright) pärast STORE-i ja uuesti laadimist alles; selle uue faili import ja lülitamine on seadmes kontrollimata.
+
+CONTROL SWITCH STSEENID JA JALGLÜLITID — LÕPPFAILIST
+Control Switch 2, Scene 1: OFF.
+Control Switch 2, Scene 2: ON.
+Control Switch 2, Scene 3: LAST (jätab eelmise stseeni oleku).
+Control Switch 2, Scene 4: OFF.
+Control Switch 2, Scene 5: OFF.
+Control Switch 2, Scene 6: OFF.
+Control Switch 2, Scene 7: OFF.
+Control Switch 2, Scene 8: OFF.
+Control Switch 3, Scene 1: OFF.
+Control Switch 3, Scene 2: OFF.
+Control Switch 3, Scene 3: OFF.
+Control Switch 3, Scene 4: OFF.
+Control Switch 3, Scene 5: OFF.
+Control Switch 3, Scene 6: OFF.
+Control Switch 3, Scene 7: OFF.
+Control Switch 3, Scene 8: OFF.
+Control Switch 4, Scene 1: OFF.
+Control Switch 4, Scene 2: ON.
+Control Switch 4, Scene 3: LAST (jätab eelmise stseeni oleku).
+Control Switch 4, Scene 4: OFF.
+Control Switch 4, Scene 5: OFF.
+Control Switch 4, Scene 6: OFF.
+Control Switch 4, Scene 7: OFF.
+Control Switch 4, Scene 8: OFF.
+Teised Control Switchi stseeniolekud: OFF (FM3 vaikimisi). FC PER-PRESET → CS Per Scene.
+Layout 1, lüliti 1 → PP#1: Control Switch: Latching (vajutus lülitab sisse/välja), Control Switch 2. Ainult selles presetis (Per-Preset FC / Overrides); lüliti tavaline funktsioon on selles presetis asendatud.
+Layout 1, lüliti 2 → PP#2: Control Switch: Momentary (sees ainult hoidmise ajal), Control Switch 3. Ainult selles presetis (Per-Preset FC / Overrides); lüliti tavaline funktsioon on selles presetis asendatud.
+Layout 1, lüliti 3 → PP#3: Control Switch: Latching (vajutus lülitab sisse/välja), Control Switch 4. Ainult selles presetis (Per-Preset FC / Overrides); lüliti tavaline funktsioon on selles presetis asendatud.
+Kodeering on seadmel kinnitatud 29.10.2026 (T14/T14B/T16: iga väli FM3-l ükshaaval salvestatud ja sõna-sõnalt tagasi loetud, generaatori tulemus võrdub FM3 salvestatud kehaga; T15: lülitite asukohad Overrides lehel; Latching ja Momentary käitusid Layout 1-s nii, nagu kirjas). Asendus kehtib ainult valitud layout'is: kui FM3 on teises layout'is, teeb lüliti oma tavalist tööd. Üldseadeid ei muudeta; kui per-preset override on FM3 üldseadetes keelatud, asendus ei rakendu. Selle uue faili import on seadmes kontrollimata.
+Scene 1: A OFF START
+  amp A: USA MK IV Rhythm 1; sees; Level -9.0002 dB
+  cab A: inherited; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; bypass
+Scene 2: D ON
+  amp D: USA MK IV Lead Mid; sees; Level -8.1594 dB
+  cab A: inherited; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; bypass
+Scene 3: D LAST
+  amp D: USA MK IV Lead Mid; sees; Level -8.1594 dB
+  cab A: inherited; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; bypass
+Scene 4: A OFF STORE
+  amp A: USA MK IV Rhythm 1; sees; Level -9.0002 dB
+  cab A: inherited; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; bypass
+Scene 5: A OFF 5
+  amp A: USA MK IV Rhythm 1; sees; Level -9.0002 dB
+  cab A: inherited; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; bypass
+Scene 6: A OFF 6
+  amp A: USA MK IV Rhythm 1; sees; Level -9.0002 dB
+  cab A: inherited; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; bypass
+Scene 7: A OFF 7
+  amp A: USA MK IV Rhythm 1; sees; Level -9.0002 dB
+  cab A: inherited; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; bypass
+Scene 8: A OFF 8
+  amp A: USA MK IV Rhythm 1; sees; Level -9.0002 dB
+  cab A: inherited; sees
+  delay A: Deluxe Mind Guy; bypass
+  drive A: Full OD; bypass
+  reverb A: Room: Large Room; bypass
+
+TABELIGA MÄÄRATUD PARAMEETRID — LÕPPFAILIST
+amp A Fat (DISTORT_FAT): OFF ; küsitud OFF; raw 0; enum-labels-crosschecked.
+
+MUUD PÕHISEADED LÕPPFAILIST
+Ümardatud salvestatud väärtused; detailne loend ja toorsõnad on validation.json failis.
+amp A Presence: 4.0001 /10 [taper-class-verified]
+amp A Treble: 5.9999 /10 [taper-class-verified]
+amp A Mid: 3.6032 /10 [taper-class-verified]
+amp A Bass: 5 /10 [taper-class-verified]
+amp A Gain: 7 /10 [taper-class-verified]
+amp A Amp1 Level: -9.0002 dB [taper-class-verified]
+amp D Presence: 0.9999 /10 [taper-class-verified]
+amp D Treble: 6.4 /10 [taper-class-verified]
+amp D Mid: 6.7188 /10 [taper-class-verified]
+amp D Bass: 0.9999 /10 [taper-class-verified]
+amp D Gain: 5 /10 [taper-class-verified]
+amp D Amp1 Level: -8.1594 dB [taper-class-verified]
+delay A Tempo: NONE   [enum-labels-crosschecked]
+delay A Feedback: 25.0008 % [taper-class-verified]
+delay A Time: 399.913 ms [taper-class-verified]
+drive A Mix: 100 % [measured]
+drive A Level: 8.9199 /10 [measured]
+drive A Tone: 6.87 /10 [measured]
+drive A Drive: 3.35 /10 [measured]
+reverb A Time: 1.6396 s [taper-class-verified]
+Modifikaator: DISTORT_BOOST; allikas Control Switch 2; kanal ALL. Salvestatud väärtus ei tõenda kontrolleri hetkeväärtust.
+Modifikaator: DISTORT_BRIGHT; allikas Control Switch 3; kanal ALL. Salvestatud väärtus ei tõenda kontrolleri hetkeväärtust.
+Modifikaator: DISTORT_FAT; allikas Control Switch 4; kanal CHAN D. Salvestatud väärtus ei tõenda kontrolleri hetkeväärtust.
+
+SÕLTUVUSED JA KONTROLLITASE
+Kanalimuudatus mõjutab kõiki seda kanalit kasutavaid stseene. Määramata väärtused pärinevad alusest või kopeeritud täiskanalimallist.
+Cab-mallid kasutavad olemasolevat Dyna-Cab teeki. Väliseid User IR-faile ei paigaldata; muutmata IR/pedaali/globaalseadistuse sõltuvused säilivad alusfailist.
+Koostamisel kontrolliti lõppfaili kaadreid, CRC-d, sisu, marsruutimist ja deklareeritud muudatusi. Nelja väljundfaili terviklikkuse kinnitab edukas --verify. Selle lõppfaili import, heli ja CPU pole uue kontrolliga kinnitatud.
+Choruse, Drive’i, Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri parameetriloend ning tabelikirjutused järgivad piiratud FW13 tüübi- ja algoritmireegleid. Delay, Reverbi, Flangeri, Phaseri, Compressori, Wah’ ja Tremolo/Panneri mudelivahetus ning Phaseri Mode nõuavad täiskanalimalli. Rotaryl puudub tüübi valija; PID 0 on Rate. Pitchi 16 mudelit kontrollitakse eraldi ja TYPE nõuab täiskanalimalli; 34 täisarvu/enum-välja kasutavad eraldi kontrollitud presetisõna kodeeringut. Seitse kohandatud noodivälja nõuavad kogu lõpliku skaala kontrolli; toonika kuvaseade jääb suletuks. Globaalse skaala valik ei lisa presetile skaala sisu ning salvestatud arpedžiaatorisamm ei kinnita selle kõlamist. 6. punkti 13 pere / 515 PID-i XML-nähtavus on kontrollitud. MultiDelay metaandmestik on ainult loetav ega ava selle ploki lisamist. Mõõdikud, tegevusnupud ja XML-is puuduvad juhikud ei ole skalaarseadistused. 21 põhiseost ning 10 Plexi/TenTapi tempo-seost ja olemasolevad modifikaatorisihtmärgid on eraldi kontrollitud; muud sõltuvused, sh Compressori automaatne ajastus/võimendus ja muude plokkide tüübinähtavus, jäävad katmata. Tempo või modifikaatori juhitud parameetri salvestatud väärtus ei tõenda hetkel kõlavat väärtust. Peidetud salvestatud sõnad säilivad toorandmetena.
+
+KASUTAMINE
+1. Säilita pooleliolev töö ning impordi fail FM3-Editi tööpuhvrisse.
+2. Kontrolli veateateid, valitud Scene 1, kanaleid ja soovitud helitasemeid.
+3. Uut eksporti küsi ainult konkreetse seni kinnitamata katse jaoks; varasemaid piisavaid tõendeid kasuta uuesti.
+Generaator ei ava seadmeühendust ega saada MIDI/SET/SAVE-käske.
+SHA-256: fc9c2295540f3786c14b18cde08c572a1b8697f701395c45f5c058bb79d6806a
+
+CPU HINNANG (FM3 Mk II Turbo, püsivara 13; mõõdetud 2026-10-23)
+Suurim: 44.6 % (Scene 1); ohutu piir 80 %.
+Stseenid: S1 44.6 %, S2 44.6 %, S3 44.6 %, S4 44.6 %, S5 44.6 %, S6 44.6 %, S7 44.6 %, S8 44.6 %
+Osa tüüpe on mõõtmata; kasutatakse olemasolevat pere maksimumi või üht mõõdetud võrdlustüüpi. See ei taga ülempiiri.
+Märkused: cab LEGACY unmeasured (measured: DYNA-CAB)
+Koondmudeli kontrollnäide G06: hinnang 44,3 %, mõõdetud 41,5 % (erinevus 2,8 protsendipunkti).
+Amp ja Delay töötavad eraldi tuumal; selle koormust see hinnang ei näe.

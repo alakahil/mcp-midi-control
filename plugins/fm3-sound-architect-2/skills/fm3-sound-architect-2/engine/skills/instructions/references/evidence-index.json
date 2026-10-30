@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2143,
-  "filePaths": 2347,
+  "uniqueContents": 2148,
+  "filePaths": 2352,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -650,12 +650,6 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-full-20261012-122507/step-012-121956b84f/donor.syx"
-      ]
-    },
-    "0c8bde234a03de1df711ccfa504418917984ecc7299ad53fe17e5d3f488c2cab": {
-      "bytes": 25614,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "0cc1824f14bc4e12e3545872bfe4fdb176fe4544ce05b667f875677316962e2d": {
@@ -1407,6 +1401,12 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-048-6688abc93b/donor.syx"
+      ]
+    },
+    "1c71095b9a06cc5693c55a7aefc78c326a825dce79e1fc5c2e5ecc9a04f947cc": {
+      "bytes": 7380,
+      "paths": [
+        "references/p2-three-switches-20261030/FM3_P2_THREE_SWITCHES.spec.json"
       ]
     },
     "1ca3231213355f05f3b6da3fbf13b0dff2c138538dceae92764f317de0664cf1": {
@@ -3268,6 +3268,12 @@
         "references/enhancer-full-20261012-122507/step-036-75bdc8b3fb/result.json"
       ]
     },
+    "4086b0ad35f8ef8c631214533dca285a85db34abcfe4446e030b9f5587dd2f2c": {
+      "bytes": 26044,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "40be64a74947d2f885ecb750347321b5fecfc5c1649f1a920ff7aa0e5c0272ee": {
       "bytes": 24680,
       "paths": [
@@ -4709,6 +4715,12 @@
         "references/geq-full-20261010-194115/step-152-d61d768f0f/result.json"
       ]
     },
+    "5e678eab582c7f788f40aabfb151b909c90a5fa51065f817fecafe3d43d3f66d": {
+      "bytes": 491678,
+      "paths": [
+        "references/p2-three-switches-20261030/FM3_P2_THREE_SWITCHES.validation.json"
+      ]
+    },
     "5e6e9395bb979d40543d608386ad2e26dbaab9bc8364dfed6ae0fb1139e38476": {
       "bytes": 457,
       "paths": [
@@ -5952,6 +5964,12 @@
       "bytes": 6927,
       "paths": [
         "references/chorus-batch-20261007-134057/capture-20261007T131325-982ea66761/capture.json"
+      ]
+    },
+    "78eff4c0e6c87ee5105b853ae0d2cc8f48bdeaa0950cdec1d5bb020b3fe8afd0": {
+      "bytes": 24680,
+      "paths": [
+        "references/p2-three-switches-20261030/FM3_P2_THREE_SWITCHES_export.syx"
       ]
     },
     "793fb3ae113f65cf719c7615b53b379b1b05063914f3b571ad06c3c497d3184a": {
@@ -8182,6 +8200,12 @@
       "bytes": 4973,
       "paths": [
         "references/geq-full-20261010-194115/step-054-51a044ba70/capture.json"
+      ]
+    },
+    "a4defabab7c2cacfa7c8c323e494354dc7593d8ee21a2a0c9fe000d1a976933b": {
+      "bytes": 3793,
+      "paths": [
+        "references/p2-three-switches-20261030/receipt.json"
       ]
     },
     "a4edc6f55c1b2da4e48e68742632feef6894790c7ed5dcf0fd710c015aa523c5": {
@@ -12844,6 +12868,12 @@
       "paths": [
         "references/geq-full-20261010-194115/step-131-bd45acc2e1/donor.syx",
         "references/geq-full-20261010-194115/step-135-4ad933d67b/donor.syx"
+      ]
+    },
+    "fc9c2295540f3786c14b18cde08c572a1b8697f701395c45f5c058bb79d6806a": {
+      "bytes": 24680,
+      "paths": [
+        "references/p2-three-switches-20261030/FM3_P2_THREE_SWITCHES.syx"
       ]
     },
     "fcf5d344941c2222745949226d422f50c1ce0d2f12e78fafb139913e7c061438": {
