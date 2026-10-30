@@ -10,12 +10,14 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.37 parandusväljalaset. Control Switchi stseeniolek
-ja jalglüliti funktsioon nõuavad stringi; massiiviks vormistatud enum ei tohi läbida
-sisendikontrolli ega `--verify` kontrolli. Regressioonid hõlmavad varasemat Latching-SYX / Momentary-TXT
-vastuolu ning skeemi ja generaatori ühist keeldumist. Korrektse sisendi binaarne kirjutus ei muutu.
-Juhendi kehtiv versioon ja Wah + Volume, `invert`/`channel`, Out 2 ning T2/T9/T10/T11/T14/T14b/T16
-seadmetõendite ulatus on ühtlustatud. Uusi seadmemõõtmisi ei lisata.
+Praegune lähtekood valmistab ette 0.3.38 tõendiväljalaset. P2 lisab 30.10.2026
+kasutaja kinnitatud kolme jalglüliti katse, algse 0.3.37 nelja faili komplekti
+ja STORE/reload-järgse ekspordi. Regressioon taastab sama SYX-i praeguse
+mootoriga ja kontrollib kogu ekspordikeha; ainsana erineb valitud stseen.
+D1 juhendiparandus eristab T8-ga kinnitatud V4 laadimist/CPU-näite endiselt
+kinnitamata terviklikust uuest tagasilugemisest ja V3/V4 kuulamisvõrdlusest.
+Kirjutustugi ja kehtiva sisendi binaarne tulemus ei muutu.
+P2 seadmevaatlused on olemas; väljalaske testid on nende offline-taasesitus.
 
 Säilib 0.3.36 tugi: `footswitches` layout'idele 1–9 ja lülititele 1–12, kuni 24
 per-preset definitsiooni; soundi skeem 0.8.0. T16 kolme definitsiooniga keha kordusvõrdlus
@@ -105,7 +107,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Kohustuslik testiloend on `references/offline-suite.json` (0.3.37: 76 testi), sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Kohustuslik testiloend on `references/offline-suite.json` (0.3.38: 77 testi), sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.

@@ -689,6 +689,15 @@
       ],
       "scope": "Read-only raw grid and record association, captured 590-byte wire frames, unknown mask bits, malformed inputs, Scene MIDI adjacency and refreshed-hash rejection; no device I/O",
       "required": true
+    },
+    {
+      "id": "test-p2-three-switches",
+      "command": [
+        "node",
+        "scripts/test-p2-three-switches.mjs"
+      ],
+      "scope": "Pinned 0.3.37 generated quartet and user-confirmed P2 STORE/reload export; exact current-generator SYX replay, complete body comparison and corrupt-output rejection. Physical observations are bounded to Layout 1 switches 1–3; no new hardware I/O.",
+      "required": true
     }
   ]
 }

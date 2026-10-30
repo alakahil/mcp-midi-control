@@ -239,44 +239,44 @@
     "mode": "local-read-only-corpus-audit",
     "metadataFirmware": 13,
     "firmwareDetected": null,
-    "files": 796,
-    "uniqueSizedInputs": 639,
+    "files": 798,
+    "uniqueSizedInputs": 641,
     "duplicates": 157,
     "unsupportedSize": 0,
     "skippedSymlinks": 0,
     "summary": {
       "supportedStructure": 627,
-      "partialRecordScans": 2,
+      "partialRecordScans": 4,
       "unsupportedOrInvalid": 10,
       "familyRecordShapes": {
-        "CABINET:106x4": 627,
+        "CABINET:106x4": 629,
         "CHORUS:32x4": 224,
         "COMP:37x4": 226,
-        "DELAY:89x4": 627,
-        "DISTORT:144x4": 627,
+        "DELAY:89x4": 629,
+        "DISTORT:144x4": 629,
         "ENHANCER:12x4": 80,
-        "FDBKRET:6x1": 407,
-        "FDBKSEND:2x1": 407,
+        "FDBKRET:6x1": 409,
+        "FDBKSEND:2x1": 409,
         "FILTER:37x4": 388,
         "FLANGER:33x4": 197,
         "FORMANT:12x4": 3,
-        "FUZZ:44x4": 627,
+        "FUZZ:44x4": 629,
         "GATE:19x4": 3,
         "GEQ:20x4": 244,
-        "INPUT:10x4": 627,
+        "INPUT:10x4": 629,
         "LOOPER:24x1": 3,
         "MEGATAP:35x2": 3,
         "MIDIBLOCK:257x1": 1,
         "MIXER:21x4": 1,
         "MULTICOMP:37x4": 3,
         "MULTIPLEXER:7x4": 1,
-        "OUTPUT:26x4": 627,
+        "OUTPUT:26x4": 629,
         "PEQ:33x4": 335,
         "PHASER:35x4": 225,
         "PITCH:114x4": 10,
         "PLEX:96x4": 3,
         "RESONATOR:40x2": 3,
-        "REVERB:71x4": 627,
+        "REVERB:71x4": 629,
         "RINGMOD:13x2": 3,
         "ROTARY:21x4": 11,
         "SYNTH:42x4": 3,
@@ -28837,6 +28837,93 @@
           }
         ],
         "tailFingerprintMatched": true
+      },
+      {
+        "sha256": "78eff4c0e6c87ee5105b853ae0d2cc8f48bdeaa0950cdec1d5bb020b3fe8afd0",
+        "copies": 1,
+        "bytes": 24680,
+        "status": "partial-record-scan",
+        "checks": {
+          "frameChecksums": true,
+          "presetCrc": true,
+          "footer": true
+        },
+        "bodyBytes": 12804,
+        "records": [
+          {
+            "effectId": 58,
+            "baseEffectId": 58,
+            "instance": 1,
+            "words": 144,
+            "channels": 4,
+            "family": "DISTORT"
+          },
+          {
+            "effectId": 62,
+            "baseEffectId": 62,
+            "instance": 1,
+            "words": 106,
+            "channels": 4,
+            "family": "CABINET"
+          },
+          {
+            "effectId": 70,
+            "baseEffectId": 70,
+            "instance": 1,
+            "words": 89,
+            "channels": 4,
+            "family": "DELAY"
+          },
+          {
+            "effectId": 186,
+            "baseEffectId": 186,
+            "instance": 1,
+            "words": 6,
+            "channels": 1,
+            "family": "FDBKRET"
+          },
+          {
+            "effectId": 182,
+            "baseEffectId": 182,
+            "instance": 1,
+            "words": 2,
+            "channels": 1,
+            "family": "FDBKSEND"
+          },
+          {
+            "effectId": 118,
+            "baseEffectId": 118,
+            "instance": 1,
+            "words": 44,
+            "channels": 4,
+            "family": "FUZZ"
+          },
+          {
+            "effectId": 37,
+            "baseEffectId": 37,
+            "instance": 1,
+            "words": 10,
+            "channels": 4,
+            "family": "INPUT"
+          },
+          {
+            "effectId": 42,
+            "baseEffectId": 42,
+            "instance": 1,
+            "words": 26,
+            "channels": 4,
+            "family": "OUTPUT"
+          },
+          {
+            "effectId": 66,
+            "baseEffectId": 66,
+            "instance": 1,
+            "words": 71,
+            "channels": 4,
+            "family": "REVERB"
+          }
+        ],
+        "tailFingerprintMatched": false
       },
       {
         "sha256": "79895ae0f22ec63415af91ad382c06d90157325553348d064f990641fff3e9ae",
@@ -67825,6 +67912,93 @@
           }
         ],
         "tailFingerprintMatched": true
+      },
+      {
+        "sha256": "fc9c2295540f3786c14b18cde08c572a1b8697f701395c45f5c058bb79d6806a",
+        "copies": 1,
+        "bytes": 24680,
+        "status": "partial-record-scan",
+        "checks": {
+          "frameChecksums": true,
+          "presetCrc": true,
+          "footer": true
+        },
+        "bodyBytes": 12804,
+        "records": [
+          {
+            "effectId": 58,
+            "baseEffectId": 58,
+            "instance": 1,
+            "words": 144,
+            "channels": 4,
+            "family": "DISTORT"
+          },
+          {
+            "effectId": 62,
+            "baseEffectId": 62,
+            "instance": 1,
+            "words": 106,
+            "channels": 4,
+            "family": "CABINET"
+          },
+          {
+            "effectId": 70,
+            "baseEffectId": 70,
+            "instance": 1,
+            "words": 89,
+            "channels": 4,
+            "family": "DELAY"
+          },
+          {
+            "effectId": 186,
+            "baseEffectId": 186,
+            "instance": 1,
+            "words": 6,
+            "channels": 1,
+            "family": "FDBKRET"
+          },
+          {
+            "effectId": 182,
+            "baseEffectId": 182,
+            "instance": 1,
+            "words": 2,
+            "channels": 1,
+            "family": "FDBKSEND"
+          },
+          {
+            "effectId": 118,
+            "baseEffectId": 118,
+            "instance": 1,
+            "words": 44,
+            "channels": 4,
+            "family": "FUZZ"
+          },
+          {
+            "effectId": 37,
+            "baseEffectId": 37,
+            "instance": 1,
+            "words": 10,
+            "channels": 4,
+            "family": "INPUT"
+          },
+          {
+            "effectId": 42,
+            "baseEffectId": 42,
+            "instance": 1,
+            "words": 26,
+            "channels": 4,
+            "family": "OUTPUT"
+          },
+          {
+            "effectId": 66,
+            "baseEffectId": 66,
+            "instance": 1,
+            "words": 71,
+            "channels": 4,
+            "family": "REVERB"
+          }
+        ],
+        "tailFingerprintMatched": false
       },
       {
         "sha256": "fd361ac416e2b543f1b7237dbfb4bcbec4b7a35301f8cf11b9105414ba44484f",

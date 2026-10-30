@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-30",
+  "test": "P2 THREE SWITCHES",
+  "status": "completed_passed",
+  "device": "FM3 Mk II Turbo",
+  "firmwareBasis": 13,
+  "firmwareReconfirmedThisSession": false,
+  "generator": {
+    "version": "0.3.37",
+    "releaseId": "pluginrel_6ae3b181b9ac8191bf7b4be32c40f8ea",
+    "sourceCommit": "857e93429de349befcdba02fc06aaeebdba3ecb2"
+  },
+  "export": {
+    "fileName": "FM3_P2_THREE_SWITCHES_export.syx",
+    "sha256": "78eff4c0e6c87ee5105b853ae0d2cc8f48bdeaa0950cdec1d5bb020b3fe8afd0"
+  },
+  "comparison": {
+    "passed": true,
+    "scope": "Stored P2 content only; physical switch behavior requires the observation table",
+    "hardwareIO": false,
+    "expectedSha256": "fc9c2295540f3786c14b18cde08c572a1b8697f701395c45f5c058bb79d6806a",
+    "actualSha256": "78eff4c0e6c87ee5105b853ae0d2cc8f48bdeaa0950cdec1d5bb020b3fe8afd0",
+    "checks": {
+      "name": true,
+      "finalScene4": true,
+      "bodyLength": true,
+      "prefix": true,
+      "grid": true,
+      "all32ModifierRecords": true,
+      "csDefinitionsOverridesAnd48SceneWords": true,
+      "effectIds": true,
+      "allEffectRecords": true,
+      "systemTail": true
+    },
+    "recordOrderChanged": false,
+    "details": {},
+    "normalization": "Only selected scene 1 -> final scene 4 and whole effect-record ordering are allowed. No parameter, modifier, name or unknown-byte differences are silently accepted."
+  },
+  "decodedBody": {
+    "bodyBytes": 12804,
+    "bodyDiff": [
+      {
+        "offset": 0,
+        "expected": 0,
+        "actual": 3
+      }
+    ],
+    "name": "FM3 P2 THREE SWITCHES",
+    "selectedScene": 4,
+    "crcValid": true
+  },
+  "userObservations": [
+    {
+      "step": "A",
+      "confirmation": "Imporditud, määrangud klapivad",
+      "proves": [
+        "manual import",
+        "three requested PP definitions and mappings reported correct"
+      ]
+    },
+    {
+      "step": "B",
+      "confirmation": "algseis ja kõik kolm katset klapivad",
+      "proves": [
+        "Scene 1 Amp A initial Boost OFF Bright ON Fat OFF",
+        "CS2 Latching Boost ON then OFF",
+        "CS3 inverted Momentary Bright OFF while held and ON on release",
+        "CS4 changes do not alter Amp A Fat"
+      ]
+    },
+    {
+      "step": "C",
+      "confirmation": "kõik viis sammu klapivad",
+      "proves": [
+        "Scene 2 Amp D Boost ON Bright ON Fat ON",
+        "manual CS2 and CS4 OFF in Scene 2",
+        "Scene 3 LAST preserves OFF",
+        "manual CS2 and CS4 ON from Scene 1 then Scene 3 LAST preserves ON on Amp D",
+        "Bright remains ON"
+      ]
+    },
+    {
+      "step": "D",
+      "confirmation": "Tegin, 4. stseen",
+      "proves": [
+        "User performed STORE, selected another preset, and returned before exporting",
+        "Scene 4 opened on return"
+      ],
+      "confirmationContext": "Asked whether STORE -> another preset -> return was completed before the supplied export and which scene opened."
+    }
+  ],
+  "pendingUserConfirmation": [],
+  "notProven": [
+    "all 24 assignments on hardware",
+    "other layouts",
+    "audio quality or CPU measurement"
+  ],
+  "passed": true,
+  "storeReload": {
+    "confirmed": true,
+    "sceneOnReturn": 4,
+    "confirmationMethod": "user statement plus semantic comparison of supplied post-reload export",
+    "exportContentPreserved": true
+  },
+  "physicalObservationsReviewed": true,
+  "verifiedScope": "This generated three-definition preset, Layout 1 switches 1-3, CS2/3/4, Latching and inverted Momentary, Amp ALL versus channel D, CS Per Scene ON/OFF/LAST, manual import and STORE/reload.",
+  "evidenceBoundary": "STORE/reload procedure is user-confirmed; the exported file independently confirms saved content. No direct assistant device I/O or universal hardware coverage is claimed."
+}

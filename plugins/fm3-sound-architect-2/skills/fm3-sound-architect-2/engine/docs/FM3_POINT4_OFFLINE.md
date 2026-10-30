@@ -41,3 +41,7 @@ ja runtime-puhvri täielik taasesitus. Olemasolev globaalsete seadete varukoopia
 võimaldaks eraldi lugemisuuringut. Kumbagi tulemust ei eeldata selles versioonis.
 Seadme import, STORE/reload, heli ja uue jaotaja tegelik käitumine jäävad eraldi
 kontrollitasemeks. Generaator ei teosta selles tööpaketis seadmetoiminguid.
+0.3.38 lisab P2 algfaili ja STORE/reload-järgse ekspordi: 798 failiteed,
+641 erinevat sisu, neist 631 toetatud ja samad 10 vanemat toetamata faili.
+Need kaks faili on ühe koondkatse tõendid; uusi sõltumatuid mõõtepunkte
+failide arvust ei järeldata.

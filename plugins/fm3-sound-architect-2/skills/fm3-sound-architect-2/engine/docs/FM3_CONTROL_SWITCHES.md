@@ -51,7 +51,7 @@ External 1 → Volume seos kasutab samu mallisõnu.
 - Control Switchi olek stseeni kaupa ja jalglüliti määrang ei ole seose osa, vaid eraldi väljad
   `controlSwitchScenes` ja `footswitches` (0.3.35, vt allpool „Stseeniolek ja jalglüliti“).
 - Osalist Min/Max-i ega muid allikaid ja sihtmärke ei kirjutata; pööratud täisvahemik ja kanalipiirang on toetatud.
-- Uue faili importi ei kinnita varasemad katsed. Lülitamine on kinnitatud T14/T14b ulatuses (vt allpool).
+- Uue faili importi ei kinnita varasemad katsed. Lülitamine on kinnitatud T14/T14b ja P2 ulatuses (vt allpool).
 
 ## Seadmekatsed (28.10.2026)
 
@@ -91,4 +91,24 @@ salvestatud kehaga sõna-sõnalt (`tools/fm3/test-cs-preset-replay.mjs`, 5 juhtu
 definitsiooni parameetrid on 6 sõna (12 baiti) ja definitsioonide loendur on asenduste järel (`references/fm3-pp-steps-20261029.json`). Seadmel: Latching lülitab vajutusega
 sisse/välja ja LED järgib; Momentary on sees ainult hoidmise ajal; CS Per Scene rakendub stseeni valikul; tavaline,
 pööratud ja CHAN D seos käituvad nii, nagu kirjas. Kui per-preset override on FM3 üldseadetes keelatud, asendus ei rakendu.
-Selle uue faili importi pole eraldi kontrollitud.
+Iga uue väljundfaili import vajab oma kinnitust; allpool kirjeldatud P2 on eraldi katsetatud.
+
+
+## P2: genereeritud kolme lüliti koondkatse (30.10.2026, lisatud 0.3.38)
+
+Tõend: `references/p2-three-switches-20261030/receipt.json`, algne 0.3.37
+nelja faili komplekt ja kasutaja STORE/reload-järgne eksport samas kaustas.
+
+| Layout 1 lüliti | Määrang | Kinnitatud käitumine |
+| --- | --- | --- |
+| 1 / PP#1 | CS2 Latching → Boost ALL | Vajutus ON, järgmine OFF |
+| 2 / PP#2 | CS3 Momentary → Bright ALL, invert | Hoides OFF, vabastades ON |
+| 3 / PP#3 | CS4 Latching → Fat D | Mõjutab D kanalit; Amp A Fat jääb OFF |
+
+Scene 2 ON ning Scene 3 LAST säilitasid CS2/CS4 käsitsi valitud OFF- ja ON-oleku.
+Kasutaja kinnitas STORE → muu preset → tagasi ning avanemise Scene 4-s.
+Ekspordi 12804 kehabaidist erineb genereeritust ainult valitud stseen (0 → 3).
+Kõik modifikaatorid, definitsioonid, 108 asendust ja 48 stseeniolekut säilisid.
+Füüsiline toiming põhineb kasutaja kinnitusel; fail kinnitab salvestatud sisu.
+Firmware 13 on senine lähtealus, seda ei küsitud selles katses uuesti.
+Katses ei mõõdetud heli, CPU-d, teisi layout'e ega kõiki 24 definitsiooni.
