@@ -2,8 +2,9 @@
 
 Status: completed on 2026-10-30. The user confirmed all five device steps; the
 retained export passes the full record comparison.
-The installed plugin remains 0.3.38. This research tool adds no public generator
-field and enables no general allocator or arbitrary-base editing.
+The test used engine 0.3.38; release 0.3.39 packages its evidence and regression.
+This research tool adds no public generator field and enables no general allocator
+or arbitrary-base editing.
 
 The bounded removal/reuse device test used one generated preset and one
 user export. The fixture is derived from two ordinary 0.3.38 presets, both of
@@ -98,3 +99,14 @@ separately transcribed numeric measurements. No audio or CPU result is inferred.
 The existing test now replays the retained hardware export and checks the receipt
 as well as the 47 synthetic rejection cases. Public distribution of these P3
 files was explicitly authorized on 2026-10-30.
+
+## 0.3.39 pakendatud regressioon
+
+P3 fikseeritud kordustööriist asub nüüd mootoris
+`engine/skills/instructions/scripts/fm3-p3-modifier-reuse.mjs`; repo CLI säilib
+õhukese suunajana. Kuus tõendifaili on pakendatud muutmata kausta
+`references/p3-modifier-reuse-20261030/`. Repo kontroll nõuab mõlema koopia
+baittäpset vastavust. Katsele eelnenud 0.3.38 metaandmed säilivad ajaloolistena;
+0.3.39 mootor kontrollib värskeid alg-/doonorkvartette ja taastab sama SYX-i.
+Pakendatud `test-p3-modifier-reuse` kuulub 78 kohustusliku offline-testi hulka.
+Avalik eemaldamise/taaskasutuse API jääb väljapoole selle väljalaske ulatust.

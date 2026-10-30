@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2148,
-  "filePaths": 2352,
+  "uniqueContents": 2153,
+  "filePaths": 2357,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -2653,6 +2653,12 @@
         "references/reverb-batch-20261006-181951/capture-20261006T181224-b10804deb3/pair.json"
       ]
     },
+    "33a379410482de1f0e722efc8a2c54540c067ec845f32451d4cfe9394578a2d8": {
+      "bytes": 24680,
+      "paths": [
+        "references/p3-modifier-reuse-20261030/FM3_P3_REMOVE_REUSE_export.syx"
+      ]
+    },
     "33a5d69f6beae87f17568c290e93e3ace59088b0ded097a5385898c7677d59ec": {
       "bytes": 2436,
       "paths": [
@@ -2730,6 +2736,12 @@
       "bytes": 4939,
       "paths": [
         "references/geq-full-20261010-194115/step-030-fb0022e684/capture.json"
+      ]
+    },
+    "351f0c6ec26cc488af3c25c228417eccbf24f84db994a3f714741220625dd5bd": {
+      "bytes": 24680,
+      "paths": [
+        "references/p3-modifier-reuse-20261030/FM3_P3_REMOVE_REUSE.syx"
       ]
     },
     "3522ff31615e4fbe1e428223f7b480aa646e2848a594a07e9c349df1065cdb00": {
@@ -3266,12 +3278,6 @@
       "bytes": 423,
       "paths": [
         "references/enhancer-full-20261012-122507/step-036-75bdc8b3fb/result.json"
-      ]
-    },
-    "4086b0ad35f8ef8c631214533dca285a85db34abcfe4446e030b9f5587dd2f2c": {
-      "bytes": 26044,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "40be64a74947d2f885ecb750347321b5fecfc5c1649f1a920ff7aa0e5c0272ee": {
@@ -7264,6 +7270,12 @@
         "references/geq-full-20261010-194115/step-134-9815cbde8a/result.json"
       ]
     },
+    "90bd7ef03af2039c96c7094fde9b3e08f8f16f2a260c575a5dacb6580199fce7": {
+      "bytes": 10748,
+      "paths": [
+        "references/fm3-modifier-lifecycle-evidence.json"
+      ]
+    },
     "90e0ddf52e868f0a976c02fa38d681dd6eff20973d20cef588658a7c0cb0a5fb": {
       "bytes": 2304,
       "paths": [
@@ -8063,6 +8075,12 @@
         "references/geq-full-20261010-194115/step-044-70127ee284/result.json"
       ]
     },
+    "a22bacd8fa129fd70c1c9743073fc71a015b18722f618613cef1b25783453f13": {
+      "bytes": 4720,
+      "paths": [
+        "references/p3-modifier-reuse-20261030/FM3_P3_seadmekatse_kviitung_2026-10-30.json"
+      ]
+    },
     "a23ec1ae69069cc05651e91e6ef6cb26df724b1c695128f44a7a97ffd7daafbc": {
       "bytes": 1769,
       "paths": [
@@ -8218,12 +8236,6 @@
       "bytes": 2326,
       "paths": [
         "references/enhancer-full-20261012-122507/step-019-84404523c8/result.json"
-      ]
-    },
-    "a51b825eac792fe6db9ad495ed29ed3343607aca5e75ccf4c7bedcf8d9dfc707": {
-      "bytes": 10748,
-      "paths": [
-        "references/fm3-modifier-lifecycle-evidence.json"
       ]
     },
     "a525f8cbe8fdc79bd06b210241a0e22aea0adc3339d2d1f1c435ea5fdcc1ea65": {
@@ -8917,6 +8929,12 @@
       "bytes": 3852,
       "paths": [
         "references/peq-user-feedback-20261009.json"
+      ]
+    },
+    "b1695e6421cf284d747648955e10a5a3a064c32358df598694fcbb64f15b7627": {
+      "bytes": 4594,
+      "paths": [
+        "references/p3-modifier-reuse-20261030/FM3_P3_REMOVE_REUSE.validation.json"
       ]
     },
     "b18a2ffb500fbe91b0d9aa09647cbc2eaccc27d9d581c38366defb1d2c364573": {
@@ -10338,6 +10356,12 @@
       "bytes": 5003,
       "paths": [
         "references/rotary-batch-20261007-151451/capture-20261007T151351-b88d569492/capture.json"
+      ]
+    },
+    "cd8628b5338d2a85eb32d624ff9997477416f01eb93817f59fecfee451bc8326": {
+      "bytes": 17741,
+      "paths": [
+        "references/p3-modifier-reuse-20261030/FM3_P3_REMOVE_REUSE.spec.json"
       ]
     },
     "cda3b89a08155c6ede7d2a26d938f1125a74a88357c8f4ce52056dc5cfbb5a01": {
@@ -12314,6 +12338,12 @@
       "bytes": 2178,
       "paths": [
         "references/filter-controls-20261008-165150/step-00-b4f6851003/result.json"
+      ]
+    },
+    "f41fc3eac25dc0d66ba50f9dafd179f8b6fb0becae433729354132e34eb27a35": {
+      "bytes": 26508,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "f42c0feb7be0f148cf573313399f7df51ed35b6ce306cfc29ddac5d409c143ce": {

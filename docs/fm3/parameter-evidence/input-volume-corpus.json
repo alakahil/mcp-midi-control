@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "files": 798,
-  "unique": 641,
-  "accepted": 629,
+  "files": 800,
+  "unique": 643,
+  "accepted": 631,
   "unsupported": [
     {
       "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-default-blocks-20261023.syx",
@@ -151,6 +151,36 @@
         "family": "volpan",
         "header": 10656,
         "start": 10702,
+        "words": 15,
+        "channels": 4,
+        "size": 166
+      }
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/p3-modifier-reuse-20261030/FM3_P3_REMOVE_REUSE.syx",
+      "sha256": "351f0c6ec26cc488af3c25c228417eccbf24f84db994a3f714741220625dd5bd",
+      "record": {
+        "eid": 102,
+        "block": 102,
+        "instance": 1,
+        "family": "volpan",
+        "header": 9206,
+        "start": 9252,
+        "words": 15,
+        "channels": 4,
+        "size": 166
+      }
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/p3-modifier-reuse-20261030/FM3_P3_REMOVE_REUSE_export.syx",
+      "sha256": "33a379410482de1f0e722efc8a2c54540c067ec845f32451d4cfe9394578a2d8",
+      "record": {
+        "eid": 102,
+        "block": 102,
+        "instance": 1,
+        "family": "volpan",
+        "header": 8960,
+        "start": 9006,
         "words": 15,
         "channels": 4,
         "size": 166

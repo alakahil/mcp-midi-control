@@ -1,0 +1,282 @@
+{
+  "schema": "fm3-p3-modifier-reuse-research-1",
+  "status": "offline_passed_hardware_pending",
+  "deviceIO": false,
+  "hardwareVerified": false,
+  "engineVersion": "0.3.38",
+  "engineSourceCommit": "7040fb17983ce5dfc5343421488c3fa052fa1026",
+  "seedSha256": "313fdb9c4d02935dba6ca69ffd6c9a3a70fc3b3854373a0e9ed00911143ed5ea",
+  "donorSha256": "30cbce1a63fac226543929c19de2f6213b2aa8325dfe5e1511681e6d3e1e930a",
+  "outputSha256": "351f0c6ec26cc488af3c25c228417eccbf24f84db994a3f714741220625dd5bd",
+  "sourceQuartetsVerified": true,
+  "finalVerifier": "tools/fm3/p3-modifier-reuse.mjs verify",
+  "bodyBytes": 13216,
+  "removal": {
+    "record": 2,
+    "before": [
+      51,
+      65534,
+      0,
+      0,
+      32767,
+      65534,
+      32767,
+      66,
+      58,
+      42,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      66,
+      0,
+      4,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      0
+    ],
+    "after": [
+      0,
+      65534,
+      0,
+      0,
+      32767,
+      65534,
+      32767,
+      66,
+      0,
+      0,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      66,
+      0,
+      4,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      0
+    ],
+    "clearedWords": [
+      0,
+      8,
+      9
+    ],
+    "compacted": false
+  },
+  "reuse": {
+    "record": 1,
+    "before": [
+      14,
+      16384,
+      49151,
+      0,
+      16384,
+      65534,
+      32767,
+      3277,
+      102,
+      0,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      66,
+      0,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      0
+    ],
+    "cleared": [
+      0,
+      16384,
+      49151,
+      0,
+      16384,
+      65534,
+      32767,
+      3277,
+      0,
+      0,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      66,
+      0,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      0
+    ],
+    "after": [
+      51,
+      0,
+      65534,
+      0,
+      32767,
+      65534,
+      32767,
+      66,
+      58,
+      47,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      66,
+      0,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      0
+    ],
+    "onlyWords0through20Written": true,
+    "headerAndWords21through24Preserved": true
+  },
+  "activeModifiers": [
+    {
+      "record": 0,
+      "source": "External 1",
+      "effectId": 94,
+      "pid": 5,
+      "channel": "ALL"
+    },
+    {
+      "record": 1,
+      "source": "Control Switch 2",
+      "effectId": 58,
+      "pid": 47,
+      "channel": "ALL"
+    },
+    {
+      "record": 3,
+      "source": "Control Switch 3",
+      "effectId": 58,
+      "pid": 41,
+      "channel": "ALL"
+    },
+    {
+      "record": 4,
+      "source": "Control Switch 4",
+      "effectId": 58,
+      "pid": 80,
+      "channel": "CHAN D"
+    }
+  ],
+  "changedBytes": [
+    {
+      "offset": 1680,
+      "before": 14,
+      "after": 51
+    },
+    {
+      "offset": 1683,
+      "before": 64,
+      "after": 0
+    },
+    {
+      "offset": 1684,
+      "before": 255,
+      "after": 254
+    },
+    {
+      "offset": 1685,
+      "before": 191,
+      "after": 255
+    },
+    {
+      "offset": 1688,
+      "before": 0,
+      "after": 255
+    },
+    {
+      "offset": 1689,
+      "before": 64,
+      "after": 127
+    },
+    {
+      "offset": 1694,
+      "before": 205,
+      "after": 66
+    },
+    {
+      "offset": 1695,
+      "before": 12,
+      "after": 0
+    },
+    {
+      "offset": 1696,
+      "before": 102,
+      "after": 58
+    },
+    {
+      "offset": 1698,
+      "before": 0,
+      "after": 47
+    },
+    {
+      "offset": 1776,
+      "before": 51,
+      "after": 0
+    },
+    {
+      "offset": 1792,
+      "before": 58,
+      "after": 0
+    },
+    {
+      "offset": 1794,
+      "before": 42,
+      "after": 0
+    }
+  ],
+  "evidence": {
+    "T12": "references/fm3-mod-steps-20261029.json",
+    "inactiveCorpus": "references/fm3-modifier-removal-20261028.json",
+    "limits": [
+      "T12 removed a Volume binding whose PID was already zero; nonzero PID removal is covered here only offline until export",
+      "No general allocator, arbitrary-base support, new source/target family, audio or CPU claim"
+    ]
+  },
+  "artifacts": {
+    ".syx": {
+      "sha256": "351f0c6ec26cc488af3c25c228417eccbf24f84db994a3f714741220625dd5bd",
+      "bytes": 24680
+    },
+    ".txt": {
+      "sha256": "2c12896953da5e5518e8301b7dcd41e9dd6179df9f36936c618b8ceb8ea6f102",
+      "bytes": 1229
+    },
+    ".spec.json": {
+      "sha256": "cd8628b5338d2a85eb32d624ff9997477416f01eb93817f59fecfee451bc8326",
+      "bytes": 17741
+    }
+  }
+}

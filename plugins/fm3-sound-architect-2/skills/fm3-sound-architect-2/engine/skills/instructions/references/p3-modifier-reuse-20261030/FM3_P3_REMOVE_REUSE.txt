@@ -1,0 +1,21 @@
+FM3 P3 REMOVE REUSE — P3 katseline eemaldamine ja taaskasutus
+
+Ainult selle faili uuringukandidaat; avalik generaator 0.3.38 ei paku eemaldamise/taaskasutuse API-t.
+
+LÕPPFAILI SEOSED
+Wah / Control: External 1 (kirje 0, muutmata).
+Volume/Pan / Volume: NONE (senine kirje 1 asendatud).
+Amp / Input Boost: NONE (kirje 2: sõnad 0/8/9 nullitud, ülejäänud säilinud).
+Amp / Cut: Control Switch 2; Min OFF, Max ON; Channel ALL (taaskasutatud kirje 1).
+Amp / Bright: Control Switch 3; Min ON, Max OFF; Channel ALL (kirje 3, muutmata).
+Amp / Fat: Control Switch 4; Min OFF, Max ON; Channel D (kirje 4, muutmata).
+
+Stseen 1 CUT OFF: CS2 OFF. Stseen 2 CUT ON: CS2 ON. Amp kanal A mõlemas.
+CS3 ja CS4 on kõigis stseenides OFF. Jalglülitite määranguid ei lisata.
+
+KONTROLLIPIIR
+Alg- ja doonorpresetid läbisid muutmata 0.3.38 nelja faili kontrolli.
+Lõppfail kasutab eraldi uuringuverifikaatorit: node tools/fm3/p3-modifier-reuse.mjs verify VÄLJUNDI_TÜVI
+Lõppfaili ei nimetata tavalise fm3-preset.mjs --verify läbinud presetiks.
+Import, STORE/reload, taaskasutatud kirje säilimine ja Cut-lülitumine on veel seadmel kinnitamata.
+See katse ei tõenda FM3-Editi automaatset vaba kirje valikut ega suvaliste presetite muutmist.

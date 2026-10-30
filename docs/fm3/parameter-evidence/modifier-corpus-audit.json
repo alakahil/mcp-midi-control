@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "scope": "All distinct SYX bytes currently packaged; includes generated examples and captures, not all independent hardware observations.",
-  "files": 798,
-  "unique": 641,
-  "accepted": 631,
+  "files": 800,
+  "unique": 643,
+  "accepted": 633,
   "unsupported": [
     {
       "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-42.syx",
@@ -67,14 +67,14 @@
     }
   ],
   "summary": {
-    "totalActiveRecords": 226,
-    "maxActivePerFile": 3,
+    "totalActiveRecords": 234,
+    "maxActivePerFile": 4,
     "activeBySlot": [
-      220,
+      222,
+      4,
       2,
+      4,
       2,
-      2,
-      0,
       0,
       0,
       0,
@@ -103,8 +103,8 @@
       0,
       0
     ],
-    "multiActiveFiles": 2,
-    "nonContiguousFiles": 2,
+    "multiActiveFiles": 4,
+    "nonContiguousFiles": 4,
     "secondaryWithoutPrimaryFiles": 0,
     "simultaneousWahVolumeGain": []
   },
@@ -7272,6 +7272,102 @@
       "secondaryWithoutPrimary": [],
       "gapsBeforeActive": [
         0
+      ]
+    },
+    {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/p3-modifier-reuse-20261030/FM3_P3_REMOVE_REUSE.syx",
+      "sha256": "351f0c6ec26cc488af3c25c228417eccbf24f84db994a3f714741220625dd5bd",
+      "aliases": [],
+      "active": [
+        {
+          "record": 0,
+          "source": 14,
+          "effectId": 94,
+          "pid": 5,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 1,
+          "source": 51,
+          "effectId": 58,
+          "pid": 47,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 3,
+          "source": 52,
+          "effectId": 58,
+          "pid": 41,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 4,
+          "source": 53,
+          "effectId": 58,
+          "pid": 80,
+          "channel": 4,
+          "secondarySource": 0,
+          "operation": 0
+        }
+      ],
+      "inactiveBound": [],
+      "secondaryWithoutPrimary": [],
+      "gapsBeforeActive": [
+        2
+      ]
+    },
+    {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/p3-modifier-reuse-20261030/FM3_P3_REMOVE_REUSE_export.syx",
+      "sha256": "33a379410482de1f0e722efc8a2c54540c067ec845f32451d4cfe9394578a2d8",
+      "aliases": [],
+      "active": [
+        {
+          "record": 0,
+          "source": 14,
+          "effectId": 94,
+          "pid": 5,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 1,
+          "source": 51,
+          "effectId": 58,
+          "pid": 47,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 3,
+          "source": 52,
+          "effectId": 58,
+          "pid": 41,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 4,
+          "source": 53,
+          "effectId": 58,
+          "pid": 80,
+          "channel": 4,
+          "secondarySource": 0,
+          "operation": 0
+        }
+      ],
+      "inactiveBound": [],
+      "secondaryWithoutPrimary": [],
+      "gapsBeforeActive": [
+        2
       ]
     },
     {

@@ -70,7 +70,7 @@ for(const a of [inactive,secondaryOnly,both,allOccupied,allUnbound]){
   assert.equal(a.lifecycle.arbitraryAllocationSupported,false);assert.equal(a.lifecycle.simultaneousWahVolumeWriterSupported,false);
   assert.equal(a.lifecycle.serializedInitializationFullyProven,false);assert.equal(a.lifecycle.sourceNoneIsNotRemoval,true);
   assert.match(renderModifierAuditText(a),new RegExp(a.typePolicy.families.length+' efektipere'));
-  assert.equal(a.lifecycle.evidence.corpus.accepted,631);
+  assert.equal(a.lifecycle.evidence.corpus.accepted,633);
 }
 // Callers cannot mutate the internal evidence used by later reports.
 secondaryOnly.lifecycle.evidence.findings.selection.examinedObjects=1;

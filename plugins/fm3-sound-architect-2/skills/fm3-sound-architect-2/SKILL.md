@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.38`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.39`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -63,6 +63,34 @@ praeguse generaatoriga ning kontrollib ekspordi terviklikku keha ja vigade tõrj
 See tõend piirdub selle preseti ja kolme määranguga; kõigi 24 määrangu, teiste
 layout'ide, heli või CPU seadmekatset sellest ei järeldu. Ära nõua P2 kordamist.
 
+## P3 eemaldamise ja taaskasutuse seadmetõend (0.3.39, 30.10.2026)
+
+`MOOTOR/references/p3-modifier-reuse-20261030/FM3_P3_seadmekatse_kviitung_2026-10-30.json`
+kinnitab ühe fikseeritud `FM3 P3 REMOVE REUSE` katse importi, kuue Source-välja
+ja Cut-modifikaatori seadeid, stseenide 1/2 Cut OFF/ON lülitumist ning
+STORE → muu preset → tagasi säilimist. Kasutaja kinnitas viis sammu koondvastusega;
+üksikuid arvulisi näite eraldi ei protokollitud. Ära nõua selle katse kordamist.
+
+Kirje 2 Input Boost seos eemaldati sõnade 0/8/9 nullimisega, ülejäänud sõnad
+säilisid. Kirje 1 Volume-seose koht kasutati CS2 → Amp Cut jaoks, vana kohandatud
+vahemik ja kõver asendusid Cut-i vaikeväärtustega. Aktiivsed kirjed on 0, 1, 3, 4;
+kirje 2 jäi vahele tühjaks. Seadmeeksport säilitab kõik 32 modifikaatorikirjet.
+Kogu fail ega dekodeeritud keha pole baittäpselt sama: FM3 vahetas Wah’ ja
+Volume/Pani plokkide järjekorra. Iga ploki sisu ning ülejäänud andmed vastavad
+algfailile pärast ainult selle järjekorra normaliseerimist.
+
+Algne 0.3.38 uuringukvartett ja eksport säilivad muutmata. Algfailide
+`hardware_pending` märge on katsele eelnenud ajalugu; hilisemat kinnitust näitab
+eraldi kviitung. `test-p3-modifier-reuse` on kohustuslik offline-test: see
+kontrollib praeguse mootori alg-/doonorkvartette, algse SYX-i taastamist,
+47 vigase sisendi tõrjumist ning säilitatud seadmeeksporti.
+`MOOTOR/scripts/fm3-p3-modifier-reuse.mjs` on ainult selle ajaloolise katse
+`build|verify|compare` tööriist; selle lõppkvartett kasutab eraldi uuringuverifikaatorit.
+Ära nimeta seda tavalise `fm3-preset.mjs --verify` läbinud lõpppresetiks.
+See ei lisa avalikku eemaldamise/taaskasutuse sisendit, üldist kirjete jaotajat,
+suvalise aluspreseti muutmist ega FM3-Editi automaatse vaba koha valimise tõendit.
+Kõigi 32 pesa kasutatavust, uusi allikaid/sihtmärke, heli ega CPU-d ei mõõdetud.
+
 ## GitHubi Satriani V4 täiendus (0.3.29, 28.10.2026)
 
 Lisatud on GitHubi PR #37 põhiharusse liidetud `SATRIANI_SOAP_ON_A_ROPE_V4`
@@ -76,7 +104,7 @@ V3/V4 kuulamisvõrdlus on eraldi kinnitamata.
 
 Näidiste kontroll hõlmab 51 spetsifikatsiooni: 48 SYX-i taastuvad baittäpselt,
 kolm ajaloolist uurimissisendit jäävad teadlikult avaliku sisendilepingu väliseks.
-Korpuse audit aktsepteerib 631 erinevat toetatud vormingus sisu. Need arvud
+Korpuse audit aktsepteerib 633 erinevat toetatud vormingus sisu. Need arvud
 sisaldavad genereeritud näiteid ega tähenda uusi sõltumatuid seadmemõõtmisi.
 
 ## Kadudeta arhiivi vähendamine (0.3.28, 27.10.2026)
