@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-30",
+  "device": "FM3 Mk II Turbo",
+  "firmware": "13.0",
+  "test": "P3 modifier removal and record reuse",
+  "status": "completed_passed",
+  "passed": true,
+  "generator": {
+    "version": "0.3.38",
+    "engineSourceCommit": "7040fb17983ce5dfc5343421488c3fa052fa1026",
+    "researchSourceCommit": "c27184ad2ade485e60cdf975e1bdeaf61be3f409",
+    "researchTool": "tools/fm3/p3-modifier-reuse.mjs",
+    "publicRemovalReuseAPI": false
+  },
+  "import": {
+    "name": "FM3 P3 REMOVE REUSE",
+    "file": "FM3_P3_REMOVE_REUSE.syx",
+    "sha256": "351f0c6ec26cc488af3c25c228417eccbf24f84db994a3f714741220625dd5bd",
+    "bytes": 24680
+  },
+  "export": {
+    "file": "FM3_P3_REMOVE_REUSE_export.syx",
+    "sha256": "33a379410482de1f0e722efc8a2c54540c067ec845f32451d4cfe9394578a2d8",
+    "bytes": 24680
+  },
+  "userConfirmation": {
+    "text": "Kõik sammud klappisid",
+    "scope": "All five steps of the issued P3 guide, including the repeated checks after STORE and reload",
+    "method": "Grouped user confirmation; individual numeric readings were not separately transcribed",
+    "importAndSixSourcesMatch": true,
+    "cutMinMaxChannelMidAttackMatch": true,
+    "scene1CutOffScene2CutOn": true,
+    "storeOtherPresetReturnAndRepeatMatch": true,
+    "finalSelectedScene": 1
+  },
+  "comparison": {
+    "passed": true,
+    "comparisonOnly": true,
+    "deviceIO": false,
+    "exportSha256": "33a379410482de1f0e722efc8a2c54540c067ec845f32451d4cfe9394578a2d8",
+    "bodyByteIdentical": false,
+    "allRecordBytesPreserved": true,
+    "modifierRegionIdentical": true,
+    "reorderedBlocks": [
+      {
+        "effectId": 94,
+        "generatedIndex": 9,
+        "exportIndex": 10
+      },
+      {
+        "effectId": 102,
+        "generatedIndex": 10,
+        "exportIndex": 9
+      }
+    ],
+    "humanChecks": "must be supplied separately",
+    "bodyBytes": 13216,
+    "selectedScene": 1,
+    "all32ModifierRecordsByteIdentical": true,
+    "allOtherBodyDataPreservedAfterBlockOrderNormalization": true,
+    "blockOrderMeaning": "FM3 stored Volume/Pan (effect 102) before Wah (effect 94); the generated file held Wah before Volume/Pan. All block bytes are preserved."
+  },
+  "removal": {
+    "record": 2,
+    "formerSource": "Control Switch 2",
+    "formerTarget": "Amp Input Boost",
+    "formerTargetPid": 42,
+    "clearedWords": [
+      0,
+      8,
+      9
+    ],
+    "allRemainingWordsPreserved": true,
+    "words": [
+      0,
+      65534,
+      0,
+      0,
+      32767,
+      65534,
+      32767,
+      66,
+      0,
+      0,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      66,
+      0,
+      4,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      0
+    ],
+    "noCompaction": true
+  },
+  "reuse": {
+    "record": 1,
+    "formerSource": "External 1",
+    "formerTarget": "Volume/Pan Volume",
+    "newSource": "Control Switch 2",
+    "newTarget": "Amp Cut",
+    "newEffectId": 58,
+    "newPid": 47,
+    "oldCustomRangeAndCurveReplaced": true,
+    "minWord": 0,
+    "maxWord": 65534,
+    "midWord": 32767,
+    "attackWord": 66,
+    "channelWord": 0,
+    "recordHeaderAndReservedWordsPreserved": true,
+    "words": [
+      51,
+      0,
+      65534,
+      0,
+      32767,
+      65534,
+      32767,
+      66,
+      58,
+      47,
+      0,
+      0,
+      0,
+      32767,
+      32767,
+      66,
+      0,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      65534,
+      0,
+      0
+    ]
+  },
+  "activeModifiers": [
+    {
+      "record": 0,
+      "source": "External 1",
+      "effectId": 94,
+      "pid": 5,
+      "channel": "ALL"
+    },
+    {
+      "record": 1,
+      "source": "Control Switch 2",
+      "effectId": 58,
+      "pid": 47,
+      "channel": "ALL"
+    },
+    {
+      "record": 3,
+      "source": "Control Switch 3",
+      "effectId": 58,
+      "pid": 41,
+      "channel": "ALL"
+    },
+    {
+      "record": 4,
+      "source": "Control Switch 4",
+      "effectId": 58,
+      "pid": 80,
+      "channel": "CHAN D"
+    }
+  ],
+  "scope": "This exact generated preset: removed Input Boost binding, Volume record reused for CS2 -> Cut, UI checks and persistence after STORE/reload; no automatic FM3-Edit allocation claim.",
+  "notTested": [
+    "General modifier allocation or arbitrary-base editing",
+    "All 32 slots and all source/target families",
+    "FM3-Edit automatic choice of a freed slot",
+    "Audio and CPU"
+  ],
+  "publication": {
+    "newP3DeviceEvidenceAuthorized": true,
+    "date": "2026-10-30",
+    "repository": "https://github.com/alakahil/mcp-midi-control",
+    "scope": "P3 test files, supplied device export and test receipt",
+    "authorization": "Explicit user authorization in this conversation"
+  },
+  "assistantDeviceIO": false
+}
