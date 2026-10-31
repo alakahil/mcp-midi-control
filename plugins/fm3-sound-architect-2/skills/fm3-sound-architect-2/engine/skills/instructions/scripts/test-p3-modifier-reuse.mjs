@@ -87,6 +87,6 @@ for(const key of ['importAndSixSourcesMatch','cutMinMaxChannelMidAttackMatch','s
 assert.equal(receipt.userConfirmation.finalSelectedScene,1);assert.equal(hb[0],0);
 assert.equal(receipt.publication.newP3DeviceEvidenceAuthorized,true);
 console.log(JSON.stringify({passed:true,negativeCases:negatives,changedBytes:13,activeRecords:[0,1,3,4],inactiveHole:2,
- replayEngineVersion:'0.3.39',historicalEvidenceVersion:'0.3.38',
+ replayEngineVersion:'0.3.40',historicalEvidenceVersion:'0.3.38',
  sourceQuartetsVerified:true,finalResearchQuartetVerified:true,syntheticExportComparison:true,
  retainedHardwareExportVerified:true,all32ModifierRecordsPreserved:true,reorderedBlocks:2,deviceIO:false}));
