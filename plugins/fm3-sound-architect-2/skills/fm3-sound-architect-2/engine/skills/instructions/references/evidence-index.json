@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2155,
-  "filePaths": 2359,
+  "uniqueContents": 2156,
+  "filePaths": 2360,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -5748,6 +5748,12 @@
       "paths": [
         "references/cab-batch-20261005-135019/capture-20261005T091341-b238d43a16/labels.json",
         "references/cab-batch-20261005-135600/capture-20261005T091341-b238d43a16/labels.json"
+      ]
+    },
+    "74a06e8675126305ee82b867687e615cfa33acb5c39f3a96d2cef805436e7035": {
+      "bytes": 21360,
+      "paths": [
+        "references/fm3-knob-read-t19-20261031.json"
       ]
     },
     "74bafd9d1d11fc9b9a42b9d70acff3060ea98bb023ecf35807b2438142129a75": {
