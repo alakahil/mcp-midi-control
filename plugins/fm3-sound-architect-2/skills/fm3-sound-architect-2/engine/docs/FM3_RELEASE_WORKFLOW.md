@@ -10,7 +10,10 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.40 tõendiväljalaset. T17 (31.10.2026) lisab 23 tabelikirjutaja nupu
+Praegune lähtekood valmistab ette 0.3.41 tõendiväljalaset. T18 (31.10.2026) lisab 28 tabelikirjutaja nupu
+esipaneeli näidud (Amp 11, Delay 8, Reverb 9): 27 võrduvad koodeki väärtusega näidatud komakohtadeni, Reverb
+High Cut 6500,05 Hz näitas 6500,0 Hz (`references/fm3-knob-read-t18-20261031.json`). Kirjutustugi ei muutu.
+Selle aluseks on 0.3.40. T17 (31.10.2026) lisab 23 tabelikirjutaja nupu
 esipaneeli näidud (Compressor 6, Phaser 6, Tremolo 4, Pitch 7): 22 võrduvad koodeki väärtusega näidatud
 komakohtadeni, Pitch High Cut 6000,07 Hz näitas 6000,0 Hz (`references/fm3-knob-read-20261031.json`).
 Kirjutustugi ei muutu. Selle aluseks on 0.3.39 (P3) ja 0.3.38. P2 lisab 30.10.2026

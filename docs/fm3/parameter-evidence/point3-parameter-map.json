@@ -7,10 +7,10 @@
     "tools/fm3/point3-index.py": "2053c97e456d7cd8d161e9575ba3ccd335939aa9f0ca64a3e5ea9a7dc5a01d71",
     "tools/fm3/point3-evidence.mjs": "6159c69d4923af5de3ae66b94801f08bc7f444bd7048654685af98963f95b4ac",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "3600d4c3286c6b29c7060fc28d58fe7b9e734380b6e892826d86b1f881ed4186",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-parameter-map.mjs": "54d64811d32429c77051d949663f57f9c3544cd16d9237d8e316542d05439f09",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-parameter-map.mjs": "7726fac754cf3a44a86bbc84c8bc0767e4c13cfd24430b8236a1e5d131bcf2fd",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-parameter-domain.mjs": "8782ecf4f3e7672de0c1b97fe9e6113ce2f935d23a09f6b595a1366623280e84",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-parameter-map.mjs": "3d189a3dd3853f659eb6966751282e32ce9344551f0a9299baa92430ae35d27c",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_PARAMETER_EVIDENCE.json": "d59d3527e2b1147c1754367b95fbf4720eafe216d6223218382d2cf3dab9ae4d"
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-parameter-map.mjs": "7a27c66471f73b74f1aaf56bd8d5335d4eebf5057244b574bb6eec6703d6d09f",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_PARAMETER_EVIDENCE.json": "bfb1bea8eec24811db1ba24af3dd640217d88aa5faf7cf51e8f91fe724df277b"
   },
   "baseline": {
     "version": "0.3.23",
@@ -43,12 +43,12 @@
       "parameterKeys": 3223,
       "dictionaryRows": 2892,
       "namedLookups": 1676,
-      "indexedObservations": 1321,
+      "indexedObservations": 1349,
       "labelParameters": 363,
       "comparedLabelWords": 5275,
       "unrequestedLabelWords": 2,
       "disputedReadings": 1,
-      "hashedBundledEvidenceSources": 1214,
+      "hashedBundledEvidenceSources": 1215,
       "deviceIO": false
     }
   },

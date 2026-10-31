@@ -1,0 +1,12 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "3084f217ba1507d52017c7e9cd6ce872b1b1b666827447b771fe3e5a16f29329",
+ "time": "2026-10-31T19:12:40",
+ "readings": {
+  "amp": "6.30/4.70/5.6076.80/3.70/4.30/2.90/ -2.5 dB /35.0 Hz/9000 Hz/1.600",
+  "delay": "437 ms/37%/28%/-1.5 dB/4500 Hz/140.0 Hz/ Depth ja Rate väärtusi oli kolm - LF01 tulbas: Depth 18% ja Rate 0.650 Hz; LF02 tulbas: Depth 0.0% ja Rate 10.000 Hz; LF03 tulbas Depth 100% ja Rate 1.000 Hz",
+  "reverb": "3.70/63.0/47.0/6500.0 Hz/160.0 Hz/23%/-2 dB/0.5500/35%",
+  "type": "Amp A: USA MK IV Rhythm 1;Delay B: 2290 w/ Modulation; Reverb C: Plate: Large Plate"
+ },
+ "note": "Amp 1 Leveli asemel oli Level; Delay ploki Depth ja Rate väärtusi oli kolm - LF01 tulbas: Depth 18% ja Rate 0.650 Hz; LF02 tulbas: Depth 0.0% ja Rate 10.000 Hz; LF03 tulbas Depth 100% ja Rate 1.000 Hz"
+}

@@ -301,6 +301,16 @@ class Registry:
                 'kind': 'screen-reading-no-export', 'scope': {'channel': c['channel'], 'raw': c['raw'], 'value': c['shownValue'],
                     'shown': c['shown'], 'codecDisplay': c['codecDisplay'], 'exactToShownDigits': c['exact'], 'source': 'generated word, edit buffer'},
                 'firmware': str(d['firmware']), 'evidence': self.ref(path, f'/controls/{i}')})
+        # T18 (2026-10-31): same method for Amp A, Delay B and Reverb C.
+        path = REF / 'fm3-knob-read-t18-20261031.json'
+        d = self.read(path)
+        for i, c in enumerate(d['controls']):
+            require(c['param'] in by_name, f'Unmatched T18 reading: {c["param"]}')
+            require(c['withinOneDisplayStep'], f'T18 reading outside one display step: {c["param"]}')
+            self.observations.append({'id': f'knob-read-t18/controls/{i}', 'parameter': by_name[c['param']],
+                'kind': 'screen-reading-no-export', 'scope': {'channel': c['channel'], 'raw': c['raw'], 'value': c['shownValue'],
+                    'shown': c['shown'], 'codecDisplay': c['codecDisplay'], 'exactToShownDigits': c['exact'], 'source': 'generated word, edit buffer'},
+                'firmware': str(d['firmware']), 'evidence': self.ref(path, f'/controls/{i}')})
 
     def audit_pairs(self):
         files = sorted({str(job[4]) for job in self.jobs} | {str(job[1]) for job in self.syx_only} | self.legacy.files)

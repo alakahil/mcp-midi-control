@@ -135,6 +135,16 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Ampi, Delay ja Reverbi nuppude näidud (0.3.41, T18)
+
+31.10.2026 loeti FM3 esipaneelilt veel 28 tabelikirjutaja nuppu: Amp A (USA MK IV Rhythm 1: Gain, Bass, Mid,
+Treble, Master Volume, Presence, Depth, Level, Low Cut, High Cut, Input Trim), Delay B (2290 w/ Modulation: Time,
+Feedback, Mix, Level, High Cut, Low Cut, LFO 1 Rate, LFO 1 Depth) ja Reverb C (Large Plate: Time, Size, Pre-Delay,
+High Cut, Low Cut, Mix, Level, High Decay, Depth). Kõik näidud on kodeerija väärtusest ühe näidusammu piires;
+27 täpselt, Reverb High Cut 6500,05 Hz näitas 6500,0 Hz. Delay ja Reverbi Mix (`linear-by-structure`, vajab
+`allow`) said esimese seadme näidu; kirjutusõigus ei muutu. Sõnastiku "Amp1 Level" on FM3-s lihtsalt "Level"
+(`MOOTOR/references/fm3-knob-read-t18-20261031.json`).
+
 ## Nuppude esipaneeli näidud (0.3.40, T17)
 
 31.10.2026 loeti FM3 esipaneelilt 23 tabelikirjutaja nuppu, mille väärtuse oli kirjutanud generaator:
