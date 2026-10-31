@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scope": "Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.",
   "inventory": {
-    "filePaths": 2359,
-    "uniqueContents": 2155,
+    "filePaths": 2360,
+    "uniqueContents": 2156,
     "archivePaths": 990,
     "archiveContents": 164
   },
@@ -107,7 +107,7 @@
     "front-panel-disputed-reading": 1,
     "front-panel-readback": 18,
     "paired-point": 869,
-    "screen-reading-no-export": 66,
+    "screen-reading-no-export": 116,
     "syx-export-no-get": 30
   },
   "pairedCapturesReplayed": 354,

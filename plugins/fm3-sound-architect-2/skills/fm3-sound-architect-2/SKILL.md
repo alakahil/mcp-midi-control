@@ -135,6 +135,17 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Cabi, Drive'i, Chorus'e, Flangeri, Wah ja Rotary nuppude näidud (0.3.42, T19)
+
+31.10.2026 loeti FM3 esipaneelilt 50 tabelikirjutaja nuppu: Cab B (DynaCab: Level, Cab 1 Level, Pan, DynaCab,
+Distance), Drive B (T808 OD: Low Cut, High Cut, Bias, Slew Rate, Bass, Mid, Mid Frequency, Treble), Chorus D
+(Japan CE-2: Rate, Depth, Mix, Minimum Delay, High Cut, Low Cut, Drive, Level), Flanger A (Analog Stereo: Rate,
+Depth, Feedback, Manual, Mix, High Cut, Drive, Level), Wah C (Cry Babe: Frequency Min/Max, Resonance Q, Q Tracking,
+Drive, Fat, Low Cut, Level) ja Rotary A (13 nuppu). Kõik 50 võrduvad kodeerija väärtusega näidatud komakohtadeni,
+sh kuus knob-klassi nuppu (display = n · kordaja). Chorus/Flanger/Rotary Mix (`linear-by-structure`, vajab
+`allow`) said esimese seadme näidu; kirjutusõigus ei muutu. Cabi ploki Low Cut / High Cut (pid 38/39) jäid
+mõõtmata: DynaCab lehel on Cab 1 enda lõiked (`MOOTOR/references/fm3-knob-read-t19-20261031.json`).
+
 ## Ampi, Delay ja Reverbi nuppude näidud (0.3.41, T18)
 
 31.10.2026 loeti FM3 esipaneelilt veel 28 tabelikirjutaja nuppu: Amp A (USA MK IV Rhythm 1: Gain, Bass, Mid,
