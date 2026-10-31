@@ -1,6 +1,6 @@
 // Replay one historical fixed research fixture; NOT a public modifier allocator.
 // Its original 0.3.38 metadata is immutable. Source quartets are independently
-// regenerated and verified with the current engine (0.3.40) before the exact SYX replay.
+// regenerated and verified with the current engine (0.3.41) before the exact SYX replay.
 // Build/verify/compare local files only; no MIDI, device access, import or STORE.
 import fs from 'node:fs';
 import os from 'node:os';
@@ -44,7 +44,7 @@ export function context(){
  const seed=seedSpec(),donor=structuredClone(seed);delete donor.volumePedal;
  donor.controlSwitches[0]={switch:2,block:'amp',param:'DISTORT_CUT'};
  const a=createPreset(base,seed),b=createPreset(base,donor);
- assert.equal(a.report.generator,'fm3-sound-0.3.40');assert.equal(b.report.generator,a.report.generator);
+ assert.equal(a.report.generator,'fm3-sound-0.3.41');assert.equal(b.report.generator,a.report.generator);
  // Both ordinary source quartets must pass the unchanged public verifier first.
  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-p3-source-'));
  try{for(const [n,result,spec] of [['seed',a,seed],['donor',b,donor]]){

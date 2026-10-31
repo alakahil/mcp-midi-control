@@ -95,6 +95,7 @@ jobs:
           node tools/fm3/fs-index-ingest.mjs
           node tools/fm3/pp-steps-ingest.mjs
           node tools/fm3/knob-read-ingest.mjs
+          node tools/fm3/knob-read-t18-ingest.mjs
           node tools/fm3/test-cs-preset-replay.mjs
           node tools/fm3/test-p3-modifier-reuse.mjs
           node tools/fm3/modifier-fields-status.mjs

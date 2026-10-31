@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2154,
-  "filePaths": 2358,
+  "uniqueContents": 2155,
+  "filePaths": 2359,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -3785,6 +3785,12 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-083-9fa26e1d99/donor.syx"
+      ]
+    },
+    "4bb75ce125eea5497d6901ed4d3ff0a311708c4f165d1640eae754cf7139bd35": {
+      "bytes": 11741,
+      "paths": [
+        "references/fm3-knob-read-t18-20261031.json"
       ]
     },
     "4bc8c7b297d1fa82eab8b57e42975337f5d9e930ea9d2debe4fd074bd943b5f1": {

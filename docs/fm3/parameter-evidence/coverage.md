@@ -15,7 +15,7 @@ Automaatselt korratav audit avaldatud firmware 13 andmetest. Arvud näitavad all
 | GET/SYX-ga uuesti võrreldud mõõtmispunktid | 869 |
 | Erinevad uuesti kontrollitud GET/SYX paarid | 354 |
 | Vähemalt ühe sellise punktiga parameetrid | 72 |
-| Eraldi arvestatud ekraaninäidud | 38 |
+| Eraldi arvestatud ekraaninäidud | 66 |
 | Ekspordi abil kontrollitud punktid ilma GET-ita | 30 |
 | Vähemalt ühe paaristatud või ekspordipunktiga parameetrid | 85 |
 | Vahele jäetud või välistatud lähtekirjed | 36 |

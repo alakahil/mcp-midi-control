@@ -9,7 +9,7 @@ import {loadDictionary,findParam} from './fm3-table-encoder.mjs';
 const all=getParameterMap(),byId=new Map(all.parameters.map(p=>[p.id,p]));
 assert.equal(all.summary.parameterKeys,3223);assert.equal(byId.size,3223);
 assert.equal(all.summary.dictionaryRows,2892);assert.equal(all.summary.catalogOnlyKeys,331);
-assert.equal(all.summary.indexedObservations,1321);  // +23 T17 front-panel readings (2026-10-31)
+assert.equal(all.summary.indexedObservations,1349);  // +23 T17, +28 T18 front-panel readings (2026-10-31)
 let names=0,observations=0,labels=0,comparedWords=0,unrequested=0,disputed=0;
 for(const p of loadDictionary().params){
  const row=byId.get(`${p.family??'UNNAMED'}:${p.param}`);
@@ -32,7 +32,7 @@ for(const row of all.parameters){
   if(obs.kind==='front-panel-disputed-reading'){disputed++;assert.equal(obs.scope.readingDisputed,true);}
  }
 }
-assert.equal(observations,1321);assert.equal(labels,363);assert.equal(comparedWords,5275);assert.equal(unrequested,2);assert.equal(disputed,1);
+assert.equal(observations,1349);assert.equal(labels,363);assert.equal(comparedWords,5275);assert.equal(unrequested,2);assert.equal(disputed,1);
 const one=(f,p)=>getParameterMap(f,p).parameters[0];
 assert.deepEqual(one('chorus','VOICES').effective.scale.numericInputRange,[2,8]);
 assert.equal(one('chorus','VOICES').effective.scale.storedDomain.displayStep,2);
