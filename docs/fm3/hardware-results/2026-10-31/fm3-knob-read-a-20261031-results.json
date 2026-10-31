@@ -1,0 +1,12 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "2e1f73c05d999c361bbf73bd4dc15569d19bf106bc5f7df7478907d946017e05",
+ "time": "2026-10-31T13:19:17",
+ "readings": {
+  "compressor": "-36.0 dB/3.500/12.000 ms/249.99 ms/2.50 dB/70%",
+  "phaser": "1.250 Hz/6.50/35%/80.00 Hz/3500.1 Hz/4.00",
+  "tremolo": "4.500 Hz/65.0%/30.0%/-3.0 dB",
+  "type": "Compressor C: JFET Studio Compressor, Phaser B:Modern Vibe, Tremolo A: Bias Trem"
+ },
+ "note": ""
+}
