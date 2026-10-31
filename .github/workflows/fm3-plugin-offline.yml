@@ -104,6 +104,8 @@ jobs:
           python3 -B plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/cpu-sweep-collector/FM3_CPU_STEPS.py --self-test
           python3 -B tools/fm3/test-cpu-check-build.py
           node tools/fm3/cpu-sweep-ingest.mjs plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cpu-sweep-20261023-results.jsonl
+      - name: Verify the local runner reads this workflow
+        run: node tools/fm3/local-check.mjs --list
       - name: Replay the pinned 0.3.11 remaining-modifier audit
         run: |
           git fetch --no-tags origin f0a99bc190fcbe3a63284335c68fad66e9f9a36c 194833788d15db09d5ab9a774940ae84fcdebaad
