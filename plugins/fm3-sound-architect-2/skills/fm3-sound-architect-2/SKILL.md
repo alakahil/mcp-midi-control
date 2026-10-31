@@ -135,6 +135,16 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Nuppude esipaneeli näidud (0.3.40, T17)
+
+31.10.2026 loeti FM3 esipaneelilt 23 tabelikirjutaja nuppu, mille väärtuse oli kirjutanud generaator:
+Compressor C (JFET Studio: Threshold, Ratio, Attack, Release, Level, Mix), Phaser B (Modern Vibe: Rate, Depth,
+Feedback, Min/Max Frequency, Tone), Tremolo A (Bias Trem: Rate, Depth, Duty Cycle, Level) ja Pitch C (Crystal
+Echoes: Shift 1, Detune 1, Level 1, Delay 1, Feedback 1, High Cut, Low Cut). Kõik näidud vastasid kodeerija
+väärtusele (lineaarne/logaritmiline skaala ja kordaja); 22 täpselt näidatud komakohtadeni, Pitch High Cut 6000,07 Hz
+näitas 6000,0 Hz. Need nupud võid nendel tüüpidel nimetada seadmel kinnitatuks; teised nupud ja tüübid jäävad
+FW13 kirjeldaja järgi kirjutatuks (`MOOTOR/references/fm3-knob-read-20261031.json`).
+
 ## GitHubi seadmetõendite koondamine (0.3.26, 27.10.2026)
 
 See väljalase toob pluginasse GitHubi põhiharusse commit'iga

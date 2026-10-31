@@ -291,6 +291,16 @@ class Registry:
             self.observations.append({'id': f'taper/readings/{i}', 'parameter': by_name[p['name']],
                 'kind': 'screen-reading-no-export', 'scope': p, 'firmware': str(d['firmware']),
                 'evidence': self.ref(path, f'/readings/{i}')})
+        # T17 (2026-10-31): front-panel readings of table-encoder words in the edit buffer; screen only, no export.
+        path = REF / 'fm3-knob-read-20261031.json'
+        d = self.read(path)
+        for i, c in enumerate(d['controls']):
+            require(c['param'] in by_name, f'Unmatched T17 reading: {c["param"]}')
+            require(c['withinOneDisplayStep'], f'T17 reading outside one display step: {c["param"]}')
+            self.observations.append({'id': f'knob-read-t17/controls/{i}', 'parameter': by_name[c['param']],
+                'kind': 'screen-reading-no-export', 'scope': {'channel': c['channel'], 'raw': c['raw'], 'value': c['shownValue'],
+                    'shown': c['shown'], 'codecDisplay': c['codecDisplay'], 'exactToShownDigits': c['exact'], 'source': 'generated word, edit buffer'},
+                'firmware': str(d['firmware']), 'evidence': self.ref(path, f'/controls/{i}')})
 
     def audit_pairs(self):
         files = sorted({str(job[4]) for job in self.jobs} | {str(job[1]) for job in self.syx_only} | self.legacy.files)

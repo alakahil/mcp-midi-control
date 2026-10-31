@@ -10,7 +10,10 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.38 tõendiväljalaset. P2 lisab 30.10.2026
+Praegune lähtekood valmistab ette 0.3.40 tõendiväljalaset. T17 (31.10.2026) lisab 23 tabelikirjutaja nupu
+esipaneeli näidud (Compressor 6, Phaser 6, Tremolo 4, Pitch 7): 22 võrduvad koodeki väärtusega näidatud
+komakohtadeni, Pitch High Cut 6000,07 Hz näitas 6000,0 Hz (`references/fm3-knob-read-20261031.json`).
+Kirjutustugi ei muutu. Selle aluseks on 0.3.39 (P3) ja 0.3.38. P2 lisab 30.10.2026
 kasutaja kinnitatud kolme jalglüliti katse, algse 0.3.37 nelja faili komplekti
 ja STORE/reload-järgse ekspordi. Regressioon taastab sama SYX-i praeguse
 mootoriga ja kontrollib kogu ekspordikeha; ainsana erineb valitud stseen.

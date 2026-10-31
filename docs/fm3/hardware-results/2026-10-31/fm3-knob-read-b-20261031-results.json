@@ -1,0 +1,10 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "248745dbe0090d35aaa50939ad35fce3a3c4ec9b59e51d889220e083847b92c1",
+ "time": "2026-10-31T13:30:56",
+ "readings": {
+  "pitch": "7/12.5 ct/80.0%/150.0 ms/25.0%/6000.0 Hz/120.0 Hz",
+  "type": "Pich: kanal C Type: Crystal Echoes"
+ },
+ "note": ""
+}
