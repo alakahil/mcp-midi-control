@@ -7,10 +7,10 @@
     "tools/fm3/point3-index.py": "2053c97e456d7cd8d161e9575ba3ccd335939aa9f0ca64a3e5ea9a7dc5a01d71",
     "tools/fm3/point3-evidence.mjs": "6159c69d4923af5de3ae66b94801f08bc7f444bd7048654685af98963f95b4ac",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "3600d4c3286c6b29c7060fc28d58fe7b9e734380b6e892826d86b1f881ed4186",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-parameter-map.mjs": "6f2a4bb116d926674eee4f3969554227548870a4030417ad1bfaef04dfa28cad",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-parameter-map.mjs": "239fa1ca5e53194b00ebbfb2bb8c1d2d9e80e147b9f236d1944bbc89642fa801",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-parameter-domain.mjs": "8782ecf4f3e7672de0c1b97fe9e6113ce2f935d23a09f6b595a1366623280e84",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-parameter-map.mjs": "9a0b4126f1c3b88bfb17ab44457bff6c24ccc27a69a66aa3e55c5e4753a194b3",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_PARAMETER_EVIDENCE.json": "2ac799634571e87d2e99a57d0020ccf1235d1adbde97a6d117fdd8390a7f8d6d"
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_PARAMETER_EVIDENCE.json": "ec98ebf768fed37fda268eb01ec58a84b72b0686987e462be51b3751bf441574"
   },
   "baseline": {
     "version": "0.3.23",
