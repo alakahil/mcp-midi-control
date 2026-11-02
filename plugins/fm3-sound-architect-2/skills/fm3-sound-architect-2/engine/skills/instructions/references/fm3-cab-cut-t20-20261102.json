@@ -1,0 +1,140 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-02",
+ "test": "T20",
+ "method": "Edit-buffer load (7F 00) of one generated preset (Cab B: block-level and Cab 1 cuts at distinct off-grid values, Preamp Type TUBE); the user read every Low/High Cut on the Cab B pages on the FM3 front panel; nothing stored or set.",
+ "files": {
+  "CAB_B": {
+   "results": {
+    "path": "docs/fm3/hardware-results/2026-11-02/fm3-cab-cut-t20-cab-b-20261102-results.json",
+    "sha256": "f6fd0c5b0ebee045c5d160bcb77183471d3f2ff3339ad1a6373740fec4744431"
+   },
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-02/fm3-cab-cut-t20-cab-b-20261102-load.json",
+    "sha256": "7deeac4c25ecb1be8c9f18dd6466391c280e5ebfadce1c2fd21179c2c83f728d"
+   }
+  }
+ },
+ "partsRun": [
+  "CAB_B"
+ ],
+ "partsNotRun": {
+  "CAB_A": "Preamp Type NONE variant not run; visibility of the Preamp page cuts with Preamp Type NONE is not established"
+ },
+ "mode": "Cab B: DynaCab",
+ "answerInterpretations": [
+  {
+   "field": "preamp+type",
+   "raw": [
+    "Preamp Type: Tube; Preamp:",
+    "Drive/Saturation/Bass/Mid/Treble/Preamp Type/Low Cut/Low Cut Slope/High Cut/ High Cut Slope"
+   ],
+   "as": "Preamp page present; Preamp Type TUBE; controls Drive, Saturation, Bass, Mid, Treble, Preamp Type, Low Cut, Low Cut Slope, High Cut, High Cut Slope",
+   "reason": "Enter pressed early: the Preamp control list continued in the \"type\" answer"
+  },
+  {
+   "field": "note",
+   "raw": "Cab kanali B MODE - DYNA-CAB",
+   "as": "Cab B mode: DynaCab",
+   "reason": "the MODE answer was given in the note"
+  },
+  {
+   "field": "cuts",
+   "raw": "Cab2 - Low Cut: 20.0 Hz; High Cut 20000 Hz",
+   "as": "unwritten Cab 2 cuts (base words), not indexed",
+   "reason": "the test wrote Cab 1 and block-level cuts only"
+  }
+ ],
+ "controls": [
+  {
+   "block": "cab",
+   "channel": "B",
+   "param": "CABINET_LOCUT",
+   "label": "Low Cut",
+   "kind": "log",
+   "requested": 87,
+   "raw": 20921,
+   "codecDisplay": 86.997692,
+   "shown": "87.0 Hz",
+   "shownValue": 87,
+   "shownDecimals": 1,
+   "page": "Preamp (Filters)",
+   "exact": true,
+   "withinOneDisplayStep": true
+  },
+  {
+   "block": "cab",
+   "channel": "B",
+   "param": "CABINET_HICUT",
+   "label": "High Cut",
+   "kind": "log",
+   "requested": 7300,
+   "raw": 51192,
+   "codecDisplay": 7300.179397,
+   "shown": "7300 Hz",
+   "shownValue": 7300,
+   "shownDecimals": 0,
+   "page": "Preamp (Filters)",
+   "exact": true,
+   "withinOneDisplayStep": true
+  },
+  {
+   "block": "cab",
+   "channel": "B",
+   "param": "CABINET_LOCUT1",
+   "label": "Low Cut",
+   "kind": "log",
+   "requested": 33,
+   "raw": 14253,
+   "codecDisplay": 33.000472,
+   "shown": "33.0 Hz",
+   "shownValue": 33,
+   "shownDecimals": 1,
+   "page": "Cab (Cab 1)",
+   "exact": true,
+   "withinOneDisplayStep": true
+  },
+  {
+   "block": "cab",
+   "channel": "B",
+   "param": "CABINET_HICUT1",
+   "label": "High Cut",
+   "kind": "log",
+   "requested": 12500,
+   "raw": 52157,
+   "codecDisplay": 12499.911697,
+   "shown": "12499 Hz",
+   "shownValue": 12499,
+   "shownDecimals": 0,
+   "page": "Cab (Cab 1)",
+   "exact": false,
+   "withinOneDisplayStep": true
+  }
+ ],
+ "enums": [
+  {
+   "param": "CABINET_PRETYPE",
+   "channel": "B",
+   "raw": 1,
+   "codecDisplay": "TUBE",
+   "shown": "Tube",
+   "page": "Preamp"
+  }
+ ],
+ "editorCorroboration": "The user also sent FM3-Edit screenshots of the same edit buffer (Cab page: Cab 1 Low Cut 33.0 Hz, High Cut 12499 Hz; Preamp page Filters: Low Cut 87.0 Hz, High Cut 7300 Hz, Preamp Type Tube). Editor display is secondary to the front panel and is not indexed.",
+ "summary": {
+  "controls": 4,
+  "exact": 3,
+  "withinOneDisplayStep": 4,
+  "location": "CABINET_LOCUT (pid 38) and CABINET_HICUT (pid 39) are the Preamp page \"Filters\" Low Cut / High Cut (with Low/High Cut Slope = PRELOSLOPE / PREHISLOPE). CABINET_LOCUT1 / HICUT1 are the Cab page per-cab Low Cut / High Cut. This confirms the T19 interpretation of the Cab 20 Hz / 20000 Hz readings.",
+  "roundingNote": "CABINET_HICUT1 (log 2000..20000 Hz): codec 12499.912 Hz, FM3 showed 12499 Hz; within one display step, below the rounded value like T17 Pitch High Cut and T18 Reverb High Cut.",
+  "meaning": "The FW13 descriptor scales match the FM3 display for the block-level Cab Low/High Cut and the Cab 1 Low/High Cut; three exact to the shown digits, Cab 1 High Cut one display step low. Write support is unchanged."
+ },
+ "notMeasured": [
+  "Preamp page visibility with Preamp Type NONE (CAB_A not run)",
+  "audio",
+  "STORE/reload"
+ ]
+}

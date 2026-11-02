@@ -135,6 +135,14 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Cabi ploki Low/High Cut asukoht (0.3.43, T20)
+
+2.11.2026 loeti Cab B (DynaCab, Preamp Type Tube) lõikenupud: `CABINET_LOCUT` / `CABINET_HICUT` (pid 38/39) on
+Preamp lehe "Filters" Low Cut / High Cut (koos Low/High Cut Slope'iga), `CABINET_LOCUT1` / `HICUT1` on Cab lehe
+Cab 1 lõiked. Näidud 87,0 Hz / 7300 Hz / 33,0 Hz on täpsed, Cab 1 High Cut 12499,9 Hz näitas 12499 Hz. Preamp Type
+NONE variant jäi tegemata, seega pole teada, kas Preamp lehe lõiked on NONE puhul nähtavad
+(`MOOTOR/references/fm3-cab-cut-t20-20261102.json`).
+
 ## Cabi, Drive'i, Chorus'e, Flangeri, Wah ja Rotary nuppude näidud (0.3.42, T19)
 
 31.10.2026 loeti FM3 esipaneelilt 50 tabelikirjutaja nuppu: Cab B (DynaCab: Level, Cab 1 Level, Pan, DynaCab,
