@@ -1,0 +1,17 @@
+{"test":"T21","preset":"STD","source":"FM3-Edit screenshots 2026-11-02 (9) + FM3 front-panel photo (Delay B Mix)","readings":[
+{"block":"amp","channel":"D","type":"USA MK IV Lead Mid","param":"DISTORT_PAN","shown":"-37.4"},
+{"block":"cab","channel":"B","type":"Dyna-Cab","param":"CABINET_PAN","shown":"28.6"},
+{"block":"drive","channel":"C","type":"FET Boost","param":"FUZZ_PAN","shown":"-14.2"},
+{"block":"delay","channel":"B","type":"Stereo BBD","param":"DELAY_MIX","shown":"37.4 %"},
+{"block":"delay","channel":"B","type":"Stereo BBD","param":"DELAY_PAN","shown":"42.8"},
+{"block":"reverb","channel":"C","type":"Hall: Colosseum","param":"REVERB_MIX","shown":"23.6 %"},
+{"block":"reverb","channel":"C","type":"Hall: Colosseum","param":"REVERB_PAN","shown":"-19.4"},
+{"block":"phaser","channel":"D","type":"Script 90","param":"PHASER_MIX","shown":"61.2 %"},
+{"block":"phaser","channel":"D","type":"Script 90","param":"PHASER_PAN","shown":"33.4"},
+{"block":"chorus","channel":"A","type":"Dimension 3","param":"CHORUS_MIX","shown":"43.8 %"},
+{"block":"chorus","channel":"A","type":"Dimension 3","param":"CHORUS_PAN","shown":"-46.6"},
+{"block":"flanger","channel":"B","type":"Deluxe Mystery","param":"OLD_FLANGER_MIX","shown":"71.4 %"},
+{"block":"flanger","channel":"B","type":"Deluxe Mystery","param":"OLD_FLANGER_PAN","shown":"12.6"},
+{"block":"wah","channel":"A","type":"Clyde","param":"WAH_PAN","shown":"-27.8"}],
+"frontPanel":[{"block":"delay","channel":"B","param":"DELAY_MIX","shown":"37.4 %","scene":2}],
+"notes":["FM3-Edit labels: Balance for all *_PAN; Mix shown with GBL marker on Delay/Reverb/Chorus/Flanger/Phaser.","Scene 2 selected (S02 Rhythm Fat)."]}

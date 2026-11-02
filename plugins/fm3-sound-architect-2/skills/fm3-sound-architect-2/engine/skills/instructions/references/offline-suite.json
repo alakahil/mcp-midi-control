@@ -619,6 +619,15 @@
       "required": true
     },
     {
+      "id": "test-display-classes",
+      "command": [
+        "node",
+        "scripts/test-display-classes.mjs"
+      ],
+      "scope": "Mix (0x0705, 17), Balance (0x0900, 29) and class-0x01 integer (552) promotion to default-writable from T21/T22 hardware readings; all 27 readings re-encoded without opt-in; Amp Dynamic Depth/Presence stay blocked (T23); no device I/O",
+      "required": true
+    },
+    {
       "id": "test-controls-output",
       "command": [
         "node",

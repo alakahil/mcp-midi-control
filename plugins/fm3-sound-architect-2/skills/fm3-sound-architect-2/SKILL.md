@@ -135,6 +135,16 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Mix, Balance ja täisarvud vaikimisi kasutatavad (0.3.44, T21–T23)
+
+2.11.2026 laaditi kolm genereeritud presetit ja loeti FM3-Edit'ist ning esipaneelilt kõik kirjutatud nupud.
+T21: Mix (lipud 0x0705, 0…100 %, üks komakoht) ja Balance (0x0900, -100…100) 17/17 täpselt üheteistkümnes
+plokis; T22: klassi 0x01 täisarvud (bitisügavus, vedrude arv, häälte arv ×2, märgiga nihe -5 jne) 10/10 täpselt.
+Need kolm klassi (Mix 17, Balance 29, täisarvud 552 parameetrit) on nüüd vaikimisi kirjutatavad
+(`taper-class-verified`, `scripts/fm3-display-classes.mjs`), `allow` pole enam vaja. Enhancer/Formant Balance
+(lipud 0x0980) jääb opt-in. T23: Ampi `DISTORT_DYNDEPTH` / `DISTORT_DYNPRES` salvestuvad täpselt, aga neil pole
+FM3-Edit'is ega esipaneelil nuppu; need jäävad lukku (`MOOTOR/references/fm3-shot-t2{1,2,3}-*-20261102.json`).
+
 ## Cabi ploki Low/High Cut asukoht (0.3.43, T20)
 
 2.11.2026 loeti Cab B (DynaCab, Preamp Type Tube) lõikenupud: `CABINET_LOCUT` / `CABINET_HICUT` (pid 38/39) on

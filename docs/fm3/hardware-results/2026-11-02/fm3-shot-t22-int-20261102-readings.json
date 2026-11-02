@@ -1,0 +1,13 @@
+{"test":"T22","preset":"INT","source":"FM3-Edit screenshots 2026-11-02 (8) + FM3 front-panel photo (Reverb B Advanced: Voice 1 Shift 7, Voice 2 Shift -5)","readings":[
+{"block":"drive","channel":"A","type":"Bit Crusher","page":"Advanced","param":"FUZZ_BITREDUCE","shown":"7"},
+{"block":"drive","channel":"B","type":"Fat Rat","page":"Advanced","param":"FUZZ_PDQTY","shown":"3"},
+{"block":"drive","channel":"B","type":"Fat Rat","page":"Advanced","param":"FUZZ_NDQTY","shown":"2"},
+{"block":"reverb","channel":"A","type":"Spring: Medium Spring","page":"Basic","param":"REVERB_NUMSPRINGS","shown":"5"},
+{"block":"reverb","channel":"B","type":"Hall: Medium Hall","page":"Basic","param":"REVERB_DENSITY","shown":"6"},
+{"block":"reverb","channel":"B","type":"Hall: Medium Hall","page":"Pitch Shift","param":"REVERB_SHIFT1","shown":"7"},
+{"block":"reverb","channel":"B","type":"Hall: Medium Hall","page":"Pitch Shift","param":"REVERB_SHIFT2","shown":"-5"},
+{"block":"delay","channel":"A","type":"Digital Mono","page":"More","param":"DELAY_BITREDUCE","shown":"9"},
+{"block":"chorus","channel":"A","type":"Digital Stereo","page":"Expert","param":"CHORUS_VOICES","shown":"6"},
+{"block":"phaser","channel":"A","type":"Digital Mono","page":"Expert 2","param":"PHASER_FBTAP","shown":"5"}],
+"frontPanel":[{"block":"reverb","channel":"B","param":"REVERB_SHIFT1","shown":"7","scene":1},{"block":"reverb","channel":"B","param":"REVERB_SHIFT2","shown":"-5","scene":1}],
+"notes":["Chorus Voices raw 3 shown 6 (multiplier 2) as predicted.","Reverb Shift2 raw 65531 shown -5 (signed word)."]}

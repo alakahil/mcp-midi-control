@@ -1,0 +1,175 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "5f65acf1e12d631eda979ed167bad0c8ff98d00e9c73e3d8ede9a77127ef253b",
+ "preset": "STD",
+ "name": "SHOT T21 MIX STD",
+ "time": "2026-11-02T12:15:07",
+ "blocks": [
+  {
+   "family": "amp",
+   "effectId": 58,
+   "values": 576,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "DISTORT_PAN",
+     "channel": "D",
+     "raw": 20512,
+     "device": 20512
+    }
+   ]
+  },
+  {
+   "family": "cab",
+   "effectId": 62,
+   "values": 424,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "CABINET_PAN",
+     "channel": "B",
+     "raw": 42138,
+     "device": 42138
+    }
+   ]
+  },
+  {
+   "family": "drive",
+   "effectId": 118,
+   "values": 176,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "FUZZ_PAN",
+     "channel": "C",
+     "raw": 28114,
+     "device": 28114
+    }
+   ]
+  },
+  {
+   "family": "delay",
+   "effectId": 70,
+   "values": 356,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "DELAY_MIX",
+     "channel": "B",
+     "raw": 24510,
+     "device": 24510
+    },
+    {
+     "param": "DELAY_PAN",
+     "channel": "B",
+     "raw": 46791,
+     "device": 46791
+    }
+   ]
+  },
+  {
+   "family": "reverb",
+   "effectId": 66,
+   "values": 284,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "REVERB_MIX",
+     "channel": "C",
+     "raw": 15466,
+     "device": 15466
+    },
+    {
+     "param": "REVERB_PAN",
+     "channel": "C",
+     "raw": 26410,
+     "device": 26410
+    }
+   ]
+  },
+  {
+   "family": "phaser",
+   "effectId": 90,
+   "values": 140,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "PHASER_MIX",
+     "channel": "D",
+     "raw": 40107,
+     "device": 40107
+    },
+    {
+     "param": "PHASER_PAN",
+     "channel": "D",
+     "raw": 43711,
+     "device": 43711
+    }
+   ]
+  },
+  {
+   "family": "chorus",
+   "effectId": 78,
+   "values": 128,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "CHORUS_MIX",
+     "channel": "A",
+     "raw": 28704,
+     "device": 28704
+    },
+    {
+     "param": "CHORUS_PAN",
+     "channel": "A",
+     "raw": 17498,
+     "device": 17498
+    }
+   ]
+  },
+  {
+   "family": "flanger",
+   "effectId": 82,
+   "values": 132,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "OLD_FLANGER_MIX",
+     "channel": "B",
+     "raw": 46791,
+     "device": 46791
+    },
+    {
+     "param": "OLD_FLANGER_PAN",
+     "channel": "B",
+     "raw": 36896,
+     "device": 36896
+    }
+   ]
+  },
+  {
+   "family": "wah",
+   "effectId": 94,
+   "values": 100,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "WAH_PAN",
+     "channel": "A",
+     "raw": 23658,
+     "device": 23658
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}
