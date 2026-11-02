@@ -10,7 +10,9 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.42 tõendiväljalaset. T19 (31.10.2026) lisab 50 tabelikirjutaja nupu
+Praegune lähtekood valmistab ette 0.3.43 tõendiväljalaset. T20 (2.11.2026) lisab Cabi ploki Low/High Cut
+(Preamp leht) ja Cab 1 lõigete esipaneeli näidud: 3 täpselt, Cab 1 High Cut 12499,9 Hz näitas 12499 Hz
+(`references/fm3-cab-cut-t20-20261102.json`). Kirjutustugi ei muutu. Selle aluseks on 0.3.42. T19 (31.10.2026) lisab 50 tabelikirjutaja nupu
 esipaneeli näidud (Cab 5, Drive 8, Chorus 8, Flanger 8, Wah 8, Rotary 13), kõik täpselt näidatud komakohtadeni,
 sh kuus knob-klassi nuppu; Cabi ploki Low/High Cut jäid mõõtmata (`references/fm3-knob-read-t19-20261031.json`).
 Kirjutustugi ei muutu. Selle aluseks on 0.3.41. T18 (31.10.2026) lisab 28 tabelikirjutaja nupu

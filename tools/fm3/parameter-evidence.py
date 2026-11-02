@@ -321,6 +321,16 @@ class Registry:
                 'kind': 'screen-reading-no-export', 'scope': {'channel': c['channel'], 'raw': c['raw'], 'value': c['shownValue'],
                     'shown': c['shown'], 'codecDisplay': c['codecDisplay'], 'exactToShownDigits': c['exact'], 'source': 'generated word, edit buffer'},
                 'firmware': str(d['firmware']), 'evidence': self.ref(path, f'/controls/{i}')})
+        # T20 (2026-11-02): Cab B block-level cuts (Preamp page) and Cab 1 cuts; CAB_A (Preamp NONE) not run.
+        path = REF / 'fm3-cab-cut-t20-20261102.json'
+        d = self.read(path)
+        for i, c in enumerate(d['controls']):
+            require(c['param'] in by_name, f'Unmatched T20 reading: {c["param"]}')
+            require(c['withinOneDisplayStep'], f'T20 reading outside one display step: {c["param"]}')
+            self.observations.append({'id': f'cab-cut-t20/controls/{i}', 'parameter': by_name[c['param']],
+                'kind': 'screen-reading-no-export', 'scope': {'channel': c['channel'], 'raw': c['raw'], 'value': c['shownValue'],
+                    'shown': c['shown'], 'codecDisplay': c['codecDisplay'], 'exactToShownDigits': c['exact'], 'source': 'generated word, edit buffer'},
+                'firmware': str(d['firmware']), 'evidence': self.ref(path, f'/controls/{i}')})
 
     def audit_pairs(self):
         files = sorted({str(job[4]) for job in self.jobs} | {str(job[1]) for job in self.syx_only} | self.legacy.files)
