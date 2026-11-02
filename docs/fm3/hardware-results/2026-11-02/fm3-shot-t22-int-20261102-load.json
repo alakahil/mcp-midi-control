@@ -1,0 +1,115 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "8e1bb2e93a60cb4eca6398e252cbf01f359daf4d412912f886bb9deac0d2bd41",
+ "preset": "INT",
+ "name": "SHOT T22 INT",
+ "time": "2026-11-02T12:35:22",
+ "blocks": [
+  {
+   "family": "drive",
+   "effectId": 118,
+   "values": 176,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "FUZZ_BITREDUCE",
+     "channel": "A",
+     "raw": 7,
+     "device": 7
+    },
+    {
+     "param": "FUZZ_PDQTY",
+     "channel": "B",
+     "raw": 3,
+     "device": 3
+    },
+    {
+     "param": "FUZZ_NDQTY",
+     "channel": "B",
+     "raw": 2,
+     "device": 2
+    }
+   ]
+  },
+  {
+   "family": "reverb",
+   "effectId": 66,
+   "values": 284,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "REVERB_NUMSPRINGS",
+     "channel": "A",
+     "raw": 5,
+     "device": 5
+    },
+    {
+     "param": "REVERB_DENSITY",
+     "channel": "B",
+     "raw": 6,
+     "device": 6
+    },
+    {
+     "param": "REVERB_SHIFT1",
+     "channel": "B",
+     "raw": 7,
+     "device": 7
+    },
+    {
+     "param": "REVERB_SHIFT2",
+     "channel": "B",
+     "raw": 65531,
+     "device": 65531
+    }
+   ]
+  },
+  {
+   "family": "delay",
+   "effectId": 70,
+   "values": 356,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "DELAY_BITREDUCE",
+     "channel": "A",
+     "raw": 9,
+     "device": 9
+    }
+   ]
+  },
+  {
+   "family": "chorus",
+   "effectId": 78,
+   "values": 128,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "CHORUS_VOICES",
+     "channel": "A",
+     "raw": 3,
+     "device": 3
+    }
+   ]
+  },
+  {
+   "family": "phaser",
+   "effectId": 90,
+   "values": 140,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "PHASER_FBTAP",
+     "channel": "A",
+     "raw": 5,
+     "device": 5
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

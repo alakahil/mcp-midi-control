@@ -1,0 +1,25 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "5f65acf1e12d631eda979ed167bad0c8ff98d00e9c73e3d8ede9a77127ef253b",
+ "preset": "TREM",
+ "name": "SHOT T21 MIX TREM",
+ "time": "2026-11-02T12:33:39",
+ "blocks": [
+  {
+   "family": "tremolo",
+   "effectId": 106,
+   "values": 88,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "TREMOLO_PAN",
+     "channel": "C",
+     "raw": 25100,
+     "device": 25100
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

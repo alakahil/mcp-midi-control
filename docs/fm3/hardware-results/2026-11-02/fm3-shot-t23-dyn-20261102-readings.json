@@ -1,0 +1,4 @@
+{"test":"T23","preset":"DYN","source":"FM3-Edit screenshots 2026-11-02 (Amp A Power Amp, A Dynamics; D Speaker, Ideal, Pwr Tubes + CF, Power Supply) + user front-panel search","result":"not-shown","readings":[],
+"notes":["No control named Dynamic Depth / Dynamic Presence on any Amp page in FM3-Edit (A: Power Amp, Dynamics; D: Ideal, Pwr Tubes + CF, Power Supply, Speaker) nor on the FM3 front panel (user report).",
+"Power Amp 'Presence Frequency' A shows 1.000 (DYNPRES A raw 0) and Ideal 'Depth' D shows 0.00 (DYNDEPTH D raw 65534): neither is the written word.",
+"Device holds all 8 written words (fn=0x1F read-back). Status stays unverified-taper; composer must not use DISTORT_DYNDEPTH / DISTORT_DYNPRES."]}

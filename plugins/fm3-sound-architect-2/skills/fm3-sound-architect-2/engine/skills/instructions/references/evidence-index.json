@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2157,
-  "filePaths": 2361,
+  "uniqueContents": 2160,
+  "filePaths": 2364,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -3907,6 +3907,12 @@
         "references/drive-batch-20261006-112254/capture-20261006T112047-061d2615da/pair.json"
       ]
     },
+    "4ed8a0ea8f36769935847e71945fb3dd162cf35f3f0b3f65a04f4d167067722c": {
+      "bytes": 10399,
+      "paths": [
+        "references/fm3-shot-t21-mix-20261102.json"
+      ]
+    },
     "4eda4d22b89fb843ce47ab011bf01290a2cdbaabb9fe0219038faa5f5f0e7095": {
       "bytes": 24680,
       "paths": [
@@ -6749,6 +6755,12 @@
         "references/flanger-batch-20261007-125456/capture-20261007T125113-921410b1d1/donor.syx"
       ]
     },
+    "864a44daaaff9700199e5e965f3a571cce967d7032d0579d71e6d35f6865a068": {
+      "bytes": 6565,
+      "paths": [
+        "references/fm3-shot-t22-int-20261102.json"
+      ]
+    },
     "864ba2f5ff6a4723780285fc4f6fa263fcfd83d4235529a9f731acf290dbd918": {
       "bytes": 2715,
       "paths": [
@@ -7362,6 +7374,12 @@
       "bytes": 658,
       "paths": [
         "references/pitch-batch-20261007-153634/capture-20261007T153537-0539bbe6cb/labels.json"
+      ]
+    },
+    "929c00ccf938ba0ab17b94c42e22795653423c5cb16d82e01a1076b7a5242329": {
+      "bytes": 2647,
+      "paths": [
+        "references/fm3-shot-t23-dyn-20261102.json"
       ]
     },
     "92a77679a0a2dde7170bb1f0f8c9d5b32fc5fa03adccdb6823617a6d53f0cf2f": {
@@ -8450,6 +8468,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-148-6b8f074483/donor.syx"
+      ]
+    },
+    "a85dd1ead287757b2807dc50c694fc54c693ef565305e81f9a36eb6455c57317": {
+      "bytes": 26919,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "a87d4d9ef7c6660503c02d68277b863ae26d69f854ff404b48f6cbcc6afa1f3a": {
@@ -12362,12 +12386,6 @@
       "bytes": 2178,
       "paths": [
         "references/filter-controls-20261008-165150/step-00-b4f6851003/result.json"
-      ]
-    },
-    "f41fc3eac25dc0d66ba50f9dafd179f8b6fb0becae433729354132e34eb27a35": {
-      "bytes": 26508,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "f42c0feb7be0f148cf573313399f7df51ed35b6ce306cfc29ddac5d409c143ce": {

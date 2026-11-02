@@ -1,0 +1,85 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-02",
+ "method": "FM3_SHOT_LOAD.py --load (Remote Control): edit-buffer load (7F 00) of one generated preset, then a read-only fn=0x1F bulk read of every test block (all words, all channels) compared word for word; the user then read the written controls from FM3-Edit screenshots and front-panel photos. Nothing stored or set.",
+ "notMeasured": [
+  "audio",
+  "STORE/reload"
+ ],
+ "test": "T23",
+ "experimental": true,
+ "packSha256": "b0a82dbb0121744474a76a28a73d339bc5105036efff0e680a2125e6a63a3d86",
+ "parts": [
+  {
+   "preset": "DYN",
+   "name": "SHOT T23 AMP DYN",
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-02/fm3-shot-t23-dyn-20261102-load.json",
+    "sha256": "2f75f3af4f90e8c9d73582ba70269a29f0516b229e54245fd41e7cd8d2aa1a89",
+    "time": "2026-11-02T12:53:55",
+    "blocks": 1,
+    "words": 576,
+    "testWords": 8,
+    "allMatch": true
+   },
+   "readings": {
+    "path": "docs/fm3/hardware-results/2026-11-02/fm3-shot-t23-dyn-20261102-readings.json",
+    "sha256": "d3d3e2bffd917b278017bef5b1dc33e6a95270feb9e9432c8b6fdc80599e83e0"
+   },
+   "written": [
+    {
+     "param": "DISTORT_DYNDEPTH",
+     "channel": "A",
+     "raw": 16384
+    },
+    {
+     "param": "DISTORT_DYNDEPTH",
+     "channel": "B",
+     "raw": 32767
+    },
+    {
+     "param": "DISTORT_DYNDEPTH",
+     "channel": "C",
+     "raw": 49151
+    },
+    {
+     "param": "DISTORT_DYNDEPTH",
+     "channel": "D",
+     "raw": 65534
+    },
+    {
+     "param": "DISTORT_DYNPRES",
+     "channel": "A",
+     "raw": 0
+    },
+    {
+     "param": "DISTORT_DYNPRES",
+     "channel": "B",
+     "raw": 16384
+    },
+    {
+     "param": "DISTORT_DYNPRES",
+     "channel": "C",
+     "raw": 49151
+    },
+    {
+     "param": "DISTORT_DYNPRES",
+     "channel": "D",
+     "raw": 65534
+    }
+   ],
+   "notes": [
+    "No control named Dynamic Depth / Dynamic Presence on any Amp page in FM3-Edit (A: Power Amp, Dynamics; D: Ideal, Pwr Tubes + CF, Power Supply, Speaker) nor on the FM3 front panel (user report).",
+    "Power Amp 'Presence Frequency' A shows 1.000 (DYNPRES A raw 0) and Ideal 'Depth' D shows 0.00 (DYNDEPTH D raw 65534): neither is the written word.",
+    "Device holds all 8 written words (fn=0x1F read-back). Status stays unverified-taper; composer must not use DISTORT_DYNDEPTH / DISTORT_DYNPRES."
+   ]
+  }
+ ],
+ "summary": {
+  "storedExactly": 8,
+  "shown": 0,
+  "result": "DISTORT_DYNDEPTH and DISTORT_DYNPRES are stored and read back exactly but have no control in FM3-Edit or on the FM3 front panel; they stay unverified-taper and the composer must not write them."
+ }
+}

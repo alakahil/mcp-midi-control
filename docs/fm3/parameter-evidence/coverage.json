@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scope": "Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.",
   "inventory": {
-    "filePaths": 2361,
-    "uniqueContents": 2157,
+    "filePaths": 2364,
+    "uniqueContents": 2160,
     "archivePaths": 990,
     "archiveContents": 164
   },
@@ -21,11 +21,11 @@
     "blocked-hidden-editor": 1,
     "enum-labels": 348,
     "enum-labels-crosschecked": 137,
-    "linear-by-structure": 600,
+    "linear-by-structure": 2,
     "measured": 22,
     "n/a": 760,
     "preset-word-crosschecked": 34,
-    "taper-class-verified": 960,
+    "taper-class-verified": 1558,
     "unverified-taper": 30
   },
   "recentEvidence": {
@@ -146,16 +146,16 @@
       "catalogKeys": 105,
       "dictionaryKeys": 106,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 34,
-      "tableOptInOnBundledBase": 27
+      "tableDefaultOnBundledBase": 36,
+      "tableOptInOnBundledBase": 25
     },
     {
       "family": "CHORUS",
       "catalogKeys": 29,
       "dictionaryKeys": 32,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 28,
-      "tableOptInOnBundledBase": 3
+      "tableDefaultOnBundledBase": 31,
+      "tableOptInOnBundledBase": 0
     },
     {
       "family": "COMP",
@@ -186,16 +186,16 @@
       "catalogKeys": 88,
       "dictionaryKeys": 89,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 80,
-      "tableOptInOnBundledBase": 3
+      "tableDefaultOnBundledBase": 83,
+      "tableOptInOnBundledBase": 0
     },
     {
       "family": "DISTORT",
       "catalogKeys": 143,
       "dictionaryKeys": 144,
       "pairedPointKeys": 1,
-      "tableDefaultOnBundledBase": 131,
-      "tableOptInOnBundledBase": 1
+      "tableDefaultOnBundledBase": 132,
+      "tableOptInOnBundledBase": 0
     },
     {
       "family": "ENHANCER",
@@ -242,8 +242,8 @@
       "catalogKeys": 33,
       "dictionaryKeys": 33,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 30,
-      "tableOptInOnBundledBase": 2
+      "tableDefaultOnBundledBase": 32,
+      "tableOptInOnBundledBase": 0
     },
     {
       "family": "FORMANT",
@@ -258,8 +258,8 @@
       "catalogKeys": 43,
       "dictionaryKeys": 44,
       "pairedPointKeys": 5,
-      "tableDefaultOnBundledBase": 39,
-      "tableOptInOnBundledBase": 4
+      "tableDefaultOnBundledBase": 43,
+      "tableOptInOnBundledBase": 0
     },
     {
       "family": "GATE",
@@ -394,16 +394,16 @@
       "catalogKeys": 35,
       "dictionaryKeys": 35,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 18,
-      "tableOptInOnBundledBase": 16
+      "tableDefaultOnBundledBase": 21,
+      "tableOptInOnBundledBase": 13
     },
     {
       "family": "PITCH",
       "catalogKeys": 114,
       "dictionaryKeys": 114,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 78,
-      "tableOptInOnBundledBase": 33
+      "tableDefaultOnBundledBase": 80,
+      "tableOptInOnBundledBase": 31
     },
     {
       "family": "PLEX",
@@ -434,8 +434,8 @@
       "catalogKeys": 71,
       "dictionaryKeys": 71,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 62,
-      "tableOptInOnBundledBase": 8
+      "tableDefaultOnBundledBase": 70,
+      "tableOptInOnBundledBase": 0
     },
     {
       "family": "RINGMOD",
@@ -450,8 +450,8 @@
       "catalogKeys": 21,
       "dictionaryKeys": 21,
       "pairedPointKeys": 5,
-      "tableDefaultOnBundledBase": 13,
-      "tableOptInOnBundledBase": 7
+      "tableDefaultOnBundledBase": 15,
+      "tableOptInOnBundledBase": 5
     },
     {
       "family": "RTA",
@@ -490,8 +490,8 @@
       "catalogKeys": 22,
       "dictionaryKeys": 22,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 12,
-      "tableOptInOnBundledBase": 8
+      "tableDefaultOnBundledBase": 13,
+      "tableOptInOnBundledBase": 7
     },
     {
       "family": "VOCODER",
@@ -514,8 +514,8 @@
       "catalogKeys": 25,
       "dictionaryKeys": 25,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 18,
-      "tableOptInOnBundledBase": 7
+      "tableDefaultOnBundledBase": 19,
+      "tableOptInOnBundledBase": 6
     }
   ]
 }

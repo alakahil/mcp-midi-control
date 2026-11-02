@@ -98,3 +98,13 @@ on vahemikku jäävad täisarvud (Pitch Shift −12 = 65524, Reverb Springs 3/4/
 of Taps toorväärtust 6 kui 6. `loadDictionary` annab neile `kind: integer`; staatus ei muutu (vajab endiselt
 `allow: linear-by-structure`). Kordaja korral näit = toorväärtus × kordaja (Plex Number of Delays: toorväärtus 2 = 4);
 kirjutatav väärtus peab olema kordaja kordne. Kordaja 0 (GLOBAL_CUSTOM_SCALE) on lukus.
+
+## Mix, Balance ja täisarvud vaikimisi (0.3.44, T21/T22)
+
+`scripts/fm3-display-classes.mjs` tõstab `loadDictionary` ajal kolm struktuurselt ühtset klassi staatusest
+`linear-by-structure` staatusse `taper-class-verified` (algne jääb välja `structuralStatus`): Mix (lipud 0x0705,
+0…1 ×100, 17 kirjet), Balance (0x0900, -1…1 ×100, 29 kirjet) ja klassi 0x01 täisarvud ilma oma näidukoodekita
+(552 kirjet). Tõend: 2.11.2026 FM3-Edit'i ja esipaneeli näidud 27/27 täpselt (Mix 6, Balance 11, täisarvud 10, sh
+kordaja 2 ja negatiivne väärtus; `references/fm3-shot-t21-mix-20261102.json`, `fm3-shot-t22-int-20261102.json`).
+Enhancer/Formant Balance (lipud 0x0980) jäävad opt-in. Ampi `DISTORT_DYNDEPTH` / `DISTORT_DYNPRES` jäävad
+`unverified-taper`: sõnad salvestuvad, kuid FM3-l pole neile nuppu (T23).

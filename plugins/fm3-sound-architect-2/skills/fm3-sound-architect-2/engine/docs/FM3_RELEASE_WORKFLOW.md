@@ -10,7 +10,7 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.43 tõendiväljalaset. T20 (2.11.2026) lisab Cabi ploki Low/High Cut
+Praegune lähtekood valmistab ette 0.3.44 tõendiväljalaset. T21–T23 (2.11.2026) teevad Mix (0x0705), Balance (0x0900) ja klassi 0x01 täisarvud vaikimisi kirjutatavaks: 27/27 FM3-Edit/esipaneeli näitu täpselt (`references/fm3-shot-t21-mix-20261102.json`, `fm3-shot-t22-int-20261102.json`); Ampi Dynamic Depth/Presence jäävad lukku, sest neil pole nuppu (`fm3-shot-t23-dyn-20261102.json`). Selle aluseks on 0.3.43. T20 (2.11.2026) lisab Cabi ploki Low/High Cut
 (Preamp leht) ja Cab 1 lõigete esipaneeli näidud: 3 täpselt, Cab 1 High Cut 12499,9 Hz näitas 12499 Hz
 (`references/fm3-cab-cut-t20-20261102.json`). Kirjutustugi ei muutu. Selle aluseks on 0.3.42. T19 (31.10.2026) lisab 50 tabelikirjutaja nupu
 esipaneeli näidud (Cab 5, Drive 8, Chorus 8, Flanger 8, Wah 8, Rotary 13), kõik täpselt näidatud komakohtadeni,

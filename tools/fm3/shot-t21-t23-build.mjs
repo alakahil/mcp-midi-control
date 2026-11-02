@@ -75,7 +75,7 @@ for(const t of TESTS){
   const writes=it.controls.map(c=>{const p=findParam(c.block,c.param),r=records.find(x=>x.family===c.block);assert.ok(r,c.block+' record');
    const raw=word(r,'ABCD'.indexOf(c.channel),p.param);if(c.raw!==undefined)assert.equal(raw,c.raw,c.param+' raw');
    const disp=decodeValue(p,raw);if(c.value!==undefined)assert.ok(Math.abs(disp-c.value)<=0.01*(Math.abs(c.value)+1),`${c.param} ${disp} vs ${c.value}`);
-   return {block:c.block,channel:c.channel,param:p.name,label:p.label,pid:p.param,kind:p.kind,status:p.status,flags:p.flags,requested:c.value??null,raw,codecDisplay:disp===undefined?null:+disp.toFixed(6)};});
+   return {block:c.block,channel:c.channel,param:p.name,label:p.label,pid:p.param,kind:p.kind,status:p.structuralStatus??p.status,flags:p.flags,requested:c.value??null,raw,codecDisplay:disp===undefined?null:+disp.toFixed(6)};});
   const fams=[...new Set(writes.map(w=>w.block))];
   const blocks=fams.map(f=>{const r=records.find(x=>x.family===f);
    return {family:f,effectId:r.eid,words:r.words,channels:r.channels,request:hex(R.bulkReadPoll(r.eid)),
