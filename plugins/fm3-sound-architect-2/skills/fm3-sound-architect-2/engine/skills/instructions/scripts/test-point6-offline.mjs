@@ -79,7 +79,8 @@ for(const [family,f] of Object.entries(policy.families)){
    // Existing tempo and modifier gates stay independent: isolate the visibility
    // check above, then exercise a scalar write only in an unlocked final state.
    for(const lock of JSON.parse(read('references/fm3-insert-tempo-locks.json')).tempoLocks.filter(x=>x.family===family))b.writeUInt16LE(0,start+2*lock.tempoPid);
-   const value=p.param===f.selectorPid?type:p.kind==='enum'?0:valueAt(p,.5);
+   // Ten-Tap Delay Time is writable only up to its measured limit (fm3-tentap-times.mjs).
+   const value=p.param===f.selectorPid?type:p.kind==='enum'?0:p.writableMaxMs?Math.min(valueAt(p,.5),p.writableMaxMs):valueAt(p,.5);
    const saved=Buffer.from(b),writes=applyTableControls(b,[{block:slug,channel:'ABCD'[ch],param:p.param,value}],opts);
    assert.equal(writes.length,1);assert.equal(b.readUInt16LE(offset),encodeValue(p,value,opts));
    for(let i=0;i<b.length;i++)if(i!==offset&&i!==offset+1)assert.equal(b[i],saved[i],'Collateral byte '+i);

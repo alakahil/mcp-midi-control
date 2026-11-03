@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.45`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.46`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -135,6 +135,15 @@ Käivita `selfCheck` väljalaske teadaoleva commit'iga. Taastatud runtime'is
 on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
+
+## Ten-Tapi ajad vaikimisi kasutatavad (0.3.46, T25)
+
+3.11.2026 laaditi T25-s kaks Ten-Tapi presetit. Rhythm Tap Delay Time 1–10 (20 väärtust 11,7…9000 ms) näitas
+FM3-Edit täpselt (lineaarne 0…10 s, täis-ms). Ten-Tap Delay'i Delay Time on lineaarne 0,01…10 s, mitte sõnastiku
+0,001…2 s: toorsõnad 650/1950/3214/5200 näitasid 109/307/500/803 ms, esipaneel 803 ms, ja seadme ise tuletatud
+Time-sõnad vastasid täpselt. 10 tapiga piiras seade Delay Time'i 1000 ms-ga. `scripts/fm3-tentap-times.mjs` tõstab
+11 sõna staatusse `measured`: Time 1–10 ainult tüübis Rhythm Tap Delay (Ten-Tap Delay arvutab need ise ümber) ja
+Delay Time ainult tüübis Ten-Tap Delay, kirjutatav 10…1000 ms. Tõend `references/fm3-shot-t25-tentap-20261103.json`.
 
 ## Valikunupud vaikimisi kasutatavad (0.3.45, T24)
 

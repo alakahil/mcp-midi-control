@@ -46,7 +46,9 @@ const composed=Buffer.from(composeSound(read(NEWLOOK),{composer:{schemaVersion:1
 const st0=inspectStructure(composed),body=Buffer.from(st0.raw.body),{records}=scanRecords(body,{requireAmpCab:false});
 const rec=records.find(r=>r.family==='tentap');assert.ok(rec,'tentap record');assert.equal(rec.words,48);assert.equal(rec.channels,4);
 const off=(ch,pid)=>rec.start+2*(ch*rec.words+pid);
-const P={type:findParam('tentap','TENTAP_TYPE'),delay:findParam('tentap','TENTAP_TIMEM'),times:TAPS.map(k=>findParam('tentap','TENTAP_TIME'+k+'M'))};
+// Pinned dictionary view: since 0.3.46 fm3-tentap-times.mjs promotes these words; the pack records the pre-test status.
+const pinned=p=>p.structuralStatus?{...p,status:p.structuralStatus,kind:p.structuralKind,min:p.dictionaryRange?.[0]??p.min,max:p.dictionaryRange?.[1]??p.max}:p;
+const P={type:findParam('tentap','TENTAP_TYPE'),delay:pinned(findParam('tentap','TENTAP_TIMEM')),times:TAPS.map(k=>pinned(findParam('tentap','TENTAP_TIME'+k+'M')))};
 for(const p of [P.delay,...P.times])assert.equal(p.status,'unverified-taper',p.name+' still unverified');
 const writes=[];
 for(const [ci,ch] of [...'ABCD'].entries()){

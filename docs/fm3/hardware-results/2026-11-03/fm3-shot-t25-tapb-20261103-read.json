@@ -1,0 +1,441 @@
+{
+ "kind": "fm3-shot-read",
+ "packSha256": "018f91bf2604ee6f2897ddd5a97982c592ac22cb8cf40dc3ae4b32cdb6fdccd2",
+ "preset": "TAPB",
+ "label": "after-edit",
+ "time": "2026-11-03T15:52:07",
+ "blocks": [
+  {
+   "family": "tentap",
+   "effectId": 158,
+   "values": 192,
+   "matches": false,
+   "mismatches": [
+    {
+     "channel": "A",
+     "pid": 17,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 18,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 19,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 20,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 21,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 22,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 23,
+     "expected": 0,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 24,
+     "expected": 0,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 25,
+     "expected": 0,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 26,
+     "expected": 0,
+     "device": 715
+    },
+    {
+     "channel": "B",
+     "pid": 17,
+     "expected": 3276,
+     "device": 2014
+    },
+    {
+     "channel": "B",
+     "pid": 18,
+     "expected": 3276,
+     "device": 2014
+    },
+    {
+     "channel": "B",
+     "pid": 19,
+     "expected": 3276,
+     "device": 2014
+    },
+    {
+     "channel": "B",
+     "pid": 20,
+     "expected": 3276,
+     "device": 2014
+    },
+    {
+     "channel": "B",
+     "pid": 21,
+     "expected": 3276,
+     "device": 2014
+    },
+    {
+     "channel": "B",
+     "pid": 22,
+     "expected": 3276,
+     "device": 2014
+    },
+    {
+     "channel": "B",
+     "pid": 23,
+     "expected": 0,
+     "device": 2014
+    },
+    {
+     "channel": "B",
+     "pid": 24,
+     "expected": 0,
+     "device": 2014
+    },
+    {
+     "channel": "B",
+     "pid": 25,
+     "expected": 0,
+     "device": 2014
+    },
+    {
+     "channel": "B",
+     "pid": 26,
+     "expected": 0,
+     "device": 2014
+    },
+    {
+     "channel": "C",
+     "pid": 23,
+     "expected": 0,
+     "device": 3276
+    },
+    {
+     "channel": "C",
+     "pid": 24,
+     "expected": 0,
+     "device": 3276
+    },
+    {
+     "channel": "C",
+     "pid": 25,
+     "expected": 0,
+     "device": 3276
+    },
+    {
+     "channel": "C",
+     "pid": 26,
+     "expected": 0,
+     "device": 3276
+    },
+    {
+     "channel": "D",
+     "pid": 17,
+     "expected": 3276,
+     "device": 5260
+    },
+    {
+     "channel": "D",
+     "pid": 18,
+     "expected": 3276,
+     "device": 5260
+    },
+    {
+     "channel": "D",
+     "pid": 19,
+     "expected": 3276,
+     "device": 5260
+    },
+    {
+     "channel": "D",
+     "pid": 20,
+     "expected": 3276,
+     "device": 5260
+    },
+    {
+     "channel": "D",
+     "pid": 21,
+     "expected": 3276,
+     "device": 5260
+    },
+    {
+     "channel": "D",
+     "pid": 22,
+     "expected": 3276,
+     "device": 5260
+    },
+    {
+     "channel": "D",
+     "pid": 23,
+     "expected": 0,
+     "device": 5260
+    },
+    {
+     "channel": "D",
+     "pid": 24,
+     "expected": 0,
+     "device": 5260
+    },
+    {
+     "channel": "D",
+     "pid": 25,
+     "expected": 0,
+     "device": 5260
+    },
+    {
+     "channel": "D",
+     "pid": 26,
+     "expected": 0,
+     "device": 5260
+    }
+   ],
+   "testWords": [
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "A",
+     "raw": 650,
+     "device": 650
+    },
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "B",
+     "raw": 1950,
+     "device": 1950
+    },
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "C",
+     "raw": 3214,
+     "device": 3214
+    },
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "D",
+     "raw": 5200,
+     "device": 5200
+    }
+   ],
+   "device": [
+    0,
+    0,
+    650,
+    0,
+    0,
+    32767,
+    0,
+    10,
+    0,
+    0,
+    65534,
+    0,
+    32767,
+    0,
+    65534,
+    65534,
+    0,
+    715,
+    715,
+    715,
+    715,
+    715,
+    715,
+    715,
+    715,
+    715,
+    715,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    120,
+    0,
+    65534,
+    13107,
+    52427,
+    32767,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1950,
+    0,
+    0,
+    32767,
+    0,
+    10,
+    0,
+    0,
+    65534,
+    0,
+    32767,
+    0,
+    65534,
+    65534,
+    0,
+    2014,
+    2014,
+    2014,
+    2014,
+    2014,
+    2014,
+    2014,
+    2014,
+    2014,
+    2014,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    120,
+    0,
+    65534,
+    13107,
+    52427,
+    32767,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3214,
+    0,
+    0,
+    32767,
+    0,
+    10,
+    0,
+    0,
+    65534,
+    0,
+    32767,
+    0,
+    65534,
+    65534,
+    0,
+    3276,
+    3276,
+    3276,
+    3276,
+    3276,
+    3276,
+    3276,
+    3276,
+    3276,
+    3276,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    120,
+    0,
+    65534,
+    13107,
+    52427,
+    32767,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5200,
+    0,
+    0,
+    32767,
+    0,
+    10,
+    0,
+    0,
+    65534,
+    0,
+    32767,
+    0,
+    65534,
+    65534,
+    0,
+    5260,
+    5260,
+    5260,
+    5260,
+    5260,
+    5260,
+    5260,
+    5260,
+    5260,
+    5260,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    52427,
+    120,
+    0,
+    65534,
+    13107,
+    52427,
+    32767,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ]
+}

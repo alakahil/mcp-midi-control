@@ -1,0 +1,1329 @@
+{
+ "kind": "fm3-shot-check",
+ "version": 1,
+ "date": "2026-11-03",
+ "test": "T25",
+ "title": "Ten-Tap ajad",
+ "experimental": true,
+ "hypotheses": {
+  "time": {
+   "param": "TENTAP_TIMEnM",
+   "rule": "linear 0..10 s, shown in ms"
+  },
+  "delayLinear": {
+   "param": "TENTAP_TIMEM",
+   "rule": "linear 0.001..2 s, shown in ms"
+  },
+  "delayLog": {
+   "param": "TENTAP_TIMEM",
+   "rule": "logarithmic 0.001..2 s, shown in ms"
+  },
+  "refTempo": {
+   "param": "TENTAP_REFTEMPO",
+   "rule": "plain integer BPM"
+  }
+ },
+ "method": "FM3_SHOT_LOAD.py --load sends one preset to the edit buffer (7F 00) and reads the Ten-Tap block back with fn=0x1F (all words, all channels; read-only). The twelve Ten-Tap time words are raw words (experimental); the FM3-Edit screenshots give their display scale. Nothing is stored or set.",
+ "items": [
+  {
+   "id": "TAP",
+   "file": "TAP.syx",
+   "sha256": "6b7f430f455e37d4f3cd727c7382bc2de7e687bbd59b6de334a8389ac702ac1e",
+   "name": "SHOT T25 TENTAP TIMES",
+   "cpuEstimate": 57.6,
+   "writes": [
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIMEM",
+     "label": "Delay Time",
+     "pid": 2,
+     "kind": "class-0",
+     "status": "unverified-taper",
+     "flags": "0x0000",
+     "raw": 3214,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 99.037,
+      "log": 1.452
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_REFTEMPO",
+     "label": null,
+     "pid": 37,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f80",
+     "raw": 120,
+     "deviceDefault": true,
+     "predictions": {
+      "integer": 120
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME1M",
+     "label": "Time 1",
+     "pid": 17,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 1227,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 187.231
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME2M",
+     "label": "Time 2",
+     "pid": 18,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 2455,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 374.615
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME3M",
+     "label": "Time 3",
+     "pid": 19,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 3682,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 561.846
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME4M",
+     "label": "Time 4",
+     "pid": 20,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 4910,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 749.229
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME5M",
+     "label": "Time 5",
+     "pid": 21,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 6137,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 936.46
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME6M",
+     "label": "Time 6",
+     "pid": 22,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 7365,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 1123.844
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME7M",
+     "label": "Time 7",
+     "pid": 23,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 8592,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 1311.075
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME8M",
+     "label": "Time 8",
+     "pid": 24,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 9820,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 1498.459
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME9M",
+     "label": "Time 9",
+     "pid": 25,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 11047,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 1685.69
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "A",
+     "param": "TENTAP_TIME10M",
+     "label": "Time 10",
+     "pid": 26,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 12275,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 1873.074
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIMEM",
+     "label": "Delay Time",
+     "pid": 2,
+     "kind": "class-0",
+     "status": "unverified-taper",
+     "flags": "0x0000",
+     "raw": 16384,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 500.765,
+      "log": 6.688
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_REFTEMPO",
+     "label": null,
+     "pid": 37,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f80",
+     "raw": 90,
+     "deviceDefault": false,
+     "predictions": {
+      "integer": 90
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME1M",
+     "label": "Time 1",
+     "pid": 17,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 77,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 11.75
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME2M",
+     "label": "Time 2",
+     "pid": 18,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 153,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 23.347
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME3M",
+     "label": "Time 3",
+     "pid": 19,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 230,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 35.096
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME4M",
+     "label": "Time 4",
+     "pid": 20,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 307,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 46.846
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME5M",
+     "label": "Time 5",
+     "pid": 21,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 383,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 58.443
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME6M",
+     "label": "Time 6",
+     "pid": 22,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 460,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 70.193
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME7M",
+     "label": "Time 7",
+     "pid": 23,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 537,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 81.942
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME8M",
+     "label": "Time 8",
+     "pid": 24,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 613,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 93.539
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME9M",
+     "label": "Time 9",
+     "pid": 25,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 690,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 105.289
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "param": "TENTAP_TIME10M",
+     "label": "Time 10",
+     "pid": 26,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 767,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 117.038
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIMEM",
+     "label": "Delay Time",
+     "pid": 2,
+     "kind": "class-0",
+     "status": "unverified-taper",
+     "flags": "0x0000",
+     "raw": 32767,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 1000.5,
+      "log": 44.721
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_REFTEMPO",
+     "label": null,
+     "pid": 37,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f80",
+     "raw": 140,
+     "deviceDefault": false,
+     "predictions": {
+      "integer": 140
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME1M",
+     "label": "Time 1",
+     "pid": 17,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 20643,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 3149.968
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME2M",
+     "label": "Time 2",
+     "pid": 18,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 24903,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 3800.012
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME3M",
+     "label": "Time 3",
+     "pid": 19,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 29163,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 4450.056
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME4M",
+     "label": "Time 4",
+     "pid": 20,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 33422,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 5099.948
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME5M",
+     "label": "Time 5",
+     "pid": 21,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 37682,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 5749.992
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME6M",
+     "label": "Time 6",
+     "pid": 22,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 41942,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 6400.037
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME7M",
+     "label": "Time 7",
+     "pid": 23,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 46201,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 7049.928
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME8M",
+     "label": "Time 8",
+     "pid": 24,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 50461,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 7699.973
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME9M",
+     "label": "Time 9",
+     "pid": 25,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 54721,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 8350.017
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "param": "TENTAP_TIME10M",
+     "label": "Time 10",
+     "pid": 26,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 58981,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 9000.061
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIMEM",
+     "label": "Delay Time",
+     "pid": 2,
+     "kind": "class-0",
+     "status": "unverified-taper",
+     "flags": "0x0000",
+     "raw": 65534,
+     "deviceDefault": false,
+     "predictions": {
+      "linear": 2000,
+      "log": 2000
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_REFTEMPO",
+     "label": null,
+     "pid": 37,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f80",
+     "raw": 200,
+     "deviceDefault": false,
+     "predictions": {
+      "integer": 200
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME1M",
+     "label": "Time 1",
+     "pid": 17,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 3276,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 499.893
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME2M",
+     "label": "Time 2",
+     "pid": 18,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 3276,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 499.893
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME3M",
+     "label": "Time 3",
+     "pid": 19,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 3276,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 499.893
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME4M",
+     "label": "Time 4",
+     "pid": 20,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 3276,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 499.893
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME5M",
+     "label": "Time 5",
+     "pid": 21,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 3276,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 499.893
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME6M",
+     "label": "Time 6",
+     "pid": 22,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 3276,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 499.893
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME7M",
+     "label": "Time 7",
+     "pid": 23,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 0,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 0
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME8M",
+     "label": "Time 8",
+     "pid": 24,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 0,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 0
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME9M",
+     "label": "Time 9",
+     "pid": 25,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 0,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 0
+     }
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "param": "TENTAP_TIME10M",
+     "label": "Time 10",
+     "pid": 26,
+     "kind": "class-f",
+     "status": "unverified-taper",
+     "flags": "0x0f00",
+     "raw": 0,
+     "deviceDefault": true,
+     "predictions": {
+      "linear": 0
+     }
+    }
+   ],
+   "blocks": [
+    {
+     "family": "tentap",
+     "effectId": 158,
+     "words": 48,
+     "channels": 4,
+     "request": "f0000174111f1e0114f7",
+     "expected": [
+      0,
+      0,
+      3214,
+      0,
+      0,
+      32767,
+      0,
+      10,
+      0,
+      0,
+      65534,
+      0,
+      32767,
+      0,
+      65534,
+      65534,
+      0,
+      1227,
+      2455,
+      3682,
+      4910,
+      6137,
+      7365,
+      8592,
+      9820,
+      11047,
+      12275,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      120,
+      0,
+      65534,
+      13107,
+      52427,
+      32767,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      16384,
+      0,
+      0,
+      32767,
+      0,
+      10,
+      0,
+      0,
+      65534,
+      0,
+      32767,
+      0,
+      65534,
+      65534,
+      0,
+      77,
+      153,
+      230,
+      307,
+      383,
+      460,
+      537,
+      613,
+      690,
+      767,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      90,
+      0,
+      65534,
+      13107,
+      52427,
+      32767,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      32767,
+      0,
+      0,
+      32767,
+      0,
+      10,
+      0,
+      0,
+      65534,
+      0,
+      32767,
+      0,
+      65534,
+      65534,
+      0,
+      20643,
+      24903,
+      29163,
+      33422,
+      37682,
+      41942,
+      46201,
+      50461,
+      54721,
+      58981,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      140,
+      0,
+      65534,
+      13107,
+      52427,
+      32767,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      65534,
+      0,
+      0,
+      32767,
+      0,
+      10,
+      0,
+      0,
+      65534,
+      0,
+      32767,
+      0,
+      65534,
+      65534,
+      0,
+      3276,
+      3276,
+      3276,
+      3276,
+      3276,
+      3276,
+      0,
+      0,
+      0,
+      0,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      52427,
+      200,
+      0,
+      65534,
+      13107,
+      52427,
+      32767,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "writes": [
+      {
+       "param": "TENTAP_TIMEM",
+       "channel": "A",
+       "pid": 2,
+       "raw": 3214
+      },
+      {
+       "param": "TENTAP_REFTEMPO",
+       "channel": "A",
+       "pid": 37,
+       "raw": 120
+      },
+      {
+       "param": "TENTAP_TIME1M",
+       "channel": "A",
+       "pid": 17,
+       "raw": 1227
+      },
+      {
+       "param": "TENTAP_TIME2M",
+       "channel": "A",
+       "pid": 18,
+       "raw": 2455
+      },
+      {
+       "param": "TENTAP_TIME3M",
+       "channel": "A",
+       "pid": 19,
+       "raw": 3682
+      },
+      {
+       "param": "TENTAP_TIME4M",
+       "channel": "A",
+       "pid": 20,
+       "raw": 4910
+      },
+      {
+       "param": "TENTAP_TIME5M",
+       "channel": "A",
+       "pid": 21,
+       "raw": 6137
+      },
+      {
+       "param": "TENTAP_TIME6M",
+       "channel": "A",
+       "pid": 22,
+       "raw": 7365
+      },
+      {
+       "param": "TENTAP_TIME7M",
+       "channel": "A",
+       "pid": 23,
+       "raw": 8592
+      },
+      {
+       "param": "TENTAP_TIME8M",
+       "channel": "A",
+       "pid": 24,
+       "raw": 9820
+      },
+      {
+       "param": "TENTAP_TIME9M",
+       "channel": "A",
+       "pid": 25,
+       "raw": 11047
+      },
+      {
+       "param": "TENTAP_TIME10M",
+       "channel": "A",
+       "pid": 26,
+       "raw": 12275
+      },
+      {
+       "param": "TENTAP_TIMEM",
+       "channel": "B",
+       "pid": 2,
+       "raw": 16384
+      },
+      {
+       "param": "TENTAP_REFTEMPO",
+       "channel": "B",
+       "pid": 37,
+       "raw": 90
+      },
+      {
+       "param": "TENTAP_TIME1M",
+       "channel": "B",
+       "pid": 17,
+       "raw": 77
+      },
+      {
+       "param": "TENTAP_TIME2M",
+       "channel": "B",
+       "pid": 18,
+       "raw": 153
+      },
+      {
+       "param": "TENTAP_TIME3M",
+       "channel": "B",
+       "pid": 19,
+       "raw": 230
+      },
+      {
+       "param": "TENTAP_TIME4M",
+       "channel": "B",
+       "pid": 20,
+       "raw": 307
+      },
+      {
+       "param": "TENTAP_TIME5M",
+       "channel": "B",
+       "pid": 21,
+       "raw": 383
+      },
+      {
+       "param": "TENTAP_TIME6M",
+       "channel": "B",
+       "pid": 22,
+       "raw": 460
+      },
+      {
+       "param": "TENTAP_TIME7M",
+       "channel": "B",
+       "pid": 23,
+       "raw": 537
+      },
+      {
+       "param": "TENTAP_TIME8M",
+       "channel": "B",
+       "pid": 24,
+       "raw": 613
+      },
+      {
+       "param": "TENTAP_TIME9M",
+       "channel": "B",
+       "pid": 25,
+       "raw": 690
+      },
+      {
+       "param": "TENTAP_TIME10M",
+       "channel": "B",
+       "pid": 26,
+       "raw": 767
+      },
+      {
+       "param": "TENTAP_TIMEM",
+       "channel": "C",
+       "pid": 2,
+       "raw": 32767
+      },
+      {
+       "param": "TENTAP_REFTEMPO",
+       "channel": "C",
+       "pid": 37,
+       "raw": 140
+      },
+      {
+       "param": "TENTAP_TIME1M",
+       "channel": "C",
+       "pid": 17,
+       "raw": 20643
+      },
+      {
+       "param": "TENTAP_TIME2M",
+       "channel": "C",
+       "pid": 18,
+       "raw": 24903
+      },
+      {
+       "param": "TENTAP_TIME3M",
+       "channel": "C",
+       "pid": 19,
+       "raw": 29163
+      },
+      {
+       "param": "TENTAP_TIME4M",
+       "channel": "C",
+       "pid": 20,
+       "raw": 33422
+      },
+      {
+       "param": "TENTAP_TIME5M",
+       "channel": "C",
+       "pid": 21,
+       "raw": 37682
+      },
+      {
+       "param": "TENTAP_TIME6M",
+       "channel": "C",
+       "pid": 22,
+       "raw": 41942
+      },
+      {
+       "param": "TENTAP_TIME7M",
+       "channel": "C",
+       "pid": 23,
+       "raw": 46201
+      },
+      {
+       "param": "TENTAP_TIME8M",
+       "channel": "C",
+       "pid": 24,
+       "raw": 50461
+      },
+      {
+       "param": "TENTAP_TIME9M",
+       "channel": "C",
+       "pid": 25,
+       "raw": 54721
+      },
+      {
+       "param": "TENTAP_TIME10M",
+       "channel": "C",
+       "pid": 26,
+       "raw": 58981
+      },
+      {
+       "param": "TENTAP_TIMEM",
+       "channel": "D",
+       "pid": 2,
+       "raw": 65534
+      },
+      {
+       "param": "TENTAP_REFTEMPO",
+       "channel": "D",
+       "pid": 37,
+       "raw": 200
+      },
+      {
+       "param": "TENTAP_TIME1M",
+       "channel": "D",
+       "pid": 17,
+       "raw": 3276
+      },
+      {
+       "param": "TENTAP_TIME2M",
+       "channel": "D",
+       "pid": 18,
+       "raw": 3276
+      },
+      {
+       "param": "TENTAP_TIME3M",
+       "channel": "D",
+       "pid": 19,
+       "raw": 3276
+      },
+      {
+       "param": "TENTAP_TIME4M",
+       "channel": "D",
+       "pid": 20,
+       "raw": 3276
+      },
+      {
+       "param": "TENTAP_TIME5M",
+       "channel": "D",
+       "pid": 21,
+       "raw": 3276
+      },
+      {
+       "param": "TENTAP_TIME6M",
+       "channel": "D",
+       "pid": 22,
+       "raw": 3276
+      },
+      {
+       "param": "TENTAP_TIME7M",
+       "channel": "D",
+       "pid": 23,
+       "raw": 0
+      },
+      {
+       "param": "TENTAP_TIME8M",
+       "channel": "D",
+       "pid": 24,
+       "raw": 0
+      },
+      {
+       "param": "TENTAP_TIME9M",
+       "channel": "D",
+       "pid": 25,
+       "raw": 0
+      },
+      {
+       "param": "TENTAP_TIME10M",
+       "channel": "D",
+       "pid": 26,
+       "raw": 0
+      }
+     ]
+    }
+   ],
+   "shots": [
+    {
+     "block": "tentap",
+     "channel": "A",
+     "controls": [
+      "Delay Time ≈ 99 / 1.5",
+      "Ref Tempo ≈ 120",
+      "Time 1 ≈ 187.2",
+      "Time 2 ≈ 374.6",
+      "Time 3 ≈ 561.8",
+      "Time 4 ≈ 749.2",
+      "Time 5 ≈ 936.5",
+      "Time 6 ≈ 1123.8",
+      "Time 7 ≈ 1311.1",
+      "Time 8 ≈ 1498.5",
+      "Time 9 ≈ 1685.7",
+      "Time 10 ≈ 1873.1"
+     ]
+    },
+    {
+     "block": "tentap",
+     "channel": "B",
+     "controls": [
+      "Delay Time ≈ 500.8 / 6.7",
+      "Ref Tempo ≈ 90",
+      "Time 1 ≈ 11.8",
+      "Time 2 ≈ 23.3",
+      "Time 3 ≈ 35.1",
+      "Time 4 ≈ 46.8",
+      "Time 5 ≈ 58.4",
+      "Time 6 ≈ 70.2",
+      "Time 7 ≈ 81.9",
+      "Time 8 ≈ 93.5",
+      "Time 9 ≈ 105.3",
+      "Time 10 ≈ 117"
+     ]
+    },
+    {
+     "block": "tentap",
+     "channel": "C",
+     "controls": [
+      "Delay Time ≈ 1000.5 / 44.7",
+      "Ref Tempo ≈ 140",
+      "Time 1 ≈ 3150",
+      "Time 2 ≈ 3800",
+      "Time 3 ≈ 4450.1",
+      "Time 4 ≈ 5099.9",
+      "Time 5 ≈ 5750",
+      "Time 6 ≈ 6400",
+      "Time 7 ≈ 7049.9",
+      "Time 8 ≈ 7700",
+      "Time 9 ≈ 8350",
+      "Time 10 ≈ 9000.1"
+     ]
+    },
+    {
+     "block": "tentap",
+     "channel": "D",
+     "controls": [
+      "Delay Time ≈ 2000 / 2000",
+      "Ref Tempo ≈ 200",
+      "Time 1 ≈ 499.9",
+      "Time 2 ≈ 499.9",
+      "Time 3 ≈ 499.9",
+      "Time 4 ≈ 499.9",
+      "Time 5 ≈ 499.9",
+      "Time 6 ≈ 499.9",
+      "Time 7 ≈ 0",
+      "Time 8 ≈ 0",
+      "Time 9 ≈ 0",
+      "Time 10 ≈ 0"
+     ]
+    }
+   ]
+  }
+ ]
+}

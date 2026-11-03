@@ -41,7 +41,9 @@ let callbacks=0;const saved=Buffer.from(body);
 assert.throws(()=>applyTableControls(body,[control('LEVEL',-10),control('RATIO',4),control('TYPE','Modern Gate')],{allow},()=>callbacks++),/not applicable/);
 assert.ok(saved.equals(body));assert.equal(callbacks,0);
 assert.throws(()=>applyTableControls(body,[{block:'tentap',channel:'A',param:'LEARN',value:'<TAP ENTER>'}],{allow}),/not applicable/);
-assert.throws(()=>applyTableControls(body,[{block:'tentap',channel:'A',param:'TIMEM',value:300}],{allow}),/unverified|Unsupported|blocked|unconfirmed|scale/i);
+assert.throws(()=>applyTableControls(body,[{block:'tentap',channel:'A',param:'REFTEMPO',value:120}],{allow}),/unverified|Unsupported|blocked|unconfirmed|scale/i);
+// Delay Time is measured since T25 (0.3.46) but limited to 1000 ms.
+assert.throws(()=>applyTableControls(Buffer.from(body),[{block:'tentap',channel:'A',param:'TIMEM',value:1200}],{allow}),/above 1000 ms|not applicable/);
 // The inserted tempo rule must be visible in reports and reject a modifier conflict.
 const pl=records.find(r=>r.family==='plex'),bound=Buffer.from(body);
 bound.writeUInt16LE(1,1584);bound.writeUInt16LE(pl.eid,1600);bound.writeUInt16LE(18,1602);bound.writeUInt16LE(0,1618);
