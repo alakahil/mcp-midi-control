@@ -1,0 +1,6649 @@
+{
+ "schemaVersion": 1,
+ "firmware": 13,
+ "date": "2026-11-03",
+ "dictionarySha256": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
+ "corpus": {
+  "trackedFiles": 811,
+  "distinctBodies": 639,
+  "sha256": "7ca0e9c32bffc1bf331298ff31a5051cbd519db49b5fef82b01575382552fb54"
+ },
+ "hardwareReceipt": {
+  "file": "fm3-shot-t24-enum-20261103.json",
+  "sha256": "a19e82b2cb7bda0f547626c5a4dbe5e9436df132f481e366ea2705d4e6701796",
+  "controls": 51,
+  "exact": 51
+ },
+ "rule": "Option selector becomes enum-labels-crosschecked when every corpus word is inside its list and it was read on hardware (T24), shares its exact list with a default-writable selector, or belongs to a family whose unique lists read exactly in T24. Type/model selectors, non-sound families and unresolved lists stay opt-in.",
+ "summary": {
+  "candidates": 348,
+  "promoted": 197,
+  "byEvidence": {
+   "shared-labels": 108,
+   "none": 0,
+   "hardware-t24": 50,
+   "family-t24": 39
+  },
+  "keptOptIn": {
+   "non-sound or routing family": 122,
+   "action or picker control (learn, layout preset, IR bank)": 6,
+   "channel type/model selector (full channel template only)": 15,
+   "label list repeats OFF (OFF, OFF, 2…); index meaning unresolved": 1,
+   "no T24 reading in this family and no shared label list": 7
+  }
+ },
+ "parameters": [
+  {
+   "family": "MULTIPLEXER",
+   "param": 6,
+   "name": "MULTIPLEXER_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 1,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MULTIPLEXER",
+   "param": 5,
+   "name": "MULTIPLEXER_BYPASS",
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 1,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MULTIPLEXER",
+   "param": 4,
+   "name": "MULTIPLEXER_BYPASSMODE",
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 1,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASSMODE",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MULTIPLEXER",
+   "param": 1,
+   "name": "MULTIPLEXER_INPUTMODE",
+   "label": "Input Mode",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 1,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MULTIPLEXER",
+   "param": 0,
+   "name": "MULTIPLEXER_INPUTSEL",
+   "label": "Input Select",
+   "options": 8,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 1,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "FDBKRET",
+   "param": 5,
+   "name": "FDBKRET_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 415,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "FDBKRET",
+   "param": 3,
+   "name": "FDBKRET_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 415,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "OLD_FLANGER_BYPASSMODE",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "PLEX",
+   "param": 95,
+   "name": "PLEX_KILLDRY",
+   "label": "Kill Dry",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 94,
+   "name": "PLEX_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 91,
+   "name": "PLEX_FLTLFOTYPE",
+   "label": "LFO Type",
+   "options": 11,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 90,
+   "name": "PLEX_PRESETS",
+   "label": null,
+   "options": 45,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "action or picker control (learn, layout preset, IR bank)"
+  },
+  {
+   "family": "PLEX",
+   "param": 88,
+   "name": "PLEX_HOLD",
+   "label": "Stack/Hold",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "DELAY_HOLD",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 87,
+   "name": "PLEX_INPUTSELECT",
+   "label": "Input Select",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_INPUTSELECT",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 82,
+   "name": "PLEX_FILTERTYPE",
+   "label": "Type",
+   "options": 12,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": "COMP_EQTYPE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 78,
+   "name": "PLEX_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 76,
+   "name": "PLEX_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "DELAY_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 69,
+   "name": "PLEX_LFOTEMPO",
+   "label": "Tempo",
+   "options": 78,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 58,
+   "name": "PLEX_DIRECTION",
+   "label": "Direction",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 33,
+   "name": "PLEX_TEMPO8",
+   "label": "Tempo 8",
+   "options": 78,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 17,
+    "max": 17,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 32,
+   "name": "PLEX_TEMPO7",
+   "label": "Tempo 7",
+   "options": 78,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 13,
+    "max": 13,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 31,
+   "name": "PLEX_TEMPO6",
+   "label": "Tempo 6",
+   "options": 78,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 10,
+    "max": 10,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 30,
+   "name": "PLEX_TEMPO5",
+   "label": "Tempo 5",
+   "options": 78,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 16,
+    "max": 16,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 29,
+   "name": "PLEX_TEMPO4",
+   "label": "Tempo 4",
+   "options": 78,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 15,
+    "max": 15,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 28,
+   "name": "PLEX_TEMPO3",
+   "label": "Tempo 3",
+   "options": 78,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 12,
+    "max": 12,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 27,
+   "name": "PLEX_TEMPO2",
+   "label": "Tempo 2",
+   "options": 78,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 11,
+    "max": 11,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 26,
+   "name": "PLEX_TEMPO1",
+   "label": "Tempo 1",
+   "options": 78,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 2,
+    "min": 0,
+    "max": 14,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PLEX",
+   "param": 0,
+   "name": "PLEX_BASETYPE",
+   "label": null,
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "LOOPER",
+   "param": 21,
+   "name": "LOOPER_XFADE",
+   "label": "Crossfade",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "LOOPER",
+   "param": 20,
+   "name": "LOOPER_HALF",
+   "label": "Speed",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "LOOPER",
+   "param": 19,
+   "name": "LOOPER_RECORDMODE",
+   "label": "Record 2nd Press",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "LOOPER",
+   "param": 18,
+   "name": "LOOPER_QUANTIZE",
+   "label": "Loop Quantize",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "LOOPER",
+   "param": 4,
+   "name": "LOOPER_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "LOOPER",
+   "param": 3,
+   "name": "LOOPER_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "OLD_FLANGER_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RESONATOR",
+   "param": 39,
+   "name": "RESONATOR_INPUTMODE",
+   "label": "Input Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RESONATOR",
+   "param": 38,
+   "name": "RESONATOR_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RESONATOR",
+   "param": 36,
+   "name": "RESONATOR_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "OLD_FLANGER_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RESONATOR",
+   "param": 20,
+   "name": "RESONATOR_LOC4",
+   "label": "Fltr Location",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RESONATOR",
+   "param": 19,
+   "name": "RESONATOR_LOC3",
+   "label": "Fltr Location",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RESONATOR",
+   "param": 18,
+   "name": "RESONATOR_LOC2",
+   "label": "Fltr Location",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RESONATOR",
+   "param": 17,
+   "name": "RESONATOR_LOC1",
+   "label": "Fltr Location",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RESONATOR",
+   "param": 1,
+   "name": "RESONATOR_CHORD",
+   "label": "Chord Type",
+   "options": 9,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RESONATOR",
+   "param": 0,
+   "name": "RESONATOR_MODE",
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "TENTAP",
+   "param": 47,
+   "name": "TENTAP_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TENTAP",
+   "param": 46,
+   "name": "TENTAP_LEARN",
+   "label": "Learn",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "action or picker control (learn, layout preset, IR bank)"
+  },
+  {
+   "family": "TENTAP",
+   "param": 45,
+   "name": "TENTAP_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TENTAP",
+   "param": 43,
+   "name": "TENTAP_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "DELAY_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TENTAP",
+   "param": 11,
+   "name": "TENTAP_PANSHAPE",
+   "label": "Pan Shape",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TENTAP",
+   "param": 9,
+   "name": "TENTAP_RTEMPO",
+   "label": "Delay Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TENTAP",
+   "param": 4,
+   "name": "TENTAP_QUANTIZE",
+   "label": "Quantize",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TENTAP",
+   "param": 3,
+   "name": "TENTAP_SUBDIV",
+   "label": null,
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TENTAP",
+   "param": 1,
+   "name": "TENTAP_STEREO",
+   "label": "Mono / Stereo",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TENTAP",
+   "param": 0,
+   "name": "TENTAP_TYPE",
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 36,
+   "name": "MULTICOMP_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 35,
+   "name": "MULTICOMP_AUTO",
+   "label": "Auto Att/Rel",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 34,
+   "name": "MULTICOMP_KNEE",
+   "label": "Knee Type",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 33,
+   "name": "MULTICOMP_ORDER",
+   "label": "Crossover Slope",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 27,
+   "name": "MULTICOMP_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 26,
+   "name": "MULTICOMP_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 22,
+   "name": "MULTICOMP_MUTE3",
+   "label": "Mute",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 21,
+   "name": "MULTICOMP_DETECT3",
+   "label": "Detector",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 15,
+   "name": "MULTICOMP_MUTE2",
+   "label": "Mute",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 14,
+   "name": "MULTICOMP_DETECT2",
+   "label": "Detector",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 8,
+   "name": "MULTICOMP_MUTE1",
+   "label": "Mute",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTICOMP",
+   "param": 7,
+   "name": "MULTICOMP_DETECT1",
+   "label": "Detector",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RINGMOD",
+   "param": 12,
+   "name": "RINGMOD_PD_RANGE",
+   "label": "Tracking Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RINGMOD",
+   "param": 11,
+   "name": "RINGMOD_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RINGMOD",
+   "param": 10,
+   "name": "RINGMOD_TYPE",
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "RINGMOD",
+   "param": 9,
+   "name": "RINGMOD_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RINGMOD",
+   "param": 7,
+   "name": "RINGMOD_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "OLD_FLANGER_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "RINGMOD",
+   "param": 2,
+   "name": "RINGMOD_TRACK",
+   "label": "Pitch Tracking",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "GATE",
+   "param": 18,
+   "name": "GATE_KNEE",
+   "label": "Knee Type",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 2,
+    "max": 2,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "COMP_KNEE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "GATE",
+   "param": 17,
+   "name": "GATE_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "GATE",
+   "param": 16,
+   "name": "GATE_PEAKRMS",
+   "label": "Detector Type",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "GATE",
+   "param": 14,
+   "name": "GATE_TYPE",
+   "label": null,
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "GATE",
+   "param": 12,
+   "name": "GATE_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "GATE",
+   "param": 11,
+   "name": "GATE_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "GATE",
+   "param": 5,
+   "name": "GATE_KEY",
+   "label": "Sidechain Source",
+   "options": 9,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": "COMP_SIDECHAIN",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MEGATAP",
+   "param": 34,
+   "name": "MEGATAP_KILLDRY",
+   "label": "Kill Dry",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MEGATAP",
+   "param": 33,
+   "name": "MEGATAP_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MEGATAP",
+   "param": 28,
+   "name": "MEGATAP_TYPE",
+   "label": null,
+   "options": 22,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "MEGATAP",
+   "param": 23,
+   "name": "MEGATAP_INPUTSELECT",
+   "label": "Input Select",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_INPUTSELECT",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MEGATAP",
+   "param": 22,
+   "name": "MEGATAP_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MEGATAP",
+   "param": 20,
+   "name": "MEGATAP_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "DELAY_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MEGATAP",
+   "param": 9,
+   "name": "MEGATAP_PANSHAPE",
+   "label": "Pan Shape",
+   "options": 7,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MEGATAP",
+   "param": 7,
+   "name": "MEGATAP_AMPSHAPE",
+   "label": "Amplitude Shape",
+   "options": 7,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MEGATAP",
+   "param": 5,
+   "name": "MEGATAP_TIMESHAPE",
+   "label": "Shape",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 41,
+   "name": "SYNTH_PD_RANGE",
+   "label": "Tracking Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 40,
+   "name": "SYNTH_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 31,
+   "name": "SYNTH_TRACK3",
+   "label": "Track",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 2,
+    "max": 2,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 29,
+   "name": "SYNTH_TYPE3",
+   "label": "Type",
+   "options": 8,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 7,
+    "max": 7,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 28,
+   "name": "SYNTH_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 26,
+   "name": "SYNTH_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "OLD_FLANGER_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 13,
+   "name": "SYNTH_TRACK2",
+   "label": "Track",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 2,
+    "max": 2,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 11,
+   "name": "SYNTH_TYPE2",
+   "label": "Type",
+   "options": 8,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 7,
+    "max": 7,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 2,
+   "name": "SYNTH_TRACK1",
+   "label": "Track",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 2,
+    "max": 2,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "SYNTH",
+   "param": 0,
+   "name": "SYNTH_TYPE1",
+   "label": "Type",
+   "options": 8,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MIXER",
+   "param": 16,
+   "name": "MIXER_BYPASS",
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 1,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MIXER",
+   "param": 15,
+   "name": "MIXER_BYPASSMODE",
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 1,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASSMODE",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MIXER",
+   "param": 14,
+   "name": "MIXER_MODE",
+   "label": "Mono/Stereo",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 1,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "ENHANCER",
+   "param": 11,
+   "name": "ENHANCER_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 80,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "ENHANCER",
+   "param": 7,
+   "name": "ENHANCER_PHASE",
+   "label": "Phase Invert",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 80,
+    "distinct": 4,
+    "min": 0,
+    "max": 3,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_PHASE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "ENHANCER",
+   "param": 6,
+   "name": "ENHANCER_TYPE",
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 80,
+    "distinct": 3,
+    "min": 0,
+    "max": 2,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "ENHANCER",
+   "param": 5,
+   "name": "ENHANCER_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 80,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 112,
+   "name": "PITCH_KILLDRY",
+   "label": "Kill Dry",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 111,
+   "name": "PITCH_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 108,
+   "name": "PITCH_TEMPERAMENT",
+   "label": "Temperament",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 105,
+   "name": "PITCH_LFOTEMPO",
+   "label": "LFO Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 103,
+   "name": "PITCH_FDBKMODE",
+   "label": "Feedback Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 101,
+   "name": "PITCH_LEARN",
+   "label": "Learn",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "action or picker control (learn, layout preset, IR bank)"
+  },
+  {
+   "family": "PITCH",
+   "param": 100,
+   "name": "PITCH_INMODE",
+   "label": "Input Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 99,
+   "name": "PITCH_SOURCE",
+   "label": "Detector Source",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_SOURCE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 95,
+   "name": "PITCH_PANSHAPE",
+   "label": "Pan Shape",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 93,
+   "name": "PITCH_AMPSHAPE",
+   "label": "Amplitude Shape",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 75,
+   "name": "PITCH_ARPRUN",
+   "label": "Run",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 56,
+   "name": "PITCH_DIRECTION",
+   "label": "Direction",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 55,
+   "name": "PITCH_FBTYPE",
+   "label": "Feedback Type",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 54,
+   "name": "PITCH_STEMPO2",
+   "label": "Tempo 2",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 53,
+   "name": "PITCH_STEMPO1",
+   "label": "Tempo 1",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 52,
+   "name": "PITCH_DTEMPO4",
+   "label": "Tempo 4",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 51,
+   "name": "PITCH_DTEMPO3",
+   "label": "Tempo 3",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 50,
+   "name": "PITCH_DTEMPO2",
+   "label": "Tempo 2",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 49,
+   "name": "PITCH_DTEMPO1",
+   "label": "Tempo 1",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 46,
+   "name": "PITCH_XFADETYPE",
+   "label": "Crossfade Type",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 44,
+   "name": "PITCH_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 41,
+   "name": "PITCH_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "DELAY_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 10,
+   "name": "PITCH_QUANTIZE",
+   "label": "Pitch Quantize",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 9,
+   "name": "PITCH_SCALE",
+   "label": "Scale",
+   "options": 18,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 8,
+   "name": "PITCH_KEY",
+   "label": "Key",
+   "options": 12,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 7,
+   "name": "PITCH_HARM4",
+   "label": "Harmony 4",
+   "options": 49,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 24,
+    "max": 24,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 6,
+   "name": "PITCH_HARM3",
+   "label": "Harmony 3",
+   "options": 49,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 24,
+    "max": 24,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 5,
+   "name": "PITCH_HARM2",
+   "label": "Harmony 2",
+   "options": 49,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 24,
+    "max": 24,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 4,
+   "name": "PITCH_HARM1",
+   "label": "Harmony 1",
+   "options": 49,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 24,
+    "max": 24,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 1,
+   "name": "PITCH_PITCHMODE",
+   "label": "Mode",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PITCH",
+   "param": 0,
+   "name": "PITCH_TYPE",
+   "label": null,
+   "options": 16,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 10,
+    "distinct": 16,
+    "min": 0,
+    "max": 15,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "TREMOLO",
+   "param": 19,
+   "name": "TREMOLO_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 4,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TREMOLO",
+   "param": 16,
+   "name": "TREMOLO_ORDER",
+   "label": "Crossover Slope",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 4,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TREMOLO",
+   "param": 14,
+   "name": "TREMOLO_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 4,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TREMOLO",
+   "param": 9,
+   "name": "TREMOLO_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 4,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TREMOLO",
+   "param": 5,
+   "name": "TREMOLO_TEMPO",
+   "label": "Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 4,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TREMOLO",
+   "param": 1,
+   "name": "TREMOLO_LFOTYPE",
+   "label": "LFO Type",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 4,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": "FILTER_LFOTYPE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "TREMOLO",
+   "param": 0,
+   "name": "TREMOLO_TYPE",
+   "label": null,
+   "options": 7,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 4,
+    "distinct": 7,
+    "min": 0,
+    "max": 6,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "VOLUME",
+   "param": 9,
+   "name": "VOLUME_TYPE",
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 8,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "VOLUME",
+   "param": 8,
+   "name": "VOLUME_INPUTSELECT",
+   "label": "Input Select",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 8,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "VOLUME",
+   "param": 7,
+   "name": "VOLUME_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 8,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASSMODE",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "VOLUME",
+   "param": 3,
+   "name": "VOLUME_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 8,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "VOLUME",
+   "param": 2,
+   "name": "VOLUME_TAPER",
+   "label": "Volume Taper",
+   "options": 7,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 8,
+    "distinct": 2,
+    "min": 0,
+    "max": 2,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "FORMANT",
+   "param": 11,
+   "name": "FORMANT_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "FORMANT",
+   "param": 9,
+   "name": "FORMANT_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "OLD_FLANGER_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "FORMANT",
+   "param": 8,
+   "name": "FORMANT_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "FORMANT",
+   "param": 2,
+   "name": "FORMANT_F3",
+   "label": "End",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 2,
+    "max": 2,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "FORMANT",
+   "param": 1,
+   "name": "FORMANT_F2",
+   "label": "Mid",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "FORMANT",
+   "param": 0,
+   "name": "FORMANT_F1",
+   "label": "Start",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 3,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "WAH",
+   "param": 24,
+   "name": "WAH_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 225,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "WAH",
+   "param": 15,
+   "name": "WAH_EQON",
+   "label": "Graphic EQ",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 225,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "WAH",
+   "param": 12,
+   "name": "WAH_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 225,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "WAH",
+   "param": 11,
+   "name": "WAH_TAPER",
+   "label": "Control Taper",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 225,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "WAH",
+   "param": 8,
+   "name": "WAH_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 225,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "WAH",
+   "param": 0,
+   "name": "WAH_TYPE",
+   "label": null,
+   "options": 9,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 225,
+    "distinct": 9,
+    "min": 0,
+    "max": 8,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "PHASER",
+   "param": 34,
+   "name": "PHASER_LFOMODE",
+   "label": "Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 31,
+   "name": "PHASER_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 24,
+   "name": "PHASER_VCR_CURVE",
+   "label": "Type",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 3,
+    "min": 1,
+    "max": 3,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 23,
+   "name": "PHASER_LFOQUANTIZE",
+   "label": "Quantize",
+   "options": 32,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_QUANTIZE",
+   "promoted": false,
+   "excluded": "label list repeats OFF (OFF, OFF, 2…); index meaning unresolved"
+  },
+  {
+   "family": "PHASER",
+   "param": 22,
+   "name": "PHASER_LFORESET",
+   "label": "Reset on Bypass",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": "OLD_FLANGER_LFORESET",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 20,
+   "name": "PHASER_DIRECTION",
+   "label": "Sweep Direction",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 17,
+   "name": "PHASER_MODE",
+   "label": "Phaser Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 3,
+    "min": 0,
+    "max": 2,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "PHASER",
+   "param": 16,
+   "name": "PHASER_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 14,
+   "name": "PHASER_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "OLD_FLANGER_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 4,
+   "name": "PHASER_TEMPO",
+   "label": "Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 3,
+   "name": "PHASER_LFOTYPE",
+   "label": "Type",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 4,
+    "min": 0,
+    "max": 9,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_LFOTYPE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 1,
+   "name": "PHASER_ORDER",
+   "label": "Order",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 5,
+    "min": 0,
+    "max": 5,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PHASER",
+   "param": 0,
+   "name": "PHASER_TYPE",
+   "label": null,
+   "options": 17,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 227,
+    "distinct": 17,
+    "min": 0,
+    "max": 16,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "ROTARY",
+   "param": 20,
+   "name": "ROTARY_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 11,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "ROTARY",
+   "param": 19,
+   "name": "ROTARY_INPUTSELECT",
+   "label": "Input Select",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 11,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_INPUTSELECT",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "ROTARY",
+   "param": 11,
+   "name": "ROTARY_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 11,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "ROTARY",
+   "param": 8,
+   "name": "ROTARY_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 11,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "OLD_FLANGER_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "ROTARY",
+   "param": 4,
+   "name": "ROTARY_TEMPO",
+   "label": "Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 11,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 120,
+   "name": "MULTITAP_KILLDRY",
+   "label": "Kill Dry",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 115,
+   "name": "MULTITAP_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 114,
+   "name": "MULTITAP_PRESETS",
+   "label": null,
+   "options": 39,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "action or picker control (learn, layout preset, IR bank)"
+  },
+  {
+   "family": "MULTITAP",
+   "param": 111,
+   "name": "MULTITAP_HIGHSLOPE",
+   "label": "High Cut Slope",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FLANGER_LPF_ORDER",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 110,
+   "name": "MULTITAP_LOWSLOPE",
+   "label": "Low Cut Slope",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FLANGER_LPF_ORDER",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 106,
+   "name": "MULTITAP_FILTER_TYPE",
+   "label": "Type",
+   "options": 9,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "no T24 reading in this family and no shared label list"
+  },
+  {
+   "family": "MULTITAP",
+   "param": 103,
+   "name": "MULTITAP_INPUTSELECT",
+   "label": "Input Select",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_INPUTSELECT",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 76,
+   "name": "MULTITAP_COMBTYPE",
+   "label": "Filter Type",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "no T24 reading in this family and no shared label list"
+  },
+  {
+   "family": "MULTITAP",
+   "param": 69,
+   "name": "MULTITAP_FLTTEMPO",
+   "label": "Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 68,
+   "name": "MULTITAP_FLTTYPE",
+   "label": "Type",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_LFOTYPE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 37,
+   "name": "MULTITAP_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 34,
+   "name": "MULTITAP_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "DELAY_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 28,
+   "name": "MULTITAP_LFOTEMPO2",
+   "label": "LFO 2 Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 27,
+   "name": "MULTITAP_LFOTEMPO1",
+   "label": "LFO 1 Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 26,
+   "name": "MULTITAP_LFOTYPE2",
+   "label": "LFO 2 Type",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_LFOTYPE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 25,
+   "name": "MULTITAP_LFOTYPE1",
+   "label": "LFO 1 Type",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_LFOTYPE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 8,
+   "name": "MULTITAP_TEMPO4",
+   "label": "Tempo 4",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 7,
+   "name": "MULTITAP_TEMPO3",
+   "label": "Tempo 3",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 6,
+   "name": "MULTITAP_TEMPO2",
+   "label": "Tempo 2",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 5,
+   "name": "MULTITAP_TEMPO1",
+   "label": "Tempo 1",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "MULTITAP",
+   "param": 0,
+   "name": "MULTITAP_BASETYPE",
+   "label": "Algorithm",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "CABINET",
+   "param": 105,
+   "name": "CABINET_AUTO_ALIGN",
+   "label": "Auto Align",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 90,
+   "name": "CABINET_DYNACAB_MIC2",
+   "label": null,
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 89,
+   "name": "CABINET_DYNACAB_MIC1",
+   "label": null,
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 2,
+    "min": 0,
+    "max": 2,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 86,
+   "name": "CABINET_DYNACAB_TYPE2",
+   "label": null,
+   "options": 45,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 45,
+    "min": 0,
+    "max": 44,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 85,
+   "name": "CABINET_DYNACAB_TYPE1",
+   "label": null,
+   "options": 45,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 45,
+    "min": 0,
+    "max": 44,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 84,
+   "name": "CABINET_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 83,
+   "name": "CABINET_PREHISLOPE",
+   "label": "High Cut Slope",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 82,
+   "name": "CABINET_PRELOSLOPE",
+   "label": "Low Cut Slope",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 79,
+   "name": "CABINET_HISLOPE2",
+   "label": "High Slope",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 78,
+   "name": "CABINET_HISLOPE1",
+   "label": "High Slope",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 75,
+   "name": "CABINET_LOSLOPE2",
+   "label": "Low Slope",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 74,
+   "name": "CABINET_LOSLOPE1",
+   "label": "Low Slope",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 71,
+   "name": "CABINET_LENGTH2",
+   "label": "IR Length",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 70,
+   "name": "CABINET_LENGTH1",
+   "label": "IR Length",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 56,
+   "name": "CABINET_ROOMSHAPE",
+   "label": "Room Shape",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 47,
+   "name": "CABINET_OVERSAMPLE",
+   "label": "Preamp Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 43,
+   "name": "CABINET_PRETYPE",
+   "label": "Preamp Type",
+   "options": 12,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 42,
+   "name": "CABINET_INPUTSEL",
+   "label": "Input Mode",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 32,
+   "name": "CABINET_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 31,
+   "name": "CABINET_MODE",
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "CABINET",
+   "param": 30,
+   "name": "CABINET_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 25,
+   "name": "CABINET_MUTE2",
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "hardware-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 24,
+   "name": "CABINET_MUTE1",
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "CABINET",
+   "param": 1,
+   "name": "CABINET_BANK2",
+   "label": "Bank",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "action or picker control (learn, layout preset, IR bank)"
+  },
+  {
+   "family": "CABINET",
+   "param": 0,
+   "name": "CABINET_BANK1",
+   "label": "Bank",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 3,
+    "min": 0,
+    "max": 3,
+    "outOfRange": []
+   },
+   "evidence": "family-t24",
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "action or picker control (learn, layout preset, IR bank)"
+  },
+  {
+   "family": "PEQ",
+   "param": 32,
+   "name": "PEQ_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 31,
+   "name": "PEQ_HIGHSLOPE",
+   "label": "Slope 5",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 6,
+    "min": 0,
+    "max": 5,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FLANGER_LPF_ORDER",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 30,
+   "name": "PEQ_LOWSLOPE",
+   "label": "Slope 1",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 6,
+    "min": 0,
+    "max": 5,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FLANGER_LPF_ORDER",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 29,
+   "name": "PEQ_SOLO5",
+   "label": "S5",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 28,
+   "name": "PEQ_SOLO4",
+   "label": "S4",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 27,
+   "name": "PEQ_SOLO3",
+   "label": "S3",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 26,
+   "name": "PEQ_SOLO2",
+   "label": "S2",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 25,
+   "name": "PEQ_SOLO1",
+   "label": "S1",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 24,
+   "name": "PEQ_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 22,
+   "name": "PEQ_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "PEQ",
+   "param": 19,
+   "name": "PEQ_TYPE5",
+   "label": "Type 5",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 5,
+    "min": 0,
+    "max": 4,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "no T24 reading in this family and no shared label list"
+  },
+  {
+   "family": "PEQ",
+   "param": 18,
+   "name": "PEQ_TYPE4",
+   "label": "Type 4",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 4,
+    "min": 0,
+    "max": 3,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "no T24 reading in this family and no shared label list"
+  },
+  {
+   "family": "PEQ",
+   "param": 17,
+   "name": "PEQ_TYPE3",
+   "label": "Type 3",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "no T24 reading in this family and no shared label list"
+  },
+  {
+   "family": "PEQ",
+   "param": 16,
+   "name": "PEQ_TYPE2",
+   "label": "Type 2",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 4,
+    "min": 0,
+    "max": 3,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "no T24 reading in this family and no shared label list"
+  },
+  {
+   "family": "PEQ",
+   "param": 15,
+   "name": "PEQ_TYPE1",
+   "label": "Type 1",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 335,
+    "distinct": 5,
+    "min": 0,
+    "max": 4,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "no T24 reading in this family and no shared label list"
+  },
+  {
+   "family": "GEQ",
+   "param": 19,
+   "name": "GEQ_SCENEIGNORE",
+   "label": "Scene Ignore",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 244,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "GEQ",
+   "param": 18,
+   "name": "GEQ_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 244,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "GEQ",
+   "param": 15,
+   "name": "GEQ_TYPE",
+   "label": null,
+   "options": 18,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 244,
+    "distinct": 18,
+    "min": 0,
+    "max": 17,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "channel type/model selector (full channel template only)"
+  },
+  {
+   "family": "GEQ",
+   "param": 13,
+   "name": "GEQ_BYPASSMODE",
+   "label": "Bypass Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 244,
+    "distinct": 2,
+    "min": 0,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASSMODE",
+   "promoted": true,
+   "excluded": null
+  },
+  {
+   "family": "OUTPUT",
+   "param": 15,
+   "name": "OUTPUT_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "INPUT",
+   "param": 9,
+   "name": "INPUT_MODE",
+   "label": "Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "INPUT",
+   "param": 7,
+   "name": "INPUT_TYPE",
+   "label": "Gate Type",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 1,
+    "max": 1,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "INPUT",
+   "param": 6,
+   "name": "INPUT_BYPASS",
+   "label": "Bypass",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_BYPASS",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "INPUT",
+   "param": 4,
+   "name": "INPUT_Z",
+   "label": "Input1/Instr Impedance",
+   "options": 13,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 637,
+    "distinct": 1,
+    "min": 0,
+    "max": 0,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MOD",
+   "param": 24,
+   "name": "MOD_DAMPING",
+   "label": "Damping",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MOD",
+   "param": 17,
+   "name": "MOD_CHANNEL",
+   "label": "Channel",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MOD",
+   "param": 16,
+   "name": "MOD_RATE",
+   "label": "Update Rate",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MOD",
+   "param": 11,
+   "name": "MOD_PCRESET",
+   "label": "PC Reset",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MOD",
+   "param": 10,
+   "name": "MOD_AUTOENGAGE",
+   "label": "Auto Engage",
+   "options": 7,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "MOD",
+   "param": 0,
+   "name": "MOD_CTRLID",
+   "label": "Modifier 1",
+   "options": 61,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 129,
+   "name": "CONTROLLERS_ADSR2_TYPE",
+   "label": "Type",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 128,
+   "name": "CONTROLLERS_ADSR1_TYPE",
+   "label": "Type",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 110,
+   "name": "CONTROLLERS_PITCH_SOURCE",
+   "label": "Input Source",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 108,
+   "name": "CONTROLLERS_ENVSOURCE",
+   "label": "Input Source",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 107,
+   "name": "CONTROLLERS_ADSR2SOURCE",
+   "label": "Input Source",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 106,
+   "name": "CONTROLLERS_ADSR1SOURCE",
+   "label": "Input Source",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 105,
+   "name": "CONTROLLERS_LFO2QUANTIZE",
+   "label": "Quantize",
+   "options": 32,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_QUANTIZE",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 104,
+   "name": "CONTROLLERS_LFO1QUANTIZE",
+   "label": "Quantize",
+   "options": 32,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_QUANTIZE",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 71,
+   "name": "CONTROLLERS_LFO2RUN",
+   "label": "Run/Stop",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 70,
+   "name": "CONTROLLERS_LFO1RUN",
+   "label": "Run/Stop",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 37,
+   "name": "CONTROLLERS_SEQRUN",
+   "label": "Run",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 35,
+   "name": "CONTROLLERS_SEQTEMPO",
+   "label": "Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 33,
+   "name": "CONTROLLERS_TEMPOTOUSE",
+   "label": "Tempo To Use",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 21,
+   "name": "CONTROLLERS_ADSR2RETRIG",
+   "label": "Retrigger",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 20,
+   "name": "CONTROLLERS_ADSR2MODE",
+   "label": "ADSR Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 13,
+   "name": "CONTROLLERS_ADSR1RETRIG",
+   "label": "Retrigger",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 12,
+   "name": "CONTROLLERS_ADSR1MODE",
+   "label": "ADSR Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 11,
+   "name": "CONTROLLERS_LFO2TEMPO",
+   "label": "Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 6,
+   "name": "CONTROLLERS_LFO2TYPE",
+   "label": "Type",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_LFOTYPE",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 5,
+   "name": "CONTROLLERS_LFO1TEMPO",
+   "label": "Tempo",
+   "options": 79,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_TEMPO",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 0,
+   "name": "CONTROLLERS_LFO1TYPE",
+   "label": "Type",
+   "options": 10,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FILTER_LFOTYPE",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 132,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 130,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "DISTORT_PRECOMPTYPE",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 129,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 127,
+   "name": null,
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 122,
+   "name": null,
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 116,
+   "name": null,
+   "label": null,
+   "options": 128,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 115,
+   "name": null,
+   "label": null,
+   "options": 128,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 113,
+   "name": "GLOBAL_SEND_REALTIME_SYSEX",
+   "label": "Send RT. Sysex",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 112,
+   "name": "GLOBAL_LINEFREQ",
+   "label": "AC Line Frequency",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 109,
+   "name": "GLOBAL_FC_SHOW_SCENE_NUM",
+   "label": "Scene Num",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 108,
+   "name": "GLOBAL_FC_SHOW_PRESET_NUM",
+   "label": "Preset Num",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 107,
+   "name": "GLOBAL_VALUE_PUSH_FUNC",
+   "label": "Value Knob Push",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 106,
+   "name": "GLOBAL_PRESET_PROMPT",
+   "label": "Prompt on Edit",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 105,
+   "name": "GLOBAL_DEFAULT_SCENE",
+   "label": "Default Scene",
+   "options": 9,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 104,
+   "name": "GLOBAL_CC_BYPASS_TYPE",
+   "label": "Eff. Bypass Mode",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 103,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 102,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 100,
+   "name": "GLOBAL_TUNER_SOURCE",
+   "label": "Source",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 99,
+   "name": "GLOBAL_USB_OUTEP_BUFF_SIZE",
+   "label": "USB Buffer Size",
+   "options": 6,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 97,
+   "name": "GLOBAL_MIDI_MAPPING",
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 95,
+   "name": null,
+   "label": null,
+   "options": 128,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 94,
+   "name": null,
+   "label": null,
+   "options": 128,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 93,
+   "name": "GLOBAL_SCENE_REVERT",
+   "label": "Scene Revert",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 92,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 91,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 90,
+   "name": null,
+   "label": null,
+   "options": 128,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 89,
+   "name": null,
+   "label": null,
+   "options": 128,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 88,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 87,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 86,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 85,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 84,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 83,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 82,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 81,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 80,
+   "name": null,
+   "label": null,
+   "options": 148,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 75,
+   "name": null,
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 74,
+   "name": null,
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 73,
+   "name": "GLOBAL_SEND_MIDIPC",
+   "label": "Send MIDI PC",
+   "options": 18,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 70,
+   "name": "GLOBAL_NO_REDUNDANT_PC",
+   "label": "Ignore Red. PC",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 69,
+   "name": "GLOBAL_MIDI_PROG_CHANGE",
+   "label": "Program Change",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 68,
+   "name": "GLOBAL_MIDI_CHAN",
+   "label": "MIDI Channel",
+   "options": 17,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 66,
+   "name": "GLOBAL_FC_HOLD_TIMEOUT",
+   "label": "Hold Function Timeout",
+   "options": 8,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 64,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 63,
+   "name": "GLOBAL_AES_SOURCE",
+   "label": "SPDIF Out Source",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 62,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 61,
+   "name": "GLOBAL_IN1_SOURCE",
+   "label": "Input 1 Source",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 60,
+   "name": "GLOBAL_COPY_OUTPUT",
+   "label": "Output 2 Copy",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 59,
+   "name": null,
+   "label": null,
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 58,
+   "name": null,
+   "label": null,
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 57,
+   "name": "GLOBAL_OUT2_PAD",
+   "label": "Boost/Pad",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 56,
+   "name": "GLOBAL_OUT1_PAD",
+   "label": "Output Level",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 55,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 54,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 53,
+   "name": "GLOBAL_OUT2_PHASE",
+   "label": "Phase",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 52,
+   "name": "GLOBAL_OUT1_PHASE",
+   "label": "Phase",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 51,
+   "name": null,
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 50,
+   "name": null,
+   "label": null,
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 49,
+   "name": "GLOBAL_OUT2_CONFIG",
+   "label": "Mode",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 48,
+   "name": "GLOBAL_OUT1_CONFIG",
+   "label": "Mode",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 47,
+   "name": null,
+   "label": null,
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 46,
+   "name": null,
+   "label": null,
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 45,
+   "name": "GLOBAL_IN2_TRIM",
+   "label": "Input 2 Pad",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 44,
+   "name": "GLOBAL_IN1_TRIM",
+   "label": "Input 1 Pad",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 43,
+   "name": null,
+   "label": null,
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 42,
+   "name": null,
+   "label": null,
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 41,
+   "name": "GLOBAL_IN2_CONFIG",
+   "label": "Input 2 Mode",
+   "options": 4,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 40,
+   "name": "GLOBAL_TAP_TEMPO_MODE",
+   "label": "Tap Tempo",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 38,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 37,
+   "name": null,
+   "label": null,
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 8,
+   "name": "GLOBAL_USETUNEOFFSETS",
+   "label": "Use Offsets",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": "shared-labels",
+   "sharedWith": "FUZZ_TONESWITCH",
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 7,
+   "name": "GLOBAL_DELAYSPILL",
+   "label": "Spillover",
+   "options": 5,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 6,
+   "name": "GLOBAL_TUNERMUTE",
+   "label": "Mute",
+   "options": 3,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 4,
+   "name": "GLOBAL_PWRAMPBYP",
+   "label": "Power Amp Modeling",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  },
+  {
+   "family": "GLOBAL",
+   "param": 3,
+   "name": "GLOBAL_CABINETBYP",
+   "label": "Cabinet Modeling",
+   "options": 2,
+   "enumBase": 0,
+   "corpus": {
+    "bodies": 0,
+    "distinct": 0,
+    "min": null,
+    "max": null,
+    "outOfRange": []
+   },
+   "evidence": null,
+   "sharedWith": null,
+   "promoted": false,
+   "excluded": "non-sound or routing family"
+  }
+ ]
+}

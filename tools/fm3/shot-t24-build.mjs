@@ -79,7 +79,7 @@ for(const it of t.items){
   const raw=word(r,'ABCD'.indexOf(c.channel),p.param),label=p.enum[raw-(p.enumBase??0)]?.trim();
   assert.equal(label,c.value,`${c.param} ${raw} -> ${label}`);
   if(plain.readUInt16LE(r.start+2*('ABCD'.indexOf(c.channel)*r.words+p.param))===raw)SAME.push(c.param+' '+c.channel+' '+c.value+' of '+p.enum.join('|'));
-  return {block:c.block,channel:c.channel,param:p.name,label:p.label,pid:p.param,kind:p.kind,status:p.status,flags:p.flags,requested:c.value,raw,codecDisplay:label,options:p.enum.length};});
+  return {block:c.block,channel:c.channel,param:p.name,label:p.label,pid:p.param,kind:p.kind,status:p.structuralStatus??p.status,flags:p.flags,requested:c.value,raw,codecDisplay:label,options:p.enum.length};});
  const fams=[...new Set(writes.map(w=>w.block))];
  const blocks=fams.map(f=>{const r=records.find(x=>x.family===f);
   return {family:f,effectId:r.eid,words:r.words,channels:r.channels,request:hex(R.bulkReadPoll(r.eid)),

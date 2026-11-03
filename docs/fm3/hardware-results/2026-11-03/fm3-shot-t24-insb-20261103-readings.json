@@ -1,0 +1,42 @@
+{
+"test": "T24",
+"preset": "INSB",
+"source": "FM3-Edit 1.07.17 window captures taken by Claude (computer use, Jan present) 2026-11-03; read from the block pages, nothing edited",
+"readings": [
+{
+"block": "plex",
+"channel": "A",
+"type": "Plex Delay",
+"param": "PLEX_FLTLFOTYPE",
+"shown": "Trapezoid"
+},
+{
+"block": "plex",
+"channel": "A",
+"type": "Plex Delay",
+"param": "PLEX_FILTERTYPE",
+"shown": "Notch"
+},
+{
+"block": "plex",
+"channel": "A",
+"type": "Plex Delay",
+"param": "PLEX_TEMPO3",
+"shown": "1/16 Dot"
+},
+{
+"block": "looper",
+"channel": "A",
+"type": null,
+"param": "LOOPER_HALF",
+"shown": "Half"
+},
+{
+"block": "looper",
+"channel": "A",
+"type": null,
+"param": "LOOPER_RECORDMODE",
+"shown": "Stop"
+}
+]
+}

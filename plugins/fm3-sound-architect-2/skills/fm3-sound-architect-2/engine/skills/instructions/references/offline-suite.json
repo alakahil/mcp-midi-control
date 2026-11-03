@@ -628,6 +628,15 @@
       "required": true
     },
     {
+      "id": "test-enum-promotion",
+      "command": [
+        "node",
+        "scripts/test-enum-promotion.mjs"
+      ],
+      "scope": "197 option selectors promoted to default-writable (T24 hardware 50, shared label lists 108, T24-read families 39); corpus 639 bodies in range; all 51 T24 readings decoded and 50 re-encoded without opt-in; type/model selectors, non-sound families, pickers and PHASER_LFOQUANTIZE stay opt-in; no device I/O",
+      "required": true
+    },
+    {
       "id": "test-controls-output",
       "command": [
         "node",

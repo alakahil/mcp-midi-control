@@ -13,6 +13,7 @@ import {validateDependencyWrites,dependencyPolicySummary} from './fm3-parameter-
 import {validateTypeWrites,typePolicySummary} from './fm3-type-applicability.mjs';
 import {effectiveInsertParameter} from './fm3-insert-applicability.mjs';
 import {effectiveDisplayClassParameter} from './fm3-display-classes.mjs';
+import {effectiveEnumParameter} from './fm3-enum-promotion.mjs';
 import {nativeParameterId} from './fm3-modulation-dynamics-applicability.mjs';
 
 import {effectivePitchParameter,validPitchStoredWord,pitchWordCodecSummary} from './fm3-pitch-word-codecs.mjs';
@@ -48,7 +49,7 @@ export function loadDictionary(){
   const bytes=fs.readFileSync(new URL('../references/fm3-param-dictionary.json',import.meta.url));
   check(sha(bytes)===dictionaryHash,'Parameter dictionary changed; run test-table-encoder.mjs and review evidence before use');
   const d=JSON.parse(bytes);check(d.params.length===2892,'Unexpected dictionary size');
-  d.params=d.params.map(effectivePitchParameter).map(effectiveIntegerParameter).map(effectiveDisplayClassParameter).map(effectiveInsertParameter);
+  d.params=d.params.map(effectivePitchParameter).map(effectiveIntegerParameter).map(effectiveDisplayClassParameter).map(effectiveEnumParameter).map(effectiveInsertParameter);
   const byKey=new Map(),byName=new Map();
   for(const p of d.params){byKey.set(p.block+':'+p.param,p);if(p.name)byName.set(p.family+':'+p.name,p)}
   return cache={...d,byKey,byName};

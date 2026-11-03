@@ -99,6 +99,8 @@ jobs:
           node tools/fm3/knob-read-t19-ingest.mjs
           node tools/fm3/cab-cut-t20-ingest.mjs
           node tools/fm3/shot-t21-t23-ingest.mjs
+          node tools/fm3/shot-t24-ingest.mjs
+          node tools/fm3/enum-promotion-build.mjs
           node tools/fm3/test-cs-preset-replay.mjs
           node tools/fm3/test-p3-modifier-reuse.mjs
           node tools/fm3/modifier-fields-status.mjs

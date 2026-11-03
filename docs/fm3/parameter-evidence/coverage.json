@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scope": "Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.",
   "inventory": {
-    "filePaths": 2364,
-    "uniqueContents": 2160,
+    "filePaths": 2366,
+    "uniqueContents": 2162,
     "archivePaths": 990,
     "archiveContents": 164
   },
@@ -19,8 +19,8 @@
   },
   "effectiveStatusClaims": {
     "blocked-hidden-editor": 1,
-    "enum-labels": 348,
-    "enum-labels-crosschecked": 137,
+    "enum-labels": 151,
+    "enum-labels-crosschecked": 334,
     "linear-by-structure": 2,
     "measured": 22,
     "n/a": 760,
@@ -146,8 +146,8 @@
       "catalogKeys": 105,
       "dictionaryKeys": 106,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 36,
-      "tableOptInOnBundledBase": 25
+      "tableDefaultOnBundledBase": 58,
+      "tableOptInOnBundledBase": 3
     },
     {
       "family": "CHORUS",
@@ -394,16 +394,16 @@
       "catalogKeys": 35,
       "dictionaryKeys": 35,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 21,
-      "tableOptInOnBundledBase": 13
+      "tableDefaultOnBundledBase": 31,
+      "tableOptInOnBundledBase": 3
     },
     {
       "family": "PITCH",
       "catalogKeys": 114,
       "dictionaryKeys": 114,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 80,
-      "tableOptInOnBundledBase": 31
+      "tableDefaultOnBundledBase": 109,
+      "tableOptInOnBundledBase": 2
     },
     {
       "family": "PLEX",
@@ -450,8 +450,8 @@
       "catalogKeys": 21,
       "dictionaryKeys": 21,
       "pairedPointKeys": 5,
-      "tableDefaultOnBundledBase": 15,
-      "tableOptInOnBundledBase": 5
+      "tableDefaultOnBundledBase": 20,
+      "tableOptInOnBundledBase": 0
     },
     {
       "family": "RTA",
@@ -490,8 +490,8 @@
       "catalogKeys": 22,
       "dictionaryKeys": 22,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 13,
-      "tableOptInOnBundledBase": 7
+      "tableDefaultOnBundledBase": 19,
+      "tableOptInOnBundledBase": 1
     },
     {
       "family": "VOCODER",
@@ -514,8 +514,8 @@
       "catalogKeys": 25,
       "dictionaryKeys": 25,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 19,
-      "tableOptInOnBundledBase": 6
+      "tableDefaultOnBundledBase": 24,
+      "tableOptInOnBundledBase": 1
     }
   ]
 }
