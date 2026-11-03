@@ -1,0 +1,112 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "f6f766a92a4e9eaa1e7fed647bfd6315fcf2db2ce953fcc46b81c8948ab4895d",
+ "preset": "INSC",
+ "name": "SHOT T24 ENUM INS C",
+ "time": "2026-11-03T11:18:34",
+ "blocks": [
+  {
+   "family": "synth",
+   "effectId": 130,
+   "values": 168,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "SYNTH_TYPE1",
+     "channel": "A",
+     "raw": 3,
+     "device": 3
+    },
+    {
+     "param": "SYNTH_TRACK1",
+     "channel": "A",
+     "raw": 3,
+     "device": 3
+    },
+    {
+     "param": "SYNTH_PD_RANGE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    }
+   ]
+  },
+  {
+   "family": "ringmod",
+   "effectId": 150,
+   "values": 26,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "RINGMOD_PD_RANGE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    }
+   ]
+  },
+  {
+   "family": "resonator",
+   "effectId": 162,
+   "values": 80,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "RESONATOR_LOC2",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "RESONATOR_INPUTMODE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "RESONATOR_MODE",
+     "channel": "B",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "RESONATOR_CHORD",
+     "channel": "B",
+     "raw": 6,
+     "device": 6
+    }
+   ]
+  },
+  {
+   "family": "formant",
+   "effectId": 98,
+   "values": 48,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "FORMANT_F1",
+     "channel": "A",
+     "raw": 4,
+     "device": 4
+    },
+    {
+     "param": "FORMANT_F2",
+     "channel": "A",
+     "raw": 7,
+     "device": 7
+    },
+    {
+     "param": "FORMANT_F3",
+     "channel": "A",
+     "raw": 9,
+     "device": 9
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

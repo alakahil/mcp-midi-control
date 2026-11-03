@@ -108,3 +108,13 @@ kirjutatav väärtus peab olema kordaja kordne. Kordaja 0 (GLOBAL_CUSTOM_SCALE) 
 kordaja 2 ja negatiivne väärtus; `references/fm3-shot-t21-mix-20261102.json`, `fm3-shot-t22-int-20261102.json`).
 Enhancer/Formant Balance (lipud 0x0980) jäävad opt-in. Ampi `DISTORT_DYNDEPTH` / `DISTORT_DYNPRES` jäävad
 `unverified-taper`: sõnad salvestuvad, kuid FM3-l pole neile nuppu (T23).
+
+## Valikunupud vaikimisi (0.3.45, T24)
+
+`scripts/fm3-enum-promotion.mjs` tõstab `loadDictionary` ajal 197 valikunuppu staatusest `enum-labels`
+staatusse `enum-labels-crosschecked` (algne jääb välja `structuralStatus`, tõendiklass välja `enumEvidence`).
+Tõend: T24 (3.11.2026) 51/51 FM3-Edit'i näitu ja 2/2 esipaneeli näitu täpselt 15 perest, ilma 0/1 nihketa
+(`references/fm3-shot-t24-enum-20261103.json`); 639 korpusekeha, ükski salvestatud väärtus pole loendist väljas;
+klassid `hardware-t24` 50, `shared-labels` 108, `family-t24` 39 (`references/fm3-enum-promotion-20261103.json`,
+`tools/fm3/enum-promotion-build.mjs`). Opt-in jäävad 151: tüübi/mudeli valijad, GLOBAL/CONTROLLERS/MOD ja
+marsruutimine, learn/preset/IR-panga valijad, testita perede unikaalsed loendid (PEQ, Multitap) ja PHASER_LFOQUANTIZE.

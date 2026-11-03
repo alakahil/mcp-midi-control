@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.44`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.45`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -98,8 +98,9 @@ nelja faili näide. V4 muudab ainult Amp C seadeid ning preseti ja 5. stseeni
 nime; stseeni uus nimi on `CRUNCH FULL`. Amp C: Crunch Orange, Gain 6,
 Bass 5.5, Mid 7.5, Presence 4 ja Level −10 dB; Output Scene 5 jääb +1 dB peale.
 V1–V3 kuulamistagasiside on allpool. T8 kinnitab V4 laadimist CPU-katseks
-ning kõigi kaheksa stseeni CPU-näite. V4 terviklik uus tagasilugemine ja
-V3/V4 kuulamisvõrdlus on eraldi kinnitamata.
+ning kõigi kaheksa stseeni CPU-näite. V3/V4 kuulamisvõrdluse tegi kasutaja
+privaatselt: eelistatud on V4, riff on 2. stseenil. V4 terviklik uus
+tagasilugemine on endiselt eraldi kinnitamata.
 Ära omista V3 seadmetõendit automaatselt V4-le.
 
 Näidiste kontroll hõlmab 51 spetsifikatsiooni: 48 SYX-i taastuvad baittäpselt,
@@ -134,6 +135,22 @@ Käivita `selfCheck` väljalaske teadaoleva commit'iga. Taastatud runtime'is
 on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
+
+## Valikunupud vaikimisi kasutatavad (0.3.45, T24)
+
+3.11.2026 laaditi T24-s viis genereeritud presetit (Pitch, Tremolo, Phaser, Wah, Cab, Gate, Multiband,
+Plex, Looper, Synth, Ring Mod, Resonator, Formant, Ten-Tap, Megatap). 51 valikunuppu kirjutati algsest
+erinevale valikule. Plokkide tagasilugemine (fn=0x1F) klappis sõna-sõnalt ja FM3-Edit näitas kõigil 51-l
+täpselt oodatud silti. Esipaneeli foto kinnitas Megatapi Time/Amplitude Shape'i (2/2). Nullist või ühest
+algava loenduse nihet ei olnud. Lisaks on 639 jälgitava preseti kehas iga kandidaadi salvestatud väärtus
+oma loendi piires. `scripts/fm3-enum-promotion.mjs` tõstab 197 valikut staatusse
+`enum-labels-crosschecked` (vaikimisi kirjutatav, `allow` pole vaja): 50 seadmel loetud, 108 sama
+sildiloendiga kui juba kinnitatud valik ning 39 T24-s loetud perede unikaalset loendit. 151 jääb opt-in:
+kanali tüübi/mudeli valijad (vajavad täit kanalimalli ja *Channels-välja), üldseaded, kontrollerid,
+modifikaatorid ja marsruutimine, learn/preset/IR-panga valijad, PEQ/Multitapi unikaalsed loendid ja
+PHASER_LFOQUANTIZE. Lõpliku tüübi, tempo ja modifikaatorite piirangud kehtivad endiselt. See ei ole heli
+ega STORE/reload'i kinnitus (`MOOTOR/references/fm3-shot-t24-enum-20261103.json`,
+`fm3-enum-promotion-20261103.json`).
 
 ## Mix, Balance ja täisarvud vaikimisi kasutatavad (0.3.44, T21–T23)
 
@@ -729,7 +746,7 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Kõverad: lineaarne, logaritmiline, nupp (klass 0x5: näit = n × 10), lineaarne dB (0x6).
   Tõendid: 280/280 seadmepunkti, 15/15 partiikatse näitu (`references/taper-batch-20261013.json`),
   12/12 senist juhti. Vaikimisi kirjutatakse measured / taper-class-verified / enum-labels-crosschecked;
-  linear-by-structure ja enum-labels vajavad `allow`; unverified-taper (36 kirjet) mitte kunagi.
+  linear-by-structure ja enum-labels vajavad `allow` (0.3.45: 197 valikut on T24 järel enum-labels-crosschecked); unverified-taper (36 kirjet) mitte kunagi.
 - **Kahe rea paigutus** `scripts/fm3-layout.mjs`: rida 2 In 1 → … → Send, rida 3 Return → … → Out 1,
   read 1/4 tühjad; plokkide järjekorra määrab sound. Ruudustiku liigutamine on **seadmel kinnitatud**
   (`examples/FM3_LAYOUT_MOVE_TEST_export.syx` keha identne).
@@ -743,7 +760,7 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   (FM3-Edit'i paigutuse lukud, `references/fm3-insert-tempo-locks.json`). Mixer ja Multiplexer lisanduvad
   ainult `grid`-režiimis (punkt 5); Scene MIDI lisandub samuti ainult `grid`-režiimis (vt allpool); kahe rea paigutuses lükatakse see tagasi. Mix-juhid
   kasutavad 0.3.44-s eespool kirjeldatud klassipoliitikat: 0x0705 Mix ei vaja `allow`-d;
-  ülejäänud `linear-by-structure` juhid ja `enum-labels` valikuloendid vajavad vastavat `allow`-d. Seadmel kinnitatud on kirjete
+  ülejäänud `linear-by-structure` juhid ja alates 0.3.45 opt-in'i jäänud `enum-labels` valikuloendid (tüübivalijad jms) vajavad vastavat `allow`-d. Seadmel kinnitatud on kirjete
   kuju ja genereeritud lisamise import/eksport (`examples/FM3_P6_INSERT_{A,B}*`; seade normaliseerib kirjete
   järjekorra, sisu sama). Kuus CPU-raskemat plokki korraga ületasid CPU piiri: hoia lisatud plokkide arv mõõdukas.
   Klassi 0x01 juhid (nt Shift, Number of Taps) on täisarvud.
@@ -795,7 +812,8 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Detailid: `engine/docs/FM3_CPU.md`.
 - **Satriani "Soap On A Rope"** `examples/SATRIANI_SOAP_ON_A_ROPE{,_V2,_V3,_V4}.*`: V1–V3 kuulatud (V3 26.10.2026:
   Scene 2 RIFF PUSH, Scene 4 SOLO JS410 ja Scene 8 meeldisid; Scene 5 Crunch liiga lahja ja puhas). V4 = V3 + täidlasem
-  Scene 5 (ainult Amp C: Crunch Orange, Gain 6, Bass 5.5, Mid 7.5, Presence 4, Level −10 dB); ootab kuulamist.
+  Scene 5 (ainult Amp C: Crunch Orange, Gain 6, Bass 5.5, Mid 7.5, Presence 4, Level −10 dB). V3/V4 kuulatud
+  privaatselt: eelistatud V4, riff 2. stseenil.
   Kõik on SA2 koostajaga baitidentsed.
 - **Helivõrdlus** `scripts/fm3-audio-compare.py REF FM3`: kolmandikoktaavi tämber ja stereolaius
   (eelista eraldatud kitarrirada). Efektide tuvastamine EI ole valideeritud — ära väida helianalüüsi

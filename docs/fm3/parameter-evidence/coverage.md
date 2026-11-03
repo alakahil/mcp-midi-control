@@ -29,7 +29,7 @@ Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik
 | Pere | Kataloogi PID-d | Sõnastiku PID-d | Paaristatud punktiga PID-d | Tabelikirjutaja vaikimisi / eraldi lubamisel |
 | --- | ---: | ---: | ---: | ---: |
 | Nimetu | 0 | 7 | 0 | 0 / 0 |
-| CABINET | 105 | 106 | 0 | 36 / 25 |
+| CABINET | 105 | 106 | 0 | 58 / 3 |
 | CHORUS | 29 | 32 | 0 | 31 / 0 |
 | COMP | 37 | 37 | 0 | 33 / 0 |
 | CONTROLLERS | 141 | 130 | 0 | 0 / 0 |
@@ -60,22 +60,22 @@ Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik
 | MULTITAP | 121 | 121 | 0 | 0 / 0 |
 | OUTPUT | 26 | 26 | 0 | 0 / 0 |
 | PEQ | 33 | 33 | 31 | 0 / 0 |
-| PHASER | 35 | 35 | 0 | 21 / 13 |
-| PITCH | 114 | 114 | 0 | 80 / 31 |
+| PHASER | 35 | 35 | 0 | 31 / 3 |
+| PITCH | 114 | 114 | 0 | 109 / 2 |
 | PLEX | 95 | 96 | 0 | 0 / 0 |
 | PRESET | 51 | 0 | 0 | 0 / 0 |
 | RESONATOR | 40 | 40 | 0 | 0 / 0 |
 | REVERB | 71 | 71 | 0 | 70 / 0 |
 | RINGMOD | 13 | 13 | 0 | 0 / 0 |
-| ROTARY | 21 | 21 | 5 | 15 / 5 |
+| ROTARY | 21 | 21 | 5 | 20 / 0 |
 | RTA | 6 | 0 | 0 | 0 / 0 |
 | SYNTH | 42 | 42 | 0 | 0 / 0 |
 | TENTAP | 49 | 48 | 0 | 0 / 0 |
 | TONEMATCH | 25 | 0 | 0 | 0 / 0 |
-| TREMOLO | 22 | 22 | 0 | 13 / 7 |
+| TREMOLO | 22 | 22 | 0 | 19 / 1 |
 | VOCODER | 67 | 0 | 0 | 0 / 0 |
 | VOLUME | 15 | 15 | 0 | 0 / 0 |
-| WAH | 25 | 25 | 0 | 19 / 6 |
+| WAH | 25 | 25 | 0 | 24 / 1 |
 
 ## Järgmised tööd kasutaja ajakulu vähendamiseks
 

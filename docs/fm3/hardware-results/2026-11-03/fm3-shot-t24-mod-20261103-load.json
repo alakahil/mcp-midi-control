@@ -1,0 +1,205 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "f6f766a92a4e9eaa1e7fed647bfd6315fcf2db2ce953fcc46b81c8948ab4895d",
+ "preset": "MOD",
+ "name": "SHOT T24 ENUM MOD",
+ "time": "2026-11-03T10:58:57",
+ "blocks": [
+  {
+   "family": "pitch",
+   "effectId": 110,
+   "values": 456,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "PITCH_SCALE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "PITCH_KEY",
+     "channel": "A",
+     "raw": 7,
+     "device": 7
+    },
+    {
+     "param": "PITCH_QUANTIZE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "PITCH_HARM1",
+     "channel": "A",
+     "raw": 28,
+     "device": 28
+    },
+    {
+     "param": "PITCH_DTEMPO1",
+     "channel": "B",
+     "raw": 12,
+     "device": 12
+    },
+    {
+     "param": "PITCH_PANSHAPE",
+     "channel": "C",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "PITCH_AMPSHAPE",
+     "channel": "C",
+     "raw": 2,
+     "device": 2
+    }
+   ]
+  },
+  {
+   "family": "tremolo",
+   "effectId": 106,
+   "values": 88,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "TREMOLO_LFOTYPE",
+     "channel": "A",
+     "raw": 4,
+     "device": 4
+    },
+    {
+     "param": "TREMOLO_ORDER",
+     "channel": "C",
+     "raw": 2,
+     "device": 2
+    }
+   ]
+  },
+  {
+   "family": "phaser",
+   "effectId": 90,
+   "values": 140,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "PHASER_VCR_CURVE",
+     "channel": "A",
+     "raw": 3,
+     "device": 3
+    },
+    {
+     "param": "PHASER_LFOMODE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "PHASER_ORDER",
+     "channel": "A",
+     "raw": 4,
+     "device": 4
+    },
+    {
+     "param": "PHASER_LFORESET",
+     "channel": "A",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "PHASER_DIRECTION",
+     "channel": "C",
+     "raw": 1,
+     "device": 1
+    }
+   ]
+  },
+  {
+   "family": "wah",
+   "effectId": 94,
+   "values": 100,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "WAH_TAPER",
+     "channel": "A",
+     "raw": 3,
+     "device": 3
+    }
+   ]
+  },
+  {
+   "family": "cab",
+   "effectId": 62,
+   "values": 424,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "CABINET_LOSLOPE1",
+     "channel": "A",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "CABINET_HISLOPE1",
+     "channel": "A",
+     "raw": 3,
+     "device": 3
+    },
+    {
+     "param": "CABINET_INPUTSEL",
+     "channel": "A",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "CABINET_ROOMSHAPE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CABINET_DYNACAB_TYPE1",
+     "channel": "B",
+     "raw": 29,
+     "device": 29
+    },
+    {
+     "param": "CABINET_DYNACAB_MIC1",
+     "channel": "B",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CABINET_PRETYPE",
+     "channel": "B",
+     "raw": 4,
+     "device": 4
+    },
+    {
+     "param": "CABINET_PRELOSLOPE",
+     "channel": "B",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "CABINET_PREHISLOPE",
+     "channel": "B",
+     "raw": 3,
+     "device": 3
+    },
+    {
+     "param": "CABINET_MUTE2",
+     "channel": "B",
+     "raw": 2,
+     "device": 2
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

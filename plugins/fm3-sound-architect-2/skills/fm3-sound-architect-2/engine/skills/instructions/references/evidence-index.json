@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2160,
-  "filePaths": 2364,
+  "uniqueContents": 2162,
+  "filePaths": 2366,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -570,6 +570,12 @@
       "bytes": 7071,
       "paths": [
         "references/flanger-batch-20261007-125456/capture-20261007T125013-13de15f8f3/capture.json"
+      ]
+    },
+    "0a7977be0e6a1878f72efeb948429933f6803bd7ae6c117037522a64fe465898": {
+      "bytes": 27399,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "0a9c55d62afd8586b93e4cce9f075ee9837902797f89a4c5d63dee102d5fe180": {
@@ -3935,6 +3941,12 @@
       "bytes": 774,
       "paths": [
         "references/peq-baseline-20261009-114022/capture-20261009T114021-4e486c054d/pair.json"
+      ]
+    },
+    "4f535c441551d00ab87ecc60e03b582248cd08e0d36e8c5f6db91d077f338def": {
+      "bytes": 125114,
+      "paths": [
+        "references/fm3-enum-promotion-20261103.json"
       ]
     },
     "4f7b6f8687923536f5266526e956bb1546a0611e46685ea0c8c72d9afc617fb8": {
@@ -8087,6 +8099,12 @@
         "references/peq-full-20261009-152606/step-053-80c194df92/donor.syx"
       ]
     },
+    "a19e82b2cb7bda0f547626c5a4dbe5e9436df132f481e366ea2705d4e6701796": {
+      "bytes": 21726,
+      "paths": [
+        "references/fm3-shot-t24-enum-20261103.json"
+      ]
+    },
     "a1a07cade0594a2fe357b51b981f1095772997568063edbd08574cb660193e17": {
       "bytes": 2549,
       "paths": [
@@ -8468,12 +8486,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-148-6b8f074483/donor.syx"
-      ]
-    },
-    "a85dd1ead287757b2807dc50c694fc54c693ef565305e81f9a36eb6455c57317": {
-      "bytes": 26919,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "a87d4d9ef7c6660503c02d68277b863ae26d69f854ff404b48f6cbcc6afa1f3a": {

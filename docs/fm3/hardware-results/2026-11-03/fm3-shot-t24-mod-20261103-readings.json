@@ -1,0 +1,183 @@
+{
+"test": "T24",
+"preset": "MOD",
+"source": "FM3-Edit 1.07.17 window captures taken by Claude (computer use, Jan present) 2026-11-03; read from the block pages, nothing edited",
+"readings": [
+{
+"block": "pitch",
+"channel": "A",
+"type": "Dual Diatonic",
+"param": "PITCH_SCALE",
+"shown": "Dorian"
+},
+{
+"block": "pitch",
+"channel": "A",
+"type": "Dual Diatonic",
+"param": "PITCH_KEY",
+"shown": "E"
+},
+{
+"block": "pitch",
+"channel": "A",
+"type": "Dual Diatonic",
+"param": "PITCH_QUANTIZE",
+"shown": "Stepped"
+},
+{
+"block": "pitch",
+"channel": "A",
+"type": "Dual Diatonic",
+"param": "PITCH_HARM1",
+"shown": "5"
+},
+{
+"block": "pitch",
+"channel": "B",
+"type": "Quad Chromatic",
+"param": "PITCH_DTEMPO1",
+"shown": "1/8 Dot"
+},
+{
+"block": "pitch",
+"channel": "C",
+"type": "Arpeggiator",
+"param": "PITCH_PANSHAPE",
+"shown": "Increasing"
+},
+{
+"block": "pitch",
+"channel": "C",
+"type": "Arpeggiator",
+"param": "PITCH_AMPSHAPE",
+"shown": "Decreasing"
+},
+{
+"block": "tremolo",
+"channel": "A",
+"type": "VCA Trem",
+"param": "TREMOLO_LFOTYPE",
+"shown": "Saw Down"
+},
+{
+"block": "tremolo",
+"channel": "C",
+"type": "Harmonic Trem",
+"param": "TREMOLO_ORDER",
+"shown": "24 dB/Oct"
+},
+{
+"block": "phaser",
+"channel": "A",
+"type": "Script 90",
+"param": "PHASER_VCR_CURVE",
+"shown": "Photocell"
+},
+{
+"block": "phaser",
+"channel": "A",
+"type": "Script 90",
+"param": "PHASER_LFOMODE",
+"shown": "Univibe"
+},
+{
+"block": "phaser",
+"channel": "A",
+"type": "Script 90",
+"param": "PHASER_ORDER",
+"shown": "10"
+},
+{
+"block": "phaser",
+"channel": "A",
+"type": "Script 90",
+"param": "PHASER_LFORESET",
+"shown": "90 Deg"
+},
+{
+"block": "phaser",
+"channel": "C",
+"type": "Barber Pole",
+"param": "PHASER_DIRECTION",
+"shown": "Down"
+},
+{
+"block": "wah",
+"channel": "A",
+"type": "Clyde",
+"param": "WAH_TAPER",
+"shown": "Log 15A"
+},
+{
+"block": "cab",
+"channel": "A",
+"type": "Legacy",
+"param": "CABINET_LOSLOPE1",
+"shown": "18 dB/Oct"
+},
+{
+"block": "cab",
+"channel": "A",
+"type": "Legacy",
+"param": "CABINET_HISLOPE1",
+"shown": "24 dB/Oct"
+},
+{
+"block": "cab",
+"channel": "A",
+"type": "Legacy",
+"param": "CABINET_INPUTSEL",
+"shown": "Right"
+},
+{
+"block": "cab",
+"channel": "A",
+"type": "Legacy",
+"param": "CABINET_ROOMSHAPE",
+"shown": "Room"
+},
+{
+"block": "cab",
+"channel": "B",
+"type": "Dyna-Cab",
+"param": "CABINET_DYNACAB_TYPE1",
+"shown": "30: 2x12 Texas Star"
+},
+{
+"block": "cab",
+"channel": "B",
+"type": "Dyna-Cab",
+"param": "CABINET_DYNACAB_MIC1",
+"shown": "Ribbon"
+},
+{
+"block": "cab",
+"channel": "B",
+"type": "Dyna-Cab",
+"param": "CABINET_PRETYPE",
+"shown": "FET II"
+},
+{
+"block": "cab",
+"channel": "B",
+"type": "Dyna-Cab",
+"param": "CABINET_PRELOSLOPE",
+"shown": "18 dB/Oct"
+},
+{
+"block": "cab",
+"channel": "B",
+"type": "Dyna-Cab",
+"param": "CABINET_PREHISLOPE",
+"shown": "24 dB/Oct"
+},
+{
+"block": "cab",
+"channel": "B",
+"type": "Dyna-Cab",
+"param": "CABINET_MUTE2",
+"shown": "S (Cab 2 solo button lit)"
+}
+],
+"notes": "Captured after a second edit-buffer load of the same pack preset (load2); both loads matched word for word."
+}

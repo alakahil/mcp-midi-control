@@ -1,0 +1,58 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "f6f766a92a4e9eaa1e7fed647bfd6315fcf2db2ce953fcc46b81c8948ab4895d",
+ "preset": "INSA",
+ "name": "SHOT T24 ENUM INS A",
+ "time": "2026-11-03T11:14:45",
+ "blocks": [
+  {
+   "family": "gate",
+   "effectId": 146,
+   "values": 76,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "GATE_KEY",
+     "channel": "A",
+     "raw": 3,
+     "device": 3
+    }
+   ]
+  },
+  {
+   "family": "multiband",
+   "effectId": 154,
+   "values": 148,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "MULTICOMP_KNEE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "MULTICOMP_ORDER",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "MULTICOMP_MUTE2",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "MULTICOMP_DETECT3",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

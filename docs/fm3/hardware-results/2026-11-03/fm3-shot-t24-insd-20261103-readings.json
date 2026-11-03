@@ -1,0 +1,58 @@
+{
+"test": "T24",
+"preset": "INSD",
+"source": "FM3-Edit 1.07.17 window captures taken by Claude (computer use, Jan present) 2026-11-03; read from the block pages, nothing edited; plus one FM3 front-panel photo by Jan (Megatap Tap Control page, Scene 1, Chan. A)",
+"readings": [
+{
+"block": "tentap",
+"channel": "A",
+"type": "Ten-Tap Delay",
+"param": "TENTAP_PANSHAPE",
+"shown": "Sine"
+},
+{
+"block": "tentap",
+"channel": "A",
+"type": "Ten-Tap Delay",
+"param": "TENTAP_STEREO",
+"shown": "Stereo"
+},
+{
+"block": "megatap",
+"channel": "A",
+"type": "Reverb Pre-Swell",
+"param": "MEGATAP_TIMESHAPE",
+"shown": "Cosine"
+},
+{
+"block": "megatap",
+"channel": "A",
+"type": "Reverb Pre-Swell",
+"param": "MEGATAP_PANSHAPE",
+"shown": "Cosine"
+},
+{
+"block": "megatap",
+"channel": "A",
+"type": "Reverb Pre-Swell",
+"param": "MEGATAP_AMPSHAPE",
+"shown": "Sine"
+}
+],
+"frontPanel": [
+{
+"block": "megatap",
+"channel": "A",
+"type": "Reverb Pre-Swell",
+"param": "MEGATAP_TIMESHAPE",
+"shown": "COSINE"
+},
+{
+"block": "megatap",
+"channel": "A",
+"type": "Reverb Pre-Swell",
+"param": "MEGATAP_AMPSHAPE",
+"shown": "SINE"
+}
+]
+}
