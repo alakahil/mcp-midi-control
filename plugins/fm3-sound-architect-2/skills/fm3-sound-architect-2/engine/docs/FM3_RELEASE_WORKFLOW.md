@@ -118,7 +118,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Kohustuslik testiloend on `references/offline-suite.json` (0.3.38: 77 testi), sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Kohustuslik testiloend on `references/offline-suite.json` (0.3.44: 79 testi), sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.

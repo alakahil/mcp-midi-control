@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.39`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.44`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -137,11 +137,15 @@ senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 
 ## Mix, Balance ja täisarvud vaikimisi kasutatavad (0.3.44, T21–T23)
 
-2.11.2026 laaditi kolm genereeritud presetit ja loeti FM3-Edit'ist ning esipaneelilt kõik kirjutatud nupud.
+2.11.2026 kasutati T21-s kolme, T22-s üht ja T23-s üht genereeritud presetit.
+T21/T22 näidud loeti FM3-Edit'ist ning valitud punktid ka esipaneelilt; T23 väljadele nähtavat nuppu ei leitud.
 T21: Mix (lipud 0x0705, 0…100 %, üks komakoht) ja Balance (0x0900, -100…100) 17/17 täpselt üheteistkümnes
 plokis; T22: klassi 0x01 täisarvud (bitisügavus, vedrude arv, häälte arv ×2, märgiga nihe -5 jne) 10/10 täpselt.
 Need kolm klassi (Mix 17, Balance 29, täisarvud 552 parameetrit) on nüüd vaikimisi kirjutatavad
-(`taper-class-verified`, `scripts/fm3-display-classes.mjs`), `allow` pole enam vaja. Enhancer/Formant Balance
+(`taper-class-verified`, `scripts/fm3-display-classes.mjs`), `allow` pole enam vaja.
+27 mõõdetud parameetri põhjal rakendatakse klassireeglit 598 sõnastikukirjele; see ei tähenda
+598 parameetri eraldi seadmemõõtmist ega kõigi tüüpide, vahemike, heli või STORE/reload'i kinnitust.
+Lõpliku tüübi, tempo ja modifikaatorite piirangud kehtivad endiselt. Enhancer/Formant Balance
 (lipud 0x0980) jääb opt-in. T23: Ampi `DISTORT_DYNDEPTH` / `DISTORT_DYNPRES` salvestuvad täpselt, aga neil pole
 FM3-Edit'is ega esipaneelil nuppu; need jäävad lukku (`MOOTOR/references/fm3-shot-t2{1,2,3}-*-20261102.json`).
 
@@ -738,7 +742,8 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Resonatoril 2 (A/B). Plexi TIME1–8 ja LFO Rate kirjutamine nõuab samas spetsis vastava TEMPO = NONE
   (FM3-Edit'i paigutuse lukud, `references/fm3-insert-tempo-locks.json`). Mixer ja Multiplexer lisanduvad
   ainult `grid`-režiimis (punkt 5); Scene MIDI lisandub samuti ainult `grid`-režiimis (vt allpool); kahe rea paigutuses lükatakse see tagasi. Mix-juhid
-  vajavad `allow: ["linear-by-structure"]`, valikuloendid `enum-labels`. Seadmel kinnitatud on kirjete
+  kasutavad 0.3.44-s eespool kirjeldatud klassipoliitikat: 0x0705 Mix ei vaja `allow`-d;
+  ülejäänud `linear-by-structure` juhid ja `enum-labels` valikuloendid vajavad vastavat `allow`-d. Seadmel kinnitatud on kirjete
   kuju ja genereeritud lisamise import/eksport (`examples/FM3_P6_INSERT_{A,B}*`; seade normaliseerib kirjete
   järjekorra, sisu sama). Kuus CPU-raskemat plokki korraga ületasid CPU piiri: hoia lisatud plokkide arv mõõdukas.
   Klassi 0x01 juhid (nt Shift, Number of Taps) on täisarvud.
