@@ -637,6 +637,15 @@
       "required": true
     },
     {
+      "id": "test-tentap-times",
+      "command": [
+        "node",
+        "scripts/test-tentap-times.mjs"
+      ],
+      "scope": "Ten-Tap Time 1-10 (Rhythm Tap, linear 0-10 s) and Delay Time (Ten-Tap, linear 0.01-10 s, writable to 1000 ms) promoted from T25/T25b hardware readings; 20+4+1 readings re-encoded without opt-in; type and clamp rules; no device I/O",
+      "required": true
+    },
+    {
       "id": "test-controls-output",
       "command": [
         "node",

@@ -1,0 +1,384 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "editor": "FM3-Edit 1.07.17",
+ "date": "2026-11-03",
+ "test": "T25/T25b",
+ "method": "FM3_SHOT_LOAD.py --load (Remote Control): edit-buffer load (7F 00) of one generated preset and a read-only fn=0x1F bulk read of the Ten-Tap block (all words, all channels); Claude read the controls from FM3-Edit window captures, FM3_SHOT_READ.py re-read the block after viewing, and the user photographed the front panel once. Nothing stored or set.",
+ "notMeasured": [
+  "audio",
+  "STORE/reload",
+  "Delay Time limit for fewer than 10 taps"
+ ],
+ "t25": {
+  "packSha256": "0da2398817231c5930432e87b949082cdaf7abd0664e4fe3d2ba8ab78a5f5887",
+  "preset": "TAP",
+  "name": "SHOT T25 TENTAP TIMES",
+  "load": {
+   "path": "docs/fm3/hardware-results/2026-11-03/fm3-shot-t25-tap-20261103-load.json",
+   "sha256": "ebef266059c48a3a12eb4695b3e35f2baa01e4d336bed0e49b99bfd52e2710d0",
+   "time": "2026-11-03T15:30:22",
+   "allMatch": true,
+   "testWords": 22
+  },
+  "reread": {
+   "path": "docs/fm3/hardware-results/2026-11-03/fm3-shot-t25-tap-20261103-read.json",
+   "sha256": "08979253149bfb74d650e1bed69394a964ad73a1f210bc0a5182e1890ff41c5e",
+   "time": "2026-11-03T15:34:34"
+  },
+  "readings": {
+   "path": "docs/fm3/hardware-results/2026-11-03/fm3-shot-t25-tap-20261103-readings.json",
+   "sha256": "7af6a8155e17007fff0b26909bc4b6acc02dc3d89e3324eb4d43d36fdefcacb3"
+  },
+  "rhythmTimes": [
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME1M",
+    "raw": 77,
+    "predictedMs": 11.75,
+    "shown": "12 ms",
+    "exact": true
+   },
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME2M",
+    "raw": 230,
+    "predictedMs": 35.096,
+    "shown": "35 ms",
+    "exact": true
+   },
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME3M",
+    "raw": 613,
+    "predictedMs": 93.539,
+    "shown": "94 ms",
+    "exact": true
+   },
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME4M",
+    "raw": 1227,
+    "predictedMs": 187.231,
+    "shown": "187 ms",
+    "exact": true
+   },
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME5M",
+    "raw": 2455,
+    "predictedMs": 374.615,
+    "shown": "375 ms",
+    "exact": true
+   },
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME6M",
+    "raw": 3682,
+    "predictedMs": 561.846,
+    "shown": "562 ms",
+    "exact": true
+   },
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME7M",
+    "raw": 6137,
+    "predictedMs": 936.46,
+    "shown": "936 ms",
+    "exact": true
+   },
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME8M",
+    "raw": 8592,
+    "predictedMs": 1311.075,
+    "shown": "1311 ms",
+    "exact": true
+   },
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME9M",
+    "raw": 11047,
+    "predictedMs": 1685.69,
+    "shown": "1686 ms",
+    "exact": true
+   },
+   {
+    "channel": "A",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME10M",
+    "raw": 12275,
+    "predictedMs": 1873.074,
+    "shown": "1873 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME1M",
+    "raw": 20643,
+    "predictedMs": 3149.968,
+    "shown": "3150 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME2M",
+    "raw": 24903,
+    "predictedMs": 3800.012,
+    "shown": "3800 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME3M",
+    "raw": 29163,
+    "predictedMs": 4450.056,
+    "shown": "4450 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME4M",
+    "raw": 33422,
+    "predictedMs": 5099.948,
+    "shown": "5100 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME5M",
+    "raw": 37682,
+    "predictedMs": 5749.992,
+    "shown": "5750 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME6M",
+    "raw": 41942,
+    "predictedMs": 6400.037,
+    "shown": "6400 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME7M",
+    "raw": 46201,
+    "predictedMs": 7049.928,
+    "shown": "7050 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME8M",
+    "raw": 50461,
+    "predictedMs": 7699.973,
+    "shown": "7700 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME9M",
+    "raw": 54721,
+    "predictedMs": 8350.017,
+    "shown": "8350 ms",
+    "exact": true
+   },
+   {
+    "channel": "B",
+    "type": "Rhythm Tap Delay",
+    "page": "Taps",
+    "param": "TENTAP_TIME10M",
+    "raw": 58981,
+    "predictedMs": 9000.061,
+    "shown": "9000 ms",
+    "exact": true
+   }
+  ],
+  "clampedDelay": [
+   {
+    "channel": "C",
+    "written": 16384,
+    "device": 6494,
+    "shown": "1000 ms",
+    "numberOfTaps": "10",
+    "exact": true
+   },
+   {
+    "channel": "D",
+    "written": 40000,
+    "device": 6494,
+    "shown": "1000 ms",
+    "numberOfTaps": "10",
+    "exact": true
+   }
+  ],
+  "firstPack": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-03/fm3-shot-t25-tap-20261103-load-v1.json",
+    "sha256": "4d3aaaf1624386f2f1d73a463b41daeae66b92aff0ee253da7bd6e9ef559321b"
+   },
+   "manifest": {
+    "path": "docs/fm3/hardware-results/2026-11-03/fm3-shot-t25-tap-20261103-manifest-v1.json",
+    "sha256": "6ed5a431fcb3b9b502394c09c052d0c8106fcb59e25731ab0a36990dcfd41d8b"
+   },
+   "result": "all channels type Ten-Tap Delay: channel A Time 1–10 words replaced by 3276 on load (derived from the default Delay Time), so Time 1–10 are not stored in Ten-Tap type"
+  }
+ },
+ "t25b": {
+  "packSha256": "018f91bf2604ee6f2897ddd5a97982c592ac22cb8cf40dc3ae4b32cdb6fdccd2",
+  "preset": "TAPB",
+  "name": "SHOT T25B TENTAP DELAY",
+  "load": {
+   "path": "docs/fm3/hardware-results/2026-11-03/fm3-shot-t25-tapb-20261103-load.json",
+   "sha256": "2c1b587723de12573a1f5b96b0702ae8ed32e1c7b0bcff9726168da6108c79cf",
+   "time": "2026-11-03T15:37:04"
+  },
+  "reread": {
+   "path": "docs/fm3/hardware-results/2026-11-03/fm3-shot-t25-tapb-20261103-read.json",
+   "sha256": "3304db99f2b6153130dc5b720082622a9be46b1d38e084e97b44f38ed41c502f",
+   "time": "2026-11-03T15:52:07"
+  },
+  "readings": {
+   "path": "docs/fm3/hardware-results/2026-11-03/fm3-shot-t25-tapb-20261103-readings.json",
+   "sha256": "a53c37e40973ca14aa3e92e711b70333b89b29c0912c6edc0f40bdceb39469ae"
+  },
+  "delayTime": [
+   {
+    "source": "FM3-Edit",
+    "channel": "A",
+    "type": "Ten-Tap Delay",
+    "param": "TENTAP_TIMEM",
+    "raw": 650,
+    "predictedMs": 109.086,
+    "dictionaryLinearMs": 20.827,
+    "shown": "109 ms",
+    "numberOfTaps": "10",
+    "exact": true
+   },
+   {
+    "source": "FM3-Edit",
+    "channel": "B",
+    "type": "Ten-Tap Delay",
+    "param": "TENTAP_TIMEM",
+    "raw": 1950,
+    "predictedMs": 307.258,
+    "dictionaryLinearMs": 60.481,
+    "shown": "307 ms",
+    "numberOfTaps": "10",
+    "exact": true
+   },
+   {
+    "source": "FM3-Edit",
+    "channel": "C",
+    "type": "Ten-Tap Delay",
+    "param": "TENTAP_TIMEM",
+    "raw": 3214,
+    "predictedMs": 499.942,
+    "dictionaryLinearMs": 99.037,
+    "shown": "500 ms",
+    "numberOfTaps": "10",
+    "exact": true
+   },
+   {
+    "source": "FM3-Edit",
+    "channel": "D",
+    "type": "Ten-Tap Delay",
+    "param": "TENTAP_TIMEM",
+    "raw": 5200,
+    "predictedMs": 802.688,
+    "dictionaryLinearMs": 159.617,
+    "shown": "803 ms",
+    "numberOfTaps": "10",
+    "exact": true
+   }
+  ],
+  "frontPanel": [
+   {
+    "source": "front panel",
+    "channel": "D",
+    "type": "Ten-Tap Delay",
+    "param": "TENTAP_TIMEM",
+    "raw": 5200,
+    "predictedMs": 802.688,
+    "dictionaryLinearMs": 159.617,
+    "shown": "803 ms",
+    "numberOfTaps": "10",
+    "exact": true
+   }
+  ],
+  "derivedTaps": [
+   {
+    "channel": "A",
+    "delayRaw": 650,
+    "tapWord": 715,
+    "predictedTapWord": 715
+   },
+   {
+    "channel": "B",
+    "delayRaw": 1950,
+    "tapWord": 2014,
+    "predictedTapWord": 2014
+   },
+   {
+    "channel": "C",
+    "delayRaw": 3214,
+    "tapWord": 3276,
+    "predictedTapWord": 3276
+   },
+   {
+    "channel": "D",
+    "delayRaw": 5200,
+    "tapWord": 5260,
+    "predictedTapWord": 5260
+   }
+  ]
+ },
+ "summary": {
+  "rhythmTimesExact": 20,
+  "delayTimeExact": 4,
+  "frontPanelExact": 1,
+  "timeScale": "TENTAP_TIME1M…10M: linear 0…10 s, whole ms; Rhythm Tap Delay only",
+  "delayScale": "TENTAP_TIMEM: linear 0.01…10 s (ms = 10 + raw·9990/65534), not the pinned 0.001…2 s; Ten-Tap Delay only",
+  "clamp": "With 10 taps the device clamps Delay Time to 1000 ms (raw 6494); writes are limited to 10…1000 ms",
+  "meaning": "Time 1–10 and Delay Time move from unverified-taper to measured (fm3-tentap-times.mjs)."
+ }
+}

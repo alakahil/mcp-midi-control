@@ -8,15 +8,15 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-point6-native-bindings.json": "e2205597c48e85ab510aec9f9546964d6ad13b2aea1ffcf0f91c3a22f7cb7160",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-insert-applicability.json": "9cedfafba267139f220224ac63a6013dd524c1c0914b49207368f590c3eb0b2a",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-point6-offline.mjs": "3ca680de906f95082d3f109947ace9996c09d8a76255ee7955eaaa31300dfdcf",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-point6-offline.mjs": "60e66ed79ed2c3259091d09e1222d39d73466fbdf035de9cbd954edf49d80dca",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-controls-output.mjs": "2d00f2f7c1db42fed82678b0808079c3d48853a39a994e153bc6b0208a5935e6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-final-state.mjs": "73068d2e047ba04a5e874d727fe26f0e75c09464a5a96939e7cdd4a4b3ceb689",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-corpus-audit.mjs": "89deb81465ee37aa89770610b5c68cd662dc69a3e606824fe472a7e11755680f",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-insert-applicability.mjs": "c8c8d219dedafaff9e9e45d78453d6e822695353e9abe8c7291701cf7befd9ed",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-scene-midi.mjs": "fd6eada69e0634bb9280c37479dbb547b07b4e284603d1e1177aec061870a832",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-modifier-type-audit.mjs": "9d1b84b07f9bab90c9884f7b361768e2aa57ad3d135eea4f9333213d8409020e",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-type-applicability.mjs": "ec017686bbec2371473d9b5a46e6d73bb99a6d2103e2cd3a8a4102803e5f3fa9",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "2006344dd2f42a9d1f10d27204ec583f070d2a75efedc79a1189e5e855850946"
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-type-applicability.mjs": "cc49acf8d907cc6cd50810da510a09fed25be5e2036ec4df9c440339cb7ec741",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "2bed8ae90cd481ce102bdafa4ff4fd0dacd96fce88b0bd4db0d502dcfa4fb789"
   },
   "nativeMetadataSources": {
     "layoutSha256": "0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2",
@@ -224,12 +224,12 @@
   "tests": {
     "passed": true,
     "parameters": 515,
-    "scalarChecks": 5722,
+    "scalarChecks": 5777,
     "visibilityCases": 49,
     "typeChannelCases": 6268,
-    "writes": 2364,
+    "writes": 2408,
     "readOnlyCases": 2904,
-    "rejections": 4357,
+    "rejections": 4434,
     "sceneMidiCases": 24576,
     "deviceIO": false,
     "newHardwareMeasurements": false

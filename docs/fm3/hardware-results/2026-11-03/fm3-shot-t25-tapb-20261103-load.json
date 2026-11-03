@@ -1,0 +1,104 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "018f91bf2604ee6f2897ddd5a97982c592ac22cb8cf40dc3ae4b32cdb6fdccd2",
+ "preset": "TAPB",
+ "name": "SHOT T25B TENTAP DELAY",
+ "time": "2026-11-03T15:37:04",
+ "blocks": [
+  {
+   "family": "tentap",
+   "effectId": 158,
+   "values": 192,
+   "matches": false,
+   "mismatches": [
+    {
+     "channel": "A",
+     "pid": 17,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 18,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 19,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 20,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 21,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 22,
+     "expected": 3276,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 23,
+     "expected": 0,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 24,
+     "expected": 0,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 25,
+     "expected": 0,
+     "device": 715
+    },
+    {
+     "channel": "A",
+     "pid": 26,
+     "expected": 0,
+     "device": 715
+    }
+   ],
+   "testWords": [
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "A",
+     "raw": 650,
+     "device": 650
+    },
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "B",
+     "raw": 1950,
+     "device": 1950
+    },
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "C",
+     "raw": 3214,
+     "device": 3214
+    },
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "D",
+     "raw": 5200,
+     "device": 5200
+    }
+   ]
+  }
+ ],
+ "allMatch": false
+}

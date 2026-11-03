@@ -8,6 +8,7 @@ import {algorithmApplicability,algorithmState,algorithmPolicySummary,templateOnl
 import {modulationApplicability,modulationState,modulationPolicySummary,modulationTemplateOnly} from './fm3-modulation-dynamics-applicability.mjs';
 import {rotaryPitchState,rotaryPitchApplicability,rotaryPitchTemplateOnly,rotaryPitchPolicySummary} from './fm3-rotary-pitch-applicability.mjs';
 import {validatePitchCustomWrites} from './fm3-pitch-custom-scales.mjs';
+import {validateTentapWrites} from './fm3-tentap-times.mjs';
 export const templateOnlyParameter=p=>delayReverbTemplateOnly(p)||modulationTemplateOnly(p)||rotaryPitchTemplateOnly(p);
 export const typePolicyHash='9fdc92ed23349838699db18dbcce223602ae6a22984cef5e5728e35150a49f99';
 const bytes=fs.readFileSync(new URL('../references/fm3-type-applicability.json',import.meta.url));
@@ -56,4 +57,5 @@ export function validateTypeWrites(body,writes){
     w.label=a.label;
   }
   validatePitchCustomWrites(body,writes);
+  validateTentapWrites(body,writes);
 }

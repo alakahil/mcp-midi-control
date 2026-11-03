@@ -10,7 +10,7 @@
 
 ## Ulatus
 
-Praegune lähtekood valmistab ette 0.3.45 tõendiväljalaset. T24 (3.11.2026) teeb 197 valikunuppu vaikimisi kirjutatavaks: 51/51 FM3-Edit'i ja 2/2 esipaneeli näitu täpselt 15 perest, korpus 639 keha loendite piires (`references/fm3-shot-t24-enum-20261103.json`, `fm3-enum-promotion-20261103.json`); tüübivalijad, üldseaded ja kontrollerid jäävad opt-in. Auditi D2: V3/V4 kuulamisvõrdlus on tehtud (V4 eelistatud). Selle aluseks on 0.3.44. T21–T23 (2.11.2026) teevad Mix (0x0705), Balance (0x0900) ja klassi 0x01 täisarvud vaikimisi kirjutatavaks: 27/27 FM3-Edit/esipaneeli näitu täpselt (`references/fm3-shot-t21-mix-20261102.json`, `fm3-shot-t22-int-20261102.json`); Ampi Dynamic Depth/Presence jäävad lukku, sest neil pole nuppu (`fm3-shot-t23-dyn-20261102.json`). Selle aluseks on 0.3.43. T20 (2.11.2026) lisab Cabi ploki Low/High Cut
+Praegune lähtekood valmistab ette 0.3.46 tõendiväljalaset. T25 (3.11.2026) teeb Ten-Tapi Time 1–10 (Rhythm Tap, 0…10 s) ja Delay Time'i (Ten-Tap, 0,01…10 s, kirjutatav kuni 1000 ms) vaikimisi kirjutatavaks: 20/20 + 4/4 FM3-Edit'i näitu ja 1 esipaneeli näit täpselt (`references/fm3-shot-t25-tentap-20261103.json`). Selle aluseks on 0.3.45. T24 (3.11.2026) teeb 197 valikunuppu vaikimisi kirjutatavaks: 51/51 FM3-Edit'i ja 2/2 esipaneeli näitu täpselt 15 perest, korpus 639 keha loendite piires (`references/fm3-shot-t24-enum-20261103.json`, `fm3-enum-promotion-20261103.json`); tüübivalijad, üldseaded ja kontrollerid jäävad opt-in. Auditi D2: V3/V4 kuulamisvõrdlus on tehtud (V4 eelistatud). Selle aluseks on 0.3.44. T21–T23 (2.11.2026) teevad Mix (0x0705), Balance (0x0900) ja klassi 0x01 täisarvud vaikimisi kirjutatavaks: 27/27 FM3-Edit/esipaneeli näitu täpselt (`references/fm3-shot-t21-mix-20261102.json`, `fm3-shot-t22-int-20261102.json`); Ampi Dynamic Depth/Presence jäävad lukku, sest neil pole nuppu (`fm3-shot-t23-dyn-20261102.json`). Selle aluseks on 0.3.43. T20 (2.11.2026) lisab Cabi ploki Low/High Cut
 (Preamp leht) ja Cab 1 lõigete esipaneeli näidud: 3 täpselt, Cab 1 High Cut 12499,9 Hz näitas 12499 Hz
 (`references/fm3-cab-cut-t20-20261102.json`). Kirjutustugi ei muutu. Selle aluseks on 0.3.42. T19 (31.10.2026) lisab 50 tabelikirjutaja nupu
 esipaneeli näidud (Cab 5, Drive 8, Chorus 8, Flanger 8, Wah 8, Rotary 13), kõik täpselt näidatud komakohtadeni,
@@ -118,7 +118,7 @@ python3 tools/fm3/build-release.py --commit HEAD --tests /ABS/tests/summary.json
 Esimene käsk kontrollib tõendite inventuuri. Uuenda seda `--write` abil ainult
 pärast teadlikku lähteandmete muudatust, mitte ebaõnnestunud kontrolli varjamiseks.
 Testirunner teeb ajutise koopia: ajaloolised testid ei muuda väljalaske lähtefaile.
-Kohustuslik testiloend on `references/offline-suite.json` (0.3.45: 80 testi), sealhulgas varasemate seadmeeksportide kordusvõrdlused,
+Kohustuslik testiloend on `references/offline-suite.json` (0.3.46: 81 testi), sealhulgas varasemate seadmeeksportide kordusvõrdlused,
 Amp ABCD mõõtmised, Satriani V3 baittäpne taaste, sisendivead, väljundifailide
 kokkupõrge/rikkumine, upstream-korpus ja tihendatud ajaloo kontroll.
 Testi nimes olev `hardware` tähendab siin olemasoleva ekspordi offline-võrdlust.

@@ -46,7 +46,8 @@ assert.equal(one('filter','QUANTIZE').effective.scale.repeatedLabels[0].stringSe
 assert.equal(one('flanger','FLANGER_MANUAL').pid,5);
 assert.equal(one('flanger','OLD_FLANGER_MANUAL').pid,6);
 assert.equal(one('mixer','DELAY1').name,'MIXER_DELAY1');
-assert.equal(one('tentap','TIME1M').effective.scale.known,false);
+assert.equal(one('tentap','TIME1M').effective.scale.known,true);assert.deepEqual(one('tentap','TIME1M').effective.scale.numericInputRange,[0,10000]);  // T25 (0.3.46)
+assert.equal(one('tentap','REFTEMPO').effective.scale.known,false);
 assert.equal(one('drive','OVERSAMPLE').authoring.scalarGate,'blocked');
 assert.equal(one('delay','TYPE').authoring.fullChannelTemplateRequired,true);
 assert.equal(one('in1','MODE').authoring.tableScalarEligible,false);

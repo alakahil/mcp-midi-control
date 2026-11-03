@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scope": "Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.",
   "inventory": {
-    "filePaths": 2366,
-    "uniqueContents": 2162,
+    "filePaths": 2367,
+    "uniqueContents": 2163,
     "archivePaths": 990,
     "archiveContents": 164
   },
@@ -22,11 +22,11 @@
     "enum-labels": 151,
     "enum-labels-crosschecked": 334,
     "linear-by-structure": 2,
-    "measured": 22,
+    "measured": 33,
     "n/a": 760,
     "preset-word-crosschecked": 34,
     "taper-class-verified": 1558,
-    "unverified-taper": 30
+    "unverified-taper": 19
   },
   "recentEvidence": {
     "labelParameters": 363,

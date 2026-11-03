@@ -109,6 +109,16 @@ kordaja 2 ja negatiivne väärtus; `references/fm3-shot-t21-mix-20261102.json`, 
 Enhancer/Formant Balance (lipud 0x0980) jäävad opt-in. Ampi `DISTORT_DYNDEPTH` / `DISTORT_DYNPRES` jäävad
 `unverified-taper`: sõnad salvestuvad, kuid FM3-l pole neile nuppu (T23).
 
+## Ten-Tapi ajad (0.3.46, T25)
+
+`scripts/fm3-tentap-times.mjs` muudab `loadDictionary` ajal 11 Ten-Tapi sõna `unverified-taper` → `measured`
+(algne staatus/tüüp väljades `structuralStatus`/`structuralKind`). `TENTAP_TIME1M…10M` (lipud 0x0f00): lineaarne
+0…10 s ×1000, ainult tüübis Rhythm Tap Delay. `TENTAP_TIMEM`: vahemik parandatud 0,001…2 s → 0,01…10 s
+(`dictionaryRange` hoiab algset), ainult tüübis Ten-Tap Delay, kirjutatav kuni 1000 ms (`validateTentapWrites`
+tabeli- ja paigutuskirjutajas). Tõend T25/T25b (3.11.2026): 20/20 aega, 4/4 Delay Time'i, esipaneel 1/1, seadme
+tuletatud tapisõnad ja 10 tapi piirang 1000 ms (`references/fm3-shot-t25-tentap-20261103.json`,
+`tools/fm3/shot-t25-ingest.mjs`). Lühema tapiarvuga piirangut pole mõõdetud.
+
 ## Valikunupud vaikimisi (0.3.45, T24)
 
 `scripts/fm3-enum-promotion.mjs` tõstab `loadDictionary` ajal 197 valikunuppu staatusest `enum-labels`
