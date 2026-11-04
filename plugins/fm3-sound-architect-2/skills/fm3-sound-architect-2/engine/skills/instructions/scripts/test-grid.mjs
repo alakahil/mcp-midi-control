@@ -116,5 +116,5 @@ check(s.txt.includes('drive2 A Drive (FUZZ_DRIVE):')&&!s.txt.includes('drive A D
 no(()=>composeSound(NL,{...spec,layout:{row2:[],row3:[]}}),/exactly one of spec.layout/,'layout and grid together');
 no(()=>composeSound(NL,{composer:spec.composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},remove:['delay']}),/need grid mode/,'remove in layout mode');
 no(()=>composeSound(NL,{composer:spec.composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},insert:['mixer']}),/grid mode/,'mixer in layout mode');
-check(Object.keys(GRID_ADDABLE).length===13&&GRID_ADDABLE.scenemidi===190,'Addable blocks (incl. Scene MIDI, 2026-10-24)');
+check(Object.keys(GRID_ADDABLE).length===14&&GRID_ADDABLE.scenemidi===190&&GRID_ADDABLE.multidelay===74,'Addable blocks (incl. Scene MIDI 2026-10-24, Multi Delay 0.3.47)');
 console.log(JSON.stringify({factoryGrids:ev.plannerAccepted,masks:ev.masksReproduced,ownGridReproduced:shuntsSequential,refusals,parallel:describeGrid(pb).filter((r,i)=>i===1||i===2)}));

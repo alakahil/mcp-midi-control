@@ -11,7 +11,7 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 export const ENUM_PROMOTION_STATUS='enum-labels-crosschecked';
-export const enumPromotionHash='4f535c441551d00ab87ecc60e03b582248cd08e0d36e8c5f6db91d077f338def';
+export const enumPromotionHash='bb418db845ef9d72a64fcd455f74d4bfba7b32c705743798833410d18ebd505e';
 const bytes=fs.readFileSync(new URL('../references/fm3-enum-promotion-20261103.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==enumPromotionHash)throw Error('Enum promotion receipt changed; run tools/fm3/enum-promotion-build.mjs and review');
 const receipt=JSON.parse(bytes);

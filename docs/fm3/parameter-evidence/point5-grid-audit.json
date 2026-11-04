@@ -6,7 +6,7 @@
   "sources": {
     "tools/fm3/point5-evidence.mjs": "a152d7259a65cf33915236a30bcd7931652d7bd307216d1e90ae3f5da1d00388",
     "tools/fm3/grid-check-ingest.mjs": "e8dfa7e335df1bb4ea0c61f973384b68faceb0b2230d8ff509df9fbce6b24a5c",
-    "docs/fm3/parameter-evidence/point5-factory-grid.json": "49f58abe0ccaf7bce9149f38a35cc85f84f82193e91f369acd682a3047d67ce3",
+    "docs/fm3/parameter-evidence/point5-factory-grid.json": "c24635883ebf3785c4f6b5679be6a463c14afa22f60ae8c947910e33f686b2a0",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid.mjs": "bd71137c382ef6053eb54be32843998fbdb4ba52712ccd22d96696abc7c70aa6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid-audit.mjs": "f8affe5ed83b59f7d59da1da5543d6455fe3d8617b1bfec2b58c17e5c8a844c2",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid-output.mjs": "c0fb3ee3d131368e398e5ea653f0e62e8fe7873c58c0def23375c4b68dc9a7a4",
@@ -60,15 +60,15 @@
     }
   },
   "corpus": {
-    "files": 800,
-    "sizedInputs": 800,
-    "unique": 643,
+    "files": 803,
+    "sizedInputs": 803,
+    "unique": 646,
     "duplicates": 157,
     "statuses": {
       "consistent-known-edges": 627,
-      "unresolved": 5,
+      "unresolved": 6,
       "unsupported-or-invalid": 10,
-      "violations-of-authoring-rules": 1
+      "violations-of-authoring-rules": 3
     },
     "inventory": [
       {
@@ -463,6 +463,24 @@
         "occupiedCells": 12,
         "shunts": 0,
         "edges": 11,
+        "splits": 0,
+        "merges": 0,
+        "standalone": 0,
+        "unknownMaskCells": 0,
+        "bit4Cells": 0,
+        "violations": 0,
+        "unresolved": 0,
+        "violationCodes": [],
+        "unresolvedCodes": []
+      },
+      {
+        "sha256": "0cdff53aac57549ec3810a04ffb430c9132563edea87115739ae822c45a990e0",
+        "copies": 1,
+        "status": "unresolved",
+        "completeRecordScan": false,
+        "occupiedCells": 0,
+        "shunts": 0,
+        "edges": 0,
         "splits": 0,
         "merges": 0,
         "standalone": 0,
@@ -1659,6 +1677,27 @@
         "violations": 0,
         "unresolved": 0,
         "violationCodes": [],
+        "unresolvedCodes": []
+      },
+      {
+        "sha256": "298df0ad4fe2856b0256d7981a044f97edf30b88f0eafce10adc4d5af144bb55",
+        "copies": 1,
+        "status": "violations-of-authoring-rules",
+        "completeRecordScan": false,
+        "occupiedCells": 1,
+        "shunts": 0,
+        "edges": 0,
+        "splits": 0,
+        "merges": 0,
+        "standalone": 0,
+        "unknownMaskCells": 0,
+        "bit4Cells": 0,
+        "violations": 2,
+        "unresolved": 0,
+        "violationCodes": [
+          "does-not-reach-known-sink",
+          "not-reached-from-known-source"
+        ],
         "unresolvedCodes": []
       },
       {
@@ -3471,6 +3510,27 @@
         "violations": 0,
         "unresolved": 0,
         "violationCodes": [],
+        "unresolvedCodes": []
+      },
+      {
+        "sha256": "54b4204b6f4e202ffb652bfad33d57785c208373c2339bb6eed246e1ef1aff07",
+        "copies": 1,
+        "status": "violations-of-authoring-rules",
+        "completeRecordScan": false,
+        "occupiedCells": 1,
+        "shunts": 0,
+        "edges": 0,
+        "splits": 0,
+        "merges": 0,
+        "standalone": 0,
+        "unknownMaskCells": 0,
+        "bit4Cells": 0,
+        "violations": 2,
+        "unresolved": 0,
+        "violationCodes": [
+          "does-not-reach-known-sink",
+          "not-reached-from-known-source"
+        ],
         "unresolvedCodes": []
       },
       {

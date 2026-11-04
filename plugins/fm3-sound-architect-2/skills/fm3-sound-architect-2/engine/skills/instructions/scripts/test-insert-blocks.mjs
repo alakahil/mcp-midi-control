@@ -5,14 +5,15 @@ import {insertBlocks,insertDonor,INSERTABLE,GATED} from './fm3-insert-blocks.mjs
 import {scanRecords,readGrid,GRID} from './fm3-layout.mjs';
 import {composeSound} from './fm3-sound.mjs';
 import {insertTempoLocks} from './fm3-insert-tempo.mjs';
+import {estimateCpu} from './fm3-cpu.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 const rd=p=>fs.readFileSync(new URL('../'+p,import.meta.url));
 const NL=rd('examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx'),body=b=>Buffer.from(inspectStructure(b).raw.body);
 const refuse=(f,re,why)=>{let m='';try{f()}catch(e){m=e.message}check(re.test(m),why+': expected '+re+' got '+(m||'success'))};
-// 1. donor: export pair reconstructs, 14 records, device defaults
-const d=insertDonor();check(d.records.length===14&&d.records.find(r=>r.eid===190)?.channels===1,'Donor records');
+// 1. donors: both export pairs reconstruct, 14 + 1 records, device defaults
+const d=insertDonor();check(d.records.length===15&&d.records.find(r=>r.eid===74)?.words===121&&d.records.find(r=>r.eid===190)?.channels===1,'Donor records');
 // 2. every insertable block at once: structure, reconstruction, default scenes
-const all=Object.keys(INSERTABLE),r=insertBlocks(NL,all),a=body(NL),b=body(r.syx);
+const all=Object.keys(INSERTABLE).filter(b=>b!=='multidelay'),r=insertBlocks(NL,all),a=body(NL),b=body(r.syx);
 check(r.inserted.length===all.length&&all.length===10&&b.length===a.length+r.inserted.reduce((n,x)=>n+x.recordBytes,0),'All 10 inserted');
 const sb=scanRecords(b),sa=scanRecords(a);
 check(sb.records.slice(sa.records.length).map(x=>x.family).join()===all.join(),'Appended in request order');
@@ -39,7 +40,18 @@ refuse(()=>composeSound(NL,{...spec,controls:[{block:'looper',channel:'B',param:
 refuse(()=>composeSound(NL,{...spec,blockScenes:{ringmod:[{scene:2,channel:'C'}]}}),/only channels A\/B/,'ring mod has two channels');
 refuse(()=>composeSound(NL,{...spec,insert:['mixer']}),/audit point 5/,'mixer gated');
 check(insertTempoLocks.length===10,'Tempo locks');
-console.log(JSON.stringify({inserted:all.length,reconstructed:true,refusals:9,pipeline:s.report.signalRows}));
+// 4b. Multi Delay (0.3.47, T26): own donor pair, device-default record, scenes engage, parameter writes refused
+const md=insertBlocks(NL,['multidelay']),mb=body(md.syx),mr=scanRecords(mb).records.find(x=>x.family==='multidelay');
+check(md.inserted[0].effectId===74&&md.inserted[0].recordBytes===46+2*121*4&&mr.channels===4&&md.report.multidelayDonorSha256,'Multi Delay inserted from its donor');
+const mdDonor=body(rd('references/fm3-multidelay-fresh-20261103.syx')),dr=scanRecords(mdDonor,{requireAmpCab:false}).records[0];
+check(mb.subarray(mr.start,mr.start+2*121*4).equals(mdDonor.subarray(dr.start,dr.start+2*121*4)),'Multi Delay words = device defaults');
+check(Object.keys(INSERTABLE).length===11,'11 insertable');
+const mspec={...spec,insert:['multidelay'],layout:{row2:['compressor','drive','amp','cab'],row3:['delay','multidelay','reverb']},blockScenes:{multidelay:[{scene:1,bypass:false}]},controls:[]};
+const ms=composeSound(NL,mspec),msb=body(ms.syx),msr=scanRecords(msb).records.find(x=>x.family==='multidelay');
+check(msb.readUInt16LE(msr.header+26)===0&&msb.readUInt16LE(msr.header+28)===1,'Multi Delay scene 1 engaged, scene 2 bypassed');
+refuse(()=>composeSound(NL,{...mspec,controls:[{block:'multidelay',channel:'A',param:'MULTITAP_MIX',value:30}]}),/not writable yet/,'Multi Delay writes refused');
+const mcpu=estimateCpu(ms.syx).scenes[0];check(mcpu.parts.multidelay===5.5&&!mcpu.unknown.includes('multidelay'),'Multi Delay CPU counted (T26: Quad-Tap Delay 5.5 points)');
+console.log(JSON.stringify({inserted:all.length,multidelay:true,reconstructed:true,refusals:10,pipeline:s.report.signalRows}));
 // 5. hardware roundtrip 2026-10-23: the device's exports of FM3_P6_INSERT_A/B hold the same prefix
 // (grid, scenes), the same system tail and byte-identical records; only the record order is
 // normalised by the device. CPU: A 82.5 %, B "CPU LIMIT EXCEEDED" (reported by the user).

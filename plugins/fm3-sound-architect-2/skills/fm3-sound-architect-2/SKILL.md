@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.46`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.47`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -135,6 +135,17 @@ Käivita `selfCheck` väljalaske teadaoleva commit'iga. Taastatud runtime'is
 on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
+
+## Multi Delay lisatav (0.3.47, T26)
+
+`insert:["multidelay"]` lisab Multi Delay ploki (MULTITAP, eid 74, üks eksemplar, 121 sõna × 4 kanalit) kasutaja
+FW13 doonoripaarist (`references/fm3-multidelay-{empty,fresh}-20261103.syx`) seadme vaikeväärtustega (Quad-Tap Delay).
+4.11.2026 hoidis FM3 kõiki 484 sõna ja FM3-Edit näitas plokki genereeritud kohas (rida 3, veerg 7), stseenis 1 sees.
+CPU on mõõdetud Base Type'i kaupa: Quad-Tap Delay, Diffusor ja Quad-Tap Band Delay 5,5, Quad Series Delay 6,5,
+Quad Parallel Delay 7,0, Quad Tape Delay 8,0 punkti; FM3-Editis valitud tüübid andsid sama tulemuse. Multi Delay
+parameetreid (sh tüüpi) generaator veel ei kirjuta, sest Base Type'i ja Multi Delay preseti valik muudavad ka teisi sõnu ning see on
+kaardistamata; `blockScenes` töötab. Tõend
+`references/fm3-shot-t26-multidelay-20261104.json`.
 
 ## Ten-Tapi ajad vaikimisi kasutatavad (0.3.46, T25)
 
@@ -762,8 +773,8 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
 - **Soundi koostaja** `scripts/fm3-sound.mjs` (jb-newlook): `composer` → `layout` → `blockScenes` →
   `controls` → `selectedScene`. Output Scene Level 1–8 (−20…+20 dB) on seadmel kinnitatud.
 - **Plokkide lisamine (auditi punkt 6)** `scripts/fm3-insert-blocks.mjs`, väli `insert`: plex, multiband, synth,
-  looper, gate, formant, tentap, megatap, ringmod, resonator (Volume/Pan: Codexi `volumePan`). Doonor on kasutaja enda FW13 eksport
-  värsketest vaikeplokkidest (`references/fm3-default-blocks-20261023.syx`). Lisatud plokk on kõigis
+  looper, gate, formant, tentap, megatap, ringmod, resonator, multidelay (0.3.47; parameetrid veel lukus) (Volume/Pan: Codexi `volumePan`). Doonor on kasutaja enda FW13 eksport
+  värsketest vaikeplokkidest (`references/fm3-default-blocks-20261023.syx`; Multi Delay `fm3-multidelay-fresh-20261103.syx`). Lisatud plokk on kõigis
   8 stseenis kanalil A ja bypassis; sisse lülita `blockScenes` abil. Looperil on 1 kanal, Megatap/Ring Mod/
   Resonatoril 2 (A/B). Plexi TIME1–8 ja LFO Rate kirjutamine nõuab samas spetsis vastava TEMPO = NONE
   (FM3-Edit'i paigutuse lukud, `references/fm3-insert-tempo-locks.json`). Mixer ja Multiplexer lisanduvad
