@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.47`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.48`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -135,6 +135,15 @@ Käivita `selfCheck` väljalaske teadaoleva commit'iga. Taastatud runtime'is
 on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
+
+## Multi Delay sisendiskeemi kooskõla (0.3.48)
+
+Soundi skeem 0.8.1 aktsepteerib `multidelay` väärtust `insert`-is, mõlemas
+`layout` reas ja `layout.columns`-is, `grid` lahtris ning `blockScenes` võtmena.
+0.3.47 generaator toetas neid juba, kuid skeemi loendid olid täiendamata.
+`test-sound-schema` kontrollib nüüd mõlemat paigutusrežiimi ning vigase kanali,
+veeru ja korduva lisamise tõrjumist. Multi Delay parameetrikirjutus jääb
+keelatuks; generaatori SYX-kirjutusloogika ja olemasolevad seadmetõendid ei muutu.
 
 ## Multi Delay lisatav (0.3.47, T26)
 
