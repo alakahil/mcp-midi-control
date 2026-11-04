@@ -34,7 +34,10 @@ const multidelayLayout={composer,insert:['multidelay'],layout:{row2:['drive','am
 const multidelayRow2={...multidelayLayout,layout:{row2:['drive','multidelay','amp','cab'],row3:['delay','reverb']}};
 const multidelayGrid={composer,insert:['multidelay'],grid:{rows:[E,['in1','drive','-','-','amp','cab','-','-','-','-','-','send'],
   ['return','delay','-','-','-','-','multidelay','-','reverb','-','-','out1'],E]},blockScenes:multidelayLayout.blockScenes};
-for(const s of [multidelayLayout,multidelayRow2,multidelayGrid])ok(s);
+// All 11 serial insert families fit; do not impose the old 10-item limit.
+const allSerialInserts={composer,insert:['plex','multiband','synth','looper','gate','formant','tentap','megatap','ringmod','resonator','multidelay'],
+  layout:{row2:['drive','amp','cab','plex','multiband','synth','looper','gate','formant','tentap'],row3:['megatap','ringmod','resonator','multidelay','delay','reverb']}};
+for(const s of [multidelayLayout,multidelayRow2,multidelayGrid,allSerialInserts])ok(s);
 const mdDuplicate=structuredClone(multidelayLayout);mdDuplicate.insert.push('multidelay');
 const mdChannel=structuredClone(multidelayLayout);mdChannel.blockScenes.multidelay[0].channel='E';
 const mdColumn=structuredClone(multidelayLayout);mdColumn.layout.columns.multidelay=12;
@@ -69,4 +72,4 @@ const generatorOnly=[
 for(const [name,edit,i] of generatorOnly){const s=structuredClone(valid[i]);edit(s);
   assert.deepEqual(checkSchema(S,s),[],'schema refuses (move it to the both-list): '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
 assert.ok(checkSchema(S,{composer,layout:{row2:['amp','cab'],row3:[]},unknownField:1}).some(e=>/unknownField/.test(e)),'unknown top-level field refused');
-console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:3,multidelayRefusals:4,refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));
+console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:4,multidelayRefusals:4,refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));
