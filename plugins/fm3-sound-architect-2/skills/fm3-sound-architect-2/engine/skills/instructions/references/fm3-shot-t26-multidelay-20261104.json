@@ -1,0 +1,157 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "editor": "FM3-Edit 1.07.17",
+ "date": "2026-11-04",
+ "test": "T26",
+ "method": "Placement: FM3_SHOT_LOAD.py --load (Remote Control) sent one composer preset to the edit buffer (7F 00) and read the Multi Delay block back with fn=0x1F; Claude read FM3-Edit window captures. CPU: FM3_CPU_SWEEP.py (Remote Control; the user confirmed the first preset name on the FM3 screen) loaded ten edit-buffer presets and read the CPU meter (fn=0x01 sub=0x2E). Nothing stored or set.",
+ "notMeasured": [
+  "audio",
+  "STORE/reload",
+  "Multi Delay parameter display scales",
+  "Multi Delay presets (MULTITAP_PRESETS)",
+  "CPU with a second Multi Delay (the FM3 has one instance)"
+ ],
+ "placement": {
+  "packSha256": "d7faf17a84b856a39cc0abcef01eb904edd3d157a7ea1ae7d7f4e99e48749931",
+  "preset": "MDP",
+  "presetSha256": "b78f76a09af7d4f6f509125cbc1ab325655276ed4945d3b405876e602d45f71f",
+  "load": {
+   "path": "docs/fm3/hardware-results/2026-11-04/fm3-shot-t26-mdp-20261104-load.json",
+   "sha256": "97f2bf5db433912b82cdc3a195510855b9395deab42c7f6668a984ca19d94ba4",
+   "time": "2026-11-04T11:36:13",
+   "values": 484,
+   "allMatch": true
+  },
+  "readings": {
+   "path": "docs/fm3/hardware-results/2026-11-04/fm3-shot-t26-mdp-20261104-readings.json",
+   "sha256": "531368a756efecf0d8bb36d39a681df114d39f8c0aa854b1a6dbc8414c60dc94"
+  },
+  "cell": {
+   "row": 3,
+   "column": 7
+  },
+  "editor": {
+   "type": "Quad-Tap Delay",
+   "scene1Engaged": true,
+   "mix": "25.0 %",
+   "level": "0.0 dB"
+  }
+ },
+ "cpu": {
+  "packSha256": "f8c1aee09a8518a452d6ca5de7929592d8987b4f6673815045dfdf3691c491cd",
+  "results": {
+   "path": "docs/fm3/hardware-results/2026-11-04/fm3-t26-cpu-20261104-results.jsonl",
+   "sha256": "6d237e97ec56946cab019c309b399a6802f26f4091ed9c220264cb0e123e17f2"
+  },
+  "calibration": {
+   "id": "cal-newlook",
+   "cpuPercent": 52.5,
+   "handReading": 52.8
+  },
+  "items": [
+   {
+    "id": "md:0",
+    "baseType": 0,
+    "type": "Quad-Tap Delay",
+    "source": "device-default donor record",
+    "presetSha256": "a05c079a52a6d45476ead9edafe03785f0118fe48843ac1bf0005b940f385cf8",
+    "cpuPercent": 58,
+    "costPoints": 5.5
+   },
+   {
+    "id": "md:1",
+    "baseType": 1,
+    "type": "Quad Parallel Delay",
+    "source": "raw Base Type word on channel A (other words default)",
+    "presetSha256": "dd952395be01632e995253b195507839def64b4ca43122838e224fe5351ba6e8",
+    "cpuPercent": 59.5,
+    "costPoints": 7
+   },
+   {
+    "id": "md:2",
+    "baseType": 2,
+    "type": "Quad Series Delay",
+    "source": "raw Base Type word on channel A (other words default)",
+    "presetSha256": "5eae86ebac25d6e2f9550ada7e9b81802777df4ae15b09027179ad2d6dd972ed",
+    "cpuPercent": 59,
+    "costPoints": 6.5
+   },
+   {
+    "id": "md:3",
+    "baseType": 3,
+    "type": "Diffusor",
+    "source": "raw Base Type word on channel A (other words default)",
+    "presetSha256": "cd76f3dafff422bf6bdd83af5c7ee673065ae25f3b99c9141146e66b662cf2ef",
+    "cpuPercent": 58,
+    "costPoints": 5.5
+   },
+   {
+    "id": "md:4",
+    "baseType": 4,
+    "type": "Quad Tape Delay",
+    "source": "raw Base Type word on channel A (other words default)",
+    "presetSha256": "fb42b85e18c20c98111d3bb97946c2cf47a21c3b429664c94c76c8e7de518fae",
+    "cpuPercent": 60.5,
+    "costPoints": 8
+   },
+   {
+    "id": "md:5",
+    "baseType": 5,
+    "type": "Quad-Tap Band Delay",
+    "source": "raw Base Type word on channel A (other words default)",
+    "presetSha256": "062e54420799e5e018bde3b2cab672ba3b38e1142aee845733d03d443d91bef1",
+    "cpuPercent": 58,
+    "costPoints": 5.5
+   },
+   {
+    "id": "md-editor:B",
+    "baseType": 1,
+    "type": "Quad Parallel Delay",
+    "source": "MD_TYPES export channel B (type set in FM3-Edit), Scene 1 on channel B",
+    "presetSha256": "600cdbe96e4386cfe9666fb9c5499f474c875f4423963de054ee21e42f906524",
+    "cpuPercent": 59.5,
+    "costPoints": 7
+   },
+   {
+    "id": "md-editor:C",
+    "baseType": 2,
+    "type": "Quad Series Delay",
+    "source": "MD_TYPES export channel C (type set in FM3-Edit), Scene 1 on channel C",
+    "presetSha256": "3397bae76874c19697563f98f4a0b802e6e23ce80c42b26ac385645a6be4c19f",
+    "cpuPercent": 59,
+    "costPoints": 6.5
+   },
+   {
+    "id": "md-editor:D",
+    "baseType": 3,
+    "type": "Diffusor",
+    "source": "MD_TYPES export channel D (type set in FM3-Edit), Scene 1 on channel D",
+    "presetSha256": "eb3a305d08a145f7b048acc8ec1dba73d3584b752af45ea066e2ff7923a4dfcb",
+    "cpuPercent": 58,
+    "costPoints": 5.5
+   }
+  ],
+  "costPoints": {
+   "Quad-Tap Delay": 5.5,
+   "Quad Parallel Delay": 7,
+   "Quad Series Delay": 6.5,
+   "Diffusor": 5.5,
+   "Quad Tape Delay": 8,
+   "Quad-Tap Band Delay": 5.5
+  },
+  "meterStepPercent": 0.5,
+  "rule": "Multi Delay cost depends on Base Type only: FM3-Edit-authored types 1..3 (editor side effects included) equal the raw Base Type word."
+ },
+ "summary": {
+  "placementWordsExact": 484,
+  "editorCell": "row 3, column 7",
+  "cpuItems": 9,
+  "costRange": [
+   5.5,
+   8
+  ],
+  "meaning": "Multi Delay is insertable with device defaults (0.3.47); fm3-cpu.mjs counts its measured cost per Base Type. Parameter writes stay refused until Base Type and Multi Delay preset side effects are mapped."
+ }
+}

@@ -43,7 +43,12 @@ export function typeApplicability(p,type){
 }
 // Preflight the complete plan. A type change may appear before or after its controls.
 // No body mutation or allowance callback is permitted until this succeeds.
+// Multi Delay (0.3.47) is insertable with device defaults. The FW13 visibility policy covers MULTITAP, but choosing a
+// Base Type or one of the 39 Multi Delay presets also changes other words in FM3-Edit (dynamic Feedback Send/Return,
+// preset fills), and that is not mapped, so no Multi Delay word is written yet (follow-up to T26).
+export const MULTIDELAY_WRITES_REFUSED='Multi Delay parameters are not writable yet (Base Type and Multi Delay preset side effects are not mapped); the block is inserted with device defaults (Quad-Tap Delay)';
 export function validateTypeWrites(body,writes){
+  for(const w of writes)if(w.block==='multidelay')throw Error(`multidelay ${w.channel} ${w.name}: ${MULTIDELAY_WRITES_REFUSED}`);
   for(const w of writes)if(templateOnlyParameter({family:familyFor[w.block],param:w.pid}))throw Error(`${w.name}: full channel template required for model/internal selector changes`);
   const planned=new Map(writes.map(w=>[w.offset,w.raw]));
   for(const w of writes){

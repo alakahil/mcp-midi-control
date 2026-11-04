@@ -23,6 +23,8 @@ const gridAt=(row,col)=>GRID.start+col*16+row*4; // zero-based row/col
 export const SLUG_BY_EID=Object.freeze({58:'amp',62:'cab',118:'drive',70:'delay',66:'reverb',90:'phaser',46:'compressor',78:'chorus',82:'flanger',94:'wah',106:'tremolo',86:'rotary',110:'pitch',114:'filter',54:'peq',50:'geq',122:'enhancer',102:'volpan',
   // audit point 6, placed by fm3-insert-blocks.mjs
   178:'plex',154:'multiband',130:'synth',166:'looper',146:'gate',98:'formant',158:'tentap',138:'megatap',150:'ringmod',162:'resonator',
+  // Multi Delay (0.3.47, T26): single FM3 instance, 121 words x 4 channels; donor fm3-multidelay-*-20261103.syx
+  74:'multidelay',
   // audit point 5, parallel routing (fm3-grid.mjs)
   126:'mixer',191:'multiplexer',
   // audit point 6, Scene MIDI (fm3-scene-midi.mjs; grid mode only, unconnected)

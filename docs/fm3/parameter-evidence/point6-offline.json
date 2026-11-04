@@ -8,15 +8,15 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-point6-native-bindings.json": "e2205597c48e85ab510aec9f9546964d6ad13b2aea1ffcf0f91c3a22f7cb7160",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-insert-applicability.json": "9cedfafba267139f220224ac63a6013dd524c1c0914b49207368f590c3eb0b2a",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-point6-offline.mjs": "60e66ed79ed2c3259091d09e1222d39d73466fbdf035de9cbd954edf49d80dca",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-point6-offline.mjs": "ed3cef88c78a0f84ef27eb16e9f6e94dcd4e7e2327806575528f8f9e53602498",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-controls-output.mjs": "2d00f2f7c1db42fed82678b0808079c3d48853a39a994e153bc6b0208a5935e6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-final-state.mjs": "73068d2e047ba04a5e874d727fe26f0e75c09464a5a96939e7cdd4a4b3ceb689",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-corpus-audit.mjs": "89deb81465ee37aa89770610b5c68cd662dc69a3e606824fe472a7e11755680f",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-insert-applicability.mjs": "c8c8d219dedafaff9e9e45d78453d6e822695353e9abe8c7291701cf7befd9ed",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-scene-midi.mjs": "fd6eada69e0634bb9280c37479dbb547b07b4e284603d1e1177aec061870a832",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-modifier-type-audit.mjs": "9d1b84b07f9bab90c9884f7b361768e2aa57ad3d135eea4f9333213d8409020e",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-type-applicability.mjs": "cc49acf8d907cc6cd50810da510a09fed25be5e2036ec4df9c440339cb7ec741",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "2bed8ae90cd481ce102bdafa4ff4fd0dacd96fce88b0bd4db0d502dcfa4fb789"
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-type-applicability.mjs": "ef2f9dce16513fe8883aa609de4c14167b9f8ee2a43811481045be0d8a80575e",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "555c52e7419a650030cfbc4b9c470f7e125b6d78d04c3988ae32839f080eac85"
   },
   "nativeMetadataSources": {
     "layoutSha256": "0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2",
@@ -229,7 +229,7 @@
     "typeChannelCases": 6268,
     "writes": 2408,
     "readOnlyCases": 2904,
-    "rejections": 4434,
+    "rejections": 4435,
     "sceneMidiCases": 24576,
     "deviceIO": false,
     "newHardwareMeasurements": false
@@ -239,14 +239,14 @@
     "mode": "local-read-only-corpus-audit",
     "metadataFirmware": 13,
     "firmwareDetected": null,
-    "files": 800,
-    "uniqueSizedInputs": 643,
+    "files": 803,
+    "uniqueSizedInputs": 646,
     "duplicates": 157,
     "unsupportedSize": 0,
     "skippedSymlinks": 0,
     "summary": {
       "supportedStructure": 627,
-      "partialRecordScans": 6,
+      "partialRecordScans": 9,
       "unsupportedOrInvalid": 10,
       "familyRecordShapes": {
         "CABINET:106x4": 631,
@@ -270,6 +270,7 @@
         "MIXER:21x4": 1,
         "MULTICOMP:37x4": 3,
         "MULTIPLEXER:7x4": 1,
+        "MULTITAP:121x4": 2,
         "OUTPUT:26x4": 631,
         "PEQ:33x4": 335,
         "PHASER:35x4": 225,
@@ -2687,6 +2688,20 @@
           }
         ],
         "tailFingerprintMatched": true
+      },
+      {
+        "sha256": "0cdff53aac57549ec3810a04ffb430c9132563edea87115739ae822c45a990e0",
+        "copies": 1,
+        "bytes": 24680,
+        "status": "partial-record-scan",
+        "checks": {
+          "frameChecksums": true,
+          "presetCrc": true,
+          "footer": true
+        },
+        "bodyBytes": 8454,
+        "records": [],
+        "tailFingerprintMatched": false
       },
       {
         "sha256": "0d983a15bb63fe1aab9b1d758e5d45640902d4ad3f80e37fa30687364f44d3fe",
@@ -9828,6 +9843,29 @@
           }
         ],
         "tailFingerprintMatched": true
+      },
+      {
+        "sha256": "298df0ad4fe2856b0256d7981a044f97edf30b88f0eafce10adc4d5af144bb55",
+        "copies": 1,
+        "bytes": 24680,
+        "status": "partial-record-scan",
+        "checks": {
+          "frameChecksums": true,
+          "presetCrc": true,
+          "footer": true
+        },
+        "bodyBytes": 9468,
+        "records": [
+          {
+            "effectId": 74,
+            "baseEffectId": 74,
+            "instance": 1,
+            "words": 121,
+            "channels": 4,
+            "family": "MULTITAP"
+          }
+        ],
+        "tailFingerprintMatched": false
       },
       {
         "sha256": "29d1a3254f9b3278473fb3a3a9d8b4bfa0fed7ad9f872d04911a42048a06ad0d",
@@ -20886,6 +20924,29 @@
           }
         ],
         "tailFingerprintMatched": true
+      },
+      {
+        "sha256": "54b4204b6f4e202ffb652bfad33d57785c208373c2339bb6eed246e1ef1aff07",
+        "copies": 1,
+        "bytes": 24680,
+        "status": "partial-record-scan",
+        "checks": {
+          "frameChecksums": true,
+          "presetCrc": true,
+          "footer": true
+        },
+        "bodyBytes": 9468,
+        "records": [
+          {
+            "effectId": 74,
+            "baseEffectId": 74,
+            "instance": 1,
+            "words": 121,
+            "channels": 4,
+            "family": "MULTITAP"
+          }
+        ],
+        "tailFingerprintMatched": false
       },
       {
         "sha256": "54bbfe7c07ab1581e90dccd7468e316823a53699f6871c115676b18239872b60",

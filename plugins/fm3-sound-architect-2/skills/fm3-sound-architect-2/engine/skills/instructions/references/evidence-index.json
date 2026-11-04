@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2163,
-  "filePaths": 2367,
+  "uniqueContents": 2167,
+  "filePaths": 2371,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -656,6 +656,12 @@
       "bytes": 24680,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T110645-8aad95e1f7/donor.syx"
+      ]
+    },
+    "0cdff53aac57549ec3810a04ffb430c9132563edea87115739ae822c45a990e0": {
+      "bytes": 24680,
+      "paths": [
+        "references/fm3-multidelay-empty-20261103.syx"
       ]
     },
     "0ce5de873caa06b7038b0064c92bebb023b86745d93a6257533a5756bc88461f": {
@@ -2114,6 +2120,12 @@
       "bytes": 24680,
       "paths": [
         "references/amp-level-20261013/session/attempt-02-00963834b87c/donor.syx"
+      ]
+    },
+    "298df0ad4fe2856b0256d7981a044f97edf30b88f0eafce10adc4d5af144bb55": {
+      "bytes": 24680,
+      "paths": [
+        "references/fm3-multidelay-types-20261103.syx"
       ]
     },
     "29a73c98ad34431162021e4c696dc7e5cb332524299aea131233436e81475079": {
@@ -3937,12 +3949,6 @@
         "references/peq-baseline-20261009-114022/capture-20261009T114021-4e486c054d/pair.json"
       ]
     },
-    "4f535c441551d00ab87ecc60e03b582248cd08e0d36e8c5f6db91d077f338def": {
-      "bytes": 125114,
-      "paths": [
-        "references/fm3-enum-promotion-20261103.json"
-      ]
-    },
     "4f7b6f8687923536f5266526e956bb1546a0611e46685ea0c8c72d9afc617fb8": {
       "bytes": 421,
       "paths": [
@@ -4297,6 +4303,12 @@
         "references/drive-batch-20261006-112254/capture-20261006T112141-44cf72a53a/donor.syx"
       ]
     },
+    "54b4204b6f4e202ffb652bfad33d57785c208373c2339bb6eed246e1ef1aff07": {
+      "bytes": 24680,
+      "paths": [
+        "references/fm3-multidelay-fresh-20261103.syx"
+      ]
+    },
     "54bbfe7c07ab1581e90dccd7468e316823a53699f6871c115676b18239872b60": {
       "bytes": 24680,
       "paths": [
@@ -4524,6 +4536,12 @@
       "bytes": 8569,
       "paths": [
         "references/amp-level-20261013/index.json"
+      ]
+    },
+    "5a3dec994668fcaeae45c3ba917d2f7d9401a6e38dfecd19e4523c8aa43750f0": {
+      "bytes": 10748,
+      "paths": [
+        "references/fm3-modifier-lifecycle-evidence.json"
       ]
     },
     "5a5d66bf43a5e2f9ca82380741a05f8d1f0d430700e572dc49b74e198fbc6bb8": {
@@ -7306,12 +7324,6 @@
         "references/geq-full-20261010-194115/step-134-9815cbde8a/result.json"
       ]
     },
-    "90bd7ef03af2039c96c7094fde9b3e08f8f16f2a260c575a5dacb6580199fce7": {
-      "bytes": 10748,
-      "paths": [
-        "references/fm3-modifier-lifecycle-evidence.json"
-      ]
-    },
     "90e0ddf52e868f0a976c02fa38d681dd6eff20973d20cef588658a7c0cb0a5fb": {
       "bytes": 2304,
       "paths": [
@@ -9471,6 +9483,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-150-f2d629c4e7/donor.syx"
+      ]
+    },
+    "bb418db845ef9d72a64fcd455f74d4bfba7b32c705743798833410d18ebd505e": {
+      "bytes": 124996,
+      "paths": [
+        "references/fm3-enum-promotion-20261103.json"
       ]
     },
     "bb43d11f98995fc2cbe122e3dcc8fb90181f9c0289ae6825e572f0c61dfd3012": {
@@ -12704,6 +12722,12 @@
       "bytes": 2406,
       "paths": [
         "references/geq-full-20261010-194115/step-073-1598990623/result.json"
+      ]
+    },
+    "f8b8c1422d3a08de74d8686b62e8e6e6007ac2885941b3aa56a39ceb75c42d9d": {
+      "bytes": 5246,
+      "paths": [
+        "references/fm3-shot-t26-multidelay-20261104.json"
       ]
     },
     "f8bb00f285cac87a51d3628fcc8e2936cbf61a6bdbe8335ce2c2b904a4d3e32e": {

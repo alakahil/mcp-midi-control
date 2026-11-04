@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "files": 800,
-  "unique": 643,
+  "files": 803,
+  "unique": 646,
   "accepted": 631,
   "unsupported": [
     {
@@ -12,6 +12,21 @@
     {
       "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-empty-preset-20261023.syx",
       "sha256": "220866f7866d9f515a98b36b2430de6e5a69ae378e58426bc86f3bc417ea7e14",
+      "error": "Amp/Cab records not found"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-multidelay-empty-20261103.syx",
+      "sha256": "0cdff53aac57549ec3810a04ffb430c9132563edea87115739ae822c45a990e0",
+      "error": "Amp/Cab records not found"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-multidelay-fresh-20261103.syx",
+      "sha256": "54b4204b6f4e202ffb652bfad33d57785c208373c2339bb6eed246e1ef1aff07",
+      "error": "Amp/Cab records not found"
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-multidelay-types-20261103.syx",
+      "sha256": "298df0ad4fe2856b0256d7981a044f97edf30b88f0eafce10adc4d5af144bb55",
       "error": "Amp/Cab records not found"
     },
     {

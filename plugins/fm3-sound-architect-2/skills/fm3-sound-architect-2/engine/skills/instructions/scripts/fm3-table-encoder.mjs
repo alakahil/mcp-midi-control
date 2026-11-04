@@ -28,7 +28,7 @@ export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','
 export const OPT_IN_STATUSES=Object.freeze(['linear-by-structure','enum-labels']);
 export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT',volpan:'VOLUME',in1:'INPUT'
 ,
-  plex:'PLEX',multiband:'MULTICOMP',synth:'SYNTH',looper:'LOOPER',gate:'GATE',formant:'FORMANT',tentap:'TENTAP',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',
+  plex:'PLEX',multiband:'MULTICOMP',synth:'SYNTH',looper:'LOOPER',gate:'GATE',formant:'FORMANT',tentap:'TENTAP',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',multidelay:'MULTITAP',
   mixer:'MIXER',multiplexer:'MULTIPLEXER'});
 
 // Class 0x01 non-enum words are stored integers, not normalised 0…65534 values (Claude, 2026-10-23):

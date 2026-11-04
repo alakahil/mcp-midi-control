@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG,DEFAULT_STATUSES,OPT_IN_STATUSES} from './fm3-table-encoder.mjs';
-import {readTypeState,typeApplicability,validateTypeWrites} from './fm3-type-applicability.mjs';
+import {readTypeState,typeApplicability,validateTypeWrites,MULTIDELAY_WRITES_REFUSED} from './fm3-type-applicability.mjs';
 import {auditModifierTargetType} from './fm3-modifier-type-audit.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {editRecords} from './fm3-grid.mjs';
@@ -33,6 +33,8 @@ for(const [family,pid,types] of anchors){
  }
 }
 assert.deepEqual(Object.keys(INSERT_TYPE_PID).sort(),['gate','plex','resonator','tentap']);
+{const md=bodyOf(editRecords(base,{add:['multidelay']}).syx),r=scanRecords(md).records.find(x=>x.block===74);
+ rejects(()=>validateTypeWrites(md,[{block:'multidelay',pid:120,name:'MULTITAP_KILLDRY',channel:'A',offset:r.start+240,raw:0}]),new RegExp(MULTIDELAY_WRITES_REFUSED.replace(/[()]/g,'\\$&')));}
 const supported=p=>['linear','log','knob','integer','enum'].includes(p.kind)&&[...DEFAULT_STATUSES,...OPT_IN_STATUSES].includes(p.status);
 function valueAt(p,n){
  if(p.kind==='integer')return Math.round(p.min+n*(p.max-p.min))*(p.integerScale??1);
@@ -42,7 +44,8 @@ function valueAt(p,n){
 for(const [family,f] of Object.entries(policy.families)){
  const params=dictionary.filter(p=>p.family===family),slug=Object.keys(FAMILY_BY_SLUG).find(s=>FAMILY_BY_SLUG[s]===family);
  const channels=CHANNELS[params[0].block]??4;
- const body=slug?bodyOf(editRecords(base,{add:[slug]}).syx):null;
+ // Multi Delay is insertable since 0.3.47, but its words stay read-only (MULTIDELAY_WRITES_REFUSED; checked below).
+ const body=slug&&slug!=='multidelay'?bodyOf(editRecords(base,{add:[slug]}).syx):null;
  const record=body?scanRecords(body).records.find(r=>r.block===params[0].block):null;
  assert.equal(params.length,Object.keys(f.parameters).length);
  if(record)assert.equal(record.channels,channels);

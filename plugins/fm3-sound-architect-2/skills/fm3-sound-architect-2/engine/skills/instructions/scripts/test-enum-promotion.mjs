@@ -11,7 +11,7 @@ assert.equal(promoted.length,197);assert.equal(rec.summary.promoted,197);assert.
 assert.deepEqual(enumPromotionSummary().byEvidence,{'shared-labels':108,'hardware-t24':50,'family-t24':39,none:0});
 for(const p of promoted){assert.equal(p.status,ENUM_PROMOTION_STATUS);assert.equal(p.structuralStatus,'enum-labels');assert.equal(p.kind,'enum');}
 // Corpus: no promoted (or any candidate) selector has a stored word outside its list.
-assert.equal(rec.corpus.distinctBodies,639);assert.deepEqual(rec.parameters.filter(r=>r.corpus.outOfRange.length),[]);
+assert.equal(rec.corpus.distinctBodies,642);assert.deepEqual(rec.parameters.filter(r=>r.corpus.outOfRange.length),[]);
 // Hardware: 51/51 readings exact; every option read is reproduced by the encoder in both directions without an opt-in
 // (the Resonator mode is a channel type selector and stays opt-in).
 assert.equal(t24.summary.controls,51);assert.equal(t24.summary.exact,51);

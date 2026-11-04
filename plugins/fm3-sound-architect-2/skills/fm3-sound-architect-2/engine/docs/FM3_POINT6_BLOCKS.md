@@ -81,7 +81,8 @@ auditi käigus avalikku reposse või pluginasse kopeerida.
 
 MultiDelay dünaamiline Feedback Send/Return ja presetivalik, Looperi jooksva oleku
 käsud, Synthi ostsillaatorite ja Multibandi automaatse ajastuse DSP-sõltuvused ei
-ole skalaarne kirjutustugi. MultiDelay ploki lisamist pole avatud. Tundmatud skaalad
+ole skalaarne kirjutustugi. MultiDelay plokki saab 0.3.47-st lisada seadme vaikeväärtustega, aga selle
+parameetreid ei kirjutata. Tundmatud skaalad
 jäävad blokeerituks. Täiendav staatiline uurimine võib osa lünki veel vähendada;
 see väljalase ei väida kogu seadme käitumise ammendavat tõendamist.
 
@@ -156,6 +157,15 @@ Test: `scripts/test-scan-records.mjs` (offline-suite).
   milles see plokk oli (nt Gate = tehasepreset 038). Seade lähtestab ainult aktiivse stseeni. Lisaja kirjutab
   seetõttu alati kõik 8 stseeni (kanal A, bypass).
 - Scene MIDI (menüüs „MIDI Block") on eid 190, 257×1, kõik sõnad 0. Väljad on dekodeeritud 24.10.2026, vt `FM3_SCENE_MIDI.md`.
+
+## Multi Delay doonor (kasutaja eksport, 2026-11-03; 0.3.47)
+
+`references/fm3-multidelay-empty-20261103.syx` ja `references/fm3-multidelay-fresh-20261103.syx` on sama tühi
+preset enne ja pärast ühe Multi Delay lisamist FM3-Editis. Paar erineb ainult ühe ruudustiku sõna (rida 2, veerg 4,
+ühendamata) ja lõppu lisatud kirje (eid 74, 121×4) poolest; kanalid A–D on identsed. `insertDonor()` loeb mõlemad
+doonoripaarid ja kontrollib kumbagi baithaaval. `references/fm3-multidelay-types-20261103.syx` (kanalid B/C/D =
+Base Type 1/2/3, valitud FM3-Editis) on CPU-katse võrdlusmaterjal. T26 (4.11.2026): laadimine 484/484 sõna,
+FM3-Edit rida 3 veerg 7, CPU 5,5…8 punkti tüübi järgi (`references/fm3-shot-t26-multidelay-20261104.json`).
 
 ## Lisamine generaatoris (`scripts/fm3-insert-blocks.mjs`, väli `insert`)
 
