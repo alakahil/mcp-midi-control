@@ -93,6 +93,20 @@ section above for the workflow.
 | `npm run agent-sweep` | **DO NOT** run casually. Spawns the `claude` CLI per case and **incurs billed Anthropic API calls**. Only run when changing agent-routing assumptions, and with maintainer permission. | `claude` CLI + API key. |
 | `npm run release-gate` | Maintainer-only, pre-announce. Runs preflight + launch-verify + agent-sweep + live-regression in sequence. **Billed.** | Hardware + API key. |
 
+### Songsterr tests
+
+`npm test` / `npm run test:no-server` keep the Songsterr importer and project
+planning checks offline. `verify-project-plan` uses synthetic local API/CDN
+responses and rejects unexpected requests; `verify-song-import` covers the
+importer with local fixtures. Neither needs access to Songsterr.
+
+The real-song project-plan goldens are preserved separately. Run
+`npm run test:songsterr:live` after installing dependencies and building, or
+manually dispatch the **Songsterr live** workflow in GitHub Actions. HTTP errors
+(including 403) and changed upstream revisions still fail that live check;
+they are not converted into skips or successes. The live check is not called
+by the ordinary test, preflight, native-platform, or release-gate commands.
+
 ## License and contributor grant
 
 By submitting a contribution (pull request, patch, issue with a code

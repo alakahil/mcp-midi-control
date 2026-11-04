@@ -18,10 +18,13 @@
  *  - `next_step` must point at project_plan. It used to steer the agent to the
  *    lossy fuzz-merge workaround in the exact case that computed the plan.
  *
- * Network: hits Songsterr for the last two cases (same as the other import goldens).
+ * Network: none. Import integration uses synthetic local response fixtures.
+ * Real-song goldens live in verify-project-plan-live.ts (explicit opt-in).
  *
  * Run:  npx tsx scripts/verify-project-plan.ts
  */
+import assert from 'node:assert/strict';
+import type { SongsterrPart } from '../packages/core/src/protocol-generic/patterns/songsterr.js';
 import { planProjects } from '@mcp-midi-control/core/protocol-generic/patterns/songStructure.js';
 import { executeImportSongsterr } from '@mcp-midi-control/core/protocol-generic/dispatcher/songsterr.js';
 
@@ -68,94 +71,116 @@ const secs = (labels: string[], silent: string[] = []) =>
   const q = planProjects(secs(['B', 'S'], ['S']), ['B', 'S', 'B']);
   ck('starts_silent false when it opens on content', q.projects[0].starts_silent === false);
 }
-// 5. every project still fits, on the real songs. "Fits" is the realizer's own
-//    layout test: a plain chain (<=8 plays, one slot per play) OR a scene chain
-//    (<=8 distinct patterns whose order compresses into <=4 contiguous
-//    ascending scene steps), the shapes apply_pattern `arrangement` accepts.
-const sceneRuns = (order: string[]): number => {
-  const slot = new Map<string, number>();
-  let runs = 0, last = -2;
-  for (const l of order) {
-    let s = slot.get(l);
-    if (s === undefined) { s = slot.size; slot.set(l, s); }
-    if (s !== last + 1) runs++;
-    last = s;
-  }
-  return runs;
+
+// 5. Exercise the real importer with local response bodies, not a mocked plan.
+// Ten different two-bar drum patterns cannot fit eight slots in one project.
+const DRUMS: SongsterrPart = {
+  tuningFlat: true,
+  measures: Array.from({ length: 20 }, (_, i) => {
+    const offset = Math.floor(i / 2);
+    return { signature: [4, 4], voices: [{ beats: [
+      ...(offset ? [{ notes: [], duration: [offset, 16] as [number, number] }] : []),
+      { notes: [{ fret: 36 }], duration: [1, 16] },
+      { notes: [], duration: [15 - offset, 16] },
+    ] }] };
+  }),
 };
-for (const [name, url] of [
-  ['Amber', 'https://www.songsterr.com/a/wsa/311-amber-drum-tab-s24430'],
-  ['Caught a Glimpse', 'https://www.songsterr.com/a/wsa/blindside-caught-a-glimpse-drum-tab-s2323977'],
-] as const) {
-  const r = await executeImportSongsterr({ url, whole_song: true, fuzz: 0 } as never) as any;
-  const pp = r.arrangement.project_plan;
-  const bad = pp.projects.filter((x: any) =>
-    !(x.order.length <= 8 || (x.patterns.length <= 8 && sceneRuns(x.order) <= 4)));
-  let i = 0, ok = true;
-  for (const l of pp.projects.flatMap((x: any) => x.order)) { const j = r.arrangement.order.indexOf(l, i); if (j < 0) { ok = false; break; } i = j + 1; }
-  ck(`${name}: all fit + order preserved (${pp.projects.length} projects)`, bad.length === 0 && ok);
-  ck(`${name}: next_step points at project_plan`, /project_plan/.test(r.next_step), r.next_step.slice(0, 90));
-}
-// 6. THE WORKED CASE. "After Dark" (Mr.Kitty, song 501859 revision 4102120) was
-//    laid out onto eight Circuit projects BY HAND in July 2026, and that hand
-//    layout is the reference this algorithm has to reproduce from the source
-//    alone. Its markers fall at m1, 19, 35, 51, 67, 83, 99 and 115: every gap is
-//    exactly 16 bars except the Intro (18) and the final Chorus (21), so a
-//    16-bar project lands on a section boundary every time once the two silent
-//    tails are dropped. If this ever disagrees with the hand answer, work out
-//    which is right before assuming it is this one.
-//
-//    Network: 7 parts, one fetch each.
-{
-  const r = await executeImportSongsterr({ url: '501859', whole_song: true, parts: 'all' } as never) as any;
-  const p = r.song_plan;
-  ck('After Dark: the golden is about the revision it was built from',
-    r.song.revisionId === 4102120, String(r.song.revisionId));
-  ck('After Dark: the source is read as 135 measures over 7 parts',
-    p.measures === 135 && p.parts.length === 7, JSON.stringify({ m: p.measures, parts: p.parts.length }));
-  ck('After Dark: the source markers are found at m1/19/35/51/67/83/99/115',
-    p.sections.map((s: any) => s.from_measure).join(',') === '1,19,35,51,67,83,99,115',
-    JSON.stringify(p.sections.map((s: any) => `${s.name}@${s.from_measure}`)));
-  const windows = p.projects.map((x: any) => `m${x.from_measure}-${x.to_measure}`).join(' ');
-  ck('After Dark: the chop reproduces the hand-built EIGHT windows exactly',
-    windows === 'm1-16 m19-34 m35-50 m51-66 m67-82 m83-98 m99-114 m115-130', windows);
-  ck('After Dark: every project is exactly 16 bars = 256 steps = 8 patterns',
-    p.projects.every((x: any) => x.bars === 16 && x.steps === 256 && x.patterns === 8)
-    && p.ceiling.max_steps === 256 && p.ceiling.max_bars === 16,
-    JSON.stringify(p.projects.map((x: any) => `${x.bars}b/${x.steps}s/${x.patterns}p`)));
-  ck('After Dark: the two trims are the SILENT TAILS m17-18 and m131-135, nothing else',
-    p.trims.length === 2 && /tail m17-18/.test(p.trims[0]) && /tail m131-135/.test(p.trims[1])
-    && p.projects[0].trimmed?.head_bars === 0 && p.projects[7].trimmed?.head_bars === 0
-    && p.projects[0].trimmed?.tail_bars === 2 && p.projects[7].trimmed?.tail_bars === 5,
-    JSON.stringify(p.trims));
-  ck('After Dark: no section had to be split, and nothing was dropped as silent-only',
-    p.splits.length === 0 && p.dropped_silent.length === 0,
-    JSON.stringify({ splits: p.splits, dropped: p.dropped_silent }));
-  ck('After Dark: all 7 parts share ONE boundary set (each is placed in every project)',
-    p.boundaries.join(',') === '1,19,35,51,67,83,99,115'
-    && p.projects.every((x: any) => x.parts.length + x.silent_parts.length === 7),
-    JSON.stringify(p.boundaries));
-  // Spot-check the occupancy against the hand-built build sheet: P1 is the two
-  // pianos alone, P6 (the Break) is bass + pad only, and the sawtooth lead sounds
-  // in the three Choruses and nowhere else. Those are the facts that decide which
-  // part goes on which track, so a wrong one is a wrong song.
-  const sounding = (i: number): string => p.projects[i].parts.map((x: any) => x.partId).join(',');
-  ck('After Dark: P1 (Intro) is the pianos alone', sounding(0) === '1,5', sounding(0));
-  ck('After Dark: P6 (Break) is bass + pad only, no leads and no drums', sounding(5) === '0,2', sounding(5));
-  ck('After Dark: the sawtooth (part 3) sounds in P3/P5/P8 and in no other project',
-    [0, 1, 3, 5, 6].every((i) => !p.projects[i].parts.some((x: any) => x.partId === 3))
-    && [2, 4, 7].every((i) => p.projects[i].parts.find((x: any) => x.partId === 3)?.onsets === 84),
-    JSON.stringify(p.projects.map((x: any) => x.parts.find((y: any) => y.partId === 3)?.onsets ?? 0)));
-  ck('After Dark: the per-project onset counts match the hand build (bass 125, drums 157)',
-    p.projects[1].parts.find((x: any) => x.partId === 0)?.onsets === 125
-    && p.projects[1].parts.find((x: any) => x.partId === 6)?.onsets === 157
-    && p.projects[5].parts.find((x: any) => x.partId === 0)?.onsets === 64
-    && p.projects[6].parts.find((x: any) => x.partId === 0)?.onsets === 121,
-    JSON.stringify(p.projects.map((x: any) => x.parts.map((y: any) => `${y.partId}:${y.onsets}`).join(' '))));
-  ck('After Dark: the plan is offered for review, not authored',
-    /READ THIS PLAN TO THE USER BEFORE AUTHORING/.test(r.next_step) && /once the user confirms/.test(r.next_step),
-    r.next_step.slice(0, 90));
+// Two 16-bar sections, with a two-bar shared silent tail after the intro.
+// The synth sounds only in the intro; drums only in the second section.
+const multipart = (melodic: boolean): SongsterrPart => ({
+  ...(melodic ? { tuning: [60] } : { tuningFlat: true }),
+  measures: Array.from({ length: 34 }, (_, i) => ({
+    signature: [4, 4],
+    ...(i === 0 || i === 18 ? { marker: { text: i === 0 ? 'Intro' : 'Verse' } } : {}),
+    voices: [{ beats: [{
+      notes: (melodic ? i < 16 : i >= 18) ? [{ fret: melodic ? 0 : 36, string: 0 }] : [],
+      duration: [1, 1],
+    }] }],
+  })),
+});
+const meta = (songId: number, tracks: object[], popularTrackDrum: number) => ({
+  songId, revisionId: 1, image: 'fixture', title: 'Synthetic project plan', artist: 'Test',
+  tracks, popularTrackDrum,
+});
+const responses = new Map<string, unknown>([
+  ['/api/meta/900001', meta(900001, [{ instrumentId: 1024, instrument: 'Drums', hash: 'd' }], 0)],
+  ['/900001/1/fixture/0.json', DRUMS],
+  ['/api/meta/900002', meta(900002, [
+    { instrumentId: 81, instrument: 'Lead 1 (square)', hash: 's' },
+    { instrumentId: 1024, instrument: 'Drums', hash: 'd' },
+  ], 1)],
+  ['/900002/1/fixture/0.json', multipart(true)],
+  ['/900002/1/fixture/1.json', multipart(false)],
+]);
+const realFetch = globalThis.fetch;
+const unexpected: string[] = [];
+const requested = new Set<string>();
+let metadataStatus = 200;
+globalThis.fetch = async (input) => {
+  const url = new URL(typeof input === 'string' ? input : input instanceof URL ? input.href : input.url);
+  const body = responses.get(url.pathname);
+  const hosts = url.pathname.startsWith('/api/meta/')
+    ? ['www.songsterr.com']
+    : ['dqsljvtekg760.cloudfront.net', 'd3d3l6a6rcgkaf.cloudfront.net'];
+  if (url.protocol !== 'https:' || !hosts.includes(url.hostname) || body === undefined) {
+    unexpected.push(url.href);
+    throw new Error(`Unexpected request in offline project-plan test: ${url.href}`);
+  }
+  requested.add(url.pathname);
+  return new Response(JSON.stringify(body), {
+    status: url.pathname.startsWith('/api/meta/') ? metadataStatus : 200,
+    headers: { 'content-type': 'application/json' },
+  });
+};
+try {
+  const r = await executeImportSongsterr({ url: '900001', whole_song: true, fuzz: 0 });
+  assert.ok(!('mode' in r) && r.arrangement?.project_plan, 'oversized song needs a project plan');
+  const { arrangement: a } = r;
+  const pp = a.project_plan!;
+  assert.equal(a.sections.length, 10, 'fixture must exercise more than eight distinct slots');
+  assert.ok(pp.projects.length > 1, 'fixture must span multiple projects');
+  assert.deepEqual(pp.projects.flatMap((p) => p.order), a.order, 'all plays retained in the same order');
+  for (const p of pp.projects) {
+    assert.ok(p.patterns.length <= 8, 'each project fits the pattern slots');
+    // A longer play order must be a sequence of at most four ascending scenes.
+    let runs = 0, previous = -2;
+    const slots = new Map<string, number>();
+    for (const name of p.order) {
+      if (!slots.has(name)) slots.set(name, slots.size);
+      const slot = slots.get(name)!;
+      if (slot !== previous + 1) runs++;
+      previous = slot;
+    }
+    assert.ok(p.order.length <= 8 || runs <= 4, 'each project fits a chain or four scenes');
+  }
+  assert.match(r.next_step, /project_plan/, 'oversized-song guidance points to the computed plan');
+  console.log('OK   offline import: ten patterns split into fitting projects without losing/reordering plays');
+
+  const multi = await executeImportSongsterr({ url: '900002', whole_song: true, parts: 'all' });
+  assert.ok(!('mode' in multi) && multi.song_plan, 'multipart import needs a shared song plan');
+  const p = multi.song_plan;
+  assert.equal(p.measures, 34);
+  assert.equal(p.parts.length, 2);
+  assert.deepEqual(p.boundaries, [1, 19]);
+  assert.deepEqual(p.projects.map((x) => [x.from_measure, x.to_measure]), [[1, 16], [19, 34]]);
+  assert.ok(p.projects.every((x) => x.bars === 16 && x.steps === 256 && x.patterns === 8));
+  assert.ok(p.projects.every((x) => x.parts.length + x.silent_parts.length === 2));
+  assert.deepEqual(p.projects.map((x) => x.parts.map((part) => part.partId)), [[0], [1]]);
+  assert.equal(p.trims.length, 1);
+  assert.match(p.trims[0], /tail m17-18/);
+  assert.match(multi.next_step, /READ THIS PLAN TO THE USER BEFORE AUTHORING/);
+  console.log('OK   offline multipart import: shared boundaries, silent-tail trim, occupancy and review guidance');
+
+  // A service failure must remain an error in the production importer. The CI
+  // fix changes the test data source, not the meaning of a 403 response.
+  metadataStatus = 403;
+  await assert.rejects(executeImportSongsterr({ url: '900001', whole_song: true }), /meta fetch failed \(403\)/);
+  assert.deepEqual(unexpected, [], 'no unrecognised endpoint may be hidden by importer retries');
+  assert.deepEqual([...requested].sort(), [...responses.keys()].sort(), 'all fixture parts were exercised');
+  console.log('OK   HTTP 403 remains a surfaced import error; no real network requests');
+} finally {
+  globalThis.fetch = realFetch;
 }
 
-console.log(fail ? `\n${fail} FAILED` : '\nall fix checks pass');
-process.exit(fail ? 1 : 0);
+console.log(fail ? `\n${fail} FAILED` : '\nall offline project-plan checks pass');
+process.exitCode = fail ? 1 : 0;
