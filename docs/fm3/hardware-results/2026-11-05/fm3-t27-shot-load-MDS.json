@@ -1,0 +1,49 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "434db3aa6507a15782c2ad56ef3001dd94337c5934ce22eeb44642bc16be8cb2",
+ "preset": "MDS",
+ "name": "T27 MD PRESETS",
+ "time": "2026-11-05T10:30:38",
+ "blocks": [
+  {
+   "family": "multidelay",
+   "effectId": 74,
+   "values": 484,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "MULTITAP_PRESETS",
+     "channel": "A",
+     "raw": 12,
+     "device": 12
+    },
+    {
+     "param": "MULTITAP_PRESETS",
+     "channel": "B",
+     "raw": 33,
+     "device": 33
+    },
+    {
+     "param": "MULTITAP_PRESETS",
+     "channel": "C",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "D",
+     "raw": 3,
+     "device": 3
+    },
+    {
+     "param": "MULTITAP_PRESETS",
+     "channel": "D",
+     "raw": 3,
+     "device": 3
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

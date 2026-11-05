@@ -14,7 +14,7 @@ export const typePolicyHash='9fdc92ed23349838699db18dbcce223602ae6a22984cef5e572
 const bytes=fs.readFileSync(new URL('../references/fm3-type-applicability.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==typePolicyHash)throw Error('Type applicability policy changed; review and regenerate');
 const policy=JSON.parse(bytes);
-const familyFor={chorus:'CHORUS',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',flanger:'FLANGER',phaser:'PHASER',compressor:'COMP',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',plex:'PLEX',gate:'GATE',tentap:'TENTAP',synth:'SYNTH',multiband:'MULTICOMP',mixer:'MIXER',multiplexer:'MULTIPLEXER',formant:'FORMANT',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',looper:'LOOPER'};
+const familyFor={chorus:'CHORUS',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',flanger:'FLANGER',phaser:'PHASER',compressor:'COMP',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',plex:'PLEX',gate:'GATE',tentap:'TENTAP',synth:'SYNTH',multiband:'MULTICOMP',mixer:'MIXER',multiplexer:'MULTIPLEXER',formant:'FORMANT',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',looper:'LOOPER',multidelay:'MULTITAP'};
 export function typePolicySummary(){
   return {sha256:typePolicyHash,firmware:policy.firmware,source:'FM3-Edit '+policy.editor,
     families:Object.fromEntries(Object.entries(policy.families).map(([family,f])=>[family,{types:f.types.length,parameters:Object.keys(f.parameters).length,restrictedParameters:Object.values(f.parameters).filter(p=>p.allowedTypes.length<f.types.length).length}])),
@@ -43,12 +43,16 @@ export function typeApplicability(p,type){
 }
 // Preflight the complete plan. A type change may appear before or after its controls.
 // No body mutation or allowance callback is permitted until this succeeds.
-// Multi Delay (0.3.47) is insertable with device defaults. The FW13 visibility policy covers MULTITAP, but choosing a
-// Base Type or one of the 39 Multi Delay presets also changes other words in FM3-Edit (dynamic Feedback Send/Return,
-// preset fills), and that is not mapped, so no Multi Delay word is written yet (follow-up to T26).
-export const MULTIDELAY_WRITES_REFUSED='Multi Delay parameters are not writable yet (Base Type and Multi Delay preset side effects are not mapped); the block is inserted with device defaults (Quad-Tap Delay)';
+// Multi Delay (0.3.47 insert, 0.3.49 writes; T27 2026-11-05): the FM3 keeps Base Type (FM3-Edit "Algorithm") and the
+// Presets word exactly as stored on load and when a channel becomes active (5 presets, 484/484 words each). Changing
+// Algorithm in FM3-Edit changes only pid 0, so Base Type is a plain selector checked by the FW13 visibility policy.
+// Choosing one of the 39 Multi Delay presets (FM3-Edit "Type", MULTITAP_PRESETS pid 114) fills about 39 other words
+// (Pealing Bells: 39 words on the channel), and a stored Presets word alone does not trigger that fill, so writing it
+// would label words it does not hold: refused until each preset's fill table is measured.
+export const MULTIDELAY_PRESET_PID=114;
+export const MULTIDELAY_PRESET_REFUSED='Multi Delay preset selection (Type) is not writable: choosing a preset fills about 39 other words that are not mapped; set Base Type (Algorithm) and the parameters instead';
 export function validateTypeWrites(body,writes){
-  for(const w of writes)if(w.block==='multidelay')throw Error(`multidelay ${w.channel} ${w.name}: ${MULTIDELAY_WRITES_REFUSED}`);
+  for(const w of writes)if(w.block==='multidelay'&&w.pid===MULTIDELAY_PRESET_PID)throw Error(`multidelay ${w.channel} ${w.name}: ${MULTIDELAY_PRESET_REFUSED}`);
   for(const w of writes)if(templateOnlyParameter({family:familyFor[w.block],param:w.pid}))throw Error(`${w.name}: full channel template required for model/internal selector changes`);
   const planned=new Map(writes.map(w=>[w.offset,w.raw]));
   for(const w of writes){

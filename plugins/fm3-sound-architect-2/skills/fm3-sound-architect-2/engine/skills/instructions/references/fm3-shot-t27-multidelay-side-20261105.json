@@ -1,0 +1,467 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "editor": {
+  "baseline": {
+   "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-read-MDF-base.json",
+   "sha256": "b0697bf559300313032cab97054802d4fb5d1b1e1d2474d54e7819f32b7bb40d",
+   "time": "2026-11-05T10:31:25"
+  },
+  "after": {
+   "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-read-MDF-editor-algo-a-pealing.json",
+   "sha256": "4c76958ec599aaa184608f5c393f54ea8a7d8e2a0ddcce0fc9c73bc9dd189195",
+   "time": "2026-11-05T10:33:50"
+  },
+  "algorithm": {
+   "control": "Algorithm",
+   "param": "MULTITAP_BASETYPE",
+   "pid": 0,
+   "channel": "A",
+   "changed": [
+    {
+     "channel": "A",
+     "pid": 0,
+     "from": 0,
+     "to": 1
+    }
+   ]
+  },
+  "preset": {
+   "control": "Type",
+   "param": "MULTITAP_PRESETS",
+   "pid": 114,
+   "channel": "B",
+   "value": 12,
+   "label": "Pealing Bells",
+   "wordsChanged": 39,
+   "fill": [
+    {
+     "pid": 0,
+     "from": 0,
+     "to": 2
+    },
+    {
+     "pid": 5,
+     "from": 14,
+     "to": 11
+    },
+    {
+     "pid": 6,
+     "from": 11,
+     "to": 14
+    },
+    {
+     "pid": 13,
+     "from": 36044,
+     "to": 39320
+    },
+    {
+     "pid": 14,
+     "from": 36044,
+     "to": 39320
+    },
+    {
+     "pid": 15,
+     "from": 36044,
+     "to": 39320
+    },
+    {
+     "pid": 16,
+     "from": 36044,
+     "to": 39320
+    },
+    {
+     "pid": 17,
+     "from": 16384,
+     "to": 0
+    },
+    {
+     "pid": 18,
+     "from": 49151,
+     "to": 16384
+    },
+    {
+     "pid": 19,
+     "from": 0,
+     "to": 49151
+    },
+    {
+     "pid": 22,
+     "from": 55670,
+     "to": 49757
+    },
+    {
+     "pid": 23,
+     "from": 6553,
+     "to": 0
+    },
+    {
+     "pid": 29,
+     "from": 32767,
+     "to": 0
+    },
+    {
+     "pid": 39,
+     "from": 26214,
+     "to": 32767
+    },
+    {
+     "pid": 59,
+     "from": 0,
+     "to": 3
+    },
+    {
+     "pid": 63,
+     "from": 0,
+     "to": 47905
+    },
+    {
+     "pid": 77,
+     "from": 164,
+     "to": 4030
+    },
+    {
+     "pid": 78,
+     "from": 328,
+     "to": 10338
+    },
+    {
+     "pid": 79,
+     "from": 737,
+     "to": 16318
+    },
+    {
+     "pid": 80,
+     "from": 1475,
+     "to": 12959
+    },
+    {
+     "pid": 85,
+     "from": 32767,
+     "to": 65534
+    },
+    {
+     "pid": 86,
+     "from": 0,
+     "to": 41286
+    },
+    {
+     "pid": 87,
+     "from": 0,
+     "to": 14352
+    },
+    {
+     "pid": 88,
+     "from": 0,
+     "to": 14385
+    },
+    {
+     "pid": 89,
+     "from": 0,
+     "to": 14417
+    },
+    {
+     "pid": 90,
+     "from": 0,
+     "to": 14450
+    },
+    {
+     "pid": 91,
+     "from": 0,
+     "to": 65534
+    },
+    {
+     "pid": 92,
+     "from": 0,
+     "to": 65534
+    },
+    {
+     "pid": 93,
+     "from": 0,
+     "to": 65534
+    },
+    {
+     "pid": 94,
+     "from": 0,
+     "to": 65534
+    },
+    {
+     "pid": 95,
+     "from": 14652,
+     "to": 34226
+    },
+    {
+     "pid": 96,
+     "from": 17827,
+     "to": 42401
+    },
+    {
+     "pid": 97,
+     "from": 18998,
+     "to": 39022
+    },
+    {
+     "pid": 98,
+     "from": 20079,
+     "to": 39763
+    },
+    {
+     "pid": 99,
+     "from": 0,
+     "to": 3277
+    },
+    {
+     "pid": 100,
+     "from": 0,
+     "to": 3277
+    },
+    {
+     "pid": 101,
+     "from": 0,
+     "to": 3277
+    },
+    {
+     "pid": 102,
+     "from": 0,
+     "to": 3277
+    },
+    {
+     "pid": 114,
+     "from": 0,
+     "to": 12
+    }
+   ]
+  }
+ },
+ "date": "2026-11-05",
+ "test": "T27",
+ "method": "FM3_SHOT_LOAD.py --load (Remote Control) sent each preset to the edit buffer (7F 00) and read the Multi Delay block back with fn=0x1F; FM3_SHOT_READ.py re-read it and saved all 484 words. For MDF, Claude changed Algorithm (channel A) and Type (channel B, Pealing Bells) in FM3-Edit without saving, closed FM3-Edit and re-read the block. Nothing stored or set.",
+ "packSha256": "434db3aa6507a15782c2ad56ef3001dd94337c5934ce22eeb44642bc16be8cb2",
+ "storedWordsKept": [
+  {
+   "id": "MDB_A",
+   "scene1Channel": "A",
+   "writes": [
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "A",
+     "raw": 1,
+     "label": "Quad Parallel Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "B",
+     "raw": 2,
+     "label": "Quad Series Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "C",
+     "raw": 4,
+     "label": "Quad Tape Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "D",
+     "raw": 5,
+     "label": "Quad-Tap Band Delay"
+    }
+   ],
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-load-MDB_A.json",
+    "sha256": "4c2c26aa1e473c643f40c9564404fab0f4699e71ba88929ee781857530dbc80c",
+    "time": "2026-11-05T10:30:27"
+   },
+   "read": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-read-MDB_A-after-load.json",
+    "sha256": "5e014c98440919c73c8d0368891847148ce83d58cd6a18be77549244a09aab82",
+    "time": "2026-11-05T10:30:29"
+   },
+   "wordsKept": 484
+  },
+  {
+   "id": "MDB_B",
+   "scene1Channel": "B",
+   "writes": [
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "A",
+     "raw": 1,
+     "label": "Quad Parallel Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "B",
+     "raw": 2,
+     "label": "Quad Series Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "C",
+     "raw": 4,
+     "label": "Quad Tape Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "D",
+     "raw": 5,
+     "label": "Quad-Tap Band Delay"
+    }
+   ],
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-load-MDB_B.json",
+    "sha256": "f2bfab96a7bfb4205cda1059dd5a753b780ef5418f32615e3b9df53910aab393",
+    "time": "2026-11-05T10:30:30"
+   },
+   "read": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-read-MDB_B-after-load.json",
+    "sha256": "debce52554073af82622bd475659c0a35c6a0eb06aab6365d98b1d79e1244128",
+    "time": "2026-11-05T10:30:32"
+   },
+   "wordsKept": 484
+  },
+  {
+   "id": "MDB_C",
+   "scene1Channel": "C",
+   "writes": [
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "A",
+     "raw": 1,
+     "label": "Quad Parallel Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "B",
+     "raw": 2,
+     "label": "Quad Series Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "C",
+     "raw": 4,
+     "label": "Quad Tape Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "D",
+     "raw": 5,
+     "label": "Quad-Tap Band Delay"
+    }
+   ],
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-load-MDB_C.json",
+    "sha256": "44a45fd7332253f285f8d6c99aef4af1276e2c5e7194bc0aa7665b5199e63b63",
+    "time": "2026-11-05T10:30:33"
+   },
+   "read": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-read-MDB_C-after-load.json",
+    "sha256": "88fb05525f982c60a889d30899cf9d680727f5ccefcba1be5c78e13c780091f2",
+    "time": "2026-11-05T10:30:35"
+   },
+   "wordsKept": 484
+  },
+  {
+   "id": "MDB_D",
+   "scene1Channel": "D",
+   "writes": [
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "A",
+     "raw": 1,
+     "label": "Quad Parallel Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "B",
+     "raw": 2,
+     "label": "Quad Series Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "C",
+     "raw": 4,
+     "label": "Quad Tape Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "D",
+     "raw": 5,
+     "label": "Quad-Tap Band Delay"
+    }
+   ],
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-load-MDB_D.json",
+    "sha256": "675520b6da5ae997be77869feb972b084d9983f7a9d93ebf806c8fc313c57349",
+    "time": "2026-11-05T10:30:36"
+   },
+   "read": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-read-MDB_D-after-load.json",
+    "sha256": "b67284a6c7aeff5ec19e64d883e2fcc3660672e77b01d03002bf55c5b0094394",
+    "time": "2026-11-05T10:30:38"
+   },
+   "wordsKept": 484
+  },
+  {
+   "id": "MDS",
+   "scene1Channel": "A",
+   "writes": [
+    {
+     "param": "MULTITAP_PRESETS",
+     "channel": "A",
+     "raw": 12,
+     "label": "Pealing Bells"
+    },
+    {
+     "param": "MULTITAP_PRESETS",
+     "channel": "B",
+     "raw": 33,
+     "label": "Aurora Delay"
+    },
+    {
+     "param": "MULTITAP_PRESETS",
+     "channel": "C",
+     "raw": 1,
+     "label": "Quad Parallel Delay"
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "D",
+     "raw": 3,
+     "label": "Diffusor"
+    },
+    {
+     "param": "MULTITAP_PRESETS",
+     "channel": "D",
+     "raw": 3,
+     "label": "Quad Diffusor"
+    }
+   ],
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-load-MDS.json",
+    "sha256": "93f1477185663c0bcf604596b4e4f67b7fc463f46a594d612d0ebe2ef5e0d84d",
+    "time": "2026-11-05T10:30:38"
+   },
+   "read": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t27-shot-read-MDS-after-load.json",
+    "sha256": "69ec254d0fa013c03c3342c55f405413f1dd04d94b1d2bd37acde3774f1a8edd",
+    "time": "2026-11-05T10:30:41"
+   },
+   "wordsKept": 484
+  }
+ ],
+ "notMeasured": [
+  "audio",
+  "STORE/reload",
+  "fill tables of the other 38 Multi Delay presets",
+  "Multi Delay parameter display scales"
+ ],
+ "summary": {
+  "presetsWithAllWordsKept": 5,
+  "wordsPerPreset": 484,
+  "algorithmWordsChanged": 1,
+  "presetFillWords": 39,
+  "meaning": "The FM3 applies no side effect from stored Base Type or Presets words; Base Type is a plain selector. Choosing a Multi Delay preset fills about 39 words, so Multi Delay parameters and Base Type become writable (0.3.49) while MULTITAP_PRESETS (Type) stays refused until each preset fill table is measured."
+ }
+}

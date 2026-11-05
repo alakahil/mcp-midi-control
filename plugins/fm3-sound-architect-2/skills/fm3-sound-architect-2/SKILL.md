@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.48`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.49`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -136,14 +136,26 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Multi Delay parameetrid kirjutatavad (0.3.49, T27)
+
+`controls` lubab nüüd plokki `multidelay`: Base Type (`MULTITAP_BASETYPE`, FM3-Editis „Algorithm“) ja
+Multi Delay parameetrid kirjutatakse tavalise FW13 nähtavuspoliitika ja staatuste järgi (nt Ring Freq ainult
+tüüpidel, mille FM3-Edit seda näitab). Multi Delay preseti sõna (`MULTITAP_PRESETS`, FM3-Editis „Type“, 39 valikut)
+jääb keelatuks. T27 (5.11.2026): FM3 hoidis laadimisel ja kanali aktiveerimisel kõik salvestatud sõnad muutmata
+(5 presetti, 484/484), Algorithmi muutmine FM3-Editis muutis ainult ühte sõna, aga preseti valik (Pealing Bells)
+täitis 39 sõna. Salvestatud preseti sõna ise täidet ei käivita, seega selle kirjutamine annaks vale sildi.
+Time 1–4, LFO 1–2 Rate ja Filter Rate on FW13 XML-i järgi tempo-lukus: kirjutus nõuab sama kanali
+Tempo = NONE (seadme vaikimisi Tempo 1 = 1/4). Feedback Send/Return jäävad kontrollimata skaala tõttu lukku. Soundi skeem on 0.8.2.
+Tõend `references/fm3-shot-t27-multidelay-side-20261105.json`.
+
 ## Multi Delay sisendiskeemi kooskõla (0.3.48)
 
 Soundi skeem 0.8.1 aktsepteerib `multidelay` väärtust `insert`-is, mõlemas
 `layout` reas ja `layout.columns`-is, `grid` lahtris ning `blockScenes` võtmena.
 0.3.47 generaator toetas neid juba, kuid skeemi loendid olid täiendamata.
 `test-sound-schema` kontrollib nüüd mõlemat paigutusrežiimi ning vigase kanali,
-veeru ja korduva lisamise tõrjumist. Multi Delay parameetrikirjutus jääb
-keelatuks; generaatori SYX-kirjutusloogika ja olemasolevad seadmetõendid ei muutu.
+veeru ja korduva lisamise tõrjumist. Multi Delay parameetrikirjutus jäi
+0.3.48-s keelatuks (avatud 0.3.49-s); generaatori SYX-kirjutusloogika ja olemasolevad seadmetõendid ei muutu.
 
 ## Multi Delay lisatav (0.3.47, T26)
 
@@ -152,8 +164,7 @@ FW13 doonoripaarist (`references/fm3-multidelay-{empty,fresh}-20261103.syx`) sea
 4.11.2026 hoidis FM3 kõiki 484 sõna ja FM3-Edit näitas plokki genereeritud kohas (rida 3, veerg 7), stseenis 1 sees.
 CPU on mõõdetud Base Type'i kaupa: Quad-Tap Delay, Diffusor ja Quad-Tap Band Delay 5,5, Quad Series Delay 6,5,
 Quad Parallel Delay 7,0, Quad Tape Delay 8,0 punkti; FM3-Editis valitud tüübid andsid sama tulemuse. Multi Delay
-parameetreid (sh tüüpi) generaator veel ei kirjuta, sest Base Type'i ja Multi Delay preseti valik muudavad ka teisi sõnu ning see on
-kaardistamata; `blockScenes` töötab. Tõend
+parameetreid 0.3.47 veel ei kirjutanud (avatud 0.3.49-s, preseti valik jääb lukku); `blockScenes` töötab. Tõend
 `references/fm3-shot-t26-multidelay-20261104.json`.
 
 ## Ten-Tapi ajad vaikimisi kasutatavad (0.3.46, T25)
@@ -344,7 +355,7 @@ heli- või CPU-kinnitus. Kontrollitud globaalvaatlused jäävad kogumisaja tõen
 Kasuta [6. punkti katvuse ja piirangute tabelit](engine/docs/FM3_POINT6_BLOCKS.md).
 FW13 XML-poliitika katab nüüd 13 peret ja 515 PID-i. Lisanduvad Mixer,
 Multiplexer, Formant, Megatap, RingMod, Resonator, Looper ning ainult loetava
-metaandmestikuna MultiDelay. Kirjutamisel kontrolli lõplikku tüüpi ja tegelikku
+MultiDelay (0.3.49-st kirjutatav, preseti valik lukus). Kirjutamisel kontrolli lõplikku tüüpi ja tegelikku
 kanalite arvu: Looper A; Megatap/RingMod/Resonator A–B; teised A–D.
 Resonatori Manual/Chordal juhikud erinevad. Synthi, Megatapi ja RingModi
 PID 0 või peidetud TYPE ei tähenda kasutajale valitavat plokitüüpi.
@@ -353,8 +364,8 @@ Mixeri `DELAY1`…`DELAY4` nimed seotakse PID-idega 17…20 kinnitatud
 FM3-Edit ARM64 kirjeldustabeli ja FW13 vahemälu alusel. Ajaloolise sõnastiku
 skaalad ja tõendistaatused ei muutu. Delay 5/6 ei ole toetatud.
 Looperi Record/Play/Once/Reverse/Undo/Dub on käivituskäsud, mitte lubatud
-skalaarseadistused. MultiDelay dünaamilised Feedback Send/Return ja
-presetivalik jäävad blokeerituks; selle ploki lisamist ei avata.
+skalaarseadistused. MultiDelay Feedback Send/Return ja presetivalik jäävad
+blokeerituks (plokk on lisatav 0.3.47-st, parameetrid kirjutatavad 0.3.49-st).
 `--inspect-modifiers` kasutab 24 pere poliitikaid ning kontrollib ka 1/2-kanalilisi
 kirjeid. Puuduv kanal ja tundmatu seis jäävad teadmata; nähtavus ei tõenda
 modifikaatori tuge ega luba uut seost kirjutada.
@@ -408,7 +419,7 @@ kirjutamisel lõpliku kanali tüübipoliitikat (`references/fm3-insert-applicabi
 Peidetud väljad, mõõdikud, TenTap Learn/Reset ja Plexi presetivalik ei ole lubatud
 skalaarseadistused. Synthi ostsillaatorite ja Multibandi Auto Att/Rel dünaamikat
 see XML-kontroll ei tõenda. Tundmatute skaalade kirjutamine jääb blokeerituks.
-Plexi/TenTapi 10 tempo-seost kuvatakse ka lõpparuandes; aktiivse modifikaatori
+Plexi/TenTapi/Multi Delay 17 tempo-seost (Multi Delay 7: Time 1–4, LFO 1–2 Rate, Filter Rate; vaikimisi Tempo 1 = 1/4, seega kirjuta Time koos Tempo NONE-ga) kuvatakse ka lõpparuandes; aktiivse modifikaatori
 siht ja tempo ei tohi sattuda vastuollu.
 
 Käivita `--verify OUTPUT_STEM` kõigi nelja väljundfaili kontrolliks. Kontroll loeb
@@ -782,7 +793,7 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
 - **Soundi koostaja** `scripts/fm3-sound.mjs` (jb-newlook): `composer` → `layout` → `blockScenes` →
   `controls` → `selectedScene`. Output Scene Level 1–8 (−20…+20 dB) on seadmel kinnitatud.
 - **Plokkide lisamine (auditi punkt 6)** `scripts/fm3-insert-blocks.mjs`, väli `insert`: plex, multiband, synth,
-  looper, gate, formant, tentap, megatap, ringmod, resonator, multidelay (0.3.47; parameetrid veel lukus) (Volume/Pan: Codexi `volumePan`). Doonor on kasutaja enda FW13 eksport
+  looper, gate, formant, tentap, megatap, ringmod, resonator, multidelay (0.3.47; parameetrid 0.3.49-st, preseti valik lukus) (Volume/Pan: Codexi `volumePan`). Doonor on kasutaja enda FW13 eksport
   värsketest vaikeplokkidest (`references/fm3-default-blocks-20261023.syx`; Multi Delay `fm3-multidelay-fresh-20261103.syx`). Lisatud plokk on kõigis
   8 stseenis kanalil A ja bypassis; sisse lülita `blockScenes` abil. Looperil on 1 kanal, Megatap/Ring Mod/
   Resonatoril 2 (A/B). Plexi TIME1–8 ja LFO Rate kirjutamine nõuab samas spetsis vastava TEMPO = NONE
