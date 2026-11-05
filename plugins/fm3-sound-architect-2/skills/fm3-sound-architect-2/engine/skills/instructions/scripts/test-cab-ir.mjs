@@ -9,6 +9,7 @@ import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {scanRecords} from './fm3-layout.mjs';
 import {findParam,decodeValue} from './fm3-table-encoder.mjs';
 import {cabIrCapabilities,CAB_IR} from './fm3-cab-ir.mjs';
+import {getParameterMap} from './fm3-parameter-map.mjs';
 const base=fs.readFileSync(new URL('../examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx',import.meta.url));
 const receipt=JSON.parse(fs.readFileSync(new URL('../references/fm3-shot-t31-cab-cpu-20261105.json',import.meta.url)));
 const composer={schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:'CAB IR TEST',compressorChannels:[{channel:'A',type:'Optical Compressor'}]};
@@ -33,4 +34,7 @@ const refuse=[[{block:'cab',channel:'B',param:'TYPE1',value:18},/Dyna-Cab channe
   [{block:'cab',channel:'A',param:'TYPE1',value:18.5},/integer/],[{block:'cab',channel:'A',param:'BANK1',value:'FACTORY 3'},/unknown option/]];
 for(const [c,re] of refuse)assert.throws(()=>composeSound(base,{composer,layout,controls:[c]}),re,JSON.stringify(c));
 const cap=cabIrCapabilities();assert.equal(cap.hardwareReceipt.readings,4);
+// The public parameter map advertises the same # range the writer accepts (1..1024, stored 0..1023).
+for(const n of ['TYPE1','TYPE2']){const sc=getParameterMap('cab',n).parameters[0].effective.scale;
+  assert.deepEqual(sc.numericInputRange,[1,1024],n+' map range');assert.deepEqual(sc.storedDomain.logicalRange,[0,1023]);assert.equal(sc.storedDomain.displayOffset,1);}
 console.log(JSON.stringify({passed:true,readingsReplayed:receipt.cab.readings.length,refusals:refuse.length,changedBytesOnly:true}));

@@ -43,9 +43,9 @@ export function parameterScale(p){
    labelRule:'Repeated labels retain distinct words; a string selects the first match. Use the numeric word to select another occurrence.'};
  }
  const m=p.kind==='integer'?(p.integerScale??1):(p.displayMultiplier||1);
- const range=p.kind==='knob'?[0,m]:[p.min*m,p.max*m];
+ const off=p.kind==='integer'?(p.displayOffset??0):0,range=p.kind==='knob'?[0,m]:[p.min*m+off,p.max*m+off];
  return {known:true,kind:p.kind,input:'FM3 display value; numeric global-scale selectors retain stored-index meaning',
-  numericInputRange:range,storedDomain:p.kind==='integer'?{kind:p.signedWord?'signed-int16':'unsigned-int16',logicalRange:[p.min,p.max],displayStep:m}:{kind:'normalized-uint16',range:[0,65534]},
+  numericInputRange:range,storedDomain:p.kind==='integer'?{kind:p.signedWord?'signed-int16':'unsigned-int16',logicalRange:[p.min,p.max],displayStep:m,...(off?{displayOffset:off}:{})}:{kind:'normalized-uint16',range:[0,65534]},
   ...(p.displayCodec?{displayCodec:structuredClone(p.displayCodec)}:{}),
   ...(p.family==='INPUT'&&p.param===0?{displayEndpoint:{input:-100,word:0,label:'OFF'}}:{}),
   ...(p.family==='CABINET'&&[93,94].includes(p.param)?{unit:'unitless 0..10; historical 0..100 is normalized percent, not display units'}:{})};
