@@ -16,6 +16,7 @@ const {parsePresetDump}=await imp('scripts/fm3-codec.mjs');
 const {readGrid}=await imp('scripts/fm3-layout.mjs');
 const {describeGrid,describeLinks,gridWarnings}=await imp('scripts/fm3-grid.mjs');
 const sha=b=>createHash('sha256').update(b).digest('hex');
+const {estimateCpu}=await imp('scripts/fm3-cpu.mjs');
 const BASE=fs.readFileSync(new URL(E+'examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx',import.meta.url));
 const [out]=process.argv.slice(2);assert.ok(out,'Usage: grid-check-build.mjs OUT_DIR');
 const e=()=>Array(12).fill('');
@@ -54,12 +55,12 @@ const items=[];
 for(const c of CASES){
   const r=composeSound(BASE,{composer:{schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:c.name,...comp},selectedScene:1,...c.spec});
   assert.deepEqual([...parsePresetDump(r.syx,0,17).headerPayload],[0x7f,0,0,0x40,0],'edit-buffer header');
-  const body=Buffer.from(inspectStructure(r.syx).raw.body),grid=readGrid(body);
+  const body=Buffer.from(inspectStructure(r.syx).raw.body),grid=readGrid(body),cpu=estimateCpu(r.syx,{model:'fm3-cpu 0.2.3'}); // pinned: pack sent before T31
   assert.equal(grid.length,48);assert.ok(grid.every(g=>g.mask<16));
   const file=c.id+'.syx';fs.writeFileSync(path.join(out,file),r.syx);
   items.push({id:c.id,file,sha256:sha(r.syx),name:c.name,proves:c.proves,...(c.ask?{ask:c.ask}:{}),rows:describeGrid(body),links:describeLinks(body),warnings:gridWarnings(body),
-    expectedGrid:grid.map(g=>[g.row,g.col,g.id,g.mask]),cpuEstimate:r.report.cpu.maxPercent,cpuUnknown:[...new Set(r.report.cpu.scenes.flatMap(s=>s.unknown))]});
-  assert.ok(r.report.cpu.maxPercent<72,c.id+' CPU estimate too high');
+    expectedGrid:grid.map(g=>[g.row,g.col,g.id,g.mask]),cpuEstimate:cpu.maxPercent,cpuUnknown:[...new Set(cpu.scenes.flatMap(s=>s.unknown))]});
+  assert.ok(cpu.maxPercent<72,c.id+' CPU estimate too high');
 }
 const manifest={kind:'fm3-grid-check',version:1,date:'2026-10-23',confirmName:items[0].name,
   method:'Each preset is sent to the FM3 edit buffer (7F 00), then the live grid (fn=0x01 sub=0x2E, tail-anchored region, 16-bit id + 16-bit input mask per cell from bit 45, MSB-first) is read and compared with expectedGrid [row, col, id, mask] (zero-based). CPU from frame[37] (piecewise decode).',

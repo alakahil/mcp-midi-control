@@ -62,7 +62,7 @@ for(const [ci,ch] of [...'ABCD'].entries()){
 const syx=Buffer.from(reencodeDumpFromRawPatch(composed,reencodeRawPatch(st0.raw.rawPatch,body)));
 assert.deepEqual([...parsePresetDump(syx,0,17).headerPayload],[0x7f,0,0,0x40,0],'edit-buffer header');
 const st=inspectStructure(syx);assert.equal(st.decoded.preset_name,item.name);assert.ok(Buffer.from(st.raw.body).equals(body),'re-encode round trip');
-const cpu=estimateCpu(syx).maxPercent;assert.ok(cpu<75,'CPU '+cpu);
+const cpu=estimateCpu(syx,{model:'fm3-cpu 0.2.3'}).maxPercent; // pinned: pack sent before T31assert.ok(cpu<75,'CPU '+cpu);
 const word=(ch,pid)=>body.readUInt16LE(off(ch,pid));
 for(const w of writes)assert.equal(word('ABCD'.indexOf(w.channel),w.pid),w.raw);
 for(const w of writes){

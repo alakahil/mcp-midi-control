@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "scope": "Bundled firmware-13 sources; coverage of indexed evidence, not all FM3 features or all hardware-valid values.",
   "inventory": {
-    "filePaths": 2375,
-    "uniqueContents": 2171,
+    "filePaths": 2376,
+    "uniqueContents": 2172,
     "archivePaths": 990,
     "archiveContents": 164
   },
@@ -19,14 +19,14 @@
   },
   "effectiveStatusClaims": {
     "blocked-hidden-editor": 1,
-    "enum-labels": 123,
-    "enum-labels-crosschecked": 362,
+    "enum-labels": 121,
+    "enum-labels-crosschecked": 364,
     "linear-by-structure": 2,
-    "measured": 33,
+    "measured": 35,
     "n/a": 760,
     "preset-word-crosschecked": 34,
     "taper-class-verified": 1558,
-    "unverified-taper": 19
+    "unverified-taper": 17
   },
   "recentEvidence": {
     "labelParameters": 363,
@@ -146,8 +146,8 @@
       "catalogKeys": 105,
       "dictionaryKeys": 106,
       "pairedPointKeys": 0,
-      "tableDefaultOnBundledBase": 58,
-      "tableOptInOnBundledBase": 3
+      "tableDefaultOnBundledBase": 62,
+      "tableOptInOnBundledBase": 1
     },
     {
       "family": "CHORUS",

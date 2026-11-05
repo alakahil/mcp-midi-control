@@ -1,4 +1,5 @@
 import {insertState,insertApplicability,insertPolicySummary} from './fm3-insert-applicability.mjs';
+import {validateCabIrWrites,cabIrState,cabIrApplicability} from './fm3-cab-ir.mjs';
 // Bounded XML-derived authoring policy. Scalar curve support is a separate axis.
 import fs from 'node:fs';
 import {volumeState,volumeApplicability,volumePolicySummary} from './fm3-volume-policy.mjs';
@@ -24,8 +25,9 @@ export function typePolicySummary(){
     rule:'Explicit writes checked against final per-channel type; stored hidden words preserved',
     limits:'Bounded XML-derived authoring policies, not executed native UI or DSP validation. Chorus/Drive coverage is in families; Delay/Reverb in algorithmApplicability; Flanger/Phaser/Compressor/Wah/Tremolo in modulationDynamics. Rotary/Pitch includes type-free Rotary, 16 Pitch models and a separately pinned 34-field preset-word overlay; seven local custom-note fields require final-scale validation; fixed Pitch slots remain blocked. Tempo/modifier scope is reported separately; Thirteen point-6 family XML policies (515 PIDs) are in insertFamilies; MultiDelay remains read-only metadata. Four Mixer delay names use native bindings; dynamic feedback controls remain unresolved; other-family visibility remains unverified.'};
 }
-export function readTypeState(p,read){return insertState(p,read)??volumeState(p,read)??inputGateState(p,read)??rotaryPitchState(p,read)??algorithmState(p,read)??modulationState(p,read)??read(policy.families[p.family]?.typePid??0);}
+export function readTypeState(p,read){return cabIrState(p,read)??insertState(p,read)??volumeState(p,read)??inputGateState(p,read)??rotaryPitchState(p,read)??algorithmState(p,read)??modulationState(p,read)??read(policy.families[p.family]?.typePid??0);}
 export function typeApplicability(p,type){
+  const cabIr=cabIrApplicability(p,type);if(cabIr.covered)return cabIr;
   const inserted=insertApplicability(p,type);if(inserted.covered)return inserted;
   const vol=volumeApplicability(p,type);if(vol.covered)return vol;
   const input=inputGateApplicability(p,type);if(input.covered)return input;
@@ -67,4 +69,5 @@ export function validateTypeWrites(body,writes){
   }
   validatePitchCustomWrites(body,writes);
   validateTentapWrites(body,writes);
+  validateCabIrWrites(body,writes);
 }

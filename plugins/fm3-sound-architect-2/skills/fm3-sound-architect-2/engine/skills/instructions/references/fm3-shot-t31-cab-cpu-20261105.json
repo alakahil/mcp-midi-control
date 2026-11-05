@@ -1,0 +1,801 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "editor": "FM3-Edit 1.07.17",
+ "date": "2026-11-05",
+ "test": "T31",
+ "method": "REA: FM3-Edit 1.07.17 __block_layout.xml (pinned). Cab: FM3_SHOT_LOAD.py --load + FM3_SHOT_READ.py (Remote Control) sent CB1 to the edit buffer (7F 00) and read the Cab record with fn=0x1F; Claude read the Cab page from a background FM3-Edit capture and quit FM3-Edit without saving. CPU: FM3_CPU_SWEEP.py (Jan in Terminal; he confirmed the first preset name on the FM3 screen) loaded 54 edit-buffer presets and read the CPU meter. Nothing stored or set.",
+ "notMeasured": [
+  "audio",
+  "STORE/reload",
+  "IR names (they come from the device)",
+  "CPU of non-default parameters inside a type",
+  "Synth voices 2 and 3 (CPU measured with voice 1 only changed)"
+ ],
+ "rea": {
+  "layoutSha256": "0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2",
+  "controls": {
+   "CABINET_TYPE1": {
+    "type": "readoutCabNumber",
+    "name": "Type",
+    "page": "Cab (Legacy)",
+    "beside": [
+     "CABINET_BANK1 dropdownCabBank",
+     "CABINET_NAME1 labelCabName"
+    ]
+   },
+   "CABINET_TYPE2": {
+    "type": "readoutCabNumber",
+    "name": "Type",
+    "page": "Cab (Legacy)",
+    "beside": [
+     "CABINET_BANK2 dropdownCabBank",
+     "CABINET_NAME2 labelCabName"
+    ]
+   }
+  },
+  "noControl": [
+   "DISTORT_XFLEAKAGE",
+   "DISTORT_RESOLUTION",
+   "DISTORT_DYNDEPTH",
+   "DISTORT_DYNPRES",
+   "TENTAP_REFTEMPO"
+  ],
+  "meaning": "Only the Cab IR numbers can be read on a screen. The five words without an editor control stay unverified-taper (T23: DYNDEPTH/DYNPRES have no front-panel control either)."
+ },
+ "cab": {
+  "packSha256": "2c7e969dce3a5a5765186fd66b2a81ebc6141f3238f64ab8c8eff42226642fb4",
+  "preset": "CB1",
+  "presetSha256": "8ca3e5a48b7359da1b15539139fc79d06d4939a800b9889b3154be0831a39c82",
+  "load": {
+   "path": "docs/fm3/hardware-results/2026-11-05/fm3-t31-shot-load-CB1.json",
+   "sha256": "415382587af040b12217e652ca936b6ea1fdee94e9b07c0b9623f56f36a1d77c",
+   "time": "2026-11-05T18:33:10",
+   "values": 424,
+   "allMatch": true
+  },
+  "read": {
+   "path": "docs/fm3/hardware-results/2026-11-05/fm3-t31-shot-read-CB1-after-load.json",
+   "sha256": "54ead53729cd8fe7fa0fe3a7b1c5956efff5c4407abd6624a59b961576087514",
+   "time": "2026-11-05T18:33:16"
+  },
+  "editor": {
+   "CABINET_MODE": "Legacy",
+   "CABINET_BANK1": "Factory 1",
+   "CABINET_TYPE1": "18",
+   "CABINET_NAME1": "1x8 Dan-O 414 A",
+   "CABINET_LENGTH1": "Standard",
+   "CABINET_BANK2": "Factory 2",
+   "CABINET_TYPE2": "201",
+   "CABINET_NAME2": "4x10 Bassguy 160 B",
+   "CABINET_LENGTH2": "Standard",
+   "CABINET_MUTE2": "muted"
+  },
+  "readings": [
+   {
+    "param": "CABINET_BANK1",
+    "pid": 0,
+    "raw": 0,
+    "before": 3,
+    "shown": "Factory 1"
+   },
+   {
+    "param": "CABINET_TYPE1",
+    "pid": 4,
+    "raw": 17,
+    "before": 127,
+    "shown": "18"
+   },
+   {
+    "param": "CABINET_BANK2",
+    "pid": 1,
+    "raw": 1,
+    "before": 0,
+    "shown": "Factory 2"
+   },
+   {
+    "param": "CABINET_TYPE2",
+    "pid": 5,
+    "raw": 200,
+    "before": 0,
+    "shown": "201"
+   }
+  ],
+  "rule": "Cab 1/2 Type is the IR number in its bank: FM3-Edit shows # = stored word + 1 (stored 0..1023 = # 1..1024)."
+ },
+ "cpu": {
+  "packSha256": "ca70651a8cc9c98a917a2b5082a7ae18e480dc37ab927e11bf9fd21464d83c89",
+  "results": {
+   "path": "docs/fm3/hardware-results/2026-11-05/fm3-t31-cpu-results.jsonl",
+   "sha256": "f795ae046e46c8ffd6443ef07cccc7e9dbc0888e89d387816735a62e3cb7543f"
+  },
+  "calibration": {
+   "id": "cal-newlook",
+   "cpuPercent": 52.5,
+   "endCpuPercent": 52.5,
+   "handReading": 52.8
+  },
+  "items": [
+   {
+    "id": "plex:0",
+    "family": "plex",
+    "type": "Plex Delay",
+    "typeWord": 0,
+    "source": "device-default insert record",
+    "presetSha256": "ea618be30448c6a976dae0e4cc25a1a6b47194445d0dd8f8e954e35de3cff865",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "plex:1",
+    "family": "plex",
+    "type": "Plex Detune",
+    "typeWord": 1,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "9f2fe6124b969b0b76884d50818fc00ff96002b91c91431dc71aea3ba93c0140",
+    "cpuPercent": 67,
+    "costPoints": 14.5
+   },
+   {
+    "id": "plex:2",
+    "family": "plex",
+    "type": "Plex Shift",
+    "typeWord": 2,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "971c4ef4abb98ad0c2f7307183e2ab84c511891dc44c1e2a74a3b049644768b3",
+    "cpuPercent": 67,
+    "costPoints": 14.5
+   },
+   {
+    "id": "plex:3",
+    "family": "plex",
+    "type": "Plex Verb",
+    "typeWord": 3,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "32290de1863d0a922723c119eb7d04fb6635785f9ded93648554ca3db82daaa0",
+    "cpuPercent": 65,
+    "costPoints": 12.5
+   },
+   {
+    "id": "plex:4",
+    "family": "plex",
+    "type": "Shimmer Verb",
+    "typeWord": 4,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "0b82748d0c03df7bde60e7d98357ec1015dec1c435eefbfa0bda474b724d5c9f",
+    "cpuPercent": 80,
+    "costPoints": 27.5
+   },
+   {
+    "id": "megatap:0",
+    "family": "megatap",
+    "type": "Reverb Pre-Swell",
+    "typeWord": 0,
+    "source": "device-default insert record",
+    "presetSha256": "744d621298877a138a83761312fc1d8f8eff45df8a2dc1b0a065ae8e2627b3ab",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:1",
+    "family": "megatap",
+    "type": "Ping-Pong Echo Verb",
+    "typeWord": 1,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "3321a894cd96df90dee9116fe5337b4e74de3e17d51edfc574211aa0a183db85",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:2",
+    "family": "megatap",
+    "type": "Diffusion Swirl",
+    "typeWord": 2,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "80e73cb1dfa6e603522974f543f133815e4a91a13a34e6fcf77acb3c42e782af",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:3",
+    "family": "megatap",
+    "type": "Decepticons",
+    "typeWord": 3,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "d89e620376aee41b2b541d267b5856b60ef80428b4c414ddd0f66dcf0c933c34",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:4",
+    "family": "megatap",
+    "type": "Reverse Reverb Echo",
+    "typeWord": 4,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "779a96fc8725e9b639ada63c19a3eaa455bf0b52d24f4708183edf32b2328db9",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:5",
+    "family": "megatap",
+    "type": "Lazer Zaps",
+    "typeWord": 5,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "79c98a45e7016466ae7523935b9da0ada678680cc8aec39b3d6e420e9b2e8ba5",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:6",
+    "family": "megatap",
+    "type": "Creaky",
+    "typeWord": 6,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "73c351cf6a45fa669964403edc8ac2ceecddb7df278538b5863dfbf081976e43",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:7",
+    "family": "megatap",
+    "type": "Tap Verb Plush",
+    "typeWord": 7,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "fcc7262bca8bbde74fa53c4045e83229987b8421311e44636d2998f0c5b433ee",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:8",
+    "family": "megatap",
+    "type": "Tap Verb Grit",
+    "typeWord": 8,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "b9cc723e6248e0e287ad3d69a9fef2c502aa730603efc578e82a8e5b7831f5cd",
+    "cpuPercent": 62.5,
+    "costPoints": 10
+   },
+   {
+    "id": "megatap:9",
+    "family": "megatap",
+    "type": "Bounce",
+    "typeWord": 9,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "275ed6bce96d08d548ba438583f6e7c87a46ceb9ff854d9e273410363780a171",
+    "cpuPercent": 62.5,
+    "costPoints": 10
+   },
+   {
+    "id": "megatap:10",
+    "family": "megatap",
+    "type": "Bounce Reverse",
+    "typeWord": 10,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "7cef4ba98d43ee527835fb13f479a74162561bb794d5fbfa5e5f8ed69fa6d73f",
+    "cpuPercent": 62.5,
+    "costPoints": 10
+   },
+   {
+    "id": "megatap:11",
+    "family": "megatap",
+    "type": "Motion Echoes",
+    "typeWord": 11,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "3853480230ee81fd88f29f101f7b26ac9aa285a9133e2becef1abdb74b6e800d",
+    "cpuPercent": 62.5,
+    "costPoints": 10
+   },
+   {
+    "id": "megatap:12",
+    "family": "megatap",
+    "type": "Staccato Spread",
+    "typeWord": 12,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "ef10bcc0ea6571400a670f6fd2b092784e48fd00a91db8bd02ffcec55ac6831e",
+    "cpuPercent": 62.5,
+    "costPoints": 10
+   },
+   {
+    "id": "megatap:13",
+    "family": "megatap",
+    "type": "Tank Taps",
+    "typeWord": 13,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "df881b877035a9d0d62d4a4977367b1bd94ae41f78bc9f7c70db8fb535566a5d",
+    "cpuPercent": 62.5,
+    "costPoints": 10
+   },
+   {
+    "id": "megatap:14",
+    "family": "megatap",
+    "type": "Serpentine Swells",
+    "typeWord": 14,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "ba6d9d6461785465360bb119ced8cabc0a3d52b7fffd07903a340e220005c66f",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:15",
+    "family": "megatap",
+    "type": "Late Bloomer",
+    "typeWord": 15,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "0087cc3885a203e3db2817530dd1843467d022813ec5d9663a379c5b8dbd9b59",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:16",
+    "family": "megatap",
+    "type": "Brute Force Reverb",
+    "typeWord": 16,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "59e78eb55bcea3fd2e8f9153011904067915792a6177f1389b5cc33f389c953b",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:17",
+    "family": "megatap",
+    "type": "Megaverb",
+    "typeWord": 17,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "b13b83063788e99482cddb357d81ada893c09272394d32172d7f4ba6ef7469db",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:18",
+    "family": "megatap",
+    "type": "Gated Reverb",
+    "typeWord": 18,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "1a0ec7a495c71d6899b431f24a403ffb6809f004e876532165c1f3ef2dc891f0",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:19",
+    "family": "megatap",
+    "type": "Take Five",
+    "typeWord": 19,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "7ad5463234e45497758cdb6b00a6812b7c7ed06cda35bc78e16a4e717f0efbaf",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:20",
+    "family": "megatap",
+    "type": "Diffused Ping-Pong Echo",
+    "typeWord": 20,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "5ff89a453ecb19a62a77cc7b1437879bd86b493655daf710ade1e9b1c806fa06",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "megatap:21",
+    "family": "megatap",
+    "type": "Echo Room",
+    "typeWord": 21,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "2bf870939d4cce718c41028e9753254747fd02343c602f156a5967dc3cb320d5",
+    "cpuPercent": 62,
+    "costPoints": 9.5
+   },
+   {
+    "id": "tentap:0",
+    "family": "tentap",
+    "type": "Ten-Tap Delay",
+    "typeWord": 0,
+    "source": "device-default insert record",
+    "presetSha256": "7d544741390378f2f0632d9c97a5e163a00d7c46efb5f7de032cc1f462718e15",
+    "cpuPercent": 57,
+    "costPoints": 4.5
+   },
+   {
+    "id": "tentap:1",
+    "family": "tentap",
+    "type": "Rhythm Tap Delay",
+    "typeWord": 1,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "bd697aaef34a62df5b3d99a529ea2ef265714ac98afc94c3f38e34ee4c9d3ece",
+    "cpuPercent": 57,
+    "costPoints": 4.5
+   },
+   {
+    "id": "resonator:0",
+    "family": "resonator",
+    "type": "MANUAL",
+    "typeWord": 0,
+    "source": "device-default insert record",
+    "presetSha256": "560beb7e3ddb90fa8d20765eeb0bac65829fe51909e6836dce847aa2ce988fa2",
+    "cpuPercent": 60,
+    "costPoints": 7.5
+   },
+   {
+    "id": "resonator:1",
+    "family": "resonator",
+    "type": "CHORDAL",
+    "typeWord": 1,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "41507fd08fa132709a09ac80601a7914d945c05b35d295bc85d41f550d643344",
+    "cpuPercent": 60,
+    "costPoints": 7.5
+   },
+   {
+    "id": "ringmod:0",
+    "family": "ringmod",
+    "type": "CLASSIC",
+    "typeWord": 0,
+    "source": "device-default insert record",
+    "presetSha256": "cd2e97eed71426cb620f2be16787fc785347b6a2c2e84775ec309a89705f0c4c",
+    "cpuPercent": 55,
+    "costPoints": 2.5
+   },
+   {
+    "id": "ringmod:1",
+    "family": "ringmod",
+    "type": "SSB UPPER",
+    "typeWord": 1,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "f63663b71341670770b5568f47c9393deab67f6ac76873be57ed337bb0e11b93",
+    "cpuPercent": 56.5,
+    "costPoints": 4
+   },
+   {
+    "id": "ringmod:2",
+    "family": "ringmod",
+    "type": "SSB LOWER",
+    "typeWord": 2,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "2abb63786b07219d5174e5f4748d2afda2ca80116df3242e15de74e4712603ed",
+    "cpuPercent": 56.5,
+    "costPoints": 4
+   },
+   {
+    "id": "gate:0",
+    "family": "gate",
+    "type": "Classic Expander",
+    "typeWord": 0,
+    "source": "device-default insert record",
+    "presetSha256": "5e10562645fbc5473f47840cb7fc39a6bd5f234e0882c159d9f1988e1c0bf704",
+    "cpuPercent": 56.5,
+    "costPoints": 4
+   },
+   {
+    "id": "gate:1",
+    "family": "gate",
+    "type": "Classic Gate",
+    "typeWord": 1,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "a74d9ad5c53cbad013c0750ad64ec96ed1373180ca0d36c62325c780b71d2657",
+    "cpuPercent": 54,
+    "costPoints": 1.5
+   },
+   {
+    "id": "gate:2",
+    "family": "gate",
+    "type": "Modern Gate",
+    "typeWord": 2,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "a9eaf8f89d8bac781a9e9355979e7e7315457e4cde7019c514f339c8e1532b07",
+    "cpuPercent": 54,
+    "costPoints": 1.5
+   },
+   {
+    "id": "gate:3",
+    "family": "gate",
+    "type": "Modern Expander",
+    "typeWord": 3,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "37bea2d4a708462ed08e05d748d8bf0150d1b6564af1875075e9a6231a998e5a",
+    "cpuPercent": 58,
+    "costPoints": 5.5
+   },
+   {
+    "id": "synth:0",
+    "family": "synth",
+    "type": "SINE",
+    "typeWord": 0,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "4ff561970a925ec6037a04f98cef17978833fb045875b17fc8ab930fe36d1a16",
+    "cpuPercent": 56.5,
+    "costPoints": 4
+   },
+   {
+    "id": "synth:1",
+    "family": "synth",
+    "type": "TRIANGLE",
+    "typeWord": 1,
+    "source": "device-default insert record",
+    "presetSha256": "56e667a5e324a8954b548a164315217cdf95bbff0d9d71d50373ae7b94d7669a",
+    "cpuPercent": 60,
+    "costPoints": 7.5
+   },
+   {
+    "id": "synth:2",
+    "family": "synth",
+    "type": "SQUARE",
+    "typeWord": 2,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "51d8ae10225ec498f1d7b979834a078337625848ab861c3b8dfedd28a6777348",
+    "cpuPercent": 59.5,
+    "costPoints": 7
+   },
+   {
+    "id": "synth:3",
+    "family": "synth",
+    "type": "SAWTOOTH",
+    "typeWord": 3,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "2b53b1830ab501c92aa18efcd103582c8a0743289ef28c945124ad842b14fbbd",
+    "cpuPercent": 59.5,
+    "costPoints": 7
+   },
+   {
+    "id": "synth:4",
+    "family": "synth",
+    "type": "RANDOM",
+    "typeWord": 4,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "2b9091c1e3d7c9523e4647d6a789aa6b7247429c5b0f1fe6e9c2bba1179fc59d",
+    "cpuPercent": 60,
+    "costPoints": 7.5
+   },
+   {
+    "id": "synth:5",
+    "family": "synth",
+    "type": "WHT NOISE",
+    "typeWord": 5,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "f4735057351fe4c1bf65b027bd454a05130767b82b9ad24c66bb99983c2fd4cb",
+    "cpuPercent": 64,
+    "costPoints": 11.5
+   },
+   {
+    "id": "synth:6",
+    "family": "synth",
+    "type": "PINK NOISE",
+    "typeWord": 6,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "295c7d8ca2fd00ba1a344ff2d64f7948ae80ab6edcfb53d0766ad174985600d3",
+    "cpuPercent": 66,
+    "costPoints": 13.5
+   },
+   {
+    "id": "synth:7",
+    "family": "synth",
+    "type": "OFF",
+    "typeWord": 7,
+    "source": "raw type word on channel A (other words default)",
+    "presetSha256": "cf4d31582b67336ed6ce34d969df5671b984b301986cb0670ffdcbeec8bba2bd",
+    "cpuPercent": 55,
+    "costPoints": 2.5
+   },
+   {
+    "id": "multiband:default",
+    "family": "multiband",
+    "type": null,
+    "typeWord": null,
+    "source": "device-default insert record (cross-check)",
+    "presetSha256": "54f737f7fef631fc16d72ce1da62bca4c70c51e82374abc9629b02cf040080f3",
+    "cpuPercent": 63.5,
+    "costPoints": 11
+   },
+   {
+    "id": "looper:default",
+    "family": "looper",
+    "type": null,
+    "typeWord": null,
+    "source": "device-default insert record (cross-check)",
+    "presetSha256": "d7ca17dd952058249881e10baecf48770d9fff5db59143f566812ca9f0f014f6",
+    "cpuPercent": 56,
+    "costPoints": 3.5
+   },
+   {
+    "id": "formant:default",
+    "family": "formant",
+    "type": null,
+    "typeWord": null,
+    "source": "device-default insert record (cross-check)",
+    "presetSha256": "6095a1e3f97218893aa6aee6eba7823a6d890ea55c5958862f74af58fd579a39",
+    "cpuPercent": 54.5,
+    "costPoints": 2
+   },
+   {
+    "id": "volpan:0",
+    "family": "volpan",
+    "type": "VOLUME",
+    "typeWord": 0,
+    "source": "composer Volume/Pan record",
+    "presetSha256": "60c13dac07aee59caf5d90a6847014337909f44fd315fba797243598a4935149",
+    "cpuPercent": 53.5,
+    "costPoints": 1
+   },
+   {
+    "id": "volpan:1",
+    "family": "volpan",
+    "type": "AUTO-SWELL",
+    "typeWord": 1,
+    "source": "raw type word on channel A",
+    "presetSha256": "22de54d6d013e0a49d55822a3414e515234d991f6d826157b17c81eee6a021a9",
+    "cpuPercent": 55,
+    "costPoints": 2.5
+   },
+   {
+    "id": "cab:legacy",
+    "family": "cab",
+    "type": "LEGACY",
+    "typeWord": 0,
+    "source": "cal-newlook with Scene 1 on Cab channel A (composer Legacy channel: bank LEGACY, IR 127); cal-newlook uses DynaCab channel D",
+    "presetSha256": "e35df2c443ac1029c4d233bd49483a7fde92734f9b0b30c2e54ba2b904e5f496",
+    "cpuPercent": 52.5,
+    "costPoints": 0
+   }
+  ],
+  "costPoints": {
+   "plex": {
+    "Plex Delay": 9.5,
+    "Plex Detune": 14.5,
+    "Plex Shift": 14.5,
+    "Plex Verb": 12.5,
+    "Shimmer Verb": 27.5
+   },
+   "megatap": {
+    "Reverb Pre-Swell": 9.5,
+    "Ping-Pong Echo Verb": 9.5,
+    "Diffusion Swirl": 9.5,
+    "Decepticons": 9.5,
+    "Reverse Reverb Echo": 9.5,
+    "Lazer Zaps": 9.5,
+    "Creaky": 9.5,
+    "Tap Verb Plush": 9.5,
+    "Tap Verb Grit": 10,
+    "Bounce": 10,
+    "Bounce Reverse": 10,
+    "Motion Echoes": 10,
+    "Staccato Spread": 10,
+    "Tank Taps": 10,
+    "Serpentine Swells": 9.5,
+    "Late Bloomer": 9.5,
+    "Brute Force Reverb": 9.5,
+    "Megaverb": 9.5,
+    "Gated Reverb": 9.5,
+    "Take Five": 9.5,
+    "Diffused Ping-Pong Echo": 9.5,
+    "Echo Room": 9.5
+   },
+   "tentap": {
+    "Ten-Tap Delay": 4.5,
+    "Rhythm Tap Delay": 4.5
+   },
+   "resonator": {
+    "MANUAL": 7.5,
+    "CHORDAL": 7.5
+   },
+   "ringmod": {
+    "CLASSIC": 2.5,
+    "SSB UPPER": 4,
+    "SSB LOWER": 4
+   },
+   "gate": {
+    "Classic Expander": 4,
+    "Classic Gate": 1.5,
+    "Modern Gate": 1.5,
+    "Modern Expander": 5.5
+   },
+   "synth": {
+    "SINE": 4,
+    "TRIANGLE": 7.5,
+    "SQUARE": 7,
+    "SAWTOOTH": 7,
+    "RANDOM": 7.5,
+    "WHT NOISE": 11.5,
+    "PINK NOISE": 13.5,
+    "OFF": 2.5
+   },
+   "multiband": {
+    "default": 11
+   },
+   "looper": {
+    "default": 3.5
+   },
+   "formant": {
+    "default": 2
+   },
+   "volpan": {
+    "VOLUME": 1,
+    "AUTO-SWELL": 2.5
+   },
+   "cab": {
+    "LEGACY": 2.9,
+    "DYNA-CAB": 2.9
+   }
+  },
+  "crossCheck": [
+   {
+    "family": "plex",
+    "type": "Plex Delay",
+    "hand": 10.5,
+    "t31": 9.5,
+    "delta": -1
+   },
+   {
+    "family": "megatap",
+    "type": "Reverb Pre-Swell",
+    "hand": 9.1,
+    "t31": 9.5,
+    "delta": 0.4
+   },
+   {
+    "family": "tentap",
+    "type": "Ten-Tap Delay",
+    "hand": 4.2,
+    "t31": 4.5,
+    "delta": 0.3
+   },
+   {
+    "family": "resonator",
+    "type": "MANUAL",
+    "hand": 7.6,
+    "t31": 7.5,
+    "delta": -0.1
+   },
+   {
+    "family": "ringmod",
+    "type": "CLASSIC",
+    "hand": 2.6,
+    "t31": 2.5,
+    "delta": -0.1
+   },
+   {
+    "family": "gate",
+    "type": "Classic Expander",
+    "hand": 3.7,
+    "t31": 4,
+    "delta": 0.3
+   },
+   {
+    "family": "volpan",
+    "type": "VOLUME",
+    "hand": 1.2,
+    "t31": 1,
+    "delta": -0.2
+   },
+   {
+    "family": "multiband",
+    "type": "default",
+    "hand": 11,
+    "t31": 11,
+    "delta": 0
+   },
+   {
+    "family": "looper",
+    "type": "default",
+    "hand": 3.3,
+    "t31": 3.5,
+    "delta": 0.2
+   },
+   {
+    "family": "formant",
+    "type": "default",
+    "hand": 1.9,
+    "t31": 2,
+    "delta": 0.1
+   }
+  ],
+  "meterStepPercent": 0.5,
+  "rule": "Block cost = CPU(item) - CPU(cal-newlook), every item being cal-newlook plus one block in row 3. Legacy Cab: Scene 1 on the composer Legacy channel changed the meter by 0, so Legacy costs the same as Dyna-Cab."
+ },
+ "summary": {
+  "cabWordsExact": 424,
+  "cabEditorReadings": 4,
+  "cpuItems": 52,
+  "meaning": "Cab 1/2 IR numbers are writable as the # FM3-Edit shows (Legacy channels only); fm3-cpu.mjs counts the measured cost of every type of Plex, Megatap, Ten-Tap, Resonator, Ring Mod, Gate, Synth voice 1, Volume/Pan and Legacy Cab."
+ }
+}

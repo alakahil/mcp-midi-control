@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2171,
-  "filePaths": 2375,
+  "uniqueContents": 2172,
+  "filePaths": 2376,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -7045,6 +7045,12 @@
         "references/geq-full-20261010-194115/step-180-f80eeab3da/donor.syx"
       ]
     },
+    "8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103": {
+      "bytes": 22450,
+      "paths": [
+        "references/fm3-shot-t31-cab-cpu-20261105.json"
+      ]
+    },
     "8b5ca3d054244210e7a360d90463c40fa7b91d7c361b738c59a5625129ac649b": {
       "bytes": 2281,
       "paths": [
@@ -9843,6 +9849,12 @@
         "references/enhancer-full-20261012-122507/step-058-ba380dccee/result.json"
       ]
     },
+    "c22df7182ce10c5683cba12dbad89773e8b2ae911daed70e3930042716284c42": {
+      "bytes": 29475,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "c23449524d974d0f05ba888e05d14967cda2cbf38d5947ce4a6460ef756af5a7": {
       "bytes": 24680,
       "paths": [
@@ -12368,12 +12380,6 @@
       "bytes": 3483,
       "paths": [
         "references/enhancer-full-20261012-122507/step-046-f4a75f2f11/capture.json"
-      ]
-    },
-    "f18bc380f76fc3e7e7a0a9a52ff81503034ad18c755a7e0d7174b14dce9ede0c": {
-      "bytes": 28896,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "f18cf232dc83519130220faa3bcac14651a85e535bc91233b303feae2142cbb1": {

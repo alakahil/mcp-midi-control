@@ -1,4 +1,4 @@
-// Option-selector promotion (0.3.45, T30 additions 0.3.52): receipt binding, T24 readings, default writability and what stays opt-in. Offline.
+// Option-selector promotion (0.3.45, T30 additions 0.3.52, T31 Cab banks 0.3.53): receipt binding, T24 readings, default writability and what stays opt-in. Offline.
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {loadDictionary,encodeValue,decodeValue,findParam,DEFAULT_STATUSES} from './fm3-table-encoder.mjs';
@@ -7,7 +7,8 @@ const R=f=>JSON.parse(fs.readFileSync(new URL('../references/'+f,import.meta.url
 const d=loadDictionary(),rec=R('fm3-enum-promotion-20261103.json'),t24=R('fm3-shot-t24-enum-20261103.json');
 assert.ok(DEFAULT_STATUSES.includes(ENUM_PROMOTION_STATUS));
 const promoted=d.params.filter(p=>p.enumEvidence),t30=R('fm3-shot-t30-enum-20261105.json');
-assert.equal(promoted.length,225);assert.equal(promoted.filter(p=>!['hardware-t30','hardware-t28'].includes(p.enumEvidence)).length,197);assert.equal(rec.summary.promoted,197);assert.equal(rec.summary.candidates,348);
+assert.equal(promoted.length,227);assert.equal(promoted.filter(p=>!['hardware-t30','hardware-t28','hardware-t31'].includes(p.enumEvidence)).length,197);
+assert.deepEqual(promoted.filter(p=>p.enumEvidence==='hardware-t31').map(p=>p.name).sort(),['CABINET_BANK1','CABINET_BANK2']);assert.equal(rec.summary.promoted,197);assert.equal(rec.summary.candidates,348);
 assert.deepEqual(enumPromotionSummary().byEvidence,{'shared-labels':108,'hardware-t24':50,'family-t24':39,none:0});
 for(const p of promoted){assert.equal(p.status,ENUM_PROMOTION_STATUS);assert.equal(p.structuralStatus,'enum-labels');assert.equal(p.kind,'enum');}
 // Corpus: no promoted (or any candidate) selector has a stored word outside its list.
@@ -29,11 +30,11 @@ for(const r of t30.editorReadings){const p=d.params.find(x=>x.name===r.param);as
   assert.equal(encodeValue(p,r.shown),r.raw,r.param);assert.equal(decodeValue(p,r.raw).trim().toLowerCase(),r.shown.toLowerCase(),r.param);}
 for(const n of ['CONTROLLERS_LFO1TYPE','CONTROLLERS_LFO2TYPE','CONTROLLERS_ADSR1MODE'])assert.equal(d.params.find(x=>x.name===n).enumEvidence,'hardware-t28',n);
 assert.equal(enumPromotionSummary().t30.promoted,28);
-for(const [b,name] of [['pitch','PITCH_TYPE'],['gate','GATE_TYPE'],['cab','CABINET_MODE'],['tentap','TENTAP_TYPE'],['pitch','PITCH_LEARN'],['cab','CABINET_BANK1'],['plex','PLEX_PRESETS'],['volpan','VOLUME_TAPER'],['multidelay','MULTITAP_PRESETS'],['CONTROLLERS','CONTROLLERS_TEMPOTOUSE']]){
+for(const [b,name] of [['pitch','PITCH_TYPE'],['gate','GATE_TYPE'],['cab','CABINET_MODE'],['tentap','TENTAP_TYPE'],['pitch','PITCH_LEARN'],['plex','PLEX_PRESETS'],['volpan','VOLUME_TAPER'],['multidelay','MULTITAP_PRESETS'],['CONTROLLERS','CONTROLLERS_TEMPOTOUSE']]){
   const p=findParam(b,name);assert.equal(p.status,'enum-labels',name);assert.throws(()=>encodeValue(p,p.enum[0]),/not writable/,name);
   assert.equal(encodeValue(p,p.enum[0],{allow:['enum-labels']}),p.enumBase??0,name);
 }
-assert.equal(d.params.filter(p=>p.status==='enum-labels').length,123);
+assert.equal(d.params.filter(p=>p.status==='enum-labels').length,121);
 assert.ok(d.params.filter(p=>['GLOBAL','MOD'].includes(p.family)).every(p=>p.status!==ENUM_PROMOTION_STATUS));
 assert.deepEqual(d.params.filter(p=>p.family==='CONTROLLERS'&&p.status==='enum-labels').map(p=>p.name),['CONTROLLERS_TEMPOTOUSE']);
-console.log(JSON.stringify({promoted:promoted.length,t24Reproduced:n,t30Readings:t30.editorReadings.length,optIn:123}));
+console.log(JSON.stringify({promoted:promoted.length,t24Reproduced:n,t30Readings:t30.editorReadings.length,optIn:121}));

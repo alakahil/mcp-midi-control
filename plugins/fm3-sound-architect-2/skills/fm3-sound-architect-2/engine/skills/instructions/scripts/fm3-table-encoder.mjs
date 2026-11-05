@@ -13,6 +13,7 @@ import {composerBases,layouts,checkComposerStructure} from './fm3-composer-bases
 import {validateDependencyWrites,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 import {validateTypeWrites,typePolicySummary} from './fm3-type-applicability.mjs';
 import {effectiveInsertParameter} from './fm3-insert-applicability.mjs';
+import {effectiveCabIrParameter} from './fm3-cab-ir.mjs';
 import {effectiveDisplayClassParameter} from './fm3-display-classes.mjs';
 import {effectiveEnumParameter} from './fm3-enum-promotion.mjs';
 import {effectiveTentapParameter} from './fm3-tentap-times.mjs';
@@ -51,7 +52,7 @@ export function loadDictionary(){
   const bytes=fs.readFileSync(new URL('../references/fm3-param-dictionary.json',import.meta.url));
   check(sha(bytes)===dictionaryHash,'Parameter dictionary changed; run test-table-encoder.mjs and review evidence before use');
   const d=JSON.parse(bytes);check(d.params.length===2892,'Unexpected dictionary size');
-  d.params=d.params.map(effectivePitchParameter).map(effectiveIntegerParameter).map(effectiveDisplayClassParameter).map(effectiveEnumParameter).map(effectiveTentapParameter).map(effectiveInsertParameter);
+  d.params=d.params.map(effectivePitchParameter).map(effectiveIntegerParameter).map(effectiveDisplayClassParameter).map(effectiveEnumParameter).map(effectiveTentapParameter).map(effectiveInsertParameter).map(effectiveCabIrParameter);
   const byKey=new Map(),byName=new Map();
   for(const p of d.params){byKey.set(p.block+':'+p.param,p);if(p.name)byName.set(p.family+':'+p.name,p)}
   return cache={...d,byKey,byName};
@@ -108,9 +109,10 @@ export function encodeValue(p,value,opts={}){
       if(codec.kind==='repeat-label'&&label==='INFINITE')value=codec.infiniteCode;
       else if(codec.kind==='global-scale-label'&&/^SCALE ([1-9]|[12][0-9]|3[0-2])$/.test(label))value=Number(label.slice(6))-codec.displayOffset;
     }
-    const k=p.integerScale??1;
+    const k=p.integerScale??1,off=p.displayOffset??0;
+    if(off&&typeof value==='number')value-=off;
     if(k!==1){check(typeof value==='number'&&Number.isInteger(value/k),`${p.name}: value must be a multiple of ${k}`);value/=k;}
-    check(typeof value==='number'&&Number.isInteger(value)&&value>=p.min&&value<=p.max,`${p.name}: integer value required in ${p.min*k}…${p.max*k}`);
+    check(typeof value==='number'&&Number.isInteger(value)&&value>=p.min&&value<=p.max,`${p.name}: integer value required in ${p.min*k+off}…${p.max*k+off}`);
     return value<0?value+65536:value;
   }
   check(['linear','log','knob'].includes(p.kind)||opts.experimental===true,`${p.name}: kind ${p.kind} has no encoder`);
@@ -137,7 +139,7 @@ export function decodeValue(p,raw){
   if(['linear','log','knob'].includes(p.kind)&&raw>65534)return undefined;
   if(p.displayCodec?.kind==='global-scale-label')return 'SCALE '+(raw+p.displayCodec.displayOffset);
   if(p.displayCodec?.kind==='repeat-label'&&raw===p.displayCodec.infiniteCode)return p.displayCodec.infiniteLabel;
-  if(p.kind==='integer')return (p.signedWord&&raw>=32768?raw-65536:raw)*(p.integerScale??1);
+  if(p.kind==='integer')return (p.signedWord&&raw>=32768?raw-65536:raw)*(p.integerScale??1)+(p.displayOffset??0);
   if(p.kind==='enum')return p.enum[raw-(p.enumBase??0)];
   const n=raw/65534,m=p.displayMultiplier||1;
   if(p.kind==='knob')return n*m;
