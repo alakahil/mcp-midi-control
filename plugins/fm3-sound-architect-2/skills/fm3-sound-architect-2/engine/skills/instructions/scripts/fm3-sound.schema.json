@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.8.3 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.8.4 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -308,6 +308,7 @@
               "resonator",
               "mixer",
               "multiplexer",
+              "return",
               "compressor2",
               "geq2",
               "peq2",

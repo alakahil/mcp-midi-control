@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import fs from 'node:fs';
 import {validateVolumeWrites} from './fm3-volume-policy.mjs';
 import {validateInputGateWrites} from './fm3-input-gate.mjs';
+import {SEND_REFUSED,validateFeedbackControl} from './fm3-feedback.mjs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {authorGen3PresetFromIR,reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
@@ -29,7 +30,7 @@ export const OPT_IN_STATUSES=Object.freeze(['linear-by-structure','enum-labels']
 export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT',volpan:'VOLUME',in1:'INPUT'
 ,
   plex:'PLEX',multiband:'MULTICOMP',synth:'SYNTH',looper:'LOOPER',gate:'GATE',formant:'FORMANT',tentap:'TENTAP',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',multidelay:'MULTITAP',
-  mixer:'MIXER',multiplexer:'MULTIPLEXER'});
+  mixer:'MIXER',multiplexer:'MULTIPLEXER',return:'FDBKRET'});
 
 // Class 0x01 non-enum words are stored integers, not normalised 0…65534 values (Claude, 2026-10-23):
 // all 57 class-0x01 parameters that occur in 574 distinct bodies (bundled exports + nine device FW13
@@ -84,10 +85,12 @@ export function validateOptions(opts){
 }
 export function validateControl(c,experimental=false){
   assertFields(c,experimental?['block','channel','param','value','raw']:['block','channel','param','value'],'control');
+  check(c.block!=='send',SEND_REFUSED);
   check(Object.hasOwn(FAMILY_BY_SLUG,baseSlug(c.block)),'Unknown control block');
   channelIndex(c.channel);
   check((typeof c.param==='string'&&c.param.length>0)||(Number.isInteger(c.param)&&c.param>=0),'Invalid parameter');
   check(Object.hasOwn(c,'raw')!==Object.hasOwn(c,'value'),'Exactly one control value is required');
+  if(c.block==='return')validateFeedbackControl(findParam('return',c.param));
 }
 // display value (as FM3-Edit shows it) -> 16-bit wire word
 export function encodeValue(p,value,opts={}){

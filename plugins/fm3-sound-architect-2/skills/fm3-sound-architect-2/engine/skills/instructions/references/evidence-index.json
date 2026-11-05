@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2169,
-  "filePaths": 2373,
+  "uniqueContents": 2170,
+  "filePaths": 2374,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -5382,6 +5382,12 @@
         "references/peq-full-20261009-152606/step-028-6a4a23a86d/capture.json"
       ]
     },
+    "6cca907f1e26a8500f535a3eae1f092c696e77ebfd474b4eaa19eb1f95eb99c7": {
+      "bytes": 28827,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "6cd29a5890625b140331726aacddc883cba7bc0f564c8c4e35c24b5d8195a1e6": {
       "bytes": 2961,
       "paths": [
@@ -6464,6 +6470,12 @@
         "examples/JB_EIGHT_SCENES_V3.spec.json"
       ]
     },
+    "7fc2a9981f737b51e2f385d9e40f2ad40f2f35c97d6f854747d063ab8fc389a9": {
+      "bytes": 4110,
+      "paths": [
+        "references/fm3-shot-t29-feedback-20261105.json"
+      ]
+    },
     "7fc3fa9a8175281fddd03fe092ce9a401302db8459291a0ce2631c68f5366ba6": {
       "bytes": 2215,
       "paths": [
@@ -6657,12 +6669,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-006-0218575eef/donor.syx"
-      ]
-    },
-    "83588bb305bbaee8f67a6c6cb01dfce4ea92cc5166b36722d47e588cbf045383": {
-      "bytes": 28311,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "8364884ef170bd0979e3a13019d15284dedc2a5461fcbbed46fd0593f015834b": {

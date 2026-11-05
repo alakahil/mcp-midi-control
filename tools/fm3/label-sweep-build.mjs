@@ -32,7 +32,7 @@ assert.ok(r.report.cpu.maxPercent<72,'CPU estimate');
 const body=Buffer.from(inspectStructure(r.syx).raw.body),{records}=scanRecords(body),d=loadDictionary();
 const EXTRA=0;  // no out-of-range indexes: the 2026-10-24 run lost the FM3 during the first block with extra=2
 // The 2026-10-24 sweep covered the families insertable then; Multi Delay (0.3.47) was added later and is not in it.
-const families=Object.entries(FAMILY_BY_SLUG).filter(([slug])=>slug!=='multidelay').map(([slug,family])=>{
+const families=Object.entries(FAMILY_BY_SLUG).filter(([slug])=>slug!=='multidelay'&&slug!=='return').map(([slug,family])=>{
   const params=d.params.filter(p=>p.family===family&&Array.isArray(p.enum)&&p.enum.length).sort((a,b)=>a.param-b.param);
   assert.ok(params.length,family);const eid=params[0].block;assert.ok(params.every(p=>p.block===eid),family+' effect id');
   const rec=records.find(x=>x.eid===eid);
