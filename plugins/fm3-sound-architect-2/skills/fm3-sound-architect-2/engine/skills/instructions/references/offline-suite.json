@@ -601,6 +601,15 @@
       "required": true
     },
     {
+      "id": "test-controllers",
+      "command": [
+        "node",
+        "scripts/test-controllers.mjs"
+      ],
+      "scope": "Controllers writes (0.3.50, T28): 29 hardware/editor readings replayed through spec.controllers at word = pid, copy = channel A-D; only Controllers bytes change; layout and grid mode; status gate and Tempo/Tempo To Use/X-Y mark refusals; saved-bundle verify (also with global scale observations) and 6 tamper cases; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-modifier-curve",
       "command": [
         "node",

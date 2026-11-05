@@ -1,0 +1,300 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "editor": "FM3-Edit 1.07.17",
+ "date": "2026-11-05",
+ "test": "T28",
+ "method": "FM3_SHOT_LOAD.py --load (Remote Control) sent CT1 to the edit buffer (7F 00) and read the Controllers record (effect id 2) back with fn=0x1F; FM3_SHOT_READ.py re-read it and saved all 520 words. Jan clicked the FM3-Edit Controllers pages and channel selector, Claude read them from background screenshots; FM3-Edit was then quit without saving. Nothing stored or set.",
+ "packSha256": "d482329196a9904a9804dab547a23404cba75dc308f7cf600ceb7e626297001e",
+ "record": {
+  "header": 452,
+  "data": 498,
+  "words": 130,
+  "channels": 4,
+  "effectId": 2
+ },
+ "load": {
+  "path": "docs/fm3/hardware-results/2026-11-05/fm3-t28-shot-load-CT1.json",
+  "sha256": "75a1a9295db0c7c175d9afd08c15d2fd5db7dd3f3b6e537b90060d615576fd91",
+  "time": "2026-11-05T12:31:23"
+ },
+ "read": {
+  "path": "docs/fm3/hardware-results/2026-11-05/fm3-t28-shot-read-CT1-after-load.json",
+  "sha256": "1cc9baabac2b8a5d33ba77a247e5c87db3fb71285fb5bc29df521a3c7b53bb8b",
+  "time": "2026-11-05T12:31:25"
+ },
+ "editorReadings": [
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_LFO1TYPE",
+   "pid": 0,
+   "page": "LFO 1 + 2",
+   "raw": 2,
+   "decoded": "SQUARE",
+   "shown": "Square"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_LFO1FREQ",
+   "pid": 1,
+   "page": "LFO 1 + 2",
+   "raw": 40077,
+   "decoded": 2.4999708,
+   "shown": "2.500 Hz"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_LFO1DEPTH",
+   "pid": 2,
+   "page": "LFO 1 + 2",
+   "raw": 49151,
+   "decoded": 75.000763,
+   "shown": "75.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_LFO1DUTY",
+   "pid": 3,
+   "page": "LFO 1 + 2",
+   "raw": 16049,
+   "decoded": 24.9997866,
+   "shown": "25.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_LFO2TYPE",
+   "pid": 6,
+   "page": "LFO 1 + 2",
+   "raw": 1,
+   "decoded": "TRIANGLE",
+   "shown": "Triangle"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_LFO2FREQ",
+   "pid": 7,
+   "page": "LFO 1 + 2",
+   "raw": 28404,
+   "decoded": 0.799994643,
+   "shown": "0.800 Hz"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_LFO2DEPTH",
+   "pid": 8,
+   "page": "LFO 1 + 2",
+   "raw": 26214,
+   "decoded": 40.0006104,
+   "shown": "40.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_ADSR1MODE",
+   "pid": 12,
+   "raw": 1,
+   "decoded": "LOOP",
+   "shown": "Loop"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_ADSR1ATTACK",
+   "pid": 14,
+   "raw": 39287,
+   "decoded": 250.012298,
+   "shown": "250.01 ms"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_ADSR1DECAY",
+   "pid": 15,
+   "raw": 44219,
+   "decoded": 500.029869,
+   "shown": "500.03 ms"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_ADSR1LEVEL",
+   "pid": 17,
+   "raw": 39320,
+   "decoded": 59.9993896,
+   "shown": "60.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_ADSR1RELEASE",
+   "pid": 18,
+   "raw": 49150,
+   "decoded": 999.929743,
+   "shown": "999.93 ms"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_ADSR1THRESH",
+   "pid": 19,
+   "raw": 32767,
+   "decoded": -30,
+   "shown": "-30.0 dB"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_SEQFREQ",
+   "pid": 34,
+   "page": "Sequencer",
+   "raw": 26711,
+   "decoded": 3.99999808,
+   "shown": "4.000 Hz"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_SEQSTAGES",
+   "pid": 36,
+   "page": "Sequencer",
+   "raw": 12,
+   "decoded": 12,
+   "shown": "12"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_SEQ1",
+   "pid": 38,
+   "page": "Sequencer",
+   "raw": 16384,
+   "decoded": 25.000763,
+   "shown": "25.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_SEQ2",
+   "pid": 39,
+   "page": "Sequencer",
+   "raw": 32767,
+   "decoded": 50,
+   "shown": "50.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_ENVATTACK",
+   "pid": 28,
+   "page": "Envelope/Manual",
+   "raw": 21315,
+   "decoded": 19.9988062,
+   "shown": "20.00 ms"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_ENVRELEASE",
+   "pid": 29,
+   "page": "Envelope/Manual",
+   "raw": 40584,
+   "decoded": 300.003544,
+   "shown": "300.00 ms"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_ENVGAIN",
+   "pid": 31,
+   "page": "Envelope/Manual",
+   "raw": 21845,
+   "decoded": 2.00001526,
+   "shown": "2.00"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_MANUAL1",
+   "pid": 112,
+   "page": "Envelope/Manual",
+   "raw": 26214,
+   "decoded": 40.0006104,
+   "shown": "40.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_MANUAL5",
+   "pid": 116,
+   "page": "Envelope/Manual",
+   "raw": 58981,
+   "decoded": 90.0006104,
+   "shown": "90.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_SCENE1_VAL1",
+   "pid": 72,
+   "page": "Scene Ctrl 1+2",
+   "raw": 6553,
+   "decoded": 9.99938963,
+   "shown": "10.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_SCENE1_VAL2",
+   "pid": 73,
+   "page": "Scene Ctrl 1+2",
+   "raw": 13107,
+   "decoded": 20.0003052,
+   "shown": "20.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_SCENE1_VAL8",
+   "pid": 79,
+   "page": "Scene Ctrl 1+2",
+   "raw": 52427,
+   "decoded": 79.9996948,
+   "shown": "80.0 %"
+  },
+  {
+   "channel": "A",
+   "param": "CONTROLLERS_SCENE2_VAL1",
+   "pid": 80,
+   "page": "Scene Ctrl 1+2",
+   "raw": 21626,
+   "decoded": 32.9996643,
+   "shown": "33.0 %"
+  },
+  {
+   "channel": "B",
+   "param": "CONTROLLERS_SCENE1_VAL1",
+   "pid": 72,
+   "page": "Scene Ctrl 1+2",
+   "raw": 7209,
+   "decoded": 11.0003967,
+   "shown": "11.0 %"
+  },
+  {
+   "channel": "C",
+   "param": "CONTROLLERS_SCENE1_VAL1",
+   "pid": 72,
+   "page": "Scene Ctrl 1+2",
+   "raw": 7864,
+   "decoded": 11.9998779,
+   "shown": "12.0 %"
+  },
+  {
+   "channel": "D",
+   "param": "CONTROLLERS_SCENE1_VAL1",
+   "pid": 72,
+   "page": "Scene Ctrl 1+2",
+   "raw": 8519,
+   "decoded": 12.9993591,
+   "shown": "13.0 %"
+  }
+ ],
+ "notMeasured": [
+  "audio",
+  "STORE/reload",
+  "per-scene Controllers channel",
+  "ADSR 2, Scene Ctrl 3+4, CS per Scene and Modifiers pages",
+  "enum option lists beyond LFO Type, ADSR Mode and the defaults shown",
+  "Tempo / Tempo To Use"
+ ],
+ "summary": {
+  "deviceWordsMatched": 520,
+  "testWords": 32,
+  "editorReadingsMatched": 29,
+  "channelA": 26,
+  "channelMarkers": "B/C/D = 11/12/13 %",
+  "meaning": "Word n of the Controllers record is dictionary parameter n, the four copies are Controllers channels A-D, and the taper-class scales (linear, log, integer) show exactly as decoded. Controllers parameters become writable through spec.controllers (0.3.50)."
+ }
+}

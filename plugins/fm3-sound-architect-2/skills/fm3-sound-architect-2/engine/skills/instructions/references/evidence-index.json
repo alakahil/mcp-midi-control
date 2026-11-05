@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2168,
-  "filePaths": 2372,
+  "uniqueContents": 2169,
+  "filePaths": 2373,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1281,6 +1281,12 @@
       "bytes": 24680,
       "paths": [
         "examples/JB_UNIFIED_RHYTHM_SOLO_TEST.syx"
+      ]
+    },
+    "1996998ecab2128a5ff74395e5c441f4eae2082764056081689b6e6f845a49a4": {
+      "bytes": 6546,
+      "paths": [
+        "references/fm3-shot-t28-controllers-20261105.json"
       ]
     },
     "19970870abad00f1d2d45354e5985c76bb10504e5aed092a0f6d23e3bdbb51dd": {
@@ -6653,6 +6659,12 @@
         "references/geq-full-20261010-194115/step-006-0218575eef/donor.syx"
       ]
     },
+    "83588bb305bbaee8f67a6c6cb01dfce4ea92cc5166b36722d47e588cbf045383": {
+      "bytes": 28311,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "8364884ef170bd0979e3a13019d15284dedc2a5461fcbbed46fd0593f015834b": {
       "bytes": 1784,
       "paths": [
@@ -11338,12 +11350,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-161-3af9eae1de/donor.syx"
-      ]
-    },
-    "dd31e3c2a200715e3c0a2195b623dedfc25249a22956aa8ab11780cad0911aaa": {
-      "bytes": 27801,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "dd3eb05b45578c6be95e869301fc68f93613354d95c5bc0dd2513b4c11879203": {

@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.49`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.50`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -135,6 +135,20 @@ Käivita `selfCheck` väljalaske teadaoleva commit'iga. Taastatud runtime'is
 on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
+
+## Controllers kirjutatav (0.3.50, T28)
+
+Uus väli `controllers` kirjutab Control ploki (LFO 1–2, ADSR 1–2, Envelope, Sequencer, Scene Controllers 1–4,
+Manual 1–5) väärtusi: `[{"channel":"A","param":"LFO1FREQ","value":2.5}]`. `param` on nimi (`LFO1FREQ` või
+`CONTROLLERS_LFO1FREQ`) või PID 0–129, väärtus on FM3-Editi näit. Kirje asub preseti algusosas (keha nihe 452,
+130 sõna × 4 kanalit). T28 (5.11.2026): FM3 hoidis laadimisel kõik 520 sõna ja FM3-Edit näitas kanalil A täpselt
+26 oodatud väärtust (LFO, ADSR 1, Sequencer, Envelope/Manual, Scene Ctrl 1+2). Kanalivalija B/C/D näitas
+11/12/13 %, seega on neli koopiat Controllersi kanalid A–D. Kirjutamisel kehtib tavaline staatuspiirang:
+nupud ja täisarvud vaikimisi, valikud (näiteks LFO Type, ADSR Mode, Run) ainult `allow:["enum-labels"]` korral.
+Tempo, Tempo To Use, ADSR X/Y märgid ja Envelope Gain Monitor on keelatud. Millist Controllersi
+kanalit iga stseen kasutab, pole dekodeeritud. Koostaja väljundis on stseeni sõnad 0 ja FM3-Edit näitas kanalit A, seega kõlab
+kanal A. Modifikaatori allika sidumine on eraldi teema. Soundi skeem on 0.8.3. Tõend:
+`references/fm3-shot-t28-controllers-20261105.json`.
 
 ## Multi Delay parameetrid kirjutatavad (0.3.49, T27)
 
@@ -791,7 +805,7 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   read 1/4 tühjad; plokkide järjekorra määrab sound. Ruudustiku liigutamine on **seadmel kinnitatud**
   (`examples/FM3_LAYOUT_MOVE_TEST_export.syx` keha identne).
 - **Soundi koostaja** `scripts/fm3-sound.mjs` (jb-newlook): `composer` → `layout` → `blockScenes` →
-  `controls` → `selectedScene`. Output Scene Level 1–8 (−20…+20 dB) on seadmel kinnitatud.
+  `controls` → `selectedScene` → `controllers` (Control plokk, 0.3.50). Output Scene Level 1–8 (−20…+20 dB) on seadmel kinnitatud.
 - **Plokkide lisamine (auditi punkt 6)** `scripts/fm3-insert-blocks.mjs`, väli `insert`: plex, multiband, synth,
   looper, gate, formant, tentap, megatap, ringmod, resonator, multidelay (0.3.47; parameetrid 0.3.49-st, preseti valik lukus) (Volume/Pan: Codexi `volumePan`). Doonor on kasutaja enda FW13 eksport
   värsketest vaikeplokkidest (`references/fm3-default-blocks-20261023.syx`; Multi Delay `fm3-multidelay-fresh-20261103.syx`). Lisatud plokk on kõigis
