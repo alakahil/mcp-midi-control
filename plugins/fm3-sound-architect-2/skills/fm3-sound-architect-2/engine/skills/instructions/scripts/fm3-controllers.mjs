@@ -62,6 +62,17 @@ export function applyControllers(syx,list,opts={}){
   return {syx:out,writes,report:{record:{...r},writes:writes.length,changedWords:writes.filter(w=>w.raw!==w.before).length,
     hardware:'T28: storage, word order, channels A-D and FM3-Edit readings confirmed for 26 parameters; this output itself not tested',sceneChannel:'not decoded; composer scenes use channel A'}};
 }
+// Saved-bundle check: re-encode the requested writes and compare them with the stored words and the report.
+export function verifyControllersOutput(body,spec,reported){
+  if(!spec.controllers){check(reported===undefined,'Controllers report without spec.controllers');return [];}
+  validateControllers(spec.controllers);const r=locateControllers(body),opts={allow:spec.allow??[]};
+  const writes=spec.controllers.map(c=>{const p=controllersParam(c.param),offset=r.start+2*(channelIndex(c.channel)*r.words+p.param),raw=encodeValue(p,c.value,opts);
+    check(body.readUInt16LE(offset)===raw,`Final Controllers word differs: ${p.name} channel ${c.channel}`);
+    return {channel:c.channel,pid:p.param,name:p.name,label:p.label,value:c.value,raw,offset,display:decodeValue(p,raw)};});
+  check(Array.isArray(reported)&&reported.length===writes.length,'Final Controllers count differs');
+  writes.forEach((w,i)=>{for(const k of ['channel','pid','name','label','raw','offset','display','value'])check(JSON.stringify(reported[i][k])===JSON.stringify(w[k]),`Final Controllers ${k} differs (${w.name})`);});
+  return writes;
+}
 export function renderControllersText(writes){
   if(!writes?.length)return '';
   const fmt=w=>typeof w.display==='number'?String(Number(w.display.toPrecision(4))):String(w.display);

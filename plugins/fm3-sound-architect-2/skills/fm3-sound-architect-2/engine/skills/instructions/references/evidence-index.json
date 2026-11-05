@@ -6659,6 +6659,12 @@
         "references/geq-full-20261010-194115/step-006-0218575eef/donor.syx"
       ]
     },
+    "83588bb305bbaee8f67a6c6cb01dfce4ea92cc5166b36722d47e588cbf045383": {
+      "bytes": 28311,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "8364884ef170bd0979e3a13019d15284dedc2a5461fcbbed46fd0593f015834b": {
       "bytes": 1784,
       "paths": [
@@ -9056,12 +9062,6 @@
       "bytes": 24680,
       "paths": [
         "references/FM3_AMP_CAPTURE_001.syx"
-      ]
-    },
-    "b258d694a04fb15a403f8010f301d06f46ce5132198d30ffcb0e6e6c80078afa": {
-      "bytes": 28233,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "b2933e08f5431c60c7a72fca615f1c65dca851935febf37aca0b3c6ed98ffe51": {
