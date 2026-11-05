@@ -6,8 +6,8 @@
 // the expected readings on the LFO 1+2, ADSR 1, Sequencer, Envelope/Manual and Scene Ctrl 1+2 pages; its Controllers
 // channel selector A/B/C/D showed copies A/B/C/D (references/fm3-shot-t28-controllers-20261105.json). So word n of a
 // copy is dictionary parameter n and the copy is the Controllers channel.
-// Writes follow the normal status gate (taper-class-verified knobs by default; 'enum-labels' selectors only with
-// allow:['enum-labels']; n/a and unverified-taper parameters are refused). Which Controllers channel a scene uses is
+// Writes follow the normal status gate (taper-class-verified knobs by default; option selectors by default since
+// 0.3.52, after T28/T30 FM3-Edit readings; n/a and unverified-taper parameters are refused). Which Controllers channel a scene uses is
 // not decoded; in composer outputs the per-scene header words are all 0 and FM3-Edit showed channel A, so channel A
 // is the one that sounds unless the user changes the Controllers channel on the device.
 import fs from 'node:fs';
@@ -80,7 +80,7 @@ export function renderControllersText(writes){
 }
 export function controllersCapabilities(){
   return {field:'controllers',maxWrites:MAX_CONTROLLER_WRITES,record:{...CONTROLLERS_RECORD},parameters:130,
-    writable:'taper-class-verified knobs and integers by default; enum-labels selectors with allow:["enum-labels"]; n/a and unverified-taper refused',
+    writable:'taper-class-verified knobs, integers and option selectors (T28/T30) by default; n/a and unverified-taper refused',
     channels:['A','B','C','D'],sceneChannel:'not decoded; composer scenes use channel A',
     hardwareReceipt:{file:'references/fm3-shot-t28-controllers-20261105.json',sha256:controllersReceiptHash,editorReadings:receipt.summary.editorReadingsMatched,deviceWords:receipt.summary.deviceWordsMatched},
     limits:['Modifier source assignment is separate (modifiers)','Tempo, Tempo To Use and Envelope Gain Monitor stay unwritable','Per-scene Controllers channel not decoded']};

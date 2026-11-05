@@ -47,7 +47,7 @@ function records(b){
 }
 const wordsOf=(b,r)=>[...Array(r.words*r.channels).keys()].map(i=>b.readUInt16LE(r.start+2*i));
 // One reading per selector: value as FM3-Edit should show it (label), the stored word, the default it replaces.
-const sel=(block,name,value)=>{const p=findParam(FAMILY[block],FAMILY[block]+'_'+name);assert.equal(p.kind,'enum',name);assert.equal(p.status,'enum-labels',name);
+const sel=(block,name,value)=>{const p=findParam(FAMILY[block],FAMILY[block]+'_'+name);assert.equal(p.kind,'enum',name);assert.equal(p.structuralStatus??p.status,'enum-labels',name);
   const raw=encodeValue(p,value,{allow});return {block,param:p.name,channel:'A',pid:p.param,label:p.label,value,raw,shows:decodeValue(p,raw)};};
 const EN1=[sel('peq','TYPE1','Blocking'),sel('peq','TYPE2','Shelving 2'),sel('peq','TYPE3','Peaking 2'),sel('peq','TYPE4','Shelving'),sel('peq','TYPE5','Peaking 2'),
   sel('phaser','LFOQUANTIZE',3),sel('multidelay','FILTER_TYPE','BANDPASS'),sel('multidelay','COMBTYPE','FEEDFORWARD')];

@@ -106,6 +106,7 @@ jobs:
           node tools/fm3/t27-multidelay-side-ingest.mjs
           node tools/fm3/t28-controllers-ingest.mjs
           node tools/fm3/t29-feedback-ingest.mjs
+          node tools/fm3/t30-enum-ingest.mjs
           node tools/fm3/test-cs-preset-replay.mjs
           node tools/fm3/test-p3-modifier-reuse.mjs
           node tools/fm3/modifier-fields-status.mjs

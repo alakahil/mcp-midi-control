@@ -62,7 +62,7 @@ const t28File='fm3-shot-t28-controllers-20261105.json',t28=J(path.join(ENG,'refe
 const t28Read=t28.editorReadings.filter(x=>x.channel==='A'&&byName(x.param).kind==='enum');
 assert.deepEqual(t28Read.map(x=>x.param).sort(),['CONTROLLERS_ADSR1MODE','CONTROLLERS_LFO1TYPE','CONTROLLERS_LFO2TYPE']);
 const promote=[...readings.map(x=>({name:x.param,evidence:'hardware-t30'})),...t28Read.map(x=>({name:x.param,evidence:'hardware-t28'}))].map(x=>{
-  const p=byName(x.name);assert.equal(p.status,'enum-labels',x.name);
+  const p=byName(x.name);assert.equal(p.structuralStatus??p.status,'enum-labels',x.name);
   return {family:p.family,param:p.param,name:p.name,options:p.enum.length,enumBase:p.enumBase??0,evidence:x.evidence};});
 const out={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,editor:'FM3-Edit 1.07.17',date:'2026-11-05',test:'T30',
  method:'FM3_SHOT_LOAD.py --load (Remote Control) sent EN1 and then EN2 to the edit buffer (7F 00) and read the PEQ, Phaser, Multi Delay and Controllers records back with fn=0x1F; FM3_SHOT_READ.py re-read them. After each load Claude opened FM3-Edit in the background, selected the blocks and read the pages from screenshots (Jan clicked the page tabs), then quit FM3-Edit without saving. Nothing stored or set.',

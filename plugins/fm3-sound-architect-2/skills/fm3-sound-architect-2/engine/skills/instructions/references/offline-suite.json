@@ -651,7 +651,7 @@
         "node",
         "scripts/test-enum-promotion.mjs"
       ],
-      "scope": "197 option selectors promoted to default-writable (T24 hardware 50, shared label lists 108, T24-read families 39); corpus 639 bodies in range; all 51 T24 readings decoded and 50 re-encoded without opt-in; type/model selectors, non-sound families, pickers and PHASER_LFOQUANTIZE stay opt-in; no device I/O",
+      "scope": "225 option selectors promoted to default-writable (T24 hardware 50, shared label lists 108, T24-read families 39, T30 hardware 25, T28 hardware 3); corpus 639 bodies in range; all 51 T24 and 25 T30 readings decoded and re-encoded without opt-in; type/model selectors, non-sound families, pickers, MULTITAP_PRESETS and CONTROLLERS_TEMPOTOUSE stay opt-in (123); no device I/O",
       "required": true
     },
     {

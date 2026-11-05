@@ -59,7 +59,7 @@ const ctl={composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},
 ok(ctl);
 const ctlBoth=[['channel E',s=>s.controllers[0].channel='E'],['extra key',s=>s.controllers[0].block='controllers'],['empty list',s=>s.controllers=[]],
   ['65 writes',s=>s.controllers=Array.from({length:65},(_,i)=>({channel:'ABCD'[i%4],param:40+Math.floor(i/4),value:1}))],['pid 130',s=>s.controllers[2].param=130],['missing value',s=>delete s.controllers[0].value]];
-const ctlGenerator=[['Tempo To Use',s=>s.controllers=[{channel:'A',param:'TEMPOTOUSE',value:0}]],['enum without allow',s=>delete s.allow],
+const ctlGenerator=[['Tempo To Use',s=>s.controllers=[{channel:'A',param:'TEMPOTOUSE',value:0}]],['unknown option',s=>s.controllers[0].value='Wobble'],
   ['n/a mark',s=>s.controllers=[{channel:'A',param:'ADSR1_XMARK',value:1}]],['same word twice',s=>s.controllers.push({channel:'A',param:1,value:1})],['out of range',s=>s.controllers[1].value=100]];
 for(const [name,edit] of ctlBoth){const s=structuredClone(ctl);edit(s);
   assert.notDeepEqual(checkSchema(S,s),[],'schema accepts controllers: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts controllers: '+name);}
