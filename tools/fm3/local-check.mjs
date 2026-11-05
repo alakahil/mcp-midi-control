@@ -70,7 +70,8 @@ function run(cmd,extraEnv={}){
   return new Promise(res=>{const t=Date.now();let out='';
     const p=spawn('bash',['-c',cmd],{cwd:ROOT,env:{...env,...extraEnv}});
     p.stdout.on('data',d=>out+=d);p.stderr.on('data',d=>out+=d);
-    p.on('close',code=>res({cmd,code,out,ms:Date.now()-t}));});
+    // A signal-terminated process has code null: count it as a failure (exit 128+n convention), never as a pass.
+    p.on('close',(code,signal)=>res({cmd,code:code===null?(128+(os.constants.signals[signal]??0)):code,signal,out:signal?out+`\n(terminated by ${signal})`:out,ms:Date.now()-t}));});
 }
 async function pool(cmds,n){const out=new Array(cmds.length);let next=0;
   await Promise.all(Array.from({length:Math.min(n,cmds.length)},async()=>{while(next<cmds.length){const i=next++;out[i]=await run(cmds[i]);}}));return out;}
@@ -98,21 +99,21 @@ async function regenerate(){
 }
 
 async function checkPhase(pass){
-  let failed=0;
+  let failed=0,rewritten=0;
   for(const s of checkSteps){
     const results=FIX||!parallelSafe(s)?await pool(s.cmds,1):await pool(s.cmds,JOBS);
     for(const r of results){
       if(!r.code)continue;
       if(FIX&&/stale/i.test(r.out)&&!/^git\b/.test(r.cmd)){
         const w=await run(r.cmd+' --write'),again=w.code?w:await run(r.cmd);
-        if(!again.code){rewrites.push(r.cmd);console.log(`  rewrote (stale): ${r.cmd}`);continue;}
+        if(!again.code){rewrites.push(r.cmd);rewritten++;console.log(`  rewrote (stale): ${r.cmd}`);continue;}
       }
       failed++;if(pass===2||!FIX)failures.push({...r,phase:'check: '+s.name});
       if(!FIX||pass===2)console.log(`  FAIL ${r.cmd}\n${tail(r.out)}`);
     }
     console.log(`check${FIX?' pass '+pass:''}: ${s.name} — ${s.cmds.length} commands, ${results.filter(r=>r.code).length} failed`);
   }
-  return failed;
+  return {failed,rewritten};
 }
 
 async function releasePhase(){
@@ -131,8 +132,9 @@ async function releasePhase(){
 console.log(`FM3 local check (${FIX?'fix':'check only'}${QUICK?', quick':''}), commands from ${path.relative(ROOT,WORKFLOW)}`);
 if(FIX&&!(await regenerate())){/* reported below */}
 else{
-  const f1=await checkPhase(1);
-  if(FIX&&f1)await checkPhase(2);
+  const p1=await checkPhase(1);
+  // A rewrite changes evidence that earlier commands already indexed: rebuild the chain and check everything again.
+  if(FIX&&(p1.failed||p1.rewritten)){if(p1.rewritten&&!(await regenerate())){/* reported below */}else await checkPhase(2);}
   if(!QUICK&&!failures.length)await releasePhase();
   else if(!QUICK)console.log('release: skipped because a check failed');
 }
