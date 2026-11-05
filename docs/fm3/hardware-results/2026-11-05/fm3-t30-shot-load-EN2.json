@@ -1,0 +1,145 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "83f062ce6afc5bfb608668027aa2a9c5ef382a4f0729cc26133f80d17327635e",
+ "preset": "EN2",
+ "name": "T30 ENUM CTRL",
+ "time": "2026-11-05T15:23:09",
+ "blocks": [
+  {
+   "family": "peq",
+   "effectId": 54,
+   "values": 132,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "phaser",
+   "effectId": 90,
+   "values": 140,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "multidelay",
+   "effectId": 74,
+   "values": 484,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "controllers",
+   "effectId": 2,
+   "values": 520,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "CONTROLLERS_LFO1TEMPO",
+     "channel": "A",
+     "raw": 11,
+     "device": 11
+    },
+    {
+     "param": "CONTROLLERS_LFO2TEMPO",
+     "channel": "A",
+     "raw": 15,
+     "device": 15
+    },
+    {
+     "param": "CONTROLLERS_LFO1QUANTIZE",
+     "channel": "A",
+     "raw": 4,
+     "device": 4
+    },
+    {
+     "param": "CONTROLLERS_LFO2QUANTIZE",
+     "channel": "A",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "CONTROLLERS_LFO1RUN",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_LFO2RUN",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_ADSR1_TYPE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_ADSR2_TYPE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_ADSR2MODE",
+     "channel": "A",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "CONTROLLERS_ADSR1RETRIG",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_ADSR2RETRIG",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_ADSR1SOURCE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_ADSR2SOURCE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_ENVSOURCE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_PITCH_SOURCE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_SEQRUN",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "CONTROLLERS_SEQTEMPO",
+     "channel": "A",
+     "raw": 8,
+     "device": 8
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.51`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.52`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -136,6 +136,19 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Valikunupud edutatud (0.3.52, T30)
+
+T30 (5.11.2026) laadis kaks generaatori presetit: EN1 (PEQ bändide 1–5 tüübid, Phaser LFO Quantize, Multi Delay
+EQ Type ja Comb Filters Filter Type) ja EN2 (17 Controllersi valikut: LFO Tempo/Quantize/Run, ADSR Type/Mode/
+Retrigger/Source, Envelope ja Pitch Source, Sequencer Run/Tempo). FM3 hoidis kõik sõnad ja FM3-Edit näitas kõigil
+25-l täpselt dekodeeritud silti (Phaser Quantize: loend algab OFF, OFF, 2, 3, salvestatud 3 näitab 3). Need 25 ning
+T28-s loetud LFO 1/2 Type ja ADSR 1 Mode (kokku 28) on nüüd `enum-labels-crosschecked`, st kirjutatavad ilma
+`allow`-ta; kokku 225 vaikimisi kirjutatavat valikut. 123 jääb teadlikult opt-in'iks (`allow:["enum-labels"]`):
+üldseaded (75, neid ei kirjutata), modifikaatorite seaded (6), Mixer/Multiplexer/Feedback Return/Output/Input/
+Volume marsruutimise ja bypassi sõnad, kanali tüübi/mudeli valijad (vajavad täit kanalimalli), learn/preset/IR-panga
+valijad, `MULTITAP_PRESETS` ja Controllersi Tempo To Use (kirjutaja keelab). Heli ja STORE/reload'i ei mõõdetud.
+Tõend: `references/fm3-shot-t30-enum-20261105.json`.
+
 ## Feedback Return kirjutatav (0.3.51, T29)
 
 Iga koostaja preset ühendab rea 2 reaga 3 Feedback Send (rida 2 veerg 12) ja Feedback Return (rida 3 veerg 1)
@@ -154,7 +167,7 @@ Manual 1–5) väärtusi: `[{"channel":"A","param":"LFO1FREQ","value":2.5}]`. `p
 130 sõna × 4 kanalit). T28 (5.11.2026): FM3 hoidis laadimisel kõik 520 sõna ja FM3-Edit näitas kanalil A täpselt
 26 oodatud väärtust (LFO, ADSR 1, Sequencer, Envelope/Manual, Scene Ctrl 1+2). Kanalivalija B/C/D näitas
 11/12/13 %, seega on neli koopiat Controllersi kanalid A–D. Kirjutamisel kehtib tavaline staatuspiirang:
-nupud ja täisarvud vaikimisi, valikud (näiteks LFO Type, ADSR Mode, Run) ainult `allow:["enum-labels"]` korral.
+nupud, täisarvud ja (alates 0.3.52, T28/T30) kõik valikud peale Tempo To Use vaikimisi.
 Tempo, Tempo To Use, ADSR X/Y märgid ja Envelope Gain Monitor on keelatud. Millist Controllersi
 kanalit iga stseen kasutab, pole dekodeeritud. Koostaja väljundis on stseeni sõnad 0 ja FM3-Edit näitas kanalit A, seega kõlab
 kanal A. Modifikaatori allika sidumine on eraldi teema. Soundi skeem on 0.8.3. Tõend:
