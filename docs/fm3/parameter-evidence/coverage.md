@@ -29,7 +29,7 @@ Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik
 | Pere | Kataloogi PID-d | Sõnastiku PID-d | Paaristatud punktiga PID-d | Tabelikirjutaja vaikimisi / eraldi lubamisel |
 | --- | ---: | ---: | ---: | ---: |
 | Nimetu | 0 | 7 | 0 | 0 / 0 |
-| CABINET | 105 | 106 | 0 | 58 / 3 |
+| CABINET | 105 | 106 | 0 | 62 / 1 |
 | CHORUS | 29 | 32 | 0 | 31 / 0 |
 | COMP | 37 | 37 | 0 | 33 / 0 |
 | CONTROLLERS | 141 | 130 | 0 | 0 / 0 |

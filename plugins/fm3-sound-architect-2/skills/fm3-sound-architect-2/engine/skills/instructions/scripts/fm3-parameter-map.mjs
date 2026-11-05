@@ -16,7 +16,7 @@ const gate=p=>DEFAULT_STATUSES.includes(p.status)?'default':OPT_IN_STATUSES.incl
 const originalDictionary=JSON.parse(fs.readFileSync(new URL('../references/fm3-param-dictionary.json',import.meta.url),'utf8'));
 const originals=new Map(originalDictionary.params.map(p=>[key(p),p]));
 const effective=new Map(loadDictionary().params.map(p=>[key(p),p]));
-export const parameterEvidenceIndexHash='16079d5a8afc54b3b5da8040b73c5c75b308ba6e92eb5f3073a4239f6324ae9d';
+export const parameterEvidenceIndexHash='5b06bfb556395d18a726296b4fd16b33032352a9a27fd24e129c870906c20ee4';
 export function validateParameterIndex(bytes){
  if(sha(bytes)!==parameterEvidenceIndexHash)throw Error('Parameter evidence index hash mismatch');
  const d=JSON.parse(bytes);
@@ -43,9 +43,9 @@ export function parameterScale(p){
    labelRule:'Repeated labels retain distinct words; a string selects the first match. Use the numeric word to select another occurrence.'};
  }
  const m=p.kind==='integer'?(p.integerScale??1):(p.displayMultiplier||1);
- const range=p.kind==='knob'?[0,m]:[p.min*m,p.max*m];
+ const off=p.kind==='integer'?(p.displayOffset??0):0,range=p.kind==='knob'?[0,m]:[p.min*m+off,p.max*m+off];
  return {known:true,kind:p.kind,input:'FM3 display value; numeric global-scale selectors retain stored-index meaning',
-  numericInputRange:range,storedDomain:p.kind==='integer'?{kind:p.signedWord?'signed-int16':'unsigned-int16',logicalRange:[p.min,p.max],displayStep:m}:{kind:'normalized-uint16',range:[0,65534]},
+  numericInputRange:range,storedDomain:p.kind==='integer'?{kind:p.signedWord?'signed-int16':'unsigned-int16',logicalRange:[p.min,p.max],displayStep:m,...(off?{displayOffset:off}:{})}:{kind:'normalized-uint16',range:[0,65534]},
   ...(p.displayCodec?{displayCodec:structuredClone(p.displayCodec)}:{}),
   ...(p.family==='INPUT'&&p.param===0?{displayEndpoint:{input:-100,word:0,label:'OFF'}}:{}),
   ...(p.family==='CABINET'&&[93,94].includes(p.param)?{unit:'unitless 0..10; historical 0..100 is normalized percent, not display units'}:{})};

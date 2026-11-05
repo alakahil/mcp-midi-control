@@ -5,6 +5,8 @@
 // on the amp core, which the meter barely shows. Satriani V1 Scene 4: estimate 60.1 %, measured 61 %.
 // 0.2.2: Out 2 = 1 point (T8b); Satriani V4 all 8 scenes within 0.4 points (T8a, references/fm3-cpu-t8-20261028.json).
 // 0.2.3: Multi Delay cost per Base Type 5.5..8 points (T26, references/fm3-shot-t26-multidelay-20261104.json).
+// 0.2.4: every type of Plex, Megatap, Ten-Tap, Resonator, Ring Mod, Gate, Volume/Pan, Legacy Cab and Synth voice 1
+//   measured (T31, references/fm3-shot-t31-cab-cpu-20261105.json; defaults agree with the hand readings within 1 point).
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
@@ -24,16 +26,26 @@ const OUT2_COST=cpuT8.out2.costPoints.out2;
 // Multi Delay (2026-11-04, test T26): cost per Base Type = CPU(item) - CPU(cal-newlook), meter step 0.5 %.
 export const cpuT26Hash='f8b8c1422d3a08de74d8686b62e8e6e6007ac2885941b3aa56a39ceb75c42d9d';
 export const cpuT26=pinned('fm3-shot-t26-multidelay-20261104.json',cpuT26Hash);
+// Insert-block types (2026-11-05, test T31): cost per type = CPU(item) - CPU(cal-newlook); Synth = voice 1 type with voices 2/3 OFF.
+export const cpuT31Hash='8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103';
+export const cpuT31=pinned('fm3-shot-t31-cab-cpu-20261105.json',cpuT31Hash);
+const T31_TYPED=['plex','megatap','tentap','resonator','ringmod','gate','volpan','cab'];
+const SYNTH_OFF=7,SYNTH_VOICES=['SYNTH_TYPE2','SYNTH_TYPE3'];
 // Type selector per family (decoded from the scene's active channel).
 const TYPE_FIELD={drive:'FUZZ_TYPE',reverb:'REVERB_TYPE',delay:'DELAY_MODEL',compressor:'COMP_TYPE',chorus:'CHORUS_TYPE',flanger:'FLANGER_TYPE',
   phaser:'PHASER_TYPE',wah:'WAH_TYPE',tremolo:'TREMOLO_TYPE',pitch:'PITCH_TYPE',filter:'FILTER_TYPE',
   cab:'CABINET_MODE',plex:'PLEX_BASETYPE',megatap:'MEGATAP_TYPE',tentap:'TENTAP_TYPE',resonator:'RESONATOR_MODE',ringmod:'RINGMOD_TYPE',gate:'GATE_TYPE',volpan:'VOLUME_TYPE',synth:'SYNTH_TYPE1',multidelay:'MULTITAP_BASETYPE'};
 // Single measured type (session A/B defaults) for families the sweep did not vary.
-const SINGLE={amp:null,cab:'DYNA-CAB',plex:'Plex Delay',megatap:'Reverb Pre-Swell',tentap:'Ten-Tap Delay',resonator:'MANUAL',ringmod:'CLASSIC',gate:'Classic Expander',volpan:'VOLUME',looper:null,multiband:null,formant:null,synth:'TRIANGLE'};
+// (T31 measured every type of the former single-type families; the hand readings remain for these.)
+const SINGLE_024={amp:null,looper:null,multiband:null,formant:null};
+// 0.2.3 (before T31): kept only so packs built and sent before T31 rebuild byte for byte (their manifests carry the estimate).
+const SINGLE_023={amp:null,cab:'DYNA-CAB',plex:'Plex Delay',megatap:'Reverb Pre-Swell',tentap:'Ten-Tap Delay',resonator:'MANUAL',ringmod:'CLASSIC',gate:'Classic Expander',volpan:'VOLUME',looper:null,multiband:null,formant:null,synth:'TRIANGLE'};
+export const CPU_MODELS=['fm3-cpu 0.2.3','fm3-cpu 0.2.4'];
 const IGNORED=new Set(['in1','out1','send','return']);
 const norm=s=>String(s).trim().toLowerCase().replace(/[’']/g,"'");
-const typeTable=Object.fromEntries(Object.entries({...cpuTypes.families,multidelay:cpuT26.cpu.costPoints}).map(([f,t])=>[f,new Map(Object.entries(t).map(([k,v])=>[norm(k),v]))]));
-const familyMax=f=>Math.max(...typeTable[f].values());
+const tables=extra=>Object.fromEntries(Object.entries({...cpuTypes.families,multidelay:cpuT26.cpu.costPoints,...extra}).map(([f,t])=>[f,new Map(Object.entries(t).map(([k,v])=>[norm(k),v]))]));
+const typeTable0=tables(Object.fromEntries(T31_TYPED.map(f=>[f,cpuT31.cpu.costPoints[f]]))),typeTable023=tables({});
+const synthTable=new Map(Object.entries(cpuT31.cpu.costPoints.synth).map(([k,v])=>[norm(k),v]));
 export function qualityDelta(type,quality){
   const q=String(quality).trim();if(q==='ECONOMY')return {delta:0,exact:true};
   const table=cpuTypes.reverbQualityDelta;
@@ -42,12 +54,19 @@ export function qualityDelta(type,quality){
   return {delta:same.length?Math.max(...same):Math.max(...Object.values(table).map(d=>d[q])),exact:false};
 }
 const readLabel=(body,r,ch,name)=>{const p=findParam(r.family.replace(/\d+$/,''),name);return String(decodeValue(p,body.readUInt16LE(r.start+2*(ch*r.words+p.param)))).trim();};
-function blockCost(body,r,s){
+function blockCost(body,r,s,legacy){
+  const typeTable=legacy?typeTable023:typeTable0,SINGLE=legacy?SINGLE_023:SINGLE_024,familyMax=f=>Math.max(...typeTable[f].values());
   if(r.family==='out2')return {cost:OUT2_COST,label:'Out 2',notes:[]};
   const fam=r.instance>1?r.family.replace(/\d+$/,''):r.family,notes=[];
   const ch=Math.min(body.readUInt16LE(r.header+10+2*s),r.channels-1);
   if(r.instance>1)notes.push(fam+' instance '+r.instance+' assumed equal to instance 1');
   const label=TYPE_FIELD[fam]?readLabel(body,r,ch,TYPE_FIELD[fam]):null;
+  if(fam==='synth'&&!legacy){
+    const voicesOff=SYNTH_VOICES.every(n=>body.readUInt16LE(r.start+2*(ch*r.words+findParam('SYNTH',n).param))===SYNTH_OFF),cost=synthTable.get(norm(label));
+    if(voicesOff&&cost!==undefined)return {cost,label,notes};
+    notes.push('synth voices 2/3 active or voice 1 '+label+' unmeasured (family maximum used)');
+    return {cost:Math.max(...synthTable.values()),label,notes};
+  }
   if(typeTable[fam]&&fam!=='synth'&&!['rotary','peq','geq','enhancer'].includes(fam)){
     let cost=typeTable[fam].get(norm(label));
     if(cost===undefined){cost=familyMax(fam);notes.push(fam+' '+label+' unmeasured (family maximum used)');}
@@ -60,18 +79,19 @@ function blockCost(body,r,s){
   if(SINGLE[fam]&&label&&norm(label)!==norm(SINGLE[fam]))notes.push(fam+' '+label+' unmeasured (measured: '+SINGLE[fam]+')');
   return {cost:c.cpu,label,notes};
 }
-export function estimateCpu(syx){
+export function estimateCpu(syx,{model=CPU_MODELS.at(-1)}={}){
+  if(!CPU_MODELS.includes(model))throw Error('Unknown CPU model '+model);const legacy=model==='fm3-cpu 0.2.3';
   const body=Buffer.from(inspectStructure(syx).raw.body),{records}=scanRecords(body),limit=cpuMeasurements.limit.safe;
   const blocks=records.filter(r=>!IGNORED.has(r.family));
   const scenes=Array.from({length:8},(_,s)=>{
     let total=cpuMeasurements.costs.baseline.cpu;const notes=[],unknown=[],parts={};
-    for(const r of blocks){const b=blockCost(body,r,s);notes.push(...b.notes);if(b.cost===null){unknown.push(r.family);continue;}total+=b.cost;parts[r.family]=b.cost;}
+    for(const r of blocks){const b=blockCost(body,r,s,legacy);notes.push(...b.notes);if(b.cost===null){unknown.push(r.family);continue;}total+=b.cost;parts[r.family]=b.cost;}
     const exact=!notes.length&&!unknown.length,pct=Math.round(total*10)/10;
     return {scene:s+1,percent:pct,measuredTypeCoverage:exact,exact,parts,notes,unknown,
       warning:pct>limit?'over the safe limit':pct>limit-8?'within 8 % of the safe limit':null};
   });
   const worst=scenes.reduce((a,b)=>b.percent>a.percent?b:a);
-  return {model:'fm3-cpu 0.2.3',measurementsSha256:cpuMeasurementsHash,typesSha256:cpuTypesHash,out2Sha256:cpuT8Hash,multidelaySha256:cpuT26Hash,limitPercent:limit,maxPercent:worst.percent,worstScene:worst.scene,
+  return {model,measurementsSha256:cpuMeasurementsHash,typesSha256:cpuTypesHash,out2Sha256:cpuT8Hash,multidelaySha256:cpuT26Hash,...(legacy?{}:{insertTypesSha256:cpuT31Hash}),limitPercent:limit,maxPercent:worst.percent,worstScene:worst.scene,
     measuredTypeCoverageAllScenes:scenes.every(s=>s.measuredTypeCoverage),
     exactAllScenes:scenes.every(s=>s.exact),exactFieldsMeaning:'Legacy aliases for measured-type coverage, not prediction accuracy',scenes,
     scope:'Effects-core meter (FM3-Edit CPU). Measured component costs do not establish a bound on combined-preset error (G06: estimate 44.3 %, measured 41.5 %). Unmeasured types use an available family maximum or a single measured reference; unknown families are omitted and named. Amp/Delay core not visible. Bypass does not reduce CPU.'};

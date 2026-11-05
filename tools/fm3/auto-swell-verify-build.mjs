@@ -29,7 +29,8 @@ const body=Buffer.from(inspectStructure(syx).raw.body),{records}=scanRecords(bod
 const vol=records.find(x=>x.eid===102);assert.equal(body.readUInt16LE(vol.start+18),1,'channel A AUTO-SWELL');
 fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'S1.syx'),syx);
 const items=[{id:'S1',file:'S1.syx',sha256:sha(syx),name:'AUTO SWELL GEN',proves:'Volume/Pan 1 channel A AUTO-SWELL with Threshold/Attack/Release/Hysteresis, channel B VOLUME 7.5',
-  cpuEstimate:estimateCpu(syx).maxPercent,bodySha256:sha(body),controls:spec.controls,expectedGrid:readGrid(body).map(g=>[g.row,g.col,g.id,g.mask]),
+  cpuEstimate:estimateCpu(syx,{model:'fm3-cpu 0.2.3'}).maxPercent, // pinned: pack sent before T31
+ bodySha256:sha(body),controls:spec.controls,expectedGrid:readGrid(body).map(g=>[g.row,g.col,g.id,g.mask]),
   blocks:records.filter(x=>x.eid!==182&&x.eid!==186).map(x=>({family:x.family,effectId:x.eid,words:x.words,channels:x.channels,request:hex(R.bulkReadPoll(x.eid)),
     expected:Array.from({length:x.channels*x.words},(_,i)=>body.readUInt16LE(x.start+2*i))}))}];
 const manifest={kind:'fm3-value-check',version:1,date:'2026-10-24',confirmName:items[0].name,gridRequest:hex(R.gridRequest()),

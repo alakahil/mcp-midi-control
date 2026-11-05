@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.52`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.53`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -135,6 +135,20 @@ Käivita `selfCheck` väljalaske teadaoleva commit'iga. Taastatud runtime'is
 on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
+
+## Legacy Cabi IR ja lisatud plokkide CPU (0.3.53, T31)
+
+`controls` plokiga `cab` kirjutab nüüd Legacy-kanalil Cab 1/2 IR-i: `BANK1`/`BANK2` (FACTORY 1, FACTORY 2, USER,
+LEGACY, SCRATCHPAD) ja `TYPE1`/`TYPE2` = FM3-Editi näidatud number `#` (1–1024), nt
+`{"block":"cab","channel":"A","param":"TYPE1","value":18}`. T31 (5.11.2026): salvestatud 17 ja 200 näitas FM3-Edit
+kui Factory 1 # 18 („1x8 Dan-O 414 A") ja Factory 2 # 201, seega # = salvestatud sõna + 1. Koostaja Cabi kanal A on
+Legacy (Cab 2 on seal vaigistatud), B–D on Dyna-Cab; Dyna-Cab kanalile need sõnad ei mõju ja kirjutus keelatakse
+(Dyna-Cabi valik käib `cabChannels` kaudu). IR-i nimed tulevad seadmest ja neid ei kontrollita.
+REA FM3-Editi paigutusest: Ampi XFLEAKAGE, RESOLUTION, DYNDEPTH, DYNPRES ja Ten-Tapi REFTEMPO jaoks pole FM3-Editis
+nuppu, need jäävad lukku. CPU: 54 lisatud ploki presetti mõõdeti (kalibreerimine 52,5 % alguses ja lõpus); CPU
+hinnang (`fm3-cpu 0.2.4`) arvestab nüüd iga tüübi oma hinda: Plex 9,5–27,5 (Shimmer Verb 27,5), Megatap 9,5–10,
+Ten-Tap 4,5, Resonator 7,5, Ring Mod 2,5–4, Gate 1,5–5,5, Volume/Pan 1/2,5, Synth (hääl 1, hääled 2–3 OFF) 2,5–13,5,
+Legacy Cab sama kui Dyna-Cab. Tõend: `references/fm3-shot-t31-cab-cpu-20261105.json`.
 
 ## Valikunupud edutatud (0.3.52, T30)
 

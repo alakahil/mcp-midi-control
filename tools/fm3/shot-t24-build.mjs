@@ -72,7 +72,7 @@ for(const it of t.items){
  const syx=build(it),plain=Buffer.from(inspectStructure(build(it,[])).raw.body);
  assert.deepEqual([...parsePresetDump(syx,0,17).headerPayload],[0x7f,0,0,0x40,0],it.id+' edit-buffer header');
  const st=inspectStructure(syx);assert.equal(st.decoded.preset_name,it.name);
- const body=Buffer.from(st.raw.body),{records}=scanRecords(body,{requireAmpCab:false}),cpu=estimateCpu(syx).maxPercent;
+ const body=Buffer.from(st.raw.body),{records}=scanRecords(body,{requireAmpCab:false}),cpu=estimateCpu(syx,{model:'fm3-cpu 0.2.3'}).maxPercent; // pinned: pack sent before T31
  assert.ok(cpu<75,it.id+' CPU '+cpu);
  const word=(r,ch,pid)=>body.readUInt16LE(r.start+2*(ch*r.words+pid));
  const writes=it.controls.map(c=>{const p=findParam(c.block,c.param),r=records.find(x=>x.family===c.block);assert.ok(r,c.block+' record');

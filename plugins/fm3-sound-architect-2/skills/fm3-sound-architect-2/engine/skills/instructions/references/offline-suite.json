@@ -145,7 +145,7 @@
         "node",
         "scripts/test-cpu.mjs"
       ],
-      "scope": "point-7 CPU estimate: hand costs consistent, 342 swept types, quality deltas, P6 A/B and Satriani V1 hardware cross-checks; no device I/O",
+      "scope": "point-7 CPU estimate: hand costs consistent, 342 swept types, quality deltas, P6 A/B and Satriani V1 hardware cross-checks, T31 insert-block types (Plex, Megatap, Ten-Tap, Resonator, Ring Mod, Gate, Synth voice 1) counted exactly; no device I/O",
       "required": true
     },
     {
@@ -610,6 +610,15 @@
       "required": true
     },
     {
+      "id": "test-cab-ir",
+      "command": [
+        "node",
+        "scripts/test-cab-ir.mjs"
+      ],
+      "scope": "Legacy Cab IR writes (0.3.53, T31): the CB1 FM3-Edit readings (Factory 1 # 18, Factory 2 # 201) replayed through controls block cab to the exact stored words (17, 200); only Cab bytes change; Dyna-Cab channels, # outside 1..1024, non-integer # and unknown banks refused; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-feedback",
       "command": [
         "node",
@@ -651,7 +660,7 @@
         "node",
         "scripts/test-enum-promotion.mjs"
       ],
-      "scope": "225 option selectors promoted to default-writable (T24 hardware 50, shared label lists 108, T24-read families 39, T30 hardware 25, T28 hardware 3); corpus 639 bodies in range; all 51 T24 and 25 T30 readings decoded and re-encoded without opt-in; type/model selectors, non-sound families, pickers, MULTITAP_PRESETS and CONTROLLERS_TEMPOTOUSE stay opt-in (123); no device I/O",
+      "scope": "227 option selectors promoted to default-writable (T24 hardware 50, shared label lists 108, T24-read families 39, T30 hardware 25, T28 hardware 3, T31 Cab banks 2); corpus 639 bodies in range; all 51 T24 and 25 T30 readings decoded and re-encoded without opt-in; type/model selectors, non-sound families, pickers, MULTITAP_PRESETS and CONTROLLERS_TEMPOTOUSE stay opt-in (121); no device I/O",
       "required": true
     },
     {
