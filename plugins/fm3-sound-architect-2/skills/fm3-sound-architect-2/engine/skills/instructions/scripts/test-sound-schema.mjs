@@ -1,5 +1,5 @@
 // The bundled sound schema (fm3-sound.schema.json) and the generator decide the same way for the 0.3.30-0.3.32
-// fields (controlSwitches, volumePedal {min,max}, Wah + Volume, out2), Multi Delay placement,
+// fields (controlSwitches, volumePedal {min,max}, Wah + Volume, out2), Multi Delay placement, Controllers writes,
 // and every current example spec.
 // Generator-only rules (the schema cannot express them) are listed and must be refused by the generator.
 import fs from 'node:fs';
@@ -52,6 +52,19 @@ for(const s of [mdDuplicate,mdChannel,mdColumn]){
   assert.notDeepEqual(checkSchema(S,s),[],'schema accepts invalid Multi Delay input');
   assert.throws(()=>createPreset(base,s),Error,'generator accepts invalid Multi Delay input');
 }
+// 0.3.50 (T28): Controllers writes. Shape errors are refused by both; status gate, refused parameters and
+// duplicates by the generator only.
+const ctl={composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},allow:['enum-labels'],
+  controllers:[{channel:'A',param:'LFO1TYPE',value:'Square'},{channel:'A',param:'CONTROLLERS_LFO1FREQ',value:2.5},{channel:'B',param:17,value:60}]};
+ok(ctl);
+const ctlBoth=[['channel E',s=>s.controllers[0].channel='E'],['extra key',s=>s.controllers[0].block='controllers'],['empty list',s=>s.controllers=[]],
+  ['65 writes',s=>s.controllers=Array.from({length:65},(_,i)=>({channel:'ABCD'[i%4],param:40+Math.floor(i/4),value:1}))],['pid 130',s=>s.controllers[2].param=130],['missing value',s=>delete s.controllers[0].value]];
+const ctlGenerator=[['Tempo To Use',s=>s.controllers=[{channel:'A',param:'TEMPOTOUSE',value:0}]],['enum without allow',s=>delete s.allow],
+  ['n/a mark',s=>s.controllers=[{channel:'A',param:'ADSR1_XMARK',value:1}]],['same word twice',s=>s.controllers.push({channel:'A',param:1,value:1})],['out of range',s=>s.controllers[1].value=100]];
+for(const [name,edit] of ctlBoth){const s=structuredClone(ctl);edit(s);
+  assert.notDeepEqual(checkSchema(S,s),[],'schema accepts controllers: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts controllers: '+name);}
+for(const [name,edit] of ctlGenerator){const s=structuredClone(ctl);edit(s);
+  assert.deepEqual(checkSchema(S,s),[],'schema refuses controllers: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts controllers: '+name);}
 // Both refuse (schema error and generator error).
 const both=[
   ['volumePedal min below 0',s=>s.volumePedal={min:-1},2],['volumePedal max above 10',s=>s.volumePedal={max:11},2],['volumePedal unknown key',s=>s.volumePedal={min:1,curve:2},2],
@@ -78,4 +91,4 @@ const generatorOnly=[
 for(const [name,edit,i] of generatorOnly){const s=structuredClone(valid[i]);edit(s);
   assert.deepEqual(checkSchema(S,s),[],'schema refuses (move it to the both-list): '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
 assert.ok(checkSchema(S,{composer,layout:{row2:['amp','cab'],row3:[]},unknownField:1}).some(e=>/unknownField/.test(e)),'unknown top-level field refused');
-console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:5,multidelayRefusals:4,refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));
+console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:5,multidelayRefusals:4,controllersRefusals:{both:ctlBoth.length,generatorOnly:ctlGenerator.length},refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));
