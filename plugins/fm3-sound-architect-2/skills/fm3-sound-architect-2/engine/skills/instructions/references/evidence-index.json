@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2167,
-  "filePaths": 2371,
+  "uniqueContents": 2168,
+  "filePaths": 2372,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -5515,6 +5515,12 @@
       "bytes": 236,
       "paths": [
         "examples/JB_RHYTHM_SOLO_GENERATED.spec.json"
+      ]
+    },
+    "6f316708afbb2a09f50193e4d14a0848bcbb0104e762b74627804ff1bacdecd8": {
+      "bytes": 9645,
+      "paths": [
+        "references/fm3-shot-t27-multidelay-side-20261105.json"
       ]
     },
     "6f4e15807d5498d069be8e2e064c85c41030cd572d3ff7e80db476bab6d0a19c": {

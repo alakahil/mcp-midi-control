@@ -41,8 +41,14 @@ for(const s of [multidelayLayout,multidelayRow2,multidelayGrid,allSerialInserts]
 const mdDuplicate=structuredClone(multidelayLayout);mdDuplicate.insert.push('multidelay');
 const mdChannel=structuredClone(multidelayLayout);mdChannel.blockScenes.multidelay[0].channel='E';
 const mdColumn=structuredClone(multidelayLayout);mdColumn.layout.columns.multidelay=12;
-const mdWrite={...multidelayLayout,allow:['enum-labels'],controls:[{block:'multidelay',channel:'A',param:'MULTITAP_BASETYPE',value:'Quad Parallel Delay'}]};
-for(const s of [mdDuplicate,mdChannel,mdColumn,mdWrite]){
+// 0.3.49 (T27): Base Type and Multi Delay parameters are writable; the Multi Delay preset word (Type, pid 114) is refused
+// by the generator only (the schema cannot know the parameter rule).
+const mdWrite={...multidelayLayout,allow:['enum-labels','linear-by-structure'],controls:[{block:'multidelay',channel:'A',param:'MULTITAP_BASETYPE',value:'Quad Parallel Delay'},{block:'multidelay',channel:'A',param:'MULTITAP_MIX',value:30}]};
+ok(mdWrite);
+const mdPreset={...multidelayLayout,allow:['enum-labels'],controls:[{block:'multidelay',channel:'A',param:'MULTITAP_PRESETS',value:3}]};
+assert.deepEqual(checkSchema(S,mdPreset),[],'schema shape of a Multi Delay preset write');
+assert.throws(()=>createPreset(base,mdPreset),/preset selection \(Type\) is not writable/,'generator refuses the Multi Delay preset word');
+for(const s of [mdDuplicate,mdChannel,mdColumn]){
   assert.notDeepEqual(checkSchema(S,s),[],'schema accepts invalid Multi Delay input');
   assert.throws(()=>createPreset(base,s),Error,'generator accepts invalid Multi Delay input');
 }
@@ -72,4 +78,4 @@ const generatorOnly=[
 for(const [name,edit,i] of generatorOnly){const s=structuredClone(valid[i]);edit(s);
   assert.deepEqual(checkSchema(S,s),[],'schema refuses (move it to the both-list): '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
 assert.ok(checkSchema(S,{composer,layout:{row2:['amp','cab'],row3:[]},unknownField:1}).some(e=>/unknownField/.test(e)),'unknown top-level field refused');
-console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:4,multidelayRefusals:4,refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));
+console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:5,multidelayRefusals:4,refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));

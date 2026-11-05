@@ -20,7 +20,7 @@ FW13 juhikut; see ei tühista skalaarse kodeeringu, tempo või modifikaatori pii
 | RingMod | 13 | 11 | A–B | Tüübivalijata |
 | Resonator | 40 | 39 | A–B | Manual / Chordal |
 | Looper | 24 | 16 | A | Salvestatavad juhikud |
-| MultiDelay/MULTITAP | 121 | 117 | A–D | 6 tüüpi; ainult loetav metaandmestik |
+| MultiDelay/MULTITAP | 121 | 117 | A–D | 6 tüüpi; kirjutatav 0.3.49-st, preseti valik (pid 114) lukus |
 
 Lähteallikad on kinnitatud FM3-Edit 1.07.17 XML ja FW13 vahemälu. Mixeri
 Delay 1–4 nimed/PID-id 17–20 lahendati ARM64 binaari 23 järjestikuse
@@ -39,10 +39,10 @@ salvestatud tuletisi ja nende kooskõla. Ühtegi native programmi ega REA teenus
 
 ## Tarkvaratestid
 
-- 515 PID-i skalaarse toe kontroll; 5722 skalaarkontrolli.
-- 6268 tüübi/kanali juhtu, sealhulgas 2904 MultiDelay ainult lugemise juhtu.
-- 2364 tegelikku puhverkirjutust koos kõigi kõrvaliste baitide säilimise kontrolliga.
-- 49 eraldi sõnastatud nähtavusjuhtu; 4357 vigase sisendi/keelatud kirjutuse kontrolli.
+- 515 PID-i skalaarse toe kontroll; 5777 skalaarkontrolli.
+- 6268 tüübi/kanali juhtu (0.3.49-st ka MultiDelay kirjutusjuhud; preseti sõna tõrjutakse igal tüübil ja kanalil).
+- 4505 tegelikku puhverkirjutust koos kõigi kõrvaliste baitide säilimise kontrolliga.
+- 49 eraldi sõnastatud nähtavusjuhtu; 5243 vigase sisendi/keelatud kirjutuse kontrolli.
 - 24 576 Scene MIDI juhtu: kõik 64 käsukohta, 7-bitised väärtused ja kõik 16 kanalit.
   Väärtused/kanalid on süsteemselt jaotatud, mitte kogu võimaliku ristkorrutise läbimine.
   PC säilitab Number-sõna, NONE säilitab muud väljad, sõna 256 ja ümbrus säilivad.
@@ -81,8 +81,8 @@ auditi käigus avalikku reposse või pluginasse kopeerida.
 
 MultiDelay dünaamiline Feedback Send/Return ja presetivalik, Looperi jooksva oleku
 käsud, Synthi ostsillaatorite ja Multibandi automaatse ajastuse DSP-sõltuvused ei
-ole skalaarne kirjutustugi. MultiDelay plokki saab 0.3.47-st lisada seadme vaikeväärtustega, aga selle
-parameetreid ei kirjutata. Tundmatud skaalad
+ole skalaarne kirjutustugi. MultiDelay plokki saab 0.3.47-st lisada seadme vaikeväärtustega; 0.3.49-st
+kirjutatakse Base Type ja parameetrid, preseti valik jääb lukku (T27). Tundmatud skaalad
 jäävad blokeerituks. Täiendav staatiline uurimine võib osa lünki veel vähendada;
 see väljalase ei väida kogu seadme käitumise ammendavat tõendamist.
 
@@ -165,7 +165,9 @@ preset enne ja pärast ühe Multi Delay lisamist FM3-Editis. Paar erineb ainult 
 ühendamata) ja lõppu lisatud kirje (eid 74, 121×4) poolest; kanalid A–D on identsed. `insertDonor()` loeb mõlemad
 doonoripaarid ja kontrollib kumbagi baithaaval. `references/fm3-multidelay-types-20261103.syx` (kanalid B/C/D =
 Base Type 1/2/3, valitud FM3-Editis) on CPU-katse võrdlusmaterjal. T26 (4.11.2026): laadimine 484/484 sõna,
-FM3-Edit rida 3 veerg 7, CPU 5,5…8 punkti tüübi järgi (`references/fm3-shot-t26-multidelay-20261104.json`).
+FM3-Edit rida 3 veerg 7, CPU 5,5…8 punkti tüübi järgi (`references/fm3-shot-t26-multidelay-20261104.json`). T27 (5.11.2026): salvestatud
+Base Type ja preseti sõna jäävad laadimisel muutmata; FM3-Editi preseti valik täidab 39 sõna
+(`references/fm3-shot-t27-multidelay-side-20261105.json`).
 
 ## Lisamine generaatoris (`scripts/fm3-insert-blocks.mjs`, väli `insert`)
 

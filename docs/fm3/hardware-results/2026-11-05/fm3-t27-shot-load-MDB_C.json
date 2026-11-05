@@ -1,0 +1,43 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "434db3aa6507a15782c2ad56ef3001dd94337c5934ce22eeb44642bc16be8cb2",
+ "preset": "MDB_C",
+ "name": "T27 MD BASE C",
+ "time": "2026-11-05T10:30:33",
+ "blocks": [
+  {
+   "family": "multidelay",
+   "effectId": 74,
+   "values": 484,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "B",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "C",
+     "raw": 4,
+     "device": 4
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "D",
+     "raw": 5,
+     "device": 5
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

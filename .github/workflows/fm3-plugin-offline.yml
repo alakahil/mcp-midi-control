@@ -103,6 +103,7 @@ jobs:
           node tools/fm3/enum-promotion-build.mjs
           node tools/fm3/shot-t25-ingest.mjs
           node tools/fm3/t26-multidelay-ingest.mjs
+          node tools/fm3/t27-multidelay-side-ingest.mjs
           node tools/fm3/test-cs-preset-replay.mjs
           node tools/fm3/test-p3-modifier-reuse.mjs
           node tools/fm3/modifier-fields-status.mjs

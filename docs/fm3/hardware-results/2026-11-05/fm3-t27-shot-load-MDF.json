@@ -1,0 +1,18 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "434db3aa6507a15782c2ad56ef3001dd94337c5934ce22eeb44642bc16be8cb2",
+ "preset": "MDF",
+ "name": "T27 MD DEFAULT",
+ "time": "2026-11-05T10:31:23",
+ "blocks": [
+  {
+   "family": "multidelay",
+   "effectId": 74,
+   "values": 484,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  }
+ ],
+ "allMatch": true
+}
