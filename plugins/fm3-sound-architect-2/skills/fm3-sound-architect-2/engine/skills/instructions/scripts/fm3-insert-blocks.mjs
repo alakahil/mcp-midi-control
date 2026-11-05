@@ -8,6 +8,8 @@
 // device defaults. Scene fields of a freshly added block are NOT defaults (the device keeps
 // scenes 2-8 from the last preset that used the block), so every insertion writes all 8 scenes:
 // channel A, bypassed, exactly like the NewLook composer. Use blockScenes to engage it.
+// Multi Delay (MULTITAP, eid 74; 0.3.47, T26) comes from a second pair of the same kind: the user's FW13 export
+// of an <EMPTY> preset before and after adding one fresh Multi Delay (2026-11-03, MULTIDELAY_DONOR).
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
@@ -20,7 +22,10 @@ const RECORDS_START=4610;
 const gridAt=(row,col)=>GRID.start+col*16+row*4;
 export const INSERT_DONOR=Object.freeze({file:'references/fm3-default-blocks-20261023.syx',sha256:'dc382d6ded7dafc6889abc19edb5763a1b8e483bec841879108ded68423e49af',
   empty:'references/fm3-empty-preset-20261023.syx',emptySha256:'220866f7866d9f515a98b36b2430de6e5a69ae378e58426bc86f3bc417ea7e14'});
-export const INSERTABLE=Object.freeze({plex:178,multiband:154,synth:130,looper:166,gate:146,formant:98,tentap:158,megatap:138,ringmod:150,resonator:162});
+export const MULTIDELAY_DONOR=Object.freeze({file:'references/fm3-multidelay-fresh-20261103.syx',sha256:'54b4204b6f4e202ffb652bfad33d57785c208373c2339bb6eed246e1ef1aff07',
+  empty:'references/fm3-multidelay-empty-20261103.syx',emptySha256:'0cdff53aac57549ec3810a04ffb430c9132563edea87115739ae822c45a990e0'});
+const DONORS=[INSERT_DONOR,MULTIDELAY_DONOR];
+export const INSERTABLE=Object.freeze({plex:178,multiband:154,synth:130,looper:166,gate:146,formant:98,tentap:158,megatap:138,ringmod:150,resonator:162,multidelay:74});
 // Type/mode selector per family (dictionary), for the final text report only.
 export const INSERT_TYPE_PID=Object.freeze({plex:0,gate:14,tentap:0,resonator:0});
 export const GATED=Object.freeze({
@@ -33,8 +38,14 @@ export const GATED=Object.freeze({
 let donorCache=null;
 export function insertDonor(){
   if(donorCache)return donorCache;
-  const bytes=readComposerFile(INSERT_DONOR.file),empty=readComposerFile(INSERT_DONOR.empty);
-  check(sha(bytes)===INSERT_DONOR.sha256&&sha(empty)===INSERT_DONOR.emptySha256,'Insert donor changed');
+  const byEid=new Map(),all=[];
+  for(const d of DONORS){const r=readDonorPair(d);for(const [eid,rec] of r.byEid){check(!byEid.has(eid),'Effect in two donors: '+eid);byEid.set(eid,rec);}all.push(...r.records);}
+  for(const eid of Object.values(INSERTABLE))check(byEid.has(eid),'Donor lacks effect '+eid);
+  return donorCache={byEid,records:all};
+}
+function readDonorPair(donor){
+  const bytes=readComposerFile(donor.file),empty=readComposerFile(donor.empty);
+  check(sha(bytes)===donor.sha256&&sha(empty)===donor.emptySha256,'Insert donor changed: '+donor.file);
   const body=Buffer.from(inspectStructure(bytes).raw.body),base=Buffer.from(inspectStructure(empty).raw.body);
   const {records,tail}=scanRecords(body,{requireAmpCab:false}),before=scanRecords(base,{requireAmpCab:false});
   check(before.records.length===0&&before.tail===RECORDS_START,'Empty donor baseline must hold no records');
@@ -48,8 +59,7 @@ export function insertDonor(){
     check(chs.every(c=>c.equals(chs[0])),'Donor record channels differ; not device defaults: '+r.eid);
     byEid.set(r.eid,Buffer.from(body.subarray(r.header,r.start+r.channels*per)));
   }
-  for(const eid of Object.values(INSERTABLE))check(byEid.has(eid),'Donor lacks effect '+eid);
-  return donorCache={byEid,records:records.map(r=>({eid:r.eid,words:r.words,channels:r.channels}))};
+  return {byEid,records:records.map(r=>({eid:r.eid,words:r.words,channels:r.channels,donor:donor.file}))};
 }
 
 // blocks: ['plex','gate',...]; each is appended after the last record (device behaviour in the
@@ -86,11 +96,13 @@ export function insertBlocks(syx,blocks){
   check(readback.decoded.preset_name===before.decoded.preset_name,'Name changed');
   const rp=Buffer.from(readback.raw.rawPatch);check(rp.readUInt16LE(72)===body.length&&rp.readUInt16LE(74)===readback.raw.compSize,'Invalid encoded size');
   check(rp.subarray(76+readback.raw.compSize).every(v=>v===0),'Nonzero output padding');
-  return {syx:out,inserted,report:{stage:'fm3-insert-blocks 0.1.0',donorSha256:INSERT_DONOR.sha256,emptySha256:INSERT_DONOR.emptySha256,outputSha256:sha(out),bodyBytes:body.length,
+  return {syx:out,inserted,report:{stage:'fm3-insert-blocks 0.2.0',donorSha256:INSERT_DONOR.sha256,emptySha256:INSERT_DONOR.emptySha256,
+    ...(blocks.includes('multidelay')?{multidelayDonorSha256:MULTIDELAY_DONOR.sha256,multidelayEmptySha256:MULTIDELAY_DONOR.emptySha256}:{}),outputSha256:sha(out),bodyBytes:body.length,
     checks:{donorPairReconstructed:true,donorChannelsIdentical:true,existingRecordsUnchanged:true,systemTailPreserved:true,onlyDeclaredGridWords:true,frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true},
-    hardware:'record shapes device-confirmed (2026-10-23 exports); generated insertion import/export pending',audio:'not tested',cpu:'not tested'}};
+    hardware:'record shapes device-confirmed (2026-10-23 exports); generated insertion import/export pending',audio:'not tested',cpu:'measured per type (T31, fm3-cpu 0.2.4)'}};
 }
 export function insertCapabilities(){
-  return {field:'insert',blocks:Object.keys(INSERTABLE),gated:GATED,donor:INSERT_DONOR.file,defaultScenes:'A, bypass in all 8 scenes; engage with blockScenes',
+  return {field:'insert',blocks:Object.keys(INSERTABLE),gated:GATED,donor:INSERT_DONOR.file,multidelayDonor:MULTIDELAY_DONOR.file,
+    multidelay:'device-default Quad-Tap Delay; Base Type (Algorithm) and parameters writable (T27), Multi Delay preset (Type) refused',defaultScenes:'A, bypass in all 8 scenes; engage with blockScenes',
     placement:'first free serial shunt of rows 2/3, then layout decides the column',limits:'One instance per family; parameter defaults come from the device; enum writes need allow enum-labels'};
 }

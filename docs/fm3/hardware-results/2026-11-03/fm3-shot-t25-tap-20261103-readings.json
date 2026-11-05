@@ -1,0 +1,191 @@
+{
+ "test": "T25",
+ "preset": "TAP",
+ "source": "FM3-Edit 1.07.17 window captures by Claude (computer use), 2026-11-03",
+ "readings": [
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME1M",
+   "shown": "12 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME2M",
+   "shown": "35 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME3M",
+   "shown": "94 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME4M",
+   "shown": "187 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME5M",
+   "shown": "375 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME6M",
+   "shown": "562 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME7M",
+   "shown": "936 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME8M",
+   "shown": "1311 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME9M",
+   "shown": "1686 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME10M",
+   "shown": "1873 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME1M",
+   "shown": "3150 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME2M",
+   "shown": "3800 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME3M",
+   "shown": "4450 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME4M",
+   "shown": "5100 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME5M",
+   "shown": "5750 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME6M",
+   "shown": "6400 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME7M",
+   "shown": "7050 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME8M",
+   "shown": "7700 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME9M",
+   "shown": "8350 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Rhythm Tap Delay",
+   "page": "Taps",
+   "param": "TENTAP_TIME10M",
+   "shown": "9000 ms"
+  },
+  {
+   "block": "tentap",
+   "channel": "C",
+   "type": "Ten-Tap Delay",
+   "page": "Config",
+   "param": "TENTAP_TIMEM",
+   "shown": "1000 ms",
+   "numberOfTaps": "10",
+   "note": "device rewrote the stored word to 6494 (shot-read after-edit); written 16384/40000"
+  },
+  {
+   "block": "tentap",
+   "channel": "D",
+   "type": "Ten-Tap Delay",
+   "page": "Config",
+   "param": "TENTAP_TIMEM",
+   "shown": "1000 ms",
+   "numberOfTaps": "10",
+   "note": "device rewrote the stored word to 6494 (shot-read after-edit); written 16384/40000"
+  }
+ ],
+ "notes": [
+  "Channel letters and page tabs clicked in FM3-Edit; nothing stored.",
+  "Channels C/D Delay Time showed 1000 ms with Number of Taps 10 although 16384/40000 were loaded; the re-read after viewing returned 6494 for both and taps 6553."
+ ]
+}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.8.0 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.8.4 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -10,9 +10,8 @@
     "insert": {
       "type": "array",
       "minItems": 1,
-      "maxItems": 10,
       "uniqueItems": true,
-      "description": "Point-6 blocks inserted from the device-default donor; all 8 scenes start on channel A, bypassed. Mixer and Multiplexer only in grid mode; Scene MIDI (grid mode only) is placed unconnected; Volume/Pan uses volumePan.",
+      "description": "Point-6 blocks inserted from the device-default donor; all 8 scenes start on channel A, bypassed. Mixer and Multiplexer only in grid mode; Scene MIDI (grid mode only) is placed unconnected; Volume/Pan uses volumePan. Multi Delay uses Quad-Tap Delay defaults; parameter writes remain unsupported.",
       "items": {
         "enum": [
           "plex",
@@ -27,7 +26,8 @@
           "resonator",
           "mixer",
           "multiplexer",
-          "scenemidi"
+          "scenemidi",
+          "multidelay"
         ]
       }
     },
@@ -68,7 +68,8 @@
               "tentap",
               "megatap",
               "ringmod",
-              "resonator"
+              "resonator",
+              "multidelay"
             ]
           }
         },
@@ -105,7 +106,8 @@
               "tentap",
               "megatap",
               "ringmod",
-              "resonator"
+              "resonator",
+              "multidelay"
             ]
           }
         },
@@ -252,6 +254,11 @@
               "type": "integer",
               "minimum": 2,
               "maximum": 11
+            },
+            "multidelay": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 11
             }
           }
         }
@@ -301,6 +308,7 @@
               "resonator",
               "mixer",
               "multiplexer",
+              "return",
               "compressor2",
               "geq2",
               "peq2",
@@ -317,7 +325,8 @@
               "filter4",
               "drive2",
               "enhancer2",
-              "resonator2"
+              "resonator2",
+              "multidelay"
             ]
           },
           "channel": {
@@ -2278,6 +2287,46 @@
               }
             ]
           }
+        },
+        "multidelay": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              },
+              "channel": {
+                "enum": [
+                  "A",
+                  "B",
+                  "C",
+                  "D"
+                ]
+              },
+              "bypass": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "scene"
+            ],
+            "anyOf": [
+              {
+                "required": [
+                  "channel"
+                ]
+              },
+              {
+                "required": [
+                  "bypass"
+                ]
+              }
+            ]
+          }
         }
       }
     },
@@ -2407,7 +2456,8 @@
                     "drive2",
                     "enhancer2",
                     "resonator2",
-                    "scenemidi"
+                    "scenemidi",
+                    "multidelay"
                   ]
                 }
               ]
@@ -2770,6 +2820,50 @@
             "maximum": 6
           }
         }
+      }
+    },
+    "controllers": {
+      "description": "Controllers block (LFO 1/2, ADSR 1/2, Envelope, Sequencer, Scene Controllers, Manual): 0.3.50, T28. Status gate and refusals (Tempo, Tempo To Use, X/Y marks) are generator rules.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "channel": {
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "param": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 129
+              },
+              {
+                "type": "string",
+                "minLength": 1
+              }
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "string"
+            ]
+          }
+        },
+        "required": [
+          "channel",
+          "param",
+          "value"
+        ]
       }
     }
   },

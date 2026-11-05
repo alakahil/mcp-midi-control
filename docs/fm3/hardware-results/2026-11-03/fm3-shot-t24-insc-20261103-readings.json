@@ -1,0 +1,84 @@
+{
+"test": "T24",
+"preset": "INSC",
+"source": "FM3-Edit 1.07.17 window captures taken by Claude (computer use, Jan present) 2026-11-03; read from the block pages, nothing edited",
+"readings": [
+{
+"block": "synth",
+"channel": "A",
+"type": null,
+"param": "SYNTH_TYPE1",
+"shown": "Sawtooth"
+},
+{
+"block": "synth",
+"channel": "A",
+"type": null,
+"param": "SYNTH_TRACK1",
+"shown": "Quantize"
+},
+{
+"block": "synth",
+"channel": "A",
+"type": null,
+"param": "SYNTH_PD_RANGE",
+"shown": "Bass"
+},
+{
+"block": "ringmod",
+"channel": "A",
+"type": "Classic",
+"param": "RINGMOD_PD_RANGE",
+"shown": "Bass"
+},
+{
+"block": "resonator",
+"channel": "A",
+"type": "Manual",
+"param": "RESONATOR_LOC2",
+"shown": "Post"
+},
+{
+"block": "resonator",
+"channel": "A",
+"type": "Manual",
+"param": "RESONATOR_INPUTMODE",
+"shown": "Stereo"
+},
+{
+"block": "resonator",
+"channel": "B",
+"type": "Chordal",
+"param": "RESONATOR_MODE",
+"shown": "Chordal (shown in the TYPE field)"
+},
+{
+"block": "resonator",
+"channel": "B",
+"type": "Chordal",
+"param": "RESONATOR_CHORD",
+"shown": "Minor 7"
+},
+{
+"block": "formant",
+"channel": "A",
+"type": null,
+"param": "FORMANT_F1",
+"shown": "OOO"
+},
+{
+"block": "formant",
+"channel": "A",
+"type": null,
+"param": "FORMANT_F2",
+"shown": "AWW"
+},
+{
+"block": "formant",
+"channel": "A",
+"type": null,
+"param": "FORMANT_F3",
+"shown": "ERR"
+}
+]
+}

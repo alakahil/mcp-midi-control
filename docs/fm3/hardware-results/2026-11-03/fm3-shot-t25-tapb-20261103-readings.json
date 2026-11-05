@@ -1,0 +1,58 @@
+{
+ "test": "T25b",
+ "preset": "TAPB",
+ "source": "FM3-Edit 1.07.17 window captures by Claude (computer use), 2026-11-03",
+ "readings": [
+  {
+   "block": "tentap",
+   "channel": "A",
+   "type": "Ten-Tap Delay",
+   "page": "Config",
+   "param": "TENTAP_TIMEM",
+   "shown": "109 ms",
+   "numberOfTaps": "10"
+  },
+  {
+   "block": "tentap",
+   "channel": "B",
+   "type": "Ten-Tap Delay",
+   "page": "Config",
+   "param": "TENTAP_TIMEM",
+   "shown": "307 ms",
+   "numberOfTaps": "10"
+  },
+  {
+   "block": "tentap",
+   "channel": "C",
+   "type": "Ten-Tap Delay",
+   "page": "Config",
+   "param": "TENTAP_TIMEM",
+   "shown": "500 ms",
+   "numberOfTaps": "10"
+  },
+  {
+   "block": "tentap",
+   "channel": "D",
+   "type": "Ten-Tap Delay",
+   "page": "Config",
+   "param": "TENTAP_TIMEM",
+   "shown": "803 ms",
+   "numberOfTaps": "10"
+  }
+ ],
+ "frontPanel": [
+  {
+   "block": "tentap",
+   "channel": "D",
+   "type": "Ten-Tap Delay",
+   "param": "TENTAP_TIMEM",
+   "shown": "803 ms",
+   "numberOfTaps": "10",
+   "source": "FM3 front-panel photo by the user (Scene 1, Chan D)"
+  }
+ ],
+ "notes": [
+  "Number of Taps 10 on every channel.",
+  "Nothing stored."
+ ]
+}

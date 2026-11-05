@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.39`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.53`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -98,8 +98,9 @@ nelja faili näide. V4 muudab ainult Amp C seadeid ning preseti ja 5. stseeni
 nime; stseeni uus nimi on `CRUNCH FULL`. Amp C: Crunch Orange, Gain 6,
 Bass 5.5, Mid 7.5, Presence 4 ja Level −10 dB; Output Scene 5 jääb +1 dB peale.
 V1–V3 kuulamistagasiside on allpool. T8 kinnitab V4 laadimist CPU-katseks
-ning kõigi kaheksa stseeni CPU-näite. V4 terviklik uus tagasilugemine ja
-V3/V4 kuulamisvõrdlus on eraldi kinnitamata.
+ning kõigi kaheksa stseeni CPU-näite. V3/V4 kuulamisvõrdluse tegi kasutaja
+privaatselt: eelistatud on V4, riff on 2. stseenil. V4 terviklik uus
+tagasilugemine on endiselt eraldi kinnitamata.
 Ära omista V3 seadmetõendit automaatselt V4-le.
 
 Näidiste kontroll hõlmab 51 spetsifikatsiooni: 48 SYX-i taastuvad baittäpselt,
@@ -134,6 +135,146 @@ Käivita `selfCheck` väljalaske teadaoleva commit'iga. Taastatud runtime'is
 on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
+
+## Legacy Cabi IR ja lisatud plokkide CPU (0.3.53, T31)
+
+`controls` plokiga `cab` kirjutab nüüd Legacy-kanalil Cab 1/2 IR-i: `BANK1`/`BANK2` (FACTORY 1, FACTORY 2, USER,
+LEGACY, SCRATCHPAD) ja `TYPE1`/`TYPE2` = FM3-Editi näidatud number `#` (1–1024), nt
+`{"block":"cab","channel":"A","param":"TYPE1","value":18}`. T31 (5.11.2026): salvestatud 17 ja 200 näitas FM3-Edit
+kui Factory 1 # 18 („1x8 Dan-O 414 A") ja Factory 2 # 201, seega # = salvestatud sõna + 1. Koostaja Cabi kanal A on
+Legacy (Cab 2 on seal vaigistatud), B–D on Dyna-Cab; Dyna-Cab kanalile need sõnad ei mõju ja kirjutus keelatakse
+(Dyna-Cabi valik käib `cabChannels` kaudu). IR-i nimed tulevad seadmest ja neid ei kontrollita.
+REA FM3-Editi paigutusest: Ampi XFLEAKAGE, RESOLUTION, DYNDEPTH, DYNPRES ja Ten-Tapi REFTEMPO jaoks pole FM3-Editis
+nuppu, need jäävad lukku. CPU: 54 lisatud ploki presetti mõõdeti (kalibreerimine 52,5 % alguses ja lõpus); CPU
+hinnang (`fm3-cpu 0.2.4`) arvestab nüüd iga tüübi oma hinda: Plex 9,5–27,5 (Shimmer Verb 27,5), Megatap 9,5–10,
+Ten-Tap 4,5, Resonator 7,5, Ring Mod 2,5–4, Gate 1,5–5,5, Volume/Pan 1/2,5, Synth (hääl 1, hääled 2–3 OFF) 2,5–13,5,
+Legacy Cab sama kui Dyna-Cab. Tõend: `references/fm3-shot-t31-cab-cpu-20261105.json`.
+
+## Valikunupud edutatud (0.3.52, T30)
+
+T30 (5.11.2026) laadis kaks generaatori presetit: EN1 (PEQ bändide 1–5 tüübid, Phaser LFO Quantize, Multi Delay
+EQ Type ja Comb Filters Filter Type) ja EN2 (17 Controllersi valikut: LFO Tempo/Quantize/Run, ADSR Type/Mode/
+Retrigger/Source, Envelope ja Pitch Source, Sequencer Run/Tempo). FM3 hoidis kõik sõnad ja FM3-Edit näitas kõigil
+25-l täpselt dekodeeritud silti (Phaser Quantize: loend algab OFF, OFF, 2, 3, salvestatud 3 näitab 3). Need 25 ning
+T28-s loetud LFO 1/2 Type ja ADSR 1 Mode (kokku 28) on nüüd `enum-labels-crosschecked`, st kirjutatavad ilma
+`allow`-ta; kokku 225 vaikimisi kirjutatavat valikut. 123 jääb teadlikult opt-in'iks (`allow:["enum-labels"]`):
+üldseaded (75, neid ei kirjutata), modifikaatorite seaded (6), Mixer/Multiplexer/Feedback Return/Output/Input/
+Volume marsruutimise ja bypassi sõnad, kanali tüübi/mudeli valijad (vajavad täit kanalimalli), learn/preset/IR-panga
+valijad, `MULTITAP_PRESETS` ja Controllersi Tempo To Use (kirjutaja keelab). Heli ja STORE/reload'i ei mõõdetud.
+Tõend: `references/fm3-shot-t30-enum-20261105.json`.
+
+## Feedback Return kirjutatav (0.3.51, T29)
+
+Iga koostaja preset ühendab rea 2 reaga 3 Feedback Send (rida 2 veerg 12) ja Feedback Return (rida 3 veerg 1)
+plokiga. `controls` lubab nüüd plokki `return` (ainult kanal A): Return Level (`RETLEVEL`, 0–100 %), Output Level
+(`LEVEL`, dB) ja Balance (`PAN`, −100…100), nt `{"block":"return","channel":"A","param":"LEVEL","value":-3}`.
+T29 (5.11.2026): FM3 hoidis laadimisel kõik Return'i sõnad ja FM3-Edit näitas 80.0 %, −3.0 dB ja 20.0 täpselt nagu
+dekodeeritud. Feedback Send'il pole FM3-Editis ühtki muudetavat parameetrit ning seade nullib selle kaks sõna laadimisel,
+seega `send` on keelatud. Return'i Bypass Mode ja Bypass jäävad lukku (nähtud ainult Thru / mitte möödas). Soundi skeem
+on 0.8.4. Tõend: `references/fm3-shot-t29-feedback-20261105.json`.
+
+## Controllers kirjutatav (0.3.50, T28)
+
+Uus väli `controllers` kirjutab Control ploki (LFO 1–2, ADSR 1–2, Envelope, Sequencer, Scene Controllers 1–4,
+Manual 1–5) väärtusi: `[{"channel":"A","param":"LFO1FREQ","value":2.5}]`. `param` on nimi (`LFO1FREQ` või
+`CONTROLLERS_LFO1FREQ`) või PID 0–129, väärtus on FM3-Editi näit. Kirje asub preseti algusosas (keha nihe 452,
+130 sõna × 4 kanalit). T28 (5.11.2026): FM3 hoidis laadimisel kõik 520 sõna ja FM3-Edit näitas kanalil A täpselt
+26 oodatud väärtust (LFO, ADSR 1, Sequencer, Envelope/Manual, Scene Ctrl 1+2). Kanalivalija B/C/D näitas
+11/12/13 %, seega on neli koopiat Controllersi kanalid A–D. Kirjutamisel kehtib tavaline staatuspiirang:
+nupud, täisarvud ja (alates 0.3.52, T28/T30) kõik valikud peale Tempo To Use vaikimisi.
+Tempo, Tempo To Use, ADSR X/Y märgid ja Envelope Gain Monitor on keelatud. Millist Controllersi
+kanalit iga stseen kasutab, pole dekodeeritud. Koostaja väljundis on stseeni sõnad 0 ja FM3-Edit näitas kanalit A, seega kõlab
+kanal A. Modifikaatori allika sidumine on eraldi teema. Soundi skeem on 0.8.3. Tõend:
+`references/fm3-shot-t28-controllers-20261105.json`.
+
+## Multi Delay parameetrid kirjutatavad (0.3.49, T27)
+
+`controls` lubab nüüd plokki `multidelay`: Base Type (`MULTITAP_BASETYPE`, FM3-Editis „Algorithm“) ja
+Multi Delay parameetrid kirjutatakse tavalise FW13 nähtavuspoliitika ja staatuste järgi (nt Ring Freq ainult
+tüüpidel, mille FM3-Edit seda näitab). Multi Delay preseti sõna (`MULTITAP_PRESETS`, FM3-Editis „Type“, 39 valikut)
+jääb keelatuks. T27 (5.11.2026): FM3 hoidis laadimisel ja kanali aktiveerimisel kõik salvestatud sõnad muutmata
+(5 presetti, 484/484), Algorithmi muutmine FM3-Editis muutis ainult ühte sõna, aga preseti valik (Pealing Bells)
+täitis 39 sõna. Salvestatud preseti sõna ise täidet ei käivita, seega selle kirjutamine annaks vale sildi.
+Time 1–4, LFO 1–2 Rate ja Filter Rate on FW13 XML-i järgi tempo-lukus: kirjutus nõuab sama kanali
+Tempo = NONE (seadme vaikimisi Tempo 1 = 1/4). Feedback Send/Return jäid 0.3.49-s lukku (Return avatud 0.3.51-s). Soundi skeem on 0.8.2.
+Tõend `references/fm3-shot-t27-multidelay-side-20261105.json`.
+
+## Multi Delay sisendiskeemi kooskõla (0.3.48)
+
+Soundi skeem 0.8.1 aktsepteerib `multidelay` väärtust `insert`-is, mõlemas
+`layout` reas ja `layout.columns`-is, `grid` lahtris ning `blockScenes` võtmena.
+0.3.47 generaator toetas neid juba, kuid skeemi loendid olid täiendamata.
+`test-sound-schema` kontrollib nüüd mõlemat paigutusrežiimi ning vigase kanali,
+veeru ja korduva lisamise tõrjumist. Multi Delay parameetrikirjutus jäi
+0.3.48-s keelatuks (avatud 0.3.49-s); generaatori SYX-kirjutusloogika ja olemasolevad seadmetõendid ei muutu.
+
+## Multi Delay lisatav (0.3.47, T26)
+
+`insert:["multidelay"]` lisab Multi Delay ploki (MULTITAP, eid 74, üks eksemplar, 121 sõna × 4 kanalit) kasutaja
+FW13 doonoripaarist (`references/fm3-multidelay-{empty,fresh}-20261103.syx`) seadme vaikeväärtustega (Quad-Tap Delay).
+4.11.2026 hoidis FM3 kõiki 484 sõna ja FM3-Edit näitas plokki genereeritud kohas (rida 3, veerg 7), stseenis 1 sees.
+CPU on mõõdetud Base Type'i kaupa: Quad-Tap Delay, Diffusor ja Quad-Tap Band Delay 5,5, Quad Series Delay 6,5,
+Quad Parallel Delay 7,0, Quad Tape Delay 8,0 punkti; FM3-Editis valitud tüübid andsid sama tulemuse. Multi Delay
+parameetreid 0.3.47 veel ei kirjutanud (avatud 0.3.49-s, preseti valik jääb lukku); `blockScenes` töötab. Tõend
+`references/fm3-shot-t26-multidelay-20261104.json`.
+
+## Ten-Tapi ajad vaikimisi kasutatavad (0.3.46, T25)
+
+3.11.2026 laaditi T25-s kaks Ten-Tapi presetit. Rhythm Tap Delay Time 1–10 (20 väärtust 11,7…9000 ms) näitas
+FM3-Edit täpselt (lineaarne 0…10 s, täis-ms). Ten-Tap Delay'i Delay Time on lineaarne 0,01…10 s, mitte sõnastiku
+0,001…2 s: toorsõnad 650/1950/3214/5200 näitasid 109/307/500/803 ms, esipaneel 803 ms, ja seadme ise tuletatud
+Time-sõnad vastasid täpselt. 10 tapiga piiras seade Delay Time'i 1000 ms-ga. `scripts/fm3-tentap-times.mjs` tõstab
+11 sõna staatusse `measured`: Time 1–10 ainult tüübis Rhythm Tap Delay (Ten-Tap Delay arvutab need ise ümber) ja
+Delay Time ainult tüübis Ten-Tap Delay, kirjutatav 10…1000 ms. Tõend `references/fm3-shot-t25-tentap-20261103.json`.
+
+## Valikunupud vaikimisi kasutatavad (0.3.45, T24)
+
+3.11.2026 laaditi T24-s viis genereeritud presetit (Pitch, Tremolo, Phaser, Wah, Cab, Gate, Multiband,
+Plex, Looper, Synth, Ring Mod, Resonator, Formant, Ten-Tap, Megatap). 51 valikunuppu kirjutati algsest
+erinevale valikule. Plokkide tagasilugemine (fn=0x1F) klappis sõna-sõnalt ja FM3-Edit näitas kõigil 51-l
+täpselt oodatud silti. Esipaneeli foto kinnitas Megatapi Time/Amplitude Shape'i (2/2). Nullist või ühest
+algava loenduse nihet ei olnud. Lisaks on 639 jälgitava preseti kehas iga kandidaadi salvestatud väärtus
+oma loendi piires. `scripts/fm3-enum-promotion.mjs` tõstab 197 valikut staatusse
+`enum-labels-crosschecked` (vaikimisi kirjutatav, `allow` pole vaja): 50 seadmel loetud, 108 sama
+sildiloendiga kui juba kinnitatud valik ning 39 T24-s loetud perede unikaalset loendit. 151 jääb opt-in:
+kanali tüübi/mudeli valijad (vajavad täit kanalimalli ja *Channels-välja), üldseaded, kontrollerid,
+modifikaatorid ja marsruutimine, learn/preset/IR-panga valijad, PEQ/Multitapi unikaalsed loendid ja
+PHASER_LFOQUANTIZE. Lõpliku tüübi, tempo ja modifikaatorite piirangud kehtivad endiselt. See ei ole heli
+ega STORE/reload'i kinnitus (`MOOTOR/references/fm3-shot-t24-enum-20261103.json`,
+`fm3-enum-promotion-20261103.json`).
+
+## Mix, Balance ja täisarvud vaikimisi kasutatavad (0.3.44, T21–T23)
+
+2.11.2026 kasutati T21-s kolme, T22-s üht ja T23-s üht genereeritud presetit.
+T21/T22 näidud loeti FM3-Edit'ist ning valitud punktid ka esipaneelilt; T23 väljadele nähtavat nuppu ei leitud.
+T21: Mix (lipud 0x0705, 0…100 %, üks komakoht) ja Balance (0x0900, -100…100) 17/17 täpselt üheteistkümnes
+plokis; T22: klassi 0x01 täisarvud (bitisügavus, vedrude arv, häälte arv ×2, märgiga nihe -5 jne) 10/10 täpselt.
+Need kolm klassi (Mix 17, Balance 29, täisarvud 552 parameetrit) on nüüd vaikimisi kirjutatavad
+(`taper-class-verified`, `scripts/fm3-display-classes.mjs`), `allow` pole enam vaja.
+27 mõõdetud parameetri põhjal rakendatakse klassireeglit 598 sõnastikukirjele; see ei tähenda
+598 parameetri eraldi seadmemõõtmist ega kõigi tüüpide, vahemike, heli või STORE/reload'i kinnitust.
+Lõpliku tüübi, tempo ja modifikaatorite piirangud kehtivad endiselt. Enhancer/Formant Balance
+(lipud 0x0980) jääb opt-in. T23: Ampi `DISTORT_DYNDEPTH` / `DISTORT_DYNPRES` salvestuvad täpselt, aga neil pole
+FM3-Edit'is ega esipaneelil nuppu; need jäävad lukku (`MOOTOR/references/fm3-shot-t2{1,2,3}-*-20261102.json`).
+
+## Cabi ploki Low/High Cut asukoht (0.3.43, T20)
+
+2.11.2026 loeti Cab B (DynaCab, Preamp Type Tube) lõikenupud: `CABINET_LOCUT` / `CABINET_HICUT` (pid 38/39) on
+Preamp lehe "Filters" Low Cut / High Cut (koos Low/High Cut Slope'iga), `CABINET_LOCUT1` / `HICUT1` on Cab lehe
+Cab 1 lõiked. Näidud 87,0 Hz / 7300 Hz / 33,0 Hz on täpsed, Cab 1 High Cut 12499,9 Hz näitas 12499 Hz. Preamp Type
+NONE variant jäi tegemata, seega pole teada, kas Preamp lehe lõiked on NONE puhul nähtavad
+(`MOOTOR/references/fm3-cab-cut-t20-20261102.json`).
+
+## Cabi, Drive'i, Chorus'e, Flangeri, Wah ja Rotary nuppude näidud (0.3.42, T19)
+
+31.10.2026 loeti FM3 esipaneelilt 50 tabelikirjutaja nuppu: Cab B (DynaCab: Level, Cab 1 Level, Pan, DynaCab,
+Distance), Drive B (T808 OD: Low Cut, High Cut, Bias, Slew Rate, Bass, Mid, Mid Frequency, Treble), Chorus D
+(Japan CE-2: Rate, Depth, Mix, Minimum Delay, High Cut, Low Cut, Drive, Level), Flanger A (Analog Stereo: Rate,
+Depth, Feedback, Manual, Mix, High Cut, Drive, Level), Wah C (Cry Babe: Frequency Min/Max, Resonance Q, Q Tracking,
+Drive, Fat, Low Cut, Level) ja Rotary A (13 nuppu). Kõik 50 võrduvad kodeerija väärtusega näidatud komakohtadeni,
+sh kuus knob-klassi nuppu (display = n · kordaja). Chorus/Flanger/Rotary Mix (`linear-by-structure`, vajab
+`allow`) said esimese seadme näidu; kirjutusõigus ei muutu. Cabi ploki Low Cut / High Cut (pid 38/39) jäid
+mõõtmata: DynaCab lehel on Cab 1 enda lõiked (`MOOTOR/references/fm3-knob-read-t19-20261031.json`).
 
 ## Ampi, Delay ja Reverbi nuppude näidud (0.3.41, T18)
 
@@ -265,7 +406,7 @@ heli- või CPU-kinnitus. Kontrollitud globaalvaatlused jäävad kogumisaja tõen
 Kasuta [6. punkti katvuse ja piirangute tabelit](engine/docs/FM3_POINT6_BLOCKS.md).
 FW13 XML-poliitika katab nüüd 13 peret ja 515 PID-i. Lisanduvad Mixer,
 Multiplexer, Formant, Megatap, RingMod, Resonator, Looper ning ainult loetava
-metaandmestikuna MultiDelay. Kirjutamisel kontrolli lõplikku tüüpi ja tegelikku
+MultiDelay (0.3.49-st kirjutatav, preseti valik lukus). Kirjutamisel kontrolli lõplikku tüüpi ja tegelikku
 kanalite arvu: Looper A; Megatap/RingMod/Resonator A–B; teised A–D.
 Resonatori Manual/Chordal juhikud erinevad. Synthi, Megatapi ja RingModi
 PID 0 või peidetud TYPE ei tähenda kasutajale valitavat plokitüüpi.
@@ -274,8 +415,8 @@ Mixeri `DELAY1`…`DELAY4` nimed seotakse PID-idega 17…20 kinnitatud
 FM3-Edit ARM64 kirjeldustabeli ja FW13 vahemälu alusel. Ajaloolise sõnastiku
 skaalad ja tõendistaatused ei muutu. Delay 5/6 ei ole toetatud.
 Looperi Record/Play/Once/Reverse/Undo/Dub on käivituskäsud, mitte lubatud
-skalaarseadistused. MultiDelay dünaamilised Feedback Send/Return ja
-presetivalik jäävad blokeerituks; selle ploki lisamist ei avata.
+skalaarseadistused. MultiDelay Feedback Send/Return ja presetivalik jäävad
+blokeerituks (plokk on lisatav 0.3.47-st, parameetrid kirjutatavad 0.3.49-st).
 `--inspect-modifiers` kasutab 24 pere poliitikaid ning kontrollib ka 1/2-kanalilisi
 kirjeid. Puuduv kanal ja tundmatu seis jäävad teadmata; nähtavus ei tõenda
 modifikaatori tuge ega luba uut seost kirjutada.
@@ -329,7 +470,7 @@ kirjutamisel lõpliku kanali tüübipoliitikat (`references/fm3-insert-applicabi
 Peidetud väljad, mõõdikud, TenTap Learn/Reset ja Plexi presetivalik ei ole lubatud
 skalaarseadistused. Synthi ostsillaatorite ja Multibandi Auto Att/Rel dünaamikat
 see XML-kontroll ei tõenda. Tundmatute skaalade kirjutamine jääb blokeerituks.
-Plexi/TenTapi 10 tempo-seost kuvatakse ka lõpparuandes; aktiivse modifikaatori
+Plexi/TenTapi/Multi Delay 17 tempo-seost (Multi Delay 7: Time 1–4, LFO 1–2 Rate, Filter Rate; vaikimisi Tempo 1 = 1/4, seega kirjuta Time koos Tempo NONE-ga) kuvatakse ka lõpparuandes; aktiivse modifikaatori
 siht ja tempo ei tohi sattuda vastuollu.
 
 Käivita `--verify OUTPUT_STEM` kõigi nelja väljundfaili kontrolliks. Kontroll loeb
@@ -696,20 +837,21 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Kõverad: lineaarne, logaritmiline, nupp (klass 0x5: näit = n × 10), lineaarne dB (0x6).
   Tõendid: 280/280 seadmepunkti, 15/15 partiikatse näitu (`references/taper-batch-20261013.json`),
   12/12 senist juhti. Vaikimisi kirjutatakse measured / taper-class-verified / enum-labels-crosschecked;
-  linear-by-structure ja enum-labels vajavad `allow`; unverified-taper (36 kirjet) mitte kunagi.
+  linear-by-structure ja enum-labels vajavad `allow` (0.3.45: 197 valikut on T24 järel enum-labels-crosschecked); unverified-taper (36 kirjet) mitte kunagi.
 - **Kahe rea paigutus** `scripts/fm3-layout.mjs`: rida 2 In 1 → … → Send, rida 3 Return → … → Out 1,
   read 1/4 tühjad; plokkide järjekorra määrab sound. Ruudustiku liigutamine on **seadmel kinnitatud**
   (`examples/FM3_LAYOUT_MOVE_TEST_export.syx` keha identne).
 - **Soundi koostaja** `scripts/fm3-sound.mjs` (jb-newlook): `composer` → `layout` → `blockScenes` →
-  `controls` → `selectedScene`. Output Scene Level 1–8 (−20…+20 dB) on seadmel kinnitatud.
+  `controls` → `selectedScene` → `controllers` (Control plokk, 0.3.50). Output Scene Level 1–8 (−20…+20 dB) on seadmel kinnitatud.
 - **Plokkide lisamine (auditi punkt 6)** `scripts/fm3-insert-blocks.mjs`, väli `insert`: plex, multiband, synth,
-  looper, gate, formant, tentap, megatap, ringmod, resonator (Volume/Pan: Codexi `volumePan`). Doonor on kasutaja enda FW13 eksport
-  värsketest vaikeplokkidest (`references/fm3-default-blocks-20261023.syx`). Lisatud plokk on kõigis
+  looper, gate, formant, tentap, megatap, ringmod, resonator, multidelay (0.3.47; parameetrid 0.3.49-st, preseti valik lukus) (Volume/Pan: Codexi `volumePan`). Doonor on kasutaja enda FW13 eksport
+  värsketest vaikeplokkidest (`references/fm3-default-blocks-20261023.syx`; Multi Delay `fm3-multidelay-fresh-20261103.syx`). Lisatud plokk on kõigis
   8 stseenis kanalil A ja bypassis; sisse lülita `blockScenes` abil. Looperil on 1 kanal, Megatap/Ring Mod/
   Resonatoril 2 (A/B). Plexi TIME1–8 ja LFO Rate kirjutamine nõuab samas spetsis vastava TEMPO = NONE
   (FM3-Edit'i paigutuse lukud, `references/fm3-insert-tempo-locks.json`). Mixer ja Multiplexer lisanduvad
   ainult `grid`-režiimis (punkt 5); Scene MIDI lisandub samuti ainult `grid`-režiimis (vt allpool); kahe rea paigutuses lükatakse see tagasi. Mix-juhid
-  vajavad `allow: ["linear-by-structure"]`, valikuloendid `enum-labels`. Seadmel kinnitatud on kirjete
+  kasutavad 0.3.44-s eespool kirjeldatud klassipoliitikat: 0x0705 Mix ei vaja `allow`-d;
+  ülejäänud `linear-by-structure` juhid ja alates 0.3.45 opt-in'i jäänud `enum-labels` valikuloendid (tüübivalijad jms) vajavad vastavat `allow`-d. Seadmel kinnitatud on kirjete
   kuju ja genereeritud lisamise import/eksport (`examples/FM3_P6_INSERT_{A,B}*`; seade normaliseerib kirjete
   järjekorra, sisu sama). Kuus CPU-raskemat plokki korraga ületasid CPU piiri: hoia lisatud plokkide arv mõõdukas.
   Klassi 0x01 juhid (nt Shift, Number of Taps) on täisarvud.
@@ -761,7 +903,8 @@ Säilita 0.3.0 paigutus/tabeliarendus ja 0.2.2 Amp Leveli lisatõendid koos. Kõ
   Detailid: `engine/docs/FM3_CPU.md`.
 - **Satriani "Soap On A Rope"** `examples/SATRIANI_SOAP_ON_A_ROPE{,_V2,_V3,_V4}.*`: V1–V3 kuulatud (V3 26.10.2026:
   Scene 2 RIFF PUSH, Scene 4 SOLO JS410 ja Scene 8 meeldisid; Scene 5 Crunch liiga lahja ja puhas). V4 = V3 + täidlasem
-  Scene 5 (ainult Amp C: Crunch Orange, Gain 6, Bass 5.5, Mid 7.5, Presence 4, Level −10 dB); ootab kuulamist.
+  Scene 5 (ainult Amp C: Crunch Orange, Gain 6, Bass 5.5, Mid 7.5, Presence 4, Level −10 dB). V3/V4 kuulatud
+  privaatselt: eelistatud V4, riff 2. stseenil.
   Kõik on SA2 koostajaga baitidentsed.
 - **Helivõrdlus** `scripts/fm3-audio-compare.py REF FM3`: kolmandikoktaavi tämber ja stereolaius
   (eelista eraldatud kitarrirada). Efektide tuvastamine EI ole valideeritud — ära väida helianalüüsi

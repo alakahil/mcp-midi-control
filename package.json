@@ -193,6 +193,7 @@
     "verify-patterns": "tsx scripts/verify-patterns.ts",
     "verify-circuit-pack-gate": "tsx scripts/verify-circuit-pack-gate.ts",
     "verify-project-plan": "tsx scripts/verify-project-plan.ts",
+    "test:songsterr:live": "tsx scripts/verify-project-plan-live.ts",
     "verify-song-import": "tsx scripts/verify-song-import.ts",
     "verify-interview-brief": "tsx scripts/verify-interview-brief.ts",
     "song:interview-brief": "tsx scripts/song-interview-brief.ts",

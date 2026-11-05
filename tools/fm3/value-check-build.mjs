@@ -59,7 +59,7 @@ const items=[];
 for(const c of CASES){
   const syx=Buffer.from(c.make());
   assert.deepEqual([...parsePresetDump(syx,0,17).headerPayload],[0x7f,0,0,0x40,0],c.id+' edit-buffer header');
-  const st=inspectStructure(syx),body=Buffer.from(st.raw.body),{records}=scanRecords(body),cpu=estimateCpu(syx).maxPercent;
+  const st=inspectStructure(syx),body=Buffer.from(st.raw.body),{records}=scanRecords(body),cpu=estimateCpu(syx,{model:'fm3-cpu 0.2.3'}).maxPercent; // pinned: pack sent before T31
   assert.ok(cpu<75,c.id+' CPU estimate '+cpu);
   fs.writeFileSync(path.join(out,c.id+'.syx'),syx);
   items.push({id:c.id,file:c.id+'.syx',sha256:sha(syx),name:st.decoded.preset_name,proves:c.proves,cpuEstimate:cpu,bodySha256:sha(body),

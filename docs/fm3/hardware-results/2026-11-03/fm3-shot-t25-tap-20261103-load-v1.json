@@ -1,0 +1,368 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "6ed5a431fcb3b9b502394c09c052d0c8106fcb59e25731ab0a36990dcfd41d8b",
+ "preset": "TAP",
+ "name": "SHOT T25 TENTAP TIMES",
+ "time": "2026-11-03T15:27:50",
+ "blocks": [
+  {
+   "family": "tentap",
+   "effectId": 158,
+   "values": 192,
+   "matches": false,
+   "mismatches": [
+    {
+     "channel": "A",
+     "pid": 17,
+     "expected": 1227,
+     "device": 3276
+    },
+    {
+     "channel": "A",
+     "pid": 18,
+     "expected": 2455,
+     "device": 3276
+    },
+    {
+     "channel": "A",
+     "pid": 19,
+     "expected": 3682,
+     "device": 3276
+    },
+    {
+     "channel": "A",
+     "pid": 20,
+     "expected": 4910,
+     "device": 3276
+    },
+    {
+     "channel": "A",
+     "pid": 21,
+     "expected": 6137,
+     "device": 3276
+    },
+    {
+     "channel": "A",
+     "pid": 22,
+     "expected": 7365,
+     "device": 3276
+    },
+    {
+     "channel": "A",
+     "pid": 23,
+     "expected": 8592,
+     "device": 3276
+    },
+    {
+     "channel": "A",
+     "pid": 24,
+     "expected": 9820,
+     "device": 3276
+    },
+    {
+     "channel": "A",
+     "pid": 25,
+     "expected": 11047,
+     "device": 3276
+    },
+    {
+     "channel": "A",
+     "pid": 26,
+     "expected": 12275,
+     "device": 3276
+    }
+   ],
+   "testWords": [
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "A",
+     "raw": 3214,
+     "device": 3214
+    },
+    {
+     "param": "TENTAP_REFTEMPO",
+     "channel": "A",
+     "raw": 120,
+     "device": 120
+    },
+    {
+     "param": "TENTAP_TIME1M",
+     "channel": "A",
+     "raw": 1227,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME2M",
+     "channel": "A",
+     "raw": 2455,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME3M",
+     "channel": "A",
+     "raw": 3682,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME4M",
+     "channel": "A",
+     "raw": 4910,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME5M",
+     "channel": "A",
+     "raw": 6137,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME6M",
+     "channel": "A",
+     "raw": 7365,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME7M",
+     "channel": "A",
+     "raw": 8592,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME8M",
+     "channel": "A",
+     "raw": 9820,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME9M",
+     "channel": "A",
+     "raw": 11047,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME10M",
+     "channel": "A",
+     "raw": 12275,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "B",
+     "raw": 16384,
+     "device": 16384
+    },
+    {
+     "param": "TENTAP_REFTEMPO",
+     "channel": "B",
+     "raw": 90,
+     "device": 90
+    },
+    {
+     "param": "TENTAP_TIME1M",
+     "channel": "B",
+     "raw": 77,
+     "device": 77
+    },
+    {
+     "param": "TENTAP_TIME2M",
+     "channel": "B",
+     "raw": 153,
+     "device": 153
+    },
+    {
+     "param": "TENTAP_TIME3M",
+     "channel": "B",
+     "raw": 230,
+     "device": 230
+    },
+    {
+     "param": "TENTAP_TIME4M",
+     "channel": "B",
+     "raw": 307,
+     "device": 307
+    },
+    {
+     "param": "TENTAP_TIME5M",
+     "channel": "B",
+     "raw": 383,
+     "device": 383
+    },
+    {
+     "param": "TENTAP_TIME6M",
+     "channel": "B",
+     "raw": 460,
+     "device": 460
+    },
+    {
+     "param": "TENTAP_TIME7M",
+     "channel": "B",
+     "raw": 537,
+     "device": 537
+    },
+    {
+     "param": "TENTAP_TIME8M",
+     "channel": "B",
+     "raw": 613,
+     "device": 613
+    },
+    {
+     "param": "TENTAP_TIME9M",
+     "channel": "B",
+     "raw": 690,
+     "device": 690
+    },
+    {
+     "param": "TENTAP_TIME10M",
+     "channel": "B",
+     "raw": 767,
+     "device": 767
+    },
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "C",
+     "raw": 32767,
+     "device": 32767
+    },
+    {
+     "param": "TENTAP_REFTEMPO",
+     "channel": "C",
+     "raw": 140,
+     "device": 140
+    },
+    {
+     "param": "TENTAP_TIME1M",
+     "channel": "C",
+     "raw": 20643,
+     "device": 20643
+    },
+    {
+     "param": "TENTAP_TIME2M",
+     "channel": "C",
+     "raw": 24903,
+     "device": 24903
+    },
+    {
+     "param": "TENTAP_TIME3M",
+     "channel": "C",
+     "raw": 29163,
+     "device": 29163
+    },
+    {
+     "param": "TENTAP_TIME4M",
+     "channel": "C",
+     "raw": 33422,
+     "device": 33422
+    },
+    {
+     "param": "TENTAP_TIME5M",
+     "channel": "C",
+     "raw": 37682,
+     "device": 37682
+    },
+    {
+     "param": "TENTAP_TIME6M",
+     "channel": "C",
+     "raw": 41942,
+     "device": 41942
+    },
+    {
+     "param": "TENTAP_TIME7M",
+     "channel": "C",
+     "raw": 46201,
+     "device": 46201
+    },
+    {
+     "param": "TENTAP_TIME8M",
+     "channel": "C",
+     "raw": 50461,
+     "device": 50461
+    },
+    {
+     "param": "TENTAP_TIME9M",
+     "channel": "C",
+     "raw": 54721,
+     "device": 54721
+    },
+    {
+     "param": "TENTAP_TIME10M",
+     "channel": "C",
+     "raw": 58981,
+     "device": 58981
+    },
+    {
+     "param": "TENTAP_TIMEM",
+     "channel": "D",
+     "raw": 65534,
+     "device": 65534
+    },
+    {
+     "param": "TENTAP_REFTEMPO",
+     "channel": "D",
+     "raw": 200,
+     "device": 200
+    },
+    {
+     "param": "TENTAP_TIME1M",
+     "channel": "D",
+     "raw": 3276,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME2M",
+     "channel": "D",
+     "raw": 3276,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME3M",
+     "channel": "D",
+     "raw": 3276,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME4M",
+     "channel": "D",
+     "raw": 3276,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME5M",
+     "channel": "D",
+     "raw": 3276,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME6M",
+     "channel": "D",
+     "raw": 3276,
+     "device": 3276
+    },
+    {
+     "param": "TENTAP_TIME7M",
+     "channel": "D",
+     "raw": 0,
+     "device": 0
+    },
+    {
+     "param": "TENTAP_TIME8M",
+     "channel": "D",
+     "raw": 0,
+     "device": 0
+    },
+    {
+     "param": "TENTAP_TIME9M",
+     "channel": "D",
+     "raw": 0,
+     "device": 0
+    },
+    {
+     "param": "TENTAP_TIME10M",
+     "channel": "D",
+     "raw": 0,
+     "device": 0
+    }
+   ]
+  }
+ ],
+ "allMatch": false
+}

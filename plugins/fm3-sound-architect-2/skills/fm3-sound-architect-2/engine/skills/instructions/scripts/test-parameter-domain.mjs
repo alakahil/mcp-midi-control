@@ -49,7 +49,9 @@ for(const p of eligible){
  }
 }
 assert.equal(decodeValue(findParam('chorus','VOICES'),65535),undefined);
-assert.equal(decodeValue(findParam('tentap','TIME1M'),32767),undefined);
+// Ten-Tap Time 1 is measured since 0.3.46 (T25); Ref Tempo keeps an unknown curve and stays undecoded.
+assert.equal(decodeValue(findParam('tentap','TIME1M'),32767),5000);
+assert.equal(decodeValue(findParam('tentap','REFTEMPO'),32767),undefined);
 assert.equal(encodeValue(findParam('plex','NUMDLINES'),4,{allow:['linear-by-structure']}),2);
 assert.equal(encodeValue(findParam('pitch','CUSTOMSCALE1'),'SCALE 32'),31);
 console.log(JSON.stringify({passed:true,dictionaryRows:params.length,scalarDescriptors:eligible.length,validWords:words,normalizedWords:numeric,integerWords:integers,enumWords:enums,rejections,repeatedLabelWords:duplicates,deviceIO:false,fullRangeHardwareProven:false}));

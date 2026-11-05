@@ -1,0 +1,42 @@
+{
+"test": "T24",
+"preset": "INSA",
+"source": "FM3-Edit 1.07.17 window captures taken by Claude (computer use, Jan present) 2026-11-03; read from the block pages, nothing edited",
+"readings": [
+{
+"block": "gate",
+"channel": "A",
+"type": "Classic Expander",
+"param": "GATE_KEY",
+"shown": "Row 3"
+},
+{
+"block": "multiband",
+"channel": "A",
+"type": null,
+"param": "MULTICOMP_KNEE",
+"shown": "Soft"
+},
+{
+"block": "multiband",
+"channel": "A",
+"type": null,
+"param": "MULTICOMP_ORDER",
+"shown": "24 dB/Oct"
+},
+{
+"block": "multiband",
+"channel": "A",
+"type": null,
+"param": "MULTICOMP_MUTE2",
+"shown": "Mute"
+},
+{
+"block": "multiband",
+"channel": "A",
+"type": null,
+"param": "MULTICOMP_DETECT3",
+"shown": "Peak"
+}
+]
+}

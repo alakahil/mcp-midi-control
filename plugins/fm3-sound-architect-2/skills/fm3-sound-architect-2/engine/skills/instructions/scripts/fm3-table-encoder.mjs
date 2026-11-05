@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import fs from 'node:fs';
 import {validateVolumeWrites} from './fm3-volume-policy.mjs';
 import {validateInputGateWrites} from './fm3-input-gate.mjs';
+import {SEND_REFUSED,validateFeedbackControl} from './fm3-feedback.mjs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {authorGen3PresetFromIR,reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
@@ -12,6 +13,10 @@ import {composerBases,layouts,checkComposerStructure} from './fm3-composer-bases
 import {validateDependencyWrites,dependencyPolicySummary} from './fm3-parameter-dependencies.mjs';
 import {validateTypeWrites,typePolicySummary} from './fm3-type-applicability.mjs';
 import {effectiveInsertParameter} from './fm3-insert-applicability.mjs';
+import {effectiveCabIrParameter} from './fm3-cab-ir.mjs';
+import {effectiveDisplayClassParameter} from './fm3-display-classes.mjs';
+import {effectiveEnumParameter} from './fm3-enum-promotion.mjs';
+import {effectiveTentapParameter} from './fm3-tentap-times.mjs';
 import {nativeParameterId} from './fm3-modulation-dynamics-applicability.mjs';
 
 import {effectivePitchParameter,validPitchStoredWord,pitchWordCodecSummary} from './fm3-pitch-word-codecs.mjs';
@@ -25,8 +30,8 @@ export const DEFAULT_STATUSES=Object.freeze(['measured','taper-class-verified','
 export const OPT_IN_STATUSES=Object.freeze(['linear-by-structure','enum-labels']);
 export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',phaser:'PHASER',compressor:'COMP',chorus:'CHORUS',flanger:'FLANGER',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',filter:'FILTER',peq:'PEQ',geq:'GEQ',enhancer:'ENHANCER',out1:'OUTPUT',volpan:'VOLUME',in1:'INPUT'
 ,
-  plex:'PLEX',multiband:'MULTICOMP',synth:'SYNTH',looper:'LOOPER',gate:'GATE',formant:'FORMANT',tentap:'TENTAP',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',
-  mixer:'MIXER',multiplexer:'MULTIPLEXER'});
+  plex:'PLEX',multiband:'MULTICOMP',synth:'SYNTH',looper:'LOOPER',gate:'GATE',formant:'FORMANT',tentap:'TENTAP',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',multidelay:'MULTITAP',
+  mixer:'MIXER',multiplexer:'MULTIPLEXER',return:'FDBKRET'});
 
 // Class 0x01 non-enum words are stored integers, not normalised 0…65534 values (Claude, 2026-10-23):
 // all 57 class-0x01 parameters that occur in 574 distinct bodies (bundled exports + nine device FW13
@@ -34,7 +39,7 @@ export const FAMILY_BY_SLUG=Object.freeze({amp:'DISTORT',cab:'CABINET',drive:'FU
 // 3/4/6, Fuzz Bit Reduce 20/21); FM3-Edit shows Ten-Tap Number of Taps raw 6 as 6. With a display
 // multiplier the display is raw × multiplier: Plex Number of Delays raw 2 shows 4 (2026-10-23), which
 // also covers Chorus Voices (multiplier 2). Multiplier 0 (GLOBAL_CUSTOM_SCALE) stays blocked.
-// Status is unchanged: writing still needs allow 'linear-by-structure'.
+// Since 0.3.44 the class is default-writable via fm3-display-classes.mjs (T22 hardware readings).
 export const INTEGER_CLASS_EVIDENCE='class-0x01 stored integer: 57/57 observed parameters in-range signed integers (574 bodies); Ten-Tap Number of Taps raw 6 displayed 6; Plex Number of Delays raw 2 displayed 4 (multiplier 2)';
 function effectiveIntegerParameter(p){
   if(((parseInt(p.flags,16)>>8)&0xf)!==1||p.kind!=='linear')return p;
@@ -47,7 +52,7 @@ export function loadDictionary(){
   const bytes=fs.readFileSync(new URL('../references/fm3-param-dictionary.json',import.meta.url));
   check(sha(bytes)===dictionaryHash,'Parameter dictionary changed; run test-table-encoder.mjs and review evidence before use');
   const d=JSON.parse(bytes);check(d.params.length===2892,'Unexpected dictionary size');
-  d.params=d.params.map(effectivePitchParameter).map(effectiveIntegerParameter).map(effectiveInsertParameter);
+  d.params=d.params.map(effectivePitchParameter).map(effectiveIntegerParameter).map(effectiveDisplayClassParameter).map(effectiveEnumParameter).map(effectiveTentapParameter).map(effectiveInsertParameter).map(effectiveCabIrParameter);
   const byKey=new Map(),byName=new Map();
   for(const p of d.params){byKey.set(p.block+':'+p.param,p);if(p.name)byName.set(p.family+':'+p.name,p)}
   return cache={...d,byKey,byName};
@@ -81,10 +86,12 @@ export function validateOptions(opts){
 }
 export function validateControl(c,experimental=false){
   assertFields(c,experimental?['block','channel','param','value','raw']:['block','channel','param','value'],'control');
+  check(c.block!=='send',SEND_REFUSED);
   check(Object.hasOwn(FAMILY_BY_SLUG,baseSlug(c.block)),'Unknown control block');
   channelIndex(c.channel);
   check((typeof c.param==='string'&&c.param.length>0)||(Number.isInteger(c.param)&&c.param>=0),'Invalid parameter');
   check(Object.hasOwn(c,'raw')!==Object.hasOwn(c,'value'),'Exactly one control value is required');
+  if(c.block==='return')validateFeedbackControl(findParam('return',c.param));
 }
 // display value (as FM3-Edit shows it) -> 16-bit wire word
 export function encodeValue(p,value,opts={}){
@@ -102,9 +109,10 @@ export function encodeValue(p,value,opts={}){
       if(codec.kind==='repeat-label'&&label==='INFINITE')value=codec.infiniteCode;
       else if(codec.kind==='global-scale-label'&&/^SCALE ([1-9]|[12][0-9]|3[0-2])$/.test(label))value=Number(label.slice(6))-codec.displayOffset;
     }
-    const k=p.integerScale??1;
+    const k=p.integerScale??1,off=p.displayOffset??0;
+    if(off&&typeof value==='number')value-=off;
     if(k!==1){check(typeof value==='number'&&Number.isInteger(value/k),`${p.name}: value must be a multiple of ${k}`);value/=k;}
-    check(typeof value==='number'&&Number.isInteger(value)&&value>=p.min&&value<=p.max,`${p.name}: integer value required in ${p.min*k}…${p.max*k}`);
+    check(typeof value==='number'&&Number.isInteger(value)&&value>=p.min&&value<=p.max,`${p.name}: integer value required in ${p.min*k+off}…${p.max*k+off}`);
     return value<0?value+65536:value;
   }
   check(['linear','log','knob'].includes(p.kind)||opts.experimental===true,`${p.name}: kind ${p.kind} has no encoder`);
@@ -131,7 +139,7 @@ export function decodeValue(p,raw){
   if(['linear','log','knob'].includes(p.kind)&&raw>65534)return undefined;
   if(p.displayCodec?.kind==='global-scale-label')return 'SCALE '+(raw+p.displayCodec.displayOffset);
   if(p.displayCodec?.kind==='repeat-label'&&raw===p.displayCodec.infiniteCode)return p.displayCodec.infiniteLabel;
-  if(p.kind==='integer')return (p.signedWord&&raw>=32768?raw-65536:raw)*(p.integerScale??1);
+  if(p.kind==='integer')return (p.signedWord&&raw>=32768?raw-65536:raw)*(p.integerScale??1)+(p.displayOffset??0);
   if(p.kind==='enum')return p.enum[raw-(p.enumBase??0)];
   const n=raw/65534,m=p.displayMultiplier||1;
   if(p.kind==='knob')return n*m;

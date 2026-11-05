@@ -1,0 +1,67 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "b0a82dbb0121744474a76a28a73d339bc5105036efff0e680a2125e6a63a3d86",
+ "preset": "DYN",
+ "name": "SHOT T23 AMP DYN",
+ "time": "2026-11-02T12:53:55",
+ "blocks": [
+  {
+   "family": "amp",
+   "effectId": 58,
+   "values": 576,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "DISTORT_DYNDEPTH",
+     "channel": "A",
+     "raw": 16384,
+     "device": 16384
+    },
+    {
+     "param": "DISTORT_DYNDEPTH",
+     "channel": "B",
+     "raw": 32767,
+     "device": 32767
+    },
+    {
+     "param": "DISTORT_DYNDEPTH",
+     "channel": "C",
+     "raw": 49151,
+     "device": 49151
+    },
+    {
+     "param": "DISTORT_DYNDEPTH",
+     "channel": "D",
+     "raw": 65534,
+     "device": 65534
+    },
+    {
+     "param": "DISTORT_DYNPRES",
+     "channel": "A",
+     "raw": 0,
+     "device": 0
+    },
+    {
+     "param": "DISTORT_DYNPRES",
+     "channel": "B",
+     "raw": 16384,
+     "device": 16384
+    },
+    {
+     "param": "DISTORT_DYNPRES",
+     "channel": "C",
+     "raw": 49151,
+     "device": 49151
+    },
+    {
+     "param": "DISTORT_DYNPRES",
+     "channel": "D",
+     "raw": 65534,
+     "device": 65534
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

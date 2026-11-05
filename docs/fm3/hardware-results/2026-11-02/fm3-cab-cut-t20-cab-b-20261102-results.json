@@ -1,0 +1,11 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "cbedfdf99045eba3600995ae0951c68ab2bd1ef6e32285e27a7cd773906ea08e",
+ "time": "2026-11-02T10:27:10",
+ "readings": {
+  "cuts": "Cabs leht: Cab1 - Low Cut: 33.0 Hz; High Cut 12499 Hz; Cab2 - Low Cut: 20.0 Hz; High Cut 20000 Hz; Preamp leht: Low Cut: 87.0 Hz; High Cut 7300 Hz",
+  "preamp": "Preamp Type: Tube; Preamp:",
+  "type": "Drive/Saturation/Bass/Mid/Treble/Preamp Type/Low Cut/Low Cut Slope/High Cut/ High Cut Slope"
+ },
+ "note": "Cab kanali B MODE - DYNA-CAB"
+}

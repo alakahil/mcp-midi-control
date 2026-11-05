@@ -1,0 +1,43 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "d7faf17a84b856a39cc0abcef01eb904edd3d157a7ea1ae7d7f4e99e48749931",
+ "preset": "MDP",
+ "name": "SHOT T26 MULTIDELAY",
+ "time": "2026-11-04T11:36:13",
+ "blocks": [
+  {
+   "family": "multidelay",
+   "effectId": 74,
+   "values": 484,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "A",
+     "raw": 0,
+     "device": 0
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "B",
+     "raw": 0,
+     "device": 0
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "C",
+     "raw": 0,
+     "device": 0
+    },
+    {
+     "param": "MULTITAP_BASETYPE",
+     "channel": "D",
+     "raw": 0,
+     "device": 0
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

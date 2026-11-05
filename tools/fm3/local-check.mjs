@@ -82,7 +82,7 @@ const sha=f=>createHash('sha256').update(fs.readFileSync(path.join(ROOT,f))).dig
 async function regenerate(){
   const chain=['python3 tools/fm3/evidence-index.py --write','python3 tools/fm3/parameter-evidence.py --write','python3 tools/fm3/metadata_reconciliation.py --write',
     'node tools/fm3/encoder-matrix.mjs --write','node tools/fm3/input-volume-audit.mjs --write','python3 tools/fm3/point3-index.py --write'];
-  const after=['node tools/fm3/point3-evidence.mjs --write','node tools/fm3/point6-evidence.mjs --write'];
+  const after=['node tools/fm3/point3-evidence.mjs --write','node tools/fm3/point6-evidence.mjs --write','node tools/fm3/point2-evidence.mjs --write'];
   if(FACTORY)after.push(`node tools/fm3/point5-evidence.mjs --factory ${JSON.stringify(path.resolve(FACTORY))} --write`);
   const mapFile=ENGINE+'scripts/fm3-parameter-map.mjs',index=ENGINE.replace('skills/instructions/','')+'docs/FM3_PARAMETER_EVIDENCE.json';
   for(let round=1;round<=3;round++){
@@ -93,6 +93,7 @@ async function regenerate(){
     const now=sha(index);if(m[1]!==now)fs.writeFileSync(path.join(ROOT,mapFile),src.replace(m[1],now));
     for(const c of after){const r=await run(c);if(r.code){failures.push({...r,phase:'regenerate'});return false;}}
   }
+  {const r=await run(chain[0]);if(r.code){failures.push({...r,phase:'regenerate'});return false;}}// final index over the regenerated files
   console.log(`regenerate: evidence chain rebuilt (3 rounds${FACTORY?', with factory receipt':''})`);return true;
 }
 

@@ -9,7 +9,7 @@ import {loadDictionary,findParam} from './fm3-table-encoder.mjs';
 const all=getParameterMap(),byId=new Map(all.parameters.map(p=>[p.id,p]));
 assert.equal(all.summary.parameterKeys,3223);assert.equal(byId.size,3223);
 assert.equal(all.summary.dictionaryRows,2892);assert.equal(all.summary.catalogOnlyKeys,331);
-assert.equal(all.summary.indexedObservations,1349);  // +23 T17, +28 T18 front-panel readings (2026-10-31)
+assert.equal(all.summary.indexedObservations,1403);  // +23 T17, +28 T18, +50 T19 (2026-10-31), +4 T20 (2026-11-02) front-panel readings
 let names=0,observations=0,labels=0,comparedWords=0,unrequested=0,disputed=0;
 for(const p of loadDictionary().params){
  const row=byId.get(`${p.family??'UNNAMED'}:${p.param}`);
@@ -32,7 +32,7 @@ for(const row of all.parameters){
   if(obs.kind==='front-panel-disputed-reading'){disputed++;assert.equal(obs.scope.readingDisputed,true);}
  }
 }
-assert.equal(observations,1349);assert.equal(labels,363);assert.equal(comparedWords,5275);assert.equal(unrequested,2);assert.equal(disputed,1);
+assert.equal(observations,1403);assert.equal(labels,363);assert.equal(comparedWords,5275);assert.equal(unrequested,2);assert.equal(disputed,1);
 const one=(f,p)=>getParameterMap(f,p).parameters[0];
 assert.deepEqual(one('chorus','VOICES').effective.scale.numericInputRange,[2,8]);
 assert.equal(one('chorus','VOICES').effective.scale.storedDomain.displayStep,2);
@@ -46,7 +46,8 @@ assert.equal(one('filter','QUANTIZE').effective.scale.repeatedLabels[0].stringSe
 assert.equal(one('flanger','FLANGER_MANUAL').pid,5);
 assert.equal(one('flanger','OLD_FLANGER_MANUAL').pid,6);
 assert.equal(one('mixer','DELAY1').name,'MIXER_DELAY1');
-assert.equal(one('tentap','TIME1M').effective.scale.known,false);
+assert.equal(one('tentap','TIME1M').effective.scale.known,true);assert.deepEqual(one('tentap','TIME1M').effective.scale.numericInputRange,[0,10000]);  // T25 (0.3.46)
+assert.equal(one('tentap','REFTEMPO').effective.scale.known,false);
 assert.equal(one('drive','OVERSAMPLE').authoring.scalarGate,'blocked');
 assert.equal(one('delay','TYPE').authoring.fullChannelTemplateRequired,true);
 assert.equal(one('in1','MODE').authoring.tableScalarEligible,false);

@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {loadDictionary,findParam,encodeValue,decodeValue,FAMILY_BY_SLUG,DEFAULT_STATUSES,OPT_IN_STATUSES} from './fm3-table-encoder.mjs';
-import {readTypeState,typeApplicability,validateTypeWrites} from './fm3-type-applicability.mjs';
+import {readTypeState,typeApplicability,validateTypeWrites,MULTIDELAY_PRESET_REFUSED,MULTIDELAY_PRESET_PID} from './fm3-type-applicability.mjs';
 import {auditModifierTargetType} from './fm3-modifier-type-audit.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {editRecords} from './fm3-grid.mjs';
@@ -33,6 +33,9 @@ for(const [family,pid,types] of anchors){
  }
 }
 assert.deepEqual(Object.keys(INSERT_TYPE_PID).sort(),['gate','plex','resonator','tentap']);
+{const md=bodyOf(editRecords(base,{add:['multidelay']}).syx),r=scanRecords(md).records.find(x=>x.block===74);
+ validateTypeWrites(md,[{block:'multidelay',pid:120,name:'MULTITAP_KILLDRY',channel:'A',offset:r.start+240,raw:1}]);counters.writes++;
+ rejects(()=>validateTypeWrites(md,[{block:'multidelay',pid:114,name:'MULTITAP_PRESETS',channel:'A',offset:r.start+228,raw:3}]),new RegExp(MULTIDELAY_PRESET_REFUSED.replace(/[()]/g,'\\$&')));}
 const supported=p=>['linear','log','knob','integer','enum'].includes(p.kind)&&[...DEFAULT_STATUSES,...OPT_IN_STATUSES].includes(p.status);
 function valueAt(p,n){
  if(p.kind==='integer')return Math.round(p.min+n*(p.max-p.min))*(p.integerScale??1);
@@ -66,10 +69,11 @@ for(const [family,f] of Object.entries(policy.families)){
   for(const type of [-1,f.typeLabels?.length??1,NaN,Infinity])assert.equal(typeApplicability(p,{type}).allowed,false);
   for(let type=0;type<(f.typeLabels?.length??1);type++)for(let ch=0;ch<channels;ch++){
    const app=typeApplicability(p,{type});counters.typeChannelCases++;
-   if(!body){assert.equal(family,'MULTITAP');counters.readOnlyCases++;continue;}
    const b=Buffer.from(body),start=record.start+ch*record.words*2,offset=start+2*p.param;
    if(f.selectorPid!==null)b.writeUInt16LE(type,start+2*f.selectorPid);
    const before=Buffer.from(b),w={block:slug,pid:p.param,name:p.name,label:p.label,channel:'ABCD'[ch],offset,raw:b.readUInt16LE(offset)};
+   // Multi Delay preset word (Type, pid 114): refused for every type and channel (T27: choosing a preset fills ~39 words).
+   if(family==='MULTITAP'&&p.param===MULTIDELAY_PRESET_PID){rejects(()=>validateTypeWrites(b,[w]),/preset selection/);assert.ok(b.equals(before));continue;}
    if(app.allowed)validateTypeWrites(b,[w]);else rejects(()=>validateTypeWrites(b,[w]),/not applicable/);
    assert.ok(b.equals(before),'Visibility preflight mutated input');
    const audit=auditModifierTargetType(b,{effectId:p.block,channel:ch+1},p,record);
@@ -79,7 +83,8 @@ for(const [family,f] of Object.entries(policy.families)){
    // Existing tempo and modifier gates stay independent: isolate the visibility
    // check above, then exercise a scalar write only in an unlocked final state.
    for(const lock of JSON.parse(read('references/fm3-insert-tempo-locks.json')).tempoLocks.filter(x=>x.family===family))b.writeUInt16LE(0,start+2*lock.tempoPid);
-   const value=p.param===f.selectorPid?type:p.kind==='enum'?0:valueAt(p,.5);
+   // Ten-Tap Delay Time is writable only up to its measured limit (fm3-tentap-times.mjs).
+   const value=p.param===f.selectorPid?type:p.kind==='enum'?0:p.writableMaxMs?Math.min(valueAt(p,.5),p.writableMaxMs):valueAt(p,.5);
    const saved=Buffer.from(b),writes=applyTableControls(b,[{block:slug,channel:'ABCD'[ch],param:p.param,value}],opts);
    assert.equal(writes.length,1);assert.equal(b.readUInt16LE(offset),encodeValue(p,value,opts));
    for(let i=0;i<b.length;i++)if(i!==offset&&i!==offset+1)assert.equal(b[i],saved[i],'Collateral byte '+i);

@@ -1,0 +1,10 @@
+{"id": "cal-newlook", "family": "calibration", "cpuPercent": 52.5, "raw": 41, "reads": [41, 41, 41], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:44:40", "userConfirmedName": true, "calibrationOk": true}
+{"id": "md:0", "family": "multidelay", "cpuPercent": 58.0, "raw": 52, "reads": [52, 52, 52], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:45:11"}
+{"id": "md:1", "family": "multidelay", "cpuPercent": 59.5, "raw": 55, "reads": [55, 55, 55], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:45:13"}
+{"id": "md:2", "family": "multidelay", "cpuPercent": 59.0, "raw": 54, "reads": [54, 54, 54], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:45:16"}
+{"id": "md:3", "family": "multidelay", "cpuPercent": 58.0, "raw": 52, "reads": [52, 52, 52], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:45:19"}
+{"id": "md:4", "family": "multidelay", "cpuPercent": 60.5, "raw": 57, "reads": [57, 57, 57], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:45:21"}
+{"id": "md:5", "family": "multidelay", "cpuPercent": 58.0, "raw": 52, "reads": [52, 52, 52], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:45:24"}
+{"id": "md-editor:B", "family": "multidelay", "cpuPercent": 59.5, "raw": 55, "reads": [55, 55, 55], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:45:26"}
+{"id": "md-editor:C", "family": "multidelay", "cpuPercent": 59.0, "raw": 54, "reads": [55, 54, 54, 54], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:45:29"}
+{"id": "md-editor:D", "family": "multidelay", "cpuPercent": 58.0, "raw": 52, "reads": [52, 52, 52], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-04T11:45:32"}

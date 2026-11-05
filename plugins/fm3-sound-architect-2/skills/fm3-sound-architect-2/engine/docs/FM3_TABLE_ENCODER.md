@@ -98,3 +98,33 @@ on vahemikku jäävad täisarvud (Pitch Shift −12 = 65524, Reverb Springs 3/4/
 of Taps toorväärtust 6 kui 6. `loadDictionary` annab neile `kind: integer`; staatus ei muutu (vajab endiselt
 `allow: linear-by-structure`). Kordaja korral näit = toorväärtus × kordaja (Plex Number of Delays: toorväärtus 2 = 4);
 kirjutatav väärtus peab olema kordaja kordne. Kordaja 0 (GLOBAL_CUSTOM_SCALE) on lukus.
+
+## Mix, Balance ja täisarvud vaikimisi (0.3.44, T21/T22)
+
+`scripts/fm3-display-classes.mjs` tõstab `loadDictionary` ajal kolm struktuurselt ühtset klassi staatusest
+`linear-by-structure` staatusse `taper-class-verified` (algne jääb välja `structuralStatus`): Mix (lipud 0x0705,
+0…1 ×100, 17 kirjet), Balance (0x0900, -1…1 ×100, 29 kirjet) ja klassi 0x01 täisarvud ilma oma näidukoodekita
+(552 kirjet). Tõend: 2.11.2026 FM3-Edit'i ja esipaneeli näidud 27/27 täpselt (Mix 6, Balance 11, täisarvud 10, sh
+kordaja 2 ja negatiivne väärtus; `references/fm3-shot-t21-mix-20261102.json`, `fm3-shot-t22-int-20261102.json`).
+Enhancer/Formant Balance (lipud 0x0980) jäävad opt-in. Ampi `DISTORT_DYNDEPTH` / `DISTORT_DYNPRES` jäävad
+`unverified-taper`: sõnad salvestuvad, kuid FM3-l pole neile nuppu (T23).
+
+## Ten-Tapi ajad (0.3.46, T25)
+
+`scripts/fm3-tentap-times.mjs` muudab `loadDictionary` ajal 11 Ten-Tapi sõna `unverified-taper` → `measured`
+(algne staatus/tüüp väljades `structuralStatus`/`structuralKind`). `TENTAP_TIME1M…10M` (lipud 0x0f00): lineaarne
+0…10 s ×1000, ainult tüübis Rhythm Tap Delay. `TENTAP_TIMEM`: vahemik parandatud 0,001…2 s → 0,01…10 s
+(`dictionaryRange` hoiab algset), ainult tüübis Ten-Tap Delay, kirjutatav kuni 1000 ms (`validateTentapWrites`
+tabeli- ja paigutuskirjutajas). Tõend T25/T25b (3.11.2026): 20/20 aega, 4/4 Delay Time'i, esipaneel 1/1, seadme
+tuletatud tapisõnad ja 10 tapi piirang 1000 ms (`references/fm3-shot-t25-tentap-20261103.json`,
+`tools/fm3/shot-t25-ingest.mjs`). Lühema tapiarvuga piirangut pole mõõdetud.
+
+## Valikunupud vaikimisi (0.3.45, T24)
+
+`scripts/fm3-enum-promotion.mjs` tõstab `loadDictionary` ajal 197 valikunuppu staatusest `enum-labels`
+staatusse `enum-labels-crosschecked` (algne jääb välja `structuralStatus`, tõendiklass välja `enumEvidence`).
+Tõend: T24 (3.11.2026) 51/51 FM3-Edit'i näitu ja 2/2 esipaneeli näitu täpselt 15 perest, ilma 0/1 nihketa
+(`references/fm3-shot-t24-enum-20261103.json`); 639 korpusekeha, ükski salvestatud väärtus pole loendist väljas;
+klassid `hardware-t24` 50, `shared-labels` 108, `family-t24` 39 (`references/fm3-enum-promotion-20261103.json`,
+`tools/fm3/enum-promotion-build.mjs`). Opt-in jäävad 151: tüübi/mudeli valijad, GLOBAL/CONTROLLERS/MOD ja
+marsruutimine, learn/preset/IR-panga valijad, testita perede unikaalsed loendid (PEQ, Multitap) ja PHASER_LFOQUANTIZE.

@@ -24,7 +24,7 @@ execFileSync('node',[path.join(ROOT,'tools/fm3/cpu-scenes-build.mjs'),tmp,path.j
 // The pack was built with fm3-cpu 0.2.1 (before the Out 2 cost this run measured); V4 has no Out 2, so the
 // rebuilt manifest differs only in the model name.
 const man=JSON.parse(fs.readFileSync(path.join(tmp,'manifest.json')));
-assert.ok(['fm3-cpu 0.2.1','fm3-cpu 0.2.2'].includes(man.estimate.model));man.estimate.model='fm3-cpu 0.2.1';
+assert.ok(['fm3-cpu 0.2.1','fm3-cpu 0.2.2','fm3-cpu 0.2.3','fm3-cpu 0.2.4'].includes(man.estimate.model));man.estimate.model='fm3-cpu 0.2.1';
 assert.equal(sha(JSON.stringify(man,null,1)+'\n'),v4.packSha256,'V4 pack rebuilt identically (as measured)');
 assert.ok(v4.userConfirmedName&&String(v4.sceneAfterLoad).trim()==='1');
 assert.deepEqual(v4.steps.map(s=>s.scene),[1,2,3,4,5,6,7,8]);

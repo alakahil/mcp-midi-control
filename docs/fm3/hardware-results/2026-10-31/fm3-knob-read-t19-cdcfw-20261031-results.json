@@ -1,0 +1,14 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "d92936c7dc8be2d2d3278f671928dff0916cc8c328d9db203cff4415c0fa45a7",
+ "time": "2026-10-31T20:53:51",
+ "readings": {
+  "cab": "-4.5 dB/-3.50 dB/-35.0/6.30/7.30 cm/20.0 Hz/20000 Hz",
+  "drive": "130.00 Hz/5600.0 Hz/0.350/3.30/6.40/4.60/850.0 Hz/5.80",
+  "chorus": "0.830 Hz/47.0%/37.0%/Delay Range: 40.00 ms; Minimum Delay 6.50 ms/7199.8 Hz/110.0 Hz/3.70/-1.5 dB",
+  "flanger": "0.370/63%/45.0%/4.30/50.0%/6800.0 Hz/2.30/-2.5 dB",
+  "wah": "420 Hz/2300 Hz/6.50/3.50/3.30/3.70/85.00 Hz/-1.5 dB",
+  "type": "Cab kanal B - Dybacab/41: 4x12 Rumble EV12L/ Input Mode: Left; Drive kanal B - T808 OD"
+ },
+ "note": "Chorus kanal D - Japan CE-2;Flanger kanal A - Analog Stereo; Wah kanal C - Cry Babe.   Delay (Manual) asemel on ainult “Manual”; Cab: Delay Time asemel Delay Range: 40.00 ms; Minimum Delay 6.50 ms"
+}

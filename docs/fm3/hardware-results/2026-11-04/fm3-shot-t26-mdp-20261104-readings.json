@@ -1,0 +1,10 @@
+{
+ "schemaVersion": 1,
+ "test": "T26",
+ "preset": "MDP",
+ "name": "SHOT T26 MULTIDELAY",
+ "source": "FM3-Edit 1.07.17 window captures by Claude (computer use, background), 2026-11-04, after FM3_SHOT_LOAD.py --load; nothing stored, Save never pressed",
+ "grid": {"row3": ["Return(1)", "Delay(3)", "MultDly(7)", "Reverb(10)", "Out 1(12)"], "row2": ["In 1(1)", "Comp(3)", "Drive(5)", "Amp(8)", "Cab(10)", "Send(12)"], "multiDelayCell": {"row": 3, "column": 7}},
+ "block": {"title": "Multitap Delay", "channel": "A", "type": "Quad-Tap Delay", "scene": "S01 Clean", "bypassLit": false, "mix": "25.0 %", "level": "0.0 dB", "inputGain": "100.0 %", "balance": "0.0", "bypassMode": "Thru", "inputSelect": "L+R"},
+ "editorCpuPercent": 58.3
+}

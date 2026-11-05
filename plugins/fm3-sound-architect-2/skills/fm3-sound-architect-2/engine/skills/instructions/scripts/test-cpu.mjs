@@ -17,4 +17,13 @@ const v=estimateCpu(rd('examples/SATRIANI_SOAP_ON_A_ROPE.syx'));check(v.exactAll
 const t=renderCpuText(v);check(/Scene 3/.test(t)&&/Amp ja Delay/.test(t)&&/ei taga presetipõhist veapiiri/.test(t)&&!t.includes('±1 %'),'text');
 const g=JSON.parse(rd('references/fm3-grid-check-20261023.json')).tests.find(t=>t.id==='G06');
 check(Math.abs((g.cpuEstimate-g.cpuMeasured)-2.8)<1e-8&&v.measuredTypeCoverageAllScenes,'Measured-type coverage cannot guarantee a 1-point model bound');
-console.log(JSON.stringify({p6a:a.scenes[0].percent,p6b:b.scenes[0].percent,v1s4:v.scenes[3].percent}));
+// 4. T31 insert-block types: per-type costs, Synth voice 1 with voices 2/3 OFF, Legacy Cab = Dyna-Cab cost.
+import('./fm3-sound.mjs').then(({composeSound})=>{
+  const NL=rd('examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx'),C={schemaVersion:1,firmware:13,baseProfile:'jb-composer',compressorChannels:[{channel:'A',type:'Optical Compressor'}],name:'CPU T31'};
+  const est=b=>estimateCpu(Buffer.from(composeSound(NL,{composer:C,insert:[b],layout:{row2:['compressor','drive','amp','cab'],row3:['delay',b,'reverb']},blockScenes:{[b]:[{scene:1,bypass:false}]}}).syx)).scenes[0];
+  const base=estimateCpu(Buffer.from(composeSound(NL,{composer:C,layout:{row2:['compressor','drive','amp','cab'],row3:['delay','reverb']}}).syx)).scenes[0];
+  for(const [b,cost] of [['plex',9.5],['megatap',9.5],['tentap',4.5],['resonator',7.5],['ringmod',2.5],['gate',4],['synth',7.5]]){
+    const s=est(b);check(s.parts[b]===cost&&!s.notes.some(n=>n.startsWith(b)),'T31 '+b+' '+s.parts[b]);check(Math.abs(s.percent-base.percent-cost)<0.05,'T31 sum '+b);}
+  check(base.parts.cab===2.9&&!base.notes.some(n=>/cab/.test(n)),'Dyna-Cab measured');
+  console.log(JSON.stringify({p6a:a.scenes[0].percent,p6b:b.scenes[0].percent,v1s4:v.scenes[3].percent,t31:'insert types'}));
+});

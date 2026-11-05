@@ -17,8 +17,9 @@ from type_applicability import active
 REF = ENGINE / 'skills/instructions/references'
 OUT = REF / 'fm3-insert-tempo-locks.json'
 LAYOUT_SHA = '0fc5f3dac1e33aa2fee6d8e1efeda6fc0f6a8782f63519d54aa973cbe67595a2'
-# family -> FW13 editor-cache section tag (record counts equal the dictionary word counts: 96, 48)
-FAMILIES = {'PLEX': 15, 'TENTAP': 38}
+# family -> FW13 editor-cache section tag (record counts equal the dictionary word counts: 96, 48, 121).
+# MULTITAP added in 0.3.49 when Multi Delay parameters became writable (T27).
+FAMILIES = {'PLEX': 15, 'TENTAP': 38, 'MULTITAP': 14}
 
 
 def layouts(data):
@@ -74,8 +75,15 @@ def rules_for(pairs):
     return rules
 
 
-def build(editor):
-    xml, copies = layouts(Path(editor).read_bytes())
+def build(editor, layout=None):
+    if layout:
+        # The layout member extracted from the editor binary (same pinned SHA-256); the copy count is the
+        # one measured on the macOS universal binary when the file was first generated.
+        xml = Path(layout).read_bytes()
+        require(sha(xml) == LAYOUT_SHA, 'Layout differs from the pinned FM3-Edit 1.07.17 layout')
+        copies = json.loads(OUT.read_text())['sources']['layoutCopiesInBinary']
+    else:
+        xml, copies = layouts(Path(editor).read_bytes())
     pairs = pairs_from(xml)
     return {'schemaVersion': 1, 'firmware': '13.0', 'editor': '1.07.17',
             'sources': {'layoutSha256': LAYOUT_SHA, 'layoutCopiesInBinary': copies,
@@ -83,27 +91,28 @@ def build(editor):
                         'cacheSections': FAMILIES},
             'pairs': pairs, 'tempoLocks': rules_for(pairs),
             'policy': 'Explicit writes to a locked target require final channel Tempo NONE (same rule as fm3-parameter-dependencies.json).',
-            'limits': 'Only the point-6 insertable families with XML tempo locks (Plex, Ten-Tap). Megatap/Synth/others have none in the layout.'}
+            'limits': 'Only the point-6 insertable families with XML tempo locks (Plex, Ten-Tap, Multi Delay). Megatap/Synth/others have none in the layout.'}
 
 
 def verify(result):
     require(result['sources']['dictionarySha256'] == sha((REF / 'fm3-param-dictionary.json').read_bytes()), 'Dictionary drift')
     require(result['tempoLocks'] == rules_for([tuple(p) for p in result['pairs']]), 'Rule drift')
-    require(len(result['pairs']) == 10, 'Pair coverage drift')
+    require(len(result['pairs']) == 17, 'Pair coverage drift')
     return result
 
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--editor', type=Path)
+    ap.add_argument('--layout', type=Path, help='__block_layout.xml extracted from the editor binary')
     ap.add_argument('--write', action='store_true')
     args = ap.parse_args()
-    require(not args.write or args.editor, '--write requires an FM3-Edit 1.07.17 binary')
-    result = json.loads(json.dumps(build(args.editor))) if args.editor else json.loads(OUT.read_text())
+    require(not args.write or args.editor or args.layout, '--write requires an FM3-Edit 1.07.17 binary or its layout XML')
+    result = json.loads(json.dumps(build(args.editor, args.layout))) if args.editor or args.layout else json.loads(OUT.read_text())
     verify(result)
     content = json.dumps(result, ensure_ascii=False, indent=1) + '\n'
     if args.write:
         OUT.write_text(content)
     else:
         require(content == OUT.read_text(), 'Insert tempo locks stale')
-    print(json.dumps({'tempoPairs': len(result['tempoLocks']), 'editorReplayed': bool(args.editor), 'deviceIO': False}))
+    print(json.dumps({'tempoPairs': len(result['tempoLocks']), 'editorReplayed': bool(args.editor or args.layout), 'deviceIO': False}))

@@ -1,0 +1,31 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "5f65acf1e12d631eda979ed167bad0c8ff98d00e9c73e3d8ede9a77127ef253b",
+ "preset": "PITCH",
+ "name": "SHOT T21 MIX PITCH",
+ "time": "2026-11-02T12:29:27",
+ "blocks": [
+  {
+   "family": "pitch",
+   "effectId": 110,
+   "values": 456,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "PITCH_MIX",
+     "channel": "B",
+     "raw": 21888,
+     "device": 21888
+    },
+    {
+     "param": "PITCH_PAN",
+     "channel": "B",
+     "raw": 25689,
+     "device": 25689
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

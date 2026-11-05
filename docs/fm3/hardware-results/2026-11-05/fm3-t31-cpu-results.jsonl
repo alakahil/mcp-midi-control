@@ -1,0 +1,54 @@
+{"id": "cal-newlook", "family": "calibration", "cpuPercent": 52.5, "raw": 41, "reads": [41, 41, 41], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:04", "userConfirmedName": true, "calibrationOk": true}
+{"id": "plex:0", "family": "plex", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 61, 60, 61, 61, 60, 61, 60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:18"}
+{"id": "plex:1", "family": "plex", "cpuPercent": 67.0, "raw": 67, "reads": [67, 67, 67], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:20"}
+{"id": "plex:2", "family": "plex", "cpuPercent": 67.0, "raw": 67, "reads": [67, 67, 67], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:23"}
+{"id": "plex:3", "family": "plex", "cpuPercent": 65.0, "raw": 65, "reads": [65, 65, 65], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:26"}
+{"id": "plex:4", "family": "plex", "cpuPercent": 80.0, "raw": 80, "reads": [80, 80, 80], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:28"}
+{"id": "megatap:0", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:31"}
+{"id": "megatap:1", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:33"}
+{"id": "megatap:2", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:36"}
+{"id": "megatap:3", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:38"}
+{"id": "megatap:4", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:41"}
+{"id": "megatap:5", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:43"}
+{"id": "megatap:6", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:46"}
+{"id": "megatap:7", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:48"}
+{"id": "megatap:8", "family": "megatap", "cpuPercent": 62.5, "raw": 61, "reads": [61, 61, 61], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:51"}
+{"id": "megatap:9", "family": "megatap", "cpuPercent": 62.5, "raw": 61, "reads": [61, 61, 61], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:53"}
+{"id": "megatap:10", "family": "megatap", "cpuPercent": 62.5, "raw": 61, "reads": [61, 61, 61], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:56"}
+{"id": "megatap:11", "family": "megatap", "cpuPercent": 62.5, "raw": 61, "reads": [61, 61, 61], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:37:59"}
+{"id": "megatap:12", "family": "megatap", "cpuPercent": 62.5, "raw": 61, "reads": [61, 61, 61], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:01"}
+{"id": "megatap:13", "family": "megatap", "cpuPercent": 62.5, "raw": 61, "reads": [60, 61, 61, 61], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:04"}
+{"id": "megatap:14", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:06"}
+{"id": "megatap:15", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 61, 61, 60, 60, 61, 61, 60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:12"}
+{"id": "megatap:16", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:14"}
+{"id": "megatap:17", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:17"}
+{"id": "megatap:18", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:20"}
+{"id": "megatap:19", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:22"}
+{"id": "megatap:20", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:25"}
+{"id": "megatap:21", "family": "megatap", "cpuPercent": 62.0, "raw": 60, "reads": [60, 60, 60], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:27"}
+{"id": "tentap:0", "family": "tentap", "cpuPercent": 57.0, "raw": 50, "reads": [50, 50, 50], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:30"}
+{"id": "tentap:1", "family": "tentap", "cpuPercent": 57.0, "raw": 50, "reads": [50, 50, 50], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:32"}
+{"id": "resonator:0", "family": "resonator", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:35"}
+{"id": "resonator:1", "family": "resonator", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:37"}
+{"id": "ringmod:0", "family": "ringmod", "cpuPercent": 55.0, "raw": 46, "reads": [46, 46, 46], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:40"}
+{"id": "ringmod:1", "family": "ringmod", "cpuPercent": 56.5, "raw": 49, "reads": [49, 49, 49], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:42"}
+{"id": "ringmod:2", "family": "ringmod", "cpuPercent": 56.5, "raw": 49, "reads": [49, 49, 49], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:45"}
+{"id": "gate:0", "family": "gate", "cpuPercent": 56.5, "raw": 49, "reads": [49, 49, 49], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:48"}
+{"id": "gate:1", "family": "gate", "cpuPercent": 54.0, "raw": 44, "reads": [44, 44, 44], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:50"}
+{"id": "gate:2", "family": "gate", "cpuPercent": 54.0, "raw": 44, "reads": [44, 44, 44], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:53"}
+{"id": "gate:3", "family": "gate", "cpuPercent": 58.0, "raw": 52, "reads": [52, 52, 52], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:55"}
+{"id": "synth:0", "family": "synth", "cpuPercent": 56.5, "raw": 49, "reads": [49, 49, 49], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:38:58"}
+{"id": "synth:1", "family": "synth", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:00"}
+{"id": "synth:2", "family": "synth", "cpuPercent": 59.5, "raw": 55, "reads": [55, 55, 55], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:03"}
+{"id": "synth:3", "family": "synth", "cpuPercent": 59.5, "raw": 55, "reads": [55, 55, 55], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:05"}
+{"id": "synth:4", "family": "synth", "cpuPercent": 60.0, "raw": 56, "reads": [56, 56, 56], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:08"}
+{"id": "synth:5", "family": "synth", "cpuPercent": 64.0, "raw": 64, "reads": [64, 64, 64], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:11"}
+{"id": "synth:6", "family": "synth", "cpuPercent": 66.0, "raw": 66, "reads": [66, 66, 66], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:13"}
+{"id": "synth:7", "family": "synth", "cpuPercent": 55.0, "raw": 46, "reads": [46, 46, 46], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:16"}
+{"id": "multiband:default", "family": "multiband", "cpuPercent": 63.5, "raw": 63, "reads": [63, 63, 63], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:18"}
+{"id": "looper:default", "family": "looper", "cpuPercent": 56.0, "raw": 48, "reads": [48, 48, 48], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:21"}
+{"id": "formant:default", "family": "formant", "cpuPercent": 54.5, "raw": 45, "reads": [45, 45, 45], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:23"}
+{"id": "volpan:0", "family": "volpan", "cpuPercent": 53.5, "raw": 43, "reads": [43, 43, 43], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:26"}
+{"id": "volpan:1", "family": "volpan", "cpuPercent": 55.0, "raw": 46, "reads": [46, 46, 46], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:28"}
+{"id": "cab:legacy", "family": "cab", "cpuPercent": 52.5, "raw": 41, "reads": [41, 41, 41], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:31"}
+{"id": "cal-newlook-end", "family": "calibration", "cpuPercent": 52.5, "raw": 41, "reads": [41, 41, 41], "saturated": false, "decode": "piecewise-20261023", "time": "2026-11-05T18:39:33"}

@@ -145,7 +145,7 @@
         "node",
         "scripts/test-cpu.mjs"
       ],
-      "scope": "point-7 CPU estimate: hand costs consistent, 342 swept types, quality deltas, P6 A/B and Satriani V1 hardware cross-checks; no device I/O",
+      "scope": "point-7 CPU estimate: hand costs consistent, 342 swept types, quality deltas, P6 A/B and Satriani V1 hardware cross-checks, T31 insert-block types (Plex, Megatap, Ten-Tap, Resonator, Ring Mod, Gate, Synth voice 1) counted exactly; no device I/O",
       "required": true
     },
     {
@@ -601,6 +601,33 @@
       "required": true
     },
     {
+      "id": "test-controllers",
+      "command": [
+        "node",
+        "scripts/test-controllers.mjs"
+      ],
+      "scope": "Controllers writes (0.3.50, T28): 29 hardware/editor readings replayed through spec.controllers at word = pid, copy = channel A-D; only Controllers bytes change; layout and grid mode; status gate and Tempo/Tempo To Use/X-Y mark refusals; saved-bundle verify (also with global scale observations) and 6 tamper cases; no new hardware evidence",
+      "required": true
+    },
+    {
+      "id": "test-cab-ir",
+      "command": [
+        "node",
+        "scripts/test-cab-ir.mjs"
+      ],
+      "scope": "Legacy Cab IR writes (0.3.53, T31): the CB1 FM3-Edit readings (Factory 1 # 18, Factory 2 # 201) replayed through controls block cab to the exact stored words (17, 200); only Cab bytes change; Dyna-Cab channels, # outside 1..1024, non-integer # and unknown banks refused; no new hardware evidence",
+      "required": true
+    },
+    {
+      "id": "test-feedback",
+      "command": [
+        "node",
+        "scripts/test-feedback.mjs"
+      ],
+      "scope": "Feedback Return writes (0.3.51, T29): FS1 hardware/editor readings replayed through controls block return (Return Level, Output Level, Balance) to the exact stored words; only Return bytes change; layout and grid mode; Feedback Send, Bypass/Bypass Mode, channels B-D and range refusals; saved-bundle verify and a tampered spec; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-modifier-curve",
       "command": [
         "node",
@@ -616,6 +643,33 @@
         "scripts/test-insert-applicability.mjs"
       ],
       "scope": "Five FW13 XML families, 242 PIDs, A-D type matrix, independent visibility negatives, final-type ordering and atomic failure; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-display-classes",
+      "command": [
+        "node",
+        "scripts/test-display-classes.mjs"
+      ],
+      "scope": "Mix (0x0705, 17), Balance (0x0900, 29) and class-0x01 integer (552) promotion to default-writable from T21/T22 hardware readings; all 27 readings re-encoded without opt-in; Amp Dynamic Depth/Presence stay blocked (T23); no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-enum-promotion",
+      "command": [
+        "node",
+        "scripts/test-enum-promotion.mjs"
+      ],
+      "scope": "227 option selectors promoted to default-writable (T24 hardware 50, shared label lists 108, T24-read families 39, T30 hardware 25, T28 hardware 3, T31 Cab banks 2); corpus 639 bodies in range; all 51 T24 and 25 T30 readings decoded and re-encoded without opt-in; type/model selectors, non-sound families, pickers, MULTITAP_PRESETS and CONTROLLERS_TEMPOTOUSE stay opt-in (121); no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-tentap-times",
+      "command": [
+        "node",
+        "scripts/test-tentap-times.mjs"
+      ],
+      "scope": "Ten-Tap Time 1-10 (Rhythm Tap, linear 0-10 s) and Delay Time (Ten-Tap, linear 0.01-10 s, writable to 1000 ms) promoted from T25/T25b hardware readings; 20+4+1 readings re-encoded without opt-in; type and clamp rules; no device I/O",
       "required": true
     },
     {

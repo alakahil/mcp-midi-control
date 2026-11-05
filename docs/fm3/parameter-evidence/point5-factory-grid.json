@@ -12,7 +12,7 @@
     "tools/fm3/factory_structure_evidence.mjs": "fefa0169dfeb774726c293d86212bc436e4d1b8168bd30b5dd460371c07eaaa2",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid.mjs": "bd71137c382ef6053eb54be32843998fbdb4ba52712ccd22d96696abc7c70aa6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid-audit.mjs": "f8affe5ed83b59f7d59da1da5543d6455fe3d8617b1bfec2b58c17e5c8a844c2",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-layout.mjs": "fe3161f19971dedaff224671ca93a660e1fffa2603fcc4d9721ba916779e5756",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-layout.mjs": "4c90a9d3cf4b76079c2f20774097e25587e122607b23df1ddc004d513632c5d6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/drive-collector/fm3-codec.mjs": "17693f90b9ddb24bcad0b79d204dc1ab9e2d2ff02a7a4629c4be6bcfb16d3c67",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-factory-grid-evidence.json": "829ffe64878c0b5c00cbf1062c404dabce28e979eb406d7b37766d12d4b67528"
   },

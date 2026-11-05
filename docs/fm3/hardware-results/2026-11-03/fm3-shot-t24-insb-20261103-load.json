@@ -1,0 +1,58 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "f6f766a92a4e9eaa1e7fed647bfd6315fcf2db2ce953fcc46b81c8948ab4895d",
+ "preset": "INSB",
+ "name": "SHOT T24 ENUM INS B",
+ "time": "2026-11-03T11:17:15",
+ "blocks": [
+  {
+   "family": "plex",
+   "effectId": 178,
+   "values": 384,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "PLEX_FLTLFOTYPE",
+     "channel": "A",
+     "raw": 9,
+     "device": 9
+    },
+    {
+     "param": "PLEX_FILTERTYPE",
+     "channel": "A",
+     "raw": 7,
+     "device": 7
+    },
+    {
+     "param": "PLEX_TEMPO3",
+     "channel": "A",
+     "raw": 9,
+     "device": 9
+    }
+   ]
+  },
+  {
+   "family": "looper",
+   "effectId": 166,
+   "values": 24,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "LOOPER_HALF",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "LOOPER_RECORDMODE",
+     "channel": "A",
+     "raw": 2,
+     "device": 2
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}

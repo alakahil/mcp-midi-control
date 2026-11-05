@@ -15,7 +15,7 @@ Automaatselt korratav audit avaldatud firmware 13 andmetest. Arvud näitavad all
 | GET/SYX-ga uuesti võrreldud mõõtmispunktid | 869 |
 | Erinevad uuesti kontrollitud GET/SYX paarid | 354 |
 | Vähemalt ühe sellise punktiga parameetrid | 72 |
-| Eraldi arvestatud ekraaninäidud | 66 |
+| Eraldi arvestatud ekraaninäidud | 120 |
 | Ekspordi abil kontrollitud punktid ilma GET-ita | 30 |
 | Vähemalt ühe paaristatud või ekspordipunktiga parameetrid | 85 |
 | Vahele jäetud või välistatud lähtekirjed | 36 |
@@ -29,21 +29,21 @@ Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik
 | Pere | Kataloogi PID-d | Sõnastiku PID-d | Paaristatud punktiga PID-d | Tabelikirjutaja vaikimisi / eraldi lubamisel |
 | --- | ---: | ---: | ---: | ---: |
 | Nimetu | 0 | 7 | 0 | 0 / 0 |
-| CABINET | 105 | 106 | 0 | 34 / 27 |
-| CHORUS | 29 | 32 | 0 | 28 / 3 |
+| CABINET | 105 | 106 | 0 | 62 / 1 |
+| CHORUS | 29 | 32 | 0 | 31 / 0 |
 | COMP | 37 | 37 | 0 | 33 / 0 |
 | CONTROLLERS | 141 | 130 | 0 | 0 / 0 |
 | CROSSOVER | 15 | 0 | 0 | 0 / 0 |
-| DELAY | 88 | 89 | 0 | 80 / 3 |
-| DISTORT | 143 | 144 | 1 | 131 / 1 |
+| DELAY | 88 | 89 | 0 | 83 / 0 |
+| DISTORT | 143 | 144 | 1 | 132 / 0 |
 | ENHANCER | 12 | 12 | 10 | 0 / 0 |
 | FC | 28 | 0 | 0 | 0 / 0 |
 | FDBKRET | 6 | 6 | 0 | 0 / 0 |
 | FDBKSEND | 2 | 2 | 0 | 0 / 0 |
 | FILTER | 37 | 37 | 5 | 0 / 0 |
-| FLANGER | 33 | 33 | 0 | 30 / 2 |
+| FLANGER | 33 | 33 | 0 | 32 / 0 |
 | FORMANT | 12 | 12 | 0 | 0 / 0 |
-| FUZZ | 43 | 44 | 5 | 39 / 4 |
+| FUZZ | 43 | 44 | 5 | 43 / 0 |
 | GATE | 19 | 19 | 0 | 0 / 0 |
 | GEQ | 21 | 20 | 15 | 0 / 0 |
 | GLOBAL | 173 | 1024 | 0 | 0 / 0 |
@@ -60,22 +60,22 @@ Tabelikirjutaja tugi on loetud töötavast mootorist: sobiv olek, kodeerimisliik
 | MULTITAP | 121 | 121 | 0 | 0 / 0 |
 | OUTPUT | 26 | 26 | 0 | 0 / 0 |
 | PEQ | 33 | 33 | 31 | 0 / 0 |
-| PHASER | 35 | 35 | 0 | 18 / 16 |
-| PITCH | 114 | 114 | 0 | 78 / 33 |
+| PHASER | 35 | 35 | 0 | 32 / 2 |
+| PITCH | 114 | 114 | 0 | 109 / 2 |
 | PLEX | 95 | 96 | 0 | 0 / 0 |
 | PRESET | 51 | 0 | 0 | 0 / 0 |
 | RESONATOR | 40 | 40 | 0 | 0 / 0 |
-| REVERB | 71 | 71 | 0 | 62 / 8 |
+| REVERB | 71 | 71 | 0 | 70 / 0 |
 | RINGMOD | 13 | 13 | 0 | 0 / 0 |
-| ROTARY | 21 | 21 | 5 | 13 / 7 |
+| ROTARY | 21 | 21 | 5 | 20 / 0 |
 | RTA | 6 | 0 | 0 | 0 / 0 |
 | SYNTH | 42 | 42 | 0 | 0 / 0 |
 | TENTAP | 49 | 48 | 0 | 0 / 0 |
 | TONEMATCH | 25 | 0 | 0 | 0 / 0 |
-| TREMOLO | 22 | 22 | 0 | 12 / 8 |
+| TREMOLO | 22 | 22 | 0 | 19 / 1 |
 | VOCODER | 67 | 0 | 0 | 0 / 0 |
 | VOLUME | 15 | 15 | 0 | 0 / 0 |
-| WAH | 25 | 25 | 0 | 18 / 7 |
+| WAH | 25 | 25 | 0 | 24 / 1 |
 
 ## Järgmised tööd kasutaja ajakulu vähendamiseks
 

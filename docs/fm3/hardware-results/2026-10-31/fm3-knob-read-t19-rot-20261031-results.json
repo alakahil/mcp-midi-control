@@ -1,0 +1,10 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "0178c3e7cc4ddd3a43add4f56a0fa04db7e8053210061d1c68eaebedc8c2a7d0",
+ "time": "2026-11-01T00:08:25",
+ "readings": {
+  "rotary": "4.370 Hz/65.0%/73.0%/1.50 dB/0.850/2.300 sec/4.700 sec/0.37/63%/47%/2.70/65%/-2.0 dB",
+  "type": "Rotary A: -"
+ },
+ "note": ""
+}

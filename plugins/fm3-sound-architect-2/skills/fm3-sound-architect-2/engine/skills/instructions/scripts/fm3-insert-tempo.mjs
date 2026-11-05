@@ -1,9 +1,9 @@
-// Tempo locks for the point-6 insertable families (Plex, Ten-Tap). Same rule as
+// Tempo locks for the point-6 insertable families (Plex, Ten-Tap, Multi Delay). Same rule as
 // fm3-parameter-dependencies: an explicit write to a locked target requires the final
 // channel Tempo to be NONE. Source: FM3-Edit 1.07.17 layout XML (tools/fm3/insert_tempo_locks.py).
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-export const insertTempoHash='059e30a1102e5f6c16bbbcf5a6edd2140119e8a004573b8bcee32bf2ae615b0d';
+export const insertTempoHash='0da79a41ee84411cf39cfade25a88704fd9bfdec32637f5c3961da10128aa87f';
 const bytes=fs.readFileSync(new URL('../references/fm3-insert-tempo-locks.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==insertTempoHash)throw Error('Insert tempo locks changed; regenerate with tools/fm3/insert_tempo_locks.py');
 export const insertTempoLocks=Object.freeze(JSON.parse(bytes).tempoLocks.map(Object.freeze));

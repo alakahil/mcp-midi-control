@@ -1,4 +1,5 @@
 import {insertState,insertApplicability,insertPolicySummary} from './fm3-insert-applicability.mjs';
+import {validateCabIrWrites,cabIrState,cabIrApplicability} from './fm3-cab-ir.mjs';
 // Bounded XML-derived authoring policy. Scalar curve support is a separate axis.
 import fs from 'node:fs';
 import {volumeState,volumeApplicability,volumePolicySummary} from './fm3-volume-policy.mjs';
@@ -8,12 +9,13 @@ import {algorithmApplicability,algorithmState,algorithmPolicySummary,templateOnl
 import {modulationApplicability,modulationState,modulationPolicySummary,modulationTemplateOnly} from './fm3-modulation-dynamics-applicability.mjs';
 import {rotaryPitchState,rotaryPitchApplicability,rotaryPitchTemplateOnly,rotaryPitchPolicySummary} from './fm3-rotary-pitch-applicability.mjs';
 import {validatePitchCustomWrites} from './fm3-pitch-custom-scales.mjs';
+import {validateTentapWrites} from './fm3-tentap-times.mjs';
 export const templateOnlyParameter=p=>delayReverbTemplateOnly(p)||modulationTemplateOnly(p)||rotaryPitchTemplateOnly(p);
 export const typePolicyHash='9fdc92ed23349838699db18dbcce223602ae6a22984cef5e5728e35150a49f99';
 const bytes=fs.readFileSync(new URL('../references/fm3-type-applicability.json',import.meta.url));
 if(createHash('sha256').update(bytes).digest('hex')!==typePolicyHash)throw Error('Type applicability policy changed; review and regenerate');
 const policy=JSON.parse(bytes);
-const familyFor={chorus:'CHORUS',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',flanger:'FLANGER',phaser:'PHASER',compressor:'COMP',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',plex:'PLEX',gate:'GATE',tentap:'TENTAP',synth:'SYNTH',multiband:'MULTICOMP',mixer:'MIXER',multiplexer:'MULTIPLEXER',formant:'FORMANT',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',looper:'LOOPER'};
+const familyFor={chorus:'CHORUS',drive:'FUZZ',delay:'DELAY',reverb:'REVERB',flanger:'FLANGER',phaser:'PHASER',compressor:'COMP',wah:'WAH',tremolo:'TREMOLO',rotary:'ROTARY',pitch:'PITCH',plex:'PLEX',gate:'GATE',tentap:'TENTAP',synth:'SYNTH',multiband:'MULTICOMP',mixer:'MIXER',multiplexer:'MULTIPLEXER',formant:'FORMANT',megatap:'MEGATAP',ringmod:'RINGMOD',resonator:'RESONATOR',looper:'LOOPER',multidelay:'MULTITAP'};
 export function typePolicySummary(){
   return {sha256:typePolicyHash,firmware:policy.firmware,source:'FM3-Edit '+policy.editor,
     families:Object.fromEntries(Object.entries(policy.families).map(([family,f])=>[family,{types:f.types.length,parameters:Object.keys(f.parameters).length,restrictedParameters:Object.values(f.parameters).filter(p=>p.allowedTypes.length<f.types.length).length}])),
@@ -23,8 +25,9 @@ export function typePolicySummary(){
     rule:'Explicit writes checked against final per-channel type; stored hidden words preserved',
     limits:'Bounded XML-derived authoring policies, not executed native UI or DSP validation. Chorus/Drive coverage is in families; Delay/Reverb in algorithmApplicability; Flanger/Phaser/Compressor/Wah/Tremolo in modulationDynamics. Rotary/Pitch includes type-free Rotary, 16 Pitch models and a separately pinned 34-field preset-word overlay; seven local custom-note fields require final-scale validation; fixed Pitch slots remain blocked. Tempo/modifier scope is reported separately; Thirteen point-6 family XML policies (515 PIDs) are in insertFamilies; MultiDelay remains read-only metadata. Four Mixer delay names use native bindings; dynamic feedback controls remain unresolved; other-family visibility remains unverified.'};
 }
-export function readTypeState(p,read){return insertState(p,read)??volumeState(p,read)??inputGateState(p,read)??rotaryPitchState(p,read)??algorithmState(p,read)??modulationState(p,read)??read(policy.families[p.family]?.typePid??0);}
+export function readTypeState(p,read){return cabIrState(p,read)??insertState(p,read)??volumeState(p,read)??inputGateState(p,read)??rotaryPitchState(p,read)??algorithmState(p,read)??modulationState(p,read)??read(policy.families[p.family]?.typePid??0);}
 export function typeApplicability(p,type){
+  const cabIr=cabIrApplicability(p,type);if(cabIr.covered)return cabIr;
   const inserted=insertApplicability(p,type);if(inserted.covered)return inserted;
   const vol=volumeApplicability(p,type);if(vol.covered)return vol;
   const input=inputGateApplicability(p,type);if(input.covered)return input;
@@ -42,7 +45,16 @@ export function typeApplicability(p,type){
 }
 // Preflight the complete plan. A type change may appear before or after its controls.
 // No body mutation or allowance callback is permitted until this succeeds.
+// Multi Delay (0.3.47 insert, 0.3.49 writes; T27 2026-11-05): the FM3 keeps Base Type (FM3-Edit "Algorithm") and the
+// Presets word exactly as stored on load and when a channel becomes active (5 presets, 484/484 words each). Changing
+// Algorithm in FM3-Edit changes only pid 0, so Base Type is a plain selector checked by the FW13 visibility policy.
+// Choosing one of the 39 Multi Delay presets (FM3-Edit "Type", MULTITAP_PRESETS pid 114) fills about 39 other words
+// (Pealing Bells: 39 words on the channel), and a stored Presets word alone does not trigger that fill, so writing it
+// would label words it does not hold: refused until each preset's fill table is measured.
+export const MULTIDELAY_PRESET_PID=114;
+export const MULTIDELAY_PRESET_REFUSED='Multi Delay preset selection (Type) is not writable: choosing a preset fills about 39 other words that are not mapped; set Base Type (Algorithm) and the parameters instead';
 export function validateTypeWrites(body,writes){
+  for(const w of writes)if(w.block==='multidelay'&&w.pid===MULTIDELAY_PRESET_PID)throw Error(`multidelay ${w.channel} ${w.name}: ${MULTIDELAY_PRESET_REFUSED}`);
   for(const w of writes)if(templateOnlyParameter({family:familyFor[w.block],param:w.pid}))throw Error(`${w.name}: full channel template required for model/internal selector changes`);
   const planned=new Map(writes.map(w=>[w.offset,w.raw]));
   for(const w of writes){
@@ -56,4 +68,6 @@ export function validateTypeWrites(body,writes){
     w.label=a.label;
   }
   validatePitchCustomWrites(body,writes);
+  validateTentapWrites(body,writes);
+  validateCabIrWrites(body,writes);
 }

@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2155,
-  "filePaths": 2359,
+  "uniqueContents": 2172,
+  "filePaths": 2376,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -309,12 +309,6 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-040-f6e7ed780e/donor.syx"
-      ]
-    },
-    "059e30a1102e5f6c16bbbcf5a6edd2140119e8a004573b8bcee32bf2ae615b0d": {
-      "bytes": 15541,
-      "paths": [
-        "references/fm3-insert-tempo-locks.json"
       ]
     },
     "05b38718822a15934323b267e5526bfd0d312aeeb7549b00396a9e117e901c42": {
@@ -658,6 +652,12 @@
         "references/drive-batch-20261006-112254/capture-20261006T110645-8aad95e1f7/donor.syx"
       ]
     },
+    "0cdff53aac57549ec3810a04ffb430c9132563edea87115739ae822c45a990e0": {
+      "bytes": 24680,
+      "paths": [
+        "references/fm3-multidelay-empty-20261103.syx"
+      ]
+    },
     "0ce5de873caa06b7038b0064c92bebb023b86745d93a6257533a5756bc88461f": {
       "bytes": 672,
       "paths": [
@@ -687,6 +687,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-097-4c2d2e39c7/donor.syx"
+      ]
+    },
+    "0da79a41ee84411cf39cfade25a88704fd9bfdec32637f5c3961da10128aa87f": {
+      "bytes": 26218,
+      "paths": [
+        "references/fm3-insert-tempo-locks.json"
       ]
     },
     "0db16ad71ae884fac28e2282dc6561030a68484a01633eccc64db2ae1aeb0a63": {
@@ -1275,6 +1281,12 @@
       "bytes": 24680,
       "paths": [
         "examples/JB_UNIFIED_RHYTHM_SOLO_TEST.syx"
+      ]
+    },
+    "1996998ecab2128a5ff74395e5c441f4eae2082764056081689b6e6f845a49a4": {
+      "bytes": 6546,
+      "paths": [
+        "references/fm3-shot-t28-controllers-20261105.json"
       ]
     },
     "19970870abad00f1d2d45354e5985c76bb10504e5aed092a0f6d23e3bdbb51dd": {
@@ -2114,6 +2126,12 @@
       "bytes": 24680,
       "paths": [
         "references/amp-level-20261013/session/attempt-02-00963834b87c/donor.syx"
+      ]
+    },
+    "298df0ad4fe2856b0256d7981a044f97edf30b88f0eafce10adc4d5af144bb55": {
+      "bytes": 24680,
+      "paths": [
+        "references/fm3-multidelay-types-20261103.syx"
       ]
     },
     "29a73c98ad34431162021e4c696dc7e5cb332524299aea131233436e81475079": {
@@ -3496,6 +3514,12 @@
         "references/enhancer-full-20261012-122507/step-004-0876b34511/result.json"
       ]
     },
+    "457b82bd133cc50e5f9da1ca1b0f4785bcfd2e0a214b3d0af2ff23d3d98bbb09": {
+      "bytes": 12725,
+      "paths": [
+        "references/fm3-shot-t30-enum-20261105.json"
+      ]
+    },
     "457da5bdb4246bcba3a8540b2e1bf7a8aeae1e5fdce1dfc0a999a2492df61b95": {
       "bytes": 3626,
       "paths": [
@@ -3907,6 +3931,12 @@
         "references/drive-batch-20261006-112254/capture-20261006T112047-061d2615da/pair.json"
       ]
     },
+    "4ed8a0ea8f36769935847e71945fb3dd162cf35f3f0b3f65a04f4d167067722c": {
+      "bytes": 10399,
+      "paths": [
+        "references/fm3-shot-t21-mix-20261102.json"
+      ]
+    },
     "4eda4d22b89fb843ce47ab011bf01290a2cdbaabb9fe0219038faa5f5f0e7095": {
       "bytes": 24680,
       "paths": [
@@ -4285,6 +4315,12 @@
         "references/drive-batch-20261006-112254/capture-20261006T112141-44cf72a53a/donor.syx"
       ]
     },
+    "54b4204b6f4e202ffb652bfad33d57785c208373c2339bb6eed246e1ef1aff07": {
+      "bytes": 24680,
+      "paths": [
+        "references/fm3-multidelay-fresh-20261103.syx"
+      ]
+    },
     "54bbfe7c07ab1581e90dccd7468e316823a53699f6871c115676b18239872b60": {
       "bytes": 24680,
       "paths": [
@@ -4512,6 +4548,12 @@
       "bytes": 8569,
       "paths": [
         "references/amp-level-20261013/index.json"
+      ]
+    },
+    "5a3dec994668fcaeae45c3ba917d2f7d9401a6e38dfecd19e4523c8aa43750f0": {
+      "bytes": 10748,
+      "paths": [
+        "references/fm3-modifier-lifecycle-evidence.json"
       ]
     },
     "5a5d66bf43a5e2f9ca82380741a05f8d1f0d430700e572dc49b74e198fbc6bb8": {
@@ -5487,6 +5529,12 @@
         "examples/JB_RHYTHM_SOLO_GENERATED.spec.json"
       ]
     },
+    "6f316708afbb2a09f50193e4d14a0848bcbb0104e762b74627804ff1bacdecd8": {
+      "bytes": 9645,
+      "paths": [
+        "references/fm3-shot-t27-multidelay-side-20261105.json"
+      ]
+    },
     "6f4e15807d5498d069be8e2e064c85c41030cd572d3ff7e80db476bab6d0a19c": {
       "bytes": 5026,
       "paths": [
@@ -5748,6 +5796,12 @@
       "paths": [
         "references/cab-batch-20261005-135019/capture-20261005T091341-b238d43a16/labels.json",
         "references/cab-batch-20261005-135600/capture-20261005T091341-b238d43a16/labels.json"
+      ]
+    },
+    "74a06e8675126305ee82b867687e615cfa33acb5c39f3a96d2cef805436e7035": {
+      "bytes": 21360,
+      "paths": [
+        "references/fm3-knob-read-t19-20261031.json"
       ]
     },
     "74bafd9d1d11fc9b9a42b9d70acff3060ea98bb023ecf35807b2438142129a75": {
@@ -6416,6 +6470,12 @@
         "examples/JB_EIGHT_SCENES_V3.spec.json"
       ]
     },
+    "7fc2a9981f737b51e2f385d9e40f2ad40f2f35c97d6f854747d063ab8fc389a9": {
+      "bytes": 4110,
+      "paths": [
+        "references/fm3-shot-t29-feedback-20261105.json"
+      ]
+    },
     "7fc3fa9a8175281fddd03fe092ce9a401302db8459291a0ce2631c68f5366ba6": {
       "bytes": 2215,
       "paths": [
@@ -6743,6 +6803,12 @@
         "references/flanger-batch-20261007-125456/capture-20261007T125113-921410b1d1/donor.syx"
       ]
     },
+    "864a44daaaff9700199e5e965f3a571cce967d7032d0579d71e6d35f6865a068": {
+      "bytes": 6565,
+      "paths": [
+        "references/fm3-shot-t22-int-20261102.json"
+      ]
+    },
     "864ba2f5ff6a4723780285fc4f6fa263fcfd83d4235529a9f731acf290dbd918": {
       "bytes": 2715,
       "paths": [
@@ -6977,6 +7043,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-180-f80eeab3da/donor.syx"
+      ]
+    },
+    "8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103": {
+      "bytes": 22450,
+      "paths": [
+        "references/fm3-shot-t31-cab-cpu-20261105.json"
       ]
     },
     "8b5ca3d054244210e7a360d90463c40fa7b91d7c361b738c59a5625129ac649b": {
@@ -7282,12 +7354,6 @@
         "references/geq-full-20261010-194115/step-134-9815cbde8a/result.json"
       ]
     },
-    "90bd7ef03af2039c96c7094fde9b3e08f8f16f2a260c575a5dacb6580199fce7": {
-      "bytes": 10748,
-      "paths": [
-        "references/fm3-modifier-lifecycle-evidence.json"
-      ]
-    },
     "90e0ddf52e868f0a976c02fa38d681dd6eff20973d20cef588658a7c0cb0a5fb": {
       "bytes": 2304,
       "paths": [
@@ -7356,6 +7422,12 @@
       "bytes": 658,
       "paths": [
         "references/pitch-batch-20261007-153634/capture-20261007T153537-0539bbe6cb/labels.json"
+      ]
+    },
+    "929c00ccf938ba0ab17b94c42e22795653423c5cb16d82e01a1076b7a5242329": {
+      "bytes": 2647,
+      "paths": [
+        "references/fm3-shot-t23-dyn-20261102.json"
       ]
     },
     "92a77679a0a2dde7170bb1f0f8c9d5b32fc5fa03adccdb6823617a6d53f0cf2f": {
@@ -8063,6 +8135,12 @@
         "references/peq-full-20261009-152606/step-053-80c194df92/donor.syx"
       ]
     },
+    "a19e82b2cb7bda0f547626c5a4dbe5e9436df132f481e366ea2705d4e6701796": {
+      "bytes": 21726,
+      "paths": [
+        "references/fm3-shot-t24-enum-20261103.json"
+      ]
+    },
     "a1a07cade0594a2fe357b51b981f1095772997568063edbd08574cb660193e17": {
       "bytes": 2549,
       "paths": [
@@ -8278,6 +8356,12 @@
       "bytes": 957570,
       "paths": [
         "references/fm3-param-dictionary.json"
+      ]
+    },
+    "a573ffc746b59ef6d993852a26542d04962e6a94600879b5da432e05d49d2842": {
+      "bytes": 4542,
+      "paths": [
+        "references/fm3-cab-cut-t20-20261102.json"
       ]
     },
     "a5839e8297ff963b1ac81478a111c4cd0fd5c88049d997fa2fc67ad4afaca7f1": {
@@ -9431,6 +9515,12 @@
         "references/geq-full-20261010-194115/step-150-f2d629c4e7/donor.syx"
       ]
     },
+    "bb418db845ef9d72a64fcd455f74d4bfba7b32c705743798833410d18ebd505e": {
+      "bytes": 124996,
+      "paths": [
+        "references/fm3-enum-promotion-20261103.json"
+      ]
+    },
     "bb43d11f98995fc2cbe122e3dcc8fb90181f9c0289ae6825e572f0c61dfd3012": {
       "bytes": 608,
       "paths": [
@@ -9489,6 +9579,12 @@
       "bytes": 24680,
       "paths": [
         "references/rotary-batch-20261007-151451/capture-20261007T151315-92d360bdd6/donor.syx"
+      ]
+    },
+    "bc90c49ff5c4371380269c8190966e775cd24cd86eb7f8e8f32bb0c3681d4dc1": {
+      "bytes": 9458,
+      "paths": [
+        "references/fm3-shot-t25-tentap-20261103.json"
       ]
     },
     "bca197bd56cff3b6deddc230567ff76d3da899a0e61c588ee2e8081889c38593": {
@@ -9751,6 +9847,12 @@
       "bytes": 349,
       "paths": [
         "references/enhancer-full-20261012-122507/step-058-ba380dccee/result.json"
+      ]
+    },
+    "c22df7182ce10c5683cba12dbad89773e8b2ae911daed70e3930042716284c42": {
+      "bytes": 29475,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "c23449524d974d0f05ba888e05d14967cda2cbf38d5947ce4a6460ef756af5a7": {
@@ -12352,12 +12454,6 @@
         "references/filter-controls-20261008-165150/step-00-b4f6851003/result.json"
       ]
     },
-    "f41fc3eac25dc0d66ba50f9dafd179f8b6fb0becae433729354132e34eb27a35": {
-      "bytes": 26508,
-      "paths": [
-        "references/offline-suite.json"
-      ]
-    },
     "f42c0feb7be0f148cf573313399f7df51ed35b6ce306cfc29ddac5d409c143ce": {
       "bytes": 5027,
       "paths": [
@@ -12656,6 +12752,12 @@
       "bytes": 2406,
       "paths": [
         "references/geq-full-20261010-194115/step-073-1598990623/result.json"
+      ]
+    },
+    "f8b8c1422d3a08de74d8686b62e8e6e6007ac2885941b3aa56a39ceb75c42d9d": {
+      "bytes": 5246,
+      "paths": [
+        "references/fm3-shot-t26-multidelay-20261104.json"
       ]
     },
     "f8bb00f285cac87a51d3628fcc8e2936cbf61a6bdbe8335ce2c2b904a4d3e32e": {

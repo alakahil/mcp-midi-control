@@ -1,5 +1,6 @@
 // The bundled sound schema (fm3-sound.schema.json) and the generator decide the same way for the 0.3.30-0.3.32
-// fields (controlSwitches, volumePedal {min,max}, Wah + Volume, out2) and for every current example spec.
+// fields (controlSwitches, volumePedal {min,max}, Wah + Volume, out2), Multi Delay placement, Controllers writes,
+// and every current example spec.
 // Generator-only rules (the schema cannot express them) are listed and must be refused by the generator.
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
@@ -26,6 +27,51 @@ const valid=[
   {composer:wahComposer,volumePan:true,volumePedal:{max:8},layout:{row2:['wah','drive','amp','cab'],row3:['volpan','delay','reverb']},controlSwitches:[{switch:2,block:'amp',param:'DISTORT_CUT',channel:'ALL'}]},
   {composer,grid:{rows:[E,['in1','drive','-','-','amp','cab','-','-','-','-','-','send'],['return','delay','-','-','reverb','-','-','-','-','-','-','out1'],[...Array(11).fill(''),'out2']],links:[{row:4,col:12,from:[3]}]},duplicate:['out2']}];
 for(const s of valid)ok(s);
+// Multi Delay is insertable in both layout rows and the general grid. The schema must
+// accept its placement and A-D scene states while keeping parameter writes closed.
+const multidelayLayout={composer,insert:['multidelay'],layout:{row2:['drive','amp','cab'],row3:['delay','multidelay','reverb'],columns:{drive:3,amp:6,cab:8,delay:6,multidelay:7,reverb:8}},
+  blockScenes:{multidelay:[{scene:1,channel:'A',bypass:false},{scene:2,channel:'D',bypass:true}]}};
+const multidelayRow2={...multidelayLayout,layout:{row2:['drive','multidelay','amp','cab'],row3:['delay','reverb']}};
+const multidelayGrid={composer,insert:['multidelay'],grid:{rows:[E,['in1','drive','-','-','amp','cab','-','-','-','-','-','send'],
+  ['return','delay','-','-','-','-','multidelay','-','reverb','-','-','out1'],E]},blockScenes:multidelayLayout.blockScenes};
+// All 11 serial insert families fit; do not impose the old 10-item limit.
+const allSerialInserts={composer,insert:['plex','multiband','synth','looper','gate','formant','tentap','megatap','ringmod','resonator','multidelay'],
+  layout:{row2:['drive','amp','cab','plex','multiband','synth','looper','gate','formant','tentap'],row3:['megatap','ringmod','resonator','multidelay','delay','reverb']}};
+for(const s of [multidelayLayout,multidelayRow2,multidelayGrid,allSerialInserts])ok(s);
+const mdDuplicate=structuredClone(multidelayLayout);mdDuplicate.insert.push('multidelay');
+const mdChannel=structuredClone(multidelayLayout);mdChannel.blockScenes.multidelay[0].channel='E';
+const mdColumn=structuredClone(multidelayLayout);mdColumn.layout.columns.multidelay=12;
+// 0.3.49 (T27): Base Type and Multi Delay parameters are writable; the Multi Delay preset word (Type, pid 114) is refused
+// by the generator only (the schema cannot know the parameter rule).
+const mdWrite={...multidelayLayout,allow:['enum-labels','linear-by-structure'],controls:[{block:'multidelay',channel:'A',param:'MULTITAP_BASETYPE',value:'Quad Parallel Delay'},{block:'multidelay',channel:'A',param:'MULTITAP_MIX',value:30}]};
+ok(mdWrite);
+const mdPreset={...multidelayLayout,allow:['enum-labels'],controls:[{block:'multidelay',channel:'A',param:'MULTITAP_PRESETS',value:3}]};
+assert.deepEqual(checkSchema(S,mdPreset),[],'schema shape of a Multi Delay preset write');
+assert.throws(()=>createPreset(base,mdPreset),/preset selection \(Type\) is not writable/,'generator refuses the Multi Delay preset word');
+for(const s of [mdDuplicate,mdChannel,mdColumn]){
+  assert.notDeepEqual(checkSchema(S,s),[],'schema accepts invalid Multi Delay input');
+  assert.throws(()=>createPreset(base,s),Error,'generator accepts invalid Multi Delay input');
+}
+// 0.3.50 (T28): Controllers writes. Shape errors are refused by both; status gate, refused parameters and
+// duplicates by the generator only.
+const ctl={composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},allow:['enum-labels'],
+  controllers:[{channel:'A',param:'LFO1TYPE',value:'Square'},{channel:'A',param:'CONTROLLERS_LFO1FREQ',value:2.5},{channel:'B',param:17,value:60}]};
+ok(ctl);
+const ctlBoth=[['channel E',s=>s.controllers[0].channel='E'],['extra key',s=>s.controllers[0].block='controllers'],['empty list',s=>s.controllers=[]],
+  ['65 writes',s=>s.controllers=Array.from({length:65},(_,i)=>({channel:'ABCD'[i%4],param:40+Math.floor(i/4),value:1}))],['pid 130',s=>s.controllers[2].param=130],['missing value',s=>delete s.controllers[0].value]];
+const ctlGenerator=[['Tempo To Use',s=>s.controllers=[{channel:'A',param:'TEMPOTOUSE',value:0}]],['unknown option',s=>s.controllers[0].value='Wobble'],
+  ['n/a mark',s=>s.controllers=[{channel:'A',param:'ADSR1_XMARK',value:1}]],['same word twice',s=>s.controllers.push({channel:'A',param:1,value:1})],['out of range',s=>s.controllers[1].value=100]];
+for(const [name,edit] of ctlBoth){const s=structuredClone(ctl);edit(s);
+  assert.notDeepEqual(checkSchema(S,s),[],'schema accepts controllers: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts controllers: '+name);}
+for(const [name,edit] of ctlGenerator){const s=structuredClone(ctl);edit(s);
+  assert.deepEqual(checkSchema(S,s),[],'schema refuses controllers: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts controllers: '+name);}
+// 0.3.51 (T29): Feedback Return controls. "send" is refused by both; Return channels B-D, Bypass/Bypass Mode and
+// out-of-range values by the generator only.
+const fb={composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},controls:[{block:'return',channel:'A',param:'RETLEVEL',value:80},{block:'return',channel:'A',param:'PAN',value:20}]};
+ok(fb);
+{const s=structuredClone(fb);s.controls[0].block='send';assert.notDeepEqual(checkSchema(S,s),[],'schema accepts send');assert.throws(()=>createPreset(base,s),/Feedback Send/,'generator accepts send');}
+for(const [name,edit] of [['channel B',s=>s.controls[0].channel='B'],['bypass',s=>s.controls[0]={block:'return',channel:'A',param:'BYPASS',value:0}],['level 101',s=>s.controls[0].value=101]]){
+  const s=structuredClone(fb);edit(s);assert.deepEqual(checkSchema(S,s),[],'schema refuses return: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts return: '+name);}
 // Both refuse (schema error and generator error).
 const both=[
   ['volumePedal min below 0',s=>s.volumePedal={min:-1},2],['volumePedal max above 10',s=>s.volumePedal={max:11},2],['volumePedal unknown key',s=>s.volumePedal={min:1,curve:2},2],
@@ -52,4 +98,4 @@ const generatorOnly=[
 for(const [name,edit,i] of generatorOnly){const s=structuredClone(valid[i]);edit(s);
   assert.deepEqual(checkSchema(S,s),[],'schema refuses (move it to the both-list): '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
 assert.ok(checkSchema(S,{composer,layout:{row2:['amp','cab'],row3:[]},unknownField:1}).some(e=>/unknownField/.test(e)),'unknown top-level field refused');
-console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));
+console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:5,multidelayRefusals:4,controllersRefusals:{both:ctlBoth.length,generatorOnly:ctlGenerator.length},refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));
