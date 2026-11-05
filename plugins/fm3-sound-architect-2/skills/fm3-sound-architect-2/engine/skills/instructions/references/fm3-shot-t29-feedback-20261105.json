@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "editor": "FM3-Edit 1.07.17",
+ "date": "2026-11-05",
+ "test": "T29",
+ "method": "FM3_SHOT_LOAD.py --load (Remote Control) sent FS0 and then FS1 to the edit buffer (7F 00) and read the Feedback Send (effect id 182) and Feedback Return (186) records back with fn=0x1F; FM3_SHOT_READ.py re-read them. After each load Claude opened FM3-Edit in the background, selected the Send and Return blocks and read their pages from screenshots, then quit FM3-Edit without saving. Nothing stored or set.",
+ "packSha256": "f810dfa9d7dc8eca6afcc15b805533dba8c44cd64f11996683bbd2301b1d9fc2",
+ "records": {
+  "send": {
+   "effectId": 182,
+   "words": 2,
+   "channels": 1
+  },
+  "return": {
+   "effectId": 186,
+   "words": 6,
+   "channels": 1
+  }
+ },
+ "runs": {
+  "FS0": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t29-shot-load-FS0.json",
+    "sha256": "0b6dd2c5b48cc45f0d2aef4e75c1dc24597c4ee77fd7ffc287e171428f1a94d3",
+    "time": "2026-11-05T14:02:20",
+    "allMatch": true
+   },
+   "read": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t29-shot-read-FS0-after-load.json",
+    "sha256": "db603c6834117e8838874b8e459b8b71e34d49dfbdacdec67ea9f4a010b44fac",
+    "time": "2026-11-05T14:02:30"
+   },
+   "sendSent": [
+    0,
+    0
+   ],
+   "sendDevice": [
+    0,
+    0
+   ],
+   "returnDevice": [
+    65534,
+    52427,
+    32767,
+    0,
+    0,
+    0
+   ]
+  },
+  "FS1": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t29-shot-load-FS1.json",
+    "sha256": "2ce7d0a1b92e2576bda4ba5a425d58d873b621696af84a0586bb477d64cd509b",
+    "time": "2026-11-05T14:04:47",
+    "allMatch": false
+   },
+   "read": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t29-shot-read-FS1-after-load.json",
+    "sha256": "91d7b22d46a1313350524407fbd4f72d14c92efd64c48e7556e4c1e019ec5e94",
+    "time": "2026-11-05T14:04:49"
+   },
+   "sendSent": [
+    32767,
+    45874
+   ],
+   "sendDevice": [
+    0,
+    0
+   ],
+   "returnDevice": [
+    52427,
+    50461,
+    39320,
+    0,
+    0,
+    0
+   ]
+  }
+ },
+ "editorReadings": [
+  {
+   "preset": "FS0",
+   "param": "FDBKRET_RETLEVEL",
+   "pid": 0,
+   "label": "Return Level",
+   "raw": 65534,
+   "decoded": 100,
+   "shown": "100.0 %"
+  },
+  {
+   "preset": "FS0",
+   "param": "FDBKRET_LEVEL",
+   "pid": 1,
+   "label": "Output Level",
+   "raw": 52427,
+   "decoded": -0.000305185095,
+   "shown": "0.0 dB"
+  },
+  {
+   "preset": "FS0",
+   "param": "FDBKRET_PAN",
+   "pid": 2,
+   "label": "Balance",
+   "raw": 32767,
+   "decoded": 0,
+   "shown": "0.0"
+  },
+  {
+   "preset": "FS0",
+   "param": "FDBKRET_BYPASSMODE",
+   "pid": 3,
+   "label": "Bypass Mode",
+   "raw": 0,
+   "decoded": "THRU",
+   "shown": "Thru"
+  },
+  {
+   "preset": "FS1",
+   "param": "FDBKRET_RETLEVEL",
+   "pid": 0,
+   "label": "Return Level",
+   "raw": 52427,
+   "decoded": 79.9996948,
+   "shown": "80.0 %"
+  },
+  {
+   "preset": "FS1",
+   "param": "FDBKRET_LEVEL",
+   "pid": 1,
+   "label": "Output Level",
+   "raw": 50461,
+   "decoded": -3.00027467,
+   "shown": "-3.0 dB"
+  },
+  {
+   "preset": "FS1",
+   "param": "FDBKRET_PAN",
+   "pid": 2,
+   "label": "Balance",
+   "raw": 39320,
+   "decoded": 19.9987793,
+   "shown": "20.0"
+  },
+  {
+   "preset": "FS1",
+   "param": "FDBKRET_BYPASSMODE",
+   "pid": 3,
+   "label": "Bypass Mode",
+   "raw": 0,
+   "decoded": "THRU",
+   "shown": "Thru"
+  }
+ ],
+ "editorSend": "FM3-Edit shows \"No user editable parameters\" on the Feedback Send block page (FS0 and FS1).",
+ "notMeasured": [
+  "audio",
+  "STORE/reload",
+  "Return Bypass Mode other than Thru",
+  "Return Bypass word",
+  "Return word 4 (unused)",
+  "values other than the FS1 points"
+ ],
+ "summary": {
+  "returnWordsMatched": 12,
+  "returnTestWords": 3,
+  "editorReadingsMatched": 8,
+  "sendWordsCleared": 2,
+  "meaning": "Feedback Return word n is dictionary parameter n; Return Level, Output Level and Balance show exactly as decoded and become writable through controls (block \"return\", 0.3.51). The Feedback Send has no user-editable parameter and the FM3 clears its two words on load, so Send writes are refused."
+ }
+}

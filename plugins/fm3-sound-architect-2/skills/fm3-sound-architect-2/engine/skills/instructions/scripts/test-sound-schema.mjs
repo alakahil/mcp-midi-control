@@ -65,6 +65,13 @@ for(const [name,edit] of ctlBoth){const s=structuredClone(ctl);edit(s);
   assert.notDeepEqual(checkSchema(S,s),[],'schema accepts controllers: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts controllers: '+name);}
 for(const [name,edit] of ctlGenerator){const s=structuredClone(ctl);edit(s);
   assert.deepEqual(checkSchema(S,s),[],'schema refuses controllers: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts controllers: '+name);}
+// 0.3.51 (T29): Feedback Return controls. "send" is refused by both; Return channels B-D, Bypass/Bypass Mode and
+// out-of-range values by the generator only.
+const fb={composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},controls:[{block:'return',channel:'A',param:'RETLEVEL',value:80},{block:'return',channel:'A',param:'PAN',value:20}]};
+ok(fb);
+{const s=structuredClone(fb);s.controls[0].block='send';assert.notDeepEqual(checkSchema(S,s),[],'schema accepts send');assert.throws(()=>createPreset(base,s),/Feedback Send/,'generator accepts send');}
+for(const [name,edit] of [['channel B',s=>s.controls[0].channel='B'],['bypass',s=>s.controls[0]={block:'return',channel:'A',param:'BYPASS',value:0}],['level 101',s=>s.controls[0].value=101]]){
+  const s=structuredClone(fb);edit(s);assert.deepEqual(checkSchema(S,s),[],'schema refuses return: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts return: '+name);}
 // Both refuse (schema error and generator error).
 const both=[
   ['volumePedal min below 0',s=>s.volumePedal={min:-1},2],['volumePedal max above 10',s=>s.volumePedal={max:11},2],['volumePedal unknown key',s=>s.volumePedal={min:1,curve:2},2],

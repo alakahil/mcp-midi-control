@@ -1,0 +1,82 @@
+{
+ "kind": "fm3-shot-read",
+ "packSha256": "f810dfa9d7dc8eca6afcc15b805533dba8c44cd64f11996683bbd2301b1d9fc2",
+ "preset": "FS1",
+ "label": "after-load",
+ "time": "2026-11-05T14:04:49",
+ "blocks": [
+  {
+   "family": "feedbacksend",
+   "effectId": 182,
+   "values": 2,
+   "matches": false,
+   "mismatches": [
+    {
+     "channel": "A",
+     "pid": 0,
+     "expected": 32767,
+     "device": 0
+    },
+    {
+     "channel": "A",
+     "pid": 1,
+     "expected": 45874,
+     "device": 0
+    }
+   ],
+   "testWords": [
+    {
+     "param": "FDBKSEND_SENDLEVEL",
+     "channel": "A",
+     "raw": 32767,
+     "device": 0
+    },
+    {
+     "param": "FDBKSEND_OUTLEVEL",
+     "channel": "A",
+     "raw": 45874,
+     "device": 0
+    }
+   ],
+   "device": [
+    0,
+    0
+   ]
+  },
+  {
+   "family": "feedbackreturn",
+   "effectId": 186,
+   "values": 6,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "FDBKRET_RETLEVEL",
+     "channel": "A",
+     "raw": 52427,
+     "device": 52427
+    },
+    {
+     "param": "FDBKRET_LEVEL",
+     "channel": "A",
+     "raw": 50461,
+     "device": 50461
+    },
+    {
+     "param": "FDBKRET_PAN",
+     "channel": "A",
+     "raw": 39320,
+     "device": 39320
+    }
+   ],
+   "device": [
+    52427,
+    50461,
+    39320,
+    0,
+    0,
+    0
+   ]
+  }
+ ]
+}

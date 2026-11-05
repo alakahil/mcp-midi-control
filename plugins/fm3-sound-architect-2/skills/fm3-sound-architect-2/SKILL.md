@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.50`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.51`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -136,6 +136,16 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Feedback Return kirjutatav (0.3.51, T29)
+
+Iga koostaja preset ühendab rea 2 reaga 3 Feedback Send (rida 2 veerg 12) ja Feedback Return (rida 3 veerg 1)
+plokiga. `controls` lubab nüüd plokki `return` (ainult kanal A): Return Level (`RETLEVEL`, 0–100 %), Output Level
+(`LEVEL`, dB) ja Balance (`PAN`, −100…100), nt `{"block":"return","channel":"A","param":"LEVEL","value":-3}`.
+T29 (5.11.2026): FM3 hoidis laadimisel kõik Return'i sõnad ja FM3-Edit näitas 80.0 %, −3.0 dB ja 20.0 täpselt nagu
+dekodeeritud. Feedback Send'il pole FM3-Editis ühtki muudetavat parameetrit ning seade nullib selle kaks sõna laadimisel,
+seega `send` on keelatud. Return'i Bypass Mode ja Bypass jäävad lukku (nähtud ainult Thru / mitte möödas). Soundi skeem
+on 0.8.4. Tõend: `references/fm3-shot-t29-feedback-20261105.json`.
+
 ## Controllers kirjutatav (0.3.50, T28)
 
 Uus väli `controllers` kirjutab Control ploki (LFO 1–2, ADSR 1–2, Envelope, Sequencer, Scene Controllers 1–4,
@@ -159,7 +169,7 @@ jääb keelatuks. T27 (5.11.2026): FM3 hoidis laadimisel ja kanali aktiveerimise
 (5 presetti, 484/484), Algorithmi muutmine FM3-Editis muutis ainult ühte sõna, aga preseti valik (Pealing Bells)
 täitis 39 sõna. Salvestatud preseti sõna ise täidet ei käivita, seega selle kirjutamine annaks vale sildi.
 Time 1–4, LFO 1–2 Rate ja Filter Rate on FW13 XML-i järgi tempo-lukus: kirjutus nõuab sama kanali
-Tempo = NONE (seadme vaikimisi Tempo 1 = 1/4). Feedback Send/Return jäävad kontrollimata skaala tõttu lukku. Soundi skeem on 0.8.2.
+Tempo = NONE (seadme vaikimisi Tempo 1 = 1/4). Feedback Send/Return jäid 0.3.49-s lukku (Return avatud 0.3.51-s). Soundi skeem on 0.8.2.
 Tõend `references/fm3-shot-t27-multidelay-side-20261105.json`.
 
 ## Multi Delay sisendiskeemi kooskõla (0.3.48)
