@@ -1,0 +1,622 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "editor": "FM3-Edit 1.07.17",
+ "date": "2026-11-05",
+ "test": "T30",
+ "method": "FM3_SHOT_LOAD.py --load (Remote Control) sent EN1 and then EN2 to the edit buffer (7F 00) and read the PEQ, Phaser, Multi Delay and Controllers records back with fn=0x1F; FM3_SHOT_READ.py re-read them. After each load Claude opened FM3-Edit in the background, selected the blocks and read the pages from screenshots (Jan clicked the page tabs), then quit FM3-Edit without saving. Nothing stored or set.",
+ "packSha256": "83f062ce6afc5bfb608668027aa2a9c5ef382a4f0729cc26133f80d17327635e",
+ "runs": {
+  "EN1": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t30-shot-load-EN1.json",
+    "sha256": "941b7e1877b1ca2dde2a79a8151af1dd066ae05daf5241985528166760f08cc0",
+    "time": "2026-11-05T15:16:57",
+    "allMatch": true
+   },
+   "read": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t30-shot-read-EN1-after-load.json",
+    "sha256": "2ac3ec4c9dff85691e4d5b4095d8183a38517e13b02bb761330a4f4a7c098d22",
+    "time": "2026-11-05T15:17:04"
+   },
+   "records": [
+    {
+     "family": "peq",
+     "effectId": 54,
+     "words": 132
+    },
+    {
+     "family": "phaser",
+     "effectId": 90,
+     "words": 140
+    },
+    {
+     "family": "multidelay",
+     "effectId": 74,
+     "words": 484
+    },
+    {
+     "family": "controllers",
+     "effectId": 2,
+     "words": 520
+    }
+   ]
+  },
+  "EN2": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t30-shot-load-EN2.json",
+    "sha256": "45294ee682617903429c0cb50fc397cd090965580164334a080218c66ab00c68",
+    "time": "2026-11-05T15:23:09",
+    "allMatch": true
+   },
+   "read": {
+    "path": "docs/fm3/hardware-results/2026-11-05/fm3-t30-shot-read-EN2-after-load.json",
+    "sha256": "f574c4e8afc44acf0ccf82cead9a20d5b38ec1230d07776037dc2fcfa3dacbcc",
+    "time": "2026-11-05T15:23:13"
+   },
+   "records": [
+    {
+     "family": "peq",
+     "effectId": 54,
+     "words": 132
+    },
+    {
+     "family": "phaser",
+     "effectId": 90,
+     "words": 140
+    },
+    {
+     "family": "multidelay",
+     "effectId": 74,
+     "words": 484
+    },
+    {
+     "family": "controllers",
+     "effectId": 2,
+     "words": 520
+    }
+   ]
+  }
+ },
+ "editorReadings": [
+  {
+   "preset": "EN1",
+   "param": "PEQ_TYPE1",
+   "pid": 15,
+   "label": "Type 1",
+   "page": "PEQ",
+   "before": 0,
+   "raw": 2,
+   "decoded": "Blocking",
+   "shown": "Blocking"
+  },
+  {
+   "preset": "EN1",
+   "param": "PEQ_TYPE2",
+   "pid": 16,
+   "label": "Type 2",
+   "page": "PEQ",
+   "before": 0,
+   "raw": 2,
+   "decoded": "Shelving 2",
+   "shown": "Shelving 2"
+  },
+  {
+   "preset": "EN1",
+   "param": "PEQ_TYPE3",
+   "pid": 17,
+   "label": "Type 3",
+   "page": "PEQ",
+   "before": 0,
+   "raw": 1,
+   "decoded": "Peaking 2",
+   "shown": "Peaking 2"
+  },
+  {
+   "preset": "EN1",
+   "param": "PEQ_TYPE4",
+   "pid": 18,
+   "label": "Type 4",
+   "page": "PEQ",
+   "before": 0,
+   "raw": 1,
+   "decoded": "Shelving",
+   "shown": "Shelving"
+  },
+  {
+   "preset": "EN1",
+   "param": "PEQ_TYPE5",
+   "pid": 19,
+   "label": "Type 5",
+   "page": "PEQ",
+   "before": 0,
+   "raw": 4,
+   "decoded": "Peaking 2",
+   "shown": "Peaking 2"
+  },
+  {
+   "preset": "EN1",
+   "param": "PHASER_LFOQUANTIZE",
+   "pid": 23,
+   "label": "Quantize",
+   "page": "Phaser Expert 1",
+   "before": 1,
+   "raw": 3,
+   "decoded": "3",
+   "shown": "3"
+  },
+  {
+   "preset": "EN1",
+   "param": "MULTITAP_FILTER_TYPE",
+   "pid": 106,
+   "label": "Type",
+   "page": "Multi Delay EQ",
+   "before": 0,
+   "raw": 2,
+   "decoded": "BANDPASS",
+   "shown": "Bandpass"
+  },
+  {
+   "preset": "EN1",
+   "param": "MULTITAP_COMBTYPE",
+   "pid": 76,
+   "label": "Filter Type",
+   "page": "Multi Delay Comb Filters",
+   "before": 0,
+   "raw": 1,
+   "decoded": "FEEDFORWARD",
+   "shown": "Feedforward"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_LFO1TEMPO",
+   "pid": 5,
+   "label": "Tempo",
+   "page": "LFO 1 + 2",
+   "before": 0,
+   "raw": 11,
+   "decoded": "1/8",
+   "shown": "1/8"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_LFO2TEMPO",
+   "pid": 11,
+   "label": "Tempo",
+   "page": "LFO 1 + 2",
+   "before": 0,
+   "raw": 15,
+   "decoded": "1/4 DOT",
+   "shown": "1/4 Dot"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_LFO1QUANTIZE",
+   "pid": 104,
+   "label": "Quantize",
+   "page": "LFO 1 + 2",
+   "before": 1,
+   "raw": 4,
+   "decoded": "4",
+   "shown": "4"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_LFO2QUANTIZE",
+   "pid": 105,
+   "label": "Quantize",
+   "page": "LFO 1 + 2",
+   "before": 1,
+   "raw": 2,
+   "decoded": "2",
+   "shown": "2"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_LFO1RUN",
+   "pid": 70,
+   "label": "Run/Stop",
+   "page": "LFO 1 + 2",
+   "before": 0,
+   "raw": 1,
+   "decoded": "STOP",
+   "shown": "Stop"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_LFO2RUN",
+   "pid": 71,
+   "label": "Run/Stop",
+   "page": "LFO 1 + 2",
+   "before": 0,
+   "raw": 1,
+   "decoded": "STOP",
+   "shown": "Stop"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_ADSR1_TYPE",
+   "pid": 128,
+   "label": "Type",
+   "page": "ADSR 1",
+   "before": 0,
+   "raw": 1,
+   "decoded": "LINEAR",
+   "shown": "Linear"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_ADSR2_TYPE",
+   "pid": 129,
+   "label": "Type",
+   "page": "ADSR 2",
+   "before": 0,
+   "raw": 1,
+   "decoded": "LINEAR",
+   "shown": "Linear"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_ADSR2MODE",
+   "pid": 20,
+   "label": "ADSR Mode",
+   "page": "ADSR 2",
+   "before": 0,
+   "raw": 2,
+   "decoded": "SUST",
+   "shown": "Sust"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_ADSR1RETRIG",
+   "pid": 13,
+   "label": "Retrigger",
+   "page": "ADSR 1",
+   "before": 0,
+   "raw": 1,
+   "decoded": "ON",
+   "shown": "ON"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_ADSR2RETRIG",
+   "pid": 21,
+   "label": "Retrigger",
+   "page": "ADSR 2",
+   "before": 0,
+   "raw": 1,
+   "decoded": "ON",
+   "shown": "ON"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_ADSR1SOURCE",
+   "pid": 106,
+   "label": "Input Source",
+   "page": "ADSR 1",
+   "before": 0,
+   "raw": 1,
+   "decoded": "INPUT 2",
+   "shown": "Input 2"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_ADSR2SOURCE",
+   "pid": 107,
+   "label": "Input Source",
+   "page": "ADSR 2",
+   "before": 0,
+   "raw": 1,
+   "decoded": "INPUT 2",
+   "shown": "Input 2"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_ENVSOURCE",
+   "pid": 108,
+   "label": "Input Source",
+   "page": "Envelope/Manual",
+   "before": 0,
+   "raw": 1,
+   "decoded": "INPUT 2",
+   "shown": "Input 2"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_PITCH_SOURCE",
+   "pid": 110,
+   "label": "Input Source",
+   "page": "Tempo/Pitch",
+   "before": 0,
+   "raw": 1,
+   "decoded": "INPUT 2",
+   "shown": "Input 2"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_SEQRUN",
+   "pid": 37,
+   "label": "Run",
+   "page": "Sequencer",
+   "before": 0,
+   "raw": 1,
+   "decoded": "PAUSE",
+   "shown": "Pause"
+  },
+  {
+   "preset": "EN2",
+   "param": "CONTROLLERS_SEQTEMPO",
+   "pid": 35,
+   "label": "Tempo",
+   "page": "Sequencer",
+   "before": 0,
+   "raw": 8,
+   "decoded": "1/16",
+   "shown": "1/16"
+  }
+ ],
+ "t28Receipt": {
+  "file": "fm3-shot-t28-controllers-20261105.json",
+  "sha256": "1996998ecab2128a5ff74395e5c441f4eae2082764056081689b6e6f845a49a4",
+  "readings": [
+   {
+    "param": "CONTROLLERS_LFO1TYPE",
+    "shown": "Square"
+   },
+   {
+    "param": "CONTROLLERS_LFO2TYPE",
+    "shown": "Triangle"
+   },
+   {
+    "param": "CONTROLLERS_ADSR1MODE",
+    "shown": "Loop"
+   }
+  ]
+ },
+ "promote": [
+  {
+   "family": "PEQ",
+   "param": 15,
+   "name": "PEQ_TYPE1",
+   "options": 5,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "PEQ",
+   "param": 16,
+   "name": "PEQ_TYPE2",
+   "options": 4,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "PEQ",
+   "param": 17,
+   "name": "PEQ_TYPE3",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "PEQ",
+   "param": 18,
+   "name": "PEQ_TYPE4",
+   "options": 4,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "PEQ",
+   "param": 19,
+   "name": "PEQ_TYPE5",
+   "options": 5,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "PHASER",
+   "param": 23,
+   "name": "PHASER_LFOQUANTIZE",
+   "options": 32,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "MULTITAP",
+   "param": 106,
+   "name": "MULTITAP_FILTER_TYPE",
+   "options": 9,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "MULTITAP",
+   "param": 76,
+   "name": "MULTITAP_COMBTYPE",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 5,
+   "name": "CONTROLLERS_LFO1TEMPO",
+   "options": 79,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 11,
+   "name": "CONTROLLERS_LFO2TEMPO",
+   "options": 79,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 104,
+   "name": "CONTROLLERS_LFO1QUANTIZE",
+   "options": 32,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 105,
+   "name": "CONTROLLERS_LFO2QUANTIZE",
+   "options": 32,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 70,
+   "name": "CONTROLLERS_LFO1RUN",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 71,
+   "name": "CONTROLLERS_LFO2RUN",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 128,
+   "name": "CONTROLLERS_ADSR1_TYPE",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 129,
+   "name": "CONTROLLERS_ADSR2_TYPE",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 20,
+   "name": "CONTROLLERS_ADSR2MODE",
+   "options": 3,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 13,
+   "name": "CONTROLLERS_ADSR1RETRIG",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 21,
+   "name": "CONTROLLERS_ADSR2RETRIG",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 106,
+   "name": "CONTROLLERS_ADSR1SOURCE",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 107,
+   "name": "CONTROLLERS_ADSR2SOURCE",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 108,
+   "name": "CONTROLLERS_ENVSOURCE",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 110,
+   "name": "CONTROLLERS_PITCH_SOURCE",
+   "options": 2,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 37,
+   "name": "CONTROLLERS_SEQRUN",
+   "options": 3,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 35,
+   "name": "CONTROLLERS_SEQTEMPO",
+   "options": 79,
+   "enumBase": 0,
+   "evidence": "hardware-t30"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 0,
+   "name": "CONTROLLERS_LFO1TYPE",
+   "options": 10,
+   "enumBase": 0,
+   "evidence": "hardware-t28"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 6,
+   "name": "CONTROLLERS_LFO2TYPE",
+   "options": 10,
+   "enumBase": 0,
+   "evidence": "hardware-t28"
+  },
+  {
+   "family": "CONTROLLERS",
+   "param": 12,
+   "name": "CONTROLLERS_ADSR1MODE",
+   "options": 3,
+   "enumBase": 0,
+   "evidence": "hardware-t28"
+  }
+ ],
+ "keptOptIn": {
+  "GLOBAL": "global settings are never written",
+  "MOD": "modifier settings go through modifiers",
+  "routing": "Mixer, Multiplexer, Feedback Return, Output, Input and Volume/Pan bypass, mode and routing words",
+  "typeSelectors": "channel type/model selectors need full channel templates",
+  "pickers": "learn buttons, layout presets and IR bank pickers",
+  "CONTROLLERS_TEMPOTOUSE": "refused by the Controllers writer"
+ },
+ "notMeasured": [
+  "audio",
+  "STORE/reload",
+  "options other than the ones read"
+ ],
+ "summary": {
+  "deviceWordsMatched": 2552,
+  "editorReadingsMatched": 25,
+  "promoted": 28,
+  "meaning": "Every selector read here shows the label the dictionary decodes (no index shift; Phaser/Controllers Quantize: stored n shows n). These 25 selectors and the 3 T28-read Controllers selectors become default-writable."
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "83f062ce6afc5bfb608668027aa2a9c5ef382a4f0729cc26133f80d17327635e",
+ "preset": "EN1",
+ "name": "T30 ENUM BLOCKS",
+ "time": "2026-11-05T15:16:57",
+ "blocks": [
+  {
+   "family": "peq",
+   "effectId": 54,
+   "values": 132,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "PEQ_TYPE1",
+     "channel": "A",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "PEQ_TYPE2",
+     "channel": "A",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "PEQ_TYPE3",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "PEQ_TYPE4",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    },
+    {
+     "param": "PEQ_TYPE5",
+     "channel": "A",
+     "raw": 4,
+     "device": 4
+    }
+   ]
+  },
+  {
+   "family": "phaser",
+   "effectId": 90,
+   "values": 140,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "PHASER_LFOQUANTIZE",
+     "channel": "A",
+     "raw": 3,
+     "device": 3
+    }
+   ]
+  },
+  {
+   "family": "multidelay",
+   "effectId": 74,
+   "values": 484,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "MULTITAP_FILTER_TYPE",
+     "channel": "A",
+     "raw": 2,
+     "device": 2
+    },
+    {
+     "param": "MULTITAP_COMBTYPE",
+     "channel": "A",
+     "raw": 1,
+     "device": 1
+    }
+   ]
+  },
+  {
+   "family": "controllers",
+   "effectId": 2,
+   "values": 520,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  }
+ ],
+ "allMatch": true
+}
