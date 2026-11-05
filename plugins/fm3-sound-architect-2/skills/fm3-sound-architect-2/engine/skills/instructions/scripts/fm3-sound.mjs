@@ -1,5 +1,6 @@
 // Offline sound pipeline: templates -> layout -> scenes -> controls -> final readback.
 import fs from 'node:fs';
+import {effectiveModifierSpec,applyModifierEdits,modifierEditsCapabilities} from './fm3-modifier-edits.mjs';
 import {applyCsPreset,readCsPreset,validateCsPreset,csPresetCapabilities} from './fm3-cs-preset.mjs';
 import {bindVolumePedal,readVolumePedal,volumePedalCapabilities,volumeRange} from './fm3-volume-pedal.mjs';
 import {bindControlSwitches,readControlSwitches,controlSwitchCapabilities,validateControlSwitches} from './fm3-control-switches.mjs';
@@ -26,10 +27,10 @@ import {applyControllers,validateControllers,renderControllersText,controllersCa
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.53',firmware:13,base:'jb-newlook',composer,
-    fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers'],
+  return {profile:'fm3-sound',revision:'0.3.54',firmware:13,base:'jb-newlook',composer,
+    fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers','modifierEdits'],
     insert:insertCapabilities(),
-    controllers:controllersCapabilities(),
+    controllers:controllersCapabilities(),modifierEdits:modifierEditsCapabilities(),
     outputs:['.syx','.txt','.spec.json','.validation.json'],
     parameterMap:{command:'fm3-preset.mjs --parameter-map [FAMILY [PID|NAME] | --all]',readOnly:true,scope:'Effective scalar metadata and historical observations; complete preset context still required'},
     gridAudit:{command:'fm3-preset.mjs --inspect-grid PRESET.syx [--format json|txt]',readOnly:true,scope:'Raw masks, known graph edges and record association; unknown bits and physical/global routing remain unresolved'},
@@ -51,8 +52,9 @@ export function getSoundCapabilities(base){
     limitations:['No device connection','New output hardware/audio/CPU unconfirmed','Experimental raw/taper writes excluded from this entry point','Global settings and all FM3 families are not implemented','Grid mode: Mixer/Multiplexer parameters and bit 4 of the grid input mask are not decoded']};
 }
 export function composeSound(base,spec){
-  assertFields(spec,['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers'],'sound');
+  assertFields(spec,['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers','modifierEdits'],'sound');
   check(spec.composer&&(spec.layout===undefined)!==(spec.grid===undefined),'spec.composer and exactly one of spec.layout / spec.grid are required');
+  const finalSpec=effectiveModifierSpec(spec);
   const gridMode=spec.grid!==undefined;
   check(gridMode||(spec.remove===undefined&&spec.duplicate===undefined),'remove and duplicate need grid mode (spec.grid)');
   check(gridMode||spec.sceneMidi===undefined,'sceneMidi needs grid mode (spec.grid) with insert:["scenemidi"]');
@@ -70,7 +72,7 @@ export function composeSound(base,spec){
   if(Object.hasOwn(spec,'controlSwitches'))validateControlSwitches(spec.controlSwitches);
   if(Object.hasOwn(spec,'controllers'))validateControllers(spec.controllers);
   const csPresetRequested=Object.hasOwn(spec,'controlSwitchScenes')||Object.hasOwn(spec,'footswitches');
-  if(csPresetRequested){check(Object.hasOwn(spec,'controlSwitches'),'controlSwitchScenes / footswitches need controlSwitches bindings');validateCsPreset(spec);}
+  if(csPresetRequested){check(Object.hasOwn(finalSpec,'controlSwitches'),'controlSwitchScenes / footswitches need final controlSwitches bindings');validateCsPreset(finalSpec);}
   const first=generatePreset(base,spec.composer);
   check(first.report.baseId==='jb-newlook','Sound composer requires the jb-newlook base');
   const volume=spec.volumePan?insertVolumePan(first.syx):null;
@@ -79,8 +81,9 @@ export function composeSound(base,spec){
   const arrangedInput=records?.syx??inserted?.syx??volume?.syx??first.syx;
   const pedal=spec.volumePedal?bindVolumePedal(arrangedInput,spec.volumePedal):null;
   const switches=spec.controlSwitches?bindControlSwitches(pedal?.syx??arrangedInput,spec.controlSwitches):null;
-  const csp=csPresetRequested?applyCsPreset(switches.syx,spec):null;
-  const bound=csp?.syx??switches?.syx??pedal?.syx??arrangedInput;
+  const edits=Object.hasOwn(spec,'modifierEdits')?applyModifierEdits(switches?.syx??pedal?.syx??arrangedInput,spec,{pedal,switches}):null;
+  const csp=csPresetRequested?applyCsPreset(edits?.syx??switches.syx,finalSpec):null;
+  const bound=csp?.syx??edits?.syx??switches?.syx??pedal?.syx??arrangedInput;
   const arranged=gridMode?arrangeGrid(bound,spec,{allow:spec.allow??[]}):arrangeSound(bound,spec,{allow:spec.allow??[]});
   // Controllers (prefix record, effect id 2) are written last, on the arranged preset; only their words change.
   const ctl=spec.controllers?applyControllers(arranged.syx,spec.controllers,{allow:spec.allow??[]}):null;
@@ -90,18 +93,19 @@ export function composeSound(base,spec){
   // A Volume binding in record 0 replaced the composer's (inactive) Wah record; in record 1 the Wah edit is final.
   const modifierEdit=pedal?.record===0?null:first.report.modifierEdit??null;
   verifyWahModifierReadback(finalBody,modifierEdit);
-  if(pedal){const vr=scanRecords(finalBody).records.find(r=>r.eid===102);
+  if(finalSpec.volumePedal){const vr=scanRecords(finalBody).records.find(r=>r.eid===102);
     for(let ch=0;ch<4;ch++)check(finalBody.readUInt16LE(vr.start+ch*vr.words*2+18)===0,`volumePedal binds Volume, which AUTO-SWELL hides (volpan channel ${'ABCD'[ch]})`);}
-  const volumePedal=pedal?readVolumePedal(finalBody,volumeRange(spec.volumePedal)):null;
-  const controlSwitches=switches?readControlSwitches(finalBody,spec.controlSwitches):null;
-  const csPreset=csp?readCsPreset(finalBody,spec):null;
+  const volumePedal=finalSpec.volumePedal?readVolumePedal(finalBody,volumeRange(finalSpec.volumePedal),edits?.region):null;
+  const controlSwitches=finalSpec.controlSwitches?readControlSwitches(finalBody,finalSpec.controlSwitches):null;
+  const csPreset=csp?readCsPreset(finalBody,finalSpec):null;
+  const switchReport=controlSwitches?{...switches?.report,policy:'control-switch-default-template-fw13',evidenceSha256:controlSwitchCapabilities().evidence.sha256,records:controlSwitches.map(c=>c.record),onlyDeclaredWordsChanged:true,bodyReadback:true,dumpHeaderPreserved:true,deviceIO:false}:null;
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const cpuEstimate=estimateCpu(second.syx);
-  const report={generator:'fm3-sound-0.3.53',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.54',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
-    hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,...(switches?{controlSwitches}:{}),...(csp?{csPreset}:{}),...(ctl?{controllers:ctl.writes}:{}),
-    stages:{volumePedal:pedal?.report??null,...(ctl?{controllers:ctl.report}:{}),...(switches?{controlSwitches:switches.report}:{}),...(csp?{csPreset:csp.report}:{}),volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};
-  return {syx:second.syx,txt:renderFinalSoundText({...state,modifierEdit,volumePedal,controlSwitches,csPreset},spec)+renderControllersText(ctl?.writes)+renderCpuText(cpuEstimate)+'\n',report,composerReport:first.report,layoutReport:report.stages.layout};
+    hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,...(controlSwitches?{controlSwitches}:{}),...(edits?{modifierEdits:edits.report}:{}),...(csp?{csPreset}:{}),...(ctl?{controllers:ctl.writes}:{}),
+    stages:{volumePedal:volumePedal?pedal.report:null,...(edits?{modifierEdits:edits.report}:{}),...(ctl?{controllers:ctl.report}:{}),...(switchReport?{controlSwitches:switchReport}:{}),...(csp?{csPreset:csp.report}:{}),volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};
+  return {syx:second.syx,txt:renderFinalSoundText({...state,modifierEdit,volumePedal,controlSwitches,csPreset,modifierEdits:edits?.report},spec)+renderControllersText(ctl?.writes)+renderCpuText(cpuEstimate)+'\n',report,composerReport:first.report,layoutReport:report.stages.layout};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   try{const [b,s,stem,...extra]=process.argv.slice(2);

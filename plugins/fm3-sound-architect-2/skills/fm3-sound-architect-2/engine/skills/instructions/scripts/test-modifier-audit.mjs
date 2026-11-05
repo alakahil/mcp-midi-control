@@ -67,7 +67,8 @@ assert.equal(allUnbound.lifecycle.inactiveUnboundRecords.length,32);
 assert.equal(allUnbound.lifecycle.inactiveBoundRecords.length,0);
 for(const a of [inactive,secondaryOnly,both,allOccupied,allUnbound]){
   assert.equal(a.lifecycle.allocationDecision,'unsupported');assert.equal(a.lifecycle.removalDecision,'unsupported');
-  assert.equal(a.lifecycle.arbitraryAllocationSupported,false);assert.equal(a.lifecycle.simultaneousWahVolumeWriterSupported,false);
+  assert.equal(a.lifecycle.arbitraryAllocationSupported,false);assert.equal(a.lifecycle.simultaneousWahVolumeWriterSupported,true);
+  assert.equal(a.lifecycle.removalWriterSupported,true);assert.match(a.lifecycle.writerScope,/Current sound generation only/);
   assert.equal(a.lifecycle.serializedInitializationFullyProven,false);assert.equal(a.lifecycle.sourceNoneIsNotRemoval,true);
   assert.match(renderModifierAuditText(a),new RegExp(a.typePolicy.families.length+' efektipere'));
   assert.equal(a.lifecycle.evidence.corpus.accepted,636);

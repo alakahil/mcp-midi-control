@@ -1,4 +1,5 @@
 import {verifyPresetReplay} from './fm3-preset-core.mjs';
+import {verifyModifierEditsOutput} from './fm3-modifier-edits.mjs';
 import {verifyControlsOutput} from './fm3-controls-output.mjs';
 import {verifyVolumePedalOutput} from './fm3-volume-pedal.mjs';
 import {verifyControlSwitchOutput} from './fm3-control-switches.mjs';
@@ -47,15 +48,19 @@ export function verifyPresetOutputs(stem){
   }
   const syx=files['.syx'],txt=utf8.decode(files['.txt']),spec=JSON.parse(utf8.decode(files['.spec.json']));
   if(sha256(syx)!==report.outputSha256)throw Error('Final SYX hash mismatch');
+  // Edited bindings need the full deterministic replay before their final-region
+  // checks. Preserve established component diagnostics for ordinary presets.
+  if(spec.modifierEdits!==undefined)verifyPresetReplay(report,syx,txt,spec);
+  const finalModifiers=verifyModifierEditsOutput(report,syx,txt,spec);
   verifyGlobalScaleReport(report,syx,txt);
   verifyWahExactOutput(report,syx,txt,spec);
   verifyInputGateOutput(report,syx,txt,spec);
   verifyVolumeOutput(report,syx,txt,spec);
-  verifyVolumePedalOutput(report,syx,txt,spec);
-  verifyControlSwitchOutput(report,syx,txt,spec);
-  verifyCsPresetOutput(report,syx,txt,spec);
+  verifyVolumePedalOutput(report,syx,txt,finalModifiers.spec,finalModifiers.region);
+  verifyControlSwitchOutput(report,syx,txt,finalModifiers.spec);
+  verifyCsPresetOutput(report,syx,txt,finalModifiers.spec);
   verifyGridOutput(report,syx,txt,spec);
   verifyControlsOutput(report,syx,txt,spec);
-  verifyPresetReplay(report,syx,txt,spec);
+  if(spec.modifierEdits===undefined)verifyPresetReplay(report,syx,txt,spec);
   return report;
 }

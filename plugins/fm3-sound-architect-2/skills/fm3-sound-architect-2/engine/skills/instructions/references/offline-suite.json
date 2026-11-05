@@ -750,7 +750,7 @@
         "node",
         "scripts/test-p2-three-switches.mjs"
       ],
-      "scope": "Pinned 0.3.37 generated quartet and user-confirmed P2 STORE/reload export; exact current-generator SYX replay, complete body comparison and corrupt-output rejection. Physical observations are bounded to Layout 1 switches 1–3; no new hardware I/O.",
+      "scope": "Pinned 0.3.37 generated quartet and user-confirmed P2 STORE/reload export; exact current-generator SYX replay, complete body comparison and corrupt-output rejection. Physical observations are bounded to Layout 1 switches 1\u20133; no new hardware I/O.",
       "required": true
     },
     {
@@ -760,6 +760,15 @@
         "scripts/test-p3-modifier-reuse.mjs"
       ],
       "scope": "Pinned historical 0.3.38 P3 quartet, current-engine source quartet replay, 47 rejection cases and actual stored device export; all 32 modifier records preserved with only block ordering normalized. Fixed research fixture only; no general allocator, new public input or hardware I/O.",
+      "required": true
+    },
+    {
+      "id": "test-modifier-edits",
+      "command": [
+        "node",
+        "scripts/test-modifier-edits.mjs"
+      ],
+      "scope": "Public bounded removal/replacement: historical P3 byte oracle, preserved records, final-state four-file verification and negative inputs/tampering; no device I/O",
       "required": true
     }
   ]

@@ -15,7 +15,8 @@ const lifecycleEvidence=JSON.parse(lifecycleBytes);
 function lifecycleCapabilities(){return {
   evidenceSha256:lifecycleSha256,metadataFirmware:13,
   allocationRuleStaticallyLocated:true,serializedInitializationFullyProven:false,
-  arbitraryAllocationSupported:false,simultaneousWahVolumeWriterSupported:false,removalWriterSupported:false,
+  arbitraryAllocationSupported:false,simultaneousWahVolumeWriterSupported:true,removalWriterSupported:true,
+  writerScope:'Current sound generation only: volumePedal with Wah, and modifierEdits for authored bindings. This arbitrary-input audit never authorizes allocation or removal.',
   sourceNoneIsNotRemoval:true,globalAssignmentsVerified:false,
   evidence:structuredClone(lifecycleEvidence)
 };}

@@ -121,8 +121,8 @@ export function renderCsPresetText(state){
   'Kodeering on seadmel kinnitatud 29.10.2026 (T14/T14B/T16: iga väli FM3-l ükshaaval salvestatud ja sõna-sõnalt tagasi loetud, generaatori tulemus võrdub FM3 salvestatud kehaga; T15: lülitite asukohad Overrides lehel; Latching ja Momentary käitusid Layout 1-s nii, nagu kirjas). Asendus kehtib ainult valitud layout\'is: kui FM3 on teises layout\'is, teeb lüliti oma tavalist tööd. Üldseadeid ei muudeta; kui per-preset override on FM3 üldseadetes keelatud, asendus ei rakendu. Selle uue faili import on seadmes kontrollimata.'];
 }
 export function csPresetCapabilities(){return {
- fields:{controlSwitchScenes:'[{switch 1..6, scene 1..8, state ON|OFF|LAST}] (switch must be bound in controlSwitches; unlisted states stay OFF)',
-  footswitches:'[{layout 1..9, switch 1..12, function latching|momentary, controlSwitch 1..6}] (one per-preset definition PP#1.. each, in list order; Control Switch must be bound in controlSwitches)'},
+ fields:{controlSwitchScenes:'[{switch 1..6, scene 1..8, state ON|OFF|LAST}] (switch must have a final binding after modifierEdits; unlisted states stay OFF)',
+  footswitches:'[{layout 1..9, switch 1..12, function latching|momentary, controlSwitch 1..6}] (one per-preset definition PP#1.. each, in list order; Control Switch must have a final binding after modifierEdits)'},
  codes:{csPerScene:CS_STATES,function:FOOTSWITCH_FUNCTIONS,category:CATEGORY_CONTROL_SWITCH},positions:`layout 1..${LAYOUTS} x switch 1..${SWITCHES} (override word 12(layout-1)+(switch-1))`,maxFootswitches:DEFS,
  storage:'in the preset (FC PER-PRESET); no global setting',evidence:[...Object.keys(RECEIPTS),...LATER].map(f=>'references/'+f),
  hardware:'encoding confirmed word for word on the device (T14/T14b/T16, 2026-10-29; T16 three-switch body replayed; T15 override positions); Latching toggles with the LED, Momentary is active while held, CS Per Scene applies on scene change',

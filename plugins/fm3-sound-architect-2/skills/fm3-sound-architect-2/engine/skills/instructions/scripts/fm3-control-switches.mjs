@@ -39,6 +39,7 @@ const writable=(r,w)=>same(w,UNUSED)||same(w,baseForm(r));
 const CHANNELS=Object.freeze(['ALL','A','B','C','D']);
 const templateFor=(source,eid,pid,{invert=false,channel='ALL'}={})=>{const t=[...TEMPLATE,65534,65534,0,0];t[0]=source;t[8]=eid;t[9]=pid;
   if(invert){t[1]=65534;t[2]=0;}t[17]=CHANNELS.indexOf(channel);return t;};
+export function controlSwitchTemplate(entry){const w=validateControlSwitches([entry])[0];return templateFor(w.source,w.effectId,w.pid,w);}
 const variantOf=w=>({invert:w[1]===65534&&w[2]===0,channel:CHANNELS[w[17]]??'?'});
 const SOURCES=new Set(Object.values(CONTROL_SWITCH_SOURCE)),PIDS=new Map(CONTROL_SWITCH_TARGETS.amp.map(n=>[findParam('amp',n).param,n]));
 // A record this engine writes: Control Switch source, amp effect, a listed PID, exactly the template (or a variant).

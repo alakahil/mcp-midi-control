@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.8.4 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.8.5 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -11,7 +11,7 @@
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
-      "description": "Point-6 blocks inserted from the device-default donor; all 8 scenes start on channel A, bypassed. Mixer and Multiplexer only in grid mode; Scene MIDI (grid mode only) is placed unconnected; Volume/Pan uses volumePan. Multi Delay uses Quad-Tap Delay defaults; parameter writes remain unsupported.",
+      "description": "Point-6 blocks inserted from the device-default donor; all 8 scenes start on channel A, bypassed. Mixer and Multiplexer only in grid mode; Scene MIDI (grid mode only) is placed unconnected; Volume/Pan uses volumePan. Multi Delay uses Quad-Tap Delay defaults; Algorithm and supported parameters are writable through controls; Type/preset selection remains blocked.",
       "items": {
         "enum": [
           "plex",
@@ -2863,6 +2863,175 @@
           "channel",
           "param",
           "value"
+        ]
+      }
+    },
+    "modifierEdits": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 9,
+      "description": "Edit only bindings authored by this sound spec, identified by record and expected source/target. No arbitrary preset or free-slot allocation. Scene/footswitch bindings must remain valid in the final state.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "operation": {
+                "const": "remove"
+              },
+              "record": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9
+              },
+              "expect": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "source": {
+                    "enum": [
+                      "External 1",
+                      "Control Switch 1",
+                      "Control Switch 2",
+                      "Control Switch 3",
+                      "Control Switch 4",
+                      "Control Switch 5",
+                      "Control Switch 6"
+                    ]
+                  },
+                  "block": {
+                    "enum": [
+                      "amp",
+                      "volpan"
+                    ]
+                  },
+                  "param": {
+                    "enum": [
+                      "VOLUME_GAIN",
+                      "DISTORT_BOOST",
+                      "DISTORT_BRIGHT",
+                      "DISTORT_CUT",
+                      "DISTORT_FAT",
+                      "DISTORT_SATSWITCH"
+                    ]
+                  }
+                },
+                "required": [
+                  "source",
+                  "block",
+                  "param"
+                ]
+              }
+            },
+            "required": [
+              "operation",
+              "record",
+              "expect"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "operation": {
+                "const": "replace"
+              },
+              "record": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9
+              },
+              "expect": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "source": {
+                    "enum": [
+                      "External 1",
+                      "Control Switch 1",
+                      "Control Switch 2",
+                      "Control Switch 3",
+                      "Control Switch 4",
+                      "Control Switch 5",
+                      "Control Switch 6"
+                    ]
+                  },
+                  "block": {
+                    "enum": [
+                      "amp",
+                      "volpan"
+                    ]
+                  },
+                  "param": {
+                    "enum": [
+                      "VOLUME_GAIN",
+                      "DISTORT_BOOST",
+                      "DISTORT_BRIGHT",
+                      "DISTORT_CUT",
+                      "DISTORT_FAT",
+                      "DISTORT_SATSWITCH"
+                    ]
+                  }
+                },
+                "required": [
+                  "source",
+                  "block",
+                  "param"
+                ]
+              },
+              "binding": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "switch",
+                  "block",
+                  "param"
+                ],
+                "properties": {
+                  "switch": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 6
+                  },
+                  "block": {
+                    "enum": [
+                      "amp"
+                    ]
+                  },
+                  "param": {
+                    "enum": [
+                      "DISTORT_BOOST",
+                      "DISTORT_BRIGHT",
+                      "DISTORT_CUT",
+                      "DISTORT_FAT",
+                      "DISTORT_SATSWITCH"
+                    ]
+                  },
+                  "invert": {
+                    "type": "boolean",
+                    "description": "true = Min ON / Max OFF (stored 65534 / 0)"
+                  },
+                  "channel": {
+                    "enum": [
+                      "ALL",
+                      "A",
+                      "B",
+                      "C",
+                      "D"
+                    ],
+                    "description": "word 17: ALL (0) or CHAN A..D (1..4)"
+                  }
+                }
+              }
+            },
+            "required": [
+              "operation",
+              "record",
+              "expect",
+              "binding"
+            ]
+          }
         ]
       }
     }
