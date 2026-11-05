@@ -144,7 +144,8 @@ tüüpidel, mille FM3-Edit seda näitab). Multi Delay preseti sõna (`MULTITAP_P
 jääb keelatuks. T27 (5.11.2026): FM3 hoidis laadimisel ja kanali aktiveerimisel kõik salvestatud sõnad muutmata
 (5 presetti, 484/484), Algorithmi muutmine FM3-Editis muutis ainult ühte sõna, aga preseti valik (Pealing Bells)
 täitis 39 sõna. Salvestatud preseti sõna ise täidet ei käivita, seega selle kirjutamine annaks vale sildi.
-Feedback Send/Return jäävad kontrollimata skaala tõttu lukku. Soundi skeem on 0.8.2.
+Time 1–4, LFO 1–2 Rate ja Filter Rate on FW13 XML-i järgi tempo-lukus: kirjutus nõuab sama kanali
+Tempo = NONE (seadme vaikimisi Tempo 1 = 1/4). Feedback Send/Return jäävad kontrollimata skaala tõttu lukku. Soundi skeem on 0.8.2.
 Tõend `references/fm3-shot-t27-multidelay-side-20261105.json`.
 
 ## Multi Delay sisendiskeemi kooskõla (0.3.48)
@@ -418,7 +419,7 @@ kirjutamisel lõpliku kanali tüübipoliitikat (`references/fm3-insert-applicabi
 Peidetud väljad, mõõdikud, TenTap Learn/Reset ja Plexi presetivalik ei ole lubatud
 skalaarseadistused. Synthi ostsillaatorite ja Multibandi Auto Att/Rel dünaamikat
 see XML-kontroll ei tõenda. Tundmatute skaalade kirjutamine jääb blokeerituks.
-Plexi/TenTapi 10 tempo-seost kuvatakse ka lõpparuandes; aktiivse modifikaatori
+Plexi/TenTapi/Multi Delay 17 tempo-seost (Multi Delay 7: Time 1–4, LFO 1–2 Rate, Filter Rate; vaikimisi Tempo 1 = 1/4, seega kirjuta Time koos Tempo NONE-ga) kuvatakse ka lõpparuandes; aktiivse modifikaatori
 siht ja tempo ei tohi sattuda vastuollu.
 
 Käivita `--verify OUTPUT_STEM` kõigi nelja väljundfaili kontrolliks. Kontroll loeb

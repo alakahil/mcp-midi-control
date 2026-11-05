@@ -39,7 +39,7 @@ refuse(()=>composeSound(NL,{...spec,controls:spec.controls.slice(0,2)}),/tempo-c
 refuse(()=>composeSound(NL,{...spec,controls:[{block:'looper',channel:'B',param:'LOOPER_PLAYLEVEL',value:0}]}),/Channel absent/,'looper has one channel');
 refuse(()=>composeSound(NL,{...spec,blockScenes:{ringmod:[{scene:2,channel:'C'}]}}),/only channels A\/B/,'ring mod has two channels');
 refuse(()=>composeSound(NL,{...spec,insert:['mixer']}),/audit point 5/,'mixer gated');
-check(insertTempoLocks.length===10,'Tempo locks');
+check(insertTempoLocks.length===17,'Tempo locks (Plex 9, Ten-Tap 1, Multi Delay 7)');
 // 4b. Multi Delay (0.3.47 T26, 0.3.49 T27): own donor pair, device-default record, scenes engage; parameters and Base
 // Type writable, the Multi Delay preset word (Type, pid 114) refused
 const md=insertBlocks(NL,['multidelay']),mb=body(md.syx),mr=scanRecords(mb).records.find(x=>x.family==='multidelay');
@@ -54,9 +54,10 @@ check(msb.readUInt16LE(msr.header+26)===0&&msb.readUInt16LE(msr.header+28)===1,'
  const wb=body(w.syx),wr=scanRecords(wb).records.find(x=>x.family==='multidelay'),at=(c,p)=>wb.readUInt16LE(wr.start+2*(c*121+p));
  check(at(0,31)===19660&&at(1,0)===2&&at(1,87)===3277&&at(0,0)===0&&at(1,114)===0,'Multi Delay Mix, Base Type and Ring Freq written (T27)');}
 refuse(()=>composeSound(NL,{...mspec,controls:[{block:'multidelay',channel:'A',param:'MULTITAP_RINGFREQ1',value:100}]}),/not applicable to final type 0/,'Multi Delay visibility policy');
+refuse(()=>composeSound(NL,{...mspec,controls:[{block:'multidelay',channel:'A',param:'MULTITAP_TIME1',value:300}]}),/tempo-controlled by MULTITAP_TEMPO1 = 1\/4/,'Multi Delay tempo lock (device default Tempo 1 = 1/4)');
 refuse(()=>composeSound(NL,{...mspec,controls:[{block:'multidelay',channel:'A',param:'MULTITAP_PRESETS',value:3}]}),/preset selection \(Type\) is not writable/,'Multi Delay preset word refused');
 const mcpu=estimateCpu(ms.syx).scenes[0];check(mcpu.parts.multidelay===5.5&&!mcpu.unknown.includes('multidelay'),'Multi Delay CPU counted (T26: Quad-Tap Delay 5.5 points)');
-console.log(JSON.stringify({inserted:all.length,multidelay:true,reconstructed:true,refusals:11,pipeline:s.report.signalRows}));
+console.log(JSON.stringify({inserted:all.length,multidelay:true,reconstructed:true,refusals:12,pipeline:s.report.signalRows}));
 // 5. hardware roundtrip 2026-10-23: the device's exports of FM3_P6_INSERT_A/B hold the same prefix
 // (grid, scenes), the same system tail and byte-identical records; only the record order is
 // normalised by the device. CPU: A 82.5 %, B "CPU LIMIT EXCEEDED" (reported by the user).
