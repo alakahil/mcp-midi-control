@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.53`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.54`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -39,8 +39,9 @@ Kehtiv modifikaatoritugi: Wah + Volume koos (0.3.30), Volume Min/Max (0.3.31),
 Control Switchi `invert`/`channel` ja Out 2 (0.3.32), kõvera/aja väljad (0.3.34)
 ning Control Switchi stseeniolekud ja jalglülitid (0.3.35–0.3.36).
 Allpool olevad versioonipealkirjad tähistavad funktsiooni lisamise aega.
-Üldine modifikaatorikirjete jaotaja, suvalised allikad/sihtmärgid ja eemaldamise
-avalik sisendiväli jäävad toetamata.
+Alates 0.3.54-st on sama koostamise käigus loodud seoste eemaldamise ja
+asendamise avalik sisend `modifierEdits`. Üldine kirjete jaotaja ning suvalised
+allikad/sihtmärgid jäävad toetamata.
 
 T11 (`MOOTOR/references/fm3-combo-store-20261029.json`) kinnitab viie seose ja
 Out 2 säilimist STORE/reload'il ning selles katses Out 2 L tööd ja helitaset.
@@ -62,6 +63,50 @@ samasse tõendikausta säilitatud. `test-p2-three-switches` taastab algse SYX-i
 praeguse generaatoriga ning kontrollib ekspordi terviklikku keha ja vigade tõrjumist.
 See tõend piirdub selle preseti ja kolme määranguga; kõigi 24 määrangu, teiste
 layout'ide, heli või CPU seadmekatset sellest ei järeldu. Ära nõua P2 kordamist.
+
+## Seoste eemaldamine ja asendamine (0.3.54)
+
+Kasuta soundi skeemi 0.8.5 välja `modifierEdits` ainult sama koostamise käigus
+loodud Volume- ja Control Switchi seoste muutmiseks. Loe lepingut
+[modifier-edits.md](engine/skills/instructions/references/modifier-edits.md).
+Määra kirje ja oodatud allikas/sihtmärk; vale eeldus peab andma vea. `remove`
+tühjendab ainult sõnad 0/8/9, `replace` kirjutab olemasoleva Control Switchi
+vaikemalli sõnadesse 0–20. Kirje päis, sõnad 21–24, kõik 32 kirjet ning
+järjestus säilivad. Kirjet 0, teiseseid allikaid ja suvalist alusfaili ei toetata.
+
+Koosta `controlSwitchScenes` ja `footswitches` lõplike seoste järgi; eemaldatud
+allikale ei tohi jätta seoseta määrangut. Staatilisi `controls` väärtusi hinnatakse
+pärast muudatusi: eemaldatud seos võib kirjutuse vabastada, uus seos selle blokeerida.
+Kõik neli lõppfaili peavad läbima tavalise `fm3-preset.mjs --verify` kontrolli.
+Uus sisend taastab P3 ajaloolise SYX-i baittäpselt. Allpool kirjeldatud
+D-kanali pööratud seos sai 06.11.2026 eraldi seadmekinnituse. Muud
+kombinatsioonid jäävad seadmevabalt kontrollituks. P2/P3 korduskatset ära nõua. Kohustuslikus testikomplektis on 85 testi, sh `test-modifier-edits`.
+
+Ajalooliste tõendite taasesituseks kasuta Node 22. Kohalik töövoog keeldub muu
+põhiversiooniga ning valib alamprotsessidele sama Node'i. Node 24 T20 erinevus
+on `Math.pow` viimastes kümnendkohtades; katse SYX jäi samaks. Tõendeid ei
+kirjutata ühilduvusprobleemi varjamiseks ümber.
+
+## D-kanali pööratud Cut-seose seadmetõend (0.3.54, 06.11.2026)
+
+Loe `MOOTOR/references/modifier-edits-d-20261106/receipt.json`. Katse
+`FM3 MOD EDITS D` kinnitab avaliku `modifierEdits` sisendiga Volume-kirje 1
+asendamist pööratud Control Switch 2 → Amp Cut seosega ainult kanalil D,
+ning Amp Input Boost seose eemaldamist kirjest 2. Kasutaja kinnitas impordi,
+seosed, neli stseeni ja STORE → muu preset → tagasi taastumise.
+
+Stseenide 1–4 Amp/CS2/Cut tulemused: A/OFF/OFF, D/OFF/ON, D/ON/OFF,
+A/ON/OFF. Cut-modifikaator: Source = Control Switch 2, Channel = D,
+Min = ON, Max = OFF. FM3-Editis ava Amp → Ideal; Cut-lüliti asub Bass-nupu
+all. Ava modifikaator paremklõpsu või Macis Control-klõpsuga.
+
+Seadmeeksport läbis Node 22 võrdluse: modifikaatoripiirkond, valitud stseen 1,
+süsteemiosa ja kõigi plokkide sisu säilisid. Ainult efektide 94 ja 102
+salvestusjärjekord vahetus. Ära nimeta kogu SYX-i ega töötlemata keha
+baittäpseks. Algkvartett, eksport ja kviitung säilivad samas tõendikaustas.
+Kviitungi katseaegne CI-seis ei kirjelda hilisemat väljalaske staatust.
+Katse ei kinnita suvalise aluspreseti muutmist, teisi kombinatsioone, heli ega
+CPU-d. Ära nõua juba kinnitatud katse kordamist.
 
 ## P3 eemaldamise ja taaskasutuse seadmetõend (0.3.39, 30.10.2026)
 
@@ -87,7 +132,8 @@ kontrollib praeguse mootori alg-/doonorkvartette, algse SYX-i taastamist,
 `MOOTOR/scripts/fm3-p3-modifier-reuse.mjs` on ainult selle ajaloolise katse
 `build|verify|compare` tööriist; selle lõppkvartett kasutab eraldi uuringuverifikaatorit.
 Ära nimeta seda tavalise `fm3-preset.mjs --verify` läbinud lõpppresetiks.
-See ei lisa avalikku eemaldamise/taaskasutuse sisendit, üldist kirjete jaotajat,
+Ajalooline kordustööriist ise ei lisa avalikku sisendit ega üldist kirjete jaotajat;
+0.3.54 avalik `modifierEdits` on eraldi piiratud liides. See ei lisa
 suvalise aluspreseti muutmist ega FM3-Editi automaatse vaba koha valimise tõendit.
 Kõigi 32 pesa kasutatavust, uusi allikaid/sihtmärke, heli ega CPU-d ei mõõdetud.
 
@@ -415,8 +461,9 @@ Mixeri `DELAY1`…`DELAY4` nimed seotakse PID-idega 17…20 kinnitatud
 FM3-Edit ARM64 kirjeldustabeli ja FW13 vahemälu alusel. Ajaloolise sõnastiku
 skaalad ja tõendistaatused ei muutu. Delay 5/6 ei ole toetatud.
 Looperi Record/Play/Once/Reverse/Undo/Dub on käivituskäsud, mitte lubatud
-skalaarseadistused. MultiDelay Feedback Send/Return ja presetivalik jäävad
-blokeerituks (plokk on lisatav 0.3.47-st, parameetrid kirjutatavad 0.3.49-st).
+skalaarseadistused. Feedback Send ja Multi Delay presetivalik jäävad blokeerituks.
+Feedback Returni kolm juhikut kanalil A on kirjutatavad alates 0.3.51-st
+(plokk Multi Delay on lisatav 0.3.47-st, parameetrid kirjutatavad 0.3.49-st).
 `--inspect-modifiers` kasutab 24 pere poliitikaid ning kontrollib ka 1/2-kanalilisi
 kirjeid. Puuduv kanal ja tundmatu seis jäävad teadmata; nähtavus ei tõenda
 modifikaatori tuge ega luba uut seost kirjutada.
@@ -436,7 +483,8 @@ Kasuta [4. punkti tõendi- ja piirangutabelit](engine/docs/FM3_POINT4_OFFLINE.md
 0.3.21 staatiline analüüs leidis FW13 kirjepesa otsingu ning loomise/eemaldamise
 harud. Tookord ei olnud teise kirje lähtestus tõendatud. Hilisem piiratud
 Wah + Volume kirjutaja kasutab kirjeid 0 ja 1; Volume Min/Max on toetatud.
-Üldist jaotajat ja eemaldamise avalikku sisendivälja endiselt ei ole.
+Üldist jaotajat ei ole. Alates 0.3.54-st toetab `modifierEdits` sama koostamise
+käigus loodud seoste piiratud eemaldamist ja asendamist (vt eespool).
 
 `--inspect-modifiers` eristab põhi- ja teisese allika aktiivsust, Source NONE-i,
 väljalülitatud sihtseost ja sidumata kirjet. External-kontrolleri sõltuvused
@@ -679,10 +727,11 @@ Tee väljundid töökausta väljaspool skill'i/plugina lähtefaile.
 5. Käivita generaator:
 
    ```bash
-   node "$FM3_ENGINE/scripts/fm3-preset.mjs" "$FM3_ENGINE/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx" "/ABS/PRESET.spec.json" "/ABS/PRESET"
+   node "$FM3_ENGINE/scripts/fm3-preset.mjs" "$FM3_ENGINE/examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx" "/ABS/PRESET.input.json" "/ABS/PRESET"
    ```
 
-   Asenda näidisteed tegelike uute väljundite absoluutsete teedega.
+   Asenda näidisteed tegelike absoluutsete teedega. Hoia sisend eraldi nimega
+   (`.input.json`), sest `.spec.json` on üks neljast uuest väljundfailist.
 6. Käivita `node "$FM3_ENGINE/scripts/fm3-preset.mjs" --verify "/ABS/PRESET"`.
    Edukas käivitus väljastab `.syx`, `.txt`, `.spec.json`, `.validation.json`;
    olemasolevat samanimelist väljundit ei kirjutata üle. Puuduv raport või räside

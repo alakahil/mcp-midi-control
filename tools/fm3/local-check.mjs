@@ -19,6 +19,7 @@ import path from 'node:path';
 import {spawn,execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {assertHistoricalRuntime} from './historical-runtime.mjs';
 const ROOT=fileURLToPath(new URL('../../',import.meta.url));
 const WORKFLOW=path.join(ROOT,'.github/workflows/fm3-plugin-offline.yml');
 const ENGINE='plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/';
@@ -65,7 +66,10 @@ if(flag('--list')){
 }
 
 // ---- runner
-const env={...process.env,PYTHONDONTWRITEBYTECODE:'1'};// no __pycache__ in the plugin tree (it breaks the tree hash)
+// --list is descriptive and runtime-independent. Actual replay uses the same
+// executable's directory first, including nested tools that spawn `node`.
+try{assertHistoricalRuntime();}catch(e){console.error(e.message);process.exit(2);}
+const env={...process.env,PATH:path.dirname(process.execPath)+path.delimiter+(process.env.PATH??''),PYTHONDONTWRITEBYTECODE:'1'};// no __pycache__ in the plugin tree (it breaks the tree hash)
 function run(cmd,extraEnv={}){
   return new Promise(res=>{const t=Date.now();let out='';
     const p=spawn('bash',['-c',cmd],{cwd:ROOT,env:{...env,...extraEnv}});

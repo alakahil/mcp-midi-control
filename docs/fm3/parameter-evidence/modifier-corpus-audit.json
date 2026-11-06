@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "scope": "All distinct SYX bytes currently packaged; includes generated examples and captures, not all independent hardware observations.",
-  "files": 803,
-  "unique": 646,
-  "accepted": 636,
+  "files": 805,
+  "unique": 648,
+  "accepted": 638,
   "unsupported": [
     {
       "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/upstream-fm3-goldens/preset-42.syx",
@@ -67,14 +67,14 @@
     }
   ],
   "summary": {
-    "totalActiveRecords": 234,
+    "totalActiveRecords": 242,
     "maxActivePerFile": 4,
     "activeBySlot": [
-      222,
-      4,
+      224,
+      6,
       2,
+      6,
       4,
-      2,
       0,
       0,
       0,
@@ -103,8 +103,8 @@
       0,
       0
     ],
-    "multiActiveFiles": 4,
-    "nonContiguousFiles": 4,
+    "multiActiveFiles": 6,
+    "nonContiguousFiles": 6,
     "secondaryWithoutPrimaryFiles": 0,
     "simultaneousWahVolumeGain": []
   },
@@ -7224,6 +7224,102 @@
       ],
       "secondaryWithoutPrimary": [],
       "gapsBeforeActive": []
+    },
+    {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/modifier-edits-d-20261106/FM3_MOD_EDITS_D.syx",
+      "sha256": "7b120c1101eab4eebde1b978e324a63d25c1574a77a3abeaafc7b2521f6902cb",
+      "aliases": [],
+      "active": [
+        {
+          "record": 0,
+          "source": 14,
+          "effectId": 94,
+          "pid": 5,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 1,
+          "source": 51,
+          "effectId": 58,
+          "pid": 47,
+          "channel": 4,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 3,
+          "source": 52,
+          "effectId": 58,
+          "pid": 41,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 4,
+          "source": 53,
+          "effectId": 58,
+          "pid": 80,
+          "channel": 4,
+          "secondarySource": 0,
+          "operation": 0
+        }
+      ],
+      "inactiveBound": [],
+      "secondaryWithoutPrimary": [],
+      "gapsBeforeActive": [
+        2
+      ]
+    },
+    {
+      "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/modifier-edits-d-20261106/FM3_MOD_EDITS_D_export.syx",
+      "sha256": "4480a83af30be67a9165de4f1535411790fa692063e4a7e0e9157752f5936c55",
+      "aliases": [],
+      "active": [
+        {
+          "record": 0,
+          "source": 14,
+          "effectId": 94,
+          "pid": 5,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 1,
+          "source": 51,
+          "effectId": 58,
+          "pid": 47,
+          "channel": 4,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 3,
+          "source": 52,
+          "effectId": 58,
+          "pid": 41,
+          "channel": 0,
+          "secondarySource": 0,
+          "operation": 0
+        },
+        {
+          "record": 4,
+          "source": 53,
+          "effectId": 58,
+          "pid": 80,
+          "channel": 4,
+          "secondarySource": 0,
+          "operation": 0
+        }
+      ],
+      "inactiveBound": [],
+      "secondaryWithoutPrimary": [],
+      "gapsBeforeActive": [
+        2
+      ]
     },
     {
       "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/p2-three-switches-20261030/FM3_P2_THREE_SWITCHES.syx",

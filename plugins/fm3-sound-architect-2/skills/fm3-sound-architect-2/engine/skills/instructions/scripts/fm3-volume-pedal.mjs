@@ -76,7 +76,7 @@ export function volumePedalCapabilities(){return {
  globalControllerSetup:false,deviceIO:false,storeReloadProven:false,pedalBehaviorEvidence:pedalBehaviorEvidence(),
  limits:evidence.limits.filter(x=>!x.startsWith('No numeric Volume Min/Max codec')).map(x=>x.startsWith('No arbitrary source')?'No arbitrary source, channel, target or record allocation; with External 1 -> Wah the binding goes to record 1':
   x.startsWith('Captured defaults do not prove')?'Min/Max (T10) and the curve / timing fields (T12, one field per step) are device-confirmed point by point; other values follow the codecs; DSP and live SET encoding not tested':x)};}
-export function readVolumePedal(body,range=volumeRange(true)){
+export function readVolumePedal(body,range=volumeRange(true),expectedModifierRegion){
  target(body);
  const modifiers=readModifiers(body),found=modifiers.filter(m=>m.active&&m.effectId===102&&m.pid===0);
  check(found.length===1,'exactly one active Volume binding is required');
@@ -85,10 +85,13 @@ export function readVolumePedal(body,range=volumeRange(true)){
  const exp=words(range);check(w.every((x,i)=>x===exp[i]),'Volume binding words differ from the captured binding and the requested Min/Max');
  // Remaining records: Control Switch records written by this engine are reset to their base form; the rest
  // must equal the capture (record 0) or the baseline (record 1, with record 0 holding the Wah binding).
+ if(expectedModifierRegion){check(Buffer.isBuffer(expectedModifierRegion)&&expectedModifierRegion.length===3072&&body.subarray(...REGION).equals(expectedModifierRegion),'final modifier region differs from the authored edits');}
+ else {
  const rest=stripControlSwitchRecords(body);
  [1,2,...CURVE_WORDS].forEach(i=>rest.writeUInt16LE(evidence.binding.words[i],start+2*i));  // Min/Max and curve checked above
  if(record===0)check(sha(rest.subarray(...REGION))===evidence.capture.modifiersSha256,'final modifier region differs from captured binding');
  else{BASE_RECORD1.forEach((x,i)=>rest.writeUInt16LE(x,offsetOf(1)+2*i));check(outsideRecord0(rest)===baselineOutsideRecord0Sha256,'final modifier region differs from the baseline outside the Wah and Volume records');}
+ }
  return {policy:'captured-volume-default-fw13',record,offset:start,source:m.source,sourceName:m.sourceName,
   effectId:m.effectId,pid:m.pid,targetName:'VOLUME_GAIN',displayLabel:'Volume',channelScope:m.channelScope,words:w,
   withWahBinding:record===1,min:{display:Math.round(decodeValue(GAIN,w[1])*100)/100,word:w[1]},max:{display:Math.round(decodeValue(GAIN,w[2])*100)/100,word:w[2]},
@@ -133,7 +136,7 @@ export function renderVolumePedalText(state){
   'External 1 globaalne pedaali/MIDI määrang ja pedaali asend ei sisaldu presetis. Seos ei muuda stseenide kanalit ega bypass’i.',
   '24.10.2026 P1/P0 katses kinnitati FM3-Editis pedaali järgimine. 26.10.2026 (T2): kand 0.00, varvas 10.00, seos säilis STORE/reload-is. 28.10.2026 (T10): vahemik 2.50/7.50 kuvati ja pedaal järgis seda. Taper ja heli on mõõtmata; selle uue faili riistvarakatset sellest ei järeldu.'];
 }
-export function verifyVolumePedalOutput(report,syx,txt,spec){
+export function verifyVolumePedalOutput(report,syx,txt,spec,expectedModifierRegion){
  const requested=Object.hasOwn(spec??{},'volumePedal');
  const range=requested?volumeRange(spec.volumePedal):null;
  if(!requested){
@@ -142,7 +145,7 @@ export function verifyVolumePedalOutput(report,syx,txt,spec){
   return;
  }
  check(spec.volumePan===true,'volumePan:true is required');
- const state=readVolumePedal(Buffer.from(inspectStructure(syx).raw.body),range);
+ const state=readVolumePedal(Buffer.from(inspectStructure(syx).raw.body),range,expectedModifierRegion);
  const wahOn=spec.composer?.modifiers?.external1Wah===true;
  check(state.withWahBinding===wahOn,'Volume binding record does not match the Wah request');
  assert.deepEqual(report.volumePedal,state,'Volume pedal final state differs');
