@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2177,
-  "filePaths": 2381,
+  "uniqueContents": 2178,
+  "filePaths": 2382,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -8898,6 +8898,12 @@
       "bytes": 9357,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T111400-8da0a91e37/capture.json"
+      ]
+    },
+    "ad550071049798fb2e21c1b69e5633a14f3cb01779c404c699182fe2752bf52c": {
+      "bytes": 5059,
+      "paths": [
+        "references/fm3-t32-live-20261106.json"
       ]
     },
     "adacde83879db0130ed77edc62a9ebe0e02625ac78b1ffacf87ee0ae92c5f67b": {

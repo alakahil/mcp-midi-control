@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-06",
+ "test": "T32",
+ "auditItem": "H1",
+ "method": "Jan in Terminal. Part 1: FM3_CPU_SCENES.py loaded the generated preset into the edit buffer (7F 00); Jan selected scenes 1..8, listened and the script read the CPU meter (fn=0x01 sub=0x2E). Part 2: FM3_BIND_STORE.py --load; Jan STOREd to 424 on the FM3, selected another preset and came back; --verify read 424 with the read-only stored dump (fn=0x03). T32B: --load only, Jan listened. Scripts never stored or set.",
+ "preset": {
+  "name": "T32 LIVE KOOSLUS",
+  "sha256": "3d9eabb5d99bceced5fb66732c5df288f1f37cbe71a051b8814ededcfc2830da",
+  "builder": "tools/fm3/t32-live-build.mjs",
+  "scenes": [
+   "CLEAN",
+   "CRUNCH",
+   "LEAD",
+   "AMBIENT",
+   "CLEAN DRY",
+   "CRUNCH PUSH",
+   "LEAD DRY",
+   "PLEXI"
+  ]
+ },
+ "cpu": {
+  "packSha256": "db6d385bf44e5e024308cdd42dd782a65e38b2302d110762a46a08c6df20b42d",
+  "results": {
+   "path": "docs/fm3/hardware-results/2026-11-06/fm3-t32-live-20261106-results.json",
+   "sha256": "ad0d45884f88a2378c156ed60767801003fcfb9aa005b1ebb951563e37299862"
+  },
+  "model": "fm3-cpu 0.2.4",
+  "scenes": [
+   {
+    "scene": 1,
+    "name": "CLEAN",
+    "estimatePercent": 71.4,
+    "measuredPercent": 70,
+    "errorPoints": 1.4
+   },
+   {
+    "scene": 2,
+    "name": "CRUNCH",
+    "estimatePercent": 55.9,
+    "measuredPercent": 55,
+    "errorPoints": 0.9
+   },
+   {
+    "scene": 3,
+    "name": "LEAD",
+    "estimatePercent": 55.9,
+    "measuredPercent": 55,
+    "errorPoints": 0.9
+   },
+   {
+    "scene": 4,
+    "name": "AMBIENT",
+    "estimatePercent": 71.4,
+    "measuredPercent": 71,
+    "errorPoints": 0.4
+   },
+   {
+    "scene": 5,
+    "name": "CLEAN DRY",
+    "estimatePercent": 55.9,
+    "measuredPercent": 55,
+    "errorPoints": 0.9
+   },
+   {
+    "scene": 6,
+    "name": "CRUNCH PUSH",
+    "estimatePercent": 55.9,
+    "measuredPercent": 55,
+    "errorPoints": 0.9
+   },
+   {
+    "scene": 7,
+    "name": "LEAD DRY",
+    "estimatePercent": 55.9,
+    "measuredPercent": 55,
+    "errorPoints": 0.9
+   },
+   {
+    "scene": 8,
+    "name": "PLEXI",
+    "estimatePercent": 55.9,
+    "measuredPercent": 55,
+    "errorPoints": 0.9
+   }
+  ],
+  "maxErrorPoints": 1.4,
+  "meaning": "fm3-cpu 0.2.4 estimate for this composition agreed with the meter within 1.5 points in all 8 scenes (estimate slightly high); 71 % max (safe limit 80 %)."
+ },
+ "store": {
+  "packSha256": "1abd8afe5b439330b82964b93e1d8ebd55193e5c12e4c96c0fd978fca621bed3",
+  "load": {
+   "path": "docs/fm3/hardware-results/2026-11-06/fm3-t32-store-20261106-load.json",
+   "sha256": "cc949aa6b61b1bbb4682ee62661935c2f59a3be1f133c49c7e9855299e7e4460"
+  },
+  "results": {
+   "path": "docs/fm3/hardware-results/2026-11-06/fm3-t32-store-20261106-results.json",
+   "sha256": "d61e380424c1548472f4ca5349f6db65631ef4721c21ade2cf75ec2bd7ae3dc9"
+  },
+  "location": 424,
+  "checks": {
+   "beforeStore": {
+    "scenes": "ok",
+    "multidelay": "j"
+   },
+   "afterReload": {
+    "scenes": "j",
+    "multidelay": "j"
+   }
+  },
+  "storedVsGenerated": {
+   "bodyBytes": 14120,
+   "bodyByteIdentical": false,
+   "prefixIdentical": true,
+   "tailIdentical": true,
+   "allRecordBytesIdentical": true,
+   "reordered": [
+    {
+     "family": "in1",
+     "effectId": 37,
+     "generatedIndex": 7,
+     "storedIndex": 8
+    },
+    {
+     "family": "out1",
+     "effectId": 42,
+     "generatedIndex": 8,
+     "storedIndex": 9
+    },
+    {
+     "family": "reverb",
+     "effectId": 66,
+     "generatedIndex": 9,
+     "storedIndex": 10
+    },
+    {
+     "family": "multidelay",
+     "effectId": 74,
+     "generatedIndex": 10,
+     "storedIndex": 7
+    }
+   ]
+  },
+  "meaning": "STORE/reload kept every byte of all 11 block records, the prefix and the tail; the FM3 only stored the Multi Delay record earlier in the record list."
+ },
+ "level": {
+  "packSha256": "207364e92e2753703991218feedae7616198b70a475a6b63264e665fbc21ef0f",
+  "load": {
+   "path": "docs/fm3/hardware-results/2026-11-06/fm3-t32b-level-20261106-load.json",
+   "sha256": "e5aa9fa285f8b7ab1de7ca2f1bbd481776ddbe422f5a08ab56a64373c4bc35fe"
+  },
+  "verdicts": [
+   {
+    "after": "T32 part 1 and 2",
+    "at": "2026-11-06T13:03:24Z",
+    "text": "Lead stseenid 3 ja 7 olid võrreldes teistega liiga vaiksed, muus osas oli kõik hästi ja sound vastas kirjeldusele",
+    "ampCLevelDb": -14
+   },
+   {
+    "after": "T32B",
+    "at": "2026-11-06T13:11:10Z",
+    "text": "umbes 2 dB juurde veel, siis on sama helitugevus, mis teistel",
+    "ampCLevelDb": -10
+   }
+  ],
+  "finalAmpCLevelDb": -8,
+  "finalPreset": {
+   "name": "LIVE KOOSLUS V1",
+   "sha256": "b180d2baf4014fc472ddcd93560041c858dc1ffee8ae81a29fe8f88a5cd189a9"
+  },
+  "meaning": "Amp C template level (-14 dB) was about 6 dB low against Amp A/B/D (-8..-9 dB) for this composition. The -8 dB final level follows the user's estimate and was not listened to separately."
+ },
+ "notMeasured": [
+  "audio of LIVE KOOSLUS V1 at -8 dB (set from the user's estimate)",
+  "loudness in dB (ears only)",
+  "Out 2",
+  "footswitches"
+ ]
+}

@@ -131,4 +131,13 @@ fs.writeFileSync(path.join(bdir,'LOE_MIND.txt'),[
 '  3. Mängi stseene 2, 3, 6 ja 7 ning võrdle valjust.',
 '  4. python3 FM3_BIND_STORE.py --record --pack . --session ../FM3_T32_SESSION/level',
 '  5. Kirjuta vestlusesse "valmis".',''].join('\n'));
-console.log(JSON.stringify({name:NAME,sha256:preset.sha256,perScene,limit:cpu.limitPercent,b:{name:NAMEB,sha256:presetB.sha256}}));
+
+// ---- FM3_T32C_FINAL: the user's level verdict on T32B ("umbes 2 dB juurde veel, siis on sama helitugevus, mis teistel")
+// -> Amp C Level -8.0 dB. Preset files only (no test step): the user's final usage preset.
+export const specC={...spec,purpose:'LIVE KOOSLUS V1: T32 kooslus, Amp C (Lead, stseenid 3 ja 7) Level -8 dB. Tase seatud kasutaja kuulamise järgi (T32: -14 liiga vaikne, T32B: -10 vaja ~2 dB veel). -8 dB ise pole eraldi kuulatud.',
+  composer:{...spec.composer,name:'LIVE KOOSLUS V1'},controls:[{block:'amp',channel:'C',param:'DISTORT_LEVEL',value:-8}]};
+const resC=createPreset(BASE,specC),cdir=path.join(out,'FM3_T32C_FINAL');fs.mkdirSync(cdir,{recursive:true});
+writePresetOutputs(path.join(cdir,'LIVE_KOOSLUS_V1'),resC,specC);verifyPresetOutputs(path.join(cdir,'LIVE_KOOSLUS_V1'));
+{const lv=resC.txt.match(/amp C: [^\n]*Level (-?[\d.]+) dB/);assert.ok(lv&&Math.abs(Number(lv[1])+8)<0.01,'Amp C Level -8 dB');}
+const finalSha=sha(Buffer.from(resC.syx));
+console.log(JSON.stringify({name:NAME,sha256:preset.sha256,perScene,limit:cpu.limitPercent,final:finalSha,b:{name:NAMEB,sha256:presetB.sha256}}));
