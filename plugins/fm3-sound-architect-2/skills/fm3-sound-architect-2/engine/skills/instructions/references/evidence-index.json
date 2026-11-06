@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2178,
-  "filePaths": 2382,
+  "uniqueContents": 2179,
+  "filePaths": 2383,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -2108,6 +2108,12 @@
       "bytes": 4956,
       "paths": [
         "references/geq-full-20261010-194115/step-155-1ce2bbcaf7/capture.json"
+      ]
+    },
+    "2911a0ce7e06c99937260107904f7360546ea3e2f094cdb215183fec6faf81f7": {
+      "bytes": 2825,
+      "paths": [
+        "references/fm3-t33-controllers-scene-20261106.json"
       ]
     },
     "292f202bdad6222d18976f1a436300c89f79e0ff2ab75e9d5538904950a8b5d1": {

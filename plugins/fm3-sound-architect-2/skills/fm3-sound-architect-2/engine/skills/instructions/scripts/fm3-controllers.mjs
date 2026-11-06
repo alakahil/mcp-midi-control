@@ -7,9 +7,9 @@
 // channel selector A/B/C/D showed copies A/B/C/D (references/fm3-shot-t28-controllers-20261105.json). So word n of a
 // copy is dictionary parameter n and the copy is the Controllers channel.
 // Writes follow the normal status gate (taper-class-verified knobs by default; option selectors by default since
-// 0.3.52, after T28/T30 FM3-Edit readings; n/a and unverified-taper parameters are refused). Which Controllers channel a scene uses is
-// not decoded; in composer outputs the per-scene header words are all 0 and FM3-Edit showed channel A, so channel A
-// is the one that sounds unless the user changes the Controllers channel on the device.
+// 0.3.52, after T28/T30 FM3-Edit readings; n/a and unverified-taper parameters are refused). T33 (2026-11-06,
+// references/fm3-t33-controllers-scene-20261106.json) confirmed that header word 5+(scene-1) is the scene's
+// Controllers channel (0..3 = A..D); this writer does not set it, so in composer outputs every scene uses channel A.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';

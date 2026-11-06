@@ -1,0 +1,79 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-06",
+ "test": "T33",
+ "auditItem": "O3/H2",
+ "method": "Jan in Terminal: FM3_BIND_STORE.py --load sent CTS to the edit buffer (7F 00); he listened to scenes 1..4, read FM3-Edit (Controllers channel per scene, Volume modifier source), STOREd to 425 on the FM3, selected another preset, came back, answered again; --verify read 425 with the read-only stored dump (fn=0x03). Scripts never stored or set.",
+ "preset": {
+  "name": "T33 CTRL SCENES",
+  "sha256": "a624f5c695df003d9388e945a69b58eda8bff7f9dc3cf60ad4b8fcfe220a03a4",
+  "builder": "tools/fm3/t33-controllers-scene-build.mjs",
+  "changedWordOffsets": [
+   464,
+   466,
+   468,
+   1584
+  ]
+ },
+ "load": {
+  "path": "docs/fm3/hardware-results/2026-11-06/fm3-t33-ctrl-20261106-load.json",
+  "sha256": "0656c0bd4021c51dc8e5acda3056dd0f66272bdc1fd92afd9174ae93a6bd039e"
+ },
+ "results": {
+  "path": "docs/fm3/hardware-results/2026-11-06/fm3-t33-ctrl-20261106-results.json",
+  "sha256": "30c949983bbb5db0361f2983c1c795f6d3173c3a6b8c6e4e0bea3fb8afa78414"
+ },
+ "packSha256": "56610ed48c1df75bc8ae14cf4b4dd57375246b4ce2807304532093ebd7580c51",
+ "location": 425,
+ "readings": {
+  "beforeStore": {
+   "tremolo": "S1 aeglane; S2 poole kiirem; S3 veel kiirem; S4 kõige kiirem",
+   "channel": "Scene1-A; 2-B;3-C;4-D",
+   "source": "LFO 1A"
+  },
+  "afterReload": {
+   "tremolo": "S1 aeglane; S2 poole kiirem; S3 veel kiirem; S4 kõige kiirem",
+   "channel": "Scene1-A; 2-B;3-C;4-D",
+   "source": "LFO 1A"
+  }
+ },
+ "storedVsGenerated": {
+  "bodyBytes": 12970,
+  "bodyByteIdentical": true
+ },
+ "findings": {
+  "sceneChannel": {
+   "rule": "Controllers record (effect 2, body offset 452) header word 5+(scene-1), i.e. body offset 462+2*(scene-1), is the Controllers channel of that scene (0..3 = A..D), the same header layout as the grid blocks.",
+   "written": [
+    0,
+    1,
+    2,
+    3,
+    0,
+    0,
+    0,
+    0
+   ],
+   "shown": "Scene 1 A, 2 B, 3 C, 4 D (FM3-Edit)",
+   "audible": "LFO 1 Rate per channel 1/2/4/8 Hz heard as faster tremolo in each scene",
+   "storedAndReloaded": true
+  },
+  "modifierSource": {
+   "rule": "Modifier record word 0 = FM3-Edit MOD_CTRLID list index (61 labels); anchors now External 1 = 14, Control Switch n = 49+n, LFO 1A = 1. The 25-word template is source independent.",
+   "record": 0,
+   "written": 1,
+   "shown": "LFO 1A",
+   "target": "Volume/Pan 1 Volume (effect 102, pid 0)",
+   "audible": "volume pulsed (LFO 1A drives Volume/Pan Volume)",
+   "storedAndReloaded": true
+  }
+ },
+ "notMeasured": [
+  "other Controllers sources (LFO 1B/2A/2B, ADSR, Sequencer, Envelope, Pitch Follower, Scene Controllers, Manual)",
+  "scenes 5..8 on channels other than A",
+  "LFO depth/shape effect on the modifier curve",
+  "targets other than Volume/Pan Volume"
+ ]
+}

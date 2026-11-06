@@ -109,6 +109,7 @@ jobs:
           node tools/fm3/t30-enum-ingest.mjs
           node tools/fm3/t31-ingest.mjs
           node tools/fm3/t32-live-ingest.mjs
+          node tools/fm3/t33-controllers-scene-ingest.mjs
           node tools/fm3/test-cs-preset-replay.mjs
           node tools/fm3/test-p3-modifier-reuse.mjs
           node tools/fm3/modifier-fields-status.mjs
