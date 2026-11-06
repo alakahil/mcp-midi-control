@@ -65,6 +65,14 @@ for(const [name,edit] of ctlBoth){const s=structuredClone(ctl);edit(s);
   assert.notDeepEqual(checkSchema(S,s),[],'schema accepts controllers: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts controllers: '+name);}
 for(const [name,edit] of ctlGenerator){const s=structuredClone(ctl);edit(s);
   assert.deepEqual(checkSchema(S,s),[],'schema refuses controllers: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts controllers: '+name);}
+// 0.3.55 (T33): controllersScenes and volumePedal.source. Shape errors are refused by both.
+const cts={composer,layout:{row2:['drive','amp','cab'],row3:['volpan','delay','reverb']},volumePan:true,volumePedal:{source:'LFO 1A',min:1},
+  controllersScenes:['A','B','C','D','D'],controllers:[{channel:'B',param:'LFO1FREQ',value:2}]};
+ok(cts);ok({...structuredClone(cts),volumePedal:{source:'Manual 5'},controllersScenes:['D']});
+const ctsBoth=[['scene E',s=>s.controllersScenes[0]='E'],['9 scenes',s=>s.controllersScenes=Array(9).fill('A')],['no scenes',s=>s.controllersScenes=[]],
+  ['scenes string',s=>s.controllersScenes='ABCD'],['source Control Switch',s=>s.volumePedal.source='Control Switch 1'],['source lower case',s=>s.volumePedal.source='lfo 1a'],['source number',s=>s.volumePedal.source=1]];
+for(const [name,edit] of ctsBoth){const s=structuredClone(cts);edit(s);
+  assert.notDeepEqual(checkSchema(S,s),[],'schema accepts: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
 // 0.3.51 (T29): Feedback Return controls. "send" is refused by both; Return channels B-D, Bypass/Bypass Mode and
 // out-of-range values by the generator only.
 const fb={composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},controls:[{block:'return',channel:'A',param:'RETLEVEL',value:80},{block:'return',channel:'A',param:'PAN',value:20}]};
@@ -98,4 +106,4 @@ const generatorOnly=[
 for(const [name,edit,i] of generatorOnly){const s=structuredClone(valid[i]);edit(s);
   assert.deepEqual(checkSchema(S,s),[],'schema refuses (move it to the both-list): '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
 assert.ok(checkSchema(S,{composer,layout:{row2:['amp','cab'],row3:[]},unknownField:1}).some(e=>/unknownField/.test(e)),'unknown top-level field refused');
-console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:5,multidelayRefusals:4,controllersRefusals:{both:ctlBoth.length,generatorOnly:ctlGenerator.length},refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));
+console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:5,multidelayRefusals:4,controllersRefusals:{both:ctlBoth.length,generatorOnly:ctlGenerator.length},controllersScenesRefusals:ctsBoth.length,refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));

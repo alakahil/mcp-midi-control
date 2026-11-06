@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.54`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.55`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -40,8 +40,9 @@ Control Switchi `invert`/`channel` ja Out 2 (0.3.32), kõvera/aja väljad (0.3.3
 ning Control Switchi stseeniolekud ja jalglülitid (0.3.35–0.3.36).
 Allpool olevad versioonipealkirjad tähistavad funktsiooni lisamise aega.
 Alates 0.3.54-st on sama koostamise käigus loodud seoste eemaldamise ja
-asendamise avalik sisend `modifierEdits`. Üldine kirjete jaotaja ning suvalised
-allikad/sihtmärgid jäävad toetamata.
+asendamise avalik sisend `modifierEdits`. Alates 0.3.55-st määrab `controllersScenes`
+Controllersi kanali stseeniti ja `volumePedal.source` Volume-seose allika (External 1 või
+Controllers ploki allikas). Üldine kirjete jaotaja ning suvalised allikad/sihtmärgid jäävad toetamata.
 
 T11 (`MOOTOR/references/fm3-combo-store-20261029.json`) kinnitab viie seose ja
 Out 2 säilimist STORE/reload'il ning selles katses Out 2 L tööd ja helitaset.
@@ -191,6 +192,21 @@ stseenis kiirema tremolona. Modifikaatori allika kood on FM3-Editi MOD_CTRLID lo
 External 1 = 14, Control Switch n = 49+n); LFO 1A → Volume/Pan Volume töötas sama 25-sõnalise malliga. Generaatoril
 pole neile veel avalikku sisendit: koostaja väljundis kasutavad kõik stseenid Controllersi kanalit A ja allikateks
 on ainult External 1 ning Control Switchid. Tõend: `references/fm3-t33-controllers-scene-20261106.json`.
+(See oli 0.3.54 seis; 0.3.55 lisab sisendid, vt järgmist lõiku.)
+
+## Controllersi stseenikanal ja Controllers-allikas Volume'ile (0.3.55)
+
+- `controllersScenes: ["A","B","C","D"]` = Controllersi kanal stseenides 1…n (n ≤ 8, stseen 1 esimesena); loetlemata
+  stseenid jäävad A-ks. Muutuvad ainult päise sõnad 462+2·(stseen−1). Kanali seaded (nt LFO 1 kiirus kanalil B)
+  tulevad väljast `controllers`.
+- `volumePedal: {source: "LFO 1A"}` (koos `min`/`max`/`curve`-iga) vahetab Volume-seose allika; muutub ainult
+  modifikaatori sõna 0. Lubatud: External 1 (vaikimisi), LFO 1A/1B/2A/2B, ADSR 1/2, Sequencer, Envelope Follower,
+  Pitch Follower, Scene Controller 1–4, Manual 1–5. Control Switch, PEDAL ja External 2–16 on keelatud.
+  `modifierEdits` tuvastab Volume-seose sama allika nimega.
+- Seadmel kinnitatud: stseenid 1–4 = A–D ja LFO 1A (T33). Sama sisendiga genereeritud fail on baiditäpselt sama,
+  mis FM3 salvestatud asukoht 425 (`tools/fm3/test-t33-controllers-replay.mjs`). Stseenid 5–8 ja teiste allikate
+  koodid (FM3-Editi MOD_CTRLID loendist) on valemi järgi, seadmel kontrollimata; TXT ütleb seda allika kaupa.
+- Skeem 0.8.6; test `scripts/test-controllers-scenes.mjs`.
 
 ## Päris kasutuspreseti koondkatse (T32, 06.11.2026)
 

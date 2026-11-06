@@ -9,7 +9,9 @@
 // Writes follow the normal status gate (taper-class-verified knobs by default; option selectors by default since
 // 0.3.52, after T28/T30 FM3-Edit readings; n/a and unverified-taper parameters are refused). T33 (2026-11-06,
 // references/fm3-t33-controllers-scene-20261106.json) confirmed that header word 5+(scene-1) is the scene's
-// Controllers channel (0..3 = A..D); this writer does not set it, so in composer outputs every scene uses channel A.
+// Controllers channel (0..3 = A..D), byte-identical after STORE 425 for scenes 1..4 = A..D. controllersScenes
+// (0.3.55) writes those 8 header words; scenes 5..8 follow the same layout (the grid-block header, T32), not measured
+// on other channels. Without controllersScenes every composer scene keeps channel A.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
@@ -22,6 +24,9 @@ const receiptBytes=fs.readFileSync(new URL('../references/fm3-shot-t28-controlle
 check(createHash('sha256').update(receiptBytes).digest('hex')===controllersReceiptHash,'Controllers receipt changed; run tools/fm3/t28-controllers-ingest.mjs and review');
 const receipt=JSON.parse(receiptBytes);
 export const MAX_CONTROLLER_WRITES=64;
+const CHANNELS='ABCD',SCENES=8;
+export const CONTROLLERS_SCENE_OFFSET=CONTROLLERS_RECORD.header+10;  // body 462 + 2*(scene-1)
+const t33Receipt='references/fm3-t33-controllers-scene-20261106.json';
 // Tempo To Use switches the preset between its own and the global tempo for every tempo-synced block: not measured.
 export const CONTROLLERS_REFUSED=Object.freeze({33:'Tempo To Use (preset/global tempo source) is not measured'});
 
@@ -45,6 +50,38 @@ export function validateControllers(list){
   check(Array.isArray(list)&&list.length>=1&&list.length<=MAX_CONTROLLER_WRITES,`controllers must be an array of 1…${MAX_CONTROLLER_WRITES} writes`);
   for(const c of list){assertFields(c,['channel','param','value'],'controllers write');channelIndex(c.channel);check(Object.hasOwn(c,'value'),'controllers write needs a value');controllersParam(c.param);}
 }
+// controllersScenes: ['A','B','C','D'] = Controllers channel of scenes 1..n (n <= 8); unlisted scenes stay A.
+export function validateControllersScenes(list){
+  check(Array.isArray(list)&&list.length>=1&&list.length<=SCENES,'controllersScenes must be an array of 1…8 channels (scene 1 first)');
+  list.forEach((c,i)=>check(typeof c==='string'&&c.length===1&&CHANNELS.includes(c),`controllersScenes[${i}] must be A, B, C or D`));
+  return Array.from({length:SCENES},(_,i)=>list[i]??'A');
+}
+export function readControllersScenes(body){
+  locateControllers(body);
+  return Array.from({length:SCENES},(_,i)=>{const v=body.readUInt16LE(CONTROLLERS_SCENE_OFFSET+2*i);check(v<4,`Controllers scene ${i+1} channel word ${v} is not 0..3`);return CHANNELS[v];});
+}
+export function applyControllersScenes(syx,list){
+  const wanted=validateControllersScenes(list);
+  const original=Buffer.from(inspectStructure(syx).raw.body),body=Buffer.from(original);locateControllers(body);
+  const before=readControllersScenes(original),allowed=new Set();
+  wanted.forEach((c,i)=>{const o=CONTROLLERS_SCENE_OFFSET+2*i;body.writeUInt16LE(CHANNELS.indexOf(c),o);allowed.add(o);allowed.add(o+1);});
+  const out=finalizeBody(syx,original,body,allowed),after=readControllersScenes(Buffer.from(inspectStructure(out).raw.body));
+  check(after.join('')===wanted.join(''),'Controllers scene channel readback');
+  return {syx:out,channels:after,report:{offsets:wanted.map((_,i)=>CONTROLLERS_SCENE_OFFSET+2*i),before,after,
+    changedScenes:wanted.map((c,i)=>c===before[i]?null:i+1).filter(Boolean),
+    hardware:'T33 2026-11-06: scenes 1..4 = A..D shown in FM3-Edit, heard and byte-identical after STORE/reload ('+t33Receipt+'); this output itself not tested'}};
+}
+export function verifyControllersScenesOutput(body,spec,reported,stage){
+  if(!Object.hasOwn(spec,'controllersScenes')){
+    check(reported===undefined&&stage===undefined,'Controllers scene report without spec.controllersScenes');
+    if(spec.composer)check(readControllersScenes(body).every(c=>c==='A'),'Controllers scene channel set without controllersScenes');
+    return undefined;}
+  const wanted=validateControllersScenes(spec.controllersScenes),actual=readControllersScenes(body);
+  check(actual.join('')===wanted.join(''),'Final Controllers scene channels differ from spec');
+  check(JSON.stringify(reported)===JSON.stringify(actual),'Final Controllers scene report differs');
+  check(JSON.stringify(stage?.after)===JSON.stringify(actual),'Controllers scene stage report differs');
+  return actual;
+}
 // controllers: [{channel:'A',param:'LFO1FREQ'|'CONTROLLERS_LFO1FREQ'|1,value:2.5}]
 export function applyControllers(syx,list,opts={}){
   validateOptions(opts);validateControllers(list);
@@ -60,7 +97,7 @@ export function applyControllers(syx,list,opts={}){
   const out=finalizeBody(syx,original,body,allowed),after=Buffer.from(inspectStructure(out).raw.body);
   for(const w of writes)check(after.readUInt16LE(w.offset)===w.raw,'Controllers readback '+w.name);
   return {syx:out,writes,report:{record:{...r},writes:writes.length,changedWords:writes.filter(w=>w.raw!==w.before).length,
-    hardware:'T28: storage, word order, channels A-D and FM3-Edit readings confirmed for 26 parameters; this output itself not tested',sceneChannel:'not decoded; composer scenes use channel A'}};
+    hardware:'T28: storage, word order, channels A-D and FM3-Edit readings confirmed for 26 parameters; this output itself not tested',sceneChannel:'controllersScenes (header words 462+2*(scene-1)); without it every scene uses channel A'}};
 }
 // Saved-bundle check: re-encode the requested writes and compare them with the stored words and the report.
 export function verifyControllersOutput(body,spec,reported){
@@ -73,15 +110,19 @@ export function verifyControllersOutput(body,spec,reported){
   writes.forEach((w,i)=>{for(const k of ['channel','pid','name','label','raw','offset','display','value'])check(JSON.stringify(reported[i][k])===JSON.stringify(w[k]),`Final Controllers ${k} differs (${w.name})`);});
   return writes;
 }
-export function renderControllersText(writes){
-  if(!writes?.length)return '';
+export function renderControllersText(writes,scenes){
+  if(!writes?.length&&!scenes)return '';
   const fmt=w=>typeof w.display==='number'?String(Number(w.display.toPrecision(4))):String(w.display);
-  return ['','CONTROLLERS (Control plokk, kõik stseenid kasutavad kanalit A):',...writes.map(w=>`  ${w.channel} ${w.label} (${w.name}) = ${fmt(w)}`)].join('\n')+'\n';
+  const head=scenes?['','CONTROLLERS (Control plokk):',`  Kanal stseeniti 1–8: ${scenes.join(', ')} (T33 06.11.2026: stseenid 1–4 = A–D seadmel kinnitatud; selle faili import kontrollimata).`]
+    :['','CONTROLLERS (Control plokk, kõik stseenid kasutavad kanalit A):'];
+  return [...head,...(writes??[]).map(w=>`  ${w.channel} ${w.label} (${w.name}) = ${fmt(w)}`)].join('\n')+'\n';
 }
 export function controllersCapabilities(){
   return {field:'controllers',maxWrites:MAX_CONTROLLER_WRITES,record:{...CONTROLLERS_RECORD},parameters:130,
     writable:'taper-class-verified knobs, integers and option selectors (T28/T30) by default; n/a and unverified-taper refused',
-    channels:['A','B','C','D'],sceneChannel:'not decoded; composer scenes use channel A',
+    channels:['A','B','C','D'],
+    sceneChannel:{field:'controllersScenes',values:'array of 1..8 of A|B|C|D, scene 1 first; unlisted scenes stay A',offsets:'body 462+2*(scene-1) (Controllers header word 5+(scene-1))',
+      hardware:'T33 2026-11-06: scenes 1..4 = A..D confirmed (FM3-Edit, audible, STORE/reload byte-identical); scenes 5..8 and other patterns follow the same layout, not measured',receipt:t33Receipt},
     hardwareReceipt:{file:'references/fm3-shot-t28-controllers-20261105.json',sha256:controllersReceiptHash,editorReadings:receipt.summary.editorReadingsMatched,deviceWords:receipt.summary.deviceWordsMatched},
-    limits:['Modifier source assignment is separate (modifiers)','Tempo, Tempo To Use and Envelope Gain Monitor stay unwritable','Per-scene Controllers channel not decoded']};
+    limits:['Controllers as a modifier source: volumePedal.source (Volume/Pan Volume only)','Tempo, Tempo To Use and Envelope Gain Monitor stay unwritable']};
 }
