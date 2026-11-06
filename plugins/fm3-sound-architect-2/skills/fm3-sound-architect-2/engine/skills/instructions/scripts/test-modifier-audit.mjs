@@ -71,7 +71,8 @@ for(const a of [inactive,secondaryOnly,both,allOccupied,allUnbound]){
   assert.equal(a.lifecycle.removalWriterSupported,true);assert.match(a.lifecycle.writerScope,/Current sound generation only/);
   assert.equal(a.lifecycle.serializedInitializationFullyProven,false);assert.equal(a.lifecycle.sourceNoneIsNotRemoval,true);
   assert.match(renderModifierAuditText(a),new RegExp(a.typePolicy.families.length+' efektipere'));
-  assert.equal(a.lifecycle.evidence.corpus.accepted,636);
+  // Includes the generated D-channel trial and its 6 November device export.
+  assert.equal(a.lifecycle.evidence.corpus.accepted,638);
 }
 // Callers cannot mutate the internal evidence used by later reports.
 secondaryOnly.lifecycle.evidence.findings.selection.examinedObjects=1;
