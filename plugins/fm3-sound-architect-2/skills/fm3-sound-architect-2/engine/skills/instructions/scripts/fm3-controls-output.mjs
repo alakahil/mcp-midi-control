@@ -6,7 +6,7 @@ import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {applyTableControls} from './fm3-layout.mjs';
 import {finalSoundState,renderFinalSoundText} from './fm3-final-state.mjs';
 import {renderCpuText} from './fm3-cpu.mjs';
-import {verifyControllersOutput,renderControllersText} from './fm3-controllers.mjs';
+import {verifyControllersOutput,verifyControllersScenesOutput,renderControllersText} from './fm3-controllers.mjs';
 export function verifyControlsOutput(report,syx,txt,spec){
   if(!spec?.composer)return;
   const body=Buffer.from(inspectStructure(syx).raw.body),copy=Buffer.from(body);
@@ -27,7 +27,8 @@ export function verifyControlsOutput(report,syx,txt,spec){
   }
   // Controllers (0.3.50): stored words re-encoded from the spec, report and text section derived from them.
   const controllers=verifyControllersOutput(body,spec,report.controllers);
+  const controllersScenes=verifyControllersScenesOutput(body,spec,report.controllersScenes,report.stages?.controllersScenes);
   // Global observations and pedal/modifier additions have their own verifiers.
   const textState={...final,globalScaleDependencies:report.globalScaleDependencies,modifierEdit:report.modifierEdit,volumePedal:report.volumePedal,controlSwitches:report.controlSwitches,csPreset:report.csPreset,modifierEdits:report.modifierEdits};
-  assert.equal(txt,renderFinalSoundText(textState,spec)+renderControllersText(controllers)+renderCpuText(report.cpu)+'\n','Final TXT differs from decoded state/spec');
+  assert.equal(txt,renderFinalSoundText(textState,spec)+renderControllersText(controllers,controllersScenes)+renderCpuText(report.cpu)+'\n','Final TXT differs from decoded state/spec');
 }

@@ -610,6 +610,15 @@
       "required": true
     },
     {
+      "id": "test-controllers-scenes",
+      "command": [
+        "node",
+        "scripts/test-controllers-scenes.mjs"
+      ],
+      "scope": "controllersScenes and volumePedal.source (0.3.55, T33): only the Controllers header scene words / modifier word 0 change; 19 sources with the MOD_CTRLID codes; Wah + Volume record 1; modifierEdits by source; saved-bundle verify and 10 tamper cases. FM3-stored T33 body replay: tools/fm3/test-t33-controllers-replay.mjs",
+      "required": true
+    },
+    {
       "id": "test-cab-ir",
       "command": [
         "node",

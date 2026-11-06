@@ -7,6 +7,7 @@ import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
 import {readModifiers} from './fm3-parameter-dependencies.mjs';
 import {removeBinding} from './fm3-modifier-removal.mjs';
 import {validateControlSwitches,controlSwitchTemplate} from './fm3-control-switches.mjs';
+import {volumeSourceName} from './fm3-volume-pedal.mjs';
 const fail=(ok,m)=>{if(!ok)throw Error('Modifier edits: '+m);};
 const own=(o,k)=>Object.hasOwn(o,k),FIELDS=1584,SIZE=96;
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -37,7 +38,7 @@ export function effectiveModifierSpec(spec){
   fail(!seen.has(e.record),'record edited twice');seen.add(e.record);
   keys(e.expect,['source','block','param'],['source','block','param'],'expect');
   const v=e.expect;
-  if(v.source==='External 1'&&v.block==='volpan'&&v.param==='VOLUME_GAIN'){
+  if(v.block==='volpan'&&v.param==='VOLUME_GAIN'&&v.source===volumeSourceName(spec.volumePedal)){
    fail(e.record===1&&own(spec,'volumePedal')&&spec.composer.modifiers?.external1Wah===true,'Volume edit requires the generated Volume binding in record 1 next to Wah');
    fail(!removeVolume,'Volume binding edited twice');removeVolume=true;
   }else{
@@ -64,7 +65,7 @@ export function applyModifierEdits(syx,spec,{pedal=null,switches=null}={}){
  const decoded=inspectStructure(syx),original=Buffer.from(decoded.raw.body);
  fail(decoded.raw.crcValid,'input CRC');
  const mods=readModifiers(original),authored=new Map();
- if(pedal)authored.set(pedal.record,{source:'External 1',block:'volpan',param:'VOLUME_GAIN',words:pedal.state.words});
+ if(pedal)authored.set(pedal.record,{source:pedal.state.sourceName,block:'volpan',param:'VOLUME_GAIN',words:pedal.state.words});
  for(const w of switches?.writes??[])authored.set(w.record,{source:sourceOf(w),block:w.block,param:w.param,words:[...w.after,65534,65534,0,0]});
  // Validate every preimage before the first mutation; a caller cannot replace a
  // secondary-source or changed record merely by naming its public target.
@@ -117,6 +118,6 @@ export function verifyModifierEditsOutput(report,syx,txt,spec){
  return {spec:effective,region};
 }
 export function modifierEditsCapabilities(){return {field:'modifierEdits',operations:['remove','replace'],records:'1..9, explicitly identified, authored during this same generation',
- expect:'{source: External 1|Control Switch 1..6, block: volpan|amp, param: VOLUME_GAIN|supported Amp switch}',replacement:'binding: existing controlSwitches entry; full template replaces words 0..20',
+ expect:'{source: the volumePedal source (default External 1)|Control Switch 1..6, block: volpan|amp, param: VOLUME_GAIN|supported Amp switch}',replacement:'binding: existing controlSwitches entry; full template replaces words 0..20',
  removalWords:[0,8,9],preserved:'all other bytes, 32 record headers, words 21..24 and record order',
  notSupported:['record 0','arbitrary preset editing','free-slot allocation','secondary sources','unknown record layouts'],deviceIO:false};}
