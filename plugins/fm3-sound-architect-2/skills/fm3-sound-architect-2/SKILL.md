@@ -182,6 +182,16 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Päris kasutuspreseti koondkatse (T32, 06.11.2026)
+
+`tools/fm3/t32-live-build.mjs` koostas preseti „T32 LIVE KOOSLUS“ (Amp A–D Deluxe Verb Normal / Class-A 30W TB /
+Brit JVM OD1 Orange / Plexi 50W High 1, T808, Analog Stereo chorus, Digital Stereo delay, Room + Plate, Multi Delay
+ainult Scene 4-s). FM3-l: CPU 8 stseenis 55–71 % (fm3-cpu 0.2.4 hinnang 0,4–1,4 punkti kõrgem), STORE 424 → muu
+preset → tagasi säilitas kõigi 11 ploki baidid (salvestus tõstis Multi Delay kirje ettepoole), kasutaja kinnitas
+heli ja Multi Delay. Amp C malli tase −14 dB oli selles koosluses ligikaudu 6 dB liiga vaikne (T32B −10 dB: „umbes
+2 dB juurde veel“); lõppversioon „LIVE KOOSLUS V1“ kasutab −8 dB, mida eraldi ei kuulatud. Kui koosluses on eri
+mallidest ampid, kontrolli stseenide taset kuulates. Tõend: `references/fm3-t32-live-20261106.json`.
+
 ## Legacy Cabi IR ja lisatud plokkide CPU (0.3.53, T31)
 
 `controls` plokiga `cab` kirjutab nüüd Legacy-kanalil Cab 1/2 IR-i: `BANK1`/`BANK2` (FACTORY 1, FACTORY 2, USER,
