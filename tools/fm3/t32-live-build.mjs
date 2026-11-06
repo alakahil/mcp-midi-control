@@ -39,6 +39,10 @@ export const spec={
       sc(7,'LEAD DRY','C',{drive:true,reverb:false}),sc(8,'PLEXI','D')]},
   insert:['multidelay'],layout:{row2:['drive','chorus','amp','cab'],row3:['delay','multidelay','reverb']},
   blockScenes:{multidelay:[{scene:4,bypass:false}]},selectedScene:1};
+// T32B (06.11.2026, after part 1): the user heard the Lead scenes 3 and 7 (Amp C) clearly quieter than the others.
+// Only Amp C Level changes: -14.0 dB (template) -> -10.0 dB (+4 dB, next to Amp B -9.0 dB). Everything else = T32.
+export const specB={...spec,purpose:'T32B: nagu T32, ainult Amp C (Lead, stseenid 3 ja 7) Level -14 -> -10 dB, sest T32 kuulamisel olid Lead-stseenid liiga vaiksed.',
+  composer:{...spec.composer,name:'T32B LIVE KOOSLUS'},controls:[{block:'amp',channel:'C',param:'DISTORT_LEVEL',value:-10}]};
 
 const result=createPreset(BASE,spec),syx=Buffer.from(result.syx);
 assert.deepEqual([...parsePresetDump(syx,0,17).headerPayload],[0x7f,0,0,0x40,0],'edit-buffer header');
@@ -97,4 +101,34 @@ const L=[
 '     Skript küsib kaks küsimust enne ja pärast salvestamist ning asukoha (vasta 424). Siis loeb asukoha 424.',
 '  5. Kirjuta vestlusesse "valmis".',''];
 fs.writeFileSync(path.join(gdir,'LOE_MIND.txt'),L.join('\n'));fs.writeFileSync(path.join(sdir,'LOE_MIND.txt'),L.join('\n'));
-console.log(JSON.stringify({name:NAME,sha256:preset.sha256,perScene,limit:cpu.limitPercent}));
+
+// ---- FM3_T32B_LEVEL (FM3_BIND_STORE.py --load / --record): load and listen, no STORE needed ----
+const NAMEB=specB.composer.name,resB=createPreset(BASE,specB),syxB=Buffer.from(resB.syx);
+assert.deepEqual([...parsePresetDump(syxB,0,17).headerPayload],[0x7f,0,0,0x40,0],'T32B edit-buffer header');
+const stB=inspectStructure(syxB);assert.equal(String(stB.decoded.preset_name).trim(),NAMEB);
+{ // only the name and the Amp C Level word differ from T32
+  const a=Buffer.from(st.raw.body),b=Buffer.from(stB.raw.body);assert.equal(a.length,b.length);
+  const d=[];for(let o=0;o<a.length;o+=2)if(a.readUInt16LE(o)!==b.readUInt16LE(o))d.push(o);
+  assert.ok(d.length>=1&&d.length<=12,'T32B differs only in name + Amp C Level: '+d.length);
+  const lv=resB.txt.match(/amp C: [^\n]*Level (-?[\d.]+) dB/);
+  assert.ok(lv&&Math.abs(Number(lv[1])+10)<0.01,'TXT shows Amp C Level -10 dB: '+(lv&&lv[1]));
+}
+const bdir=path.join(out,'FM3_T32B_LEVEL');fs.mkdirSync(bdir,{recursive:true});
+writePresetOutputs(path.join(bdir,'T32B_LIVE'),resB,specB);verifyPresetOutputs(path.join(bdir,'T32B_LIVE'));
+const presetB={file:'LIVE_B.syx',sha256:sha(syxB)};fs.writeFileSync(path.join(bdir,presetB.file),syxB);copy(bdir,[...COLLECTORS,'FM3_BIND_STORE.py']);
+fs.writeFileSync(path.join(bdir,'manifest.json'),JSON.stringify({kind:'fm3-bind-check',version:1,test:'T32B',date:'2026-11-06',confirmName:NAMEB,preset:presetB,
+  checks:[{id:'leadLevel',text:'Võrdle stseene 2 (CRUNCH), 3 (LEAD), 6 (CRUNCH PUSH) ja 7 (LEAD DRY). Kas Lead on nüüd sobiva valjusega? (ok / ikka vaikne / liiga vali, ligikaudu mitu dB)'}],
+  method:'--load: edit-buffer dump (7F 00) only. --record: the user answers one listening question. Nothing is stored or set.'},null,1)+'\n');
+fs.writeFileSync(path.join(bdir,'LOE_MIND.txt'),[
+'FM3 katse T32B: Lead-stseenide (3 ja 7) tase, ainult laadimine ja kuulamine',
+'='.repeat(78),
+'Muudetud on ainult Amp C Level: -14 -> -10 dB (+4 dB). Muu on nagu T32-s. STORE-i pole vaja.',
+'Skriptid EI salvesta ega sea midagi. Ampero A-nuppu ära kasuta.',
+'',
+'  0. Sulge FM3-Edit.',
+'  1. cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_T32B_LEVEL',
+'  2. python3 FM3_BIND_STORE.py --load --pack . --session ../FM3_T32_SESSION/level',
+'  3. Mängi stseene 2, 3, 6 ja 7 ning võrdle valjust.',
+'  4. python3 FM3_BIND_STORE.py --record --pack . --session ../FM3_T32_SESSION/level',
+'  5. Kirjuta vestlusesse "valmis".',''].join('\n'));
+console.log(JSON.stringify({name:NAME,sha256:preset.sha256,perScene,limit:cpu.limitPercent,b:{name:NAMEB,sha256:presetB.sha256}}));
