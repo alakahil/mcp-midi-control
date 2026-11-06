@@ -4436,6 +4436,12 @@
         "references/peq-full-20261009-152606/step-030-87e47788cc/result.json"
       ]
     },
+    "573d5a5a9cbe095cd2911d96f4fe82a310f051d9a43c9839c4e249eb1c25745b": {
+      "bytes": 125001,
+      "paths": [
+        "references/fm3-enum-promotion-20261103.json"
+      ]
+    },
     "5798abbc929e31ebc0907bb27b98d0d34af648b06e7c94be4ebf83157246335c": {
       "bytes": 31019,
       "paths": [
@@ -9537,12 +9543,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-150-f2d629c4e7/donor.syx"
-      ]
-    },
-    "bb418db845ef9d72a64fcd455f74d4bfba7b32c705743798833410d18ebd505e": {
-      "bytes": 124996,
-      "paths": [
-        "references/fm3-enum-promotion-20261103.json"
       ]
     },
     "bb43d11f98995fc2cbe122e3dcc8fb90181f9c0289ae6825e572f0c61dfd3012": {
