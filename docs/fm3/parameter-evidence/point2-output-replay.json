@@ -8,10 +8,10 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-output.mjs": "f8df94b5e8ae97bd4ba9d361489b376b5b1f6a0a2890d28c005236524accff4b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset.mjs": "a264cd9e881cefd16a07537bd80bb33e811ee350cb56c2a57b886a85df345ce6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset-core.mjs": "b2035495bbbaf9bb2fa633df4bdd9d2c10a72cbfa0d3e415db37bef831156c20",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-sound.mjs": "fee516595444c3108bfae7d8296cab1e482ac379f593845d654343a3e04c9b9b",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-sound.mjs": "dd8b3e1d19b52ea4f9131f3d91f3e1675cbdf83a25b964cb39e8401d66df4f4f",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-jb-composer.mjs": "7bf064a6edca0495c04fbbb696d0a6b6fe09af6e5cc8ca8044b5af3a6e4ff115",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-final-state.mjs": "469e87dbee11427c483240bb0917f8b36a6abba4295cb5c86351ffcaff11b785",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-controls-output.mjs": "e6f7e87e57ab330a0c53fd4836b3ce65ae19142b521c244cb11b2b4d47b4d4a2",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-controls-output.mjs": "c4a447e47d273d59a06c9caa8f2951ae72a3ebafc6a89362f030a773c24e4995",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-output-replay.mjs": "f15db063408025ca3408245bfc260476b3fc0ad2140647772a10ab95b27bf36a",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-example-bundles.mjs": "481a033cbb97b1b9dafb9d0c1876227105b280cdaa2e03762373fb05db8d96f7"
   },
