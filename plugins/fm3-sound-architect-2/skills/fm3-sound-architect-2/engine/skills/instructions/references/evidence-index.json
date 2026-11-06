@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2172,
-  "filePaths": 2376,
+  "uniqueContents": 2177,
+  "filePaths": 2381,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -1797,6 +1797,12 @@
         "examples/JB_UNIFIED_RHYTHM_SOLO_TEST.validation.json"
       ]
     },
+    "239799d34ea0ec5d9149d1f051c28aa7a4466cbf72e866171dfb43273fea8b8c": {
+      "bytes": 563210,
+      "paths": [
+        "references/modifier-edits-d-20261106/FM3_MOD_EDITS_D.validation.json"
+      ]
+    },
     "23ce5ad5568d14a54aa85a8e619c53ea096608d74e3ac07b0b1eabc4f66465a6": {
       "bytes": 7216,
       "paths": [
@@ -3460,6 +3466,12 @@
         "references/geq-full-20261010-194115/step-045-f5c246d220/capture.json"
       ]
     },
+    "4480a83af30be67a9165de4f1535411790fa692063e4a7e0e9157752f5936c55": {
+      "bytes": 24680,
+      "paths": [
+        "references/modifier-edits-d-20261106/FM3_MOD_EDITS_D_export.syx"
+      ]
+    },
     "44823cb677ccccb45c0fdbaae427fb8f29ab3554362f9ea0f43df16f61754b62": {
       "bytes": 9361,
       "paths": [
@@ -4550,12 +4562,6 @@
         "references/amp-level-20261013/index.json"
       ]
     },
-    "5a3dec994668fcaeae45c3ba917d2f7d9401a6e38dfecd19e4523c8aa43750f0": {
-      "bytes": 10748,
-      "paths": [
-        "references/fm3-modifier-lifecycle-evidence.json"
-      ]
-    },
     "5a5d66bf43a5e2f9ca82380741a05f8d1f0d430700e572dc49b74e198fbc6bb8": {
       "bytes": 2012,
       "paths": [
@@ -5448,6 +5454,12 @@
         "references/geq-full-20261010-194115/step-178-c83c761bc4/donor.syx"
       ]
     },
+    "6da64c4660d8308eb209f51a4efbc1b2241e73730ab81906cbac19112b9886dc": {
+      "bytes": 8431,
+      "paths": [
+        "references/modifier-edits-d-20261106/FM3_MOD_EDITS_D.spec.json"
+      ]
+    },
     "6db73626ee88352f9eb62236e22f18f4aa2a849c913f9f0ec0d4dfd8a7d00f48": {
       "bytes": 3465,
       "paths": [
@@ -6151,6 +6163,12 @@
       "bytes": 24680,
       "paths": [
         "references/enhancer-full-20261012-122507/step-032-27aa2f1050/donor.syx"
+      ]
+    },
+    "7b120c1101eab4eebde1b978e324a63d25c1574a77a3abeaafc7b2521f6902cb": {
+      "bytes": 24680,
+      "paths": [
+        "references/modifier-edits-d-20261106/FM3_MOD_EDITS_D.syx"
       ]
     },
     "7b3533193e78ee56e1047e9e3534d893b45d02e689d0f8937c13c068a6452c27": {
@@ -10612,6 +10630,12 @@
         "references/geq-full-20261010-194115/step-038-f680c5baa2/donor.syx"
       ]
     },
+    "d08c74869eba807dce50b80c9ceaa8fbd12c1d790e679a49433c97bda553da53": {
+      "bytes": 10748,
+      "paths": [
+        "references/fm3-modifier-lifecycle-evidence.json"
+      ]
+    },
     "d0cda8dde8850ef92745bbad1cf10e0db33a4d3854dc9b24b6b0bb4be2ea6ca5": {
       "bytes": 3390,
       "paths": [
@@ -13005,6 +13029,12 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-019-442d5032f9/donor.syx"
+      ]
+    },
+    "fc5f8ab4654412c9dddbe9e3a7afe7603a8adea5f18260fc770238bb2cffa27d": {
+      "bytes": 3777,
+      "paths": [
+        "references/modifier-edits-d-20261106/receipt.json"
       ]
     },
     "fc60e5c3f74eef553ee71de9e3567e825e785c0dcf4f69dd8f1ac7cc34d6ae50": {

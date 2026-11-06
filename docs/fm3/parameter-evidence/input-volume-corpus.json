@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "files": 803,
-  "unique": 646,
-  "accepted": 631,
+  "files": 805,
+  "unique": 648,
+  "accepted": 633,
   "unsupported": [
     {
       "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-default-blocks-20261023.syx",
@@ -166,6 +166,36 @@
         "family": "volpan",
         "header": 10656,
         "start": 10702,
+        "words": 15,
+        "channels": 4,
+        "size": 166
+      }
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/modifier-edits-d-20261106/FM3_MOD_EDITS_D.syx",
+      "sha256": "7b120c1101eab4eebde1b978e324a63d25c1574a77a3abeaafc7b2521f6902cb",
+      "record": {
+        "eid": 102,
+        "block": 102,
+        "instance": 1,
+        "family": "volpan",
+        "header": 9206,
+        "start": 9252,
+        "words": 15,
+        "channels": 4,
+        "size": 166
+      }
+    },
+    {
+      "file": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/modifier-edits-d-20261106/FM3_MOD_EDITS_D_export.syx",
+      "sha256": "4480a83af30be67a9165de4f1535411790fa692063e4a7e0e9157752f5936c55",
+      "record": {
+        "eid": 102,
+        "block": 102,
+        "instance": 1,
+        "family": "volpan",
+        "header": 8960,
+        "start": 9006,
         "words": 15,
         "channels": 4,
         "size": 166

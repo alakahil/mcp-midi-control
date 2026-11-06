@@ -60,13 +60,13 @@
     }
   },
   "corpus": {
-    "files": 803,
-    "sizedInputs": 803,
-    "unique": 646,
+    "files": 805,
+    "sizedInputs": 805,
+    "unique": 648,
     "duplicates": 157,
     "statuses": {
       "consistent-known-edges": 627,
-      "unresolved": 6,
+      "unresolved": 8,
       "unsupported-or-invalid": 10,
       "violations-of-authoring-rules": 3
     },
@@ -2757,6 +2757,24 @@
         "unresolvedCodes": []
       },
       {
+        "sha256": "4480a83af30be67a9165de4f1535411790fa692063e4a7e0e9157752f5936c55",
+        "copies": 1,
+        "status": "unresolved",
+        "completeRecordScan": false,
+        "occupiedCells": 24,
+        "shunts": 13,
+        "edges": 22,
+        "splits": 0,
+        "merges": 0,
+        "standalone": 0,
+        "unknownMaskCells": 0,
+        "bit4Cells": 0,
+        "violations": 0,
+        "unresolved": 0,
+        "violationCodes": [],
+        "unresolvedCodes": []
+      },
+      {
         "sha256": "44942e670c947ee3f3ab74557f76ba09262b0abe7c8c59a6a54875cb6e230dde",
         "copies": 1,
         "status": "consistent-known-edges",
@@ -4962,6 +4980,24 @@
         "completeRecordScan": true,
         "occupiedCells": 24,
         "shunts": 11,
+        "edges": 22,
+        "splits": 0,
+        "merges": 0,
+        "standalone": 0,
+        "unknownMaskCells": 0,
+        "bit4Cells": 0,
+        "violations": 0,
+        "unresolved": 0,
+        "violationCodes": [],
+        "unresolvedCodes": []
+      },
+      {
+        "sha256": "7b120c1101eab4eebde1b978e324a63d25c1574a77a3abeaafc7b2521f6902cb",
+        "copies": 1,
+        "status": "unresolved",
+        "completeRecordScan": false,
+        "occupiedCells": 24,
+        "shunts": 13,
         "edges": 22,
         "splits": 0,
         "merges": 0,

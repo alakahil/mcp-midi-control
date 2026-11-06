@@ -64,7 +64,7 @@ praeguse generaatoriga ning kontrollib ekspordi terviklikku keha ja vigade tõrj
 See tõend piirdub selle preseti ja kolme määranguga; kõigi 24 määrangu, teiste
 layout'ide, heli või CPU seadmekatset sellest ei järeldu. Ära nõua P2 kordamist.
 
-## Seoste eemaldamine ja asendamine (0.3.54, seadmevaba arendus)
+## Seoste eemaldamine ja asendamine (0.3.54)
 
 Kasuta soundi skeemi 0.8.5 välja `modifierEdits` ainult sama koostamise käigus
 loodud Volume- ja Control Switchi seoste muutmiseks. Loe lepingut
@@ -78,14 +78,35 @@ Koosta `controlSwitchScenes` ja `footswitches` lõplike seoste järgi; eemaldatu
 allikale ei tohi jätta seoseta määrangut. Staatilisi `controls` väärtusi hinnatakse
 pärast muudatusi: eemaldatud seos võib kirjutuse vabastada, uus seos selle blokeerida.
 Kõik neli lõppfaili peavad läbima tavalise `fm3-preset.mjs --verify` kontrolli.
-Uus sisend taastab P3 ajaloolise SYX-i baittäpselt. Muud kombinatsioonid on
-seadmevabalt kontrollitud; see pole nende uus seadmekinnitus. P2/P3 korduskatset
-ära nõua. Kohustuslikus testikomplektis on 85 testi, sh `test-modifier-edits`.
+Uus sisend taastab P3 ajaloolise SYX-i baittäpselt. Allpool kirjeldatud
+D-kanali pööratud seos sai 06.11.2026 eraldi seadmekinnituse. Muud
+kombinatsioonid jäävad seadmevabalt kontrollituks. P2/P3 korduskatset ära nõua. Kohustuslikus testikomplektis on 85 testi, sh `test-modifier-edits`.
 
 Ajalooliste tõendite taasesituseks kasuta Node 22. Kohalik töövoog keeldub muu
 põhiversiooniga ning valib alamprotsessidele sama Node'i. Node 24 T20 erinevus
 on `Math.pow` viimastes kümnendkohtades; katse SYX jäi samaks. Tõendeid ei
 kirjutata ühilduvusprobleemi varjamiseks ümber.
+
+## D-kanali pööratud Cut-seose seadmetõend (0.3.54, 06.11.2026)
+
+Loe `MOOTOR/references/modifier-edits-d-20261106/receipt.json`. Katse
+`FM3 MOD EDITS D` kinnitab avaliku `modifierEdits` sisendiga Volume-kirje 1
+asendamist pööratud Control Switch 2 → Amp Cut seosega ainult kanalil D,
+ning Amp Input Boost seose eemaldamist kirjest 2. Kasutaja kinnitas impordi,
+seosed, neli stseeni ja STORE → muu preset → tagasi taastumise.
+
+Stseenide 1–4 Amp/CS2/Cut tulemused: A/OFF/OFF, D/OFF/ON, D/ON/OFF,
+A/ON/OFF. Cut-modifikaator: Source = Control Switch 2, Channel = D,
+Min = ON, Max = OFF. FM3-Editis ava Amp → Ideal; Cut-lüliti asub Bass-nupu
+all. Ava modifikaator paremklõpsu või Macis Control-klõpsuga.
+
+Seadmeeksport läbis Node 22 võrdluse: modifikaatoripiirkond, valitud stseen 1,
+süsteemiosa ja kõigi plokkide sisu säilisid. Ainult efektide 94 ja 102
+salvestusjärjekord vahetus. Ära nimeta kogu SYX-i ega töötlemata keha
+baittäpseks. Algkvartett, eksport ja kviitung säilivad samas tõendikaustas.
+Kviitungi katseaegne CI-seis ei kirjelda hilisemat väljalaske staatust.
+Katse ei kinnita suvalise aluspreseti muutmist, teisi kombinatsioone, heli ega
+CPU-d. Ära nõua juba kinnitatud katse kordamist.
 
 ## P3 eemaldamise ja taaskasutuse seadmetõend (0.3.39, 30.10.2026)
 

@@ -1,0 +1,124 @@
+{
+  "kind": "fm3-modifier-edits-hardware-trial-result",
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-06T10:00:45.048362+00:00",
+  "testDateLocal": "2026-11-06",
+  "timezone": "Europe/Tallinn",
+  "candidateVersion": "0.3.54",
+  "candidateCommit": "cb339fb626b07278ea582c25be8d34c7db0d6c73",
+  "preset": "FM3 MOD EDITS D",
+  "sourceRepository": "https://github.com/alakahil/mcp-midi-control",
+  "pullRequest": 70,
+  "deviceFirmware": "13.00",
+  "firmwareBasis": "User screenshot in this conversation",
+  "generatedSyxSha256": "7b120c1101eab4eebde1b978e324a63d25c1574a77a3abeaafc7b2521f6902cb",
+  "deviceExport": {
+    "filename": "FM3 MOD EDITS D_export.syx",
+    "sha256": "4480a83af30be67a9165de4f1535411790fa692063e4a7e0e9157752f5936c55",
+    "bytes": 24680
+  },
+  "humanConfirmation": {
+    "exactUserText": "Import, seosed, neli stseeni ja STORE/tagasitulek klappisid",
+    "basis": "User report after following the supplied test guide",
+    "import": true,
+    "bindings": true,
+    "fourScenes": true,
+    "storeAndReload": true
+  },
+  "testedBinding": {
+    "source": "Control Switch 2",
+    "block": "Amp",
+    "parameter": "DISTORT_CUT",
+    "channel": "D",
+    "min": "ON",
+    "max": "OFF",
+    "recordReuse": {
+      "record": 1,
+      "previousTarget": "Volume"
+    },
+    "removedBinding": {
+      "record": 2,
+      "target": "Amp Input Boost"
+    }
+  },
+  "scenes": [
+    {
+      "scene": 1,
+      "ampChannel": "A",
+      "cs2": "OFF",
+      "cut": "OFF"
+    },
+    {
+      "scene": 2,
+      "ampChannel": "D",
+      "cs2": "OFF",
+      "cut": "ON"
+    },
+    {
+      "scene": 3,
+      "ampChannel": "D",
+      "cs2": "ON",
+      "cut": "OFF"
+    },
+    {
+      "scene": 4,
+      "ampChannel": "A",
+      "cs2": "ON",
+      "cut": "OFF"
+    }
+  ],
+  "verification": {
+    "tool": "tools/fm3/modifier-edits-trial.mjs compare",
+    "toolSha256": "be72d19f8531e189363fdbdb145d20882f6144375f329383c74384aa950a2639",
+    "runtime": "Node.js 22.23.4",
+    "exitCode": 0,
+    "fourFileReplayPassed": true,
+    "trialSpecMatched": true,
+    "crcValidBoth": true,
+    "prefixModifiersAndSelectedScenePreserved": true,
+    "systemTailPreserved": true,
+    "comparison": {
+      "passed": true,
+      "comparisonOnly": true,
+      "deviceIO": false,
+      "exportSha256": "4480a83af30be67a9165de4f1535411790fa692063e4a7e0e9157752f5936c55",
+      "bodyByteIdentical": false,
+      "allRecordBytesPreserved": true,
+      "modifierRegionIdentical": true,
+      "reorderedBlocks": [
+        {
+          "effectId": 94,
+          "generatedIndex": 9,
+          "exportIndex": 10
+        },
+        {
+          "effectId": 102,
+          "generatedIndex": 10,
+          "exportIndex": 9
+        }
+      ],
+      "humanChecks": "must be supplied separately"
+    }
+  },
+  "outcome": "PASS within the tested scope",
+  "scope": "One candidate preset, inverted CS2 to Amp Cut on channel D, removal and reuse, four A/D scenes and STORE/reload.",
+  "notEstablished": [
+    "Arbitrary preset modifier allocation",
+    "Other untested modifier combinations",
+    "Audio quality",
+    "CPU stress or performance"
+  ],
+  "assistantDeviceIOPerformed": false,
+  "runtimeNote": "An initial Node 24.22.1 attempt stopped at deterministic report replay (parameters field). The successful comparison used the required Node 22.23.4 baseline; original evidence files were not regenerated.",
+  "ciSnapshot": {
+    "checkedOn": "2026-11-06",
+    "commit": "cb339fb626b07278ea582c25be8d34c7db0d6c73",
+    "preflight": "success",
+    "fm3Offline": "success",
+    "linuxNative": "success",
+    "macosArm64": "in_progress",
+    "rerunJobId": 127829666126,
+    "nativeRunId": 42122330593
+  },
+  "publication": "This receipt records the device result; it does not certify merge or plugin publication."
+}
