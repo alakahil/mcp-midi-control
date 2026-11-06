@@ -182,6 +182,16 @@ on ka kogu algne SYX-korpus, mistõttu auditid ja arendustööriistad töötavad
 senisel kujul. Puhta lähtepuu eksportimiseks saab kasutada sama skripti
 `materialize --output /ABS/NEW_PLUGIN_SOURCE` käsku; see jätab levimanifesti välja.
 
+## Controllersi kanal stseeniti ja LFO 1A allikana (T33, 06.11.2026)
+
+Seadmel kinnitatud (STORE 425 → tagasi, salvestatud keha baiditäpselt sama): Controllersi kirje (keha nihe 452)
+päises on sama paigutus kui ruudustiku plokkidel; päise sõna 5+(stseen−1) (nihe 462+2·(stseen−1)) on stseeni
+Controllersi kanal (0–3 = A–D). FM3-Edit näitas stseenides 1–4 kanaleid A–D ja LFO 1 kiirus 1/2/4/8 Hz kõlas igas
+stseenis kiirema tremolona. Modifikaatori allika kood on FM3-Editi MOD_CTRLID loendi indeks (61 silti; LFO 1A = 1,
+External 1 = 14, Control Switch n = 49+n); LFO 1A → Volume/Pan Volume töötas sama 25-sõnalise malliga. Generaatoril
+pole neile veel avalikku sisendit: koostaja väljundis kasutavad kõik stseenid Controllersi kanalit A ja allikateks
+on ainult External 1 ning Control Switchid. Tõend: `references/fm3-t33-controllers-scene-20261106.json`.
+
 ## Päris kasutuspreseti koondkatse (T32, 06.11.2026)
 
 `tools/fm3/t32-live-build.mjs` koostas preseti „T32 LIVE KOOSLUS“ (Amp A–D Deluxe Verb Normal / Class-A 30W TB /
