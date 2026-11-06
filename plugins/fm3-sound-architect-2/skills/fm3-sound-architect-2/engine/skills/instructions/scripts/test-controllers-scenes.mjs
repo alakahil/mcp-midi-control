@@ -14,6 +14,10 @@ import {readModifiers} from './fm3-parameter-dependencies.mjs';
 import {createPreset,writePresetOutputs,verifyPresetOutputs} from './fm3-preset.mjs';
 import {sha256} from './fm3-output.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
+import {checkSchema} from './fm3-schema-check.mjs';
+import {loadGlobalScaleObservations} from './fm3-global-scale-observations.mjs';
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 const base=fs.readFileSync(new URL('../examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx',import.meta.url));
 const body=syx=>Buffer.from(inspectStructure(syx).raw.body);
 const composer={schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:'CTRL SCENES',scenes:[1,2,3,4].map(s=>({scene:s,name:'S'+s}))};
@@ -57,6 +61,7 @@ assert.match(lw.txt,/Volume järgib allikat LFO 2A, mitte pedaali/);
 assert.equal(volumePedalCapabilities().sources.deviceConfirmed['LFO 1A'],'T33 (2026-11-06)');
 // modifierEdits identify the Volume binding by its own source.
 const espec=s=>({composer:wah,layout:{...layout,row2:['wah','drive','amp','cab']},volumePan:true,volumePedal:{source:'LFO 1A'},modifierEdits:[{operation:'remove',record:1,expect:{source:s,block:'volpan',param:'VOLUME_GAIN'}}]});
+assert.deepEqual(checkSchema('fm3-sound.schema.json',espec('LFO 1A')),[],'schema accepts a Volume edit by its LFO source');
 const removed=composeSound(base,espec('LFO 1A'));assert.deepEqual(readModifiers(body(removed.syx)).filter(m=>m.active).map(m=>m.record),[0]);
 assert.throws(()=>composeSound(base,espec('External 1')),/expect must identify/);
 
@@ -81,6 +86,15 @@ try{
     r.syx=Buffer.from(reencodeDumpFromRawPatch(good.syx,reencodeRawPatch(parsed.raw.rawPatch,r.body)));r.report.outputSha256=sha256(r.syx);r.report.bytes=r.syx.length;
     const target=path.join(dir,String(i));writePresetOutputs(target,r,r.spec);assert.throws(()=>verifyPresetOutputs(target),error,name);
   }
+  // Global scale observations re-render the text; the scene-channel section must stay and the bundle must verify.
+  const ev=path.join(dir,'SYNTHETIC-observations.json');
+  execFileSync('python3',[fileURLToPath(new URL('./global-scale-collector/test_global_scale_decode.py',import.meta.url)),'--fixture',ev]);
+  const ospec=JSON.parse(fs.readFileSync(new URL('../examples/SATRIANI_SOAP_ON_A_ROPE_V3.spec.json',import.meta.url)));
+  ospec.composer.name='CTS GLOBAL OBS';ospec.composer.pitchChannels=[{channel:'A',type:'Custom Shifter'}];
+  ospec.layout={row2:['drive','phaser','amp','cab'],row3:['pitch','delay','reverb']};
+  ospec.controls=[{block:'pitch',channel:'A',param:'CUSTOMSCALE1',value:'SCALE 1'}];ospec.controllersScenes=['C','B'];
+  const obs=createPreset(base,ospec,{globalScaleObservations:loadGlobalScaleObservations(ev)});
+  assert.match(obs.txt,/Kanal stseeniti 1–8: C, B, A,/);const ostem=path.join(dir,'obs');writePresetOutputs(ostem,obs,ospec);verifyPresetOutputs(ostem);
   // An unrequested scene channel in a composer output is refused.
   const pstem=path.join(dir,'plain'),pb=body(plain.syx);pb.writeUInt16LE(1,462);
   const ps=Buffer.from(reencodeDumpFromRawPatch(plain.syx,reencodeRawPatch(inspectStructure(plain.syx).raw.rawPatch,pb))),pr={...plain,syx:ps,report:{...structuredClone(plain.report),outputSha256:sha256(ps),bytes:ps.length}};

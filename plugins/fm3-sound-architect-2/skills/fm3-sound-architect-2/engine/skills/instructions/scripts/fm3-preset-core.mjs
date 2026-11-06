@@ -17,7 +17,7 @@ export function createPreset(base,spec,options={}){
   if(observations){
     result.report.globalScaleObservations=observations;
     result.report.globalScaleDependencies=bindGlobalScaleObservations(result.syx,observations);
-    result.txt=sound?renderFinalSoundText(result.report,spec)+renderControllersText(result.report.controllers)+renderCpuText(result.report.cpu)+'\n':result.txt+'\n'+renderGlobalScaleObservations(result.report.globalScaleDependencies);
+    result.txt=sound?renderFinalSoundText(result.report,spec)+renderControllersText(result.report.controllers,result.report.controllersScenes)+renderCpuText(result.report.cpu)+'\n':result.txt+'\n'+renderGlobalScaleObservations(result.report.globalScaleDependencies);
   }
   return result;
 }
