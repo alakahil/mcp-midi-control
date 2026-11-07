@@ -53,7 +53,7 @@ assert.throws(()=>composeSound(base,{composer,layout:{row2:['drive','amp','cab']
 assert.throws(()=>composeSound(base,spec({multidelayTypes:[{channel:'A',type:'Pealing Bells'}],controls:[{block:'multidelay',channel:'A',param:'MULTITAP_BASETYPE',value:'Quad-Tap Delay'}]})),/not writable|Algorithm changed after Type/);
 assert.throws(()=>composeSound(base,spec({controls:[{block:'multidelay',channel:'A',param:'MULTITAP_PRESETS',value:'Dub Echo'}]})),e=>/not writable/.test(e.message)||e.message.includes(MULTIDELAY_PRESET_REFUSED));
 assert.match(MULTIDELAY_PRESET_REFUSED,/multidelayTypes/);
-assert.equal(multidelayTypesCapabilities().types.length,39);
+assert.equal(multidelayTypesCapabilities().types.length,39);assert.match(multidelayTypesCapabilities().deviceConfirmed,/^T36/);assert.match(only.txt,/T36 07.11.2026 kinnitas/);
 // 4. Schema and saved bundle: verifies; tampering with the Type word, Algorithm, other template word, report, text or spec is refused.
 const bspec=spec({multidelayTypes:[{channel:'A',type:'Pealing Bells'},{channel:'B',type:'Dub Echo'}],controls:[{block:'multidelay',channel:'A',param:'MULTITAP_MIX',value:30}]});
 assert.deepEqual(checkSchema('fm3-sound.schema.json',bspec),[],'schema accepts multidelayTypes');

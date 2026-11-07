@@ -2905,7 +2905,7 @@
       }
     },
     "multidelayTypes": {
-      "description": "0.3.56 (T35): Multi Delay Type per channel as a full-channel template: all 121 words become the image the FM3 produced after choosing that Type on the device-default channel (T35 2026-11-07, 39/39 measured). Needs a Multi Delay block (insert or grid). Controls apply afterwards; the Type's Algorithm stays; this generated output is not tested on the device.",
+      "description": "0.3.56 (T35): Multi Delay Type per channel as a full-channel template: all 121 words become the image the FM3 produced after choosing that Type on the device-default channel (T35 2026-11-07, 39/39 measured). Needs a Multi Delay block (insert or grid). Controls apply afterwards; the Type's Algorithm stays. T36 (2026-11-07) loaded such a preset on the FM3: 484/484 words held, FM3-Edit showed the Types, audio as described (no STORE).",
       "type": "array",
       "minItems": 1,
       "maxItems": 4,

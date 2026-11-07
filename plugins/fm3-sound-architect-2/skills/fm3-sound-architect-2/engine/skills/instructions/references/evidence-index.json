@@ -7031,6 +7031,12 @@
         "references/delay-batch-20261006-134023/capture-20261006T133830-b175fdafea/capture.json"
       ]
     },
+    "898d5d31d970b42ce4bd01254be4aeda476183cac710b3f64eb6221904e49dd4": {
+      "bytes": 2347,
+      "paths": [
+        "references/fm3-t36-multidelay-types-20261107.json"
+      ]
+    },
     "89d1b97d7bae3a7a23117b2818eca6ec024b558051e2572a63e13a5f4fa8bc2c": {
       "bytes": 6031,
       "paths": [

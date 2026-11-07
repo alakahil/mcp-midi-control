@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-07",
+ "test": "T36",
+ "generator": "fm3-sound-0.3.56",
+ "method": "FM3_SHOT_LOAD.py --load sends the generated preset to the edit buffer (7F 00) and reads the Multi Delay record (74) with fn=0x1F (read-only), word for word against the generated file; the user checks the FM3-Edit Type names without saving and listens to scenes 1..4. Nothing is stored or set.",
+ "builder": "tools/fm3/t36-multidelay-types-build.mjs",
+ "collector": "FM3_SHOT_LOAD.py --load",
+ "packSha256": "066beb617b7f954bfb2feac5d5c6f124596dfc6105b612e10dd74d810de7ad53",
+ "presetSha256": "3e2abd198c674e9fa89d631950b3e271e1cf6ba4ae49ca0efdf106a5c5891c6a",
+ "types": [
+  {
+   "channel": "A",
+   "type": "Pealing Bells",
+   "index": 12
+  },
+  {
+   "channel": "B",
+   "type": "Dub Echo",
+   "index": 32
+  },
+  {
+   "channel": "C",
+   "type": "Mono Diffuser",
+   "index": 15
+  },
+  {
+   "channel": "D",
+   "type": "Aurora Delay",
+   "index": 33
+  }
+ ],
+ "controlsOnTop": [
+  {
+   "param": "MULTITAP_MIX",
+   "channel": "A",
+   "pid": 31,
+   "raw": 19660,
+   "value": 30
+  }
+ ],
+ "result": {
+  "deviceWordsMatch": "484/484",
+  "fm3EditTypes": {
+   "A": "Pealing Bells",
+   "B": "Dub Echo",
+   "C": "Mono Diffuser",
+   "D": "Aurora Delay"
+  },
+  "audio": "Delay worked; all as described (scenes 1-4)",
+  "stored": false
+ },
+ "meaning": "A preset written through multidelayTypes (four Types on channels A..D, Mix on top of A) loads with every Multi Delay word as generated, FM3-Edit shows the four Type names and the channels sound like them. multidelayTypes is device-confirmed for load + edit buffer; STORE/reload was not done.",
+ "files": [
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/t36/manifest.json",
+   "sha256": "066beb617b7f954bfb2feac5d5c6f124596dfc6105b612e10dd74d810de7ad53"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/t36/shot-load-MDT.json",
+   "sha256": "f3d4fe301f8b54948843a540833a2b2ff2faccb4784cb4a1e6e74aec2cb8de74"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/t36/observations.json",
+   "sha256": "7604006b1c3987b2a4d02aceac6dd5021d76e3408e2255f411c063bde03014e8"
+  }
+ ],
+ "notMeasured": [
+  "STORE/reload of a templated channel",
+  "Types other than these four on the device through the generator (their images are the T35 reads)"
+ ]
+}

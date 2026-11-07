@@ -1,0 +1,25 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "066beb617b7f954bfb2feac5d5c6f124596dfc6105b612e10dd74d810de7ad53",
+ "preset": "MDT",
+ "name": "T36 MD TYPES",
+ "time": "2026-11-07T19:00:33",
+ "blocks": [
+  {
+   "family": "multidelay",
+   "effectId": 74,
+   "values": 484,
+   "matches": true,
+   "mismatches": [],
+   "testWords": [
+    {
+     "param": "MULTITAP_MIX",
+     "channel": "A",
+     "raw": 19660,
+     "device": 19660
+    }
+   ]
+  }
+ ],
+ "allMatch": true
+}
