@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.8.6 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.8.7 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -2902,6 +2902,73 @@
           "C",
           "D"
         ]
+      }
+    },
+    "multidelayTypes": {
+      "description": "0.3.56 (T35): Multi Delay Type per channel as a full-channel template: all 121 words become the image the FM3 produced after choosing that Type on the device-default channel (T35 2026-11-07, 39/39 measured). Needs a Multi Delay block (insert or grid). Controls apply afterwards; the Type's Algorithm stays; this generated output is not tested on the device.",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "channel",
+          "type"
+        ],
+        "properties": {
+          "channel": {
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "type": {
+            "enum": [
+              "Quad-Tap Delay",
+              "Quad Parallel Delay",
+              "Quad Series Delay",
+              "Quad Diffusor",
+              "Quad Tape Delay",
+              "Quad Tap Band Delay",
+              "Ambient Quad Tape",
+              "Ambient Tape Delay",
+              "Circular Delays",
+              "Comb Filter Delay",
+              "Filtered Mod Band Delay",
+              "Quad Chorus",
+              "Pealing Bells",
+              "Rhythmic Bands",
+              "MD Chorus",
+              "Mono Diffuser",
+              "1210",
+              "Aerosol",
+              "PCM Circular",
+              "PCM Pan",
+              "A.H. Clean Short",
+              "A.H. Clean Long",
+              "A.H. Lead Short",
+              "A.H. Lead Long",
+              "A.H. Swell Short",
+              "A.H. Swell Long",
+              "Ya-Ya Delay",
+              "L-C-R-C",
+              "Space Tape",
+              "Shadows Taps",
+              "Stereo Shadows",
+              "Swing Ping",
+              "Dub Echo",
+              "Aurora Delay",
+              "Kilimanjaro",
+              "Camera Obscura",
+              "Strange Things",
+              "Matterhorn",
+              "Centaurus X-3"
+            ]
+          }
+        }
       }
     },
     "modifierEdits": {

@@ -52,7 +52,7 @@ export function typeApplicability(p,type){
 // (Pealing Bells: 39 words on the channel), and a stored Presets word alone does not trigger that fill, so writing it
 // would label words it does not hold: refused until each preset's fill table is measured.
 export const MULTIDELAY_PRESET_PID=114;
-export const MULTIDELAY_PRESET_REFUSED='Multi Delay preset selection (Type) is not writable: choosing a preset fills about 39 other words that are not mapped; set Base Type (Algorithm) and the parameters instead';
+export const MULTIDELAY_PRESET_REFUSED='Multi Delay preset selection (Type) is not writable: choosing a Type fills the whole channel (up to 44 words); use multidelayTypes (measured full-channel template, T35) or set Base Type (Algorithm) and the parameters instead';
 export function validateTypeWrites(body,writes){
   for(const w of writes)if(w.block==='multidelay'&&w.pid===MULTIDELAY_PRESET_PID)throw Error(`multidelay ${w.channel} ${w.name}: ${MULTIDELAY_PRESET_REFUSED}`);
   for(const w of writes)if(templateOnlyParameter({family:familyFor[w.block],param:w.pid}))throw Error(`${w.name}: full channel template required for model/internal selector changes`);

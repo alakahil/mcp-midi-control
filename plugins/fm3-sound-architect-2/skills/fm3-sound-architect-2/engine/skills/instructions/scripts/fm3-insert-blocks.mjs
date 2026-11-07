@@ -103,6 +103,6 @@ export function insertBlocks(syx,blocks){
 }
 export function insertCapabilities(){
   return {field:'insert',blocks:Object.keys(INSERTABLE),gated:GATED,donor:INSERT_DONOR.file,multidelayDonor:MULTIDELAY_DONOR.file,
-    multidelay:'device-default Quad-Tap Delay; Base Type (Algorithm) and parameters writable (T27), Multi Delay preset (Type) refused',defaultScenes:'A, bypass in all 8 scenes; engage with blockScenes',
+    multidelay:'device-default Quad-Tap Delay; Base Type (Algorithm) and parameters writable (T27), Multi Delay Type via multidelayTypes (full-channel template, T35), Type word in controls refused',defaultScenes:'A, bypass in all 8 scenes; engage with blockScenes',
     placement:'first free serial shunt of rows 2/3, then layout decides the column',limits:'One instance per family; parameter defaults come from the device; enum writes need allow enum-labels'};
 }
