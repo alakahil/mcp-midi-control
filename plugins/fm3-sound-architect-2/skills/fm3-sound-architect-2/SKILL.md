@@ -305,8 +305,11 @@ Seega saab kanal ka Type'i Algorithmi, tempod ja peidetud sõnad (nt Feedback 1�
 (`MULTITAP_BASETYPE`) sama kanali Type'i järel muuta ei saa, ja `MULTITAP_PRESETS` jääb `controls`-is keelatuks.
 Lõpukontroll nõuab, et Type'i sõna ja Algorithm oleksid malli omad. TXT-s on lõik „MULTI DELAY TYPE“.
 T36 (07.11.2026) laadis `multidelayTypes` preseti (A Pealing Bells + Mix 30 %, B Dub Echo, C Mono Diffuser, D Aurora
-Delay): seade hoidis 484/484 sõna, FM3-Edit näitas nelja Type'i ja heli vastas kirjeldusele; STORE-i ei tehtud
-(`references/fm3-t36-multidelay-types-20261107.json`). Iga uue faili import ja heli jääb kontrollimata. Skeem 0.8.7; test
+Delay): seade hoidis 484/484 sõna, FM3-Edit näitas nelja Type'i ja heli vastas kirjeldusele
+(`references/fm3-t36-multidelay-types-20261107.json`). T38 (07.11.2026) salvestas teise preseti (A Ya-Ya Delay + Mix 30 %,
+B Space Tape, C L-C-R-C, D Centaurus X-3) STORE-iga ja laadis uuesti: kõigi plokkide kanalite andmed (Multi Delay 484/484
+sõna) ja stseenikanalid jäid samaks, Type'id ja heli samuti. FM3 paigutab salvestamisel ainult plokkide kirjed oma
+järjekorda (lisatud Multi Delay Sendi järele), seega fail pole baidiidentne, sisu on (`references/fm3-t38-multidelay-store-20261107.json`). Iga uue faili import ja heli jääb kontrollimata. Skeem 0.8.7; test
 `scripts/test-multidelay-types.mjs` (kõik 39 Type'i = T35 kujutis, ainult selle kanali sõnad muutuvad).
 
 ## Multi Delay parameetrid kirjutatavad (0.3.49, T27)
