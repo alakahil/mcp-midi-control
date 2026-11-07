@@ -619,6 +619,15 @@
       "required": true
     },
     {
+      "id": "test-multidelay-types",
+      "command": [
+        "node",
+        "scripts/test-multidelay-types.mjs"
+      ],
+      "scope": "multidelayTypes (0.3.56, T35): every one of the 39 Types written as a full-channel template equals the T35 device image (121 words) and changes nothing outside that channel; several channels; controls on top change only their own word; Algorithm and MULTITAP_PRESETS refusals; schema; saved-bundle verify and 8 tamper cases; generated output not tested on the device",
+      "required": true
+    },
+    {
       "id": "test-cab-ir",
       "command": [
         "node",

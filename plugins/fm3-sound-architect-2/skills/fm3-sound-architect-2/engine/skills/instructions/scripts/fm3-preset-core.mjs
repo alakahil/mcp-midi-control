@@ -10,6 +10,7 @@ import {validateGlobalScaleObservations,bindGlobalScaleObservations,renderGlobal
 import {renderCpuText} from './fm3-cpu.mjs';
 import {renderFinalSoundText} from './fm3-final-state.mjs';
 import {renderControllersText} from './fm3-controllers.mjs';
+import {renderMultidelayTypesText} from './fm3-multidelay-types.mjs';
 export function createPreset(base,spec,options={}){
   if(!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(k=>k!=='globalScaleObservations'))throw Error('Unknown preset options');
   const observations=Object.hasOwn(options,'globalScaleObservations')?validateGlobalScaleObservations(options.globalScaleObservations):null;
@@ -17,7 +18,7 @@ export function createPreset(base,spec,options={}){
   if(observations){
     result.report.globalScaleObservations=observations;
     result.report.globalScaleDependencies=bindGlobalScaleObservations(result.syx,observations);
-    result.txt=sound?renderFinalSoundText(result.report,spec)+renderControllersText(result.report.controllers,result.report.controllersScenes)+renderCpuText(result.report.cpu)+'\n':result.txt+'\n'+renderGlobalScaleObservations(result.report.globalScaleDependencies);
+    result.txt=sound?renderFinalSoundText(result.report,spec)+renderControllersText(result.report.controllers,result.report.controllersScenes)+renderMultidelayTypesText(result.report.multidelayTypes)+renderCpuText(result.report.cpu)+'\n':result.txt+'\n'+renderGlobalScaleObservations(result.report.globalScaleDependencies);
   }
   return result;
 }

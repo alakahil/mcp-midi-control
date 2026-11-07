@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.55`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.56`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -42,7 +42,8 @@ Allpool olevad versioonipealkirjad tähistavad funktsiooni lisamise aega.
 Alates 0.3.54-st on sama koostamise käigus loodud seoste eemaldamise ja
 asendamise avalik sisend `modifierEdits`. Alates 0.3.55-st määrab `controllersScenes`
 Controllersi kanali stseeniti ja `volumePedal.source` Volume-seose allika (External 1 või
-Controllers ploki allikas). Üldine kirjete jaotaja ning suvalised allikad/sihtmärgid jäävad toetamata.
+Controllers ploki allikas). Alates 0.3.56-st valib `multidelayTypes` Multi Delay Type'i
+kanali kaupa terve kanali mallina (T35). Üldine kirjete jaotaja ning suvalised allikad/sihtmärgid jäävad toetamata.
 
 T11 (`MOOTOR/references/fm3-combo-store-20261029.json`) kinnitab viie seose ja
 Out 2 säilimist STORE/reload'il ning selles katses Out 2 L tööd ja helitaset.
@@ -291,8 +292,20 @@ Kontrollid olid baiditäpsed:
 - Pealing Bells kordus T27 tulemusega;
 - Type'id 1–3 kattusid 03.11 ekspordiga;
 - Type 0 on vaikimisi kanal.
-Generaatoris on preseti valik veel keelatud. Järgmine samm on rakendada Type terve kanali mallina.
+0.3.56-st rakendab generaator Type'i terve kanali mallina (`multidelayTypes`, vt järgmist lõiku).
 Tõend: `references/fm3-t35-multidelay-presets-20261107.json`, ingest `tools/fm3/t35-multidelay-presets-ingest.mjs`.
+
+## Multi Delay Type terve kanali mallina (0.3.56, T35)
+
+`multidelayTypes: [{channel:"A", type:"Pealing Bells"}, ...]` (1–4 kirjet, üks kanali kohta; 39 FM3-Edit'i
+Type'i nime, suurtähed pole olulised). Selleks peab presetis olema Multi Delay plokk (`insert:["multidelay"]` või
+grid). Kanali kõik 121 sõna asendatakse T35 seadmelugemisega, mis tekkis selle Type'i valimisel vaikimisi kanalil.
+Seega saab kanal ka Type'i Algorithmi, tempod ja peidetud sõnad (nt Feedback 1–4). Mall rakendub enne paigutust ja
+`controls`-i, nii et `controls` saavad Type'i peal üksikuid nuppe muuta (nt `MULTITAP_MIX`). Algorithmi
+(`MULTITAP_BASETYPE`) sama kanali Type'i järel muuta ei saa, ja `MULTITAP_PRESETS` jääb `controls`-is keelatuks.
+Lõpukontroll nõuab, et Type'i sõna ja Algorithm oleksid malli omad. TXT-s on lõik „MULTI DELAY TYPE“.
+Genereeritud väljund ja heli on seadmel kontrollimata (mallid ise on seadmelt loetud). Skeem 0.8.7; test
+`scripts/test-multidelay-types.mjs` (kõik 39 Type'i = T35 kujutis, ainult selle kanali sõnad muutuvad).
 
 ## Multi Delay parameetrid kirjutatavad (0.3.49, T27)
 
@@ -522,7 +535,7 @@ Mixeri `DELAY1`…`DELAY4` nimed seotakse PID-idega 17…20 kinnitatud
 FM3-Edit ARM64 kirjeldustabeli ja FW13 vahemälu alusel. Ajaloolise sõnastiku
 skaalad ja tõendistaatused ei muutu. Delay 5/6 ei ole toetatud.
 Looperi Record/Play/Once/Reverse/Undo/Dub on käivituskäsud, mitte lubatud
-skalaarseadistused. Feedback Send ja Multi Delay presetivalik jäävad blokeerituks.
+skalaarseadistused. Feedback Send jääb blokeerituks; Multi Delay Type ainult `multidelayTypes` mallina (0.3.56).
 Feedback Returni kolm juhikut kanalil A on kirjutatavad alates 0.3.51-st
 (plokk Multi Delay on lisatav 0.3.47-st, parameetrid kirjutatavad 0.3.49-st).
 `--inspect-modifiers` kasutab 24 pere poliitikaid ning kontrollib ka 1/2-kanalilisi
