@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2185,
-  "filePaths": 2389,
+  "uniqueContents": 2186,
+  "filePaths": 2390,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -461,6 +461,12 @@
       "bytes": 24680,
       "paths": [
         "examples/JB_UNIFIED_RHYTHM_SOLO_TEST_export.syx"
+      ]
+    },
+    "08623c97551ac8b558d25269ffd8e04e7762c708ae6d44d0ff337393e196b687": {
+      "bytes": 18006,
+      "paths": [
+        "references/fm3-record-order-20261107.json"
       ]
     },
     "087207dfe2a6c6ea0a0beb049b239e1306e5cc8230c9cc2f8dfb88949f72290e": {
@@ -6420,6 +6426,12 @@
         "references/geq-full-20261010-194115/step-021-9440a6013d/donor.syx"
       ]
     },
+    "7e2121270b5eb92d64b91bc3a48760bc9b661222f985e665eb9c0d4d068fb042": {
+      "bytes": 3375,
+      "paths": [
+        "references/fm3-t38-multidelay-store-20261107.json"
+      ]
+    },
     "7e4137de86adb49c14f2816c16bca7cb509076d6c2a53b53d910332c418ac790": {
       "bytes": 24680,
       "paths": [
@@ -7388,12 +7400,6 @@
       "bytes": 5020,
       "paths": [
         "references/geq-full-20261010-194115/step-180-f80eeab3da/capture.json"
-      ]
-    },
-    "90b106985f90fed6a2cd1103027d91174331b8eb287a30b884e1e83dc343332f": {
-      "bytes": 3202,
-      "paths": [
-        "references/fm3-t38-multidelay-store-20261107.json"
       ]
     },
     "90b74efb9a1438bf52deb767363d78704625d189f36d75508f45d8aac0065b43": {
