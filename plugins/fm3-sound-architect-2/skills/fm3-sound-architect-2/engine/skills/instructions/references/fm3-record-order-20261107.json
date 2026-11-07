@@ -1,0 +1,670 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-07",
+ "kind": "fm3-record-order",
+ "rule": "The FM3 stores and exports block records in one fixed order. Every device-made preset in the repo agrees with a single order; an inserted block is placed where that evidence fixes its position relative to every other record, otherwise it is appended (the generator default before 0.3.58, which the device also loads).",
+ "trigger": "T38 2026-11-07: Multi Delay (74) appended last by the generator was stored after Drive (118), before Input 1 (37).",
+ "blocks": [
+  37,
+  42,
+  43,
+  46,
+  50,
+  54,
+  58,
+  62,
+  66,
+  70,
+  74,
+  78,
+  82,
+  86,
+  90,
+  94,
+  98,
+  102,
+  106,
+  110,
+  114,
+  118,
+  122,
+  126,
+  130,
+  138,
+  146,
+  150,
+  154,
+  158,
+  162,
+  166,
+  178,
+  182,
+  186,
+  190,
+  191
+ ],
+ "orders": [
+  [
+   58,
+   62,
+   70,
+   186,
+   182,
+   118,
+   37,
+   42,
+   66,
+   102
+  ],
+  [
+   58,
+   62,
+   70,
+   186,
+   182,
+   118,
+   37,
+   42,
+   66,
+   102,
+   94
+  ],
+  [
+   58,
+   62,
+   70,
+   186,
+   182,
+   118,
+   37,
+   42,
+   43,
+   66,
+   102,
+   94
+  ],
+  [
+   58,
+   62,
+   78,
+   70,
+   186,
+   182,
+   118,
+   74,
+   37,
+   42,
+   66
+  ],
+  [
+   58,
+   62,
+   46,
+   70,
+   186,
+   182,
+   118,
+   74,
+   37,
+   42,
+   66
+  ],
+  [
+   58,
+   62,
+   78,
+   46,
+   70,
+   82,
+   118,
+   37,
+   42,
+   90,
+   66,
+   94
+  ],
+  [
+   58,
+   62,
+   70,
+   186,
+   182,
+   118,
+   37,
+   42,
+   66
+  ],
+  [
+   58,
+   62,
+   70,
+   186,
+   182,
+   114,
+   118,
+   37,
+   42,
+   66
+  ],
+  [
+   58,
+   62,
+   70,
+   122,
+   186,
+   182,
+   114,
+   118,
+   50,
+   37,
+   42,
+   54,
+   66
+  ],
+  [
+   58,
+   62,
+   70,
+   186,
+   182,
+   114,
+   118,
+   50,
+   37,
+   42,
+   54,
+   66
+  ],
+  [
+   58,
+   62,
+   78,
+   46,
+   70,
+   186,
+   182,
+   118,
+   37,
+   42,
+   90,
+   66
+  ],
+  [
+   58,
+   62,
+   78,
+   70,
+   186,
+   182,
+   118,
+   37,
+   42,
+   66
+  ],
+  [
+   58,
+   62,
+   70,
+   186,
+   182,
+   118,
+   37,
+   42,
+   110,
+   66
+  ],
+  [
+   58,
+   62,
+   46,
+   70,
+   186,
+   182,
+   118,
+   146,
+   37,
+   154,
+   42,
+   178,
+   66,
+   102,
+   166
+  ],
+  [
+   58,
+   62,
+   46,
+   70,
+   186,
+   182,
+   98,
+   118,
+   37,
+   138,
+   42,
+   66,
+   162,
+   150,
+   130,
+   158
+  ],
+  [
+   58,
+   62,
+   70,
+   186,
+   182,
+   114,
+   118,
+   37,
+   42,
+   54,
+   66
+  ],
+  [
+   58,
+   62,
+   78,
+   46,
+   70,
+   118,
+   37,
+   42,
+   110,
+   90,
+   66,
+   94
+  ],
+  [
+   58,
+   62,
+   78,
+   46,
+   70,
+   118,
+   37,
+   42,
+   90,
+   66,
+   86,
+   94
+  ],
+  [
+   58,
+   62,
+   78,
+   46,
+   70,
+   118,
+   37,
+   42,
+   90,
+   66,
+   106,
+   94
+  ],
+  [
+   98,
+   146,
+   138,
+   126,
+   191,
+   154,
+   178,
+   162,
+   150,
+   130,
+   158,
+   102,
+   190,
+   166
+  ]
+ ],
+ "sources": [
+  {
+   "path": "docs/fm3/hardware-results/2026-10-26/fm3-pedal-store-20261026-results.json",
+   "sha256": "94fd459604b39e6836f553d94addcef6e534225b74827e9aed8df47ff9361029",
+   "kind": "stored dump (fn=0x03)",
+   "records": 10
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-10-28/fm3-bind-store-20261028-results.json",
+   "sha256": "579bad394d47f64ae5ca84669cfb089bdb3490698a6ed13a93a278027fd47d35",
+   "kind": "stored dump (fn=0x03)",
+   "records": 11
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-10-29/fm3-combo-store-20261029-results.json",
+   "sha256": "4f71040f39e38805cd134f9dd7c5b4f6c750ad33156f050563aeaf5a1e62deea",
+   "kind": "stored dump (fn=0x03)",
+   "records": 12
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-10-30/p3-modifier-reuse/FM3_P3_REMOVE_REUSE_export.syx",
+   "sha256": "33a379410482de1f0e722efc8a2c54540c067ec845f32451d4cfe9394578a2d8",
+   "kind": "device export",
+   "records": 11
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-06/fm3-t32-store-20261106-results.json",
+   "sha256": "d61e380424c1548472f4ca5349f6db65631ef4721c21ade2cf75ec2bd7ae3dc9",
+   "kind": "stored dump (fn=0x03)",
+   "records": 11
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-06/fm3-t33-ctrl-20261106-results.json",
+   "sha256": "30c949983bbb5db0361f2983c1c795f6d3173c3a6b8c6e4e0bea3fb8afa78414",
+   "kind": "stored dump (fn=0x03)",
+   "records": 10
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34a-20261107-results.json",
+   "sha256": "bb15a2e84e95ac8cfe6faa7d6508eb3678e19fce6f919df499e9ea01a79755e8",
+   "kind": "stored dump (fn=0x03)",
+   "records": 10
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/t38/bind-store-results.json",
+   "sha256": "0db559d8d09074cd80fca92bee7afe0c975c170f3b4b8ea8d844c73f0b367141",
+   "kind": "stored dump (fn=0x03)",
+   "records": 11
+  },
+  {
+   "path": "docs/fm3/parameter-evidence/captures/FM3_MOD_BATCH_A_export.syx",
+   "sha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "docs/fm3/parameter-evidence/captures/FM3_MOD_BATCH_B_export.syx",
+   "sha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "docs/fm3/parameter-evidence/captures/FM3_MOD_MAX_5p00_export.syx",
+   "sha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_AMP_CAB_AD_TEST_export.syx",
+   "sha256": "22b6df6e5c3edf26ba3d9542179fc643ae3f6f9fabdcd3d61a7d4c57dfa33248",
+   "kind": "device export",
+   "records": 9
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_AMP_CD_LEVEL_CHECK_export.syx",
+   "sha256": "aac60417ad82db7be996bbc1dd6026a2ff9a5a246bdf4966c116ab33cd87c237",
+   "kind": "device export",
+   "records": 10
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_CHORUS_ABCD_TEST_export.syx",
+   "sha256": "8ecff27b3da708c0a1f84febab7d6c2059022fec1c01e10a4b383f79718ecb69",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_COMPRESSOR_ABCD_TEST_export.syx",
+   "sha256": "06a137c4002e61b1139fc47a90319dd7d8a644b2f1b39c0c25896bf049c1a2e6",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_DELAY_ABCD_TEST_export.syx",
+   "sha256": "04e20e9846652bda5a147b025a92d4540707eead51ce693175f050b3b1c70f72",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_DRIVE_ABCD_TEST_export.syx",
+   "sha256": "6c0017301ed1ec513b4ed0d384cc04570ef0e532d4b38696ede1eca8084dc106",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_DRIVE_GENERATED_TEST_export.syx",
+   "sha256": "e2e560791223667892e7f3116024bcdccacb1097ba41205d9f27277ebd3b60f9",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_ENHANCER_ABCD_TEST_export.syx",
+   "sha256": "463aaf84ce2bafc4f531f03b6d1af6c441ec98028bc5a1767d90111062f32edf",
+   "kind": "device export",
+   "records": 13
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_FLANGER_ABCD_TEST_export.syx",
+   "sha256": "9a63a591fc3f95232771b95eceb8a322bd0be45ffce006b80543c8c24cedce4c",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_GEQ_ABCD_TEST_export.syx",
+   "sha256": "1663e891e6bc1a7cb89a1bc0540a48ce8d61527911267682bc3082bf06e70c3e",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_LAYOUT_MOVE_TEST_export.syx",
+   "sha256": "b8fb3b2c79598f7e8245de1b4f95f08c739cb060cd17853a4fd4fabc55f0a44c",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_AUTOENGAGE_OFF_export.syx",
+   "sha256": "7b6026539df41c36bf828dc35bf78510c0a3f30d77afe830eda5a2a7b71ea913",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_BATCH_A_export.syx",
+   "sha256": "7377e1494af98b181fc0557f3d66e57c532693bc2332a2212a2cbe4feb730ecb",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_BATCH_B_export.syx",
+   "sha256": "c6d460678803699e245ac7d13e777afd6993efc0e704508e4ac1995e77fe1b63",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_DAMPING_LINEAR_export.syx",
+   "sha256": "f2d59758cbe24ef1bd38453968d2b2f974e3da64424fae23cedb190f2162fc5d",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_MAX_5p00_export.syx",
+   "sha256": "f4f632c005540a3f759a3960837aef70dc1e562bdb060e7671e8ebe3d1ea285f",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_MOD_MIN_2p50_export.syx",
+   "sha256": "11fcb7084d099429f845d7ef27b31d6bd74fa3883cfd5dec27424d771a5cdf13",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_NEWLOOK_FILTER_TEST_export.syx",
+   "sha256": "b3d406ce0bf847dadd20ba4b36553e8a54cc4939fe4808ee7e389e40d63ae2a3",
+   "kind": "device export",
+   "records": 10
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_NEWLOOK_INSERT_TEST_export.syx",
+   "sha256": "c258a4b6952687acc693a400b2a2d0310db6301d2daae01b363077034d28c381",
+   "kind": "device export",
+   "records": 10
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_NEWLOOK_PITCH_TEST_export.syx",
+   "sha256": "d8ab1f7915e6d06990692b78b8a29b76035ed9216f528891ae88b864b653e437",
+   "kind": "device export",
+   "records": 10
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_P6_INSERT_A_export.syx",
+   "sha256": "18edadfb3bafe1be03f5196a06a127b0039e816aa52b1b862fc787aa58184c00",
+   "kind": "device export",
+   "records": 15
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_P6_INSERT_B_export.syx",
+   "sha256": "c2917196337a855671e980a452ee4449f3018c221a7302333749d8c450610a25",
+   "kind": "device export",
+   "records": 16
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_PEQ_ABCD_TEST_export.syx",
+   "sha256": "b4794f55fe14565029ebaca6f2e9d7cac39572b5d33bcc0a2c9802e5cc6a6c5b",
+   "kind": "device export",
+   "records": 11
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_PEQ_BAND3_TEST_export.syx",
+   "sha256": "d4dc973e430ac37cd26be7ba92869fb514eada2e9d013bf72136f2538cfd11ab",
+   "kind": "device export",
+   "records": 11
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_PHASER_ABCD_TEST_export.syx",
+   "sha256": "51da4b0e1ba43bef27f39c8dec08571bcfd49f452559e7869c18398c0d639eb3",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_PITCH_ABCD_TEST_export.syx",
+   "sha256": "1b7ffc02a8e56749677a24fc55b192b0cb414dc960c3af408c17e3d78fc918a8",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_REVERB_ABCD_TEST_export.syx",
+   "sha256": "d7813ce6c5d352da180e659e73fee0e5fe114b96eab8da1beb34570d9aa8f76a",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_ROTARY_A_TEST_export.syx",
+   "sha256": "4eda4d22b89fb843ce47ab011bf01290a2cdbaabb9fe0219038faa5f5f0e7095",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_SA_TEST_BASSGUY_export.syx",
+   "sha256": "0207f5a040c4dd5dd354f26c3fde81e1240fe0ef9135cc7b882db8617e273a25",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_SA_TEST_CAB_BASSGUY_export.syx",
+   "sha256": "33ed3f078a1b7cf9830d0fca67e3d7c0a45d8a0c4126ef36a9651611137f1b37",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_SA_TEST_G5_export.syx",
+   "sha256": "fe57cf8306ae6525020c2cc15643af73ab58f329313a6e335513db80cf442748",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_SA_TEST_MODEL_CAB_export.syx",
+   "sha256": "21bb5641b2d4d9c0ad9daf6cd0058f691c12338ae75738e1500ca4e1c03e9c13",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_SA_TEST_SCENES_export.syx",
+   "sha256": "c3a1daee81f80766768df3734ff8f83e15dbfa67c1daaf9c9340676dc1907293",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_SA_TEST_TIME_export.syx",
+   "sha256": "7f0b7f56d53d3328f9791cfe974c797ac2a143079bf198480887294f946572e0",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_SA_TEST_TONE_export.syx",
+   "sha256": "3d2699d5e7ac5cdd1fe626cc6c09676c80d0a8c799ba5e3439694a4e0c99d86d",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_TREMOLO_ABCD_TEST_export.syx",
+   "sha256": "de7dfc12cbcd2ad517f10f13d392f8b859aee75e94286152d14b80fe9d1596f1",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/FM3_WAH_ABCD_TEST_export.syx",
+   "sha256": "8e5dfddfe0ef6d20032cafd5e697d602b550005041588075d12a21dbf60a633a",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_EIGHT_SCENES_V1_export.syx",
+   "sha256": "862f0088b9b50198a4484e5999ce72e44292db3855b70e23b3010683eab2fa27",
+   "kind": "device export",
+   "records": 10
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_EIGHT_SCENES_V2_export.syx",
+   "sha256": "db508e85b3e0ef015dce6b562699f16e20e5179917069d52de8ac22caf5da32d",
+   "kind": "device export",
+   "records": 10
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_RHYTHM_LEVEL_MINUS3_export.syx",
+   "sha256": "a7262b9703e23d3641be39344e13472b9b7ccd509305e08f76d3db1677cb97b3",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_RHYTHM_SOLO_GENERATED_export.syx",
+   "sha256": "2c6b907ddf9f1773a12aaa444ff5d0ba5630650fb978524ae1b03f5e951cb39f",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/examples/JB_UNIFIED_RHYTHM_SOLO_TEST_export.syx",
+   "sha256": "0838937628b863e253c64c170ab96ae2bde6d3c0f9d4d3083382e4967ce5fc68",
+   "kind": "device export",
+   "records": 12
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-default-blocks-20261023.syx",
+   "sha256": "dc382d6ded7dafc6889abc19edb5763a1b8e483bec841879108ded68423e49af",
+   "kind": "device export",
+   "records": 14
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/modifier-edits-d-20261106/FM3_MOD_EDITS_D_export.syx",
+   "sha256": "4480a83af30be67a9165de4f1535411790fa692063e4a7e0e9157752f5936c55",
+   "kind": "device export",
+   "records": 11
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/p2-three-switches-20261030/FM3_P2_THREE_SWITCHES_export.syx",
+   "sha256": "78eff4c0e6c87ee5105b853ae0d2cc8f48bdeaa0950cdec1d5bb020b3fe8afd0",
+   "kind": "device export",
+   "records": 9
+  },
+  {
+   "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/p3-modifier-reuse-20261030/FM3_P3_REMOVE_REUSE_export.syx",
+   "sha256": "33a379410482de1f0e722efc8a2c54540c067ec845f32451d4cfe9394578a2d8",
+   "kind": "device export",
+   "records": 11
+  }
+ ],
+ "pairs": 390
+}

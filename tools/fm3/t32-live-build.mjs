@@ -37,7 +37,7 @@ export const spec={
     scenes:[sc(1,'CLEAN','A',{chorus:true,reverbChannel:'B'}),sc(2,'CRUNCH','B'),sc(3,'LEAD','C',{drive:true,delay:true}),
       sc(4,'AMBIENT','A',{chorus:true,reverbChannel:'B'}),sc(5,'CLEAN DRY','A',{reverb:false}),sc(6,'CRUNCH PUSH','B',{drive:true}),
       sc(7,'LEAD DRY','C',{drive:true,reverb:false}),sc(8,'PLEXI','D')]},
-  insert:['multidelay'],layout:{row2:['drive','chorus','amp','cab'],row3:['delay','multidelay','reverb']},
+  insert:['multidelay'],recordOrder:'append',layout:{row2:['drive','chorus','amp','cab'],row3:['delay','multidelay','reverb']},
   blockScenes:{multidelay:[{scene:4,bypass:false}]},selectedScene:1};
 // T32B (06.11.2026, after part 1): the user heard the Lead scenes 3 and 7 (Amp C) clearly quieter than the others.
 // Only Amp C Level changes: -14.0 dB (template) -> -10.0 dB (+4 dB, next to Amp B -9.0 dB). Everything else = T32.

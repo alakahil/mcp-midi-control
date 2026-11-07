@@ -32,7 +32,7 @@ const NEWLOOK=read('examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx');
 const COMPOSER={schemaVersion:1,firmware:13,baseProfile:'jb-composer',compressorChannels:[{channel:'A',type:'Optical Compressor'}]};
 const BASETYPE=findParam('multidelay','MULTITAP_BASETYPE');assert.equal(BASETYPE.param,0);assert.equal(BASETYPE.enum.length,6);
 
-const mdp=name=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:['multidelay'],selectedScene:1,
+const mdp=name=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:['multidelay'],recordOrder:'append',selectedScene:1,
   layout:{row2:['compressor','drive','amp','cab'],row3:['delay','multidelay','reverb']},blockScenes:{multidelay:[{scene:1,bypass:false}]}}).syx);
 // Measurement edits on a composed preset: Multi Delay words and Scene 1 channel; verified re-encode.
 function patch(syx,{words=null,writes=[],scene1Channel=0}={}){

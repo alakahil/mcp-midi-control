@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.8.7 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.8.8 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -30,6 +30,13 @@
           "multidelay"
         ]
       }
+    },
+    "recordOrder": {
+      "enum": [
+        "device",
+        "append"
+      ],
+      "description": "0.3.58: where an inserted block's record goes in the preset. device (default): where the FM3 itself stores it when device exports fix that position (references/fm3-record-order-20261107.json, T38), else last. append: always last (the behaviour before 0.3.58; for packs built earlier). Only with insert outside grid mode."
     },
     "layout": {
       "type": "object",

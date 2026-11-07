@@ -19,15 +19,16 @@ const RAW=path.join(ROOT,'docs/fm3/hardware-results/2026-11-07/t38/');
 const {inspectStructure}=await import(path.join(ENG,'scripts/drive-collector/fm3-prototype.mjs'));
 const {scanRecords}=await import(path.join(ENG,'scripts/fm3-layout.mjs'));
 const {multidelayType}=await import(path.join(ENG,'scripts/fm3-multidelay-types.mjs'));
+const {createPreset}=await import(path.join(ENG,'scripts/fm3-preset.mjs'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const J=f=>JSON.parse(fs.readFileSync(f,'utf8'));
 const rel=f=>({path:path.relative(ROOT,f),sha256:sha(fs.readFileSync(f))});
 const mf=path.join(RAW,'manifest.json'),lf=path.join(RAW,'bind-store-load.json'),rf=path.join(RAW,'bind-store-results.json');
 const mb=fs.readFileSync(mf),m=JSON.parse(mb),ld=J(lf),res=J(rf);
 assert.equal(m.kind,'fm3-bind-store');assert.equal(m.test,'T38');
-const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-t38-'));let syx,rebuilt;
+const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-t38-'));let syx,rebuilt,spec;
 try{execFileSync('node',[path.join(ROOT,'tools/fm3/t38-multidelay-store-build.mjs'),tmp],{stdio:'ignore'});
-  const d=path.join(tmp,'FM3_T38_MDSTORE');rebuilt=fs.readFileSync(path.join(d,'manifest.json'));syx=fs.readFileSync(path.join(d,m.preset.file));}
+  const d=path.join(tmp,'FM3_T38_MDSTORE');rebuilt=fs.readFileSync(path.join(d,'manifest.json'));syx=fs.readFileSync(path.join(d,m.preset.file));spec=J(path.join(d,'T38_MD_STORE.spec.json'));}
 finally{fs.rmSync(tmp,{recursive:true,force:true});}
 assert.ok(rebuilt.equals(mb),'pack rebuilt identically');assert.equal(sha(syx),m.preset.sha256);
 assert.equal(ld.kind,'fm3-bind-store-load');assert.equal(ld.packSha256,sha(mb));assert.equal(ld.userConfirmedName,true);
@@ -58,6 +59,12 @@ const mix=Number(m.expect.mixA.replace(/\D/g,''));
 m.multidelayTypes.forEach(({channel,type,index},k)=>{const img=multidelayType(type).words,got=[...Array(121).keys()].map(i=>stored.readUInt16LE(md.start+2*(k*121+i)));
   assert.equal(got[114],index,channel+' Type word');const diff=img.map((w,i)=>w!==got[i]?i:-1).filter(i=>i>=0);
   assert.ok(channel==='A'?diff.length===1:diff.length===0,channel+' '+type+' image');});
+// 0.3.58: the same spec with the device record order (fm3-record-order) reproduces the stored body byte for byte.
+assert.equal(spec.recordOrder,'append','T38 pack was built with the pre-0.3.58 order');
+const {recordOrder:_,...deviceSpec}=spec;
+const NEWLOOK=fs.readFileSync(path.join(ENG,'examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx'));
+const devOrder=Buffer.from(createPreset(NEWLOOK,deviceSpec).syx),devBody=Buffer.from(inspectStructure(devOrder).raw.body);
+assert.ok(devBody.equals(stored),'device record order reproduces the stored body');
 const blocksStored=S.decoded.blocks.map(b=>b.block),blocksGen=G.decoded.blocks.map(b=>b.block);
 const mt=S.decoded.blocks.find(b=>b.block==='MultiTap');assert.deepEqual(mt.scene_channels.slice(0,4),['A','B','C','D']);
 
@@ -67,9 +74,10 @@ const out={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-11-07
  storeLocation:{planned:'424..426',reported:427,index:426,note:'The user stored to 427 (outside the planned 424..426); 427 held the T34A CTRL SCENES test preset, which is regenerable from tools/fm3/t34-controllers-sources-build.mjs.'},
  result:{beforeStore:res.beforeStore,afterReload:res.afterReload,storedDumpFrames:res.frameKinds.length,
   multidelayWords:'484/484 equal after STORE',allChannelDataEqual:true,decodedBlocksEqual:true,bodyByteIdentical:false,bodyBytes:stored.length,
+  deviceRecordOrderBodyByteIdentical:true,
   recordOrder:{generated:blocksGen,stored:blocksStored}},
  findings:{storeRoundTrip:'multidelayTypes channel templates (and the Mix control on A, and the scene channels) survive STORE and reload unchanged.',
-  recordOrder:'On STORE the FM3 writes the block records in its own order: the inserted Multi Delay record (appended last by the generator) is stored after Send. Each record keeps its channel data; only the per-record link words (next record id, its scene channels and size) differ. Loading the generator order works (T36/T38 load), so this is cosmetic.'},
+  recordOrder:'On STORE the FM3 writes the block records in its own order: the inserted Multi Delay record (appended last by the generator) is stored after Send. Each record keeps its channel data; only the per-record link words (next record id, its scene channels and size) differ. Loading the generator order works (T36/T38 load), so this is cosmetic. Since 0.3.58 the generator uses the device order (fm3-record-order): the same spec now produces the stored body byte for byte.'},
  meaning:'multidelayTypes is device-confirmed for load + edit buffer (T36) and STORE/reload (T38).',
  files:[rel(mf),rel(lf),rel(rf)],
  notMeasured:['Types other than the eight in T36/T38 on the device through the generator (their images are the T35 reads)']};

@@ -15,6 +15,7 @@ import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
 import {scanRecords,readGrid,SHUNT_MIN,GRID} from './fm3-layout.mjs';
 import {readComposerFile} from './fm3-composer-components.mjs';
+import {placeRecords,RECORD_ORDER_RECEIPT,recordOrderReceiptHash} from './fm3-record-order.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(v,m)=>{if(!v)throw Error(m)};
@@ -62,9 +63,10 @@ function readDonorPair(donor){
   return {byEid,records:records.map(r=>({eid:r.eid,words:r.words,channels:r.channels,donor:donor.file}))};
 }
 
-// blocks: ['plex','gate',...]; each is appended after the last record (device behaviour in the
-// donor export) and takes the first free serial shunt of rows 2/3 in reading order.
-export function insertBlocks(syx,blocks){
+// blocks: ['plex','gate',...]; each takes the first free serial shunt of rows 2/3 in reading order. Its record goes
+// where the device stores it (fm3-record-order, 0.3.58) when the evidence fixes that position, else after the last
+// record. recordOrder:'append' keeps the pre-0.3.58 placement (always last), for packs built before 0.3.58.
+export function insertBlocks(syx,blocks,{recordOrder='device'}={}){
   check(Array.isArray(blocks)&&blocks.length>0,'insert must be a non-empty array of block names');
   check(new Set(blocks).size===blocks.length,'A block is inserted twice');
   for(const b of blocks){check(typeof b==='string','Block names must be strings');check(!GATED[b],`${b}: not insertable — ${GATED[b]}`);check(Object.hasOwn(INSERTABLE,b),'Unknown insertable block '+b);}
@@ -80,11 +82,17 @@ export function insertBlocks(syx,blocks){
     const cell=free[i];prefix.writeUInt16LE(eid,gridAt(cell.row,cell.col));
     added.push(rec);inserted.push({block:b,effectId:eid,row:cell.row+1,column:cell.col+1,replacedShunt:cell.id,words:rec.readUInt16LE(42),channels:rec.readUInt16LE(44),recordBytes:rec.length,defaultScenes:'A, bypass (all 8 scenes)'});
   });
-  const body=Buffer.concat([prefix,original.subarray(RECORDS_START,tail),...added,original.subarray(tail)]);
-  // Structure: old records byte-identical and in order, new ones appended, tail unchanged.
+  const placement=placeRecords(records.map(r=>r.eid),inserted.map(x=>x.effectId),recordOrder);
+  const byEid=new Map([...records.map(r=>[r.eid,original.subarray(r.header,r.header+r.size)]),...inserted.map((x,i)=>[x.effectId,added[i]])]);
+  const body=Buffer.concat([prefix,...placement.order.map(e=>byEid.get(e)),original.subarray(tail)]);
+  inserted.forEach((x,i)=>{const p=placement.placed[i];x.recordIndex=p.index;x.recordOrder=p.by;});
+  // Structure: old records byte-identical and in their order, new ones where placed, tail unchanged.
   const after=scanRecords(body);
   check(after.records.length===records.length+added.length,'Inserted record scan');
-  records.forEach((r,k)=>{const n=after.records[k];check(n.eid===r.eid&&body.subarray(n.header,n.header+r.size).equals(original.subarray(r.header,r.header+r.size)),'Existing record modified');});
+  check(JSON.stringify(after.records.map(r=>r.eid))===JSON.stringify(placement.order),'Record order differs from placement');
+  const old=after.records.filter(n=>records.some(r=>r.eid===n.eid));
+  records.forEach((r,k)=>{const n=old[k];check(n.eid===r.eid&&body.subarray(n.header,n.header+r.size).equals(original.subarray(r.header,r.header+r.size)),'Existing record modified');});
+  inserted.forEach((x,i)=>{const n=after.records[x.recordIndex];check(n.eid===x.effectId&&body.subarray(n.header,n.header+added[i].length).equals(added[i]),'Inserted record differs from donor');});
   check(body.subarray(after.tail).equals(original.subarray(tail)),'System tail changed');
   const cells=new Set(inserted.map(x=>gridAt(x.row-1,x.column-1)));
   for(let i=0;i<RECORDS_START;i++)if(body[i]!==original[i])check(cells.has(i&~1),'Collateral prefix change at '+i);
@@ -96,13 +104,14 @@ export function insertBlocks(syx,blocks){
   check(readback.decoded.preset_name===before.decoded.preset_name,'Name changed');
   const rp=Buffer.from(readback.raw.rawPatch);check(rp.readUInt16LE(72)===body.length&&rp.readUInt16LE(74)===readback.raw.compSize,'Invalid encoded size');
   check(rp.subarray(76+readback.raw.compSize).every(v=>v===0),'Nonzero output padding');
-  return {syx:out,inserted,report:{stage:'fm3-insert-blocks 0.2.0',donorSha256:INSERT_DONOR.sha256,emptySha256:INSERT_DONOR.emptySha256,
+  return {syx:out,inserted,report:{stage:'fm3-insert-blocks 0.3.0',donorSha256:INSERT_DONOR.sha256,emptySha256:INSERT_DONOR.emptySha256,
     ...(blocks.includes('multidelay')?{multidelayDonorSha256:MULTIDELAY_DONOR.sha256,multidelayEmptySha256:MULTIDELAY_DONOR.emptySha256}:{}),outputSha256:sha(out),bodyBytes:body.length,
-    checks:{donorPairReconstructed:true,donorChannelsIdentical:true,existingRecordsUnchanged:true,systemTailPreserved:true,onlyDeclaredGridWords:true,frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true},
+    recordOrder:{mode:recordOrder,receipt:RECORD_ORDER_RECEIPT,receiptSha256:recordOrderReceiptHash,placed:inserted.map(x=>({block:x.block,index:x.recordIndex,by:x.recordOrder}))},
+    checks:{donorPairReconstructed:true,donorChannelsIdentical:true,existingRecordsUnchanged:true,existingRecordOrderKept:true,systemTailPreserved:true,onlyDeclaredGridWords:true,frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true},
     hardware:'record shapes device-confirmed (2026-10-23 exports); generated insertion import/export pending',audio:'not tested',cpu:'measured per type (T31; Synth voices 2/3 T37, fm3-cpu 0.2.5)'}};
 }
 export function insertCapabilities(){
   return {field:'insert',blocks:Object.keys(INSERTABLE),gated:GATED,donor:INSERT_DONOR.file,multidelayDonor:MULTIDELAY_DONOR.file,
     multidelay:'device-default Quad-Tap Delay; Base Type (Algorithm) and parameters writable (T27), Multi Delay Type via multidelayTypes (full-channel template, T35), Type word in controls refused',defaultScenes:'A, bypass in all 8 scenes; engage with blockScenes',
-    placement:'first free serial shunt of rows 2/3, then layout decides the column',limits:'One instance per family; parameter defaults come from the device; enum writes need allow enum-labels'};
+    placement:'first free serial shunt of rows 2/3, then layout decides the column',recordOrder:'record stored where the device stores it when device exports fix the position (fm3-record-order, T38), else last; spec.recordOrder:"append" keeps last',limits:'One instance per family; parameter defaults come from the device; enum writes need allow enum-labels'};
 }

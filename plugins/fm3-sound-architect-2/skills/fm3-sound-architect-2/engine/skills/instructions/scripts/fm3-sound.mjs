@@ -23,13 +23,14 @@ import {pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 import {insertBlocks,insertCapabilities} from './fm3-insert-blocks.mjs';
 import {editRecords,arrangeGrid,gridCapabilities} from './fm3-grid.mjs';
 import {estimateCpu,renderCpuText} from './fm3-cpu.mjs';
+import {RECORD_ORDER_MODES} from './fm3-record-order.mjs';
 import {applyMultidelayTypes,validateMultidelayTypes,verifyMultidelayTypesOutput,renderMultidelayTypesText,multidelayTypesCapabilities} from './fm3-multidelay-types.mjs';
 import {applyControllers,validateControllers,renderControllersText,controllersCapabilities,applyControllersScenes,validateControllersScenes} from './fm3-controllers.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.57',firmware:13,base:'jb-newlook',composer,
-    fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers','controllersScenes','modifierEdits','multidelayTypes'],
+  return {profile:'fm3-sound',revision:'0.3.58',firmware:13,base:'jb-newlook',composer,
+    fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers','controllersScenes','modifierEdits','multidelayTypes','recordOrder'],
     insert:insertCapabilities(),
     controllers:controllersCapabilities(),multidelayTypes:multidelayTypesCapabilities(),modifierEdits:modifierEditsCapabilities(),
     outputs:['.syx','.txt','.spec.json','.validation.json'],
@@ -53,7 +54,7 @@ export function getSoundCapabilities(base){
     limitations:['No device connection','New output hardware/audio/CPU unconfirmed','Experimental raw/taper writes excluded from this entry point','Global settings and all FM3 families are not implemented','Grid mode: Mixer/Multiplexer parameters and bit 4 of the grid input mask are not decoded']};
 }
 export function composeSound(base,spec){
-  assertFields(spec,['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers','controllersScenes','modifierEdits','multidelayTypes'],'sound');
+  assertFields(spec,['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers','controllersScenes','modifierEdits','multidelayTypes','recordOrder'],'sound');
   check(spec.composer&&(spec.layout===undefined)!==(spec.grid===undefined),'spec.composer and exactly one of spec.layout / spec.grid are required');
   const finalSpec=effectiveModifierSpec(spec);
   const gridMode=spec.grid!==undefined;
@@ -74,12 +75,13 @@ export function composeSound(base,spec){
   if(Object.hasOwn(spec,'controllers'))validateControllers(spec.controllers);
   if(Object.hasOwn(spec,'controllersScenes'))validateControllersScenes(spec.controllersScenes);
   if(Object.hasOwn(spec,'multidelayTypes'))validateMultidelayTypes(spec.multidelayTypes);
+  if(Object.hasOwn(spec,'recordOrder'))check(spec.insert!==undefined&&!gridMode&&RECORD_ORDER_MODES.includes(spec.recordOrder),'recordOrder needs insert (not grid mode) and one of: '+RECORD_ORDER_MODES.join(', '));
   const csPresetRequested=Object.hasOwn(spec,'controlSwitchScenes')||Object.hasOwn(spec,'footswitches');
   if(csPresetRequested){check(Object.hasOwn(finalSpec,'controlSwitches'),'controlSwitchScenes / footswitches need final controlSwitches bindings');validateCsPreset(finalSpec);}
   const first=generatePreset(base,spec.composer);
   check(first.report.baseId==='jb-newlook','Sound composer requires the jb-newlook base');
   const volume=spec.volumePan?insertVolumePan(first.syx):null;
-  const inserted=gridMode||spec.insert===undefined?null:insertBlocks(volume?.syx??first.syx,spec.insert);
+  const inserted=gridMode||spec.insert===undefined?null:insertBlocks(volume?.syx??first.syx,spec.insert,{recordOrder:spec.recordOrder??'device'});
   const records=gridMode?editRecords(volume?.syx??first.syx,{remove:spec.remove??[],duplicate:spec.duplicate??[],add:spec.insert??[]}):null;
   const arrangedInput=records?.syx??inserted?.syx??volume?.syx??first.syx;
   const pedal=spec.volumePedal?bindVolumePedal(arrangedInput,spec.volumePedal):null;
@@ -109,7 +111,7 @@ export function composeSound(base,spec){
   const switchReport=controlSwitches?{...switches?.report,policy:'control-switch-default-template-fw13',evidenceSha256:controlSwitchCapabilities().evidence.sha256,records:controlSwitches.map(c=>c.record),onlyDeclaredWordsChanged:true,bodyReadback:true,dumpHeaderPreserved:true,deviceIO:false}:null;
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const cpuEstimate=estimateCpu(second.syx);
-  const report={generator:'fm3-sound-0.3.57',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.58',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,...(controlSwitches?{controlSwitches}:{}),...(edits?{modifierEdits:edits.report}:{}),...(csp?{csPreset}:{}),...(ctl?{controllers:ctl.writes}:{}),...(cts?{controllersScenes:[...cts.channels]}:{}),...(mdt?{multidelayTypes:mdt.channels}:{}),
     stages:{volumePedal:volumePedal?pedal.report:null,...(edits?{modifierEdits:edits.report}:{}),...(ctl?{controllers:ctl.report}:{}),...(cts?{controllersScenes:cts.report}:{}),...(mdt?{multidelayTypes:mdt.report}:{}),...(switchReport?{controlSwitches:switchReport}:{}),...(csp?{csPreset:csp.report}:{}),volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};

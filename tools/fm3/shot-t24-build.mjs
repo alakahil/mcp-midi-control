@@ -66,7 +66,7 @@ export const TEST={dir:'FM3_T24_ENUM',test:'T24',title:'valikunupud (enum)',item
    C('megatap','A','MEGATAP_TIMESHAPE','COSINE'),C('megatap','A','MEGATAP_PANSHAPE','COSINE'),C('megatap','A','MEGATAP_AMPSHAPE','SINE')]}]};
 const NEWLOOK='examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx';
 const build=(it,controls=it.controls)=>Buffer.from(composeSound(read(NEWLOOK),{composer:{schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:it.name,...it.composer},
- ...(it.insert?{insert:it.insert}:{}),selectedScene:1,layout:it.layout,allow:['enum-labels'],...(controls.length?{controls}:{})}).syx);
+ ...(it.insert?{insert:it.insert,recordOrder:'append'}:{}),selectedScene:1,layout:it.layout,allow:['enum-labels'],...(controls.length?{controls}:{})}).syx);
 const SAME=[];const t=TEST,dir=path.join(out,t.dir);fs.mkdirSync(dir,{recursive:true});const items=[];
 for(const it of t.items){
  const syx=build(it),plain=Buffer.from(inspectStructure(build(it,[])).raw.body);
