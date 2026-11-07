@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2181,
-  "filePaths": 2385,
+  "uniqueContents": 2182,
+  "filePaths": 2386,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -4488,6 +4488,12 @@
       "bytes": 1640,
       "paths": [
         "references/fm3-modifier-removal-20261028.json"
+      ]
+    },
+    "5877c6980d34ce7edd6e2f5bb453d8232f0da1b5721f7babf7cf7b0ab2f209c9": {
+      "bytes": 73599,
+      "paths": [
+        "references/fm3-t35-multidelay-presets-20261107.json"
       ]
     },
     "587a4d70a967a8a168993fd1c0d56553cf06ab36f9c757426b5430d173f023ec": {
