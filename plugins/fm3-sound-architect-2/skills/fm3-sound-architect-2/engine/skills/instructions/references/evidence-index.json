@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2182,
-  "filePaths": 2386,
+  "uniqueContents": 2183,
+  "filePaths": 2387,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -7029,6 +7029,12 @@
       "bytes": 17618,
       "paths": [
         "references/delay-batch-20261006-134023/capture-20261006T133830-b175fdafea/capture.json"
+      ]
+    },
+    "898d5d31d970b42ce4bd01254be4aeda476183cac710b3f64eb6221904e49dd4": {
+      "bytes": 2347,
+      "paths": [
+        "references/fm3-t36-multidelay-types-20261107.json"
       ]
     },
     "89d1b97d7bae3a7a23117b2818eca6ec024b558051e2572a63e13a5f4fa8bc2c": {
