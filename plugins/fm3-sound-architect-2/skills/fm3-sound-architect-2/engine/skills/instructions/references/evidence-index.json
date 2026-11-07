@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2182,
-  "filePaths": 2386,
+  "uniqueContents": 2183,
+  "filePaths": 2387,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -9836,6 +9836,12 @@
       "bytes": 5025,
       "paths": [
         "references/geq-full-20261010-194115/step-154-61df59b19d/capture.json"
+      ]
+    },
+    "c0a1cae9fa0fc79c16bd6573b055a84ba363fdf15656e23c91b04823dcdafbdd": {
+      "bytes": 4893,
+      "paths": [
+        "references/fm3-t37-synth-cpu-20261107.json"
       ]
     },
     "c0bb60d52c1819ecbea4a959d3cfa8d19501c46735da05a086a93333d459e8d0": {
