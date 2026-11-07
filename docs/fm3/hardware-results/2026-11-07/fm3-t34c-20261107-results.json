@@ -1,0 +1,10 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "3845f10cec1971c6044cf6de379ad41d71d187080bf4b4f51c8aa5016e087ac3",
+ "time": "2026-11-07T15:49:51",
+ "readings": {
+  "chop": "tükeldab, umbes 2 korda sekundis",
+  "source": "Sequencer"
+ },
+ "note": ""
+}

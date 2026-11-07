@@ -1,0 +1,10 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "5fc62d39028dc021cbc56e0934286dc78d4a07abf4f505287fd4c75a6b399f87",
+ "time": "2026-11-07T15:51:57",
+ "readings": {
+  "swell": "paisub iga noodiga",
+  "source": "ADSR 1"
+ },
+ "note": ""
+}

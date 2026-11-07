@@ -1,0 +1,10 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "b5fec19c1c1a9358853d4f3b7307d4c0c71c43cf0e36463d52ad0632f5e14320",
+ "time": "2026-11-07T15:55:26",
+ "readings": {
+  "leadLevel": "Umbes sama vali, dB ei oska öelda punasesse ei läinud",
+  "overall": "kõik tundub ok"
+ },
+ "note": ""
+}

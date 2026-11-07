@@ -32,7 +32,7 @@ const sc=composeSound(base,{composer,layout,volumePan:true,controllersScenes:['B
 assert.deepEqual(readControllersScenes(b1),['B','C','D','A','D','C','B','B']);
 assert.deepEqual(diffWords(b0,b1),[462,464,466,470,472,474,476]);
 assert.deepEqual(sc.report.controllersScenes,['B','C','D','A','D','C','B','B']);assert.deepEqual(sc.report.stages.controllersScenes.changedScenes,[1,2,3,5,6,7,8]);
-assert.match(sc.txt,/CONTROLLERS \(Control plokk\):\n  Kanal stseeniti 1–8: B, C, D, A, D, C, B, B \(T33/);
+assert.match(sc.txt,/CONTROLLERS \(Control plokk\):\n  Kanal stseeniti 1–8: B, C, D, A, D, C, B, B \(seadmel kinnitatud kõigis 8 stseenis: T33 06.11.2026 stseenid 1–4 = A–D, T34 07.11.2026 stseenid 5–8/);
 const short=composeSound(base,{composer,layout,volumePan:true,controllersScenes:['A','D']});
 assert.deepEqual(readControllersScenes(body(short.syx)),['A','D','A','A','A','A','A','A']);assert.deepEqual(diffWords(b0,body(short.syx)),[464]);
 for(const [v,re] of [[[],/1…8/],[Array(9).fill('A'),/1…8/],[['E'],/A, B, C or D/],[['a'],/A, B, C or D/],[[0],/A, B, C or D/],['ABCD',/1…8/]])
@@ -49,7 +49,8 @@ for(const [name,code] of Object.entries(VOLUME_SOURCES)){
   const m=readModifiers(b).find(x=>x.active&&x.effectId===102&&x.pid===0);assert.equal(m.source,code);assert.equal(m.record,0);
   assert.equal(r.report.volumePedal.sourceName,name);
   if(code!==14){assert.match(r.txt,new RegExp(name.toUpperCase()+' → VOLUME/PAN 1 — LÕPPFAILIST'));assert.doesNotMatch(r.txt,/External 1 globaalne pedaali/);
-    assert.match(r.txt,name==='LFO 1A'?/seadmel kinnitatud: T33/:/seadmel ei kontrollitud/);}
+    assert.match(r.txt,{'LFO 1A':/seadmel kinnitatud: T33 \(2026-11-06\), LFO 1A → Volume säilis STORE/,'Scene Controller 1':/seadmel kinnitatud: T34B .*STORE\/reload-i selle allikaga ei tehtud/,
+      'Sequencer':/seadmel kinnitatud: T34C/,'ADSR 1':/seadmel kinnitatud: T34D/}[name]??/seadmel ei kontrollitud/);}
 }
 assert.equal(composeSound(base,{composer,layout,volumePan:true,volumePedal:{source:'External 1'}}).txt,ext.txt,'explicit External 1 = default');
 for(const s of ['Control Switch 1','PEDAL 1 (EXP/SW TIP)','External 2','NONE','lfo 1a',1])
@@ -59,6 +60,7 @@ const wah={...composer,wahChannels:[{channel:'A',type:'FAS Wah'}],modifiers:{ext
 const mw=readModifiers(body(lw.syx)).filter(m=>m.active);assert.deepEqual(mw.map(m=>[m.record,m.source,m.effectId]),[[0,14,94],[1,3,102]]);
 assert.match(lw.txt,/Volume järgib allikat LFO 2A, mitte pedaali/);
 assert.equal(volumePedalCapabilities().sources.deviceConfirmed['LFO 1A'],'T33 (2026-11-06)');
+assert.deepEqual(Object.keys(volumePedalCapabilities().sources.deviceConfirmed),['External 1','LFO 1A','ADSR 1','Sequencer','Scene Controller 1']);
 // modifierEdits identify the Volume binding by its own source.
 const espec=s=>({composer:wah,layout:{...layout,row2:['wah','drive','amp','cab']},volumePan:true,volumePedal:{source:'LFO 1A'},modifierEdits:[{operation:'remove',record:1,expect:{source:s,block:'volpan',param:'VOLUME_GAIN'}}]});
 assert.deepEqual(checkSchema('fm3-sound.schema.json',espec('LFO 1A')),[],'schema accepts a Volume edit by its LFO source');

@@ -1,0 +1,10 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "8fdafad3b399f9d1da261b2cfbbbf6407412907cbe867f108b1ad92a534a7b86",
+ "time": "2026-11-07T15:47:10",
+ "readings": {
+  "level": "kasvab ühtlaselt",
+  "source": "Scene Controller 1"
+ },
+ "note": ""
+}

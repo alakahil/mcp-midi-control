@@ -40,12 +40,16 @@ const GAIN=findParam('volpan','VOLUME_GAIN');
 // volumePedal.source (0.3.55): word 0 = FM3-Edit MOD_CTRLID list index. T33 (2026-11-06, STORE 425 byte-identical)
 // confirmed LFO 1A = 1 driving this exact record (only word 0 changed from External 1 = 14) and showed the record
 // template is source independent. Offered: External 1 and the Controllers-block sources (LFO, ADSR, Sequencer,
-// Envelope/Pitch Follower, Scene Controller, Manual). Codes other than 1 and 14 come from the editor list, not tested.
+// Envelope/Pitch Follower, Scene Controller, Manual). T34 (2026-11-07, references/fm3-t34-controllers-sources-20261107.json, edit buffer)
+// confirmed ADSR 1 = 5, Sequencer = 7 and Scene Controller 1 = 30 audibly with FM3-Edit showing the source; the other codes
+// come from the editor list, not tested.
+const t34Receipt='references/fm3-t34-controllers-sources-20261107.json';
 const t33Receipt='references/fm3-t33-controllers-scene-20261106.json';
 const CTRLID=loadDictionary().params.find(p=>p.family==='MOD'&&p.name==='MOD_CTRLID');
 check(CTRLID?.enum?.length===61&&CTRLID.enum[1]==='LFO 1A'&&CTRLID.enum[14]==='External 1'&&CTRLID.enum[50]==='Control Switch 1','MOD_CTRLID source list');
 export const VOLUME_SOURCES=Object.freeze(Object.fromEntries([14,...Array.from({length:9},(_,i)=>i+1),30,31,32,33,56,57,58,59,60].map(c=>[CTRLID.enum[c].trim(),c])));
-const DEVICE_CONFIRMED_SOURCES=Object.freeze({'External 1':'T2/T10 (2026-10-26/28)','LFO 1A':'T33 (2026-11-06)'});
+const DEVICE_CONFIRMED_SOURCES=Object.freeze({'External 1':'T2/T10 (2026-10-26/28)','LFO 1A':'T33 (2026-11-06)','ADSR 1':'T34D (2026-11-07)','Sequencer':'T34C (2026-11-07)','Scene Controller 1':'T34B (2026-11-07)'});
+const STORED_SOURCES=new Set(['External 1','LFO 1A']);
 const sourceOf=name=>{check(typeof name==='string'&&Object.hasOwn(VOLUME_SOURCES,name),'volumePedal.source must be one of '+Object.keys(VOLUME_SOURCES).join(', '));return {name,code:VOLUME_SOURCES[name]};};
 export const volumeSourceName=request=>request&&typeof request==='object'&&Object.hasOwn(request,'source')?sourceOf(request.source).name:'External 1';
 // Off Value only acts with Auto-Engage, which this binding keeps OFF; it is not offered here.
@@ -81,7 +85,7 @@ export function volumePedalCapabilities(){return {
  field:'volumePedal',values:[true,'{min 0..10, max 0..10, curve, source}'],requires:'volumePan:true; exact captured inactive modifier region (records 1..31 when Wah is bound in record 0)',
  source:'External 1',sourceCode:14,
  sources:{field:'volumePedal.source',default:'External 1',codes:VOLUME_SOURCES,encoding:'modifier word 0 = FM3-Edit MOD_CTRLID list index; the rest of the record is the same captured template',
-  deviceConfirmed:DEVICE_CONFIRMED_SOURCES,receipt:t33Receipt,others:'code from the FM3-Edit list, not tested on the device',controllerSettings:'set the source itself (e.g. LFO rate) with controllers / controllersScenes'},
+  deviceConfirmed:DEVICE_CONFIRMED_SOURCES,receipt:t33Receipt,receipts:[t33Receipt,t34Receipt],others:'code from the FM3-Edit list, not tested on the device',controllerSettings:'set the source itself (e.g. LFO rate) with controllers / controllersScenes'},
  target:{effectId:102,pid:0,name:'VOLUME_GAIN',displayLabel:'Volume',channelScope:'ALL'},
  record:'0, or 1 when External 1 -> Wah is active in record 0',words:words(),policy:'captured-volume-default-fw13',evidenceSha256:volumeBindingEvidenceHash,
  captureSha256:evidence.capture.sha256,fullRangeEncodingProven:false,numericMinMaxAuthoring:true,
@@ -143,14 +147,14 @@ export function renderVolumePedalText(state){
  const ext=state.sourceName==='External 1',confirmed=DEVICE_CONFIRMED_SOURCES[state.sourceName];
  return ['',`${state.sourceName.toUpperCase()} → VOLUME/PAN 1 — LÕPPFAILIST`,
   `Seos: ${state.sourceName} → Volume/Pan 1 Volume (VOLUME_GAIN, PID 0); kanalid ALL (A–D); modifikaatori kirje ${state.record}.`,
-  ...(ext?[]:[`Allikas ${state.sourceName} (kood ${state.source}) on Controllers ploki kontroller; selle seaded (nt LFO kiirus) tulevad väljadest controllers / controllersScenes. ${confirmed?`Allika kood on seadmel kinnitatud: ${confirmed}, LFO 1A → Volume säilis STORE/reload-is baiditäpselt.`:'Allika kood on FM3-Editi MOD_CTRLID loendist (T33 kinnitas sama loendi koodid LFO 1A = 1, External 1 = 14, Control Switch n = 49+n); seda allikat seadmel ei kontrollitud.'} Muu kirje on sama seadme salvestatud mall.`]),
+  ...(ext?[]:[`Allikas ${state.sourceName} (kood ${state.source}) on Controllers ploki kontroller; selle seaded (nt LFO kiirus) tulevad väljadest controllers / controllersScenes. ${confirmed?`Allika kood on seadmel kinnitatud: ${confirmed}${STORED_SOURCES.has(state.sourceName)?`, ${state.sourceName} → Volume säilis STORE/reload-is baiditäpselt`:`, kuuldav ja FM3-Editis näha redaktsioonipuhvris (STORE/reload-i selle allikaga ei tehtud)`}.`:'Allika kood on FM3-Editi MOD_CTRLID loendist (T33/T34 kinnitasid sama loendi koodid LFO 1A = 1, ADSR 1 = 5, Sequencer = 7, External 1 = 14, Scene Controller 1 = 30, Control Switch n = 49+n); seda allikat seadmel ei kontrollitud.'} Muu kirje on sama seadme salvestatud mall.`]),
   ...(state.withWahBinding?[ext?'Kirjes 0 on External 1 → Wah seos; mõlemad järgivad sama pedaali (External 1). 28.10.2026 katses T9 jäid mõlemad seosed pärast STORE-i ja uuesti laadimist alles ning pedaal liigutas mõlemat; selle uue faili import on kontrollimata.':`Kirjes 0 on External 1 → Wah seos (pedaal); Volume järgib allikat ${state.sourceName}, mitte pedaali.`]:[]),
   state.capturedDefaults?'Min/Max, kõver ja muud modifikaatori väljad: 23.10.2026 FW13 ekspordist kopeeritud vaikeolek (Min 0.00, Max 10.00).':`Min ${state.min.display.toFixed(2)} / Max ${state.max.display.toFixed(2)} (Volume skaalas; sõnad ${state.min.word} / ${state.max.word}). ${state.curveCustom?'Kõver ja ajad on allpool; ülejäänud väljad on 23.10.2026 ekspordi vaikeolek.':'Kõver ja muud väljad on 23.10.2026 ekspordi vaikeolek.'} Min/Max kodeering on seadme näiduga kinnitatud (T7/T7b teistel sihtmärkidel; 28.10.2026 T10 Volume'il: Min 2.50 / Max 7.50, nupp kannas 2.50 ja varbas 7.50). Selle faili vahemikku eraldi ei mõõdetud.`,
   ...(state.curveCustom?[`Kõver ja ajad: ${Object.entries(state.curve).map(([k,c])=>`${CURVE.find(f=>f.key===k).label} ${c.display}${c.unit==='%'?'%':c.unit==='ms'?' ms':''}`).join(', ')} (sõnad ${CURVE.map(f=>state.curve[f.key].word).join('/')}). Kodeering: FM3 modifikaatori natiivne vahemik; iga väli on 29.10.2026 katses T12 seadmel ükshaaval läbi astutud, väärtused mõõdetud punktide vahel on valemi järgi.`]:[]),
   `Modifikaatori 25 toorsõna: ${state.words.join(', ')}.`,
   state.entireBodyMatchesCapture?'Kogu preseti keha kattub kasutaja Volume-seose ekspordiga; selle sisu korduseksporti pole vaja. Uut kodeeritud faili eraldi seadmesse ei imporditud.':'See on uus kombinatsioon: seose vaikeolek on seadmeekspordist, lõppfaili kombinatsioon kontrollitud tarkvaraliselt.',
   ...(ext?['External 1 globaalne pedaali/MIDI määrang ja pedaali asend ei sisaldu presetis. Seos ei muuda stseenide kanalit ega bypass’i.',
-  '24.10.2026 P1/P0 katses kinnitati FM3-Editis pedaali järgimine. 26.10.2026 (T2): kand 0.00, varvas 10.00, seos säilis STORE/reload-is. 28.10.2026 (T10): vahemik 2.50/7.50 kuvati ja pedaal järgis seda. Taper ja heli on mõõtmata; selle uue faili riistvarakatset sellest ei järeldu.']:['Seos ei muuda stseenide kanalit ega bypass’i. T33 06.11.2026: LFO 1A → Volume pulseeris kuuldavalt; selle uue faili import ja heli on kontrollimata.'])];
+  '24.10.2026 P1/P0 katses kinnitati FM3-Editis pedaali järgimine. 26.10.2026 (T2): kand 0.00, varvas 10.00, seos säilis STORE/reload-is. 28.10.2026 (T10): vahemik 2.50/7.50 kuvati ja pedaal järgis seda. Taper ja heli on mõõtmata; selle uue faili riistvarakatset sellest ei järeldu.']:['Seos ei muuda stseenide kanalit ega bypass’i. Kuuldav seadmel: T33 06.11.2026 LFO 1A (pulseeris); T34 07.11.2026 Scene Controller 1 (tase stseeniti), Sequencer (tükeldus), ADSR 1 (noodi paisumine). Selle uue faili import ja heli on kontrollimata.'])];
 }
 export function verifyVolumePedalOutput(report,syx,txt,spec,expectedModifierRegion){
  const requested=Object.hasOwn(spec??{},'volumePedal');

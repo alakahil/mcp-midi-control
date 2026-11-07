@@ -1,0 +1,11 @@
+{
+ "kind": "fm3-bind-check-results",
+ "packSha256": "bb1471ea8080aa394e358103117b00b073ea6c27a125e4842d105f44fe936c6a",
+ "time": "2026-11-07T16:00:39",
+ "readings": {
+  "cuts": "Mode: DynaCab - Cabs - Cab 1: LowCut 33.0 Hz, HighCut 12499 Hz; Cab 2: LowCut 20.0 Hz, HighCut 20000 Hz; Mode: DynaCab - Preamp: LowCut 87.0 Hz, HighCut 7300 Hz",
+  "preamp": "",
+  "type": "Mode: Legacy - Cabs - Cab 1: LowCut 33.0 Hz, HighCut 12499 Hz; Cab 2: LowCut 20.0 Hz, HighCut 20000 Hz; Mode: DynaCab - Preamp: LowCut 87.0 Hz, HighCut 7300 HzScene 2, Chan B, DYNA-CAB"
+ },
+ "note": ""
+}
