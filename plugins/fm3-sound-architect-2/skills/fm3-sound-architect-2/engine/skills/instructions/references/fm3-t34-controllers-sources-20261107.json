@@ -1,0 +1,235 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-07",
+ "test": "T34",
+ "auditItems": [
+  "O3/H2 follow-up",
+  "H1",
+  "H7"
+ ],
+ "method": "Jan in Terminal, six parts from tools/fm3/t34-controllers-sources-build.mjs. Every part: FM3_BIND_STORE.py --load sent the preset to the edit buffer (7F 00), he listened/read, answered. Part A: he STOREd on the FM3, selected another preset, came back, answered again; --verify read that location with the read-only stored dump (fn=0x03). Scripts never stored or set.",
+ "builder": "tools/fm3/t34-controllers-sources-build.mjs",
+ "files": {
+  "a": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34a-20261107-load.json",
+    "sha256": "c310045b14c9cc13239996fcf57f54eb98138c0bc331e3403a110d7ed2c2e5ae"
+   },
+   "results": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34a-20261107-results.json",
+    "sha256": "bb15a2e84e95ac8cfe6faa7d6508eb3678e19fce6f919df499e9ea01a79755e8"
+   },
+   "packSha256": "aeb50715a686ca95b86c2c252a951b781b03e641082c693d15a4d936804c8725",
+   "preset": {
+    "name": "T34A CTRL SCENES",
+    "sha256": "a0d94283acdac8d5f18eafed4e8ac21923a4045ecd10e796f9aa25ef8972ad91"
+   }
+  },
+  "b": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34b-20261107-load.json",
+    "sha256": "6e1cebb180020fc33570d034adff96e1dd5035742da2014f042b7ecfe1d22f3e"
+   },
+   "results": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34b-20261107-results.json",
+    "sha256": "2dd843ce825daacc5b7befe4d214e178317a5fdf2865b9913e3f1237640d755c"
+   },
+   "packSha256": "8fdafad3b399f9d1da261b2cfbbbf6407412907cbe867f108b1ad92a534a7b86",
+   "preset": {
+    "name": "T34B SCENE CTRL",
+    "sha256": "b159de8b9fa50153aa2b503ee279722704253164f1b9ea4993337695d44a5c75"
+   }
+  },
+  "c": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34c-20261107-load.json",
+    "sha256": "9d1a832ddc937960953427163a68c322db5faad6fee19451de74ecc4e8eb69ba"
+   },
+   "results": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34c-20261107-results.json",
+    "sha256": "c22ad6064667dc952c84a1ad5600e8598e3b82c626d4822deb9f2eae14a87021"
+   },
+   "packSha256": "3845f10cec1971c6044cf6de379ad41d71d187080bf4b4f51c8aa5016e087ac3",
+   "preset": {
+    "name": "T34C SEQUENCER",
+    "sha256": "c2255bf5a6c29327e81a55280b7ae2d29ab2a155055fd2338d2b2d820532bf99"
+   }
+  },
+  "d": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34d-20261107-load.json",
+    "sha256": "a638cf78203617a51cc44dd9b914079f421f26d91254d8f2fe94139ed14fc0d6"
+   },
+   "results": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34d-20261107-results.json",
+    "sha256": "a741c902b32de058d03063cf12aa392a7b4f917dc4fc1cf8663bcc991b7e8302"
+   },
+   "packSha256": "5fc62d39028dc021cbc56e0934286dc78d4a07abf4f505287fd4c75a6b399f87",
+   "preset": {
+    "name": "T34D ADSR SWELL",
+    "sha256": "3209fbeb8f03dc68e44b40e2e31df6609b408c2953f7e269f368adb551918b01"
+   }
+  },
+  "e": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34e-20261107-load.json",
+    "sha256": "cb8d2d01f03f09d29d17a96861b1cfd6d1949d47f5b271aa83ca770ae1452bc0"
+   },
+   "results": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34e-20261107-results.json",
+    "sha256": "89672b20323cdbca623a3341e1cacf8aa65d0c30d0838626335752e9e899c96e"
+   },
+   "packSha256": "b5fec19c1c1a9358853d4f3b7307d4c0c71c43cf0e36463d52ad0632f5e14320",
+   "preset": {
+    "name": "LIVE KOOSLUS V1",
+    "sha256": "b180d2baf4014fc472ddcd93560041c858dc1ffee8ae81a29fe8f88a5cd189a9"
+   }
+  },
+  "f": {
+   "load": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34f-20261107-load.json",
+    "sha256": "b6e4df27e5cfd464d98a78f460e3a366283209617b344d50abddaa425c660fdc"
+   },
+   "results": {
+    "path": "docs/fm3/hardware-results/2026-11-07/fm3-t34f-20261107-results.json",
+    "sha256": "fef837d868d7514485e9757e39e20b9b8cebb70dafbca8080e7c48c3523badde"
+   },
+   "packSha256": "bb1471ea8080aa394e358103117b00b073ea6c27a125e4842d105f44fe936c6a",
+   "preset": {
+    "name": "KNOBS T20 CAB A",
+    "sha256": "c0aa8221a43ba176ec613e2931e73374d342be2387ebada48069483008397094"
+   }
+  }
+ },
+ "storeLocation": {
+  "planned": 426,
+  "reported": 427,
+  "index": 426,
+  "note": "The instructions said 426; the user typed 427 as the stored location and the stored dump read from 427 (index 426) holds T34A CTRL SCENES byte-identically. The user confirmed (2026-11-07): he stored to 427, it was empty before, nothing to restore."
+ },
+ "findings": {
+  "scenes5to8": {
+   "rule": "Controllers header word 5+(scene-1) (body 462+2*(scene-1)) is the Controllers channel for scenes 5..8 too (T33 measured 1..4).",
+   "written": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "D",
+    "C",
+    "B",
+    "D"
+   ],
+   "shown": "5-D 6-C 7-B 8-D",
+   "audible": "S5 kõige kiirem; S6 poole aeglasem; S7 veel aeglasem; S8 sama kiirus, mis S5 umbes",
+   "storedAndReloaded": true,
+   "bodyByteIdentical": true,
+   "bodyBytes": 12970
+  },
+  "sources": {
+   "rule": "Modifier record word 0 = FM3-Edit MOD_CTRLID index; device-confirmed now: External 1 = 14, LFO 1A = 1, ADSR 1 = 5, Sequencer = 7, Scene Controller 1 = 30. Same 25-word template.",
+   "confirmed": {
+    "Scene Controller 1": {
+     "test": "T34B",
+     "code": 30,
+     "record": 0,
+     "shownInFm3Edit": "Scene Controller 1",
+     "audible": "level rose evenly from scene 1 to scene 4 (Scene Controller 1 values 10/40/70/100 %)",
+     "stored": false
+    },
+    "Sequencer": {
+     "test": "T34C",
+     "code": 7,
+     "record": 0,
+     "shownInFm3Edit": "Sequencer",
+     "audible": "volume chopped on/off about twice a second (Sequencer 4 stages 0/100/0/100 %, Rate 4 Hz: one stage per 1/4 s, so one on/off cycle per 1/2 s)",
+     "stored": false
+    },
+    "ADSR 1": {
+     "test": "T34D",
+     "code": 5,
+     "record": 0,
+     "shownInFm3Edit": "ADSR 1",
+     "audible": "every picked note swelled in (ADSR 1 Once, Retrigger On, Attack 800 ms, Threshold -40 dB)",
+     "stored": false
+    }
+   }
+  },
+  "liveKooslusV1": {
+   "preset": {
+    "name": "LIVE KOOSLUS V1",
+    "sha256": "b180d2baf4014fc472ddcd93560041c858dc1ffee8ae81a29fe8f88a5cd189a9"
+   },
+   "leadLevel": "Umbes sama vali, dB ei oska öelda punasesse ei läinud",
+   "overall": "kõik tundub ok",
+   "as": "Lead scenes about as loud as the others after Amp C -8 dB; no clipping; the user found nothing to change"
+  },
+  "cabPreampNone": {
+   "preset": {
+    "name": "KNOBS T20 CAB A",
+    "sha256": "c0aa8221a43ba176ec613e2931e73374d342be2387ebada48069483008397094"
+   },
+   "channel": "B",
+   "mode": "DynaCab (screen header \"Scene 2, Chan B, DYNA-CAB\")",
+   "controls": [
+    {
+     "param": "CABINET_LOCUT",
+     "requested": 87,
+     "raw": 20921,
+     "codecDisplay": 86.997692,
+     "shown": "87.0 Hz",
+     "page": "Preamp",
+     "withinOneDisplayStep": true
+    },
+    {
+     "param": "CABINET_HICUT",
+     "requested": 7300,
+     "raw": 51192,
+     "codecDisplay": 7300.179397,
+     "shown": "7300 Hz",
+     "page": "Preamp",
+     "withinOneDisplayStep": true
+    },
+    {
+     "param": "CABINET_LOCUT1",
+     "requested": 33,
+     "raw": 14253,
+     "codecDisplay": 33.000472,
+     "shown": "33.0 Hz",
+     "page": "Cabs (Cab 1)",
+     "withinOneDisplayStep": true
+    },
+    {
+     "param": "CABINET_HICUT1",
+     "requested": 12500,
+     "raw": 52157,
+     "codecDisplay": 12499.911697,
+     "shown": "12499 Hz",
+     "page": "Cabs (Cab 1)",
+     "withinOneDisplayStep": true
+    }
+   ],
+   "as": "With Preamp Type NONE the block-level Low/High Cut (pid 38/39) are still shown on the Preamp page with the written values; Cab 1 cuts on the Cabs page; Cab 2 shows its unwritten base values 20.0 Hz / 20000 Hz.",
+   "answerInterpretations": [
+    {
+     "field": "type",
+     "as": "Cab B mode DynaCab",
+     "reason": "the answer repeats the cut list (first page label \"Legacy\") and ends with the screen header \"Scene 2, Chan B, DYNA-CAB\""
+    },
+    {
+     "field": "preamp",
+     "as": "not answered",
+     "reason": "empty answer; Preamp Type NONE is the pack value, not read back"
+    }
+   ]
+  }
+ },
+ "notMeasured": [
+  "Scene Controllers 2..4, LFO 1B/2A/2B, ADSR 2, Envelope/Pitch Follower, Manual 1..5 as sources",
+  "STORE/reload of the B/C/D source presets",
+  "Sequencer Rate unit (per stage) beyond the one 4 Hz reading",
+  "Preamp Type value read back on the device (NONE)"
+ ]
+}

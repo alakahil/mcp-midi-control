@@ -2642,7 +2642,7 @@
               }
             },
             "source": {
-              "description": "0.3.55: modifier Source (word 0 = FM3-Edit MOD_CTRLID index); default External 1. LFO 1A device-confirmed by T33 (2026-11-06); other Controllers sources from the editor list, not tested. Set the source itself with controllers / controllersScenes.",
+              "description": "0.3.55: modifier Source (word 0 = FM3-Edit MOD_CTRLID index); default External 1. Device-confirmed: LFO 1A (T33, 2026-11-06), Scene Controller 1, Sequencer, ADSR 1 (T34, 2026-11-07); other Controllers sources from the editor list, not tested. Set the source itself with controllers / controllersScenes.",
               "enum": [
                 "External 1",
                 "LFO 1A",
@@ -2891,7 +2891,7 @@
       }
     },
     "controllersScenes": {
-      "description": "0.3.55 (T33): Controllers channel of scenes 1..n, scene 1 first (body 462+2*(scene-1), 0..3 = A..D); unlisted scenes stay A. T33 confirmed scenes 1..4 = A..D on the device.",
+      "description": "0.3.55 (T33): Controllers channel of scenes 1..n, scene 1 first (body 462+2*(scene-1), 0..3 = A..D); unlisted scenes stay A. T33 confirmed scenes 1..4 = A..D and T34 scenes 5..8 = D,C,B,D on the device.",
       "type": "array",
       "minItems": 1,
       "maxItems": 8,

@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2179,
-  "filePaths": 2383,
+  "uniqueContents": 2180,
+  "filePaths": 2384,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -9739,6 +9739,12 @@
       "paths": [
         "references/cab-batch-20261005-135019/capture-20261005T091020-fff845f79b/labels.json",
         "references/cab-batch-20261005-135600/capture-20261005T091020-fff845f79b/labels.json"
+      ]
+    },
+    "be8d8f33e090785b3ccf02b6d1dbc897474fec2512b9fe06ec2fa64e1c2e951a": {
+      "bytes": 8431,
+      "paths": [
+        "references/fm3-t34-controllers-sources-20261107.json"
       ]
     },
     "be937c9a4f9691b9e38c818ce5f61d1e0f95c709950621c867369fdcd210f255": {

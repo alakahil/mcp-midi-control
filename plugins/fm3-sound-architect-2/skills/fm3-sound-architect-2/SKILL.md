@@ -204,8 +204,12 @@ on ainult External 1 ning Control Switchid. Tõend: `references/fm3-t33-controll
   Pitch Follower, Scene Controller 1–4, Manual 1–5. Control Switch, PEDAL ja External 2–16 on keelatud.
   `modifierEdits` tuvastab Volume-seose sama allika nimega.
 - Seadmel kinnitatud: stseenid 1–4 = A–D ja LFO 1A (T33). Sama sisendiga genereeritud fail on baiditäpselt sama,
-  mis FM3 salvestatud asukoht 425 (`tools/fm3/test-t33-controllers-replay.mjs`). Stseenid 5–8 ja teiste allikate
-  koodid (FM3-Editi MOD_CTRLID loendist) on valemi järgi, seadmel kontrollimata; TXT ütleb seda allika kaupa.
+  mis FM3 salvestatud asukoht 425 (`tools/fm3/test-t33-controllers-replay.mjs`). T34 (07.11.2026) kinnitas ka
+  stseenid 5–8 (D, C, B, D; STORE 427 → tagasi baiditäpne) ning allikad Scene Controller 1 (30), Sequencer (7) ja
+  ADSR 1 (5) redaktsioonipuhvris kuuldavalt ja FM3-Editis. Ülejäänud allikate koodid (FM3-Editi MOD_CTRLID loendist)
+  on seadmel kontrollimata; TXT ütleb seda allika kaupa. Tõend: `references/fm3-t34-controllers-sources-20261107.json`.
+- T34 andis veel: LIVE KOOSLUS V1 (Amp C −8 dB) Lead on teistega umbes sama vali, muuta pole vaja; Cab B Preamp
+  Type NONE puhul on ploki Low/High Cut (87,0 Hz / 7300 Hz) ikka Preamp-lehel näha ja Cab 1 lõiked Cabs-lehel.
 - Skeem 0.8.6; test `scripts/test-controllers-scenes.mjs`.
 
 ## Päris kasutuspreseti koondkatse (T32, 06.11.2026)

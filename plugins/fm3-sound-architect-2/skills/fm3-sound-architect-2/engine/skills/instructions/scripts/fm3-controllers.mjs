@@ -26,7 +26,7 @@ const receipt=JSON.parse(receiptBytes);
 export const MAX_CONTROLLER_WRITES=64;
 const CHANNELS='ABCD',SCENES=8;
 export const CONTROLLERS_SCENE_OFFSET=CONTROLLERS_RECORD.header+10;  // body 462 + 2*(scene-1)
-const t33Receipt='references/fm3-t33-controllers-scene-20261106.json';
+const t33Receipt='references/fm3-t33-controllers-scene-20261106.json',t34Receipt='references/fm3-t34-controllers-sources-20261107.json';
 // Tempo To Use switches the preset between its own and the global tempo for every tempo-synced block: not measured.
 export const CONTROLLERS_REFUSED=Object.freeze({33:'Tempo To Use (preset/global tempo source) is not measured'});
 
@@ -69,7 +69,7 @@ export function applyControllersScenes(syx,list){
   check(after.join('')===wanted.join(''),'Controllers scene channel readback');
   return {syx:out,channels:after,report:{offsets:wanted.map((_,i)=>CONTROLLERS_SCENE_OFFSET+2*i),before,after,
     changedScenes:wanted.map((c,i)=>c===before[i]?null:i+1).filter(Boolean),
-    hardware:'T33 2026-11-06: scenes 1..4 = A..D shown in FM3-Edit, heard and byte-identical after STORE/reload ('+t33Receipt+'); this output itself not tested'}};
+    hardware:'T33 2026-11-06: scenes 1..4 = A..D; T34 2026-11-07: scenes 5..8 = D,C,B,D; both shown in FM3-Edit, heard and byte-identical after STORE/reload ('+t33Receipt+', '+t34Receipt+'); this output itself not tested'}};
 }
 export function verifyControllersScenesOutput(body,spec,reported,stage){
   if(!Object.hasOwn(spec,'controllersScenes')){
@@ -113,7 +113,7 @@ export function verifyControllersOutput(body,spec,reported){
 export function renderControllersText(writes,scenes){
   if(!writes?.length&&!scenes)return '';
   const fmt=w=>typeof w.display==='number'?String(Number(w.display.toPrecision(4))):String(w.display);
-  const head=scenes?['','CONTROLLERS (Control plokk):',`  Kanal stseeniti 1–8: ${scenes.join(', ')} (T33 06.11.2026: stseenid 1–4 = A–D seadmel kinnitatud; selle faili import kontrollimata).`]
+  const head=scenes?['','CONTROLLERS (Control plokk):',`  Kanal stseeniti 1–8: ${scenes.join(', ')} (seadmel kinnitatud kõigis 8 stseenis: T33 06.11.2026 stseenid 1–4 = A–D, T34 07.11.2026 stseenid 5–8 = D, C, B, D; selle faili import kontrollimata).`]
     :['','CONTROLLERS (Control plokk, kõik stseenid kasutavad kanalit A):'];
   return [...head,...(writes??[]).map(w=>`  ${w.channel} ${w.label} (${w.name}) = ${fmt(w)}`)].join('\n')+'\n';
 }
@@ -122,7 +122,7 @@ export function controllersCapabilities(){
     writable:'taper-class-verified knobs, integers and option selectors (T28/T30) by default; n/a and unverified-taper refused',
     channels:['A','B','C','D'],
     sceneChannel:{field:'controllersScenes',values:'array of 1..8 of A|B|C|D, scene 1 first; unlisted scenes stay A',offsets:'body 462+2*(scene-1) (Controllers header word 5+(scene-1))',
-      hardware:'T33 2026-11-06: scenes 1..4 = A..D confirmed (FM3-Edit, audible, STORE/reload byte-identical); scenes 5..8 and other patterns follow the same layout, not measured',receipt:t33Receipt},
+      hardware:'T33 2026-11-06 scenes 1..4 = A..D and T34 2026-11-07 scenes 5..8 = D,C,B,D confirmed (FM3-Edit, audible, STORE/reload byte-identical); other patterns follow the same layout',receipt:t33Receipt,receipts:[t33Receipt,t34Receipt]},
     hardwareReceipt:{file:'references/fm3-shot-t28-controllers-20261105.json',sha256:controllersReceiptHash,editorReadings:receipt.summary.editorReadingsMatched,deviceWords:receipt.summary.deviceWordsMatched},
     limits:['Controllers as a modifier source: volumePedal.source (Volume/Pan Volume only)','Tempo, Tempo To Use and Envelope Gain Monitor stay unwritable']};
 }
