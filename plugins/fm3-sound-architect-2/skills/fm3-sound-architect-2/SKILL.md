@@ -304,7 +304,9 @@ Seega saab kanal ka Type'i Algorithmi, tempod ja peidetud sõnad (nt Feedback 1�
 `controls`-i, nii et `controls` saavad Type'i peal üksikuid nuppe muuta (nt `MULTITAP_MIX`). Algorithmi
 (`MULTITAP_BASETYPE`) sama kanali Type'i järel muuta ei saa, ja `MULTITAP_PRESETS` jääb `controls`-is keelatuks.
 Lõpukontroll nõuab, et Type'i sõna ja Algorithm oleksid malli omad. TXT-s on lõik „MULTI DELAY TYPE“.
-Genereeritud väljund ja heli on seadmel kontrollimata (mallid ise on seadmelt loetud). Skeem 0.8.7; test
+T36 (07.11.2026) laadis `multidelayTypes` preseti (A Pealing Bells + Mix 30 %, B Dub Echo, C Mono Diffuser, D Aurora
+Delay): seade hoidis 484/484 sõna, FM3-Edit näitas nelja Type'i ja heli vastas kirjeldusele; STORE-i ei tehtud
+(`references/fm3-t36-multidelay-types-20261107.json`). Iga uue faili import ja heli jääb kontrollimata. Skeem 0.8.7; test
 `scripts/test-multidelay-types.mjs` (kõik 39 Type'i = T35 kujutis, ainult selle kanali sõnad muutuvad).
 
 ## Multi Delay parameetrid kirjutatavad (0.3.49, T27)

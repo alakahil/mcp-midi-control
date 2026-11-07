@@ -51,7 +51,7 @@ export function applyMultidelayTypes(syx,list){
   for(const {channel,type} of wanted)check(channelWords(rb,r2,CHANNELS.indexOf(channel)).every((w,i)=>w===type.words[i]),'Multi Delay Type readback '+channel);
   return {syx:out,channels,report:{stage:'fm3-multidelay-types 0.1.0',receipt:MULTIDELAY_TYPES_RECEIPT,receiptSha256:multidelayTypesReceiptHash,channels,
     rule:'all 121 words of the channel replaced by the measured T35 image; controls apply afterwards',
-    hardware:'T35 2026-11-07: every image read back from the FM3 after choosing the Type on the device-default channel; this output itself not tested',audio:'not tested'}};
+    hardware:'T35 2026-11-07: every image read back from the FM3 after choosing the Type on the device-default channel; T36 2026-11-07: a multidelayTypes preset (4 Types + Mix) loaded 484/484 words, FM3-Edit showed the Types; this output itself not tested',audio:'not tested for this output (T36: the four tested Types sounded as described)'}};
 }
 // Final check: the Type word and its Algorithm must still be the template's (controls may change other words).
 export function verifyMultidelayTypesOutput(body,spec,reported,stage){
@@ -67,10 +67,10 @@ export function verifyMultidelayTypesOutput(body,spec,reported,stage){
 export function renderMultidelayTypesText(channels){
   if(!channels?.length)return '';
   return ['','MULTI DELAY TYPE (terve kanali mall):',...channels.map(c=>`  Kanal ${c.channel}: ${c.type} (Type nr ${c.index+1}, Algorithm ${c.algorithm}; ${c.wordsChanged} sõna erines vaikimisi kanalist).`),
-    '  Mall on T35 07.11.2026 seadmelt loetud kanal pärast Type valikut vaikimisi kanalil; selle faili import ja heli on kontrollimata. Controls rakenduvad malli peale.'].join('\n')+'\n';
+    '  Mall on T35 07.11.2026 seadmelt loetud kanal pärast Type valikut vaikimisi kanalil. T36 07.11.2026 kinnitas sellise preseti laadimise seadmel (484/484 sõna, FM3-Edit näitas Type\'e, heli vastas); selle faili import ja heli on kontrollimata. Controls rakenduvad malli peale.'].join('\n')+'\n';
 }
 export function multidelayTypesCapabilities(){
   return {field:'multidelayTypes',values:'[{channel:"A".."D",type:<label>}], one per channel',types:MULTIDELAY_TYPE_LABELS,
     rule:'full-channel template (121 words) from the T35 device reads; applied before layout/controls; Algorithm stays the Type\'s',receipt:MULTIDELAY_TYPES_RECEIPT,
-    hardware:'T35 2026-11-07: 39/39 images read from the FM3; Pealing Bells = T27, Types 1..3 = MD_TYPES export; generated output not tested'};
+    hardware:'T35 2026-11-07: 39/39 images read from the FM3; Pealing Bells = T27, Types 1..3 = MD_TYPES export. T36 2026-11-07: generated preset with Pealing Bells / Dub Echo / Mono Diffuser / Aurora Delay (+ Mix) held 484/484 words after loading, FM3-Edit showed the four Types, audio as described; STORE/reload not done',deviceConfirmed:'T36 (load + edit buffer)'};
 }

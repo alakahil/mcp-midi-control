@@ -1,0 +1,10 @@
+{
+ "test": "T36",
+ "date": "2026-11-07",
+ "observer": "Jan",
+ "source": "thread message 2026-11-07T17:08:11Z (verbatim): \"valmis. A - Pealing Bells, B - Dub Echo, C - Mono Diffuser, D - Aurora Delay. Kõikvastas kirjeldusele, Delay toimis\"",
+ "fm3EditTypes": {"A": "Pealing Bells", "B": "Dub Echo", "C": "Mono Diffuser", "D": "Aurora Delay"},
+ "matchedDescription": true,
+ "audio": "Delay worked; all as described (scenes 1-4)",
+ "stored": false
+}
