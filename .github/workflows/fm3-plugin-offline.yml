@@ -104,6 +104,8 @@ jobs:
           node tools/fm3/shot-t25-ingest.mjs
           node tools/fm3/t26-multidelay-ingest.mjs
           node tools/fm3/t27-multidelay-side-ingest.mjs
+          node tools/fm3/o4-multidelay-presets.mjs
+          node tools/fm3/t35-multidelay-presets-ingest.mjs
           node tools/fm3/t28-controllers-ingest.mjs
           node tools/fm3/t29-feedback-ingest.mjs
           node tools/fm3/t30-enum-ingest.mjs
@@ -116,6 +118,7 @@ jobs:
           node tools/fm3/test-p3-modifier-reuse.mjs
           node tools/fm3/modifier-fields-status.mjs
           python3 -B plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/cpu-sweep-collector/FM3_BIND_STORE.py --self-test
+          python3 -B plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/cpu-sweep-collector/FM3_MD_PRESETS.py --self-test
           python3 -B plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/cpu-sweep-collector/FM3_MOD_READ.py --self-test
           python3 -B plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/cpu-sweep-collector/FM3_CPU_STEPS.py --self-test
           python3 -B tools/fm3/test-cpu-check-build.py
