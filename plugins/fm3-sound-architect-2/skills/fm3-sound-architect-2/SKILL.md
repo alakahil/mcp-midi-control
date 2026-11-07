@@ -285,6 +285,15 @@ Quad Series, Quad Diffusor). Need muutsid vastavalt 3, 11 ja 11 sõna; algolek p
 repos ei ole. Preseti valik jääb keelatuks, kuni täide on mõõdetud (vt `deviceSweep`).
 Tõend: `references/fm3-o4-multidelay-presets-20261107.json`, tööriist `tools/fm3/o4-multidelay-presets.mjs`.
 
+**T35 (07.11.2026) mõõtis kõik 39 Type'i.** Iga valik tehti seadme vaikimisi Multi Delay kanalil A ja plokk loeti
+tagasi (fn=0x1F). Iga Type on mõõdetud 121-sõnaline kanali kujutis ja muudab 0–44 sõna. Kanalid B–D jäid muutmata.
+Kontrollid olid baiditäpsed:
+- Pealing Bells kordus T27 tulemusega;
+- Type'id 1–3 kattusid 03.11 ekspordiga;
+- Type 0 on vaikimisi kanal.
+Generaatoris on preseti valik veel keelatud. Järgmine samm on rakendada Type terve kanali mallina.
+Tõend: `references/fm3-t35-multidelay-presets-20261107.json`, ingest `tools/fm3/t35-multidelay-presets-ingest.mjs`.
+
 ## Multi Delay parameetrid kirjutatavad (0.3.49, T27)
 
 `controls` lubab nüüd plokki `multidelay`: Base Type (`MULTITAP_BASETYPE`, FM3-Editis „Algorithm“) ja

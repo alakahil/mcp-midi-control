@@ -105,6 +105,7 @@ jobs:
           node tools/fm3/t26-multidelay-ingest.mjs
           node tools/fm3/t27-multidelay-side-ingest.mjs
           node tools/fm3/o4-multidelay-presets.mjs
+          node tools/fm3/t35-multidelay-presets-ingest.mjs
           node tools/fm3/t28-controllers-ingest.mjs
           node tools/fm3/t29-feedback-ingest.mjs
           node tools/fm3/t30-enum-ingest.mjs
