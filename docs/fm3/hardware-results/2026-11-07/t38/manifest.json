@@ -1,0 +1,50 @@
+{
+ "kind": "fm3-bind-store",
+ "version": 1,
+ "test": "T38",
+ "date": "2026-11-07",
+ "confirmName": "T38 MD STORE",
+ "preset": {
+  "file": "T38_MD_STORE.syx",
+  "sha256": "8da4decaed8cc67653ee781bc3bed11086b8444d2af45831e9afd14b8e59fb61"
+ },
+ "storeLocation": "424..426 (the user picks a location he may overwrite)",
+ "purpose": "multidelayTypes channel templates after STORE and reload (T36 confirmed the edit-buffer load only).",
+ "multidelayTypes": [
+  {
+   "channel": "A",
+   "type": "Ya-Ya Delay",
+   "index": 26
+  },
+  {
+   "channel": "B",
+   "type": "Space Tape",
+   "index": 28
+  },
+  {
+   "channel": "C",
+   "type": "L-C-R-C",
+   "index": 27
+  },
+  {
+   "channel": "D",
+   "type": "Centaurus X-3",
+   "index": 38
+  }
+ ],
+ "expect": {
+  "types": "A Ya-Ya Delay, B Space Tape, C L-C-R-C, D Centaurus X-3",
+  "mixA": "30 %"
+ },
+ "checks": [
+  {
+   "id": "types",
+   "text": "FM3-Editis (ilma Save-ta) Multi Delay plokk: mis on Type kanalitel A, B, C, D? (oodatud A Ya-Ya Delay, B Space Tape, C L-C-R-C, D Centaurus X-3; kui ei vaata, \"-\"). Sulge FM3-Edit enne järgmist käsku."
+  },
+  {
+   "id": "sound",
+   "text": "Mängi stseenid 1-4. Kas delay kõlab igas stseenis ja erinevalt? (ok või lühike märkus)"
+  }
+ ],
+ "method": "--load: edit-buffer dump (7F 00) only. The user STOREs on the FM3 to a location in 424..426. --verify: one read-only stored-dump request (fn=0x03) for that location. The script never stores and never sets."
+}

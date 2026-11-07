@@ -1,0 +1,104 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-07",
+ "test": "T38",
+ "generator": "fm3-sound 0.3.56",
+ "method": "--load: edit-buffer dump (7F 00) only. The user STOREs on the FM3 to a location in 424..426. --verify: one read-only stored-dump request (fn=0x03) for that location. The script never stores and never sets.",
+ "builder": "tools/fm3/t38-multidelay-store-build.mjs",
+ "collector": "FM3_BIND_STORE.py --load / --verify",
+ "packSha256": "a3f19fa41de2cb53d4a6f43b367f1088ef8ac6dec5f1e0e02022082d1a9a2908",
+ "presetSha256": "8da4decaed8cc67653ee781bc3bed11086b8444d2af45831e9afd14b8e59fb61",
+ "types": [
+  {
+   "channel": "A",
+   "type": "Ya-Ya Delay",
+   "index": 26
+  },
+  {
+   "channel": "B",
+   "type": "Space Tape",
+   "index": 28
+  },
+  {
+   "channel": "C",
+   "type": "L-C-R-C",
+   "index": 27
+  },
+  {
+   "channel": "D",
+   "type": "Centaurus X-3",
+   "index": 38
+  }
+ ],
+ "mixA": "30 %",
+ "storeLocation": {
+  "planned": "424..426",
+  "reported": 427,
+  "index": 426,
+  "note": "The user stored to 427 (outside the planned 424..426); 427 held the T34A CTRL SCENES test preset, which is regenerable from tools/fm3/t34-controllers-sources-build.mjs."
+ },
+ "result": {
+  "beforeStore": {
+   "types": "A Ya-Ya Delay, B Space Tape, C L-C-R-C, D Centaurus X-3",
+   "sound": "ok"
+  },
+  "afterReload": {
+   "types": "A Ya-Ya Delay, B Space Tape, C L-C-R-C, D Centaurus X-3",
+   "sound": "ok"
+  },
+  "storedDumpFrames": 10,
+  "multidelayWords": "484/484 equal after STORE",
+  "allChannelDataEqual": true,
+  "decodedBlocksEqual": true,
+  "bodyByteIdentical": false,
+  "bodyBytes": 14160,
+  "recordOrder": {
+   "generated": [
+    "Amp",
+    "Cab",
+    "Comp",
+    "Return",
+    "Send",
+    "Vol/Pan",
+    "PEQ",
+    "Reverb",
+    "MultiTap"
+   ],
+   "stored": [
+    "Amp",
+    "Cab",
+    "Comp",
+    "Return",
+    "Send",
+    "MultiTap",
+    "Vol/Pan",
+    "PEQ",
+    "Reverb"
+   ]
+  }
+ },
+ "findings": {
+  "storeRoundTrip": "multidelayTypes channel templates (and the Mix control on A, and the scene channels) survive STORE and reload unchanged.",
+  "recordOrder": "On STORE the FM3 writes the block records in its own order: the inserted Multi Delay record (appended last by the generator) is stored after Send. Each record keeps its channel data; only the per-record link words (next record id, its scene channels and size) differ. Loading the generator order works (T36/T38 load), so this is cosmetic."
+ },
+ "meaning": "multidelayTypes is device-confirmed for load + edit buffer (T36) and STORE/reload (T38).",
+ "files": [
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/t38/manifest.json",
+   "sha256": "a3f19fa41de2cb53d4a6f43b367f1088ef8ac6dec5f1e0e02022082d1a9a2908"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/t38/bind-store-load.json",
+   "sha256": "aff0641610ad5f6ca869e731a897481ad9f58e934b412f499abd7d4dcf4dad8f"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/t38/bind-store-results.json",
+   "sha256": "0db559d8d09074cd80fca92bee7afe0c975c170f3b4b8ea8d844c73f0b367141"
+  }
+ ],
+ "notMeasured": [
+  "Types other than the eight in T36/T38 on the device through the generator (their images are the T35 reads)"
+ ]
+}
