@@ -17,7 +17,7 @@ const v=estimateCpu(rd('examples/SATRIANI_SOAP_ON_A_ROPE.syx'));check(v.exactAll
 const t=renderCpuText(v);check(/Scene 3/.test(t)&&/Amp ja Delay/.test(t)&&/ei taga presetipõhist veapiiri/.test(t)&&!t.includes('±1 %'),'text');
 const g=JSON.parse(rd('references/fm3-grid-check-20261023.json')).tests.find(t=>t.id==='G06');
 check(Math.abs((g.cpuEstimate-g.cpuMeasured)-2.8)<1e-8&&v.measuredTypeCoverageAllScenes,'Measured-type coverage cannot guarantee a 1-point model bound');
-// 4. T31 insert-block types: per-type costs, Synth voice 1 with voices 2/3 OFF, Legacy Cab = Dyna-Cab cost.
+// 4. T31 insert-block types (0.2.4 behaviour kept for voices 2/3 OFF): per-type costs, Synth voice 1 with voices 2/3 OFF, Legacy Cab = Dyna-Cab cost.
 import('./fm3-sound.mjs').then(({composeSound})=>{
   const NL=rd('examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx'),C={schemaVersion:1,firmware:13,baseProfile:'jb-composer',compressorChannels:[{channel:'A',type:'Optical Compressor'}],name:'CPU T31'};
   const est=b=>estimateCpu(Buffer.from(composeSound(NL,{composer:C,insert:[b],layout:{row2:['compressor','drive','amp','cab'],row3:['delay',b,'reverb']},blockScenes:{[b]:[{scene:1,bypass:false}]}}).syx)).scenes[0];
@@ -25,5 +25,17 @@ import('./fm3-sound.mjs').then(({composeSound})=>{
   for(const [b,cost] of [['plex',9.5],['megatap',9.5],['tentap',4.5],['resonator',7.5],['ringmod',2.5],['gate',4],['synth',7.5]]){
     const s=est(b);check(s.parts[b]===cost&&!s.notes.some(n=>n.startsWith(b)),'T31 '+b+' '+s.parts[b]);check(Math.abs(s.percent-base.percent-cost)<0.05,'T31 sum '+b);}
   check(base.parts.cab===2.9&&!base.notes.some(n=>/cab/.test(n)),'Dyna-Cab measured');
-  console.log(JSON.stringify({p6a:a.scenes[0].percent,p6b:b.scenes[0].percent,v1s4:v.scenes[3].percent,t31:'insert types'}));
+  // 5. T37 Synth voices (0.2.5): voices 2/3 priced like voice 1 and summed; every T37 item replayed from its voice words.
+  return Promise.all([import('./drive-collector/fm3-prototype.mjs'),import('./fm3-codec.mjs'),import('./fm3-layout.mjs')]).then(([P,K,L])=>{
+    const t37=JSON.parse(rd('references/fm3-t37-synth-cpu-20261107.json')),TY=['SINE','TRIANGLE','SQUARE','SAWTOOTH','RANDOM','WHT NOISE','PINK NOISE','OFF'];
+    const syn=Buffer.from(composeSound(NL,{composer:C,insert:['synth'],layout:{row2:['compressor','drive','amp','cab'],row3:['delay','synth','reverb']},blockScenes:{synth:[{scene:1,bypass:false}]}}).syx);
+    for(const it of t37.items.filter(x=>x.voices)){
+      const st=P.inspectStructure(syn),bd=Buffer.from(st.raw.body),r=L.scanRecords(bd,{requireAmpCab:false}).records.find(x=>x.family==='synth');
+      [0,11,29].forEach((pid,k)=>bd.writeUInt16LE(TY.indexOf(it.voices[k]),r.start+2*pid));
+      const o=Buffer.from(K.reencodeDumpFromRawPatch(syn,K.reencodeRawPatch(st.raw.rawPatch,bd))),e=estimateCpu(o).scenes[0];
+      check(e.parts.synth===it.summedPoints&&!e.notes.length,'T37 '+it.id+' '+e.parts.synth);check(it.costPoints<=e.parts.synth+1,'T37 sum conservative '+it.id);
+      check(estimateCpu(o,{model:'fm3-cpu 0.2.4'}).scenes[0].parts.synth===(it.voices[1]==='OFF'&&it.voices[2]==='OFF'&&it.voices[0]!=='OFF'||it.id==='default'?it.costPoints:13.5),'0.2.4 kept '+it.id);
+    }
+    console.log(JSON.stringify({p6a:a.scenes[0].percent,p6b:b.scenes[0].percent,v1s4:v.scenes[3].percent,t31:'insert types',t37:t37.items.filter(x=>x.voices).length}));
+  });
 });

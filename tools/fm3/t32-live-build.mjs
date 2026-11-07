@@ -48,7 +48,7 @@ const result=createPreset(BASE,spec),syx=Buffer.from(result.syx);
 assert.deepEqual([...parsePresetDump(syx,0,17).headerPayload],[0x7f,0,0,0x40,0],'edit-buffer header');
 const st=inspectStructure(syx);assert.equal(String(st.decoded.preset_name).trim(),NAME);
 assert.equal(Buffer.from(st.raw.body)[0],0,'selected scene 1');
-const cpu=estimateCpu(syx);assert.ok(cpu.maxPercent<cpu.limitPercent,'estimate under the safe limit');
+const cpu=estimateCpu(syx,{model:'fm3-cpu 0.2.4'});assert.ok(cpu.maxPercent<cpu.limitPercent,'estimate under the safe limit'); // pinned: pack sent before T37
 const perScene=cpu.scenes.map(s=>s.percent);
 
 const copy=(dir,files)=>{for(const f of files)fs.copyFileSync(new URL(f,COLLECT),path.join(dir,f));};

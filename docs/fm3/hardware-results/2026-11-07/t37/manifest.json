@@ -1,0 +1,352 @@
+{
+ "schemaVersion": 1,
+ "builder": "t37-synth-cpu-build 0.1.0",
+ "test": "T37",
+ "audit": "H6",
+ "calibrationOnly": false,
+ "confirmName": "CPU CAL NEWLOOK",
+ "reference": "cal-newlook",
+ "scene": 1,
+ "header": "7f0000400",
+ "note": "Cost of an item = CPU(item) - CPU(cal-newlook); every Synth item is cal-newlook plus the Synth block in row 3 with only the three voice type words set (V1 pid 0, V2 pid 11, V3 pid 29; 7 = OFF).",
+ "items": [
+  {
+   "id": "cal-newlook",
+   "family": "calibration",
+   "expectPercent": 52.8,
+   "note": "NewLook + Optical Compressor (= T26/T31 cal-newlook)",
+   "file": "presets/000.syx",
+   "sha256": "e6151cd6295f9231b01f12f25d6420a84c1f40f9909eb74dd1de209778cd44d7"
+  },
+  {
+   "id": "default",
+   "family": "synth",
+   "voices": [
+    "TRIANGLE",
+    "OFF",
+    "OFF"
+   ],
+   "voiceWords": [
+    1,
+    7,
+    7
+   ],
+   "source": "device-default Synth insert (T31 synth:1 repeat, 7.5 above cal-newlook)",
+   "file": "presets/001.syx",
+   "sha256": "a1b3b2c192f47a3aa10a8e1b0df11acc811fefa7ece9ddfe4d1ba829e4386c2f"
+  },
+  {
+   "id": "v2:0",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "SINE",
+    "OFF"
+   ],
+   "voiceWords": [
+    7,
+    0,
+    7
+   ],
+   "source": "V1 OFF, V2 SINE, V3 OFF",
+   "file": "presets/002.syx",
+   "sha256": "485cd09c1bb3c9464878d16217d0c83152f1a5a95390d4937daa22c3f99bff1e"
+  },
+  {
+   "id": "v2:1",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "TRIANGLE",
+    "OFF"
+   ],
+   "voiceWords": [
+    7,
+    1,
+    7
+   ],
+   "source": "V1 OFF, V2 TRIANGLE, V3 OFF",
+   "file": "presets/003.syx",
+   "sha256": "51108ad27cf93cdbd258dee575d6ee1048e00d9c04d8efd0cc2a9882a708a97c"
+  },
+  {
+   "id": "v2:2",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "SQUARE",
+    "OFF"
+   ],
+   "voiceWords": [
+    7,
+    2,
+    7
+   ],
+   "source": "V1 OFF, V2 SQUARE, V3 OFF",
+   "file": "presets/004.syx",
+   "sha256": "f81d41498536c20e385096962ac641111a542602ecef3d2af88191350bd0d6c6"
+  },
+  {
+   "id": "v2:3",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "SAWTOOTH",
+    "OFF"
+   ],
+   "voiceWords": [
+    7,
+    3,
+    7
+   ],
+   "source": "V1 OFF, V2 SAWTOOTH, V3 OFF",
+   "file": "presets/005.syx",
+   "sha256": "1c487ac764384ca1dd059a1e1bc2376440707c0a6e84e521d80b9163b0d89df8"
+  },
+  {
+   "id": "v2:4",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "RANDOM",
+    "OFF"
+   ],
+   "voiceWords": [
+    7,
+    4,
+    7
+   ],
+   "source": "V1 OFF, V2 RANDOM, V3 OFF",
+   "file": "presets/006.syx",
+   "sha256": "1bf577438855adc23816dc690c717abf72b3e81c377a90127bf15faa3b1cff17"
+  },
+  {
+   "id": "v2:5",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "WHT NOISE",
+    "OFF"
+   ],
+   "voiceWords": [
+    7,
+    5,
+    7
+   ],
+   "source": "V1 OFF, V2 WHT NOISE, V3 OFF",
+   "file": "presets/007.syx",
+   "sha256": "06e62eb5e77de395916278560448949b3f90ae50ba2e4ad714da19fa1e414fe2"
+  },
+  {
+   "id": "v2:6",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "PINK NOISE",
+    "OFF"
+   ],
+   "voiceWords": [
+    7,
+    6,
+    7
+   ],
+   "source": "V1 OFF, V2 PINK NOISE, V3 OFF",
+   "file": "presets/008.syx",
+   "sha256": "49f34a2e7fc145daf0e9af50bd433657e71f8d851975da1752b170c9fe8f463c"
+  },
+  {
+   "id": "v3:0",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "OFF",
+    "SINE"
+   ],
+   "voiceWords": [
+    7,
+    7,
+    0
+   ],
+   "source": "V1 OFF, V2 OFF, V3 SINE",
+   "file": "presets/009.syx",
+   "sha256": "200c49943616cefb21a091cb26e24a852c61953b06d804d15fca8ba945035dad"
+  },
+  {
+   "id": "v3:1",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "OFF",
+    "TRIANGLE"
+   ],
+   "voiceWords": [
+    7,
+    7,
+    1
+   ],
+   "source": "V1 OFF, V2 OFF, V3 TRIANGLE",
+   "file": "presets/010.syx",
+   "sha256": "72351dd355d9e9fb2f30d862fc980467c2fabde2e8cb53f8d90b4f144e90f03f"
+  },
+  {
+   "id": "v3:2",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "OFF",
+    "SQUARE"
+   ],
+   "voiceWords": [
+    7,
+    7,
+    2
+   ],
+   "source": "V1 OFF, V2 OFF, V3 SQUARE",
+   "file": "presets/011.syx",
+   "sha256": "bcb98ecc430d0dc2c173749300d574f06b6b3d8aaa48aecde458dc6e6d93a5ea"
+  },
+  {
+   "id": "v3:3",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "OFF",
+    "SAWTOOTH"
+   ],
+   "voiceWords": [
+    7,
+    7,
+    3
+   ],
+   "source": "V1 OFF, V2 OFF, V3 SAWTOOTH",
+   "file": "presets/012.syx",
+   "sha256": "92be546984d2877fbe0155b0fde2f269bb34ee559ebe153c446f71d286a14a41"
+  },
+  {
+   "id": "v3:4",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "OFF",
+    "RANDOM"
+   ],
+   "voiceWords": [
+    7,
+    7,
+    4
+   ],
+   "source": "V1 OFF, V2 OFF, V3 RANDOM",
+   "file": "presets/013.syx",
+   "sha256": "02d78b887314d2cabf8d22989b27730952e4684fb3989da1e2446b64308fb1d1"
+  },
+  {
+   "id": "v3:5",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "OFF",
+    "WHT NOISE"
+   ],
+   "voiceWords": [
+    7,
+    7,
+    5
+   ],
+   "source": "V1 OFF, V2 OFF, V3 WHT NOISE",
+   "file": "presets/014.syx",
+   "sha256": "42898082f7e786b3ec6d8e96f4eca62d7e159538c3b5e3b1575a37eb9f54e2ea"
+  },
+  {
+   "id": "v3:6",
+   "family": "synth",
+   "voices": [
+    "OFF",
+    "OFF",
+    "PINK NOISE"
+   ],
+   "voiceWords": [
+    7,
+    7,
+    6
+   ],
+   "source": "V1 OFF, V2 OFF, V3 PINK NOISE",
+   "file": "presets/015.syx",
+   "sha256": "973ce634b1531781143bd81f7dcf7eab2d537863fc222a1d570d45da35315c3d"
+  },
+  {
+   "id": "mix:tri2",
+   "family": "synth",
+   "voices": [
+    "TRIANGLE",
+    "TRIANGLE",
+    "OFF"
+   ],
+   "voiceWords": [
+    1,
+    1,
+    7
+   ],
+   "source": "V1+V2 TRIANGLE",
+   "file": "presets/016.syx",
+   "sha256": "fa9a5d2d772a2c2a7f46f98517781c42d95291630b2780648794125e16459575"
+  },
+  {
+   "id": "mix:tri3",
+   "family": "synth",
+   "voices": [
+    "TRIANGLE",
+    "TRIANGLE",
+    "TRIANGLE"
+   ],
+   "voiceWords": [
+    1,
+    1,
+    1
+   ],
+   "source": "all three TRIANGLE",
+   "file": "presets/017.syx",
+   "sha256": "d4ac31efb53b38307e9b9151b5b1663974db86d254b51f3a953641c6f329381c"
+  },
+  {
+   "id": "mix:pink3",
+   "family": "synth",
+   "voices": [
+    "PINK NOISE",
+    "PINK NOISE",
+    "PINK NOISE"
+   ],
+   "voiceWords": [
+    6,
+    6,
+    6
+   ],
+   "source": "all three PINK NOISE",
+   "file": "presets/018.syx",
+   "sha256": "c0894f2b2e5bab08b416cb657f31b0fe7319494c321c9ee2c4840b8c792f3ebe"
+  },
+  {
+   "id": "mix:ssw",
+   "family": "synth",
+   "voices": [
+    "SINE",
+    "SAWTOOTH",
+    "WHT NOISE"
+   ],
+   "voiceWords": [
+    0,
+    3,
+    5
+   ],
+   "source": "SINE / SAWTOOTH / WHT NOISE",
+   "file": "presets/019.syx",
+   "sha256": "779ca857676c826f115f1f11bf98dce94a1278cafe26c6c9ad385ee67d33ea35"
+  },
+  {
+   "id": "cal-newlook-end",
+   "family": "calibration",
+   "note": "cal-newlook again: meter drift over the sweep",
+   "file": "presets/020.syx",
+   "sha256": "e6151cd6295f9231b01f12f25d6420a84c1f40f9909eb74dd1de209778cd44d7"
+  }
+ ]
+}

@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.56`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.57`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -222,6 +222,15 @@ preset → tagasi säilitas kõigi 11 ploki baidid (salvestus tõstis Multi Dela
 heli ja Multi Delay. Amp C malli tase −14 dB oli selles koosluses ligikaudu 6 dB liiga vaikne (T32B −10 dB: „umbes
 2 dB juurde veel“); lõppversioon „LIVE KOOSLUS V1“ kasutab −8 dB, mida eraldi ei kuulatud. Kui koosluses on eri
 mallidest ampid, kontrolli stseenide taset kuulates. Tõend: `references/fm3-t32-live-20261106.json`.
+
+## Synth häälte CPU (0.3.57, T37)
+
+T37 (7.11.2026, audit H6) mõõtis Synth'i hääli 2 ja 3 (21 presetti, kalibreerimine 52,5 % alguses ja lõpus). Hääl 2 ja hääl 3
+maksavad tüübiti sama palju kui hääl 1 (14/14, üks näit ühe 1 % sammu võrra kõrgem) ning hääled liituvad: plokk ise
+2,5 punkti, iga hääl, mis pole OFF, lisab oma osa (SINE 1,5, TRIANGLE 5, SQUARE/SAWTOOTH 4,5, RANDOM 5, WHT NOISE 9,
+PINK NOISE 11). Kaks häält ja SINE/SAWTOOTH/WHT NOISE klappisid summaga täpselt; kolm TRIANGLE häält mõõdeti 1 ja kolm
+PINK NOISE häält 4 punkti summast madalamana, seega on summa ettevaatlik. `fm3-cpu 0.2.5` arvestab häälte summat (enne
+kasutati häälte 2/3 korral pere maksimumi). Tõend: `references/fm3-t37-synth-cpu-20261107.json`.
 
 ## Legacy Cabi IR ja lisatud plokkide CPU (0.3.53, T31)
 
