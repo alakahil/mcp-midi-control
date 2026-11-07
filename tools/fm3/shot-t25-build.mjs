@@ -40,7 +40,7 @@ const TAPS=Array.from({length:10},(_,i)=>i+1);
 const NEWLOOK='examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx';
 function buildItem(item,RAW){
 const composed=Buffer.from(composeSound(read(NEWLOOK),{composer:{schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:item.name,
- compressorChannels:[{channel:'A',type:'Optical Compressor'}]},insert:['tentap'],selectedScene:1,
+ compressorChannels:[{channel:'A',type:'Optical Compressor'}]},insert:['tentap'],recordOrder:'append',selectedScene:1,
  layout:{row2:['compressor','drive','amp','cab'],row3:['delay','tentap','reverb']},
  allow:['enum-labels'],controls:'ABCD'.split('').map(ch=>RAW[ch].type==='Ten-Tap Delay'?{block:'tentap',channel:ch,param:'TENTAP_NUMTAPS',value:10}:{block:'tentap',channel:ch,param:'TENTAP_TYPE',value:RAW[ch].type})}).syx);
 const st0=inspectStructure(composed),body=Buffer.from(st0.raw.body),{records}=scanRecords(body,{requireAmpCab:false});

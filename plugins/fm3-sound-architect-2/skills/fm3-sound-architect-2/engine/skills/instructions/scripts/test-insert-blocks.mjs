@@ -6,14 +6,15 @@ import {scanRecords,readGrid,GRID} from './fm3-layout.mjs';
 import {composeSound} from './fm3-sound.mjs';
 import {insertTempoLocks} from './fm3-insert-tempo.mjs';
 import {estimateCpu} from './fm3-cpu.mjs';
+import {placeRecords,knownOrder} from './fm3-record-order.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 const rd=p=>fs.readFileSync(new URL('../'+p,import.meta.url));
 const NL=rd('examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx'),body=b=>Buffer.from(inspectStructure(b).raw.body);
 const refuse=(f,re,why)=>{let m='';try{f()}catch(e){m=e.message}check(re.test(m),why+': expected '+re+' got '+(m||'success'))};
 // 1. donors: both export pairs reconstruct, 14 + 1 records, device defaults
 const d=insertDonor();check(d.records.length===15&&d.records.find(r=>r.eid===74)?.words===121&&d.records.find(r=>r.eid===190)?.channels===1,'Donor records');
-// 2. every insertable block at once: structure, reconstruction, default scenes
-const all=Object.keys(INSERTABLE).filter(b=>b!=='multidelay'),r=insertBlocks(NL,all),a=body(NL),b=body(r.syx);
+// 2. every insertable block at once: structure, reconstruction, default scenes (pre-0.3.58 placement: appended)
+const all=Object.keys(INSERTABLE).filter(b=>b!=='multidelay'),r=insertBlocks(NL,all,{recordOrder:'append'}),a=body(NL),b=body(r.syx);
 check(r.inserted.length===all.length&&all.length===10&&b.length===a.length+r.inserted.reduce((n,x)=>n+x.recordBytes,0),'All 10 inserted');
 const sb=scanRecords(b),sa=scanRecords(a);
 check(sb.records.slice(sa.records.length).map(x=>x.family).join()===all.join(),'Appended in request order');
@@ -68,3 +69,24 @@ for(const t of ['A','B']){
   check(G.records.length===E.records.length&&bytes(g,G)===bytes(e,E),'Roundtrip records '+t);
 }
 console.log(JSON.stringify({hardwareRoundtrip:['A','B'],recordOrder:'device-normalised'}));
+// 6. device record order (0.3.58, fm3-record-order): inserted records go where the FM3 stores them.
+const eids=s=>scanRecords(body(s)).records.map(x=>x.eid);
+// The P6 presets also carried Compressor (46) and Volume/Pan (102, own inserter); the NewLook base has neither.
+const exp=t=>eids(rd(`examples/FM3_P6_INSERT_${t}_export.syx`)).filter(e=>e!==46&&e!==102);
+{const A=insertBlocks(NL,['gate','multiband','plex','looper']);check(JSON.stringify(eids(A.syx))===JSON.stringify(exp('A')),'P6 A: device order = the device export');
+ check(A.inserted.every(x=>x.recordOrder==='device order')&&A.report.recordOrder.mode==='device','P6 A placed by evidence');
+ const B=insertBlocks(NL,['formant','megatap','resonator','ringmod','synth','tentap']);check(JSON.stringify(eids(B.syx))===JSON.stringify(exp('B')),'P6 B: device order = the device export');
+ // Same bytes as the append build, only the record order differs.
+ const Bx=insertBlocks(NL,['formant','megatap','resonator','ringmod','synth','tentap'],{recordOrder:'append'}),rec=s=>{const b=body(s);return scanRecords(b).records.map(r=>b.subarray(r.header,r.header+r.size).toString('hex')).sort().join()};
+ check(rec(B.syx)===rec(Bx.syx)&&body(B.syx).length===body(Bx.syx).length,'device and append builds hold the same records');
+ const M=insertBlocks(NL,['multidelay']);check(JSON.stringify(eids(M.syx))==='[58,62,70,186,182,118,74,37,42,66]','Multi Delay after Drive, before Input 1 (T38 stored dump)');
+ check(JSON.stringify(eids(insertBlocks(NL,['multidelay'],{recordOrder:'append'}).syx))==='[58,62,70,186,182,118,37,42,66,74]','append keeps it last');}
+// unknown pairs fall back to appending; a base order is never changed
+{const mod=[58,62,78,46,70,82,118,37,42,90,66,94];
+ check(knownOrder(178,90)===0&&knownOrder(162,94)===-1,'Plex vs Phaser has no evidence; Resonator before Wah does (via Volume/Pan)');
+ const p=placeRecords(mod,[178,74]);check(JSON.stringify(p.order)===JSON.stringify([58,62,78,46,70,82,118,74,37,42,90,66,94,178])&&p.placed[0].by==='appended'&&p.placed[1].by==='device order','Unknown pair appended, known placed');
+ check(JSON.stringify(placeRecords(mod,[74],'append').order)===JSON.stringify([...mod,74]),'append mode');
+ refuse(()=>placeRecords(mod,[74],'sorted'),/recordOrder must be/,'mode');
+ refuse(()=>composeSound(NL,{...mspec,recordOrder:'sorted'}),/recordOrder needs insert/,'spec recordOrder value');
+ refuse(()=>composeSound(NL,{...mspec,insert:undefined,layout:{row2:['compressor','drive','amp','cab'],row3:['delay','reverb']},blockScenes:{},recordOrder:'device'}),/recordOrder needs insert/,'recordOrder without insert');}
+console.log(JSON.stringify({recordOrder:'device',p6:['A','B'],t38:true}));

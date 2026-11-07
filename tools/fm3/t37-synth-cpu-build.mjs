@@ -35,7 +35,7 @@ const TYPES=V[0].enum;assert.deepEqual(TYPES,['SINE','TRIANGLE','SQUARE','SAWTOO
 for(const p of V)assert.deepEqual(p.enum,TYPES);
 const OFF=7,T=n=>TYPES.indexOf(n);
 const calibration=()=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name:'CPU CAL NEWLOOK'},layout:{row2:ROW2,row3:['delay','reverb']}}).syx);
-const synth=name=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:['synth'],layout:{row2:ROW2,row3:['delay','synth','reverb']},
+const synth=name=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:['synth'],recordOrder:'append',layout:{row2:ROW2,row3:['delay','synth','reverb']},
   blockScenes:{synth:[{scene:1,bypass:false}]}}).syx);
 const s0=body(synth('X')),r0=recOf(s0);
 assert.equal(s0.readUInt16LE(r0.header+10),0,'Scene 1 on Synth channel A');

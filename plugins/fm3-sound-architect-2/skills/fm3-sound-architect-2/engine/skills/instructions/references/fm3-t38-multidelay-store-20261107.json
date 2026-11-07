@@ -54,6 +54,7 @@
   "decodedBlocksEqual": true,
   "bodyByteIdentical": false,
   "bodyBytes": 14160,
+  "deviceRecordOrderBodyByteIdentical": true,
   "recordOrder": {
    "generated": [
     "Amp",
@@ -81,7 +82,7 @@
  },
  "findings": {
   "storeRoundTrip": "multidelayTypes channel templates (and the Mix control on A, and the scene channels) survive STORE and reload unchanged.",
-  "recordOrder": "On STORE the FM3 writes the block records in its own order: the inserted Multi Delay record (appended last by the generator) is stored after Send. Each record keeps its channel data; only the per-record link words (next record id, its scene channels and size) differ. Loading the generator order works (T36/T38 load), so this is cosmetic."
+  "recordOrder": "On STORE the FM3 writes the block records in its own order: the inserted Multi Delay record (appended last by the generator) is stored after Send. Each record keeps its channel data; only the per-record link words (next record id, its scene channels and size) differ. Loading the generator order works (T36/T38 load), so this is cosmetic. Since 0.3.58 the generator uses the device order (fm3-record-order): the same spec now produces the stored body byte for byte."
  },
  "meaning": "multidelayTypes is device-confirmed for load + edit buffer (T36) and STORE/reload (T38).",
  "files": [

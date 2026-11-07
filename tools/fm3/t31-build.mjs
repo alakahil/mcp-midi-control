@@ -73,7 +73,7 @@ const FAM={plex:'PLEX',megatap:'MEGATAP',tentap:'TENTAP',resonator:'RESONATOR',r
 const cpuItems=[];const add=(id,family,syx,meta)=>cpuItems.push({id,family,syx,...meta});
 const calibration=()=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name:'CPU CAL NEWLOOK'},layout:{row2:ROW2,row3:['delay','reverb']}}).syx);
 add('cal-newlook','calibration',calibration(),{expectPercent:52.8,note:'NewLook + Optical Compressor (= T26 cal-newlook)'});
-const inserted=(b,name)=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:[b],layout:{row2:ROW2,row3:['delay',b,'reverb']},
+const inserted=(b,name)=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:[b],recordOrder:'append',layout:{row2:ROW2,row3:['delay',b,'reverb']},
   blockScenes:{[b]:[{scene:1,bypass:false}]}}).syx);
 for(const [b,n] of Object.entries(SEL)){
   const p=findParam(FAM[b],n),syx0=inserted(b,('CPU '+b).toUpperCase().slice(0,20)),r0=recOf(body(syx0),b),def=body(syx0).readUInt16LE(r0.start+2*p.param);
