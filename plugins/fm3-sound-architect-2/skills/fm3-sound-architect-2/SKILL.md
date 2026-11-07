@@ -273,6 +273,16 @@ kanalit iga stseen kasutab, pole dekodeeritud. Koostaja väljundis on stseeni s�
 kanal A. Modifikaatori allika sidumine on eraldi teema. Soundi skeem on 0.8.3. Tõend:
 `references/fm3-shot-t28-controllers-20261105.json`.
 
+## Multi Delay presetid: analüüs ilma seadmeta (O4, 07.11.2026)
+
+Algorithm (`MULTITAP_BASETYPE`, pid 0) on tavaline valija. Preseti sõna (`MULTITAP_PRESETS`, pid 114, 39 valikut) on
+ainult silt. Preset tähendab terve kanali kujutist, mitte ühe valija kirjutamist. Ainus mõõdetud täide on T27-st:
+Pealing Bells vaikimisi kanalil muutis 39 sõna. Algorithm sai väärtuseks Quad Series Delay, Tempo 1/2 said 1/8 ja 1/4.
+Muudetud olid veel Pan 1–3, LFO, Diffusion Time, Feedback 73 %, neli aega, Ring Mod ja nelja tapi Ring/Mod väärtused.
+Neist 33 näitab FM3-Edit valitud Algorithmil. Kuus jäävad peidetuks: Feedback 1–4, Feedback Send ja preseti silt.
+Teiste 37 preseti täidet repos ei ole. Preseti valik jääb keelatuks, kuni täide on mõõdetud (vt `deviceSweep`).
+Tõend: `references/fm3-o4-multidelay-presets-20261107.json`, tööriist `tools/fm3/o4-multidelay-presets.mjs`.
+
 ## Multi Delay parameetrid kirjutatavad (0.3.49, T27)
 
 `controls` lubab nüüd plokki `multidelay`: Base Type (`MULTITAP_BASETYPE`, FM3-Editis „Algorithm“) ja
