@@ -10899,6 +10899,12 @@
         "references/fm3-pitch-factory-evidence.json"
       ]
     },
+    "d742675bde9b426afb3d13722775d2ac21f55fd8e9653e68033f97a398751e3b": {
+      "bytes": 26796,
+      "paths": [
+        "references/fm3-o4-multidelay-presets-20261107.json"
+      ]
+    },
     "d749eb4c636c0f9cbaeee45aa909a11955785cb6f344aa85fd21bc322b79a7e9": {
       "bytes": 478,
       "paths": [
@@ -11890,12 +11896,6 @@
       "bytes": 2309,
       "paths": [
         "references/enhancer-full-20261012-122507/step-007-10c32c018a/result.json"
-      ]
-    },
-    "e592dcba13962de7b907d46010608719a2e42fffa3caf338eafac0e05cf432ad": {
-      "bytes": 17016,
-      "paths": [
-        "references/fm3-o4-multidelay-presets-20261107.json"
       ]
     },
     "e5b22822e85a45ca4c83d8bb833c97e5bd2e25ab9ca64d58d15ea8a0f240c7db": {
