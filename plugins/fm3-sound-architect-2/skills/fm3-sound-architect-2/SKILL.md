@@ -280,7 +280,9 @@ ainult silt. Preset tähendab terve kanali kujutist, mitte ühe valija kirjutami
 Pealing Bells vaikimisi kanalil muutis 39 sõna. Algorithm sai väärtuseks Quad Series Delay, Tempo 1/2 said 1/8 ja 1/4.
 Muudetud olid veel Pan 1–3, LFO, Diffusion Time, Feedback 73 %, neli aega, Ring Mod ja nelja tapi Ring/Mod väärtused.
 Neist 33 näitab FM3-Edit valitud Algorithmil. Kuus jäävad peidetuks: Feedback 1–4, Feedback Send ja preseti silt.
-Teiste 37 preseti täidet repos ei ole. Preseti valik jääb keelatuks, kuni täide on mõõdetud (vt `deviceSweep`).
+Kasutaja 03.11 eksport (`fm3-multidelay-types-20261103.syx`) hoiab seadmel valitud presette 1–3 (Quad Parallel,
+Quad Series, Quad Diffusor). Need muutsid vastavalt 3, 11 ja 11 sõna; algolek pole teada. Ülejäänud 34 preseti täidet
+repos ei ole. Preseti valik jääb keelatuks, kuni täide on mõõdetud (vt `deviceSweep`).
 Tõend: `references/fm3-o4-multidelay-presets-20261107.json`, tööriist `tools/fm3/o4-multidelay-presets.mjs`.
 
 ## Multi Delay parameetrid kirjutatavad (0.3.49, T27)

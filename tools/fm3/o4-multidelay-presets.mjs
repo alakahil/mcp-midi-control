@@ -13,6 +13,8 @@ const ROOT=fileURLToPath(new URL('../../',import.meta.url));
 const ENG=path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/');
 const RAW=path.join(ROOT,'docs/fm3/hardware-results/2026-11-05/');
 const {typeApplicability}=await import(path.join(ENG,'scripts/fm3-type-applicability.mjs'));
+const {inspectStructure}=await import(path.join(ENG,'scripts/drive-collector/fm3-prototype.mjs'));
+const {scanRecords}=await import(path.join(ENG,'scripts/fm3-layout.mjs'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const J=f=>JSON.parse(fs.readFileSync(f,'utf8'));
 const rel=f=>({path:path.relative(ROOT,f),sha256:sha(fs.readFileSync(f))});
@@ -45,6 +47,17 @@ for(let pid=0;pid<W;pid++){
     shownForAlgorithm:vis.covered&&vis.stateValid?vis.allowed:null});
 }
 assert.equal(fill.length,39);assert.deepEqual(fill.map(f=>f.pid),t27.editor.preset.fill.map(f=>f.pid));
+// The MD_TYPES donor (user FM3 export 2026-11-03, references/fm3-multidelay-types-20261103.syx): channels B..D hold
+// presets 1..3 chosen on the device (start state not recorded); compared with the fresh-insert donor.
+const recWords=f=>{const b=Buffer.from(inspectStructure(fs.readFileSync(f)).raw.body),r=scanRecords(b,{requireAmpCab:false}).records.find(r=>r.eid===74);
+  assert.ok(r&&r.words===W&&r.channels===4);return [...Array(4*W).keys()].map(i=>b.readUInt16LE(r.start+2*i));};
+const typesf=path.join(ENG,'references/fm3-multidelay-types-20261103.syx'),freshf=path.join(ENG,'references/fm3-multidelay-fresh-20261103.syx');
+const types=recWords(typesf),fresh=recWords(freshf);assert.deepEqual(ch(fresh,0),def,'fresh-insert donor = device default');
+const donorPresets=[1,2,3].map(c=>{const w=ch(types,c);assert.equal(w[114],c);assert.equal(w[0],c);
+  const d=[];for(let pid=0;pid<W;pid++)if(w[pid]!==def[pid]){const p=P.get(pid);d.push({pid,name:p.name,label:p.label,from:def[pid],to:w[pid],fromDisplay:display(p,def[pid]),toDisplay:display(p,w[pid])});}
+  return {presetWord:c,label:PRESETS[c],algorithm:ALGOS[w[0]],channel:'ABCD'[c],fillWords:d.length,fill:d,words:w};});
+assert.deepEqual(ch(types,0),def,'MD_TYPES channel A = default (preset 0 word)');
+assert.deepEqual(donorPresets.map(d=>d.fillWords),[3,11,11]);
 const shown=fill.filter(f=>f.shownForAlgorithm===true).map(f=>f.pid),hidden=fill.filter(f=>f.shownForAlgorithm===false).map(f=>f.pid);
 const out={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-11-07',audit:'O4',
  sources:{t27Receipt:rel(t27f),baseline:rel(basef),after:rel(aftf)},
@@ -54,10 +67,12 @@ const out={schemaVersion:1,device:'FM3 Mk II Turbo',firmware:13,date:'2026-11-07
   status:'device default of a freshly inserted block (T26/T27); it carries preset word 0 "Quad-Tap Delay". Whether choosing "Quad-Tap Delay" in FM3-Edit fills exactly this image is not measured.'},
  pealingBells:{presetWord:12,algorithm:ALGOS[algo],channelMeasured:'B',fillWords:fill.length,shownWords:shown,hiddenWords:hidden,fill,words:pb,
   status:'measured once: FM3-Edit preset choice on the device-default channel, FM3 block read back (fn=0x1F). The 121-word image is exact for that start state; audio, STORE/reload and the fill from a non-default start are not measured.'},
- otherPresets:{count:PRESETS.length-2,labels:PRESETS.filter((_,i)=>i!==0&&i!==12),status:'fill tables not measured; the editor/device fill is not in the repository (the FM3-Edit table was not extracted)'},
- deviceSweep:{method:'T27 MDF method: FM3_SHOT_LOAD.py --load sends the device-default preset to the edit buffer (7F 00); in FM3-Edit choose one Type on channel A, do not save, close FM3-Edit; FM3_SHOT_READ.py reads the block (fn=0x1F, read only). One preset per read, 37 reads plus a "Quad-Tap Delay" control read. Nothing stored or set.',
+ donorPresets:{source:rel(typesf),freshDonor:rel(freshf),presets:donorPresets,
+  status:'device-made preset choices in a user export; the start state of those channels is not recorded, so each image is exact as stored but not proven to be the fill from the device default. Presets 1..3 match the Algorithm names; 2 and 3 also set the four tap Ring frequencies/mixes, as Pealing Bells does.'},
+ otherPresets:{count:PRESETS.length-5,labels:PRESETS.filter((_,i)=>![0,1,2,3,12].includes(i)),status:'fill tables not measured; the editor/device fill is not in the repository (the FM3-Edit table was not extracted)'},
+ deviceSweep:{method:'T27 MDF method: FM3_SHOT_LOAD.py --load sends the device-default preset to the edit buffer (7F 00); in FM3-Edit choose one Type on channel A, do not save, close FM3-Edit; FM3_SHOT_READ.py reads the block (fn=0x1F, read only). One preset per read: the 34 unmeasured presets, presets 0..3 from the device default, and Pealing Bells again as a repeat check. Nothing stored or set.',
   acceptance:'per preset: only channel A changes, pid 114 = preset index, the full 121-word image is recorded; a repeat of Pealing Bells must equal this image',
   thenWritable:'a preset becomes a full-channel template (all 121 words replaced) on the chosen channel; other controls apply on top and keep the normal visibility policy'}};
 const target=path.join(ENG,'references','fm3-o4-multidelay-presets-20261107.json'),content=JSON.stringify(out,null,1)+'\n';
 if(process.argv.includes('--write'))fs.writeFileSync(target,content);else assert.equal(fs.readFileSync(target,'utf8'),content,'O4 analysis stale');
-console.log(JSON.stringify({algorithm:ALGOS[algo],fill:fill.length,shown:shown.length,hidden:hidden.length,unknownVisibility:fill.length-shown.length-hidden.length}));
+console.log(JSON.stringify({donorPresets:donorPresets.map(d=>d.label+' '+d.fillWords),algorithm:ALGOS[algo],fill:fill.length,shown:shown.length,hidden:hidden.length,unknownVisibility:fill.length-shown.length-hidden.length}));

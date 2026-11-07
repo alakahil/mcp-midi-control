@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2180,
-  "filePaths": 2384,
+  "uniqueContents": 2181,
+  "filePaths": 2385,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -11890,6 +11890,12 @@
       "bytes": 2309,
       "paths": [
         "references/enhancer-full-20261012-122507/step-007-10c32c018a/result.json"
+      ]
+    },
+    "e592dcba13962de7b907d46010608719a2e42fffa3caf338eafac0e05cf432ad": {
+      "bytes": 17016,
+      "paths": [
+        "references/fm3-o4-multidelay-presets-20261107.json"
       ]
     },
     "e5b22822e85a45ca4c83d8bb833c97e5bd2e25ab9ca64d58d15ea8a0f240c7db": {
