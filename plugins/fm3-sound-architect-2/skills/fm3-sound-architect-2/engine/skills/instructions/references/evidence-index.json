@@ -3586,6 +3586,12 @@
         "references/wah-minmax-exact.json"
       ]
     },
+    "4699b1e6fe3ea65758914d68c1209780baea0c50ae316dcb9baa764f365eb85e": {
+      "bytes": 30863,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "47100f661c57f5be1d9f703670d390991225ca240cf6d706fde0c5e090c0208b": {
       "bytes": 5025,
       "paths": [
@@ -11123,12 +11129,6 @@
       "bytes": 12868,
       "paths": [
         "references/phaser-library.json"
-      ]
-    },
-    "d9f03d9efb40f91f8f9d6b80c01cc002270e80dbab5ed12b8d1e18a941e8c87f": {
-      "bytes": 30317,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "d9fda0e4581de4f700f0a7a1f27ebae2e60ed7235f7f4a8ea69451adf7896007": {
