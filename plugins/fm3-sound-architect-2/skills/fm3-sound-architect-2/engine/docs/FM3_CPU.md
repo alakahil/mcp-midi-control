@@ -62,6 +62,13 @@ ja loeb CPU `fn=0x01 sub=0x2E` vastusest. Midagi ei salvestata.
 `fm3-cpu.mjs` 0.2.1 arvutab iga stseeni CPU aktiivse kanali tüübi järgi. Mõõtmata tüübi korral kasutab see
 olemasolevat pere maksimumi või mõõdetud võrdlustüüpi ja nimetab selle; teadmata pere jäetakse summast välja. Hoiatus antakse üle 72 %-st; üle 80 % on ohutu piir ületatud.
 
+## Synth hääled (0.2.5, T37 7.11.2026)
+
+Hääl 2 ja hääl 3 maksavad tüübiti sama palju kui hääl 1 (T31). Hääled liituvad: plokk 2,5 punkti + iga hääle osa,
+mis pole OFF (SINE 1,5, TRIANGLE 5, SQUARE/SAWTOOTH 4,5, RANDOM 5, WHT NOISE 9, PINK NOISE 11). Kolm TRIANGLE
+häält mõõdeti 1 ja kolm PINK NOISE häält 4 punkti summast madalamana; hinnang kasutab summat (ettevaatlik).
+Tõend: `references/fm3-t37-synth-cpu-20261107.json`, ehitaja `tools/fm3/t37-synth-cpu-build.mjs`.
+
 ## Järgmine
 
 - Mõõtmata on veel point-6 perede teised tüübid (Plex, Megatap jt), Cab LEGACY ja Amp (Ampi tuum).

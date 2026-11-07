@@ -99,7 +99,7 @@ export function insertBlocks(syx,blocks){
   return {syx:out,inserted,report:{stage:'fm3-insert-blocks 0.2.0',donorSha256:INSERT_DONOR.sha256,emptySha256:INSERT_DONOR.emptySha256,
     ...(blocks.includes('multidelay')?{multidelayDonorSha256:MULTIDELAY_DONOR.sha256,multidelayEmptySha256:MULTIDELAY_DONOR.emptySha256}:{}),outputSha256:sha(out),bodyBytes:body.length,
     checks:{donorPairReconstructed:true,donorChannelsIdentical:true,existingRecordsUnchanged:true,systemTailPreserved:true,onlyDeclaredGridWords:true,frameChecksums:true,presetCrc:true,footer:true,bodyReadback:true},
-    hardware:'record shapes device-confirmed (2026-10-23 exports); generated insertion import/export pending',audio:'not tested',cpu:'measured per type (T31, fm3-cpu 0.2.4)'}};
+    hardware:'record shapes device-confirmed (2026-10-23 exports); generated insertion import/export pending',audio:'not tested',cpu:'measured per type (T31; Synth voices 2/3 T37, fm3-cpu 0.2.5)'}};
 }
 export function insertCapabilities(){
   return {field:'insert',blocks:Object.keys(INSERTABLE),gated:GATED,donor:INSERT_DONOR.file,multidelayDonor:MULTIDELAY_DONOR.file,
