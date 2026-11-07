@@ -26,7 +26,7 @@ const NEWLOOK=read('examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx');
 const PRESETS=findParam('multidelay','MULTITAP_PRESETS');assert.equal(PRESETS.param,114);assert.equal(PRESETS.enum.length,39);
 const WORDS=121,NAME='T35 MD DEFAULT';
 const syx=Buffer.from(composeSound(NEWLOOK,{composer:{schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:NAME,compressorChannels:[{channel:'A',type:'Optical Compressor'}]},
-  insert:['multidelay'],selectedScene:1,layout:{row2:['compressor','drive','amp','cab'],row3:['delay','multidelay','reverb']},blockScenes:{multidelay:[{scene:1,bypass:false}]}}).syx);
+  insert:['multidelay'],recordOrder:'append',selectedScene:1,layout:{row2:['compressor','drive','amp','cab'],row3:['delay','multidelay','reverb']},blockScenes:{multidelay:[{scene:1,bypass:false}]}}).syx);
 assert.deepEqual([...parsePresetDump(syx,0,17).headerPayload],[0x7f,0,0,0x40,0],'edit-buffer header');
 const body=Buffer.from(inspectStructure(syx).raw.body),rec=scanRecords(body,{requireAmpCab:false}).records.find(r=>r.eid===74);
 assert.ok(rec&&rec.words===WORDS&&rec.channels===4,'Multi Delay record');

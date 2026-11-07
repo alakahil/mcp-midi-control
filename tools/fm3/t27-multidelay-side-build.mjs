@@ -35,7 +35,7 @@ const BASETYPE=findParam('multidelay','MULTITAP_BASETYPE'),PRESETS=findParam('mu
 assert.equal(BASETYPE.param,0);assert.equal(BASETYPE.enum.length,6);assert.equal(PRESETS.param,114);assert.equal(PRESETS.enum.length,39);
 const WORDS=121,CH='ABCD';
 
-const mdp=name=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:['multidelay'],selectedScene:1,
+const mdp=name=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:['multidelay'],recordOrder:'append',selectedScene:1,
   layout:{row2:['compressor','drive','amp','cab'],row3:['delay','multidelay','reverb']},blockScenes:{multidelay:[{scene:1,bypass:false}]}}).syx);
 const recordOf=syx=>{const body=Buffer.from(inspectStructure(syx).raw.body),rec=scanRecords(body,{requireAmpCab:false}).records.find(r=>r.eid===74);
   assert.ok(rec&&rec.words===WORDS&&rec.channels===4,'Multi Delay record');

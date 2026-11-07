@@ -27,7 +27,7 @@ const WORDS=121,EID=74,NAME='T36 MD TYPES';
 const TYPES=[['A','Pealing Bells'],['B','Dub Echo'],['C','Mono Diffuser'],['D','Aurora Delay']];
 const spec={composer:{schemaVersion:1,firmware:13,baseProfile:'jb-composer',name:NAME,compressorChannels:[{channel:'A',type:'Optical Compressor'}],
     scenes:TYPES.map(([c,t],i)=>({scene:i+1,name:c+' '+t}))},
-  insert:['multidelay'],selectedScene:1,layout:{row2:['compressor','drive','amp','cab'],row3:['delay','multidelay','reverb']},
+  insert:['multidelay'],recordOrder:'append',selectedScene:1,layout:{row2:['compressor','drive','amp','cab'],row3:['delay','multidelay','reverb']},
   multidelayTypes:TYPES.map(([channel,type])=>({channel,type})),
   controls:[{block:'multidelay',channel:'A',param:'MULTITAP_MIX',value:30}],
   blockScenes:{multidelay:TYPES.map(([channel],i)=>({scene:i+1,channel,bypass:false}))}};

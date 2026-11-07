@@ -37,7 +37,7 @@ const LAYOUT={row2:['compressor','drive','peq','phaser','amp','cab'],row3:['dela
 const FAMILY={peq:'PEQ',phaser:'PHASER',multidelay:'MULTITAP',controllers:'CONTROLLERS'};
 const allow=['enum-labels'];
 const body=syx=>Buffer.from(inspectStructure(syx).raw.body);
-const compose=(name,extra)=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:['multidelay'],allow,layout:LAYOUT,...extra}).syx);
+const compose=(name,extra)=>Buffer.from(composeSound(NEWLOOK,{composer:{...COMPOSER,name},insert:['multidelay'],recordOrder:'append',allow,layout:LAYOUT,...extra}).syx);
 // Records read back: the three blocks (4 channels each) and the Controllers prefix record (4 copies).
 function records(b){
   const rs=scanRecords(b).records,pick=f=>{const r=rs.filter(x=>x.family===f);assert.equal(r.length,1,f);return r[0];};
