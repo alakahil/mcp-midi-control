@@ -1,0 +1,278 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-07",
+ "test": "T37",
+ "audit": "H6",
+ "method": "FM3_CPU_SWEEP.py: edit-buffer loads (7F 00) of cal-newlook and cal-newlook + Synth in row 3 (Scene 1 engaged) with only the voice type words set; CPU meter fn=0x01 sub=0x2E until three equal reads. Nothing stored or set.",
+ "builder": "tools/fm3/t37-synth-cpu-build.mjs",
+ "packSha256": "f6c2e4a9fa0973a93a42e086e29cd217e44dd9b06b82f2aabb95bbcfabf4e810",
+ "calibration": {
+  "start": 52.5,
+  "end": 52.5
+ },
+ "meterStepPercent": {
+  "below64": 0.5,
+  "atOrAbove64": 1
+ },
+ "voiceIncrementPoints": {
+  "SINE": 1.5,
+  "TRIANGLE": 5,
+  "SQUARE": 4.5,
+  "SAWTOOTH": 4.5,
+  "RANDOM": 5,
+  "WHT NOISE": 9,
+  "PINK NOISE": 11
+ },
+ "blockBasePoints": 2.5,
+ "items": [
+  {
+   "id": "cal-newlook",
+   "cpuPercent": 52.5
+  },
+  {
+   "id": "default",
+   "voices": [
+    "TRIANGLE",
+    "OFF",
+    "OFF"
+   ],
+   "cpuPercent": 60,
+   "costPoints": 7.5,
+   "summedPoints": 7.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "v2:0",
+   "voices": [
+    "OFF",
+    "SINE",
+    "OFF"
+   ],
+   "cpuPercent": 56.5,
+   "costPoints": 4,
+   "summedPoints": 4,
+   "errorPoints": 0
+  },
+  {
+   "id": "v2:1",
+   "voices": [
+    "OFF",
+    "TRIANGLE",
+    "OFF"
+   ],
+   "cpuPercent": 60,
+   "costPoints": 7.5,
+   "summedPoints": 7.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "v2:2",
+   "voices": [
+    "OFF",
+    "SQUARE",
+    "OFF"
+   ],
+   "cpuPercent": 59.5,
+   "costPoints": 7,
+   "summedPoints": 7,
+   "errorPoints": 0
+  },
+  {
+   "id": "v2:3",
+   "voices": [
+    "OFF",
+    "SAWTOOTH",
+    "OFF"
+   ],
+   "cpuPercent": 59.5,
+   "costPoints": 7,
+   "summedPoints": 7,
+   "errorPoints": 0
+  },
+  {
+   "id": "v2:4",
+   "voices": [
+    "OFF",
+    "RANDOM",
+    "OFF"
+   ],
+   "cpuPercent": 60,
+   "costPoints": 7.5,
+   "summedPoints": 7.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "v2:5",
+   "voices": [
+    "OFF",
+    "WHT NOISE",
+    "OFF"
+   ],
+   "cpuPercent": 64,
+   "costPoints": 11.5,
+   "summedPoints": 11.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "v2:6",
+   "voices": [
+    "OFF",
+    "PINK NOISE",
+    "OFF"
+   ],
+   "cpuPercent": 66,
+   "costPoints": 13.5,
+   "summedPoints": 13.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "v3:0",
+   "voices": [
+    "OFF",
+    "OFF",
+    "SINE"
+   ],
+   "cpuPercent": 56.5,
+   "costPoints": 4,
+   "summedPoints": 4,
+   "errorPoints": 0
+  },
+  {
+   "id": "v3:1",
+   "voices": [
+    "OFF",
+    "OFF",
+    "TRIANGLE"
+   ],
+   "cpuPercent": 60,
+   "costPoints": 7.5,
+   "summedPoints": 7.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "v3:2",
+   "voices": [
+    "OFF",
+    "OFF",
+    "SQUARE"
+   ],
+   "cpuPercent": 59.5,
+   "costPoints": 7,
+   "summedPoints": 7,
+   "errorPoints": 0
+  },
+  {
+   "id": "v3:3",
+   "voices": [
+    "OFF",
+    "OFF",
+    "SAWTOOTH"
+   ],
+   "cpuPercent": 59.5,
+   "costPoints": 7,
+   "summedPoints": 7,
+   "errorPoints": 0
+  },
+  {
+   "id": "v3:4",
+   "voices": [
+    "OFF",
+    "OFF",
+    "RANDOM"
+   ],
+   "cpuPercent": 60,
+   "costPoints": 7.5,
+   "summedPoints": 7.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "v3:5",
+   "voices": [
+    "OFF",
+    "OFF",
+    "WHT NOISE"
+   ],
+   "cpuPercent": 65,
+   "costPoints": 12.5,
+   "summedPoints": 11.5,
+   "errorPoints": 1
+  },
+  {
+   "id": "v3:6",
+   "voices": [
+    "OFF",
+    "OFF",
+    "PINK NOISE"
+   ],
+   "cpuPercent": 66,
+   "costPoints": 13.5,
+   "summedPoints": 13.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "mix:tri2",
+   "voices": [
+    "TRIANGLE",
+    "TRIANGLE",
+    "OFF"
+   ],
+   "cpuPercent": 65,
+   "costPoints": 12.5,
+   "summedPoints": 12.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "mix:tri3",
+   "voices": [
+    "TRIANGLE",
+    "TRIANGLE",
+    "TRIANGLE"
+   ],
+   "cpuPercent": 69,
+   "costPoints": 16.5,
+   "summedPoints": 17.5,
+   "errorPoints": -1
+  },
+  {
+   "id": "mix:pink3",
+   "voices": [
+    "PINK NOISE",
+    "PINK NOISE",
+    "PINK NOISE"
+   ],
+   "cpuPercent": 84,
+   "costPoints": 31.5,
+   "summedPoints": 35.5,
+   "errorPoints": -4
+  },
+  {
+   "id": "mix:ssw",
+   "voices": [
+    "SINE",
+    "SAWTOOTH",
+    "WHT NOISE"
+   ],
+   "cpuPercent": 70,
+   "costPoints": 17.5,
+   "summedPoints": 17.5,
+   "errorPoints": 0
+  },
+  {
+   "id": "cal-newlook-end",
+   "cpuPercent": 52.5
+  }
+ ],
+ "rule": "Synth cost = 2.5 (block, all voices OFF) + for each voice that is not OFF its T31 voice-1 cost minus 2.5. Voices 2 and 3 alone matched voice 1 within one meter step; two voices and SINE/SAWTOOTH/WHT NOISE matched the sum exactly; three TRIANGLE measured 1 point and three PINK NOISE 4 points below the sum (the sum is conservative).",
+ "files": [
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/t37/manifest.json",
+   "sha256": "f6c2e4a9fa0973a93a42e086e29cd217e44dd9b06b82f2aabb95bbcfabf4e810"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-07/t37/results.jsonl",
+   "sha256": "8877dd81ae1b1d440c9a856046fe0e2d5b9f367db4a3c6bd4e6e0a761f9de22a"
+  }
+ ]
+}

@@ -28,7 +28,7 @@ import {applyControllers,validateControllers,renderControllersText,controllersCa
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.56',firmware:13,base:'jb-newlook',composer,
+  return {profile:'fm3-sound',revision:'0.3.57',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers','controllersScenes','modifierEdits','multidelayTypes'],
     insert:insertCapabilities(),
     controllers:controllersCapabilities(),multidelayTypes:multidelayTypesCapabilities(),modifierEdits:modifierEditsCapabilities(),
@@ -109,7 +109,7 @@ export function composeSound(base,spec){
   const switchReport=controlSwitches?{...switches?.report,policy:'control-switch-default-template-fw13',evidenceSha256:controlSwitchCapabilities().evidence.sha256,records:controlSwitches.map(c=>c.record),onlyDeclaredWordsChanged:true,bodyReadback:true,dumpHeaderPreserved:true,deviceIO:false}:null;
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const cpuEstimate=estimateCpu(second.syx);
-  const report={generator:'fm3-sound-0.3.56',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.57',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,...(controlSwitches?{controlSwitches}:{}),...(edits?{modifierEdits:edits.report}:{}),...(csp?{csPreset}:{}),...(ctl?{controllers:ctl.writes}:{}),...(cts?{controllersScenes:[...cts.channels]}:{}),...(mdt?{multidelayTypes:mdt.channels}:{}),
     stages:{volumePedal:volumePedal?pedal.report:null,...(edits?{modifierEdits:edits.report}:{}),...(ctl?{controllers:ctl.report}:{}),...(cts?{controllersScenes:cts.report}:{}),...(mdt?{multidelayTypes:mdt.report}:{}),...(switchReport?{controlSwitches:switchReport}:{}),...(csp?{csPreset:csp.report}:{}),volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};
