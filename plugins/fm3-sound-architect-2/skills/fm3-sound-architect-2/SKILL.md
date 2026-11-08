@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.58`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.59`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -41,6 +41,14 @@ T32–T38 ulatuse ja allika-/tüübipõhise seisu kontrollimiseks loe
 seadmeimporti, kuuldud käitumist ja STORE-kinnitust ning viitab algtõenditele.
 „not-measured” tähendab tõendi puudumist selles ulatuses, mitte tarkvaratuge
 keelavat otsust. Ära üldista ühe katse tulemust teistele allikatele või tüüpidele.
+
+0.3.59 koondab seadmevabade tööde 1–6 tulemused: parandatud juhendid,
+Controllersi allikate ja MultiDelay mallide tõendiseis ning nende piirid.
+GitHubi arendustööriistad lisavad kolme allika STORE-katse ettevalmistuse,
+automaatse tagasilugemise võrdluse ning MultiDelay ja kirjejärjekorra
+piirjuhtude kontrollid. K1 on ettevalmistatud katse, mitte uus seadmetõend.
+Kirjutustoe ulatus ja soundi skeem 0.8.8 säilivad; kohustuslikus mootori
+testikomplektis on 87 testi, välised CI-kontrollid on sellest eraldi.
 
 0.3.37 nõuab `controlSwitchScenes[].state` ja `footswitches[].function` väärtuseks
 stringi. Näiteks `"function":"latching"` on lubatud, `["latching"]` ei ole.
