@@ -5,12 +5,12 @@
   "scope": "Finite preset-word codec conformance and evidence-linked parameter map; not a device range measurement, DSP model or expanded write permission",
   "sources": {
     "tools/fm3/point3-index.py": "2053c97e456d7cd8d161e9575ba3ccd335939aa9f0ca64a3e5ea9a7dc5a01d71",
-    "tools/fm3/point3-evidence.mjs": "6159c69d4923af5de3ae66b94801f08bc7f444bd7048654685af98963f95b4ac",
+    "tools/fm3/point3-evidence.mjs": "41ecad7237fc6efc6f5491a57c5fd4b5eb8c51d2b47ce254b943f8528ed250e6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-parameter-map.mjs": "34ef6e2d1e6f7c9a9f83e43b88ce92b0180237f31dfe9a3e47df05faaf841461",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-parameter-map.mjs": "f94bf756c1a597c6dffec8f35bbbf514a2737907c8e4e14756aa4a97fcb18465",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-parameter-domain.mjs": "ed7cf9805a57afd97a603d9ca2c0dbdcdc2ac9c92b8dfbf49f5ea2f8083a29e9",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-parameter-map.mjs": "8f8c93a7a84e7bb8db9dee04e609245b7ba6653fa479b0f0b85c091f5f131d84",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_PARAMETER_EVIDENCE.json": "f78c852ecca7f9b0d7a1749b404ff7979687258c269eb3a65611f50801d6ce80"
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/docs/FM3_PARAMETER_EVIDENCE.json": "5450732d9c08a3625ec5f7f2f4325b1ba0da8709d258b607d80d384deb20fd33"
   },
   "baseline": {
     "version": "0.3.23",
@@ -53,9 +53,9 @@
     }
   },
   "limits": [
-    "2101 scalar descriptors include global and metadata-only fields; scalar conformance is not public preset support.",
+    "2114 scalar descriptors include global and metadata-only fields; scalar conformance is not public preset support.",
     "Catalogue-only keys, unknown curves, hidden controls and global writes remain unsupported.",
-    "5275 checked device labels retain the two unrequested final words of 1-based Pitch lists; labels do not establish numeric scales.",
+    "The historical label corpus retains two unrequested final words of 1-based Pitch lists; this corpus statistic is not the current hardware-gap list. Labels do not establish numeric scales.",
     "All 36 catalogue/display-range differences remain explicit source claims; canonical Cab input is 0..10, historical percent is 0..100.",
     "No new device import, STORE, live SET, audio/CPU, commercial preset audit, REA or Ghidra invocation."
   ],

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "scope": "Audit point 6 bounded offline software conformance; no new device or REA execution",
   "sources": {
-    "tools/fm3/point6-evidence.mjs": "8f732bd4eb43a348cb7be649f8681a83f4dd1bf58eb0ca21bbf53b1799b3d500",
+    "tools/fm3/point6-evidence.mjs": "10ef631bccbb1a5c3c6a6868e63497482db964408c090b4de88d9e563ff39853",
     "tools/fm3/insert_applicability.py": "20ac0e089395e8b63447157295fe2169de29c4203673bd34cd8c6288b878c485",
     "tools/fm3/point6_native_bindings.py": "bbc349823522ddbf76b1ec1221e82e2b4e694651716b8533e931dc74f58fd503",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-point6-native-bindings.json": "e2205597c48e85ab510aec9f9546964d6ad13b2aea1ffcf0f91c3a22f7cb7160",
@@ -69675,9 +69675,9 @@
     "presetWrites": false
   },
   "remaining": [
-    "Hardware import/STORE/audio/CPU/MIDI-output behavior is not tested.",
-    "MultiDelay dynamic feedback metadata remains unresolved; Mixer Delay 1-4 names are bound to native descriptors without scale promotion.",
-    "MultiDelay metadata is read-only; no new insertion or scalar authoring is enabled.",
+    "This offline replay performs no new hardware import/STORE/audio/CPU/MIDI-output tests; existing dated device receipts remain valid within their measured scope.",
+    "The original native metadata audit does not establish every dynamic feedback scale; current MultiDelay controls follow T27 applicability rules. Mixer Delay 1-4 bindings alone do not promote their scales.",
+    "MultiDelay insertion (T26), bounded scalar authoring (T27), and 39 full-channel Type templates (T35) are supported. T36 confirms four generated Type imports; T38 confirms four other Types through STORE/reload. Remaining types and combinations do not inherit those device checks.",
     "Unknown scalar curves remain gated; XML visibility is not a range measurement or proof of modifier support.",
     "Looper runtime actions remain unavailable through scalar preset controls.",
     "AustinBuddy Live Gold Tonepack was not accessible and is not included in this corpus."

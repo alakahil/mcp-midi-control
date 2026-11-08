@@ -1,0 +1,32 @@
+# Controllersi järgmised tõendilüngad
+
+## Esimene voor: ainult puuduv STORE-kinnitus
+
+Scene Controller 1, Sequencer ja ADSR 1 on juba kuuldavalt kinnitatud. Järgmine pakett kordab nende kolme säilimist pärast STORE-i ja taaslaadimist. Üks sõltumatu sidumine ühes presetis; kolm tulemust saab saata koos.
+
+| Allikas | Puudu | Järgmine kontroll |
+|---|---|---|
+| ADSR 1 | store-reload | Määra paisumine; mängi eraldi noote, kontrolli Source nime, retrigger-käitumist ja STORE järel kordumist. |
+| Sequencer | store-reload | Kontrolli rütmilist helikatkestust enne ja pärast STORE; kasuta sama T34 neljaastmelist jada. |
+| Scene Controller 1 | store-reload | Määra neljale stseenile selgelt erinevad väärtused; kontrolli järjest kasvavat Volume taset ja STORE järel säilimist. |
+| LFO 1B | device-import, audible-behavior, store-reload | Määra valitud LFO-le aeglane ja kiire sagedus; kuula Volume pulsseerimist, kontrolli Source nime ja STORE järel kordumist. |
+| LFO 2A | device-import, audible-behavior, store-reload | Määra valitud LFO-le aeglane ja kiire sagedus; kuula Volume pulsseerimist, kontrolli Source nime ja STORE järel kordumist. |
+| LFO 2B | device-import, audible-behavior, store-reload | Määra valitud LFO-le aeglane ja kiire sagedus; kuula Volume pulsseerimist, kontrolli Source nime ja STORE järel kordumist. |
+| ADSR 2 | device-import, audible-behavior, store-reload | Määra paisumine; mängi eraldi noote, kontrolli Source nime, retrigger-käitumist ja STORE järel kordumist. |
+| Envelope Follower | device-import, audible-behavior, store-reload | Mängi nõrku ja tugevaid noote; ootus määratakse kinnitatud envelope-seadistuse järgi, kontrolli Volume reaktsiooni ja STORE järel kordumist. |
+| Pitch Follower | device-import, audible-behavior, store-reload | Mängi etteantud madalaid ja kõrgeid üksiknoote; kontrolli õiget Source nime, ootuspärast Volume muutust ja STORE järel kordumist. |
+| Scene Controller 2 | device-import, audible-behavior, store-reload | Määra neljale stseenile selgelt erinevad väärtused; kontrolli järjest kasvavat Volume taset ja STORE järel säilimist. |
+| Scene Controller 3 | device-import, audible-behavior, store-reload | Määra neljale stseenile selgelt erinevad väärtused; kontrolli järjest kasvavat Volume taset ja STORE järel säilimist. |
+| Scene Controller 4 | device-import, audible-behavior, store-reload | Määra neljale stseenile selgelt erinevad väärtused; kontrolli järjest kasvavat Volume taset ja STORE järel säilimist. |
+| Manual 1 | device-import, audible-behavior, store-reload | Muuda valitud Manual väärtust kahes kontrollitud punktis; kontrolli Volume reaktsiooni, õiget Source nime ja salvestatud väärtuse säilimist. |
+| Manual 2 | device-import, audible-behavior, store-reload | Muuda valitud Manual väärtust kahes kontrollitud punktis; kontrolli Volume reaktsiooni, õiget Source nime ja salvestatud väärtuse säilimist. |
+| Manual 3 | device-import, audible-behavior, store-reload | Muuda valitud Manual väärtust kahes kontrollitud punktis; kontrolli Volume reaktsiooni, õiget Source nime ja salvestatud väärtuse säilimist. |
+| Manual 4 | device-import, audible-behavior, store-reload | Muuda valitud Manual väärtust kahes kontrollitud punktis; kontrolli Volume reaktsiooni, õiget Source nime ja salvestatud väärtuse säilimist. |
+| Manual 5 | device-import, audible-behavior, store-reload | Muuda valitud Manual väärtust kahes kontrollitud punktis; kontrolli Volume reaktsiooni, õiget Source nime ja salvestatud väärtuse säilimist. |
+
+## Piirid
+
+Ülejäänud 14 allika katse on vajaduspõhine. See plaan ei ava uusi allikaid ega sihtparameetreid. Kõigi allikate siht on Volume/Pan Volume, ALL. Erinevad LFO-kujud, sügavused ja modifikaatorikõverad vajavad oma kontrollitud ootust.
+
+Masinloetav plaan: [controllers-gap-plan.json](parameter-evidence/controllers-gap-plan.json). Tõendibaas: [FM3_CURRENT_EVIDENCE.md](FM3_CURRENT_EVIDENCE.md).
+Taasesitus: `node tools/fm3/controllers-gap-plan.mjs`; uuendamine: lisa `--write`. Uusi seadmemõõtmisi pole tehtud.
