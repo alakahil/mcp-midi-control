@@ -30,3 +30,12 @@ Scene Controller 1, Sequencer ja ADSR 1 on juba kuuldavalt kinnitatud. Järgmine
 
 Masinloetav plaan: [controllers-gap-plan.json](parameter-evidence/controllers-gap-plan.json). Tõendibaas: [FM3_CURRENT_EVIDENCE.md](FM3_CURRENT_EVIDENCE.md).
 Taasesitus: `node tools/fm3/controllers-gap-plan.mjs`; uuendamine: lisa `--write`. Uusi seadmemõõtmisi pole tehtud.
+
+## T39-T41 paketid (ette valmistatud 08.11.2026)
+
+- T39 = K1 (`tools/fm3/controllers-store-build.mjs`): Scene Controller 1, Sequencer, ADSR 1 STORE/taaslaadimine.
+- T40 (`tools/fm3/t40-controllers-sources-build.mjs`): LFO 1B, LFO 2A, LFO 2B, ADSR 2, Envelope Follower.
+- T41 (sama ehitaja): Scene Controller 2-4, Manual 1-5, Pitch Follower.
+- Igas presetis üks allikas, vastandseaded teeb vale sidumise kuuldavaks (nt LFO 1 = 5 Hz, LFO 2 = 1 Hz; teised Scene Controllerid kahanevad, teised Manualid 0 %).
+- FM3-Edit 1.07.17 stringides on Pitch Followeril ainult `CONTROLLERS_PITCH_SOURCE`; noodivahemikku ei kirjutata, T41I kontrollib ainult suunda.
+- Võrdlus: `node tools/fm3/controllers-store-compare.mjs PAKI_KAUST SESSION_KAUST` (vahele jäetud osa märgitakse `skipped`). Seadmetulemusi veel pole.

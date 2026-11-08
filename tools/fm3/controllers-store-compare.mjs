@@ -1,4 +1,4 @@
-// Offline comparison of the K1 stored readbacks. Never infer listening from preserved bytes.
+// Offline comparison of the K1 (T39) and T40/T41 stored readbacks. Never infer listening from preserved bytes.
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -26,10 +26,19 @@ export function compareStoredPreset(expected,actual){
   allowedDifferences:['selected-scene byte 0','whole-record ordering','SysEx destination header'],audioConfirmed:false};
 }
 export function compareSession(packDir,sessionDir){
- const root=JSON.parse(fs.readFileSync(path.join(packDir,'pack.json')));assert.equal(root.kind,'fm3-controllers-store-preparation');
- assert.deepEqual(root.packs.map(p=>[p.dir,p.source]),[['K1_B','Scene Controller 1'],['K1_C','Sequencer'],['K1_D','ADSR 1']],'exactly three independent source packs');
+ const root=JSON.parse(fs.readFileSync(path.join(packDir,'pack.json')));
+ if(root.kind==='fm3-controllers-store-preparation')
+  assert.deepEqual(root.packs.map(p=>[p.dir,p.source]),[['K1_B','Scene Controller 1'],['K1_C','Sequencer'],['K1_D','ADSR 1']],'exactly three independent source packs');
+ else{ // T40/T41 (tools/fm3/t40-controllers-sources-build.mjs): one new source per pack, each source once
+  assert.equal(root.kind,'fm3-controllers-sources-preparation','pack kind');assert.ok(['T40','T41'].includes(root.test),'T40/T41 pack');
+  assert.ok(root.packs.length>0&&new Set(root.packs.map(p=>p.source)).size===root.packs.length,'one pack per source');
+  for(const p of root.packs)assert.match(p.dir,new RegExp('^'+root.test+'[A-I]_[A-Z0-9]+$'),'pack dir');
+ }
+ // A part the user skipped (answer s) has no session folder; it is reported, never counted as a pass.
+ const skipped=root.kind==='fm3-controllers-sources-preparation'?new Set(root.packs.filter(p=>!fs.existsSync(path.join(sessionDir,p.dir,'bind-store-results.json'))).map(p=>p.dir)):new Set();
  for(const f of root.files){assert.ok(!path.isAbsolute(f.path)&&!f.path.split(/[\\/]/).includes('..'),'pack path');assert.equal(sha(fs.readFileSync(path.join(packDir,f.path))),f.sha256,'pack file '+f.path);}
  return root.packs.map(p=>{
+  if(skipped.has(p.dir))return {case:p.dir,source:p.source,skipped:true,dataPassed:false,audibleBehaviorConfirmed:false};
   const d=path.join(packDir,p.dir),sd=path.join(sessionDir,p.dir),mb=fs.readFileSync(path.join(d,'manifest.json')),m=JSON.parse(mb);
   assert.equal(sha(mb),p.manifestSha256,'manifest hash');
   const load=JSON.parse(fs.readFileSync(path.join(sd,'bind-store-load.json'))),r=JSON.parse(fs.readFileSync(path.join(sd,'bind-store-results.json')));
@@ -57,5 +66,5 @@ export function compareSession(packDir,sessionDir){
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const [pack,session]=process.argv.slice(2);assert.ok(pack&&session,'Usage: controllers-store-compare.mjs PACK_DIR SESSION_DIR');
  const results=compareSession(pack,session);assert.ok(results.every(r=>!r.syntheticFixture),'Synthetic test sessions are not hardware results');
- console.log(JSON.stringify({kind:'fm3-k1-offline-comparison',deviceIO:false,results},null,2));
+ console.log(JSON.stringify({kind:'fm3-controllers-store-offline-comparison',deviceIO:false,results},null,2));
 }
