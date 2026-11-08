@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "typeChannelImages": 156,
+  "nonDefaultSoftwareResets": 39,
+  "tempoCases": [
+    {
+      "target": "MULTITAP_FLTRATE",
+      "tempo": "MULTITAP_FLTTEMPO",
+      "type": "Quad-Tap Delay",
+      "value": 1.0000000074505806,
+      "manualBothOrders": true,
+      "synchronizedRejected": true,
+      "wrongChannelUnlockRejected": true
+    },
+    {
+      "target": "MULTITAP_RATE1",
+      "tempo": "MULTITAP_LFOTEMPO1",
+      "type": "Quad-Tap Delay",
+      "value": 1.0000000074505806,
+      "manualBothOrders": true,
+      "synchronizedRejected": true,
+      "wrongChannelUnlockRejected": true
+    },
+    {
+      "target": "MULTITAP_RATE2",
+      "tempo": "MULTITAP_LFOTEMPO2",
+      "type": "Quad-Tap Delay",
+      "value": 1.0000000074505806,
+      "manualBothOrders": true,
+      "synchronizedRejected": true,
+      "wrongChannelUnlockRejected": true
+    },
+    {
+      "target": "MULTITAP_TIME1",
+      "tempo": "MULTITAP_TEMPO1",
+      "type": "Quad-Tap Delay",
+      "value": 1000.5000000237487,
+      "manualBothOrders": true,
+      "synchronizedRejected": true,
+      "wrongChannelUnlockRejected": true
+    },
+    {
+      "target": "MULTITAP_TIME2",
+      "tempo": "MULTITAP_TEMPO2",
+      "type": "Quad-Tap Delay",
+      "value": 1000.5000000237487,
+      "manualBothOrders": true,
+      "synchronizedRejected": true,
+      "wrongChannelUnlockRejected": true
+    },
+    {
+      "target": "MULTITAP_TIME3",
+      "tempo": "MULTITAP_TEMPO3",
+      "type": "Quad-Tap Delay",
+      "value": 1000.5000000237487,
+      "manualBothOrders": true,
+      "synchronizedRejected": true,
+      "wrongChannelUnlockRejected": true
+    },
+    {
+      "target": "MULTITAP_TIME4",
+      "tempo": "MULTITAP_TEMPO4",
+      "type": "Quad-Tap Delay",
+      "value": 1000.5000000237487,
+      "manualBothOrders": true,
+      "synchronizedRejected": true,
+      "wrongChannelUnlockRejected": true
+    }
+  ],
+  "rejected": 17,
+  "scope": "Software template replacement and bounded public dependencies; not FM3-Edit non-default Type fill, new audio or STORE evidence.",
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

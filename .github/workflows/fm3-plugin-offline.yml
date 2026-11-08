@@ -127,6 +127,13 @@ jobs:
           python3 -B plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/cpu-sweep-collector/FM3_CPU_STEPS.py --self-test
           python3 -B tools/fm3/test-cpu-check-build.py
           node tools/fm3/cpu-sweep-ingest.mjs plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cpu-sweep-20261023-results.jsonl
+      - name: Verify current evidence and audit follow-up boundaries
+        run: |
+          node tools/fm3/current-evidence.mjs
+          node tools/fm3/controllers-gap-plan.mjs
+          node tools/fm3/test-controllers-store.mjs
+          node tools/fm3/test-multidelay-boundaries.mjs
+          node tools/fm3/test-record-order-boundaries.mjs
       - name: Verify the local runner reads this workflow
         run: node tools/fm3/local-check.mjs --list
       - name: Replay the pinned 0.3.11 remaining-modifier audit

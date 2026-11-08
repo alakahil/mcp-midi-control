@@ -30,6 +30,18 @@ Selle juhendi kehtiv seis asendab allpool viidatud ajalooliste dokumentide
 vanad „järgmine kogumine” ja „OOTEL” märked. Kasuta tegeliku kirjutustoe
 kontrollimiseks alati generaatori praegust capabilities-väljundit ja skeemi.
 
+Kehtiv enum-koond alates T31-st: **227** vaikimisi `enum-labels-crosschecked`
+valikut ja **121** opt-in valikut. T30 ajalooline 225/123 jaotus ei sisalda
+T31 `BANK1`/`BANK2` lisandusi. Opt-in ei tühista tüübi, kanali, tempo,
+modifikaatori ega nähtavuse piiranguid. Need arvud ei tähenda 227 eraldi
+seadmel mõõdetud parameetrit.
+
+T32–T38 ulatuse ja allika-/tüübipõhise seisu kontrollimiseks loe
+`MOOTOR/references/fm3-current-evidence.json`. See eristab tarkvaratuge,
+seadmeimporti, kuuldud käitumist ja STORE-kinnitust ning viitab algtõenditele.
+„not-measured” tähendab tõendi puudumist selles ulatuses, mitte tarkvaratuge
+keelavat otsust. Ära üldista ühe katse tulemust teistele allikatele või tüüpidele.
+
 0.3.37 nõuab `controlSwitchScenes[].state` ja `footswitches[].function` väärtuseks
 stringi. Näiteks `"function":"latching"` on lubatud, `["latching"]` ei ole.
 Vigane tüüp tõrjutakse nii genereerimisel kui ka nelja lõppfaili kontrollis;
@@ -264,7 +276,9 @@ EQ Type ja Comb Filters Filter Type) ja EN2 (17 Controllersi valikut: LFO Tempo/
 Retrigger/Source, Envelope ja Pitch Source, Sequencer Run/Tempo). FM3 hoidis kõik sõnad ja FM3-Edit näitas kõigil
 25-l täpselt dekodeeritud silti (Phaser Quantize: loend algab OFF, OFF, 2, 3, salvestatud 3 näitab 3). Need 25 ning
 T28-s loetud LFO 1/2 Type ja ADSR 1 Mode (kokku 28) on nüüd `enum-labels-crosschecked`, st kirjutatavad ilma
-`allow`-ta; kokku 225 vaikimisi kirjutatavat valikut. 123 jääb teadlikult opt-in'iks (`allow:["enum-labels"]`):
+`allow`-ta; T30 hetkel oli kokku 225 vaikimisi kirjutatavat valikut ja 123 opt-in valikut
+(`allow:["enum-labels"]`). T31 lisas `BANK1`/`BANK2`: kehtiv jaotus on 227/121.
+T30 ajalooliste opt-in rühmade hulgas olid:
 üldseaded (75, neid ei kirjutata), modifikaatorite seaded (6), Mixer/Multiplexer/Feedback Return/Output/Input/
 Volume marsruutimise ja bypassi sõnad, kanali tüübi/mudeli valijad (vajavad täit kanalimalli), learn/preset/IR-panga
 valijad, `MULTITAP_PRESETS` ja Controllersi Tempo To Use (kirjutaja keelab). Heli ja STORE/reload'i ei mõõdetud.
@@ -289,9 +303,11 @@ Manual 1–5) väärtusi: `[{"channel":"A","param":"LFO1FREQ","value":2.5}]`. `p
 26 oodatud väärtust (LFO, ADSR 1, Sequencer, Envelope/Manual, Scene Ctrl 1+2). Kanalivalija B/C/D näitas
 11/12/13 %, seega on neli koopiat Controllersi kanalid A–D. Kirjutamisel kehtib tavaline staatuspiirang:
 nupud, täisarvud ja (alates 0.3.52, T28/T30) kõik valikud peale Tempo To Use vaikimisi.
-Tempo, Tempo To Use, ADSR X/Y märgid ja Envelope Gain Monitor on keelatud. Millist Controllersi
-kanalit iga stseen kasutab, pole dekodeeritud. Koostaja väljundis on stseeni sõnad 0 ja FM3-Edit näitas kanalit A, seega kõlab
-kanal A. Modifikaatori allika sidumine on eraldi teema. Soundi skeem on 0.8.3. Tõend:
+Tempo, Tempo To Use, ADSR X/Y märgid ja Envelope Gain Monitor on keelatud. T28 ajal polnud Controllersi
+stseenikanali valik veel dekodeeritud ja koostaja kasutas kanalit A. Alates 0.3.55-st
+kirjutab `controllersScenes` kõik kaheksa stseenikanalit (T33/T34); Volume-seose
+allika valib `volumePedal.source`. Allika sidumine ja Controllersi väärtused on eraldi toimingud.
+T28-aegne soundi skeem oli 0.8.3. Tõend:
 `references/fm3-shot-t28-controllers-20261105.json`.
 
 ## Multi Delay presetid: analüüs ilma seadmeta (O4, 07.11.2026)

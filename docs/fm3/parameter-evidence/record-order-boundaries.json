@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "singleInsertions": 11,
+  "orderedInsertionPairs": 110,
+  "gridAdditions": 14,
+  "checks": [
+    "device versus append: entire record bytes equal",
+    "base relative order and bytes preserved",
+    "same grid/controller/modifier prefix",
+    "system tail preserved",
+    "unknown record falls back to append",
+    "inconsistent base not reordered",
+    "invalid mode/duplicate/unknown block rejected",
+    "grid retains its separate append policy"
+  ],
+  "scope": "Software invariants on the verified NewLook base plus pure ordering edge cases; no arbitrary-base authoring or new hardware/CPU/audio claim.",
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

@@ -1,0 +1,963 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-11-08",
+  "hardwareEvidenceThrough": "2026-11-07",
+  "baselineVersion": "0.3.58",
+  "scope": "T32-T38 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
+  "definitions": {
+    "confirmed": "A cited dated device result exists in the stated scope.",
+    "notMeasured": "No cited device result for this scope; not a failure and not a software-support restriction."
+  },
+  "enumCounts": {
+    "defaultPromoted": 227,
+    "optIn": 121
+  },
+  "scalarDescriptors": 2114,
+  "controllers": [
+    {
+      "name": "External 1",
+      "code": 14,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T2/T10 (2026-10-26/28)",
+        "T11 STORE"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
+    },
+    {
+      "name": "LFO 1A",
+      "code": 1,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T33 (2026-11-06)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
+    },
+    {
+      "name": "LFO 1B",
+      "code": 2,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "LFO 2A",
+      "code": 3,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "LFO 2B",
+      "code": 4,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "ADSR 1",
+      "code": 5,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T34D (2026-11-07)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
+    },
+    {
+      "name": "ADSR 2",
+      "code": 6,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Sequencer",
+      "code": 7,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T34C (2026-11-07)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
+    },
+    {
+      "name": "Envelope Follower",
+      "code": 8,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Pitch Follower",
+      "code": 9,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Scene Controller 1",
+      "code": 30,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T34B (2026-11-07)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
+    },
+    {
+      "name": "Scene Controller 2",
+      "code": 31,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Scene Controller 3",
+      "code": 32,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Scene Controller 4",
+      "code": 33,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Manual 1",
+      "code": 56,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Manual 2",
+      "code": 57,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Manual 3",
+      "code": 58,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Manual 4",
+      "code": 59,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    },
+    {
+      "name": "Manual 5",
+      "code": 60,
+      "softwareSupported": true,
+      "target": "Volume/Pan 1 Volume (102:0), ALL",
+      "deviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [],
+      "scope": "Source code from the editor list; software support is not a device test."
+    }
+  ],
+  "multiDelay": [
+    {
+      "index": 0,
+      "name": "Quad-Tap Delay",
+      "algorithm": "Quad-Tap Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 1,
+      "name": "Quad Parallel Delay",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 2,
+      "name": "Quad Series Delay",
+      "algorithm": "Quad Series Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 3,
+      "name": "Quad Diffusor",
+      "algorithm": "Diffusor",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 4,
+      "name": "Quad Tape Delay",
+      "algorithm": "Quad Tape Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 5,
+      "name": "Quad Tap Band Delay",
+      "algorithm": "Quad-Tap Band Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 6,
+      "name": "Ambient Quad Tape",
+      "algorithm": "Quad Tape Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 7,
+      "name": "Ambient Tape Delay",
+      "algorithm": "Quad Tape Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 8,
+      "name": "Circular Delays",
+      "algorithm": "Quad-Tap Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 9,
+      "name": "Comb Filter Delay",
+      "algorithm": "Quad Series Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 10,
+      "name": "Filtered Mod Band Delay",
+      "algorithm": "Quad-Tap Band Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 11,
+      "name": "Quad Chorus",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 12,
+      "name": "Pealing Bells",
+      "algorithm": "Quad Series Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35",
+        "T36"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 13,
+      "name": "Rhythmic Bands",
+      "algorithm": "Quad Series Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 14,
+      "name": "MD Chorus",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 15,
+      "name": "Mono Diffuser",
+      "algorithm": "Diffusor",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35",
+        "T36"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 16,
+      "name": "1210",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 17,
+      "name": "Aerosol",
+      "algorithm": "Quad-Tap Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 18,
+      "name": "PCM Circular",
+      "algorithm": "Quad-Tap Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 19,
+      "name": "PCM Pan",
+      "algorithm": "Quad-Tap Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 20,
+      "name": "A.H. Clean Short",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 21,
+      "name": "A.H. Clean Long",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 22,
+      "name": "A.H. Lead Short",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 23,
+      "name": "A.H. Lead Long",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 24,
+      "name": "A.H. Swell Short",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 25,
+      "name": "A.H. Swell Long",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 26,
+      "name": "Ya-Ya Delay",
+      "algorithm": "Quad-Tap Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T35",
+        "T38"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 27,
+      "name": "L-C-R-C",
+      "algorithm": "Quad Series Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T35",
+        "T38"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 28,
+      "name": "Space Tape",
+      "algorithm": "Quad Tape Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T35",
+        "T38"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 29,
+      "name": "Shadows Taps",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 30,
+      "name": "Stereo Shadows",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 31,
+      "name": "Swing Ping",
+      "algorithm": "Quad Series Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 32,
+      "name": "Dub Echo",
+      "algorithm": "Quad Tape Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35",
+        "T36"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 33,
+      "name": "Aurora Delay",
+      "algorithm": "Quad Parallel Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35",
+        "T36"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 34,
+      "name": "Kilimanjaro",
+      "algorithm": "Quad-Tap Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 35,
+      "name": "Camera Obscura",
+      "algorithm": "Diffusor",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 36,
+      "name": "Strange Things",
+      "algorithm": "Quad Series Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 37,
+      "name": "Matterhorn",
+      "algorithm": "Quad Tape Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "not-measured",
+      "audibleBehavior": "not-measured",
+      "storeReload": "not-measured",
+      "evidence": [
+        "T35"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    },
+    {
+      "index": 38,
+      "name": "Centaurus X-3",
+      "algorithm": "Quad Series Delay",
+      "softwareSupported": true,
+      "measuredFullChannelWords": 121,
+      "templateStart": "device default, channel A",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T35",
+        "T38"
+      ],
+      "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
+    }
+  ],
+  "otherEvidence": {
+    "controllersScenes": {
+      "scenes": 8,
+      "channels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "storeReload": "confirmed",
+      "evidence": [
+        "T33",
+        "T34A"
+      ],
+      "scope": "The measured scene/channel selections, not every permutation."
+    },
+    "liveComposition": {
+      "evidence": [
+        "T32",
+        "T34E"
+      ],
+      "cpuPercent": [
+        70,
+        55,
+        55,
+        71,
+        55,
+        55,
+        55,
+        55
+      ],
+      "storedBlockRecords": 11,
+      "finalLeadLevelDb": -8,
+      "finalListening": "Lead scenes about as loud as the others after Amp C -8 dB; no clipping; the user found nothing to change",
+      "limitations": [
+        "No numerical loudness measurement.",
+        "T32 CPU/STORE belong to the measured file; the final -8 dB file has T34 listening, not an independent full CPU/STORE repeat."
+      ]
+    },
+    "synthCpu": {
+      "evidence": [
+        "T37"
+      ],
+      "presets": 21,
+      "model": "0.2.5",
+      "rule": "Synth cost = 2.5 (block, all voices OFF) + for each voice that is not OFF its T31 voice-1 cost minus 2.5. Voices 2 and 3 alone matched voice 1 within one meter step; two voices and SINE/SAWTOOTH/WHT NOISE matched the sum exactly; three TRIANGLE measured 1 point and three PINK NOISE 4 points below the sum (the sum is conservative).",
+      "scope": "Measured voice types/settings, not all non-default parameters."
+    },
+    "cabCuts": {
+      "evidence": [
+        "T34F"
+      ],
+      "displayReadings": [
+        {
+          "param": "CABINET_LOCUT",
+          "shown": "87.0 Hz",
+          "page": "Preamp"
+        },
+        {
+          "param": "CABINET_HICUT",
+          "shown": "7300 Hz",
+          "page": "Preamp"
+        },
+        {
+          "param": "CABINET_LOCUT1",
+          "shown": "33.0 Hz",
+          "page": "Cabs (Cab 1)"
+        },
+        {
+          "param": "CABINET_HICUT1",
+          "shown": "12499 Hz",
+          "page": "Cabs (Cab 1)"
+        }
+      ],
+      "preampTypeNoneReadback": "not-measured",
+      "scope": "Cuts visible in the preset prepared with NONE; the Preamp Type value itself was not read back."
+    },
+    "recordOrder": {
+      "evidence": [
+        "T38"
+      ],
+      "storedBodyReproduced": true,
+      "scope": "T38 same spec with device order; insert only, unknown-pair fallback; grid unchanged."
+    }
+  },
+  "supersededHistoricalGaps": [
+    {
+      "from": "T32 final -8 dB listening pending",
+      "resolvedBy": "T34E",
+      "remaining": "Numerical loudness; separate final-file CPU/STORE."
+    },
+    {
+      "from": "T33 scenes 5-8 pending",
+      "resolvedBy": "T34A",
+      "remaining": "Other source/target/shape combinations."
+    },
+    {
+      "from": "T35 no generated Type import or STORE",
+      "resolvedBy": "T36 and T38",
+      "remaining": "31 unimported generated Types; T36 four Types lack their own STORE result."
+    }
+  ],
+  "notPromoted": [
+    "General modifier allocator and arbitrary preset bases.",
+    "Other footswitch layouts, Hold and every PP definition.",
+    "Out 2 stereo/right and 4CM.",
+    "New preset audio/CPU/STORE.",
+    "Fresh-chat automatic launcher discovery."
+  ],
+  "sources": {
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-combo-store-20261029.json": "2a31b8aa42c357fb87d0273c1466685517a5f0a6a90e0ad1e2e9eeddf0bed62c",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-enum-promotion-20261103.json": "573d5a5a9cbe095cd2911d96f4fe82a310f051d9a43c9839c4e249eb1c25745b",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t30-enum-20261105.json": "457b82bd133cc50e5f9da1ca1b0f4785bcfd2e0a214b3d0af2ff23d3d98bbb09",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t31-cab-cpu-20261105.json": "8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t32-live-20261106.json": "ad550071049798fb2e21c1b69e5633a14f3cb01779c404c699182fe2752bf52c",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t33-controllers-scene-20261106.json": "2911a0ce7e06c99937260107904f7360546ea3e2f094cdb215183fec6faf81f7",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t34-controllers-sources-20261107.json": "be8d8f33e090785b3ccf02b6d1dbc897474fec2512b9fe06ec2fa64e1c2e951a",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t35-multidelay-presets-20261107.json": "5877c6980d34ce7edd6e2f5bb453d8232f0da1b5721f7babf7cf7b0ab2f209c9",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t36-multidelay-types-20261107.json": "898d5d31d970b42ce4bd01254be4aeda476183cac710b3f64eb6221904e49dd4",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t37-synth-cpu-20261107.json": "c0a1cae9fa0fc79c16bd6573b055a84ba363fdf15656e23c91b04823dcdafbdd",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t38-multidelay-store-20261107.json": "7e2121270b5eb92d64b91bc3a48760bc9b661222f985e665eb9c0d4d068fb042",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-enum-promotion.mjs": "5cf8e5afa993cc1740ac8193b0da23f9374524c10b6fc1136f047c69a12896db",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "34c1c7edff37e7c1c3d1f6fccbd8ab513c17a99ba3da8b2e9dc85a5b46105483",
+    "tools/fm3/current-evidence.mjs": "ca267a54c2bdd1140ec20bc3ce7fabe98bbe0e18f0d4071791126bff31eed1da"
+  },
+  "newHardwareMeasurements": false,
+  "deviceIO": false
+}

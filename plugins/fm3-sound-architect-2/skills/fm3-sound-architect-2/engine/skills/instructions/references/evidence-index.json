@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2186,
-  "filePaths": 2390,
+  "uniqueContents": 2187,
+  "filePaths": 2391,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -870,6 +870,12 @@
       "bytes": 475,
       "paths": [
         "references/tremolo-batch-20261007-143642/capture-20261007T143641-d0af19e1e9/labels.json"
+      ]
+    },
+    "120e150f964e8d540c1faf6664db4d7b43ea8232d268000c20662ec95bb4505d": {
+      "bytes": 33915,
+      "paths": [
+        "references/fm3-current-evidence.json"
       ]
     },
     "121717b20c19d929d45171902b6070935b5c10beca171e4907610685af571b40": {
