@@ -1,5 +1,5 @@
 // The bundled sound schema (fm3-sound.schema.json) and the generator decide the same way for the 0.3.30-0.3.32
-// fields (controlSwitches, volumePedal {min,max}, Wah + Volume, out2), Multi Delay placement, Controllers writes,
+// fields (controlSwitches, volumePedal {min,max}, Wah + Volume, out2), Multi Delay placement, Controllers writes, 0.3.60 modifierTargets/tempo,
 // and every current example spec.
 // Generator-only rules (the schema cannot express them) are listed and must be refused by the generator.
 import fs from 'node:fs';
@@ -73,6 +73,19 @@ const ctsBoth=[['scene E',s=>s.controllersScenes[0]='E'],['9 scenes',s=>s.contro
   ['scenes string',s=>s.controllersScenes='ABCD'],['source Control Switch',s=>s.volumePedal.source='Control Switch 1'],['source lower case',s=>s.volumePedal.source='lfo 1a'],['source number',s=>s.volumePedal.source=1]];
 for(const [name,edit] of ctsBoth){const s=structuredClone(cts);edit(s);
   assert.notDeepEqual(checkSchema(S,s),[],'schema accepts: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
+// 0.3.60 (T42): modifierTargets and tempo. Shape errors are refused by both; the flag rule and block presence by the generator.
+const mt={composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},modifierTargets:[{source:'Scene Controller 1',block:'delay',param:'DELAY_MIX',min:0,max:100},{source:'External 1',block:'amp',param:'DISTORT_DRIVE',channel:'A'}],tempo:143};
+ok(mt);ok({...structuredClone(mt),modifierTargets:[{source:'LFO 2B',block:'reverb',param:'REVERB_MIX'}],tempo:24});
+const mtBoth=[['source Control Switch',s=>s.modifierTargets[0].source='Control Switch 1'],['no param',s=>delete s.modifierTargets[0].param],['curve field',s=>s.modifierTargets[0].curve=1],
+  ['channel E',s=>s.modifierTargets[1].channel='E'],['min string',s=>s.modifierTargets[0].min='0'],['9 targets',s=>s.modifierTargets=Array(9).fill(s.modifierTargets[0])],['empty',s=>s.modifierTargets=[]],
+  ['tempo 23',s=>s.tempo=23],['tempo 251',s=>s.tempo=251],['tempo fraction',s=>s.tempo=97.5],['tempo string',s=>s.tempo='97']];
+for(const [name,edit] of mtBoth){const s=structuredClone(mt);edit(s);
+  assert.notDeepEqual(checkSchema(S,s),[],'schema accepts: '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
+const mtGenerator=[['bit-set target',s=>s.modifierTargets[0].param='DELAY_LOCUT'],['type selector',s=>s.modifierTargets[0].param='DELAY_TYPE'],['Volume target',s=>s.modifierTargets[0]={source:'LFO 1A',block:'volpan',param:'VOLUME_GAIN'}],
+  ['block not placed',s=>s.modifierTargets[0]={source:'LFO 1A',block:'chorus',param:'CHORUS_MIX'}],['min out of range',s=>s.modifierTargets[0].min=-5],['same target twice',s=>s.modifierTargets[1]={...s.modifierTargets[0],source:'LFO 1A'}],
+  ['Min/Max on a switch',s=>s.modifierTargets[1]={source:'LFO 1A',block:'amp',param:'DISTORT_BOOST',min:0,max:1}]];
+for(const [name,edit] of mtGenerator){const s=structuredClone(mt);edit(s);
+  assert.deepEqual(checkSchema(S,s),[],'schema refuses (move it to the both-list): '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
 // 0.3.51 (T29): Feedback Return controls. "send" is refused by both; Return channels B-D, Bypass/Bypass Mode and
 // out-of-range values by the generator only.
 const fb={composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']},controls:[{block:'return',channel:'A',param:'RETLEVEL',value:80},{block:'return',channel:'A',param:'PAN',value:20}]};
@@ -106,4 +119,4 @@ const generatorOnly=[
 for(const [name,edit,i] of generatorOnly){const s=structuredClone(valid[i]);edit(s);
   assert.deepEqual(checkSchema(S,s),[],'schema refuses (move it to the both-list): '+name);assert.throws(()=>createPreset(base,s),Error,'generator accepts: '+name);}
 assert.ok(checkSchema(S,{composer,layout:{row2:['amp','cab'],row3:[]},unknownField:1}).some(e=>/unknownField/.test(e)),'unknown top-level field refused');
-console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:5,multidelayRefusals:4,controllersRefusals:{both:ctlBoth.length,generatorOnly:ctlGenerator.length},controllersScenesRefusals:ctsBoth.length,refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));
+console.log(JSON.stringify({passed:true,examples,newFieldSpecs:valid.length,multidelayValidSpecs:5,multidelayRefusals:4,controllersRefusals:{both:ctlBoth.length,generatorOnly:ctlGenerator.length},controllersScenesRefusals:ctsBoth.length,modifierTargetsRefusals:{both:mtBoth.length,generatorOnly:mtGenerator.length},refusedByBoth:both.length,generatorOnly:generatorOnly.map(x=>x[0]),historicalExceptions:[...HISTORICAL]}));

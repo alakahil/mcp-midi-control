@@ -19,6 +19,7 @@ import {dependencyState,readModifiers,dependencyPolicySummary} from './fm3-param
 import {globalScaleDependencies,pitchCustomScaleSummary} from './fm3-pitch-custom-scales.mjs';
 import {renderGlobalScaleObservations} from './fm3-global-scale-observations.mjs';
 import {renderModifierEditsText} from './fm3-modifier-edits.mjs';
+import {renderModifierTargetsText} from './fm3-modifier-targets.mjs';
 import {renderWahModifierText} from './fm3-wah-modifier.mjs';
 import {INSERT_TYPE_PID} from './fm3-insert-blocks.mjs';
 const definitions=Object.assign({},...Object.values(layouts),filterDonor.blocks,peqDonor.blocks,geqDonor.blocks,enhancerDonor.blocks,{volpan:{typePid:9}});
@@ -87,7 +88,7 @@ export function renderFinalSoundText(state,spec){
     'Seade: FM3 Mk II Turbo, firmware 13.',`Kitarr: ${context.guitar??'selle kirjelduse jaoks määramata'}`,
     `Helipead: ${context.pickups??'selle kirjelduse jaoks määramata'}`,`Ühendus: ${context.output??'selle kirjelduse jaoks määramata'}`,
     `Valitud Scene: ${state.selectedScene}`,...(state.signalLayout==='grid'?['Ruudustik (4 × 12; "-" = shunt, "." = tühi, "<2+3" = sisend ridadest 2 ja 3):',...state.signalRows.map((r,i)=>`Rida ${i+1}: ${r}`),...(state.signalLinks.length?['Hargnemised ja liitmised (sihtlahter ← allikas):',...state.signalLinks.map(l=>'  '+l)]:[]),...state.gridWarnings.map(w=>'HOIATUS: '+w)]:state.signalRows.map((r,i)=>`Rida ${i+2}: ${r}`)),...(state.sceneMidi?['','SCENE MIDI (salvestatud käsud; MIDI OUT väljastus ja PC nihe on mõõtmata)',...(state.sceneMidi.length?state.sceneMidi.map(c=>`Scene ${c.scene}, käsk ${c.command}: ${c.type} kanal ${c.channel}, ${c.type==='PC'?`programm ${c.program} (FM3 Value väli)`:`CC ${c.number}, väärtus ${c.value}`}`):['  käske pole'])]:[]),'','STSEENID JA LÕPLIKUD MUDELID'];
-  lines.push(...renderWahModifierText(state.modifierEdit),...renderVolumePedalText(state.volumePedal),...renderControlSwitchText(state.controlSwitches),...renderCsPresetText(state.csPreset),...renderModifierEditsText(state.modifierEdits));
+  lines.push(...renderWahModifierText(state.modifierEdit),...renderVolumePedalText(state.volumePedal),...renderControlSwitchText(state.controlSwitches),...renderModifierTargetsText(state.modifierTargets),...renderCsPresetText(state.csPreset),...renderModifierEditsText(state.modifierEdits));
   if(state.controls.some(w=>w.block==='in1'))lines.push('','SISENDI GATE — INPUT 1',
     'Presetis salvestatud A–D väärtused; Gate Type, Mode ja bypass säilivad. See ei ole eraldi Gate-plokk.',
     'Kodeering kasutab FW13 tabelikõveraid; 20 Input-sihtsõna säilimine ja 24.10.2026 valitud skaalapunktid on kinnitatud. Mõõtmata vaheväärtused tuginevad mudelile.',

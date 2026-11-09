@@ -3,6 +3,7 @@ import {verifyModifierEditsOutput} from './fm3-modifier-edits.mjs';
 import {verifyControlsOutput} from './fm3-controls-output.mjs';
 import {verifyVolumePedalOutput} from './fm3-volume-pedal.mjs';
 import {verifyControlSwitchOutput} from './fm3-control-switches.mjs';
+import {verifyModifierTargetsOutput} from './fm3-modifier-targets.mjs';
 import {verifyCsPresetOutput} from './fm3-cs-preset.mjs';
 import {verifyGridOutput} from './fm3-grid-output.mjs';
 import {verifyVolumeOutput} from './fm3-volume-output.mjs';
@@ -58,6 +59,7 @@ export function verifyPresetOutputs(stem){
   verifyVolumeOutput(report,syx,txt,spec);
   verifyVolumePedalOutput(report,syx,txt,finalModifiers.spec,finalModifiers.region);
   verifyControlSwitchOutput(report,syx,txt,finalModifiers.spec);
+  verifyModifierTargetsOutput(report,syx,txt,finalModifiers.spec);
   verifyCsPresetOutput(report,syx,txt,finalModifiers.spec);
   verifyGridOutput(report,syx,txt,spec);
   verifyControlsOutput(report,syx,txt,spec);

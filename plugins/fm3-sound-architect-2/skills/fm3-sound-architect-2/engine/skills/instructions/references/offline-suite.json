@@ -610,6 +610,15 @@
       "required": true
     },
     {
+      "id": "test-modifier-targets",
+      "command": [
+        "node",
+        "scripts/test-modifier-targets.mjs"
+      ],
+      "scope": "modifierTargets and tempo (0.3.60, T42): FM3-Edit flag-0x0080 rule (476 bit-clear, 468 labelled targets), the three device-stored T42 records replayed word for word, placement after Volume/Control Switch bindings, tempo in all four Controllers channels, refusals and CRC-valid tamper rejection; no new hardware evidence",
+      "required": true
+    },
+    {
       "id": "test-controllers-scenes",
       "command": [
         "node",
