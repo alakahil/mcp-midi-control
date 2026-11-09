@@ -1,6 +1,6 @@
 # FM3 kehtiv tõendiseis
 
-Koondatud 2026-11-09; seadmetõendid kuni 2026-11-09. Alus 0.3.58.
+Koondatud 2026-11-09; seadmetõendid kuni 2026-11-09. Alus 0.3.62.
 
 See on ulatusega tõendikoond, mitte kõigi FM3 võimaluste valmidusprotsent. „Mõõtmata” ei tähenda keelatud sisendit ega ebaõnnestunud katset.
 
@@ -31,6 +31,18 @@ Enum: 227 vaikimisi / 121 opt-in; scalarDescriptors: 2114.
 | Manual 5 | 60 | jah | jah / jah | jah | T41H (2026-11-09) |
 
 Siht: Volume/Pan 1 Volume, ALL. T39-T41 (09.11.2026) kinnitasid ülejäänud 17 allikat: õige Source, ootuspärane heli ning STORE/reload baiditäpselt, ainult katse seadetega. Controllersi kõik kaheksa stseenikanalit on T33/T34 ulatuses kinnitatud. See ei laienda tuge suvalisele sihtparameetrile.
+
+## T42: modifikaatori sihid ja tempo
+
+| Siht | Allikas | Min–Max | Import / kuva / heli / STORE | Ulatus |
+|---|---|---|---|---|
+| DELAY_MIX | Scene Controller 1 | 0–100 | kinnitatud | T42, ALL, vaikekõver |
+| FILTER_FREQ | LFO 1A | 300–3000 | kinnitatud | T42, ALL, vaikekõver |
+| DISTORT_DRIVE | External 1 | 2–8 | kinnitatud | T42, ALL, vaikekõver |
+
+Delay Low Cut on keelatud: FM3 tühjendas Source ja sihtploki. 468 nimega sihti on lipureegli põhjal lubatud, mitte eraldi mõõdetud.
+Preseti tempo tarkvaravahemik 24–250 BPM; T42 kinnitab 97 ja 143 BPM näidu ning STORE/reload säilimise.
+Avaliku generaatori uue lõppfaili import, A–D piirangud ja kooskasutus jäävad eraldi katsesse. Algkviitungit ei muudeta.
 
 ## MultiDelay Type mallid
 

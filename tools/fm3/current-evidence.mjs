@@ -15,6 +15,7 @@ const t={};for(let n=32;n<=38;n++){
  const names={32:'live-20261106',33:'controllers-scene-20261106',34:'controllers-sources-20261107',35:'multidelay-presets-20261107',36:'multidelay-types-20261107',37:'synth-cpu-20261107',38:'multidelay-store-20261107'};
  t[n]=receipt(`fm3-t${n}-${names[n]}.json`);
 }
+const t42=receipt('fm3-t42-modifier-targets-20261109.json');
 const combo=receipt('fm3-combo-store-20261029.json');
 const t3941=receipt('fm3-t39-t41-controllers-store-20261109.json');
 const stored3941=new Set(t3941.parts.filter(p=>p.storeReload==='confirmed'&&p.storedBodyByteIdentical).map(p=>p.source));
@@ -56,10 +57,29 @@ const multiDelay=t[35].presets.map(p=>{
 });
 assert.equal(multiDelay.length,39);assert.equal(multiDelay.filter(r=>r.generatedDeviceImport==='confirmed').length,8);
 assert.equal(multiDelay.filter(r=>r.storeReload==='confirmed').length,4);
-const current={schemaVersion:1,asOf:'2026-11-09',hardwareEvidenceThrough:'2026-11-09',baselineVersion:'0.3.58',
- scope:'T32-T41 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.',
+const {modifierTargetsCapabilities}=await import(path.join(E,'scripts/fm3-modifier-targets.mjs'));
+read(EP+'scripts/fm3-modifier-targets.mjs');
+const targetSupport=modifierTargetsCapabilities();assert.equal(targetSupport.targets,468);
+const modifierTargets={softwareSupported:true,namedTargets:468,maxBindings:8,
+ flagRule:{bit:'0x0080',allowedWhen:'clear and labelled',acceptedTargetsObserved:20,rejectedTargetsObserved:1,
+  scope:'Rule inference, not 468 individually measured targets.'},
+ measured:t42.parts.filter(p=>p.hypothesis==='H1').map(p=>({case:p.case,target:p.target,source:p.source,
+  min:p.min.display,max:p.max.display,channel:'ALL',curve:'default',deviceImport:'confirmed',display:'confirmed',
+  audibleBehavior:'confirmed',storeReload:'confirmed',storedBodyByteIdentical:true,
+  generatedFinalPresetImport:'not-measured',evidence:'T42',scope:t42.scope})),
+ rejected:t42.parts.filter(p=>p.hypothesis==='H2').map(p=>({case:p.case,target:p.target,softwareSupported:false,
+  deviceResult:p.deviceResult,clearedWords:p.clearedWords,evidence:'T42'})),
+ scope:'T42 research files; public-generator final presets and A-D/channel combinations require their own device test.'};
+assert.equal(modifierTargets.measured.length,3);assert.equal(modifierTargets.rejected.length,1);
+const presetTempo={softwareSupported:true,rangeBpm:[24,250],integerOnly:true,channels:['A','B','C','D'],tempoToUse:'PRESET',
+ measured:t42.parts.filter(p=>p.hypothesis==='H3').map(p=>({case:p.case,bpm:p.tempoBpm,storedWord:p.storedWord,
+  display:'confirmed',storeReload:'confirmed',evidence:'T42'})),
+ scope:'97 and 143 BPM only; not every BPM, tempo-synced effect, tap-tempo or global setting.'};
+assert.deepEqual(presetTempo.measured.map(p=>p.bpm),[97,143]);
+const current={schemaVersion:1,asOf:'2026-11-09',hardwareEvidenceThrough:'2026-11-09',baselineVersion:'0.3.62',
+ scope:'T32-T42 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.',
  definitions:{confirmed:'A cited dated device result exists in the stated scope.',notMeasured:'No cited device result for this scope; not a failure and not a software-support restriction.'},
- enumCounts,scalarDescriptors,controllers,multiDelay,
+ enumCounts,scalarDescriptors,controllers,multiDelay,modifierTargets,presetTempo,
  otherEvidence:{
   controllersScenes:{scenes:8,channels:['A','B','C','D'],storeReload:'confirmed',evidence:['T33','T34A'],scope:'The measured scene/channel selections, not every permutation.'},
   liveComposition:{evidence:['T32','T34E'],cpuPercent:t[32].cpu.scenes.map(s=>s.measuredPercent),storedBlockRecords:11,
@@ -83,6 +103,13 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
  '','## Controllersi allikad','', '| Allikas | Kood | Tarkvaratugi | Import / käitumine | STORE | Tõend |','|---|---:|---|---|---|---|',
  ...controllers.map(r=>`| ${r.name} | ${r.code} | jah | ${mark(r.deviceImport)} / ${mark(r.audibleBehavior)} | ${mark(r.storeReload)} | ${r.evidence.join('; ')||'FM3-Editi allikaloend'} |`),
  '','Siht: Volume/Pan 1 Volume, ALL. T39-T41 (09.11.2026) kinnitasid ülejäänud 17 allikat: õige Source, ootuspärane heli ning STORE/reload baiditäpselt, ainult katse seadetega. Controllersi kõik kaheksa stseenikanalit on T33/T34 ulatuses kinnitatud. See ei laienda tuge suvalisele sihtparameetrile.',
+ '','## T42: modifikaatori sihid ja tempo','',
+ '| Siht | Allikas | Min–Max | Import / kuva / heli / STORE | Ulatus |',
+ '|---|---|---|---|---|',
+ ...modifierTargets.measured.map(p=>`| ${p.target} | ${p.source} | ${p.min}–${p.max} | kinnitatud | T42, ALL, vaikekõver |`),
+ '', 'Delay Low Cut on keelatud: FM3 tühjendas Source ja sihtploki. 468 nimega sihti on lipureegli põhjal lubatud, mitte eraldi mõõdetud.',
+ 'Preseti tempo tarkvaravahemik 24–250 BPM; T42 kinnitab 97 ja 143 BPM näidu ning STORE/reload säilimise.',
+ 'Avaliku generaatori uue lõppfaili import, A–D piirangud ja kooskasutus jäävad eraldi katsesse. Algkviitungit ei muudeta.',
  '','## MultiDelay Type mallid','', '| Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |','|---|---:|---|---|---|---|',
  ...multiDelay.map(r=>`| ${r.name} | ${r.measuredFullChannelWords} | ${mark(r.generatedDeviceImport)} | ${mark(r.audibleBehavior)} | ${mark(r.storeReload)} | ${r.evidence.join(', ')} |`),
  '','39 malli, 8 generaatori importi, 4 STORE-kinnitust. Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',
