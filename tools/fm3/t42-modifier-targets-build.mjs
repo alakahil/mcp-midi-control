@@ -47,7 +47,7 @@ const MOD_BIT=0x0080;
 
 const parts=[
  {id:'A',name:'T42A SC1 DLYMIX',source:'Scene Controller 1',target:{family:'DELAY',param:'DELAY_MIX',min:0,max:100,unit:'%'},
-  scenes:SC.map(v=>`SC1 ${v} DLY MIX`),controllers:sc1,controls:delayEcho(50,40),blockScenes:on('delay'),
+  scenes:SC.map(v=>`SC1 ${v} DLY MIX`),controllers:sc1,controls:delayEcho(50,40),blockScenes:on('delay','amp','cab','reverb'),
   expect:'Stseenid 1-4: viivituse kordused kuulduvad järjest valjemini (Delay Mix 0 / 33 / 67 / 100 %). Stseen 1 on kuiv.'},
  {id:'B',name:'T42B LFO1A FILTFREQ',source:'LFO 1A',target:{family:'FILTER',param:'FILTER_FREQ',min:300,max:3000,unit:'Hz'},
   scenes:['LFO 0.5HZ LP SWEEP'],controllers:[cc('LFO1TYPE','SINE'),cc('LFO1RUN','RUN'),cc('LFO1DEPTH',100),cc('LFO1FREQ',0.5)],
@@ -58,7 +58,7 @@ const parts=[
   scenes:['EXT1 AMP GAIN 2-8'],controllers:[],controls:[],blockScenes:{},
   expect:'Pedaal kannal: puhtam, vähem moonutust (Amp Gain 2). Pedaal varbal: rohkem moonutust (Gain 8). Helitugevus ise ei muutu.'},
  {id:'D',name:'T42D SC1 LOCUT NEG',source:'Scene Controller 1',target:{family:'DELAY',param:'DELAY_LOCUT',min:20,max:2000,unit:'Hz'},negative:true,
-  scenes:SC.map(v=>`SC1 ${v} DLY LOCUT`),controllers:sc1,controls:delayEcho(60,50),blockScenes:on('delay'),
+  scenes:SC.map(v=>`SC1 ${v} DLY LOCUT`),controllers:sc1,controls:delayEcho(60,50),blockScenes:on('delay','amp','cab','reverb'),
   expect:'KEELATUD SIHT (kontroll). Kui FM3 seda sihti ei luba, kõlavad kordused kõigis stseenides 1-4 ühtmoodi täis. Kui lubab, muutuvad kordused stseeniti õhemaks (Low Cut 20 -> 2000 Hz).'},
  {id:'E',name:'T42E TEMPO 97',tempo:97,scenes:['TEMPO 97 DLY 1/4'],controllers:[],
   controls:[ctl('delay','DELAY_TEMPO','1/4'),ctl('delay','DELAY_FEED',30),ctl('delay','DELAY_MIX',40)],blockScenes:on('delay'),

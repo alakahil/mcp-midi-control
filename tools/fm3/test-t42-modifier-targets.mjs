@@ -13,6 +13,7 @@ const {inspectStructure}=await import(path.join(E,'scripts/drive-collector/fm3-p
 const {readModifiers}=await import(path.join(E,'scripts/fm3-parameter-dependencies.mjs'));
 const {findParam,decodeValue}=await import(path.join(E,'scripts/fm3-table-encoder.mjs'));
 const {CONTROLLERS_RECORD:R}=await import(path.join(E,'scripts/fm3-controllers.mjs'));
+const {scanRecords}=await import(path.join(E,'scripts/fm3-layout.mjs'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-t42-test-'));
 const build=dir=>execFileSync(process.execPath,[path.join(ROOT,'tools/fm3/t42-modifier-targets-build.mjs'),dir],{stdio:'pipe'});
@@ -31,6 +32,10 @@ try{
   assert.equal(m.kind,'fm3-bind-store');assert.ok(!('storeLocation' in m),'no fixed STORE slot');assert.equal(sha(syx),m.preset.sha256);
   assert.deepEqual([...parsePresetDump(syx,0,17).headerPayload],[127,0,0,64,0],'edit buffer only');
   const body=Buffer.from(inspectStructure(syx).raw.body),mods=readModifiers(body).filter(x=>x.active),x=EXPECT[c.id];
+  if(c.id==='A'||c.id==='D')for(const r of scanRecords(body).records.filter(r=>['amp','cab','reverb','delay','drive'].includes(r.family))){
+   const st=[0,1,2,3].map(i=>`${body.readUInt16LE(r.header+10+2*i)}/${body.readUInt16LE(r.header+26+2*i)}`);
+   assert.equal(new Set(st).size,1,`${c.id} ${r.family} scene state constant across scenes 1-4`);
+  }
   if(Array.isArray(x)){
    const p=findParam(x[0],x[1]);assert.equal(mods.length,1);assert.equal(mods[0].effectId,p.block);assert.equal(mods[0].pid,p.param);
    assert.equal(mods[0].sourceName.trim(),x[2]);assert.equal(mods[0].channel,0);assert.equal((+p.flags&0x80)!==0,x[3],'modifier bit hypothesis');
