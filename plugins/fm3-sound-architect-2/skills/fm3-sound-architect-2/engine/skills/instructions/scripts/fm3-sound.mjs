@@ -92,7 +92,7 @@ export function composeSound(base,spec){
   // Generic targets (0.3.60) take the next unused records after the Volume and Control Switch bindings.
   const targets=spec.modifierTargets?bindModifierTargets(switches?.syx??pedal?.syx??arrangedInput,spec.modifierTargets):null;
   const edits=Object.hasOwn(spec,'modifierEdits')?applyModifierEdits(targets?.syx??switches?.syx??pedal?.syx??arrangedInput,spec,{pedal,switches}):null;
-  const csp=csPresetRequested?applyCsPreset(edits?.syx??switches.syx,finalSpec):null;
+  const csp=csPresetRequested?applyCsPreset(edits?.syx??targets?.syx??switches.syx,finalSpec):null;
   const bound=csp?.syx??edits?.syx??targets?.syx??switches?.syx??pedal?.syx??arrangedInput;
   // Multi Delay Type (0.3.56): measured full-channel images replace the channel before layout/controls.
   const mdt=Object.hasOwn(spec,'multidelayTypes')?applyMultidelayTypes(bound,spec.multidelayTypes):null;

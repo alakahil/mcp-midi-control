@@ -54,6 +54,10 @@ assert.deepEqual(r.report.modifierTargets.map(t=>t.record),[2,3,4]);assert.equal
 assert.equal(r.report.modifierTargets[2].channelScope,'CHAN B');assert.equal(r.report.modifierTargets[1].fullRange,true);
 for(let ch=0;ch<4;ch++){assert.equal(b.readUInt16LE(R.start+2*(ch*R.words+32)),97);assert.equal(b.readUInt16LE(R.start+2*(ch*R.words+33)),0);}
 assert.deepEqual(readPresetTempo(b),{bpm:97,channels:[97,97,97,97],tempoToUse:'PRESET'});
+// Codex P2 (PR #85): per-preset switch states must keep the target records (csPreset reads the target-stage output).
+const cs=createPreset(base,{composer,layout,controlSwitches:[{switch:2,block:'amp',param:'DISTORT_BOOST'}],controlSwitchScenes:[{switch:2,scene:2,state:'ON'}],
+ modifierTargets:[{source:'LFO 1A',block:'delay',param:'DELAY_MIX',min:10,max:60}]});
+assert.deepEqual(readModifiers(bodyOf(cs.syx)).filter(m=>m.active).map(m=>m.record),[1,2]);assert.equal(cs.report.modifierTargets[0].record,2);
 assert.match(r.txt,/MODIFIKAATORI SIHID — LÕPPFAILIST/);assert.match(r.txt,/97 BPM/);
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-modtgt-'));
 try{
