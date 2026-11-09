@@ -134,6 +134,7 @@ jobs:
           node tools/fm3/controllers-gap-plan.mjs
           node tools/fm3/test-controllers-store.mjs
           node tools/fm3/test-t40-controllers-sources.mjs
+          node tools/fm3/test-t42-modifier-targets.mjs
           node tools/fm3/test-multidelay-boundaries.mjs
           node tools/fm3/test-record-order-boundaries.mjs
       - name: Verify the local runner reads this workflow
