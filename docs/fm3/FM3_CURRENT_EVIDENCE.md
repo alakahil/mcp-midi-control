@@ -1,6 +1,6 @@
 # FM3 kehtiv tõendiseis
 
-Koondatud 2026-11-08; seadmetõendid kuni 2026-11-07. Alus 0.3.58.
+Koondatud 2026-11-09; seadmetõendid kuni 2026-11-09. Alus 0.3.58.
 
 See on ulatusega tõendikoond, mitte kõigi FM3 võimaluste valmidusprotsent. „Mõõtmata” ei tähenda keelatud sisendit ega ebaõnnestunud katset.
 
@@ -12,25 +12,25 @@ Enum: 227 vaikimisi / 121 opt-in; scalarDescriptors: 2114.
 |---|---:|---|---|---|---|
 | External 1 | 14 | jah | jah / jah | jah | T2/T10 (2026-10-26/28); T11 STORE |
 | LFO 1A | 1 | jah | jah / jah | jah | T33 (2026-11-06) |
-| LFO 1B | 2 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| LFO 2A | 3 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| LFO 2B | 4 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| ADSR 1 | 5 | jah | jah / jah | mõõtmata | T34D (2026-11-07) |
-| ADSR 2 | 6 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Sequencer | 7 | jah | jah / jah | mõõtmata | T34C (2026-11-07) |
-| Envelope Follower | 8 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Pitch Follower | 9 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Scene Controller 1 | 30 | jah | jah / jah | mõõtmata | T34B (2026-11-07) |
-| Scene Controller 2 | 31 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Scene Controller 3 | 32 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Scene Controller 4 | 33 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Manual 1 | 56 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Manual 2 | 57 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Manual 3 | 58 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Manual 4 | 59 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
-| Manual 5 | 60 | jah | mõõtmata / mõõtmata | mõõtmata | FM3-Editi allikaloend |
+| LFO 1B | 2 | jah | jah / jah | jah | T40A (2026-11-09) |
+| LFO 2A | 3 | jah | jah / jah | jah | T40B (2026-11-09) |
+| LFO 2B | 4 | jah | jah / jah | jah | T40C (2026-11-09) |
+| ADSR 1 | 5 | jah | jah / jah | jah | T34D (2026-11-07); STORE T39 K1 (2026-11-09) |
+| ADSR 2 | 6 | jah | jah / jah | jah | T40D (2026-11-09) |
+| Sequencer | 7 | jah | jah / jah | jah | T34C (2026-11-07); STORE T39 K1 (2026-11-09) |
+| Envelope Follower | 8 | jah | jah / jah | jah | T40E (2026-11-09) |
+| Pitch Follower | 9 | jah | jah / jah | jah | T41I (2026-11-09) |
+| Scene Controller 1 | 30 | jah | jah / jah | jah | T34B (2026-11-07); STORE T39 K1 (2026-11-09) |
+| Scene Controller 2 | 31 | jah | jah / jah | jah | T41A (2026-11-09) |
+| Scene Controller 3 | 32 | jah | jah / jah | jah | T41B (2026-11-09) |
+| Scene Controller 4 | 33 | jah | jah / jah | jah | T41C (2026-11-09) |
+| Manual 1 | 56 | jah | jah / jah | jah | T41D (2026-11-09) |
+| Manual 2 | 57 | jah | jah / jah | jah | T41E (2026-11-09) |
+| Manual 3 | 58 | jah | jah / jah | jah | T41F (2026-11-09) |
+| Manual 4 | 59 | jah | jah / jah | jah | T41G (2026-11-09) |
+| Manual 5 | 60 | jah | jah / jah | jah | T41H (2026-11-09) |
 
-Siht: Volume/Pan 1 Volume, ALL. Controllersi kõik kaheksa stseenikanalit on T33/T34 ulatuses kinnitatud. See ei laienda tuge suvalisele sihtparameetrile.
+Siht: Volume/Pan 1 Volume, ALL. T39-T41 (09.11.2026) kinnitasid ülejäänud 17 allikat: õige Source, ootuspärane heli ning STORE/reload baiditäpselt, ainult katse seadetega. Controllersi kõik kaheksa stseenikanalit on T33/T34 ulatuses kinnitatud. See ei laienda tuge suvalisele sihtparameetrile.
 
 ## MultiDelay Type mallid
 
@@ -78,7 +78,7 @@ Siht: Volume/Pan 1 Volume, ALL. Controllersi kõik kaheksa stseenikanalit on T33
 
 39 malli, 8 generaatori importi, 4 STORE-kinnitust. Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.
 
-## Muud T32-T38 tulemused
+## Muud T32-T41 tulemused
 
 - T32: 8 stseeni CPU 55-71%, 11 ploki andmed säilisid STORE järel. T34E kinnitab lõpliku -8 dB lead-nivoo kuulamist; arvuline nivoo ja lõppfaili eraldi CPU/STORE puuduvad.
 - T37: Synthi häälte 2/3 mõõdetud tüübid on CPU mudelis 0.2.5; muud parameetrid vajavad oma tõendit.

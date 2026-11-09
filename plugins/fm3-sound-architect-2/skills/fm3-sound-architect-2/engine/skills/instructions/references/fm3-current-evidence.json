@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-08",
-  "hardwareEvidenceThrough": "2026-11-07",
+  "asOf": "2026-11-09",
+  "hardwareEvidenceThrough": "2026-11-09",
   "baselineVersion": "0.3.58",
-  "scope": "T32-T38 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
+  "scope": "T32-T41 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
   "definitions": {
     "confirmed": "A cited dated device result exists in the stated scope.",
     "notMeasured": "No cited device result for this scope; not a failure and not a software-support restriction."
@@ -46,33 +46,39 @@
       "code": 2,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T40A (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "LFO 2A",
       "code": 3,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T40B (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "LFO 2B",
       "code": 4,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T40C (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "ADSR 1",
@@ -81,9 +87,9 @@
       "target": "Volume/Pan 1 Volume (102:0), ALL",
       "deviceImport": "confirmed",
       "audibleBehavior": "confirmed",
-      "storeReload": "not-measured",
+      "storeReload": "confirmed",
       "evidence": [
-        "T34D (2026-11-07)"
+        "T34D (2026-11-07); STORE T39 K1 (2026-11-09)"
       ],
       "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
@@ -92,11 +98,13 @@
       "code": 6,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T40D (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Sequencer",
@@ -105,9 +113,9 @@
       "target": "Volume/Pan 1 Volume (102:0), ALL",
       "deviceImport": "confirmed",
       "audibleBehavior": "confirmed",
-      "storeReload": "not-measured",
+      "storeReload": "confirmed",
       "evidence": [
-        "T34C (2026-11-07)"
+        "T34C (2026-11-07); STORE T39 K1 (2026-11-09)"
       ],
       "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
@@ -116,22 +124,26 @@
       "code": 8,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T40E (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Pitch Follower",
       "code": 9,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T41I (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Scene Controller 1",
@@ -140,9 +152,9 @@
       "target": "Volume/Pan 1 Volume (102:0), ALL",
       "deviceImport": "confirmed",
       "audibleBehavior": "confirmed",
-      "storeReload": "not-measured",
+      "storeReload": "confirmed",
       "evidence": [
-        "T34B (2026-11-07)"
+        "T34B (2026-11-07); STORE T39 K1 (2026-11-09)"
       ],
       "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
@@ -151,88 +163,104 @@
       "code": 31,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T41A (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Scene Controller 3",
       "code": 32,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T41B (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Scene Controller 4",
       "code": 33,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T41C (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Manual 1",
       "code": 56,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T41D (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Manual 2",
       "code": 57,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T41E (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Manual 3",
       "code": 58,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T41F (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Manual 4",
       "code": 59,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T41G (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     },
     {
       "name": "Manual 5",
       "code": 60,
       "softwareSupported": true,
       "target": "Volume/Pan 1 Volume (102:0), ALL",
-      "deviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
-      "storeReload": "not-measured",
-      "evidence": [],
-      "scope": "Source code from the editor list; software support is not a device test."
+      "deviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "evidence": [
+        "T41H (2026-11-09)"
+      ],
+      "scope": "Only the dated test settings and target; not every curve/rate/target."
     }
   ],
   "multiDelay": [
@@ -927,6 +955,11 @@
       "remaining": "Other source/target/shape combinations."
     },
     {
+      "from": "T34 sources B-D edit buffer only; 14 sources unmeasured",
+      "resolvedBy": "T39-T41",
+      "remaining": "Other LFO shapes/depths, modifier curves and targets."
+    },
+    {
       "from": "T35 no generated Type import or STORE",
       "resolvedBy": "T36 and T38",
       "remaining": "31 unimported generated Types; T36 four Types lack their own STORE result."
@@ -952,11 +985,12 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t36-multidelay-types-20261107.json": "898d5d31d970b42ce4bd01254be4aeda476183cac710b3f64eb6221904e49dd4",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t37-synth-cpu-20261107.json": "c0a1cae9fa0fc79c16bd6573b055a84ba363fdf15656e23c91b04823dcdafbdd",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t38-multidelay-store-20261107.json": "7e2121270b5eb92d64b91bc3a48760bc9b661222f985e665eb9c0d4d068fb042",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t39-t41-controllers-store-20261109.json": "b5a717c0ccf52eb4d33747c4f0b0cef201edb9a1ae50ba98314f6b9fdbe0fb02",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-enum-promotion.mjs": "5cf8e5afa993cc1740ac8193b0da23f9374524c10b6fc1136f047c69a12896db",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "34c1c7edff37e7c1c3d1f6fccbd8ab513c17a99ba3da8b2e9dc85a5b46105483",
-    "tools/fm3/current-evidence.mjs": "ca267a54c2bdd1140ec20bc3ce7fabe98bbe0e18f0d4071791126bff31eed1da"
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
+    "tools/fm3/current-evidence.mjs": "487a5efb0ba1bb693e66e456f0236690019f09b2d109b9556088604a5d22bbf3"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false

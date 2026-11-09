@@ -36,7 +36,7 @@ T31 `BANK1`/`BANK2` lisandusi. Opt-in ei tühista tüübi, kanali, tempo,
 modifikaatori ega nähtavuse piiranguid. Need arvud ei tähenda 227 eraldi
 seadmel mõõdetud parameetrit.
 
-T32–T38 ulatuse ja allika-/tüübipõhise seisu kontrollimiseks loe
+T32–T41 ulatuse ja allika-/tüübipõhise seisu kontrollimiseks loe
 `MOOTOR/references/fm3-current-evidence.json`. See eristab tarkvaratuge,
 seadmeimporti, kuuldud käitumist ja STORE-kinnitust ning viitab algtõenditele.
 „not-measured” tähendab tõendi puudumist selles ulatuses, mitte tarkvaratuge
@@ -227,8 +227,11 @@ on ainult External 1 ning Control Switchid. Tõend: `references/fm3-t33-controll
 - Seadmel kinnitatud: stseenid 1–4 = A–D ja LFO 1A (T33). Sama sisendiga genereeritud fail on baiditäpselt sama,
   mis FM3 salvestatud asukoht 425 (`tools/fm3/test-t33-controllers-replay.mjs`). T34 (07.11.2026) kinnitas ka
   stseenid 5–8 (D, C, B, D; STORE 427 → tagasi baiditäpne) ning allikad Scene Controller 1 (30), Sequencer (7) ja
-  ADSR 1 (5) redaktsioonipuhvris kuuldavalt ja FM3-Editis. Ülejäänud allikate koodid (FM3-Editi MOD_CTRLID loendist)
-  on seadmel kontrollimata; TXT ütleb seda allika kaupa. Tõend: `references/fm3-t34-controllers-sources-20261107.json`.
+  ADSR 1 (5) redaktsioonipuhvris kuuldavalt ja FM3-Editis. T39–T41 (09.11.2026) kinnitasid kõik ülejäänud 17 allikat:
+  õige Source, ootuspärane heli ning STORE/reload baiditäpselt (iga allikas oma presetis, siht Volume/Pan Volume).
+  Nüüd on kõik 19 lubatud allikat seadmel kinnitatud katse seadetega; teised LFO kujud/sügavused, kõverad ja sihtmärgid
+  on eraldi küsimus. Tõend: `references/fm3-t34-controllers-sources-20261107.json`,
+  `references/fm3-t39-t41-controllers-store-20261109.json`.
 - T34 andis veel: LIVE KOOSLUS V1 (Amp C −8 dB) Lead on teistega umbes sama vali, muuta pole vaja; Cab B Preamp
   Type NONE puhul on ploki Low/High Cut (87,0 Hz / 7300 Hz) ikka Preamp-lehel näha ja Cab 1 lõiked Cabs-lehel.
 - Skeem 0.8.6; test `scripts/test-controllers-scenes.mjs`.
