@@ -24,15 +24,15 @@ from pathlib import Path
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import FM3_CPU_SWEEP as S
-from FM3_READ_PROBE import read_only_shape, collect
+from FM3_READ_PROBE import read_only_shape, collect, send_read
 
 def stored_request(index):
+    S.check(type(index) is int and 0 <= index <= 511, 'Stored preset index must be 0..511')
     body = [0xf0, 0x00, 0x01, 0x74, S.MODEL, 0x03, (index >> 7) & 0x7f, index & 0x7f, 0x00]
     return bytes(body + [S.checksum(body), 0xf7])
 
 def require_fm3(port, path):
-    v = S.read_cpu(port, timeout=2.0)
-    S.check(v is not None, 'Port %s ei vastanud FM3 päringule; midagi ei saadetud. Kontrolli USB-kaablit ja jagajat, sulge FM3-Edit/Fractal-Bot.' % path)
+    v = S.require_fm3(port, path)
     print('FM3 vastas pordis %s (CPU %s %%).' % (path, S.cpu_from_raw(v)))
 
 def check_port(port_path):
@@ -56,25 +56,27 @@ def run(mode, pack, session, port_path):
     frames = S.dump_frames(data)
     session.mkdir(parents=True, exist_ok=True)
     if mode == 'load':
+        out = session / 'bind-store-load.json'
+        S.check_new_result(out)
         port = S.Port(port_path)
         try: require_fm3(port, port_path); S.send_preset(port, frames); time.sleep(1.0)
         finally: port.close()
         ans = input('\nFM3 ekraanil peaks nüüd olema nimi "%s". Kas on? (j/e): ' % manifest['confirmName']).strip().lower()
-        (session / 'bind-store-load.json').write_text(json.dumps({'kind': 'fm3-bind-store-load', 'packSha256': hashlib.sha256(mb).hexdigest(),
-            'time': time.strftime('%Y-%m-%dT%H:%M:%S'), 'userConfirmedName': ans.startswith('j')}, ensure_ascii=False) + '\n')
+        S.write_json_new(out, {'kind': 'fm3-bind-store-load', 'packSha256': hashlib.sha256(mb).hexdigest(),
+            'time': time.strftime('%Y-%m-%dT%H:%M:%S'), 'userConfirmedName': ans.startswith('j')})
         S.check(ans.startswith('j'), 'Seade ei laadinud presetti redaktsioonipuhvrisse; midagi ei salvestatud.')
         print('Laaditud redaktsioonipuhvrisse. Jätka LOE_MIND.txt järgi.'); return
     if mode == 'record':
         out = session / 'bind-check-results.json'
-        S.check(not out.exists(), 'Sessioonis on juba bind-check-results.json; kasuta uut --session kausta.')
+        S.check_new_result(out)
         res = {'kind': 'fm3-bind-check-results', 'packSha256': hashlib.sha256(mb).hexdigest(), 'time': time.strftime('%Y-%m-%dT%H:%M:%S')}
         print('Kirjuta, mida nägid (nagu märkisid üles). Kui midagi ei saanud kontrollida, kirjuta "-".')
         res['readings'] = ask_checks(manifest, 'Tähelepanekud')
         res['note'] = input('\nKas midagi muud oli teistmoodi või märkimisväärne? (Enter = ei) > ').strip()
-        out.write_text(json.dumps(res, ensure_ascii=False, indent=1) + '\n')
+        S.write_json_new(out, res)
         print('Valmis. Tulemused: %s\nKirjuta vestlusesse "valmis".' % out); return
     out = session / 'bind-store-results.json'
-    S.check(not out.exists(), 'Sessioonis on juba bind-store-results.json; kasuta uut --session kausta.')
+    S.check_new_result(out)
     res = {'kind': 'fm3-bind-store-results', 'packSha256': hashlib.sha256(mb).hexdigest(), 'time': time.strftime('%Y-%m-%dT%H:%M:%S')}
     print('Kirjuta, mida nägid (nagu märkisid üles). Kui midagi ei saanud kontrollida, kirjuta "-".')
     res['beforeStore'] = ask_checks(manifest, 'ENNE salvestamist')
@@ -87,16 +89,19 @@ def run(mode, pack, session, port_path):
     port = S.Port(port_path)
     try:
         require_fm3(port, port_path)
-        port.framer.frames.clear(); port.write(req); res['storedDumpFrames'] = collect(port, quiet=0.4, max_wait=6.0)
+        port.framer.frames.clear(); send_read(port, req, 'storedDump'); res['storedDumpFrames'] = collect(port, quiet=0.4, max_wait=6.0)
     finally:
         port.close()
     dump = [bytes.fromhex(h) for h in res['storedDumpFrames']]
     dump = [f for f in dump if len(f) > 6 and f[5] in (0x77, 0x78, 0x79)]
     res['frameKinds'] = [f[5] for f in dump]
-    out.write_text(json.dumps(res, ensure_ascii=False, indent=1) + '\n')
+    S.write_json_new(out, res)
     ok = res['frameKinds'] == [0x77] + [0x78] * 8 + [0x79]
     print('\nAsukoht %d loetud: %d kaadrit (%s).' % (int(loc), len(dump), 'täielik' if ok else 'MITTETÄIELIK'))
-    print('Valmis. Tulemused: %s\nKirjuta vestlusesse "valmis".' % out)
+    S.check(ok, 'Salvestise vastus on mittetäielik; säilitatud: %s' % out)
+    S.check(all(len(f) >= 8 and f[:5] == bytes([240, 0, 1, 116, S.MODEL]) and f[-1] == 247 and all(b < 128 for b in f[1:-1]) and S.checksum(f[:-2]) == f[-2] for f in dump), 'Vigane salvestise kaader; säilitatud: %s' % out)
+    S.check(dump[0][6:11] == bytes([index >> 7, index & 127, 0, 64, 0]), 'Salvestise asukoht ei vasta päringule; säilitatud: %s' % out)
+    print('Tulemused salvestatud; sisu võrdlus tehakse offline: %s' % out)
 
 def self_test():
     r = stored_request(422); S.check(read_only_shape(r) == 'storedDump' and r[6:8] == bytes([3, 38]), 'request')

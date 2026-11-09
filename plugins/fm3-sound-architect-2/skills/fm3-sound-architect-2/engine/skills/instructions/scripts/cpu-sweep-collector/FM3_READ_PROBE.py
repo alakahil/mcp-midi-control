@@ -58,8 +58,13 @@ def read_only_shape(frame):
         if payload[8:11] == [0, 0, 0] and 1 <= v <= 4095: return 'labelInt'
     if fn == 0x1f and len(payload) == 2: return 'bulk'
     if fn == 0x43 and payload == []: return 'editBufferDump'
-    if fn == 0x03 and len(payload) == 3 and payload[2] == 0: return 'storedDump'
+    if fn == 0x03 and len(payload) == 3 and payload[2] == 0 and (payload[0] << 7 | payload[1]) <= 511: return 'storedDump'
     return None
+
+def send_read(port, frame, kind):
+    S.check(kind is not None and read_only_shape(frame) == kind, 'Not an allowed read-only request')
+    port.write(frame)
+
 
 def collect(port, quiet=0.4, max_wait=4.0):
     """All complete frames until `quiet` s without new data (max `max_wait` s)."""
@@ -80,30 +85,36 @@ def run(pack, session, port_path):
     reqs = []
     for r in manifest['requests']:
         b = bytes.fromhex(r['request']); kind = read_only_shape(b)
-        S.check(kind == r['kind'], 'Not an allowed read-only request: %s (%s)' % (r['label'], r['request']))
+        S.check(kind is not None and kind == r['kind'], 'Not an allowed read-only request: %s (%s)' % (r['label'], r['request']))
         reqs.append((r, b))
     session.mkdir(parents=True, exist_ok=True); out = session / 'probe-results.json'
-    S.check(not out.exists(), 'Session already has probe-results.json; use a new --session folder.')
+    S.check_new_result(out)
     print('Pakk kontrollitud: 1 preset, %d lugemispäringut (kõik ainult lugemiseks).' % len(reqs))
     result = {'kind': 'fm3-read-probe-results', 'packSha256': hashlib.sha256(manifest_bytes).hexdigest(),
-              'time': time.strftime('%Y-%m-%dT%H:%M:%S'), 'sentDumpHex': [f.hex() for f in dump], 'replies': []}
+              'time': time.strftime('%Y-%m-%dT%H:%M:%S'), 'sentDumpHex': [], 'loadAttempted': False, 'loadCompleted': False, 'replies': []}
     port = S.Port(port_path)
     try:
-        for f in dump: port.write(f); time.sleep(0.03)
-        port.drain(0.3)
+        S.require_fm3(port, port_path)
+        result['loadAttempted'] = True
+        S.send_preset(port, dump)
+        result['loadCompleted'] = True
+        result['sentDumpHex'] = [f.hex() for f in dump]
         time.sleep(1.5)
         ans = input('\nFM3 ekraanil peaks nüüd olema nimi "%s". Kas on? (j/e): ' % manifest['confirmName']).strip().lower()
         result['userConfirmedName'] = ans.startswith('j')
         S.check(result['userConfirmedName'], 'Seade ei laadinud presetti redaktsioonipuhvrisse; lugemist ei tehtud, midagi ei salvestatud.')
         for n, (r, b) in enumerate(reqs, 1):
-            port.framer.frames.clear(); port.write(b)
+            port.framer.frames.clear(); send_read(port, b, r['kind'])
             frames = collect(port, max_wait=6.0 if r['kind'] in ('editBufferDump', 'storedDump') else 4.0)
             result['replies'].append({'label': r['label'], 'kind': r['kind'], 'request': r['request'], 'frames': frames})
             print('[%2d/%d] %-45s vastuseid: %d' % (n, len(reqs), r['label'][:45], len(frames)))
             time.sleep(0.1)
+    except (SystemExit, Exception) as e:
+        result['error'] = str(e)
+        raise
     finally:
         port.close()
-        out.write_text(json.dumps(result, indent=1) + '\n')
+        S.write_json_new(out, result)
     print('\nValmis. Tulemused: %s' % out)
     print('Vali FM3-l mõni preset (redaktsioonipuhver tühistub). Midagi ei salvestatud.')
 

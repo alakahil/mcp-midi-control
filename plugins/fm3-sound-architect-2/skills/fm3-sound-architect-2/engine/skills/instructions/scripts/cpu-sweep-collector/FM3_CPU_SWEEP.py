@@ -47,6 +47,8 @@ def dump_frames(data):
     """Validate a preset file and return its frames; refuses anything but an edit-buffer dump."""
     check(len(data) == 24680, 'Preset file must be 24680 bytes')
     frames = split_frames(data)
+    check(all(len(f) >= 8 for f in frames), 'Short frame in preset file')
+    check(bytes(sum(frames, [])) == data, 'Data outside preset frames')
     check([f[5] for f in frames] == [0x77] + [0x78] * 8 + [0x79], 'Unexpected frame sequence')
     for f in frames:
         check(f[:5] == [0xf0, 0x00, 0x01, 0x74, MODEL], 'Not an FM3 frame')
@@ -110,13 +112,34 @@ class Port:
         finally: os.close(self.fd)
 
 def read_cpu(port, timeout=2.0):
-    port.framer.frames.clear(); port.write(cpu_request()); end = time.monotonic() + timeout
+    from FM3_READ_PROBE import send_read
+    port.framer.frames.clear(); send_read(port, cpu_request(), 'grid'); end = time.monotonic() + timeout
     while time.monotonic() < end:
         port.drain(0.05)
         for f in port.framer.frames:
             v = parse_raw(f)
             if v is not None: return v
     return None
+
+def require_fm3(port, path):
+    value = read_cpu(port, timeout=2.0)
+    check(value is not None, 'Port %s ei vastanud FM3 CPU lugemispäringule; presetti ei laaditud. Sulge FM3-Edit/Fractal-Bot ja kontrolli ühendust.' % path)
+    return value
+
+
+def write_json_new(path, value):
+    """Never replace a previous result, including a symlink or a concurrent writer."""
+    try:
+        with path.open('x', encoding='utf-8') as f:
+            json.dump(value, f, ensure_ascii=False, indent=1)
+            f.write('\n')
+    except FileExistsError:
+        check(False, 'Tulemus on juba olemas: %s; kasuta uut sessiooni või silti.' % path)
+
+
+def check_new_result(path):
+    check(not path.exists() and not path.is_symlink(), 'Tulemus on juba olemas: %s; kasuta uut sessiooni või silti.' % path)
+
 
 def settle(port, first_wait=1.2, max_wait=8.0):
     """Read until three consecutive equal values (0.5 % steps) or timeout; returns (value, reads)."""
@@ -129,6 +152,8 @@ def settle(port, first_wait=1.2, max_wait=8.0):
     return (max(good) if good else None), reads
 
 def send_preset(port, frames):
+    # Validate the entire sequence before its first frame, even for direct callers.
+    frames = dump_frames(b''.join(frames))
     for f in frames: port.write(f); time.sleep(0.03)
     port.drain(0.2)
 
@@ -154,6 +179,7 @@ def run(pack, session, port_path):
     print('Pakk kontrollitud: %d presetti, juba mõõdetud %d.' % (len(items), len(done)))
     port = Port(port_path)
     try:
+        require_fm3(port, port_path)
         before, _ = settle(port, first_wait=0.2)
         print('CPU enne algust (praegune preset): %s %%' % (None if before is None else cpu_from_raw(before)))
         confirmed = bool(done)
