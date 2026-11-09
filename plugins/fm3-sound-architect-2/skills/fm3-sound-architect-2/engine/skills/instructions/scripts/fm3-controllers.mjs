@@ -28,7 +28,41 @@ const CHANNELS='ABCD',SCENES=8;
 export const CONTROLLERS_SCENE_OFFSET=CONTROLLERS_RECORD.header+10;  // body 462 + 2*(scene-1)
 const t33Receipt='references/fm3-t33-controllers-scene-20261106.json',t34Receipt='references/fm3-t34-controllers-sources-20261107.json';
 // Tempo To Use switches the preset between its own and the global tempo for every tempo-synced block: not measured.
-export const CONTROLLERS_REFUSED=Object.freeze({33:'Tempo To Use (preset/global tempo source) is not measured'});
+// Tempo (pid 32) is written only through the tempo field, which sets all four channel copies (T42).
+export const CONTROLLERS_REFUSED=Object.freeze({32:'Tempo is set with the tempo field (all four Controllers channels)',33:'Tempo To Use (preset/global tempo source) is not measured'});
+// Preset tempo (0.3.60). T42 (2026-11-09, references/fm3-t42-modifier-targets-20261109.json): CONTROLLERS_TEMPO stored
+// word = BPM; 97 and 143 written to all four channel copies were shown on the FM3, delay 1/4 followed, and the body was
+// byte-identical after STORE/reload. Tempo To Use stays 0 = PRESET (every jb-newlook output; GLOBAL is not written).
+const TEMPO_PID=32,TEMPO_TO_USE_PID=33,t42Receipt='references/fm3-t42-modifier-targets-20261109.json';
+export const TEMPO_RANGE=Object.freeze([24,250]);
+export function validatePresetTempo(v){check(Number.isInteger(v)&&v>=TEMPO_RANGE[0]&&v<=TEMPO_RANGE[1],`tempo must be an integer BPM ${TEMPO_RANGE[0]}…${TEMPO_RANGE[1]}`);return v;}
+const tempoOffset=(r,ch,pid)=>r.start+2*(ch*r.words+pid);
+export function readPresetTempo(body){
+  const r=locateControllers(body),v=[0,1,2,3].map(ch=>body.readUInt16LE(tempoOffset(r,ch,TEMPO_PID)));
+  return {bpm:v.every(x=>x===v[0])?v[0]:null,channels:v,tempoToUse:[0,1,2,3].map(ch=>body.readUInt16LE(tempoOffset(r,ch,TEMPO_TO_USE_PID))).every(x=>x===0)?'PRESET':'mixed/GLOBAL'};
+}
+export function applyPresetTempo(syx,bpm){
+  validatePresetTempo(bpm);
+  const original=Buffer.from(inspectStructure(syx).raw.body),body=Buffer.from(original),r=locateControllers(body),allowed=new Set();
+  const before=readPresetTempo(original);check(before.tempoToUse==='PRESET','tempo needs Tempo To Use = PRESET in every Controllers channel');
+  for(let ch=0;ch<4;ch++){const o=tempoOffset(r,ch,TEMPO_PID);body.writeUInt16LE(bpm,o);allowed.add(o);allowed.add(o+1);}
+  const out=finalizeBody(syx,original,body,allowed),after=readPresetTempo(Buffer.from(inspectStructure(out).raw.body));
+  check(after.bpm===bpm&&after.tempoToUse==='PRESET','tempo readback');
+  return {syx:out,state:{bpm,channels:4,tempoToUse:'PRESET'},report:{before:before.channels,after:after.channels,offsets:[0,1,2,3].map(ch=>tempoOffset(r,ch,TEMPO_PID)),
+    hardware:'T42 2026-11-09: 97 and 143 BPM shown on the FM3 and byte-identical after STORE/reload ('+t42Receipt+'); this output itself not tested'}};
+}
+export function verifyPresetTempoOutput(body,spec,reported,stage){
+  if(!Object.hasOwn(spec,'tempo')){check(reported===undefined&&stage===undefined,'Preset tempo report without spec.tempo');return undefined;}
+  const bpm=validatePresetTempo(spec.tempo),actual=readPresetTempo(body);
+  check(actual.bpm===bpm&&actual.tempoToUse==='PRESET','Final preset tempo differs from spec');
+  check(JSON.stringify(reported)===JSON.stringify({bpm,channels:4,tempoToUse:'PRESET'}),'Final preset tempo report differs');
+  check(JSON.stringify(stage?.after)===JSON.stringify(actual.channels),'Preset tempo stage report differs');
+  return reported;
+}
+export function renderPresetTempoText(state){
+  if(!state)return '';
+  return ['','PRESETI TEMPO:',`  ${state.bpm} BPM (Controllers Tempo kõigis neljas kanalis; Tempo To Use = PRESET). Kodeering seadmel kinnitatud: T42 09.11.2026 (97 ja 143 BPM näidati FM3-l ja säilisid STORE/reload-is baiditäpselt); selle faili import kontrollimata.`].join('\n')+'\n';
+}
 
 export function locateControllers(body){
   const {effectId,header,words,channels,start}=CONTROLLERS_RECORD;
@@ -124,5 +158,6 @@ export function controllersCapabilities(){
     sceneChannel:{field:'controllersScenes',values:'array of 1..8 of A|B|C|D, scene 1 first; unlisted scenes stay A',offsets:'body 462+2*(scene-1) (Controllers header word 5+(scene-1))',
       hardware:'T33 2026-11-06 scenes 1..4 = A..D and T34 2026-11-07 scenes 5..8 = D,C,B,D confirmed (FM3-Edit, audible, STORE/reload byte-identical); other patterns follow the same layout',receipt:t33Receipt,receipts:[t33Receipt,t34Receipt]},
     hardwareReceipt:{file:'references/fm3-shot-t28-controllers-20261105.json',sha256:controllersReceiptHash,editorReadings:receipt.summary.editorReadingsMatched,deviceWords:receipt.summary.deviceWordsMatched},
-    limits:['Controllers as a modifier source: volumePedal.source (Volume/Pan Volume only)','Tempo, Tempo To Use and Envelope Gain Monitor stay unwritable']};
+    presetTempo:{field:'tempo',values:'integer BPM 24..250, written to all four Controllers channels; Tempo To Use stays PRESET',hardware:'T42 2026-11-09: 97/143 BPM shown and byte-identical after STORE/reload',receipt:t42Receipt},
+    limits:['Controllers as a modifier source: volumePedal.source and modifierTargets','Tempo only through the tempo field; Tempo To Use and Envelope Gain Monitor stay unwritable']};
 }

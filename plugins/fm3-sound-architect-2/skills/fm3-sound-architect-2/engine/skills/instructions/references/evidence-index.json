@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2188,
-  "filePaths": 2392,
+  "uniqueContents": 2189,
+  "filePaths": 2393,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -3448,6 +3448,12 @@
         "references/enhancer-lisa-20261012-125350/step-008-f58e3878de/donor.syx"
       ]
     },
+    "43884ea90ae1f53c857d2488a83ab3c4845693720d15cfaf32620f779d508e69": {
+      "bytes": 31362,
+      "paths": [
+        "references/offline-suite.json"
+      ]
+    },
     "439883ae04a03cbb4772a12a48ba0916361dc26baa494475732eb702ca8b903a": {
       "bytes": 7265,
       "paths": [
@@ -3590,12 +3596,6 @@
       "bytes": 61603,
       "paths": [
         "references/wah-minmax-exact.json"
-      ]
-    },
-    "4699b1e6fe3ea65758914d68c1209780baea0c50ae316dcb9baa764f365eb85e": {
-      "bytes": 30863,
-      "paths": [
-        "references/offline-suite.json"
       ]
     },
     "47100f661c57f5be1d9f703670d390991225ca240cf6d706fde0c5e090c0208b": {
@@ -6090,6 +6090,12 @@
       "bytes": 6919,
       "paths": [
         "references/chorus-batch-20261007-134057/capture-20261007T134054-b7a6531047/capture.json"
+      ]
+    },
+    "794b9823682b001e94c40561761325d9fe7eeda16407e3a15c918b6b2db562e8": {
+      "bytes": 8295,
+      "paths": [
+        "references/fm3-t42-modifier-targets-20261109.json"
       ]
     },
     "7967d566cd5d3312bca2619784ab873a530db89a49498ec3568d0bdf85059c70": {

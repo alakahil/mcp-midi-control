@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.59`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.60`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -42,6 +42,18 @@ seadmeimporti, kuuldud käitumist ja STORE-kinnitust ning viitab algtõenditele.
 „not-measured” tähendab tõendi puudumist selles ulatuses, mitte tarkvaratuge
 keelavat otsust. Ära üldista ühe katse tulemust teistele allikatele või tüüpidele.
 
+0.3.60 lisab kaks T42-l (09.11.2026) põhinevat välja; soundi skeem 0.8.9, mootori kohustuslikus
+testikomplektis on 88 testi. `modifierTargets` seob External 1 või Controllers ploki allika
+(LFO, ADSR, Sequencer, Envelope/Pitch Follower, Scene Controller, Manual) suvalise ploki
+parameetriga, mille FM3-Editi FW13 lipp 0x0080 on null (468 nähtava nimega parameetrit,
+nimekiri `fm3-preset.mjs --capabilities` → `modifierTargets`). Seadmel kinnitatud sihid on
+Delay Mix, Filter Freq ja Amp Gain (kuvati, kõlasid, STORE/reload baiditäpne); lipuga siht
+(Delay Low Cut) jäi FM3-s tühjaks, seega generaator keelab lipuga parameetrid. Ülejäänud sihid
+on lipureegli järgi lubatud, igaüht seadmel eraldi ei kontrollitud; ütle seda kasutajale.
+`tempo` (24–250 BPM) kirjutab preseti tempo kõigisse nelja Controllersi kanalisse, Tempo To
+Use jääb PRESET-iks (T42: 97 ja 143 BPM näidati ja säilisid). Vaata jaotist
+„Modifikaatori sihid ja preseti tempo (0.3.60, T42)”.
+
 0.3.59 koondab seadmevabade tööde 1–6 tulemused: parandatud juhendid,
 Controllersi allikate ja MultiDelay mallide tõendiseis ning nende piirid.
 GitHubi arendustööriistad lisavad kolme allika STORE-katse ettevalmistuse,
@@ -63,7 +75,9 @@ Alates 0.3.54-st on sama koostamise käigus loodud seoste eemaldamise ja
 asendamise avalik sisend `modifierEdits`. Alates 0.3.55-st määrab `controllersScenes`
 Controllersi kanali stseeniti ja `volumePedal.source` Volume-seose allika (External 1 või
 Controllers ploki allikas). Alates 0.3.56-st valib `multidelayTypes` Multi Delay Type'i
-kanali kaupa terve kanali mallina (T35). Üldine kirjete jaotaja ning suvalised allikad/sihtmärgid jäävad toetamata.
+kanali kaupa terve kanali mallina (T35). Alates 0.3.60-st seob `modifierTargets` Controllersi/External 1 allika
+lipureegliga lubatud ploki parameetriga järgmistesse vabadesse kirjetesse (T42). Teisesed allikad,
+kõverad uutel sihtidel ja teise ploki eksemplari sihid jäävad toetamata.
 
 T11 (`MOOTOR/references/fm3-combo-store-20261029.json`) kinnitab viie seose ja
 Out 2 säilimist STORE/reload'il ning selles katses Out 2 L tööd ja helitaset.
@@ -85,6 +99,28 @@ samasse tõendikausta säilitatud. `test-p2-three-switches` taastab algse SYX-i
 praeguse generaatoriga ning kontrollib ekspordi terviklikku keha ja vigade tõrjumist.
 See tõend piirdub selle preseti ja kolme määranguga; kõigi 24 määrangu, teiste
 layout'ide, heli või CPU seadmekatset sellest ei järeldu. Ära nõua P2 kordamist.
+
+## Modifikaatori sihid ja preseti tempo (0.3.60, T42)
+
+`modifierTargets: [{"source":"LFO 1A","block":"delay","param":"DELAY_MIX","min":10,"max":60,"channel":"ALL"}]`
+(1–8 seost). `source` on üks `volumePedal.source` 19 allikast; `block` on ploki lühinimi ja `param`
+sõnastiku nimi. Siht peab olema presetis (esimene eksemplar) ja ruudustikul täpselt üks kord ning
+ilma olemasoleva modifikaatorita. Volume/Pan Volume seo `volumePedal`-iga ja Wah Control
+`composer.modifiers.external1Wah`-iga. `min`/`max` on näiduühikutes ja lubatud ainult pidevatel
+sihtidel (lineaar/log/knob); muudel sihtidel ja ilma nendeta jääb täisvahemik. Kirje mall on FM3
+enda salvestatud vaikemall (sama mis Control Switchil ja T42-s); kõver ja ajad on vaikimisi.
+Kirjed lähevad pärast Volume- ja Control Switchi seoseid järgmistesse vabadesse kirjetesse.
+Allika enda seaded (LFO kiirus, Scene Controlleri väärtused stseeniti) kirjuta väljadega
+`controllers` / `controllersScenes`. `tempo: 97` kirjutab preseti tempo; tempo-sünkroniseeritud
+plokid (nt `DELAY_TEMPO: "1/4"`) järgivad seda.
+
+Tõend: `MOOTOR/references/fm3-t42-modifier-targets-20261109.json` (FM3 Mk II Turbo, FW13, STORE 427).
+SC1 → Delay Mix, LFO 1A → Filter Freq ja External 1 → Amp Gain: Source ja Min/Max kuvati enne ja pärast
+STORE-i, heli oli oodatud ja salvestatud keha oli baiditäpselt sama. Delay Low Cut (lipp 0x0080 püsti)
+jäi tühjaks: FM3 nullis laadimisel Source'i ja sihi. Tempo 97/143 näidati FM3-l ja salvestati otse BPM-ina.
+Lipureegel pidas 20 lubatud ja 1 keelatud sihi puhul, kuid iga parameetrit pole seadmel proovitud;
+TXT märgib iga sihi juures, kas see on seadmel kinnitatud. Selle uue faili importi ja heli ei ole
+kontrollitud.
 
 ## Seoste eemaldamine ja asendamine (0.3.54)
 
@@ -314,7 +350,8 @@ Manual 1–5) väärtusi: `[{"channel":"A","param":"LFO1FREQ","value":2.5}]`. `p
 26 oodatud väärtust (LFO, ADSR 1, Sequencer, Envelope/Manual, Scene Ctrl 1+2). Kanalivalija B/C/D näitas
 11/12/13 %, seega on neli koopiat Controllersi kanalid A–D. Kirjutamisel kehtib tavaline staatuspiirang:
 nupud, täisarvud ja (alates 0.3.52, T28/T30) kõik valikud peale Tempo To Use vaikimisi.
-Tempo, Tempo To Use, ADSR X/Y märgid ja Envelope Gain Monitor on keelatud. T28 ajal polnud Controllersi
+Tempo To Use, ADSR X/Y märgid ja Envelope Gain Monitor on keelatud; Tempo kirjutab alates 0.3.60-st ainult väli
+`tempo` (kõik neli kanalit). T28 ajal polnud Controllersi
 stseenikanali valik veel dekodeeritud ja koostaja kasutas kanalit A. Alates 0.3.55-st
 kirjutab `controllersScenes` kõik kaheksa stseenikanalit (T33/T34); Volume-seose
 allika valib `volumePedal.source`. Allika sidumine ja Controllersi väärtused on eraldi toimingud.

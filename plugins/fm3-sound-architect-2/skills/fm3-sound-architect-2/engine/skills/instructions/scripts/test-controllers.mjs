@@ -39,7 +39,7 @@ for(let i=0;i<b0.length;i++)if(!changed.has(i))assert.equal(b1[i],b0[i],'collate
 assert.equal(b1.readUInt16LE(header),2);
 const copies=readControllers(b1);assert.deepEqual(copies.map(c=>c.channel),['A','B','C','D']);
 assert.equal(copies[1].words[controllersParam('SCENE1_VAL1').param],receipt.editorReadings.find(r=>r.channel==='B').raw);
-assert.equal(out.report.controllers.length,29);assert.equal(out.report.stages.controllers.writes,29);assert.equal(out.report.generator,'fm3-sound-0.3.59');
+assert.equal(out.report.controllers.length,29);assert.equal(out.report.stages.controllers.writes,29);assert.equal(out.report.generator,'fm3-sound-0.3.60');
 assert.match(out.txt,/CONTROLLERS \(Control plokk/);assert.match(out.txt,/A Rate \(CONTROLLERS_LFO1FREQ\) = 2\.5/);
 // Without controllers the output is unchanged by the 0.3.50 stage.
 assert.equal(plain.report.controllers,undefined);assert.doesNotMatch(plain.txt,/CONTROLLERS \(/);
@@ -47,7 +47,7 @@ assert.equal(plain.report.controllers,undefined);assert.doesNotMatch(plain.txt,/
 const grid=composeSound(base,{composer,grid:{rows:[Array(12).fill(''),['in1','compressor','drive','-','amp','cab','-','-','-','-','-','send'],['return','delay','-','-','reverb','-','-','-','-','-','-','out1'],Array(12).fill('')]},
   controllers:[{channel:'D',param:'MANUAL3',value:70}]});
 assert.equal(readControllers(body(grid.syx))[3].words[controllersParam('MANUAL3').param],Math.round(0.7*65534));
-const refuse=[[{channel:'A',param:'TEMPOTOUSE',value:0},/Tempo To Use/],[{channel:'A',param:'TEMPO',value:120},/not writable/],[{channel:'A',param:'ADSR2_YMARK',value:1},/not writable/],
+const refuse=[[{channel:'A',param:'TEMPOTOUSE',value:0},/Tempo To Use/],[{channel:'A',param:'TEMPO',value:120},/tempo field/],[{channel:'A',param:'ADSR2_YMARK',value:1},/not writable/],
   [{channel:'A',param:'LFO2TYPE',value:'Wobble'},/unknown option/],[{channel:'A',param:'DISTORT_GAIN',value:1},/Unknown parameter/],[{channel:'A',param:130,value:1},/Unknown parameter|Not a Controllers/],
   [{channel:'A',param:'LFO1DEPTH',value:101},/outside/],[{channel:'a',param:'LFO1DEPTH',value:1},/Channel/],[{channel:'A',param:'LFO1DEPTH'},/value/]];
 for(const [w,re] of refuse)assert.throws(()=>composeSound(base,{composer,layout,controllers:[w]}),re,JSON.stringify(w));

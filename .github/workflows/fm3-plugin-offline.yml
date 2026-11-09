@@ -110,6 +110,7 @@ jobs:
           node tools/fm3/t37-synth-cpu-ingest.mjs
           node tools/fm3/t38-multidelay-store-ingest.mjs
           node tools/fm3/t39-t41-controllers-store-ingest.mjs
+          node tools/fm3/t42-modifier-targets-ingest.mjs
           node tools/fm3/record-order-build.mjs
           node tools/fm3/t28-controllers-ingest.mjs
           node tools/fm3/t29-feedback-ingest.mjs

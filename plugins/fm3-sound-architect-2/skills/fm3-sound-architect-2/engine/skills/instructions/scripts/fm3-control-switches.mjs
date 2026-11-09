@@ -40,14 +40,25 @@ const CHANNELS=Object.freeze(['ALL','A','B','C','D']);
 const templateFor=(source,eid,pid,{invert=false,channel='ALL'}={})=>{const t=[...TEMPLATE,65534,65534,0,0];t[0]=source;t[8]=eid;t[9]=pid;
   if(invert){t[1]=65534;t[2]=0;}t[17]=CHANNELS.indexOf(channel);return t;};
 export function controlSwitchTemplate(entry){const w=validateControlSwitches([entry])[0];return templateFor(w.source,w.effectId,w.pid,w);}
+// Generic modifier targets (fm3-modifier-targets.mjs, 0.3.60) use the same 25-word template with Min/Max words 1/2 in the
+// target's stored-word codec (T42 2026-11-09: three targets accepted and byte-identical after STORE).
+export function modifierTemplate(source,eid,pid,{min=0,max=65534,channel='ALL'}={}){const t=templateFor(source,eid,pid,{channel});t[1]=min;t[2]=max;return t;}
+export const nextWritableModifierRecord=(body,from=1)=>{let r=from;while(r<RECORDS&&!writable(r,words(body,r)))r++;return r;};
+export const MODIFIER_RECORDS=RECORDS;
+// Sources offered by volumePedal / modifierTargets (FM3-Edit MOD_CTRLID codes): External 1 and the Controllers sources.
+const TARGET_SOURCES=new Set([14,1,2,3,4,5,6,7,8,9,30,31,32,33,56,57,58,59,60]);
+const FREE=new Set([0,1,2,8,9,17]);
+// A generic target record written by fm3-modifier-targets.mjs (never the Volume or Wah binding).
+export function isModifierTargetRecord(w){const t=templateFor(0,0,0);
+  return TARGET_SOURCES.has(w[0])&&w[8]!==0&&!(w[8]===102&&w[9]===0)&&!(w[8]===94&&w[9]===5)&&w[17]<CHANNELS.length&&w.every((x,i)=>FREE.has(i)||x===t[i]);}
 const variantOf=w=>({invert:w[1]===65534&&w[2]===0,channel:CHANNELS[w[17]]??'?'});
 const SOURCES=new Set(Object.values(CONTROL_SWITCH_SOURCE)),PIDS=new Map(CONTROL_SWITCH_TARGETS.amp.map(n=>[findParam('amp',n).param,n]));
 // A record this engine writes: Control Switch source, amp effect, a listed PID, exactly the template (or a variant).
 export function isControlSwitchRecord(w){return SOURCES.has(w[0])&&w[8]===EID.amp&&PIDS.has(w[9])&&w[17]<CHANNELS.length&&same(w,templateFor(w[0],w[8],w[9],variantOf(w)));}
-// Copy of the body with every Control Switch record reset to its base form, so other verifiers can pin the rest.
+// Copy of the body with every Control Switch and generic target record reset to its base form, so other verifiers can pin the rest.
 export function stripControlSwitchRecords(body){
   const out=Buffer.from(body);
-  for(let r=1;r<RECORDS;r++)if(isControlSwitchRecord(words(body,r)))baseForm(r).forEach((x,i)=>out.writeUInt16LE(x,FIELDS0+RECORD*r+2*i));
+  for(let r=1;r<RECORDS;r++)if(isControlSwitchRecord(words(body,r))||isModifierTargetRecord(words(body,r)))baseForm(r).forEach((x,i)=>out.writeUInt16LE(x,FIELDS0+RECORD*r+2*i));
   return out;
 }
 export function validateControlSwitches(list){
@@ -130,6 +141,7 @@ export function verifyControlSwitchOutput(report,syx,txt,spec){
     &&stage.onlyDeclaredWordsChanged===true&&stage.bodyReadback===true&&stage.dumpHeaderPreserved===true&&stage.deviceIO===false,'Control Switch stage report differs');
   const expected=new Set(state.map(s=>s.record));
   if(report.volumePedal)expected.add(report.volumePedal.record);
+  for(const t of report.modifierTargets??[])expected.add(t.record);
   if(spec.composer?.modifiers?.external1Wah===true)expected.add(0);
   const active=readModifiers(body).filter(m=>m.active).map(m=>m.record);
   check(active.length===expected.size&&active.every(r=>expected.has(r)),'active modifier records differ from the requested bindings');

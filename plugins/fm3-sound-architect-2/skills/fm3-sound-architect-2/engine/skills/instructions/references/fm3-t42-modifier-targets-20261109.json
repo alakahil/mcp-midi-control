@@ -1,0 +1,325 @@
+{
+ "schemaVersion": 1,
+ "kind": "fm3-t42-modifier-targets",
+ "date": "2026-11-09",
+ "device": "FM3 Mk II Turbo, FW13",
+ "method": "Edit-buffer load (7F 00), user check and listening, user STORE to location 427, another preset selected and back, read-only stored dump (fn=0x03). Scripts never stored or set.",
+ "builder": "tools/fm3/t42-modifier-targets-build.mjs",
+ "findings": {
+  "modifierTargets": "Delay Mix, Filter Freq and Amp Gain accepted as new modifier targets (cache flag 0x0080 clear); stored bodies byte-identical.",
+  "forbiddenTarget": "Delay Low Cut (flag 0x0080 set) refused: the FM3 cleared Source and target effect id on import; Min/Max/pid words left as sent.",
+  "flagRule": "Supported, not proven per parameter: flag 0x0080 clear on 20 accepted targets (17 earlier + 3 here), set on the 1 refused target.",
+  "presetTempo": "CONTROLLERS_TEMPO stored word = BPM (97, 143), shown on the FM3 and kept after STORE; Tempo To Use 0 = PRESET."
+ },
+ "scope": "Only the tested targets, ranges, channel ALL and default curve; other targets rely on the flag rule.",
+ "parts": [
+  {
+   "case": "T42A_SC1DLYMIX",
+   "hypothesis": "H1",
+   "observations": {
+    "before": {
+     "target": "Scene Controller 1",
+     "minmax": "0 ja 100 %",
+     "behavior": "jah"
+    },
+    "after": {
+     "target": "Scene Controller 1",
+     "minmax": "0 ja 100 %",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "resultSha256": "3c4c7516f818962673daaafa2df020462b5f6c2d9e6df1069bd1008e2ae8f1c8",
+   "target": "DELAY_MIX",
+   "label": "Mix",
+   "flags": "0x0705",
+   "source": "Scene Controller 1",
+   "min": {
+    "display": 0,
+    "word": 0
+   },
+   "max": {
+    "display": 100,
+    "word": 65534
+   },
+   "storedRecord": {
+    "record": 0,
+    "words": [
+     30,
+     0,
+     65534,
+     0,
+     32767,
+     65534,
+     32767,
+     66,
+     70,
+     0,
+     0,
+     0,
+     0,
+     32767,
+     32767,
+     66,
+     0,
+     0,
+     0,
+     0,
+     0,
+     65534,
+     65534,
+     0,
+     0
+    ]
+   },
+   "deviceResult": "accepted: Source, Min/Max and behavior shown before STORE and after reload"
+  },
+  {
+   "case": "T42B_LFO1AFILTFREQ",
+   "hypothesis": "H1",
+   "observations": {
+    "before": {
+     "target": "ok täpp, LFO 1A",
+     "minmax": "300 ja 3000 Hz",
+     "behavior": "jah"
+    },
+    "after": {
+     "target": "LFO 1A",
+     "minmax": "300 ja 3000 Hz",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "resultSha256": "eaf17c950eecdf390dc5b7de10f81ff8ae310c17e84d608ca8a74c979c3653ce",
+   "target": "FILTER_FREQ",
+   "label": "Frequency",
+   "flags": "0x0402",
+   "source": "LFO 1A",
+   "min": {
+    "display": 300,
+    "word": 25691
+   },
+   "max": {
+    "display": 3000,
+    "word": 47536
+   },
+   "storedRecord": {
+    "record": 0,
+    "words": [
+     1,
+     25691,
+     47536,
+     0,
+     32767,
+     65534,
+     32767,
+     66,
+     114,
+     1,
+     0,
+     0,
+     0,
+     32767,
+     32767,
+     66,
+     0,
+     0,
+     0,
+     0,
+     0,
+     65534,
+     65534,
+     0,
+     0
+    ]
+   },
+   "deviceResult": "accepted: Source, Min/Max and behavior shown before STORE and after reload"
+  },
+  {
+   "case": "T42C_EXT1AMPGAIN",
+   "hypothesis": "H1",
+   "observations": {
+    "before": {
+     "target": "on täpp, External 1",
+     "minmax": "2 ja 8",
+     "behavior": "jah"
+    },
+    "after": {
+     "target": "on täpp, External 1",
+     "minmax": "2 ja 8",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "resultSha256": "c0781dbcb5ca52a68b189f8a9edd87bfb09f5392c638e084b97b60b33f77fcd8",
+   "target": "DISTORT_DRIVE",
+   "label": "Gain",
+   "flags": "0x0300",
+   "source": "External 1",
+   "min": {
+    "display": 2,
+    "word": 13107
+   },
+   "max": {
+    "display": 8,
+    "word": 52427
+   },
+   "storedRecord": {
+    "record": 0,
+    "words": [
+     14,
+     13107,
+     52427,
+     0,
+     32767,
+     65534,
+     32767,
+     66,
+     58,
+     7,
+     0,
+     0,
+     0,
+     32767,
+     32767,
+     66,
+     0,
+     0,
+     0,
+     0,
+     0,
+     65534,
+     65534,
+     0,
+     0
+    ]
+   },
+   "deviceResult": "accepted: Source, Min/Max and behavior shown before STORE and after reload"
+  },
+  {
+   "case": "T42D_SC1LOCUTNEG",
+   "hypothesis": "H2",
+   "observations": {
+    "before": {
+     "target": "Ei ole täppi, ei saa siseneda enter nupuga",
+     "minmax": "ei leia, kordused kõlavad sarnaselt",
+     "behavior": "Kõlavad sarnaselt"
+    },
+    "after": {
+     "target": "Ei ole täppi, ei saa siseneda enter nupuga",
+     "minmax": "ei leia, kordused kõlavad sarnaselt",
+     "behavior": "Kõlavad sarnaselt"
+    },
+    "note": ""
+   },
+   "resultSha256": "2b981d21c690f41cf91c756d75ca023e7039ed357d3d30be6a95989a932adf2f",
+   "target": "DELAY_LOCUT",
+   "flags": "0x0482",
+   "deviceResult": "refused: Source and target cleared on import, repeats unchanged across scenes",
+   "storedModifier": null,
+   "clearedWords": [
+    {
+     "byte": 1584,
+     "generated": 30,
+     "stored": 0
+    },
+    {
+     "byte": 1600,
+     "generated": 70,
+     "stored": 0
+    }
+   ]
+  },
+  {
+   "case": "T42E_TEMPO97",
+   "hypothesis": "H3",
+   "observations": {
+    "before": {
+     "tempo": "97",
+     "behavior": "jah"
+    },
+    "after": {
+     "tempo": "97",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "resultSha256": "c3b995b403704501a8296e5d11537418662a0a21aeb776b105792dd81fcd2939",
+   "tempoBpm": 97,
+   "storedWord": 97,
+   "tempoToUse": "PRESET",
+   "deviceResult": "tempo shown on FM3 before STORE and after reload; stored word equals BPM"
+  },
+  {
+   "case": "T42F_TEMPO143",
+   "hypothesis": "H3",
+   "observations": {
+    "before": {
+     "tempo": "143",
+     "behavior": "jah"
+    },
+    "after": {
+     "tempo": "143",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "resultSha256": "022d6116e4728275db4773b1f9d4c036549fe76f1362f54bf10f4dc651e24177",
+   "tempoBpm": 143,
+   "storedWord": 143,
+   "tempoToUse": "PRESET",
+   "deviceResult": "tempo shown on FM3 before STORE and after reload; stored word equals BPM"
+  }
+ ],
+ "files": [
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42A_SC1DLYMIX/bind-store-load.json",
+   "sha256": "b6c056535bc0b621474a65cca2e7d3a417499570d98f8b556a6e771ea2cd5d30"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42A_SC1DLYMIX/bind-store-results.json",
+   "sha256": "3c4c7516f818962673daaafa2df020462b5f6c2d9e6df1069bd1008e2ae8f1c8"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42B_LFO1AFILTFREQ/bind-store-load.json",
+   "sha256": "b3c3f9fb3a2e6e6edcac3c9214e9ca7ceae23fca0b520c8e96edf5528e690c49"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42B_LFO1AFILTFREQ/bind-store-results.json",
+   "sha256": "eaf17c950eecdf390dc5b7de10f81ff8ae310c17e84d608ca8a74c979c3653ce"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42C_EXT1AMPGAIN/bind-store-load.json",
+   "sha256": "bf662e2017ec6d0e30abe449d64970c7ed090bd4b1903ac7fa8fffc5c3f3d7c1"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42C_EXT1AMPGAIN/bind-store-results.json",
+   "sha256": "c0781dbcb5ca52a68b189f8a9edd87bfb09f5392c638e084b97b60b33f77fcd8"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42D_SC1LOCUTNEG/bind-store-load.json",
+   "sha256": "dcc2063e476e95ce84dc0545094bd0f70b7bbe1aa4297e88b7089a01a654e894"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42D_SC1LOCUTNEG/bind-store-results.json",
+   "sha256": "2b981d21c690f41cf91c756d75ca023e7039ed357d3d30be6a95989a932adf2f"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42E_TEMPO97/bind-store-load.json",
+   "sha256": "b17f18160288732dc37ee571e7c3afcf4efb04e2508e3bbe1b2e839a1c374e8f"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42E_TEMPO97/bind-store-results.json",
+   "sha256": "c3b995b403704501a8296e5d11537418662a0a21aeb776b105792dd81fcd2939"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42F_TEMPO143/bind-store-load.json",
+   "sha256": "9e3219d971ecb9e93b7f129ac149ee8abf3e04c893e334a485eadc1dfc646292"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t42/T42F_TEMPO143/bind-store-results.json",
+   "sha256": "022d6116e4728275db4773b1f9d4c036549fe76f1362f54bf10f4dc651e24177"
+  }
+ ],
+ "resultsSha256": "88e2b4cadfb9247a5de190cde52c07f923c2bc09d8141b1f501b87043ba58bf6"
+}
