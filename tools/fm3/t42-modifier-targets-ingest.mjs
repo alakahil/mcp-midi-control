@@ -60,7 +60,8 @@ try{
    if(m.hypothesis==='H1'){
     for(const o of [r.beforeStore,r.afterReload])assert.ok(o.target.includes(m.binding.source),p.dir+' Source shown');
     assert.deepEqual(mods,[{source:m.binding.source,effectId:m.binding.effectId,pid:m.binding.pid,min:m.binding.min.word,max:m.binding.max.word}]);
-    Object.assign(part,{target:m.binding.name,label:m.binding.label,flags:m.binding.flags,source:m.binding.source,min:m.binding.min,max:m.binding.max,deviceResult:'accepted: Source, Min/Max and behavior shown before STORE and after reload'});
+    const rec=readModifiers(s).find(x=>x.active).record,storedRecord=Array.from({length:25},(_,i)=>s.readUInt16LE(1584+96*rec+2*i));
+    Object.assign(part,{target:m.binding.name,label:m.binding.label,flags:m.binding.flags,source:m.binding.source,min:m.binding.min,max:m.binding.max,storedRecord:{record:rec,words:storedRecord},deviceResult:'accepted: Source, Min/Max and behavior shown before STORE and after reload'});
    }else{
     assert.equal(m.hypothesis,'H3');const bpm=+r.beforeStore.tempo;assert.equal(+r.afterReload.tempo,bpm);
     for(let ch=0;ch<4;ch++){assert.equal(s.readUInt16LE(R.start+2*(ch*R.words+32)),bpm);assert.equal(s.readUInt16LE(R.start+2*(ch*R.words+33)),0);}

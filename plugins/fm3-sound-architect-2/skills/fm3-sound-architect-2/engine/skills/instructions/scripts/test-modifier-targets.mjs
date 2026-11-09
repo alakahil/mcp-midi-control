@@ -34,7 +34,7 @@ assert.deepEqual(Object.keys(DEVICE_CONFIRMED_TARGETS).sort(),['DELAY_MIX','DIST
 assert.equal(modifierTargetsCapabilities().targets,468);
 
 // 2. T42 records replayed: the generated record equals the device-stored T42 record word for word (record moves 0 -> 1).
-const t42Words=part=>{const r=receipt.parts.find(p=>p.case.startsWith(part)),dump=Buffer.concat(JSON.parse(fs.readFileSync(new URL('../../../../../../../docs/fm3/hardware-results/2026-11-09/t42/'+r.case+'/bind-store-results.json',E))).storedDumpFrames.map(h=>Buffer.from(h,'hex')).filter(f=>[0x77,0x78,0x79].includes(f[5])));return words(bodyOf(dump),0);};
+const t42Words=part=>receipt.parts.find(p=>p.case.startsWith(part)).storedRecord.words;  // device-stored record (STORE 427)
 const replay=[['T42A',{source:'Scene Controller 1',block:'delay',param:'DELAY_MIX',min:0,max:100}],['T42B',{source:'LFO 1A',block:'filter',param:'FILTER_FREQ',min:300,max:3000}],['T42C',{source:'External 1',block:'amp',param:'DISTORT_DRIVE',min:2,max:8}]];
 for(const [part,t] of replay){
  const r=createPreset(base,{composer:{...composer,name:part},layout,modifierTargets:[t]}),b=bodyOf(r.syx);

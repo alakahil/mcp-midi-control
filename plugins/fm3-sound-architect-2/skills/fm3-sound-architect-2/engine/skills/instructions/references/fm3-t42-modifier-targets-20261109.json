@@ -42,6 +42,36 @@
     "display": 100,
     "word": 65534
    },
+   "storedRecord": {
+    "record": 0,
+    "words": [
+     30,
+     0,
+     65534,
+     0,
+     32767,
+     65534,
+     32767,
+     66,
+     70,
+     0,
+     0,
+     0,
+     0,
+     32767,
+     32767,
+     66,
+     0,
+     0,
+     0,
+     0,
+     0,
+     65534,
+     65534,
+     0,
+     0
+    ]
+   },
    "deviceResult": "accepted: Source, Min/Max and behavior shown before STORE and after reload"
   },
   {
@@ -73,6 +103,36 @@
     "display": 3000,
     "word": 47536
    },
+   "storedRecord": {
+    "record": 0,
+    "words": [
+     1,
+     25691,
+     47536,
+     0,
+     32767,
+     65534,
+     32767,
+     66,
+     114,
+     1,
+     0,
+     0,
+     0,
+     32767,
+     32767,
+     66,
+     0,
+     0,
+     0,
+     0,
+     0,
+     65534,
+     65534,
+     0,
+     0
+    ]
+   },
    "deviceResult": "accepted: Source, Min/Max and behavior shown before STORE and after reload"
   },
   {
@@ -103,6 +163,36 @@
    "max": {
     "display": 8,
     "word": 52427
+   },
+   "storedRecord": {
+    "record": 0,
+    "words": [
+     14,
+     13107,
+     52427,
+     0,
+     32767,
+     65534,
+     32767,
+     66,
+     58,
+     7,
+     0,
+     0,
+     0,
+     32767,
+     32767,
+     66,
+     0,
+     0,
+     0,
+     0,
+     0,
+     65534,
+     65534,
+     0,
+     0
+    ]
    },
    "deviceResult": "accepted: Source, Min/Max and behavior shown before STORE and after reload"
   },
