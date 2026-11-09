@@ -1,5 +1,8 @@
 # FM3 seadmest lugemine ja väärtuste kontroll (Claude, 2026-10-23)
 
+Kehtiv valikuline seadmekatse: [laadimine edit buffer’isse ja tagasilugemine](FM3_LOAD_READBACK.md).
+Allpool on varasemate katsete mõõtetulemused, mitte uue skriptiversiooni seadmekinnitus.
+
 Tulemused on failis `references/fm3-read-value-check-20261023.json`. Toorandmed on samas kaustas:
 `fm3-read-probe-20261023-results.json` ja `fm3-value-check-20261023-results.json`. CI kontrollib neid
 käsuga `node tools/fm3/read-value-ingest.mjs`.

@@ -797,6 +797,15 @@
       ],
       "scope": "Public bounded removal/replacement: historical P3 byte oracle, preserved records, final-state four-file verification and negative inputs/tampering; no device I/O",
       "required": true
+    },
+    {
+      "id": "test-device-load-readback",
+      "command": [
+        "python3",
+        "scripts/test-device-load-readback.py"
+      ],
+      "scope": "Simulated POSIX port: preflight, edit-buffer-only writes, read whitelist, no-response refusal, bulk compare, malformed replies, read-only recheck, manual STORE readback and non-overwriting receipts; no device I/O",
+      "required": true
     }
   ]
 }

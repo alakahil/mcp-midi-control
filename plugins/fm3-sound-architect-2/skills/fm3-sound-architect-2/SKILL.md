@@ -19,7 +19,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.60`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.61`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -194,6 +194,31 @@ Ajalooline kordustööriist ise ei lisa avalikku sisendit ega üldist kirjete ja
 0.3.54 avalik `modifierEdits` on eraldi piiratud liides. See ei lisa
 suvalise aluspreseti muutmist ega FM3-Editi automaatse vaba koha valimise tõendit.
 Kõigi 32 pesa kasutatavust, uusi allikaid/sihtmärke, heli ega CPU-d ei mõõdetud.
+
+## Valikuline kohalik laadimise/tagasilugemise katse (0.3.61)
+
+Kasutaja soovil saab seadmekatset teha kaasasolevate Python-skriptidega:
+kontrollitud preset laaditakse ainult edit buffer'isse ja plokid loetakse
+sõna-sõnalt tagasi. Loe enne katse ettevalmistamist või käivitamist
+[laadimise ja tagasilugemise juhendit](engine/docs/FM3_LOAD_READBACK.md).
+`MOOTOR/scripts/cpu-sweep-collector/FM3_SHOT_LOAD.py --load` teeb
+mitteinteraktiivse laadimise/võrdluse, `FM3_SHOT_READ.py` hilisema ainult
+lugemise. STORE-katsel teeb salvestamise ja presetivahetused kasutaja;
+`FM3_BIND_STORE.py --verify` loeb tema nimetatud salvestuskoha.
+
+Need on kohaliku Maci/Linuxi USB-skriptid, mitte pilvest kättesaadav MCP-teenus.
+Valmista katsepakk ette ka siis, kui siin puudub kasutaja arvuti ligipääs;
+ära väida, et seade on ühendatud või kontroll tehtud. Kui kohalik ligipääs
+ja katse korraldus on olemas, täida lubatud sammud. Enne käivitust sulge
+FM3-Edit/Fractal-Bot ja säilita vajalik salvestamata töö. Pordikontroll saadab
+ainult CPU-päringu; vastuseta seadet ei laadita. Parameetri SET, STORE,
+stseeni/presetivahetuse käsud ja üldseadete kirjutamine on keelatud.
+Kuvanäidud, heli ja STORE/reload'i tulemus on eraldi tõendid.
+
+0.3.61 tugevdab olemasolevate kogujate eelkontrolli, vastuse kontrolli ning
+tulemuste säilitamist; generaatori binaarkirjutuse ulatus ei laiene.
+Kohustuslikus offline-suite'is on 89 testi, sealhulgas simuleeritud pordi
+laadimise/tagasilugemise regressioon. Uut füüsilist seadmekatset see ei kinnita.
 
 ## GitHubi Satriani V4 täiendus (0.3.29, 28.10.2026)
 
@@ -1151,9 +1176,12 @@ töökoopiasse. Algne kataloog, mallid ja lähteandmed peavad säilima kontrolli
 faili/kausta/juurkausta kirjet. Kopeeri ainult selle oskuse failid, säilita uue
 plugina identiteet ja privaatsus ning uuenda olemasolevat pluginat, mitte ära loo kolmandat.
 
-Riistvaraaudit on ainult kasutaja kinnitatud GET/read-only päringud. Ära saada
-tooreid SET-käske ega salvesta automaatselt FM3 presetikohtadele. Kontrollimpordi
-teeb kasutaja FM3-Editis teadlikult, säilitades oma töö; see muudab tööpuhvrit.
+Riistvaraaudit kasutab kasutaja tellitud lugemist ja eespool kirjeldatud
+valikulist tervikpreseti edit-buffer-laadimist. Kontrollimport võib toimuda
+FM3-Editis või kontrollitud LOAD/GET skriptidega; mõlemad asendavad tööpuhvri.
+Ära saada parameetri SET-i, STORE-i, stseeni/presetivahetust ega üldseadete
+kirjutust. STORE jääb kasutajale. Muudatused tee eraldi harul ja PR-is;
+liida ainult kasutaja selgesõnalise „liida“ korralduse järel.
 
 ## Laadimise kontroll
 
