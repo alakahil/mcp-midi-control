@@ -48,8 +48,15 @@ const t33Receipt='references/fm3-t33-controllers-scene-20261106.json';
 const CTRLID=loadDictionary().params.find(p=>p.family==='MOD'&&p.name==='MOD_CTRLID');
 check(CTRLID?.enum?.length===61&&CTRLID.enum[1]==='LFO 1A'&&CTRLID.enum[14]==='External 1'&&CTRLID.enum[50]==='Control Switch 1','MOD_CTRLID source list');
 export const VOLUME_SOURCES=Object.freeze(Object.fromEntries([14,...Array.from({length:9},(_,i)=>i+1),30,31,32,33,56,57,58,59,60].map(c=>[CTRLID.enum[c].trim(),c])));
-const DEVICE_CONFIRMED_SOURCES=Object.freeze({'External 1':'T2/T10 (2026-10-26/28)','LFO 1A':'T33 (2026-11-06)','ADSR 1':'T34D (2026-11-07)','Sequencer':'T34C (2026-11-07)','Scene Controller 1':'T34B (2026-11-07)'});
-const STORED_SOURCES=new Set(['External 1','LFO 1A']);
+// T39-T41 (2026-11-09, references/fm3-t39-t41-controllers-store-20261109.json): the 17 other sources, each heard with the
+// expected Source name before STORE and after reload, stored body byte-identical to the generated one.
+const t3941Receipt='references/fm3-t39-t41-controllers-store-20261109.json';
+const t3941=JSON.parse(fs.readFileSync(new URL('../'+t3941Receipt,import.meta.url),'utf8'));
+check(t3941.parts.length===17&&t3941.parts.every(p=>p.storeReload==='confirmed'&&p.storedBodyByteIdentical===true),'T39-T41 receipt');
+const EARLIER_CONFIRMED={'External 1':'T2/T10 (2026-10-26/28)','LFO 1A':'T33 (2026-11-06)','ADSR 1':'T34D (2026-11-07)','Sequencer':'T34C (2026-11-07)','Scene Controller 1':'T34B (2026-11-07)'};
+const DEVICE_CONFIRMED_SOURCES=Object.freeze({...EARLIER_CONFIRMED,...Object.fromEntries(t3941.parts.map(p=>{const tag=`${p.case.split('_')[0]} (2026-11-09)`;
+ return [p.source,EARLIER_CONFIRMED[p.source]?`${EARLIER_CONFIRMED[p.source]}; STORE ${p.test} ${tag}`:tag];}))});
+const STORED_SOURCES=new Set(['External 1','LFO 1A',...t3941.parts.map(p=>p.source)]);
 const sourceOf=name=>{check(typeof name==='string'&&Object.hasOwn(VOLUME_SOURCES,name),'volumePedal.source must be one of '+Object.keys(VOLUME_SOURCES).join(', '));return {name,code:VOLUME_SOURCES[name]};};
 export const volumeSourceName=request=>request&&typeof request==='object'&&Object.hasOwn(request,'source')?sourceOf(request.source).name:'External 1';
 // Off Value only acts with Auto-Engage, which this binding keeps OFF; it is not offered here.
@@ -85,7 +92,7 @@ export function volumePedalCapabilities(){return {
  field:'volumePedal',values:[true,'{min 0..10, max 0..10, curve, source}'],requires:'volumePan:true; exact captured inactive modifier region (records 1..31 when Wah is bound in record 0)',
  source:'External 1',sourceCode:14,
  sources:{field:'volumePedal.source',default:'External 1',codes:VOLUME_SOURCES,encoding:'modifier word 0 = FM3-Edit MOD_CTRLID list index; the rest of the record is the same captured template',
-  deviceConfirmed:DEVICE_CONFIRMED_SOURCES,receipt:t33Receipt,receipts:[t33Receipt,t34Receipt],others:'code from the FM3-Edit list, not tested on the device',controllerSettings:'set the source itself (e.g. LFO rate) with controllers / controllersScenes'},
+  deviceConfirmed:DEVICE_CONFIRMED_SOURCES,receipt:t33Receipt,receipts:[t33Receipt,t34Receipt,t3941Receipt],others:'none: all 19 sources confirmed (T33/T34/T39-T41)',controllerSettings:'set the source itself (e.g. LFO rate) with controllers / controllersScenes'},
  target:{effectId:102,pid:0,name:'VOLUME_GAIN',displayLabel:'Volume',channelScope:'ALL'},
  record:'0, or 1 when External 1 -> Wah is active in record 0',words:words(),policy:'captured-volume-default-fw13',evidenceSha256:volumeBindingEvidenceHash,
  captureSha256:evidence.capture.sha256,fullRangeEncodingProven:false,numericMinMaxAuthoring:true,
@@ -154,7 +161,7 @@ export function renderVolumePedalText(state){
   `Modifikaatori 25 toorsõna: ${state.words.join(', ')}.`,
   state.entireBodyMatchesCapture?'Kogu preseti keha kattub kasutaja Volume-seose ekspordiga; selle sisu korduseksporti pole vaja. Uut kodeeritud faili eraldi seadmesse ei imporditud.':'See on uus kombinatsioon: seose vaikeolek on seadmeekspordist, lõppfaili kombinatsioon kontrollitud tarkvaraliselt.',
   ...(ext?['External 1 globaalne pedaali/MIDI määrang ja pedaali asend ei sisaldu presetis. Seos ei muuda stseenide kanalit ega bypass’i.',
-  '24.10.2026 P1/P0 katses kinnitati FM3-Editis pedaali järgimine. 26.10.2026 (T2): kand 0.00, varvas 10.00, seos säilis STORE/reload-is. 28.10.2026 (T10): vahemik 2.50/7.50 kuvati ja pedaal järgis seda. Taper ja heli on mõõtmata; selle uue faili riistvarakatset sellest ei järeldu.']:['Seos ei muuda stseenide kanalit ega bypass’i. Kuuldav seadmel: T33 06.11.2026 LFO 1A (pulseeris); T34 07.11.2026 Scene Controller 1 (tase stseeniti), Sequencer (tükeldus), ADSR 1 (noodi paisumine). Selle uue faili import ja heli on kontrollimata.'])];
+  '24.10.2026 P1/P0 katses kinnitati FM3-Editis pedaali järgimine. 26.10.2026 (T2): kand 0.00, varvas 10.00, seos säilis STORE/reload-is. 28.10.2026 (T10): vahemik 2.50/7.50 kuvati ja pedaal järgis seda. Taper ja heli on mõõtmata; selle uue faili riistvarakatset sellest ei järeldu.']:['Seos ei muuda stseenide kanalit ega bypass’i. Kuuldav seadmel: T33 06.11.2026 LFO 1A (pulseeris); T34 07.11.2026 Scene Controller 1 (tase stseeniti), Sequencer (tükeldus), ADSR 1 (noodi paisumine); T39–T41 09.11.2026 kõik 19 allikat kuuldavalt ja STORE/reload-is baiditäpselt (katse seadetega). Selle uue faili import ja heli on kontrollimata.'])];
 }
 export function verifyVolumePedalOutput(report,syx,txt,spec,expectedModifierRegion){
  const requested=Object.hasOwn(spec??{},'volumePedal');

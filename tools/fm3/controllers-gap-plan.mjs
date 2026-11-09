@@ -16,30 +16,33 @@ const checks=name=>name.startsWith('LFO ')?'Määra valitud LFO-le aeglane ja ki
  name==='Sequencer'?'Kontrolli rütmilist helikatkestust enne ja pärast STORE; kasuta sama T34 neljaastmelist jada.':
  'Kasuta olemasoleva T34 allikakatse ootust enne ja pärast STORE-i.';
 const pending=current.controllers.filter(r=>r.audibleBehavior==='confirmed'&&r.storeReload==='not-measured');
-assert.deepEqual(pending.map(r=>r.name).sort(),['ADSR 1','Scene Controller 1','Sequencer']);
-const unmeasured=current.controllers.filter(r=>r.audibleBehavior==='not-measured');assert.equal(unmeasured.length,14);
+// T39-T41 (2026-11-09) closed every source gap: no store-only or behavior gap remains.
+assert.deepEqual(pending.map(r=>r.name),[]);
+const unmeasured=current.controllers.filter(r=>r.audibleBehavior==='not-measured');assert.equal(unmeasured.length,0);
+assert.equal(current.controllers.filter(r=>r.storeReload==='confirmed').length,19);
 const rows=[...pending,...unmeasured].map(r=>({source:r.name,code:r.code,
  priority:pending.includes(r)?'next-store-only':'only-when-needed',
  existing:r,missing:pending.includes(r)?['store-reload']:['device-import','audible-behavior','store-reload'],
  nextCheck:checks(r.name),target:'Volume/Pan 1 Volume, ALL',
  prerequisites:['Verified four-file bundle; one independent source binding per preset.','Validated controller values and expected response before import.'],
  deviceMeasurementPerformed:false}));
-const report={schemaVersion:1,asOf:'2026-11-08',evidence:{path:ref,sha256:createHash('sha256').update(bytes).digest('hex')},
- supportedSources:19,behaviorConfirmed:5,storeConfirmed:2,storeOnlyPending:3,behaviorPending:14,
+const report={schemaVersion:1,asOf:'2026-11-09',evidence:{path:ref,sha256:createHash('sha256').update(bytes).digest('hex')},
+ supportedSources:19,behaviorConfirmed:19,storeConfirmed:19,storeOnlyPending:0,behaviorPending:0,
  rows,excluded:['External 2-16','PEDAL','Control Switch in volumePedal.source','Other modifier targets'],
  separateQuestions:['Different LFO shapes/depths and modifier curves.','Sequencer Rate units beyond the measured 4 Hz case.'],
- minimalNextRound:'Three separate T34 source presets, one STORE/reload/readback each; submit the three sessions together. No hardware has been used by this plan.'};
+ minimalNextRound:'None for source coverage. A new round is needed only for a separate question (another LFO shape/depth, modifier curve or target). This plan uses no hardware.'};
 const md=['# Controllersi järgmised tõendilüngad','',
- '## Esimene voor: ainult puuduv STORE-kinnitus','',
- 'Scene Controller 1, Sequencer ja ADSR 1 on juba kuuldavalt kinnitatud. Järgmine pakett kordab nende kolme säilimist pärast STORE-i ja taaslaadimist. Üks sõltumatu sidumine ühes presetis; kolm tulemust saab saata koos.',
- '', '| Allikas | Puudu | Järgmine kontroll |','|---|---|---|',
- ...rows.map(r=>`| ${r.source} | ${r.missing.join(', ')} | ${r.nextCheck} |`),
+ '## Allikad: lünki pole','',
+ 'T39-T41 (09.11.2026) kinnitasid kõik 19 toetatud allikat sihtmärgiga Volume/Pan Volume, ALL: õige Source, ootuspärane heli ning STORE/reload baiditäpselt. Tõend kehtib katse seadetega.',
+ ...(rows.length?['', '| Allikas | Puudu | Järgmine kontroll |','|---|---|---|',...rows.map(r=>`| ${r.source} | ${r.missing.join(', ')} | ${r.nextCheck} |`)]:[]),
+ '', '## Eraldi küsimused (vajaduspõhised)','',
+ ...report.separateQuestions.map(q=>'- '+q),
  '', '## Piirid','',
- 'Ülejäänud 14 allika katse on vajaduspõhine. See plaan ei ava uusi allikaid ega sihtparameetreid. Kõigi allikate siht on Volume/Pan Volume, ALL. Erinevad LFO-kujud, sügavused ja modifikaatorikõverad vajavad oma kontrollitud ootust.',
+ 'See plaan ei ava uusi allikaid ega sihtparameetreid. Välja jäävad: '+report.excluded.join(', ')+'.',
  '', 'Masinloetav plaan: [controllers-gap-plan.json](parameter-evidence/controllers-gap-plan.json). Tõendibaas: [FM3_CURRENT_EVIDENCE.md](FM3_CURRENT_EVIDENCE.md).',
- 'Taasesitus: `node tools/fm3/controllers-gap-plan.mjs`; uuendamine: lisa `--write`. Uusi seadmemõõtmisi pole tehtud.',''].join('\n');
+ 'Taasesitus: `node tools/fm3/controllers-gap-plan.mjs`; uuendamine: lisa `--write`.',''].join('\n');
 assert.ok(process.argv.slice(2).every(a=>a==='--write'));
 for(const [file,text] of [['docs/fm3/parameter-evidence/controllers-gap-plan.json',JSON.stringify(report,null,2)+'\n'],['docs/fm3/FM3_CONTROLLERS_GAPS.md',md]]){
  if(process.argv.includes('--write'))fs.writeFileSync(path.join(ROOT,file),text);else assert.equal(fs.readFileSync(path.join(ROOT,file),'utf8'),text,'Controllers gap plan stale');
 }
-console.log(JSON.stringify({passed:true,sources:19,behaviorConfirmed:5,stored:2,storeOnlyPending:3,otherPending:14,deviceIO:false}));
+console.log(JSON.stringify({passed:true,sources:19,behaviorConfirmed:19,stored:19,storeOnlyPending:0,otherPending:0,deviceIO:false}));

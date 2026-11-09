@@ -1,0 +1,603 @@
+{
+ "schemaVersion": 1,
+ "kind": "fm3-t39-t41-controllers-store",
+ "date": "2026-11-09",
+ "device": "FM3 Mk II Turbo, FW13",
+ "method": "Edit-buffer load (7F 00), user listening and Source check, user STORE to location 427, another preset selected and back, read-only stored dump (fn=0x03); offline comparison with tools/fm3/controllers-store-compare.mjs. Scripts never stored or set.",
+ "builders": [
+  "tools/fm3/controllers-store-build.mjs",
+  "tools/fm3/t40-controllers-sources-build.mjs"
+ ],
+ "target": "Volume/Pan 1 Volume (102:0), ALL",
+ "findings": {
+  "sources": 17,
+  "allStoredBodiesByteIdentical": true,
+  "allObservationsPassed": true,
+  "summary": "All 17 sources showed the expected Source name and behavior before STORE and after reload; every stored body equals the generated body byte for byte.",
+  "pitchFollowerRange": "Direction only (low notes quieter, high notes louder); FM3-Edit has only CONTROLLERS_PITCH_SOURCE (Ghidra 2026-11-08)."
+ },
+ "scope": "Only the tested settings and the Volume/Pan Volume target; other LFO shapes/depths, modifier curves and targets are separate questions.",
+ "parts": [
+  {
+   "test": "T39",
+   "case": "K1_B",
+   "source": "Scene Controller 1",
+   "code": 30,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:31:12",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Scene Controller 1",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Scene Controller 1",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "663fbcc1797c7be6984042e2cdd4fc68b749cf76d2f0d0da6766694aec2702a1"
+  },
+  {
+   "test": "T39",
+   "case": "K1_C",
+   "source": "Sequencer",
+   "code": 7,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:33:31",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Sequencer",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Sequencer",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "be58898c2788a9af5528bb365c5f2123be8719df218a1ae2f1cf6701ba01a98a"
+  },
+  {
+   "test": "T39",
+   "case": "K1_D",
+   "source": "ADSR 1",
+   "code": 5,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:36:07",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "ADSR 1",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "ADSR 1",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "7cef7b0edbbd7d283f04ed14f1c0464b30f13d4a206dedc0e79ac08c20a78e27"
+  },
+  {
+   "test": "T40",
+   "case": "T40A_LFO1B",
+   "source": "LFO 1B",
+   "code": 2,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:40:23",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "LFO 1B",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "LFO 1B",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "59aa1491dbd411a0e94c34a648851c7c21f9d967ba9741c227b8a8bd659f4193"
+  },
+  {
+   "test": "T40",
+   "case": "T40B_LFO2A",
+   "source": "LFO 2A",
+   "code": 3,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:42:01",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "LFO 2A",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "LFO 2A",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "9640c4d497ee1935028c1bfe4f9151c2b0c332a0a641c82bd5047789bae79e49"
+  },
+  {
+   "test": "T40",
+   "case": "T40C_LFO2B",
+   "source": "LFO 2B",
+   "code": 4,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:43:05",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "LFO 2B",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "LFO 2B",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "b95afb56dbb3d22fe66657e5579bf9c6587cc06b2c4090030d2956111f69d931"
+  },
+  {
+   "test": "T40",
+   "case": "T40D_ADSR2",
+   "source": "ADSR 2",
+   "code": 6,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:44:07",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "ADSR 2",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "ADSR 2",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "fbc36e1c2ab335930574bf001614ee31d9313bafbb0c4e01dd0e7ba4cc7491c2"
+  },
+  {
+   "test": "T40",
+   "case": "T40E_ENVELOPEFOLLOWER",
+   "source": "Envelope Follower",
+   "code": 8,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:45:45",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Envelope Follower",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Envelope Follower",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "6bc71137d7f5db04e6c6bc80cb0e7d7533a29d9093e146ef8d06611c1cf26eb1"
+  },
+  {
+   "test": "T41",
+   "case": "T41A_SCENECONTROLLER2",
+   "source": "Scene Controller 2",
+   "code": 31,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:48:19",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Scene Controller 2",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Scene Controller 2",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "85bb72409ad6329f9d185d65013e64a43c597ec1af1f93fe435428bfe42d2e7d"
+  },
+  {
+   "test": "T41",
+   "case": "T41B_SCENECONTROLLER3",
+   "source": "Scene Controller 3",
+   "code": 32,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:50:01",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Scene Controller 3",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Scene Controller 3",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "458bd25a0b57342a77b463fe37e56fdd9bb1f071add3f928e683840b21b41d9d"
+  },
+  {
+   "test": "T41",
+   "case": "T41C_SCENECONTROLLER4",
+   "source": "Scene Controller 4",
+   "code": 33,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:51:00",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Scene Controller 4",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Scene Controller 4",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "148bb681bf89107f67d17288f392bfe7834ca39e3c35e01079d92f8e3efc0820"
+  },
+  {
+   "test": "T41",
+   "case": "T41D_MANUAL1",
+   "source": "Manual 1",
+   "code": 56,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:52:18",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Manual 1",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Manual 1",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "e39c92ab0d431ca63cd4a8668f5f86dfaf4d5ea762639771e888018c5e434f1c"
+  },
+  {
+   "test": "T41",
+   "case": "T41E_MANUAL2",
+   "source": "Manual 2",
+   "code": 57,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:53:45",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Manual 2",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Manual 2",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "615a7bc5b4411ba5805304f0fafc9c8ff3be9647607c79ffc2792efca3f549be"
+  },
+  {
+   "test": "T41",
+   "case": "T41F_MANUAL3",
+   "source": "Manual 3",
+   "code": 58,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:54:33",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Manual 3",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Manual 3",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "9fb2c2c6e0eda031e81a52bea6daf12daf923b1aed60f48dbcc3e934594490d8"
+  },
+  {
+   "test": "T41",
+   "case": "T41G_MANUAL4",
+   "source": "Manual 4",
+   "code": 59,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:55:20",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Manual 4",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Manual 4",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "175faef911737d41bc16081364ed81dd0e50f9785dc26d6e78bad70021c2c3d1"
+  },
+  {
+   "test": "T41",
+   "case": "T41H_MANUAL5",
+   "source": "Manual 5",
+   "code": 60,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:56:16",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Manual 5",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Manual 5",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "ed9c13cdbacceba6da580582c73e2a0fecee0f0df56ac3ddd8811831ca4b49a5"
+  },
+  {
+   "test": "T41",
+   "case": "T41I_PITCHFOLLOWER",
+   "source": "Pitch Follower",
+   "code": 9,
+   "shownLocation": 427,
+   "time": "2026-11-09T10:57:42",
+   "nameConfirmedAtLoad": true,
+   "observations": {
+    "before": {
+     "source": "Pitch Follower",
+     "behavior": "jah"
+    },
+    "after": {
+     "source": "Pitch Follower",
+     "behavior": "jah"
+    },
+    "note": ""
+   },
+   "storedBodyByteIdentical": true,
+   "records": 10,
+   "deviceImport": "confirmed",
+   "audibleBehavior": "confirmed",
+   "storeReload": "confirmed",
+   "resultSha256": "dc504de249277d78c71908f771b8d290cb19db6d781972c8d3ec7a327be00578"
+  }
+ ],
+ "files": [
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T39/K1_B/bind-store-load.json",
+   "sha256": "8b37602fd77d48022ea5b816af154366b97715a6f8565487a5f1efd91aed1583"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T39/K1_B/bind-store-results.json",
+   "sha256": "663fbcc1797c7be6984042e2cdd4fc68b749cf76d2f0d0da6766694aec2702a1"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T39/K1_C/bind-store-load.json",
+   "sha256": "17487e3eb44e0f4c7609e2d4f395cdb5fad11f8b58db0113935c7df557190fbf"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T39/K1_C/bind-store-results.json",
+   "sha256": "be58898c2788a9af5528bb365c5f2123be8719df218a1ae2f1cf6701ba01a98a"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T39/K1_D/bind-store-load.json",
+   "sha256": "40206f212e49b11e299707d5a2fbcb741c27b9641d14089b676a0b66829a2773"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T39/K1_D/bind-store-results.json",
+   "sha256": "7cef7b0edbbd7d283f04ed14f1c0464b30f13d4a206dedc0e79ac08c20a78e27"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40A_LFO1B/bind-store-load.json",
+   "sha256": "e2d3dfce2aaff82aa674526228513eb17e928e095459c85cacfb76aa5a04fade"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40A_LFO1B/bind-store-results.json",
+   "sha256": "59aa1491dbd411a0e94c34a648851c7c21f9d967ba9741c227b8a8bd659f4193"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40B_LFO2A/bind-store-load.json",
+   "sha256": "3495dd71f9b8b0893fc1febfb482996bfc54c7cd56f9d8858ffc4c498ef6f12c"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40B_LFO2A/bind-store-results.json",
+   "sha256": "9640c4d497ee1935028c1bfe4f9151c2b0c332a0a641c82bd5047789bae79e49"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40C_LFO2B/bind-store-load.json",
+   "sha256": "95df3348db9ec2402dc840ee5e0d468ee7c1c93e3950f1b081285f798cd9cabd"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40C_LFO2B/bind-store-results.json",
+   "sha256": "b95afb56dbb3d22fe66657e5579bf9c6587cc06b2c4090030d2956111f69d931"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40D_ADSR2/bind-store-load.json",
+   "sha256": "80d6f3e3c92ee746accc1952096e47e93c863f98d167b6137908d20d8679c4c3"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40D_ADSR2/bind-store-results.json",
+   "sha256": "fbc36e1c2ab335930574bf001614ee31d9313bafbb0c4e01dd0e7ba4cc7491c2"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40E_ENVELOPEFOLLOWER/bind-store-load.json",
+   "sha256": "470a04b25b5b76b28e5125c7cca0b9b261b10c65927274d1f8e10ccdff86b64f"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T40/T40E_ENVELOPEFOLLOWER/bind-store-results.json",
+   "sha256": "6bc71137d7f5db04e6c6bc80cb0e7d7533a29d9093e146ef8d06611c1cf26eb1"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41A_SCENECONTROLLER2/bind-store-load.json",
+   "sha256": "b9865bcfce3c9682b341a29a6c34dac81b943d31364b18f9b05399a09b6ed8d6"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41A_SCENECONTROLLER2/bind-store-results.json",
+   "sha256": "85bb72409ad6329f9d185d65013e64a43c597ec1af1f93fe435428bfe42d2e7d"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41B_SCENECONTROLLER3/bind-store-load.json",
+   "sha256": "dae945481113e05b07fba5a907b815d27684e4226fa04d52186f06791cd37995"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41B_SCENECONTROLLER3/bind-store-results.json",
+   "sha256": "458bd25a0b57342a77b463fe37e56fdd9bb1f071add3f928e683840b21b41d9d"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41C_SCENECONTROLLER4/bind-store-load.json",
+   "sha256": "8ba71258d946c4b54ecab3dcad99d7d1b214a89ff182791d4f88113bbb6ef3ae"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41C_SCENECONTROLLER4/bind-store-results.json",
+   "sha256": "148bb681bf89107f67d17288f392bfe7834ca39e3c35e01079d92f8e3efc0820"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41D_MANUAL1/bind-store-load.json",
+   "sha256": "b01a2ea1a64f89390de8c50906261daf09c0ac8c121940e206fa1517e64d911d"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41D_MANUAL1/bind-store-results.json",
+   "sha256": "e39c92ab0d431ca63cd4a8668f5f86dfaf4d5ea762639771e888018c5e434f1c"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41E_MANUAL2/bind-store-load.json",
+   "sha256": "7dc979c003ac175bbeebb3da3d466470e64f85a35273b17901b09e46de7f2d0f"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41E_MANUAL2/bind-store-results.json",
+   "sha256": "615a7bc5b4411ba5805304f0fafc9c8ff3be9647607c79ffc2792efca3f549be"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41F_MANUAL3/bind-store-load.json",
+   "sha256": "56d0fb61e817c017a8d664a1edc229d1c9e1b1ac4447cd29dc841580ca9f9e4c"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41F_MANUAL3/bind-store-results.json",
+   "sha256": "9fb2c2c6e0eda031e81a52bea6daf12daf923b1aed60f48dbcc3e934594490d8"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41G_MANUAL4/bind-store-load.json",
+   "sha256": "6945d46bdcd14a6b1455ae34d0989ee0fa9f2e787b095ee9cf6a3701a6279615"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41G_MANUAL4/bind-store-results.json",
+   "sha256": "175faef911737d41bc16081364ed81dd0e50f9785dc26d6e78bad70021c2c3d1"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41H_MANUAL5/bind-store-load.json",
+   "sha256": "d755e98f8689145fc4a3897897c4a9c97b653ca62577649dee850b34d9c83142"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41H_MANUAL5/bind-store-results.json",
+   "sha256": "ed9c13cdbacceba6da580582c73e2a0fecee0f0df56ac3ddd8811831ca4b49a5"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41I_PITCHFOLLOWER/bind-store-load.json",
+   "sha256": "7627462e9fdca8bcbe74289e7041ee03435236348bfee8311e82eec3a0c81d77"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-09/t39-t41/T41/T41I_PITCHFOLLOWER/bind-store-results.json",
+   "sha256": "dc504de249277d78c71908f771b8d290cb19db6d781972c8d3ec7a327be00578"
+  }
+ ],
+ "resultsSha256": "73adf0368870ad5df9fa956c8654d38a81ebfddef21a89cca445ebd17db6f1b4"
+}

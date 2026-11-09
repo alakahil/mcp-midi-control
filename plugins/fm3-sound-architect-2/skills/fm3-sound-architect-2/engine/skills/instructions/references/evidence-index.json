@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2187,
-  "filePaths": 2391,
+  "uniqueContents": 2188,
+  "filePaths": 2392,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -870,12 +870,6 @@
       "bytes": 475,
       "paths": [
         "references/tremolo-batch-20261007-143642/capture-20261007T143641-d0af19e1e9/labels.json"
-      ]
-    },
-    "120e150f964e8d540c1faf6664db4d7b43ea8232d268000c20662ec95bb4505d": {
-      "bytes": 33915,
-      "paths": [
-        "references/fm3-current-evidence.json"
       ]
     },
     "121717b20c19d929d45171902b6070935b5c10beca171e4907610685af571b40": {
@@ -9303,6 +9297,12 @@
         "references/enhancer-full-20261012-122507/step-079-2ade7b25e5/result.json"
       ]
     },
+    "b5a717c0ccf52eb4d33747c4f0b0cef201edb9a1ae50ba98314f6b9fdbe0fb02": {
+      "bytes": 18134,
+      "paths": [
+        "references/fm3-t39-t41-controllers-store-20261109.json"
+      ]
+    },
     "b5c8d163354dc9a0d6460f53c86d0b3d1f3e99a54e1fbf56f52b2922b41e6753": {
       "bytes": 656,
       "paths": [
@@ -13108,6 +13108,12 @@
       "bytes": 24680,
       "paths": [
         "references/p2-three-switches-20261030/FM3_P2_THREE_SWITCHES.syx"
+      ]
+    },
+    "fcee7502ac72311ad7b43295bb588beb15483979a6d257cd4e8101dc46bfcc84": {
+      "bytes": 34717,
+      "paths": [
+        "references/fm3-current-evidence.json"
       ]
     },
     "fcf5d344941c2222745949226d422f50c1ce0d2f12e78fafb139913e7c061438": {
