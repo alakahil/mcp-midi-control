@@ -12,6 +12,12 @@ päris binaarne SYX ning sellele vastav allalaaditav UTF-8 TXT.
 
 ## Kehtiv seis
 
+0.3.62 ühtlustab T42 tõendikoondi ja ajaloolised testiarvud ning lisab auditi
+B1/B2 nelja avaliku generaatori katse ettevalmistuse. Kirjutustugi ei laiene;
+skeem 0.8.9 ja 89 kohustuslikku mootoritesti säilivad. Katsepakett on
+seadmevabalt kontrollitud, selle import, heli ja STORE ootavad kasutaja katset.
+Repo tööriist: `tools/fm3/audit-targets-build.mjs`; LOAD/GET piirid säilivad.
+
 See versioon sisaldab varasema FM3 Sound Architecti generaatorit, mudelimallide
 registreid, lähtepreseteid ja kontrolltõendeid. Kõik paiknevad selles skill-kaustas
 alamkaustas `engine/`; väline repo ega seade pole failide genereerimiseks vajalik.
@@ -19,7 +25,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.61`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.62`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -36,7 +42,7 @@ T31 `BANK1`/`BANK2` lisandusi. Opt-in ei tühista tüübi, kanali, tempo,
 modifikaatori ega nähtavuse piiranguid. Need arvud ei tähenda 227 eraldi
 seadmel mõõdetud parameetrit.
 
-T32–T41 ulatuse ja allika-/tüübipõhise seisu kontrollimiseks loe
+T32–T42 ulatuse ja allika-/tüübipõhise seisu kontrollimiseks loe
 `MOOTOR/references/fm3-current-evidence.json`. See eristab tarkvaratuge,
 seadmeimporti, kuuldud käitumist ja STORE-kinnitust ning viitab algtõenditele.
 „not-measured” tähendab tõendi puudumist selles ulatuses, mitte tarkvaratuge
@@ -58,7 +64,7 @@ Use jääb PRESET-iks (T42: 97 ja 143 BPM näidati ja säilisid). Vaata jaotist
 Controllersi allikate ja MultiDelay mallide tõendiseis ning nende piirid.
 GitHubi arendustööriistad lisavad kolme allika STORE-katse ettevalmistuse,
 automaatse tagasilugemise võrdluse ning MultiDelay ja kirjejärjekorra
-piirjuhtude kontrollid. K1 on ettevalmistatud katse, mitte uus seadmetõend.
+piirjuhtude kontrollid. 0.3.59 avaldamisel oli K1 ettevalmistatud katse; hilisem T39 lõpetas selle STORE-osa.
 Kirjutustoe ulatus ja soundi skeem 0.8.8 säilivad; kohustuslikus mootori
 testikomplektis on 87 testi, välised CI-kontrollid on sellest eraldi.
 

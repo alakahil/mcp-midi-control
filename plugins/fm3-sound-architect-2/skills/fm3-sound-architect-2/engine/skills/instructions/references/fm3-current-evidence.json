@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "asOf": "2026-11-09",
   "hardwareEvidenceThrough": "2026-11-09",
-  "baselineVersion": "0.3.58",
-  "scope": "T32-T41 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
+  "baselineVersion": "0.3.62",
+  "scope": "T32-T42 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
   "definitions": {
     "confirmed": "A cited dated device result exists in the stated scope.",
     "notMeasured": "No cited device result for this scope; not a failure and not a software-support restriction."
@@ -858,6 +858,127 @@
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     }
   ],
+  "modifierTargets": {
+    "softwareSupported": true,
+    "namedTargets": 468,
+    "maxBindings": 8,
+    "flagRule": {
+      "bit": "0x0080",
+      "allowedWhen": "clear and labelled",
+      "acceptedTargetsObserved": 20,
+      "rejectedTargetsObserved": 1,
+      "scope": "Rule inference, not 468 individually measured targets."
+    },
+    "measured": [
+      {
+        "case": "T42A_SC1DLYMIX",
+        "target": "DELAY_MIX",
+        "source": "Scene Controller 1",
+        "min": 0,
+        "max": 100,
+        "channel": "ALL",
+        "curve": "default",
+        "deviceImport": "confirmed",
+        "display": "confirmed",
+        "audibleBehavior": "confirmed",
+        "storeReload": "confirmed",
+        "storedBodyByteIdentical": true,
+        "generatedFinalPresetImport": "not-measured",
+        "evidence": "T42",
+        "scope": "Only the tested targets, ranges, channel ALL and default curve; other targets rely on the flag rule."
+      },
+      {
+        "case": "T42B_LFO1AFILTFREQ",
+        "target": "FILTER_FREQ",
+        "source": "LFO 1A",
+        "min": 300,
+        "max": 3000,
+        "channel": "ALL",
+        "curve": "default",
+        "deviceImport": "confirmed",
+        "display": "confirmed",
+        "audibleBehavior": "confirmed",
+        "storeReload": "confirmed",
+        "storedBodyByteIdentical": true,
+        "generatedFinalPresetImport": "not-measured",
+        "evidence": "T42",
+        "scope": "Only the tested targets, ranges, channel ALL and default curve; other targets rely on the flag rule."
+      },
+      {
+        "case": "T42C_EXT1AMPGAIN",
+        "target": "DISTORT_DRIVE",
+        "source": "External 1",
+        "min": 2,
+        "max": 8,
+        "channel": "ALL",
+        "curve": "default",
+        "deviceImport": "confirmed",
+        "display": "confirmed",
+        "audibleBehavior": "confirmed",
+        "storeReload": "confirmed",
+        "storedBodyByteIdentical": true,
+        "generatedFinalPresetImport": "not-measured",
+        "evidence": "T42",
+        "scope": "Only the tested targets, ranges, channel ALL and default curve; other targets rely on the flag rule."
+      }
+    ],
+    "rejected": [
+      {
+        "case": "T42D_SC1LOCUTNEG",
+        "target": "DELAY_LOCUT",
+        "softwareSupported": false,
+        "deviceResult": "refused: Source and target cleared on import, repeats unchanged across scenes",
+        "clearedWords": [
+          {
+            "byte": 1584,
+            "generated": 30,
+            "stored": 0
+          },
+          {
+            "byte": 1600,
+            "generated": 70,
+            "stored": 0
+          }
+        ],
+        "evidence": "T42"
+      }
+    ],
+    "scope": "T42 research files; public-generator final presets and A-D/channel combinations require their own device test."
+  },
+  "presetTempo": {
+    "softwareSupported": true,
+    "rangeBpm": [
+      24,
+      250
+    ],
+    "integerOnly": true,
+    "channels": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "tempoToUse": "PRESET",
+    "measured": [
+      {
+        "case": "T42E_TEMPO97",
+        "bpm": 97,
+        "storedWord": 97,
+        "display": "confirmed",
+        "storeReload": "confirmed",
+        "evidence": "T42"
+      },
+      {
+        "case": "T42F_TEMPO143",
+        "bpm": 143,
+        "storedWord": 143,
+        "display": "confirmed",
+        "storeReload": "confirmed",
+        "evidence": "T42"
+      }
+    ],
+    "scope": "97 and 143 BPM only; not every BPM, tempo-synced effect, tap-tempo or global setting."
+  },
   "otherEvidence": {
     "controllersScenes": {
       "scenes": 8,
@@ -986,11 +1107,13 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t37-synth-cpu-20261107.json": "c0a1cae9fa0fc79c16bd6573b055a84ba363fdf15656e23c91b04823dcdafbdd",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t38-multidelay-store-20261107.json": "7e2121270b5eb92d64b91bc3a48760bc9b661222f985e665eb9c0d4d068fb042",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t39-t41-controllers-store-20261109.json": "b5a717c0ccf52eb4d33747c4f0b0cef201edb9a1ae50ba98314f6b9fdbe0fb02",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t42-modifier-targets-20261109.json": "794b9823682b001e94c40561761325d9fe7eeda16407e3a15c918b6b2db562e8",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-enum-promotion.mjs": "5cf8e5afa993cc1740ac8193b0da23f9374524c10b6fc1136f047c69a12896db",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-modifier-targets.mjs": "949710e620c25ff353b39ec4d47769d669151fc8f30773bb4ad37b28ebd4074c",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "487a5efb0ba1bb693e66e456f0236690019f09b2d109b9556088604a5d22bbf3"
+    "tools/fm3/current-evidence.mjs": "9011753377f48ace1f1888c9ed08a3fea7a792b3678375416dd5af5a587f91cb"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false

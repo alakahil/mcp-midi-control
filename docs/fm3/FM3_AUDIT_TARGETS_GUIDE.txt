@@ -1,0 +1,51 @@
+FM3 auditi B1/B2 seadmekatsed — 09.11.2026
+
+Neli eraldi presetti; igaühel SYX, TXT, spec.json ja validation.json.
+Need on avaliku generaatori kontrollitud väljundid. Uus import, heli ja STORE on mõõtmata.
+Vaja: FM3 Mk II Turbo FW13, Mac/Linux, Python 3 ja USB. Node'i kohalikuks kogumiseks ei vajata.
+
+1. Paki kaust lahti. Ava Terminal ja liigu sellesse kausta (kirjuta cd ja lohista kaust aknasse).
+2. Seadmeta kontroll: bash ALUSTA.command --preflight
+3. Säilita vajalik salvestamata töö. Sulge FM3-Edit ja Fractal-Bot.
+4. Käivita: bash ALUSTA.command
+   Ainult esimene katse: bash ALUSTA.command --case B1A
+   Teised valikud: B1B, B1C või B2. Iga käivitus loob uue SESSION-kausta.
+5. LAADI kinnitab, et tööpuhvri võib asendada. Programm loeb pärast laadimist
+   manifestis nimetatud plokid tagasi. Vea korral peatub; ära jätka STORE-iga.
+6. Kinnita preseti nimi. Ava soovi korral FM3-Edit alles pärast lugemise lõppu;
+   Terminal jääb küsimuse juurde ootama. Vaata iga osa VAATLUSED.txt ja TXT-faili.
+7. Kontrolli Source'i, Min/Maxi, Channelit, stseene ja heli. Märgi näidud üles.
+   Tee STORE FM3-l enda valitud testikohta, vali teine preset, tule tagasi ja korda vaatlusi.
+   Varasemad testikohad on 424–427; programm ei vali ega kirjuta neid automaatselt.
+8. Sulge FM3-Edit/Fractal-Bot, kirjuta Terminali STORE ja vasta enne/pärast küsimustele.
+   Sisesta tegelik FM3-l nähtud asukoht. Skript kasutab Display Offset 1: N → indeks N−1.
+   Kui sinu kuvanihe on teine, peatu ja teata sellest; üldseadet ära muuda.
+9. Saada tekkinud SESSION_....zip vestlusesse. Ka katkestamisel säilivad tulemused ZIP-is.
+
+B1A: Scene Controller 1 → Delay Mix 0–100 %, ALL; 97 BPM, Delay Tempo 1/4.
+B1B: LFO 1A → Low-Pass Filter Frequency 300–3000 Hz, ALL; SINE 0,5 Hz.
+B1C: External 1 → Amp Gain 2–8, ALL. Kasuta olemasolevat pedaalivastendust.
+B2: SC1 → Delay Mix 10–60 % D-kanalil + CS2 → Amp Cut D-kanalil; 143 BPM.
+    Stseen 1: Amp/Delay A, CS2 OFF, Cut OFF, Mix 30 %.
+    Stseen 2: Amp/Delay D, CS2 OFF, Cut OFF, Mix 10 %.
+    Stseen 3: Amp/Delay D, CS2 ON, Cut ON, Mix 60 %.
+    Stseen 4: Amp/Delay A, CS2 ON, Cut OFF, Mix 30 %.
+    Stseenid 5–8 ei lisa uut katsejuhtu. Ära kasuta tap-tempot, sest kontrollime salvestatud BPM-i.
+
+Programmid ainult laadivad tervikpreseti tööpuhvrisse ja loevad. Need ei saada
+parameetri SET-i, STORE-i, stseeni-/presetivahetust ega üldseadete kirjutusi.
+Need presetid ei sisalda Scene MIDI plokki ega jalglülitite ümbermääranguid.
+Bulk-võrdlus hõlmab loetletud heliplokkide andmesõnu; Send on välja jäetud,
+sest FM3 nullib selle kaks sõna. Controllers, modifikaatorid, ruudustik,
+stseenipäised ja süsteemisaba kontrollitakse STORE-järgses tervikvõrdluses.
+Näidud, heli ja CPU on eraldi vaatlused. Puuduvat vastust ei loeta läbituks.
+
+Arenduskeskkonna offline-võrdlus:
+node tools/fm3/audit-targets-compare.mjs PAKI_KAUST SESSION_KAUST
+Võrdlus lubab ainult valitud stseeni baiti, tervete plokikirjete järjekorda
+ja SYX-i sihtkoha päist. Muid andmemuudatusi ei normaliseerita.
+
+Auditi B3–B5 on vajaduspõhised järgmised voorud. B3 võimalik siht on Reverb Mix;
+B4 vajab valitud MultiDelay tüüpi või lõplikku esinemispresetti; B5 vajab üht
+konkreetset küsimust (Out 2 stereo, Hold/layout, CPU, Looper või Cab Preamp NONE).
+Neid ei loeta selle nelja presetiga tehtuks ega anta keelatud sihte laadimiseks.
