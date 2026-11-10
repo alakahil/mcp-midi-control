@@ -3,7 +3,7 @@
   "asOf": "2026-11-10",
   "hardwareEvidenceThrough": "2026-11-10",
   "baselineVersion": "0.3.64",
-  "scope": "T32-T42, B1A/B1B/B1C/B2 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
+  "scope": "T32-T42, B1A/B1B/B1C/B2, H1/H2/H4 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
   "definitions": {
     "confirmed": "A cited dated device result exists in the stated scope.",
     "notMeasured": "No cited device result for this scope; not a failure and not a software-support restriction."
@@ -453,10 +453,11 @@
       "templateStart": "device default, channel A",
       "generatedDeviceImport": "confirmed",
       "audibleBehavior": "confirmed",
-      "storeReload": "not-measured",
+      "storeReload": "confirmed",
       "evidence": [
         "T35",
-        "T36"
+        "T36",
+        "H2"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -499,10 +500,11 @@
       "templateStart": "device default, channel A",
       "generatedDeviceImport": "confirmed",
       "audibleBehavior": "confirmed",
-      "storeReload": "not-measured",
+      "storeReload": "confirmed",
       "evidence": [
         "T35",
-        "T36"
+        "T36",
+        "H2"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -758,10 +760,11 @@
       "templateStart": "device default, channel A",
       "generatedDeviceImport": "confirmed",
       "audibleBehavior": "confirmed",
-      "storeReload": "not-measured",
+      "storeReload": "confirmed",
       "evidence": [
         "T35",
-        "T36"
+        "T36",
+        "H2"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -774,10 +777,11 @@
       "templateStart": "device default, channel A",
       "generatedDeviceImport": "confirmed",
       "audibleBehavior": "confirmed",
-      "storeReload": "not-measured",
+      "storeReload": "confirmed",
       "evidence": [
         "T35",
-        "T36"
+        "T36",
+        "H2"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -1167,6 +1171,240 @@
     },
     "scope": "Four named public-generator presets only. Actual user LOAD/GET and STORE/reload captures, observations and LFO screenshot; this replay performs no device I/O."
   },
+  "auditNextPresets": {
+    "evidence": "H1/H2/H4 2026-11-10",
+    "cases": [
+      {
+        "case": "H1",
+        "deviceImport": "confirmed",
+        "display": "confirmed",
+        "audibleBehavior": "confirmed",
+        "storeReload": "confirmed",
+        "storedBodyByteIdentical": true,
+        "selectedScene": {
+          "expected": 1,
+          "stored": 1
+        },
+        "records": 9,
+        "resultSha256": "1f478e2ba8356f05c8b25f50ca1cec9540b097e3b3effd0ffd1afe1ee409083e",
+        "observations": {
+          "before": {
+            "name_grid_scenes": "jah",
+            "source": "Controller 1",
+            "minmax_channel": "10.0%, 40.0%, All",
+            "type": "Recording Studio A",
+            "scene1": "SC1 nägemata; Mix 10.0%; heli kõige vähem kaja; CPU 44.6% enne ja pärast STORE",
+            "scene2": "SC1 nägemata; Mix 25.0%; rohkem kaja kui S1; CPU 44.4% enne, 44.6% pärast STORE",
+            "scene3": "SC1 nägemata; Mix 40.0%; veel rohkem kaja; CPU 44.6% enne ja pärast STORE",
+            "behavior": "jah; kaja suureneb S1->S3; otsest heli eraldi ei hinnatud; näidud FM3-Edit ekraanipiltidelt"
+          },
+          "after": {
+            "name_grid_scenes": "jah",
+            "source": "Controller 1",
+            "minmax_channel": "10.0%, 40.0%, All",
+            "type": "Recording Studio A",
+            "scene1": "SC1 nägemata; Mix 10.0%; heli kõige vähem kaja; CPU 44.6% enne ja pärast STORE",
+            "scene2": "SC1 nägemata; Mix 25.0%; rohkem kaja kui S1; CPU 44.4% enne, 44.6% pärast STORE",
+            "scene3": "SC1 nägemata; Mix 40.0%; veel rohkem kaja; CPU 44.6% enne ja pärast STORE",
+            "behavior": "jah; kaja suureneb S1->S3; otsest heli eraldi ei hinnatud; näidud FM3-Edit ekraanipiltidelt"
+          },
+          "note": "Modifier kõver vaikimisi (Start 0, Mid 50, End 100, Scale 1, Offset 0), Damping Exponential 10.1 ms"
+        },
+        "expected": "Reverb A: Room: Recording Studio A. Scene Controller 1 → Reverb Mix, ALL, Min 10%, Max 40%. Stseenid 1/2/3: SC1 0/50/100%, Mix 10/25/40%; reverb suureneb ja otsene heli säilib."
+      },
+      {
+        "case": "H2",
+        "deviceImport": "confirmed",
+        "display": "confirmed",
+        "audibleBehavior": "confirmed",
+        "storeReload": "confirmed",
+        "storedBodyByteIdentical": true,
+        "selectedScene": {
+          "expected": 1,
+          "stored": 1
+        },
+        "records": 10,
+        "resultSha256": "8812e4eb83730e5da3573552918508ae30cd17586a87961b74e7d58b2bce8bb8",
+        "observations": {
+          "before": {
+            "name_grid_scenes": "jah; FM3-Editis nimi, ruudustik ja kanalid A-D õiged",
+            "scene1": "Pealing Bells, Mix 30.0%; pidev kordus; CPU 62.4-62.5%",
+            "scene2": "Dub Echo; suure reverbiga kordus; CPU 55.1-55.3%",
+            "scene3": "Mono Diffuser; helimaastik, kõla jääb hõljuma; CPU 49.9-50.0%",
+            "scene4": "Aurora Delay; korduskaja; CPU 52.2%",
+            "behavior": "jah; tüübid erinevad kuuldavalt; näidud FM3-Edit piltidelt enne ja pärast STORE"
+          },
+          "after": {
+            "name_grid_scenes": "jah; FM3-Editis nimi, ruudustik ja kanalid A-D õiged",
+            "scene1": "Pealing Bells, Mix 30.0%; pidev kordus; CPU 62.4-62.5%",
+            "scene2": "Dub Echo; suure reverbiga kordus; CPU 55.1-55.3%",
+            "scene3": "Mono Diffuser; helimaastik, kõla jääb hõljuma; CPU 49.9-50.0%",
+            "scene4": "Aurora Delay; korduskaja; CPU 52.2%",
+            "behavior": "jah; tüübid erinevad kuuldavalt; näidud FM3-Edit piltidelt enne ja pärast STORE"
+          },
+          "note": "S1 CPU 11 punkti üle hinnangu 51.1%; heli kuulatud enne STORE-i"
+        },
+        "expected": "Multi Delay A Pealing Bells (Mix 30%), B Dub Echo, C Mono Diffuser, D Aurora Delay. Stseenid 1–4 valivad A–D. Kontrolli nimesid ja heli; pärast käsitsi STORE/reload peab terve preset säilima."
+      }
+    ],
+    "display": {
+      "schemaVersion": 1,
+      "date": "2026-11-10",
+      "source": "FM3-Edit window screenshots captured by Claude in the background (computer use, no full-screen control). Jan selected presets, did STORE on the FM3 and answered the collector; Claude selected blocks/scenes in FM3-Edit only, no parameter edits and no Save button.",
+      "H1": {
+        "location": 427,
+        "reverbType": "Room: Recording Studio A",
+        "reverbChannel": "A",
+        "modifier": {
+          "source": "Scene Controller 1",
+          "min": "10.0 %",
+          "max": "40.0 %",
+          "channel": "All",
+          "pcReset": "Off",
+          "start": "0.0 %",
+          "mid": "50.0 %",
+          "end": "100.0 %",
+          "slope": "50.0 %",
+          "scale": "1.000",
+          "offset": "0.0 %",
+          "attackMs": 10.1,
+          "releaseMs": 10.1,
+          "damping": "Exponential",
+          "updateRate": "Slow",
+          "autoEngage": "Off"
+        },
+        "scenes": [
+          {
+            "scene": 1,
+            "mixPercent": 10,
+            "cpuBefore": 44.6,
+            "cpuAfter": 44.6,
+            "sound": "least reverb"
+          },
+          {
+            "scene": 2,
+            "mixPercent": 25,
+            "cpuBefore": 44.4,
+            "cpuAfter": 44.6,
+            "sound": "more reverb than scene 1"
+          },
+          {
+            "scene": 3,
+            "mixPercent": 40,
+            "cpuBefore": 44.6,
+            "cpuAfter": 44.6,
+            "sound": "more reverb than scene 2"
+          }
+        ],
+        "cpuEstimate": [
+          44.6,
+          44.6,
+          44.6
+        ],
+        "collectorAnswerNote": "Pasted collector answers were shortened to 'Controller 1' and 'Recording Studio A'; screenshots show the full names.",
+        "screenshots": {
+          "h1-reverb-s1.jpg": "e30f57e420de8ebafa793d30280be21841a991116f34a72a2ebf62d3a395ad6f",
+          "h1-modifier.jpg": "dbf5cdf3fd7bb7397563ea8818f6a46c63451210e01eb250437f0d5cd9960266"
+        }
+      },
+      "H2": {
+        "location": 427,
+        "scenes": [
+          {
+            "scene": 1,
+            "channel": "A",
+            "type": "Pealing Bells",
+            "algorithm": "Quad Series Delay",
+            "mixPercent": 30,
+            "cpuBefore": [
+              62.4,
+              62.5
+            ],
+            "cpuAfter": 62.5,
+            "cpuEstimate": 51.1,
+            "sound": "continuous repeats"
+          },
+          {
+            "scene": 2,
+            "channel": "B",
+            "type": "Dub Echo",
+            "algorithm": "Quad Tape Delay",
+            "cpuBefore": [
+              55.1,
+              57.8
+            ],
+            "cpuAfter": 55.3,
+            "cpuEstimate": 52.6,
+            "sound": "repeats with large reverb"
+          },
+          {
+            "scene": 3,
+            "channel": "C",
+            "type": "Mono Diffuser",
+            "algorithm": "Diffusor",
+            "cpuBefore": [
+              49.9,
+              50
+            ],
+            "cpuAfter": 50,
+            "cpuEstimate": 50.1,
+            "sound": "soundscape, sound floats"
+          },
+          {
+            "scene": 4,
+            "channel": "D",
+            "type": "Aurora Delay",
+            "algorithm": "Quad Parallel Delay",
+            "cpuBefore": [
+              52.2,
+              52.4
+            ],
+            "cpuAfter": 52.2,
+            "cpuEstimate": 51.6,
+            "sound": "echo repeats"
+          }
+        ],
+        "cpuNote": "CPU settles a few seconds after a scene change; ranges are transient readings. Pealing Bells (scene 1) is ~11 percentage points above fm3-cpu 0.2.5 estimate; model not changed in this receipt.",
+        "soundNote": "Sound judged before STORE only.",
+        "screenshots": {
+          "h2-multidelay-s1.jpg": "55332bb2cc48316003bd7a37c40d4173809888d0833c3300f2b60f7287b4cc87"
+        }
+      },
+      "H4": {
+        "pack": "FM3_T20_CAB_A (2026-10-31, KNOBS T20 CAB A), LOAD only, no STORE",
+        "block": "Cab",
+        "channel": "B",
+        "type": "Dyna-Cab",
+        "page": "Preamp",
+        "preampType": "None",
+        "preampMode": "Economy",
+        "filtersLowCutHz": 87,
+        "filtersHighCutHz": 7300,
+        "cab1LowCutHz": 33,
+        "cab1HighCutHz": 12499,
+        "screenshots": {
+          "h4-cab-preamp.jpg": "6ace7afa1773db563acc565c3356f95982dd60f2756517450ae27530ed2dc09c"
+        },
+        "scope": "Direct FM3-Edit readback of Preamp Type NONE and block cuts in the T20 CAB_A preset; FM3-Edit display, not front panel.",
+        "presetSha256": "c0aa8221a43ba176ec613e2931e73374d342be2387ebada48069483008397094",
+        "loadRecord": "h4-load.json"
+      }
+    },
+    "findings": {
+      "h1": "Scene Controller 1 -> Reverb Mix 10-40%, ALL, default curve: scenes 1/2/3 show 10/25/40% before and after STORE; CPU 44.4-44.6% (estimate 44.6%).",
+      "h2": "Pealing Bells, Dub Echo, Mono Diffuser and Aurora Delay on MultiDelay A-D survive STORE/reload byte-identically; these four T36 Types now have STORE confirmation.",
+      "h4": "Cab channel B Preamp page shows Preamp Type None with block Low/High Cut 87.0 Hz / 7300 Hz.",
+      "cpuModelGap": "Pealing Bells scene CPU 62.4-62.5% vs fm3-cpu 0.2.5 estimate 51.1% (+11 p.p.); other H1/H2 scenes within 0-3 p.p. Recorded only; model unchanged."
+    },
+    "limitations": [
+      "Sound is a user listening judgement; no numerical audio measurement.",
+      "H2 sound was judged before STORE only.",
+      "Screenshots are FM3-Edit display, not the front panel.",
+      "Scene Controller 1 value itself was not displayed.",
+      "No generalization to other targets, Types, channels, presets or CPU limits."
+    ],
+    "scope": "H1 and H2 audit presets from tools/fm3/audit-next-build.mjs plus the H4 Preamp Type NONE readback of the existing T20 CAB_A preset. Actual user LOAD/GET and STORE/reload captures, user answers and FM3-Edit screenshots; this replay performs no device I/O."
+  },
   "otherEvidence": {
     "controllersScenes": {
       "scenes": 8,
@@ -1241,8 +1479,9 @@
           "page": "Cabs (Cab 1)"
         }
       ],
-      "preampTypeNoneReadback": "not-measured",
-      "scope": "Cuts visible in the preset prepared with NONE; the Preamp Type value itself was not read back."
+      "preampTypeNoneReadback": "confirmed",
+      "preampTypeNoneEvidence": "H4 2026-11-10: FM3-Edit Cab B Preamp page shows Preamp Type None, Filters 87.0 Hz / 7300 Hz",
+      "scope": "Cuts and Preamp Type None visible in the T20 CAB_A preset (FM3-Edit display); not other presets or Preamp Types."
     },
     "recordOrder": {
       "evidence": [
@@ -1270,8 +1509,13 @@
     },
     {
       "from": "T35 no generated Type import or STORE",
-      "resolvedBy": "T36 and T38",
-      "remaining": "31 unimported generated Types; T36 four Types lack their own STORE result."
+      "resolvedBy": "T36, T38 and H2",
+      "remaining": "31 unimported generated Types."
+    },
+    {
+      "from": "T34F Preamp Type NONE not read back",
+      "resolvedBy": "H4",
+      "remaining": "Front-panel reading and other Preamp Types."
     }
   ],
   "notPromoted": [
@@ -1285,6 +1529,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-b1-b2-20261110.json": "b721a145b16e26f13119241d9256c26bfd7e4e131afb38eb720356a6bae4141c",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-combo-store-20261029.json": "2a31b8aa42c357fb87d0273c1466685517a5f0a6a90e0ad1e2e9eeddf0bed62c",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-enum-promotion-20261103.json": "573d5a5a9cbe095cd2911d96f4fe82a310f051d9a43c9839c4e249eb1c25745b",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h1-h2-h4-20261110.json": "02d2adf0543966eb28db514d075720bc4cbc29263464ed61f02f4f50369a667b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t30-enum-20261105.json": "457b82bd133cc50e5f9da1ca1b0f4785bcfd2e0a214b3d0af2ff23d3d98bbb09",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t31-cab-cpu-20261105.json": "8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103",
@@ -1302,7 +1547,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "4c5d5e522246102d30fcbae7e9d8bd0cde70ca87096bc101aceeb442c29e2bba"
+    "tools/fm3/current-evidence.mjs": "b8ea0705c6cb150d0d753c6f11ba98cf07db8d177adc43a018f8a30378744051"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "source": "FM3-Edit window screenshots captured by Claude in the background (computer use, no full-screen control). Jan selected presets, did STORE on the FM3 and answered the collector; Claude selected blocks/scenes in FM3-Edit only, no parameter edits and no Save button.",
+  "H1": {
+    "location": 427,
+    "reverbType": "Room: Recording Studio A",
+    "reverbChannel": "A",
+    "modifier": {
+      "source": "Scene Controller 1",
+      "min": "10.0 %",
+      "max": "40.0 %",
+      "channel": "All",
+      "pcReset": "Off",
+      "start": "0.0 %",
+      "mid": "50.0 %",
+      "end": "100.0 %",
+      "slope": "50.0 %",
+      "scale": "1.000",
+      "offset": "0.0 %",
+      "attackMs": 10.1,
+      "releaseMs": 10.1,
+      "damping": "Exponential",
+      "updateRate": "Slow",
+      "autoEngage": "Off"
+    },
+    "scenes": [
+      {
+        "scene": 1,
+        "mixPercent": 10.0,
+        "cpuBefore": 44.6,
+        "cpuAfter": 44.6,
+        "sound": "least reverb"
+      },
+      {
+        "scene": 2,
+        "mixPercent": 25.0,
+        "cpuBefore": 44.4,
+        "cpuAfter": 44.6,
+        "sound": "more reverb than scene 1"
+      },
+      {
+        "scene": 3,
+        "mixPercent": 40.0,
+        "cpuBefore": 44.6,
+        "cpuAfter": 44.6,
+        "sound": "more reverb than scene 2"
+      }
+    ],
+    "cpuEstimate": [
+      44.6,
+      44.6,
+      44.6
+    ],
+    "collectorAnswerNote": "Pasted collector answers were shortened to 'Controller 1' and 'Recording Studio A'; screenshots show the full names.",
+    "screenshots": {
+      "h1-reverb-s1.jpg": "e30f57e420de8ebafa793d30280be21841a991116f34a72a2ebf62d3a395ad6f",
+      "h1-modifier.jpg": "dbf5cdf3fd7bb7397563ea8818f6a46c63451210e01eb250437f0d5cd9960266"
+    }
+  },
+  "H2": {
+    "location": 427,
+    "scenes": [
+      {
+        "scene": 1,
+        "channel": "A",
+        "type": "Pealing Bells",
+        "algorithm": "Quad Series Delay",
+        "mixPercent": 30.0,
+        "cpuBefore": [
+          62.4,
+          62.5
+        ],
+        "cpuAfter": 62.5,
+        "cpuEstimate": 51.1,
+        "sound": "continuous repeats"
+      },
+      {
+        "scene": 2,
+        "channel": "B",
+        "type": "Dub Echo",
+        "algorithm": "Quad Tape Delay",
+        "cpuBefore": [
+          55.1,
+          57.8
+        ],
+        "cpuAfter": 55.3,
+        "cpuEstimate": 52.6,
+        "sound": "repeats with large reverb"
+      },
+      {
+        "scene": 3,
+        "channel": "C",
+        "type": "Mono Diffuser",
+        "algorithm": "Diffusor",
+        "cpuBefore": [
+          49.9,
+          50.0
+        ],
+        "cpuAfter": 50.0,
+        "cpuEstimate": 50.1,
+        "sound": "soundscape, sound floats"
+      },
+      {
+        "scene": 4,
+        "channel": "D",
+        "type": "Aurora Delay",
+        "algorithm": "Quad Parallel Delay",
+        "cpuBefore": [
+          52.2,
+          52.4
+        ],
+        "cpuAfter": 52.2,
+        "cpuEstimate": 51.6,
+        "sound": "echo repeats"
+      }
+    ],
+    "cpuNote": "CPU settles a few seconds after a scene change; ranges are transient readings. Pealing Bells (scene 1) is ~11 percentage points above fm3-cpu 0.2.5 estimate; model not changed in this receipt.",
+    "soundNote": "Sound judged before STORE only.",
+    "screenshots": {
+      "h2-multidelay-s1.jpg": "55332bb2cc48316003bd7a37c40d4173809888d0833c3300f2b60f7287b4cc87"
+    }
+  },
+  "H4": {
+    "pack": "FM3_T20_CAB_A (2026-10-31, KNOBS T20 CAB A), LOAD only, no STORE",
+    "block": "Cab",
+    "channel": "B",
+    "type": "Dyna-Cab",
+    "page": "Preamp",
+    "preampType": "None",
+    "preampMode": "Economy",
+    "filtersLowCutHz": 87.0,
+    "filtersHighCutHz": 7300,
+    "cab1LowCutHz": 33.0,
+    "cab1HighCutHz": 12499,
+    "screenshots": {
+      "h4-cab-preamp.jpg": "6ace7afa1773db563acc565c3356f95982dd60f2756517450ae27530ed2dc09c"
+    },
+    "scope": "Direct FM3-Edit readback of Preamp Type NONE and block cuts in the T20 CAB_A preset; FM3-Edit display, not front panel.",
+    "presetSha256": "c0aa8221a43ba176ec613e2931e73374d342be2387ebada48069483008397094",
+    "loadRecord": "h4-load.json"
+  }
+}
