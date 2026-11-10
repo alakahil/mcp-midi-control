@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "asOf": "2026-11-10",
   "hardwareEvidenceThrough": "2026-11-10",
-  "baselineVersion": "0.3.64",
+  "baselineVersion": "0.3.65",
   "scope": "T32-T42, B1A/B1B/B1C/B2, H1/H2/H4, H3 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
   "definitions": {
     "confirmed": "A cited dated device result exists in the stated scope.",
@@ -1691,7 +1691,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "6c657424f125c1be2c8fa9179a2337d33c38c8ac9022bb6d42aa00b15558f565"
+    "tools/fm3/current-evidence.mjs": "9fc171c0b30312fa54c301136cbad0d1781e0a5b3b5bb1c9398a204af9b6d394"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false
