@@ -86,7 +86,7 @@ const presetTempo={softwareSupported:true,rangeBpm:[24,250],integerOnly:true,cha
   display:'confirmed',storeReload:'confirmed',evidence:'T42'})),
  scope:'97 and 143 BPM only; not every BPM, tempo-synced effect, tap-tempo or global setting.'};
 assert.deepEqual(presetTempo.measured.map(p=>p.bpm),[97,143]);
-const current={schemaVersion:1,asOf:'2026-11-10',hardwareEvidenceThrough:'2026-11-10',baselineVersion:'0.3.64',
+const current={schemaVersion:1,asOf:'2026-11-10',hardwareEvidenceThrough:'2026-11-10',baselineVersion:'0.3.65',
  scope:'T32-T42, B1A/B1B/B1C/B2, H1/H2/H4, H3 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.',
  definitions:{confirmed:'A cited dated device result exists in the stated scope.',notMeasured:'No cited device result for this scope; not a failure and not a software-support restriction.'},
  enumCounts,scalarDescriptors,controllers,multiDelay,modifierTargets,presetTempo,
