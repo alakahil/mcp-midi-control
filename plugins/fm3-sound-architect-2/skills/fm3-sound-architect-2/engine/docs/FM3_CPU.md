@@ -69,6 +69,17 @@ mis pole OFF (SINE 1,5, TRIANGLE 5, SQUARE/SAWTOOTH 4,5, RANDOM 5, WHT NOISE 9, 
 häält mõõdeti 1 ja kolm PINK NOISE häält 4 punkti summast madalamana; hinnang kasutab summat (ettevaatlik).
 Tõend: `references/fm3-t37-synth-cpu-20261107.json`, ehitaja `tools/fm3/t37-synth-cpu-build.mjs`.
 
+## Multi Delay tüübimallid (0.2.6, H2 10.11.2026)
+
+Varem maksis Multi Delay ainult Base Type'i järgi (T26: 5,5–8 punkti). H2 presetis olid kanalitel A–D neli
+tüübimalli ja stseenid 1–4 valisid need; muud plokid olid kõigis neljas stseenis samad. Seega iga stseeni
+püsinud näidu ja 0.2.5 hinnangu vahe kuulub tüübile. 0.2.6 hind = Base Type'i hind + see vahe:
+Pealing Bells 6,5 + 11,4 = **17,9**; Dub Echo 8 + 2,7 = 10,7; Mono Diffuser 5,5 − 0,1 = 5,4; Aurora Delay
+7 + 0,6 = 7,6. Mall tuvastatakse kanali tüübisõna (MULTITAP_PRESETS) ja Algorithmi järgi. Väljundi muutused
+malli peal (nt Mix 30%) hinda ei muuda; neid pole eraldi mõõdetud. Ülejäänud 35 tüüpi kasutavad Base Type'i
+hinda nagu varem. Iga tüüp on mõõdetud üks kord ühes presetis; mõõturi samm on ±0,5 punkti.
+Tõend: `references/fm3-h1-h2-h4-20261110.json` (`display.H2.scenes`), test `scripts/test-cpu.mjs` jaotis 6.
+
 ## Järgmine
 
 - Mõõtmata on veel point-6 perede teised tüübid (Plex, Megatap jt), Cab LEGACY ja Amp (Ampi tuum).
