@@ -1,0 +1,50 @@
+FM3 H5 / H5B / T43 seadmekatsed — ettevalmistatud 10.11.2026, tegemiseks 11.11.2026
+
+Kolm presetti. Tee need järjest või vali üks:
+H5:  LIVE KOOSLUS V1.1  — V1, aga Amp A ja D −2 dB (−10,16), Amp C +1 dB (−7), Amp B −9 dB.
+H5B: LIVE KOOSLUS V1.1B — V1 amp-tasemed, sama tasakaal Out 1 Scene Level kaudu
+     (S1/S4/S5/S8 −2 dB, S2/S6 0 dB, S3/S7 +1 dB). Peaks kõlama nagu H5.
+T43: T43 MOD TARGETS 2  — 7 modifikaatori seost (Amp Level, Drive, Delay Feedback,
+     Reverb Time, Chorus Depth, Out 1 Level, Chorus Bypass); kasutusel stseenid 1–4.
+T44: T44 PP SWITCHES    — lihtne alus. Pärast laadimist lisad FM3-Editis neli
+     Per-Preset Switchi: PP#1 Effect Bypass Drive 1, PP#2 Effect Bypass Delay 1,
+     PP#3 Effect Bypass Reverb 1, PP#4 Scene 3. Siis STORE kohta 427.
+     See on salvestuskoha katse: salvestatud keha PEABKI failist erinema
+     (ainult per-preset määrangute piirkonnas).
+
+Iga kaust sisaldab SYX-, TXT-, spec.json- ja validation.json-faili ning
+VAATLUSED.txt küsimusi (T43 puhul ka oodatud sihtväärtuste tabelit).
+
+Enne seadmekorda:
+1. Ava Terminal ja mine kausta:
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_H5_T43
+2. Käivita: bash ALUSTA.command --preflight
+   See EI ava USB- ega MIDI-porti. See kontrollib räsidega faile ja kogujaid.
+
+Seadmekorral (FM3 Mk II Turbo FW13, Mac, Python 3, USB, päris kitarr):
+1. Sulge FM3-Edit ja Fractal-Bot.
+2. Käivita: bash ALUSTA.command --case H5   (või --case H5B, --case T43, --case T44)
+   Kõik järjest: bash ALUSTA.command
+3. Kirjuta LAADI. Programm laadib faili tööpuhvrisse ja loeb plokid tagasi.
+   Vea korral peatub; ära jätka STORE-iga. Kinnita nimi (j).
+4. Kirjuta vestlusesse "ok". Claude avab FM3-Editi, pildistab stseenid ja CPU
+   taustal ning vahetab stseene. Mängi stseenid läbi päris kitarriga.
+   Ära muuda presetiparameetreid ega tap-tempot.
+   Ampero puhul ainult B lühike vajutus; A-nuppu ei kasutata.
+5. Tee käsitsi STORE kohta 427, vali teine preset, tule tagasi ja kirjuta "ok".
+   Claude pildistab uuesti. FM3-Editi Save-nuppu ei vajutata.
+6. Claude sulgeb FM3-Editi. Kirjuta Terminali STORE ning vasta küsimustele
+   (VAATLUSED.txt). Sisesta salvestuskoht 427.
+   Koguja kasutab Display Offset 1: N → indeks N−1.
+7. Saada SESSION_....zip nimi vestlusesse.
+
+Iga STORE kohta 427 kirjutab eelmise üle; kõik failid saab uuesti laadida.
+
+Skriptid ei tee SET-i, STORE-i, automaatset stseeni-/presetivahetust ega
+üldseadete kirjutusi. LOAD asendab ainult tööpuhvri; STORE on kasutaja tegevus.
+
+Tulemuste seadmevaba võrdlus arendusrepos:
+node tools/fm3/h5-t43-compare.mjs PAKI_KAUST SESSION_KAUST
+Lubatud erinevused: valitud stseeni bait 0, tervete plokikirjete järjekord,
+SysEx-sihtkoha päis. Vahele jäetud preset on "tegemata", mitte läbitud.
+T44 andmevõrdlus näitab per-preset piirkonna erinevust; selle dekodeerib eraldi ingest.
