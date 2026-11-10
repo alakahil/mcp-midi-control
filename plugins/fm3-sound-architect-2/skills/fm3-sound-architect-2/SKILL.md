@@ -17,8 +17,11 @@ H1 SC1 → Reverb Mix 10/25/40% ja H2 nelja MultiDelay tüübi import, kuva, kuu
 ning STORE/reload on kinnitatud, salvestatud keha baittäpne. H4 luges T20 CAB_A
 presetis Preamp Type None otse FM3-Editist. Tüübipõhine koond on nüüd 39 malli /
 8 genereeritud importi / 8 STORE-kinnitust. Pealing Bells kasutas CPU-d ~11
-punkti üle mudeli hinnangu; mudelit pole muudetud. Kviitung:
-`references/fm3-h1-h2-h4-20261110.json`.
+punkti üle 0.2.5 hinnangu. Kviitung: `references/fm3-h1-h2-h4-20261110.json`.
+
+0.3.65 (CPU mudel `fm3-cpu 0.2.6`): H2 nelja Multi Delay tüübimalli hind tuleb
+nende mõõdetud stseenidest (Pealing Bells 17,9, Dub Echo 10,7, Mono Diffuser 5,4,
+Aurora Delay 7,6 punkti). Muud 35 tüüpi kasutavad Base Type'i hinda. Vt `engine/docs/FM3_CPU.md`.
 
 0.3.64 korrastab allpool T32/T20 aegunud piiranguid ning lisab järgmise
 seadmekorra ettevalmistuse: H1 Scene Controller 1 → Reverb Mix 10–40% (ALL,
@@ -46,7 +49,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.64`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.65`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.

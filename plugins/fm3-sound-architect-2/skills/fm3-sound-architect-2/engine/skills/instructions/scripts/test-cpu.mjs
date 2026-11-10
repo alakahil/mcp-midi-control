@@ -1,6 +1,6 @@
 // Regression for fm3-cpu (audit point 7). Offline.
 import fs from 'node:fs';
-import {estimateCpu,renderCpuText,cpuMeasurements,cpuTypes,qualityDelta} from './fm3-cpu.mjs';
+import {estimateCpu,renderCpuText,cpuMeasurements,cpuTypes,qualityDelta,MULTIDELAY_TEMPLATE_COSTS} from './fm3-cpu.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 const rd=p=>fs.readFileSync(new URL('../'+p,import.meta.url));
 // 1. hand subtractive readings are internally consistent
@@ -36,6 +36,21 @@ import('./fm3-sound.mjs').then(({composeSound})=>{
       check(e.parts.synth===it.summedPoints&&!e.notes.length,'T37 '+it.id+' '+e.parts.synth);check(it.costPoints<=e.parts.synth+1,'T37 sum conservative '+it.id);
       check(estimateCpu(o,{model:'fm3-cpu 0.2.4'}).scenes[0].parts.synth===(it.voices[1]==='OFF'&&it.voices[2]==='OFF'&&it.voices[0]!=='OFF'||it.id==='default'?it.costPoints:13.5),'0.2.4 kept '+it.id);
     }
-    console.log(JSON.stringify({p6a:a.scenes[0].percent,p6b:b.scenes[0].percent,v1s4:v.scenes[3].percent,t31:'insert types',t37:t37.items.filter(x=>x.voices).length}));
+    // 6. H2 Multi Delay Type templates (0.2.6): the H2 preset shape replays the settled scene readings; 0.2.5 is unchanged.
+    const h2=JSON.parse(rd('references/fm3-h1-h2-h4-20261110.json')).display.H2.scenes,TYPES=h2.map(x=>x.type);
+    const md=(extra={})=>Buffer.from(composeSound(NL,{composer:{...C,reverbChannels:[{channel:'A',type:'Room: Recording Studio A'}]},insert:['multidelay'],
+      layout:{row2:['compressor','drive','amp','cab'],row3:['delay','multidelay','reverb']},multidelayTypes:TYPES.map((type,i)=>({channel:'ABCD'[i],type})),
+      blockScenes:{multidelay:[0,1,2,3].map(i=>({scene:i+1,channel:'ABCD'[i],bypass:false}))},...extra}).syx);
+    const m6=estimateCpu(md()),m5=estimateCpu(md(),{model:'fm3-cpu 0.2.5'});
+    h2.forEach((x,i)=>{check(m6.scenes[i].parts.multidelay===MULTIDELAY_TEMPLATE_COSTS[i].costPoints&&!m6.scenes[i].notes.length,'0.2.6 template '+x.type);
+      check(Math.abs((m6.scenes[i].percent-m5.scenes[i].percent)-(x.cpuAfter-x.cpuEstimate))<0.06,'0.2.6 residual '+x.type);});
+    check(m6.model==='fm3-cpu 0.2.6'&&m6.multidelayTemplatesSha256&&!m5.multidelayTemplatesSha256,'0.2.6 is the default and names its source');
+    check(MULTIDELAY_TEMPLATE_COSTS.find(t=>t.type==='Pealing Bells').costPoints===17.9,'Pealing Bells 6.5 + 11.4');
+    // Output edits on top keep the Type price (Mix 30 % in H2); a device-default channel keeps its Base Type price.
+    check(estimateCpu(md({controls:[{block:'multidelay',channel:'A',param:'MULTITAP_MIX',value:30}]})).scenes[0].parts.multidelay===17.9,'Mix edit keeps the template');
+    // An unmeasured Type keeps its Base Type price (Pealing Bells' Algorithm, Quad Series, is 6.5 by T26).
+    const other=MULTIDELAY_TEMPLATE_COSTS.length&&estimateCpu(md({multidelayTypes:[{channel:'A',type:'Quad-Tap Delay'}]})).scenes[0].parts.multidelay;
+    check(other===5.5,'unmeasured Type keeps the Base Type price: '+other);
+    console.log(JSON.stringify({p6a:a.scenes[0].percent,p6b:b.scenes[0].percent,v1s4:v.scenes[3].percent,t31:'insert types',t37:t37.items.filter(x=>x.voices).length,mdTemplates:h2.length}));
   });
 });

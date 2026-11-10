@@ -9,11 +9,15 @@
 //   measured (T31, references/fm3-shot-t31-cab-cpu-20261105.json; defaults agree with the hand readings within 1 point).
 // 0.2.5: Synth voices 2/3 (T37, references/fm3-t37-synth-cpu-20261107.json): each voice costs its T31 voice-1 price above
 //   the 2.5-point block; voices add up (three heavy voices measured up to 4 points below the sum, so the sum is conservative).
+// 0.2.6: measured Multi Delay Type templates (H2, references/fm3-h1-h2-h4-20261110.json): a channel whose Type word
+//   (MULTITAP_PRESETS) and Algorithm match a measured Type costs its Base Type price plus that scene's settled
+//   measured-minus-0.2.5 residual (Pealing Bells +11.4 points). Other Types keep the Base Type price.
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {scanRecords} from './fm3-layout.mjs';
 import {findParam,decodeValue} from './fm3-table-encoder.mjs';
+import {multidelayType} from './fm3-multidelay-types.mjs';
 
 const pinned=(file,hash)=>{const b=fs.readFileSync(new URL('../references/'+file,import.meta.url));
   if(createHash('sha256').update(b).digest('hex')!==hash)throw Error(file+' changed; review and re-pin');return JSON.parse(b);};
@@ -34,6 +38,16 @@ export const cpuT31=pinned('fm3-shot-t31-cab-cpu-20261105.json',cpuT31Hash);
 // Synth voices (2026-11-07, test T37): cost = block base + sum of the non-OFF voice increments.
 export const cpuT37Hash='c0a1cae9fa0fc79c16bd6573b055a84ba363fdf15656e23c91b04823dcdafbdd';
 export const cpuT37=pinned('fm3-t37-synth-cpu-20261107.json',cpuT37Hash);
+// Multi Delay Type templates (2026-11-10, audit H2): one preset, Multi Delay channels A-D = four Types, scenes 1-4.
+// All other blocks are identical across those scenes, so each scene's settled residual against 0.2.5 belongs to the Type.
+export const cpuH2Hash='02d2adf0543966eb28db514d075720bc4cbc29263464ed61f02f4f50369a667b';
+export const cpuH2=pinned('fm3-h1-h2-h4-20261110.json',cpuH2Hash);
+export const MULTIDELAY_TEMPLATE_COSTS=Object.freeze(cpuH2.display.H2.scenes.map(s=>{
+  const base=cpuT26.cpu.costPoints[s.algorithm];if(typeof base!=='number')throw Error('H2 Type '+s.type+': no T26 Base Type price');
+  const t=multidelayType(s.type);if(t.algorithm!==s.algorithm)throw Error('H2 Type '+s.type+': Algorithm differs from the T35 template');
+  return Object.freeze({type:s.type,index:t.index,algorithm:s.algorithm,basePoints:base,measuredPercent:s.cpuAfter,estimate025:s.cpuEstimate,
+    costPoints:Math.round((base+s.cpuAfter-s.cpuEstimate)*10)/10});}));
+const mdTemplate=new Map(MULTIDELAY_TEMPLATE_COSTS.map(t=>[t.index,t]));
 const synthIncrement=new Map(Object.entries(cpuT37.voiceIncrementPoints).map(([k,v])=>[k.toLowerCase(),v]));
 const T31_TYPED=['plex','megatap','tentap','resonator','ringmod','gate','volpan','cab'];
 const SYNTH_OFF=7,SYNTH_VOICES=['SYNTH_TYPE2','SYNTH_TYPE3'],SYNTH_ALL=['SYNTH_TYPE1','SYNTH_TYPE2','SYNTH_TYPE3'];
@@ -46,7 +60,7 @@ const TYPE_FIELD={drive:'FUZZ_TYPE',reverb:'REVERB_TYPE',delay:'DELAY_MODEL',com
 const SINGLE_024={amp:null,looper:null,multiband:null,formant:null};
 // 0.2.3 (before T31): kept only so packs built and sent before T31 rebuild byte for byte (their manifests carry the estimate).
 const SINGLE_023={amp:null,cab:'DYNA-CAB',plex:'Plex Delay',megatap:'Reverb Pre-Swell',tentap:'Ten-Tap Delay',resonator:'MANUAL',ringmod:'CLASSIC',gate:'Classic Expander',volpan:'VOLUME',looper:null,multiband:null,formant:null,synth:'TRIANGLE'};
-export const CPU_MODELS=['fm3-cpu 0.2.3','fm3-cpu 0.2.4','fm3-cpu 0.2.5'];
+export const CPU_MODELS=['fm3-cpu 0.2.3','fm3-cpu 0.2.4','fm3-cpu 0.2.5','fm3-cpu 0.2.6'];
 const IGNORED=new Set(['in1','out1','send','return']);
 const norm=s=>String(s).trim().toLowerCase().replace(/[’']/g,"'");
 const tables=extra=>Object.fromEntries(Object.entries({...cpuTypes.families,multidelay:cpuT26.cpu.costPoints,...extra}).map(([f,t])=>[f,new Map(Object.entries(t).map(([k,v])=>[norm(k),v]))]));
@@ -60,7 +74,7 @@ export function qualityDelta(type,quality){
   return {delta:same.length?Math.max(...same):Math.max(...Object.values(table).map(d=>d[q])),exact:false};
 }
 const readLabel=(body,r,ch,name)=>{const p=findParam(r.family.replace(/\d+$/,''),name);return String(decodeValue(p,body.readUInt16LE(r.start+2*(ch*r.words+p.param)))).trim();};
-function blockCost(body,r,s,legacy,voices){
+function blockCost(body,r,s,legacy,voices,templates){
   const typeTable=legacy?typeTable023:typeTable0,SINGLE=legacy?SINGLE_023:SINGLE_024,familyMax=f=>Math.max(...typeTable[f].values());
   if(r.family==='out2')return {cost:OUT2_COST,label:'Out 2',notes:[]};
   const fam=r.instance>1?r.family.replace(/\d+$/,''):r.family,notes=[];
@@ -79,6 +93,10 @@ function blockCost(body,r,s,legacy,voices){
     notes.push('synth voices 2/3 active or voice 1 '+label+' unmeasured (family maximum used)');
     return {cost:Math.max(...synthTable.values()),label,notes};
   }
+  if(fam==='multidelay'&&templates){
+    const t=mdTemplate.get(body.readUInt16LE(r.start+2*(ch*r.words+findParam('multidelay','MULTITAP_PRESETS').param)));
+    if(t&&norm(t.algorithm)===norm(label))return {cost:t.costPoints,label:label+' / '+t.type,notes};
+  }
   if(typeTable[fam]&&fam!=='synth'&&!['rotary','peq','geq','enhancer'].includes(fam)){
     let cost=typeTable[fam].get(norm(label));
     if(cost===undefined){cost=familyMax(fam);notes.push(fam+' '+label+' unmeasured (family maximum used)');}
@@ -92,18 +110,18 @@ function blockCost(body,r,s,legacy,voices){
   return {cost:c.cpu,label,notes};
 }
 export function estimateCpu(syx,{model=CPU_MODELS.at(-1)}={}){
-  if(!CPU_MODELS.includes(model))throw Error('Unknown CPU model '+model);const legacy=model==='fm3-cpu 0.2.3',voices=model==='fm3-cpu 0.2.5';
+  if(!CPU_MODELS.includes(model))throw Error('Unknown CPU model '+model);const legacy=model==='fm3-cpu 0.2.3',templates=model==='fm3-cpu 0.2.6',voices=model==='fm3-cpu 0.2.5'||templates;
   const body=Buffer.from(inspectStructure(syx).raw.body),{records}=scanRecords(body),limit=cpuMeasurements.limit.safe;
   const blocks=records.filter(r=>!IGNORED.has(r.family));
   const scenes=Array.from({length:8},(_,s)=>{
     let total=cpuMeasurements.costs.baseline.cpu;const notes=[],unknown=[],parts={};
-    for(const r of blocks){const b=blockCost(body,r,s,legacy,voices);notes.push(...b.notes);if(b.cost===null){unknown.push(r.family);continue;}total+=b.cost;parts[r.family]=b.cost;}
+    for(const r of blocks){const b=blockCost(body,r,s,legacy,voices,templates);notes.push(...b.notes);if(b.cost===null){unknown.push(r.family);continue;}total+=b.cost;parts[r.family]=b.cost;}
     const exact=!notes.length&&!unknown.length,pct=Math.round(total*10)/10;
     return {scene:s+1,percent:pct,measuredTypeCoverage:exact,exact,parts,notes,unknown,
       warning:pct>limit?'over the safe limit':pct>limit-8?'within 8 % of the safe limit':null};
   });
   const worst=scenes.reduce((a,b)=>b.percent>a.percent?b:a);
-  return {model,measurementsSha256:cpuMeasurementsHash,typesSha256:cpuTypesHash,out2Sha256:cpuT8Hash,multidelaySha256:cpuT26Hash,...(legacy?{}:{insertTypesSha256:cpuT31Hash}),...(voices?{synthVoicesSha256:cpuT37Hash}:{}),limitPercent:limit,maxPercent:worst.percent,worstScene:worst.scene,
+  return {model,measurementsSha256:cpuMeasurementsHash,typesSha256:cpuTypesHash,out2Sha256:cpuT8Hash,multidelaySha256:cpuT26Hash,...(legacy?{}:{insertTypesSha256:cpuT31Hash}),...(voices?{synthVoicesSha256:cpuT37Hash}:{}),...(templates?{multidelayTemplatesSha256:cpuH2Hash}:{}),limitPercent:limit,maxPercent:worst.percent,worstScene:worst.scene,
     measuredTypeCoverageAllScenes:scenes.every(s=>s.measuredTypeCoverage),
     exactAllScenes:scenes.every(s=>s.exact),exactFieldsMeaning:'Legacy aliases for measured-type coverage, not prediction accuracy',scenes,
     scope:'Effects-core meter (FM3-Edit CPU). Measured component costs do not establish a bound on combined-preset error (G06: estimate 44.3 %, measured 41.5 %). Unmeasured types use an available family maximum or a single measured reference; unknown families are omitted and named. Amp/Delay core not visible. Bypass does not reduce CPU.'};

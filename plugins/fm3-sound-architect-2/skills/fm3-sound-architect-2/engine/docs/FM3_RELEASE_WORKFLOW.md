@@ -10,17 +10,17 @@
 
 ## Ulatus
 
-0.3.64 valmistab ette H1 Reverb Mixi ning H2 nelja T36 MultiDelay tüübi
-STORE-katse. Mõlemal on avaliku generaatori nelik, räsidega LOAD/STORE manifestid,
-vaatlusleht, seadmeta eelkontroll ja range tervikpreseti võrdlus. T32/T20 juhendi
-ajaloolised lahtised küsimused viitavad neid täpsustanud T34 tulemustele.
-0.3.63-ga lisatud B1A/B1B/B1C/B2 import, kuva, käitumine ja STORE/reload
-kinnitused säilivad; õnnestunud B1B kordus ja parandatud B1A CPU on kehtiv alus.
-Skeem 0.8.9, 89 kohustuslikku mootoritesti; 0.3.64 uusi seadmetõendeid ei lisa.
+0.3.65 lisab CPU mudeli `fm3-cpu 0.2.6`: H2-s mõõdetud neli Multi Delay
+tüübimalli maksavad oma mõõdetud hinda (Pealing Bells 17,9 punkti Base Type'i
+6,5 asemel). Muud tüübid ja plokid arvutatakse nagu 0.2.5-s. Juba saadetud H1/H2
+pakid jäävad 0.2.5 hinnangule kinnitatuks. Skeem 0.8.9, 89 kohustuslikku
+mootoritesti; 0.3.65 uusi seadmetõendeid ei lisa, kasutab H2 näite.
 Lähtekood läheb eraldi harule ja PR-i; liitmine nõuab kasutaja „liida“ korraldust.
 
 ### Ajaloolised väljalasked
 
+- 0.3.64: H1 Reverb Mixi ja H2 nelja T36 MultiDelay tüübi STORE-pakid,
+  T32/T20 juhendi täpsustused; 89 mootoritesti.
 - 0.3.61: valikuline [kohalik LOAD/GET töövoog](FM3_LOAD_READBACK.md) ja viie
   koguja kaitsed; 89 mootoritesti. STORE ja presetivahetused jäävad kasutajale.
 - 0.3.60: T42 `modifierTargets` ja `tempo`, skeem 0.8.9, **88** mootoritesti.
