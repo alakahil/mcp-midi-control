@@ -1,0 +1,33 @@
+{
+  "kind": "fm3-user-observation-correction",
+  "case": "B1A",
+  "preset": "AUDIT SC1 DELAY MIX",
+  "source": "User message in this conversation, 2026-11-10",
+  "originalSessionSha256": "e2c82767c19ab33de0c22f1882d76f95cce99593fff2cef59056d4c78e9bb270",
+  "originalObservationBefore": "427, CPU 44,5%",
+  "originalObservationAfter": "427, CPU 44,5%",
+  "correctedCpuPercentByScene": [
+    {
+      "scene": 1,
+      "min": 44.5,
+      "max": 44.5
+    },
+    {
+      "scene": 2,
+      "min": 44.5,
+      "max": 44.5
+    },
+    {
+      "scene": 3,
+      "min": 44.5,
+      "max": 44.5
+    },
+    {
+      "scene": 4,
+      "min": 44.5,
+      "max": 44.6
+    }
+  ],
+  "phaseScope": "User corrected first-test scene readings; no separate before/after phase attribution supplied.",
+  "rawFilesPreserved": true
+}

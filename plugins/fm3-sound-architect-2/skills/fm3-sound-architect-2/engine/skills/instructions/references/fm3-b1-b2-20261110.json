@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "generatedPresetVersion": "0.3.62",
+  "scope": "Four named public-generator presets only. Actual user LOAD/GET and STORE/reload captures, observations and LFO screenshot; this replay performs no device I/O.",
+  "cases": [
+    {
+      "case": "B1A",
+      "deviceImport": "confirmed",
+      "display": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "storedBodyByteIdentical": true,
+      "selectedScene": {
+        "expected": 1,
+        "stored": 1
+      },
+      "records": 9,
+      "resultSha256": "b4836e79e9b7cf3f63e2f720077e671b6df7a9fb83d850b68bff048c96e9b125",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "source": "Scene Controller 1",
+          "minmax_channel": "0, 100, ALL",
+          "behavior": "jah",
+          "tempo": "97",
+          "cpu": "427, CPU 44,5%"
+        },
+        "after": {
+          "name_grid_scenes": "j",
+          "source": "Scene Controller 1",
+          "minmax_channel": "0, 100, ALL",
+          "behavior": "jah",
+          "tempo": "97",
+          "cpu": "427, CPU 44,5%"
+        },
+        "note": ""
+      },
+      "expected": "Stseenides 1–4 on SC1 0/33/67/100 %. Delay Mix järgib seda. 0 % on kuiv ja 100 % ainult efekt; otsene heli võib kaduda. Tempo 97 BPM, 1/4 korduste vahe umbes 619 ms."
+    },
+    {
+      "case": "B1B",
+      "deviceImport": "confirmed",
+      "display": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "storedBodyByteIdentical": true,
+      "selectedScene": {
+        "expected": 1,
+        "stored": 1
+      },
+      "records": 10,
+      "resultSha256": "44a85121dcb24b6b47992d8bb78c3f661f13b728e025fc9c99dd6b0fefff6bc3",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "source": "LFO 1A",
+          "minmax_channel": "300.0 Hz, 3000.0 Hz, ALL",
+          "behavior": "jah",
+          "cpu": "Stseen 1, 46,4"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "source": "LFO 1A",
+          "minmax_channel": "300.0 Hz, 3000.0 Hz, ALL",
+          "behavior": "jah",
+          "cpu": "Stseen 1, 46,4"
+        },
+        "note": ""
+      },
+      "expected": "Low-Pass Filter 300–3000 Hz liigub tumedast heledaks ja tagasi umbes 2-sekundilise tsükliga. LFO 1A, SINE, Depth 100 %, Rate 0,5 Hz."
+    },
+    {
+      "case": "B1C",
+      "deviceImport": "confirmed",
+      "display": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "storedBodyByteIdentical": true,
+      "selectedScene": {
+        "expected": 1,
+        "stored": 1
+      },
+      "records": 9,
+      "resultSha256": "ca8f1d1a43e37c58fdd6d25fbcd90689e9a50b8d9f91f88a6a0b2d7298e92c09",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "source": "External 1",
+          "minmax_channel": "2.00, 8.00, ALL",
+          "behavior": "jah",
+          "cpu": "Stseen 1, CPU 44,5 - 44,6%"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "source": "External 1",
+          "minmax_channel": "2.00, 8.00, ALL",
+          "behavior": "jah",
+          "cpu": "Stseen 1, CPU 44,5 - 44,6%"
+        },
+        "note": ""
+      },
+      "expected": "Olemasoleva External 1 pedaali kand/varvas muudab Amp Gaini 2→8. Moonutus peaks suurenema; ka valjus võib muutuda. Pakk ei muuda pedaali globaalset vastendust."
+    },
+    {
+      "case": "B2",
+      "deviceImport": "confirmed",
+      "display": "confirmed",
+      "audibleBehavior": "confirmed",
+      "storeReload": "confirmed",
+      "storedBodyByteIdentical": true,
+      "selectedScene": {
+        "expected": 1,
+        "stored": 1
+      },
+      "records": 9,
+      "resultSha256": "1d623c8b99574c5be6e3ae023c01d0865e09191f3d7a130a5e828352b13745db",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "source": "Scene Controller 1",
+          "minmax_channel": "10, 60, D",
+          "behavior": "jah",
+          "cs2": "jah",
+          "tempo": "143",
+          "cpu": "1 - 44,4%;  2 - 44,4%; 3 - 44,5%; 4 - 44,6%"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "source": "Scene Controller 1",
+          "minmax_channel": "10, 60, D",
+          "behavior": "jah",
+          "cs2": "jah",
+          "tempo": "143",
+          "cpu": "1 - 44,4% 2 - 44,4%; 3 - 44,5%; 4 - 44,6%"
+        },
+        "note": ""
+      },
+      "expected": "Stseen 1: Amp/Delay A, CS2 OFF, Cut OFF, Mix 30 %. Stseen 2: D, OFF, Cut OFF, Mix 10 %. Stseen 3: D, ON, Cut ON, Mix 60 %. Stseen 4: A, ON, Cut OFF, Mix 30 %. Mõlemad seosed on ainult D-kanalil. 143 BPM, 1/4 umbes 420 ms."
+    }
+  ],
+  "lfo1Display": {
+    "schemaVersion": 1,
+    "date": "2026-11-10",
+    "case": "B1B",
+    "source": "User confirmation of the latest completed test and attached FM3-Edit screenshot",
+    "page": "Controllers > LFO 1 + 2 > LFO 1",
+    "type": "Sine",
+    "runStop": "Run",
+    "rateHz": 0.5,
+    "depthPercent": 100,
+    "tempo": "None",
+    "screenshot": "lfo1-display.png",
+    "screenshotSha256": "06607711359f4e301390f547065ed4c1a4bf7787321bdeff455175d0f698e577",
+    "scope": "User confirms these readings in the latest B1B test. Screenshot independently shows these values, but does not independently timestamp both STORE phases. LFO 2 Rate 1.000 Hz is a separate controller."
+  },
+  "cpuCorrection": {
+    "kind": "fm3-user-observation-correction",
+    "case": "B1A",
+    "preset": "AUDIT SC1 DELAY MIX",
+    "source": "User message in this conversation, 2026-11-10",
+    "originalSessionSha256": "e2c82767c19ab33de0c22f1882d76f95cce99593fff2cef59056d4c78e9bb270",
+    "originalObservationBefore": "427, CPU 44,5%",
+    "originalObservationAfter": "427, CPU 44,5%",
+    "correctedCpuPercentByScene": [
+      {
+        "scene": 1,
+        "min": 44.5,
+        "max": 44.5
+      },
+      {
+        "scene": 2,
+        "min": 44.5,
+        "max": 44.5
+      },
+      {
+        "scene": 3,
+        "min": 44.5,
+        "max": 44.5
+      },
+      {
+        "scene": 4,
+        "min": 44.5,
+        "max": 44.6
+      }
+    ],
+    "phaseScope": "User corrected first-test scene readings; no separate before/after phase attribution supplied.",
+    "rawFilesPreserved": true
+  },
+  "sources": {
+    "B1A/bind-store-results.json": "b4836e79e9b7cf3f63e2f720077e671b6df7a9fb83d850b68bff048c96e9b125",
+    "B1A/load-confirmation.json": "db67de4af82b683d8b68b86b19c4aed92fbf1519e06d1bfcbd68c7d294e71585",
+    "B1A/shot-load-B1A.json": "989fcda4a561d6a16c47ea15cb4b58c833acb0d526d49fab8008bbd85cc90d5c",
+    "B1B/bind-store-results.json": "44a85121dcb24b6b47992d8bb78c3f661f13b728e025fc9c99dd6b0fefff6bc3",
+    "B1B/load-confirmation.json": "f284af7ca7ece8e2e9e313fced85c0b3c944b554826f4b7e8f821a104c405bdc",
+    "B1B/shot-load-B1B.json": "66798e82f463bc7977f2efc7523231b2d1bd98c44fdc43e61b62cec38b002c94",
+    "B1C/bind-store-results.json": "ca8f1d1a43e37c58fdd6d25fbcd90689e9a50b8d9f91f88a6a0b2d7298e92c09",
+    "B1C/load-confirmation.json": "de7b0ac4ea16ddb87607632920781f47c295a6d691f82840eecfbdd3d4f67c52",
+    "B1C/shot-load-B1C.json": "514ea9923c2bac67513f91b5b499f82dae97fc11cf71508ddd0b7816166d38ad",
+    "B2/bind-store-results.json": "1d623c8b99574c5be6e3ae023c01d0865e09191f3d7a130a5e828352b13745db",
+    "B2/load-confirmation.json": "c463ef46b09c4870ac1b2778ecf498ef84c5e08df2226dcf626f378b2f625034",
+    "B2/shot-load-B2.json": "07bb4791e5e6f43eecc37dbe79758926bf424fb0c0683c70a6bbd4d94ae8704b",
+    "cpu-correction.json": "07094296db3b84ff85388484c70292bcd19538605907f12cc645ba29f0071cd3",
+    "display-confirmation.json": "dfae1a8d3c137d3c9840c370af2fb6a159f1a865d6f12f93696e24f864c1c05f",
+    "lfo1-display.png": "06607711359f4e301390f547065ed4c1a4bf7787321bdeff455175d0f698e577"
+  },
+  "limitations": [
+    "CPU correction has no separate before/after phase attribution.",
+    "No numerical audio/period measurement; behavior is user-confirmed.",
+    "No generalization to all modifier targets, channel combinations, new presets or CPU limits."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

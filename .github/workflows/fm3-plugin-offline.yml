@@ -131,6 +131,7 @@ jobs:
           node tools/fm3/cpu-sweep-ingest.mjs plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-cpu-sweep-20261023-results.jsonl
       - name: Verify current evidence and audit follow-up boundaries
         run: |
+          node tools/fm3/b1-b2-evidence.mjs
           node tools/fm3/current-evidence.mjs
           node tools/fm3/controllers-gap-plan.mjs
           node tools/fm3/test-controllers-store.mjs
