@@ -12,6 +12,14 @@ päris binaarne SYX ning sellele vastav allalaaditav UTF-8 TXT.
 
 ## Kehtiv seis
 
+10.11.2026 seadmekord (0.3.64 failidega): H1 ja H2 on seadmel läbitud.
+H1 SC1 → Reverb Mix 10/25/40% ja H2 nelja MultiDelay tüübi import, kuva, kuulamine
+ning STORE/reload on kinnitatud, salvestatud keha baittäpne. H4 luges T20 CAB_A
+presetis Preamp Type None otse FM3-Editist. Tüübipõhine koond on nüüd 39 malli /
+8 genereeritud importi / 8 STORE-kinnitust. Pealing Bells kasutas CPU-d ~11
+punkti üle mudeli hinnangu; mudelit pole muudetud. Kviitung:
+`references/fm3-h1-h2-h4-20261110.json`.
+
 0.3.64 korrastab allpool T32/T20 aegunud piiranguid ning lisab järgmise
 seadmekorra ettevalmistuse: H1 Scene Controller 1 → Reverb Mix 10–40% (ALL,
 Room: Recording Studio A, stseenid 0/50/100%) ning H2 neli T36 MultiDelay tüüpi

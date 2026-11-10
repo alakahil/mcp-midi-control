@@ -18,6 +18,10 @@ const t={};for(let n=32;n<=38;n++){
 const b1b2=receipt('fm3-b1-b2-20261110.json');
 assert.equal(b1b2.cases.length,4);
 assert.ok(b1b2.cases.every(c=>c.storedBodyByteIdentical&&c.storeReload==='confirmed'));
+const h12=receipt('fm3-h1-h2-h4-20261110.json');
+assert.deepEqual(h12.cases.map(c=>c.case),['H1','H2']);
+assert.ok(h12.cases.every(c=>c.storedBodyByteIdentical&&c.storeReload==='confirmed'));
+const h2Stored=new Set(h12.display.H2.scenes.map(s=>s.type));
 const t42=receipt('fm3-t42-modifier-targets-20261109.json');
 const combo=receipt('fm3-combo-store-20261029.json');
 const t3941=receipt('fm3-t39-t41-controllers-store-20261109.json');
@@ -49,17 +53,17 @@ const controllers=Object.entries(VOLUME_SOURCES).map(([name,code])=>{
 assert.equal(controllers.filter(r=>r.deviceImport==='confirmed').length,19);
 assert.equal(controllers.filter(r=>r.storeReload==='confirmed').length,19);
 const multiDelay=t[35].presets.map(p=>{
- const imported=t[36].types.some(x=>x.type===p.label),stored=t[38].types.some(x=>x.type===p.label);
+ const imported=t[36].types.some(x=>x.type===p.label),stored38=t[38].types.some(x=>x.type===p.label),storedH2=h2Stored.has(p.label),stored=stored38||storedH2;
  assert.equal(MULTIDELAY_TYPE_LABELS[p.index],p.label);assert.equal(p.words.length,121);
  return {index:p.index,name:p.label,algorithm:p.algorithm,softwareSupported:true,
   measuredFullChannelWords:121,templateStart:'device default, channel A',
   generatedDeviceImport:imported||stored?'confirmed':'not-measured',
   audibleBehavior:imported||stored?'confirmed':'not-measured',storeReload:stored?'confirmed':'not-measured',
-  evidence:['T35',...(imported?['T36']:[]),...(stored?['T38']:[])],
+  evidence:['T35',...(imported?['T36']:[]),...(stored38?['T38']:[]),...(storedH2?['H2']:[])],
   scope:'Whole-channel template before controls; Type selector alone is not a fill operation.'};
 });
 assert.equal(multiDelay.length,39);assert.equal(multiDelay.filter(r=>r.generatedDeviceImport==='confirmed').length,8);
-assert.equal(multiDelay.filter(r=>r.storeReload==='confirmed').length,4);
+assert.equal(multiDelay.filter(r=>r.storeReload==='confirmed').length,8);
 const {modifierTargetsCapabilities}=await import(path.join(E,'scripts/fm3-modifier-targets.mjs'));
 read(EP+'scripts/fm3-modifier-targets.mjs');
 const targetSupport=modifierTargetsCapabilities();assert.equal(targetSupport.targets,468);
@@ -80,10 +84,11 @@ const presetTempo={softwareSupported:true,rangeBpm:[24,250],integerOnly:true,cha
  scope:'97 and 143 BPM only; not every BPM, tempo-synced effect, tap-tempo or global setting.'};
 assert.deepEqual(presetTempo.measured.map(p=>p.bpm),[97,143]);
 const current={schemaVersion:1,asOf:'2026-11-10',hardwareEvidenceThrough:'2026-11-10',baselineVersion:'0.3.64',
- scope:'T32-T42, B1A/B1B/B1C/B2 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.',
+ scope:'T32-T42, B1A/B1B/B1C/B2, H1/H2/H4 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.',
  definitions:{confirmed:'A cited dated device result exists in the stated scope.',notMeasured:'No cited device result for this scope; not a failure and not a software-support restriction.'},
  enumCounts,scalarDescriptors,controllers,multiDelay,modifierTargets,presetTempo,
  auditFinalPresets:{evidence:'B1A/B1B/B1C/B2 2026-11-10',cases:b1b2.cases,lfo1Display:b1b2.lfo1Display,cpuCorrection:b1b2.cpuCorrection,scope:b1b2.scope},
+ auditNextPresets:{evidence:'H1/H2/H4 2026-11-10',cases:h12.cases,display:h12.display,findings:h12.findings,limitations:h12.limitations,scope:h12.scope},
  otherEvidence:{
   controllersScenes:{scenes:8,channels:['A','B','C','D'],storeReload:'confirmed',evidence:['T33','T34A'],scope:'The measured scene/channel selections, not every permutation.'},
   liveComposition:{evidence:['T32','T34E'],cpuPercent:t[32].cpu.scenes.map(s=>s.measuredPercent),storedBlockRecords:11,
@@ -91,13 +96,14 @@ const current={schemaVersion:1,asOf:'2026-11-10',hardwareEvidenceThrough:'2026-1
    limitations:['No numerical loudness measurement.','T32 CPU/STORE belong to the measured file; the final -8 dB file has T34 listening, not an independent full CPU/STORE repeat.']},
   synthCpu:{evidence:['T37'],presets:t[37].items.length,model:'0.2.5',rule:t[37].rule,scope:'Measured voice types/settings, not all non-default parameters.'},
   cabCuts:{evidence:['T34F'],displayReadings:t[34].findings.cabPreampNone.controls.map(c=>({param:c.param,shown:c.shown,page:c.page})),
-   preampTypeNoneReadback:'not-measured',scope:'Cuts visible in the preset prepared with NONE; the Preamp Type value itself was not read back.'},
+   preampTypeNoneReadback:'confirmed',preampTypeNoneEvidence:'H4 2026-11-10: FM3-Edit Cab B Preamp page shows Preamp Type None, Filters 87.0 Hz / 7300 Hz',scope:'Cuts and Preamp Type None visible in the T20 CAB_A preset (FM3-Edit display); not other presets or Preamp Types.'},
   recordOrder:{evidence:['T38'],storedBodyReproduced:t[38].result.deviceRecordOrderBodyByteIdentical,scope:'T38 same spec with device order; insert only, unknown-pair fallback; grid unchanged.'}},
  supersededHistoricalGaps:[
   {from:'T32 final -8 dB listening pending',resolvedBy:'T34E',remaining:'Numerical loudness; separate final-file CPU/STORE.'},
   {from:'T33 scenes 5-8 pending',resolvedBy:'T34A',remaining:'Other source/target/shape combinations.'},
   {from:'T34 sources B-D edit buffer only; 14 sources unmeasured',resolvedBy:'T39-T41',remaining:'Other LFO shapes/depths, modifier curves and targets.'},
-  {from:'T35 no generated Type import or STORE',resolvedBy:'T36 and T38',remaining:'31 unimported generated Types; T36 four Types lack their own STORE result.'}],
+  {from:'T35 no generated Type import or STORE',resolvedBy:'T36, T38 and H2',remaining:'31 unimported generated Types.'},
+  {from:'T34F Preamp Type NONE not read back',resolvedBy:'H4',remaining:'Front-panel reading and other Preamp Types.'}],
  notPromoted:['General modifier allocator and arbitrary preset bases.','Other footswitch layouts, Hold and every PP definition.','Out 2 stereo/right and 4CM.','New preset audio/CPU/STORE.','Fresh-chat automatic launcher discovery.'],
  sources:Object.fromEntries([...sources].sort(([a],[b])=>a.localeCompare(b))),newHardwareMeasurements:false,deviceIO:false};
 const mark=s=>s==='confirmed'?'jah':'mõõtmata';
@@ -121,13 +127,19 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
  '- B1C: External 1 → Amp Gain 2–8, ALL. CPU stseen 1 44,5–44,6%.',
  '- B2: SC1 → Delay Mix 10–60% ja CS2 → Amp Cut, mõlemad D-kanalil, 143 BPM; nelja stseeni käitumine kinnitatud. CPU 44,4/44,4/44,5/44,6%.',
  'Algtõendid ja räsidega kviitung: MOOTOR references/fm3-b1-b2-20261110.json. LFO juhikud: Controllers → LFO 1 + 2 → ülemine LFO 1 rida. CPU-parandusel pole eraldi enne/pärast faasimäärangut. Need tulemused ei kinnita iga uut presetit.',
+ '','## H1/H2/H4 seadmekatse — 10.11.2026','',
+ 'H1 ja H2 import, FM3-Editi kuvanäidud, kasutaja kuulamine ja STORE/reload on kinnitatud. Salvestatud keha on mõlemal baittäpne.',
+ '- H1: SC1 → Reverb Mix 10–40%, ALL, vaikekõver, Room: Recording Studio A. Stseenid 1/2/3 Mix 10/25/40% enne ja pärast STORE-i; CPU 44,4–44,6%.',
+ '- H2: MultiDelay A–D Pealing Bells / Dub Echo / Mono Diffuser / Aurora Delay säilivad STORE järel; nende nelja T36 tüübi STORE on nüüd kinnitatud. CPU 62,5/55,3/50,0/52,2%; Pealing Bells on CPU mudeli hinnangust 51,1% ~11 punkti kõrgem (mudel muutmata).',
+ '- H4: T20 CAB_A Cab B Preamp lehel Preamp Type None ja ploki lõiked 87,0 Hz / 7300 Hz (FM3-Edit).',
+ 'Kviitung: MOOTOR references/fm3-h1-h2-h4-20261110.json. Heli on kasutaja kuulamishinnang; H2 heli kuulati enne STORE-i.',
  '','## MultiDelay Type mallid','', '| Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |','|---|---:|---|---|---|---|',
  ...multiDelay.map(r=>`| ${r.name} | ${r.measuredFullChannelWords} | ${mark(r.generatedDeviceImport)} | ${mark(r.audibleBehavior)} | ${mark(r.storeReload)} | ${r.evidence.join(', ')} |`),
- '','39 malli, 8 generaatori importi, 4 STORE-kinnitust. Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',
+ '','39 malli, 8 generaatori importi, 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',
  '','## Muud T32-T41 tulemused','',
  '- T32: 8 stseeni CPU 55-71%, 11 ploki andmed säilisid STORE järel. T34E kinnitab lõpliku -8 dB lead-nivoo kuulamist; arvuline nivoo ja lõppfaili eraldi CPU/STORE puuduvad.',
  '- T37: Synthi häälte 2/3 mõõdetud tüübid on CPU mudelis 0.2.5; muud parameetrid vajavad oma tõendit.',
- '- T34F: Cab lõiked nähtavad; Preamp Type väärtust NONE ennast ei loetud tagasi.',
+ '- T34F: Cab lõiked nähtavad; H4 luges Preamp Type None otse FM3-Editist tagasi.',
  '- T38: sama spec taastab 0.3.58 device-järjekorras salvestatud keha; see ei kinnita kõigi presetite ega grid-režiimi baittäpsust.',
  '','## Allikad ja piirid','',
  'Masinloetav koond koos iga sisendi SHA-256-ga: [fm3-current-evidence.json](../../'+EP+'references/fm3-current-evidence.json).',
@@ -136,4 +148,4 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
 const outputs=[[path.join(E,'references/fm3-current-evidence.json'),JSON.stringify(current,null,2)+'\n'],[path.join(ROOT,'docs/fm3/FM3_CURRENT_EVIDENCE.md'),md]];
 assert.ok(process.argv.slice(2).every(a=>a==='--write'),'Usage: current-evidence.mjs [--write]');
 for(const [file,text] of outputs){if(process.argv.includes('--write'))fs.writeFileSync(file,text);else assert.equal(fs.readFileSync(file,'utf8'),text,'Current evidence stale: '+file);}
-console.log(JSON.stringify({passed:true,controllers:controllers.length,deviceSources:19,storedSources:19,multiDelay:39,importedTypes:8,storedTypes:4,enumCounts,scalarDescriptors,deviceIO:false}));
+console.log(JSON.stringify({passed:true,controllers:controllers.length,deviceSources:19,storedSources:19,multiDelay:39,importedTypes:8,storedTypes:8,enumCounts,scalarDescriptors,deviceIO:false}));

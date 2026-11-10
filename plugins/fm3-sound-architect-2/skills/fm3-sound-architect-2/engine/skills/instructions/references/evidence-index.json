@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2204,
-  "filePaths": 2408,
+  "uniqueContents": 2213,
+  "filePaths": 2417,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -135,6 +135,12 @@
       "bytes": 18283,
       "paths": [
         "references/filter-controls.json"
+      ]
+    },
+    "02d2adf0543966eb28db514d075720bc4cbc29263464ed61f02f4f50369a667b": {
+      "bytes": 10792,
+      "paths": [
+        "references/fm3-h1-h2-h4-20261110.json"
       ]
     },
     "03001aebd776a135884c1b2b2753d5a21e05368a5dd84eb1415a58ca19f91388": {
@@ -1623,6 +1629,12 @@
         "examples/JB_SOLO_FX_GENERATED.syx"
       ]
     },
+    "1f478e2ba8356f05c8b25f50ca1cec9540b097e3b3effd0ffd1afe1ee409083e": {
+      "bytes": 50934,
+      "paths": [
+        "references/h1-h2-20261110/H1/bind-store-results.json"
+      ]
+    },
     "1f5446007c8226bf3b6a3317c64e3125b683ff57035ad44cb70c253af44690c0": {
       "bytes": 24680,
       "paths": [
@@ -1918,6 +1930,12 @@
       "paths": [
         "references/drive-batch-20261006-110109/capture-001/labels.json",
         "references/drive-batch-20261006-112254/capture-001/labels.json"
+      ]
+    },
+    "26406692785ba0d0d7eb05e1eb469c6539303f0b79197bc08be4138fe2e7d152": {
+      "bytes": 156,
+      "paths": [
+        "references/h1-h2-20261110/H2/load-confirmation.json"
       ]
     },
     "2653e9ad9d691b03b17b2fff662b8a69539df3dcd07c0fcc47370d787d0ca987": {
@@ -2318,6 +2336,12 @@
       "bytes": 2357,
       "paths": [
         "references/geq-full-20261010-194115/step-000-a542edbde5/result.json"
+      ]
+    },
+    "2c3cf798c0540e0c02400b848219d761c11ecc26ed3ec1b7e2864124e26bbda2": {
+      "bytes": 156,
+      "paths": [
+        "references/h1-h2-20261110/H1/load-confirmation.json"
       ]
     },
     "2c41bd3d94748103401f2eb69537b247dc5dc628b5a9da87770cbc1edad695f8": {
@@ -5939,6 +5963,12 @@
         "references/geq-full-20261010-194115/step-147-434df6446f/donor.syx"
       ]
     },
+    "75a9592d8377ef59591c918fa5701a9b4dcf03f0952be5788d2ca69212a36a6d": {
+      "bytes": 56102,
+      "paths": [
+        "references/fm3-current-evidence.json"
+      ]
+    },
     "75cb2958d8d97fc51a82e67710e55d7f92eb7879abb55369f0c58796ed1201b1": {
       "bytes": 24680,
       "paths": [
@@ -6993,6 +7023,12 @@
       "bytes": 2310,
       "paths": [
         "references/geq-full-20261010-194115/step-143-6a42dd2fac/result.json"
+      ]
+    },
+    "8812e4eb83730e5da3573552918508ae30cd17586a87961b74e7d58b2bce8bb8": {
+      "bytes": 50738,
+      "paths": [
+        "references/h1-h2-20261110/H2/bind-store-results.json"
       ]
     },
     "882927f42e289912cca70fa0b0e982e2830166e506229af53958bfbdc0270a40": {
@@ -9327,10 +9363,22 @@
         "references/wah-batch-20261007-140115/capture-20261007T140114-a590705c88/capture.json"
       ]
     },
+    "b554b732c50c746a45b33a8b060dd9fe5999cfa6ecafea23a444d5bbf71b394d": {
+      "bytes": 1378,
+      "paths": [
+        "references/h1-h2-20261110/H2/shot-load-H2.json"
+      ]
+    },
     "b55c737c7ad1638a533535886387ac0ca1556d353ccea94c2a62e986fa64a759": {
       "bytes": 1775,
       "paths": [
         "references/drive-controls-20261006-123230/step-17-d9cc5aa516/result.json"
+      ]
+    },
+    "b55e05a20e25e41aef89f58d06922aa7719ebe2f84698a055c2b3c650e3c41d5": {
+      "bytes": 4160,
+      "paths": [
+        "references/h1-h2-20261110/display-confirmation.json"
       ]
     },
     "b5848890def0c95177da0de07ad7657c91de105b403d662ae5c66be5135c36cd": {
@@ -11007,12 +11055,6 @@
         "references/fm3-pitch-factory-evidence.json"
       ]
     },
-    "d7412e1c00f13a4a5b18410e15e111ecbe8edb3347189bd63b9ef6505ba4ca59": {
-      "bytes": 45591,
-      "paths": [
-        "references/fm3-current-evidence.json"
-      ]
-    },
     "d742675bde9b426afb3d13722775d2ac21f55fd8e9653e68033f97a398751e3b": {
       "bytes": 26796,
       "paths": [
@@ -11877,6 +11919,12 @@
       "bytes": 3491,
       "paths": [
         "references/enhancer-full-20261012-122507/step-008-b065f4bd56/capture.json"
+      ]
+    },
+    "e30159b261cc39ff1b5889a45a50a174f371b0f5037c21120256184c5a13e7f6": {
+      "bytes": 172,
+      "paths": [
+        "references/h1-h2-20261110/h4-load.json"
       ]
     },
     "e31af449cf10b3a4491df466f6a0209dab8fb7c677161e09563be9a44670f2b9": {
@@ -13167,6 +13215,12 @@
       "bytes": 456,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T110554-7b0304f87e/pair.json"
+      ]
+    },
+    "fbe148d21fe517108bdc000dad9b1a5e7b0e4eecfca03df101b8ee7915f288a5": {
+      "bytes": 1247,
+      "paths": [
+        "references/h1-h2-20261110/H1/shot-load-H1.json"
       ]
     },
     "fc1377f467281251a974887d361875afc6b3c14b66241a065912bcb43f13275d": {

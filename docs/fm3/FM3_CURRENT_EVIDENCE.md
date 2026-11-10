@@ -53,6 +53,14 @@ Kõigi nelja preseti import, kuvanäidud, kasutaja kinnitatud käitumine ja STOR
 - B2: SC1 → Delay Mix 10–60% ja CS2 → Amp Cut, mõlemad D-kanalil, 143 BPM; nelja stseeni käitumine kinnitatud. CPU 44,4/44,4/44,5/44,6%.
 Algtõendid ja räsidega kviitung: MOOTOR references/fm3-b1-b2-20261110.json. LFO juhikud: Controllers → LFO 1 + 2 → ülemine LFO 1 rida. CPU-parandusel pole eraldi enne/pärast faasimäärangut. Need tulemused ei kinnita iga uut presetit.
 
+## H1/H2/H4 seadmekatse — 10.11.2026
+
+H1 ja H2 import, FM3-Editi kuvanäidud, kasutaja kuulamine ja STORE/reload on kinnitatud. Salvestatud keha on mõlemal baittäpne.
+- H1: SC1 → Reverb Mix 10–40%, ALL, vaikekõver, Room: Recording Studio A. Stseenid 1/2/3 Mix 10/25/40% enne ja pärast STORE-i; CPU 44,4–44,6%.
+- H2: MultiDelay A–D Pealing Bells / Dub Echo / Mono Diffuser / Aurora Delay säilivad STORE järel; nende nelja T36 tüübi STORE on nüüd kinnitatud. CPU 62,5/55,3/50,0/52,2%; Pealing Bells on CPU mudeli hinnangust 51,1% ~11 punkti kõrgem (mudel muutmata).
+- H4: T20 CAB_A Cab B Preamp lehel Preamp Type None ja ploki lõiked 87,0 Hz / 7300 Hz (FM3-Edit).
+Kviitung: MOOTOR references/fm3-h1-h2-h4-20261110.json. Heli on kasutaja kuulamishinnang; H2 heli kuulati enne STORE-i.
+
 ## MultiDelay Type mallid
 
 | Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |
@@ -69,10 +77,10 @@ Algtõendid ja räsidega kviitung: MOOTOR references/fm3-b1-b2-20261110.json. LF
 | Comb Filter Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | Filtered Mod Band Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | Quad Chorus | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Pealing Bells | 121 | jah | jah | mõõtmata | T35, T36 |
+| Pealing Bells | 121 | jah | jah | jah | T35, T36, H2 |
 | Rhythmic Bands | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | MD Chorus | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Mono Diffuser | 121 | jah | jah | mõõtmata | T35, T36 |
+| Mono Diffuser | 121 | jah | jah | jah | T35, T36, H2 |
 | 1210 | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | Aerosol | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | PCM Circular | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
@@ -89,21 +97,21 @@ Algtõendid ja räsidega kviitung: MOOTOR references/fm3-b1-b2-20261110.json. LF
 | Shadows Taps | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | Stereo Shadows | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | Swing Ping | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Dub Echo | 121 | jah | jah | mõõtmata | T35, T36 |
-| Aurora Delay | 121 | jah | jah | mõõtmata | T35, T36 |
+| Dub Echo | 121 | jah | jah | jah | T35, T36, H2 |
+| Aurora Delay | 121 | jah | jah | jah | T35, T36, H2 |
 | Kilimanjaro | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | Camera Obscura | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | Strange Things | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | Matterhorn | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
 | Centaurus X-3 | 121 | jah | jah | jah | T35, T38 |
 
-39 malli, 8 generaatori importi, 4 STORE-kinnitust. Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.
+39 malli, 8 generaatori importi, 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.
 
 ## Muud T32-T41 tulemused
 
 - T32: 8 stseeni CPU 55-71%, 11 ploki andmed säilisid STORE järel. T34E kinnitab lõpliku -8 dB lead-nivoo kuulamist; arvuline nivoo ja lõppfaili eraldi CPU/STORE puuduvad.
 - T37: Synthi häälte 2/3 mõõdetud tüübid on CPU mudelis 0.2.5; muud parameetrid vajavad oma tõendit.
-- T34F: Cab lõiked nähtavad; Preamp Type väärtust NONE ennast ei loetud tagasi.
+- T34F: Cab lõiked nähtavad; H4 luges Preamp Type None otse FM3-Editist tagasi.
 - T38: sama spec taastab 0.3.58 device-järjekorras salvestatud keha; see ei kinnita kõigi presetite ega grid-režiimi baittäpsust.
 
 ## Allikad ja piirid

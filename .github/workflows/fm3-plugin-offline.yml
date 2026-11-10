@@ -132,6 +132,7 @@ jobs:
       - name: Verify current evidence and audit follow-up boundaries
         run: |
           node tools/fm3/b1-b2-evidence.mjs
+          node tools/fm3/h1-h2-h4-evidence.mjs
           node tools/fm3/current-evidence.mjs
           node tools/fm3/controllers-gap-plan.mjs
           node tools/fm3/test-controllers-store.mjs
