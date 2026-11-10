@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "asOf": "2026-11-10",
   "hardwareEvidenceThrough": "2026-11-10",
-  "baselineVersion": "0.3.64",
-  "scope": "T32-T42, B1A/B1B/B1C/B2, H1/H2/H4 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
+  "baselineVersion": "0.3.65",
+  "scope": "T32-T42, B1A/B1B/B1C/B2, H1/H2/H4, H3 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
   "definitions": {
     "confirmed": "A cited dated device result exists in the stated scope.",
     "notMeasured": "No cited device result for this scope; not a failure and not a software-support restriction."
@@ -1405,6 +1405,128 @@
     ],
     "scope": "H1 and H2 audit presets from tools/fm3/audit-next-build.mjs plus the H4 Preamp Type NONE readback of the existing T20 CAB_A preset. Actual user LOAD/GET and STORE/reload captures, user answers and FM3-Edit screenshots; this replay performs no device I/O."
   },
+  "auditFinalPerformance": {
+    "evidence": "H3 2026-11-10",
+    "cases": [
+      {
+        "case": "V1",
+        "name": "LIVE KOOSLUS V1",
+        "presetSha256": "b180d2baf4014fc472ddcd93560041c858dc1ffee8ae81a29fe8f88a5cd189a9",
+        "deviceImport": "confirmed",
+        "storeReload": "confirmed",
+        "storedBodyByteIdentical": false,
+        "reordered": true,
+        "records": 11,
+        "selectedScene": {
+          "expected": 1,
+          "stored": 1
+        },
+        "resultSha256": "e613cc4e23ad9b353daabd9973944a6426ef525fbc20a201f23946a5880b8554",
+        "cpuPercent": {
+          "before": [
+            70.9,
+            55,
+            55,
+            71.2,
+            55.1,
+            55.3,
+            55.2,
+            55.1
+          ],
+          "after": [
+            71.2,
+            55.2,
+            55.1,
+            71,
+            55,
+            55,
+            55,
+            55
+          ],
+          "estimate": {
+            "model": "fm3-cpu 0.2.5",
+            "scenes": [
+              71.4,
+              55.9,
+              55.9,
+              71.4,
+              55.9,
+              55.9,
+              55.9,
+              55.9
+            ]
+          }
+        },
+        "levelFinding": "User: no clipping; scenes 1/4/5/8 (Amp A clean, Amp D Plexi) loudest, 2/6 (Amp B crunch) slightly quieter, 3/7 (Amp C lead) quieter than 2/6. Levels need adjustment; V1 is not accepted as the final file.",
+        "finalVerdict": "not final (levels)"
+      },
+      {
+        "case": "V4",
+        "name": "SATCH SOAP ON A ROPE V4",
+        "presetSha256": "cc24d3f7cfcb5a6537a07a12fc6246a9de94c49bcf84301a8a632916c1437037",
+        "deviceImport": "confirmed",
+        "storeReload": "confirmed",
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "records": 10,
+        "selectedScene": {
+          "expected": 1,
+          "stored": 1
+        },
+        "resultSha256": "6faa90833499c1a0696a58919aef32385d050a44ac7f37841de480c8a69659e4",
+        "cpuPercent": {
+          "before": [
+            47.1,
+            46.6,
+            62.8,
+            62.9,
+            47,
+            47.1,
+            47.1,
+            62.9
+          ],
+          "after": [
+            47,
+            46.7,
+            62.8,
+            62.8,
+            47.4,
+            47,
+            47.1,
+            62.5
+          ],
+          "estimate": {
+            "model": "fm3-cpu 0.2.5",
+            "scenes": [
+              46.9,
+              46.9,
+              62.4,
+              62.4,
+              46.9,
+              46.9,
+              46.9,
+              62.4
+            ]
+          }
+        },
+        "levelFinding": "User: no clipping; sound and level fit in all 8 scenes; scene change without click, on switch release.",
+        "finalVerdict": "accepted as the final performance preset"
+      }
+    ],
+    "findings": {
+      "final": "V4 SATCH SOAP ON A ROPE V4 is accepted as the final performance preset: stored body byte-identical, no clipping, levels and sound fit in all 8 scenes, scene changes without a click; CPU 46.6-62.9%.",
+      "v1": "V1 LIVE KOOSLUS V1: data preserved after STORE (11 records, device record order), no clipping, clean scene changes; scene levels uneven (lead quietest, clean/Plexi loudest); not accepted as final.",
+      "cpu": "All 16 scene readings within 1 point of the fm3-cpu 0.2.5 estimate and within 0.5 points before/after STORE.",
+      "switches": "Scenes selected with an M-Wave MIDI footswitch (scenes 1-4); Ampero B is assigned to tap tempo/tuner (hold) and was not used for scenes."
+    },
+    "limitations": [
+      "Loudness is a user listening judgement; no numerical audio measurement.",
+      "Screenshots and CPU are FM3-Edit display, not the front panel.",
+      "Scenes were selected with an M-Wave MIDI footswitch for scenes 1-4; the FM3 footswitches and scenes 5-8 by footswitch were not checked.",
+      "No generalization to other presets."
+    ],
+    "scope": "Audit H3 final performance preset check: two candidate files from tools/fm3/h3-final-build.mjs, each loaded, read back, played with real guitar in all 8 scenes, stored by the user to 427, reloaded and read back. This replay performs no device I/O."
+  },
   "otherEvidence": {
     "controllersScenes": {
       "scenes": 8,
@@ -1439,9 +1561,25 @@
       "storedBlockRecords": 11,
       "finalLeadLevelDb": -8,
       "finalListening": "Lead scenes about as loud as the others after Amp C -8 dB; no clipping; the user found nothing to change",
+      "finalFile": {
+        "evidence": "H3 V1 2026-11-10",
+        "cpuPercent": [
+          71.2,
+          55.2,
+          55.1,
+          71,
+          55,
+          55,
+          55,
+          55
+        ],
+        "storeReload": "confirmed",
+        "storedBlockRecords": 11,
+        "levelFinding": "User: no clipping; scenes 1/4/5/8 (Amp A clean, Amp D Plexi) loudest, 2/6 (Amp B crunch) slightly quieter, 3/7 (Amp C lead) quieter than 2/6. Levels need adjustment; V1 is not accepted as the final file."
+      },
       "limitations": [
         "No numerical loudness measurement.",
-        "T32 CPU/STORE belong to the measured file; the final -8 dB file has T34 listening, not an independent full CPU/STORE repeat."
+        "H3: scene levels of the -8 dB file are uneven; not accepted as the final file."
       ]
     },
     "synthCpu": {
@@ -1498,6 +1636,11 @@
       "remaining": "Numerical loudness; separate final-file CPU/STORE."
     },
     {
+      "from": "Audit H3 final performance preset unchecked; LIVE KOOSLUS V1 final-file CPU/STORE missing",
+      "resolvedBy": "H3",
+      "remaining": "V1 scene level balance; numerical loudness."
+    },
+    {
       "from": "T33 scenes 5-8 pending",
       "resolvedBy": "T34A",
       "remaining": "Other source/target/shape combinations."
@@ -1530,6 +1673,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-combo-store-20261029.json": "2a31b8aa42c357fb87d0273c1466685517a5f0a6a90e0ad1e2e9eeddf0bed62c",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-enum-promotion-20261103.json": "573d5a5a9cbe095cd2911d96f4fe82a310f051d9a43c9839c4e249eb1c25745b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h1-h2-h4-20261110.json": "02d2adf0543966eb28db514d075720bc4cbc29263464ed61f02f4f50369a667b",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h3-20261110.json": "36ecdf87ad5e6f22107c7f067f6dd8d5682eebee89954f8b26fafc76a8cffd3f",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t30-enum-20261105.json": "457b82bd133cc50e5f9da1ca1b0f4785bcfd2e0a214b3d0af2ff23d3d98bbb09",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t31-cab-cpu-20261105.json": "8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103",
@@ -1547,7 +1691,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "b8ea0705c6cb150d0d753c6f11ba98cf07db8d177adc43a018f8a30378744051"
+    "tools/fm3/current-evidence.mjs": "9fc171c0b30312fa54c301136cbad0d1781e0a5b3b5bb1c9398a204af9b6d394"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false

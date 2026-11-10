@@ -1,0 +1,112 @@
+{
+ "kind": "fm3-h3-display-confirmation",
+ "date": "2026-11-10",
+ "source": "FM3-Edit background screenshots by Claude (scene buttons clicked by Claude); settled CPU readings read from the CPU meter after each scene change. Sound/level/switches are the user's answers in bind-store-results.json.",
+ "V1": {
+  "name": "LIVE KOOSLUS V1",
+  "location": 427,
+  "scenes": [
+   "CLEAN",
+   "CRUNCH",
+   "LEAD",
+   "AMBIENT",
+   "CLEAN DRY",
+   "CRUNCH PUSH",
+   "LEAD DRY",
+   "PLEXI"
+  ],
+  "cpuBefore": [
+   70.9,
+   55.0,
+   55.0,
+   71.2,
+   55.1,
+   55.3,
+   55.2,
+   55.1
+  ],
+  "cpuAfter": [
+   71.2,
+   55.2,
+   55.1,
+   71.0,
+   55.0,
+   55.0,
+   55.0,
+   55.0
+  ],
+  "cpuEstimate": {
+   "model": "fm3-cpu 0.2.5",
+   "scenes": [
+    71.4,
+    55.9,
+    55.9,
+    71.4,
+    55.9,
+    55.9,
+    55.9,
+    55.9
+   ]
+  },
+  "levelFinding": "User: no clipping; scenes 1/4/5/8 (Amp A clean, Amp D Plexi) loudest, 2/6 (Amp B crunch) slightly quieter, 3/7 (Amp C lead) quieter than 2/6. Levels need adjustment; V1 is not accepted as the final file.",
+  "finalVerdict": "not final (levels)",
+  "screenshots": {
+   "v1-grid-s1.jpg": "dd63a42a7c4aefb1be4617385cae04ab12a1807556e245fc8687dfe8ea7ad5d9",
+   "v1-after-grid-s1.jpg": "05f362da9bf61548c9f6b85c717dc17f1dfcea2013c2592707f342cf4268121a"
+  }
+ },
+ "V4": {
+  "name": "SATCH SOAP ON A ROPE V4",
+  "location": 427,
+  "scenes": [
+   "RIFF",
+   "RIFF PUSH",
+   "SOLO",
+   "SOLO JS410",
+   "CRUNCH FULL",
+   "RIFF DRY",
+   "SOLO DRY",
+   "SOLO LONG DLY"
+  ],
+  "cpuBefore": [
+   47.1,
+   46.6,
+   62.8,
+   62.9,
+   47.0,
+   47.1,
+   47.1,
+   62.9
+  ],
+  "cpuAfter": [
+   47.0,
+   46.7,
+   62.8,
+   62.8,
+   47.4,
+   47.0,
+   47.1,
+   62.5
+  ],
+  "cpuEstimate": {
+   "model": "fm3-cpu 0.2.5",
+   "scenes": [
+    46.9,
+    46.9,
+    62.4,
+    62.4,
+    46.9,
+    46.9,
+    46.9,
+    62.4
+   ]
+  },
+  "levelFinding": "User: no clipping; sound and level fit in all 8 scenes; scene change without click, on switch release.",
+  "finalVerdict": "accepted as the final performance preset",
+  "screenshots": {
+   "v4-grid-s1.jpg": "35e07f58d16c6eff56731a6a434b80576e1e85dc00f383f0463ed0a9982190e5",
+   "v4-after-grid-s1.jpg": "01b0dae94b762f024e7fd8b9807cd65e0bea80ddb225f285eb24b88c147090d6"
+  }
+ },
+ "switches": "Scenes selected with an M-Wave MIDI footswitch (scenes 1-4); Ampero B is assigned to tap tempo/tuner (hold) and was not used for scenes."
+}

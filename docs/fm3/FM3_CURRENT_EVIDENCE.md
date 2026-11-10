@@ -1,6 +1,6 @@
 # FM3 kehtiv tõendiseis
 
-Koondatud 2026-11-10; seadmetõendid kuni 2026-11-10. Alus 0.3.64.
+Koondatud 2026-11-10; seadmetõendid kuni 2026-11-10. Alus 0.3.65.
 
 See on ulatusega tõendikoond, mitte kõigi FM3 võimaluste valmidusprotsent. „Mõõtmata” ei tähenda keelatud sisendit ega ebaõnnestunud katset.
 
@@ -61,6 +61,14 @@ H1 ja H2 import, FM3-Editi kuvanäidud, kasutaja kuulamine ja STORE/reload on ki
 - H4: T20 CAB_A Cab B Preamp lehel Preamp Type None ja ploki lõiked 87,0 Hz / 7300 Hz (FM3-Edit).
 Kviitung: MOOTOR references/fm3-h1-h2-h4-20261110.json. Heli on kasutaja kuulamishinnang; H2 heli kuulati enne STORE-i.
 
+## H3 lõpliku esinemispreseti kontroll — 10.11.2026
+
+Mõlemad kandidaadid laaditi, loeti tagasi, mängiti päris kitarriga läbi kõigis 8 stseenis, salvestati kohta 427 ja loeti pärast tagasitulekut uuesti.
+- V4 SATCH SOAP ON A ROPE V4 on lõplik esinemispreset: salvestatud keha baittäpne, klippimist pole, heli ja valjus sobivad kõigis stseenides, vahetus plõksuta. CPU 47.1/46.6/62.8/62.9/47/47.1/47.1/62.9%.
+- V1 LIVE KOOSLUS V1: 11 ploki andmed säilisid (FM3 salvestusjärjekord), klippimist pole; stseenide valjus ebaühtlane (lead kõige vaiksem), lõppfailiks ei sobi. CPU 70.9/55/55/71.2/55.1/55.3/55.2/55.1%.
+Kõik 16 CPU näitu on 0.2.5 hinnangust 1 punkti ja enne/pärast STORE-i 0,5 punkti piires. Stseene valiti M-Wave MIDI lülitiga (1–4).
+Kviitung: MOOTOR references/fm3-h3-20261110.json.
+
 ## MultiDelay Type mallid
 
 | Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |
@@ -109,7 +117,7 @@ Kviitung: MOOTOR references/fm3-h1-h2-h4-20261110.json. Heli on kasutaja kuulami
 
 ## Muud T32-T41 tulemused
 
-- T32: 8 stseeni CPU 55-71%, 11 ploki andmed säilisid STORE järel. T34E kinnitab lõpliku -8 dB lead-nivoo kuulamist; arvuline nivoo ja lõppfaili eraldi CPU/STORE puuduvad.
+- T32: 8 stseeni CPU 55-71%, 11 ploki andmed säilisid STORE järel. T34E kinnitab lõpliku -8 dB lead-nivoo kuulamist; H3 mõõtis lõppfaili CPU ja STORE-i, stseenide valjus vajab sättimist.
 - T37: Synthi häälte 2/3 mõõdetud tüübid on CPU mudelis 0.2.5; muud parameetrid vajavad oma tõendit.
 - T34F: Cab lõiked nähtavad; H4 luges Preamp Type None otse FM3-Editist tagasi.
 - T38: sama spec taastab 0.3.58 device-järjekorras salvestatud keha; see ei kinnita kõigi presetite ega grid-režiimi baittäpsust.

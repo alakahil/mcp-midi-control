@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "test": "H3",
+  "generatedPresetVersion": "0.3.64",
+  "scope": "Audit H3 final performance preset check: two candidate files from tools/fm3/h3-final-build.mjs, each loaded, read back, played with real guitar in all 8 scenes, stored by the user to 427, reloaded and read back. This replay performs no device I/O.",
+  "cases": [
+    {
+      "case": "V1",
+      "name": "LIVE KOOSLUS V1",
+      "presetSha256": "b180d2baf4014fc472ddcd93560041c858dc1ffee8ae81a29fe8f88a5cd189a9",
+      "deviceImport": "confirmed",
+      "storeReload": "confirmed",
+      "storedBodyByteIdentical": false,
+      "reordered": true,
+      "records": 11,
+      "selectedScene": {
+        "expected": 1,
+        "stored": 1
+      },
+      "resultSha256": "e613cc4e23ad9b353daabd9973944a6426ef525fbc20a201f23946a5880b8554",
+      "cpuPercent": {
+        "before": [
+          70.9,
+          55,
+          55,
+          71.2,
+          55.1,
+          55.3,
+          55.2,
+          55.1
+        ],
+        "after": [
+          71.2,
+          55.2,
+          55.1,
+          71,
+          55,
+          55,
+          55,
+          55
+        ],
+        "estimate": {
+          "model": "fm3-cpu 0.2.5",
+          "scenes": [
+            71.4,
+            55.9,
+            55.9,
+            71.4,
+            55.9,
+            55.9,
+            55.9,
+            55.9
+          ]
+        }
+      },
+      "levelFinding": "User: no clipping; scenes 1/4/5/8 (Amp A clean, Amp D Plexi) loudest, 2/6 (Amp B crunch) slightly quieter, 3/7 (Amp C lead) quieter than 2/6. Levels need adjustment; V1 is not accepted as the final file.",
+      "finalVerdict": "not final (levels)",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "scenes1_4": "Ei lähe punasesse, Stseenid 1 ja4 on valjemad, 2 veidi vaiksem ja 3 on 2st veidi vaiksem",
+          "scenes5_8": "5 ja 8 on valjemad, 6 veidi vaiksem ja 7 on 6st veidi vaiksem",
+          "transitions": "Hilinemist ja plõsu pole, vajutamisel tuleb kohe uus sound",
+          "switches": "Kasutasin M-Wavw midi lülitit, ampero B on tap tempo ja Tuneri(hold) peal",
+          "cpu": "Claude FM3-Editist: enne S1 70.9 S2 55.0 S3 55.0 S4 71.2 S5 55.1 S6 55.3 S7 55.2 S8 55.1; pärast S1 71.2 S2 55.2 S3 55.1 S4 71.0 S5-S8 55.0",
+          "behavior": "Helitugevusi peaks veel sättima, kirjeldused on varasemalt kirjeldatud"
+        },
+        "after": {
+          "name_grid_scenes": "j",
+          "scenes1_4": "kõik sama, mis enne salvestamist kehtib ka pärast\u001b[C",
+          "scenes5_8": "kõik sama, mis enne salvestamist kehtib ka pärast",
+          "transitions": "kõik sama, mis enne salvestamist kehtib ka pärast",
+          "switches": "kõik sama, mis enne salvestamist kehtib ka pärast",
+          "cpu": "Claude FM3-Editist: enne S1 70.9 S2 55.0 S3 55.0 S4 71.2 S5 55.1 S6 55.3 S7 55.2 S8 55.1; pärast S1 71.2 S2 55.2 S3 55.1 S4 71.0 S5-S8 55.0",
+          "behavior": "kõik sama, mis enne salvestamist kehtib ka pärast"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "V4",
+      "name": "SATCH SOAP ON A ROPE V4",
+      "presetSha256": "cc24d3f7cfcb5a6537a07a12fc6246a9de94c49bcf84301a8a632916c1437037",
+      "deviceImport": "confirmed",
+      "storeReload": "confirmed",
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "records": 10,
+      "selectedScene": {
+        "expected": 1,
+        "stored": 1
+      },
+      "resultSha256": "6faa90833499c1a0696a58919aef32385d050a44ac7f37841de480c8a69659e4",
+      "cpuPercent": {
+        "before": [
+          47.1,
+          46.6,
+          62.8,
+          62.9,
+          47,
+          47.1,
+          47.1,
+          62.9
+        ],
+        "after": [
+          47,
+          46.7,
+          62.8,
+          62.8,
+          47.4,
+          47,
+          47.1,
+          62.5
+        ],
+        "estimate": {
+          "model": "fm3-cpu 0.2.5",
+          "scenes": [
+            46.9,
+            46.9,
+            62.4,
+            62.4,
+            46.9,
+            46.9,
+            46.9,
+            62.4
+          ]
+        }
+      },
+      "levelFinding": "User: no clipping; sound and level fit in all 8 scenes; scene change without click, on switch release.",
+      "finalVerdict": "accepted as the final performance preset",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "j",
+          "scenes1_4": "Ei ole punases kõik sobib (heli ja valjus)",
+          "scenes5_8": "Ei ole punases kõik sobib (heli ja valjus)",
+          "transitions": "Plõsu ei ole vahetus toimub nupu lahtilaskmisel,",
+          "switches": "kasutasin m-wave midi seadet (1-4 stseen)",
+          "cpu": "Claude FM3-Editist: enne S1 47.1 S2 46.6 S3 62.8 S4 62.9 S5 47.0 S6 47.1 S7 47.1 S8 62.9; pärast S1 47.0 S2 46.7 S3 62.8 S4 62.8 S5 47.4 S6 47.0 S7 47.1 S8 62.5",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "scenes1_4": "Ei ole punases kõik sobib (heli ja valjus)",
+          "scenes5_8": "Ei ole punases kõik sobib (heli ja valjus)",
+          "transitions": "Plõsu ei ole vahetus toimub nupu lahtilaskmisel",
+          "switches": "kasutasin m-wave midi seadet (1-4 stseen)",
+          "cpu": "Claude FM3-Editist pärast STORE: S1 47.0 S2 46.7 S3 62.8 S4 62.8 S5 47.4 S6 47.0 S7 47.1 S8 62.5",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    }
+  ],
+  "findings": {
+    "final": "V4 SATCH SOAP ON A ROPE V4 is accepted as the final performance preset: stored body byte-identical, no clipping, levels and sound fit in all 8 scenes, scene changes without a click; CPU 46.6-62.9%.",
+    "v1": "V1 LIVE KOOSLUS V1: data preserved after STORE (11 records, device record order), no clipping, clean scene changes; scene levels uneven (lead quietest, clean/Plexi loudest); not accepted as final.",
+    "cpu": "All 16 scene readings within 1 point of the fm3-cpu 0.2.5 estimate and within 0.5 points before/after STORE.",
+    "switches": "Scenes selected with an M-Wave MIDI footswitch (scenes 1-4); Ampero B is assigned to tap tempo/tuner (hold) and was not used for scenes."
+  },
+  "sources": {
+    "display-confirmation.json": "48631bd04bbb5ac9931ac9c6692d01041aa7eac24abd104c6ee61799a75df56e",
+    "V1/bind-store-results.json": "e613cc4e23ad9b353daabd9973944a6426ef525fbc20a201f23946a5880b8554",
+    "V1/load-confirmation.json": "b8a528741fd202e8513d71033e73d2a73d12f6196b1f001747ac6c36ad7f1ba6",
+    "V1/shot-load-V1.json": "9954d7f1123c27d00b91ee0b2764145dfe24c13405423adac5d17d232924409c",
+    "v1-after-grid-s1.jpg": "05f362da9bf61548c9f6b85c717dc17f1dfcea2013c2592707f342cf4268121a",
+    "v1-grid-s1.jpg": "dd63a42a7c4aefb1be4617385cae04ab12a1807556e245fc8687dfe8ea7ad5d9",
+    "V4/bind-store-results.json": "6faa90833499c1a0696a58919aef32385d050a44ac7f37841de480c8a69659e4",
+    "V4/load-confirmation.json": "665905ea21743175420d0fa9bee68c2508ab0bc85c19c010248df442ca11c0fc",
+    "V4/shot-load-V4.json": "fba9cdb3ffa4f0df95b53b1ecf3037566f533caf974231c002468b7b9b5237ae",
+    "v4-after-grid-s1.jpg": "01b0dae94b762f024e7fd8b9807cd65e0bea80ddb225f285eb24b88c147090d6",
+    "v4-grid-s1.jpg": "35e07f58d16c6eff56731a6a434b80576e1e85dc00f383f0463ed0a9982190e5"
+  },
+  "limitations": [
+    "Loudness is a user listening judgement; no numerical audio measurement.",
+    "Screenshots and CPU are FM3-Edit display, not the front panel.",
+    "Scenes were selected with an M-Wave MIDI footswitch for scenes 1-4; the FM3 footswitches and scenes 5-8 by footswitch were not checked.",
+    "No generalization to other presets."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

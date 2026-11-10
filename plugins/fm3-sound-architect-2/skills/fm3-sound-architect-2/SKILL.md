@@ -12,6 +12,13 @@ päris binaarne SYX ning sellele vastav allalaaditav UTF-8 TXT.
 
 ## Kehtiv seis
 
+10.11.2026 H3 lõpliku esinemispreseti kontroll: `SATRIANI_SOAP_ON_A_ROPE_V4`
+(SATCH SOAP ON A ROPE V4) on kasutaja lõplik esinemispreset. Laadimine, 8 stseeni
+päris kitarriga, STORE/reload ja salvestatud keha on baittäpselt kinnitatud; CPU
+46,6–62,9%. LIVE KOOSLUS V1 andmed säilisid, kuid stseenide valjus on ebaühtlane
+(clean/Plexi valjem, lead vaiksem); ära esita V1-te lõppfailina. Kviitung:
+`references/fm3-h3-20261110.json`.
+
 10.11.2026 seadmekord (0.3.64 failidega): H1 ja H2 on seadmel läbitud.
 H1 SC1 → Reverb Mix 10/25/40% ja H2 nelja MultiDelay tüübi import, kuva, kuulamine
 ning STORE/reload on kinnitatud, salvestatud keha baittäpne. H4 luges T20 CAB_A
