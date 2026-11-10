@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2213,
-  "filePaths": 2417,
+  "uniqueContents": 2221,
+  "filePaths": 2425,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -2921,6 +2921,12 @@
         "references/geq-full-20261010-194115/step-017-dfcd4c64a1/capture.json"
       ]
     },
+    "36ecdf87ad5e6f22107c7f067f6dd8d5682eebee89954f8b26fafc76a8cffd3f": {
+      "bytes": 7703,
+      "paths": [
+        "references/fm3-h3-20261110.json"
+      ]
+    },
     "36f55c7e39bb74a242d86154cdacbec955fec657f0af3b7d3261ae32371ad521": {
       "bytes": 3464,
       "paths": [
@@ -3713,6 +3719,12 @@
         "references/S2_AmpGain_5.syx",
         "references/Test_3_AmpGain5_1.syx",
         "references/Test_3_AmpGain5_2_IdenticalTo1.syx"
+      ]
+    },
+    "48631bd04bbb5ac9931ac9c6692d01041aa7eac24abd104c6ee61799a75df56e": {
+      "bytes": 2389,
+      "paths": [
+        "references/h3-20261110/display-confirmation.json"
       ]
     },
     "486327e27f3bbad6af3fb19b6628a6cefbb9b480b6dc512120d6733445be8abf": {
@@ -5202,6 +5214,12 @@
         "references/chorus-batch-20261007-134057/capture-20261007T133730-3d3d9417aa/capture.json"
       ]
     },
+    "665905ea21743175420d0fa9bee68c2508ab0bc85c19c010248df442ca11c0fc": {
+      "bytes": 156,
+      "paths": [
+        "references/h3-20261110/V4/load-confirmation.json"
+      ]
+    },
     "665b1dc0d92fc2b3394dbedf8d5e7b5e1420b09947ab3daea6d09aaf468d0926": {
       "bytes": 24680,
       "paths": [
@@ -5649,6 +5667,12 @@
         "references/geq-full-20261010-194115/step-047-721d1ba1aa/donor.syx"
       ]
     },
+    "6faa90833499c1a0696a58919aef32385d050a44ac7f37841de480c8a69659e4": {
+      "bytes": 50669,
+      "paths": [
+        "references/h3-20261110/V4/bind-store-results.json"
+      ]
+    },
     "6febef6be602d7efdff33646148351aeae1fc8cf569fbbffd0bb8d21f1892696": {
       "bytes": 24680,
       "paths": [
@@ -5961,12 +5985,6 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-147-434df6446f/donor.syx"
-      ]
-    },
-    "75a9592d8377ef59591c918fa5701a9b4dcf03f0952be5788d2ca69212a36a6d": {
-      "bytes": 56102,
-      "paths": [
-        "references/fm3-current-evidence.json"
       ]
     },
     "75cb2958d8d97fc51a82e67710e55d7f92eb7879abb55369f0c58796ed1201b1": {
@@ -7921,6 +7939,12 @@
         "references/delay-batch-20261006-134023/capture-20261006T133736-15220b76d9/capture.json"
       ]
     },
+    "9954d7f1123c27d00b91ee0b2764145dfe24c13405423adac5d17d232924409c": {
+      "bytes": 1504,
+      "paths": [
+        "references/h3-20261110/V1/shot-load-V1.json"
+      ]
+    },
     "99561a058a6c0e496ac54efee2cbde9c8e193e989637af3a11bfc1107a8d06c0": {
       "bytes": 5026,
       "paths": [
@@ -9147,6 +9171,12 @@
         "references/geq-full-20261010-194115/step-090-6b58b8b420/donor.syx"
       ]
     },
+    "b0d7f5671397101f041d7826e7ca2fa65133c7336304cce2a9edb1e51f4fbbd8": {
+      "bytes": 61241,
+      "paths": [
+        "references/fm3-current-evidence.json"
+      ]
+    },
     "b0e1043997cee2439bf16f98b0de1c21ccc30c6b75bcb569577eced4d40e55c9": {
       "bytes": 1855,
       "paths": [
@@ -9543,6 +9573,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-102-5d3ba39d72/donor.syx"
+      ]
+    },
+    "b8a528741fd202e8513d71033e73d2a73d12f6196b1f001747ac6c36ad7f1ba6": {
+      "bytes": 156,
+      "paths": [
+        "references/h3-20261110/V1/load-confirmation.json"
       ]
     },
     "b8b4591c83eac3a099b369c953ba6795697b4f9ff3184324db9c2266a8357669": {
@@ -12097,6 +12133,12 @@
         "references/geq-full-20261010-194115/step-032-d443dd924c/capture.json"
       ]
     },
+    "e613cc4e23ad9b353daabd9973944a6426ef525fbc20a201f23946a5880b8554": {
+      "bytes": 50951,
+      "paths": [
+        "references/h3-20261110/V1/bind-store-results.json"
+      ]
+    },
     "e62b9acfc249996e550e87a467ebf645f5016518599b4f5e0034215dc42089bd": {
       "bytes": 24680,
       "paths": [
@@ -13191,6 +13233,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-070-87c664c365/donor.syx"
+      ]
+    },
+    "fba9cdb3ffa4f0df95b53b1ecf3037566f533caf974231c002468b7b9b5237ae": {
+      "bytes": 1379,
+      "paths": [
+        "references/h3-20261110/V4/shot-load-V4.json"
       ]
     },
     "fbb8dd7c11df2c3fb423c9024c95972b86735371eb76375d82d0d444c890acb8": {
