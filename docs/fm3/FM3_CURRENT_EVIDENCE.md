@@ -1,6 +1,6 @@
 # FM3 kehtiv tõendiseis
 
-Koondatud 2026-11-10; seadmetõendid kuni 2026-11-10. Alus 0.3.63.
+Koondatud 2026-11-10; seadmetõendid kuni 2026-11-10. Alus 0.3.64.
 
 See on ulatusega tõendikoond, mitte kõigi FM3 võimaluste valmidusprotsent. „Mõõtmata” ei tähenda keelatud sisendit ega ebaõnnestunud katset.
 

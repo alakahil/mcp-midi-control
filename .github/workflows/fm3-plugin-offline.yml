@@ -136,6 +136,7 @@ jobs:
           node tools/fm3/controllers-gap-plan.mjs
           node tools/fm3/test-controllers-store.mjs
           node tools/fm3/test-audit-targets.mjs
+          node tools/fm3/test-audit-next.mjs
           node tools/fm3/test-t40-controllers-sources.mjs
           node tools/fm3/test-t42-modifier-targets.mjs
           node tools/fm3/test-multidelay-boundaries.mjs

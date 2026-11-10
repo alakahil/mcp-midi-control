@@ -8789,12 +8789,6 @@
         "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
       ]
     },
-    "aacc9bb2be47680012bba0f83502e1217ea74b4d463fd58d474ee11b8af34283": {
-      "bytes": 45591,
-      "paths": [
-        "references/fm3-current-evidence.json"
-      ]
-    },
     "aade9bff69b4105a187163fd64b6bf9ce009cf2c5b5c072f74f2d4622e75ce69": {
       "bytes": 2063,
       "paths": [
@@ -11011,6 +11005,12 @@
       "bytes": 13153,
       "paths": [
         "references/fm3-pitch-factory-evidence.json"
+      ]
+    },
+    "d7412e1c00f13a4a5b18410e15e111ecbe8edb3347189bd63b9ef6505ba4ca59": {
+      "bytes": 45591,
+      "paths": [
+        "references/fm3-current-evidence.json"
       ]
     },
     "d742675bde9b426afb3d13722775d2ac21f55fd8e9653e68033f97a398751e3b": {
