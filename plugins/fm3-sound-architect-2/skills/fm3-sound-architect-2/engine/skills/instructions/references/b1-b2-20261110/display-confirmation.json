@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "case": "B1B",
+  "source": "User confirmation of the latest completed test and attached FM3-Edit screenshot",
+  "page": "Controllers > LFO 1 + 2 > LFO 1",
+  "type": "Sine",
+  "runStop": "Run",
+  "rateHz": 0.5,
+  "depthPercent": 100,
+  "tempo": "None",
+  "screenshot": "lfo1-display.png",
+  "screenshotSha256": "06607711359f4e301390f547065ed4c1a4bf7787321bdeff455175d0f698e577",
+  "scope": "User confirms these readings in the latest B1B test. Screenshot independently shows these values, but does not independently timestamp both STORE phases. LFO 2 Rate 1.000 Hz is a separate controller."
+}

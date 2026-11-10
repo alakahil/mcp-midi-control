@@ -12,11 +12,15 @@ päris binaarne SYX ning sellele vastav allalaaditav UTF-8 TXT.
 
 ## Kehtiv seis
 
-0.3.62 ühtlustab T42 tõendikoondi ja ajaloolised testiarvud ning lisab auditi
-B1/B2 nelja avaliku generaatori katse ettevalmistuse. Kirjutustugi ei laiene;
-skeem 0.8.9 ja 89 kohustuslikku mootoritesti säilivad. Katsepakett on
-seadmevabalt kontrollitud, selle import, heli ja STORE ootavad kasutaja katset.
-Repo tööriist: `tools/fm3/audit-targets-build.mjs`; LOAD/GET piirid säilivad.
+0.3.63 lisab B1A/B1B/B1C/B2 avaliku generaatori lõppfailide seadmekinnituse:
+import, kasutaja kinnitatud kuvanäidud ja käitumine ning STORE/reload järel
+baittäpselt säilinud preseti keha. B1B tõend on õnnestunud viimane katse;
+LFO 1 Rate 0,500 Hz, Depth 100,0% ja Sine on kinnitatud ka ekraanipildiga.
+B1A parandatud CPU: stseenid 1–3 44,5%, stseen 4 44,5–44,6%.
+Loe MOOTOR `references/fm3-b1-b2-20261110.json` ja selle algtõendeid.
+Ära nõua neid katseid uuesti. Tulemused kehtivad neljale katsepresedile;
+kirjutustugi ei laiene, skeem 0.8.9 ja 89 kohustuslikku mootoritesti säilivad.
+LOAD/GET piirid säilivad. Uue preseti import, heli ja CPU vajavad oma kontrolli.
 
 See versioon sisaldab varasema FM3 Sound Architecti generaatorit, mudelimallide
 registreid, lähtepreseteid ja kontrolltõendeid. Kõik paiknevad selles skill-kaustas
@@ -25,7 +29,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.62`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.63`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.

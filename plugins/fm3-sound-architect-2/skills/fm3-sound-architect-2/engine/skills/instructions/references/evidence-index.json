@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2189,
-  "filePaths": 2393,
+  "uniqueContents": 2204,
+  "filePaths": 2408,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -384,6 +384,12 @@
         "references/enhancer-full-20261012-122507/step-020-4ad545da37/capture.json"
       ]
     },
+    "07094296db3b84ff85388484c70292bcd19538605907f12cc645ba29f0071cd3": {
+      "bytes": 806,
+      "paths": [
+        "references/b1-b2-20261110/cpu-correction.json"
+      ]
+    },
     "078bc425b92fc00cbe733102cd278ef89b81ed824fadd10e46138fd46d55ac0d": {
       "bytes": 75,
       "paths": [
@@ -400,6 +406,12 @@
       "bytes": 3172,
       "paths": [
         "references/geq-full-20261010-194115/step-075-641a588095/result.json"
+      ]
+    },
+    "07bb4791e5e6f43eecc37dbe79758926bf424fb0c0683c70a6bbd4d94ae8704b": {
+      "bytes": 1246,
+      "paths": [
+        "references/b1-b2-20261110/B2/shot-load-B2.json"
       ]
     },
     "07be14e36e3ab23c382924151e236553445fd9558c8f8e40a92ded1704cd5fcf": {
@@ -1508,6 +1520,12 @@
         "references/taper-batch-20261013.json"
       ]
     },
+    "1d623c8b99574c5be6e3ae023c01d0865e09191f3d7a130a5e828352b13745db": {
+      "bytes": 50194,
+      "paths": [
+        "references/b1-b2-20261110/B2/bind-store-results.json"
+      ]
+    },
     "1d636e4577669c1bda5b9c168af188446e6ad424318f4d066a1c9f3d01adb1eb": {
       "bytes": 2292,
       "paths": [
@@ -2544,12 +2562,6 @@
         "references/pitch-batch-20261007-153634/capture-20261007T153441-c02d8d43dd/capture.json"
       ]
     },
-    "31296a8094066cd33d7f261ded188a92cbb21a55d846507469ac87b3143484b3": {
-      "bytes": 38656,
-      "paths": [
-        "references/fm3-current-evidence.json"
-      ]
-    },
     "314ce6cac7277578e2c18e438675b77d24abe44bc55b7905c1d245537cf0e1b8": {
       "bytes": 7211,
       "paths": [
@@ -3508,6 +3520,12 @@
         "references/reverb-batch-20261006-181951/capture-20261006T181746-53d3c337ed/labels.json"
       ]
     },
+    "44a85121dcb24b6b47992d8bb78c3f661f13b728e025fc9c99dd6b0fefff6bc3": {
+      "bytes": 50076,
+      "paths": [
+        "references/b1-b2-20261110/B1B/bind-store-results.json"
+      ]
+    },
     "44c383b56d03f1b2dbc96c48ef03c5c4e9b4f8b1541ae06147c18f8a4be8ff50": {
       "bytes": 424,
       "paths": [
@@ -4129,6 +4147,12 @@
       "bytes": 326,
       "paths": [
         "references/cab-batch-20261005-135600/capture-20261005T135558-dfcf2b9e97/labels.json"
+      ]
+    },
+    "514ea9923c2bac67513f91b5b499f82dae97fc11cf71508ddd0b7816166d38ad": {
+      "bytes": 1247,
+      "paths": [
+        "references/b1-b2-20261110/B1C/shot-load-B1C.json"
       ]
     },
     "5153d11ab2185c62dc0b858b957f51b56259b6b44e2c34e5f34401c9f7d203b1": {
@@ -5172,6 +5196,12 @@
       "bytes": 7229,
       "paths": [
         "references/peq-full-20261009-152606/step-052-c0d4f25c5f/capture.json"
+      ]
+    },
+    "66798e82f463bc7977f2efc7523231b2d1bd98c44fdc43e61b62cec38b002c94": {
+      "bytes": 1379,
+      "paths": [
+        "references/b1-b2-20261110/B1B/shot-load-B1B.json"
       ]
     },
     "6693a2e8341de233498a6570323e41adf609dc9795230d66e17271a400c50684": {
@@ -7798,6 +7828,12 @@
         "references/drive-batch-20261006-112254/capture-20261006T110839-7a1e03cf57/pair.json"
       ]
     },
+    "989fcda4a561d6a16c47ea15cb4b58c833acb0d526d49fab8008bbd85cc90d5c": {
+      "bytes": 1247,
+      "paths": [
+        "references/b1-b2-20261110/B1A/shot-load-B1A.json"
+      ]
+    },
     "98a79fbb6ea58c10fe01545eb9c705aad11e53bf4a4e454a7d926a916e46422f": {
       "bytes": 463,
       "paths": [
@@ -8753,6 +8789,12 @@
         "examples/FM3_AMP_CD_LEVEL_CHECK_export.syx"
       ]
     },
+    "aacc9bb2be47680012bba0f83502e1217ea74b4d463fd58d474ee11b8af34283": {
+      "bytes": 45591,
+      "paths": [
+        "references/fm3-current-evidence.json"
+      ]
+    },
     "aade9bff69b4105a187163fd64b6bf9ce009cf2c5b5c072f74f2d4622e75ce69": {
       "bytes": 2063,
       "paths": [
@@ -9249,6 +9291,12 @@
         "examples/FM3_PEQ_ABCD_TEST_export.syx"
       ]
     },
+    "b4836e79e9b7cf3f63e2f720077e671b6df7a9fb83d850b68bff048c96e9b125": {
+      "bytes": 50106,
+      "paths": [
+        "references/b1-b2-20261110/B1A/bind-store-results.json"
+      ]
+    },
     "b48bc60cc221c4599b2f27e8aecf9ac3ce71b059a1354375e96b2b071151b787": {
       "bytes": 1048429,
       "paths": [
@@ -9392,6 +9440,12 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-000-7075694f52/donor.syx"
+      ]
+    },
+    "b721a145b16e26f13119241d9256c26bfd7e4e131afb38eb720356a6bae4141c": {
+      "bytes": 8204,
+      "paths": [
+        "references/fm3-b1-b2-20261110.json"
       ]
     },
     "b72d6b6508d537e48acf5e503ba822978656d1eb04108090f1381903bcc6403a": {
@@ -10071,6 +10125,12 @@
         "references/reverb-batch-20261006-181951/capture-20261006T162732-aeac5ab47a/labels.json"
       ]
     },
+    "c463ef46b09c4870ac1b2778ecf498ef84c5e08df2226dcf626f378b2f625034": {
+      "bytes": 156,
+      "paths": [
+        "references/b1-b2-20261110/B2/load-confirmation.json"
+      ]
+    },
     "c4b9b38aea16c31d63af95eb6889f90d24cb090bd1eb8bc49367c21d0cb6614b": {
       "bytes": 24680,
       "paths": [
@@ -10407,6 +10467,12 @@
       "paths": [
         "references/drive-batch-20261006-110109/capture-20261006T110100-23b81b0ef6/donor.syx",
         "references/drive-batch-20261006-112254/capture-20261006T110100-23b81b0ef6/donor.syx"
+      ]
+    },
+    "ca8f1d1a43e37c58fdd6d25fbcd90689e9a50b8d9f91f88a6a0b2d7298e92c09": {
+      "bytes": 50090,
+      "paths": [
+        "references/b1-b2-20261110/B1C/bind-store-results.json"
       ]
     },
     "cad024b54a8126c637bc0665fff1b036c53e35c391b4ba9c20428ab55cd00ab3": {
@@ -11290,6 +11356,12 @@
         "references/geq-full-20261010-194115/step-116-f619ee4c52/donor.syx"
       ]
     },
+    "db67de4af82b683d8b68b86b19c4aed92fbf1519e06d1bfcbd68c7d294e71585": {
+      "bytes": 156,
+      "paths": [
+        "references/b1-b2-20261110/B1A/load-confirmation.json"
+      ]
+    },
     "db6b9a8336b99f6d8d746ab94f2b9df4209accce4aeb325f0165f840b8bfaa73": {
       "bytes": 2234,
       "paths": [
@@ -11514,6 +11586,12 @@
         "references/drive-batch-20261006-112254/capture-20261006T111024-ed6fcb396f/labels.json"
       ]
     },
+    "de7b0ac4ea16ddb87607632920781f47c295a6d691f82840eecfbdd3d4f67c52": {
+      "bytes": 156,
+      "paths": [
+        "references/b1-b2-20261110/B1C/load-confirmation.json"
+      ]
+    },
     "de7dfc12cbcd2ad517f10f13d392f8b859aee75e94286152d14b80fe9d1596f1": {
       "bytes": 24680,
       "paths": [
@@ -11620,6 +11698,12 @@
       "bytes": 2324,
       "paths": [
         "references/enhancer-full-20261012-122507/step-040-4f0cf5829e/result.json"
+      ]
+    },
+    "dfae1a8d3c137d3c9840c370af2fb6a159f1a865d6f12f93696e24f864c1c05f": {
+      "bytes": 643,
+      "paths": [
+        "references/b1-b2-20261110/display-confirmation.json"
       ]
     },
     "e00713b651d2780fe5bfa4a3f69a871ec95ad5b3a7c498918de9b8ff69f39938": {
@@ -12506,6 +12590,12 @@
       "bytes": 212,
       "paths": [
         "examples/FM3_ROTARY_A_TEST.spec.json"
+      ]
+    },
+    "f284af7ca7ece8e2e9e313fced85c0b3c944b554826f4b7e8f821a104c405bdc": {
+      "bytes": 156,
+      "paths": [
+        "references/b1-b2-20261110/B1B/load-confirmation.json"
       ]
     },
     "f28c822a0ac12897b157346a79dbac6e73124d04184be048def5f8482fe612cc": {

@@ -1,5 +1,13 @@
 # 09.11.2026 auditi A1–A5 järeltegevused
 
+**10.11.2026 täiendus:** allpool olev 09.11 ettevalmistuse seis on ajalooline.
+B1A/B1B/B1C/B2 lõpppresetite import, kuvanäidud, käitumine ja STORE/reload
+on nüüd kinnitatud; kõik neli salvestatud keha on baittäpsed.
+B1B LFO 1 Rate 0,500 Hz ja Depth 100,0% on kinnitatud ekraanipildiga.
+B1A parandatud CPU: 44,5 / 44,5 / 44,5 / 44,5–44,6%.
+Kehtiv koond: [FM3_CURRENT_EVIDENCE.md](FM3_CURRENT_EVIDENCE.md).
+Neid nelja katset pole vaja korrata. 0.3.63 avaldamiskontroll on eraldi kviitungis.
+
 Alus: FM3_Audit_ja_tegevusaruanne_2026-11-09_0.3.60. Töö alustamisel oli
 avaldatud 0.3.61; hoolduse kandidaat on 0.3.62. Uut seadmekatset ei tehtud.
 
