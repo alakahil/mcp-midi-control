@@ -12,6 +12,15 @@ päris binaarne SYX ning sellele vastav allalaaditav UTF-8 TXT.
 
 ## Kehtiv seis
 
+0.3.64 korrastab allpool T32/T20 aegunud piiranguid ning lisab järgmise
+seadmekorra ettevalmistuse: H1 Scene Controller 1 → Reverb Mix 10–40% (ALL,
+Room: Recording Studio A, stseenid 0/50/100%) ning H2 neli T36 MultiDelay tüüpi
+ühes A–D presetis STORE-kontrolliks. Repo `tools/fm3/audit-next-build.mjs`
+loob kontrollitud nelikud, LOAD/STORE manifestid ja seadmevaba `--preflight`
+kontrolli; `docs/fm3/FM3_AUDIT_NEXT_GUIDE.txt` kirjeldab kasutamist.
+Need on ettevalmistatud, mitte seadmel läbitud katsed. Tüübipõhine koond jääb
+39 malli / 8 genereeritud importi / 4 STORE-kinnitust; uut sihttuge ei edutata.
+
 0.3.63 lisab B1A/B1B/B1C/B2 avaliku generaatori lõppfailide seadmekinnituse:
 import, kasutaja kinnitatud kuvanäidud ja käitumine ning STORE/reload järel
 baittäpselt säilinud preseti keha. B1B tõend on õnnestunud viimane katse;
@@ -29,7 +38,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.63`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.64`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -304,7 +313,7 @@ on ainult External 1 ning Control Switchid. Tõend: `references/fm3-t33-controll
   on eraldi küsimus. Tõend: `references/fm3-t34-controllers-sources-20261107.json`,
   `references/fm3-t39-t41-controllers-store-20261109.json`.
 - T34 andis veel: LIVE KOOSLUS V1 (Amp C −8 dB) Lead on teistega umbes sama vali, muuta pole vaja; Cab B Preamp
-  Type NONE puhul on ploki Low/High Cut (87,0 Hz / 7300 Hz) ikka Preamp-lehel näha ja Cab 1 lõiked Cabs-lehel.
+  Type NONE-iga ettevalmistatud presetis on ploki Low/High Cut (87,0 Hz / 7300 Hz) ikka Preamp-lehel näha ja Cab 1 lõiked Cabs-lehel; Type NONE väärtust ennast ei loetud tagasi.
 - Skeem 0.8.6; test `scripts/test-controllers-scenes.mjs`.
 
 ## Päris kasutuspreseti koondkatse (T32, 06.11.2026)
@@ -314,8 +323,10 @@ Brit JVM OD1 Orange / Plexi 50W High 1, T808, Analog Stereo chorus, Digital Ster
 ainult Scene 4-s). FM3-l: CPU 8 stseenis 55–71 % (fm3-cpu 0.2.4 hinnang 0,4–1,4 punkti kõrgem), STORE 424 → muu
 preset → tagasi säilitas kõigi 11 ploki baidid (salvestus tõstis Multi Delay kirje ettepoole), kasutaja kinnitas
 heli ja Multi Delay. Amp C malli tase −14 dB oli selles koosluses ligikaudu 6 dB liiga vaikne (T32B −10 dB: „umbes
-2 dB juurde veel“); lõppversioon „LIVE KOOSLUS V1“ kasutab −8 dB, mida eraldi ei kuulatud. Kui koosluses on eri
-mallidest ampid, kontrolli stseenide taset kuulates. Tõend: `references/fm3-t32-live-20261106.json`.
+2 dB juurde veel“). Lõppversiooni „LIVE KOOSLUS V1“ −8 dB nivood kuulati hiljem T34E-s:
+Lead oli teistega umbes sama vali ja kasutaja ei soovinud muudatust. See asendab T32 ajaloolise
+„kuulamata“ märke; lõppfaili eraldi arvuline nivoo, CPU ja STORE jäävad mõõtmata.
+Tõendid: `references/fm3-t32-live-20261106.json`, `references/fm3-t34-controllers-sources-20261107.json`.
 
 ## Lisatud ploki kirje seadme järjekorras (0.3.58)
 
@@ -506,8 +517,10 @@ FM3-Edit'is ega esipaneelil nuppu; need jäävad lukku (`MOOTOR/references/fm3-s
 2.11.2026 loeti Cab B (DynaCab, Preamp Type Tube) lõikenupud: `CABINET_LOCUT` / `CABINET_HICUT` (pid 38/39) on
 Preamp lehe "Filters" Low Cut / High Cut (koos Low/High Cut Slope'iga), `CABINET_LOCUT1` / `HICUT1` on Cab lehe
 Cab 1 lõiked. Näidud 87,0 Hz / 7300 Hz / 33,0 Hz on täpsed, Cab 1 High Cut 12499,9 Hz näitas 12499 Hz. Preamp Type
-NONE variant jäi tegemata, seega pole teada, kas Preamp lehe lõiked on NONE puhul nähtavad
-(`MOOTOR/references/fm3-cab-cut-t20-20261102.json`).
+NONE variant jäi T20-s tegemata (`MOOTOR/references/fm3-cab-cut-t20-20261102.json`).
+Hilisem T34F kinnitas lõigete nähtavuse NONE-iga ettevalmistatud presetis; Preamp Type väärtust
+NONE ennast ei loetud tagasi. See asendab T20 vana nähtavuse-lahtist küsimust, kuid ei kinnita
+Type väärtuse tagasilugemist (`references/fm3-t34-controllers-sources-20261107.json`).
 
 ## Cabi, Drive'i, Chorus'e, Flangeri, Wah ja Rotary nuppude näidud (0.3.42, T19)
 

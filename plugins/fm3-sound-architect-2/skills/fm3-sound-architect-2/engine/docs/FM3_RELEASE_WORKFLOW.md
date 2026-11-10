@@ -10,10 +10,13 @@
 
 ## Ulatus
 
-0.3.62 ühtlustab T42 tõendikoondi ning eristab praegust ja ajaloolist testiarvu.
-Auditi B1/B2 neli katsepresetti valmivad avaliku generaatoriga; SHOT laadimine,
-plokkide lugemine ja kasutaja STORE-järgne BIND lugemine on eraldi etapid.
-Skeem 0.8.9, 89 kohustuslikku mootoritesti; uusi seadmetõendeid ei lisata.
+0.3.64 valmistab ette H1 Reverb Mixi ning H2 nelja T36 MultiDelay tüübi
+STORE-katse. Mõlemal on avaliku generaatori nelik, räsidega LOAD/STORE manifestid,
+vaatlusleht, seadmeta eelkontroll ja range tervikpreseti võrdlus. T32/T20 juhendi
+ajaloolised lahtised küsimused viitavad neid täpsustanud T34 tulemustele.
+0.3.63-ga lisatud B1A/B1B/B1C/B2 import, kuva, käitumine ja STORE/reload
+kinnitused säilivad; õnnestunud B1B kordus ja parandatud B1A CPU on kehtiv alus.
+Skeem 0.8.9, 89 kohustuslikku mootoritesti; 0.3.64 uusi seadmetõendeid ei lisa.
 Lähtekood läheb eraldi harule ja PR-i; liitmine nõuab kasutaja „liida“ korraldust.
 
 ### Ajaloolised väljalasked
@@ -201,6 +204,15 @@ lahtipakitud arhiivi testi hosti laadimiseks. Hosti tehtud failimuudatused vajav
 tegeliku erinevuse uurimist, mitte automaatset räside erandit.
 
 ## Järgmine etapp
+
+Auditi 10.11.2026 konkreetne jätk on H1 ja H2. Koosta pakid käsuga
+`node tools/fm3/audit-next-build.mjs /ABS/EMPTY_OUT`, kontrolli
+`python3 -B /ABS/EMPTY_OUT/ALUSTA.py --preflight` ning anna kasutajale
+`docs/fm3/FM3_AUDIT_NEXT_GUIDE.txt`. Import, näidud, heli, CPU ja käsitsi
+STORE/reload jäävad seadmepäevaks. N2 automaatne avastamine vajab eraldi
+uut tavalist hostivestlust; arenduskeskkonna taaste ega alamagent ei asenda seda.
+
+Järgnev pikaajaline uurimissuund ei ole selle seadmevaba väljalaske kohustus:
 
 Ehita täielik tõendiregister (firmware, plokk, tüüp, kanal, parameeter, vahemik,
 GET/SYX-paar, kontrollitase), tüübi/tempo sõltuvused ja katvuse raport.

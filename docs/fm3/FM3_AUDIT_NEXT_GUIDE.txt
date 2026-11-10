@@ -1,0 +1,57 @@
+FM3 järgmised seadmekatsed H1 ja H2 — ettevalmistatud 10.11.2026
+
+Mõlemal presetil on SYX, TXT, spec.json ja validation.json. Failikontroll ja
+seadmeta eelkontroll on tehtavad enne USB ühendamist. Nende lõppfailide import,
+kuva, heli, CPU ning STORE/reload ootavad eraldi seadmekorda.
+
+H1: Scene Controller 1 → Reverb Mix 10–40%, ALL, vaikekõver.
+    Reverb A Type: Room: Recording Studio A.
+    Stseen 1: SC1 0%, Mix 10%; stseen 2: SC1 50%, Mix 25%;
+    stseen 3: SC1 100%, Mix 40%. Ülejäänud stseenid ei lisa katsejuhtu.
+H2: Multi Delay A Pealing Bells (Mix 30%), B Dub Echo,
+    C Mono Diffuser, D Aurora Delay. Stseenid 1–4 = A–D.
+    T36 import ja heli on varem kinnitatud. Siin kogutakse nende nelja tüübi
+    puuduv STORE-kinnitus ühe uue fikseeritud preseti terviklugemisega.
+
+Enne seadmekorda:
+1. Paki ZIP lahti. Ava Terminal, kirjuta cd ja lohista paki kaust aknasse.
+2. Käivita: bash ALUSTA.command --preflight
+   See EI ava USB- ega MIDI-porti. See kontrollib räsidega faile ja kogujaid.
+3. Vaata H1/H2 TXT- ja VAATLUSED.txt-faile. pack.json seob täpsed failiräsid,
+   stseenikava ja CPU tarkvarahinnangu. Hinnang pole mõõdetud CPU ega veapiir.
+
+Seadmekorral (FM3 Mk II Turbo FW13, Mac/Linux, Python 3, USB):
+1. Säilita vajalik salvestamata töö. Sulge FM3-Edit ja Fractal-Bot.
+2. Käivita: bash ALUSTA.command --case H1
+   Hiljem H2 jaoks: bash ALUSTA.command --case H2
+   Mõlemad järjest: bash ALUSTA.command
+3. LAADI lubab asendada tööpuhvri. Programm laadib fikseeritud tervikpreseti
+   ja loeb plokid tagasi. Vea korral peatub; ära jätka STORE-iga.
+4. Kinnita nimi. Ava FM3-Edit alles pärast lugemise lõppu. Terminal ootab.
+   Vaata VAATLUSED.txt järgi kasutatud stseene; kirjuta üles näidud, heli ja CPU.
+   Stseene valib kasutaja. Ära muuda presetiparameetreid ega tap-tempot.
+5. Tee käsitsi STORE enda varundatud või kasutuseta testikohta, vali teine
+   preset, tule tagasi. Korda samade stseenide vaatlusi ja CPU näitude lugemist.
+6. Sulge FM3-Edit/Fractal-Bot. Kirjuta Terminali STORE ning vasta enne/pärast
+   küsimustele. Sisesta FM3-l tegelikult nähtud salvestuskoht.
+   Koguja kasutab Display Offset 1: N → indeks N−1. Kui kuvanihe on teine,
+   peatu ja teata sellest; ära muuda selle katse tarvis üldseadet.
+7. Saada SESSION_....zip vestlusesse. Ka katkestusel säilivad kogutud andmed.
+
+Üks fikseeritud preset = üks laadimine + üks STORE-järgne terviklugemine.
+Eraldi parameetrieksporte pole vaja. Ära korda B1/B2, P2/P3 ega T38 katseid.
+
+Skriptid ei tee SET-i, STORE-i, automaatset stseeni-/presetivahetust ega
+üldseadete kirjutusi. LOAD asendab ainult tööpuhvri; STORE on kasutaja tegevus.
+Presetid ei lisa Scene MIDI sõnumeid ega jalglülitite ümbermääranguid.
+LOAD võrdleb loetletud heliplokkide sõnu. Send jäetakse bulk-võrdlusest välja,
+sest seade nullib selle sõnad. STORE-järgne tervikvõrdlus hõlmab ka Sendi,
+Controllersit, modifikaatoreid, ruudustikku, stseenipäiseid ja süsteemisaba.
+
+Tulemuste seadmevaba võrdlus arendusrepos:
+node tools/fm3/audit-next-compare.mjs PAKI_KAUST SESSION_KAUST
+Lubatud erinevused: valitud stseeni bait 0, tervete plokikirjete järjekord,
+SysEx-sihtkoha päis. Muud sisu ei normaliseerita. Puuduv STORE-tulemus on
+pooleli, mitte läbitud. Räsiviga, vale asukoht või puudulik dump peatab võrdluse.
+Sünteetiline tulemus ei ole seadmetõend. Baitide säilimine ei tõenda heli;
+kuva, käitumine ja CPU vaadatakse eraldi kasutaja vastustest üle.
