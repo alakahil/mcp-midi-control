@@ -10,10 +10,10 @@ const E=path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect
 const {verifyPresetOutputs}=await import(path.join(E,'scripts/fm3-preset.mjs'));
 const {parsePresetDump}=await import(path.join(E,'scripts/fm3-codec.mjs'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
-export function compareNextSession(packDir,sessionDir,{allowSynthetic=false}={}){
+export function compareNextSession(packDir,sessionDir,{allowSynthetic=false,kind='fm3-audit-next-preparation',cases=['H1','H2']}={}){
  const read=p=>JSON.parse(fs.readFileSync(p));const pack=read(path.join(packDir,'pack.json'));
- assert.equal(pack.kind,'fm3-audit-next-preparation');
- assert.deepEqual(pack.packs.map(p=>p.id),['H1','H2']);
+ assert.equal(pack.kind,kind);
+ assert.deepEqual(pack.packs.map(p=>p.id),cases);
  for(const f of pack.files){assert.ok(!path.isAbsolute(f.path)&&!f.path.split(/[\\/]/).includes('..'));
   assert.equal(sha(fs.readFileSync(path.join(packDir,f.path))),f.sha256,'Pack file '+f.path);}
  return pack.packs.map(p=>{
