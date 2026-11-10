@@ -13,6 +13,7 @@ const {inspectStructure}=await import(path.join(E,'scripts/drive-collector/fm3-p
 const {scanRecords}=await import(path.join(E,'scripts/fm3-layout.mjs'));
 const {readModifiers}=await import(path.join(E,'scripts/fm3-parameter-dependencies.mjs'));
 const {multidelayType}=await import(path.join(E,'scripts/fm3-multidelay-types.mjs'));
+const {estimateCpu}=await import(path.join(E,'scripts/fm3-cpu.mjs'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const TYPES=['Pealing Bells','Dub Echo','Mono Diffuser','Aurora Delay'];
 const REVERB='Room: Recording Studio A';
@@ -77,7 +78,7 @@ export function build(out){
   const bind={kind:'fm3-bind-store',version:1,test:k.id,confirmName:k.name,preset,checks,expect:k.expected,
    storeLocationPolicy:'User chooses a backed-up/expendable slot. No automatic STORE, preset/scene selection, SET or global writes.'};
   for(const [dir,value] of [['shot',shot],['store',bind]])fs.writeFileSync(path.join(d,dir,'manifest.json'),JSON.stringify(value,null,2)+'\n');
-  const cpu=r.report.cpu;assert.ok(cpu.maxPercent<cpu.limitPercent);assert.equal(cpu.model,'fm3-cpu 0.2.5');
+  const cpu=estimateCpu(r.syx,{model:'fm3-cpu 0.2.5'});assert.ok(cpu.maxPercent<cpu.limitPercent); // pinned: packs sent before 0.2.6
   fs.writeFileSync(path.join(d,'VAATLUSED.txt'),k.name+'\n\n'+checks.map(c=>c.text).join('\n\n')+
    '\n\nCPU tarkvarahinnang (mitte mõõtmine): '+cpu.scenes.map(s=>`S${s.scene} ${s.percent}%`).join(', ')+
    '\nHinnang ei taga presetipõhist veapiiri; mõõda kasutatud stseenid enne STORE-i ja pärast tagasitulekut.\n');
