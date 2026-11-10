@@ -15,6 +15,13 @@ const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-h5-test-')),pack=path.join(t
 const write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v));
 const frames=b=>{const out=[];for(let i=0;i<b.length;){const j=b.indexOf(247,i);assert.ok(j>=i);out.push(b.subarray(i,j+1).toString('hex'));i=j+1;}return out;};
 const compare=()=>compareH5Session(pack,session,{allowSynthetic:true});
+const {decodeRawPatch,reencodeRawPatch,reencodeDumpFromRawPatch}=await import(path.join(E,'scripts/fm3-codec.mjs'));
+// Rewrite body words counted from the body end, as the FM3 would store a Per-Preset Switch edit.
+function editPP(syx,edits){
+ const raw=decodeRawPatch(parsePresetDump(syx,0,17).chunkPayloads),body=Buffer.from(raw.body);
+ for(const [,fromEnd,value] of edits)body.writeUInt16LE(value,body.length-fromEnd);
+ return Buffer.from(reencodeDumpFromRawPatch(syx,reencodeRawPatch(raw.rawPatch,body)));
+}
 let refusals=0;
 try{
  const r0=build(pack),r1=build(pack2);assert.deepEqual(r0.sha256,r1.sha256,'deterministic rebuild');
@@ -24,7 +31,9 @@ try{
  assert.equal(p.packs.find(c=>c.id==='T43').activeModifiers,7);assert.equal(p.packs.find(c=>c.id==='T44').activeModifiers,0);assert.ok(p.packs.find(c=>c.id==='T44').userEdits);
  const samples=[];
  for(const c of p.packs){
-  const syx=fs.readFileSync(path.join(pack,c.stem+'.syx')),parsed=parsePresetDump(syx,0,17);
+  let syx=fs.readFileSync(path.join(pack,c.stem+'.syx'));
+  if(c.id==='T44')syx=editPP(syx,[[0,3052,4],[0,3052-144,7]]); // PP#1 category 4, param 7: what the user's FM3-Edit change would store
+  const parsed=parsePresetDump(syx,0,17);
   parsed.headerPayload=Uint8Array.from([3,42,...parsed.headerPayload.slice(2)]); // shown 427
   const stored=Buffer.from(serializePresetDump(parsed));
   const m=JSON.parse(fs.readFileSync(path.join(pack,c.id,'store/manifest.json'))),shot=JSON.parse(fs.readFileSync(path.join(pack,c.id,'shot/manifest.json'))).items[0];
@@ -38,7 +47,14 @@ try{
   write(path.join(d,'load-confirmation.json'),{kind:'fm3-audit-load-confirmation',syntheticFixture:true,presetSha256:c.presetSha256,userConfirmedName:true});
   samples.push({c,r,load,d});
  }
- assert.ok(compare().every(r=>r.dataPassed&&r.needsObservationReview));
+ const all=compare();assert.ok(all.every(r=>r.dataPassed&&r.needsObservationReview));
+ const t44=all.find(r=>r.case==='T44');assert.equal(t44.userEditWords.length,2);assert.equal(t44.unexpectedCount,0);
+ { // a T44 change outside the per-preset area is reported, not accepted
+  const s44=samples.find(x=>x.c.id==='T44'),f44=path.join(s44.d,'bind-store-results.json'),r=structuredClone(s44.r);
+  const syx=editPP(fs.readFileSync(path.join(pack,s44.c.stem+'.syx')),[[0,3052,4],[0,6000,1]]),pd=parsePresetDump(syx,0,17);
+  pd.headerPayload=Uint8Array.from([3,42,...pd.headerPayload.slice(2)]);r.storedDumpFrames=frames(Buffer.from(serializePresetDump(pd)));
+  write(f44,r);const bad=compare().find(x=>x.case==='T44');assert.equal(bad.dataPassed,false);assert.equal(bad.unexpectedCount,1);refusals++;write(f44,s44.r);
+ }
  assert.throws(()=>compareH5Session(pack,session),/Synthetic/);refusals++;
  const x=samples[0],file=path.join(x.d,'bind-store-results.json');
  for(const mutate of [r=>r.packSha256='0'.repeat(64),r=>r.storedDumpFrames.pop(),r=>{r.index++;r.shownLocation++;}]){

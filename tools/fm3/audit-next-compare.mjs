@@ -8,7 +8,18 @@ import {compareStoredPreset} from './controllers-store-compare.mjs';
 const ROOT=fileURLToPath(new URL('../../',import.meta.url));
 const E=path.join(ROOT,'plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions');
 const {verifyPresetOutputs}=await import(path.join(E,'scripts/fm3-preset.mjs'));
-const {parsePresetDump}=await import(path.join(E,'scripts/fm3-codec.mjs'));
+const {parsePresetDump,decodeRawPatch}=await import(path.join(E,'scripts/fm3-codec.mjs'));
+// Per-preset footswitch area (fm3-cs-preset.mjs): definitions 3052 bytes before the body end, 1920 definition bytes,
+// 108 override words and the count word. A case marked userEdits may differ only there and in the selected-scene byte 0.
+const PP_FROM_END=3052,PP_BYTES=1920+2*108+2;
+export function compareUserEditedPreset(expected,actual){
+ const body=b=>Buffer.from(decodeRawPatch(parsePresetDump(b,0,17).chunkPayloads).body);
+ const e=body(expected),a=body(actual);assert.equal(a.length,e.length,'Stored body length changed');
+ const start=e.length-PP_FROM_END,end=start+PP_BYTES,inside=[],outside=[];
+ for(let i=0;i<e.length;i+=2){const x=e.readUInt16LE(i),y=a.readUInt16LE(i);if(x===y||i===0)continue;
+  (i>=start&&i<end?inside:outside).push({offset:i,fromEnd:e.length-i,expected:x,actual:y});}
+ return {dataPassed:outside.length===0,userEditRegion:{start,end},userEditWords:inside,unexpectedWords:outside.slice(0,50),unexpectedCount:outside.length};
+}
 const sha=b=>createHash('sha256').update(b).digest('hex');
 export function compareNextSession(packDir,sessionDir,{allowSynthetic=false,kind='fm3-audit-next-preparation',cases=['H1','H2']}={}){
  const read=p=>JSON.parse(fs.readFileSync(p));const pack=read(path.join(packDir,'pack.json'));
@@ -35,7 +46,7 @@ export function compareNextSession(packDir,sessionDir,{allowSynthetic=false,kind
   assert.deepEqual(r.frameKinds,dump.map(f=>f[5]));const actual=Buffer.concat(dump);
   assert.deepEqual([...parsePresetDump(actual,0,17).headerPayload].slice(0,2),[r.index>>7,r.index&127],'Stored location mismatch');
   const stem=path.join(packDir,p.stem);verifyPresetOutputs(stem);const expected=fs.readFileSync(stem+'.syx');
-  assert.equal(sha(expected),p.presetSha256);const data=compareStoredPreset(expected,actual);
+  assert.equal(sha(expected),p.presetSha256);const data=p.userEdits===true?compareUserEditedPreset(expected,actual):compareStoredPreset(expected,actual);
   const missingObservations=['beforeStore','afterReload'].flatMap(when=>m.checks.filter(c=>typeof r[when]?.[c.id]!=='string'||['','-','mõõtmata'].includes(r[when][c.id].trim().toLowerCase())).map(c=>when+'.'+c.id));
   return {case:p.id,completed:true,...data,syntheticFixture:synthetic,
    hardwareAcceptance:'pending observation review',needsObservationReview:true,missingObservations,
