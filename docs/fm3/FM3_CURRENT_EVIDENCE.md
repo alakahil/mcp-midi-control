@@ -1,6 +1,6 @@
 # FM3 kehtiv tõendiseis
 
-Koondatud 2026-11-10; seadmetõendid kuni 2026-11-10. Alus 0.3.65.
+Koondatud 2026-11-11; seadmetõendid kuni 2026-11-11. Alus 0.3.65.
 
 See on ulatusega tõendikoond, mitte kõigi FM3 võimaluste valmidusprotsent. „Mõõtmata” ei tähenda keelatud sisendit ega ebaõnnestunud katset.
 
@@ -68,6 +68,15 @@ Mõlemad kandidaadid laaditi, loeti tagasi, mängiti päris kitarriga läbi kõi
 - V1 LIVE KOOSLUS V1: 11 ploki andmed säilisid (FM3 salvestusjärjekord), klippimist pole; stseenide valjus ebaühtlane (lead kõige vaiksem), lõppfailiks ei sobi. CPU 70.9/55/55/71.2/55.1/55.3/55.2/55.1%.
 Kõik 16 CPU näitu on 0.2.5 hinnangust 1 punkti ja enne/pärast STORE-i 0,5 punkti piires. Stseene valiti M-Wave MIDI lülitiga (1–4).
 Kviitung: MOOTOR references/fm3-h3-20261110.json.
+
+## H5/H5B/T43/T44 seadmekatse — 11.11.2026
+
+Kõik neli presetti laaditi, kuulati päris kitarriga, salvestati kohta 427 ja loeti tagasi; andmesõnad vastavad failile.
+- H5 LIVE KOOSLUS V1.1: Amp A/D −10,2 dB, C −7,0 dB säilivad STORE-i järel (FM3 salvestusjärjekord). Kasutaja: lead võiks veel ~2 dB valjem olla.
+- H5B: Out 1 Scene Level 1–8 −2/0/+1/−2/−2/0/+1/−2 dB enne ja pärast STORE-i — OUTPUT_SCENE1..8 esimene seadmekinnitus.
+- T43: Amp Level, Drive Drive, Delay Feedback, Reverb Time, Chorus Depth, Out 1 Level ja Chorus Bypass modifikaatori sihid salvestuvad baittäpselt; Chorus Bypass SC2 0% = sees, 50%/100% = bypass. CPU 49,7–49,8% (hinnang 50,4%).
+- T44: per-preset lüliti kategooria 4 = Effect, 3 = Scene; Bypass/Select funktsioon 0; Effect param on ploki indeks (Drive 1 = 9, Delay 1 = 7, Reverb 1 = 51), Scene param = stseeni number. Värv ja Mini-Display silt ei salvestu kehasse.
+Kviitung: MOOTOR references/fm3-h5-t43-20261111.json. Modifikaatori dialooge ei avatud; seosed tuletatud näidatud väärtustest ja baittäpsest salvestisest.
 
 ## MultiDelay Type mallid
 
