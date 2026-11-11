@@ -1,0 +1,135 @@
+{
+ "source": "FM3-Edit 13 screenshots taken by Claude in the background on 2026-11-11 (FM3 FW 13.00); readings transcribed from the images.",
+ "H5": {
+  "screenshots": {
+   "h5-amp-a-after.jpg": "16aa1df7ce90abfb41e345f604278be47c74946e84cf53f7ddd626f42d0051b3",
+   "h5-amp-c-after.jpg": "c51cae4de67a6b0525c28862be81b1574a992813b3d0b5b1bbd7a6d82c2cac8b"
+  },
+  "ampLevelDb": {
+   "A": -10.2,
+   "C": -7.0
+  },
+  "cpuPercent": {
+   "before": {
+    "1": 71.2,
+    "2": 55.3,
+    "3": 55.3,
+    "4": 70.8,
+    "5": 55.2,
+    "6": 56.0,
+    "7": 55.2,
+    "8": 55.1
+   },
+   "after": {
+    "1": 70.9
+   }
+  },
+  "userVerdict": "A and D slightly quieter, C slightly louder; lead channels could be about 2 dB louder still."
+ },
+ "H5B": {
+  "screenshots": {
+   "h5b-scene-levels-before.jpg": "e74b919f5ee21f0d99d9bdaed0ac4c55a6d8795bb5fcb23ed1eba98bb3033fb0",
+   "h5b-scene-levels-after.jpg": "6d0c1029dcec5c3d553a560ea033a7cb72cf230fb7aed46f45c123f521726b60"
+  },
+  "out1SceneLevelDb": {
+   "before": [
+    -2,
+    0,
+    1,
+    -2,
+    -2,
+    0,
+    1,
+    -2
+   ],
+   "after": [
+    -2,
+    0,
+    1,
+    -2,
+    -2,
+    0,
+    1,
+    -2
+   ]
+  },
+  "cpuPercent": {
+   "before": {
+    "1": 71.3
+   },
+   "after": {
+    "1": 70.9
+   }
+  },
+  "userVerdict": "Clean and Ambient ok; lead could get a little more."
+ },
+ "T43": {
+  "screenshots": {
+   "t43-amp-s3.jpg": "01d3ec24f23745d5432f9094e73202152d8bb979c39a396819910a1909901a2f",
+   "t43-drive-s3.jpg": "ea4804173ae182db096f4fe85b08f67b2ee1dc2bf8df3e8ac52566abe6d3fa37",
+   "t43-delay-s3.jpg": "8b6ad48adeef68687a4929cc85728ed7a8e2e6cb40b80597f1be67e1561e402c",
+   "t43-reverb-s3.jpg": "4717d55f3134c0ca0f931d7edbe52e54d4db219ff0d4815b29454f4e3aabb9dc",
+   "t43-out1-s3.jpg": "5f695c1046e81abf8bd35d0609eeadff7d3c9d771f3c216546365d4669a8bd1d",
+   "t43-chorus-s3.jpg": "4d820f807fe663765a6d58e4fe8cd6cda1781e87612ac33ad2c9ad11256ad368",
+   "t43-chorus-s2.jpg": "cf1a7206dacb0d0f7a289b52f5a8273bad0b32f178ba6309552c55b3660d51c0"
+  },
+  "sceneReadings": {
+   "1": {
+    "ampLevelDb": -12.0,
+    "chorusBypassed": false
+   },
+   "2": {
+    "ampLevelDb": -6.0,
+    "chorusBypassed": false
+   },
+   "3": {
+    "ampLevelDb": -9.0,
+    "driveDrive": 8.0,
+    "delayFeedbackPercent": 60.0,
+    "reverbTimeS": 3.5,
+    "out1LevelDb": -2.0,
+    "chorusDepthPercent": 50.0,
+    "chorusBypassed": true
+   },
+   "4": {
+    "chorusBypassed": true
+   }
+  },
+  "modifierDialogsOpened": false,
+  "chorusBypassModifier": "Scene Controller 2 at 0% leaves Chorus engaged; 50% and 100% bypass it.",
+  "cpuPercent": {
+   "1-4": "49.7-49.8",
+   "estimate": 50.4
+  },
+  "userVerdict": "Sound changed per scene exactly as described."
+ },
+ "T44": {
+  "screenshots": {
+   "t44-pp1-before.jpg": "e33512d631b6229f9a0cf5be26a4c62af7de2ac8b3127e6a3904cdda9dcbf9ca",
+   "t44-pp2-before.jpg": "e7a93e958b0472046b693678f1c962bfb926cc3b9b260730c86b44b4dc59862a",
+   "t44-pp3-before.jpg": "5f5af4ea4ed991b13800d93fa7f7a1620e11e0ac10118de18b6af35a356d4b66",
+   "t44-pp4-before.jpg": "655228a32f0f70718c2001a2ebe5a70c5e68f35c4e064626bb3a88255d07dba6",
+   "t44-after.jpg": "be98ae8075f5ccd8662e93d9ef313e53ec2c1d80f5b621ccf2c68a92fa2fb4cf"
+  },
+  "definitions": [
+   {
+    "pp": 1,
+    "tap": "Effect / Bypass / Drive 1"
+   },
+   {
+    "pp": 2,
+    "tap": "Effect / Bypass / Delay 1"
+   },
+   {
+    "pp": 3,
+    "tap": "Effect / Bypass / Reverb 1"
+   },
+   {
+    "pp": 4,
+    "tap": "Scene / Select / 3, 2nd Press = Prev. Scene Off"
+   }
+  ],
+  "editorAutoFields": "FM3-Edit set icon colours (effects blue, scene red) and Mini-Display Label (Long Name / Name); after STORE and reload the icons showed grey.",
+  "footswitchTried": false
+ }
+}

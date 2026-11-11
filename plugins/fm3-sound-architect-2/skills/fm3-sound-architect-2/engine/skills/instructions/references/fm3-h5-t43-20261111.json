@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "generatedPresetVersion": "0.3.65",
+  "scope": "H5 (LIVE KOOSLUS V1.1), H5B (V1.1B), T43 (7 modifier targets) and T44 (user-added per-preset switches) from tools/fm3/h5-t43-build.mjs. Actual user LOAD/GET and STORE/reload captures at location 427, user answers and FM3-Edit screenshots; this replay performs no device I/O.",
+  "cases": [
+    {
+      "case": "H5",
+      "deviceImport": "confirmed",
+      "storeReload": "confirmed",
+      "dataPassed": true,
+      "storedBodyByteIdentical": false,
+      "reordered": true,
+      "resultSha256": "7b3ed4cd74ae1b2599a5e681de54b42099137e2dd4dfb71913691131688a0371",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "scenes1_4": "Ei lähe punasesse A ja D on veidi vaiksemad, C võib olla Lead Stseeni jaoks isegi veidi valjem",
+          "scenes5_8": "Ei lähe punasesse A ja D on veidi vaiksemad, C võib olla Lead Stseeni jaoks isegi veidi valjem",
+          "balance": "Kõik on umbes sama valjud, Lead kanalid võivad umbes 2 dB valjemad olla",
+          "transitions": "Kõik korras",
+          "cpu": "Stseen\tCPU",
+          "behavior": "1 CLEAN\t71,2%"
+        },
+        "after": {
+          "name_grid_scenes": "2 CRUNCH\t55,3%",
+          "scenes1_4": "3 LEAD\t55,3%",
+          "scenes5_8": "4 AMBIENT\t70,8%",
+          "balance": "5 CLEAN DRY\t55,2%",
+          "transitions": "6 CRUNCH PUSH\t56,0%",
+          "cpu": "7 LEAD DRY\t55,2%",
+          "behavior": "8 PLEXI\t55,1%Pärast STORE-i: stseenis 1 oli 70,9% ja stseenis 3 oli 71,0%. Stseeni 3 lugem võis jääda eelmise stseeni näidu juurde, sest FM3-Edit uuendab CPU numbrit väikese viivitusega."
+        },
+        "note": ""
+      },
+      "expected": "LIVE KOOSLUS V1.1: nagu V1, aga clean ja Plexi (stseenid 1, 4, 5, 8) 2 dB vaiksemad ning lead (3, 7) 1 dB valjem. Kõik 8 stseeni on umbes sama valjud; ükski ei klipi."
+    },
+    {
+      "case": "H5B",
+      "deviceImport": "confirmed",
+      "storeReload": "confirmed",
+      "dataPassed": true,
+      "storedBodyByteIdentical": false,
+      "reordered": true,
+      "resultSha256": "1a315092d13c6cdcbb9e30f893e3c50c05952c3d7de67f5573096a1669d0b081",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "scenes1_4": "Ei lähe punasesse, Leadile paneks veidi juurde",
+          "scenes5_8": "Ei lähe punasesse, Leadile paneks veidi juurde",
+          "balance": "Leadi lisaks 1-2dB",
+          "transitions": "ok",
+          "cpu": "Enne STORE: S1 71,3 S2 55 S3 55 S4 71 S5-S8 55; parast STORE: S1 70,9",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "scenes1_4": "Ei lähe punasesse, Leadile paneks veidi juurde",
+          "scenes5_8": "Ei lähe punasesse, Leadile paneks veidi juurde",
+          "balance": "Leadi lisaks 1-2dB",
+          "transitions": "ok",
+          "cpu": "Enne STORE: S1 71,3 S2 55 S3 55 S4 71 S5-S8 55; parast STORE: S1 70,9",
+          "behavior": "jah"
+        },
+        "note": ""
+      },
+      "expected": "LIVE KOOSLUS V1.1B: amp-tasemed nagu V1; Out 1 Scene Level S1/S4/S5/S8 -2 dB, S2/S6 0 dB, S3/S7 +1 dB. Kõlab nagu H5: stseenid umbes sama valjud, ükski ei klipi."
+    },
+    {
+      "case": "T43",
+      "deviceImport": "confirmed",
+      "storeReload": "confirmed",
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "94159c8294267ffdba9ae02a92d434edcdf596e3dd79bd809c8978ac828bf9a4",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "sources": "Claude: koik 7 seost vaartuste jargi klapivad",
+          "scene1": "vaikne, luhike kaja, chorus sees",
+          "scene2": "valjem, pikk kaja, chorus sees",
+          "scene3": "rohkem drive, palju delay, chorus valjas",
+          "scene4": "vaikne, kuiv, chorus valjas",
+          "cpu": "49,8",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "sources": "Claude: koik 7 seost vaartuste jargi klapivad",
+          "scene1": "vaikne, luhike kaja, chorus sees",
+          "scene2": "valjem, pikk kaja, chorus sees",
+          "scene3": "rohkem drive, palju delay, chorus valjas",
+          "scene4": "vaikne, kuiv, chorus valjas",
+          "cpu": "49,8",
+          "behavior": "jah"
+        },
+        "note": ""
+      },
+      "expected": "T43: 7 modifikaatori seost. Stseenid 1-4 muudavad SC1-SC4 väärtusi; FM3-Editis näidatud sihtväärtused vastavad tabelile VAATLUSED.txt-s ja heli muutub vastavalt."
+    },
+    {
+      "case": "T44",
+      "deviceImport": "confirmed",
+      "storeReload": "confirmed",
+      "dataPassed": true,
+      "storedBodyByteIdentical": null,
+      "reordered": null,
+      "resultSha256": "1139320dad303fe8fbf4033352fd9049959982c30b301899ae77178f9847d9fa",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_edits": "Claude: PP1 Effect/Bypass/Drive 1, PP2 Effect/Bypass/Delay 1, PP3 Effect/Bypass/Reverb 1, PP4 Scene/Select/3 (2nd press Off); FM3-Edit lisas varvid ja Mini-Display Label",
+          "pp_switch": "ei proovinud (kui proovisid, kirjuta mis juhtus)",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_edits": "Claude: koik 4 maarangut alles, ikoonide varvid hallid",
+          "pp_switch": "ei proovinud",
+          "behavior": "jah"
+        },
+        "note": ""
+      },
+      "expected": "T44: pärast kasutaja muudatusi on presetis 4 Per-Preset Switchi: PP#1 Effect Bypass Drive 1, PP#2 Effect Bypass Delay 1, PP#3 Effect Bypass Reverb 1, PP#4 Scene 3. Salvestatud keha erineb failist ainult per-preset määrangute piirkonnas."
+    }
+  ],
+  "display": {
+    "source": "FM3-Edit 13 screenshots taken by Claude in the background on 2026-11-11 (FM3 FW 13.00); readings transcribed from the images.",
+    "H5": {
+      "screenshots": {
+        "h5-amp-a-after.jpg": "16aa1df7ce90abfb41e345f604278be47c74946e84cf53f7ddd626f42d0051b3",
+        "h5-amp-c-after.jpg": "c51cae4de67a6b0525c28862be81b1574a992813b3d0b5b1bbd7a6d82c2cac8b"
+      },
+      "ampLevelDb": {
+        "A": -10.2,
+        "C": -7
+      },
+      "cpuPercent": {
+        "before": {
+          "1": 71.2,
+          "2": 55.3,
+          "3": 55.3,
+          "4": 70.8,
+          "5": 55.2,
+          "6": 56,
+          "7": 55.2,
+          "8": 55.1
+        },
+        "after": {
+          "1": 70.9
+        }
+      },
+      "userVerdict": "A and D slightly quieter, C slightly louder; lead channels could be about 2 dB louder still."
+    },
+    "H5B": {
+      "screenshots": {
+        "h5b-scene-levels-before.jpg": "e74b919f5ee21f0d99d9bdaed0ac4c55a6d8795bb5fcb23ed1eba98bb3033fb0",
+        "h5b-scene-levels-after.jpg": "6d0c1029dcec5c3d553a560ea033a7cb72cf230fb7aed46f45c123f521726b60"
+      },
+      "out1SceneLevelDb": {
+        "before": [
+          -2,
+          0,
+          1,
+          -2,
+          -2,
+          0,
+          1,
+          -2
+        ],
+        "after": [
+          -2,
+          0,
+          1,
+          -2,
+          -2,
+          0,
+          1,
+          -2
+        ]
+      },
+      "cpuPercent": {
+        "before": {
+          "1": 71.3
+        },
+        "after": {
+          "1": 70.9
+        }
+      },
+      "userVerdict": "Clean and Ambient ok; lead could get a little more."
+    },
+    "T43": {
+      "screenshots": {
+        "t43-amp-s3.jpg": "01d3ec24f23745d5432f9094e73202152d8bb979c39a396819910a1909901a2f",
+        "t43-drive-s3.jpg": "ea4804173ae182db096f4fe85b08f67b2ee1dc2bf8df3e8ac52566abe6d3fa37",
+        "t43-delay-s3.jpg": "8b6ad48adeef68687a4929cc85728ed7a8e2e6cb40b80597f1be67e1561e402c",
+        "t43-reverb-s3.jpg": "4717d55f3134c0ca0f931d7edbe52e54d4db219ff0d4815b29454f4e3aabb9dc",
+        "t43-out1-s3.jpg": "5f695c1046e81abf8bd35d0609eeadff7d3c9d771f3c216546365d4669a8bd1d",
+        "t43-chorus-s3.jpg": "4d820f807fe663765a6d58e4fe8cd6cda1781e87612ac33ad2c9ad11256ad368",
+        "t43-chorus-s2.jpg": "cf1a7206dacb0d0f7a289b52f5a8273bad0b32f178ba6309552c55b3660d51c0"
+      },
+      "sceneReadings": {
+        "1": {
+          "ampLevelDb": -12,
+          "chorusBypassed": false
+        },
+        "2": {
+          "ampLevelDb": -6,
+          "chorusBypassed": false
+        },
+        "3": {
+          "ampLevelDb": -9,
+          "driveDrive": 8,
+          "delayFeedbackPercent": 60,
+          "reverbTimeS": 3.5,
+          "out1LevelDb": -2,
+          "chorusDepthPercent": 50,
+          "chorusBypassed": true
+        },
+        "4": {
+          "chorusBypassed": true
+        }
+      },
+      "modifierDialogsOpened": false,
+      "chorusBypassModifier": "Scene Controller 2 at 0% leaves Chorus engaged; 50% and 100% bypass it.",
+      "cpuPercent": {
+        "1-4": "49.7-49.8",
+        "estimate": 50.4
+      },
+      "userVerdict": "Sound changed per scene exactly as described."
+    },
+    "T44": {
+      "screenshots": {
+        "t44-pp1-before.jpg": "e33512d631b6229f9a0cf5be26a4c62af7de2ac8b3127e6a3904cdda9dcbf9ca",
+        "t44-pp2-before.jpg": "e7a93e958b0472046b693678f1c962bfb926cc3b9b260730c86b44b4dc59862a",
+        "t44-pp3-before.jpg": "5f5af4ea4ed991b13800d93fa7f7a1620e11e0ac10118de18b6af35a356d4b66",
+        "t44-pp4-before.jpg": "655228a32f0f70718c2001a2ebe5a70c5e68f35c4e064626bb3a88255d07dba6",
+        "t44-after.jpg": "be98ae8075f5ccd8662e93d9ef313e53ec2c1d80f5b621ccf2c68a92fa2fb4cf"
+      },
+      "definitions": [
+        {
+          "pp": 1,
+          "tap": "Effect / Bypass / Drive 1"
+        },
+        {
+          "pp": 2,
+          "tap": "Effect / Bypass / Delay 1"
+        },
+        {
+          "pp": 3,
+          "tap": "Effect / Bypass / Reverb 1"
+        },
+        {
+          "pp": 4,
+          "tap": "Scene / Select / 3, 2nd Press = Prev. Scene Off"
+        }
+      ],
+      "editorAutoFields": "FM3-Edit set icon colours (effects blue, scene red) and Mini-Display Label (Long Name / Name); after STORE and reload the icons showed grey.",
+      "footswitchTried": false
+    }
+  },
+  "perPresetSwitchWords": {
+    "region": "definitions start 3052 bytes before body end; category word 2k, function word 48+2k, param word 144+12k (k = PP index 0..23)",
+    "observed": [
+      {
+        "pp": 1,
+        "category": 4,
+        "function": 0,
+        "param": 9,
+        "meaning": "Effect / Bypass / Drive 1"
+      },
+      {
+        "pp": 2,
+        "category": 4,
+        "function": 0,
+        "param": 7,
+        "meaning": "Effect / Bypass / Delay 1"
+      },
+      {
+        "pp": 3,
+        "category": 4,
+        "function": 0,
+        "param": 51,
+        "meaning": "Effect / Bypass / Reverb 1"
+      },
+      {
+        "pp": 4,
+        "category": 3,
+        "function": 0,
+        "param": 3,
+        "meaning": "Scene / Select / Scene 3"
+      }
+    ],
+    "notStored": "Icon colour and Mini-Display Label changed no body word; icons showed grey after reload."
+  },
+  "findings": {
+    "h5": "Amp channel levels A/D -10.16 dB, C -7 dB survive STORE (display -10.2 / -7.0). User: lead could be ~2 dB louder still.",
+    "h5b": "Out 1 Scene Level 1..8 (-2/0/+1/-2/-2/0/+1/-2 dB) shows exactly in FM3-Edit before and after STORE: first device confirmation of OUTPUT_SCENE1..8.",
+    "t43": "Amp Level, Drive Drive, Delay Feedback, Reverb Time, Chorus Depth, Out 1 Level and Chorus Bypass modifier targets store byte-identically and drive the expected values; Chorus Bypass from Scene Controller 2 bypasses at 50% and 100%, engaged at 0%. CPU 49.7-49.8% vs estimate 50.4%.",
+    "t44": "Per-preset switch category 4 = Effect, 3 = Scene; Bypass and Select are function 0; Effect param is a block index (Drive 1 = 9, Delay 1 = 7, Reverb 1 = 51), Scene param = scene number."
+  },
+  "sources": {
+    "display-confirmation.json": "4266c411447223833d4f72cbed9681bf47640f85e9e967429196c4791b344625",
+    "H5/bind-store-results.json": "7b3ed4cd74ae1b2599a5e681de54b42099137e2dd4dfb71913691131688a0371",
+    "H5/load-confirmation.json": "a0c753b502c22985a2e0f047027d86fa036bf5e263e9c086b2fd39f5cca123f4",
+    "H5/shot-load-H5.json": "ebc157db959b47e201b56728b86632caeeedc7613ecbee75033ee1336cb0ccff",
+    "h5-amp-a-after.jpg": "16aa1df7ce90abfb41e345f604278be47c74946e84cf53f7ddd626f42d0051b3",
+    "h5-amp-c-after.jpg": "c51cae4de67a6b0525c28862be81b1574a992813b3d0b5b1bbd7a6d82c2cac8b",
+    "H5B/bind-store-results.json": "1a315092d13c6cdcbb9e30f893e3c50c05952c3d7de67f5573096a1669d0b081",
+    "H5B/load-confirmation.json": "b101d50483399ef05395ac3d621f3c7336b360eab9ae2dfe10311af67fc5484b",
+    "H5B/shot-load-H5B.json": "f49ca5e3699d5427c808ab9ba7ac26ece27fe9915393db908351ae69b8799ccd",
+    "h5b-scene-levels-after.jpg": "6d0c1029dcec5c3d553a560ea033a7cb72cf230fb7aed46f45c123f521726b60",
+    "h5b-scene-levels-before.jpg": "e74b919f5ee21f0d99d9bdaed0ac4c55a6d8795bb5fcb23ed1eba98bb3033fb0",
+    "T43/bind-store-results.json": "94159c8294267ffdba9ae02a92d434edcdf596e3dd79bd809c8978ac828bf9a4",
+    "T43/load-confirmation.json": "8f65df87940eeed9f24fc057fb6d7177a952222fceb1cce4efb1bcd3e4d5ba1d",
+    "T43/shot-load-T43.json": "3482b96e8852b538a821dce231b4b381ba1545926997e5b70e2761c4b96a997c",
+    "t43-amp-s3.jpg": "01d3ec24f23745d5432f9094e73202152d8bb979c39a396819910a1909901a2f",
+    "t43-chorus-s2.jpg": "cf1a7206dacb0d0f7a289b52f5a8273bad0b32f178ba6309552c55b3660d51c0",
+    "t43-chorus-s3.jpg": "4d820f807fe663765a6d58e4fe8cd6cda1781e87612ac33ad2c9ad11256ad368",
+    "t43-delay-s3.jpg": "8b6ad48adeef68687a4929cc85728ed7a8e2e6cb40b80597f1be67e1561e402c",
+    "t43-drive-s3.jpg": "ea4804173ae182db096f4fe85b08f67b2ee1dc2bf8df3e8ac52566abe6d3fa37",
+    "t43-out1-s3.jpg": "5f695c1046e81abf8bd35d0609eeadff7d3c9d771f3c216546365d4669a8bd1d",
+    "t43-reverb-s3.jpg": "4717d55f3134c0ca0f931d7edbe52e54d4db219ff0d4815b29454f4e3aabb9dc",
+    "T44/bind-store-results.json": "1139320dad303fe8fbf4033352fd9049959982c30b301899ae77178f9847d9fa",
+    "T44/load-confirmation.json": "9e46a398d4f92c474f183a6423bcd1fa3b812d93a54f7b925409965ac188968b",
+    "T44/shot-load-T44.json": "f6c2ba5f337a2a374a1b7c9ffe1856ad57ee571db54b6bb4a1ce5a5af37a9983",
+    "t44-after.jpg": "be98ae8075f5ccd8662e93d9ef313e53ec2c1d80f5b621ccf2c68a92fa2fb4cf",
+    "t44-pp1-before.jpg": "e33512d631b6229f9a0cf5be26a4c62af7de2ac8b3127e6a3904cdda9dcbf9ca",
+    "t44-pp2-before.jpg": "e7a93e958b0472046b693678f1c962bfb926cc3b9b260730c86b44b4dc59862a",
+    "t44-pp3-before.jpg": "5f5af4ea4ed991b13800d93fa7f7a1620e11e0ac10118de18b6af35a356d4b66",
+    "t44-pp4-before.jpg": "655228a32f0f70718c2001a2ebe5a70c5e68f35c4e064626bb3a88255d07dba6"
+  },
+  "limitations": [
+    "Sound is a user listening judgement; no numerical audio measurement.",
+    "T43 modifier Source/Min/Max dialogs were not opened; bindings are inferred from displayed target values plus the byte-identical store.",
+    "H5 terminal answers were shifted by a pasted multi-line CPU table; the CPU values are recorded in display-confirmation.json.",
+    "T43 STORE readback was taken in a separate FM3_BIND_STORE.py --verify run after the first run stopped before readback.",
+    "T44 PP switches were not tried on a footswitch.",
+    "Screenshots are FM3-Edit display, not the front panel.",
+    "Block indices beyond Drive 1, Delay 1 and Reverb 1 are not measured."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}
