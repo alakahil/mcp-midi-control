@@ -51,6 +51,10 @@ try{
   assert.equal(compare().find(r=>r.case==='T46B').dataPassed,false);refusals++;
   bad.allMatch=true;bad.packSha256='0'.repeat(64);fs.writeFileSync(f,JSON.stringify(bad));assert.throws(compare);refusals++;
   fs.rmSync(f);assert.equal(compare().find(r=>r.case==='T46B').completed,false);fs.writeFileSync(f,orig);
+  const nf=path.join(session,'T46B','load-confirmation.json'),norig=fs.readFileSync(nf),n=JSON.parse(norig);
+  n.userConfirmedName=false;fs.writeFileSync(nf,JSON.stringify(n));assert.equal(compare().find(r=>r.case==='T46B').dataPassed,false);refusals++;
+  fs.rmSync(nf);assert.equal(compare().find(r=>r.case==='T46B').dataPassed,false);refusals++;
+  n.userConfirmedName=true;n.presetSha256='0'.repeat(64);fs.writeFileSync(nf,JSON.stringify(n));assert.throws(compare);refusals++;fs.writeFileSync(nf,norig);
  }
  assert.throws(()=>compareH5Session(pack,session,{allowSynthetic:true}));refusals++;
  const syxf=path.join(pack,'T46A/T46A.syx'),orig=fs.readFileSync(syxf),b=Buffer.from(orig);b[40]^=1;fs.writeFileSync(syxf,b);

@@ -14,8 +14,13 @@ export function compareH6Session(packDir,sessionDir,{allowSynthetic=false}={}){
   if(!fs.existsSync(f))return {case:p.id,loadOnly:true,completed:false,dataPassed:false,reason:'load result missing; skipped'};
   const load=JSON.parse(fs.readFileSync(f));
   assert.equal(load.packSha256,p.shotManifestSha256,p.id+' load result belongs to another pack');
-  if(load.syntheticFixture)assert.ok(allowSynthetic,'Synthetic load result');
-  return {case:p.id,loadOnly:true,completed:true,dataPassed:load.allMatch===true,perPreset:p.perPreset,
+  // The sweep presets share their blocks, so only the confirmed name + preset hash proves which sweep was loaded.
+  const nf=path.join(sessionDir,p.id,'load-confirmation.json'),name=fs.existsSync(nf)?JSON.parse(fs.readFileSync(nf)):null;
+  if(name)assert.equal(name.kind,'fm3-audit-load-confirmation');
+  if(name)assert.equal(name.presetSha256,p.presetSha256,p.id+' name confirmation belongs to another preset');
+  if([load,name].some(x=>x?.syntheticFixture))assert.ok(allowSynthetic,'Synthetic load result');
+  const nameConfirmed=name?.userConfirmedName===true;
+  return {case:p.id,loadOnly:true,completed:true,dataPassed:load.allMatch===true&&nameConfirmed,nameConfirmed,perPreset:p.perPreset,
    note:'Effect names come from FM3-Edit screenshots (ingest), not from this comparison.'};
  });
 }
