@@ -8,6 +8,10 @@
 //                    (switch-1); 65535 = none, n = PP#(n+1).
 //   Count            the word after the overrides: 1 with zero or one definition; the FM3 set it to 2, 3 when the
 //                    user added PP#2, PP#3 (T16), so it is written as the number of definitions.
+// Effect / Scene definitions (H5/T44, 2026-11-11, FM3-Edit-written and STOREd, references/fm3-h5-t43-20261111.json):
+//   category 4 = Effect, function 0 = Bypass, param = the FM3 effect index (Drive 1 = 9, Delay 1 = 7, Reverb 1 = 51);
+//   category 3 = Scene, function 0 = Select, param = scene number. The count word did not change for these definitions,
+//   so it counts Control Switch definitions only. Icon colour and Mini-Display Label are not stored in the preset.
 // Evidence: T14 / T14b / T16 device step checks (references/fm3-cs-steps-20261029.json, fm3-cs-steps-b-20261029.json,
 // fm3-pp-steps-20261029.json), each change STOREd on the FM3 and read back word for word; T15 override positions
 // read on the Overrides page (references/fm3-fs-index-20261029.json); marker 1525 four bytes before the definitions in 384/384
@@ -16,6 +20,7 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
+import {scanRecords} from './fm3-layout.mjs';
 const check=(ok,m)=>{if(!ok)throw Error('Control Switch preset: '+m);};
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const RECEIPTS=Object.freeze({'fm3-cs-steps-20261029.json':'58e4cb0e30eef1fded80443e6eb4aa9b25ec978af66f40345db3ea315c765c7b','fm3-cs-steps-b-20261029.json':'8e45f37e27e999a7fcfd2627ad5dc0d97fa5d220cf09750d4649b2423ea83e9f'});
@@ -27,16 +32,22 @@ const LATER=['fm3-fs-index-20261029.json','fm3-pp-steps-20261029.json'];
 check(JSON.stringify(t14b.decoded.csPerScene.codes)==='{"ON":0,"OFF":1,"LAST":2}','CS Per Scene codes');
 export const CS_STATES=Object.freeze({ON:0,OFF:1,LAST:2});
 export const FOOTSWITCH_FUNCTIONS=Object.freeze({latching:1,momentary:0});
-const CATEGORY_CONTROL_SWITCH=7,DEFS=24,FROM_END={csPerScene:482,definitions:3052},DEF_BYTES=1920,OVERRIDE_WORDS=108,MARKER=1525,LAYOUTS=9,SWITCHES=12;
+// Effect index per block instance, measured on the device (H5/T44 2026-11-11). Only measured blocks are writable.
+export const PP_EFFECTS=Object.freeze({drive1:{index:9,effectId:118,label:'Drive 1'},delay1:{index:7,effectId:70,label:'Delay 1'},reverb1:{index:51,effectId:66,label:'Reverb 1'}});
+const kindOf=f=>f.effect!==undefined?'effect':f.scene!==undefined?'scene':'controlSwitch';
+export const csPresetNeedsControlSwitches=spec=>spec.controlSwitchScenes!==undefined||(Array.isArray(spec.footswitches)&&spec.footswitches.some(f=>f&&typeof f==='object'&&kindOf(f)==='controlSwitch'));
+const CATEGORY_CONTROL_SWITCH=7,CATEGORY_EFFECT=4,CATEGORY_SCENE=3,DEFS=24,FROM_END={csPerScene:482,definitions:3052},DEF_BYTES=1920,OVERRIDE_WORDS=108,MARKER=1525,LAYOUTS=9,SWITCHES=12;
 // [layout, switch] -> override word (T15: 8 positions on 4 layouts read on the device; T16: words 1 and 11 stored by the FM3).
 export const OVERRIDE_POSITIONS=Object.freeze(Object.fromEntries(Array.from({length:LAYOUTS*SWITCHES},(_,i)=>[`${Math.floor(i/SWITCHES)+1}/${i%SWITCHES+1}`,i])));
 const at=body=>{const L=body.length,def=L-FROM_END.definitions,ov=def+DEF_BYTES;return {L,def,ov,count:ov+2*OVERRIDE_WORDS,csps:L-FROM_END.csPerScene};};
 const cspsOffset=(o,cs,scene)=>o.csps+16*(cs-1)+2*(scene-1);
 const FIELD={category:k=>2*k,function:k=>48+2*k,param:k=>144+12*k};
 // The definitions block as the FM3 stores it for the requested switches (all other bytes 0).
-const defImage=feet=>{const b=Buffer.alloc(DEF_BYTES);for(const f of feet){const k=f.definition-1;
- b.writeUInt16LE(CATEGORY_CONTROL_SWITCH,FIELD.category(k));b.writeUInt16LE(FOOTSWITCH_FUNCTIONS[f.function],FIELD.function(k));b.writeUInt16LE(f.controlSwitch-1,FIELD.param(k));}return b;};
-const countFor=feet=>Math.max(1,feet.length);
+const defWords=f=>f.kind==='effect'?{category:CATEGORY_EFFECT,function:0,param:PP_EFFECTS[f.effect].index}:
+ f.kind==='scene'?{category:CATEGORY_SCENE,function:0,param:f.scene}:{category:CATEGORY_CONTROL_SWITCH,function:FOOTSWITCH_FUNCTIONS[f.function],param:f.controlSwitch-1};
+const defImage=feet=>{const b=Buffer.alloc(DEF_BYTES);for(const f of feet){const k=f.definition-1,w=defWords(f);
+ b.writeUInt16LE(w.category,FIELD.category(k));b.writeUInt16LE(w.function,FIELD.function(k));b.writeUInt16LE(w.param,FIELD.param(k));}return b;};
+const countFor=feet=>Math.max(1,feet.filter(f=>f.kind==='controlSwitch').length);
 function region(body){
  const o=at(body);check(o.def>=4610&&body.readUInt16LE(o.def-4)===MARKER,'per-preset region marker not found');
  return o;
@@ -68,30 +79,45 @@ export function validateCsPreset(spec){
   check(Array.isArray(feet)&&feet.length>=1&&feet.length<=DEFS,`footswitches must be a list of 1..${DEFS} entries (one per-preset definition each)`);
   const seen=new Set();
   feet.forEach((x,i)=>{check(x&&typeof x==='object'&&!Array.isArray(x),`footswitches[${i}] must be an object`);
-   for(const k of Object.keys(x))check(['layout','switch','function','controlSwitch'].includes(k),`footswitches[${i}]: unknown field ${k}`);
+   const kind=kindOf(x),fields={controlSwitch:['layout','switch','function','controlSwitch'],effect:['layout','switch','effect','function'],scene:['layout','switch','scene']}[kind];
+   for(const k of Object.keys(x))check(fields.includes(k),`footswitches[${i}]: unknown field ${k} for a ${kind==='controlSwitch'?'Control Switch':kind} footswitch`);
    const pos=x.layout+'/'+x.switch;
    check(Number.isInteger(x.layout)&&x.layout>=1&&x.layout<=LAYOUTS,`footswitches[${i}].layout must be 1..${LAYOUTS}`);
    check(Number.isInteger(x.switch)&&x.switch>=1&&x.switch<=SWITCHES,`footswitches[${i}].switch must be 1..${SWITCHES}`);
-   check(typeof x.function==='string'&&Object.hasOwn(FOOTSWITCH_FUNCTIONS,x.function),`footswitches[${i}].function must be a string: latching or momentary`);
-   check(Number.isInteger(x.controlSwitch)&&x.controlSwitch>=1&&x.controlSwitch<=6,`footswitches[${i}].controlSwitch must be 1..6`);
-   check(bound.has(x.controlSwitch),`footswitches[${i}]: Control Switch ${x.controlSwitch} has no binding in controlSwitches`);
    check(!seen.has(pos),`footswitches: Layout ${x.layout} switch ${x.switch} set twice`);seen.add(pos);
-   outFeet.push({layout:x.layout,switch:x.switch,function:x.function,controlSwitch:x.controlSwitch,definition:i+1,overrideIndex:OVERRIDE_POSITIONS[pos]});});
+   const out={layout:x.layout,switch:x.switch,kind};
+   if(kind==='controlSwitch'){
+    check(typeof x.function==='string'&&Object.hasOwn(FOOTSWITCH_FUNCTIONS,x.function),`footswitches[${i}].function must be a string: latching or momentary`);
+    check(Number.isInteger(x.controlSwitch)&&x.controlSwitch>=1&&x.controlSwitch<=6,`footswitches[${i}].controlSwitch must be 1..6`);
+    check(bound.has(x.controlSwitch),`footswitches[${i}]: Control Switch ${x.controlSwitch} has no binding in controlSwitches`);
+    Object.assign(out,{function:x.function,controlSwitch:x.controlSwitch});
+   } else if(kind==='effect'){
+    check(typeof x.effect==='string'&&Object.hasOwn(PP_EFFECTS,x.effect),`footswitches[${i}].effect must be one of the device-measured blocks: ${Object.keys(PP_EFFECTS).join(', ')}`);
+    check(x.function===undefined||x.function==='bypass',`footswitches[${i}].function for an effect footswitch must be bypass`);
+    Object.assign(out,{effect:x.effect,function:'bypass'});
+   } else {
+    check(Number.isInteger(x.scene)&&x.scene>=1&&x.scene<=8,`footswitches[${i}].scene must be 1..8`);
+    out.scene=x.scene;
+   }
+   outFeet.push({...out,definition:i+1,overrideIndex:OVERRIDE_POSITIONS[pos]});});
  }
  return {scenes:outScenes,footswitches:outFeet};
 }
 export function applyCsPreset(syx,spec){
  const want=validateCsPreset(spec);check(want.scenes.length||want.footswitches.length,'nothing requested');
  const before=inspectStructure(syx),original=Buffer.from(before.raw.body),body=Buffer.from(original);
+ const present=new Set(scanRecords(original).records.map(r=>r.eid));
+ for(const f of want.footswitches)if(f.kind==='effect')check(present.has(PP_EFFECTS[f.effect].effectId),`footswitch Layout ${f.layout} switch ${f.switch}: ${PP_EFFECTS[f.effect].label} is not in the preset`);
  check(isDefault(original),'the per-preset switch region must hold the FM3 defaults (no definitions, no overrides, CS Per Scene all OFF)');
  const o=region(body),writes=[];const put=(off,v,what)=>{writes.push({fromEnd:o.L-off,before:body.readUInt16LE(off),after:v,what});body.writeUInt16LE(v,off);};
  for(const s of want.scenes)if(s.code!==CS_STATES.OFF)put(cspsOffset(o,s.switch,s.scene),s.code,`CS ${s.switch} scene ${s.scene} ${s.state}`);
  for(const f of want.footswitches){const k=f.definition-1;
-  put(o.def+FIELD.category(k),CATEGORY_CONTROL_SWITCH,`definition ${f.definition} category Control Switch`);
-  if(FOOTSWITCH_FUNCTIONS[f.function])put(o.def+FIELD.function(k),FOOTSWITCH_FUNCTIONS[f.function],`definition ${f.definition} ${f.function}`);
-  if(f.controlSwitch>1)put(o.def+FIELD.param(k),f.controlSwitch-1,`definition ${f.definition} Control Switch ${f.controlSwitch}`);
+  const w=defWords(f),what=f.kind==='effect'?`Effect Bypass ${PP_EFFECTS[f.effect].label}`:f.kind==='scene'?`Scene ${f.scene}`:`Control Switch ${f.controlSwitch} ${f.function}`;
+  put(o.def+FIELD.category(k),w.category,`definition ${f.definition} category (${what})`);
+  if(w.function)put(o.def+FIELD.function(k),w.function,`definition ${f.definition} function (${what})`);
+  if(w.param)put(o.def+FIELD.param(k),w.param,`definition ${f.definition} parameter (${what})`);
   put(o.ov+2*f.overrideIndex,k,`override Layout ${f.layout} switch ${f.switch} -> PP#${f.definition}`);}
- if(countFor(want.footswitches)!==1)put(o.count,countFor(want.footswitches),`definition count ${want.footswitches.length}`);
+ if(countFor(want.footswitches)!==1)put(o.count,countFor(want.footswitches),`Control Switch definition count ${countFor(want.footswitches)}`);
  const allowed=new Set(writes.flatMap(w=>[o.L-w.fromEnd,o.L-w.fromEnd+1]));
  for(let i=0;i<body.length;i++)if(body[i]!==original[i])check(allowed.has(i),'byte outside the declared words changed at '+i);
  const out=Buffer.from(reencodeDumpFromRawPatch(syx,reencodeRawPatch(before.raw.rawPatch,body))),after=inspectStructure(out);
@@ -109,7 +135,8 @@ export function readCsPreset(body,spec){
  check(body.readUInt16LE(o.count)===countFor(want.footswitches),'definition count word differs');
  for(let i=0;i<OVERRIDE_WORDS;i++){const f=want.footswitches.find(x=>x.overrideIndex===i),v=body.readUInt16LE(o.ov+2*i);
   check(v===(f?f.definition-1:65535),`override word ${i}: stored ${v}`);
-  if(f)feet.push({layout:f.layout,switch:f.switch,definition:f.definition,function:f.function,controlSwitch:f.controlSwitch});}
+  if(f)feet.push(f.kind==='controlSwitch'?{layout:f.layout,switch:f.switch,definition:f.definition,function:f.function,controlSwitch:f.controlSwitch}:
+   {layout:f.layout,switch:f.switch,definition:f.definition,kind:f.kind,...(f.kind==='effect'?{effect:f.effect,function:'bypass'}:{scene:f.scene})});}
  return {controlSwitchScenes:scenes,footswitches:feet,otherScenes:'OFF',evidence:[...Object.keys(RECEIPTS),...LATER].map(f=>'references/'+f)};
 }
 export function renderCsPresetText(state){
@@ -117,16 +144,20 @@ export function renderCsPresetText(state){
  return ['','CONTROL SWITCH STSEENID JA JALGLÜLITID — LÕPPFAILIST',
   ...state.controlSwitchScenes.map(s=>`Control Switch ${s.switch}, Scene ${s.scene}: ${s.state}${s.state==='LAST'?' (jätab eelmise stseeni oleku)':''}.`),
   'Teised Control Switchi stseeniolekud: OFF (FM3 vaikimisi). FC PER-PRESET → CS Per Scene.',
-  ...state.footswitches.map(f=>`Layout ${f.layout}, lüliti ${f.switch} → PP#${f.definition}: Control Switch: ${f.function==='latching'?'Latching (vajutus lülitab sisse/välja)':'Momentary (sees ainult hoidmise ajal)'}, Control Switch ${f.controlSwitch}. Ainult selles presetis (Per-Preset FC / Overrides); lüliti tavaline funktsioon on selles presetis asendatud.`),
+  ...state.footswitches.map(f=>`Layout ${f.layout}, lüliti ${f.switch} → PP#${f.definition}: `+(f.kind==='effect'?`Effect, Bypass, ${PP_EFFECTS[f.effect].label} (vajutus lülitab ploki sisse/välja)`:
+   f.kind==='scene'?`Scene, Select, Scene ${f.scene}`:`Control Switch: ${f.function==='latching'?'Latching (vajutus lülitab sisse/välja)':'Momentary (sees ainult hoidmise ajal)'}, Control Switch ${f.controlSwitch}`)+'. Ainult selles presetis (Per-Preset FC / Overrides); lüliti tavaline funktsioon on selles presetis asendatud.'),
+  ...(state.footswitches.some(f=>f.kind)?['Effect- ja Scene-lülitite kodeering on seadmel salvestatud (H5/T44 11.11.2026: FM3-Editis tehtud määrangud sõna-sõnalt tagasi loetud); generaatori kirjutatud Effect/Scene lüliti import ja jalglüliti käitumine on kontrollimata. Lüliti värv ja Mini-Display silt ei salvestu presetisse (FM3-Edit näitab halli).']:[]),
   'Kodeering on seadmel kinnitatud 29.10.2026 (T14/T14B/T16: iga väli FM3-l ükshaaval salvestatud ja sõna-sõnalt tagasi loetud, generaatori tulemus võrdub FM3 salvestatud kehaga; T15: lülitite asukohad Overrides lehel; Latching ja Momentary käitusid Layout 1-s nii, nagu kirjas). Asendus kehtib ainult valitud layout\'is: kui FM3 on teises layout\'is, teeb lüliti oma tavalist tööd. Üldseadeid ei muudeta; kui per-preset override on FM3 üldseadetes keelatud, asendus ei rakendu. Selle uue faili import on seadmes kontrollimata.'];
 }
 export function csPresetCapabilities(){return {
+ effects:Object.fromEntries(Object.entries(PP_EFFECTS).map(([k,v])=>[k,v.label])),
  fields:{controlSwitchScenes:'[{switch 1..6, scene 1..8, state ON|OFF|LAST}] (switch must have a final binding after modifierEdits; unlisted states stay OFF)',
-  footswitches:'[{layout 1..9, switch 1..12, function latching|momentary, controlSwitch 1..6}] (one per-preset definition PP#1.. each, in list order; Control Switch must have a final binding after modifierEdits)'},
- codes:{csPerScene:CS_STATES,function:FOOTSWITCH_FUNCTIONS,category:CATEGORY_CONTROL_SWITCH},positions:`layout 1..${LAYOUTS} x switch 1..${SWITCHES} (override word 12(layout-1)+(switch-1))`,maxFootswitches:DEFS,
+  footswitches:'[{layout 1..9, switch 1..12} + one of: {function latching|momentary, controlSwitch 1..6} | {effect drive1|delay1|reverb1, function? bypass} | {scene 1..8}] (one per-preset definition PP#1.. each, in list order; a Control Switch must have a final binding after modifierEdits; an effect must be in the preset)'},
+ codes:{csPerScene:CS_STATES,function:FOOTSWITCH_FUNCTIONS,category:{controlSwitch:CATEGORY_CONTROL_SWITCH,effect:CATEGORY_EFFECT,scene:CATEGORY_SCENE}},positions:`layout 1..${LAYOUTS} x switch 1..${SWITCHES} (override word 12(layout-1)+(switch-1))`,maxFootswitches:DEFS,
  storage:'in the preset (FC PER-PRESET); no global setting',evidence:[...Object.keys(RECEIPTS),...LATER].map(f=>'references/'+f),
  hardware:'encoding confirmed word for word on the device (T14/T14b/T16, 2026-10-29; T16 three-switch body replayed; T15 override positions); Latching toggles with the LED, Momentary is active while held, CS Per Scene applies on scene change',
- notSupported:['Hold functions','functions other than Control Switch'],deviceIO:false};}
+ effectScene:'Effect Bypass / Scene Select definitions: encoding stored on the device by FM3-Edit (H5/T44 2026-11-11); generator import and footswitch behavior untested',
+ notSupported:['Hold functions','Effect functions other than Bypass, Scene functions other than Select','effect blocks whose index is not measured','icon colour and Mini-Display Label (not stored in the preset)'],deviceIO:false};}
 // Final artifact check (verifyPresetOutputs).
 export function verifyCsPresetOutput(report,syx,txt,spec){
  const requested=Object.hasOwn(spec??{},'controlSwitchScenes')||Object.hasOwn(spec??{},'footswitches'),body=Buffer.from(inspectStructure(syx).raw.body);

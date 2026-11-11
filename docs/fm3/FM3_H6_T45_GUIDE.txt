@@ -1,0 +1,47 @@
+FM3 H6 / T45 / T46 seadmekatsed — ettevalmistatud 11.11.2026, tegemiseks 12.11.2026
+
+Kuus presetti. Tee need järjest või vali üks:
+H6:   LIVE KOOSLUS V1.2 — V1.1, aga lead (Amp C) veel +2 dB (−5).
+      Amp A ja D −10,16 dB, Amp B −9 dB nagu V1.1.
+T45:  T45 PP GEN        — plugina kirjutatud Per-Preset lülitid (Layout 1):
+      lüliti 1 = Drive 1 sisse/välja, lüliti 2 = Delay 1 sisse/välja,
+      lüliti 3 = stseen 3, PP#4 = Reverb 1 (lüliti 4, FM3-l füüsiliselt pole).
+      Proovi FM3 lüliteid 1–3 enne ja pärast STORE-i.
+T46A–T46D: PP INDEX     — ainult laadimine, STORE-i EI tehta.
+      Igas on 24 Per-Preset definitsiooni (Effect, Bypass, indeksid 0..92).
+      Claude pildistab FM3-Editi FC Per-Prst lehe ja loeb efektinimed.
+      Nii saab plugin hiljem lubada ka teisi plokke peale Drive 1 / Delay 1 / Reverb 1.
+
+Enne seadmekorda:
+1. Ava Terminal ja mine kausta:
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_H6_T45
+2. Käivita: bash ALUSTA.command --preflight
+   See EI ava USB- ega MIDI-porti. See kontrollib räsidega faile ja kogujaid.
+
+Seadmekorral (FM3 Mk II Turbo FW13, Mac, Python 3, USB, päris kitarr):
+1. Sulge FM3-Edit ja Fractal-Bot.
+2. Käivita üks juhtum korraga: bash ALUSTA.command --case H6
+   (siis --case T45, --case T46A, --case T46B, --case T46C, --case T46D)
+3. Kirjuta LAADI. Programm laadib faili tööpuhvrisse ja loeb plokid tagasi.
+   Vea korral peatub; ära jätka STORE-iga. Kinnita nimi (j).
+4. Kirjuta vestlusesse "ok". Claude avab FM3-Editi ja pildistab taustal.
+   H6: mängi kõik 8 stseeni. T45: vajuta FM3 lüliteid 1, 2 ja 3.
+   T46: Claude pildistab ainult FC Per-Prst lehte; siis sulgeb FM3-Editi
+   ja sina kirjutad Terminali VALMIS.
+   Ampero puhul ainult B lühike vajutus; A-nuppu ei kasutata.
+5. H6 ja T45: tee käsitsi STORE kohta 427, vali teine preset, tule tagasi
+   ja kirjuta "ok". Claude pildistab uuesti. FM3-Editi Save-nuppu ei vajutata.
+6. Claude sulgeb FM3-Editi. Kirjuta Terminali STORE ja vasta küsimustele
+   ühe rea kaupa. Sisesta salvestuskoht 427.
+7. Saada SESSION_....zip nimi vestlusesse.
+
+Iga STORE kohta 427 kirjutab eelmise üle; kõik failid saab uuesti laadida.
+
+Skriptid ei tee SET-i, STORE-i, automaatset stseeni-/presetivahetust ega
+üldseadete kirjutusi. LOAD asendab ainult tööpuhvri; STORE on kasutaja tegevus.
+
+Tulemuste seadmevaba võrdlus arendusrepos:
+node tools/fm3/h6-t45-compare.mjs PAKI_KAUST SESSION_KAUST
+Lubatud erinevused: valitud stseeni bait 0, tervete plokikirjete järjekord,
+SysEx-sihtkoha päis. Vahele jäetud preset on "tegemata", mitte läbitud.
+T46 on ainult laadimistulemus; efektinimed tulevad FM3-Editi piltidest.

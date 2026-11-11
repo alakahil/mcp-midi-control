@@ -56,7 +56,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.65`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.66`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -843,6 +843,13 @@ layout'i lülitid 1–3; asendus kehtib ainult siis, kui FM3 on selles layout'is
 CS-i seost `controlSwitches`-is. Ilma nendeta on iga CS igas stseenis OFF. Kodeering on seadmel kinnitatud (T14/T14B) ja
 generaatori tulemus võrdub FM3 enda salvestatud kehaga (T14/T14B/T16; asukohad T15). Kui kasutaja on FM3 üldseadetes
 per-preset override'i keelanud, asendus ei rakendu – ütle seda. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md#stseeniolek-ja-jalglüliti-0335).
+
+0.3.66: `footswitches` kirje võib olla ka **efekti bypass** `{layout, switch, effect: "drive1"|"delay1"|"reverb1"}` või
+**stseeni valik** `{layout, switch, scene: 1–8}`; neil pole `controlSwitches`-seost vaja. Plokk peab presetis olemas
+olema. Kodeering (kategooria 4 = Effect, 3 = Scene; Effect param = FM3 efekti indeks: Drive 1 = 9, Delay 1 = 7,
+Reverb 1 = 51) on H5/T44 (11.11.2026) FM3-Editi salvestatud kehast sõna-sõnalt; generaatori kirjutatud lüliti import ja
+jalglüliti käitumine on veel kontrollimata – ütle seda. Teisi plokke ei kirjuta (indeks mõõtmata). Lüliti värv ja
+Mini-Display silt presetti ei salvestu.
 
 ## Skeem ja sisendikontroll (0.3.37)
 

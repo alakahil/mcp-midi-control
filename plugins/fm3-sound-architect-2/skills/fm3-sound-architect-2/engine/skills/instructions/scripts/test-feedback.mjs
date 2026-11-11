@@ -34,7 +34,7 @@ for(const r of fs1){
   const shown=/^-?\d+(?:\.(\d+))?/.exec(r.shown);assert.equal(decodeValue(findParam('FDBKRET',r.param),b1.readUInt16LE(off)).toFixed((shown[1]??'').length),shown[0],r.param);
 }
 for(let i=0;i<b0.length;i++)if(!changed.has(i))assert.equal(b1[i],b0[i],'collateral byte '+i);
-assert.equal(out.report.generator,'fm3-sound-0.3.65');
+assert.equal(out.report.generator,'fm3-sound-0.3.66');
 assert.match(out.txt,/return A Return Level \(FDBKRET_RETLEVEL\)/);
 // Grid mode: the same Return record is written.
 const grid=composeSound(base,{composer,grid:{rows:[Array(12).fill(''),['in1','compressor','drive','-','amp','cab','-','-','-','-','-','send'],['return','delay','-','-','reverb','-','-','-','-','-','-','out1'],Array(12).fill('')]},
