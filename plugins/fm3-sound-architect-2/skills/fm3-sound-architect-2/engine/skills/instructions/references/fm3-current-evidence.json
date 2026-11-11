@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-10",
-  "hardwareEvidenceThrough": "2026-11-10",
+  "asOf": "2026-11-11",
+  "hardwareEvidenceThrough": "2026-11-11",
   "baselineVersion": "0.3.65",
   "scope": "T32-T42, B1A/B1B/B1C/B2, H1/H2/H4, H3 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
   "definitions": {
@@ -1527,6 +1527,101 @@
     ],
     "scope": "Audit H3 final performance preset check: two candidate files from tools/fm3/h3-final-build.mjs, each loaded, read back, played with real guitar in all 8 scenes, stored by the user to 427, reloaded and read back. This replay performs no device I/O."
   },
+  "auditH5T43": {
+    "evidence": "H5/H5B/T43/T44 2026-11-11",
+    "cases": [
+      {
+        "case": "H5",
+        "deviceImport": "confirmed",
+        "storeReload": "confirmed",
+        "dataPassed": true,
+        "storedBodyByteIdentical": false,
+        "reordered": true,
+        "resultSha256": "7b3ed4cd74ae1b2599a5e681de54b42099137e2dd4dfb71913691131688a0371",
+        "expected": "LIVE KOOSLUS V1.1: nagu V1, aga clean ja Plexi (stseenid 1, 4, 5, 8) 2 dB vaiksemad ning lead (3, 7) 1 dB valjem. Kõik 8 stseeni on umbes sama valjud; ükski ei klipi."
+      },
+      {
+        "case": "H5B",
+        "deviceImport": "confirmed",
+        "storeReload": "confirmed",
+        "dataPassed": true,
+        "storedBodyByteIdentical": false,
+        "reordered": true,
+        "resultSha256": "1a315092d13c6cdcbb9e30f893e3c50c05952c3d7de67f5573096a1669d0b081",
+        "expected": "LIVE KOOSLUS V1.1B: amp-tasemed nagu V1; Out 1 Scene Level S1/S4/S5/S8 -2 dB, S2/S6 0 dB, S3/S7 +1 dB. Kõlab nagu H5: stseenid umbes sama valjud, ükski ei klipi."
+      },
+      {
+        "case": "T43",
+        "deviceImport": "confirmed",
+        "storeReload": "confirmed",
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "94159c8294267ffdba9ae02a92d434edcdf596e3dd79bd809c8978ac828bf9a4",
+        "expected": "T43: 7 modifikaatori seost. Stseenid 1-4 muudavad SC1-SC4 väärtusi; FM3-Editis näidatud sihtväärtused vastavad tabelile VAATLUSED.txt-s ja heli muutub vastavalt."
+      },
+      {
+        "case": "T44",
+        "deviceImport": "confirmed",
+        "storeReload": "confirmed",
+        "dataPassed": true,
+        "storedBodyByteIdentical": null,
+        "reordered": null,
+        "resultSha256": "1139320dad303fe8fbf4033352fd9049959982c30b301899ae77178f9847d9fa",
+        "expected": "T44: pärast kasutaja muudatusi on presetis 4 Per-Preset Switchi: PP#1 Effect Bypass Drive 1, PP#2 Effect Bypass Delay 1, PP#3 Effect Bypass Reverb 1, PP#4 Scene 3. Salvestatud keha erineb failist ainult per-preset määrangute piirkonnas."
+      }
+    ],
+    "perPresetSwitchWords": {
+      "region": "definitions start 3052 bytes before body end; category word 2k, function word 48+2k, param word 144+12k (k = PP index 0..23)",
+      "observed": [
+        {
+          "pp": 1,
+          "category": 4,
+          "function": 0,
+          "param": 9,
+          "meaning": "Effect / Bypass / Drive 1"
+        },
+        {
+          "pp": 2,
+          "category": 4,
+          "function": 0,
+          "param": 7,
+          "meaning": "Effect / Bypass / Delay 1"
+        },
+        {
+          "pp": 3,
+          "category": 4,
+          "function": 0,
+          "param": 51,
+          "meaning": "Effect / Bypass / Reverb 1"
+        },
+        {
+          "pp": 4,
+          "category": 3,
+          "function": 0,
+          "param": 3,
+          "meaning": "Scene / Select / Scene 3"
+        }
+      ],
+      "notStored": "Icon colour and Mini-Display Label changed no body word; icons showed grey after reload."
+    },
+    "findings": {
+      "h5": "Amp channel levels A/D -10.16 dB, C -7 dB survive STORE (display -10.2 / -7.0). User: lead could be ~2 dB louder still.",
+      "h5b": "Out 1 Scene Level 1..8 (-2/0/+1/-2/-2/0/+1/-2 dB) shows exactly in FM3-Edit before and after STORE: first device confirmation of OUTPUT_SCENE1..8.",
+      "t43": "Amp Level, Drive Drive, Delay Feedback, Reverb Time, Chorus Depth, Out 1 Level and Chorus Bypass modifier targets store byte-identically and drive the expected values; Chorus Bypass from Scene Controller 2 bypasses at 50% and 100%, engaged at 0%. CPU 49.7-49.8% vs estimate 50.4%.",
+      "t44": "Per-preset switch category 4 = Effect, 3 = Scene; Bypass and Select are function 0; Effect param is a block index (Drive 1 = 9, Delay 1 = 7, Reverb 1 = 51), Scene param = scene number."
+    },
+    "limitations": [
+      "Sound is a user listening judgement; no numerical audio measurement.",
+      "T43 modifier Source/Min/Max dialogs were not opened; bindings are inferred from displayed target values plus the byte-identical store.",
+      "H5 terminal answers were shifted by a pasted multi-line CPU table; the CPU values are recorded in display-confirmation.json.",
+      "T43 STORE readback was taken in a separate FM3_BIND_STORE.py --verify run after the first run stopped before readback.",
+      "T44 PP switches were not tried on a footswitch.",
+      "Screenshots are FM3-Edit display, not the front panel.",
+      "Block indices beyond Drive 1, Delay 1 and Reverb 1 are not measured."
+    ],
+    "scope": "H5 (LIVE KOOSLUS V1.1), H5B (V1.1B), T43 (7 modifier targets) and T44 (user-added per-preset switches) from tools/fm3/h5-t43-build.mjs. Actual user LOAD/GET and STORE/reload captures at location 427, user answers and FM3-Edit screenshots; this replay performs no device I/O."
+  },
   "otherEvidence": {
     "controllersScenes": {
       "scenes": 8,
@@ -1674,6 +1769,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-enum-promotion-20261103.json": "573d5a5a9cbe095cd2911d96f4fe82a310f051d9a43c9839c4e249eb1c25745b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h1-h2-h4-20261110.json": "02d2adf0543966eb28db514d075720bc4cbc29263464ed61f02f4f50369a667b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h3-20261110.json": "36ecdf87ad5e6f22107c7f067f6dd8d5682eebee89954f8b26fafc76a8cffd3f",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h5-t43-20261111.json": "00b628097e4d2a50c53e2c6781c016632d374892388c62525f5bfbeeb382aa0a",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t30-enum-20261105.json": "457b82bd133cc50e5f9da1ca1b0f4785bcfd2e0a214b3d0af2ff23d3d98bbb09",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t31-cab-cpu-20261105.json": "8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103",
@@ -1691,7 +1787,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "9fc171c0b30312fa54c301136cbad0d1781e0a5b3b5bb1c9398a204af9b6d394"
+    "tools/fm3/current-evidence.mjs": "b1355adf28fd1b21e391ddc48ac39f80d556ab98cd2b43e6827fd00c0bd2a30e"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false
