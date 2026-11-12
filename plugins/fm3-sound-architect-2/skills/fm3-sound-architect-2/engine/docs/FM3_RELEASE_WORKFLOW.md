@@ -10,6 +10,10 @@
 
 ## Ulatus
 
+0.3.66 lisab per-preset lülititele efekti bypassi (Drive 1, Delay 1, Reverb 1) ja stseeni valiku
+(`footswitches[].effect` / `footswitches[].scene`). Kodeering tuleb H5/T44 seadmetõendist (11.11.2026); generaatori
+faili import on kontrollimata (katse T45).
+
 0.3.65 lisab CPU mudeli `fm3-cpu 0.2.6`: H2-s mõõdetud neli Multi Delay
 tüübimalli maksavad oma mõõdetud hinda (Pealing Bells 17,9 punkti Base Type'i
 6,5 asemel). Muud tüübid ja plokid arvutatakse nagu 0.2.5-s. Juba saadetud H1/H2

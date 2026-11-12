@@ -2815,42 +2815,105 @@
       }
     },
     "footswitches": {
-      "description": "Per-preset Control Switch footswitches (Per-Preset FC definitions PP#1.. in list order + Overrides, stored in the preset). Override position = 12 x (layout - 1) + (switch - 1) (T15/T16). Each Control Switch needs a controlSwitches binding.",
+      "description": "Per-preset footswitches (Per-Preset FC definitions PP#1.. in list order + Overrides, stored in the preset). Override position = 12 x (layout - 1) + (switch - 1) (T15/T16). Each entry is a Control Switch (needs a controlSwitches binding), an Effect Bypass of a device-measured block (drive1, delay1, reverb1; the block must be in the preset) or a Scene Select (H5/T44 2026-11-11).",
       "type": "array",
       "minItems": 1,
       "maxItems": 24,
       "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": [
-          "layout",
-          "switch",
-          "function",
-          "controlSwitch"
-        ],
-        "properties": {
-          "layout": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 9
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "layout",
+              "switch",
+              "function",
+              "controlSwitch"
+            ],
+            "properties": {
+              "layout": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9
+              },
+              "switch": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "function": {
+                "enum": [
+                  "latching",
+                  "momentary"
+                ]
+              },
+              "controlSwitch": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 6
+              }
+            }
           },
-          "switch": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 12
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "layout",
+              "switch",
+              "effect"
+            ],
+            "properties": {
+              "layout": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9
+              },
+              "switch": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "effect": {
+                "enum": [
+                  "drive1",
+                  "delay1",
+                  "reverb1"
+                ]
+              },
+              "function": {
+                "enum": [
+                  "bypass"
+                ]
+              }
+            }
           },
-          "function": {
-            "enum": [
-              "latching",
-              "momentary"
-            ]
-          },
-          "controlSwitch": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 6
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "layout",
+              "switch",
+              "scene"
+            ],
+            "properties": {
+              "layout": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9
+              },
+              "switch": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "scene": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 8
+              }
+            }
           }
-        }
+        ]
       }
     },
     "controllers": {
@@ -3305,9 +3368,6 @@
       "volumePan"
     ],
     "controlSwitchScenes": [
-      "controlSwitches"
-    ],
-    "footswitches": [
       "controlSwitches"
     ]
   }

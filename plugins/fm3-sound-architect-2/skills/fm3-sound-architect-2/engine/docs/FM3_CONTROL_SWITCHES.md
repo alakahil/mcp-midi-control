@@ -74,7 +74,13 @@ FM3 hoiab mõlemat **presetis** (FC PER-PRESET menüü), mitte üldseadetes. Kod
   preseti-põhist lülitidefinitsiooni (Per-Preset FC, PP#1… loendi järjekorras) ja nende asendused (Overrides). Asendussõna on
   12 × (layout − 1) + (lüliti − 1) (0.3.36: T15 asukohad Overrides lehel, T16 FM3 enda salvestatud asendused). FM3 esipaneeli
   lülitid on layout'i lülitid 1–3. Asendus kehtib ainult siis, kui FM3 on selles layout'is.
-- Mõlemad nõuavad, et sama Control Switch oleks `controlSwitches`-is seotud.
+- Control Switchi kirjed nõuavad, et sama Control Switch oleks `controlSwitches`-is seotud.
+- 0.3.66: `footswitches` kirje võib olla ka `{layout, switch, effect: "drive1" | "delay1" | "reverb1"}` (Effect, Bypass)
+  või `{layout, switch, scene: 1..8}` (Scene, Select). Plokk peab presetis olema. Sõnad: kategooria 4 = Effect,
+  3 = Scene; funktsioon 0; Effect param = FM3 efekti indeks (Drive 1 = 9, Delay 1 = 7, Reverb 1 = 51), Scene param =
+  stseeni number. Loendussõna (count) loeb ainult Control Switchi definitsioone. Tõend: H5/T44 11.11.2026, FM3-Editis
+  tehtud määrangud salvestati ja loeti sõna-sõnalt tagasi (`references/fm3-h5-t43-20261111.json`). Generaatori
+  kirjutatud Effect/Scene lüliti import ja jalglüliti käitumine on kontrollimata. Värv ja Mini-Display silt ei salvestu.
 - `state` ja `function` peavad olema stringid. 0.3.37 tõrjub ka üheelemendilised ja pesastatud massiivid;
   vigase tüübi tõrjumine kehtib generaatoris ning `--verify` kontrollis.
 

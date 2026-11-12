@@ -52,6 +52,22 @@ const three=createPreset(base,{...plainSpec,footswitches:[{layout:1,switch:1,fun
 assert.deepEqual([0,1,2].map(k=>[tb.readUInt16LE(D+2*k),tb.readUInt16LE(D+48+2*k),tb.readUInt16LE(D+144+12*k)]),[[7,1,1],[7,0,2],[7,1,2]]);
 assert.deepEqual([tb.readUInt16LE(D+1920),tb.readUInt16LE(D+1922),tb.readUInt16LE(D+1920+2*28),tb.readUInt16LE(D+1920+216)],[0,1,2,3]);
 assert.deepEqual(three.report.csPreset.footswitches.map(f=>[f.layout,f.switch,f.definition]),[[1,1,1],[1,2,2],[3,5,3]]);
+// Effect Bypass / Scene Select (H5/T44 2026-11-11): the four FM3-Edit-stored definitions word for word, plus overrides;
+// no controlSwitches needed and the count word stays 1.
+const ppPlain={composer,layout:{row2:['drive','amp','cab'],row3:['delay','reverb']}},pp=createPreset(base,{...ppPlain,footswitches:[
+ {layout:1,switch:1,effect:'drive1'},{layout:1,switch:2,effect:'delay1',function:'bypass'},{layout:1,switch:3,effect:'reverb1'},{layout:1,switch:4,scene:3}]});
+const ppb=bodyOf(pp.syx),ppBase=bodyOf(createPreset(base,ppPlain).syx),ppChanged=[];
+for(let o=0;o<L;o+=2)if(ppb.readUInt16LE(o)!==ppBase.readUInt16LE(o))ppChanged.push([L-o,ppBase.readUInt16LE(o),ppb.readUInt16LE(o)]);
+assert.deepEqual(ppChanged,[[3052,0,4],[3050,0,4],[3048,0,4],[3046,0,3],[2908,0,9],[2896,0,7],[2884,0,51],[2872,0,3],
+ [3052-1920,65535,0],[3052-1922,65535,1],[3052-1924,65535,2],[3052-1926,65535,3]]);
+assert.equal(ppb.readUInt16LE(D+1920+216),1);
+assert.deepEqual(pp.report.csPreset.footswitches,[{layout:1,switch:1,definition:1,kind:'effect',effect:'drive1',function:'bypass'},{layout:1,switch:2,definition:2,kind:'effect',effect:'delay1',function:'bypass'},
+ {layout:1,switch:3,definition:3,kind:'effect',effect:'reverb1',function:'bypass'},{layout:1,switch:4,definition:4,kind:'scene',scene:3}]);
+for(const line of ['Layout 1, lüliti 1 → PP#1: Effect, Bypass, Drive 1 (vajutus lülitab ploki sisse/välja).','Layout 1, lüliti 4 → PP#4: Scene, Select, Scene 3.'])assert.ok(pp.txt.includes(line.slice(0,-1)),line);
+const ppBad=edit=>{const s={...ppPlain,footswitches:[{layout:1,switch:1,effect:'drive1'}]};edit(s);assert.throws(()=>createPreset(base,s),/footswitch|Control Switch preset/);rejected++;};
+ppBad(s=>s.footswitches[0].effect='amp1');ppBad(s=>s.footswitches[0].function='latching');ppBad(s=>s.footswitches[0].controlSwitch=2);
+ppBad(s=>s.footswitches[0]={layout:1,switch:1,scene:9});ppBad(s=>s.footswitches[0]={layout:1,switch:1,scene:2,function:'bypass'});
+ppBad(s=>s.footswitches[0].effect='Drive 1');ppBad(s=>s.footswitches[0]={layout:1,switch:1,effect:'drive1',scene:3});
 // A base whose region is not the FM3 default is refused (no merging with unknown switch content).
 for(const [off,v] of [[3052,7],[3052-1920,3],[482,0]]){const tampered=rewrite(plain.syx,b=>b.writeUInt16LE(v,L-off));
   assert.throws(()=>applyCsPreset(tampered,spec),/FM3 defaults/);rejected++;}
