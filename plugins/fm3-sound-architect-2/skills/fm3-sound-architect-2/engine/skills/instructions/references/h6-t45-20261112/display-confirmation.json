@@ -1,0 +1,123 @@
+{
+ "source": "FM3-Edit (FW13) display read by Claude (screenshots) and by the user (T45 PP#2-4, T46 card names typed in chat), 2026-11-12",
+ "H6": {
+  "ampLevelDb": {
+   "A": -10.2,
+   "B": -9,
+   "C": -5
+  },
+  "cpuPercent": {
+   "1": 71.2,
+   "2": 55.3,
+   "3": 55.9,
+   "4": 71.8
+  },
+  "screenshots": {
+   "H6/fm3edit-s1-amp.jpg": "1968387bbce335a2fb6b4efe1dfc75fe0340d5203b98dd2694d3228853dd8b75",
+   "H6/fm3edit-s3-amp.jpg": "a6df5c1c4a44dc130c3f9b4828ccc5baca4552de92e7ceae1b5c3a9d3df7f725"
+  },
+  "userVerdict": "Kõik tundub õige, leadid on veidi valjemad ja teised ühtlase valjusega."
+ },
+ "T45": {
+  "perPresetDisplay": [
+   "PP#1 Effect, Bypass, Drive 1",
+   "PP#2 Effect, Bypass, Delay 1",
+   "PP#3 Scene, Select, 3",
+   "PP#4 Effect, Bypass, Reverb 1"
+  ],
+  "footswitches": "Layout 1 switch 1 toggled Drive 1, switch 2 toggled Delay 1, switch 3 selected scene 3, before and after STORE/reload (user: \"Kõik vastas tõele\").",
+  "screenshots": {
+   "T45/fm3edit-pp-before-store.jpg": "9d48dc3b0ae249108669a50418cf24a034a035d651c5608180a2cbc345990ca1",
+   "T45/fm3edit-pp-after-store.jpg": "3961cb151b397175c14a50a9e90cb815bd768f2daed3417d1be1bed767a2f4d8"
+  }
+ },
+ "T46": {
+  "method": "Each preset has PP#1..PP#24 = Effect, Bypass, index lo..hi (no overrides); the user clicked each card and typed the TAP Effect field.",
+  "indexNames": [
+   "Amp 1",
+   "Cab 1",
+   "Chorus 1",
+   "Chorus 2",
+   "Comp 1",
+   "Comp 2",
+   "Comp 2",
+   "Delay 1",
+   "Delay 2",
+   "Drive 1",
+   "Drive 2",
+   "Enhance 1",
+   "Enhance 2",
+   "FB Rtn 1",
+   "FB Rtn 2",
+   "FB Rtn 2",
+   "FB Rtn 2",
+   "Filter 1",
+   "Filter 2",
+   "Filter 3",
+   "Filter 4",
+   "Flanger 1",
+   "Flanger 2",
+   "Formant 1",
+   "Formant 1",
+   "Gate 1",
+   "Gate 2",
+   "GEQ 1",
+   "GEQ 2",
+   "In 1",
+   "In 2",
+   "Looper",
+   "Megatap 1",
+   "Megatap 1",
+   "Megatap 1",
+   "Megatap 1",
+   "Megatap 1",
+   "MultCmp 1",
+   "MultDly 1",
+   "MultDly 1",
+   "MultDly 1",
+   "Out 1",
+   "Out 2",
+   "PEQ 1",
+   "PEQ 2",
+   "Phaser 1",
+   "Phaser 2",
+   "Pitch 1",
+   "Plex 1",
+   "Reso 1",
+   "Reso 2",
+   "Reverb 1",
+   "RingMod 1",
+   "Rotary 1",
+   "Rotary 2",
+   "Synth 1",
+   "Ten-Tap 1",
+   "TremPan 1",
+   "TremPan 2",
+   "Vol/Pan 1",
+   "Vol/Pan 2",
+   "Wah 1",
+   "Wah 2",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "firstIndex": 0,
+  "notes": [
+   "index 47 typed \"Pich 1\" = Pitch 1",
+   "indices 63..71 showed an empty Effect field; T46D (72..92) was not run",
+   "a repeated name (6, 15, 16, 33-36, 39, 40) is read as an index without an FM3 block: the field keeps the previous name",
+   "index 0 shows Amp 1, which is also the field default before any card is chosen; 23 and 24 both showed Formant 1"
+  ],
+  "effectList": "FM3-Edit Effect dropdown: 56 entries, alphabetical (screenshot T46A/fm3edit-effect-list.jpg)",
+  "screenshots": {
+   "T46A/fm3edit-pp-cards.jpg": "a9c6c881444ab9ed6addde4d7f79a807ed6233f17dbfcf27a0b76b430e1389db",
+   "T46A/fm3edit-effect-list.jpg": "893c4fe0a36d5391d0e34f3a4eba2f0cf3c0fab0fcc3cb610697f9906e833306"
+  }
+ }
+}

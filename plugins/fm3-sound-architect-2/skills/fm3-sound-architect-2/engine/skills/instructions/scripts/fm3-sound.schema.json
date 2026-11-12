@@ -2815,7 +2815,7 @@
       }
     },
     "footswitches": {
-      "description": "Per-preset footswitches (Per-Preset FC definitions PP#1.. in list order + Overrides, stored in the preset). Override position = 12 x (layout - 1) + (switch - 1) (T15/T16). Each entry is a Control Switch (needs a controlSwitches binding), an Effect Bypass of a device-measured block (drive1, delay1, reverb1; the block must be in the preset) or a Scene Select (H5/T44 2026-11-11).",
+      "description": "Per-preset footswitches (Per-Preset FC definitions PP#1.. in list order + Overrides, stored in the preset). Override position = 12 x (layout - 1) + (switch - 1) (T15/T16). Each entry is a Control Switch (needs a controlSwitches binding), an Effect Bypass of a mapped block (instance 1 of 27 families + resonator2; drive1/delay1 switch-confirmed T45 2026-11-12, reverb1 stored + displayed T45, the rest mapped from the FM3-Edit display T46; switch untested except drive1/delay1; the block must be in the preset) or a Scene Select (T44/T45).",
       "type": "array",
       "minItems": 1,
       "maxItems": 24,
@@ -2875,9 +2875,34 @@
               },
               "effect": {
                 "enum": [
-                  "drive1",
+                  "cab1",
+                  "chorus1",
+                  "compressor1",
                   "delay1",
-                  "reverb1"
+                  "drive1",
+                  "enhancer1",
+                  "filter1",
+                  "flanger1",
+                  "gate1",
+                  "geq1",
+                  "looper1",
+                  "megatap1",
+                  "multiband1",
+                  "multidelay1",
+                  "peq1",
+                  "phaser1",
+                  "pitch1",
+                  "plex1",
+                  "resonator1",
+                  "resonator2",
+                  "reverb1",
+                  "ringmod1",
+                  "rotary1",
+                  "synth1",
+                  "tentap1",
+                  "tremolo1",
+                  "volpan1",
+                  "wah1"
                 ]
               },
               "function": {

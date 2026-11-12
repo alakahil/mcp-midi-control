@@ -33,7 +33,41 @@ check(JSON.stringify(t14b.decoded.csPerScene.codes)==='{"ON":0,"OFF":1,"LAST":2}
 export const CS_STATES=Object.freeze({ON:0,OFF:1,LAST:2});
 export const FOOTSWITCH_FUNCTIONS=Object.freeze({latching:1,momentary:0});
 // Effect index per block instance, measured on the device (H5/T44 2026-11-11). Only measured blocks are writable.
-export const PP_EFFECTS=Object.freeze({drive1:{index:9,effectId:118,label:'Drive 1'},delay1:{index:7,effectId:70,label:'Delay 1'},reverb1:{index:51,effectId:66,label:'Reverb 1'}});
+// Per-preset Effect index -> FM3 block (instance 1 + Resonator 2). Drive 1 / Delay 1: stored by FM3-Edit (T44) and
+// generator-written + footswitch-confirmed (T45, 2026-11-12). Reverb 1: same, but T45 confirmed it only on the FM3-Edit display and
+// in the stored body (switch 4 was not pressed), so its footswitch behavior stays untested. The rest: FM3-Edit FC Per-Prst display of every index 0..71
+// (T46A-C, 2026-11-12, references/fm3-h6-t45-20261112.json); import and footswitch behavior of those are untested.
+// Left out: index 0 (Amp 1 is also FM3-Edit's default display), 23/24 (both shown as Formant 1), second instances
+// (effect ID unmeasured), In/Out/FB Rtn.
+export const PP_EFFECTS=Object.freeze({
+ cab1:{index:1,effectId:62,label:'Cab 1',status:'display-mapped'},
+ chorus1:{index:2,effectId:78,label:'Chorus 1',status:'display-mapped'},
+ compressor1:{index:4,effectId:46,label:'Comp 1',status:'display-mapped'},
+ delay1:{index:7,effectId:70,label:'Delay 1',status:'switch-confirmed'},
+ drive1:{index:9,effectId:118,label:'Drive 1',status:'switch-confirmed'},
+ enhancer1:{index:11,effectId:122,label:'Enhance 1',status:'display-mapped'},
+ filter1:{index:17,effectId:114,label:'Filter 1',status:'display-mapped'},
+ flanger1:{index:21,effectId:82,label:'Flanger 1',status:'display-mapped'},
+ gate1:{index:25,effectId:146,label:'Gate 1',status:'display-mapped'},
+ geq1:{index:27,effectId:50,label:'GEQ 1',status:'display-mapped'},
+ looper1:{index:31,effectId:166,label:'Looper',status:'display-mapped'},
+ megatap1:{index:32,effectId:138,label:'Megatap 1',status:'display-mapped'},
+ multiband1:{index:37,effectId:154,label:'MultCmp 1',status:'display-mapped'},
+ multidelay1:{index:38,effectId:74,label:'MultDly 1',status:'display-mapped'},
+ peq1:{index:43,effectId:54,label:'PEQ 1',status:'display-mapped'},
+ phaser1:{index:45,effectId:90,label:'Phaser 1',status:'display-mapped'},
+ pitch1:{index:47,effectId:110,label:'Pitch 1',status:'display-mapped'},
+ plex1:{index:48,effectId:178,label:'Plex 1',status:'display-mapped'},
+ resonator1:{index:49,effectId:162,label:'Reso 1',status:'display-mapped'},
+ resonator2:{index:50,effectId:163,label:'Reso 2',status:'display-mapped'},
+ reverb1:{index:51,effectId:66,label:'Reverb 1',status:'store-confirmed'},
+ ringmod1:{index:52,effectId:150,label:'RingMod 1',status:'display-mapped'},
+ rotary1:{index:53,effectId:86,label:'Rotary 1',status:'display-mapped'},
+ synth1:{index:55,effectId:130,label:'Synth 1',status:'display-mapped'},
+ tentap1:{index:56,effectId:158,label:'Ten-Tap 1',status:'display-mapped'},
+ tremolo1:{index:57,effectId:106,label:'TremPan 1',status:'display-mapped'},
+ volpan1:{index:59,effectId:102,label:'Vol/Pan 1',status:'display-mapped'},
+ wah1:{index:61,effectId:94,label:'Wah 1',status:'display-mapped'}});
 const kindOf=f=>f.effect!==undefined?'effect':f.scene!==undefined?'scene':'controlSwitch';
 export const csPresetNeedsControlSwitches=spec=>spec.controlSwitchScenes!==undefined||(Array.isArray(spec.footswitches)&&spec.footswitches.some(f=>f&&typeof f==='object'&&kindOf(f)==='controlSwitch'));
 const CATEGORY_CONTROL_SWITCH=7,CATEGORY_EFFECT=4,CATEGORY_SCENE=3,DEFS=24,FROM_END={csPerScene:482,definitions:3052},DEF_BYTES=1920,OVERRIDE_WORDS=108,MARKER=1525,LAYOUTS=9,SWITCHES=12;
@@ -92,7 +126,7 @@ export function validateCsPreset(spec){
     check(bound.has(x.controlSwitch),`footswitches[${i}]: Control Switch ${x.controlSwitch} has no binding in controlSwitches`);
     Object.assign(out,{function:x.function,controlSwitch:x.controlSwitch});
    } else if(kind==='effect'){
-    check(typeof x.effect==='string'&&Object.hasOwn(PP_EFFECTS,x.effect),`footswitches[${i}].effect must be one of the device-measured blocks: ${Object.keys(PP_EFFECTS).join(', ')}`);
+    check(typeof x.effect==='string'&&Object.hasOwn(PP_EFFECTS,x.effect),`footswitches[${i}].effect must be one of the mapped blocks: ${Object.keys(PP_EFFECTS).join(', ')}`);
     check(x.function===undefined||x.function==='bypass',`footswitches[${i}].function for an effect footswitch must be bypass`);
     Object.assign(out,{effect:x.effect,function:'bypass'});
    } else {
@@ -146,18 +180,19 @@ export function renderCsPresetText(state){
   'Teised Control Switchi stseeniolekud: OFF (FM3 vaikimisi). FC PER-PRESET → CS Per Scene.',
   ...state.footswitches.map(f=>`Layout ${f.layout}, lüliti ${f.switch} → PP#${f.definition}: `+(f.kind==='effect'?`Effect, Bypass, ${PP_EFFECTS[f.effect].label} (vajutus lülitab ploki sisse/välja)`:
    f.kind==='scene'?`Scene, Select, Scene ${f.scene}`:`Control Switch: ${f.function==='latching'?'Latching (vajutus lülitab sisse/välja)':'Momentary (sees ainult hoidmise ajal)'}, Control Switch ${f.controlSwitch}`)+'. Ainult selles presetis (Per-Preset FC / Overrides); lüliti tavaline funktsioon on selles presetis asendatud.'),
-  ...(state.footswitches.some(f=>f.kind)?['Effect- ja Scene-lülitite kodeering on seadmel salvestatud (H5/T44 11.11.2026: FM3-Editis tehtud määrangud sõna-sõnalt tagasi loetud); generaatori kirjutatud Effect/Scene lüliti import ja jalglüliti käitumine on kontrollimata. Lüliti värv ja Mini-Display silt ei salvestu presetisse (FM3-Edit näitab halli).']:[]),
+  ...(state.footswitches.some(f=>f.kind)?['Effect- ja Scene-lülitite kodeering on seadmel kinnitatud: T44 (11.11.2026) FM3-Editis tehtud määrangud loeti sõna-sõnalt tagasi; T45 (12.11.2026) generaatori kirjutatud Drive 1 / Delay 1 / Scene 3 lülitid töötasid FM3 jalglülititel enne ja pärast STORE-i ning salvestatud keha oli baiditäpne. Lüliti värv ja Mini-Display silt ei salvestu presetisse (FM3-Edit näitab halli).',
+   ...(state.footswitches.some(f=>f.kind==='effect'&&PP_EFFECTS[f.effect].status!=='switch-confirmed')?['Plokid peale Drive 1 / Delay 1: jalglüliti käitumine on kontrollimata (Reverb 1 on kinnitatud FM3-Editi kuval ja salvestuses, teised indeksid FM3-Editi kuvalt, T45/T46 12.11.2026).']:[])]:[]),
   'Kodeering on seadmel kinnitatud 29.10.2026 (T14/T14B/T16: iga väli FM3-l ükshaaval salvestatud ja sõna-sõnalt tagasi loetud, generaatori tulemus võrdub FM3 salvestatud kehaga; T15: lülitite asukohad Overrides lehel; Latching ja Momentary käitusid Layout 1-s nii, nagu kirjas). Asendus kehtib ainult valitud layout\'is: kui FM3 on teises layout\'is, teeb lüliti oma tavalist tööd. Üldseadeid ei muudeta; kui per-preset override on FM3 üldseadetes keelatud, asendus ei rakendu. Selle uue faili import on seadmes kontrollimata.'];
 }
 export function csPresetCapabilities(){return {
- effects:Object.fromEntries(Object.entries(PP_EFFECTS).map(([k,v])=>[k,v.label])),
+ effects:Object.fromEntries(Object.entries(PP_EFFECTS).map(([k,v])=>[k,v.label+(v.status==='switch-confirmed'?'':v.status==='store-confirmed'?' (stored + displayed, switch untested)':' (display-mapped, switch untested)')])),
  fields:{controlSwitchScenes:'[{switch 1..6, scene 1..8, state ON|OFF|LAST}] (switch must have a final binding after modifierEdits; unlisted states stay OFF)',
-  footswitches:'[{layout 1..9, switch 1..12} + one of: {function latching|momentary, controlSwitch 1..6} | {effect drive1|delay1|reverb1, function? bypass} | {scene 1..8}] (one per-preset definition PP#1.. each, in list order; a Control Switch must have a final binding after modifierEdits; an effect must be in the preset)'},
+  footswitches:'[{layout 1..9, switch 1..12} + one of: {function latching|momentary, controlSwitch 1..6} | {effect <key of effects>, function? bypass} | {scene 1..8}] (one per-preset definition PP#1.. each, in list order; a Control Switch must have a final binding after modifierEdits; an effect must be in the preset)'},
  codes:{csPerScene:CS_STATES,function:FOOTSWITCH_FUNCTIONS,category:{controlSwitch:CATEGORY_CONTROL_SWITCH,effect:CATEGORY_EFFECT,scene:CATEGORY_SCENE}},positions:`layout 1..${LAYOUTS} x switch 1..${SWITCHES} (override word 12(layout-1)+(switch-1))`,maxFootswitches:DEFS,
  storage:'in the preset (FC PER-PRESET); no global setting',evidence:[...Object.keys(RECEIPTS),...LATER].map(f=>'references/'+f),
  hardware:'encoding confirmed word for word on the device (T14/T14b/T16, 2026-10-29; T16 three-switch body replayed; T15 override positions); Latching toggles with the LED, Momentary is active while held, CS Per Scene applies on scene change',
- effectScene:'Effect Bypass / Scene Select definitions: encoding stored on the device by FM3-Edit (H5/T44 2026-11-11); generator import and footswitch behavior untested',
- notSupported:['Hold functions','Effect functions other than Bypass, Scene functions other than Select','effect blocks whose index is not measured','icon colour and Mini-Display Label (not stored in the preset)'],deviceIO:false};}
+ effectScene:'Effect Bypass / Scene Select definitions: encoding stored on the device by FM3-Edit (T44 2026-11-11); generator-written Drive 1 / Delay 1 / Scene 3 imported, stored byte-identically and switched on the FM3 footswitches (T45 2026-11-12); other effect indices mapped from the FM3-Edit display (T46), footswitch behavior untested',
+ notSupported:['Hold functions','Effect functions other than Bypass, Scene functions other than Select','Amp 1, Formant, second block instances (except Resonator 2), In/Out/FB Rtn (index not unambiguously mapped)','icon colour and Mini-Display Label (not stored in the preset)'],deviceIO:false};}
 // Final artifact check (verifyPresetOutputs).
 export function verifyCsPresetOutput(report,syx,txt,spec){
  const requested=Object.hasOwn(spec??{},'controlSwitchScenes')||Object.hasOwn(spec??{},'footswitches'),body=Buffer.from(inspectStructure(syx).raw.body);
