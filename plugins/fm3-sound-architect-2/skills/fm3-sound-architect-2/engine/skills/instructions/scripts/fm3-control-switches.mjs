@@ -47,7 +47,7 @@ export const nextWritableModifierRecord=(body,from=1)=>{let r=from;while(r<RECOR
 export const MODIFIER_RECORDS=RECORDS;
 // Sources offered by volumePedal / modifierTargets (FM3-Edit MOD_CTRLID codes): External 1 and the Controllers sources.
 const TARGET_SOURCES=new Set([14,1,2,3,4,5,6,7,8,9,30,31,32,33,56,57,58,59,60]);
-const FREE=new Set([0,1,2,8,9,17]);
+const FREE=new Set([0,1,2,8,9,17,3,4,5,6,7,13,14,15]);  // 0.3.69: curve / timing words of modifierTargets[].curve
 // A generic target record written by fm3-modifier-targets.mjs (never the Volume or Wah binding).
 export function isModifierTargetRecord(w){const t=templateFor(0,0,0);
   return TARGET_SOURCES.has(w[0])&&w[8]!==0&&!(w[8]===102&&w[9]===0)&&!(w[8]===94&&w[9]===5)&&w[17]<CHANNELS.length&&w.every((x,i)=>FREE.has(i)||x===t[i]);}

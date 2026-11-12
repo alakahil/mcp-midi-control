@@ -1,0 +1,51 @@
+FM3 T50 seadmekatse — modifikaatori kõver ja ajad muul sihil kui Volume (ette valmistatud 12.11.2026)
+
+Kaks presetti (plugin 0.3.69, väli modifierTargets[].curve):
+T50A: T50A MOD CURVE — Envelope Follower → Filter 1 Frequency (Low-Pass)
+      300…3000 Hz; Attack 20 ms, Release 250 ms, Scale 2. Kõlab nagu auto-wah.
+T50B: T50B MOD CURVE — LFO 1A (2 Hz) → Amp Level −12…−6 dB; Start 20 %,
+      End 80 %, Slope 75 %. Kõlab nagu tremolo.
+      Scene Controller 1 → Delay Mix 0…50 %; Mid 25 %, Offset 10 %.
+      Stseenides 1–4 on SC1 0 / 50 / 100 / 0 %.
+Drive on mõlemas välja lülitatud, et muutus oleks selgelt kuulda.
+
+Kõvera kodeering on seni seadmel kinnitatud ainult Volume'i kirjel (T12).
+See katse kinnitab, et samad sõnad kehtivad ka teistel sihtidel.
+
+Enne seadmekorda:
+1. Ava Terminal ja mine kausta:
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_T50
+2. Käivita: bash ALUSTA.command --preflight
+   See EI ava USB- ega MIDI-porti. See kontrollib räsidega faile ja kogujaid.
+
+Seadmekorral (FM3 Mk II Turbo FW13, Mac, Python 3, USB, päris kitarr):
+1. Sulge FM3-Edit ja Fractal-Bot.
+2. Käivita üks juhtum korraga: bash ALUSTA.command --case T50A
+   (siis --case T50B)
+3. Kirjuta LAADI. Programm laadib faili tööpuhvrisse ja loeb plokid tagasi.
+   Vea korral peatub; ära jätka STORE-iga. Kinnita nimi (j).
+4. Ava FM3-Edit (Save-nuppu ei vajutata). Ava seotud nupu modifikaatoriaken:
+   T50A: Filter 1 → paremklõps nupul Frequency → Edit Modifier.
+   T50B: Amp 1 → paremklõps nupul Level → Edit Modifier; siis
+         Delay 1 → paremklõps nupul Mix → Edit Modifier.
+   Kirjuta iga akna järel vestlusesse "ok"; Claude pildistab akna.
+   (Paremklõpsu Claude ise teha ei saa.)
+5. Mängi päris kitarriga ja kuula:
+   T50A: tugev löök teeb heli heledamaks, kustudes tumedamaks.
+   T50B: valjus kõigub umbes 2 korda sekundis; stseen 3 on kõige rohkem
+         delay'd, stseenid 1 ja 4 kõige vähem.
+6. Sulge FM3-Edit. Tee käsitsi STORE kohta 427, vali teine preset, tule
+   tagasi, kuula uuesti.
+7. Kirjuta Terminali STORE ja vasta küsimustele ühe rea kaupa.
+   Sisesta salvestuskoht 427.
+8. Saada SESSION_....zip nimi vestlusesse.
+
+Iga STORE kohta 427 kirjutab eelmise üle; kõik failid saab uuesti laadida.
+
+Skriptid ei tee SET-i, STORE-i, automaatset stseeni-/presetivahetust ega
+üldseadete kirjutusi. LOAD asendab ainult tööpuhvri; STORE on kasutaja tegevus.
+
+Tulemuste seadmevaba võrdlus arendusrepos:
+node tools/fm3/t50-compare.mjs PAKI_KAUST SESSION_KAUST
+Lubatud erinevused: valitud stseeni bait 0, tervete plokikirjete järjekord,
+SysEx-sihtkoha päis. Vahele jäetud preset on "tegemata", mitte läbitud.

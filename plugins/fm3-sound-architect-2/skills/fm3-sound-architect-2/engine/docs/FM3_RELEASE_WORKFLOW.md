@@ -9,6 +9,8 @@
 - 0.3.2 avaldamisvormingu parandus
 
 ## Ulatus
+0.3.69: `modifierTargets[].curve` — seose kõver ja ajad (Start, Mid, End, Slope, Scale, Offset, Attack, Release; kirje sõnad 3–7 ja 13–15). Kodeering on seadmel sammhaaval kinnitatud Volume'i kirjel (T12); teistel sihtidel valemi järgi, seadmel kontrollimata kuni T50-ni. Skeem 0.8.10.
+
 0.3.68: T47 kinnitas per-preset Effect Bypassi jalglülitil veel 8 plokile (Comp 1, Chorus 1, TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1, Reverb 1); kokku 10 plokki lülitil kinnitatud, ülejäänud 18 ainult FM3-Editi kuvalt.
 
 0.3.67: per-preset Effect Bypass lülitid 28 plokile (T46 FM3-Editi indeksikaart); Drive 1 / Delay 1 / Scene 3 jalglülitil kinnitatud (T45).

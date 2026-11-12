@@ -56,7 +56,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.68`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.69`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -150,6 +150,12 @@ Kirjed lähevad pärast Volume- ja Control Switchi seoseid järgmistesse vabades
 Allika enda seaded (LFO kiirus, Scene Controlleri väärtused stseeniti) kirjuta väljadega
 `controllers` / `controllersScenes`. `tempo: 97` kirjutab preseti tempo; tempo-sünkroniseeritud
 plokid (nt `DELAY_TEMPO: "1/4"`) järgivad seda.
+
+Alates 0.3.69-st võib igal `modifierTargets` kirjel olla valikuline `curve` samade võtmetega nagu `volumePedal.curve`
+(`startPercent`, `midPercent`, `endPercent`, `slopePercent`, `scale`, `offsetPercent`, `attackMs`, `releaseMs`), näiteks
+`{"source":"Envelope Follower","block":"filter","param":"FILTER_FREQ","min":300,"max":3000,"curve":{"attackMs":20,"releaseMs":250,"scale":2}}`.
+Nimetamata väljad jäävad vaikimisi. Kodeering on seadmel sammhaaval kinnitatud Volume'i kirjel (T12); muul sihil on kõver
+valemi järgi ja seadmel kontrollimata – ütle seda. Auto-Engage, Off Value ja teisene allikas pole toetatud. Skeem 0.8.10.
 
 Tõend: `MOOTOR/references/fm3-t42-modifier-targets-20261109.json` (FM3 Mk II Turbo, FW13, STORE 427).
 SC1 → Delay Mix, LFO 1A → Filter Freq ja External 1 → Amp Gain: Source ja Min/Max kuvati enne ja pärast

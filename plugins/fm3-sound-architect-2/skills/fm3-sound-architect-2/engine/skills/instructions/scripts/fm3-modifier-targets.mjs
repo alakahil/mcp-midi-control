@@ -9,7 +9,9 @@
 // The record is the Control Switch / T42 template: word 0 Source (MOD_CTRLID), words 1/2 Min/Max in the target's
 // stored-word codec (S1 + T7/T7b/T10/T42), 8 target effect id, 9 target PID, 17 channel (0 ALL, 1..4 A..D).
 // Records: the next unused (or inactive default) records after the Volume and Control Switch bindings.
-// Not covered: curves/timing other than the default, secondary sources, second block instances, Min/Max on
+// 0.3.69: optional curve / timing per binding (words 3-7, 13-15; the codec of fm3-modifier-curve.mjs, stepped on the
+// device field by field in T12 on the Volume record). On other targets these words are formula-derived until T50.
+// Not covered: secondary sources, second block instances, Auto-Engage/Off Value, Min/Max on
 // non-continuous targets (those keep the full 0..65534 range).
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -20,6 +22,7 @@ import {scanRecords,readGrid} from './fm3-layout.mjs';
 import {findParam,encodeValue,decodeValue,loadDictionary,FAMILY_BY_SLUG} from './fm3-table-encoder.mjs';
 import {modifierTemplate,nextWritableModifierRecord,MODIFIER_RECORDS,isModifierTargetRecord} from './fm3-control-switches.mjs';
 import {VOLUME_SOURCES} from './fm3-volume-pedal.mjs';
+import {modifierCurveFields,encodeCurveValue,decodeCurveWord} from './fm3-modifier-curve.mjs';
 const check=(ok,m)=>{if(!ok)throw Error('Modifier targets: '+m);};
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const FIELDS0=1584,RECORD=96,MAX=8,CHANNELS=['ALL','A','B','C','D'],CONTINUOUS=new Set(['linear','log','knob']);
@@ -38,6 +41,7 @@ export const t42ReceiptHash=sha(receiptBytes);
 export const DEVICE_CONFIRMED_TARGETS=Object.freeze(Object.fromEntries(receipt.parts.filter(p=>p.hypothesis==='H1').map(p=>[p.target,`T42 ${p.case.slice(3,4)} (2026-11-09, ${p.source})`])));
 const words=(body,r)=>Array.from({length:25},(_,i)=>body.readUInt16LE(FIELDS0+RECORD*r+2*i));
 const slugOf=family=>Object.keys(FAMILY_BY_SLUG).find(k=>FAMILY_BY_SLUG[k]===family);
+const CURVE=modifierCurveFields.filter(f=>f.key!=='offValuePercent');
 const near=(p,word,v)=>Math.abs(decodeValue(p,word)-v)<=Math.max(0.006*Math.abs(v),0.06);
 
 export function validateModifierTargets(list){
@@ -46,7 +50,7 @@ export function validateModifierTargets(list){
  return list.map((e,i)=>{
   const at=`modifierTargets[${i}]`;
   check(e&&typeof e==='object'&&!Array.isArray(e),at+' must be an object');
-  for(const k of Object.keys(e))check(['source','block','param','min','max','channel'].includes(k),`${at}: unknown field ${k}`);
+  for(const k of Object.keys(e))check(['source','block','param','min','max','channel','curve'].includes(k),`${at}: unknown field ${k}`);
   check(typeof e.source==='string'&&Object.hasOwn(VOLUME_SOURCES,e.source),`${at}.source must be one of ${Object.keys(VOLUME_SOURCES).join(', ')}`);
   check(typeof e.block==='string'&&Object.hasOwn(FAMILY_BY_SLUG,e.block),`${at}.block must be a block slug (${Object.keys(FAMILY_BY_SLUG).join(', ')})`);
   check(typeof e.param==='string'&&e.param.length>0,`${at}.param must be a parameter name`);
@@ -62,12 +66,20 @@ export function validateModifierTargets(list){
   const min=e.min===undefined?0:encodeValue(p,e.min),max=e.max===undefined?65534:encodeValue(p,e.max);
   for(const [k,w] of [['min',min],['max',max]])if(e[k]!==undefined)check(near(p,w,e[k]),`${at}.${k} ${e[k]} is not representable`);
   check(min!==max,`${at}: Min and Max must differ`);
+  const curve={};
+  if(Object.hasOwn(e,'curve')){const c=e.curve;
+   check(c&&typeof c==='object'&&!Array.isArray(c)&&Object.keys(c).length>0&&Object.keys(c).every(k=>CURVE.some(f=>f.key===k)),`${at}.curve must name ${CURVE.map(f=>f.key).join(', ')}`);
+   for(const f of CURVE)if(Object.hasOwn(c,f.key)){try{curve[f.key]=encodeCurveValue(f.key,c[f.key]);}catch(err){check(false,`${at}.curve.`+err.message.replace(/^Modifier curve: /,''));}}
+  }
   const key=p.block+':'+p.param;check(!seen.has(key),`${at}: ${e.block}.${p.name} bound twice`);seen.add(key);
   return {source:e.source,sourceCode:VOLUME_SOURCES[e.source],block:e.block,param:p.name,label:p.label??p.name,effectId:p.block,pid:p.param,kind:p.kind,
-   channel:e.channel??'ALL',min,max,minDisplay:e.min,maxDisplay:e.max};
+   channel:e.channel??'ALL',min,max,minDisplay:e.min,maxDisplay:e.max,...(Object.hasOwn(e,'curve')?{curve}:{})};
  });
 }
-const templateOf=w=>modifierTemplate(w.sourceCode,w.effectId,w.pid,{min:w.min,max:w.max,channel:w.channel});
+const templateOf=w=>{const t=modifierTemplate(w.sourceCode,w.effectId,w.pid,{min:w.min,max:w.max,channel:w.channel});
+ for(const f of CURVE)if(Object.hasOwn(w.curve??{},f.key))t[f.word]=w.curve[f.key];return t;};
+const DEFAULT_CURVE=modifierTemplate(1,1,0);
+const curveState=ws=>Object.fromEntries(CURVE.map(f=>[f.key,{word:ws[f.word],display:decodeCurveWord(f.key,ws[f.word]),unit:f.unit}]));
 export function bindModifierTargets(syx,list){
  const wanted=validateModifierTargets(list);
  const before=inspectStructure(syx),original=Buffer.from(before.raw.body),body=Buffer.from(original);
@@ -104,7 +116,8 @@ export function readModifierTargets(body,list){
   const p=findParam(w.block,w.param),show=(x,asked)=>!CONTINUOUS.has(w.kind)?null:asked!==undefined?asked:Math.round(decodeValue(p,x)*100)/100;  // validated: asked decodes back within tolerance
   return {record:m[0].record,source:w.source,sourceCode:w.sourceCode,block:w.block,param:w.param,label:w.label,effectId:w.effectId,pid:w.pid,
    channelScope:m[0].channelScope,min:{display:show(w.min,w.minDisplay),word:w.min},max:{display:show(w.max,w.maxDisplay),word:w.max},fullRange:w.min===0&&w.max===65534,
-   evidence:DEVICE_CONFIRMED_TARGETS[w.param]??'flag rule (T42 2026-11-09); this target not device-tested'};
+   evidence:DEVICE_CONFIRMED_TARGETS[w.param]??'flag rule (T42 2026-11-09); this target not device-tested',
+   ...(w.curve?{curve:curveState(ws),curveCustom:CURVE.some(f=>ws[f.word]!==DEFAULT_CURVE[f.word]),curveEvidence:'codec stepped on the device on the Volume record (T12 2026-10-29); on this target formula-derived, device-unverified'}:{})};
  });
 }
 const fmt=v=>String(Number(v.toPrecision(4)));
@@ -112,15 +125,17 @@ export function renderModifierTargetsText(state){
  if(!state?.length)return [];
  return ['','MODIFIKAATORI SIHID — LÕPPFAILIST',
   ...state.map(s=>`${s.source} → ${s.block} ${s.label} (${s.param}); kanalid ${s.channelScope}; kirje ${s.record}; ${s.fullRange?'täisvahemik (Min 0 / Max 65534 sõnana)':`Min ${fmt(s.min.display)} / Max ${fmt(s.max.display)} (sõnad ${s.min.word} / ${s.max.word})`}; ${DEVICE_CONFIRMED_TARGETS[s.param]?'siht seadmel kinnitatud: '+DEVICE_CONFIRMED_TARGETS[s.param]:'siht lubatud FM3-Editi lipu 0x0080 reegli järgi, seadmel seda sihti eraldi ei kontrollitud'}.`),
-  'Seose mall on sama, mida FM3 ise salvestab (Control Switch / T42); kõver ja ajad on vaikimisi. Allika seaded (LFO kiirus, Scene Controlleri väärtused jms) tulevad väljadest controllers / controllersScenes.',
+  ...state.filter(s=>s.curve).map(s=>`Kõver ja ajad (${s.block} ${s.label}): ${CURVE.map(f=>`${f.label} ${s.curve[f.key].display}${f.unit==='%'?'%':f.unit==='ms'?' ms':''}`).join(', ')} (sõnad ${CURVE.map(f=>s.curve[f.key].word).join(' / ')}). Kodeering on seadmel sammhaaval kinnitatud Volume'i kirjel (T12, 29.10.2026); sellel sihil on kõver valemi järgi, seadmel kontrollimata.`),
+  `Seose mall on sama, mida FM3 ise salvestab (Control Switch / T42); ${state.some(s=>s.curve)?'kõver ja ajad on vaikimisi seal, kus neid ülal ei nimetata':'kõver ja ajad on vaikimisi'}. Allika seaded (LFO kiirus, Scene Controlleri väärtused jms) tulevad väljadest controllers / controllersScenes.`,
   'T42 (09.11.2026): kolm uut sihti kuvati, kõlasid ja säilisid STORE/reload-is baiditäpselt; lipuga 0x0080 siht (Delay Low Cut) jäi FM3-s tühjaks. Selle uue faili import ja heli on kontrollimata.'];
 }
-export function modifierTargetsCapabilities(){return {field:'modifierTargets',entry:'{source: External 1 | LFO 1A..2B | ADSR 1..2 | Sequencer | Envelope/Pitch Follower | Scene Controller 1..4 | Manual 1..5, block: block slug, param: dictionary name, min?/max?: display values (continuous targets only), channel?: ALL|A|B|C|D}',
+export function modifierTargetsCapabilities(){return {field:'modifierTargets',entry:'{source: External 1 | LFO 1A..2B | ADSR 1..2 | Sequencer | Envelope/Pitch Follower | Scene Controller 1..4 | Manual 1..5, block: block slug, param: dictionary name, min?/max?: display values (continuous targets only), channel?: ALL|A|B|C|D, curve?: {'+CURVE.map(f=>f.key).join(', ')+'}}',
  maxBindings:MAX,targets:MODIFIER_TARGET_COUNT,rule:'FM3-Edit FW13 cache flags bit 0x0080 clear (476); MOD/CONTROLLERS/GLOBAL, unused and the 8 unlabelled (editor-hidden) parameters excluded',
  deviceConfirmed:DEVICE_CONFIRMED_TARGETS,refusedOnDevice:'Delay Low Cut (bit set): FM3 cleared Source and target on import (T42 D)',
  records:'next unused records after volumePedal and controlSwitches',template:'Control Switch / T42 template; words 1/2 = target stored-word codec',
  evidence:{receipt:receiptPath,sha256:t42ReceiptHash},
- notSupported:['Volume/Pan Volume (volumePedal)','Wah Control (composer.modifiers.external1Wah)','second block instances','curves and timing','Min/Max on non-continuous targets','secondary sources'],deviceIO:false};}
+ notSupported:['Volume/Pan Volume (volumePedal)','Wah Control (composer.modifiers.external1Wah)','second block instances','Auto-Engage, Off Value, PC Reset, Update Rate and Damping (template values)','Min/Max on non-continuous targets','secondary sources'],
+ curve:{keys:Object.fromEntries(CURVE.map(f=>[f.key,{word:f.word,label:f.label,unit:f.unit,min:f.min,max:f.max,decimals:f.decimals,default:decodeCurveWord(f.key,DEFAULT_CURVE[f.word])}])),evidence:'codec device-stepped on the Volume record (T12); other targets formula-derived until a device check (T50)'},deviceIO:false};}
 export const listModifierTargets=()=>dictionary.params.filter(isModifierTarget).map(p=>({block:slugOf(p.family)??null,family:p.family,param:p.name,label:p.label,kind:p.kind,
  minMax:CONTINUOUS.has(p.kind),deviceConfirmed:!!DEVICE_CONFIRMED_TARGETS[p.name]}));
 export function verifyModifierTargetsOutput(report,syx,txt,spec){

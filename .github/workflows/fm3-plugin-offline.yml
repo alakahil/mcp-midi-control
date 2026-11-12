@@ -148,6 +148,7 @@ jobs:
           node tools/fm3/test-t47.mjs
           node tools/fm3/test-t48.mjs
           node tools/fm3/test-t49-t52.mjs
+          node tools/fm3/test-t50.mjs
           node tools/fm3/test-t40-controllers-sources.mjs
           node tools/fm3/test-t42-modifier-targets.mjs
           node tools/fm3/test-multidelay-boundaries.mjs
