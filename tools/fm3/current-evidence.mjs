@@ -25,6 +25,9 @@ const h2Stored=new Set(h12.display.H2.scenes.map(s=>s.type));
 const h5=receipt('fm3-h5-t43-20261111.json');
 assert.deepEqual(h5.cases.map(c=>c.case),['H5','H5B','T43','T44']);
 assert.ok(h5.cases.every(c=>c.dataPassed&&c.storeReload==='confirmed'));
+const h6=receipt('fm3-h6-t45-20261112.json');
+assert.deepEqual(h6.cases.map(c=>[c.case,c.completed]),[['H6',true],['T45',true],['T46A',true],['T46B',true],['T46C',true],['T46D',false]]);
+assert.ok(h6.cases.filter(c=>c.completed).every(c=>c.dataPassed)&&h6.cases[1].storedBodyByteIdentical);
 const h3=receipt('fm3-h3-20261110.json');
 assert.deepEqual(h3.cases.map(c=>c.case),['V1','V4']);
 assert.ok(h3.cases.every(c=>c.storeReload==='confirmed')&&h3.cases[1].storedBodyByteIdentical);
@@ -89,7 +92,7 @@ const presetTempo={softwareSupported:true,rangeBpm:[24,250],integerOnly:true,cha
   display:'confirmed',storeReload:'confirmed',evidence:'T42'})),
  scope:'97 and 143 BPM only; not every BPM, tempo-synced effect, tap-tempo or global setting.'};
 assert.deepEqual(presetTempo.measured.map(p=>p.bpm),[97,143]);
-const current={schemaVersion:1,asOf:'2026-11-11',hardwareEvidenceThrough:'2026-11-11',baselineVersion:'0.3.65',
+const current={schemaVersion:1,asOf:'2026-11-12',hardwareEvidenceThrough:'2026-11-12',baselineVersion:'0.3.65',
  scope:'T32-T42, B1A/B1B/B1C/B2, H1/H2/H4, H3 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.',
  definitions:{confirmed:'A cited dated device result exists in the stated scope.',notMeasured:'No cited device result for this scope; not a failure and not a software-support restriction.'},
  enumCounts,scalarDescriptors,controllers,multiDelay,modifierTargets,presetTempo,
@@ -97,6 +100,7 @@ const current={schemaVersion:1,asOf:'2026-11-11',hardwareEvidenceThrough:'2026-1
  auditNextPresets:{evidence:'H1/H2/H4 2026-11-10',cases:h12.cases,display:h12.display,findings:h12.findings,limitations:h12.limitations,scope:h12.scope},
  auditFinalPerformance:{evidence:'H3 2026-11-10',cases:h3.cases.map(({observations,...c})=>c),findings:h3.findings,limitations:h3.limitations,scope:h3.scope},
  auditH5T43:{evidence:'H5/H5B/T43/T44 2026-11-11',cases:h5.cases.map(({observations,...c})=>c),perPresetSwitchWords:h5.perPresetSwitchWords,findings:h5.findings,limitations:h5.limitations,scope:h5.scope},
+ auditH6T45:{evidence:'H6/T45/T46A-C 2026-11-12',cases:h6.cases.map(({observations,...c})=>c),pluginEffects:h6.pluginEffects,findings:h6.findings,limitations:h6.limitations,scope:h6.scope},
  otherEvidence:{
   controllersScenes:{scenes:8,channels:['A','B','C','D'],storeReload:'confirmed',evidence:['T33','T34A'],scope:'The measured scene/channel selections, not every permutation.'},
   liveComposition:{evidence:['T32','T34E'],cpuPercent:t[32].cpu.scenes.map(s=>s.measuredPercent),storedBlockRecords:11,
@@ -156,6 +160,11 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
  '- T43: Amp Level, Drive Drive, Delay Feedback, Reverb Time, Chorus Depth, Out 1 Level ja Chorus Bypass modifikaatori sihid salvestuvad baittäpselt; Chorus Bypass SC2 0% = sees, 50%/100% = bypass. CPU 49,7–49,8% (hinnang 50,4%).',
  '- T44: per-preset lüliti kategooria 4 = Effect, 3 = Scene; Bypass/Select funktsioon 0; Effect param on ploki indeks (Drive 1 = 9, Delay 1 = 7, Reverb 1 = 51), Scene param = stseeni number. Värv ja Mini-Display silt ei salvestu kehasse.',
  'Kviitung: MOOTOR references/fm3-h5-t43-20261111.json. Modifikaatori dialooge ei avatud; seosed tuletatud näidatud väärtustest ja baittäpsest salvestisest.',
+ '','## H6/T45/T46 seadmekatse — 12.11.2026','',
+ '- H6 LIVE KOOSLUS V1.2: Amp C (lead) −5 dB, A/D −10,2, B −9 säilivad STORE-i järel. Kasutaja: leadid veidi valjemad, teised ühtlased. CPU S1 71,2 / S2 55,3 / S3 55,9 / S4 71,8 %.',
+ '- T45: generaatori kirjutatud PP#1 Drive 1, PP#2 Delay 1 (Effect Bypass), PP#3 Scene 3, PP#4 Reverb 1 — FM3-Edit näitas õigesti, FM3 lülitid 1–3 töötasid enne ja pärast STORE-i, salvestatud keha baiditäpne.',
+ '- T46A–C: Effect-indeks on FM3-Editi tähestikulise plokinimekirja järjekord aukudega; 0..62 = Amp 1 … Wah 2, 63..71 tühi. Plugin lubab 28 üheselt kaardistatud plokki; peale Drive 1 / Delay 1 / Reverb 1 on lülitikäitumine kontrollimata.',
+ 'Kviitung: MOOTOR references/fm3-h6-t45-20261112.json.',
  '','## MultiDelay Type mallid','', '| Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |','|---|---:|---|---|---|---|',
  ...multiDelay.map(r=>`| ${r.name} | ${r.measuredFullChannelWords} | ${mark(r.generatedDeviceImport)} | ${mark(r.audibleBehavior)} | ${mark(r.storeReload)} | ${r.evidence.join(', ')} |`),
  '','39 malli, 8 generaatori importi, 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',

@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-12",
+  "generatedPresetVersion": "0.3.66",
+  "scope": "H6 (LIVE KOOSLUS V1.2), T45 (generator-written per-preset switches) and T46A-C (Effect-index display sweep, load only) from tools/fm3/h6-t45-build.mjs. Actual user LOAD/GET and STORE/reload captures at location 427, user answers and FM3-Edit display; this replay performs no device I/O.",
+  "cases": [
+    {
+      "case": "H6",
+      "completed": true,
+      "dataPassed": true,
+      "loadOnly": false,
+      "storedBodyByteIdentical": false,
+      "reordered": true,
+      "resultSha256": "76b2de0cd0bdd989c947cf5c8404cbff4d34b4fd670173bc5d840f33747de762",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "scenes1_4": "õige heli, valjus ühtlane, ei klipi",
+          "scenes5_8": "õige heli, valjus ühtlane, ei klipi",
+          "balance": "lead veidi valjem, sobib",
+          "cpu": "S1 71.2, S2 55.3, S3 55.9, S4 71.8",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "scenes1_4": "õige heli, valjus ühtlane, ei klipi",
+          "scenes5_8": "õige heli, valjus ühtlane, ei klipi",
+          "balance": "lead veidi valjem, sobib",
+          "cpu": "S1 71.2, S2 55.3, S3 55.9, S4 71.8",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "T45",
+      "completed": true,
+      "dataPassed": true,
+      "loadOnly": false,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "697f259721810c37c6324d02e2e8b51e399f02a83d5ac542d2c7bc0d8170775f",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "PP1 Drive 1, PP2 Delay 1, PP3 Scene 3, PP4 Reverb 1",
+          "pp_switch": "L1 Drive sisse/välja, L2 Delay sisse/välja, L3 stseen 3",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "PP1 Drive 1, PP2 Delay 1, PP3 Scene 3, PP4 Reverb 1",
+          "pp_switch": "L1 Drive sisse/välja, L2 Delay sisse/välja, L3 stseen 3",
+          "behavior": "jah"
+        },
+        "note": "T45 ok"
+      }
+    },
+    {
+      "case": "T46A",
+      "completed": true,
+      "dataPassed": true,
+      "loadOnly": true,
+      "storedBodyByteIdentical": null,
+      "reordered": null,
+      "resultSha256": null,
+      "observations": null
+    },
+    {
+      "case": "T46B",
+      "completed": true,
+      "dataPassed": true,
+      "loadOnly": true,
+      "storedBodyByteIdentical": null,
+      "reordered": null,
+      "resultSha256": null,
+      "observations": null
+    },
+    {
+      "case": "T46C",
+      "completed": true,
+      "dataPassed": true,
+      "loadOnly": true,
+      "storedBodyByteIdentical": null,
+      "reordered": null,
+      "resultSha256": null,
+      "observations": null
+    },
+    {
+      "case": "T46D",
+      "completed": false,
+      "dataPassed": false,
+      "loadOnly": true,
+      "storedBodyByteIdentical": null,
+      "reordered": null,
+      "resultSha256": null,
+      "observations": null
+    }
+  ],
+  "display": {
+    "source": "FM3-Edit (FW13) display read by Claude (screenshots) and by the user (T45 PP#2-4, T46 card names typed in chat), 2026-11-12",
+    "H6": {
+      "ampLevelDb": {
+        "A": -10.2,
+        "B": -9,
+        "C": -5
+      },
+      "cpuPercent": {
+        "1": 71.2,
+        "2": 55.3,
+        "3": 55.9,
+        "4": 71.8
+      },
+      "screenshots": {
+        "H6/fm3edit-s1-amp.jpg": "1968387bbce335a2fb6b4efe1dfc75fe0340d5203b98dd2694d3228853dd8b75",
+        "H6/fm3edit-s3-amp.jpg": "a6df5c1c4a44dc130c3f9b4828ccc5baca4552de92e7ceae1b5c3a9d3df7f725"
+      },
+      "userVerdict": "Kõik tundub õige, leadid on veidi valjemad ja teised ühtlase valjusega."
+    },
+    "T45": {
+      "perPresetDisplay": [
+        "PP#1 Effect, Bypass, Drive 1",
+        "PP#2 Effect, Bypass, Delay 1",
+        "PP#3 Scene, Select, 3",
+        "PP#4 Effect, Bypass, Reverb 1"
+      ],
+      "footswitches": "Layout 1 switch 1 toggled Drive 1, switch 2 toggled Delay 1, switch 3 selected scene 3, before and after STORE/reload (user: \"Kõik vastas tõele\").",
+      "screenshots": {
+        "T45/fm3edit-pp-before-store.jpg": "9d48dc3b0ae249108669a50418cf24a034a035d651c5608180a2cbc345990ca1",
+        "T45/fm3edit-pp-after-store.jpg": "3961cb151b397175c14a50a9e90cb815bd768f2daed3417d1be1bed767a2f4d8"
+      }
+    },
+    "T46": {
+      "method": "Each preset has PP#1..PP#24 = Effect, Bypass, index lo..hi (no overrides); the user clicked each card and typed the TAP Effect field.",
+      "indexNames": [
+        "Amp 1",
+        "Cab 1",
+        "Chorus 1",
+        "Chorus 2",
+        "Comp 1",
+        "Comp 2",
+        "Comp 2",
+        "Delay 1",
+        "Delay 2",
+        "Drive 1",
+        "Drive 2",
+        "Enhance 1",
+        "Enhance 2",
+        "FB Rtn 1",
+        "FB Rtn 2",
+        "FB Rtn 2",
+        "FB Rtn 2",
+        "Filter 1",
+        "Filter 2",
+        "Filter 3",
+        "Filter 4",
+        "Flanger 1",
+        "Flanger 2",
+        "Formant 1",
+        "Formant 1",
+        "Gate 1",
+        "Gate 2",
+        "GEQ 1",
+        "GEQ 2",
+        "In 1",
+        "In 2",
+        "Looper",
+        "Megatap 1",
+        "Megatap 1",
+        "Megatap 1",
+        "Megatap 1",
+        "Megatap 1",
+        "MultCmp 1",
+        "MultDly 1",
+        "MultDly 1",
+        "MultDly 1",
+        "Out 1",
+        "Out 2",
+        "PEQ 1",
+        "PEQ 2",
+        "Phaser 1",
+        "Phaser 2",
+        "Pitch 1",
+        "Plex 1",
+        "Reso 1",
+        "Reso 2",
+        "Reverb 1",
+        "RingMod 1",
+        "Rotary 1",
+        "Rotary 2",
+        "Synth 1",
+        "Ten-Tap 1",
+        "TremPan 1",
+        "TremPan 2",
+        "Vol/Pan 1",
+        "Vol/Pan 2",
+        "Wah 1",
+        "Wah 2",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "firstIndex": 0,
+      "notes": [
+        "index 47 typed \"Pich 1\" = Pitch 1",
+        "indices 63..71 showed an empty Effect field; T46D (72..92) was not run",
+        "a repeated name (6, 15, 16, 33-36, 39, 40) is read as an index without an FM3 block: the field keeps the previous name",
+        "index 0 shows Amp 1, which is also the field default before any card is chosen; 23 and 24 both showed Formant 1"
+      ],
+      "effectList": "FM3-Edit Effect dropdown: 56 entries, alphabetical (screenshot T46A/fm3edit-effect-list.jpg)",
+      "screenshots": {
+        "T46A/fm3edit-pp-cards.jpg": "a9c6c881444ab9ed6addde4d7f79a807ed6233f17dbfcf27a0b76b430e1389db",
+        "T46A/fm3edit-effect-list.jpg": "893c4fe0a36d5391d0e34f3a4eba2f0cf3c0fab0fcc3cb610697f9906e833306"
+      }
+    }
+  },
+  "effectIndexMap": [
+    {
+      "index": 0,
+      "name": "Amp 1"
+    },
+    {
+      "index": 1,
+      "name": "Cab 1"
+    },
+    {
+      "index": 2,
+      "name": "Chorus 1"
+    },
+    {
+      "index": 3,
+      "name": "Chorus 2"
+    },
+    {
+      "index": 4,
+      "name": "Comp 1"
+    },
+    {
+      "index": 5,
+      "name": "Comp 2"
+    },
+    {
+      "index": 7,
+      "name": "Delay 1"
+    },
+    {
+      "index": 8,
+      "name": "Delay 2"
+    },
+    {
+      "index": 9,
+      "name": "Drive 1"
+    },
+    {
+      "index": 10,
+      "name": "Drive 2"
+    },
+    {
+      "index": 11,
+      "name": "Enhance 1"
+    },
+    {
+      "index": 12,
+      "name": "Enhance 2"
+    },
+    {
+      "index": 13,
+      "name": "FB Rtn 1"
+    },
+    {
+      "index": 14,
+      "name": "FB Rtn 2"
+    },
+    {
+      "index": 17,
+      "name": "Filter 1"
+    },
+    {
+      "index": 18,
+      "name": "Filter 2"
+    },
+    {
+      "index": 19,
+      "name": "Filter 3"
+    },
+    {
+      "index": 20,
+      "name": "Filter 4"
+    },
+    {
+      "index": 21,
+      "name": "Flanger 1"
+    },
+    {
+      "index": 22,
+      "name": "Flanger 2"
+    },
+    {
+      "index": 23,
+      "name": "Formant 1"
+    },
+    {
+      "index": 25,
+      "name": "Gate 1"
+    },
+    {
+      "index": 26,
+      "name": "Gate 2"
+    },
+    {
+      "index": 27,
+      "name": "GEQ 1"
+    },
+    {
+      "index": 28,
+      "name": "GEQ 2"
+    },
+    {
+      "index": 29,
+      "name": "In 1"
+    },
+    {
+      "index": 30,
+      "name": "In 2"
+    },
+    {
+      "index": 31,
+      "name": "Looper"
+    },
+    {
+      "index": 32,
+      "name": "Megatap 1"
+    },
+    {
+      "index": 37,
+      "name": "MultCmp 1"
+    },
+    {
+      "index": 38,
+      "name": "MultDly 1"
+    },
+    {
+      "index": 41,
+      "name": "Out 1"
+    },
+    {
+      "index": 42,
+      "name": "Out 2"
+    },
+    {
+      "index": 43,
+      "name": "PEQ 1"
+    },
+    {
+      "index": 44,
+      "name": "PEQ 2"
+    },
+    {
+      "index": 45,
+      "name": "Phaser 1"
+    },
+    {
+      "index": 46,
+      "name": "Phaser 2"
+    },
+    {
+      "index": 47,
+      "name": "Pitch 1"
+    },
+    {
+      "index": 48,
+      "name": "Plex 1"
+    },
+    {
+      "index": 49,
+      "name": "Reso 1"
+    },
+    {
+      "index": 50,
+      "name": "Reso 2"
+    },
+    {
+      "index": 51,
+      "name": "Reverb 1"
+    },
+    {
+      "index": 52,
+      "name": "RingMod 1"
+    },
+    {
+      "index": 53,
+      "name": "Rotary 1"
+    },
+    {
+      "index": 54,
+      "name": "Rotary 2"
+    },
+    {
+      "index": 55,
+      "name": "Synth 1"
+    },
+    {
+      "index": 56,
+      "name": "Ten-Tap 1"
+    },
+    {
+      "index": 57,
+      "name": "TremPan 1"
+    },
+    {
+      "index": 58,
+      "name": "TremPan 2"
+    },
+    {
+      "index": 59,
+      "name": "Vol/Pan 1"
+    },
+    {
+      "index": 60,
+      "name": "Vol/Pan 2"
+    },
+    {
+      "index": 61,
+      "name": "Wah 1"
+    },
+    {
+      "index": 62,
+      "name": "Wah 2"
+    }
+  ],
+  "pluginEffects": {
+    "cab1": {
+      "index": 1,
+      "label": "Cab 1",
+      "status": "display-mapped"
+    },
+    "chorus1": {
+      "index": 2,
+      "label": "Chorus 1",
+      "status": "display-mapped"
+    },
+    "compressor1": {
+      "index": 4,
+      "label": "Comp 1",
+      "status": "display-mapped"
+    },
+    "delay1": {
+      "index": 7,
+      "label": "Delay 1",
+      "status": "switch-confirmed"
+    },
+    "drive1": {
+      "index": 9,
+      "label": "Drive 1",
+      "status": "switch-confirmed"
+    },
+    "enhancer1": {
+      "index": 11,
+      "label": "Enhance 1",
+      "status": "display-mapped"
+    },
+    "filter1": {
+      "index": 17,
+      "label": "Filter 1",
+      "status": "display-mapped"
+    },
+    "flanger1": {
+      "index": 21,
+      "label": "Flanger 1",
+      "status": "display-mapped"
+    },
+    "gate1": {
+      "index": 25,
+      "label": "Gate 1",
+      "status": "display-mapped"
+    },
+    "geq1": {
+      "index": 27,
+      "label": "GEQ 1",
+      "status": "display-mapped"
+    },
+    "looper1": {
+      "index": 31,
+      "label": "Looper",
+      "status": "display-mapped"
+    },
+    "megatap1": {
+      "index": 32,
+      "label": "Megatap 1",
+      "status": "display-mapped"
+    },
+    "multiband1": {
+      "index": 37,
+      "label": "MultCmp 1",
+      "status": "display-mapped"
+    },
+    "multidelay1": {
+      "index": 38,
+      "label": "MultDly 1",
+      "status": "display-mapped"
+    },
+    "peq1": {
+      "index": 43,
+      "label": "PEQ 1",
+      "status": "display-mapped"
+    },
+    "phaser1": {
+      "index": 45,
+      "label": "Phaser 1",
+      "status": "display-mapped"
+    },
+    "pitch1": {
+      "index": 47,
+      "label": "Pitch 1",
+      "status": "display-mapped"
+    },
+    "plex1": {
+      "index": 48,
+      "label": "Plex 1",
+      "status": "display-mapped"
+    },
+    "resonator1": {
+      "index": 49,
+      "label": "Reso 1",
+      "status": "display-mapped"
+    },
+    "resonator2": {
+      "index": 50,
+      "label": "Reso 2",
+      "status": "display-mapped"
+    },
+    "reverb1": {
+      "index": 51,
+      "label": "Reverb 1",
+      "status": "switch-confirmed"
+    },
+    "ringmod1": {
+      "index": 52,
+      "label": "RingMod 1",
+      "status": "display-mapped"
+    },
+    "rotary1": {
+      "index": 53,
+      "label": "Rotary 1",
+      "status": "display-mapped"
+    },
+    "synth1": {
+      "index": 55,
+      "label": "Synth 1",
+      "status": "display-mapped"
+    },
+    "tentap1": {
+      "index": 56,
+      "label": "Ten-Tap 1",
+      "status": "display-mapped"
+    },
+    "tremolo1": {
+      "index": 57,
+      "label": "TremPan 1",
+      "status": "display-mapped"
+    },
+    "volpan1": {
+      "index": 59,
+      "label": "Vol/Pan 1",
+      "status": "display-mapped"
+    },
+    "wah1": {
+      "index": 61,
+      "label": "Wah 1",
+      "status": "display-mapped"
+    }
+  },
+  "findings": {
+    "h6": "Amp C (lead) -5 dB, A/D -10.16, B -9 survive STORE. User: leads slightly louder, others even. CPU S1 71.2, S2 55.3, S3 55.9, S4 71.8 % (FM3-Edit).",
+    "t45": "Generator-written Effect Bypass Drive 1 / Delay 1 / Reverb 1 and Scene Select 3 import, display correctly in FM3-Edit, store byte-identically and switch on FM3 footswitches 1-3 before and after STORE.",
+    "t46": "The Effect parameter is an index into FM3-Edit's alphabetical block list with gaps (a gap repeats the previous name); 0..62 cover Amp 1 .. Wah 2, 63..71 are empty."
+  },
+  "sources": {
+    "display-confirmation.json": "137fb16fad73b3a5d87f4632632e6789a7538d398050520607cfc3b2093bd2d9",
+    "H6/bind-store-results.json": "76b2de0cd0bdd989c947cf5c8404cbff4d34b4fd670173bc5d840f33747de762",
+    "H6/fm3edit-s1-amp.jpg": "1968387bbce335a2fb6b4efe1dfc75fe0340d5203b98dd2694d3228853dd8b75",
+    "H6/fm3edit-s3-amp.jpg": "a6df5c1c4a44dc130c3f9b4828ccc5baca4552de92e7ceae1b5c3a9d3df7f725",
+    "H6/load-confirmation.json": "99828cfdc34dcd9c1f2c0ca3a5d3939cbfbbd865a69f6591e642a42ca3e8b58b",
+    "H6/shot-load-H6.json": "762606312e696fa88d82c27e56d3babe73e9cc58bf2ada329741d3583bacce64",
+    "T45/bind-store-results.json": "697f259721810c37c6324d02e2e8b51e399f02a83d5ac542d2c7bc0d8170775f",
+    "T45/fm3edit-pp-after-store.jpg": "3961cb151b397175c14a50a9e90cb815bd768f2daed3417d1be1bed767a2f4d8",
+    "T45/fm3edit-pp-before-store.jpg": "9d48dc3b0ae249108669a50418cf24a034a035d651c5608180a2cbc345990ca1",
+    "T45/load-confirmation.json": "b8822cf157c6a579bebedd3ea119317f7fb41f15750d3a7e4c6fa5bc42ab8e92",
+    "T45/shot-load-T45.json": "e95109cffe3da6bc619e26b18ba771d9c86c259eaba135b4b62875cacd9f12b2",
+    "T46A/fm3edit-effect-list.jpg": "893c4fe0a36d5391d0e34f3a4eba2f0cf3c0fab0fcc3cb610697f9906e833306",
+    "T46A/fm3edit-pp-cards.jpg": "a9c6c881444ab9ed6addde4d7f79a807ed6233f17dbfcf27a0b76b430e1389db",
+    "T46A/load-confirmation.json": "9f91dcef7c333609046a6b2c269fdc8671fd66d486d2a12f01a8dbef07f3da84",
+    "T46A/shot-load-T46A.json": "701696fb07e0e33654ce05c200b2858ea5e0cdc9a24cb698072ec4eb799eb0dc",
+    "T46B/load-confirmation.json": "5e814911cc049e22a79979319adef0e64c47c3c3e326ddf18e755c041623402a",
+    "T46B/shot-load-T46B.json": "95348016bf325f9e5cf0209e418be6a7a3c23b088ded8a50679050c7bc0cd53d",
+    "T46C/load-confirmation.json": "f113f348bbb0f41b704eca12920ded96ae1ade61ca8eeb0b3950bd6244258fe9",
+    "T46C/shot-load-T46C.json": "ae55edf7150ceae34b93c75396278dd185fa0cd3df0f91a8a9cad19e407fe147"
+  },
+  "limitations": [
+    "Sound is a user listening judgement.",
+    "T46 names were typed by the user from FM3-Edit; only the T46A cards/list were screenshotted.",
+    "Index 0 (Amp 1) equals the field default; 23 and 24 both read Formant 1; both stay unmapped.",
+    "Footswitch behavior is confirmed only for Drive 1, Delay 1 and Scene 3 (and Reverb 1 display); other mapped blocks are display-only.",
+    "Second block instances: index known for some, effect ID not measured; only Resonator 2 (163) is mapped.",
+    "T46D (72..92) not run; 63..71 already empty."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

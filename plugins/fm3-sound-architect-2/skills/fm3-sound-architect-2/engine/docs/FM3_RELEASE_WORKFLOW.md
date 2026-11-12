@@ -10,6 +10,7 @@
 
 ## Ulatus
 
+0.3.67: per-preset Effect Bypass lülitid 28 plokile (T46 FM3-Editi indeksikaart); Drive 1 / Delay 1 / Scene 3 jalglülitil kinnitatud (T45).
 0.3.66 lisab per-preset lülititele efekti bypassi (Drive 1, Delay 1, Reverb 1) ja stseeni valiku
 (`footswitches[].effect` / `footswitches[].scene`). Kodeering tuleb H5/T44 seadmetõendist (11.11.2026); generaatori
 faili import on kontrollimata (katse T45).

@@ -1,6 +1,6 @@
 # FM3 kehtiv tõendiseis
 
-Koondatud 2026-11-11; seadmetõendid kuni 2026-11-11. Alus 0.3.65.
+Koondatud 2026-11-12; seadmetõendid kuni 2026-11-12. Alus 0.3.65.
 
 See on ulatusega tõendikoond, mitte kõigi FM3 võimaluste valmidusprotsent. „Mõõtmata” ei tähenda keelatud sisendit ega ebaõnnestunud katset.
 
@@ -77,6 +77,13 @@ Kõik neli presetti laaditi, kuulati päris kitarriga, salvestati kohta 427 ja l
 - T43: Amp Level, Drive Drive, Delay Feedback, Reverb Time, Chorus Depth, Out 1 Level ja Chorus Bypass modifikaatori sihid salvestuvad baittäpselt; Chorus Bypass SC2 0% = sees, 50%/100% = bypass. CPU 49,7–49,8% (hinnang 50,4%).
 - T44: per-preset lüliti kategooria 4 = Effect, 3 = Scene; Bypass/Select funktsioon 0; Effect param on ploki indeks (Drive 1 = 9, Delay 1 = 7, Reverb 1 = 51), Scene param = stseeni number. Värv ja Mini-Display silt ei salvestu kehasse.
 Kviitung: MOOTOR references/fm3-h5-t43-20261111.json. Modifikaatori dialooge ei avatud; seosed tuletatud näidatud väärtustest ja baittäpsest salvestisest.
+
+## H6/T45/T46 seadmekatse — 12.11.2026
+
+- H6 LIVE KOOSLUS V1.2: Amp C (lead) −5 dB, A/D −10,2, B −9 säilivad STORE-i järel. Kasutaja: leadid veidi valjemad, teised ühtlased. CPU S1 71,2 / S2 55,3 / S3 55,9 / S4 71,8 %.
+- T45: generaatori kirjutatud PP#1 Drive 1, PP#2 Delay 1 (Effect Bypass), PP#3 Scene 3, PP#4 Reverb 1 — FM3-Edit näitas õigesti, FM3 lülitid 1–3 töötasid enne ja pärast STORE-i, salvestatud keha baiditäpne.
+- T46A–C: Effect-indeks on FM3-Editi tähestikulise plokinimekirja järjekord aukudega; 0..62 = Amp 1 … Wah 2, 63..71 tühi. Plugin lubab 28 üheselt kaardistatud plokki; peale Drive 1 / Delay 1 / Reverb 1 on lülitikäitumine kontrollimata.
+Kviitung: MOOTOR references/fm3-h6-t45-20261112.json.
 
 ## MultiDelay Type mallid
 
