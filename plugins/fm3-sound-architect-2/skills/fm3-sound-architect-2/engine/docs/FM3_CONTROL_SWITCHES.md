@@ -88,8 +88,8 @@ FM3 hoiab mõlemat **presetis** (FC PER-PRESET menüü), mitte üldseadetes. Kod
   alates 63 on väli tühi). `effect` võib nüüd olla 27 ploki esimene eksemplar + `resonator2` (`cab1`, `chorus1`,
   `compressor1`, `delay1`, `drive1`, `enhancer1`, `filter1`, `flanger1`, `gate1`, `geq1`, `looper1`, `megatap1`,
   `multiband1`, `multidelay1`, `peq1`, `phaser1`, `pitch1`, `plex1`, `resonator1`, `resonator2`, `reverb1`, `ringmod1`,
-  `rotary1`, `synth1`, `tentap1`, `tremolo1`, `volpan1`, `wah1`). Peale Drive 1 / Delay 1 / Reverb 1 on nende jalglüliti
-  käitumine kontrollimata. Välja jäetud: Amp 1 (indeks 0 = ka FM3-Editi vaikekuva), Formant (23 ja 24 näitasid mõlemad
+  `rotary1`, `synth1`, `tentap1`, `tremolo1`, `volpan1`, `wah1`). Peale Drive 1 / Delay 1 on nende jalglüliti
+  käitumine kontrollimata (Reverb 1 on T45-s kinnitatud FM3-Editi kuval ja salvestuses, lülitit ei vajutatud). Välja jäetud: Amp 1 (indeks 0 = ka FM3-Editi vaikekuva), Formant (23 ja 24 näitasid mõlemad
   Formant 1), teised eksemplarid (efekti ID mõõtmata), In/Out/FB Rtn.
 - `state` ja `function` peavad olema stringid. 0.3.37 tõrjub ka üheelemendilised ja pesastatud massiivid;
   vigase tüübi tõrjumine kehtib generaatoris ning `--verify` kontrollis.

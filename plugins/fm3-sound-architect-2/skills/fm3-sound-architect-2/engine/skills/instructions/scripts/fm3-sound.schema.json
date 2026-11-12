@@ -2815,7 +2815,7 @@
       }
     },
     "footswitches": {
-      "description": "Per-preset footswitches (Per-Preset FC definitions PP#1.. in list order + Overrides, stored in the preset). Override position = 12 x (layout - 1) + (switch - 1) (T15/T16). Each entry is a Control Switch (needs a controlSwitches binding), an Effect Bypass of a mapped block (instance 1 of 27 families + resonator2; drive1/delay1/reverb1 switch-confirmed T45 2026-11-12, the rest mapped from the FM3-Edit display T46, switch untested; the block must be in the preset) or a Scene Select (T44/T45).",
+      "description": "Per-preset footswitches (Per-Preset FC definitions PP#1.. in list order + Overrides, stored in the preset). Override position = 12 x (layout - 1) + (switch - 1) (T15/T16). Each entry is a Control Switch (needs a controlSwitches binding), an Effect Bypass of a mapped block (instance 1 of 27 families + resonator2; drive1/delay1 switch-confirmed T45 2026-11-12, reverb1 stored + displayed T45, the rest mapped from the FM3-Edit display T46; switch untested except drive1/delay1; the block must be in the preset) or a Scene Select (T44/T45).",
       "type": "array",
       "minItems": 1,
       "maxItems": 24,

@@ -68,7 +68,8 @@ for(const line of ['Layout 1, lüliti 1 → PP#1: Effect, Bypass, Drive 1 (vajut
 {const c=createPreset(base,{...ppPlain,footswitches:[{layout:1,switch:1,effect:'cab1'},{layout:1,switch:2,effect:'drive1'}]}),cb=bodyOf(c.syx);
  assert.deepEqual([cb.readUInt16LE(D),cb.readUInt16LE(D+144),cb.readUInt16LE(D+2),cb.readUInt16LE(D+156)],[4,1,4,9]);
  assert.ok(c.txt.includes('Effect, Bypass, Cab 1')&&c.txt.includes('jalglüliti käitumine on kontrollimata'));
- assert.ok(!pp.txt.includes('Plokid peale Drive 1'));
+ assert.ok(pp.txt.includes('Plokid peale Drive 1'),'Reverb 1 switch is untested (T45 switch 4 not pressed)');
+ {const dd=createPreset(base,{...ppPlain,footswitches:[{layout:1,switch:1,effect:'drive1'},{layout:1,switch:2,effect:'delay1'}]});assert.ok(!dd.txt.includes('Plokid peale Drive 1'));}
  assert.throws(()=>createPreset(base,{...ppPlain,footswitches:[{layout:1,switch:1,effect:'chorus1'}]}),/not in the preset/);rejected++;
  for(const e of ['amp1','formant1','chorus2','in1'])assert.throws(()=>createPreset(base,{...ppPlain,footswitches:[{layout:1,switch:1,effect:e}]}),/footswitch/);rejected+=4;}
 const ppBad=edit=>{const s={...ppPlain,footswitches:[{layout:1,switch:1,effect:'drive1'}]};edit(s);assert.throws(()=>createPreset(base,s),/footswitch|Control Switch preset/);rejected++;};

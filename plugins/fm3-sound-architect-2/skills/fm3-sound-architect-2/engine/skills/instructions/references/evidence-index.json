@@ -1863,12 +1863,6 @@
         "references/modifier-edits-d-20261106/FM3_MOD_EDITS_D.validation.json"
       ]
     },
-    "23a24f79c5dfbcbf50f03b5dda5a712ce975ca96c39450b500ec21246b133f4d": {
-      "bytes": 15817,
-      "paths": [
-        "references/fm3-h6-t45-20261112.json"
-      ]
-    },
     "23ce5ad5568d14a54aa85a8e619c53ea096608d74e3ac07b0b1eabc4f66465a6": {
       "bytes": 7216,
       "paths": [
@@ -2396,6 +2390,12 @@
       "bytes": 24680,
       "paths": [
         "examples/JB_RHYTHM_SOLO_GENERATED_export.syx"
+      ]
+    },
+    "2c6d8b29a8a51c3b01ecaef74b45126a567dc82c91219e1a025bcb681ddfe10d": {
+      "bytes": 72826,
+      "paths": [
+        "references/fm3-current-evidence.json"
       ]
     },
     "2c6d8df49659e0adf50398c7e9e0cef91d87035f4b1d9781f22c70c52080a717": {
@@ -5799,12 +5799,6 @@
       "bytes": 8907,
       "paths": [
         "references/fm3-read-value-check-20261023.json"
-      ]
-    },
-    "7117e7391a2e0d29029449231f18cf0691b51034d87f5fbc4fa88857901ab501": {
-      "bytes": 72720,
-      "paths": [
-        "references/fm3-current-evidence.json"
       ]
     },
     "713420812f973fc2d3fc948e1fab0b3f79515c5d442e06ec5b4dcd8628a67009": {
@@ -10321,6 +10315,12 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-040-be05c39ff9/donor.syx"
+      ]
+    },
+    "c3c700e9674a4f9ada67a1e6ca0511050cf4a08948c70c60768c90b4f15dbad2": {
+      "bytes": 15923,
+      "paths": [
+        "references/fm3-h6-t45-20261112.json"
       ]
     },
     "c3cdc07fb6daaee73aae616027cc09724aa2969dfc595da5a5421df04d8ae898": {

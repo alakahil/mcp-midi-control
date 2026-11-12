@@ -38,7 +38,7 @@ try {
  assert.equal(names.slice(63).filter(Boolean).length,0,'indices 63..71 empty');
  for(const [k,v] of Object.entries(PP_EFFECTS)){
   assert.equal(byName[v.label],v.index,k);assert.ok(v.index>0&&v.index!==23&&v.index!==24,k+' ambiguous index');
-  assert.equal(v.status,['drive1','delay1','reverb1'].includes(k)?'switch-confirmed':'display-mapped',k);
+  assert.equal(v.status,{drive1:'switch-confirmed',delay1:'switch-confirmed',reverb1:'store-confirmed'}[k]??'display-mapped',k);
  }
  const sources={};
  function walk(dir){for(const f of fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){const p=path.join(dir,f.name);if(f.isDirectory())walk(p);else sources[path.relative(D,p)]=sha(fs.readFileSync(p));}}
@@ -52,10 +52,10 @@ try {
   pluginEffects:Object.fromEntries(Object.entries(PP_EFFECTS).map(([k,v])=>[k,{index:v.index,label:v.label,status:v.status}])),
   findings:{
    h6:'Amp C (lead) -5 dB, A/D -10.16, B -9 survive STORE. User: leads slightly louder, others even. CPU S1 71.2, S2 55.3, S3 55.9, S4 71.8 % (FM3-Edit).',
-   t45:'Generator-written Effect Bypass Drive 1 / Delay 1 / Reverb 1 and Scene Select 3 import, display correctly in FM3-Edit, store byte-identically and switch on FM3 footswitches 1-3 before and after STORE.',
+   t45:'Generator-written Effect Bypass Drive 1 / Delay 1 / Reverb 1 and Scene Select 3 import, display correctly in FM3-Edit, store byte-identically and switch on FM3 footswitches 1-3 (Drive 1, Delay 1, Scene 3) before and after STORE; Reverb 1 on switch 4 is display/STORE-confirmed only.',
    t46:'The Effect parameter is an index into FM3-Edit\'s alphabetical block list with gaps (a gap repeats the previous name); 0..62 cover Amp 1 .. Wah 2, 63..71 are empty.'},
   sources,
-  limitations:['Sound is a user listening judgement.','T46 names were typed by the user from FM3-Edit; only the T46A cards/list were screenshotted.','Index 0 (Amp 1) equals the field default; 23 and 24 both read Formant 1; both stay unmapped.','Footswitch behavior is confirmed only for Drive 1, Delay 1 and Scene 3 (and Reverb 1 display); other mapped blocks are display-only.','Second block instances: index known for some, effect ID not measured; only Resonator 2 (163) is mapped.','T46D (72..92) not run; 63..71 already empty.'],
+  limitations:['Sound is a user listening judgement.','T46 names were typed by the user from FM3-Edit; only the T46A cards/list were screenshotted.','Index 0 (Amp 1) equals the field default; 23 and 24 both read Formant 1; both stay unmapped.','Footswitch behavior is confirmed only for Drive 1, Delay 1 and Scene 3 ; Reverb 1 is display- and STORE-confirmed only; other mapped blocks are display-only.','Second block instances: index known for some, effect ID not measured; only Resonator 2 (163) is mapped.','T46D (72..92) not run; 63..71 already empty.'],
   deviceIO:false,newHardwareMeasurements:false};
  const out=path.join(E,'references/fm3-h6-t45-20261112.json'),text=JSON.stringify(report,null,2)+'\n';
  assert.ok(process.argv.slice(2).every(a=>a==='--write'));

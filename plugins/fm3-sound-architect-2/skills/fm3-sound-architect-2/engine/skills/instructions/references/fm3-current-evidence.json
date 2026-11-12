@@ -1784,7 +1784,7 @@
       "reverb1": {
         "index": 51,
         "label": "Reverb 1",
-        "status": "switch-confirmed"
+        "status": "store-confirmed"
       },
       "ringmod1": {
         "index": 52,
@@ -1824,14 +1824,14 @@
     },
     "findings": {
       "h6": "Amp C (lead) -5 dB, A/D -10.16, B -9 survive STORE. User: leads slightly louder, others even. CPU S1 71.2, S2 55.3, S3 55.9, S4 71.8 % (FM3-Edit).",
-      "t45": "Generator-written Effect Bypass Drive 1 / Delay 1 / Reverb 1 and Scene Select 3 import, display correctly in FM3-Edit, store byte-identically and switch on FM3 footswitches 1-3 before and after STORE.",
+      "t45": "Generator-written Effect Bypass Drive 1 / Delay 1 / Reverb 1 and Scene Select 3 import, display correctly in FM3-Edit, store byte-identically and switch on FM3 footswitches 1-3 (Drive 1, Delay 1, Scene 3) before and after STORE; Reverb 1 on switch 4 is display/STORE-confirmed only.",
       "t46": "The Effect parameter is an index into FM3-Edit's alphabetical block list with gaps (a gap repeats the previous name); 0..62 cover Amp 1 .. Wah 2, 63..71 are empty."
     },
     "limitations": [
       "Sound is a user listening judgement.",
       "T46 names were typed by the user from FM3-Edit; only the T46A cards/list were screenshotted.",
       "Index 0 (Amp 1) equals the field default; 23 and 24 both read Formant 1; both stay unmapped.",
-      "Footswitch behavior is confirmed only for Drive 1, Delay 1 and Scene 3 (and Reverb 1 display); other mapped blocks are display-only.",
+      "Footswitch behavior is confirmed only for Drive 1, Delay 1 and Scene 3 ; Reverb 1 is display- and STORE-confirmed only; other mapped blocks are display-only.",
       "Second block instances: index known for some, effect ID not measured; only Resonator 2 (163) is mapped.",
       "T46D (72..92) not run; 63..71 already empty."
     ],
@@ -1985,7 +1985,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h1-h2-h4-20261110.json": "02d2adf0543966eb28db514d075720bc4cbc29263464ed61f02f4f50369a667b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h3-20261110.json": "36ecdf87ad5e6f22107c7f067f6dd8d5682eebee89954f8b26fafc76a8cffd3f",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h5-t43-20261111.json": "00b628097e4d2a50c53e2c6781c016632d374892388c62525f5bfbeeb382aa0a",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h6-t45-20261112.json": "23a24f79c5dfbcbf50f03b5dda5a712ce975ca96c39450b500ec21246b133f4d",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h6-t45-20261112.json": "c3c700e9674a4f9ada67a1e6ca0511050cf4a08948c70c60768c90b4f15dbad2",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t30-enum-20261105.json": "457b82bd133cc50e5f9da1ca1b0f4785bcfd2e0a214b3d0af2ff23d3d98bbb09",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t31-cab-cpu-20261105.json": "8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103",
@@ -2003,7 +2003,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "d3c9ada9d8f78ec6af3277df091df4f6b8fec1e11bb133aa9913c84bb83554d2"
+    "tools/fm3/current-evidence.mjs": "642e4db82f1d14cf591d78a760021e5d95c068914febf3eda1ebae577428ac51"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false

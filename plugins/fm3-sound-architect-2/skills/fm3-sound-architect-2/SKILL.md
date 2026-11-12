@@ -853,8 +853,8 @@ Mini-Display silt presetti ei salvestu.
 
 0.3.67 (T45/T46, 12.11.2026): generaatori kirjutatud Drive 1 / Delay 1 / Scene 3 lülitid töötasid FM3 jalglülititel enne ja
 pärast STORE-i (salvestatud keha baiditäpne). `effect` võib nüüd olla 27 ploki esimene eksemplar + `resonator2`
-(võtmed `getSoundCapabilities().csPreset.effects`-ist); indeksid on FM3-Editi kuvalt (T46). Drive 1 / Delay 1 / Reverb 1 on
-lülitil kinnitatud; teiste puhul ütle, et jalglüliti käitumine on kontrollimata. Amp 1, Formant, teised eksemplarid ja
+(võtmed `getSoundCapabilities().csPreset.effects`-ist); indeksid on FM3-Editi kuvalt (T46). Drive 1 / Delay 1 on
+lülitil kinnitatud (Reverb 1 ainult kuval ja salvestuses); teiste puhul ütle, et jalglüliti käitumine on kontrollimata. Amp 1, Formant, teised eksemplarid ja
 In/Out/FB Rtn pole toetatud. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md#stseeniolek-ja-jalglüliti-0335).
 
 ## Skeem ja sisendikontroll (0.3.37)
