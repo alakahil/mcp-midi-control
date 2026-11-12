@@ -9,6 +9,7 @@
 - 0.3.2 avaldamisvormingu parandus
 
 ## Ulatus
+0.3.68: T47 kinnitas per-preset Effect Bypassi jalglülitil veel 8 plokile (Comp 1, Chorus 1, TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1, Reverb 1); kokku 10 plokki lülitil kinnitatud, ülejäänud 18 ainult FM3-Editi kuvalt.
 
 0.3.67: per-preset Effect Bypass lülitid 28 plokile (T46 FM3-Editi indeksikaart); Drive 1 / Delay 1 / Scene 3 jalglülitil kinnitatud (T45).
 0.3.66 lisab per-preset lülititele efekti bypassi (Drive 1, Delay 1, Reverb 1) ja stseeni valiku

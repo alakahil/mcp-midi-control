@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-12",
+  "generatedPresetVersion": "0.3.67",
+  "scope": "T47A-C from tools/fm3/t47-build.mjs: generator-written per-preset Effect Bypass on FM3 footswitches 1-3. Actual user LOAD/GET and STORE/reload captures at location 427, user answers and FM3-Edit display read by Claude; this replay performs no device I/O.",
+  "cases": [
+    {
+      "case": "T47A",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "fefbd12ccdb13ba91a7b2f8b107cd33114afadae293c9ee8095fa0ab1ed039f4",
+      "switches": [
+        {
+          "switch": 1,
+          "effect": "compressor1",
+          "label": "Comp 1",
+          "index": 4
+        },
+        {
+          "switch": 2,
+          "effect": "chorus1",
+          "label": "Chorus 1",
+          "index": 2
+        },
+        {
+          "switch": 3,
+          "effect": "tremolo1",
+          "label": "TremPan 1",
+          "index": 57
+        }
+      ],
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "Claude",
+          "pp_switch": "L1 Comp sisse/välja, L2 Chorus sisse/välja, L3 TremPan sisse/välja; teised plokid ei muutunud",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "Claude",
+          "pp_switch": "L1 Comp sisse/välja, L2 Chorus sisse/välja, L3 TremPan sisse/välja; teised plokid ei muutunud",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "T47B",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "6fc7934da20d54696ce48d06006947505e3b524f609205a4c39ab41d702a9855",
+      "switches": [
+        {
+          "switch": 1,
+          "effect": "pitch1",
+          "label": "Pitch 1",
+          "index": 47
+        },
+        {
+          "switch": 2,
+          "effect": "flanger1",
+          "label": "Flanger 1",
+          "index": 21
+        },
+        {
+          "switch": 3,
+          "effect": "synth1",
+          "label": "Synth 1",
+          "index": 55
+        }
+      ],
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "Claude",
+          "pp_switch": "L1 Pitch sisse/välja, L2 Flanger sisse/välja, L3 Synth sisse/välja; teised plokid ei muutunud",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "Claude",
+          "pp_switch": "L1 Pitch sisse/välja, L2 Flanger sisse/välja, L3 Synth sisse/välja; teised plokid ei muutunud",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "T47C",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "f2a047f86dfd9cf3446167a57d469630062776f094ddd60a8655c76a540ade79",
+      "switches": [
+        {
+          "switch": 1,
+          "effect": "rotary1",
+          "label": "Rotary 1",
+          "index": 53
+        },
+        {
+          "switch": 2,
+          "effect": "reverb1",
+          "label": "Reverb 1",
+          "index": 51
+        }
+      ],
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "Claude",
+          "pp_switch": "L1 Rotary sisse/välja, L2 Reverb sisse/välja; teised plokid ei muutunud",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "Claude",
+          "pp_switch": "L1 Rotary sisse/välja, L2 Reverb sisse/välja; teised plokid ei muutunud",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    }
+  ],
+  "display": {
+    "source": "FM3-Edit FC Per-Prst > Definitions, card selected by Claude in the background, TAP Category/Function/Effect fields read from the screenshot (12.11.2026)",
+    "cases": {
+      "T47A": {
+        "cards": [
+          {
+            "pp": 1,
+            "category": "Effect",
+            "function": "Bypass",
+            "effect": "Comp 1"
+          },
+          {
+            "pp": 2,
+            "category": "Effect",
+            "function": "Bypass",
+            "effect": "Chorus 1"
+          },
+          {
+            "pp": 3,
+            "category": "Effect",
+            "function": "Bypass",
+            "effect": "TremPan 1"
+          }
+        ],
+        "afterStore": "Save button no longer EDITED; card list unchanged",
+        "screenshots": {
+          "T47A/pp-after-store.jpg": "d0de4a9b454e8bf30c3741b14f13ba39d97aab88802f46db37f3f3d1514bc6d9",
+          "T47A/pp1-comp1.jpg": "02778125c828596a92b4632f41f8d22d9f0d42578e7e46f87529e98e72e27f9f",
+          "T47A/pp2-chorus1.jpg": "8cd5aafeadccbcb3d8cee7a7b2e972a4184c4182d47496793d484b286896ff8f",
+          "T47A/pp3-trempan1.jpg": "1f869825e6e798e16b628ac3a265c1e73b9df9317ad7fc3c2c754a2d63acd651"
+        }
+      },
+      "T47B": {
+        "cards": [
+          {
+            "pp": 1,
+            "category": "Effect",
+            "function": "Bypass",
+            "effect": "Pitch 1"
+          },
+          {
+            "pp": 2,
+            "category": "Effect",
+            "function": "Bypass",
+            "effect": "Flanger 1"
+          },
+          {
+            "pp": 3,
+            "category": "Effect",
+            "function": "Bypass",
+            "effect": "Synth 1"
+          }
+        ],
+        "afterStore": "Save button no longer EDITED; card list unchanged",
+        "screenshots": {
+          "T47B/grid.jpg": "0ed20226df5adb4bc454bca2590f8cc6890d6419629f049d3dd6c6c53a7e8a09",
+          "T47B/pp-after-store.jpg": "89a74933d2632b877341a8df654c31d1435e2ff652969363977995242021b4e8",
+          "T47B/pp1-pitch1.jpg": "03c5fd520142e40f0edfb55d446ecea160535762b74d0b71cf08c16ffe652ec1",
+          "T47B/pp2-flanger1.jpg": "fc28d1a582e95dc86cc937181ca796b6d6adfc8e7a4e2ace1ce0150592d8b469",
+          "T47B/pp3-synth1.jpg": "4ed7b20758163d8f11876905e63d74060a2fd3ed87fc65ea9d8dcabc56bfcaa8"
+        }
+      },
+      "T47C": {
+        "cards": [
+          {
+            "pp": 1,
+            "category": "Effect",
+            "function": "Bypass",
+            "effect": "Rotary 1"
+          },
+          {
+            "pp": 2,
+            "category": "Effect",
+            "function": "Bypass",
+            "effect": "Reverb 1"
+          }
+        ],
+        "afterStore": "Save button no longer EDITED; card list unchanged",
+        "screenshots": {
+          "T47C/grid.jpg": "2022fb33e9d797dec140218608756f08822994e2dec838df9a7dbd946916b1c6",
+          "T47C/pp-after-store.jpg": "528ed8c34f0e6827c016b725ff71d0b4b654316b57d1ba449e61fe835e5ad264",
+          "T47C/pp1-rotary1.jpg": "8488c48ac60d4bba7918bef5cebdf2e2ebca0471bf8d2914c18da5ceb3645159",
+          "T47C/pp2-reverb1.jpg": "839d1cbcca446f701186ae4380b0f082395ca9f7552bab61b953e86f590ae17c"
+        }
+      }
+    }
+  },
+  "promotedToSwitchConfirmed": [
+    "compressor1",
+    "chorus1",
+    "tremolo1",
+    "pitch1",
+    "flanger1",
+    "synth1",
+    "rotary1",
+    "reverb1"
+  ],
+  "findings": "Comp 1 (4), Chorus 1 (2), TremPan 1 (57), Pitch 1 (47), Flanger 1 (21), Synth 1 (55), Rotary 1 (53) and Reverb 1 (51) import, display correctly in FM3-Edit, store byte-identically and each footswitch bypasses/engages only its own block before and after STORE.",
+  "sources": {
+    "display-confirmation.json": "5e670e01cf618f2f382c3b7b13efee2875062cae959043f49dfa88519ce52dd9",
+    "T47A/bind-store-results.json": "fefbd12ccdb13ba91a7b2f8b107cd33114afadae293c9ee8095fa0ab1ed039f4",
+    "T47A/load-confirmation.json": "23ab62be921e0586ff4568b68d8a475cd27add607a08d2b61c9a6e28c8da7c29",
+    "T47A/pp-after-store.jpg": "d0de4a9b454e8bf30c3741b14f13ba39d97aab88802f46db37f3f3d1514bc6d9",
+    "T47A/pp1-comp1.jpg": "02778125c828596a92b4632f41f8d22d9f0d42578e7e46f87529e98e72e27f9f",
+    "T47A/pp2-chorus1.jpg": "8cd5aafeadccbcb3d8cee7a7b2e972a4184c4182d47496793d484b286896ff8f",
+    "T47A/pp3-trempan1.jpg": "1f869825e6e798e16b628ac3a265c1e73b9df9317ad7fc3c2c754a2d63acd651",
+    "T47A/shot-load-T47A.json": "ef17e9b63a3a62a2a073ed4b096cdb12e8e784075157b5f6963dc95124612bdb",
+    "T47B/bind-store-results.json": "6fc7934da20d54696ce48d06006947505e3b524f609205a4c39ab41d702a9855",
+    "T47B/grid.jpg": "0ed20226df5adb4bc454bca2590f8cc6890d6419629f049d3dd6c6c53a7e8a09",
+    "T47B/load-confirmation.json": "085de2ea14e1b361c4491b2ea65d68edcfb48d9190479f1ae5b0b79e04354fa3",
+    "T47B/pp-after-store.jpg": "89a74933d2632b877341a8df654c31d1435e2ff652969363977995242021b4e8",
+    "T47B/pp1-pitch1.jpg": "03c5fd520142e40f0edfb55d446ecea160535762b74d0b71cf08c16ffe652ec1",
+    "T47B/pp2-flanger1.jpg": "fc28d1a582e95dc86cc937181ca796b6d6adfc8e7a4e2ace1ce0150592d8b469",
+    "T47B/pp3-synth1.jpg": "4ed7b20758163d8f11876905e63d74060a2fd3ed87fc65ea9d8dcabc56bfcaa8",
+    "T47B/shot-load-T47B.json": "886eb1fd23be08d3fd0e0e191c0e7be5fcd4862184510725ee07567571249b27",
+    "T47C/bind-store-results.json": "f2a047f86dfd9cf3446167a57d469630062776f094ddd60a8655c76a540ade79",
+    "T47C/grid.jpg": "2022fb33e9d797dec140218608756f08822994e2dec838df9a7dbd946916b1c6",
+    "T47C/load-confirmation.json": "151e73f737583ff037a2e02f6263d7ecc46c78e7b6576a02b745139e6b43b3d8",
+    "T47C/pp-after-store.jpg": "528ed8c34f0e6827c016b725ff71d0b4b654316b57d1ba449e61fe835e5ad264",
+    "T47C/pp1-rotary1.jpg": "8488c48ac60d4bba7918bef5cebdf2e2ebca0471bf8d2914c18da5ceb3645159",
+    "T47C/pp2-reverb1.jpg": "839d1cbcca446f701186ae4380b0f082395ca9f7552bab61b953e86f590ae17c",
+    "T47C/shot-load-T47C.json": "af21dc94846805e1fbee6a9ce50a8238e8cf8c5bc056103399687df602d6bbae"
+  },
+  "limitations": [
+    "Switch behaviour is the user's listening/display judgement.",
+    "One block type per family (Dynami-Comp Classic, VCA Trem, Octave Divider, Analog Stereo flanger, default Synth, Rotary 5 Hz/50 %).",
+    "Other display-mapped blocks stay switch-untested."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

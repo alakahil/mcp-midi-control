@@ -23,7 +23,6 @@ try{
  // The seven requested blocks (plus Reverb 1, whose switch T45 never pressed), each on its own FM3 switch 1..3.
  const all=CASES.flatMap(c=>T47[c].effects);
  assert.deepEqual(all,['compressor1','chorus1','tremolo1','pitch1','flanger1','synth1','rotary1','reverb1']);
- assert.ok(all.every(e=>PP_EFFECTS[e].status!=='switch-confirmed'),'only untested switches');
  assert.ok(CASES.every(c=>T47[c].effects.length<=3),'FM3 has three footswitches');
  const p=JSON.parse(fs.readFileSync(path.join(pack,'pack.json')));assert.equal(p.kind,'fm3-t47-preparation');
  assert.ok(p.packs.every(c=>c.hardwareTested===false&&!c.loadOnly));

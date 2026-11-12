@@ -1,0 +1,98 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "c821e61a12b7d82be5f74496416a8526fa2d047e2f5ce92e3378c1b4a3ea3df5",
+ "preset": "T47A",
+ "name": "T47A PP SWITCH",
+ "time": "2026-11-12T14:28:20",
+ "blocks": [
+  {
+   "family": "amp",
+   "effectId": 58,
+   "values": 576,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "cab",
+   "effectId": 62,
+   "values": 424,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "chorus",
+   "effectId": 78,
+   "values": 128,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "compressor",
+   "effectId": 46,
+   "values": 148,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "delay",
+   "effectId": 70,
+   "values": 356,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "return",
+   "effectId": 186,
+   "values": 6,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "drive",
+   "effectId": 118,
+   "values": 176,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "in1",
+   "effectId": 37,
+   "values": 40,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "out1",
+   "effectId": 42,
+   "values": 104,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "reverb",
+   "effectId": 66,
+   "values": 284,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "tremolo",
+   "effectId": 106,
+   "values": 88,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  }
+ ],
+ "allMatch": true
+}

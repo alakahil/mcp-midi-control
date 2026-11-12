@@ -4,6 +4,7 @@
 //   T47C = Rotary 1 (switch 1) and Reverb 1 (switch 2; T45 confirmed Reverb 1 only on the display and in the stored body).
 // Every block is on in scenes 1-4, so each press must audibly bypass / re-engage one block. The run script loads, reads
 // blocks back and waits for the user's switch/STORE round, then reads the stored location (read-only request).
+// The pack text describes the evidence as of preparation (0.3.67), so a rebuild stays byte-identical after T47 promoted the blocks.
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -44,7 +45,7 @@ export function specs(tmp){
   const pp=labels.map((l,i)=>`PP#${i+1} Effect Bypass ${l}`).join(', ');
   return {id,name,spec:s,effects:t.effects,labels,scenes:4,
    expected:`${id}: FC Per-Prst lehel ${pp}. FM3 ${labels.map((l,i)=>`lüliti ${i+1} lülitab ${l} sisse/välja`).join(', ')}; teised plokid ei muutu.`,
-   history:t.effects.map(e=>`${PP_EFFECTS[e].label}: ${PP_EFFECTS[e].status==='store-confirmed'?'T45 kuval ja salvestuses kinnitatud, lülitit ei vajutatud':'indeks FM3-Editi kuvalt (T46), import ja lüliti kontrollimata'}`).join('; ')+'.'};
+   history:t.effects.map(e=>`${PP_EFFECTS[e].label}: ${e==='reverb1'?'T45 kuval ja salvestuses kinnitatud, lülitit ei vajutatud':'indeks FM3-Editi kuvalt (T46), import ja lüliti kontrollimata'}`).join('; ')+'.'};
  });
 }
 export function build(out){
