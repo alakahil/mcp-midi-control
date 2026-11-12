@@ -1,0 +1,41 @@
+FM3 L1 — stseenide valjuse mõõtmine USB-heliga (ette valmistatud 12.11.2026)
+
+Eesmärk: mõõta numbriga, kui valjud on preseti stseenid üksteise suhtes,
+et Amp Level / Out 1 stseenitasemed saaks seada ühe korraga, mitte kõrva
+järgi mitme ringiga.
+
+Skript ainult SALVESTAB FM3 USB-heli (ffmpeg). FM3-le ei saadeta midagi:
+ei laadimist, SET-i, STORE-i ega stseenivahetust. Maci heliseadeid ei muudeta.
+FM3-Edit võib olla lahti või kinni (USB-heli ei sega MIDI-porti).
+
+Vaja: FM3 USB-ga Macis, ffmpeg (paigaldatud 12.11.2026), kitarr.
+
+Sammud:
+1. Ava Terminal:
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_L1_LOUDNESS
+2. Kontroll (ei salvesta midagi):
+   python3 -B FM3_L1_LOUDNESS.py --self-test
+3. Vali FM3-l preset, mida mõõdame (nt koht 427, LIVE KOOSLUS V1.2).
+4. Käivita:
+   python3 -B FM3_L1_LOUDNESS.py --scenes 1-8 --reference 1
+   (ainult neli stseeni: --scenes 1-4)
+5. Kirjuta preseti nimi. Iga stseeni kohta:
+   a) vali FM3-l (või M-Wave'iga) see stseen;
+   b) vajuta Enter, oota 3-2-1 ja mängi 12 sekundit SAMA riffi sama
+      tugevusega (nt 4 akordi + lühike soolofraas). Kitarri nupud paigal.
+   c) Enter = sobib, k = kordan.
+6. Lõpus näitab skript tabelit ja kausta SESSION_L1_... nime.
+   Kirjuta see nimi vestlusesse.
+
+Tabeli lugemine:
+- Valjus LUFS: stseeni töödeldud heli (USB 1-2) valjus.
+- Vahe: stseen miinus võrdlusstseen.
+- Mäng: kuiva kitarri (USB 3-4) vahe, st kui erinevalt sa mängisid.
+- Korrigeeritud: Vahe miinus Mäng. Selle järgi seame tasemed.
+- Lead-stseen jääb teadlikult valjemaks (tavaliselt +2..+3 dB).
+
+Kui USB 1-2 on vaikne ja 3-4 mitte, on FM3 USB-väljundi allikas teisiti
+seatud; ütle seda vestluses, üldseadeid ise ei muuda.
+
+Olemasoleva kausta uus arvutus:
+   python3 -B FM3_L1_LOUDNESS.py --analyze SESSION_L1_... --reference 1
