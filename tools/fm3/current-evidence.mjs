@@ -28,6 +28,8 @@ assert.ok(h5.cases.every(c=>c.dataPassed&&c.storeReload==='confirmed'));
 const h6=receipt('fm3-h6-t45-20261112.json');
 assert.deepEqual(h6.cases.map(c=>[c.case,c.completed]),[['H6',true],['T45',true],['T46A',true],['T46B',true],['T46C',true],['T46D',false]]);
 assert.ok(h6.cases.filter(c=>c.completed).every(c=>c.dataPassed)&&h6.cases[1].storedBodyByteIdentical);
+const t47=receipt('fm3-t47-20261112.json');
+assert.ok(t47.cases.length===3&&t47.cases.every(c=>c.completed&&c.dataPassed&&c.storedBodyByteIdentical));
 const h3=receipt('fm3-h3-20261110.json');
 assert.deepEqual(h3.cases.map(c=>c.case),['V1','V4']);
 assert.ok(h3.cases.every(c=>c.storeReload==='confirmed')&&h3.cases[1].storedBodyByteIdentical);
@@ -100,6 +102,7 @@ const current={schemaVersion:1,asOf:'2026-11-12',hardwareEvidenceThrough:'2026-1
  auditNextPresets:{evidence:'H1/H2/H4 2026-11-10',cases:h12.cases,display:h12.display,findings:h12.findings,limitations:h12.limitations,scope:h12.scope},
  auditFinalPerformance:{evidence:'H3 2026-11-10',cases:h3.cases.map(({observations,...c})=>c),findings:h3.findings,limitations:h3.limitations,scope:h3.scope},
  auditH5T43:{evidence:'H5/H5B/T43/T44 2026-11-11',cases:h5.cases.map(({observations,...c})=>c),perPresetSwitchWords:h5.perPresetSwitchWords,findings:h5.findings,limitations:h5.limitations,scope:h5.scope},
+ auditT47:{evidence:'T47A-C 2026-11-12',cases:t47.cases.map(({observations,...c})=>c),promotedToSwitchConfirmed:t47.promotedToSwitchConfirmed,findings:t47.findings,limitations:t47.limitations,scope:t47.scope},
  auditH6T45:{evidence:'H6/T45/T46A-C 2026-11-12',cases:h6.cases.map(({observations,...c})=>c),pluginEffects:h6.pluginEffects,findings:h6.findings,limitations:h6.limitations,scope:h6.scope},
  otherEvidence:{
   controllersScenes:{scenes:8,channels:['A','B','C','D'],storeReload:'confirmed',evidence:['T33','T34A'],scope:'The measured scene/channel selections, not every permutation.'},
@@ -165,6 +168,9 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
  '- T45: generaatori kirjutatud PP#1 Drive 1, PP#2 Delay 1 (Effect Bypass), PP#3 Scene 3, PP#4 Reverb 1 — FM3-Edit näitas õigesti, FM3 lülitid 1–3 töötasid enne ja pärast STORE-i, salvestatud keha baiditäpne.',
  '- T46A–C: Effect-indeks on FM3-Editi tähestikulise plokinimekirja järjekord aukudega; 0..62 = Amp 1 … Wah 2, 63..71 tühi. Plugin lubab 28 üheselt kaardistatud plokki; peale Drive 1 / Delay 1 on lülitikäitumine kontrollimata (Reverb 1 ainult kuval ja salvestuses).',
  'Kviitung: MOOTOR references/fm3-h6-t45-20261112.json.',
+ '','## T47 seadmekatse — 12.11.2026','',
+ '- T47A–C: generaatori kirjutatud per-preset Effect Bypass Comp 1, Chorus 1, TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1 ja Reverb 1 — FM3-Editi kuva õige, STORE baiditäpne, iga FM3 jalglüliti lülitas ainult oma plokki enne ja pärast STORE-i. 0.3.68: kokku 10 plokki lülitil kinnitatud.',
+ 'Kviitung: MOOTOR references/fm3-t47-20261112.json.',
  '','## MultiDelay Type mallid','', '| Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |','|---|---:|---|---|---|---|',
  ...multiDelay.map(r=>`| ${r.name} | ${r.measuredFullChannelWords} | ${mark(r.generatedDeviceImport)} | ${mark(r.audibleBehavior)} | ${mark(r.storeReload)} | ${r.evidence.join(', ')} |`),
  '','39 malli, 8 generaatori importi, 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',

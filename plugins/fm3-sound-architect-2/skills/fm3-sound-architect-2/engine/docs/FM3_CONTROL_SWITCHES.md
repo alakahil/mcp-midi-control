@@ -81,6 +81,9 @@ FM3 hoiab mõlemat **presetis** (FC PER-PRESET menüü), mitte üldseadetes. Kod
   stseeni number. Loendussõna (count) loeb ainult Control Switchi definitsioone. Tõend: H5/T44 11.11.2026, FM3-Editis
   tehtud määrangud salvestati ja loeti sõna-sõnalt tagasi (`references/fm3-h5-t43-20261111.json`). Värv ja Mini-Display
   silt ei salvestu.
+- 0.3.68 (T47A–C 12.11.2026, `references/fm3-t47-20261112.json`): generaatori kirjutatud Effect Bypass Comp 1, Chorus 1,
+  TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1 ja Reverb 1 näitusid FM3-Editis õigesti, salvestusid baiditäpselt ja lülitusid FM3
+  jalglülititel enne ja pärast STORE-i.
 - 0.3.67 (T45/T46 12.11.2026, `references/fm3-h6-t45-20261112.json`): generaatori kirjutatud Drive 1 / Delay 1 / Scene 3
   lülitid imporditi, FM3-Edit näitas neid õigesti, FM3 jalglülitid 1–3 lülitasid Drive'i ja Delay sisse/välja ning valisid
   stseeni 3 enne ja pärast STORE-i; salvestatud keha oli baiditäpne. T46 näitas FM3-Editis indeksite 0..71 nimed:
@@ -88,8 +91,9 @@ FM3 hoiab mõlemat **presetis** (FC PER-PRESET menüü), mitte üldseadetes. Kod
   alates 63 on väli tühi). `effect` võib nüüd olla 27 ploki esimene eksemplar + `resonator2` (`cab1`, `chorus1`,
   `compressor1`, `delay1`, `drive1`, `enhancer1`, `filter1`, `flanger1`, `gate1`, `geq1`, `looper1`, `megatap1`,
   `multiband1`, `multidelay1`, `peq1`, `phaser1`, `pitch1`, `plex1`, `resonator1`, `resonator2`, `reverb1`, `ringmod1`,
-  `rotary1`, `synth1`, `tentap1`, `tremolo1`, `volpan1`, `wah1`). Peale Drive 1 / Delay 1 on nende jalglüliti
-  käitumine kontrollimata (Reverb 1 on T45-s kinnitatud FM3-Editi kuval ja salvestuses, lülitit ei vajutatud). Välja jäetud: Amp 1 (indeks 0 = ka FM3-Editi vaikekuva), Formant (23 ja 24 näitasid mõlemad
+  `rotary1`, `synth1`, `tentap1`, `tremolo1`, `volpan1`, `wah1`). Jalglülitil kinnitatud: Drive 1, Delay 1 (T45) ning 0.3.68-st Comp 1, Chorus 1, TremPan 1, Pitch 1,
+  Flanger 1, Synth 1, Rotary 1, Reverb 1 (T47, 12.11.2026: FM3-Editi kuva, baiditäpne STORE, lülitid enne ja pärast STORE-i).
+  Teiste jalglüliti käitumine on kontrollimata. Välja jäetud: Amp 1 (indeks 0 = ka FM3-Editi vaikekuva), Formant (23 ja 24 näitasid mõlemad
   Formant 1), teised eksemplarid (efekti ID mõõtmata), In/Out/FB Rtn.
 - `state` ja `function` peavad olema stringid. 0.3.37 tõrjub ka üheelemendilised ja pesastatud massiivid;
   vigase tüübi tõrjumine kehtib generaatoris ning `--verify` kontrollis.

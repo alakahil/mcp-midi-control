@@ -135,6 +135,7 @@ jobs:
           node tools/fm3/h1-h2-h4-evidence.mjs
           node tools/fm3/h5-t43-evidence.mjs
           node tools/fm3/h6-t45-evidence.mjs
+          node tools/fm3/t47-evidence.mjs
           node tools/fm3/h3-evidence.mjs
           node tools/fm3/current-evidence.mjs
           node tools/fm3/controllers-gap-plan.mjs
@@ -144,6 +145,7 @@ jobs:
           node tools/fm3/test-h3-final.mjs
           node tools/fm3/test-h5-t43.mjs
           node tools/fm3/test-h6-t45.mjs
+          node tools/fm3/test-t47.mjs
           node tools/fm3/test-t40-controllers-sources.mjs
           node tools/fm3/test-t42-modifier-targets.mjs
           node tools/fm3/test-multidelay-boundaries.mjs

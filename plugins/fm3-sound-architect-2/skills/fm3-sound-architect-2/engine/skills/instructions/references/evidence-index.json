@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2249,
-  "filePaths": 2453,
+  "uniqueContents": 2260,
+  "filePaths": 2464,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -485,6 +485,12 @@
       "bytes": 24680,
       "paths": [
         "examples/JB_UNIFIED_RHYTHM_SOLO_TEST_export.syx"
+      ]
+    },
+    "085de2ea14e1b361c4491b2ea65d68edcfb48d9190479f1ae5b0b79e04354fa3": {
+      "bytes": 156,
+      "paths": [
+        "references/t47-20261112/T47B/load-confirmation.json"
       ]
     },
     "08623c97551ac8b558d25269ffd8e04e7762c708ae6d44d0ff337393e196b687": {
@@ -1072,6 +1078,12 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-069-543adb3126/donor.syx"
+      ]
+    },
+    "151e73f737583ff037a2e02f6263d7ecc46c78e7b6576a02b745139e6b43b3d8": {
+      "bytes": 156,
+      "paths": [
+        "references/t47-20261112/T47C/load-confirmation.json"
       ]
     },
     "1525c6b0c5439d661aa69a7180758fc1526b113bef8bffcfdf0241c0c32bbeee": {
@@ -1863,6 +1875,12 @@
         "references/modifier-edits-d-20261106/FM3_MOD_EDITS_D.validation.json"
       ]
     },
+    "23ab62be921e0586ff4568b68d8a475cd27add607a08d2b61c9a6e28c8da7c29": {
+      "bytes": 156,
+      "paths": [
+        "references/t47-20261112/T47A/load-confirmation.json"
+      ]
+    },
     "23ce5ad5568d14a54aa85a8e619c53ea096608d74e3ac07b0b1eabc4f66465a6": {
       "bytes": 7216,
       "paths": [
@@ -2390,12 +2408,6 @@
       "bytes": 24680,
       "paths": [
         "examples/JB_RHYTHM_SOLO_GENERATED_export.syx"
-      ]
-    },
-    "2c6d8b29a8a51c3b01ecaef74b45126a567dc82c91219e1a025bcb681ddfe10d": {
-      "bytes": 72826,
-      "paths": [
-        "references/fm3-current-evidence.json"
       ]
     },
     "2c6d8df49659e0adf50398c7e9e0cef91d87035f4b1d9781f22c70c52080a717": {
@@ -3404,6 +3416,12 @@
       "bytes": 423,
       "paths": [
         "references/enhancer-full-20261012-122507/step-036-75bdc8b3fb/result.json"
+      ]
+    },
+    "4099975c5e80335f86b133f0430b156cb91a5dd5b3269a5ddceee125308501ac": {
+      "bytes": 10080,
+      "paths": [
+        "references/fm3-t47-20261112.json"
       ]
     },
     "40be64a74947d2f885ecb750347321b5fecfc5c1649f1a920ff7aa0e5c0272ee": {
@@ -4913,6 +4931,12 @@
         "references/geq-full-20261010-194115/step-152-d61d768f0f/result.json"
       ]
     },
+    "5e670e01cf618f2f382c3b7b13efee2875062cae959043f49dfa88519ce52dd9": {
+      "bytes": 3006,
+      "paths": [
+        "references/t47-20261112/display-confirmation.json"
+      ]
+    },
     "5e678eab582c7f788f40aabfb151b909c90a5fa51065f817fecafe3d43d3f66d": {
       "bytes": 491678,
       "paths": [
@@ -5725,6 +5749,12 @@
       "bytes": 50669,
       "paths": [
         "references/h3-20261110/V4/bind-store-results.json"
+      ]
+    },
+    "6fc7934da20d54696ce48d06006947505e3b524f609205a4c39ab41d702a9855": {
+      "bytes": 50164,
+      "paths": [
+        "references/t47-20261112/T47B/bind-store-results.json"
       ]
     },
     "6febef6be602d7efdff33646148351aeae1fc8cf569fbbffd0bb8d21f1892696": {
@@ -7155,6 +7185,12 @@
       "bytes": 5025,
       "paths": [
         "references/geq-full-20261010-194115/step-109-6cc73d1383/capture.json"
+      ]
+    },
+    "886eb1fd23be08d3fd0e0e191c0e7be5fcd4862184510725ee07567571249b27": {
+      "bytes": 1631,
+      "paths": [
+        "references/t47-20261112/T47B/shot-load-T47B.json"
       ]
     },
     "887553aafe7d4b37cdcda8073dd5151e1c67521c297dbae55efd58adae0d7156": {
@@ -9248,6 +9284,12 @@
         "references/enhancer-full-20261012-122507/step-013-6fe53655fb/donor.syx"
       ]
     },
+    "af21dc94846805e1fbee6a9ce50a8238e8cf8c5bc056103399687df602d6bbae": {
+      "bytes": 1371,
+      "paths": [
+        "references/t47-20261112/T47C/shot-load-T47C.json"
+      ]
+    },
     "af640629f7e705eb6a08413bda68c85d4f21164b8200f39cc2985f1680b74040": {
       "bytes": 24680,
       "paths": [
@@ -10315,12 +10357,6 @@
       "bytes": 24680,
       "paths": [
         "references/peq-full-20261009-152606/step-040-be05c39ff9/donor.syx"
-      ]
-    },
-    "c3c700e9674a4f9ada67a1e6ca0511050cf4a08948c70c60768c90b4f15dbad2": {
-      "bytes": 15923,
-      "paths": [
-        "references/fm3-h6-t45-20261112.json"
       ]
     },
     "c3cdc07fb6daaee73aae616027cc09724aa2969dfc595da5a5421df04d8ae898": {
@@ -11391,6 +11427,12 @@
       "bytes": 24680,
       "paths": [
         "references/flanger-batch-20261007-125456/capture-20261007T125400-f50981221a/donor.syx"
+      ]
+    },
+    "d9394157fa813a872374fb9d4d1673d55839c19908f32eb91da269b68d6ebb0b": {
+      "bytes": 15938,
+      "paths": [
+        "references/fm3-h6-t45-20261112.json"
       ]
     },
     "d94f4d6f3b6e112b16d40a0ad3c7284bb65bcaaf06cc6ad0fed4017af12df222": {
@@ -12688,6 +12730,12 @@
         "references/enhancer-full-20261012-122507/step-074-3706bb3a65/capture.json"
       ]
     },
+    "ef17e9b63a3a62a2a073ed4b096cdb12e8e784075157b5f6963dc95124612bdb": {
+      "bytes": 1635,
+      "paths": [
+        "references/t47-20261112/T47A/shot-load-T47A.json"
+      ]
+    },
     "ef713f8343c4f2f2549c417a8e70371ba6b6c4b2e4352f47bfe3351c678a0ff1": {
       "bytes": 24680,
       "paths": [
@@ -12848,6 +12896,12 @@
       "bytes": 2248,
       "paths": [
         "references/peq-controls-20261009-121911/step-08-01047bcbc6/result.json"
+      ]
+    },
+    "f2a047f86dfd9cf3446167a57d469630062776f094ddd60a8655c76a540ade79": {
+      "bytes": 50118,
+      "paths": [
+        "references/t47-20261112/T47C/bind-store-results.json"
       ]
     },
     "f2d52fbea1d47b17dcf1186cef3fe9bf7e0354cf33766fe73091685ea6bf9620": {
@@ -13114,6 +13168,12 @@
       "bytes": 7530,
       "paths": [
         "references/phaser-batch-20261007-122802/capture-001/capture.json"
+      ]
+    },
+    "f7779616b8b649a5d01f4daacbd3fe197a1e379afec5e5146ed872d3c000df6e": {
+      "bytes": 76123,
+      "paths": [
+        "references/fm3-current-evidence.json"
       ]
     },
     "f77c2b065edd404291ace3bc53ae2b4bccc0596fd6c1bcb97abb061faa37fa7f": {
@@ -13651,6 +13711,12 @@
       "bytes": 7216,
       "paths": [
         "references/peq-full-20261009-152606/step-029-ef132c65e1/capture.json"
+      ]
+    },
+    "fefbd12ccdb13ba91a7b2f8b107cd33114afadae293c9ee8095fa0ab1ed039f4": {
+      "bytes": 50164,
+      "paths": [
+        "references/t47-20261112/T47A/bind-store-results.json"
       ]
     },
     "ff2a8877a2849c1260f9254648e19015762b2a47ea88ed2afeff59d5ddf34126": {

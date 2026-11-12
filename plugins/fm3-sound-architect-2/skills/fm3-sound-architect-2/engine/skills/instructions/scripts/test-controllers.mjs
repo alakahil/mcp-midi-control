@@ -39,7 +39,7 @@ for(let i=0;i<b0.length;i++)if(!changed.has(i))assert.equal(b1[i],b0[i],'collate
 assert.equal(b1.readUInt16LE(header),2);
 const copies=readControllers(b1);assert.deepEqual(copies.map(c=>c.channel),['A','B','C','D']);
 assert.equal(copies[1].words[controllersParam('SCENE1_VAL1').param],receipt.editorReadings.find(r=>r.channel==='B').raw);
-assert.equal(out.report.controllers.length,29);assert.equal(out.report.stages.controllers.writes,29);assert.equal(out.report.generator,'fm3-sound-0.3.67');
+assert.equal(out.report.controllers.length,29);assert.equal(out.report.stages.controllers.writes,29);assert.equal(out.report.generator,'fm3-sound-0.3.68');
 assert.match(out.txt,/CONTROLLERS \(Control plokk/);assert.match(out.txt,/A Rate \(CONTROLLERS_LFO1FREQ\) = 2\.5/);
 // Without controllers the output is unchanged by the 0.3.50 stage.
 assert.equal(plain.report.controllers,undefined);assert.doesNotMatch(plain.txt,/CONTROLLERS \(/);

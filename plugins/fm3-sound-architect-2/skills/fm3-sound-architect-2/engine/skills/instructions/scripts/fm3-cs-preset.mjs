@@ -34,20 +34,21 @@ export const CS_STATES=Object.freeze({ON:0,OFF:1,LAST:2});
 export const FOOTSWITCH_FUNCTIONS=Object.freeze({latching:1,momentary:0});
 // Effect index per block instance, measured on the device (H5/T44 2026-11-11). Only measured blocks are writable.
 // Per-preset Effect index -> FM3 block (instance 1 + Resonator 2). Drive 1 / Delay 1: stored by FM3-Edit (T44) and
-// generator-written + footswitch-confirmed (T45, 2026-11-12). Reverb 1: same, but T45 confirmed it only on the FM3-Edit display and
-// in the stored body (switch 4 was not pressed), so its footswitch behavior stays untested. The rest: FM3-Edit FC Per-Prst display of every index 0..71
+// generator-written + footswitch-confirmed (T45, 2026-11-12). Comp 1, Chorus 1, TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1 and
+// Reverb 1: generator-written, shown in FM3-Edit, stored byte-identically and switched on the FM3 footswitches before and after STORE
+// (T47A-C, 2026-11-12, references/fm3-t47-20261112.json). The rest: FM3-Edit FC Per-Prst display of every index 0..71
 // (T46A-C, 2026-11-12, references/fm3-h6-t45-20261112.json); import and footswitch behavior of those are untested.
 // Left out: index 0 (Amp 1 is also FM3-Edit's default display), 23/24 (both shown as Formant 1), second instances
 // (effect ID unmeasured), In/Out/FB Rtn.
 export const PP_EFFECTS=Object.freeze({
  cab1:{index:1,effectId:62,label:'Cab 1',status:'display-mapped'},
- chorus1:{index:2,effectId:78,label:'Chorus 1',status:'display-mapped'},
- compressor1:{index:4,effectId:46,label:'Comp 1',status:'display-mapped'},
+ chorus1:{index:2,effectId:78,label:'Chorus 1',status:'switch-confirmed'},
+ compressor1:{index:4,effectId:46,label:'Comp 1',status:'switch-confirmed'},
  delay1:{index:7,effectId:70,label:'Delay 1',status:'switch-confirmed'},
  drive1:{index:9,effectId:118,label:'Drive 1',status:'switch-confirmed'},
  enhancer1:{index:11,effectId:122,label:'Enhance 1',status:'display-mapped'},
  filter1:{index:17,effectId:114,label:'Filter 1',status:'display-mapped'},
- flanger1:{index:21,effectId:82,label:'Flanger 1',status:'display-mapped'},
+ flanger1:{index:21,effectId:82,label:'Flanger 1',status:'switch-confirmed'},
  gate1:{index:25,effectId:146,label:'Gate 1',status:'display-mapped'},
  geq1:{index:27,effectId:50,label:'GEQ 1',status:'display-mapped'},
  looper1:{index:31,effectId:166,label:'Looper',status:'display-mapped'},
@@ -56,16 +57,16 @@ export const PP_EFFECTS=Object.freeze({
  multidelay1:{index:38,effectId:74,label:'MultDly 1',status:'display-mapped'},
  peq1:{index:43,effectId:54,label:'PEQ 1',status:'display-mapped'},
  phaser1:{index:45,effectId:90,label:'Phaser 1',status:'display-mapped'},
- pitch1:{index:47,effectId:110,label:'Pitch 1',status:'display-mapped'},
+ pitch1:{index:47,effectId:110,label:'Pitch 1',status:'switch-confirmed'},
  plex1:{index:48,effectId:178,label:'Plex 1',status:'display-mapped'},
  resonator1:{index:49,effectId:162,label:'Reso 1',status:'display-mapped'},
  resonator2:{index:50,effectId:163,label:'Reso 2',status:'display-mapped'},
- reverb1:{index:51,effectId:66,label:'Reverb 1',status:'store-confirmed'},
+ reverb1:{index:51,effectId:66,label:'Reverb 1',status:'switch-confirmed'},
  ringmod1:{index:52,effectId:150,label:'RingMod 1',status:'display-mapped'},
- rotary1:{index:53,effectId:86,label:'Rotary 1',status:'display-mapped'},
- synth1:{index:55,effectId:130,label:'Synth 1',status:'display-mapped'},
+ rotary1:{index:53,effectId:86,label:'Rotary 1',status:'switch-confirmed'},
+ synth1:{index:55,effectId:130,label:'Synth 1',status:'switch-confirmed'},
  tentap1:{index:56,effectId:158,label:'Ten-Tap 1',status:'display-mapped'},
- tremolo1:{index:57,effectId:106,label:'TremPan 1',status:'display-mapped'},
+ tremolo1:{index:57,effectId:106,label:'TremPan 1',status:'switch-confirmed'},
  volpan1:{index:59,effectId:102,label:'Vol/Pan 1',status:'display-mapped'},
  wah1:{index:61,effectId:94,label:'Wah 1',status:'display-mapped'}});
 const kindOf=f=>f.effect!==undefined?'effect':f.scene!==undefined?'scene':'controlSwitch';
@@ -181,7 +182,7 @@ export function renderCsPresetText(state){
   ...state.footswitches.map(f=>`Layout ${f.layout}, lüliti ${f.switch} → PP#${f.definition}: `+(f.kind==='effect'?`Effect, Bypass, ${PP_EFFECTS[f.effect].label} (vajutus lülitab ploki sisse/välja)`:
    f.kind==='scene'?`Scene, Select, Scene ${f.scene}`:`Control Switch: ${f.function==='latching'?'Latching (vajutus lülitab sisse/välja)':'Momentary (sees ainult hoidmise ajal)'}, Control Switch ${f.controlSwitch}`)+'. Ainult selles presetis (Per-Preset FC / Overrides); lüliti tavaline funktsioon on selles presetis asendatud.'),
   ...(state.footswitches.some(f=>f.kind)?['Effect- ja Scene-lülitite kodeering on seadmel kinnitatud: T44 (11.11.2026) FM3-Editis tehtud määrangud loeti sõna-sõnalt tagasi; T45 (12.11.2026) generaatori kirjutatud Drive 1 / Delay 1 / Scene 3 lülitid töötasid FM3 jalglülititel enne ja pärast STORE-i ning salvestatud keha oli baiditäpne. Lüliti värv ja Mini-Display silt ei salvestu presetisse (FM3-Edit näitab halli).',
-   ...(state.footswitches.some(f=>f.kind==='effect'&&PP_EFFECTS[f.effect].status!=='switch-confirmed')?['Plokid peale Drive 1 / Delay 1: jalglüliti käitumine on kontrollimata (Reverb 1 on kinnitatud FM3-Editi kuval ja salvestuses, teised indeksid FM3-Editi kuvalt, T45/T46 12.11.2026).']:[])]:[]),
+   ...(state.footswitches.some(f=>f.kind==='effect'&&PP_EFFECTS[f.effect].status!=='switch-confirmed')?['Mõne ploki jalglüliti käitumine on kontrollimata: selle indeks on kaardistatud ainult FM3-Editi kuvalt (T46, 12.11.2026). Lülitil kinnitatud (T45/T47): '+Object.values(PP_EFFECTS).filter(v=>v.status==='switch-confirmed').map(v=>v.label).join(', ')+'.']:[])]:[]),
   'Kodeering on seadmel kinnitatud 29.10.2026 (T14/T14B/T16: iga väli FM3-l ükshaaval salvestatud ja sõna-sõnalt tagasi loetud, generaatori tulemus võrdub FM3 salvestatud kehaga; T15: lülitite asukohad Overrides lehel; Latching ja Momentary käitusid Layout 1-s nii, nagu kirjas). Asendus kehtib ainult valitud layout\'is: kui FM3 on teises layout\'is, teeb lüliti oma tavalist tööd. Üldseadeid ei muudeta; kui per-preset override on FM3 üldseadetes keelatud, asendus ei rakendu. Selle uue faili import on seadmes kontrollimata.'];
 }
 export function csPresetCapabilities(){return {

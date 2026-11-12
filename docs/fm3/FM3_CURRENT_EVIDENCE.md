@@ -85,6 +85,11 @@ Kviitung: MOOTOR references/fm3-h5-t43-20261111.json. Modifikaatori dialooge ei 
 - T46A–C: Effect-indeks on FM3-Editi tähestikulise plokinimekirja järjekord aukudega; 0..62 = Amp 1 … Wah 2, 63..71 tühi. Plugin lubab 28 üheselt kaardistatud plokki; peale Drive 1 / Delay 1 on lülitikäitumine kontrollimata (Reverb 1 ainult kuval ja salvestuses).
 Kviitung: MOOTOR references/fm3-h6-t45-20261112.json.
 
+## T47 seadmekatse — 12.11.2026
+
+- T47A–C: generaatori kirjutatud per-preset Effect Bypass Comp 1, Chorus 1, TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1 ja Reverb 1 — FM3-Editi kuva õige, STORE baiditäpne, iga FM3 jalglüliti lülitas ainult oma plokki enne ja pärast STORE-i. 0.3.68: kokku 10 plokki lülitil kinnitatud.
+Kviitung: MOOTOR references/fm3-t47-20261112.json.
+
 ## MultiDelay Type mallid
 
 | Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |

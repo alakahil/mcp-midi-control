@@ -443,12 +443,12 @@
     "chorus1": {
       "index": 2,
       "label": "Chorus 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "compressor1": {
       "index": 4,
       "label": "Comp 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "delay1": {
       "index": 7,
@@ -473,7 +473,7 @@
     "flanger1": {
       "index": 21,
       "label": "Flanger 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "gate1": {
       "index": 25,
@@ -518,7 +518,7 @@
     "pitch1": {
       "index": 47,
       "label": "Pitch 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "plex1": {
       "index": 48,
@@ -538,7 +538,7 @@
     "reverb1": {
       "index": 51,
       "label": "Reverb 1",
-      "status": "store-confirmed"
+      "status": "switch-confirmed"
     },
     "ringmod1": {
       "index": 52,
@@ -548,12 +548,12 @@
     "rotary1": {
       "index": 53,
       "label": "Rotary 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "synth1": {
       "index": 55,
       "label": "Synth 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "tentap1": {
       "index": 56,
@@ -563,7 +563,7 @@
     "tremolo1": {
       "index": 57,
       "label": "TremPan 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "volpan1": {
       "index": 59,

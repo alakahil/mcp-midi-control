@@ -1,0 +1,42 @@
+FM3 T47 seadmekatse — per-preset jalglülitid seitsmele plokile (ette valmistatud 12.11.2026)
+
+Kolm presetti. Igas on plokid stseenides 1–4 sees ja FM3 jalglülitid (Layout 1)
+lülitavad neid sisse/välja (Per-Preset Effect Bypass, plugin 0.3.67):
+T47A: T47A PP SWITCH — lüliti 1 = Comp 1 (Dynami-Comp Classic), 2 = Chorus 1,
+      3 = TremPan 1 (VCA Trem).
+T47B: T47B PP SWITCH — lüliti 1 = Pitch 1 (Octave Divider), 2 = Flanger 1
+      (Analog Stereo), 3 = Synth 1.
+T47C: T47C PP SWITCH — lüliti 1 = Rotary 1, 2 = Reverb 1.
+      (Reverb 1 lülitit T45-s ei vajutatud.)
+
+Enne seadmekorda:
+1. Ava Terminal ja mine kausta:
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_T47
+2. Käivita: bash ALUSTA.command --preflight
+   See EI ava USB- ega MIDI-porti. See kontrollib räsidega faile ja kogujaid.
+
+Seadmekorral (FM3 Mk II Turbo FW13, Mac, Python 3, USB, päris kitarr):
+1. Sulge FM3-Edit ja Fractal-Bot.
+2. Käivita üks juhtum korraga: bash ALUSTA.command --case T47A
+   (siis --case T47B ja --case T47C)
+3. Kirjuta LAADI. Programm laadib faili tööpuhvrisse ja loeb plokid tagasi.
+   Vea korral peatub; ära jätka STORE-iga. Kinnita nimi (j).
+4. Kirjuta vestlusesse "ok". Claude avab FM3-Editi ja pildistab FC Per-Prst lehe.
+   Vajuta FM3 lüliteid 1, 2 ja 3 (T47C: 1 ja 2) mitu korda ja kuula:
+   iga lüliti peab lülitama just oma ploki sisse/välja (FM3 ekraan ja heli).
+   Ampero puhul ainult B lühike vajutus; A-nuppu ei kasutata.
+5. Tee käsitsi STORE kohta 427, vali teine preset, tule tagasi, vajuta lüliteid
+   uuesti ja kirjuta "ok". FM3-Editi Save-nuppu ei vajutata.
+6. Claude sulgeb FM3-Editi. Kirjuta Terminali STORE ja vasta küsimustele
+   ühe rea kaupa. Sisesta salvestuskoht 427.
+7. Saada SESSION_....zip nimi vestlusesse.
+
+Iga STORE kohta 427 kirjutab eelmise üle; kõik failid saab uuesti laadida.
+
+Skriptid ei tee SET-i, STORE-i, automaatset stseeni-/presetivahetust ega
+üldseadete kirjutusi. LOAD asendab ainult tööpuhvri; STORE on kasutaja tegevus.
+
+Tulemuste seadmevaba võrdlus arendusrepos:
+node tools/fm3/t47-compare.mjs PAKI_KAUST SESSION_KAUST
+Lubatud erinevused: valitud stseeni bait 0, tervete plokikirjete järjekord,
+SysEx-sihtkoha päis. Vahele jäetud preset on "tegemata", mitte läbitud.

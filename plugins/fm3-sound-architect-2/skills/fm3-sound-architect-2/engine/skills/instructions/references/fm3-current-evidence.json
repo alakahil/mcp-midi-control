@@ -1622,6 +1622,106 @@
     ],
     "scope": "H5 (LIVE KOOSLUS V1.1), H5B (V1.1B), T43 (7 modifier targets) and T44 (user-added per-preset switches) from tools/fm3/h5-t43-build.mjs. Actual user LOAD/GET and STORE/reload captures at location 427, user answers and FM3-Edit screenshots; this replay performs no device I/O."
   },
+  "auditT47": {
+    "evidence": "T47A-C 2026-11-12",
+    "cases": [
+      {
+        "case": "T47A",
+        "completed": true,
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "fefbd12ccdb13ba91a7b2f8b107cd33114afadae293c9ee8095fa0ab1ed039f4",
+        "switches": [
+          {
+            "switch": 1,
+            "effect": "compressor1",
+            "label": "Comp 1",
+            "index": 4
+          },
+          {
+            "switch": 2,
+            "effect": "chorus1",
+            "label": "Chorus 1",
+            "index": 2
+          },
+          {
+            "switch": 3,
+            "effect": "tremolo1",
+            "label": "TremPan 1",
+            "index": 57
+          }
+        ]
+      },
+      {
+        "case": "T47B",
+        "completed": true,
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "6fc7934da20d54696ce48d06006947505e3b524f609205a4c39ab41d702a9855",
+        "switches": [
+          {
+            "switch": 1,
+            "effect": "pitch1",
+            "label": "Pitch 1",
+            "index": 47
+          },
+          {
+            "switch": 2,
+            "effect": "flanger1",
+            "label": "Flanger 1",
+            "index": 21
+          },
+          {
+            "switch": 3,
+            "effect": "synth1",
+            "label": "Synth 1",
+            "index": 55
+          }
+        ]
+      },
+      {
+        "case": "T47C",
+        "completed": true,
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "f2a047f86dfd9cf3446167a57d469630062776f094ddd60a8655c76a540ade79",
+        "switches": [
+          {
+            "switch": 1,
+            "effect": "rotary1",
+            "label": "Rotary 1",
+            "index": 53
+          },
+          {
+            "switch": 2,
+            "effect": "reverb1",
+            "label": "Reverb 1",
+            "index": 51
+          }
+        ]
+      }
+    ],
+    "promotedToSwitchConfirmed": [
+      "compressor1",
+      "chorus1",
+      "tremolo1",
+      "pitch1",
+      "flanger1",
+      "synth1",
+      "rotary1",
+      "reverb1"
+    ],
+    "findings": "Comp 1 (4), Chorus 1 (2), TremPan 1 (57), Pitch 1 (47), Flanger 1 (21), Synth 1 (55), Rotary 1 (53) and Reverb 1 (51) import, display correctly in FM3-Edit, store byte-identically and each footswitch bypasses/engages only its own block before and after STORE.",
+    "limitations": [
+      "Switch behaviour is the user's listening/display judgement.",
+      "One block type per family (Dynami-Comp Classic, VCA Trem, Octave Divider, Analog Stereo flanger, default Synth, Rotary 5 Hz/50 %).",
+      "Other display-mapped blocks stay switch-untested."
+    ],
+    "scope": "T47A-C from tools/fm3/t47-build.mjs: generator-written per-preset Effect Bypass on FM3 footswitches 1-3. Actual user LOAD/GET and STORE/reload captures at location 427, user answers and FM3-Edit display read by Claude; this replay performs no device I/O."
+  },
   "auditH6T45": {
     "evidence": "H6/T45/T46A-C 2026-11-12",
     "cases": [
@@ -1689,12 +1789,12 @@
       "chorus1": {
         "index": 2,
         "label": "Chorus 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "compressor1": {
         "index": 4,
         "label": "Comp 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "delay1": {
         "index": 7,
@@ -1719,7 +1819,7 @@
       "flanger1": {
         "index": 21,
         "label": "Flanger 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "gate1": {
         "index": 25,
@@ -1764,7 +1864,7 @@
       "pitch1": {
         "index": 47,
         "label": "Pitch 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "plex1": {
         "index": 48,
@@ -1784,7 +1884,7 @@
       "reverb1": {
         "index": 51,
         "label": "Reverb 1",
-        "status": "store-confirmed"
+        "status": "switch-confirmed"
       },
       "ringmod1": {
         "index": 52,
@@ -1794,12 +1894,12 @@
       "rotary1": {
         "index": 53,
         "label": "Rotary 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "synth1": {
         "index": 55,
         "label": "Synth 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "tentap1": {
         "index": 56,
@@ -1809,7 +1909,7 @@
       "tremolo1": {
         "index": 57,
         "label": "TremPan 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "volpan1": {
         "index": 59,
@@ -1985,7 +2085,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h1-h2-h4-20261110.json": "02d2adf0543966eb28db514d075720bc4cbc29263464ed61f02f4f50369a667b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h3-20261110.json": "36ecdf87ad5e6f22107c7f067f6dd8d5682eebee89954f8b26fafc76a8cffd3f",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h5-t43-20261111.json": "00b628097e4d2a50c53e2c6781c016632d374892388c62525f5bfbeeb382aa0a",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h6-t45-20261112.json": "c3c700e9674a4f9ada67a1e6ca0511050cf4a08948c70c60768c90b4f15dbad2",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h6-t45-20261112.json": "d9394157fa813a872374fb9d4d1673d55839c19908f32eb91da269b68d6ebb0b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t30-enum-20261105.json": "457b82bd133cc50e5f9da1ca1b0f4785bcfd2e0a214b3d0af2ff23d3d98bbb09",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t31-cab-cpu-20261105.json": "8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103",
@@ -1998,12 +2098,13 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t38-multidelay-store-20261107.json": "7e2121270b5eb92d64b91bc3a48760bc9b661222f985e665eb9c0d4d068fb042",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t39-t41-controllers-store-20261109.json": "b5a717c0ccf52eb4d33747c4f0b0cef201edb9a1ae50ba98314f6b9fdbe0fb02",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t42-modifier-targets-20261109.json": "794b9823682b001e94c40561761325d9fe7eeda16407e3a15c918b6b2db562e8",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t47-20261112.json": "4099975c5e80335f86b133f0430b156cb91a5dd5b3269a5ddceee125308501ac",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-enum-promotion.mjs": "5cf8e5afa993cc1740ac8193b0da23f9374524c10b6fc1136f047c69a12896db",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-modifier-targets.mjs": "949710e620c25ff353b39ec4d47769d669151fc8f30773bb4ad37b28ebd4074c",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "642e4db82f1d14cf591d78a760021e5d95c068914febf3eda1ebae577428ac51"
+    "tools/fm3/current-evidence.mjs": "c05d936344508406a02e73f881a2ec11406684386543680fa0b4aeed820c9731"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false
