@@ -29,13 +29,16 @@ Seadmekorral (FM3 Mk II Turbo FW13, Mac, Python 3, USB, päris kitarr):
    Vajuta FM3 lüliteid 1, 2 ja 3 (T48F: 1 ja 2) mitu korda ja kuula/vaata:
    iga lüliti peab lülitama just oma ploki sisse/välja.
    Ampero puhul ainult B lühike vajutus; A-nuppu ei kasutata.
-5. Tee käsitsi STORE kohta 427, vali teine preset, tule tagasi, vajuta lüliteid
+5. ENNE STORE-i lülita kõik proovitud plokid uuesti SISSE (FM3 ekraanil ükski
+   plokk pole hall). Muidu salvestub bypass-olek ja võrdlus failiga ei klapi.
+   Tee käsitsi STORE kohta 427, vali teine preset, tule tagasi, vajuta lüliteid
    uuesti ja kirjuta "ok". FM3-Editi Save-nuppu ei vajutata.
 6. Claude sulgeb FM3-Editi. Kirjuta Terminali STORE ja vasta küsimustele
    ühe rea kaupa. Sisesta salvestuskoht 427.
 7. Ainult T48A: Hold-proov. Programm küsib seda pärast punkti 6.
    Ava FM3-Edit -> FC Per-Prst -> PP#1 ja määra Hold Function: Scene, Select,
-   Scene 2. Claude pildistab. Sulge FM3-Edit, tee FM3-l STORE kohta 427.
+   Scene 2. Claude pildistab. Sulge FM3-Edit, vaata et Cab 1 on sees ja
+   stseen 1 valitud, ning tee FM3-l STORE kohta 427.
    Proovi: lühike vajutus = Cab 1 bypass, pikk hoidmine = stseen 2.
    Kirjuta Terminali HOLD ja vasta kahele küsimusele (vahelejätmiseks Enter).
 8. Saada SESSION_....zip nimi vestlusesse.

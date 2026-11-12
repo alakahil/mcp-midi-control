@@ -84,6 +84,7 @@ def main():
                 S.check(input('Kui Claude on pildid teinud ja FM3-Edit on suletud, kirjuta VALMIS: ').strip() == 'VALMIS', 'Katse peatatud')
                 continue
             print('Ava FM3-Edit; Claude pildistab FC Per-Prst lehe. Vajuta FM3 jalglüliteid päris kitarriga ENNE STORE-i.')
+            print('ENNE STORE-i lülita kõik proovitud plokid uuesti SISSE (ükski plokk pole hall), muidu salvestub bypass-olek.')
             print('Seejärel STORE sinu valitud kohta, vali teine preset, tule tagasi ning vajuta lüliteid uuesti.')
             print('Sulge FM3-Edit/Fractal-Bot enne jätkamist. Ära sulge Terminali.')
             S.check(input('Kui ring on tehtud ja rakendused suletud, kirjuta STORE: ').strip() == 'STORE', 'Katse peatatud')
