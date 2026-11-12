@@ -1,0 +1,52 @@
+FM3 T48 seadmekatse — per-preset jalglülitid ülejäänud 17 plokile + Hold-proov (ette valmistatud 12.11.2026)
+
+Kuus presetti. Igas on plokid stseenides 1–4 sees ja FM3 jalglülitid (Layout 1)
+lülitavad neid sisse/välja (Per-Preset Effect Bypass):
+T48A: lüliti 1 = Cab 1, 2 = Phaser 1 (Script 90), 3 = Wah 1 (Cry Babe).
+T48B: lüliti 1 = Filter 1 (High-Pass 750 Hz), 2 = GEQ 1, 3 = PEQ 1.
+T48C: lüliti 1 = Enhance 1, 2 = Vol/Pan 1, 3 = Gate 1.
+T48D: lüliti 1 = MultDly 1, 2 = Megatap 1, 3 = Ten-Tap 1.
+T48E: lüliti 1 = Plex 1, 2 = RingMod 1, 3 = Reso 1.
+T48F: lüliti 1 = MultCmp 1, 2 = Looper.
+Reso 2 jääb välja (vajab teist eksemplari).
+
+Mõne ploki (Vol/Pan, Gate, Enhance, MultCmp, Looper) mõju helile on väike:
+nende puhul loeb FM3 ekraan (plokk muutub halliks = bypass).
+
+Enne seadmekorda:
+1. Ava Terminal ja mine kausta:
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_T48
+2. Käivita: bash ALUSTA.command --preflight
+   See EI ava USB- ega MIDI-porti. See kontrollib räsidega faile ja kogujaid.
+
+Seadmekorral (FM3 Mk II Turbo FW13, Mac, Python 3, USB, päris kitarr):
+1. Sulge FM3-Edit ja Fractal-Bot.
+2. Käivita üks juhtum korraga: bash ALUSTA.command --case T48A
+   (siis T48B, T48C, T48D, T48E, T48F)
+3. Kirjuta LAADI. Programm laadib faili tööpuhvrisse ja loeb plokid tagasi.
+   Vea korral peatub; ära jätka STORE-iga. Kinnita nimi (j).
+4. Kirjuta vestlusesse "ok". Claude avab FM3-Editi ja pildistab FC Per-Prst lehe.
+   Vajuta FM3 lüliteid 1, 2 ja 3 (T48F: 1 ja 2) mitu korda ja kuula/vaata:
+   iga lüliti peab lülitama just oma ploki sisse/välja.
+   Ampero puhul ainult B lühike vajutus; A-nuppu ei kasutata.
+5. Tee käsitsi STORE kohta 427, vali teine preset, tule tagasi, vajuta lüliteid
+   uuesti ja kirjuta "ok". FM3-Editi Save-nuppu ei vajutata.
+6. Claude sulgeb FM3-Editi. Kirjuta Terminali STORE ja vasta küsimustele
+   ühe rea kaupa. Sisesta salvestuskoht 427.
+7. Ainult T48A: Hold-proov. Programm küsib seda pärast punkti 6.
+   Ava FM3-Edit -> FC Per-Prst -> PP#1 ja määra Hold Function: Scene, Select,
+   Scene 2. Claude pildistab. Sulge FM3-Edit, tee FM3-l STORE kohta 427.
+   Proovi: lühike vajutus = Cab 1 bypass, pikk hoidmine = stseen 2.
+   Kirjuta Terminali HOLD ja vasta kahele küsimusele (vahelejätmiseks Enter).
+8. Saada SESSION_....zip nimi vestlusesse.
+
+Iga STORE kohta 427 kirjutab eelmise üle; kõik failid saab uuesti laadida.
+
+Skriptid ei tee SET-i, STORE-i, automaatset stseeni-/presetivahetust ega
+üldseadete kirjutusi. LOAD asendab ainult tööpuhvri; STORE on kasutaja tegevus.
+
+Tulemuste seadmevaba võrdlus arendusrepos:
+node tools/fm3/t48-compare.mjs PAKI_KAUST SESSION_KAUST
+Lubatud erinevused: valitud stseeni bait 0, tervete plokikirjete järjekord,
+SysEx-sihtkoha päis. Vahele jäetud preset on "tegemata", mitte läbitud.
+Hold-proovi salvestis (hold-probe.json) analüüsitakse eraldi sisselugemisel.
