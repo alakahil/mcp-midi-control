@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2235,
-  "filePaths": 2439,
+  "uniqueContents": 2249,
+  "filePaths": 2453,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -988,6 +988,12 @@
         "references/phaser-batch-20261007-122802/capture-20261007T122800-3b6eb73afe/donor.syx"
       ]
     },
+    "137fb16fad73b3a5d87f4632632e6789a7538d398050520607cfc3b2093bd2d9": {
+      "bytes": 3069,
+      "paths": [
+        "references/h6-t45-20261112/display-confirmation.json"
+      ]
+    },
     "13db83e661984c08922cd1f7f25086e1489fbaed557d7600a03a52aeba5eb5ae": {
       "bytes": 7934,
       "paths": [
@@ -1855,6 +1861,12 @@
       "bytes": 563210,
       "paths": [
         "references/modifier-edits-d-20261106/FM3_MOD_EDITS_D.validation.json"
+      ]
+    },
+    "23a24f79c5dfbcbf50f03b5dda5a712ce975ca96c39450b500ec21246b133f4d": {
+      "bytes": 15817,
+      "paths": [
+        "references/fm3-h6-t45-20261112.json"
       ]
     },
     "23ce5ad5568d14a54aa85a8e619c53ea096608d74e3ac07b0b1eabc4f66465a6": {
@@ -4913,6 +4925,12 @@
         "references/enhancer-full-20261012-122507/session.json"
       ]
     },
+    "5e814911cc049e22a79979319adef0e64c47c3c3e326ddf18e755c041623402a": {
+      "bytes": 156,
+      "paths": [
+        "references/h6-t45-20261112/T46B/load-confirmation.json"
+      ]
+    },
     "5ea0b5ecd9e8cacb53563c1f8465aa43f02f00e62f0334a6fecff71a003b4f0f": {
       "bytes": 5013,
       "paths": [
@@ -5345,6 +5363,12 @@
         "references/chorus-batch-20261007-134057/capture-20261007T134054-b7a6531047/pair.json"
       ]
     },
+    "697f259721810c37c6324d02e2e8b51e399f02a83d5ac542d2c7bc0d8170775f": {
+      "bytes": 50182,
+      "paths": [
+        "references/h6-t45-20261112/T45/bind-store-results.json"
+      ]
+    },
     "6982dee0b52f7e484dd761afb07def7730834b973f958891cf8dc11acd93bb04": {
       "bytes": 5028,
       "paths": [
@@ -5715,6 +5739,12 @@
         "references/filter-controls-20261008-165150/step-15-5658d4a0aa/donor.syx"
       ]
     },
+    "701696fb07e0e33654ce05c200b2858ea5e0cdc9a24cb698072ec4eb799eb0dc": {
+      "bytes": 1371,
+      "paths": [
+        "references/h6-t45-20261112/T46A/shot-load-T46A.json"
+      ]
+    },
     "701de7eb49711d57b60246ade80f00367b1ddd583da2353ad4d068e1d4f0a63b": {
       "bytes": 24680,
       "paths": [
@@ -5769,6 +5799,12 @@
       "bytes": 8907,
       "paths": [
         "references/fm3-read-value-check-20261023.json"
+      ]
+    },
+    "7117e7391a2e0d29029449231f18cf0691b51034d87f5fbc4fa88857901ab501": {
+      "bytes": 72720,
+      "paths": [
+        "references/fm3-current-evidence.json"
       ]
     },
     "713420812f973fc2d3fc948e1fab0b3f79515c5d442e06ec5b4dcd8628a67009": {
@@ -6042,6 +6078,12 @@
         "references/enhancer-full-20261012-122507/step-029-0215cbf97e/result.json"
       ]
     },
+    "762606312e696fa88d82c27e56d3babe73e9cc58bf2ada329741d3583bacce64": {
+      "bytes": 1506,
+      "paths": [
+        "references/h6-t45-20261112/H6/shot-load-H6.json"
+      ]
+    },
     "7663349721e93f0dd898950bc6a60750c5012c86f7c48bf9f8f026de6445e084": {
       "bytes": 24680,
       "paths": [
@@ -6064,6 +6106,12 @@
       "bytes": 2847,
       "paths": [
         "references/geq-full-20261010-194115/step-048-54123459dc/result.json"
+      ]
+    },
+    "76b2de0cd0bdd989c947cf5c8404cbff4d34b4fd670173bc5d840f33747de762": {
+      "bytes": 50282,
+      "paths": [
+        "references/h6-t45-20261112/H6/bind-store-results.json"
       ]
     },
     "76b30d01868183f97ce4833e3b3ec2436f4370d48ad9fc4557dcc7b6ee7d5189": {
@@ -7019,12 +7067,6 @@
         "references/drive-controls-20261006-123230/step-04-798077e637/capture.json"
       ]
     },
-    "8726681422d2ade18b49650874b0c0582b3e16f5978e02eb6451ef41c5d70a0b": {
-      "bytes": 66345,
-      "paths": [
-        "references/fm3-current-evidence.json"
-      ]
-    },
     "873a21d3551976dfb6e6699be00dddc92a3cd9bbf1d4e14e0d307b6c932a4456": {
       "bytes": 3046,
       "paths": [
@@ -7761,6 +7803,12 @@
         "references/geq-full-20261010-194115/step-005-85115b89d4/result.json"
       ]
     },
+    "95348016bf325f9e5cf0209e418be6a7a3c23b088ded8a50679050c7bc0cd53d": {
+      "bytes": 1371,
+      "paths": [
+        "references/h6-t45-20261112/T46B/shot-load-T46B.json"
+      ]
+    },
     "9587de6e34974975332e5330ef910eb51bfe66024b02f8f18c7f8957f16ba9b2": {
       "bytes": 1310,
       "paths": [
@@ -8009,6 +8057,12 @@
       "bytes": 1778,
       "paths": [
         "references/drive-controls-20261006-123230/step-19-9e9457dffc/result.json"
+      ]
+    },
+    "99828cfdc34dcd9c1f2c0ca3a5d3939cbfbbd865a69f6591e642a42ca3e8b58b": {
+      "bytes": 156,
+      "paths": [
+        "references/h6-t45-20261112/H6/load-confirmation.json"
       ]
     },
     "99937d25e3f4df0462e2167567768c8b7e809cea8989d77a89f5bbc08ab26f84": {
@@ -8265,6 +8319,12 @@
       "bytes": 635,
       "paths": [
         "references/delay-batch-20261006-134023/capture-20261006T133736-15220b76d9/labels.json"
+      ]
+    },
+    "9f91dcef7c333609046a6b2c269fdc8671fd66d486d2a12f01a8dbef07f3da84": {
+      "bytes": 156,
+      "paths": [
+        "references/h6-t45-20261112/T46A/load-confirmation.json"
       ]
     },
     "9fa705e44595b65a232f099691da3ea4d88684b2097d906168f9f61741cb969c": {
@@ -9146,6 +9206,12 @@
         "references/amp-level-20261013/session/attempt-04-8b0ff3595c9e/attempt.json"
       ]
     },
+    "ae55edf7150ceae34b93c75396278dd185fa0cd3df0f91a8a9cad19e407fe147": {
+      "bytes": 1371,
+      "paths": [
+        "references/h6-t45-20261112/T46C/shot-load-T46C.json"
+      ]
+    },
     "ae73452faba071abdac5fdb3aa371b93da96d5e4ced27214b14ab661249146ed": {
       "bytes": 5022,
       "paths": [
@@ -9633,6 +9699,12 @@
       "bytes": 2511,
       "paths": [
         "references/fm3-bit4-check-20261024-facts.json"
+      ]
+    },
+    "b8822cf157c6a579bebedd3ea119317f7fb41f15750d3a7e4c6fa5bc42ab8e92": {
+      "bytes": 156,
+      "paths": [
+        "references/h6-t45-20261112/T45/load-confirmation.json"
       ]
     },
     "b8994fcf800c7c3babff0a2c3b56a69300467bae475d241dd6136f523584a35d": {
@@ -12350,6 +12422,12 @@
         "examples/FM3_AMP_CAB_AD_TEST.syx"
       ]
     },
+    "e95109cffe3da6bc619e26b18ba771d9c86c259eaba135b4b62875cacd9f12b2": {
+      "bytes": 1367,
+      "paths": [
+        "references/h6-t45-20261112/T45/shot-load-T45.json"
+      ]
+    },
     "e99e599952f73a237119e8b102dc512210ed89e489128ca096d346b60ded6257": {
       "bytes": 24680,
       "paths": [
@@ -12716,6 +12794,12 @@
       "bytes": 11518,
       "paths": [
         "references/peq-controls.json"
+      ]
+    },
+    "f113f348bbb0f41b704eca12920ded96ae1ade61ca8eeb0b3950bd6244258fe9": {
+      "bytes": 156,
+      "paths": [
+        "references/h6-t45-20261112/T46C/load-confirmation.json"
       ]
     },
     "f1320dcd767434d169af7b5acc047f498d793029e9a7dfb792593786ab2343c4": {
