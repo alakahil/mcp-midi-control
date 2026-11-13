@@ -36,6 +36,8 @@ const l1=receipt('fm3-l1-20261113.json');
 assert.ok(l1.l1.scenes.length===8&&l1.l1.scenes.every(s=>Math.abs(s.correctedDeltaDb)<=1.5));
 const t48=receipt('fm3-t48-20261113.json');
 assert.ok(t48.cases.length===6&&t48.cases.every(c=>c.completed&&c.dataPassed&&c.storedBodyByteIdentical));
+const t50=receipt('fm3-t50-20261113.json');
+assert.ok(t50.cases.length===2&&t50.cases.every(c=>c.completed&&c.dataPassed&&c.storedBodyByteIdentical));
 const h3=receipt('fm3-h3-20261110.json');
 assert.deepEqual(h3.cases.map(c=>c.case),['V1','V4']);
 assert.ok(h3.cases.every(c=>c.storeReload==='confirmed')&&h3.cases[1].storedBodyByteIdentical);
@@ -111,6 +113,7 @@ const current={schemaVersion:1,asOf:'2026-11-13',hardwareEvidenceThrough:'2026-1
  auditT47:{evidence:'T47A-C 2026-11-12',cases:t47.cases.map(({observations,...c})=>c),promotedToSwitchConfirmed:t47.promotedToSwitchConfirmed,findings:t47.findings,limitations:t47.limitations,scope:t47.scope},
  auditL1:{evidence:'L1 2026-11-13',l1:l1.l1,v13:l1.v13,findings:l1.findings,limitations:l1.limitations,scope:l1.scope},
  auditT48:{evidence:'T48A-F 2026-11-13',cases:t48.cases.map(({observations,...c})=>c),promotedToSwitchConfirmed:t48.promotedToSwitchConfirmed,fm3EditPp1Mislabel:t48.fm3EditPp1Mislabel,hold:t48.hold,findings:t48.findings,limitations:t48.limitations,scope:t48.scope},
+ auditT50:{evidence:'T50A-B 2026-11-13',cases:t50.cases.map(({observations,...c})=>c),targets:t50.targets,curveConfirmedTargets:t50.curveConfirmedTargets,findings:t50.findings,limitations:t50.limitations,scope:t50.scope},
  auditH6T45:{evidence:'H6/T45/T46A-C 2026-11-12',cases:h6.cases.map(({observations,...c})=>c),pluginEffects:h6.pluginEffects,findings:h6.findings,limitations:h6.limitations,scope:h6.scope},
  otherEvidence:{
   controllersScenes:{scenes:8,channels:['A','B','C','D'],storeReload:'confirmed',evidence:['T33','T34A'],scope:'The measured scene/channel selections, not every permutation.'},
@@ -190,6 +193,11 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
  '- FM3-Edit FW13 näitab PP#1 kaardil indeksite 11/17/37/38/48 puhul valesti „Amp 1”; FM3 ise näitab ja lülitab õiget plokki.',
  '- Hold: FM3-Editis määratud PP#1 Hold Scene Select Scene 2 salvestus Tap paigutusest 432 baiti eespool (kaks sõna); pikk vajutus valis stseeni 2. Generaator Holdi ei kirjuta.',
  'Kviitung: MOOTOR references/fm3-t48-20261113.json.',
+ '','## T50 modifikaatori kõverad — 13.11.2026','',
+ '- T50A: Envelope Follower → Filter Frequency 300–3000 Hz, Attack 20 ms, Release 250 ms (FM3-Edit 249,9), Scale 2 — auto-wah.',
+ '- T50B: LFO 1A → Amp Level −12…−6 dB, Start 20 / End 80 / Slope 75 %; Scene Controller 1 → Delay Mix 0–50 %, Mid 25 / Offset 10 %.',
+ 'FM3-Editi modifikaatoriaken näitas kirjutatud väärtusi, heli vastas ootusele ja mõlema preseti STORE oli baiditäpne. Teistel sihtidel on kõver valemi järgi.',
+ 'Kviitung: MOOTOR references/fm3-t50-20261113.json.',
  '','## MultiDelay Type mallid','', '| Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |','|---|---:|---|---|---|---|',
  ...multiDelay.map(r=>`| ${r.name} | ${r.measuredFullChannelWords} | ${mark(r.generatedDeviceImport)} | ${mark(r.audibleBehavior)} | ${mark(r.storeReload)} | ${r.evidence.join(', ')} |`),
  '','39 malli, 39 generaatori importi (T36, T38, H2 ja T49 13.11.2026: 31 ülejäänud Type\'i, kõik sõnad, FM3-Editi nimi ja heli), 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',
