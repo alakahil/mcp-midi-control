@@ -342,6 +342,12 @@
         "references/peq-full-20261009-152606/step-032-bb4e22eb6b/capture.json"
       ]
     },
+    "0648fd2dbc84e47d21549c2c839412976781046b7a45a101859b2591da8eb6e1": {
+      "bytes": 18340,
+      "paths": [
+        "references/fm3-record-order-20261107.json"
+      ]
+    },
     "064bc9d668a0b821c6e121c37b18ed4e76b3e2b8420b6f052f941b1c49bdf204": {
       "bytes": 2294,
       "paths": [
@@ -491,12 +497,6 @@
       "bytes": 156,
       "paths": [
         "references/t47-20261112/T47B/load-confirmation.json"
-      ]
-    },
-    "08623c97551ac8b558d25269ffd8e04e7762c708ae6d44d0ff337393e196b687": {
-      "bytes": 18006,
-      "paths": [
-        "references/fm3-record-order-20261107.json"
       ]
     },
     "087207dfe2a6c6ea0a0beb049b239e1306e5cc8230c9cc2f8dfb88949f72290e": {
@@ -11283,12 +11283,6 @@
         "references/filter-batch-20261008-132133/capture-20261008T132131-9226fea59b/pair.json"
       ]
     },
-    "d76c45b4571e9a1e1ce88571bd4a5c4e53bedebe2dbf8d3ddeaeb9b9e02be70b": {
-      "bytes": 31764,
-      "paths": [
-        "references/offline-suite.json"
-      ]
-    },
     "d7813ce6c5d352da180e659e73fee0e5fe114b96eab8da1beb34570d9aa8f76a": {
       "bytes": 24680,
       "paths": [
@@ -11445,6 +11439,12 @@
       "bytes": 2301,
       "paths": [
         "examples/FM3_FILTER_REA_VERIFIED.spec.json"
+      ]
+    },
+    "d95f4d1ea77e71bee9b813645f0f1d4342c52b20fd84170bc6af35e01ee56ae7": {
+      "bytes": 32229,
+      "paths": [
+        "references/offline-suite.json"
       ]
     },
     "d97b37ad93e1be9435b7625ed2973b635a0eb425dc271fedd4135ad7d9052896": {
