@@ -1,0 +1,66 @@
+{
+ "kind": "fm3-record-order-observation",
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-13",
+ "test": "T51 observation",
+ "source": "FM3-Edit exports of one FM3 factory preset with parallel rows: from its factory location and again after the user's STORE to test location 427. Only the record order and the grid shape are recorded here; the preset file and its values are not in the repo.",
+ "exports": [
+  {
+   "location": 362,
+   "sha256": "8239400f0a548d55e191bcfd511b37faf48d9be87a8f15e1bb3e9a1c38c987b7",
+   "bytes": 24680
+  },
+  {
+   "location": 427,
+   "sha256": "8239400f0a548d55e191bcfd511b37faf48d9be87a8f15e1bb3e9a1c38c987b7",
+   "bytes": 24680,
+   "afterUserStore": true
+  }
+ ],
+ "storeKeptExportByteIdentical": true,
+ "order": [
+  58,
+  62,
+  70,
+  37,
+  126,
+  129,
+  42,
+  66,
+  150,
+  130,
+  95
+ ],
+ "blocks": [
+  "amp",
+  "cab",
+  "delay",
+  "in1",
+  "mixer",
+  "mixer4",
+  "out1",
+  "reverb",
+  "ringmod",
+  "synth",
+  "wah2"
+ ],
+ "grid": {
+  "rows": [
+   "In 1 | synth | - | - | mixer4<1+2+3 | ringmod | amp | cab | delay | reverb | Out 1 | .",
+   ". | . | wah2<1 | mixer<1+2 | . | . | . | . | . | . | . | .",
+   ". | . | . | -<2 | . | . | . | . | . | . | . | .",
+   ". | . | . | . | . | . | . | . | . | . | . | ."
+  ],
+  "note": "Blocks on rows 2 and 3 (wah2, mixer) take the same fixed record order as row-1 blocks: the order does not follow grid position."
+ },
+ "consistency": {
+  "contradictionsWithReceipt20261107": 0,
+  "newPairs": 19,
+  "newBlocks": [
+   129,
+   95
+  ]
+ }
+}
