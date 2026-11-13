@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2260,
-  "filePaths": 2464,
+  "uniqueContents": 2263,
+  "filePaths": 2467,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -406,6 +406,12 @@
       "bytes": 806,
       "paths": [
         "references/b1-b2-20261110/cpu-correction.json"
+      ]
+    },
+    "07157f6d96c05ee5f4b60b94afc4f42316efe9fbf40498f191c00fb401bcc9b6": {
+      "bytes": 79922,
+      "paths": [
+        "references/fm3-current-evidence.json"
       ]
     },
     "078bc425b92fc00cbe733102cd278ef89b81ed824fadd10e46138fd46d55ac0d": {
@@ -1323,6 +1329,12 @@
       "bytes": 3485,
       "paths": [
         "references/enhancer-full-20261012-122507/step-060-a86cbe7a1b/capture.json"
+      ]
+    },
+    "195e54c43a9a5de791e06f7a2765f5e1bfb009ab276ebc91b075b6d7b8ef62aa": {
+      "bytes": 3615,
+      "paths": [
+        "references/fm3-l1-20261113.json"
       ]
     },
     "19800c14f85c5a4061d12225e137cea7d788e4969203c4ab50dd559d097e14d0": {
@@ -8357,12 +8369,6 @@
         "references/h6-t45-20261112/T46A/load-confirmation.json"
       ]
     },
-    "9f9677af5911e29d292bcafd2457662f8b196ccb8ab6109667f87d5a423d844f": {
-      "bytes": 76123,
-      "paths": [
-        "references/fm3-current-evidence.json"
-      ]
-    },
     "9fa705e44595b65a232f099691da3ea4d88684b2097d906168f9f61741cb969c": {
       "bytes": 649,
       "paths": [
@@ -8475,6 +8481,12 @@
       "bytes": 456,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T111400-8da0a91e37/pair.json"
+      ]
+    },
+    "a1b2e9f589c6485c1b333ec1873b2d8aa5a32ffebc13d65697c1071031749094": {
+      "bytes": 3255,
+      "paths": [
+        "references/l1-20261113/l1-loudness-results.json"
       ]
     },
     "a1c463de9e735e4ebb600065185be73e2210157e6e27034b748aa057ec79d01b": {
@@ -9897,6 +9909,12 @@
       "bytes": 7216,
       "paths": [
         "references/peq-full-20261009-152606/step-040-f6e7ed780e/capture.json"
+      ]
+    },
+    "bb0143549be5c41542badcab225ed1ab781adbf1b981bdae492db082949726b6": {
+      "bytes": 442,
+      "paths": [
+        "references/l1-20261113/v13-listening.json"
       ]
     },
     "bb25c4fd2b7e4a57a3d47080ba999cb13432f4878d8a454cc8cddabad4560de3": {
