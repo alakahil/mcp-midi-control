@@ -583,6 +583,15 @@
       "required": true
     },
     {
+      "id": "test-grid-record-order",
+      "command": [
+        "node",
+        "scripts/test-grid-record-order.mjs"
+      ],
+      "scope": "Grid-mode recordOrder (0.3.70): append is the unchanged default, device moves only whole added records by the device record-order evidence (kept order, Out 2 after Out 1, prefix/tail/record bytes unchanged), fail-closed input, four-file verification and one tamper case; no hardware I/O",
+      "required": true
+    },
+    {
       "id": "test-modifier-removal",
       "command": [
         "node",
@@ -777,7 +786,7 @@
         "node",
         "scripts/test-p2-three-switches.mjs"
       ],
-      "scope": "Pinned 0.3.37 generated quartet and user-confirmed P2 STORE/reload export; exact current-generator SYX replay, complete body comparison and corrupt-output rejection. Physical observations are bounded to Layout 1 switches 1\u20133; no new hardware I/O.",
+      "scope": "Pinned 0.3.37 generated quartet and user-confirmed P2 STORE/reload export; exact current-generator SYX replay, complete body comparison and corrupt-output rejection. Physical observations are bounded to Layout 1 switches 1–3; no new hardware I/O.",
       "required": true
     },
     {

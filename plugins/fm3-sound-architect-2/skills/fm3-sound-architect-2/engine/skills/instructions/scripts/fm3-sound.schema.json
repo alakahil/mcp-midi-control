@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.8.10 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.8.11 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -36,7 +36,7 @@
         "device",
         "append"
       ],
-      "description": "0.3.58: where an inserted block's record goes in the preset. device (default): where the FM3 itself stores it when device exports fix that position (references/fm3-record-order-20261107.json, T38), else last. append: always last (the behaviour before 0.3.58; for packs built earlier). Only with insert outside grid mode."
+      "description": "0.3.58: where an inserted block's record goes in the preset. device (default): where the FM3 itself stores it when device exports fix that position (references/fm3-record-order-20261107.json, T38), else last. append: always last (the behaviour before 0.3.58; for packs built earlier). 0.3.70: also in grid mode with insert or duplicate; there the default stays append (every grid pack built before 0.3.70), and device places each added record by the same evidence (kept records keep their order, Out 2 follows Out 1). Grid-mode device order is by evidence and not yet confirmed by a stored dump (T51)."
     },
     "layout": {
       "type": "object",

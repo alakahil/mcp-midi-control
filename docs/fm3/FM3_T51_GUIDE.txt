@@ -1,0 +1,51 @@
+FM3 T51 seadmekatse — ruudustik paralleelridadega ja kirjete järjekord (ette valmistatud 13.11.2026)
+
+Kolm presetti (plugin 0.3.70, ruudustikurežiim, recordOrder "device"):
+T51A: T51A GRID ORDER — Delay ja Reverb kahes reas paralleelselt, Mixer liidab.
+T51B: T51B GRID ORDER — Delay, Reverb ja Plex kolmes reas pluss kuiv shundirida,
+      Mixer liidab neli rida.
+T51C: T51C GRID ORDER — Drive ja Drive 2 kahes reas, Multiplexer valib rea 2 (Drive 1).
+
+Küsimus: kas FM3 salvestab generaatori ruudustikupreseti baidiidentselt, ka
+plokikirjete järjekorra poolest? T51A ja T51B puhul ootame täpset kokkulangevust.
+T51C näitab, kuhu FM3 ise paneb teise eksemplari (Drive 2) kirje; seal on
+järjekorra erinevus uus teadmine, mitte viga.
+
+Varasem tõend: FM3 tehasepreset 362 (paralleelread) jäi pärast STORE-i kohta 427
+baidiidentseks ja selle kirjete järjekord klapib kõigi varasemate tõenditega
+(13.11.2026).
+
+Enne seadmekorda:
+1. Ava Terminal ja mine kausta:
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_T51
+2. Käivita: bash ALUSTA.command --preflight
+   See EI ava USB- ega MIDI-porti. See kontrollib räsidega faile ja kogujaid.
+
+Seadmekorral (FM3 Mk II Turbo FW13, Mac, Python 3, USB, päris kitarr):
+1. Sulge FM3-Edit ja Fractal-Bot.
+2. Käivita üks juhtum korraga: bash ALUSTA.command --case T51A
+   (siis --case T51B ja --case T51C)
+3. Kirjuta LAADI. Programm laadib faili tööpuhvrisse ja loeb plokid tagasi.
+   Vea korral peatub; ära jätka STORE-iga. Kinnita nimi (j).
+4. Ava FM3-Edit (Save-nuppu ei vajutata) ja kirjuta vestlusesse "ok";
+   Claude pildistab ruudustiku.
+5. Mängi päris kitarriga ja kuula:
+   T51A: kuulda on nii delay kordused kui ka reverbi ruum.
+   T51B: lisaks veel Plex; heli on ruumilisem kui T51A.
+   T51C: tavaline ülevõimendatud rütmiheli (Drive 1 haru).
+6. Sulge FM3-Edit. Tee käsitsi STORE kohta 427, vali teine preset, tule
+   tagasi, kuula uuesti.
+7. Kirjuta Terminali STORE ja vasta küsimustele ühe rea kaupa.
+   Sisesta salvestuskoht 427.
+8. Saada SESSION_....zip nimi vestlusesse.
+
+Iga STORE kohta 427 kirjutab eelmise üle; kõik failid saab uuesti laadida.
+
+Skriptid ei tee SET-i, STORE-i, automaatset stseeni-/presetivahetust ega
+üldseadete kirjutusi. LOAD asendab ainult tööpuhvri; STORE on kasutaja tegevus.
+
+Tulemuste seadmevaba võrdlus arendusrepos:
+node tools/fm3/t51-compare.mjs PAKI_KAUST SESSION_KAUST
+Võrdlus teatab iga juhtumi kohta eraldi, kas kirjete järjekord ja kogu keha on
+baidiidentsed (peale valitud stseeni baidi 0). Vahele jäetud preset on
+"tegemata", mitte läbitud.

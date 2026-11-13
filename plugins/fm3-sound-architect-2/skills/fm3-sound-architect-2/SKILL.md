@@ -56,7 +56,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.69`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.70`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -361,7 +361,10 @@ järjekorraga. Nüüd paneb `insert` lisatud ploki kirje samasse kohta, kui tõe
 suhtes. Muidu läheb kirje lõppu nagu varem, sest seade laadib ka sellise faili. Plokkide sisu ei muutu, muutub ainult
 kirjete järjekord. T38 spec annab nüüd seadme salvestatud kehaga baidiidentse faili ja P6 A/B lisamised kattuvad seadme
 ekspordiga. `recordOrder:"append"` hoiab vana paigutuse. Aruandes `stages.insert.recordOrder` ütleb iga ploki kohta,
-kas kirje pandi seadme järjekorda või lõppu. Grid-režiim (`spec.grid`) kasutab endist järjekorda.
+kas kirje pandi seadme järjekorda või lõppu. Grid-režiim (`spec.grid`) kasutab vaikimisi endist järjekorda;
+alates 0.3.70-st paneb `recordOrder:"device"` ka seal `insert`/`duplicate` kirjed seadme järjekorda (aruandes
+`stages.records.recordOrder`). Uute ruudustikupresetite puhul kasuta `recordOrder:"device"`; see on tõendite järgi
+ja seadmel STORE-iga kontrollimata kuni T51-ni – ütle seda.
 
 ## Synth häälte CPU (0.3.57, T37)
 
