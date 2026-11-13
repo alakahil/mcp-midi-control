@@ -1,0 +1,66 @@
+{
+  "source": "FM3-Edit Edit Modifier dialog (13.11.2026). T50A read by Claude from a background screenshot; T50B screenshots sent by the user, read by Claude. No Save pressed.",
+  "dialogs": [
+    {
+      "case": "T50A",
+      "file": "T50A/filter-freq-mod.jpg",
+      "sha256": "fe7595cc22707d8a3fd75ddc59149c792a306839cffdd33f1aff4235ab808a16",
+      "title": "Filter 1 - Frequency",
+      "source": "Envelope Follower",
+      "channel": "All",
+      "min": "300.0 Hz",
+      "max": "3000.0 Hz",
+      "shown": {
+        "start": "0.0 %",
+        "mid": "50.0 %",
+        "end": "100.0 %",
+        "slope": "50.0 %",
+        "scale": "2.000",
+        "offset": "0.0 %",
+        "attack": "20.0 ms",
+        "release": "249.9 ms"
+      },
+      "note": "Release written as 250 ms shows 249.9 ms (the T12 Volume codec shows the same quantisation)."
+    },
+    {
+      "case": "T50B",
+      "file": "T50B/amp-level-mod.png",
+      "sha256": "b0e6478e9a607ad006cd06b3a2a3450bff82d084f675c7d7c77692626aba77f3",
+      "title": "Amp - Level",
+      "source": "LFO 1A",
+      "channel": "All",
+      "min": "-12.0 dB",
+      "max": "-6.0 dB",
+      "shown": {
+        "start": "20.0 %",
+        "mid": "50.0 %",
+        "end": "80.0 %",
+        "slope": "75.0 %",
+        "scale": "1.000",
+        "offset": "0.0 %",
+        "attack": "10.1 ms",
+        "release": "10.1 ms"
+      }
+    },
+    {
+      "case": "T50B",
+      "file": "T50B/delay-mix-mod.png",
+      "sha256": "38a49547a9ec746e590db7d79a7c6186be33cacba5593b9f5ca17963ff5990b5",
+      "title": "Delay 1 - Mix",
+      "source": "Scene Controller 1",
+      "channel": "All",
+      "min": "0.0 %",
+      "max": "50.0 %",
+      "shown": {
+        "start": "0.0 %",
+        "mid": "25.0 %",
+        "end": "100.0 %",
+        "slope": "50.0 %",
+        "scale": "1.000",
+        "offset": "10.0 %",
+        "attack": "10.1 ms",
+        "release": "10.1 ms"
+      }
+    }
+  ]
+}

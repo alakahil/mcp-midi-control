@@ -103,6 +103,13 @@ Kviitung: MOOTOR references/fm3-l1-20261113.json.
 - Hold: FM3-Editis määratud PP#1 Hold Scene Select Scene 2 salvestus Tap paigutusest 432 baiti eespool (kaks sõna); pikk vajutus valis stseeni 2. Generaator Holdi ei kirjuta.
 Kviitung: MOOTOR references/fm3-t48-20261113.json.
 
+## T50 modifikaatori kõverad — 13.11.2026
+
+- T50A: Envelope Follower → Filter Frequency 300–3000 Hz, Attack 20 ms, Release 250 ms (FM3-Edit 249,9), Scale 2 — auto-wah.
+- T50B: LFO 1A → Amp Level −12…−6 dB, Start 20 / End 80 / Slope 75 %; Scene Controller 1 → Delay Mix 0–50 %, Mid 25 / Offset 10 %.
+FM3-Editi modifikaatoriaken näitas kirjutatud väärtusi, heli vastas ootusele ja mõlema preseti STORE oli baiditäpne. Teistel sihtidel on kõver valemi järgi.
+Kviitung: MOOTOR references/fm3-t50-20261113.json.
+
 ## MultiDelay Type mallid
 
 | Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |

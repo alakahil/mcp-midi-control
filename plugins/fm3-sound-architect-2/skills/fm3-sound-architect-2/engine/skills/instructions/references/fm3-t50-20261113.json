@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "generatedPresetVersion": "0.3.69",
+  "scope": "T50A-B from tools/fm3/t50-build.mjs: modifierTargets[].curve on Filter Frequency, Amp Level and Delay Mix. Actual user LOAD/GET and STORE/reload captures at location 427, user listening answers and FM3-Edit modifier dialogs read by Claude; this replay performs no device I/O.",
+  "cases": [
+    {
+      "case": "T50A",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "4f194019e7176d6b59d75f49ed60b0caaa6c86394a9f4067839426fd0c7a46f2",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "curve_display": "Claude",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "curve_display": "Claude",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "T50B",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "a38382e54553881115c37f76d7a6df13d305b14912f980dd5b3d7b375d8efbb9",
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "curve_display": "Claude (Jani ekraanipildid): Amp Level LFO 1A -12..-6 dB, Start 20, End 80, Slope 75; Delay Mix Scene Controller 1 0..50 %, Mid 25, Offset 10",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "curve_display": "Claude (Jani ekraanipildid): Amp Level LFO 1A -12..-6 dB, Start 20, End 80, Slope 75; Delay Mix Scene Controller 1 0..50 %, Mid 25, Offset 10",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    }
+  ],
+  "targets": [
+    {
+      "case": "T50A",
+      "source": "Envelope Follower",
+      "block": "filter",
+      "param": "FILTER_FREQ",
+      "min": 300,
+      "max": 3000,
+      "curve": {
+        "attackMs": 20,
+        "releaseMs": 250,
+        "scale": 2
+      }
+    },
+    {
+      "case": "T50B",
+      "source": "LFO 1A",
+      "block": "amp",
+      "param": "DISTORT_LEVEL",
+      "min": -12,
+      "max": -6,
+      "curve": {
+        "startPercent": 20,
+        "endPercent": 80,
+        "slopePercent": 75
+      }
+    },
+    {
+      "case": "T50B",
+      "source": "Scene Controller 1",
+      "block": "delay",
+      "param": "DELAY_MIX",
+      "min": 0,
+      "max": 50,
+      "curve": {
+        "midPercent": 25,
+        "offsetPercent": 10
+      }
+    }
+  ],
+  "display": {
+    "source": "FM3-Edit Edit Modifier dialog (13.11.2026). T50A read by Claude from a background screenshot; T50B screenshots sent by the user, read by Claude. No Save pressed.",
+    "dialogs": [
+      {
+        "case": "T50A",
+        "file": "T50A/filter-freq-mod.jpg",
+        "sha256": "fe7595cc22707d8a3fd75ddc59149c792a306839cffdd33f1aff4235ab808a16",
+        "title": "Filter 1 - Frequency",
+        "source": "Envelope Follower",
+        "channel": "All",
+        "min": "300.0 Hz",
+        "max": "3000.0 Hz",
+        "shown": {
+          "start": "0.0 %",
+          "mid": "50.0 %",
+          "end": "100.0 %",
+          "slope": "50.0 %",
+          "scale": "2.000",
+          "offset": "0.0 %",
+          "attack": "20.0 ms",
+          "release": "249.9 ms"
+        },
+        "note": "Release written as 250 ms shows 249.9 ms (the T12 Volume codec shows the same quantisation)."
+      },
+      {
+        "case": "T50B",
+        "file": "T50B/amp-level-mod.png",
+        "sha256": "b0e6478e9a607ad006cd06b3a2a3450bff82d084f675c7d7c77692626aba77f3",
+        "title": "Amp - Level",
+        "source": "LFO 1A",
+        "channel": "All",
+        "min": "-12.0 dB",
+        "max": "-6.0 dB",
+        "shown": {
+          "start": "20.0 %",
+          "mid": "50.0 %",
+          "end": "80.0 %",
+          "slope": "75.0 %",
+          "scale": "1.000",
+          "offset": "0.0 %",
+          "attack": "10.1 ms",
+          "release": "10.1 ms"
+        }
+      },
+      {
+        "case": "T50B",
+        "file": "T50B/delay-mix-mod.png",
+        "sha256": "38a49547a9ec746e590db7d79a7c6186be33cacba5593b9f5ca17963ff5990b5",
+        "title": "Delay 1 - Mix",
+        "source": "Scene Controller 1",
+        "channel": "All",
+        "min": "0.0 %",
+        "max": "50.0 %",
+        "shown": {
+          "start": "0.0 %",
+          "mid": "25.0 %",
+          "end": "100.0 %",
+          "slope": "50.0 %",
+          "scale": "1.000",
+          "offset": "10.0 %",
+          "attack": "10.1 ms",
+          "release": "10.1 ms"
+        }
+      }
+    ]
+  },
+  "curveConfirmedTargets": {
+    "FILTER_FREQ": "T50A 2026-11-13 (Envelope Follower: Attack 20 ms, Release 250 ms, Scale 2)",
+    "DISTORT_LEVEL": "T50B 2026-11-13 (LFO 1A: Start 20, End 80, Slope 75 %)",
+    "DELAY_MIX": "T50B 2026-11-13 (Scene Controller 1: Mid 25, Offset 10 %)"
+  },
+  "findings": "The written curve and timing fields show in FM3-Edit as generated (Release 250 ms shows 249.9 ms), the auto-wah, tremolo and per-scene Delay Mix sound as intended and both presets store byte-identically. The curve codec stepped on the Volume record (T12) holds on these three targets.",
+  "sources": {
+    "display-confirmation.json": "49ca4d19cd43c65f52de229d5ae31107bf18f90c88a696c390e94a396df31baa",
+    "T50A/bind-store-results.json": "4f194019e7176d6b59d75f49ed60b0caaa6c86394a9f4067839426fd0c7a46f2",
+    "T50A/filter-freq-mod.jpg": "fe7595cc22707d8a3fd75ddc59149c792a306839cffdd33f1aff4235ab808a16",
+    "T50A/load-confirmation.json": "5b86c6a4d9d0650e4bdc122f62516a07c315fe750f397f60a6fabee62bc992b6",
+    "T50A/shot-load-T50A.json": "1c3fa9a88630440005e5a5c3f409c518589d00231ffc7ba956a0f180d4e3a763",
+    "T50B/amp-level-mod.png": "b0e6478e9a607ad006cd06b3a2a3450bff82d084f675c7d7c77692626aba77f3",
+    "T50B/bind-store-results.json": "a38382e54553881115c37f76d7a6df13d305b14912f980dd5b3d7b375d8efbb9",
+    "T50B/delay-mix-mod.png": "38a49547a9ec746e590db7d79a7c6186be33cacba5593b9f5ca17963ff5990b5",
+    "T50B/load-confirmation.json": "7d89092b93a3b4ee66c070e789fadc21dfc803aafa00b73a763d024e7cc2333b",
+    "T50B/shot-load-T50B.json": "004af983b911054bb2fef9998ae0bc36bb3463545236f5d214ffd7aa8cfc6296"
+  },
+  "limitations": [
+    "Listening is the user's judgement.",
+    "Three targets and the named fields only; other targets stay formula-derived.",
+    "Auto-Engage, Off Value and secondary sources are not written."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

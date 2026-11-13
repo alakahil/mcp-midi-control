@@ -10,7 +10,10 @@
 // stored-word codec (S1 + T7/T7b/T10/T42), 8 target effect id, 9 target PID, 17 channel (0 ALL, 1..4 A..D).
 // Records: the next unused (or inactive default) records after the Volume and Control Switch bindings.
 // 0.3.69: optional curve / timing per binding (words 3-7, 13-15; the codec of fm3-modifier-curve.mjs, stepped on the
-// device field by field in T12 on the Volume record). On other targets these words are formula-derived until T50.
+// device field by field in T12 on the Volume record). T50 (2026-11-13) confirmed written curves on three more targets
+// (FM3-Edit dialog, listening, byte-identical STORE; references/fm3-t50-20261113.json); on the rest they are formula-derived.
+export const CURVE_CONFIRMED_TARGETS=Object.freeze({FILTER_FREQ:'T50A 2026-11-13 (Envelope Follower: Attack 20 ms, Release 250 ms, Scale 2)',
+ DISTORT_LEVEL:'T50B 2026-11-13 (LFO 1A: Start 20, End 80, Slope 75 %)',DELAY_MIX:'T50B 2026-11-13 (Scene Controller 1: Mid 25, Offset 10 %)'});
 // Not covered: secondary sources, second block instances, Auto-Engage/Off Value, Min/Max on
 // non-continuous targets (those keep the full 0..65534 range).
 import fs from 'node:fs';
@@ -117,7 +120,7 @@ export function readModifierTargets(body,list){
   return {record:m[0].record,source:w.source,sourceCode:w.sourceCode,block:w.block,param:w.param,label:w.label,effectId:w.effectId,pid:w.pid,
    channelScope:m[0].channelScope,min:{display:show(w.min,w.minDisplay),word:w.min},max:{display:show(w.max,w.maxDisplay),word:w.max},fullRange:w.min===0&&w.max===65534,
    evidence:DEVICE_CONFIRMED_TARGETS[w.param]??'flag rule (T42 2026-11-09); this target not device-tested',
-   ...(w.curve?{curve:curveState(ws),curveCustom:CURVE.some(f=>ws[f.word]!==DEFAULT_CURVE[f.word]),curveEvidence:'codec stepped on the device on the Volume record (T12 2026-10-29); on this target formula-derived, device-unverified'}:{})};
+   ...(w.curve?{curve:curveState(ws),curveCustom:CURVE.some(f=>ws[f.word]!==DEFAULT_CURVE[f.word]),curveEvidence:CURVE_CONFIRMED_TARGETS[w.param]?'codec stepped on the Volume record (T12 2026-10-29); curve on this target device-confirmed in '+CURVE_CONFIRMED_TARGETS[w.param]:'codec stepped on the device on the Volume record (T12 2026-10-29); on this target formula-derived, device-unverified'}:{})};
  });
 }
 const fmt=v=>String(Number(v.toPrecision(4)));
@@ -125,7 +128,7 @@ export function renderModifierTargetsText(state){
  if(!state?.length)return [];
  return ['','MODIFIKAATORI SIHID — LÕPPFAILIST',
   ...state.map(s=>`${s.source} → ${s.block} ${s.label} (${s.param}); kanalid ${s.channelScope}; kirje ${s.record}; ${s.fullRange?'täisvahemik (Min 0 / Max 65534 sõnana)':`Min ${fmt(s.min.display)} / Max ${fmt(s.max.display)} (sõnad ${s.min.word} / ${s.max.word})`}; ${DEVICE_CONFIRMED_TARGETS[s.param]?'siht seadmel kinnitatud: '+DEVICE_CONFIRMED_TARGETS[s.param]:'siht lubatud FM3-Editi lipu 0x0080 reegli järgi, seadmel seda sihti eraldi ei kontrollitud'}.`),
-  ...state.filter(s=>s.curve).map(s=>`Kõver ja ajad (${s.block} ${s.label}): ${CURVE.map(f=>`${f.label} ${s.curve[f.key].display}${f.unit==='%'?'%':f.unit==='ms'?' ms':''}`).join(', ')} (sõnad ${CURVE.map(f=>s.curve[f.key].word).join(' / ')}). Kodeering on seadmel sammhaaval kinnitatud Volume'i kirjel (T12, 29.10.2026); sellel sihil on kõver valemi järgi, seadmel kontrollimata.`),
+  ...state.filter(s=>s.curve).map(s=>`Kõver ja ajad (${s.block} ${s.label}): ${CURVE.map(f=>`${f.label} ${s.curve[f.key].display}${f.unit==='%'?'%':f.unit==='ms'?' ms':''}`).join(', ')} (sõnad ${CURVE.map(f=>s.curve[f.key].word).join(' / ')}). Kodeering on seadmel sammhaaval kinnitatud Volume'i kirjel (T12, 29.10.2026); ${CURVE_CONFIRMED_TARGETS[s.param]?'sellel sihil kinnitas T50 (13.11.2026) kõvera FM3-Editi kuval, kuulamisel ja baiditäpse STORE-iga.':'sellel sihil on kõver valemi järgi, seadmel kontrollimata.'}`),
   `Seose mall on sama, mida FM3 ise salvestab (Control Switch / T42); ${state.some(s=>s.curve)?'kõver ja ajad on vaikimisi seal, kus neid ülal ei nimetata':'kõver ja ajad on vaikimisi'}. Allika seaded (LFO kiirus, Scene Controlleri väärtused jms) tulevad väljadest controllers / controllersScenes.`,
   'T42 (09.11.2026): kolm uut sihti kuvati, kõlasid ja säilisid STORE/reload-is baiditäpselt; lipuga 0x0080 siht (Delay Low Cut) jäi FM3-s tühjaks. Selle uue faili import ja heli on kontrollimata.'];
 }
@@ -135,7 +138,7 @@ export function modifierTargetsCapabilities(){return {field:'modifierTargets',en
  records:'next unused records after volumePedal and controlSwitches',template:'Control Switch / T42 template; words 1/2 = target stored-word codec',
  evidence:{receipt:receiptPath,sha256:t42ReceiptHash},
  notSupported:['Volume/Pan Volume (volumePedal)','Wah Control (composer.modifiers.external1Wah)','second block instances','Auto-Engage, Off Value, PC Reset, Update Rate and Damping (template values)','Min/Max on non-continuous targets','secondary sources'],
- curve:{keys:Object.fromEntries(CURVE.map(f=>[f.key,{word:f.word,label:f.label,unit:f.unit,min:f.min,max:f.max,decimals:f.decimals,default:decodeCurveWord(f.key,DEFAULT_CURVE[f.word])}])),evidence:'codec device-stepped on the Volume record (T12); other targets formula-derived until a device check (T50)'},deviceIO:false};}
+ curve:{keys:Object.fromEntries(CURVE.map(f=>[f.key,{word:f.word,label:f.label,unit:f.unit,min:f.min,max:f.max,decimals:f.decimals,default:decodeCurveWord(f.key,DEFAULT_CURVE[f.word])}])),evidence:'codec device-stepped on the Volume record (T12); curve device-confirmed on FILTER_FREQ, DISTORT_LEVEL and DELAY_MIX (T50 2026-11-13); other targets formula-derived',curveConfirmed:CURVE_CONFIRMED_TARGETS},deviceIO:false};}
 export const listModifierTargets=()=>dictionary.params.filter(isModifierTarget).map(p=>({block:slugOf(p.family)??null,family:p.family,param:p.name,label:p.label,kind:p.kind,
  minMax:CONTINUOUS.has(p.kind),deviceConfirmed:!!DEVICE_CONFIRMED_TARGETS[p.name]}));
 export function verifyModifierTargetsOutput(report,syx,txt,spec){

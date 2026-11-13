@@ -9,6 +9,8 @@
 - 0.3.2 avaldamisvormingu parandus
 
 ## Ulatus
+0.3.72: T50 kinnitas `modifierTargets[].curve` seadmel Filter Frequency, Amp Level ja Delay Mix sihil (FM3-Editi aken, kuulamine, baiditäpne STORE); TXT ja aruanne märgivad need sihid kinnitatuks.
+
 0.3.71: T48 kinnitas per-preset Effect Bypassi jalglülitil ülejäänud 17 plokile; kokku 27 plokki lülitil kinnitatud, ainult Reso 2 FM3-Editi kuvalt. Hold Scene Select = Tap paigutus +432 baiti (mõõdetud, generaator ei kirjuta).
 
 0.3.70: `recordOrder:"device"` ka ruudustikurežiimis (`grid` + `insert`/`duplicate`): lisatud ploki kirje läheb sinna, kuhu FM3 selle tõendite järgi ise paneb; vaikimisi jääb seal `append` (kõik varasemad ruudustikupakid). Tõendisse lisandus FM3 enda paralleelridadega tehasepreseti kirjejärjekord (T51 vaatlus 13.11.2026, ainult järjekord; STORE teise kohta jättis ekspordi baidiidentseks). Ruudustikurežiimi `device` on seadmel kontrollimata kuni T51 STORE-ni. Skeem 0.8.11. Selle aluseks on 0.3.69.
