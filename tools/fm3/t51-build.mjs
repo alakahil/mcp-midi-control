@@ -36,14 +36,15 @@ export const T51={
  T51C:{remove:['send','return'],insert:['multiplexer'],duplicate:['drive2'],
   rows:[e(),['in1','compressor','-','drive','-','multiplexer','amp','cab','delay','reverb','-','out1'],['','','-','drive2','-','','','','','','',''],e()],
   links:[{row:3,col:3,from:[2]},{row:2,col:6,from:[2,3]}],on:['compressor','drive','amp','cab','delay','reverb','multiplexer'],
-  shape:'Rida 2: In 1, Comp, shunt, Drive, shunt, Multiplexer, Amp, Cab, Delay, Reverb, shunt, Out 1. Rida 3 veergudes 3–5: shunt, Drive 2, shunt. Comp hargneb mõlemale reale; Multiplexer valib ühe.',
+  controls:[{block:'multiplexer',channel:'A',param:'MULTIPLEXER_INPUTSEL',value:'ROW 2'}],
+  shape:'Rida 2: In 1, Comp, shunt, Drive, shunt, Multiplexer, Amp, Cab, Delay, Reverb, shunt, Out 1. Rida 3 veergudes 3–5: shunt, Drive 2, shunt. Comp hargneb mõlemale reale; Multiplexeri Input Select = ROW 2 (Drive 1).',
   hear:'Heli läbib Drive 1 haru (Drive 2 on välja lülitatud). Tavaline ülevõimendatud rütmiheli.'}};
 export function specs(){
  return CASES.map(id=>{const t=T51[id],name=id+' GRID ORDER',blocks=t.rows.flat().filter(v=>v&&v!=='-'&&v!=='in1'&&v!=='out1');
   const s={composer:{schemaVersion:1,firmware:13,baseProfile:'jb-composer',name,modifiers:{external1Wah:false},
     reverbChannels:[{channel:'A',type:'Room: Recording Studio A'}],driveChannels:[{channel:'A',type:'T808 OD'}],delayChannels:[{channel:'A',type:'Digital Stereo'}],compressorChannels:[{channel:'A',type:'Optical Compressor'}],
     scenes:Array.from({length:8},(_,i)=>({scene:i+1,name:i<2?`${id} S${i+1}`:'TEST DEFAULT'}))},
-   grid:{rows:structuredClone(t.rows),links:structuredClone(t.links)},remove:[...t.remove],insert:[...t.insert],...(t.duplicate?{duplicate:[...t.duplicate]}:{}),recordOrder:'device',selectedScene:1,
+   grid:{rows:structuredClone(t.rows),links:structuredClone(t.links)},remove:[...t.remove],insert:[...t.insert],...(t.duplicate?{duplicate:[...t.duplicate]}:{}),...(t.controls?{controls:structuredClone(t.controls),allow:['enum-labels']}:{}),recordOrder:'device',selectedScene:1,
    blockScenes:Object.fromEntries(blocks.map(b=>[b,Array.from({length:8},(_,i)=>({scene:i+1,channel:'A',bypass:!t.on.includes(b)}))])),
    context:{guitar:'Ibanez AS-120',pickups:'humbucker',output:'OUT1 stereo FOH'},
    purpose:`${id}: ruudustikurežiimi paralleelread ja recordOrder "device" (0.3.70). Kuva, heli ja STORE on mõõtmata.`};
@@ -65,6 +66,8 @@ export function build(out){
    assert.equal(String(st.decoded.preset_name).trim(),k.name);
    const ro=r.report.stages.records.recordOrder;assert.equal(ro.mode,'device');
    const order=records.map(x=>x.eid);
+   if(k.id==='T51C'){const mux=records.find(x=>x.family==='multiplexer');assert.ok(mux,'T51C Multiplexer record');
+    assert.equal(body.readUInt16LE(mux.start),1,'T51C Multiplexer Input Select = ROW 2 (Drive 1 row), not the donor ROW 1');}
    const validation=JSON.parse(fs.readFileSync(stem+'.validation.json')),cpu=validation.cpu??validation.report?.cpu;
    assert.ok(cpu&&cpu.maxPercent<cpu.limitPercent,'CPU estimate under the safe limit');
    const blocks=records.filter(x=>x.family!=='send').map(x=>({family:x.family,effectId:x.eid,words:x.words,channels:x.channels,

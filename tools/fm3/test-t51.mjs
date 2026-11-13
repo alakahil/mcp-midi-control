@@ -28,6 +28,8 @@ try{
  assert.deepEqual(by.T51A.placed.map(x=>[x.block,x.by]),[['mixer','device order']]);assert.deepEqual(by.T51A.generated,[58,62,46,70,118,37,126,42,66]);
  assert.deepEqual(by.T51B.placed.map(x=>[x.block,x.by]),[['mixer','device order'],['plex','device order']]);assert.deepEqual(by.T51B.generated,[58,62,46,70,118,37,126,42,178,66]);
  assert.deepEqual(by.T51C.placed.map(x=>[x.block,x.by]),[['multiplexer','device order'],['drive2','appended']]);assert.equal(by.T51C.generated.at(-1),119);
+ // T51C Multiplexer selects the Drive 1 row explicitly (donor default ROW 1 is empty in this grid).
+ assert.deepEqual(T51.T51C.controls,[{block:'multiplexer',channel:'A',param:'MULTIPLEXER_INPUTSEL',value:'ROW 2'}]);
  for(const c of p.packs){
   const syx=fs.readFileSync(path.join(pack,c.stem+'.syx')),shot=JSON.parse(fs.readFileSync(path.join(pack,c.id,'shot/manifest.json'))).items[0];
   const d=path.join(session,c.id);fs.mkdirSync(d,{recursive:true});

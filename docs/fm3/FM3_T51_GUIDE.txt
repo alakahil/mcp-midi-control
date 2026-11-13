@@ -4,7 +4,7 @@ Kolm presetti (plugin 0.3.70, ruudustikurežiim, recordOrder "device"):
 T51A: T51A GRID ORDER — Delay ja Reverb kahes reas paralleelselt, Mixer liidab.
 T51B: T51B GRID ORDER — Delay, Reverb ja Plex kolmes reas pluss kuiv shundirida,
       Mixer liidab neli rida.
-T51C: T51C GRID ORDER — Drive ja Drive 2 kahes reas, Multiplexer valib ühe.
+T51C: T51C GRID ORDER — Drive ja Drive 2 kahes reas, Multiplexer valib rea 2 (Drive 1).
 
 Küsimus: kas FM3 salvestab generaatori ruudustikupreseti baidiidentselt, ka
 plokikirjete järjekorra poolest? T51A ja T51B puhul ootame täpset kokkulangevust.
