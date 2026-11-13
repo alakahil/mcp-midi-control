@@ -2470,6 +2470,15 @@
       "preampTypeNoneEvidence": "H4 2026-11-10: FM3-Edit Cab B Preamp page shows Preamp Type None, Filters 87.0 Hz / 7300 Hz",
       "scope": "Cuts and Preamp Type None visible in the T20 CAB_A preset (FM3-Edit display); not other presets or Preamp Types."
     },
+    "plexPresets": {
+      "evidence": [
+        "T52"
+      ],
+      "images": 45,
+      "wordsPerChannel": 96,
+      "generatorSupport": false,
+      "scope": "45 device-measured Plex channel images from the device default; generated load, audio and STORE not measured."
+    },
     "recordOrder": {
       "evidence": [
         "T38"
@@ -2552,12 +2561,13 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t48-20261113.json": "e996dee08e1a24e1e4b2d26440b5c85dd29e708e418db388e854511557eb4e82",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t49-multidelay-types-20261113.json": "46ccf6610110d774ba0c9fc3dd92ea9488a7c4920d94b6894dc67a3e538d887a",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t50-20261113.json": "fa4ed1d8726bf40aa192378959f1716693f1158d5062f1d59d05c797a02d8235",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t52-plex-presets-20261113.json": "522358efc83e932be2531698d5720944011d390f2371ea1c69a9f8bb2ad8b59d",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-enum-promotion.mjs": "5cf8e5afa993cc1740ac8193b0da23f9374524c10b6fc1136f047c69a12896db",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-modifier-targets.mjs": "7dfacb7b3511051383e40fd2a6c7f54518cea48e0050e472b52cb66b787a0ba2",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "8eb87cfba75651b0844ce02d4e6a928b3347e8f7c063b88a272e7689f5144c50"
+    "tools/fm3/current-evidence.mjs": "3cd0bfb54ad9389b5dade1b1ffeaadfdf767a285bac35fad1aed17e0f9a03409"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false
