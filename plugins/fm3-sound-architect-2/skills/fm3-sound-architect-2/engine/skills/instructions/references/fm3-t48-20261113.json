@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "generatedPresetVersion": "0.3.68",
+  "scope": "T48A-F from tools/fm3/t48-build.mjs: generator-written per-preset Effect Bypass on FM3 footswitches 1-3 for the 17 blocks mapped only from the FM3-Edit display (T46). Actual user LOAD/GET and STORE/reload captures at location 427, user answers (FM3 front panel) and FM3-Edit display read by Claude; plus the T48A Hold probe. This replay performs no device I/O.",
+  "cases": [
+    {
+      "case": "T48A",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "a1deee80029bc7e169b5d52c12c00fdbc591efb77546d1bb41913fe30e0c59f1",
+      "switches": [
+        {
+          "switch": 1,
+          "effect": "cab1",
+          "label": "Cab 1",
+          "index": 1
+        },
+        {
+          "switch": 2,
+          "effect": "phaser1",
+          "label": "Phaser 1",
+          "index": 45
+        },
+        {
+          "switch": 3,
+          "effect": "wah1",
+          "label": "Wah 1",
+          "index": 61
+        }
+      ],
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "Claude: PP#1 Effect Bypass Cab 1, PP#2 Effect Bypass Phaser 1, PP#3 Effect Bypass Wah 1",
+          "pp_switch": "lüliti 1 Cab 1, lüliti 2 Phaser 1, lüliti 3 Wah 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "Claude: PP#1 Effect Bypass Cab 1, PP#2 Effect Bypass Phaser 1, PP#3 Effect Bypass Wah 1",
+          "pp_switch": "lüliti 1 Cab 1, lüliti 2 Phaser 1, lüliti 3 Wah 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "T48B",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "edb72ce6836f433c6a307c43d034745ccc7a9ad3a0172ecb46f7ae796bd59c61",
+      "switches": [
+        {
+          "switch": 1,
+          "effect": "filter1",
+          "label": "Filter 1",
+          "index": 17
+        },
+        {
+          "switch": 2,
+          "effect": "geq1",
+          "label": "GEQ 1",
+          "index": 27
+        },
+        {
+          "switch": 3,
+          "effect": "peq1",
+          "label": "PEQ 1",
+          "index": 43
+        }
+      ],
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "FM3 ekraan: PP#1 Filter 1, PP#2 GEQ 1, PP#3 PEQ 1. FM3-Edit (Claude) kuvas PP#1 nimena Amp 1, PP#2 GEQ 1, PP#3 PEQ 1",
+          "pp_switch": "lüliti 1 Filter 1 (Ampiga ei juhtunud midagi), lüliti 2 GEQ 1, lüliti 3 PEQ 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "Claude: PP#1 kuvab Amp 1 (oodatud Filter 1), PP#2 Effect Bypass GEQ 1, PP#3 Effect Bypass PEQ 1",
+          "pp_switch": "lüliti 1 Filter 1 (Amp ei muutunud), lüliti 2 GEQ 1, lüliti 3 PEQ 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "T48C",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "a3ed9043d2efb07ed2593df6c4dfd4748c7b4ceffce483d95b999b40dd94f425",
+      "switches": [
+        {
+          "switch": 1,
+          "effect": "enhancer1",
+          "label": "Enhance 1",
+          "index": 11
+        },
+        {
+          "switch": 2,
+          "effect": "volpan1",
+          "label": "Vol/Pan 1",
+          "index": 59
+        },
+        {
+          "switch": 3,
+          "effect": "gate1",
+          "label": "Gate 1",
+          "index": 25
+        }
+      ],
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "FM3 ekraan: PP#1 Enhance 1 (mitte Amp), PP#2 Vol/Pan 1, PP#3 Gate 1. FM3-Edit (Claude) kuvas PP#1 nimena Amp 1, PP#2 Vol/Pan 1, PP#3 Gate 1",
+          "pp_switch": "lüliti 1 Enhance 1 (Ampiga ei juhtunud midagi), lüliti 2 Vol/Pan 1, lüliti 3 Gate 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "FM3 ekraan: PP#1 Enhance 1 (mitte Amp), PP#2 Vol/Pan 1, PP#3 Gate 1. FM3-Edit (Claude) kuvas PP#1 nimena Amp 1, PP#2 Vol/Pan 1, PP#3 Gate 1",
+          "pp_switch": "lüliti 1 Enhance 1 (Ampiga ei juhtunud midagi), lüliti 2 Vol/Pan 1, lüliti 3 Gate 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "T48D",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "2f5c776eb8a30db199d8cd1c4ba2c971e7a855120f2d2a550faa253ddefec809",
+      "switches": [
+        {
+          "switch": 1,
+          "effect": "multidelay1",
+          "label": "MultDly 1",
+          "index": 38
+        },
+        {
+          "switch": 2,
+          "effect": "megatap1",
+          "label": "Megatap 1",
+          "index": 32
+        },
+        {
+          "switch": 3,
+          "effect": "tentap1",
+          "label": "Ten-Tap 1",
+          "index": 56
+        }
+      ],
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "FM3 ekraan: PP#1 MultDly 1, PP#2 Megatap 1, PP#3 Ten-Tap 1. FM3-Edit (Claude) kuvas PP#1 nimena Amp 1, PP#2 Megatap 1, PP#3 Ten-Tap 1",
+          "pp_switch": "lüliti 1 MultDly 1 (Ampiga ei juhtunud midagi), lüliti 2 Megatap 1, lüliti 3 Ten-Tap 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "FM3 ekraan: PP#1 MultDly 1, PP#2 Megatap 1, PP#3 Ten-Tap 1. FM3-Edit (Claude) kuvas PP#1 nimena Amp 1, PP#2 Megatap 1, PP#3 Ten-Tap 1",
+          "pp_switch": "lüliti 1 MultDly 1 (Ampiga ei juhtunud midagi), lüliti 2 Megatap 1, lüliti 3 Ten-Tap 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "T48E",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "30aed5adf4d12b5e315c29fa621aaf2d0a4702357a41ea14aca95e522335d861",
+      "switches": [
+        {
+          "switch": 1,
+          "effect": "plex1",
+          "label": "Plex 1",
+          "index": 48
+        },
+        {
+          "switch": 2,
+          "effect": "ringmod1",
+          "label": "RingMod 1",
+          "index": 52
+        },
+        {
+          "switch": 3,
+          "effect": "resonator1",
+          "label": "Reso 1",
+          "index": 49
+        }
+      ],
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "FM3 ekraan: PP#1 Plex 1, PP#2 RingMod 1, PP#3 Reso 1. FM3-Edit (Claude) kuvas PP#1 nimena Amp 1, PP#2 RingMod 1, PP#3 Reso 1",
+          "pp_switch": "lüliti 1 Plex 1 (Ampiga ei juhtunud midagi), lüliti 2 RingMod 1, lüliti 3 Reso 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "FM3 ekraan: PP#1 Plex 1, PP#2 RingMod 1, PP#3 Reso 1. FM3-Edit (Claude) kuvas PP#1 nimena Amp 1, PP#2 RingMod 1, PP#3 Reso 1",
+          "pp_switch": "lüliti 1 Plex 1 (Ampiga ei juhtunud midagi), lüliti 2 RingMod 1, lüliti 3 Reso 1: kõik lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    },
+    {
+      "case": "T48F",
+      "completed": true,
+      "dataPassed": true,
+      "storedBodyByteIdentical": true,
+      "reordered": false,
+      "resultSha256": "1446c11083f2b3e3af09ff9db2897fe4235bfef732f4eb5187ee7ff2965ae0fb",
+      "switches": [
+        {
+          "switch": 1,
+          "effect": "multiband1",
+          "label": "MultCmp 1",
+          "index": 37
+        },
+        {
+          "switch": 2,
+          "effect": "looper1",
+          "label": "Looper",
+          "index": 31
+        }
+      ],
+      "observations": {
+        "before": {
+          "name_grid_scenes": "jah",
+          "pp_display": "FM3 ekraan: PP#1 MultCmp 1, PP#2 Looper. FM3-Edit (Claude) kuvas PP#1 nimena Amp 1, PP#2 Looper",
+          "pp_switch": "lüliti 1 MultCmp 1 (Ampiga ei juhtunud midagi), lüliti 2 Looper: mõlemad lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "after": {
+          "name_grid_scenes": "jah",
+          "pp_display": "FM3 ekraan: PP#1 MultCmp 1, PP#2 Looper. FM3-Edit (Claude) kuvas PP#1 nimena Amp 1, PP#2 Looper",
+          "pp_switch": "lüliti 1 MultCmp 1 (Ampiga ei juhtunud midagi), lüliti 2 Looper: mõlemad lülitasid oma ploki sisse/välja",
+          "behavior": "jah"
+        },
+        "note": ""
+      }
+    }
+  ],
+  "display": {
+    "source": "FM3 front panel read by the user; FM3-Edit FC Per-Prst > Definitions cards read by Claude from background screenshots (13.11.2026). T48A was read only in FM3-Edit.",
+    "groundTruth": "FM3 front panel and footswitch behaviour. FM3-Edit FW13 labels PP#1 \"Amp 1\" for effect indices 11, 17, 37, 38 and 48 although the FM3 shows and switches the right block (FM3-Edit display bug).",
+    "cases": {
+      "T48A": {
+        "cards": [
+          {
+            "pp": 1,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": null,
+            "fm3Edit": "Cab 1"
+          },
+          {
+            "pp": 2,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": null,
+            "fm3Edit": "Phaser 1"
+          },
+          {
+            "pp": 3,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": null,
+            "fm3Edit": "Wah 1"
+          }
+        ],
+        "screenshots": {
+          "T48A/hold.jpg": "adfd112c18d9b894b651201426780b80fcc5f304d046e2d68a1fd3c95d57a6ef",
+          "T48A/pp1.jpg": "a7a797069f0e9afc2393fd24e32c9053e92aad8ffaad4e34fb68f882d0e87b43",
+          "T48A/pp2.jpg": "adfed24a4ee8861b7497144ea40481274f3a045cbf9a9a72f05022771acd78f4",
+          "T48A/pp3.jpg": "b9a2c14a01e50d6f483d9b8f7b72b1eb0d630ec700fa82fd6af0b407fb08b801"
+        }
+      },
+      "T48B": {
+        "cards": [
+          {
+            "pp": 1,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "Filter 1",
+            "fm3Edit": "Amp 1"
+          },
+          {
+            "pp": 2,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "GEQ 1",
+            "fm3Edit": "GEQ 1"
+          },
+          {
+            "pp": 3,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "PEQ 1",
+            "fm3Edit": "PEQ 1"
+          }
+        ],
+        "screenshots": {
+          "T48B/pp1.jpg": "1b091644dbc0445389f21ebf77a891353e820e4d237c343231723af82253bf6c",
+          "T48B/pp2.jpg": "29bf2360cf24d2d087e6a1d7c07aaa7984ee38fe82f44ec0c54a0eb45401dede",
+          "T48B/pp3.jpg": "1e5359377f185ac61e39a151e67b7642a417fc40730ae6399011eb97f9d1d36f"
+        }
+      },
+      "T48C": {
+        "cards": [
+          {
+            "pp": 1,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "Enhance 1",
+            "fm3Edit": "Amp 1"
+          },
+          {
+            "pp": 2,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "Vol/Pan 1",
+            "fm3Edit": "Vol/Pan 1"
+          },
+          {
+            "pp": 3,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "Gate 1",
+            "fm3Edit": "Gate 1"
+          }
+        ],
+        "screenshots": {
+          "T48C/pp1.jpg": "a61861673349d2673dc99b59b09b6ccaf58a0b3cf743b2600a581072372d058f",
+          "T48C/pp2.jpg": "800ba75866488766ec1b4ac35638c9373cb1e086389741f24dc03a0eacdb8d78",
+          "T48C/pp3.jpg": "06456c6b99abe6855d2cbd1eb72f02b44b9205501e4a0851de1d111abb35f573"
+        }
+      },
+      "T48D": {
+        "cards": [
+          {
+            "pp": 1,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "MultDly 1",
+            "fm3Edit": "Amp 1"
+          },
+          {
+            "pp": 2,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "Megatap 1",
+            "fm3Edit": "Megatap 1"
+          },
+          {
+            "pp": 3,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "Ten-Tap 1",
+            "fm3Edit": "Ten-Tap 1"
+          }
+        ],
+        "screenshots": {
+          "T48D/grid.jpg": "ee113bd024b7a94923dfd17a2cfb2975d2966ada6d641086a238dfe6cfbe522f",
+          "T48D/pp1.jpg": "0fd0a4903346edacab4cb0778b9fec14612311935645958479762637dc0102f0",
+          "T48D/pp2.jpg": "4dc69699758541b795978fe5763dd65f9d0f335136e8d0f001e713a3625f2b6c",
+          "T48D/pp3.jpg": "f7491cf194d2cf2c55b2ff0238d878790f23c659c81a3acecc61794631bbc523"
+        }
+      },
+      "T48E": {
+        "cards": [
+          {
+            "pp": 1,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "Plex 1",
+            "fm3Edit": "Amp 1"
+          },
+          {
+            "pp": 2,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "RingMod 1",
+            "fm3Edit": "RingMod 1"
+          },
+          {
+            "pp": 3,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "Reso 1",
+            "fm3Edit": "Reso 1"
+          }
+        ],
+        "screenshots": {
+          "T48E/grid.jpg": "73dea9076626d979dd132c749f2f7bb864726528c93a55e206223807e98b55db",
+          "T48E/pp1.jpg": "fa616becc3d6da0e2376ec92dad266db7c05d40adc7a40485a36d3cd54e7d162",
+          "T48E/pp2.jpg": "27ec1dc7a9adf49dfc2901b3805e29fef3b086a6e4b5a449a7320910d06694a8",
+          "T48E/pp3.jpg": "02ef53f3bba79d1a637c047e947b15f2e165e935f3616c7651dba5acf7d95ebf"
+        }
+      },
+      "T48F": {
+        "cards": [
+          {
+            "pp": 1,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "MultCmp 1",
+            "fm3Edit": "Amp 1"
+          },
+          {
+            "pp": 2,
+            "category": "Effect",
+            "function": "Bypass",
+            "frontPanel": "Looper",
+            "fm3Edit": "Looper"
+          }
+        ],
+        "screenshots": {
+          "T48F/grid.jpg": "2c2243dd3e1244ad2f35a07dbe47ede857e21dc1c461885e91bd0646497f8fb6",
+          "T48F/pp1.jpg": "22adbc015621aa6acdfcdd6e1417dbd82c4d1d21c4415e840b5a593ee6521185",
+          "T48F/pp2.jpg": "c69fa34c0ced2acb9223052b728d3aa4fb894bd63a0d80bed29d80779e68196d"
+        }
+      }
+    },
+    "hold": {
+      "case": "T48A",
+      "set": "In FM3-Edit by the user after the first STORE: PP#1 HOLD Category Scene, Function Select, Scene 2, 2nd Press Prev. Scene Off; stored again at 427.",
+      "userResult": "Long press of switch 1 selected scene 2; short press still toggled Cab 1.",
+      "screenshot": "T48A/hold.jpg"
+    }
+  },
+  "fm3EditPp1Mislabel": {
+    "indices": [
+      11,
+      17,
+      37,
+      38,
+      48
+    ],
+    "shown": "Amp 1",
+    "groundTruth": "FM3 front panel showed and the footswitch toggled the right block; FM3-Edit FW13 display bug, not an encoding error."
+  },
+  "hold": {
+    "set": "In FM3-Edit by the user after the first STORE: PP#1 HOLD Category Scene, Function Select, Scene 2, 2nd Press Prev. Scene Off; stored again at 427.",
+    "userResult": "Long press of switch 1 selected scene 2; short press still toggled Cab 1.",
+    "storedWordChanges": [
+      {
+        "fromEnd": 2620,
+        "before": 0,
+        "after": 3
+      },
+      {
+        "fromEnd": 2476,
+        "before": 0,
+        "after": 2
+      }
+    ],
+    "layout": "Hold category word = 3052-432-2k from the body end (Tap category 3052-2k), Hold param words = 3052-144-432-12k (Tap 3052-144-12k): the Tap layout shifted by 432 bytes. Function word (Select = 0) presumed at +432 too, not observed changing.",
+    "generatorSupport": false
+  },
+  "promotedToSwitchConfirmed": [
+    "cab1",
+    "phaser1",
+    "wah1",
+    "filter1",
+    "geq1",
+    "peq1",
+    "enhancer1",
+    "volpan1",
+    "gate1",
+    "multidelay1",
+    "megatap1",
+    "tentap1",
+    "plex1",
+    "ringmod1",
+    "resonator1",
+    "multiband1",
+    "looper1"
+  ],
+  "findings": "All 17 blocks (Cab 1, Phaser 1, Wah 1, Filter 1, GEQ 1, PEQ 1, Enhance 1, Vol/Pan 1, Gate 1, MultDly 1, Megatap 1, Ten-Tap 1, Plex 1, RingMod 1, Reso 1, MultCmp 1, Looper) import, show correctly on the FM3, store byte-identically and each footswitch bypasses/engages only its own block before and after STORE. FM3-Edit labels PP#1 of indices 11/17/37/38/48 \"Amp 1\" (display bug). Hold Scene Select = Tap layout + 432 bytes; the long press selected scene 2.",
+  "sources": {
+    "display-confirmation.json": "772048b140faa3375f756427586886b388cc5cfc371352bba4cc9c4b32d903cf",
+    "T48A/bind-store-results.json": "a1deee80029bc7e169b5d52c12c00fdbc591efb77546d1bb41913fe30e0c59f1",
+    "T48A/hold-probe.json": "193a1e7b5de31d138d43ef6ff608d736d451b8bea280ab90cd9601425383c44b",
+    "T48A/hold.jpg": "adfd112c18d9b894b651201426780b80fcc5f304d046e2d68a1fd3c95d57a6ef",
+    "T48A/load-confirmation.json": "68b2ba16dd52181aa1aa7d7f10578aba7c01b1a7671e1cca29ed4c74e4e89a18",
+    "T48A/pp1.jpg": "a7a797069f0e9afc2393fd24e32c9053e92aad8ffaad4e34fb68f882d0e87b43",
+    "T48A/pp2.jpg": "adfed24a4ee8861b7497144ea40481274f3a045cbf9a9a72f05022771acd78f4",
+    "T48A/pp3.jpg": "b9a2c14a01e50d6f483d9b8f7b72b1eb0d630ec700fa82fd6af0b407fb08b801",
+    "T48A/shot-load-T48A.json": "a0bffec94bbb60f725a8b4af8cd7cb8a9915f5ac9a756d5a39c74bbe58ce77d2",
+    "T48B/bind-store-results.json": "edb72ce6836f433c6a307c43d034745ccc7a9ad3a0172ecb46f7ae796bd59c61",
+    "T48B/load-confirmation.json": "6aa54a7f8061f61a1072a1e564ddf9296f019f578e63ac5955642b5e53218f9f",
+    "T48B/pp1.jpg": "1b091644dbc0445389f21ebf77a891353e820e4d237c343231723af82253bf6c",
+    "T48B/pp2.jpg": "29bf2360cf24d2d087e6a1d7c07aaa7984ee38fe82f44ec0c54a0eb45401dede",
+    "T48B/pp3.jpg": "1e5359377f185ac61e39a151e67b7642a417fc40730ae6399011eb97f9d1d36f",
+    "T48B/shot-load-T48B.json": "e05a9d05874d88d73b856053d8425a8078cfc59c36effa548b9ed030410eda9b",
+    "T48C/bind-store-results.json": "a3ed9043d2efb07ed2593df6c4dfd4748c7b4ceffce483d95b999b40dd94f425",
+    "T48C/load-confirmation.json": "467a33d4f4f8f1db8ee861df1e476635497eeec4df30c974f7580ef5a736e8db",
+    "T48C/pp1.jpg": "a61861673349d2673dc99b59b09b6ccaf58a0b3cf743b2600a581072372d058f",
+    "T48C/pp2.jpg": "800ba75866488766ec1b4ac35638c9373cb1e086389741f24dc03a0eacdb8d78",
+    "T48C/pp3.jpg": "06456c6b99abe6855d2cbd1eb72f02b44b9205501e4a0851de1d111abb35f573",
+    "T48C/shot-load-T48C.json": "ff3d43cef48e9118343f3b4a6d6a493425366200665a4be7ab3fb5a3bb7cddd4",
+    "T48D/bind-store-results.json": "2f5c776eb8a30db199d8cd1c4ba2c971e7a855120f2d2a550faa253ddefec809",
+    "T48D/grid.jpg": "ee113bd024b7a94923dfd17a2cfb2975d2966ada6d641086a238dfe6cfbe522f",
+    "T48D/load-confirmation.json": "169f3a3f177ffe21267a66f66c14468e9696b641f147cd1969bb663168211394",
+    "T48D/pp1.jpg": "0fd0a4903346edacab4cb0778b9fec14612311935645958479762637dc0102f0",
+    "T48D/pp2.jpg": "4dc69699758541b795978fe5763dd65f9d0f335136e8d0f001e713a3625f2b6c",
+    "T48D/pp3.jpg": "f7491cf194d2cf2c55b2ff0238d878790f23c659c81a3acecc61794631bbc523",
+    "T48D/shot-load-T48D.json": "bf360c23e0a8468fb68fc4e50aa78d412725c9cf1f4916e137f75cfe776971be",
+    "T48E/bind-store-results.json": "30aed5adf4d12b5e315c29fa621aaf2d0a4702357a41ea14aca95e522335d861",
+    "T48E/grid.jpg": "73dea9076626d979dd132c749f2f7bb864726528c93a55e206223807e98b55db",
+    "T48E/load-confirmation.json": "6e6014c996796b834bd72ef1d266982d0547318d964aec3027071e62a4c2e021",
+    "T48E/pp1.jpg": "fa616becc3d6da0e2376ec92dad266db7c05d40adc7a40485a36d3cd54e7d162",
+    "T48E/pp2.jpg": "27ec1dc7a9adf49dfc2901b3805e29fef3b086a6e4b5a449a7320910d06694a8",
+    "T48E/pp3.jpg": "02ef53f3bba79d1a637c047e947b15f2e165e935f3616c7651dba5acf7d95ebf",
+    "T48E/shot-load-T48E.json": "2143adb40acc0b59527b7b3261b6338c53872e6e93e45c2ba64e8573d5ca08be",
+    "T48F/bind-store-results.json": "1446c11083f2b3e3af09ff9db2897fe4235bfef732f4eb5187ee7ff2965ae0fb",
+    "T48F/grid.jpg": "2c2243dd3e1244ad2f35a07dbe47ede857e21dc1c461885e91bd0646497f8fb6",
+    "T48F/load-confirmation.json": "2041d05fe828a9ae73e1a12c389ddc01d9890150b0fac01d3cc11190106f17cd",
+    "T48F/pp1.jpg": "22adbc015621aa6acdfcdd6e1417dbd82c4d1d21c4415e840b5a593ee6521185",
+    "T48F/pp2.jpg": "c69fa34c0ced2acb9223052b728d3aa4fb894bd63a0d80bed29d80779e68196d",
+    "T48F/shot-load-T48F.json": "dcedb6ded808681f797fda5385e7bff2f8842d39086d938d2858d21b1e38e2e5"
+  },
+  "limitations": [
+    "Switch behaviour is the user's listening/display judgement.",
+    "One block type per family.",
+    "Hold: one definition (PP#1, Scene Select, Scene 2), set in FM3-Edit; the generator does not write Hold.",
+    "Reso 2 stays display-mapped (needs a second instance)."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

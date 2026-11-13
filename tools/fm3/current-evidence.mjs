@@ -32,6 +32,8 @@ const t47=receipt('fm3-t47-20261112.json');
 assert.ok(t47.cases.length===3&&t47.cases.every(c=>c.completed&&c.dataPassed&&c.storedBodyByteIdentical));
 const l1=receipt('fm3-l1-20261113.json');
 assert.ok(l1.l1.scenes.length===8&&l1.l1.scenes.every(s=>Math.abs(s.correctedDeltaDb)<=1.5));
+const t48=receipt('fm3-t48-20261113.json');
+assert.ok(t48.cases.length===6&&t48.cases.every(c=>c.completed&&c.dataPassed&&c.storedBodyByteIdentical));
 const h3=receipt('fm3-h3-20261110.json');
 assert.deepEqual(h3.cases.map(c=>c.case),['V1','V4']);
 assert.ok(h3.cases.every(c=>c.storeReload==='confirmed')&&h3.cases[1].storedBodyByteIdentical);
@@ -106,6 +108,7 @@ const current={schemaVersion:1,asOf:'2026-11-13',hardwareEvidenceThrough:'2026-1
  auditH5T43:{evidence:'H5/H5B/T43/T44 2026-11-11',cases:h5.cases.map(({observations,...c})=>c),perPresetSwitchWords:h5.perPresetSwitchWords,findings:h5.findings,limitations:h5.limitations,scope:h5.scope},
  auditT47:{evidence:'T47A-C 2026-11-12',cases:t47.cases.map(({observations,...c})=>c),promotedToSwitchConfirmed:t47.promotedToSwitchConfirmed,findings:t47.findings,limitations:t47.limitations,scope:t47.scope},
  auditL1:{evidence:'L1 2026-11-13',l1:l1.l1,v13:l1.v13,findings:l1.findings,limitations:l1.limitations,scope:l1.scope},
+ auditT48:{evidence:'T48A-F 2026-11-13',cases:t48.cases.map(({observations,...c})=>c),promotedToSwitchConfirmed:t48.promotedToSwitchConfirmed,fm3EditPp1Mislabel:t48.fm3EditPp1Mislabel,hold:t48.hold,findings:t48.findings,limitations:t48.limitations,scope:t48.scope},
  auditH6T45:{evidence:'H6/T45/T46A-C 2026-11-12',cases:h6.cases.map(({observations,...c})=>c),pluginEffects:h6.pluginEffects,findings:h6.findings,limitations:h6.limitations,scope:h6.scope},
  otherEvidence:{
   controllersScenes:{scenes:8,channels:['A','B','C','D'],storeReload:'confirmed',evidence:['T33','T34A'],scope:'The measured scene/channel selections, not every permutation.'},
@@ -125,7 +128,7 @@ const current={schemaVersion:1,asOf:'2026-11-13',hardwareEvidenceThrough:'2026-1
   {from:'T35 no generated Type import or STORE',resolvedBy:'T36, T38 and H2',remaining:'31 unimported generated Types.'},
   {from:'T34F Preamp Type NONE not read back',resolvedBy:'H4',remaining:'Front-panel reading and other Preamp Types.'},
   {from:'LIVE KOOSLUS numerical loudness not measured',resolvedBy:'L1',remaining:'V1.3 numerical loudness, CPU and STORE/reload.'}],
- notPromoted:['General modifier allocator and arbitrary preset bases.','Other footswitch layouts, Hold and every PP definition.','Out 2 stereo/right and 4CM.','New preset audio/CPU/STORE.','Fresh-chat automatic launcher discovery.'],
+ notPromoted:['General modifier allocator and arbitrary preset bases.','Other footswitch layouts, generator-written Hold and every PP definition.','Out 2 stereo/right and 4CM.','New preset audio/CPU/STORE.','Fresh-chat automatic launcher discovery.'],
  sources:Object.fromEntries([...sources].sort(([a],[b])=>a.localeCompare(b))),newHardwareMeasurements:false,deviceIO:false};
 const mark=s=>s==='confirmed'?'jah':'mõõtmata';
 const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõendid kuni ${current.hardwareEvidenceThrough}. Alus ${current.baselineVersion}.`,
@@ -179,6 +182,11 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
  '- L1: LIVE KOOSLUS V1.2 kõik 8 stseeni on pärast mängu erinevuse eemaldamist stseenist 1 kuni 1,5 dB kaugusel, klippimist pole (FM3 USB heli, EBU R128). Stseen 2 kõige valjem (+1,5 dB); lead-stseenid 3 ja 7 pole keskmiselt valjemad (tipud kõrgemad).',
  '- V1.3: Out 1 Scene Level S2 −1,5 dB, S3/S7 +2 dB (tools/fm3/l1-v13-build.mjs). Kasutaja kuulamise järgi tasakaalud paigas; numbriliselt mõõtmata, CPU ja STORE/reload mõõtmata.',
  'Kviitung: MOOTOR references/fm3-l1-20261113.json.',
+ '','## T48 seadmekatse — 13.11.2026','',
+ '- T48A–F: generaatori kirjutatud per-preset Effect Bypass ülejäänud 17 plokile (Cab 1, Phaser 1, Wah 1, Filter 1, GEQ 1, PEQ 1, Enhance 1, Vol/Pan 1, Gate 1, MultDly 1, Megatap 1, Ten-Tap 1, Plex 1, RingMod 1, Reso 1, MultCmp 1, Looper) — FM3 ekraan õige, STORE baiditäpne, iga jalglüliti lülitas ainult oma plokki enne ja pärast STORE-i. 0.3.71: kokku 27 plokki lülitil kinnitatud, Reso 2 ainult FM3-Editi kuvalt.',
+ '- FM3-Edit FW13 näitab PP#1 kaardil indeksite 11/17/37/38/48 puhul valesti „Amp 1”; FM3 ise näitab ja lülitab õiget plokki.',
+ '- Hold: FM3-Editis määratud PP#1 Hold Scene Select Scene 2 salvestus Tap paigutusest 432 baiti eespool (kaks sõna); pikk vajutus valis stseeni 2. Generaator Holdi ei kirjuta.',
+ 'Kviitung: MOOTOR references/fm3-t48-20261113.json.',
  '','## MultiDelay Type mallid','', '| Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |','|---|---:|---|---|---|---|',
  ...multiDelay.map(r=>`| ${r.name} | ${r.measuredFullChannelWords} | ${mark(r.generatedDeviceImport)} | ${mark(r.audibleBehavior)} | ${mark(r.storeReload)} | ${r.evidence.join(', ')} |`),
  '','39 malli, 8 generaatori importi, 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',

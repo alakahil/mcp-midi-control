@@ -1,0 +1,188 @@
+{
+  "source": "FM3 front panel read by the user; FM3-Edit FC Per-Prst > Definitions cards read by Claude from background screenshots (13.11.2026). T48A was read only in FM3-Edit.",
+  "groundTruth": "FM3 front panel and footswitch behaviour. FM3-Edit FW13 labels PP#1 \"Amp 1\" for effect indices 11, 17, 37, 38 and 48 although the FM3 shows and switches the right block (FM3-Edit display bug).",
+  "cases": {
+    "T48A": {
+      "cards": [
+        {
+          "pp": 1,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": null,
+          "fm3Edit": "Cab 1"
+        },
+        {
+          "pp": 2,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": null,
+          "fm3Edit": "Phaser 1"
+        },
+        {
+          "pp": 3,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": null,
+          "fm3Edit": "Wah 1"
+        }
+      ],
+      "screenshots": {
+        "T48A/hold.jpg": "adfd112c18d9b894b651201426780b80fcc5f304d046e2d68a1fd3c95d57a6ef",
+        "T48A/pp1.jpg": "a7a797069f0e9afc2393fd24e32c9053e92aad8ffaad4e34fb68f882d0e87b43",
+        "T48A/pp2.jpg": "adfed24a4ee8861b7497144ea40481274f3a045cbf9a9a72f05022771acd78f4",
+        "T48A/pp3.jpg": "b9a2c14a01e50d6f483d9b8f7b72b1eb0d630ec700fa82fd6af0b407fb08b801"
+      }
+    },
+    "T48B": {
+      "cards": [
+        {
+          "pp": 1,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "Filter 1",
+          "fm3Edit": "Amp 1"
+        },
+        {
+          "pp": 2,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "GEQ 1",
+          "fm3Edit": "GEQ 1"
+        },
+        {
+          "pp": 3,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "PEQ 1",
+          "fm3Edit": "PEQ 1"
+        }
+      ],
+      "screenshots": {
+        "T48B/pp1.jpg": "1b091644dbc0445389f21ebf77a891353e820e4d237c343231723af82253bf6c",
+        "T48B/pp2.jpg": "29bf2360cf24d2d087e6a1d7c07aaa7984ee38fe82f44ec0c54a0eb45401dede",
+        "T48B/pp3.jpg": "1e5359377f185ac61e39a151e67b7642a417fc40730ae6399011eb97f9d1d36f"
+      }
+    },
+    "T48C": {
+      "cards": [
+        {
+          "pp": 1,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "Enhance 1",
+          "fm3Edit": "Amp 1"
+        },
+        {
+          "pp": 2,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "Vol/Pan 1",
+          "fm3Edit": "Vol/Pan 1"
+        },
+        {
+          "pp": 3,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "Gate 1",
+          "fm3Edit": "Gate 1"
+        }
+      ],
+      "screenshots": {
+        "T48C/pp1.jpg": "a61861673349d2673dc99b59b09b6ccaf58a0b3cf743b2600a581072372d058f",
+        "T48C/pp2.jpg": "800ba75866488766ec1b4ac35638c9373cb1e086389741f24dc03a0eacdb8d78",
+        "T48C/pp3.jpg": "06456c6b99abe6855d2cbd1eb72f02b44b9205501e4a0851de1d111abb35f573"
+      }
+    },
+    "T48D": {
+      "cards": [
+        {
+          "pp": 1,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "MultDly 1",
+          "fm3Edit": "Amp 1"
+        },
+        {
+          "pp": 2,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "Megatap 1",
+          "fm3Edit": "Megatap 1"
+        },
+        {
+          "pp": 3,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "Ten-Tap 1",
+          "fm3Edit": "Ten-Tap 1"
+        }
+      ],
+      "screenshots": {
+        "T48D/grid.jpg": "ee113bd024b7a94923dfd17a2cfb2975d2966ada6d641086a238dfe6cfbe522f",
+        "T48D/pp1.jpg": "0fd0a4903346edacab4cb0778b9fec14612311935645958479762637dc0102f0",
+        "T48D/pp2.jpg": "4dc69699758541b795978fe5763dd65f9d0f335136e8d0f001e713a3625f2b6c",
+        "T48D/pp3.jpg": "f7491cf194d2cf2c55b2ff0238d878790f23c659c81a3acecc61794631bbc523"
+      }
+    },
+    "T48E": {
+      "cards": [
+        {
+          "pp": 1,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "Plex 1",
+          "fm3Edit": "Amp 1"
+        },
+        {
+          "pp": 2,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "RingMod 1",
+          "fm3Edit": "RingMod 1"
+        },
+        {
+          "pp": 3,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "Reso 1",
+          "fm3Edit": "Reso 1"
+        }
+      ],
+      "screenshots": {
+        "T48E/grid.jpg": "73dea9076626d979dd132c749f2f7bb864726528c93a55e206223807e98b55db",
+        "T48E/pp1.jpg": "fa616becc3d6da0e2376ec92dad266db7c05d40adc7a40485a36d3cd54e7d162",
+        "T48E/pp2.jpg": "27ec1dc7a9adf49dfc2901b3805e29fef3b086a6e4b5a449a7320910d06694a8",
+        "T48E/pp3.jpg": "02ef53f3bba79d1a637c047e947b15f2e165e935f3616c7651dba5acf7d95ebf"
+      }
+    },
+    "T48F": {
+      "cards": [
+        {
+          "pp": 1,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "MultCmp 1",
+          "fm3Edit": "Amp 1"
+        },
+        {
+          "pp": 2,
+          "category": "Effect",
+          "function": "Bypass",
+          "frontPanel": "Looper",
+          "fm3Edit": "Looper"
+        }
+      ],
+      "screenshots": {
+        "T48F/grid.jpg": "2c2243dd3e1244ad2f35a07dbe47ede857e21dc1c461885e91bd0646497f8fb6",
+        "T48F/pp1.jpg": "22adbc015621aa6acdfcdd6e1417dbd82c4d1d21c4415e840b5a593ee6521185",
+        "T48F/pp2.jpg": "c69fa34c0ced2acb9223052b728d3aa4fb894bd63a0d80bed29d80779e68196d"
+      }
+    }
+  },
+  "hold": {
+    "case": "T48A",
+    "set": "In FM3-Edit by the user after the first STORE: PP#1 HOLD Category Scene, Function Select, Scene 2, 2nd Press Prev. Scene Off; stored again at 427.",
+    "userResult": "Long press of switch 1 selected scene 2; short press still toggled Cab 1.",
+    "screenshot": "T48A/hold.jpg"
+  }
+}

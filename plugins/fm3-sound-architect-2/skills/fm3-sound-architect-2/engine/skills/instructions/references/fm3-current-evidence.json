@@ -1834,6 +1834,229 @@
     ],
     "scope": "L1: integrated loudness (EBU R128, ffmpeg) of LIVE KOOSLUS V1.2 scenes 1-8 from the FM3 USB audio, wet 1-2 and dry 3-4, user playing the same riff; no FM3 MIDI I/O. V1.3: generator file built from tools/fm3/l1-v13-build.mjs, judged by ear by the user."
   },
+  "auditT48": {
+    "evidence": "T48A-F 2026-11-13",
+    "cases": [
+      {
+        "case": "T48A",
+        "completed": true,
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "a1deee80029bc7e169b5d52c12c00fdbc591efb77546d1bb41913fe30e0c59f1",
+        "switches": [
+          {
+            "switch": 1,
+            "effect": "cab1",
+            "label": "Cab 1",
+            "index": 1
+          },
+          {
+            "switch": 2,
+            "effect": "phaser1",
+            "label": "Phaser 1",
+            "index": 45
+          },
+          {
+            "switch": 3,
+            "effect": "wah1",
+            "label": "Wah 1",
+            "index": 61
+          }
+        ]
+      },
+      {
+        "case": "T48B",
+        "completed": true,
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "edb72ce6836f433c6a307c43d034745ccc7a9ad3a0172ecb46f7ae796bd59c61",
+        "switches": [
+          {
+            "switch": 1,
+            "effect": "filter1",
+            "label": "Filter 1",
+            "index": 17
+          },
+          {
+            "switch": 2,
+            "effect": "geq1",
+            "label": "GEQ 1",
+            "index": 27
+          },
+          {
+            "switch": 3,
+            "effect": "peq1",
+            "label": "PEQ 1",
+            "index": 43
+          }
+        ]
+      },
+      {
+        "case": "T48C",
+        "completed": true,
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "a3ed9043d2efb07ed2593df6c4dfd4748c7b4ceffce483d95b999b40dd94f425",
+        "switches": [
+          {
+            "switch": 1,
+            "effect": "enhancer1",
+            "label": "Enhance 1",
+            "index": 11
+          },
+          {
+            "switch": 2,
+            "effect": "volpan1",
+            "label": "Vol/Pan 1",
+            "index": 59
+          },
+          {
+            "switch": 3,
+            "effect": "gate1",
+            "label": "Gate 1",
+            "index": 25
+          }
+        ]
+      },
+      {
+        "case": "T48D",
+        "completed": true,
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "2f5c776eb8a30db199d8cd1c4ba2c971e7a855120f2d2a550faa253ddefec809",
+        "switches": [
+          {
+            "switch": 1,
+            "effect": "multidelay1",
+            "label": "MultDly 1",
+            "index": 38
+          },
+          {
+            "switch": 2,
+            "effect": "megatap1",
+            "label": "Megatap 1",
+            "index": 32
+          },
+          {
+            "switch": 3,
+            "effect": "tentap1",
+            "label": "Ten-Tap 1",
+            "index": 56
+          }
+        ]
+      },
+      {
+        "case": "T48E",
+        "completed": true,
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "30aed5adf4d12b5e315c29fa621aaf2d0a4702357a41ea14aca95e522335d861",
+        "switches": [
+          {
+            "switch": 1,
+            "effect": "plex1",
+            "label": "Plex 1",
+            "index": 48
+          },
+          {
+            "switch": 2,
+            "effect": "ringmod1",
+            "label": "RingMod 1",
+            "index": 52
+          },
+          {
+            "switch": 3,
+            "effect": "resonator1",
+            "label": "Reso 1",
+            "index": 49
+          }
+        ]
+      },
+      {
+        "case": "T48F",
+        "completed": true,
+        "dataPassed": true,
+        "storedBodyByteIdentical": true,
+        "reordered": false,
+        "resultSha256": "1446c11083f2b3e3af09ff9db2897fe4235bfef732f4eb5187ee7ff2965ae0fb",
+        "switches": [
+          {
+            "switch": 1,
+            "effect": "multiband1",
+            "label": "MultCmp 1",
+            "index": 37
+          },
+          {
+            "switch": 2,
+            "effect": "looper1",
+            "label": "Looper",
+            "index": 31
+          }
+        ]
+      }
+    ],
+    "promotedToSwitchConfirmed": [
+      "cab1",
+      "phaser1",
+      "wah1",
+      "filter1",
+      "geq1",
+      "peq1",
+      "enhancer1",
+      "volpan1",
+      "gate1",
+      "multidelay1",
+      "megatap1",
+      "tentap1",
+      "plex1",
+      "ringmod1",
+      "resonator1",
+      "multiband1",
+      "looper1"
+    ],
+    "fm3EditPp1Mislabel": {
+      "indices": [
+        11,
+        17,
+        37,
+        38,
+        48
+      ],
+      "shown": "Amp 1",
+      "groundTruth": "FM3 front panel showed and the footswitch toggled the right block; FM3-Edit FW13 display bug, not an encoding error."
+    },
+    "hold": {
+      "set": "In FM3-Edit by the user after the first STORE: PP#1 HOLD Category Scene, Function Select, Scene 2, 2nd Press Prev. Scene Off; stored again at 427.",
+      "userResult": "Long press of switch 1 selected scene 2; short press still toggled Cab 1.",
+      "storedWordChanges": [
+        {
+          "fromEnd": 2620,
+          "before": 0,
+          "after": 3
+        },
+        {
+          "fromEnd": 2476,
+          "before": 0,
+          "after": 2
+        }
+      ],
+      "layout": "Hold category word = 3052-432-2k from the body end (Tap category 3052-2k), Hold param words = 3052-144-432-12k (Tap 3052-144-12k): the Tap layout shifted by 432 bytes. Function word (Select = 0) presumed at +432 too, not observed changing.",
+      "generatorSupport": false
+    },
+    "findings": "All 17 blocks (Cab 1, Phaser 1, Wah 1, Filter 1, GEQ 1, PEQ 1, Enhance 1, Vol/Pan 1, Gate 1, MultDly 1, Megatap 1, Ten-Tap 1, Plex 1, RingMod 1, Reso 1, MultCmp 1, Looper) import, show correctly on the FM3, store byte-identically and each footswitch bypasses/engages only its own block before and after STORE. FM3-Edit labels PP#1 of indices 11/17/37/38/48 \"Amp 1\" (display bug). Hold Scene Select = Tap layout + 432 bytes; the long press selected scene 2.",
+    "limitations": [
+      "Switch behaviour is the user's listening/display judgement.",
+      "One block type per family.",
+      "Hold: one definition (PP#1, Scene Select, Scene 2), set in FM3-Edit; the generator does not write Hold.",
+      "Reso 2 stays display-mapped (needs a second instance)."
+    ],
+    "scope": "T48A-F from tools/fm3/t48-build.mjs: generator-written per-preset Effect Bypass on FM3 footswitches 1-3 for the 17 blocks mapped only from the FM3-Edit display (T46). Actual user LOAD/GET and STORE/reload captures at location 427, user answers (FM3 front panel) and FM3-Edit display read by Claude; plus the T48A Hold probe. This replay performs no device I/O."
+  },
   "auditH6T45": {
     "evidence": "H6/T45/T46A-C 2026-11-12",
     "cases": [
@@ -1896,7 +2119,7 @@
       "cab1": {
         "index": 1,
         "label": "Cab 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "chorus1": {
         "index": 2,
@@ -1921,12 +2144,12 @@
       "enhancer1": {
         "index": 11,
         "label": "Enhance 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "filter1": {
         "index": 17,
         "label": "Filter 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "flanger1": {
         "index": 21,
@@ -1936,42 +2159,42 @@
       "gate1": {
         "index": 25,
         "label": "Gate 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "geq1": {
         "index": 27,
         "label": "GEQ 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "looper1": {
         "index": 31,
         "label": "Looper",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "megatap1": {
         "index": 32,
         "label": "Megatap 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "multiband1": {
         "index": 37,
         "label": "MultCmp 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "multidelay1": {
         "index": 38,
         "label": "MultDly 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "peq1": {
         "index": 43,
         "label": "PEQ 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "phaser1": {
         "index": 45,
         "label": "Phaser 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "pitch1": {
         "index": 47,
@@ -1981,12 +2204,12 @@
       "plex1": {
         "index": 48,
         "label": "Plex 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "resonator1": {
         "index": 49,
         "label": "Reso 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "resonator2": {
         "index": 50,
@@ -2001,7 +2224,7 @@
       "ringmod1": {
         "index": 52,
         "label": "RingMod 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "rotary1": {
         "index": 53,
@@ -2016,7 +2239,7 @@
       "tentap1": {
         "index": 56,
         "label": "Ten-Tap 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "tremolo1": {
         "index": 57,
@@ -2026,12 +2249,12 @@
       "volpan1": {
         "index": 59,
         "label": "Vol/Pan 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       },
       "wah1": {
         "index": 61,
         "label": "Wah 1",
-        "status": "display-mapped"
+        "status": "switch-confirmed"
       }
     },
     "findings": {
@@ -2190,7 +2413,7 @@
   ],
   "notPromoted": [
     "General modifier allocator and arbitrary preset bases.",
-    "Other footswitch layouts, Hold and every PP definition.",
+    "Other footswitch layouts, generator-written Hold and every PP definition.",
     "Out 2 stereo/right and 4CM.",
     "New preset audio/CPU/STORE.",
     "Fresh-chat automatic launcher discovery."
@@ -2202,7 +2425,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h1-h2-h4-20261110.json": "02d2adf0543966eb28db514d075720bc4cbc29263464ed61f02f4f50369a667b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h3-20261110.json": "36ecdf87ad5e6f22107c7f067f6dd8d5682eebee89954f8b26fafc76a8cffd3f",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h5-t43-20261111.json": "00b628097e4d2a50c53e2c6781c016632d374892388c62525f5bfbeeb382aa0a",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h6-t45-20261112.json": "d9394157fa813a872374fb9d4d1673d55839c19908f32eb91da269b68d6ebb0b",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h6-t45-20261112.json": "fb0186999cf9e46a0ae89d980eb3fa70ded109d4b2257ccf1becc4d40c2c3f70",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-l1-20261113.json": "195e54c43a9a5de791e06f7a2765f5e1bfb009ab276ebc91b075b6d7b8ef62aa",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t30-enum-20261105.json": "457b82bd133cc50e5f9da1ca1b0f4785bcfd2e0a214b3d0af2ff23d3d98bbb09",
@@ -2217,12 +2440,13 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t39-t41-controllers-store-20261109.json": "b5a717c0ccf52eb4d33747c4f0b0cef201edb9a1ae50ba98314f6b9fdbe0fb02",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t42-modifier-targets-20261109.json": "794b9823682b001e94c40561761325d9fe7eeda16407e3a15c918b6b2db562e8",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t47-20261112.json": "4099975c5e80335f86b133f0430b156cb91a5dd5b3269a5ddceee125308501ac",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t48-20261113.json": "e996dee08e1a24e1e4b2d26440b5c85dd29e708e418db388e854511557eb4e82",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-enum-promotion.mjs": "5cf8e5afa993cc1740ac8193b0da23f9374524c10b6fc1136f047c69a12896db",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-modifier-targets.mjs": "77062dc8aed547d8d5340e39f822beb73d7f86976ed94807214a14e43e9f73d5",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "a8eb80a5ce7bec6069577839fc9b1ec92fe1ca5e2f4e08bd00060f4d21110d0f"
+    "tools/fm3/current-evidence.mjs": "4c448d0e0d6eb7b6a7ad061da98ce9ae384144cb9c1bbfe8b2e07e24aeb8f136"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false

@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2263,
-  "filePaths": 2467,
+  "uniqueContents": 2284,
+  "filePaths": 2488,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -406,12 +406,6 @@
       "bytes": 806,
       "paths": [
         "references/b1-b2-20261110/cpu-correction.json"
-      ]
-    },
-    "07157f6d96c05ee5f4b60b94afc4f42316efe9fbf40498f191c00fb401bcc9b6": {
-      "bytes": 79922,
-      "paths": [
-        "references/fm3-current-evidence.json"
       ]
     },
     "078bc425b92fc00cbe733102cd278ef89b81ed824fadd10e46138fd46d55ac0d": {
@@ -1024,6 +1018,12 @@
         "references/filter-controls-20261008-165150/step-04-560512bddc/result.json"
       ]
     },
+    "1446c11083f2b3e3af09ff9db2897fe4235bfef732f4eb5187ee7ff2965ae0fb": {
+      "bytes": 50368,
+      "paths": [
+        "references/t48-20261113/T48F/bind-store-results.json"
+      ]
+    },
     "14505c8fc81330fa9abe14ffaaf24b5a7109a0bdae3fe905d14e1dff6c60e764": {
       "bytes": 24680,
       "paths": [
@@ -1186,6 +1186,12 @@
         "examples/JB_RHYTHM_LEVEL_MINUS3.spec.json"
       ]
     },
+    "169f3a3f177ffe21267a66f66c14468e9696b641f147cd1969bb663168211394": {
+      "bytes": 156,
+      "paths": [
+        "references/t48-20261113/T48D/load-confirmation.json"
+      ]
+    },
     "16dc18a33226d3c3c8a173dbdb75555aa0db5f07859cbdbea39af678eefca6d3": {
       "bytes": 3485,
       "paths": [
@@ -1329,6 +1335,12 @@
       "bytes": 3485,
       "paths": [
         "references/enhancer-full-20261012-122507/step-060-a86cbe7a1b/capture.json"
+      ]
+    },
+    "193a1e7b5de31d138d43ef6ff608d736d451b8bea280ab90cd9601425383c44b": {
+      "bytes": 49599,
+      "paths": [
+        "references/t48-20261113/T48A/hold-probe.json"
       ]
     },
     "195e54c43a9a5de791e06f7a2765f5e1bfb009ab276ebc91b075b6d7b8ef62aa": {
@@ -1731,6 +1743,12 @@
         "references/geq-full-20261010-194115/step-176-ddb1df1145/capture.json"
       ]
     },
+    "2041d05fe828a9ae73e1a12c389ddc01d9890150b0fac01d3cc11190106f17cd": {
+      "bytes": 156,
+      "paths": [
+        "references/t48-20261113/T48F/load-confirmation.json"
+      ]
+    },
     "206fee53baa32f7b655335655ab4354c2f3735bb3153d86244aa59d7c37838cc": {
       "bytes": 7500,
       "paths": [
@@ -1759,6 +1777,12 @@
       "bytes": 24680,
       "paths": [
         "references/filter-rea-20261012/step-007-548a7d46c0/donor.syx"
+      ]
+    },
+    "2143adb40acc0b59527b7b3261b6338c53872e6e93e45c2ba64e8573d5ca08be": {
+      "bytes": 1633,
+      "paths": [
+        "references/t48-20261113/T48E/shot-load-T48E.json"
       ]
     },
     "214b273f00839a700e2ac20b64cf86cece20611c504b1db90995d55fb11fc863": {
@@ -2550,6 +2574,12 @@
         "references/geq-full-20261010-194115/step-183-3f7faf28f2/result.json"
       ]
     },
+    "2f5c776eb8a30db199d8cd1c4ba2c971e7a855120f2d2a550faa253ddefec809": {
+      "bytes": 50486,
+      "paths": [
+        "references/t48-20261113/T48D/bind-store-results.json"
+      ]
+    },
     "2f645ab4b6bec7e16cda78165eacad11befc1339a3657fc22202c077292b5a40": {
       "bytes": 5025,
       "paths": [
@@ -2602,6 +2632,12 @@
       "bytes": 24680,
       "paths": [
         "references/reverb-batch-20261006-181951/capture-20261006T181654-78dc7ade74/donor.syx"
+      ]
+    },
+    "30aed5adf4d12b5e315c29fa621aaf2d0a4702357a41ea14aca95e522335d861": {
+      "bytes": 50456,
+      "paths": [
+        "references/t48-20261113/T48E/bind-store-results.json"
       ]
     },
     "30b4e4d5afc0fe94252d6a481185269f96f4bded0a2cc7f36a45738457233355": {
@@ -3704,6 +3740,12 @@
       "bytes": 24680,
       "paths": [
         "examples/FM3_ENHANCER_ABCD_TEST_export.syx"
+      ]
+    },
+    "467a33d4f4f8f1db8ee861df1e476635497eeec4df30c974f7580ef5a736e8db": {
+      "bytes": 156,
+      "paths": [
+        "references/t48-20261113/T48C/load-confirmation.json"
       ]
     },
     "4686b9f9bda2f0f9a1c4ce9abe182a4fe0ba1a1495c64839d5715cd9d095305e": {
@@ -5373,6 +5415,12 @@
         "references/filter-rea-20261012/step-001-c1ebbcd791/result.json"
       ]
     },
+    "68b2ba16dd52181aa1aa7d7f10578aba7c01b1a7671e1cca29ed4c74e4e89a18": {
+      "bytes": 156,
+      "paths": [
+        "references/t48-20261113/T48A/load-confirmation.json"
+      ]
+    },
     "68c0a3d9b2908a9dacb3983b9e3bc6d536a9f50753d2e8fefdd60fd771710fd1": {
       "bytes": 21493,
       "paths": [
@@ -5463,6 +5511,12 @@
       "bytes": 477,
       "paths": [
         "references/filter-batch-20261008-132133/capture-20261008T131620-16f88ce479/pair.json"
+      ]
+    },
+    "6aa54a7f8061f61a1072a1e564ddf9296f019f578e63ac5955642b5e53218f9f": {
+      "bytes": 156,
+      "paths": [
+        "references/t48-20261113/T48B/load-confirmation.json"
       ]
     },
     "6aa6349536160c6376d7c490d805508dbe0a8b0be595ea1a71f4496814c2a47b": {
@@ -5693,6 +5747,12 @@
       "bytes": 3509,
       "paths": [
         "references/wah-min-evidence.json"
+      ]
+    },
+    "6e6014c996796b834bd72ef1d266982d0547318d964aec3027071e62a4c2e021": {
+      "bytes": 156,
+      "paths": [
+        "references/t48-20261113/T48E/load-confirmation.json"
       ]
     },
     "6e863c2a8a80be23fcce94121f0b30388f4068577ba92c539dcb061e7f1115c6": {
@@ -6179,6 +6239,12 @@
       "bytes": 7206,
       "paths": [
         "references/peq-full-20261009-152606/step-054-231d084525/capture.json"
+      ]
+    },
+    "772048b140faa3375f756427586886b388cc5cfc371352bba4cc9c4b32d903cf": {
+      "bytes": 6003,
+      "paths": [
+        "references/t48-20261113/display-confirmation.json"
       ]
     },
     "773fa4cacd88e3de64d7e99112a1198c05e411934d3b49da8cd22b74e5078251": {
@@ -8435,6 +8501,12 @@
         "references/amp-level-20261013/session/attempt-05-4503cfdd34a8/pair.json"
       ]
     },
+    "a0bffec94bbb60f725a8b4af8cd7cb8a9915f5ac9a756d5a39c74bbe58ce77d2": {
+      "bytes": 1498,
+      "paths": [
+        "references/t48-20261113/T48A/shot-load-T48A.json"
+      ]
+    },
     "a0c753b502c22985a2e0f047027d86fa036bf5e263e9c086b2fd39f5cca123f4": {
       "bytes": 156,
       "paths": [
@@ -8493,6 +8565,12 @@
       "bytes": 24680,
       "paths": [
         "references/chorus-batch-20261007-134057/capture-20261007T133821-22c7fe39ff/donor.syx"
+      ]
+    },
+    "a1deee80029bc7e169b5d52c12c00fdbc591efb77546d1bb41913fe30e0c59f1": {
+      "bytes": 50320,
+      "paths": [
+        "references/t48-20261113/T48A/bind-store-results.json"
       ]
     },
     "a21557c111f8e712f7b00fdce76d075b5c20ab5922ebfb8964306f847d963970": {
@@ -8584,6 +8662,12 @@
       "bytes": 8339,
       "paths": [
         "references/fm3-step-diff-input-volume-20261024-results.json"
+      ]
+    },
+    "a3ed9043d2efb07ed2593df6c4dfd4748c7b4ceffce483d95b999b40dd94f425": {
+      "bytes": 50492,
+      "paths": [
+        "references/t48-20261113/T48C/bind-store-results.json"
       ]
     },
     "a400c87c087ce6373e0fceffe722c51fb717f5c2ed7483e310cabb641a5099c6": {
@@ -9525,6 +9609,12 @@
         "references/drive-batch-20261006-112254/capture-20261006T111455-04a249b6ed/pair.json"
       ]
     },
+    "b4669adddccf90fefebc01fd14fa557d7debddef04d67465bda95729c25df9a8": {
+      "bytes": 86909,
+      "paths": [
+        "references/fm3-current-evidence.json"
+      ]
+    },
     "b47053d87d7da8ba168298056ac6531556c9cabb0102ab90a59182ebeeb7a111": {
       "bytes": 86580,
       "paths": [
@@ -10142,6 +10232,12 @@
       "paths": [
         "references/reverb-batch-20261006-151235/session.json",
         "references/reverb-batch-20261006-181951/session.json"
+      ]
+    },
+    "bf360c23e0a8468fb68fc4e50aa78d412725c9cf1f4916e137f75cfe776971be": {
+      "bytes": 1636,
+      "paths": [
+        "references/t48-20261113/T48D/shot-load-T48D.json"
       ]
     },
     "bf7da9ce3acf0c9f960bfad1bb579cbdb4d31e075b96fc4627f2529e1027cfa6": {
@@ -11447,12 +11543,6 @@
         "references/flanger-batch-20261007-125456/capture-20261007T125400-f50981221a/donor.syx"
       ]
     },
-    "d9394157fa813a872374fb9d4d1673d55839c19908f32eb91da269b68d6ebb0b": {
-      "bytes": 15938,
-      "paths": [
-        "references/fm3-h6-t45-20261112.json"
-      ]
-    },
     "d94f4d6f3b6e112b16d40a0ad3c7284bb65bcaaf06cc6ad0fed4017af12df222": {
       "bytes": 2301,
       "paths": [
@@ -11802,6 +11892,12 @@
         "references/geq-full-20261010-194115/step-153-c9efaf75d9/result.json"
       ]
     },
+    "dcedb6ded808681f797fda5385e7bff2f8842d39086d938d2858d21b1e38e2e5": {
+      "bytes": 1505,
+      "paths": [
+        "references/t48-20261113/T48F/shot-load-T48F.json"
+      ]
+    },
     "dd14d150ef534d95d6576378f61f899837aa516bd3019d7fb8222d06f388d2b7": {
       "bytes": 4310,
       "paths": [
@@ -11999,6 +12095,12 @@
       "paths": [
         "references/cab-batch-20261005-135019/capture-20261005T134029-d30a42c1ce/labels.json",
         "references/cab-batch-20261005-135600/capture-20261005T134029-d30a42c1ce/labels.json"
+      ]
+    },
+    "e05a9d05874d88d73b856053d8425a8078cfc59c36effa548b9ed030410eda9b": {
+      "bytes": 1624,
+      "paths": [
+        "references/t48-20261113/T48B/shot-load-T48B.json"
       ]
     },
     "e08b7a70bdd734930cd9500a6f980389f58e3f01caa74a6657463449f9c86fcc": {
@@ -12494,6 +12596,12 @@
         "references/h6-t45-20261112/T45/shot-load-T45.json"
       ]
     },
+    "e996dee08e1a24e1e4b2d26440b5c85dd29e708e418db388e854511557eb4e82": {
+      "bytes": 21572,
+      "paths": [
+        "references/fm3-t48-20261113.json"
+      ]
+    },
     "e99e599952f73a237119e8b102dc512210ed89e489128ca096d346b60ded6257": {
       "bytes": 24680,
       "paths": [
@@ -12654,6 +12762,12 @@
       "bytes": 3473,
       "paths": [
         "references/enhancer-lisa-20261012-125350/step-004-2c8a975c43/capture.json"
+      ]
+    },
+    "edb72ce6836f433c6a307c43d034745ccc7a9ad3a0172ecb46f7ae796bd59c61": {
+      "bytes": 50403,
+      "paths": [
+        "references/t48-20261113/T48B/bind-store-results.json"
       ]
     },
     "edba0bedb51217dd0a7ec9ba8561674c3ff3e934b82d3068e2761c9c8a7e200d": {
@@ -13433,6 +13547,12 @@
         "references/filter-controls-20261008-165150/step-01-99d4288f9c/capture.json"
       ]
     },
+    "fb0186999cf9e46a0ae89d980eb3fa70ded109d4b2257ccf1becc4d40c2c3f70": {
+      "bytes": 15972,
+      "paths": [
+        "references/fm3-h6-t45-20261112.json"
+      ]
+    },
     "fb1f6960aa84329614e1e0cf15111fc94e7c5aaf31bfbd22bade392ef99cce9e": {
       "bytes": 4971,
       "paths": [
@@ -13741,6 +13861,12 @@
       "bytes": 24680,
       "paths": [
         "examples/FM3_SA_TEST_CAB_BASSGUY.syx"
+      ]
+    },
+    "ff3d43cef48e9118343f3b4a6d6a493425366200665a4be7ab3fb5a3bb7cddd4": {
+      "bytes": 1630,
+      "paths": [
+        "references/t48-20261113/T48C/shot-load-T48C.json"
       ]
     },
     "ff3e6a5159fc8245c3f643f1857c5c64acdd1bc934e4dd63137e5d6865b34c76": {

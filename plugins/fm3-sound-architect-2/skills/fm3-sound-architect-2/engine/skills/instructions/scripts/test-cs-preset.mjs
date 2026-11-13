@@ -7,7 +7,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {createPreset,writePresetOutputs,verifyPresetOutputs,getPresetCapabilities} from './fm3-preset.mjs';
-import {applyCsPreset,readCsPreset,CS_STATES,OVERRIDE_POSITIONS} from './fm3-cs-preset.mjs';
+import {applyCsPreset,readCsPreset,CS_STATES,OVERRIDE_POSITIONS,PP_EFFECTS} from './fm3-cs-preset.mjs';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {reencodeRawPatch,reencodeDumpFromRawPatch} from './fm3-codec.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -64,12 +64,12 @@ assert.equal(ppb.readUInt16LE(D+1920+216),1);
 assert.deepEqual(pp.report.csPreset.footswitches,[{layout:1,switch:1,definition:1,kind:'effect',effect:'drive1',function:'bypass'},{layout:1,switch:2,definition:2,kind:'effect',effect:'delay1',function:'bypass'},
  {layout:1,switch:3,definition:3,kind:'effect',effect:'reverb1',function:'bypass'},{layout:1,switch:4,definition:4,kind:'scene',scene:3}]);
 for(const line of ['Layout 1, lüliti 1 → PP#1: Effect, Bypass, Drive 1 (vajutus lülitab ploki sisse/välja).','Layout 1, lüliti 4 → PP#4: Scene, Select, Scene 3.'])assert.ok(pp.txt.includes(line.slice(0,-1)),line);
-// 0.3.67: a T46 display-mapped block (Cab 1 = index 1); untested-switch note in the TXT; a mapped block that is not placed is refused.
+// Cab 1 = index 1 (T46 map, switch-confirmed by T48 2026-11-13): no untested-switch note; a mapped block that is not placed is refused.
 {const c=createPreset(base,{...ppPlain,footswitches:[{layout:1,switch:1,effect:'cab1'},{layout:1,switch:2,effect:'drive1'}]}),cb=bodyOf(c.syx);
  assert.deepEqual([cb.readUInt16LE(D),cb.readUInt16LE(D+144),cb.readUInt16LE(D+2),cb.readUInt16LE(D+156)],[4,1,4,9]);
- assert.ok(c.txt.includes('Effect, Bypass, Cab 1')&&c.txt.includes('jalglüliti käitumine on kontrollimata'));
+ assert.ok(c.txt.includes('Effect, Bypass, Cab 1')&&!c.txt.includes('jalglüliti käitumine on kontrollimata'));
+ assert.deepEqual(Object.entries(PP_EFFECTS).filter(([,v])=>v.status!=='switch-confirmed').map(([k])=>k),['resonator2']);
  assert.ok(!pp.txt.includes('jalglüliti käitumine on kontrollimata'),'Drive 1 / Delay 1 / Reverb 1 are switch-confirmed (T45/T47)');
- assert.ok(c.txt.includes('Reverb 1, '),'the note lists the switch-confirmed blocks');
  assert.throws(()=>createPreset(base,{...ppPlain,footswitches:[{layout:1,switch:1,effect:'chorus1'}]}),/not in the preset/);rejected++;
  for(const e of ['amp1','formant1','chorus2','in1'])assert.throws(()=>createPreset(base,{...ppPlain,footswitches:[{layout:1,switch:1,effect:e}]}),/footswitch/);rejected+=4;}
 const ppBad=edit=>{const s={...ppPlain,footswitches:[{layout:1,switch:1,effect:'drive1'}]};edit(s);assert.throws(()=>createPreset(base,s),/footswitch|Control Switch preset/);rejected++;};

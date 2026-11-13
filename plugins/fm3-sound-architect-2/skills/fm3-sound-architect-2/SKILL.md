@@ -56,7 +56,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.70`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.71`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -863,7 +863,7 @@ Mini-Display silt presetti ei salvestu.
 0.3.67 (T45/T46, 12.11.2026): generaatori kirjutatud Drive 1 / Delay 1 / Scene 3 lülitid töötasid FM3 jalglülititel enne ja
 pärast STORE-i (salvestatud keha baiditäpne). `effect` võib nüüd olla 27 ploki esimene eksemplar + `resonator2`
 (võtmed `getSoundCapabilities().csPreset.effects`-ist); indeksid on FM3-Editi kuvalt (T46). Drive 1 / Delay 1 on
-lülitil kinnitatud (0.3.68: T47 lisas Comp 1, Chorus 1, TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1, Reverb 1); teiste puhul ütle, et jalglüliti käitumine on kontrollimata. Amp 1, Formant, teised eksemplarid ja
+lülitil kinnitatud (0.3.68: T47 lisas Comp 1, Chorus 1, TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1, Reverb 1; 0.3.71: T48 ülejäänud 17 plokki). Kontrollimata on ainult `resonator2`, selle puhul ütle seda. FM3-Edit FW13 võib PP#1 kaardil näidata valesti "Amp 1" (Enhance 1, Filter 1, MultCmp 1, MultDly 1, Plex 1); FM3 ise näitab ja lülitab õigesti. Hold-funktsiooni generaator ei kirjuta. Amp 1, Formant, teised eksemplarid ja
 In/Out/FB Rtn pole toetatud. [Juhend](engine/docs/FM3_CONTROL_SWITCHES.md#stseeniolek-ja-jalglüliti-0335).
 
 ## Skeem ja sisendikontroll (0.3.37)
