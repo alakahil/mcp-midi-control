@@ -82,7 +82,7 @@ const fmt=v=>typeof v==='number'?String(Number(v.toFixed(4))):String(v);
 export function renderFinalSoundText(state,spec){
   const context=spec.context??{};
   const point6=state.typeApplicability.insertFamilies.families;
-  const point6Note=`6. punkti ${Object.keys(point6).length} pere / ${Object.values(point6).reduce((n,f)=>n+f.parameters,0)} PID-i XML-nähtavus on kontrollitud. Multi Delay on lisatav ning Algorithm ja toetatud parameetrid kirjutatavad; Type/preset-valik jääb blokeerituks. Mõõdikud, tegevusnupud ja XML-is puuduvad juhikud ei ole skalaarseadistused.`;
+  const point6Note=`6. punkti ${Object.keys(point6).length} pere / ${Object.values(point6).reduce((n,f)=>n+f.parameters,0)} PID-i XML-nähtavus on kontrollitud. Multi Delay on lisatav ning Algorithm ja toetatud parameetrid kirjutatavad; Type/preset valitakse multidelayTypes kaudu täieliku kanalimallina. Ainult MULTITAP_PRESETS otsekirjutamine controls kaudu jääb blokeerituks. Mõõdikud, tegevusnupud ja XML-is puuduvad juhikud ei ole skalaarseadistused.`;
   const lines=['FM3 SOUND ARCHITECT 2 — LÕPLIK PRESET',`Preset: ${state.name}`,
     `Eesmärk: ${spec.purpose??spec.composer.purpose??'Kirjeldatud soundi koostamine.'}`,
     'Seade: FM3 Mk II Turbo, firmware 13.',`Kitarr: ${context.guitar??'selle kirjelduse jaoks määramata'}`,

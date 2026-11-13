@@ -9,6 +9,8 @@
 - 0.3.2 avaldamisvormingu parandus
 
 ## Ulatus
+0.3.74: TXT üldselgitus ja sisendskeemi `insert` kirjeldus eristavad Multi Delay toetatud `multidelayTypes` tüübivalikut üksiku `MULTITAP_PRESETS` väärtuse otsekirjutamisest `controls` kaudu, mis jääb keelatuks. Täielikud kanalimallid on jätkuvalt toetatud; SYX-kirjutusloogika, skeemi kuju ja seadmetõendid ei muutu.
+
 0.3.73: T51A–C (13.11.2026) salvestati FM3-s; kolm salvestatud keha taastuvad generaatoriga baidi kaupa. T51C dump lisati kirjejärjekorra tõendisse (59 allikat): FM3 paneb teise Drive'i kirje kohe Drive 1 järele, seega `recordOrder:"device"` teeb seda nüüd ka generaatoris. Kviitung `references/fm3-t51-20261113.json`.
 
 0.3.72: T50 kinnitas `modifierTargets[].curve` seadmel Filter Frequency, Amp Level ja Delay Mix sihil (FM3-Editi aken, kuulamine, baiditäpne STORE); TXT ja aruanne märgivad need sihid kinnitatuks.
