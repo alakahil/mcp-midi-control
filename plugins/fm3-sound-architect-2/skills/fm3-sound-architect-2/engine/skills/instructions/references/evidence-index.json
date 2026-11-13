@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2293,
-  "filePaths": 2497,
+  "uniqueContents": 2294,
+  "filePaths": 2498,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -2767,6 +2767,12 @@
         "references/peq-full-20261009-152606/step-003-ee68893cff/capture.json"
       ]
     },
+    "32b9cb997a3888c4ccba25b5df31bb8e56e5584896985b4e040cbc394ac996b5": {
+      "bytes": 90793,
+      "paths": [
+        "references/fm3-current-evidence.json"
+      ]
+    },
     "32d4bbe21ce3ff38ecf2d0a3a3ce5674daffdc1ac87ba622bbb2e234fb13c52e": {
       "bytes": 7182,
       "paths": [
@@ -4406,6 +4412,12 @@
       "bytes": 24680,
       "paths": [
         "references/geq-full-20261010-194115/step-069-4ce8e211d6/donor.syx"
+      ]
+    },
+    "522358efc83e932be2531698d5720944011d390f2371ea1c69a9f8bb2ad8b59d": {
+      "bytes": 67318,
+      "paths": [
+        "references/fm3-t52-plex-presets-20261113.json"
       ]
     },
     "524a2d90393a17e1bfe800ddf893b44d9ebb0c3143995c6ecb369d485c501990": {
@@ -11004,12 +11016,6 @@
       "bytes": 24680,
       "paths": [
         "references/drive-batch-20261006-112254/capture-20261006T110501-0e96926020/donor.syx"
-      ]
-    },
-    "cd1a37f1d6733471f097b02eabc6f060ca2b384b2cc049ab7b83f964c2ae55ca": {
-      "bytes": 90306,
-      "paths": [
-        "references/fm3-current-evidence.json"
       ]
     },
     "cd25793f20ab07c8eeeace758acd0b5c5ecf06a903edb3d6b463b1466b116e89": {
