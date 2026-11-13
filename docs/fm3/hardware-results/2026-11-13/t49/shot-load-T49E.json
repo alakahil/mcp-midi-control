@@ -1,0 +1,18 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "0472920554a107af6f1017bde9c6a2717a2cb530a40a0940c6f49a743c061b23",
+ "preset": "T49E",
+ "name": "T49E MD TYPES",
+ "time": "2026-11-13T11:43:56",
+ "blocks": [
+  {
+   "family": "multidelay",
+   "effectId": 74,
+   "values": 484,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  }
+ ],
+ "allMatch": true
+}

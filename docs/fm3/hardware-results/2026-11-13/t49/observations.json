@@ -1,0 +1,79 @@
+{
+ "kind": "fm3-t49-observations",
+ "date": "2026-11-13",
+ "source": "FM3-Edit Multi Delay Type field per channel A..D read by Claude from background screenshots (no Save); listening by the user, scenes 1..4.",
+ "cases": {
+  "T49A": {
+   "fm3EditTypes": {
+    "A": "Quad-Tap Delay",
+    "B": "Quad Parallel Delay",
+    "C": "Quad Series Delay",
+    "D": "Quad Diffusor"
+   },
+   "listening": "kõlas nagu nimi lubab"
+  },
+  "T49B": {
+   "fm3EditTypes": {
+    "A": "Quad Tape Delay",
+    "B": "Quad Tap Band Delay",
+    "C": "Ambient Quad Tape",
+    "D": "Ambient Tape Delay"
+   },
+   "listening": "ok, kõlas nagu nimi lubab"
+  },
+  "T49C": {
+   "fm3EditTypes": {
+    "A": "Circular Delays",
+    "B": "Comb Filter Delay",
+    "C": "Filtered Mod Band Delay",
+    "D": "Quad Chorus"
+   },
+   "listening": "ok"
+  },
+  "T49D": {
+   "fm3EditTypes": {
+    "A": "Rhythmic Bands",
+    "B": "MD Chorus",
+    "C": "1210",
+    "D": "Aerosol"
+   },
+   "listening": "ok"
+  },
+  "T49E": {
+   "fm3EditTypes": {
+    "A": "PCM Circular",
+    "B": "PCM Pan",
+    "C": "A.H. Clean Short",
+    "D": "A.H. Clean Long"
+   },
+   "listening": "ok"
+  },
+  "T49F": {
+   "fm3EditTypes": {
+    "A": "A.H. Lead Short",
+    "B": "A.H. Lead Long",
+    "C": "A.H. Swell Short",
+    "D": "A.H. Swell Long"
+   },
+   "listening": "ok"
+  },
+  "T49G": {
+   "fm3EditTypes": {
+    "A": "Shadows Taps",
+    "B": "Stereo Shadows",
+    "C": "Swing Ping",
+    "D": "Kilimanjaro"
+   },
+   "listening": "ok"
+  },
+  "T49H": {
+   "fm3EditTypes": {
+    "A": "Camera Obscura",
+    "B": "Strange Things",
+    "C": "Matterhorn"
+   },
+   "listening": "ok"
+  }
+ },
+ "stored": false
+}

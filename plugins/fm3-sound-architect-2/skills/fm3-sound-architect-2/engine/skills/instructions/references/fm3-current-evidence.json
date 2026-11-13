@@ -271,11 +271,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -286,11 +287,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -301,11 +303,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -316,11 +319,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -331,11 +335,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -346,11 +351,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -361,11 +367,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -376,11 +383,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -391,11 +399,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -406,11 +415,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -421,11 +431,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -436,11 +447,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -468,11 +480,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -483,11 +496,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -515,11 +529,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -530,11 +545,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -545,11 +561,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -560,11 +577,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -575,11 +593,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -590,11 +609,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -605,11 +625,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -620,11 +641,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -635,11 +657,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -650,11 +673,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -713,11 +737,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -728,11 +753,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -743,11 +769,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -792,11 +819,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -807,11 +835,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -822,11 +851,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -837,11 +867,12 @@
       "softwareSupported": true,
       "measuredFullChannelWords": 121,
       "templateStart": "device default, channel A",
-      "generatedDeviceImport": "not-measured",
-      "audibleBehavior": "not-measured",
+      "generatedDeviceImport": "confirmed",
+      "audibleBehavior": "confirmed",
       "storeReload": "not-measured",
       "evidence": [
-        "T35"
+        "T35",
+        "T49"
       ],
       "scope": "Whole-channel template before controls; Type selector alone is not a fill operation."
     },
@@ -2401,6 +2432,11 @@
       "remaining": "31 unimported generated Types."
     },
     {
+      "from": "31 unimported generated Multi Delay Types",
+      "resolvedBy": "T49",
+      "remaining": "STORE/reload of those 31 Types."
+    },
+    {
       "from": "T34F Preamp Type NONE not read back",
       "resolvedBy": "H4",
       "remaining": "Front-panel reading and other Preamp Types."
@@ -2441,12 +2477,13 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t42-modifier-targets-20261109.json": "794b9823682b001e94c40561761325d9fe7eeda16407e3a15c918b6b2db562e8",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t47-20261112.json": "4099975c5e80335f86b133f0430b156cb91a5dd5b3269a5ddceee125308501ac",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t48-20261113.json": "e996dee08e1a24e1e4b2d26440b5c85dd29e708e418db388e854511557eb4e82",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t49-multidelay-types-20261113.json": "46ccf6610110d774ba0c9fc3dd92ea9488a7c4920d94b6894dc67a3e538d887a",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-enum-promotion.mjs": "5cf8e5afa993cc1740ac8193b0da23f9374524c10b6fc1136f047c69a12896db",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-modifier-targets.mjs": "77062dc8aed547d8d5340e39f822beb73d7f86976ed94807214a14e43e9f73d5",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "4c448d0e0d6eb7b6a7ad061da98ce9ae384144cb9c1bbfe8b2e07e24aeb8f136"
+    "tools/fm3/current-evidence.mjs": "242e8264ddcd38837344b6a0455b370b222f1c032576fa08ddf508b1ecd05406"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false
