@@ -86,18 +86,6 @@ check(gridWarnings(pb).length===0,'Split after Cab: no warning');
 const amp=arrangeGrid(pe0(),{grid:{rows:P.map((r,i)=>i===2?['','','','','-','reverb','-','','','','','']:r),links:[{row:3,col:5,from:[2]},{row:2,col:8,from:[2,3]}]}});
 const ab=body(amp.syx);check(describeLinks(ab).some(l=>l.includes('← amp (rida 2, veerg 4)'))&&gridWarnings(ab).length===1&&amp.warnings.length===1,'Amp-fed branch is named and warned');
 const pe=editRecords(NL,{remove:['send','return'],duplicate:['drive2'],add:['mixer']}).syx;
-// 0.3.70 recordOrder in grid mode: append (default) keeps additions last; device places Mixer between In 1 and Out 1
-// (device record-order evidence), keeps the kept records' order and appends Drive 2 (no evidence).
-{const eids=s=>scanRecords(body(s)).records.map(r=>r.eid),kept=eids(NL).filter(e=>e!==186&&e!==182);
- const ap=editRecords(NL,{remove:['send','return'],duplicate:['drive2'],add:['mixer']}),dv=editRecords(NL,{remove:['send','return'],duplicate:['drive2'],add:['mixer'],recordOrder:'device'});
- check(body(ap.syx).equals(body(pe))&&ap.recordOrder.mode==='append'&&JSON.stringify(eids(ap.syx))===JSON.stringify([...kept,126,119]),'append is the default and unchanged');
- const o=eids(dv.syx);check(o.indexOf(126)===o.indexOf(37)+1&&o.indexOf(42)===o.indexOf(126)+1&&o.at(-1)===119,'device: Mixer between In 1 and Out 1, Drive 2 last: '+o);
- check(JSON.stringify(o.filter(e=>kept.includes(e)))===JSON.stringify(kept),'kept order unchanged');
- check(JSON.stringify(dv.recordOrder.placed.map(p=>[p.block,p.by]))==='[["drive2","appended"],["mixer","device order"]]'||JSON.stringify(dv.recordOrder.placed.map(p=>[p.block,p.by]))==='[["mixer","device order"],["drive2","appended"]]','placement report');
- const recs=s=>{const b=body(s);return new Map(scanRecords(b).records.map(r=>[r.eid,b.subarray(r.header,r.header+r.size).toString('hex')]))};
- const ra=recs(ap.syx),rd=recs(dv.syx);check(ra.size===rd.size&&[...ra].every(([e,h])=>rd.get(e)===h),'same records, only their order differs');
- no(()=>editRecords(NL,{add:['mixer'],recordOrder:'sorted'}),/recordOrder must be/,'record order mode');
- const out2=editRecords(NL,{duplicate:['out2'],add:['mixer'],recordOrder:'device'}),oo=eids(out2.syx);check(oo.indexOf(43)===oo.indexOf(42)+1&&oo.indexOf(126)===oo.indexOf(42)-1,'Out 2 still follows Out 1');}
 no(()=>arrangeGrid(pe,{grid:{rows:P}}),/has no input/,'missing split link');
 no(()=>arrangeGrid(pe,{grid:{rows:P.map((r,i)=>i===1?r.map(v=>v==='drive2'?'-':v):r),links}}),/not on the grid/,'record without cell');
 no(()=>arrangeGrid(pe,{grid:{rows:P.map((r,i)=>i===2?r.map(v=>v==='reverb'?'drive':v):r),links}}),/placed twice/,'block twice');

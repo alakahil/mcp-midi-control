@@ -24,6 +24,7 @@ import {insertBlocks,insertCapabilities} from './fm3-insert-blocks.mjs';
 import {editRecords,arrangeGrid,gridCapabilities} from './fm3-grid.mjs';
 import {estimateCpu,renderCpuText} from './fm3-cpu.mjs';
 import {RECORD_ORDER_MODES} from './fm3-record-order.mjs';
+import {orderGridRecords} from './fm3-grid-record-order.mjs';
 import {applyMultidelayTypes,validateMultidelayTypes,verifyMultidelayTypesOutput,renderMultidelayTypesText,multidelayTypesCapabilities} from './fm3-multidelay-types.mjs';
 import {applyControllers,validateControllers,renderControllersText,controllersCapabilities,applyControllersScenes,validateControllersScenes,applyPresetTempo,validatePresetTempo,renderPresetTempoText} from './fm3-controllers.mjs';
 import {bindModifierTargets,readModifierTargets,validateModifierTargets,modifierTargetsCapabilities} from './fm3-modifier-targets.mjs';
@@ -86,8 +87,10 @@ export function composeSound(base,spec){
   check(first.report.baseId==='jb-newlook','Sound composer requires the jb-newlook base');
   const volume=spec.volumePan?insertVolumePan(first.syx):null;
   const inserted=gridMode||spec.insert===undefined?null:insertBlocks(volume?.syx??first.syx,spec.insert,{recordOrder:spec.recordOrder??'device'});
-  const records=gridMode?editRecords(volume?.syx??first.syx,{remove:spec.remove??[],duplicate:spec.duplicate??[],add:spec.insert??[],recordOrder:spec.recordOrder??'append'}):null;
-  const arrangedInput=records?.syx??inserted?.syx??volume?.syx??first.syx;
+  const records=gridMode?editRecords(volume?.syx??first.syx,{remove:spec.remove??[],duplicate:spec.duplicate??[],add:spec.insert??[]}):null;
+  // 0.3.70: recordOrder in grid mode moves the added records to the device order (default append = unchanged output).
+  const gridOrder=records&&Object.hasOwn(spec,'recordOrder')?orderGridRecords(records.syx,[...records.inserted.map(x=>({block:x.block,effectId:x.effectId})),...records.duplicated.map(x=>({block:x.block,effectId:x.effectId}))],spec.recordOrder):null;
+  const arrangedInput=gridOrder?.syx??records?.syx??inserted?.syx??volume?.syx??first.syx;
   const pedal=spec.volumePedal?bindVolumePedal(arrangedInput,spec.volumePedal):null;
   const switches=spec.controlSwitches?bindControlSwitches(pedal?.syx??arrangedInput,spec.controlSwitches):null;
   // Generic targets (0.3.60) take the next unused records after the Volume and Control Switch bindings.
@@ -122,7 +125,7 @@ export function composeSound(base,spec){
   const report={generator:'fm3-sound-0.3.70',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,...(controlSwitches?{controlSwitches}:{}),...(modifierTargets?{modifierTargets}:{}),...(tmp?{presetTempo:tmp.state}:{}),...(edits?{modifierEdits:edits.report}:{}),...(csp?{csPreset}:{}),...(ctl?{controllers:ctl.writes}:{}),...(cts?{controllersScenes:[...cts.channels]}:{}),...(mdt?{multidelayTypes:mdt.channels}:{}),
-    stages:{volumePedal:volumePedal?pedal.report:null,...(targets?{modifierTargets:targets.report}:{}),...(tmp?{presetTempo:tmp.report}:{}),...(edits?{modifierEdits:edits.report}:{}),...(ctl?{controllers:ctl.report}:{}),...(cts?{controllersScenes:cts.report}:{}),...(mdt?{multidelayTypes:mdt.report}:{}),...(switchReport?{controlSwitches:switchReport}:{}),...(csp?{csPreset:csp.report}:{}),volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated,...(Object.hasOwn(spec,'recordOrder')?{recordOrder:records.recordOrder}:{})}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};
+    stages:{volumePedal:volumePedal?pedal.report:null,...(targets?{modifierTargets:targets.report}:{}),...(tmp?{presetTempo:tmp.report}:{}),...(edits?{modifierEdits:edits.report}:{}),...(ctl?{controllers:ctl.report}:{}),...(cts?{controllersScenes:cts.report}:{}),...(mdt?{multidelayTypes:mdt.report}:{}),...(switchReport?{controlSwitches:switchReport}:{}),...(csp?{csPreset:csp.report}:{}),volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated,...(gridOrder?{recordOrder:gridOrder.recordOrder}:{})}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};
   return {syx:second.syx,txt:renderFinalSoundText({...state,modifierEdit,volumePedal,controlSwitches,modifierTargets,csPreset,modifierEdits:edits?.report},spec)+renderControllersText(ctl?.writes,cts?.channels)+renderPresetTempoText(tmp?.state)+renderMultidelayTypesText(mdt?.channels)+renderCpuText(cpuEstimate)+'\n',report,composerReport:first.report,layoutReport:report.stages.layout};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){

@@ -16,7 +16,6 @@ import {scanRecords,readGrid,blockOf,SLUG_BY_EID,IO,SHUNT_MIN,GRID,applyBlockSce
 import {INSERTABLE,GATED,insertDonor} from './fm3-insert-blocks.mjs';
 import {applySceneMidi,SCENE_MIDI_EID,sceneMidiCapabilities} from './fm3-scene-midi.mjs';
 import {baseSlug,assertFields} from './fm3-table-encoder.mjs';
-import {placeRecords,RECORD_ORDER_MODES,RECORD_ORDER_RECEIPT,recordOrderReceiptHash} from './fm3-record-order.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const check=(v,m)=>{if(!v)throw Error(m)};
@@ -55,11 +54,7 @@ export const GRID_ADDABLE=Object.freeze({...INSERTABLE,mixer:126,multiplexer:191
 
 // Remove records, add donor blocks and second instances. Grid cells of removed blocks become
 // empty; added records get no cell. The grid stage then writes the whole layout.
-// recordOrder (0.3.70): 'append' (default, the placement of every grid pack built before 0.3.70) puts added records last;
-// 'device' puts each added record where the device record-order evidence fixes it against every kept record (as
-// insertBlocks does since 0.3.58), otherwise last. Out 2 always follows Out 1.
-export function editRecords(syx,{remove=[],duplicate=[],add=[],recordOrder='append'}={}){
-  check(RECORD_ORDER_MODES.includes(recordOrder),'recordOrder must be one of: '+RECORD_ORDER_MODES.join(', '));
+export function editRecords(syx,{remove=[],duplicate=[],add=[]}={}){
   check(Array.isArray(remove)&&Array.isArray(duplicate)&&Array.isArray(add),'remove, duplicate and insert must be arrays');
   const before=inspectStructure(syx),original=Buffer.from(before.raw.body),{records,tail}=scanRecords(original);
   const keep=[],removed=[],added=[];const prefix=Buffer.from(original.subarray(0,RECORDS_START));
@@ -98,20 +93,14 @@ export function editRecords(syx,{remove=[],duplicate=[],add=[],recordOrder='appe
   // Records: kept order; Out 2 directly after Out 1 (as the FM3 serialises it), other additions at the end.
   const keptRecords=records.filter(r=>!removed.includes(r)),ordered=[];
   keptRecords.forEach((r,i)=>{ordered.push(keep[i]);for(const a of added.filter(a=>a.after===r.eid))ordered.push(a.rec);});
-  const keptEids=[];keptRecords.forEach(r=>{keptEids.push(r.eid);for(const a of added.filter(a=>a.after===r.eid))keptEids.push(a.eid);});
-  const free=added.filter(a=>!a.after),placement=placeRecords(keptEids,free.map(a=>a.eid),recordOrder);
-  const bufOf=new Map([...keptEids.map((e,i)=>[e,ordered[i]]),...free.map(a=>[a.eid,a.rec])]);
-  const body=Buffer.concat([prefix,...placement.order.map(e=>bufOf.get(e)),original.subarray(tail)]);
+  const body=Buffer.concat([prefix,...ordered,...added.filter(a=>!a.after).map(a=>a.rec),original.subarray(tail)]);
   const after=scanRecords(body);
-  check(JSON.stringify(after.records.map(r=>r.eid))===JSON.stringify(placement.order),'Record order differs from placement');
-  check(JSON.stringify(placement.order.filter(e=>keptEids.includes(e)))===JSON.stringify(keptEids),'Kept record order changed');
   check(after.records.length===records.length-removed.length+added.length,'Record count after edit');
   check(body.subarray(after.tail).equals(original.subarray(tail)),'System tail changed');
   for(const a of added)check(after.records.some(r=>r.eid===a.eid&&r.family===a.slug),'Record not scanned as '+a.slug);
   keptRecords.forEach((r,i)=>{const n=after.records.find(x=>x.eid===r.eid);check(n&&body.subarray(n.header,n.header+n.size).equals(keep[i]),'Kept record modified');});
   const out=reencode(syx,before,body);
   return {syx:out,removed:removed.map(r=>r.family),
-    recordOrder:{mode:recordOrder,receipt:RECORD_ORDER_RECEIPT,receiptSha256:recordOrderReceiptHash,placed:placement.placed.map(p=>({block:free.find(a=>a.eid===p.eid).slug,effectId:p.eid,recordIndex:p.index,by:p.by}))},
     inserted:added.filter(a=>a.from==='device-default donor').map(a=>({block:a.slug,effectId:a.eid,defaultScenes:a.slug==='scenemidi'?'A, engaged (all 8 scenes)':'A, bypass (all 8 scenes)'})),
     duplicated:added.filter(a=>a.from!=='device-default donor').map(a=>({block:a.slug,effectId:a.eid,from:a.from,...(a.slug==='out2'?{record:'Out 1 record with effect ID 43 (I/O header, no scenes)',position:'after Out 1'}:{defaultScenes:'A, bypass (all 8 scenes)'})})),
     report:{stage:'fm3-grid records 0.1.0',outputSha256:sha(out),bodyBytes:body.length,
