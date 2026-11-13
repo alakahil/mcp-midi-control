@@ -161,6 +161,7 @@ Kviitung: MOOTOR references/fm3-t50-20261113.json.
 - T32: 8 stseeni CPU 55-71%, 11 ploki andmed säilisid STORE järel. T34E kinnitab lõpliku -8 dB lead-nivoo kuulamist; H3 mõõtis lõppfaili CPU ja STORE-i, stseenide valjus vajab sättimist.
 - T37: Synthi häälte 2/3 mõõdetud tüübid on CPU mudelis 0.2.5; muud parameetrid vajavad oma tõendit.
 - T34F: Cab lõiked nähtavad; H4 luges Preamp Type None otse FM3-Editist tagasi.
+- T52 (13.11.2026): kõik 45 Plexi preseti kanalikujutist (96 sõna) mõõdetud seadme vaikeplokist; generaator neid veel ei kasuta.
 - T38: sama spec taastab 0.3.58 device-järjekorras salvestatud keha; see ei kinnita kõigi presetite ega grid-režiimi baittäpsust.
 
 ## Allikad ja piirid
