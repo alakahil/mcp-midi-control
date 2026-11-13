@@ -1,0 +1,360 @@
+{
+ "schemaVersion": 1,
+ "device": "FM3 Mk II Turbo",
+ "firmware": 13,
+ "date": "2026-11-13",
+ "test": "T49",
+ "method": "FM3_SHOT_LOAD.py --load --preset ID sends one generated preset to the edit buffer (7F 00) and reads the Multi Delay record (74) with fn=0x1F (read-only), word for word against the generated file; FM3-Edit Type names are read without saving and the user listens to scenes 1..4. Nothing is stored or set.",
+ "builder": "tools/fm3/t49-multidelay-types-build.mjs",
+ "collector": "FM3_SHOT_LOAD.py --load",
+ "packSha256": "0472920554a107af6f1017bde9c6a2717a2cb530a40a0940c6f49a743c061b23",
+ "results": [
+  {
+   "id": "T49A",
+   "presetSha256": "b4535a182e76e9ccf6ea414ade7639e58c15f90df9893370d5270e4022865b67",
+   "types": [
+    {
+     "channel": "A",
+     "type": "Quad-Tap Delay",
+     "index": 0
+    },
+    {
+     "channel": "B",
+     "type": "Quad Parallel Delay",
+     "index": 1
+    },
+    {
+     "channel": "C",
+     "type": "Quad Series Delay",
+     "index": 2
+    },
+    {
+     "channel": "D",
+     "type": "Quad Diffusor",
+     "index": 3
+    }
+   ],
+   "deviceWordsMatch": "484/484",
+   "fm3EditTypes": {
+    "A": "Quad-Tap Delay",
+    "B": "Quad Parallel Delay",
+    "C": "Quad Series Delay",
+    "D": "Quad Diffusor"
+   },
+   "listening": "kõlas nagu nimi lubab"
+  },
+  {
+   "id": "T49B",
+   "presetSha256": "70589a963279c90a6bfbff80e94e799bce37e6ff89490405e855cf78e77b9558",
+   "types": [
+    {
+     "channel": "A",
+     "type": "Quad Tape Delay",
+     "index": 4
+    },
+    {
+     "channel": "B",
+     "type": "Quad Tap Band Delay",
+     "index": 5
+    },
+    {
+     "channel": "C",
+     "type": "Ambient Quad Tape",
+     "index": 6
+    },
+    {
+     "channel": "D",
+     "type": "Ambient Tape Delay",
+     "index": 7
+    }
+   ],
+   "deviceWordsMatch": "484/484",
+   "fm3EditTypes": {
+    "A": "Quad Tape Delay",
+    "B": "Quad Tap Band Delay",
+    "C": "Ambient Quad Tape",
+    "D": "Ambient Tape Delay"
+   },
+   "listening": "ok, kõlas nagu nimi lubab"
+  },
+  {
+   "id": "T49C",
+   "presetSha256": "8baf7eb1a591eda766f1b0f7086b388a1b418e56c637b4d2bd263e018f37db6c",
+   "types": [
+    {
+     "channel": "A",
+     "type": "Circular Delays",
+     "index": 8
+    },
+    {
+     "channel": "B",
+     "type": "Comb Filter Delay",
+     "index": 9
+    },
+    {
+     "channel": "C",
+     "type": "Filtered Mod Band Delay",
+     "index": 10
+    },
+    {
+     "channel": "D",
+     "type": "Quad Chorus",
+     "index": 11
+    }
+   ],
+   "deviceWordsMatch": "484/484",
+   "fm3EditTypes": {
+    "A": "Circular Delays",
+    "B": "Comb Filter Delay",
+    "C": "Filtered Mod Band Delay",
+    "D": "Quad Chorus"
+   },
+   "listening": "ok"
+  },
+  {
+   "id": "T49D",
+   "presetSha256": "936226509966dc362fd3bb8892d095a4fd8ea26d1d0071c2df110dabc7c1c237",
+   "types": [
+    {
+     "channel": "A",
+     "type": "Rhythmic Bands",
+     "index": 13
+    },
+    {
+     "channel": "B",
+     "type": "MD Chorus",
+     "index": 14
+    },
+    {
+     "channel": "C",
+     "type": "1210",
+     "index": 16
+    },
+    {
+     "channel": "D",
+     "type": "Aerosol",
+     "index": 17
+    }
+   ],
+   "deviceWordsMatch": "484/484",
+   "fm3EditTypes": {
+    "A": "Rhythmic Bands",
+    "B": "MD Chorus",
+    "C": "1210",
+    "D": "Aerosol"
+   },
+   "listening": "ok"
+  },
+  {
+   "id": "T49E",
+   "presetSha256": "208ef468ccf580fd5054ca3c25cbc2695bf13e43f972ba09466ae68a342dcd6a",
+   "types": [
+    {
+     "channel": "A",
+     "type": "PCM Circular",
+     "index": 18
+    },
+    {
+     "channel": "B",
+     "type": "PCM Pan",
+     "index": 19
+    },
+    {
+     "channel": "C",
+     "type": "A.H. Clean Short",
+     "index": 20
+    },
+    {
+     "channel": "D",
+     "type": "A.H. Clean Long",
+     "index": 21
+    }
+   ],
+   "deviceWordsMatch": "484/484",
+   "fm3EditTypes": {
+    "A": "PCM Circular",
+    "B": "PCM Pan",
+    "C": "A.H. Clean Short",
+    "D": "A.H. Clean Long"
+   },
+   "listening": "ok"
+  },
+  {
+   "id": "T49F",
+   "presetSha256": "e548f2d2f264355ac2fb5fa0b4262579d919509294fa764c8f8e46eeff079b71",
+   "types": [
+    {
+     "channel": "A",
+     "type": "A.H. Lead Short",
+     "index": 22
+    },
+    {
+     "channel": "B",
+     "type": "A.H. Lead Long",
+     "index": 23
+    },
+    {
+     "channel": "C",
+     "type": "A.H. Swell Short",
+     "index": 24
+    },
+    {
+     "channel": "D",
+     "type": "A.H. Swell Long",
+     "index": 25
+    }
+   ],
+   "deviceWordsMatch": "484/484",
+   "fm3EditTypes": {
+    "A": "A.H. Lead Short",
+    "B": "A.H. Lead Long",
+    "C": "A.H. Swell Short",
+    "D": "A.H. Swell Long"
+   },
+   "listening": "ok"
+  },
+  {
+   "id": "T49G",
+   "presetSha256": "fb6601a488dfd90404d768eccb0fbf1947abd22179bdd8bc6eef23388ddbf9e6",
+   "types": [
+    {
+     "channel": "A",
+     "type": "Shadows Taps",
+     "index": 29
+    },
+    {
+     "channel": "B",
+     "type": "Stereo Shadows",
+     "index": 30
+    },
+    {
+     "channel": "C",
+     "type": "Swing Ping",
+     "index": 31
+    },
+    {
+     "channel": "D",
+     "type": "Kilimanjaro",
+     "index": 34
+    }
+   ],
+   "deviceWordsMatch": "484/484",
+   "fm3EditTypes": {
+    "A": "Shadows Taps",
+    "B": "Stereo Shadows",
+    "C": "Swing Ping",
+    "D": "Kilimanjaro"
+   },
+   "listening": "ok"
+  },
+  {
+   "id": "T49H",
+   "presetSha256": "75b321d0f733f2e8dfc80193685cc25a02839f6790a2b1460d18053ad7b344f0",
+   "types": [
+    {
+     "channel": "A",
+     "type": "Camera Obscura",
+     "index": 35
+    },
+    {
+     "channel": "B",
+     "type": "Strange Things",
+     "index": 36
+    },
+    {
+     "channel": "C",
+     "type": "Matterhorn",
+     "index": 37
+    }
+   ],
+   "deviceWordsMatch": "484/484",
+   "fm3EditTypes": {
+    "A": "Camera Obscura",
+    "B": "Strange Things",
+    "C": "Matterhorn"
+   },
+   "listening": "ok"
+  }
+ ],
+ "types": [
+  "Quad-Tap Delay",
+  "Quad Parallel Delay",
+  "Quad Series Delay",
+  "Quad Diffusor",
+  "Quad Tape Delay",
+  "Quad Tap Band Delay",
+  "Ambient Quad Tape",
+  "Ambient Tape Delay",
+  "Circular Delays",
+  "Comb Filter Delay",
+  "Filtered Mod Band Delay",
+  "Quad Chorus",
+  "Rhythmic Bands",
+  "MD Chorus",
+  "1210",
+  "Aerosol",
+  "PCM Circular",
+  "PCM Pan",
+  "A.H. Clean Short",
+  "A.H. Clean Long",
+  "A.H. Lead Short",
+  "A.H. Lead Long",
+  "A.H. Swell Short",
+  "A.H. Swell Long",
+  "Shadows Taps",
+  "Stereo Shadows",
+  "Swing Ping",
+  "Kilimanjaro",
+  "Camera Obscura",
+  "Strange Things",
+  "Matterhorn"
+ ],
+ "meaning": "All 31 remaining Multi Delay Types written through multidelayTypes (four per preset on channels A..D) load with every Multi Delay word as generated, FM3-Edit shows each Type name and the user heard each channel sound like its Type. With T36/T38/H2 all 39 Types are confirmed for generated load + edit buffer; STORE/reload is confirmed for 8.",
+ "files": [
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/manifest.json",
+   "sha256": "0472920554a107af6f1017bde9c6a2717a2cb530a40a0940c6f49a743c061b23"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/observations.json",
+   "sha256": "0e91ff7de0a18cc87ff3fb2c3b99ed92c7e46f98773879487fd6d86352dec6ff"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/shot-load-T49A.json",
+   "sha256": "cb897b8a90a36d70ed88328a84061675dac2c4f3a494fa3fbcfd201a0fff49a0"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/shot-load-T49B.json",
+   "sha256": "81d460931945f1063ddedfa2850d53f5e474cd26b7329d746b17002230984a63"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/shot-load-T49C.json",
+   "sha256": "d1e33d0354f4c35880994fdc58a11ba65acb01fbc443c3443b756950af650f31"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/shot-load-T49D.json",
+   "sha256": "82109ad1ae6f1b6e524bf0caf60d0324da623beea067967a26f90cd5bd18b122"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/shot-load-T49E.json",
+   "sha256": "8d1ba6a63fcc18f9c8d68b1dc9b042cedf5131d8b97a7ea4e5c7522831ea632e"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/shot-load-T49F.json",
+   "sha256": "f79dd8fc24ce3dea88dc33aa888354f32a675cde73ef3391ba5ae2461b55b4a6"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/shot-load-T49G.json",
+   "sha256": "9c336dd8a23ded8ae708d31a5a52c949f114a31a5fd63238a01a17558da78af2"
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t49/shot-load-T49H.json",
+   "sha256": "0390e2cd5370ced362e5a0b74b592eca2c17ba9e948c29650bda8e7e74fc6440"
+  }
+ ],
+ "notMeasured": [
+  "STORE/reload of these 31 templated channels",
+  "CPU of the loaded presets",
+  "Controls on top of these templates"
+ ]
+}

@@ -107,47 +107,47 @@ Kviitung: MOOTOR references/fm3-t48-20261113.json.
 
 | Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |
 |---|---:|---|---|---|---|
-| Quad-Tap Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Quad Parallel Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Quad Series Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Quad Diffusor | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Quad Tape Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Quad Tap Band Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Ambient Quad Tape | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Ambient Tape Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Circular Delays | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Comb Filter Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Filtered Mod Band Delay | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Quad Chorus | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
+| Quad-Tap Delay | 121 | jah | jah | mõõtmata | T35, T49 |
+| Quad Parallel Delay | 121 | jah | jah | mõõtmata | T35, T49 |
+| Quad Series Delay | 121 | jah | jah | mõõtmata | T35, T49 |
+| Quad Diffusor | 121 | jah | jah | mõõtmata | T35, T49 |
+| Quad Tape Delay | 121 | jah | jah | mõõtmata | T35, T49 |
+| Quad Tap Band Delay | 121 | jah | jah | mõõtmata | T35, T49 |
+| Ambient Quad Tape | 121 | jah | jah | mõõtmata | T35, T49 |
+| Ambient Tape Delay | 121 | jah | jah | mõõtmata | T35, T49 |
+| Circular Delays | 121 | jah | jah | mõõtmata | T35, T49 |
+| Comb Filter Delay | 121 | jah | jah | mõõtmata | T35, T49 |
+| Filtered Mod Band Delay | 121 | jah | jah | mõõtmata | T35, T49 |
+| Quad Chorus | 121 | jah | jah | mõõtmata | T35, T49 |
 | Pealing Bells | 121 | jah | jah | jah | T35, T36, H2 |
-| Rhythmic Bands | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| MD Chorus | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
+| Rhythmic Bands | 121 | jah | jah | mõõtmata | T35, T49 |
+| MD Chorus | 121 | jah | jah | mõõtmata | T35, T49 |
 | Mono Diffuser | 121 | jah | jah | jah | T35, T36, H2 |
-| 1210 | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Aerosol | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| PCM Circular | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| PCM Pan | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| A.H. Clean Short | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| A.H. Clean Long | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| A.H. Lead Short | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| A.H. Lead Long | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| A.H. Swell Short | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| A.H. Swell Long | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
+| 1210 | 121 | jah | jah | mõõtmata | T35, T49 |
+| Aerosol | 121 | jah | jah | mõõtmata | T35, T49 |
+| PCM Circular | 121 | jah | jah | mõõtmata | T35, T49 |
+| PCM Pan | 121 | jah | jah | mõõtmata | T35, T49 |
+| A.H. Clean Short | 121 | jah | jah | mõõtmata | T35, T49 |
+| A.H. Clean Long | 121 | jah | jah | mõõtmata | T35, T49 |
+| A.H. Lead Short | 121 | jah | jah | mõõtmata | T35, T49 |
+| A.H. Lead Long | 121 | jah | jah | mõõtmata | T35, T49 |
+| A.H. Swell Short | 121 | jah | jah | mõõtmata | T35, T49 |
+| A.H. Swell Long | 121 | jah | jah | mõõtmata | T35, T49 |
 | Ya-Ya Delay | 121 | jah | jah | jah | T35, T38 |
 | L-C-R-C | 121 | jah | jah | jah | T35, T38 |
 | Space Tape | 121 | jah | jah | jah | T35, T38 |
-| Shadows Taps | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Stereo Shadows | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Swing Ping | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
+| Shadows Taps | 121 | jah | jah | mõõtmata | T35, T49 |
+| Stereo Shadows | 121 | jah | jah | mõõtmata | T35, T49 |
+| Swing Ping | 121 | jah | jah | mõõtmata | T35, T49 |
 | Dub Echo | 121 | jah | jah | jah | T35, T36, H2 |
 | Aurora Delay | 121 | jah | jah | jah | T35, T36, H2 |
-| Kilimanjaro | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Camera Obscura | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Strange Things | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
-| Matterhorn | 121 | mõõtmata | mõõtmata | mõõtmata | T35 |
+| Kilimanjaro | 121 | jah | jah | mõõtmata | T35, T49 |
+| Camera Obscura | 121 | jah | jah | mõõtmata | T35, T49 |
+| Strange Things | 121 | jah | jah | mõõtmata | T35, T49 |
+| Matterhorn | 121 | jah | jah | mõõtmata | T35, T49 |
 | Centaurus X-3 | 121 | jah | jah | jah | T35, T38 |
 
-39 malli, 8 generaatori importi, 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.
+39 malli, 39 generaatori importi (T36, T38, H2 ja T49 13.11.2026: 31 ülejäänud Type'i, kõik sõnad, FM3-Editi nimi ja heli), 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.
 
 ## Muud T32-T41 tulemused
 

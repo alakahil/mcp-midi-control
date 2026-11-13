@@ -466,7 +466,7 @@ Delay): seade hoidis 484/484 sõna, FM3-Edit näitas nelja Type'i ja heli vastas
 (`references/fm3-t36-multidelay-types-20261107.json`). T38 (07.11.2026) salvestas teise preseti (A Ya-Ya Delay + Mix 30 %,
 B Space Tape, C L-C-R-C, D Centaurus X-3) STORE-iga ja laadis uuesti: kõigi plokkide kanalite andmed (Multi Delay 484/484
 sõna) ja stseenikanalid jäid samaks, Type'id ja heli samuti. FM3 paigutab salvestamisel ainult plokkide kirjed oma
-järjekorda (lisatud Multi Delay Sendi järele), seega fail pole baidiidentne, sisu on (`references/fm3-t38-multidelay-store-20261107.json`). Iga uue faili import ja heli jääb kontrollimata. Skeem 0.8.7; test
+järjekorda (lisatud Multi Delay Sendi järele), seega fail pole baidiidentne, sisu on (`references/fm3-t38-multidelay-store-20261107.json`). T49 (13.11.2026) laadis ülejäänud 31 Type'i (kaheksa presetti, igas neli kanalit): seade hoidis kõik sõnad, FM3-Edit näitas iga Type'i nime ja heli vastas nimele (`references/fm3-t49-multidelay-types-20261113.json`); kõik 39 Type'i on seega laadimisel kinnitatud, STORE 8-l. Iga uue faili heli ja nende 31 STORE jäävad kontrollimata. Skeem 0.8.7; test
 `scripts/test-multidelay-types.mjs` (kõik 39 Type'i = T35 kujutis, ainult selle kanali sõnad muutuvad).
 
 ## Multi Delay parameetrid kirjutatavad (0.3.49, T27)

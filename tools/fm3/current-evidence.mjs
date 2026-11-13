@@ -15,6 +15,8 @@ const t={};for(let n=32;n<=38;n++){
  const names={32:'live-20261106',33:'controllers-scene-20261106',34:'controllers-sources-20261107',35:'multidelay-presets-20261107',36:'multidelay-types-20261107',37:'synth-cpu-20261107',38:'multidelay-store-20261107'};
  t[n]=receipt(`fm3-t${n}-${names[n]}.json`);
 }
+const t49=receipt('fm3-t49-multidelay-types-20261113.json');
+assert.equal(t49.types.length,31);
 const b1b2=receipt('fm3-b1-b2-20261110.json');
 assert.equal(b1b2.cases.length,4);
 assert.ok(b1b2.cases.every(c=>c.storedBodyByteIdentical&&c.storeReload==='confirmed'));
@@ -68,16 +70,16 @@ const controllers=Object.entries(VOLUME_SOURCES).map(([name,code])=>{
 assert.equal(controllers.filter(r=>r.deviceImport==='confirmed').length,19);
 assert.equal(controllers.filter(r=>r.storeReload==='confirmed').length,19);
 const multiDelay=t[35].presets.map(p=>{
- const imported=t[36].types.some(x=>x.type===p.label),stored38=t[38].types.some(x=>x.type===p.label),storedH2=h2Stored.has(p.label),stored=stored38||storedH2;
+ const imported36=t[36].types.some(x=>x.type===p.label),imported49=t49.types.includes(p.label),imported=imported36||imported49,stored38=t[38].types.some(x=>x.type===p.label),storedH2=h2Stored.has(p.label),stored=stored38||storedH2;
  assert.equal(MULTIDELAY_TYPE_LABELS[p.index],p.label);assert.equal(p.words.length,121);
  return {index:p.index,name:p.label,algorithm:p.algorithm,softwareSupported:true,
   measuredFullChannelWords:121,templateStart:'device default, channel A',
   generatedDeviceImport:imported||stored?'confirmed':'not-measured',
   audibleBehavior:imported||stored?'confirmed':'not-measured',storeReload:stored?'confirmed':'not-measured',
-  evidence:['T35',...(imported?['T36']:[]),...(stored38?['T38']:[]),...(storedH2?['H2']:[])],
+  evidence:['T35',...(imported36?['T36']:[]),...(imported49?['T49']:[]),...(stored38?['T38']:[]),...(storedH2?['H2']:[])],
   scope:'Whole-channel template before controls; Type selector alone is not a fill operation.'};
 });
-assert.equal(multiDelay.length,39);assert.equal(multiDelay.filter(r=>r.generatedDeviceImport==='confirmed').length,8);
+assert.equal(multiDelay.length,39);assert.equal(multiDelay.filter(r=>r.generatedDeviceImport==='confirmed').length,39);
 assert.equal(multiDelay.filter(r=>r.storeReload==='confirmed').length,8);
 const {modifierTargetsCapabilities}=await import(path.join(E,'scripts/fm3-modifier-targets.mjs'));
 read(EP+'scripts/fm3-modifier-targets.mjs');
@@ -126,6 +128,7 @@ const current={schemaVersion:1,asOf:'2026-11-13',hardwareEvidenceThrough:'2026-1
   {from:'T33 scenes 5-8 pending',resolvedBy:'T34A',remaining:'Other source/target/shape combinations.'},
   {from:'T34 sources B-D edit buffer only; 14 sources unmeasured',resolvedBy:'T39-T41',remaining:'Other LFO shapes/depths, modifier curves and targets.'},
   {from:'T35 no generated Type import or STORE',resolvedBy:'T36, T38 and H2',remaining:'31 unimported generated Types.'},
+  {from:'31 unimported generated Multi Delay Types',resolvedBy:'T49',remaining:'STORE/reload of those 31 Types.'},
   {from:'T34F Preamp Type NONE not read back',resolvedBy:'H4',remaining:'Front-panel reading and other Preamp Types.'},
   {from:'LIVE KOOSLUS numerical loudness not measured',resolvedBy:'L1',remaining:'V1.3 numerical loudness, CPU and STORE/reload.'}],
  notPromoted:['General modifier allocator and arbitrary preset bases.','Other footswitch layouts, generator-written Hold and every PP definition.','Out 2 stereo/right and 4CM.','New preset audio/CPU/STORE.','Fresh-chat automatic launcher discovery.'],
@@ -189,7 +192,7 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
  'Kviitung: MOOTOR references/fm3-t48-20261113.json.',
  '','## MultiDelay Type mallid','', '| Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |','|---|---:|---|---|---|---|',
  ...multiDelay.map(r=>`| ${r.name} | ${r.measuredFullChannelWords} | ${mark(r.generatedDeviceImport)} | ${mark(r.audibleBehavior)} | ${mark(r.storeReload)} | ${r.evidence.join(', ')} |`),
- '','39 malli, 8 generaatori importi, 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',
+ '','39 malli, 39 generaatori importi (T36, T38, H2 ja T49 13.11.2026: 31 ülejäänud Type\'i, kõik sõnad, FM3-Editi nimi ja heli), 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',
  '','## Muud T32-T41 tulemused','',
  '- T32: 8 stseeni CPU 55-71%, 11 ploki andmed säilisid STORE järel. T34E kinnitab lõpliku -8 dB lead-nivoo kuulamist; H3 mõõtis lõppfaili CPU ja STORE-i, stseenide valjus vajab sättimist.',
  '- T37: Synthi häälte 2/3 mõõdetud tüübid on CPU mudelis 0.2.5; muud parameetrid vajavad oma tõendit.',
@@ -202,4 +205,4 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
 const outputs=[[path.join(E,'references/fm3-current-evidence.json'),JSON.stringify(current,null,2)+'\n'],[path.join(ROOT,'docs/fm3/FM3_CURRENT_EVIDENCE.md'),md]];
 assert.ok(process.argv.slice(2).every(a=>a==='--write'),'Usage: current-evidence.mjs [--write]');
 for(const [file,text] of outputs){if(process.argv.includes('--write'))fs.writeFileSync(file,text);else assert.equal(fs.readFileSync(file,'utf8'),text,'Current evidence stale: '+file);}
-console.log(JSON.stringify({passed:true,controllers:controllers.length,deviceSources:19,storedSources:19,multiDelay:39,importedTypes:8,storedTypes:8,enumCounts,scalarDescriptors,deviceIO:false}));
+console.log(JSON.stringify({passed:true,controllers:controllers.length,deviceSources:19,storedSources:19,multiDelay:39,importedTypes:39,storedTypes:8,enumCounts,scalarDescriptors,deviceIO:false}));
