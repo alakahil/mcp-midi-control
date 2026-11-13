@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "FM3 sound specification 0.8.9 (two-row layout or general grid)",
+  "title": "FM3 sound specification 0.8.10 (two-row layout or general grid)",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -3272,7 +3272,7 @@
       }
     },
     "modifierTargets": {
-      "description": "0.3.60 (T42): Source -> block parameter modifier bindings with the FM3 default template, next unused records after volumePedal / controlSwitches. Targets: parameters whose FM3-Edit FW13 flag 0x0080 is clear (468 labelled; fm3-preset.mjs --capabilities). Device-confirmed: Delay Mix, Filter Freq, Amp Gain (T42, STORE byte-identical); the FM3 cleared a bit-set target (Delay Low Cut). Target rule, Min/Max representability and block presence are generator rules.",
+      "description": "0.3.60 (T42): Source -> block parameter modifier bindings with the FM3 default template, next unused records after volumePedal / controlSwitches. Targets: parameters whose FM3-Edit FW13 flag 0x0080 is clear (468 labelled; fm3-preset.mjs --capabilities). Device-confirmed: Delay Mix, Filter Freq, Amp Gain (T42, STORE byte-identical); the FM3 cleared a bit-set target (Delay Low Cut). Target rule, Min/Max representability and block presence are generator rules. 0.3.69: optional curve / timing per binding.",
       "type": "array",
       "minItems": 1,
       "maxItems": 8,
@@ -3333,6 +3333,62 @@
               "D"
             ],
             "description": "word 17: ALL (0) or CHAN A..D (1..4)"
+          },
+          "curve": {
+            "type": "object",
+            "additionalProperties": false,
+            "minProperties": 1,
+            "description": "0.3.69: Modify-page curve and timing fields of this binding (record words 3-7, 13-15); omitted fields keep the template defaults (Start 0, Mid 50, End 100, Slope 50, Attack 10.1 ms, Scale 1, Offset 0, Release 10.1 ms). The codec was stepped on the device on the Volume record (T12); on other targets it is formula-derived until a device check.",
+            "properties": {
+              "startPercent": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "description": "Start %"
+              },
+              "midPercent": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "description": "Mid %"
+              },
+              "endPercent": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "description": "End %"
+              },
+              "slopePercent": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "description": "Slope %"
+              },
+              "attackMs": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10000,
+                "description": "Attack ms"
+              },
+              "scale": {
+                "type": "number",
+                "minimum": 0.1,
+                "maximum": 10,
+                "description": "Scale"
+              },
+              "offsetPercent": {
+                "type": "number",
+                "minimum": -100,
+                "maximum": 100,
+                "description": "Offset %"
+              },
+              "releaseMs": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10000,
+                "description": "Release ms"
+              }
+            }
           }
         }
       }

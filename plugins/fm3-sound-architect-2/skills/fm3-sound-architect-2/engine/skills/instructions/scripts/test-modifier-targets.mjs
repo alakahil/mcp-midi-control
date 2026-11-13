@@ -79,10 +79,35 @@ const bad=[[{source:'Scene Controller 1',block:'delay',param:'DELAY_LOCUT'},/not
  [{source:'External 1',block:'volpan',param:'VOLUME_GAIN'},/volumePedal/],[{source:'External 1',block:'wah',param:'WAH_CONTROL'},/external1Wah/],
  [{source:'Control Switch 1',block:'delay',param:'DELAY_MIX'},/source must be/],[{source:'LFO 1A',block:'delay',param:'REVERB_MIX'},/not in the dictionary/],
  [{source:'LFO 1A',block:'amp',param:'DISTORT_BOOST',min:0,max:1},/continuous/],[{source:'LFO 1A',block:'delay',param:'DELAY_MIX',min:50,max:50},/differ/],
- [{source:'LFO 1A',block:'delay',param:'DELAY_MIX',channel:'E'},/channel/],[{source:'LFO 1A',block:'delay',param:'DELAY_MIX',curve:1},/unknown field/],
+ [{source:'LFO 1A',block:'delay',param:'DELAY_MIX',channel:'E'},/channel/],[{source:'LFO 1A',block:'delay',param:'DELAY_MIX',curve:1},/curve must name/],[{source:'LFO 1A',block:'delay',param:'DELAY_MIX',curve:{}},/curve must name/],
+ [{source:'LFO 1A',block:'delay',param:'DELAY_MIX',curve:{offValuePercent:50}},/curve must name/],[{source:'LFO 1A',block:'delay',param:'DELAY_MIX',curve:{scale:11}},/scale out of range/],
+ [{source:'LFO 1A',block:'delay',param:'DELAY_MIX',curve:{attackMs:'5'}},/attackMs must be a number/],[{source:'LFO 1A',block:'delay',param:'DELAY_MIX',bogus:1},/unknown field/],
  [{source:'LFO 1A',block:'phaser',param:'PHASER_RATE'},/exactly once|once on the grid/]];
 for(const [x,re] of bad)assert.throws(()=>createPreset(base,one(x)),re,JSON.stringify(x));
 assert.throws(()=>createPreset(base,{composer,layout,modifierTargets:[{source:'LFO 1A',block:'delay',param:'DELAY_MIX'},{source:'LFO 1B',block:'delay',param:'DELAY_MIX'}]}),/twice/);
 assert.throws(()=>validateModifierTargets(Array(9).fill({source:'LFO 1A',block:'delay',param:'DELAY_MIX'})),/1\.\.8/);
 for(const t of [23,251,97.5,'97'])assert.throws(()=>createPreset(base,{composer,layout,tempo:t}),/tempo must be/,String(t));
-console.log(JSON.stringify({passed:true,targets:468,t42RecordsReplayed:3,tamperCases:6,deviceIO:false}));
+// 5. 0.3.69 curve / timing per binding: only words 3-7 and 13-15 of that record differ from the plain binding; the other
+// binding keeps the template; the words are the fm3-modifier-curve codec (T12 device steps: 13107 = 20.0 %, 52427 = 80.0 %).
+{const plainT=[{source:'Envelope Follower',block:'filter',param:'FILTER_FREQ',min:300,max:3000},{source:'LFO 1A',block:'delay',param:'DELAY_MIX',min:10,max:60}];
+ const curve={startPercent:20,midPercent:25,endPercent:80,slopePercent:75,scale:2,offsetPercent:10,attackMs:50,releaseMs:500};
+ const a=createPreset(base,{composer,layout,modifierTargets:plainT}),c=createPreset(base,{composer,layout,modifierTargets:[{...plainT[0],curve},plainT[1]]});
+ const wa=words(bodyOf(a.syx),1),wc=words(bodyOf(c.syx),1);
+ assert.deepEqual(wa.map((x,i)=>x!==wc[i]?i:-1).filter(i=>i>=0),[3,4,5,6,7,13,14,15]);
+ assert.deepEqual([3,4,5,6,7,13,14,15].map(i=>wc[i]),[13107,16384,52427,49151,328,42631,36044,3277]);
+ assert.deepEqual(words(bodyOf(a.syx),2),words(bodyOf(c.syx),2));
+ const ba=bodyOf(a.syx),bc=bodyOf(c.syx);for(let o=0;o<ba.length;o++)if(ba[o]!==bc[o])assert.ok(o>=1584+96+6&&o<1584+96+32,'byte '+o);
+ const st=c.report.modifierTargets;assert.equal(st[0].curveCustom,true);assert.equal(st[0].curve.scale.display,2);assert.equal(st[0].curve.attackMs.display,50.1);assert.equal(st[1].curve,undefined);
+ assert.equal(a.report.modifierTargets[0].curve,undefined);assert.ok(!a.txt.includes('Kõver ja ajad ('));assert.ok(c.txt.includes('Kõver ja ajad (filter'));assert.ok(c.txt.includes('Start 20%'));
+ assert.ok(stripControlSwitchRecords(bc).equals(stripControlSwitchRecords(ba)),'curve record is recognised and stripped');
+ // A curve naming only defaults is still reported, but not custom.
+ const d=createPreset(base,{composer,layout,modifierTargets:[{...plainT[0],curve:{midPercent:50}},plainT[1]]});assert.equal(d.report.modifierTargets[0].curveCustom,false);assert.ok(bodyOf(d.syx).equals(ba));
+ const tmp2=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-modcurve-'));
+ try{const spec={composer,layout,modifierTargets:[{...plainT[0],curve},plainT[1]]},stem=path.join(tmp2,'ok');writePresetOutputs(stem,c,spec);verifyPresetOutputs(stem);
+  const s1=path.join(tmp2,'word');writePresetOutputs(s1,{...c,syx:rewrite(c.syx,b=>b.writeUInt16LE(13108,1584+96+6))},spec);assert.throws(()=>verifyPresetOutputs(s1),undefined,'curve word');
+  const s2=path.join(tmp2,'txt');writePresetOutputs(s2,{...c,txt:c.txt.replace('Start 20%','Start 21%')},spec);assert.throws(()=>verifyPresetOutputs(s2),undefined,'curve txt');
+  // the same file without the curve request is refused: the curve words are not the template
+  const s3=path.join(tmp2,'unrequested');writePresetOutputs(s3,c,{composer,layout,modifierTargets:plainT});assert.throws(()=>verifyPresetOutputs(s3),undefined,'unrequested curve');
+ }finally{fs.rmSync(tmp2,{recursive:true,force:true});}
+}
+console.log(JSON.stringify({passed:true,targets:468,t42RecordsReplayed:3,tamperCases:9,curveWords:8,deviceIO:false}));
