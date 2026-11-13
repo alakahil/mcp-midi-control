@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "generatedPresetVersion": "0.3.70",
+  "scope": "L1: integrated loudness (EBU R128, ffmpeg) of LIVE KOOSLUS V1.2 scenes 1-8 from the FM3 USB audio, wet 1-2 and dry 3-4, user playing the same riff; no FM3 MIDI I/O. V1.3: generator file built from tools/fm3/l1-v13-build.mjs, judged by ear by the user.",
+  "l1": {
+    "preset": "LIVE KOOSLUS V1.2",
+    "seconds": 12,
+    "reference": 1,
+    "method": "ffmpeg ebur128 integrated loudness",
+    "scenes": [
+      {
+        "scene": 1,
+        "wetLufs": -17.4,
+        "wetPeakDb": -8.7,
+        "deltaDb": 0,
+        "playingDeltaDb": 0,
+        "correctedDeltaDb": 0,
+        "suggestedTrimDb": 0
+      },
+      {
+        "scene": 2,
+        "wetLufs": -16.4,
+        "wetPeakDb": -8.7,
+        "deltaDb": 1,
+        "playingDeltaDb": -0.5,
+        "correctedDeltaDb": 1.5,
+        "suggestedTrimDb": -1.5
+      },
+      {
+        "scene": 3,
+        "wetLufs": -17.1,
+        "wetPeakDb": -6.5,
+        "deltaDb": 0.3,
+        "playingDeltaDb": 0.3,
+        "correctedDeltaDb": 0,
+        "suggestedTrimDb": 0
+      },
+      {
+        "scene": 4,
+        "wetLufs": -16.6,
+        "wetPeakDb": -7.5,
+        "deltaDb": 0.8,
+        "playingDeltaDb": 0,
+        "correctedDeltaDb": 0.8,
+        "suggestedTrimDb": -0.8
+      },
+      {
+        "scene": 5,
+        "wetLufs": -16.8,
+        "wetPeakDb": -9.1,
+        "deltaDb": 0.6,
+        "playingDeltaDb": 0.9,
+        "correctedDeltaDb": -0.3,
+        "suggestedTrimDb": 0.3
+      },
+      {
+        "scene": 6,
+        "wetLufs": -16.6,
+        "wetPeakDb": -10.4,
+        "deltaDb": 0.8,
+        "playingDeltaDb": 0.3,
+        "correctedDeltaDb": 0.5,
+        "suggestedTrimDb": -0.5
+      },
+      {
+        "scene": 7,
+        "wetLufs": -17.8,
+        "wetPeakDb": -7.2,
+        "deltaDb": -0.4,
+        "playingDeltaDb": 0.2,
+        "correctedDeltaDb": -0.6,
+        "suggestedTrimDb": 0.6
+      },
+      {
+        "scene": 8,
+        "wetLufs": -17.8,
+        "wetPeakDb": -10.7,
+        "deltaDb": -0.4,
+        "playingDeltaDb": -0.3,
+        "correctedDeltaDb": -0.1,
+        "suggestedTrimDb": 0.1
+      }
+    ]
+  },
+  "v13": {
+    "file": "LIVE_KOOSLUS_V1_3.syx",
+    "fileSha256": "b7bd043ce9602293be7d3be830aa8655b0c92cf3309d20b47913571ca1d06668",
+    "out1SceneLevelsDb": [
+      0,
+      -1.5,
+      2,
+      0,
+      0,
+      0,
+      2,
+      0
+    ],
+    "bodyWordsChangedVsV12": 3,
+    "userVerdict": "V1.3 on tasakaalud paigas",
+    "method": "User loaded the file on the FM3 and played all scenes with a real guitar; listening judgement only.",
+    "measured": {
+      "loudness": false,
+      "cpu": false,
+      "storeReload": false
+    }
+  },
+  "findings": "V1.2: all 8 scenes within 1.5 dB of scene 1 after removing the playing difference; no clipping. Scene 2 was loudest (+1.5 dB); lead scenes 3 and 7 were not louder on average (peaks higher). V1.3 (Out 1 S2 -1.5 dB, S3/S7 +2 dB) is balanced by the user's listening.",
+  "sources": {
+    "l1-loudness-results.json": "a1b2e9f589c6485c1b333ec1873b2d8aa5a32ffebc13d65697c1071031749094",
+    "l1-loudness.txt": "8d3cbec08ccb2110888af8f770a0c597e507794e6a59d9ef12bce9a01fe8f3df",
+    "v13-listening.json": "bb0143549be5c41542badcab225ed1ab781adbf1b981bdae492db082949726b6"
+  },
+  "limitations": [
+    "One riff, one player, 12 s per scene; loudness is integrated LUFS, not perceived lead presence.",
+    "V1.3 was not measured numerically, CPU-read or stored/reloaded.",
+    "Audio files are not committed (user playing)."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

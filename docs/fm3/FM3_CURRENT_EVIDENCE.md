@@ -1,6 +1,6 @@
 # FM3 kehtiv tõendiseis
 
-Koondatud 2026-11-12; seadmetõendid kuni 2026-11-12. Alus 0.3.65.
+Koondatud 2026-11-13; seadmetõendid kuni 2026-11-13. Alus 0.3.65.
 
 See on ulatusega tõendikoond, mitte kõigi FM3 võimaluste valmidusprotsent. „Mõõtmata” ei tähenda keelatud sisendit ega ebaõnnestunud katset.
 
@@ -89,6 +89,12 @@ Kviitung: MOOTOR references/fm3-h6-t45-20261112.json.
 
 - T47A–C: generaatori kirjutatud per-preset Effect Bypass Comp 1, Chorus 1, TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1 ja Reverb 1 — FM3-Editi kuva õige, STORE baiditäpne, iga FM3 jalglüliti lülitas ainult oma plokki enne ja pärast STORE-i. 0.3.68: kokku 10 plokki lülitil kinnitatud.
 Kviitung: MOOTOR references/fm3-t47-20261112.json.
+
+## L1 stseenide valjus ja V1.3 — 13.11.2026
+
+- L1: LIVE KOOSLUS V1.2 kõik 8 stseeni on pärast mängu erinevuse eemaldamist stseenist 1 kuni 1,5 dB kaugusel, klippimist pole (FM3 USB heli, EBU R128). Stseen 2 kõige valjem (+1,5 dB); lead-stseenid 3 ja 7 pole keskmiselt valjemad (tipud kõrgemad).
+- V1.3: Out 1 Scene Level S2 −1,5 dB, S3/S7 +2 dB (tools/fm3/l1-v13-build.mjs). Kasutaja kuulamise järgi tasakaalud paigas; numbriliselt mõõtmata, CPU ja STORE/reload mõõtmata.
+Kviitung: MOOTOR references/fm3-l1-20261113.json.
 
 ## MultiDelay Type mallid
 

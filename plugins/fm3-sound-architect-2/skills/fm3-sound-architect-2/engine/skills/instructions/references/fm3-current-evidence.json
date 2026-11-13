@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-12",
-  "hardwareEvidenceThrough": "2026-11-12",
+  "asOf": "2026-11-13",
+  "hardwareEvidenceThrough": "2026-11-13",
   "baselineVersion": "0.3.65",
   "scope": "T32-T42, B1A/B1B/B1C/B2, H1/H2/H4, H3 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
   "definitions": {
@@ -1722,6 +1722,118 @@
     ],
     "scope": "T47A-C from tools/fm3/t47-build.mjs: generator-written per-preset Effect Bypass on FM3 footswitches 1-3. Actual user LOAD/GET and STORE/reload captures at location 427, user answers and FM3-Edit display read by Claude; this replay performs no device I/O."
   },
+  "auditL1": {
+    "evidence": "L1 2026-11-13",
+    "l1": {
+      "preset": "LIVE KOOSLUS V1.2",
+      "seconds": 12,
+      "reference": 1,
+      "method": "ffmpeg ebur128 integrated loudness",
+      "scenes": [
+        {
+          "scene": 1,
+          "wetLufs": -17.4,
+          "wetPeakDb": -8.7,
+          "deltaDb": 0,
+          "playingDeltaDb": 0,
+          "correctedDeltaDb": 0,
+          "suggestedTrimDb": 0
+        },
+        {
+          "scene": 2,
+          "wetLufs": -16.4,
+          "wetPeakDb": -8.7,
+          "deltaDb": 1,
+          "playingDeltaDb": -0.5,
+          "correctedDeltaDb": 1.5,
+          "suggestedTrimDb": -1.5
+        },
+        {
+          "scene": 3,
+          "wetLufs": -17.1,
+          "wetPeakDb": -6.5,
+          "deltaDb": 0.3,
+          "playingDeltaDb": 0.3,
+          "correctedDeltaDb": 0,
+          "suggestedTrimDb": 0
+        },
+        {
+          "scene": 4,
+          "wetLufs": -16.6,
+          "wetPeakDb": -7.5,
+          "deltaDb": 0.8,
+          "playingDeltaDb": 0,
+          "correctedDeltaDb": 0.8,
+          "suggestedTrimDb": -0.8
+        },
+        {
+          "scene": 5,
+          "wetLufs": -16.8,
+          "wetPeakDb": -9.1,
+          "deltaDb": 0.6,
+          "playingDeltaDb": 0.9,
+          "correctedDeltaDb": -0.3,
+          "suggestedTrimDb": 0.3
+        },
+        {
+          "scene": 6,
+          "wetLufs": -16.6,
+          "wetPeakDb": -10.4,
+          "deltaDb": 0.8,
+          "playingDeltaDb": 0.3,
+          "correctedDeltaDb": 0.5,
+          "suggestedTrimDb": -0.5
+        },
+        {
+          "scene": 7,
+          "wetLufs": -17.8,
+          "wetPeakDb": -7.2,
+          "deltaDb": -0.4,
+          "playingDeltaDb": 0.2,
+          "correctedDeltaDb": -0.6,
+          "suggestedTrimDb": 0.6
+        },
+        {
+          "scene": 8,
+          "wetLufs": -17.8,
+          "wetPeakDb": -10.7,
+          "deltaDb": -0.4,
+          "playingDeltaDb": -0.3,
+          "correctedDeltaDb": -0.1,
+          "suggestedTrimDb": 0.1
+        }
+      ]
+    },
+    "v13": {
+      "file": "LIVE_KOOSLUS_V1_3.syx",
+      "fileSha256": "b7bd043ce9602293be7d3be830aa8655b0c92cf3309d20b47913571ca1d06668",
+      "out1SceneLevelsDb": [
+        0,
+        -1.5,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "bodyWordsChangedVsV12": 3,
+      "userVerdict": "V1.3 on tasakaalud paigas",
+      "method": "User loaded the file on the FM3 and played all scenes with a real guitar; listening judgement only.",
+      "measured": {
+        "loudness": false,
+        "cpu": false,
+        "storeReload": false
+      }
+    },
+    "findings": "V1.2: all 8 scenes within 1.5 dB of scene 1 after removing the playing difference; no clipping. Scene 2 was loudest (+1.5 dB); lead scenes 3 and 7 were not louder on average (peaks higher). V1.3 (Out 1 S2 -1.5 dB, S3/S7 +2 dB) is balanced by the user's listening.",
+    "limitations": [
+      "One riff, one player, 12 s per scene; loudness is integrated LUFS, not perceived lead presence.",
+      "V1.3 was not measured numerically, CPU-read or stored/reloaded.",
+      "Audio files are not committed (user playing)."
+    ],
+    "scope": "L1: integrated loudness (EBU R128, ffmpeg) of LIVE KOOSLUS V1.2 scenes 1-8 from the FM3 USB audio, wet 1-2 and dry 3-4, user playing the same riff; no FM3 MIDI I/O. V1.3: generator file built from tools/fm3/l1-v13-build.mjs, judged by ear by the user."
+  },
   "auditH6T45": {
     "evidence": "H6/T45/T46A-C 2026-11-12",
     "cases": [
@@ -2069,6 +2181,11 @@
       "from": "T34F Preamp Type NONE not read back",
       "resolvedBy": "H4",
       "remaining": "Front-panel reading and other Preamp Types."
+    },
+    {
+      "from": "LIVE KOOSLUS numerical loudness not measured",
+      "resolvedBy": "L1",
+      "remaining": "V1.3 numerical loudness, CPU and STORE/reload."
     }
   ],
   "notPromoted": [
@@ -2086,6 +2203,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h3-20261110.json": "36ecdf87ad5e6f22107c7f067f6dd8d5682eebee89954f8b26fafc76a8cffd3f",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h5-t43-20261111.json": "00b628097e4d2a50c53e2c6781c016632d374892388c62525f5bfbeeb382aa0a",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-h6-t45-20261112.json": "d9394157fa813a872374fb9d4d1673d55839c19908f32eb91da269b68d6ebb0b",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-l1-20261113.json": "195e54c43a9a5de791e06f7a2765f5e1bfb009ab276ebc91b075b6d7b8ef62aa",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t30-enum-20261105.json": "457b82bd133cc50e5f9da1ca1b0f4785bcfd2e0a214b3d0af2ff23d3d98bbb09",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-shot-t31-cab-cpu-20261105.json": "8b52b94f8b273995e6ec038aa0bf8d9b77d6cf65a1286c11f7e575b5469fe103",
@@ -2104,7 +2222,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "c05d936344508406a02e73f881a2ec11406684386543680fa0b4aeed820c9731"
+    "tools/fm3/current-evidence.mjs": "a8eb80a5ce7bec6069577839fc9b1ec92fe1ca5e2f4e08bd00060f4d21110d0f"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false
