@@ -96,6 +96,13 @@ Kviitung: MOOTOR references/fm3-t47-20261112.json.
 - V1.3: Out 1 Scene Level S2 −1,5 dB, S3/S7 +2 dB (tools/fm3/l1-v13-build.mjs). Kasutaja kuulamise järgi tasakaalud paigas; numbriliselt mõõtmata, CPU ja STORE/reload mõõtmata.
 Kviitung: MOOTOR references/fm3-l1-20261113.json.
 
+## T48 seadmekatse — 13.11.2026
+
+- T48A–F: generaatori kirjutatud per-preset Effect Bypass ülejäänud 17 plokile (Cab 1, Phaser 1, Wah 1, Filter 1, GEQ 1, PEQ 1, Enhance 1, Vol/Pan 1, Gate 1, MultDly 1, Megatap 1, Ten-Tap 1, Plex 1, RingMod 1, Reso 1, MultCmp 1, Looper) — FM3 ekraan õige, STORE baiditäpne, iga jalglüliti lülitas ainult oma plokki enne ja pärast STORE-i. 0.3.71: kokku 27 plokki lülitil kinnitatud, Reso 2 ainult FM3-Editi kuvalt.
+- FM3-Edit FW13 näitab PP#1 kaardil indeksite 11/17/37/38/48 puhul valesti „Amp 1”; FM3 ise näitab ja lülitab õiget plokki.
+- Hold: FM3-Editis määratud PP#1 Hold Scene Select Scene 2 salvestus Tap paigutusest 432 baiti eespool (kaks sõna); pikk vajutus valis stseeni 2. Generaator Holdi ei kirjuta.
+Kviitung: MOOTOR references/fm3-t48-20261113.json.
+
 ## MultiDelay Type mallid
 
 | Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |

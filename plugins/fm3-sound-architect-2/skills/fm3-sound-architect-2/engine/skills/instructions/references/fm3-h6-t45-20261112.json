@@ -438,7 +438,7 @@
     "cab1": {
       "index": 1,
       "label": "Cab 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "chorus1": {
       "index": 2,
@@ -463,12 +463,12 @@
     "enhancer1": {
       "index": 11,
       "label": "Enhance 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "filter1": {
       "index": 17,
       "label": "Filter 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "flanger1": {
       "index": 21,
@@ -478,42 +478,42 @@
     "gate1": {
       "index": 25,
       "label": "Gate 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "geq1": {
       "index": 27,
       "label": "GEQ 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "looper1": {
       "index": 31,
       "label": "Looper",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "megatap1": {
       "index": 32,
       "label": "Megatap 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "multiband1": {
       "index": 37,
       "label": "MultCmp 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "multidelay1": {
       "index": 38,
       "label": "MultDly 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "peq1": {
       "index": 43,
       "label": "PEQ 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "phaser1": {
       "index": 45,
       "label": "Phaser 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "pitch1": {
       "index": 47,
@@ -523,12 +523,12 @@
     "plex1": {
       "index": 48,
       "label": "Plex 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "resonator1": {
       "index": 49,
       "label": "Reso 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "resonator2": {
       "index": 50,
@@ -543,7 +543,7 @@
     "ringmod1": {
       "index": 52,
       "label": "RingMod 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "rotary1": {
       "index": 53,
@@ -558,7 +558,7 @@
     "tentap1": {
       "index": 56,
       "label": "Ten-Tap 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "tremolo1": {
       "index": 57,
@@ -568,12 +568,12 @@
     "volpan1": {
       "index": 59,
       "label": "Vol/Pan 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     },
     "wah1": {
       "index": 61,
       "label": "Wah 1",
-      "status": "display-mapped"
+      "status": "switch-confirmed"
     }
   },
   "findings": {

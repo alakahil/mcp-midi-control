@@ -137,6 +137,7 @@ jobs:
           node tools/fm3/h6-t45-evidence.mjs
           node tools/fm3/t47-evidence.mjs
           node tools/fm3/l1-evidence.mjs
+          node tools/fm3/t48-evidence.mjs
           node tools/fm3/h3-evidence.mjs
           node tools/fm3/current-evidence.mjs
           node tools/fm3/controllers-gap-plan.mjs
