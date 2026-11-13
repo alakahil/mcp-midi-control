@@ -30,6 +30,8 @@ assert.deepEqual(h6.cases.map(c=>[c.case,c.completed]),[['H6',true],['T45',true]
 assert.ok(h6.cases.filter(c=>c.completed).every(c=>c.dataPassed)&&h6.cases[1].storedBodyByteIdentical);
 const t47=receipt('fm3-t47-20261112.json');
 assert.ok(t47.cases.length===3&&t47.cases.every(c=>c.completed&&c.dataPassed&&c.storedBodyByteIdentical));
+const l1=receipt('fm3-l1-20261113.json');
+assert.ok(l1.l1.scenes.length===8&&l1.l1.scenes.every(s=>Math.abs(s.correctedDeltaDb)<=1.5));
 const h3=receipt('fm3-h3-20261110.json');
 assert.deepEqual(h3.cases.map(c=>c.case),['V1','V4']);
 assert.ok(h3.cases.every(c=>c.storeReload==='confirmed')&&h3.cases[1].storedBodyByteIdentical);
@@ -94,7 +96,7 @@ const presetTempo={softwareSupported:true,rangeBpm:[24,250],integerOnly:true,cha
   display:'confirmed',storeReload:'confirmed',evidence:'T42'})),
  scope:'97 and 143 BPM only; not every BPM, tempo-synced effect, tap-tempo or global setting.'};
 assert.deepEqual(presetTempo.measured.map(p=>p.bpm),[97,143]);
-const current={schemaVersion:1,asOf:'2026-11-12',hardwareEvidenceThrough:'2026-11-12',baselineVersion:'0.3.65',
+const current={schemaVersion:1,asOf:'2026-11-13',hardwareEvidenceThrough:'2026-11-13',baselineVersion:'0.3.65',
  scope:'T32-T42, B1A/B1B/B1C/B2, H1/H2/H4, H3 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.',
  definitions:{confirmed:'A cited dated device result exists in the stated scope.',notMeasured:'No cited device result for this scope; not a failure and not a software-support restriction.'},
  enumCounts,scalarDescriptors,controllers,multiDelay,modifierTargets,presetTempo,
@@ -103,6 +105,7 @@ const current={schemaVersion:1,asOf:'2026-11-12',hardwareEvidenceThrough:'2026-1
  auditFinalPerformance:{evidence:'H3 2026-11-10',cases:h3.cases.map(({observations,...c})=>c),findings:h3.findings,limitations:h3.limitations,scope:h3.scope},
  auditH5T43:{evidence:'H5/H5B/T43/T44 2026-11-11',cases:h5.cases.map(({observations,...c})=>c),perPresetSwitchWords:h5.perPresetSwitchWords,findings:h5.findings,limitations:h5.limitations,scope:h5.scope},
  auditT47:{evidence:'T47A-C 2026-11-12',cases:t47.cases.map(({observations,...c})=>c),promotedToSwitchConfirmed:t47.promotedToSwitchConfirmed,findings:t47.findings,limitations:t47.limitations,scope:t47.scope},
+ auditL1:{evidence:'L1 2026-11-13',l1:l1.l1,v13:l1.v13,findings:l1.findings,limitations:l1.limitations,scope:l1.scope},
  auditH6T45:{evidence:'H6/T45/T46A-C 2026-11-12',cases:h6.cases.map(({observations,...c})=>c),pluginEffects:h6.pluginEffects,findings:h6.findings,limitations:h6.limitations,scope:h6.scope},
  otherEvidence:{
   controllersScenes:{scenes:8,channels:['A','B','C','D'],storeReload:'confirmed',evidence:['T33','T34A'],scope:'The measured scene/channel selections, not every permutation.'},
@@ -120,7 +123,8 @@ const current={schemaVersion:1,asOf:'2026-11-12',hardwareEvidenceThrough:'2026-1
   {from:'T33 scenes 5-8 pending',resolvedBy:'T34A',remaining:'Other source/target/shape combinations.'},
   {from:'T34 sources B-D edit buffer only; 14 sources unmeasured',resolvedBy:'T39-T41',remaining:'Other LFO shapes/depths, modifier curves and targets.'},
   {from:'T35 no generated Type import or STORE',resolvedBy:'T36, T38 and H2',remaining:'31 unimported generated Types.'},
-  {from:'T34F Preamp Type NONE not read back',resolvedBy:'H4',remaining:'Front-panel reading and other Preamp Types.'}],
+  {from:'T34F Preamp Type NONE not read back',resolvedBy:'H4',remaining:'Front-panel reading and other Preamp Types.'},
+  {from:'LIVE KOOSLUS numerical loudness not measured',resolvedBy:'L1',remaining:'V1.3 numerical loudness, CPU and STORE/reload.'}],
  notPromoted:['General modifier allocator and arbitrary preset bases.','Other footswitch layouts, Hold and every PP definition.','Out 2 stereo/right and 4CM.','New preset audio/CPU/STORE.','Fresh-chat automatic launcher discovery.'],
  sources:Object.fromEntries([...sources].sort(([a],[b])=>a.localeCompare(b))),newHardwareMeasurements:false,deviceIO:false};
 const mark=s=>s==='confirmed'?'jah':'mõõtmata';
@@ -171,6 +175,10 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
  '','## T47 seadmekatse — 12.11.2026','',
  '- T47A–C: generaatori kirjutatud per-preset Effect Bypass Comp 1, Chorus 1, TremPan 1, Pitch 1, Flanger 1, Synth 1, Rotary 1 ja Reverb 1 — FM3-Editi kuva õige, STORE baiditäpne, iga FM3 jalglüliti lülitas ainult oma plokki enne ja pärast STORE-i. 0.3.68: kokku 10 plokki lülitil kinnitatud.',
  'Kviitung: MOOTOR references/fm3-t47-20261112.json.',
+ '','## L1 stseenide valjus ja V1.3 — 13.11.2026','',
+ '- L1: LIVE KOOSLUS V1.2 kõik 8 stseeni on pärast mängu erinevuse eemaldamist stseenist 1 kuni 1,5 dB kaugusel, klippimist pole (FM3 USB heli, EBU R128). Stseen 2 kõige valjem (+1,5 dB); lead-stseenid 3 ja 7 pole keskmiselt valjemad (tipud kõrgemad).',
+ '- V1.3: Out 1 Scene Level S2 −1,5 dB, S3/S7 +2 dB (tools/fm3/l1-v13-build.mjs). Kasutaja kuulamise järgi tasakaalud paigas; numbriliselt mõõtmata, CPU ja STORE/reload mõõtmata.',
+ 'Kviitung: MOOTOR references/fm3-l1-20261113.json.',
  '','## MultiDelay Type mallid','', '| Tüüp | Mõõdetud sõnu | Generaatori import | Heli | STORE | Tõend |','|---|---:|---|---|---|---|',
  ...multiDelay.map(r=>`| ${r.name} | ${r.measuredFullChannelWords} | ${mark(r.generatedDeviceImport)} | ${mark(r.audibleBehavior)} | ${mark(r.storeReload)} | ${r.evidence.join(', ')} |`),
  '','39 malli, 8 generaatori importi, 8 STORE-kinnitust (T38 ja H2). Mall asendab kogu kanali enne controls-muudatusi; üksik Type sõna ei täida kanalit.',

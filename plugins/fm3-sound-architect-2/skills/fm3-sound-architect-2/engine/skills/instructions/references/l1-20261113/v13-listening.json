@@ -1,0 +1,10 @@
+{
+  "kind": "fm3-v13-listening",
+  "date": "2026-11-13",
+  "preset": "LIVE KOOSLUS V1.3",
+  "file": "LIVE_KOOSLUS_V1_3.syx",
+  "fileSha256": "b7bd043ce9602293be7d3be830aa8655b0c92cf3309d20b47913571ca1d06668",
+  "userVerdict": "V1.3 on tasakaalud paigas",
+  "method": "User loaded the file on the FM3 and played all scenes with a real guitar; listening judgement only.",
+  "measured": {"loudness": false, "cpu": false, "storeReload": false}
+}

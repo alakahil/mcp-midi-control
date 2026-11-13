@@ -1,0 +1,179 @@
+{
+ "kind": "fm3-l1-scene-loudness",
+ "version": 1,
+ "preset": "LIVE KOOSLUS V1.2",
+ "label": "",
+ "time": "2026-11-13T10:44:30",
+ "seconds": 12,
+ "reference": 1,
+ "device": "FM3",
+ "channels": {
+  "wet": "USB 1-2",
+  "dry": "USB 3-4"
+ },
+ "method": "ffmpeg ebur128 integrated loudness",
+ "fm3IO": false,
+ "note": "",
+ "scenes": [
+  {
+   "scene": 1,
+   "file": "scene-1.wav",
+   "wet": {
+    "lufs": -17.4,
+    "rmsDb": -19.87611,
+    "peakDb": -8.704363
+   },
+   "dry": {
+    "lufs": -33.9,
+    "rmsDb": -36.530986,
+    "peakDb": -17.655638
+   },
+   "silent": false,
+   "clipRisk": false,
+   "deltaDb": 0.0,
+   "playingDeltaDb": 0.0,
+   "correctedDeltaDb": 0.0,
+   "suggestedTrimDb": -0.0
+  },
+  {
+   "scene": 2,
+   "file": "scene-2.wav",
+   "wet": {
+    "lufs": -16.4,
+    "rmsDb": -18.938763,
+    "peakDb": -8.698555
+   },
+   "dry": {
+    "lufs": -34.4,
+    "rmsDb": -37.037107,
+    "peakDb": -17.042233
+   },
+   "silent": false,
+   "clipRisk": false,
+   "deltaDb": 1.0,
+   "playingDeltaDb": -0.5,
+   "correctedDeltaDb": 1.5,
+   "suggestedTrimDb": -1.5
+  },
+  {
+   "scene": 3,
+   "file": "scene-3.wav",
+   "wet": {
+    "lufs": -17.1,
+    "rmsDb": -20.263918,
+    "peakDb": -6.488666
+   },
+   "dry": {
+    "lufs": -33.6,
+    "rmsDb": -36.190638,
+    "peakDb": -17.480036
+   },
+   "silent": false,
+   "clipRisk": false,
+   "deltaDb": 0.3,
+   "playingDeltaDb": 0.3,
+   "correctedDeltaDb": 0.0,
+   "suggestedTrimDb": -0.0
+  },
+  {
+   "scene": 4,
+   "file": "scene-4.wav",
+   "wet": {
+    "lufs": -16.6,
+    "rmsDb": -19.238324,
+    "peakDb": -7.547746
+   },
+   "dry": {
+    "lufs": -33.9,
+    "rmsDb": -36.670366,
+    "peakDb": -18.60786
+   },
+   "silent": false,
+   "clipRisk": false,
+   "deltaDb": 0.8,
+   "playingDeltaDb": 0.0,
+   "correctedDeltaDb": 0.8,
+   "suggestedTrimDb": -0.8
+  },
+  {
+   "scene": 5,
+   "file": "scene-5.wav",
+   "wet": {
+    "lufs": -16.8,
+    "rmsDb": -19.162919,
+    "peakDb": -9.074449
+   },
+   "dry": {
+    "lufs": -33.0,
+    "rmsDb": -35.741866,
+    "peakDb": -17.16848
+   },
+   "silent": false,
+   "clipRisk": false,
+   "deltaDb": 0.6,
+   "playingDeltaDb": 0.9,
+   "correctedDeltaDb": -0.3,
+   "suggestedTrimDb": 0.3
+  },
+  {
+   "scene": 6,
+   "file": "scene-6.wav",
+   "wet": {
+    "lufs": -16.6,
+    "rmsDb": -19.437819,
+    "peakDb": -10.440932
+   },
+   "dry": {
+    "lufs": -33.6,
+    "rmsDb": -36.199405,
+    "peakDb": -18.77797
+   },
+   "silent": false,
+   "clipRisk": false,
+   "deltaDb": 0.8,
+   "playingDeltaDb": 0.3,
+   "correctedDeltaDb": 0.5,
+   "suggestedTrimDb": -0.5
+  },
+  {
+   "scene": 7,
+   "file": "scene-7.wav",
+   "wet": {
+    "lufs": -17.8,
+    "rmsDb": -21.062616,
+    "peakDb": -7.23449
+   },
+   "dry": {
+    "lufs": -33.7,
+    "rmsDb": -36.492951,
+    "peakDb": -17.442321
+   },
+   "silent": false,
+   "clipRisk": false,
+   "deltaDb": -0.4,
+   "playingDeltaDb": 0.2,
+   "correctedDeltaDb": -0.6,
+   "suggestedTrimDb": 0.6
+  },
+  {
+   "scene": 8,
+   "file": "scene-8.wav",
+   "wet": {
+    "lufs": -17.8,
+    "rmsDb": -20.915738,
+    "peakDb": -10.741508
+   },
+   "dry": {
+    "lufs": -34.2,
+    "rmsDb": -36.748235,
+    "peakDb": -18.673107
+   },
+   "silent": false,
+   "clipRisk": false,
+   "deltaDb": -0.4,
+   "playingDeltaDb": -0.3,
+   "correctedDeltaDb": -0.1,
+   "suggestedTrimDb": 0.1
+  }
+ ]
+}

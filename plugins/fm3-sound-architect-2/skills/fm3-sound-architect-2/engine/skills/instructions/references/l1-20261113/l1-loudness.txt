@@ -1,0 +1,11 @@
+Stseen  Valjus LUFS  Tipp dBFS  Vahe  Mäng  Korrigeeritud  Soovitus (sama valjuse jaoks)
+   1         -17.4       -8.7   +0.0  +0.0          +0.0   võrdlus
+   2         -16.4       -8.7   +1.0  -0.5          +1.5   -1.5 dB
+   3         -17.1       -6.5   +0.3  +0.3          +0.0   -0.0 dB
+   4         -16.6       -7.5   +0.8  +0.0          +0.8   -0.8 dB
+   5         -16.8       -9.1   +0.6  +0.9          -0.3   +0.3 dB
+   6         -16.6      -10.4   +0.8  +0.3          +0.5   -0.5 dB
+   7         -17.8       -7.2   -0.4  +0.2          -0.6   +0.6 dB
+   8         -17.8      -10.7   -0.4  -0.3          -0.1   +0.1 dB
+Vahe = stseen miinus võrdlusstseen. Mäng = kuiva kitarri (USB 3-4) vahe ehk kui erinevalt mängisid.
+Soovitus on stseeni taseme muutus, et valjus võrduks võrdlusstseeniga; lead-stseen jäta teadlikult valjemaks.
