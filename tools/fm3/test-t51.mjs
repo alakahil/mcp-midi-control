@@ -24,10 +24,10 @@ try{
  const by=Object.fromEntries(p.packs.map(c=>[c.id,c.recordOrder]));assert.ok(p.packs.every(c=>c.recordOrder.mode==='device'));
  assert.ok(Object.keys(T51).every(k=>T51[k].links.length>=2));
  // T51A: Mixer between In 1 and Out 1 (the 2026-11-13 factory-preset observation). T51B: Plex lands between Out 1 and Reverb.
- // T51C: Drive 2 has no order evidence -> appended last.
+ // T51C: since the T51C STORE (2026-11-13) Drive 2 is placed by device order, right after Drive 1.
  assert.deepEqual(by.T51A.placed.map(x=>[x.block,x.by]),[['mixer','device order']]);assert.deepEqual(by.T51A.generated,[58,62,46,70,118,37,126,42,66]);
  assert.deepEqual(by.T51B.placed.map(x=>[x.block,x.by]),[['mixer','device order'],['plex','device order']]);assert.deepEqual(by.T51B.generated,[58,62,46,70,118,37,126,42,178,66]);
- assert.deepEqual(by.T51C.placed.map(x=>[x.block,x.by]),[['multiplexer','device order'],['drive2','appended']]);assert.equal(by.T51C.generated.at(-1),119);
+ assert.deepEqual(by.T51C.placed.map(x=>[x.block,x.by]),[['multiplexer','device order'],['drive2','device order']]);assert.deepEqual(by.T51C.generated,[58,62,46,70,118,119,37,191,42,66]);
  // T51C Multiplexer selects the Drive 1 row explicitly (donor default ROW 1 is empty in this grid).
  assert.deepEqual(T51.T51C.controls,[{block:'multiplexer',channel:'A',param:'MULTIPLEXER_INPUTSEL',value:'ROW 2'}]);
  for(const c of p.packs){

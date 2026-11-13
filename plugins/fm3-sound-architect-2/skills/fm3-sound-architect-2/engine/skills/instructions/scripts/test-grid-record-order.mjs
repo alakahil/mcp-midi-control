@@ -16,15 +16,15 @@ const recs=s=>{const b=body(s);return new Map(scanRecords(b).records.map(r=>[r.e
 let refusals=0;const no=(f,re)=>{assert.throws(f,re);refusals++};
 // 1. The 2026-11-13 observation (an FM3 factory preset with parallel rows) is in the receipt: Mixer between In 1 and Out 1.
 assert.equal(knownOrder(37,126),-1);assert.equal(knownOrder(126,42),-1);assert.equal(knownOrder(126,129),-1);assert.equal(knownOrder(130,95),-1);
-// 2. Stage: append keeps the file; device moves Mixer, appends Drive 2 (no evidence), keeps everything else.
+// 2. Stage: append keeps the file; device moves Mixer and Drive 2 (T51C 2026-11-13: FM3 stores Drive 2 right after Drive 1).
 const ed=editRecords(NL,{remove:['send','return'],duplicate:['drive2'],add:['mixer']}),added=[{block:'mixer',effectId:126},{block:'drive2',effectId:119}];
 const kept=eids(NL).filter(e=>e!==186&&e!==182);
 assert.deepEqual(eids(ed.syx),[...kept,126,119]);
 const ap=orderGridRecords(ed.syx,added,'append');assert.equal(ap.moved,false);assert.ok(Buffer.from(ap.syx).equals(Buffer.from(ed.syx)));
 const dv=orderGridRecords(ed.syx,added,'device'),o=eids(dv.syx);assert.equal(dv.moved,true);
-assert.ok(o.indexOf(126)===o.indexOf(37)+1&&o.indexOf(42)===o.indexOf(126)+1&&o.at(-1)===119,'Mixer between In 1 and Out 1, Drive 2 last: '+o);
+assert.ok(o.indexOf(126)===o.indexOf(37)+1&&o.indexOf(42)===o.indexOf(126)+1&&o.indexOf(119)===o.indexOf(118)+1,'Mixer between In 1 and Out 1, Drive 2 after Drive 1: '+o);
 assert.deepEqual(o.filter(e=>kept.includes(e)),kept);
-assert.deepEqual(dv.recordOrder.placed.map(p=>[p.block,p.by]),[['mixer','device order'],['drive2','appended']]);
+assert.deepEqual(dv.recordOrder.placed.map(p=>[p.block,p.by]),[['mixer','device order'],['drive2','device order']]);
 {const a=recs(ed.syx),b=recs(dv.syx);assert.ok(a.size===b.size&&[...a].every(([e,h])=>b.get(e)===h),'same records');
  const x=body(ed.syx),y=body(dv.syx),sx=scanRecords(x),sy=scanRecords(y);assert.equal(x.length,y.length);
  assert.ok(x.subarray(0,4610).equals(y.subarray(0,4610))&&x.subarray(sx.tail).equals(y.subarray(sy.tail)),'prefix and tail unchanged');}

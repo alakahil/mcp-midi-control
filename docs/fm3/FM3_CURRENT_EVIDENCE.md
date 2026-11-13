@@ -162,7 +162,8 @@ Kviitung: MOOTOR references/fm3-t50-20261113.json.
 - T37: Synthi häälte 2/3 mõõdetud tüübid on CPU mudelis 0.2.5; muud parameetrid vajavad oma tõendit.
 - T34F: Cab lõiked nähtavad; H4 luges Preamp Type None otse FM3-Editist tagasi.
 - T52 (13.11.2026): kõik 45 Plexi preseti kanalikujutist (96 sõna) mõõdetud seadme vaikeplokist; generaator neid veel ei kasuta.
-- T38: sama spec taastab 0.3.58 device-järjekorras salvestatud keha; see ei kinnita kõigi presetite ega grid-režiimi baittäpsust.
+- T38: sama spec taastab 0.3.58 device-järjekorras salvestatud keha.
+- T51A–C (13.11.2026): grid-režiimi `recordOrder:"device"` kolm FM3-s salvestatud keha taastuvad baidi kaupa (T51C pani Drive 2 kirje Drive 1 järele; see on nüüd järjekorratõendis). T51B: neli täisnivool rida panid OUT 1 clippima. Kviitung: MOOTOR references/fm3-t51-20261113.json.
 
 ## Allikad ja piirid
 

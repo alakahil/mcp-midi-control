@@ -2481,10 +2481,67 @@
     },
     "recordOrder": {
       "evidence": [
-        "T38"
+        "T38",
+        "T51"
       ],
       "storedBodyReproduced": true,
-      "scope": "T38 same spec with device order; insert only, unknown-pair fallback; grid unchanged."
+      "gridStoredBodiesReproduced": 3,
+      "gridCases": [
+        {
+          "case": "T51A",
+          "storedRecordOrder": [
+            58,
+            62,
+            46,
+            70,
+            118,
+            37,
+            126,
+            42,
+            66
+          ],
+          "note": null
+        },
+        {
+          "case": "T51B",
+          "storedRecordOrder": [
+            58,
+            62,
+            46,
+            70,
+            118,
+            37,
+            126,
+            42,
+            178,
+            66
+          ],
+          "note": "OUT 1 clippis (oli punases)"
+        },
+        {
+          "case": "T51C",
+          "storedRecordOrder": [
+            58,
+            62,
+            46,
+            70,
+            118,
+            119,
+            37,
+            191,
+            42,
+            66
+          ],
+          "note": null
+        }
+      ],
+      "findings": "T51A (Delay || Reverb + Mixer) and T51B (Delay || Reverb || Plex + dry row, Mixer of four rows) stored byte-identically, record order included. T51C (Drive || Drive 2 + Multiplexer, Input Select Row 2) stored all data; the FM3 placed the Drive 2 record right after Drive 1 instead of last. With that order evidence the generator now reproduces all three stored bodies byte for byte. T51B note: OUT 1 clipped (Mixer sums four rows at unity).",
+      "limitations": [
+        "Grid display and sound are the user's judgement and Claude's FM3-Edit reading.",
+        "Second instances other than Drive 2 still have no order evidence (appended).",
+        "T51B level: four summed rows clip OUT 1; the generator does not trim Mixer levels."
+      ],
+      "scope": "T38 same spec with device order (insert); T51A-C grid mode recordOrder \"device\" stored bodies reproduced byte for byte; unknown-pair fallback appends."
     }
   },
   "supersededHistoricalGaps": [
@@ -2561,13 +2618,14 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t48-20261113.json": "e996dee08e1a24e1e4b2d26440b5c85dd29e708e418db388e854511557eb4e82",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t49-multidelay-types-20261113.json": "46ccf6610110d774ba0c9fc3dd92ea9488a7c4920d94b6894dc67a3e538d887a",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t50-20261113.json": "fa4ed1d8726bf40aa192378959f1716693f1158d5062f1d59d05c797a02d8235",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t51-20261113.json": "d207e39cca97c0bb372f712de2849e8e4fa3ed120c1b21f3b664f4b1c7b37b01",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t52-plex-presets-20261113.json": "522358efc83e932be2531698d5720944011d390f2371ea1c69a9f8bb2ad8b59d",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-enum-promotion.mjs": "5cf8e5afa993cc1740ac8193b0da23f9374524c10b6fc1136f047c69a12896db",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-modifier-targets.mjs": "7dfacb7b3511051383e40fd2a6c7f54518cea48e0050e472b52cb66b787a0ba2",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "3cd0bfb54ad9389b5dade1b1ffeaadfdf767a285bac35fad1aed17e0f9a03409"
+    "tools/fm3/current-evidence.mjs": "ef0c3c4b17f525fdf7f15bd7a662d5a5289edc5ac43383caf468962beaf45c7b"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false

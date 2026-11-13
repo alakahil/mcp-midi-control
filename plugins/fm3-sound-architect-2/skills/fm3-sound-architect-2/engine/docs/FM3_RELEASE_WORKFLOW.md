@@ -9,6 +9,8 @@
 - 0.3.2 avaldamisvormingu parandus
 
 ## Ulatus
+0.3.73: T51A–C (13.11.2026) salvestati FM3-s; kolm salvestatud keha taastuvad generaatoriga baidi kaupa. T51C dump lisati kirjejärjekorra tõendisse (59 allikat): FM3 paneb teise Drive'i kirje kohe Drive 1 järele, seega `recordOrder:"device"` teeb seda nüüd ka generaatoris. Kviitung `references/fm3-t51-20261113.json`.
+
 0.3.72: T50 kinnitas `modifierTargets[].curve` seadmel Filter Frequency, Amp Level ja Delay Mix sihil (FM3-Editi aken, kuulamine, baiditäpne STORE); TXT ja aruanne märgivad need sihid kinnitatuks.
 
 0.3.71: T48 kinnitas per-preset Effect Bypassi jalglülitil ülejäänud 17 plokile; kokku 27 plokki lülitil kinnitatud, ainult Reso 2 FM3-Editi kuvalt. Hold Scene Select = Tap paigutus +432 baiti (mõõdetud, generaator ei kirjuta).

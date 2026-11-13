@@ -1,0 +1,82 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "a67a94551d3a7eef20b64e6a2e2fae2bfafdf85dda79feabe5a5b72c4a0b1970",
+ "preset": "T51A",
+ "name": "T51A GRID ORDER",
+ "time": "2026-11-13T12:13:38",
+ "blocks": [
+  {
+   "family": "amp",
+   "effectId": 58,
+   "values": 576,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "cab",
+   "effectId": 62,
+   "values": 424,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "compressor",
+   "effectId": 46,
+   "values": 148,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "delay",
+   "effectId": 70,
+   "values": 356,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "drive",
+   "effectId": 118,
+   "values": 176,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "in1",
+   "effectId": 37,
+   "values": 40,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "mixer",
+   "effectId": 126,
+   "values": 84,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "out1",
+   "effectId": 42,
+   "values": 104,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "reverb",
+   "effectId": 66,
+   "values": 284,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  }
+ ],
+ "allMatch": true
+}
