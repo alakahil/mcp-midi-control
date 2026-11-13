@@ -56,7 +56,7 @@ Vaja on Node.js-i ja failitöötlusega täitekeskkonda. Ära väida, et FM3 on �
 või et MCP/REA teenus töötab: selle plugina generaator teeb offline failitöötlust.
 
 Peamine lähtekoht on `engine/skills/instructions/`, allpool nimetatud MOOTOR.
-Selle lähtekoodi versioon on `0.3.72`; ühine käivituspunkt on `fm3-preset.mjs`.
+Selle lähtekoodi versioon on `0.3.73`; ühine käivituspunkt on `fm3-preset.mjs`.
 Aluskoostaja `jb-composer-0.13.0-dev` on sisemine etapp. Need identifikaatorid
 ei kinnita uue preseti seadmeimporti, heli ega CPU-d.
 Privaatse plugina identiteet on `plugins_6accfd716e148191b0adb61e4e36f0e4`.
@@ -365,8 +365,10 @@ kirjete järjekord. T38 spec annab nüüd seadme salvestatud kehaga baidiidentse
 ekspordiga. `recordOrder:"append"` hoiab vana paigutuse. Aruandes `stages.insert.recordOrder` ütleb iga ploki kohta,
 kas kirje pandi seadme järjekorda või lõppu. Grid-režiim (`spec.grid`) kasutab vaikimisi endist järjekorda;
 alates 0.3.70-st paneb `recordOrder:"device"` ka seal `insert`/`duplicate` kirjed seadme järjekorda (aruandes
-`stages.records.recordOrder`). Uute ruudustikupresetite puhul kasuta `recordOrder:"device"`; see on tõendite järgi
-ja seadmel STORE-iga kontrollimata kuni T51-ni – ütle seda.
+`stages.records.recordOrder`). Uute ruudustikupresetite puhul kasuta `recordOrder:"device"`. T51A–C (13.11.2026,
+0.3.73) salvestasid kolm ruudustikupresetit FM3-s; nende kehad taastuvad nüüd baidi kaupa. T51C näitas, et FM3 paneb
+teise Drive'i kirje kohe Drive 1 järele. Teiste teise eksemplaride järjekorda pole veel mõõdetud (need lähevad lõppu).
+Paralleelridade Mixer liidab read täisnivool: neli rida panid OUT 1 clippima, seega alanda ridade või Mixeri taset.
 
 ## Synth häälte CPU (0.3.57, T37)
 

@@ -8,7 +8,7 @@ import {createHash} from 'node:crypto';
 import {readComposerFile} from './fm3-composer-components.mjs';
 const check=(v,m)=>{if(!v)throw Error(m)};
 export const RECORD_ORDER_RECEIPT='references/fm3-record-order-20261107.json';
-export const recordOrderReceiptHash='0648fd2dbc84e47d21549c2c839412976781046b7a45a101859b2591da8eb6e1';
+export const recordOrderReceiptHash='c849c3319849719ec0041b1d1dd5754898b93ef1cdcb9a6cc513568d332acfc4';
 export const RECORD_ORDER_MODES=Object.freeze(['device','append']);
 let cache=null;
 function closure(){

@@ -33,6 +33,8 @@ const h6=receipt('fm3-h6-t45-20261112.json');
 assert.deepEqual(h6.cases.map(c=>[c.case,c.completed]),[['H6',true],['T45',true],['T46A',true],['T46B',true],['T46C',true],['T46D',false]]);
 assert.ok(h6.cases.filter(c=>c.completed).every(c=>c.dataPassed)&&h6.cases[1].storedBodyByteIdentical);
 const t47=receipt('fm3-t47-20261112.json');
+const t51=receipt('fm3-t51-20261113.json');
+assert.ok(t51.cases.length===3&&t51.cases.every(c=>c.storedBodyByteIdenticalToCurrentGenerator));
 assert.ok(t47.cases.length===3&&t47.cases.every(c=>c.completed&&c.dataPassed&&c.storedBodyByteIdentical));
 const l1=receipt('fm3-l1-20261113.json');
 assert.ok(l1.l1.scenes.length===8&&l1.l1.scenes.every(s=>Math.abs(s.correctedDeltaDb)<=1.5));
@@ -127,7 +129,9 @@ const current={schemaVersion:1,asOf:'2026-11-13',hardwareEvidenceThrough:'2026-1
   cabCuts:{evidence:['T34F'],displayReadings:t[34].findings.cabPreampNone.controls.map(c=>({param:c.param,shown:c.shown,page:c.page})),
    preampTypeNoneReadback:'confirmed',preampTypeNoneEvidence:'H4 2026-11-10: FM3-Edit Cab B Preamp page shows Preamp Type None, Filters 87.0 Hz / 7300 Hz',scope:'Cuts and Preamp Type None visible in the T20 CAB_A preset (FM3-Edit display); not other presets or Preamp Types.'},
   plexPresets:{evidence:['T52'],images:t52.presets.length,wordsPerChannel:t52.block.words,generatorSupport:false,scope:'45 device-measured Plex channel images from the device default; generated load, audio and STORE not measured.'},
-  recordOrder:{evidence:['T38'],storedBodyReproduced:t[38].result.deviceRecordOrderBodyByteIdentical,scope:'T38 same spec with device order; insert only, unknown-pair fallback; grid unchanged.'}},
+  recordOrder:{evidence:['T38','T51'],storedBodyReproduced:t[38].result.deviceRecordOrderBodyByteIdentical,gridStoredBodiesReproduced:t51.cases.length,
+   gridCases:t51.cases.map(c=>({case:c.case,storedRecordOrder:c.storedRecordOrder,note:c.note})),findings:t51.findings,limitations:t51.limitations,
+   scope:'T38 same spec with device order (insert); T51A-C grid mode recordOrder "device" stored bodies reproduced byte for byte; unknown-pair fallback appends.'}},
  supersededHistoricalGaps:[
   {from:'T32 final -8 dB listening pending',resolvedBy:'T34E',remaining:'Numerical loudness; separate final-file CPU/STORE.'},
   {from:'Audit H3 final performance preset unchecked; LIVE KOOSLUS V1 final-file CPU/STORE missing',resolvedBy:'H3',remaining:'V1 scene level balance; numerical loudness.'},
@@ -209,7 +213,8 @@ const md=['# FM3 kehtiv tõendiseis','',`Koondatud ${current.asOf}; seadmetõend
  '- T37: Synthi häälte 2/3 mõõdetud tüübid on CPU mudelis 0.2.5; muud parameetrid vajavad oma tõendit.',
  '- T34F: Cab lõiked nähtavad; H4 luges Preamp Type None otse FM3-Editist tagasi.',
  '- T52 (13.11.2026): kõik 45 Plexi preseti kanalikujutist (96 sõna) mõõdetud seadme vaikeplokist; generaator neid veel ei kasuta.',
- '- T38: sama spec taastab 0.3.58 device-järjekorras salvestatud keha; see ei kinnita kõigi presetite ega grid-režiimi baittäpsust.',
+ '- T38: sama spec taastab 0.3.58 device-järjekorras salvestatud keha.',
+ '- T51A–C (13.11.2026): grid-režiimi `recordOrder:"device"` kolm FM3-s salvestatud keha taastuvad baidi kaupa (T51C pani Drive 2 kirje Drive 1 järele; see on nüüd järjekorratõendis). T51B: neli täisnivool rida panid OUT 1 clippima. Kviitung: MOOTOR references/fm3-t51-20261113.json.',
  '','## Allikad ja piirid','',
  'Masinloetav koond koos iga sisendi SHA-256-ga: [fm3-current-evidence.json](../../'+EP+'references/fm3-current-evidence.json).',
  'Ajaloolised kviitungid säilivad muutmata. Koondi kontroll: `node tools/fm3/current-evidence.mjs`; uuendus: lisa `--write` ja vaata muutused üle.',

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "testedGeneratorVersion": "0.3.70",
+  "scope": "T51A-C from tools/fm3/t51-build.mjs (grid mode, parallel rows, recordOrder \"device\"). Actual user LOAD/GET and STORE/reload captures at location 427, user answers and FM3-Edit grid read by Claude; this replay performs no device I/O.",
+  "cases": [
+    {
+      "case": "T51A",
+      "storedBodyByteIdenticalToCurrentGenerator": true,
+      "storedRecordOrder": [
+        58,
+        62,
+        46,
+        70,
+        118,
+        37,
+        126,
+        42,
+        66
+      ],
+      "presetSha256": "37ad0278c10bc03ad4d1d83ff701fe4b88a0dfaa60bd0d60582d9a55c09bbdb1",
+      "testedPresetSha256": "37ad0278c10bc03ad4d1d83ff701fe4b88a0dfaa60bd0d60582d9a55c09bbdb1",
+      "beforeStore": {
+        "name_grid_scenes": "jah",
+        "grid_display": "Claude",
+        "behavior": "jah"
+      },
+      "afterReload": {
+        "name_grid_scenes": "jah",
+        "grid_display": "Claude",
+        "behavior": "jah"
+      },
+      "note": null
+    },
+    {
+      "case": "T51B",
+      "storedBodyByteIdenticalToCurrentGenerator": true,
+      "storedRecordOrder": [
+        58,
+        62,
+        46,
+        70,
+        118,
+        37,
+        126,
+        42,
+        178,
+        66
+      ],
+      "presetSha256": "fa2d23895ff02c5aaa820cba0652d3a2ebd53949fd4b0dd9f96f871e3067ce1b",
+      "testedPresetSha256": "fa2d23895ff02c5aaa820cba0652d3a2ebd53949fd4b0dd9f96f871e3067ce1b",
+      "beforeStore": {
+        "name_grid_scenes": "jah",
+        "grid_display": "Claude",
+        "behavior": "jah"
+      },
+      "afterReload": {
+        "name_grid_scenes": "jah",
+        "grid_display": "Claude",
+        "behavior": "jah"
+      },
+      "note": "OUT 1 clippis (oli punases)"
+    },
+    {
+      "case": "T51C",
+      "storedBodyByteIdenticalToCurrentGenerator": true,
+      "storedRecordOrder": [
+        58,
+        62,
+        46,
+        70,
+        118,
+        119,
+        37,
+        191,
+        42,
+        66
+      ],
+      "presetSha256": "02ceb3180de8840dd3a464dc716df866fd2a8958255eaa1727d15d2534f0def2",
+      "testedPresetSha256": "8c12adef8c8371c06f2f5b24b322fb9c21efb67099cd2cf8552883797e9b4024",
+      "beforeStore": {
+        "name_grid_scenes": "jah",
+        "grid_display": "Claude",
+        "behavior": "jah"
+      },
+      "afterReload": {
+        "name_grid_scenes": "jah",
+        "grid_display": "Claude",
+        "behavior": "Jah"
+      },
+      "note": null
+    }
+  ],
+  "shots": {
+    "T51A/grid.jpg": {
+      "sha256": "e3597940c0fd969b1ebfbbddd9495c3ad0c302b4213e5e2db75534783f5fe04b",
+      "shown": "Rida 2 Comp/Drive/Amp/Cab/Delay/Mixer, rida 3 Reverb"
+    },
+    "T51B/grid.jpg": {
+      "sha256": "83eb934a3876ba3696b05cbbd48f1a8f5339ef5c6438483b1b5548288a1f217f",
+      "shown": "Delay, Reverb ja PlexDly kolmes reas, neljas kuiv shunt, Mixer liidab neli rida"
+    },
+    "T51C/grid.jpg": {
+      "sha256": "5eaf1038054821349e354132c8a2abeb384d75180ddf89a431e7974d5ce780cf",
+      "shown": "Comp hargneb: rida 2 Drive (sees), rida 3 Drive 2 (bypass), M-Plex, Amp, Cab, Delay, Reverb"
+    },
+    "T51C/multiplexer.jpg": {
+      "sha256": "44c6d10346a1016089ec9b77687b54c13a509e68a710888a6b29356e5289803b",
+      "shown": "Multiplexer 1 Input Select Row 2, Input Mode Stereo"
+    }
+  },
+  "findings": "T51A (Delay || Reverb + Mixer) and T51B (Delay || Reverb || Plex + dry row, Mixer of four rows) stored byte-identically, record order included. T51C (Drive || Drive 2 + Multiplexer, Input Select Row 2) stored all data; the FM3 placed the Drive 2 record right after Drive 1 instead of last. With that order evidence the generator now reproduces all three stored bodies byte for byte. T51B note: OUT 1 clipped (Mixer sums four rows at unity).",
+  "limitations": [
+    "Grid display and sound are the user's judgement and Claude's FM3-Edit reading.",
+    "Second instances other than Drive 2 still have no order evidence (appended).",
+    "T51B level: four summed rows clip OUT 1; the generator does not trim Mixer levels."
+  ],
+  "deviceIO": false,
+  "newHardwareMeasurements": false
+}

@@ -3,8 +3,9 @@
 // record-order evidence. Question: is the stored body byte-identical after STORE, record order included?
 //   T51A = Delay || Reverb in two rows, merged by an inserted Mixer (Mixer placed by evidence).
 //   T51B = Delay || Reverb || Plex in three rows plus a dry shunt row, merged by a Mixer (Plex is placed between kept records).
-//   T51C = Drive || Drive 2 selected by a Multiplexer. Drive 2 has no order evidence, so it is appended: the stored dump
-//          shows where the FM3 itself puts a second instance (a record-order difference here is a finding, not a failure).
+//   T51C = Drive || Drive 2 selected by a Multiplexer. Tested 2026-11-13 with Drive 2 appended (no order evidence then);
+//          the FM3 stored it right after Drive 1. That stored dump is now order evidence, so Drive 2 is placed there and the
+//          rebuilt T51C equals the FM3-stored body byte for byte (tools/fm3/t51-evidence.mjs).
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';

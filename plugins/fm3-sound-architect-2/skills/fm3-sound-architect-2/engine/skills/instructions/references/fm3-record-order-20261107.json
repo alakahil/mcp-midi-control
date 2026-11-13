@@ -30,6 +30,7 @@
   110,
   114,
   118,
+  119,
   122,
   126,
   129,
@@ -110,6 +111,18 @@
    118,
    74,
    37,
+   42,
+   66
+  ],
+  [
+   58,
+   62,
+   46,
+   70,
+   118,
+   119,
+   37,
+   191,
    42,
    66
   ],
@@ -385,6 +398,12 @@
    "sha256": "0db559d8d09074cd80fca92bee7afe0c975c170f3b4b8ea8d844c73f0b367141",
    "kind": "stored dump (fn=0x03)",
    "records": 11
+  },
+  {
+   "path": "docs/fm3/hardware-results/2026-11-13/t51/T51C/bind-store-results.json",
+   "sha256": "054557d25d956009d10f181eac986e2ebd0ccb1df92f55085afcc93ba6c98bd7",
+   "kind": "stored dump (fn=0x03)",
+   "records": 10
   },
   {
    "path": "docs/fm3/hardware-results/2026-11-13/t51/record-order-observation.json",
@@ -687,5 +706,5 @@
    "records": 11
   }
  ],
- "pairs": 415
+ "pairs": 432
 }
