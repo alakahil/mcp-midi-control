@@ -143,6 +143,8 @@ jobs:
           node tools/fm3/t50-evidence.mjs
           node tools/fm3/h3-evidence.mjs
           node tools/fm3/current-evidence.mjs
+          node tools/fm3/evidence-summary.mjs
+          node tools/fm3/test-sound-candidates.mjs
           node tools/fm3/controllers-gap-plan.mjs
           node tools/fm3/test-controllers-store.mjs
           node tools/fm3/test-audit-targets.mjs

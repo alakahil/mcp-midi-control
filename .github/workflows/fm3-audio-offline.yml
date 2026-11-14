@@ -1,0 +1,25 @@
+name: FM3 audio offline
+on:
+  push:
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/test-audio-session.py', '.github/workflows/fm3-audio-offline.yml']
+  pull_request:
+    paths: ['plugins/fm3-sound-architect-2/**', 'tools/fm3/test-audio-session.py', '.github/workflows/fm3-audio-offline.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-audio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install offline analysis dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python -m pip install numpy==2.3.5 scipy==1.17.0
+      - name: Verify known synthetic gain, delay and failures
+        run: python -B tools/fm3/test-audio-session.py

@@ -1,5 +1,6 @@
 // Offline sound pipeline: templates -> layout -> scenes -> controls -> final readback.
 import fs from 'node:fs';
+import {evidenceSummary} from './fm3-evidence-summary.mjs';
 import {effectiveModifierSpec,applyModifierEdits,modifierEditsCapabilities} from './fm3-modifier-edits.mjs';
 import {applyCsPreset,readCsPreset,validateCsPreset,csPresetCapabilities,csPresetNeedsControlSwitches} from './fm3-cs-preset.mjs';
 import {bindVolumePedal,readVolumePedal,volumePedalCapabilities,volumeRange} from './fm3-volume-pedal.mjs';
@@ -31,7 +32,7 @@ import {bindModifierTargets,readModifierTargets,validateModifierTargets,modifier
 const check=(v,m)=>{if(!v)throw Error(m)};
 export function getSoundCapabilities(base){
   const composer=getComposerCapabilities(base),d=loadDictionary();
-  return {profile:'fm3-sound',revision:'0.3.73',firmware:13,base:'jb-newlook',composer,
+  return {currentEvidence:evidenceSummary(),presetReview:{command:'fm3-preset.mjs --review OUTPUT_STEM',readOnly:true},soundWorkflow:{guide:'engine/docs/FM3_SOUND_WORKFLOW.md',candidates:'scripts/fm3-sound-candidates.mjs',audio:'scripts/fm3-audio-session.py',acceptance:'scripts/fm3-sound-acceptance.mjs'},profile:'fm3-sound',revision:'0.3.75',firmware:13,base:'jb-newlook',composer,
     fields:['composer','layout','grid','remove','duplicate','blockScenes','controls','allow','purpose','selectedScene','context','volumePan','volumePedal','controlSwitches','controlSwitchScenes','footswitches','insert','sceneMidi','controllers','controllersScenes','modifierEdits','multidelayTypes','recordOrder','modifierTargets','tempo'],
     insert:insertCapabilities(),
     controllers:controllersCapabilities(),modifierTargets:modifierTargetsCapabilities(),multidelayTypes:multidelayTypesCapabilities(),modifierEdits:modifierEditsCapabilities(),
@@ -122,7 +123,7 @@ export function composeSound(base,spec){
   const switchReport=controlSwitches?{...switches?.report,policy:'control-switch-default-template-fw13',evidenceSha256:controlSwitchCapabilities().evidence.sha256,records:controlSwitches.map(c=>c.record),onlyDeclaredWordsChanged:true,bodyReadback:true,dumpHeaderPreserved:true,deviceIO:false}:null;
   const state=finalSoundState(second.syx,second.writes,{allow:spec.allow??[]});
   const cpuEstimate=estimateCpu(second.syx);
-  const report={generator:'fm3-sound-0.3.73',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
+  const report={generator:'fm3-sound-0.3.75',outputSha256:sha256(second.syx),bytes:second.syx.length,baseSha256:sha256(base),
     checks:{...second.report.checks,finalControlReadback:true,finalStateDecoded:true},
     hardware:'not tested for this final output',audio:'not tested',cpu:cpuEstimate,...state,modifierEdit,volumePedal,...(controlSwitches?{controlSwitches}:{}),...(modifierTargets?{modifierTargets}:{}),...(tmp?{presetTempo:tmp.state}:{}),...(edits?{modifierEdits:edits.report}:{}),...(csp?{csPreset}:{}),...(ctl?{controllers:ctl.writes}:{}),...(cts?{controllersScenes:[...cts.channels]}:{}),...(mdt?{multidelayTypes:mdt.channels}:{}),
     stages:{volumePedal:volumePedal?pedal.report:null,...(targets?{modifierTargets:targets.report}:{}),...(tmp?{presetTempo:tmp.report}:{}),...(edits?{modifierEdits:edits.report}:{}),...(ctl?{controllers:ctl.report}:{}),...(cts?{controllersScenes:cts.report}:{}),...(mdt?{multidelayTypes:mdt.report}:{}),...(switchReport?{controlSwitches:switchReport}:{}),...(csp?{csPreset:csp.report}:{}),volumePan:volume?.report??null,composer:{scope:'intermediate; not final settings',...first.report},...(inserted?{insert:{...inserted.report,inserted:inserted.inserted}}:{}),...(records?{records:{...records.report,removed:records.removed,inserted:records.inserted,duplicated:records.duplicated,...(gridOrder?{recordOrder:gridOrder.recordOrder}:{})}}:{}),layout:{...second.report,rows:second.rows,...(gridMode?{expectedGrid:second.expectedGrid}:{}),writes:second.writes,sceneEdits:second.sceneEdits,...(second.sceneMidi?{sceneMidi:second.sceneMidi}:{}),composerOutputSha256:first.report.outputSha256}}};

@@ -1,6 +1,7 @@
 // One public entry point. Legacy specs retain their measured writer; sound specs
 // add the two-row/table stages. Generation emits four files; read modes use stdout.
 import fs from 'node:fs';
+import {reviewPreset} from './fm3-preset-review.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createPreset,resolveReplayBase} from './fm3-preset-core.mjs';
@@ -25,6 +26,7 @@ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.ur
     if(!s||!((!stem&&!extra.length)||(stem==='--format'&&extra.length===1&&['json','txt'].includes(extra[0]))))throw Error('Usage: --inspect-modifiers PRESET.syx [--format json|txt]');
     const audit=auditModifiers(fs.readFileSync(s));process.stdout.write(extra[0]==='txt'?renderModifierAuditText(audit):JSON.stringify(audit,null,2)+'\n');
   }
+  else if(b==='--review'){if(!s||stem||extra.length)throw Error('Usage: --review OUTPUT_STEM');console.log(JSON.stringify(reviewPreset(s),null,2));}
   else if(b==='--verify'){if(!s||stem||extra.length)throw Error('Usage: --verify OUTPUT_STEM');const r=verifyPresetOutputs(s);console.log(JSON.stringify({passed:true,outputSha256:r.outputSha256}));}
   else{if(!b||!s||!stem||(extra.length&&!(extra.length===2&&extra[0]==='--global-scales'&&extra[1])))throw Error('Usage: node fm3-preset.mjs BASE.syx SPEC.json OUTPUT_STEM [--global-scales OBSERVATIONS.json]');const options=extra.length?{globalScaleObservations:loadGlobalScaleObservations(extra[1])}:{},spec=JSON.parse(fs.readFileSync(s,'utf8')),r=createPreset(fs.readFileSync(b),spec,options);resolveReplayBase(r.report.baseSha256);const files=writePresetOutputs(stem,r,spec);verifyPresetOutputs(stem);console.log(JSON.stringify({outputSha256:r.report.outputSha256,files}));}
  }catch(e){console.error(e.message);process.exitCode=1;}

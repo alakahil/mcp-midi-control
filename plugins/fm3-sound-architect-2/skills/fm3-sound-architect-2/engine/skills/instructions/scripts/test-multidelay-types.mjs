@@ -53,7 +53,12 @@ assert.throws(()=>composeSound(base,{composer,layout:{row2:['drive','amp','cab']
 assert.throws(()=>composeSound(base,spec({multidelayTypes:[{channel:'A',type:'Pealing Bells'}],controls:[{block:'multidelay',channel:'A',param:'MULTITAP_BASETYPE',value:'Quad-Tap Delay'}]})),/not writable|Algorithm changed after Type/);
 assert.throws(()=>composeSound(base,spec({controls:[{block:'multidelay',channel:'A',param:'MULTITAP_PRESETS',value:'Dub Echo'}]})),e=>/not writable/.test(e.message)||e.message.includes(MULTIDELAY_PRESET_REFUSED));
 assert.match(MULTIDELAY_PRESET_REFUSED,/multidelayTypes/);
-assert.equal(multidelayTypesCapabilities().types.length,39);assert.match(multidelayTypesCapabilities().deviceConfirmed,/^T36.*T38 \(STORE\/reload\)$/);assert.match(only.txt,/T36 07.11.2026 kinnitas/);
+const caps=multidelayTypesCapabilities();assert.equal(caps.types.length,39);
+assert.equal(caps.evidence.generatedImports,39);assert.equal(caps.evidence.storeReload,8);
+assert.equal(caps.evidence.postStoreListeningH2,false);assert.equal(caps.evidence.newOutputConfirmed,false);
+assert.match(caps.deviceConfirmed,/T49: 39 generated imports/);assert.match(caps.deviceConfirmed,/T38\/H2: 8 STORE confirmations/);
+assert.match(only.txt,/39\/39 genereeritud importi ja heli/);assert.match(only.txt,/8\/39 STORE-kinnitust/);
+assert.match(only.txt,/T36 07.11.2026 kinnitas/);
 // 4. Schema and saved bundle: verifies; tampering with the Type word, Algorithm, other template word, report, text or spec is refused.
 const bspec=spec({multidelayTypes:[{channel:'A',type:'Pealing Bells'},{channel:'B',type:'Dub Echo'}],controls:[{block:'multidelay',channel:'A',param:'MULTITAP_MIX',value:30}]});
 assert.deepEqual(checkSchema('fm3-sound.schema.json',bspec),[],'schema accepts multidelayTypes');
