@@ -9,6 +9,10 @@
 - 0.3.2 avaldamisvormingu parandus
 
 ## Ulatus
+
+0.3.75: SV1 ühtne tõendikoond ja kooskõlakontroll; SV4 korduv WAV-analüüs; SV5 nelikfaili riskikontroll. SV2/SV3 kandidaatide ettevalmistus ja SV7 räsiga seotud vastuvõtuvorm. SYX-kirjutustugi ei laiene.
+
+### Varasemate väljalasete ajalugu
 0.3.74: TXT üldselgitus ja sisendskeemi `insert` kirjeldus eristavad Multi Delay toetatud `multidelayTypes` tüübivalikut üksiku `MULTITAP_PRESETS` väärtuse otsekirjutamisest `controls` kaudu, mis jääb keelatuks. Täielikud kanalimallid on jätkuvalt toetatud; SYX-kirjutusloogika, skeemi kuju ja seadmetõendid ei muutu.
 
 0.3.73: T51A–C (13.11.2026) salvestati FM3-s; kolm salvestatud keha taastuvad generaatoriga baidi kaupa. T51C dump lisati kirjejärjekorra tõendisse (59 allikat): FM3 paneb teise Drive'i kirje kohe Drive 1 järele, seega `recordOrder:"device"` teeb seda nüüd ka generaatoris. Kviitung `references/fm3-t51-20261113.json`.
@@ -223,12 +227,10 @@ tegeliku erinevuse uurimist, mitte automaatset räside erandit.
 
 ## Järgmine etapp
 
-Auditi 10.11.2026 konkreetne jätk on H1 ja H2. Koosta pakid käsuga
-`node tools/fm3/audit-next-build.mjs /ABS/EMPTY_OUT`, kontrolli
-`python3 -B /ABS/EMPTY_OUT/ALUSTA.py --preflight` ning anna kasutajale
-`docs/fm3/FM3_AUDIT_NEXT_GUIDE.txt`. Import, näidud, heli, CPU ja käsitsi
-STORE/reload jäävad seadmepäevaks. N2 automaatne avastamine vajab eraldi
-uut tavalist hostivestlust; arenduskeskkonna taaste ega alamagent ei asenda seda.
+14.11.2026 auditi seadmevaba jätk on [soundi töövoos](FM3_SOUND_WORKFLOW.md).
+H1/H2 on tehtud; neid ei valmistata uuesti ette. Uue soundi SK1–SK4 ning
+SV7 lõplik vastuvõtt vajavad tegelikke mõõte- ja kuulamistulemusi. Uue vestluse
+automaatne avastamine vajab eraldi tavalist ainult-FM3 vestlust.
 
 Järgnev pikaajaline uurimissuund ei ole selle seadmevaba väljalaske kohustus:
 

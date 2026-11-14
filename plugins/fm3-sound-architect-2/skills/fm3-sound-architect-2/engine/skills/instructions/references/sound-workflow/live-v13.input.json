@@ -1,0 +1,420 @@
+{
+  "purpose": "LIVE KOOSLUS V1.3: V1.2 + L1 mõõtmise (13.11.2026) järgi Out 1 stseenitasemed: stseen 2 -1,5 dB, lead-stseenid 3 ja 7 +2 dB. Muu nagu V1.2.",
+  "context": {
+    "guitar": "Ibanez AS-120",
+    "pickups": "humbucker",
+    "output": "OUT1 stereo FOH"
+  },
+  "composer": {
+    "schemaVersion": 1,
+    "firmware": 13,
+    "baseProfile": "jb-composer",
+    "name": "LIVE KOOSLUS V1.3",
+    "ampChannels": [
+      {
+        "channel": "A",
+        "model": "Deluxe Verb Normal"
+      },
+      {
+        "channel": "B",
+        "model": "Class-A 30W TB"
+      },
+      {
+        "channel": "C",
+        "model": "Brit JVM OD1 Orange"
+      },
+      {
+        "channel": "D",
+        "model": "Plexi 50W High 1"
+      }
+    ],
+    "cabChannels": [
+      {
+        "channel": "A",
+        "model": "1x12 Deluxe Verb"
+      },
+      {
+        "channel": "B",
+        "model": "2x12 Class-A 30W"
+      },
+      {
+        "channel": "C",
+        "model": "4x12 Friedman GB"
+      },
+      {
+        "channel": "D",
+        "model": "4x12 1960TV"
+      }
+    ],
+    "driveChannels": [
+      {
+        "channel": "A",
+        "type": "T808 OD"
+      }
+    ],
+    "chorusChannels": [
+      {
+        "channel": "A",
+        "type": "Analog Stereo"
+      }
+    ],
+    "delayChannels": [
+      {
+        "channel": "A",
+        "type": "Digital Stereo"
+      }
+    ],
+    "reverbChannels": [
+      {
+        "channel": "A",
+        "type": "Room: Recording Studio A"
+      },
+      {
+        "channel": "B",
+        "type": "Plate: Medium Plate"
+      }
+    ],
+    "scenes": [
+      {
+        "scene": 1,
+        "name": "CLEAN",
+        "blocks": {
+          "amp": {
+            "channel": "A",
+            "bypass": false
+          },
+          "cab": {
+            "channel": "A",
+            "bypass": false
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": false
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": true
+          },
+          "reverb": {
+            "channel": "B",
+            "bypass": false
+          }
+        }
+      },
+      {
+        "scene": 2,
+        "name": "CRUNCH",
+        "blocks": {
+          "amp": {
+            "channel": "B",
+            "bypass": false
+          },
+          "cab": {
+            "channel": "B",
+            "bypass": false
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": true
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": false
+          }
+        }
+      },
+      {
+        "scene": 3,
+        "name": "LEAD",
+        "blocks": {
+          "amp": {
+            "channel": "C",
+            "bypass": false
+          },
+          "cab": {
+            "channel": "C",
+            "bypass": false
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": false
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": false
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": false
+          }
+        }
+      },
+      {
+        "scene": 4,
+        "name": "AMBIENT",
+        "blocks": {
+          "amp": {
+            "channel": "A",
+            "bypass": false
+          },
+          "cab": {
+            "channel": "A",
+            "bypass": false
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": false
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": true
+          },
+          "reverb": {
+            "channel": "B",
+            "bypass": false
+          }
+        }
+      },
+      {
+        "scene": 5,
+        "name": "CLEAN DRY",
+        "blocks": {
+          "amp": {
+            "channel": "A",
+            "bypass": false
+          },
+          "cab": {
+            "channel": "A",
+            "bypass": false
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": true
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": true
+          }
+        }
+      },
+      {
+        "scene": 6,
+        "name": "CRUNCH PUSH",
+        "blocks": {
+          "amp": {
+            "channel": "B",
+            "bypass": false
+          },
+          "cab": {
+            "channel": "B",
+            "bypass": false
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": false
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": true
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": false
+          }
+        }
+      },
+      {
+        "scene": 7,
+        "name": "LEAD DRY",
+        "blocks": {
+          "amp": {
+            "channel": "C",
+            "bypass": false
+          },
+          "cab": {
+            "channel": "C",
+            "bypass": false
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": false
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": true
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": true
+          }
+        }
+      },
+      {
+        "scene": 8,
+        "name": "PLEXI",
+        "blocks": {
+          "amp": {
+            "channel": "D",
+            "bypass": false
+          },
+          "cab": {
+            "channel": "D",
+            "bypass": false
+          },
+          "drive": {
+            "channel": "A",
+            "bypass": true
+          },
+          "chorus": {
+            "channel": "A",
+            "bypass": true
+          },
+          "delay": {
+            "channel": "A",
+            "bypass": true
+          },
+          "reverb": {
+            "channel": "A",
+            "bypass": false
+          }
+        }
+      }
+    ]
+  },
+  "insert": [
+    "multidelay"
+  ],
+  "recordOrder": "append",
+  "layout": {
+    "row2": [
+      "drive",
+      "chorus",
+      "amp",
+      "cab"
+    ],
+    "row3": [
+      "delay",
+      "multidelay",
+      "reverb"
+    ]
+  },
+  "blockScenes": {
+    "multidelay": [
+      {
+        "scene": 4,
+        "bypass": false
+      }
+    ]
+  },
+  "selectedScene": 1,
+  "controls": [
+    {
+      "block": "amp",
+      "channel": "A",
+      "param": "DISTORT_LEVEL",
+      "value": -10.16
+    },
+    {
+      "block": "amp",
+      "channel": "B",
+      "param": "DISTORT_LEVEL",
+      "value": -9
+    },
+    {
+      "block": "amp",
+      "channel": "C",
+      "param": "DISTORT_LEVEL",
+      "value": -5
+    },
+    {
+      "block": "amp",
+      "channel": "D",
+      "param": "DISTORT_LEVEL",
+      "value": -10.16
+    },
+    {
+      "block": "out1",
+      "channel": "A",
+      "param": "OUTPUT_SCENE1",
+      "value": 0
+    },
+    {
+      "block": "out1",
+      "channel": "A",
+      "param": "OUTPUT_SCENE2",
+      "value": -1.5
+    },
+    {
+      "block": "out1",
+      "channel": "A",
+      "param": "OUTPUT_SCENE3",
+      "value": 2
+    },
+    {
+      "block": "out1",
+      "channel": "A",
+      "param": "OUTPUT_SCENE4",
+      "value": 0
+    },
+    {
+      "block": "out1",
+      "channel": "A",
+      "param": "OUTPUT_SCENE5",
+      "value": 0
+    },
+    {
+      "block": "out1",
+      "channel": "A",
+      "param": "OUTPUT_SCENE6",
+      "value": 0
+    },
+    {
+      "block": "out1",
+      "channel": "A",
+      "param": "OUTPUT_SCENE7",
+      "value": 2
+    },
+    {
+      "block": "out1",
+      "channel": "A",
+      "param": "OUTPUT_SCENE8",
+      "value": 0
+    }
+  ]
+}
