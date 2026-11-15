@@ -786,7 +786,7 @@
         "node",
         "scripts/test-p2-three-switches.mjs"
       ],
-      "scope": "Pinned 0.3.37 generated quartet and user-confirmed P2 STORE/reload export; exact current-generator SYX replay, complete body comparison and corrupt-output rejection. Physical observations are bounded to Layout 1 switches 1–3; no new hardware I/O.",
+      "scope": "Pinned 0.3.37 generated quartet and user-confirmed P2 STORE/reload export; exact current-generator SYX replay, complete body comparison and corrupt-output rejection. Physical observations are bounded to Layout 1 switches 1\u20133; no new hardware I/O.",
       "required": true
     },
     {
@@ -814,6 +814,24 @@
         "scripts/test-device-load-readback.py"
       ],
       "scope": "Simulated POSIX port: preflight, edit-buffer-only writes, read whitelist, no-response refusal, bulk compare, malformed replies, read-only recheck, manual STORE readback and non-overwriting receipts; no device I/O",
+      "required": true
+    },
+    {
+      "id": "test-evidence-summary",
+      "command": [
+        "node",
+        "scripts/test-evidence-summary.mjs"
+      ],
+      "scope": "Current guide and capabilities vs dated immutable receipts; no device promotion",
+      "required": true
+    },
+    {
+      "id": "test-preset-review",
+      "command": [
+        "node",
+        "scripts/test-preset-review.mjs"
+      ],
+      "scope": "Verified quartet review, parallel sums, tampered/missing output refusal; no DSP simulation",
       "required": true
     }
   ]

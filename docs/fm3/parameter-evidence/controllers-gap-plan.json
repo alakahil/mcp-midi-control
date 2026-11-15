@@ -3,7 +3,7 @@
   "asOf": "2026-11-09",
   "evidence": {
     "path": "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-current-evidence.json",
-    "sha256": "4ead72049d0757e35a1bd6e9e3ba46a7b857d0f0bba296df15ca3602dfae17d5"
+    "sha256": "30150a798c12016142eee00475fa8d4780ae2ededbaa6b14f951fb19a94d7b48"
   },
   "supportedSources": 19,
   "behaviorConfirmed": 19,

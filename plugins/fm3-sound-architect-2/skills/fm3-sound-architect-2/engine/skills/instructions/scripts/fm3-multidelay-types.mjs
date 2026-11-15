@@ -6,6 +6,7 @@
 // the measured image before layout/controls, so controls apply on top of it. The Algorithm (pid 0) belongs to the Type
 // and may not be changed afterwards; MULTITAP_PRESETS stays refused in controls.
 import fs from 'node:fs';
+import {evidenceSummary} from './fm3-evidence-summary.mjs';
 import {createHash} from 'node:crypto';
 import {inspectStructure} from './drive-collector/fm3-prototype.mjs';
 import {finalizeBody,scanRecords} from './fm3-layout.mjs';
@@ -51,7 +52,7 @@ export function applyMultidelayTypes(syx,list){
   for(const {channel,type} of wanted)check(channelWords(rb,r2,CHANNELS.indexOf(channel)).every((w,i)=>w===type.words[i]),'Multi Delay Type readback '+channel);
   return {syx:out,channels,report:{stage:'fm3-multidelay-types 0.1.0',receipt:MULTIDELAY_TYPES_RECEIPT,receiptSha256:multidelayTypesReceiptHash,channels,
     rule:'all 121 words of the channel replaced by the measured T35 image; controls apply afterwards',
-    hardware:'T35 2026-11-07: every image read back from the FM3 after choosing the Type on the device-default channel; T36 2026-11-07: a multidelayTypes preset (4 Types + Mix) loaded 484/484 words, FM3-Edit showed the Types; T38 2026-11-07: another 4 Types survived STORE/reload (484/484 words, Types and audio unchanged); this output itself not tested',audio:'not tested for this output (T36: the four tested Types sounded as described)'}};
+    hardware:'H2 2026-11-10 added STORE confirmation for the four T36 Types; T49 2026-11-13 confirmed generated import, display and audio for 31 more Types: 39 generated imports, 8 STORE confirmations. H2 post-STORE listening was not separately assessed. T35 2026-11-07: every image read back from the FM3 after choosing the Type on the device-default channel; T36 2026-11-07: a multidelayTypes preset (4 Types + Mix) loaded 484/484 words, FM3-Edit showed the Types; T38 2026-11-07: another 4 Types survived STORE/reload (484/484 words, Types and audio unchanged); this output itself not tested',audio:'not tested for this output (T36: the four tested Types sounded as described)'}};
 }
 // Final check: the Type word and its Algorithm must still be the template's (controls may change other words).
 export function verifyMultidelayTypesOutput(body,spec,reported,stage){
@@ -67,10 +68,11 @@ export function verifyMultidelayTypesOutput(body,spec,reported,stage){
 export function renderMultidelayTypesText(channels){
   if(!channels?.length)return '';
   return ['','MULTI DELAY TYPE (terve kanali mall):',...channels.map(c=>`  Kanal ${c.channel}: ${c.type} (Type nr ${c.index+1}, Algorithm ${c.algorithm}; ${c.wordsChanged} sõna erines vaikimisi kanalist).`),
+    '  Koond: 39/39 genereeritud importi ja heli (T36/T38/H2/T49); 8/39 STORE-kinnitust (T38/H2). H2 eraldi järelkuulamist ei tehtud.',
     '  Mall on T35 07.11.2026 seadmelt loetud kanal pärast Type valikut vaikimisi kanalil. T36 07.11.2026 kinnitas sellise preseti laadimise seadmel (484/484 sõna, FM3-Edit näitas Type\'e, heli vastas), T38 07.11.2026 STORE-i ja uuesti laadimise; selle faili import ja heli on kontrollimata. Controls rakenduvad malli peale.'].join('\n')+'\n';
 }
 export function multidelayTypesCapabilities(){
-  return {field:'multidelayTypes',values:'[{channel:"A".."D",type:<label>}], one per channel',types:MULTIDELAY_TYPE_LABELS,
+  return {evidence:evidenceSummary().multiDelay,field:'multidelayTypes',values:'[{channel:"A".."D",type:<label>}], one per channel',types:MULTIDELAY_TYPE_LABELS,
     rule:'full-channel template (121 words) from the T35 device reads; applied before layout/controls; Algorithm stays the Type\'s',receipt:MULTIDELAY_TYPES_RECEIPT,
-    hardware:'T35 2026-11-07: 39/39 images read from the FM3; Pealing Bells = T27, Types 1..3 = MD_TYPES export. T36 2026-11-07: generated preset with Pealing Bells / Dub Echo / Mono Diffuser / Aurora Delay (+ Mix) held 484/484 words after loading, FM3-Edit showed the four Types, audio as described. T38 2026-11-07: Ya-Ya Delay / Space Tape / L-C-R-C / Centaurus X-3 (+ Mix) STOREd and reloaded: all channel data and decoded blocks unchanged (the FM3 re-orders the block records only), Types and audio unchanged',deviceConfirmed:'T36 (load + edit buffer), T38 (STORE/reload)'};
+    hardware:'T35 2026-11-07: 39/39 images read from the FM3; Pealing Bells = T27, Types 1..3 = MD_TYPES export. T36 2026-11-07: generated preset with Pealing Bells / Dub Echo / Mono Diffuser / Aurora Delay (+ Mix) held 484/484 words after loading, FM3-Edit showed the four Types, audio as described. T38 2026-11-07: Ya-Ya Delay / Space Tape / L-C-R-C / Centaurus X-3 (+ Mix) STOREd and reloaded: all channel data and decoded blocks unchanged (the FM3 re-orders the block records only), Types and audio unchanged',deviceConfirmed:'T36/T38/H2/T49: 39 generated imports and audio, T38/H2: 8 STORE confirmations; H2 post-STORE listening not separately assessed'};
 }

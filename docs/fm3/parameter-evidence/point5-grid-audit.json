@@ -10,7 +10,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid.mjs": "bd71137c382ef6053eb54be32843998fbdb4ba52712ccd22d96696abc7c70aa6",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid-audit.mjs": "f8affe5ed83b59f7d59da1da5543d6455fe3d8617b1bfec2b58c17e5c8a844c2",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-grid-output.mjs": "c0fb3ee3d131368e398e5ea653f0e62e8fe7873c58c0def23375c4b68dc9a7a4",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset.mjs": "a264cd9e881cefd16a07537bd80bb33e811ee350cb56c2a57b886a85df345ce6",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-preset.mjs": "338ddf604bfb40960049a40c75eb1e725c7365b291d2d32bcd4a0b2b5e71062b",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-grid-domain.mjs": "f02c48f4ff34b7aac14c965df3dcd6daf833b76b571fce9f53ad29015f57c778",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-grid-audit.mjs": "9f8f61e0aa642c180152036b13a7adc5dbb7d988fa2283d5297edcb5a0a2f1c0",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-grid-check-20261023-results.jsonl": "e1cdfeee137317b0bc04bc66317939964ef80330ced197f4912e55ee4a5ecb08",

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-13",
+  "asOf": "2026-11-14",
   "hardwareEvidenceThrough": "2026-11-13",
-  "baselineVersion": "0.3.65",
-  "scope": "T32-T42, B1A/B1B/B1C/B2, H1/H2/H4, H3 and their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
+  "baselineVersion": "0.3.75",
+  "scope": "T32-T52, B1/B2, H1-H6 and L1 with their named prerequisite receipts; current software contract, not a complete claim about every FM3 function.",
   "definitions": {
     "confirmed": "A cited dated device result exists in the stated scope.",
     "notMeasured": "No cited device result for this scope; not a failure and not a software-support restriction."
@@ -2427,8 +2427,7 @@
         "levelFinding": "User: no clipping; scenes 1/4/5/8 (Amp A clean, Amp D Plexi) loudest, 2/6 (Amp B crunch) slightly quieter, 3/7 (Amp C lead) quieter than 2/6. Levels need adjustment; V1 is not accepted as the final file."
       },
       "limitations": [
-        "No numerical loudness measurement.",
-        "H3: scene levels of the -8 dB file are uneven; not accepted as the final file."
+        "Historical V1 evidence only; see auditL1 for accepted V1.3 listening and its remaining numerical-level/CPU/STORE gaps."
       ]
     },
     "synthCpu": {
@@ -2622,10 +2621,10 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-t52-plex-presets-20261113.json": "522358efc83e932be2531698d5720944011d390f2371ea1c69a9f8bb2ad8b59d",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-enum-promotion.mjs": "5cf8e5afa993cc1740ac8193b0da23f9374524c10b6fc1136f047c69a12896db",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-modifier-targets.mjs": "7dfacb7b3511051383e40fd2a6c7f54518cea48e0050e472b52cb66b787a0ba2",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "1a0ac64659f99cd7e4aed3e36fcbac66af7c198d752e50a2fd21892b025e094b",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-multidelay-types.mjs": "9ed064ce2c7c07579420ee41c2657571cedae1654b3a794971d2f8df2e231aa7",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-table-encoder.mjs": "ba6690f70f6ff43c7bf1da56f24007a290ab2c92efdf133f34344ced144fd9bb",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-volume-pedal.mjs": "b4ef3091d374d30bedeeb53388720ffec22bbfef4857461967ae1518e8b77d8d",
-    "tools/fm3/current-evidence.mjs": "ef0c3c4b17f525fdf7f15bd7a662d5a5289edc5ac43383caf468962beaf45c7b"
+    "tools/fm3/current-evidence.mjs": "07c0a36ada2ef7080d55b716667ad51b03f8ec557a46f2bba0f12f9e7474ce50"
   },
   "newHardwareMeasurements": false,
   "deviceIO": false
