@@ -11,7 +11,7 @@
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
-      "description": "Point-6 blocks inserted from the device-default donor; all 8 scenes start on channel A, bypassed. Mixer and Multiplexer only in grid mode; Scene MIDI (grid mode only) is placed unconnected; Volume/Pan uses volumePan. Multi Delay uses Quad-Tap Delay defaults; Algorithm and supported parameters are writable through controls; Type/preset selection remains blocked.",
+      "description": "Point-6 blocks inserted from the device-default donor; all 8 scenes start on channel A, bypassed. Mixer and Multiplexer only in grid mode; Scene MIDI (grid mode only) is placed unconnected; Volume/Pan uses volumePan. Multi Delay uses Quad-Tap Delay defaults; Algorithm and supported parameters are writable through controls. Type/preset selection uses multidelayTypes to apply a complete channel template; direct MULTITAP_PRESETS writes through controls remain blocked.",
       "items": {
         "enum": [
           "plex",

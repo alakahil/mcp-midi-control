@@ -10,7 +10,7 @@
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/references/fm3-param-dictionary.json": "a54e0ba251d380d5fe2de952d18a0f9aeedd22c093984ed130720c0fa664d730",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-point6-offline.mjs": "9fbbbed907a3f004053b21629b470b91252aa53c74aa0b36861d781a9a045327",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/test-controls-output.mjs": "2d00f2f7c1db42fed82678b0808079c3d48853a39a994e153bc6b0208a5935e6",
-    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-final-state.mjs": "677522543097dd96cfdf2c5aa7e0d0114a00159a7e35fe5744fa548ea1f00975",
+    "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-final-state.mjs": "bb49a70e68230c9afa27014462cb130787a8798ee65ffc6b6cccbcc5de49a1dd",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-corpus-audit.mjs": "89deb81465ee37aa89770610b5c68cd662dc69a3e606824fe472a7e11755680f",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-insert-applicability.mjs": "c8c8d219dedafaff9e9e45d78453d6e822695353e9abe8c7291701cf7befd9ed",
     "plugins/fm3-sound-architect-2/skills/fm3-sound-architect-2/engine/skills/instructions/scripts/fm3-scene-midi.mjs": "fd6eada69e0634bb9280c37479dbb547b07b4e284603d1e1177aec061870a832",
