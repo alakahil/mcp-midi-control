@@ -69,11 +69,16 @@ def run_case(p, session, port, a):
             row = {'scene': s, 'name': p['scenes'][s - 1], 'file': wav.name, 'wet': L.measure(wav, 0), 'dry': L.measure(wav, 1),
                    'cpuReadings': cpu, 'cpuPeakPercent': max(cpu) if cpu else None, 'cpuEstimatePercent': p['cpuEstimate']['scenes'][s - 1]}
             print('  Valjus %s LUFS, tipp %s dBFS, CPU tipp %s %% (hinnang %s %%)' % (row['wet']['lufs'], row['wet']['peakDb'], row['cpuPeakPercent'], row['cpuEstimatePercent']))
-            if input('  Enter = sobib, k = korda > ').strip().lower() != 'k': rows.append(row); break
+            if input('  Enter = sobib, k = korda > ').strip().lower() != 'k':
+                rows.append(row)
+                # Persist each accepted scene at once: CPU readings cannot be rebuilt from the WAV after an interruption.
+                with (dest / 'sk-scenes.jsonl').open('a', encoding='utf-8') as f: f.write(json.dumps(row, ensure_ascii=False) + '\n')
+                break
             wav.unlink()
     ref = a.reference if any(r['scene'] == a.reference for r in rows) else (rows[0]['scene'] if rows else None)
     if ref is not None:
-        rows = L.summarize(rows, ref); print('\n' + L.table(rows, ref))
+        try: rows = L.summarize(rows, ref); print('\n' + L.table(rows, ref))
+        except SystemExit as e: print('Kokkuvõte jäi tegemata (%s); stseenide mõõtmised on failis sk-scenes.jsonl.' % e)
     note = input('\nKuidas %s kõlas võrreldes lähtega (bass, kõrged, rünnak, läbikostvus)? Enter = ei oska öelda > ' % case).strip()
     S.write_json_new(dest / 'sk-audio-results.json', {'kind': 'fm3-sk-audio', 'version': 1, 'case': case, 'presetSha256': p['presetSha256'],
         'time': time.strftime('%Y-%m-%dT%H:%M:%S'), 'seconds': a.seconds, 'reference': ref, 'device': a.device,
