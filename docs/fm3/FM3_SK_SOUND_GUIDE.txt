@@ -1,0 +1,45 @@
+FM3 SK1–SK4: LIVE KOOSLUS V1.3 Cab-filtrite võrdlus (ette valmistatud 15.11.2026)
+
+Audit 0.3.74 / seadmevabad tööd 0.3.75. Kolm kandidaati, kõik räsiga seotud:
+  BASELINE_V13  LIVE KOOSLUS V1.3 muutmata (sama fail, mille 13.11 heaks kiitsid)
+  CAB_LOW80     ainult Cab A–D Low Cut 20 → 80 Hz (ootus: tihedam bass, selgem palm mute)
+  CAB_HIGH6500  ainult Cab A–D High Cut ~10000 → 6500 Hz (ootus: pehmemad kõrged)
+Kõik muu (stseenid, nivood, Amp, Drive, efektid) on kolmes failis sama.
+
+Mida skript teeb: laadib kandidaadi tööpuhvrisse (SHA-256 kontroll), loeb plokid tagasi,
+siis salvestab iga stseeni kohta FM3 USB-heli (1-2 töödeldud, 3-4 kuiv kitarr) ja loeb
+samal ajal CPU-näitu (ainult lugemispäring). Üldseadeid, Input 1 Source'i ega Maci
+heliseadeid ei muudeta. STORE-i, stseeni- ja presetivahetused teed sina.
+Ampero: ainult B lühike vajutus, A-d mitte.
+
+Ettevalmistus:
+1. Häälesta kitarr. Kitarri volume/tone nupud paika ja hoia need terve katse vältel samas.
+2. Pane valmis üks 15-sekundiline lõik, mida mängid igas stseenis SAMAMOODI
+   (nt 2 akordi + palm mute + lühike üksiknoodifraas + kõlama jäetud akord).
+3. Sulge FM3-Edit ja Fractal-Bot.
+4. Terminal:
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_SK_SOUND
+   bash ALUSTA.command --self-test
+
+SK1–SK3 (kõik kolm kandidaati järjest, ~25 min):
+   bash ALUSTA.command
+   - kirjuta LAADI; skript laadib BASELINE_V13 ja küsib nime (j);
+   - iga stseeni juures: vali stseen M-Wave'iga, vajuta Enter, oota 3-2-1, mängi lõik;
+     Enter = sobib, k = kordan;
+   - kandidaadi lõpus kirjuta lühidalt, kuidas see kõlas (bass, kõrged, rünnak);
+   - seejärel laadib skript ise järgmise kandidaadi.
+   Üks kandidaat: bash ALUSTA.command --case CAB_LOW80
+   Ainult osa stseene: --scenes 1-3   Pikem lõik: --seconds 20
+
+Pärast SK1–SK3 kirjuta vestlusesse "valmis". Claude toob WAV-id ära, võrdleb
+kandidaate (valjus, spekter, tipud, CPU) ja annab kokkuvõtte. Siis valid lõppfaili.
+
+SK4 (alles pärast valikut, ainult valitud fail):
+   bash ALUSTA.command --store CAB_LOW80      (või BASELINE_V13 / CAB_HIGH6500)
+   - skript laadib faili; tee FM3-l STORE oma kohta (424–427);
+   - vali teine preset, tule tagasi ja mängi kõik 8 stseeni üle;
+   - kirjuta STORE, vasta küsimustele, sisesta salvestuskoht (Display Offset 1).
+   Skript loeb salvestatud koha tagasi; sisu võrdlus tehakse offline.
+
+Kui midagi peatub, ära salvesta; saada vestlusesse ekraanipilt või SESSION_SK_... nimi.
+Kogutud andmed jäävad alles ka katkestusel.
