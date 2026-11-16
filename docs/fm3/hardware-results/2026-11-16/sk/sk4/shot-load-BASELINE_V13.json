@@ -1,0 +1,90 @@
+{
+ "kind": "fm3-shot-load",
+ "packSha256": "7315051af47fdcb62cc2e0c82db46c3ce7b39eb7144557b6f27d9f0df65f116c",
+ "preset": "BASELINE_V13",
+ "name": "LIVE KOOSLUS V1.3",
+ "time": "2026-11-16T17:47:36",
+ "blocks": [
+  {
+   "family": "amp",
+   "effectId": 58,
+   "values": 576,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "cab",
+   "effectId": 62,
+   "values": 424,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "chorus",
+   "effectId": 78,
+   "values": 128,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "delay",
+   "effectId": 70,
+   "values": 356,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "return",
+   "effectId": 186,
+   "values": 6,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "drive",
+   "effectId": 118,
+   "values": 176,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "in1",
+   "effectId": 37,
+   "values": 40,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "out1",
+   "effectId": 42,
+   "values": 104,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "reverb",
+   "effectId": 66,
+   "values": 284,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  },
+  {
+   "family": "multidelay",
+   "effectId": 74,
+   "values": 484,
+   "matches": true,
+   "mismatches": [],
+   "testWords": []
+  }
+ ],
+ "allMatch": true
+}
