@@ -7,8 +7,8 @@
     "gitMain": "27316fb09a57218c12dc75e517527d0c0748a61f",
     "upstreamGoldens": "553d24b7409302908d5c7e46a71b45e07dffdc05"
   },
-  "uniqueContents": 2296,
-  "filePaths": 2500,
+  "uniqueContents": 2297,
+  "filePaths": 2501,
   "blobs": {
     "0004382bdbd87480f2e5b6d7dba34a8613d20b47f0fb8af12966da0b52829019": {
       "bytes": 2219,
@@ -7706,6 +7706,12 @@
       "bytes": 3222,
       "paths": [
         "references/peq-full-20261009-152606/step-059-0e6d271056/result.json"
+      ]
+    },
+    "90048004382870c4985c0a3b9f923b6828d846e3b9fc57e116843f305f3066fe": {
+      "bytes": 10309,
+      "paths": [
+        "references/fm3-sk-sound-20261116.json"
       ]
     },
     "90207b91631edbedfcabba82ee8ebb9fea1afc74146ac3854752bd662344da1a": {

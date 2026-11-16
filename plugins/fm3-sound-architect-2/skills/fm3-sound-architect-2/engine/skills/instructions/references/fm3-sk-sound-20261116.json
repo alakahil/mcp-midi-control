@@ -1,0 +1,326 @@
+{
+  "kind": "fm3-sk-sound-receipt",
+  "version": 1,
+  "date": "2026-11-16",
+  "device": "FM3 Mk II Turbo FW13",
+  "packVersion": "0.3.75",
+  "resultsSha256": {
+    "sk1-3/wav-sha256.txt": "de1e34a4505c00e66b168842c4a2f85efe0e4358af03789f258fd9d2d55ebc88",
+    "sk1-3/BASELINE_V13/sk-audio-results.json": "fce1cc74ed19cc5fd3e7c40caa9654f04cc348d76e8c6397167baafd7f98cc62",
+    "sk1-3/BASELINE_V13/shot-load-BASELINE_V13.json": "d0f23a98aae6eb79264c205412df6d99c0199196839becb8d4693aea05a8feed",
+    "sk1-3/BASELINE_V13/load-confirmation.json": "4ff21baee356a746e6d72f8210a6889213871d37ae271549cb6f3b02305d12c5",
+    "sk1-3/CAB_LOW80/sk-audio-results.json": "fbffbcf945856ee52a8c216db637213e20de61045de4095940598dde465aa3ce",
+    "sk1-3/CAB_LOW80/shot-load-CAB_LOW80.json": "c313693a60c7cf03b1670cde19979a5d5f0e2d9031fb6f7d8d83ac10fd56cf19",
+    "sk1-3/CAB_LOW80/load-confirmation.json": "b886c654243c2a86de34cef8c64b2bcad8ab8b21e2483e973eae53116d126d78",
+    "sk1-3/CAB_HIGH6500/sk-audio-results.json": "09664676d5b7cd44cc16749dde1321cae115f8579fc4ab99a64a8e2d861919d8",
+    "sk1-3/CAB_HIGH6500/shot-load-CAB_HIGH6500.json": "33661403b7ba08ac244a2dc01bc64c39b0f57fe592eefac57c5a7fd419b44923",
+    "sk1-3/CAB_HIGH6500/load-confirmation.json": "aad4a643cd911fc65ce1c2c63acb420f960aa157585ccb9b4d4cef7162d5d285",
+    "sk4/bind-store-results.json": "47c93b68c3f42515bd1e0c27f6e6704c6098ea839858e309d7a4bddd88e7d65b",
+    "sk4/shot-load-BASELINE_V13.json": "0070ee6a356e20f97e4ebf4177e1736dab83bfbebc9146b9b41f9a3740211928"
+  },
+  "cases": {
+    "BASELINE_V13": {
+      "presetSha256": "b7bd043ce9602293be7d3be830aa8655b0c92cf3309d20b47913571ca1d06668",
+      "loadReadBack": true,
+      "nameConfirmed": true,
+      "userNote": "ok",
+      "scenes": [
+        {
+          "scene": 1,
+          "name": "CLEAN",
+          "cpuPeakPercent": 71,
+          "cpuEstimatePercent": 71.4,
+          "wetLufs": -18.7,
+          "wetPeakDb": -8.888634,
+          "dryPeakDb": -22.89758,
+          "correctedDeltaDb": 0
+        },
+        {
+          "scene": 2,
+          "name": "CRUNCH",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -18.5,
+          "wetPeakDb": -11.329345,
+          "dryPeakDb": -21.179365,
+          "correctedDeltaDb": 0.4
+        },
+        {
+          "scene": 3,
+          "name": "LEAD",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -14.9,
+          "wetPeakDb": -4.783365,
+          "dryPeakDb": -24.173447,
+          "correctedDeltaDb": 5.1
+        },
+        {
+          "scene": 4,
+          "name": "AMBIENT",
+          "cpuPeakPercent": 72,
+          "cpuEstimatePercent": 71.4,
+          "wetLufs": -18,
+          "wetPeakDb": -6.394546,
+          "dryPeakDb": -23.323782,
+          "correctedDeltaDb": 0.9
+        },
+        {
+          "scene": 5,
+          "name": "CLEAN DRY",
+          "cpuPeakPercent": 56,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -17.8,
+          "wetPeakDb": -9.128507,
+          "dryPeakDb": -23.020368,
+          "correctedDeltaDb": 0.9
+        },
+        {
+          "scene": 6,
+          "name": "CRUNCH PUSH",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -16.6,
+          "wetPeakDb": -9.905387,
+          "dryPeakDb": -22.906243,
+          "correctedDeltaDb": 2.7
+        },
+        {
+          "scene": 7,
+          "name": "LEAD DRY",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -15.4,
+          "wetPeakDb": -5.683686,
+          "dryPeakDb": -20.591632,
+          "correctedDeltaDb": 3.4
+        },
+        {
+          "scene": 8,
+          "name": "PLEXI",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -18.5,
+          "wetPeakDb": -10.006377,
+          "dryPeakDb": -20.294506,
+          "correctedDeltaDb": 0
+        }
+      ]
+    },
+    "CAB_LOW80": {
+      "presetSha256": "725e8279c93bbaea10d137ade35731831c95b7e91bcbc92752b506dc639c39f1",
+      "loadReadBack": true,
+      "nameConfirmed": true,
+      "userNote": "ok",
+      "scenes": [
+        {
+          "scene": 1,
+          "name": "CLEAN",
+          "cpuPeakPercent": 71,
+          "cpuEstimatePercent": 71.4,
+          "wetLufs": -18.2,
+          "wetPeakDb": -8.425605,
+          "dryPeakDb": -22.040528,
+          "correctedDeltaDb": 0
+        },
+        {
+          "scene": 2,
+          "name": "CRUNCH",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -18.7,
+          "wetPeakDb": -10.56016,
+          "dryPeakDb": -18.074375,
+          "correctedDeltaDb": -0.9
+        },
+        {
+          "scene": 3,
+          "name": "LEAD",
+          "cpuPeakPercent": 56,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -14.9,
+          "wetPeakDb": -5.329909,
+          "dryPeakDb": -21.011817,
+          "correctedDeltaDb": 4
+        },
+        {
+          "scene": 4,
+          "name": "AMBIENT",
+          "cpuPeakPercent": 71,
+          "cpuEstimatePercent": 71.4,
+          "wetLufs": -17.3,
+          "wetPeakDb": -5.330858,
+          "dryPeakDb": -19.421436,
+          "correctedDeltaDb": 0.4
+        },
+        {
+          "scene": 5,
+          "name": "CLEAN DRY",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -17.8,
+          "wetPeakDb": -8.981947,
+          "dryPeakDb": -21.123941,
+          "correctedDeltaDb": 0.1
+        },
+        {
+          "scene": 6,
+          "name": "CRUNCH PUSH",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -16.8,
+          "wetPeakDb": -10.34803,
+          "dryPeakDb": -20.026141,
+          "correctedDeltaDb": 1.1
+        },
+        {
+          "scene": 7,
+          "name": "LEAD DRY",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -15.5,
+          "wetPeakDb": -5.977791,
+          "dryPeakDb": -19.99741,
+          "correctedDeltaDb": 3.1
+        },
+        {
+          "scene": 8,
+          "name": "PLEXI",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -18.7,
+          "wetPeakDb": -10.570955,
+          "dryPeakDb": -18.086711,
+          "correctedDeltaDb": -1.1
+        }
+      ]
+    },
+    "CAB_HIGH6500": {
+      "presetSha256": "501f0ddbb1564952f13a4855e6b90770afe7ba5e389ea31cdc4d1ffb16263012",
+      "loadReadBack": true,
+      "nameConfirmed": true,
+      "userNote": "ok",
+      "scenes": [
+        {
+          "scene": 1,
+          "name": "CLEAN",
+          "cpuPeakPercent": 71,
+          "cpuEstimatePercent": 71.4,
+          "wetLufs": -18.1,
+          "wetPeakDb": -8.055231,
+          "dryPeakDb": -21.433499,
+          "correctedDeltaDb": 0
+        },
+        {
+          "scene": 2,
+          "name": "CRUNCH",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -18.5,
+          "wetPeakDb": -11.049156,
+          "dryPeakDb": -18.197082,
+          "correctedDeltaDb": -1.4
+        },
+        {
+          "scene": 3,
+          "name": "LEAD",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -15.1,
+          "wetPeakDb": -5.317473,
+          "dryPeakDb": -18.413398,
+          "correctedDeltaDb": 3.2
+        },
+        {
+          "scene": 4,
+          "name": "AMBIENT",
+          "cpuPeakPercent": 71,
+          "cpuEstimatePercent": 71.4,
+          "wetLufs": -17.6,
+          "wetPeakDb": -6.888526,
+          "dryPeakDb": -19.257288,
+          "correctedDeltaDb": 0.1
+        },
+        {
+          "scene": 5,
+          "name": "CLEAN DRY",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -17.7,
+          "wetPeakDb": -8.805427,
+          "dryPeakDb": -20.751398,
+          "correctedDeltaDb": 0.5
+        },
+        {
+          "scene": 6,
+          "name": "CRUNCH PUSH",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -16.7,
+          "wetPeakDb": -10.092069,
+          "dryPeakDb": -18.627739,
+          "correctedDeltaDb": 0.7
+        },
+        {
+          "scene": 7,
+          "name": "LEAD DRY",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -15.7,
+          "wetPeakDb": -5.864797,
+          "dryPeakDb": -17.089682,
+          "correctedDeltaDb": 1.9
+        },
+        {
+          "scene": 8,
+          "name": "PLEXI",
+          "cpuPeakPercent": 55.5,
+          "cpuEstimatePercent": 55.9,
+          "wetLufs": -18.8,
+          "wetPeakDb": -10.077814,
+          "dryPeakDb": -17.603904,
+          "correctedDeltaDb": -1.6
+        }
+      ]
+    }
+  },
+  "chosenFinal": {
+    "id": "BASELINE_V13",
+    "name": "LIVE KOOSLUS V1.3",
+    "presetSha256": "b7bd043ce9602293be7d3be830aa8655b0c92cf3309d20b47913571ca1d06668",
+    "storedLocation": 427,
+    "storeComparison": {
+      "dataPassed": true,
+      "bodyByteIdentical": false,
+      "selectedScene": {
+        "expected": 1,
+        "stored": 1
+      },
+      "reordered": true,
+      "records": 11,
+      "allowedDifferences": [
+        "selected-scene byte 0",
+        "whole-record ordering",
+        "SysEx destination header"
+      ],
+      "audioConfirmed": false
+    },
+    "userAfterReload": {
+      "scenes": "jah",
+      "transitions": "jah, kõik ok",
+      "switches": "jah",
+      "accepted": "jah tasakaal on paigas"
+    }
+  },
+  "findings": [
+    "All 3 candidates load and read back word for word; no output or input clip (wet peak <= -4.8 dBFS).",
+    "CPU measured while playing: scenes 1/4 71-72 %, others 55.5-56 %; fm3-cpu 0.2.6 estimate within 0.6 points.",
+    "CAB_LOW80 lowers <100 Hz by about 1.6 dB on average (3-4 dB in clean scenes); CAB_HIGH6500 effect is within playing variation.",
+    "User chose the unchanged V1.3; STORE 427 keeps all data (only whole-record order differs, allowed)."
+  ],
+  "limits": [
+    "Each candidate was a separate live take; no common DI/reamp (no global Input Source change), so tonal deltas include playing variation.",
+    "SV7 fm3-sound-acceptance needs a common-DI audio analysis; this receipt does not claim that acceptance."
+  ],
+  "deviceIO": false
+}
