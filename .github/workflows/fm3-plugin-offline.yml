@@ -152,6 +152,7 @@ jobs:
           node tools/fm3/test-h3-final.mjs
           node tools/fm3/test-sk-sound.mjs
           node tools/fm3/sk-results-ingest.mjs
+          node tools/fm3/test-dab-sound.mjs
           node tools/fm3/test-h5-t43.mjs
           node tools/fm3/test-h6-t45.mjs
           node tools/fm3/test-t47.mjs

@@ -1,0 +1,58 @@
+FM3 DAB: "Dust and Bone" live-presetid (ette valmistatud 17.11.2026)
+
+Kolm faili, kõik räsiga seotud:
+  BASELINE_V13  LIVE KOOSLUS V1.3 muutmata (valjuse võrdlusalus, 13.11 heaks kiidetud)
+  DAB_A_PLEXI   "DUST BONE A PLEXI": Plexi 50W High 1 crunch, Brit 800 2204 High refrään,
+                Brit JVM OD1 Orange + T808 soolo, Deluxe Verb breakdown
+  DAB_B_DIRTY   "DUST BONE B DIRTY": Brit JM45 crunch, Dirty Shirley 1 refrään,
+                Friedman BE V1 + T808 soolo, V30 kõlarid
+Loo analüüs: G-moll, ~92 BPM. Soolo-delay 652 ms (veerandnoot 92 BPM juures, Tempo NONE).
+
+Stseenid (A ja B samad, loo järjekorras):
+  1 INTRO RIFF  crunch + room            (0:00–0:31, ka riffid 0:24)
+  2 VERSE       crunch, kuiv, Out −1,5 dB (salmid 0:32, 1:00, 2:20)
+  3 CHORUS      kõrgem gain + room        (1:44–2:11, lõpurefrään)
+  4 SOLO        lead + T808 + delay + room, Out +2 dB (3:08–3:51)
+  5 BREAKDOWN   puhas + chorus + plate    (2:44–3:00)
+  6 BUILD       crunch + T808             (3:00–3:08)
+  7 OUTRO       refrääniamp + delay + plate (3:52–lõpp)
+  8 FILLS       lead + T808, ilma delay'ta, Out +1 dB (refrääni vahelicksid)
+
+Mida skript teeb: laadib faili tööpuhvrisse (SHA-256 kontroll), loeb plokid tagasi,
+siis salvestab iga stseeni kohta FM3 USB-heli (1-2 töödeldud, 3-4 kuiv kitarr) ja loeb
+samal ajal CPU-näitu (ainult lugemispäring). Üldseadeid, Input 1 Source'i ega Maci
+heliseadeid ei muudeta. STORE-i, stseeni- ja presetivahetused teed sina.
+Ampero: ainult B lühike vajutus, A-d mitte.
+
+Ettevalmistus:
+1. Häälesta kitarr. Kitarri volume/tone nupud paika ja hoia need terve katse vältel samas.
+2. Pane valmis üks 15-sekundiline lõik, mida mängid igas stseenis SAMAMOODI
+   (soovitus: loo intro-riff G-mollis + palm mute + lühike soolofraas + kõlama jäetud akord).
+3. Sulge FM3-Edit ja Fractal-Bot.
+4. Terminal:
+   cd ~/Downloads/FM3_REA_DEVELOPMENT/FM3_DAB_SOUND
+   bash ALUSTA.command --self-test
+
+DAB1 (kõik kolm faili järjest, ~25 min):
+   bash ALUSTA.command
+   - kirjuta LAADI; skript laadib BASELINE_V13 ja küsib nime (j);
+   - iga stseeni juures: vali stseen M-Wave'iga, vajuta Enter, oota 3-2-1, mängi lõik;
+     Enter = sobib, k = kordan;
+   - faili lõpus kirjuta lühidalt, kuidas see loo jaoks kõlas;
+   - seejärel laadib skript ise järgmise faili.
+   Üks fail: bash ALUSTA.command --case DAB_A_PLEXI
+   Ainult osa stseene: --scenes 1-4   Pikem lõik: --seconds 20
+
+Pärast DAB1 kirjuta vestlusesse "valmis". Claude toob WAV-id ära, võrdleb stseenide
+valjust V1.3-ga ja loo kitarripartiiga (spekter), ning teeb vajadusel tasakaalustatud
+versiooni. Siis valid lõppfaili.
+
+DAB-STORE (alles pärast valikut, ainult valitud fail):
+   bash ALUSTA.command --store DAB_A_PLEXI      (või DAB_B_DIRTY)
+   - skript laadib faili; tee FM3-l STORE oma kohta (424–427);
+   - vali teine preset, tule tagasi, mängi loo kaasa ja vaheta stseene loo järjekorras;
+   - kirjuta STORE, vasta küsimustele, sisesta salvestuskoht (Display Offset 1).
+   Skript loeb salvestatud koha tagasi; sisu võrdlus tehakse offline.
+
+Kui midagi peatub, ära salvesta; saada vestlusesse ekraanipilt või SESSION_DAB_... nimi.
+Kogutud andmed jäävad alles ka katkestusel.
