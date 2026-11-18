@@ -6,6 +6,10 @@ Kolm faili, kõik räsiga seotud:
                 Brit JVM OD1 Orange + T808 soolo, Deluxe Verb breakdown
   DAB_B_DIRTY   "DUST BONE B DIRTY": Brit JM45 crunch, Dirty Shirley 1 refrään,
                 Friedman BE V1 + T808 soolo, V30 kõlarid
+  DAB_A2        "DUST BONE A2": A edasiarendus DAB1 (18.11) järgi: Cab High Cut 8 kHz,
+                Plexi Mid 5,5 / Bass 6, 800 Mid 6, Out1 soolo +3 dB, outro −0,5 dB
+  DAB_B2        "DUST BONE B2": B edasiarendus: JM45 tase −6,5 dB ja Bass 4, Dirty Shirley +1 dB
+                ja Mid 5,5, Friedman +1 dB, Cab High Cut 8 kHz, soolo +3 dB, outro −0,5 dB
 Kitarr: Fender Stratocaster (single coil). Mängi KÕIK kolm faili (ka V1.3) Stratiga.
 Strati kohandus: Amp B/C Gain +1, Bass +1, Treble/Presence −0,5; puhas Gain 3,5;
 T808 Drive 3,5; Cab High Cut 6 kHz. Input Gate jääb aluse seadeks (Intelligent, −60 dB).
@@ -50,8 +54,12 @@ Pärast DAB1 kirjuta vestlusesse "valmis". Claude toob WAV-id ära, võrdleb sts
 valjust V1.3-ga ja loo kitarripartiiga (spekter), ning teeb vajadusel tasakaalustatud
 versiooni. Siis valid lõppfaili.
 
+DAB2 (A2 vs B2, ~10 min, sama lõik mõlemas):
+   bash ALUSTA.command --case DAB_A2
+   bash ALUSTA.command --case DAB_B2
+
 DAB-STORE (alles pärast valikut, ainult valitud fail):
-   bash ALUSTA.command --store DAB_A_PLEXI      (või DAB_B_DIRTY)
+   bash ALUSTA.command --store DAB_A2      (või DAB_B2)
    - skript laadib faili; tee FM3-l STORE oma kohta (424–427);
    - vali teine preset, tule tagasi, mängi loo kaasa ja vaheta stseene loo järjekorras;
    - kirjuta STORE, vasta küsimustele, sisesta salvestuskoht (Display Offset 1).

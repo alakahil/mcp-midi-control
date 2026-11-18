@@ -9,7 +9,7 @@ import {build,CASES,PINNED,SONG_SCENES} from './dab-sound-build.mjs';
 import {build as buildV13} from './l1-v13-build.mjs';
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'fm3-dab-test-')),pack=path.join(tmp,'pack');
 try{
- const r=build(pack);assert.deepEqual(r.sha256,PINNED);assert.deepEqual(CASES,['BASELINE_V13','DAB_A_PLEXI','DAB_B_DIRTY']);
+ const r=build(pack);assert.deepEqual(r.sha256,PINNED);assert.deepEqual(CASES,['BASELINE_V13','DAB_A_PLEXI','DAB_B_DIRTY','DAB_A2','DAB_B2']);
  const p=JSON.parse(fs.readFileSync(path.join(pack,'pack.json')));assert.equal(p.kind,'fm3-dab-sound-preparation');
  assert.ok(p.packs.every(c=>c.scenes.length===8&&c.hardwareTested===false&&c.cpuEstimate.scenes.length===8));
  for(const c of p.packs.filter(c=>c.id!=='BASELINE_V13')){
