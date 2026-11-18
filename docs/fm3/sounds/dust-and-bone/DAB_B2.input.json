@@ -1,0 +1,593 @@
+{
+ "purpose": "Dust and Bone (G-moll, ~92 BPM) live-preset variant B: Tumedam ja paksem: JTM45 crunch, Dirty Shirley refrään, Friedman BE soolo; V30 kõlarid (1,6 kHz nõgu, 3 kHz kühm). Stseenid loo järjekorras; Out1 tasemed V1.3 loogikaga (salm -1,5, soolo +2, fillid +1). Kohandatud Stratocasteri single-coil helipeadele (18.11.2026): rohkem gaini ja bassi, vähem treble/presence, Cab High Cut 6 kHz, T808 Drive 3,5. Tasakaal vajab SK-tüüpi mõõtmist. B2 (18.11.2026, DAB1 järgi): JM45 Level -15,5 dB (oli ~6,5 dB liiga vali, tipp -1,3 dBFS) ja Bass 4, Dirty Shirley Level -7 / Mid 5,5, Friedman Level -5, Cab High Cut 8 kHz, Out1 soolo +3 dB, outro -0,5 dB.",
+ "context": {
+  "guitar": "Fender Stratocaster",
+  "pickups": "single coil",
+  "output": "OUT1 aktiivkõlaritesse; mono/stereo ja kõlarimudel täpsustamata"
+ },
+ "composer": {
+  "schemaVersion": 1,
+  "firmware": 13,
+  "baseProfile": "jb-composer",
+  "name": "DUST BONE B2",
+  "ampChannels": [
+   {
+    "channel": "A",
+    "model": "Deluxe Verb Normal"
+   },
+   {
+    "channel": "B",
+    "model": "Brit JM45"
+   },
+   {
+    "channel": "C",
+    "model": "Dirty Shirley 1"
+   },
+   {
+    "channel": "D",
+    "model": "Friedman BE V1"
+   }
+  ],
+  "cabChannels": [
+   {
+    "channel": "A",
+    "model": "1x12 Deluxe Verb"
+   },
+   {
+    "channel": "B",
+    "model": "4x12 1960TV"
+   },
+   {
+    "channel": "C",
+    "model": "4x12 Friedman V30"
+   },
+   {
+    "channel": "D",
+    "model": "4x12 Friedman V30"
+   }
+  ],
+  "driveChannels": [
+   {
+    "channel": "A",
+    "type": "T808 OD"
+   }
+  ],
+  "chorusChannels": [
+   {
+    "channel": "A",
+    "type": "Analog Stereo"
+   }
+  ],
+  "delayChannels": [
+   {
+    "channel": "A",
+    "type": "Analog Stereo"
+   }
+  ],
+  "reverbChannels": [
+   {
+    "channel": "A",
+    "type": "Room: Recording Studio A"
+   },
+   {
+    "channel": "B",
+    "type": "Plate: Medium Plate"
+   }
+  ],
+  "scenes": [
+   {
+    "scene": 1,
+    "name": "INTRO RIFF",
+    "blocks": {
+     "amp": {
+      "channel": "B",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "B",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": true
+     },
+     "chorus": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": false
+     }
+    }
+   },
+   {
+    "scene": 2,
+    "name": "VERSE",
+    "blocks": {
+     "amp": {
+      "channel": "B",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "B",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": true
+     },
+     "chorus": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": true
+     }
+    }
+   },
+   {
+    "scene": 3,
+    "name": "CHORUS",
+    "blocks": {
+     "amp": {
+      "channel": "C",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "C",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": true
+     },
+     "chorus": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": false
+     }
+    }
+   },
+   {
+    "scene": 4,
+    "name": "SOLO",
+    "blocks": {
+     "amp": {
+      "channel": "D",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "D",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": false
+     },
+     "chorus": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": false
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": false
+     }
+    }
+   },
+   {
+    "scene": 5,
+    "name": "BREAKDOWN",
+    "blocks": {
+     "amp": {
+      "channel": "A",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "A",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": true
+     },
+     "chorus": {
+      "channel": "A",
+      "bypass": false
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "B",
+      "bypass": false
+     }
+    }
+   },
+   {
+    "scene": 6,
+    "name": "BUILD",
+    "blocks": {
+     "amp": {
+      "channel": "B",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "B",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": false
+     },
+     "chorus": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": false
+     }
+    }
+   },
+   {
+    "scene": 7,
+    "name": "OUTRO",
+    "blocks": {
+     "amp": {
+      "channel": "C",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "C",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": true
+     },
+     "chorus": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": false
+     },
+     "reverb": {
+      "channel": "B",
+      "bypass": false
+     }
+    }
+   },
+   {
+    "scene": 8,
+    "name": "FILLS",
+    "blocks": {
+     "amp": {
+      "channel": "D",
+      "bypass": false
+     },
+     "cab": {
+      "channel": "D",
+      "bypass": false
+     },
+     "drive": {
+      "channel": "A",
+      "bypass": false
+     },
+     "chorus": {
+      "channel": "A",
+      "bypass": true
+     },
+     "delay": {
+      "channel": "A",
+      "bypass": true
+     },
+     "reverb": {
+      "channel": "A",
+      "bypass": false
+     }
+    }
+   }
+  ]
+ },
+ "layout": {
+  "row2": [
+   "drive",
+   "chorus",
+   "amp",
+   "cab"
+  ],
+  "row3": [
+   "delay",
+   "reverb"
+  ]
+ },
+ "selectedScene": 1,
+ "controls": [
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_DRIVE",
+   "value": 3.5
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_BASS",
+   "value": 5
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_MID",
+   "value": 5
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_TREBLE",
+   "value": 5
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_PRESENCE",
+   "value": 5
+  },
+  {
+   "block": "amp",
+   "channel": "A",
+   "param": "DISTORT_LEVEL",
+   "value": -10.16
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_DRIVE",
+   "value": 7
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_BASS",
+   "value": 4
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_MID",
+   "value": 6.5
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_TREBLE",
+   "value": 5
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_PRESENCE",
+   "value": 4
+  },
+  {
+   "block": "amp",
+   "channel": "B",
+   "param": "DISTORT_LEVEL",
+   "value": -15.5
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_DRIVE",
+   "value": 6
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_BASS",
+   "value": 5.5
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_MID",
+   "value": 5.5
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_TREBLE",
+   "value": 5
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_PRESENCE",
+   "value": 4.5
+  },
+  {
+   "block": "amp",
+   "channel": "C",
+   "param": "DISTORT_LEVEL",
+   "value": -7
+  },
+  {
+   "block": "amp",
+   "channel": "D",
+   "param": "DISTORT_LEVEL",
+   "value": -5
+  },
+  {
+   "block": "cab",
+   "channel": "B",
+   "param": "CABINET_LOCUT",
+   "value": 80
+  },
+  {
+   "block": "cab",
+   "channel": "B",
+   "param": "CABINET_HICUT",
+   "value": 8000
+  },
+  {
+   "block": "cab",
+   "channel": "C",
+   "param": "CABINET_LOCUT",
+   "value": 80
+  },
+  {
+   "block": "cab",
+   "channel": "C",
+   "param": "CABINET_HICUT",
+   "value": 8000
+  },
+  {
+   "block": "cab",
+   "channel": "D",
+   "param": "CABINET_LOCUT",
+   "value": 80
+  },
+  {
+   "block": "cab",
+   "channel": "D",
+   "param": "CABINET_HICUT",
+   "value": 8000
+  },
+  {
+   "block": "drive",
+   "channel": "A",
+   "param": "FUZZ_DRIVE",
+   "value": 3.5
+  },
+  {
+   "block": "drive",
+   "channel": "A",
+   "param": "FUZZ_TONE",
+   "value": 5
+  },
+  {
+   "block": "drive",
+   "channel": "A",
+   "param": "FUZZ_LEVEL",
+   "value": 6.5
+  },
+  {
+   "block": "drive",
+   "channel": "A",
+   "param": "FUZZ_MIX",
+   "value": 100
+  },
+  {
+   "block": "delay",
+   "channel": "A",
+   "param": "DELAY_TEMPO",
+   "value": "NONE"
+  },
+  {
+   "block": "delay",
+   "channel": "A",
+   "param": "DELAY_TIME",
+   "value": 652
+  },
+  {
+   "block": "delay",
+   "channel": "A",
+   "param": "DELAY_FEED",
+   "value": 25
+  },
+  {
+   "block": "delay",
+   "channel": "A",
+   "param": "DELAY_MIX",
+   "value": 18
+  },
+  {
+   "block": "reverb",
+   "channel": "A",
+   "param": "REVERB_MIX",
+   "value": 12
+  },
+  {
+   "block": "reverb",
+   "channel": "B",
+   "param": "REVERB_MIX",
+   "value": 22
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE1",
+   "value": 0
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE2",
+   "value": -1.5
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE3",
+   "value": 0
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE4",
+   "value": 3
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE5",
+   "value": 0
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE6",
+   "value": 0
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE7",
+   "value": -0.5
+  },
+  {
+   "block": "out1",
+   "channel": "A",
+   "param": "OUTPUT_SCENE8",
+   "value": 1
+  }
+ ]
+}

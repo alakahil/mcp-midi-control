@@ -15,7 +15,7 @@ import FM3_CPU_SWEEP as S
 import FM3_SHOT_LOAD as Q
 import FM3_BIND_STORE as B
 import FM3_L1_LOUDNESS as L
-CASES = ['BASELINE_V13', 'DAB_A_PLEXI', 'DAB_B_DIRTY']
+CASES = ['BASELINE_V13', 'DAB_A_PLEXI', 'DAB_B_DIRTY', 'DAB_A2', 'DAB_B2']
 
 def preflight():
     pack = json.loads((ROOT / 'pack.json').read_text())
