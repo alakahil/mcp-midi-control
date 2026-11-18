@@ -1,4 +1,4 @@
-FM3 DAB: "Dust and Bone" live-presetid (ette valmistatud 17.11.2026)
+FM3 DAB: "Dust and Bone" live-presetid (ette valmistatud 17.11.2026, Strati jaoks kohandatud 18.11.2026)
 
 Kolm faili, kõik räsiga seotud:
   BASELINE_V13  LIVE KOOSLUS V1.3 muutmata (valjuse võrdlusalus, 13.11 heaks kiidetud)
@@ -6,6 +6,9 @@ Kolm faili, kõik räsiga seotud:
                 Brit JVM OD1 Orange + T808 soolo, Deluxe Verb breakdown
   DAB_B_DIRTY   "DUST BONE B DIRTY": Brit JM45 crunch, Dirty Shirley 1 refrään,
                 Friedman BE V1 + T808 soolo, V30 kõlarid
+Kitarr: Fender Stratocaster (single coil). Mängi KÕIK kolm faili (ka V1.3) Stratiga.
+Strati kohandus: Amp B/C Gain +1, Bass +1, Treble/Presence −0,5; puhas Gain 3,5;
+T808 Drive 3,5; Cab High Cut 6 kHz. Input Gate jääb aluse seadeks (Intelligent, −60 dB).
 Loo analüüs: G-moll, ~92 BPM. Soolo-delay 652 ms (veerandnoot 92 BPM juures, Tempo NONE).
 
 Stseenid (A ja B samad, loo järjekorras):
