@@ -21,12 +21,12 @@ const {scanRecords}=await import(path.join(E,'scripts/fm3-layout.mjs'));
 const sha=b=>createHash('sha256').update(b).digest('hex');
 export const KIND='fm3-dab-sound-preparation',CASES=['BASELINE_V13','DAB_A_PLEXI','DAB_B_DIRTY'];
 export const PINNED={BASELINE_V13:'b7bd043ce9602293be7d3be830aa8655b0c92cf3309d20b47913571ca1d06668',
- DAB_A_PLEXI:'d6234b144c7ba995193ce5af08466b051a647794dac56a89dadaf3af1be3f032',DAB_B_DIRTY:'7d5aa9a64555859d6f19538b67501175b3148c132f9936ee7b1e8b9305bb7fe9'};
+ DAB_A_PLEXI:'665d9630dad25e0d4410d7d21631745f24f3b8856c5f0d90d9c778a87734cd26',DAB_B_DIRTY:'8de0802cfbf7b912f4a1c57a629b295574de6cc2a840f1da6999a8807b69d1eb'};
 const NAME={BASELINE_V13:'LIVE KOOSLUS V1.3',DAB_A_PLEXI:'DUST BONE A PLEXI',DAB_B_DIRTY:'DUST BONE B DIRTY'};
 export const SONG_SCENES=['INTRO RIFF','VERSE','CHORUS','SOLO','BREAKDOWN','BUILD','OUTRO','FILLS'];
 const EXPECT={BASELINE_V13:'Võrdlusalus: 13.11 heaks kiidetud V1.3 tasakaal (sama riff kõigis kolmes).',
- DAB_A_PLEXI:'Plexi crunch (intro/salm), JCM800 refrään, JVM OD1 + T808 soolo, Deluxe Verb breakdown; tumedam ülaots (Cab High Cut 6,5 kHz).',
- DAB_B_DIRTY:'Paksem ja tumedam: JM45 crunch, Dirty Shirley refrään, Friedman BE + T808 soolo, V30 kõlarid.'};
+ DAB_A_PLEXI:'Plexi crunch (intro/salm), JCM800 refrään, JVM OD1 + T808 soolo, Deluxe Verb breakdown; tumedam ülaots (Cab High Cut 6 kHz); Stratocaster single coil.',
+ DAB_B_DIRTY:'Paksem ja tumedam: JM45 crunch, Dirty Shirley refrään, Friedman BE + T808 soolo, V30 kõlarid; Stratocaster single coil.'};
 function generate(dir,id){
  const BASE=path.join(E,'examples/JB_RHYTHM_LEVEL_MINUS3_NewLook.syx');
  const spec=JSON.parse(fs.readFileSync(path.join(SPECS,id+'.input.json')));

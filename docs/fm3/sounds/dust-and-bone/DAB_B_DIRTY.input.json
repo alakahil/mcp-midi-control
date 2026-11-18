@@ -1,8 +1,8 @@
 {
- "purpose": "Dust and Bone (G-moll, ~92 BPM) live-preset variant B: Tumedam ja paksem: JTM45 crunch, Dirty Shirley refrään, Friedman BE soolo; V30 kõlarid (1,6 kHz nõgu, 3 kHz kühm). Stseenid loo järjekorras; Out1 tasemed V1.3 loogikaga (salm -1,5, soolo +2, fillid +1). Tasakaal vajab SK-tüüpi mõõtmist.",
+ "purpose": "Dust and Bone (G-moll, ~92 BPM) live-preset variant B: Tumedam ja paksem: JTM45 crunch, Dirty Shirley refrään, Friedman BE soolo; V30 kõlarid (1,6 kHz nõgu, 3 kHz kühm). Stseenid loo järjekorras; Out1 tasemed V1.3 loogikaga (salm -1,5, soolo +2, fillid +1). Kohandatud Stratocasteri single-coil helipeadele (18.11.2026): rohkem gaini ja bassi, vähem treble/presence, Cab High Cut 6 kHz, T808 Drive 3,5. Tasakaal vajab SK-tüüpi mõõtmist.",
  "context": {
-  "guitar": "Ibanez AS-120",
-  "pickups": "humbucker",
+  "guitar": "Fender Stratocaster",
+  "pickups": "single coil",
   "output": "OUT1 aktiivkõlaritesse; mono/stereo ja kõlarimudel täpsustamata"
  },
  "composer": {
@@ -335,7 +335,7 @@
    "block": "amp",
    "channel": "A",
    "param": "DISTORT_DRIVE",
-   "value": 3
+   "value": 3.5
   },
   {
    "block": "amp",
@@ -353,7 +353,7 @@
    "block": "amp",
    "channel": "A",
    "param": "DISTORT_TREBLE",
-   "value": 5.5
+   "value": 5
   },
   {
    "block": "amp",
@@ -371,13 +371,13 @@
    "block": "amp",
    "channel": "B",
    "param": "DISTORT_DRIVE",
-   "value": 6
+   "value": 7
   },
   {
    "block": "amp",
    "channel": "B",
    "param": "DISTORT_BASS",
-   "value": 4
+   "value": 5
   },
   {
    "block": "amp",
@@ -389,13 +389,13 @@
    "block": "amp",
    "channel": "B",
    "param": "DISTORT_TREBLE",
-   "value": 5.5
+   "value": 5
   },
   {
    "block": "amp",
    "channel": "B",
    "param": "DISTORT_PRESENCE",
-   "value": 4.5
+   "value": 4
   },
   {
    "block": "amp",
@@ -407,13 +407,13 @@
    "block": "amp",
    "channel": "C",
    "param": "DISTORT_DRIVE",
-   "value": 5
+   "value": 6
   },
   {
    "block": "amp",
    "channel": "C",
    "param": "DISTORT_BASS",
-   "value": 4.5
+   "value": 5.5
   },
   {
    "block": "amp",
@@ -425,13 +425,13 @@
    "block": "amp",
    "channel": "C",
    "param": "DISTORT_TREBLE",
-   "value": 5.5
+   "value": 5
   },
   {
    "block": "amp",
    "channel": "C",
    "param": "DISTORT_PRESENCE",
-   "value": 5
+   "value": 4.5
   },
   {
    "block": "amp",
@@ -455,7 +455,7 @@
    "block": "cab",
    "channel": "B",
    "param": "CABINET_HICUT",
-   "value": 6500
+   "value": 6000
   },
   {
    "block": "cab",
@@ -467,7 +467,7 @@
    "block": "cab",
    "channel": "C",
    "param": "CABINET_HICUT",
-   "value": 6500
+   "value": 6000
   },
   {
    "block": "cab",
@@ -479,19 +479,19 @@
    "block": "cab",
    "channel": "D",
    "param": "CABINET_HICUT",
-   "value": 6500
+   "value": 6000
   },
   {
    "block": "drive",
    "channel": "A",
    "param": "FUZZ_DRIVE",
-   "value": 2.5
+   "value": 3.5
   },
   {
    "block": "drive",
    "channel": "A",
    "param": "FUZZ_TONE",
-   "value": 5.5
+   "value": 5
   },
   {
    "block": "drive",
